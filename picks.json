@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T19:55:00Z",
+  "updated": "2026-07-20T20:20:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -78,6 +78,21 @@
       "result": "PENDING",
       "profit": 0,
       "analysis": "Lean \u2014 home favorite with the market leaning Toronto all day (-168 via DraftKings)."
+    },
+    {
+      "id": "2026-07-20-dbacks-ml",
+      "date": "2026-07-20",
+      "sport": "mlb",
+      "awayTeam": "Athletics",
+      "homeTeam": "Arizona Diamondbacks",
+      "desc": "Diamondbacks ML",
+      "market": "ML",
+      "odds": -149,
+      "units": 1,
+      "tier": "whale",
+      "result": "PENDING",
+      "profit": 0,
+      "analysis": "Whale exclusive \u2014 late window, A's traveling into the desert, steady -149 all day."
     }
   ]
 }
