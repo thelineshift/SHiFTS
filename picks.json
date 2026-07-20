@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T03:30:00Z",
+  "updated": "2026-07-20T19:55:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -35,34 +35,49 @@
       "analysis": "Best lineup in baseball as a road favorite in the nightcap. Yankees bullpen stole it \u2014 owned publicly."
     },
     {
-      "id": "2026-07-21-brewers-ml",
-      "date": "2026-07-21",
+      "id": "2026-07-20-brewers-ml",
+      "date": "2026-07-20",
       "sport": "mlb",
       "awayTeam": "New York Mets",
       "homeTeam": "Milwaukee Brewers",
       "desc": "Brewers ML",
       "market": "ML",
-      "odds": -185,
+      "odds": -219,
       "units": 1.5,
       "tier": "lock",
       "result": "PENDING",
       "profit": 0,
-      "analysis": "Brewers at home with the better bullpen matchup; books hanging a heavy number for a reason."
+      "analysis": "Biggest favorite on tonight's board at home. Books hanging -219 for a reason \u2014 strong spot, sized up to 1.5u."
     },
     {
-      "id": "2026-07-21-rangers-ml",
-      "date": "2026-07-21",
+      "id": "2026-07-20-rangers-ml",
+      "date": "2026-07-20",
       "sport": "mlb",
       "awayTeam": "Chicago White Sox",
       "homeTeam": "Texas Rangers",
       "desc": "Rangers ML",
       "market": "ML",
-      "odds": -175,
+      "odds": -171,
       "units": 1,
       "tier": "free",
       "result": "PENDING",
       "profit": 0,
-      "analysis": "Free pick of the day \u2014 most popular game of the night, home favorite with the form edge."
+      "analysis": "Free pick of the day \u2014 home favorite vs a rebuilding White Sox club in the primetime slot."
+    },
+    {
+      "id": "2026-07-20-bluejays-ml",
+      "date": "2026-07-20",
+      "sport": "mlb",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Toronto Blue Jays",
+      "desc": "Blue Jays ML",
+      "market": "ML",
+      "odds": -168,
+      "units": 1,
+      "tier": "sharp",
+      "result": "PENDING",
+      "profit": 0,
+      "analysis": "Lean \u2014 home favorite with the market leaning Toronto all day (-168 via DraftKings)."
     }
   ]
 }
