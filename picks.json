@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T20:20:00Z",
+  "updated": "2026-07-20T20:50:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -93,6 +93,36 @@
       "result": "PENDING",
       "profit": 0,
       "analysis": "Whale exclusive \u2014 late window, A's traveling into the desert, steady -149 all day."
+    },
+    {
+      "id": "2026-07-20-liberty-ml",
+      "date": "2026-07-20",
+      "sport": "wnba",
+      "awayTeam": "New York Liberty",
+      "homeTeam": "Dallas Wings",
+      "desc": "Liberty ML",
+      "market": "ML",
+      "odds": -218,
+      "units": 1,
+      "tier": "lock",
+      "result": "PENDING",
+      "profit": 0,
+      "analysis": "Liberty on the road but the class gap is real \u2014 books steady at -218 via DraftKings."
+    },
+    {
+      "id": "2026-07-20-aces-ml",
+      "date": "2026-07-20",
+      "sport": "wnba",
+      "awayTeam": "Las Vegas Aces",
+      "homeTeam": "Toronto Tempo",
+      "desc": "Aces ML",
+      "market": "ML",
+      "odds": -575,
+      "units": 0.5,
+      "tier": "sharp",
+      "result": "PENDING",
+      "profit": 0,
+      "analysis": "Record-builder \u2014 heaviest chalk on the board. Thin value at -575, so it's sized at 0.5u. Honest sizing wins long-term."
     }
   ]
 }
