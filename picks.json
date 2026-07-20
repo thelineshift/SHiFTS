@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T14:00:00Z",
+  "updated": "2026-07-21T19:30:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -16,7 +16,7 @@
       "result": "WIN",
       "profit": 1.82,
       "finalScore": "0-0 through 90'",
-      "analysis": "World Cup final — two elite defensive structures, everything to lose. Finals tighten up. Called pre-game."
+      "analysis": "World Cup final \u2014 two elite defensive structures, everything to lose. Finals tighten up. Called pre-game."
     },
     {
       "id": "2026-07-19-dodgers-ml",
@@ -31,8 +31,8 @@
       "tier": "lock",
       "result": "LOSS",
       "profit": -1,
-      "finalScore": "LAD 1 — NYY 2",
-      "analysis": "Best lineup in baseball as a road favorite in the nightcap. Yankees bullpen stole it — owned publicly."
+      "finalScore": "LAD 1 \u2014 NYY 2",
+      "analysis": "Best lineup in baseball as a road favorite in the nightcap. Yankees bullpen stole it \u2014 owned publicly."
     },
     {
       "id": "2026-07-21-brewers-ml",
@@ -62,7 +62,7 @@
       "tier": "free",
       "result": "PENDING",
       "profit": 0,
-      "analysis": "Free pick of the day — most popular game of the night, home favorite with the form edge."
+      "analysis": "Free pick of the day \u2014 most popular game of the night, home favorite with the form edge."
     }
   ]
 }
