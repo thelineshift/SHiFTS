@@ -1,0 +1,68 @@
+{
+  "updated": "2026-07-21T14:00:00Z",
+  "picks": [
+    {
+      "id": "2026-07-19-under15-final",
+      "date": "2026-07-19",
+      "sport": "epl",
+      "awayTeam": "Argentina",
+      "homeTeam": "Spain",
+      "desc": "UNDER 1.5",
+      "market": "UNDER",
+      "line": 1.5,
+      "odds": -110,
+      "units": 2,
+      "tier": "free",
+      "result": "WIN",
+      "profit": 1.82,
+      "finalScore": "0-0 through 90'",
+      "analysis": "World Cup final — two elite defensive structures, everything to lose. Finals tighten up. Called pre-game."
+    },
+    {
+      "id": "2026-07-19-dodgers-ml",
+      "date": "2026-07-19",
+      "sport": "mlb",
+      "awayTeam": "Los Angeles Dodgers",
+      "homeTeam": "New York Yankees",
+      "desc": "Dodgers ML",
+      "market": "ML",
+      "odds": -130,
+      "units": 1,
+      "tier": "lock",
+      "result": "LOSS",
+      "profit": -1,
+      "finalScore": "LAD 1 — NYY 2",
+      "analysis": "Best lineup in baseball as a road favorite in the nightcap. Yankees bullpen stole it — owned publicly."
+    },
+    {
+      "id": "2026-07-21-brewers-ml",
+      "date": "2026-07-21",
+      "sport": "mlb",
+      "awayTeam": "New York Mets",
+      "homeTeam": "Milwaukee Brewers",
+      "desc": "Brewers ML",
+      "market": "ML",
+      "odds": -185,
+      "units": 1.5,
+      "tier": "lock",
+      "result": "PENDING",
+      "profit": 0,
+      "analysis": "Brewers at home with the better bullpen matchup; books hanging a heavy number for a reason."
+    },
+    {
+      "id": "2026-07-21-rangers-ml",
+      "date": "2026-07-21",
+      "sport": "mlb",
+      "awayTeam": "Chicago White Sox",
+      "homeTeam": "Texas Rangers",
+      "desc": "Rangers ML",
+      "market": "ML",
+      "odds": -175,
+      "units": 1,
+      "tier": "free",
+      "result": "PENDING",
+      "profit": 0,
+      "analysis": "Free pick of the day — most popular game of the night, home favorite with the form edge."
+    }
+  ]
+}
