@@ -1,26 +1,29 @@
 {
-  "seq": 15,
+  "seq": 16,
   "commands": [
     {
-      "action": "list_roles"
+      "action": "delete_message",
+      "channel": "every-play",
+      "marker": "No card tonight"
     },
     {
-      "action": "member_roles",
-      "member": "hustlersdream353"
+      "action": "purge_system"
     },
     {
-      "action": "add_role",
-      "member": "hustlersdream353",
-      "role": "whale"
+      "action": "replace_pinned",
+      "channel": "promotions",
+      "marker": "CURRENT OFFERS",
+      "content": "\ud83d\udce3 **CURRENT OFFERS**\n\n\ud83c\udf89 **FIRST MONTH FREE \u2014 EVERY TIER** (\ud83d\udd12 Lock / \ud83d\udcca Sharp / \ud83d\udc0b Whale)\nNo code needed. Thirty days of the full machine, on us.\n\n\ud83d\udd25 **LAUNCH50** \u2014 50% off your first PAID month on top of that. Launch pricing \u2014 when it's gone, it's gone.\n\n\ud83d\udc8e Grab your tier in <#1528794177549107394> \u2014 cancel anytime, keep the picks you already used."
     },
     {
-      "action": "member_roles",
-      "member": "hustlersdream353"
+      "action": "post_and_pin",
+      "channel": "lock-lounge",
+      "content": "\ud83d\udd12 **Lock holders' lounge.** Sweat tonight's lock here \u2014 reactions, tickets, bad beats, all of it. Keep ticket talk in this room. \ud83e\udd1d"
     },
     {
-      "action": "read_recent",
-      "channel": "all",
-      "limit": 3
+      "action": "post_and_pin",
+      "channel": "sharp-talk",
+      "content": "\ud83d\udcca **Sharp talk.** This is where we break down the WHY \u2014 props, esports markets, line movement. Bring your reads, challenge the model's. \ud83e\udde0"
     }
   ]
 }
