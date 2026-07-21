@@ -1,13 +1,8 @@
 {
-  "seq": 19,
+  "seq": 20,
   "commands": [
     {
-      "action": "delete_message",
-      "channel": "every-play",
-      "marker": "No card tonight"
-    },
-    {
-      "action": "purge_system"
+      "action": "list_roles"
     }
   ]
 }
