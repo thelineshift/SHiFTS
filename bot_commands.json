@@ -1,14 +1,8 @@
 {
-  "seq": 5,
+  "seq": 6,
   "commands": [
     {
-      "action": "list_roles"
-    },
-    {
-      "action": "audit_roles"
-    },
-    {
-      "action": "fix_role_hierarchy"
+      "action": "audit_all"
     },
     {
       "action": "add_role",
