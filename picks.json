@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T22:50:00Z",
+  "updated": "2026-07-21T22:35:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -225,7 +225,8 @@
       "result": "PENDING",
       "profit": 0,
       "finalScore": null,
-      "analysis": "Best record in baseball (63-38) at home with Wheeler (10-1, 2.13 ERA, 108 K) vs a road lefty in the TBS national window. Highest win-probability spot on the board \u2014 sized to 1.5u. -136 via DraftKings."
+      "analysis": "Best record in baseball (63-38) at home with Wheeler (10-1, 2.13 ERA, 108 K) vs a road lefty in the TBS national window. Highest win-probability spot on the board \u2014 sized to 1.5u. -136 via DraftKings.",
+      "time_et": "6:40 PM"
     },
     {
       "id": "2026-07-21-dodgers-phillies-under85",
@@ -242,7 +243,8 @@
       "result": "PENDING",
       "profit": 0,
       "finalScore": null,
-      "analysis": "Free pick of the day \u2014 TBS marquee with Wheeler (2.13 ERA) vs Wrobleski (2.69 ERA). Public pounds primetime overs; two top arms say otherwise. Total via DraftKings."
+      "analysis": "Free pick of the day \u2014 TBS marquee with Wheeler (2.13 ERA) vs Wrobleski (2.69 ERA). Public pounds primetime overs; two top arms say otherwise. Total via DraftKings.",
+      "time_et": "6:40 PM"
     },
     {
       "id": "2026-07-21-mariners-ml",
@@ -261,7 +263,7 @@
       "analysis": "Lean \u2014 models make Seattle ~58% at home: Kirby (3.76 ERA) vs Abbott (4.11 ERA), T-Mobile mutes road power bats, market pricing it like a coin flip. That gap is the edge. -114 via DraftKings. | CANCELLED 6:30 PM ET: rotation change (Castillo not Kirby; Burns not Abbott) - edge gone, public PASS posted in sharp room."
     },
     {
-      "id": "2026-07-21-tigers-ml",
+      "id": "2026-07-21-tigers-ml-dup",
       "date": "2026-07-21",
       "sport": "mlb",
       "awayTeam": "Detroit Tigers",
