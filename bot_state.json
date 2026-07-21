@@ -1,8 +1,9 @@
 {
-  "executed_seq": 10,
+  "executed_seq": 11,
   "last_log": [
-    "seq 10 executed 2026-07-21 15:52 UTC",
-    "old pinned message deleted",
-    "replaced pin in #\ud83d\udc4bwelcome (unpinned 1)"
+    "seq 11 executed 2026-07-21 16:34 UTC",
+    "ROLES: Whop Bot (id=1528801407199875155, pos=5) | LineShift Bot (id=1529105570278277133, pos=4) | \ud83d\udc0b Whale (id=1528793151387730042, pos=3) | \ud83d\udcca Sharp (id=1528793132072833105, pos=2) | \ud83d\udd12 Lock Room (id=1528793092130476102, pos=1) | @everyone (id=1528792749162365133, pos=0)",
+    "check_giveaway: post found, \ud83c\udf89 reactions=0",
+    "member not found: hustlersdream353"
   ]
 }
