@@ -11,6 +11,9 @@ API = f'https://api.github.com/repos/{REPO}/contents'
 
 TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U0001F40B Whale': 'whale'}
 
+BOT_NICK = '🤖 SHiFT'
+BOT_STATUS = 'the board 🛰️'
+
 def make_client(privileged=True):
     intents = discord.Intents.default()
     intents.guilds = True
@@ -20,7 +23,15 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v8.1 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v8.2 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        try:
+            await c.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=BOT_STATUS))
+            g0 = c.guilds[0] if c.guilds else None
+            if g0 and g0.me and g0.me.nick != BOT_NICK:
+                await g0.me.edit(nick=BOT_NICK)
+                print('nick applied:', BOT_NICK)
+        except Exception as e:
+            print('presence/nick error:', e)
         if not poll.is_running():
             poll.start()
         if not countdown.is_running():
@@ -369,10 +380,20 @@ async def run_command(cmd, guild, log):
             count += 1
         log.append(f'total members: {count}')
     elif a == 'set_avatar':
-        req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})
-        data = urllib.request.urlopen(req, timeout=25).read()
+        if cmd.get('path'):
+            d = await asyncio.to_thread(gh_get, cmd['path'], 'main')
+            data = base64.b64decode(d['content'])
+        else:
+            req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})
+            data = urllib.request.urlopen(req, timeout=25).read()
         await client.user.edit(avatar=data)
-        log.append('bot avatar updated')
+        log.append(f'bot avatar updated ({len(data) // 1024} KB)')
+    elif a == 'set_nick':
+        await guild.me.edit(nick=cmd.get('nick', BOT_NICK))
+        log.append(f'nick set -> {guild.me.nick}')
+    elif a == 'set_status':
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=cmd.get('status', BOT_STATUS)))
+        log.append('status set')
     elif a == 'make_webhook':
         ch = find_channel(guild, cmd['channel'])
         wh = await ch.create_webhook(name=cmd.get('name', 'TheLineShift Bot'))
@@ -580,7 +601,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.1'
+            state['bot_version'] = '8.2'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
