@@ -1,18 +1,11 @@
 {
-  "executed_seq": 24,
+  "executed_seq": 26,
   "last_log": [
-    "seq 24 executed 2026-07-21 19:23 UTC",
-    "hustlersdream353 (1529128117744959509) joined 07-21 14:28 roles=['\ud83d\udd12 Lock Room', '\ud83d\udc0b Whale']",
-    "LineShift Bot (1529104244332953741) joined 07-21 12:39 roles=['LineShift Bot']",
-    "billiondollarinvestors (1471031483585265664) joined 07-20 21:31 roles=[]",
-    "cryptodad001 (1429156504094904443) joined 07-20 21:06 roles=[]",
-    "whalesyan56388 (1089999389432492073) joined 07-20 21:25 roles=[]",
-    "bojanpump2723 (960950621060603985) joined 07-20 21:20 roles=[]",
-    "Whop Bot (815703008075579422) joined 07-20 16:30 roles=['Whop Bot']",
-    "odin1h (551582227188809738) joined 07-20 15:56 roles=[]",
-    "total members: 8",
-    "added \ud83d\udcca Sharp -> hustlersdream353",
-    "removed \ud83d\udcca Sharp from hustlersdream353"
+    "seq 26 executed 2026-07-21 19:41 UTC",
+    "created #\ud83d\udef0\ufe0fscan-feed",
+    "topic set on #\ud83d\udef0\ufe0fscan-feed",
+    "webhook for #\ud83d\udef0\ufe0fscan-feed: https://discord.com/api/webhooks/1529211731610439732/UDRIzemwf4R46QFTpPDRAZilkjVYnRR5hd9hUsUSUF5XNKJl4eZu5u-nYiF_99k32KWA",
+    "posted+pinned in #\ud83d\udef0\ufe0fscan-feed"
   ],
   "time_audit": {
     "at": "2026-07-21 19:39 UTC",
