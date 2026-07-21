@@ -241,6 +241,29 @@ async def run_command(cmd, guild, log):
                 log.append(f'#{ch.name}: read error {e}')
             if count == 0:
                 log.append(f'#{ch.name}: (empty)')
+    elif a == 'delete_message':
+        ch = find_channel(guild, cmd['channel'])
+        marker = cmd.get('marker', '')
+        done = False
+        async for m in ch.history(limit=50):
+            if marker.lower() in (m.content or '').lower():
+                await m.delete()
+                log.append(f'deleted message in #{ch.name} (marker match)')
+                done = True
+                break
+        if not done:
+            log.append(f'delete_message: marker not found in #{ch.name}')
+    elif a == 'purge_system':
+        total = 0
+        for ch in guild.text_channels:
+            try:
+                async for m in ch.history(limit=30):
+                    if m.type == discord.MessageType.pins_add:
+                        await m.delete()
+                        total += 1
+            except Exception:
+                pass
+        log.append(f'purged {total} pin notices server-wide')
     elif a == 'check_giveaway':
         ch = find_channel(guild, cmd.get('channel', 'giveaway'))
         target = None
