@@ -1,10 +1,30 @@
 {
-  "seq": 33,
+  "seq": 34,
   "commands": [
     {
-      "action": "read_full",
+      "action": "delete_message",
       "channel": "receipts",
-      "limit": 10
+      "marker": "WELCOME TO #receipts"
+    },
+    {
+      "action": "delete_message",
+      "channel": "receipts",
+      "marker": "COMING THIS WEEK: THE $100"
+    },
+    {
+      "action": "delete_message",
+      "channel": "receipts",
+      "marker": "SYSTEM UPGRADE"
+    },
+    {
+      "action": "delete_message",
+      "channel": "receipts",
+      "marker": "Relay check"
+    },
+    {
+      "action": "delete_message",
+      "channel": "receipts",
+      "marker": "This is the receipts room"
     }
   ]
 }
