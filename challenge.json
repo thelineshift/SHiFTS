@@ -1,0 +1,11 @@
+{
+  "updated": "2026-07-21T06:30:00Z",
+  "bankrollStart": 100.0,
+  "goal": 1000.0,
+  "balance": 100.0,
+  "record": {
+    "wins": 0,
+    "losses": 0
+  },
+  "plays": []
+}
