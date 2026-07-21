@@ -103,12 +103,13 @@ async def run_command(cmd, guild, log):
         await ch.delete()
         log.append(f'deleted #{ch.name}')
     elif a == 'create_channel':
-        overwrites = {}
+        kwargs = {}
         if cmd.get('private_for'):
             role = find_role(guild, cmd['private_for'])
-            overwrites[guild.default_role] = discord.PermissionOverwrite(view_channel=False)
-            overwrites[role] = discord.PermissionOverwrite(view_channel=True)
-        ch = await guild.create_text_channel(cmd['name'], overwrites=overwrites or None)
+            if role:
+                kwargs['overwrites'] = {guild.default_role: discord.PermissionOverwrite(view_channel=False),
+                                        role: discord.PermissionOverwrite(view_channel=True)}
+        ch = await guild.create_text_channel(cmd['name'], **kwargs)
         log.append(f'created #{ch.name}')
     else:
         log.append(f'unknown action: {a}')
