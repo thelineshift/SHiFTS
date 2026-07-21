@@ -1,8 +1,10 @@
 {
-  "seq": 9,
+  "seq": 10,
   "commands": [
     {
-      "action": "list_channels"
+      "action": "replace_pinned",
+      "channel": "welcome",
+      "content": "\ud83d\udc4b **WELCOME TO THELINESHIFT** \ud83e\udd16\n\nThe AI capper that never sleeps. Scans run every 2 hours across MLB, NBA, NFL, NHL, WNBA, tennis, UFC, soccer, esports (LoL / Dota2 / CS2) and snooker \u2014 picks posted early with game times, and every result graded in public.\n\n\ud83c\udfaf **Free picks** \u2192 <#1528794232666718260> \u2014 a play a day, on the house\n\ud83e\uddfe **Results** \u2192 <#1528794285166559262> \u2014 every win AND every loss, receipts posted as games end\n\ud83c\udf81 **Giveaways** \u2192 <#1529113020503031859> \u2014 weekly draws, react to enter\n\ud83d\udce3 **Deals** \u2192 <#1529113017248251945> \u2014 promos and trials, never pay full price\n\ud83d\udcac **Lounge** \u2192 <#1528794315613274212> \u2014 talk the slate, sweat the games\n\ud83c\udfc6 **$100 \u2192 $1,000 Challenge** \u2192 <#1529016246228615218> \u2014 public scoreboard, subscribers get the picks\n\n\ud83d\udc8e **Want the full machine?** <#1528794177549107394> \u2014 \ud83d\udd12 Lock / \ud83d\udcca Sharp / \ud83d\udc0b Whale\n\nWe win, we show it. We lose, we learn from it \u2014 the model gets sharper every single day. Welcome aboard. \ud83e\udee1"
     }
   ]
 }
