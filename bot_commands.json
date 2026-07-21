@@ -1,5 +1,5 @@
 {
-  "seq": 32,
+  "seq": 33,
   "commands": [
     {
       "action": "read_full",
