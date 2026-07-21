@@ -173,6 +173,33 @@ async def run_command(cmd, guild, log):
             if t is not None:
                 lines.append(f'{getattr(t, "name", "?")}({getattr(t, "id", "?")}) by {e.user} at {e.created_at:%m-%d %H:%M}')
         log.append('AUDIT: ' + (' | '.join(lines) if lines else 'no member_role_update entries'))
+    elif a == 'read_pins':
+        ch = find_channel(guild, cmd['channel'])
+        pins = await ch.pins()
+        if not pins:
+            log.append(f'no pins in #{ch.name}')
+        for i, m in enumerate(pins):
+            log.append(f'PIN{i} by {m.author}: {(m.content or "")[:500]}')
+    elif a == 'replace_pinned':
+        ch = find_channel(guild, cmd['channel'])
+        pins = await ch.pins()
+        marker = cmd.get('marker', '')
+        removed = 0
+        for m in pins:
+            if not marker or marker.lower() in (m.content or '').lower() or len(pins) == 1:
+                try:
+                    await m.unpin()
+                    removed += 1
+                except Exception:
+                    pass
+                try:
+                    await m.delete()
+                    log.append('old pinned message deleted')
+                except Exception:
+                    log.append('old pinned message unpinned (could not delete - not mine)')
+        m = await ch.send(cmd['content'])
+        await m.pin()
+        log.append(f'replaced pin in #{ch.name} (unpinned {removed})')
     elif a == 'audit_all':
         lines = []
         async for e in guild.audit_logs(limit=25):
