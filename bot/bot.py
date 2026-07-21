@@ -80,6 +80,16 @@ async def resolve_member(guild, ident):
                 return await guild.fetch_member(t.id)
             except Exception:
                 return None
+    for ch in guild.text_channels:
+        try:
+            async for msg in ch.history(limit=200):
+                if msg.author.name.lower() == ident.lower():
+                    try:
+                        return await guild.fetch_member(msg.author.id)
+                    except Exception:
+                        return None
+        except Exception:
+            pass
     return None
 
 async def run_command(cmd, guild, log):
@@ -163,6 +173,13 @@ async def run_command(cmd, guild, log):
             if t is not None:
                 lines.append(f'{getattr(t, "name", "?")}({getattr(t, "id", "?")}) by {e.user} at {e.created_at:%m-%d %H:%M}')
         log.append('AUDIT: ' + (' | '.join(lines) if lines else 'no member_role_update entries'))
+    elif a == 'audit_all':
+        lines = []
+        async for e in guild.audit_logs(limit=25):
+            t = getattr(e, 'target', None)
+            tn = getattr(t, 'name', None) or str(getattr(t, 'id', '?'))
+            lines.append(f'{e.action.name} target={tn} by={e.user}')
+        log.append('AUDITALL: ' + (' | '.join(lines) if lines else 'empty'))
     elif a == 'add_role':
         m = await resolve_member(guild, cmd.get('member', ''))
         role = find_role(guild, cmd.get('role', ''))
