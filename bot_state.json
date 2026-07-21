@@ -1,11 +1,8 @@
 {
-  "executed_seq": 36,
+  "executed_seq": 37,
   "last_log": [
-    "seq 36 executed 2026-07-21 21:46 UTC",
-    "FULL #\ud83d\udcacgeneral-chat id=1529229861556850818 | SHiFT#0000: \u2705 **SCAN COMPLETE \u2014 4:00 PM ET** \ud83e\udd16 \\n  \\n 214,000 parameters crunched. Tonight's slate dissected. Here's what made the cut: \\n  \\n \ud83d\udd12 **1 pick** \u2192 Lock Room \\n \ud83d\udcca **1 pick** \u2192 Sharp \\n \ud83d\udc0b **2 picks** \u2192 Whale \\n  \\n \ud83c\udfaf **FREE PLAY:** Reds/Giants UNDER 7.5 (-113) \u00b7 1u \u00b7 9:40 PM ET \u2014 full breakdown in <#1528794232666718260> \\n  \\n \ud83d\udeab Passed on the rest \u2014 no edge, no bet. Discipline is the product. \\n  \\n Not in a tier yet? First month FREE \u2192 \ud83d\udc8e <#1528794177549107394> \\n  \\n Next scan: **8:00 PM ET**. \u2014 SHiFT",
-    "FULL #\ud83d\udcacgeneral-chat id=1529222503107657769 | LineShift Bot#8676: ",
-    "FULL #\ud83d\udcacgeneral-chat id=1529222501438328872 | LineShift Bot#8676: \ud83d\udcc5 **HOW THE WEEK RUNS AT THELINESHIFT** *(all times ET)* \\n  \\n \ud83d\udef0\ufe0f **4 LIVE SCAN EVENTS daily** \u2014 8:00 AM / 12:00 PM / 4:00 PM / 8:00 PM \u2014 right here in this channel \\n \u23f3 Countdowns 60 + 10 min before each \u00b7 \ud83d\udce1 live collection \u00b7 \ud83e\udde0 analysis \u00b7 \u2705 picks per tier \\n \ud83c\udfaf **Free pick daily** \u2192 <#1528794232666718260> \\n \ud83e\uddfe **Receipts** \u2014 results as games end + nightly recap 11:30 PM \u2192 <#1528794285166559262> \\n \ud83e\udde0 **Autopsies** after every result \u2014 why it won or lost, what the model changed \\n \ud83d\udcca **Sundays 10 AM** \u2014 weekly analytics (\ud83d\udc0b full sheet) \\n \ud83c\udf81 **Sundays 6 PM** \u2014 giveaway winner drawn + next one launches \\n \ud83d\uddd3\ufe0f **1st of month, 6 PM** \u2014 \ud83d\udc0b monthly deep-dive \\n \ud83c\udfc6 **$100 \u2192 $1,000 Challenge** \u2014 scoreboard updates as they settle \\n  \\n Between scans: \ud83d\udea8 FLASH plays only when the edge can't wait. Quiet never means idle \u2014 receipts and intel flow all day. \ud83e\udd16",
-    "FULL #\ud83d\udcacgeneral-chat id=1529220981934264552 | TheLineShift Bot#000: \ud83e\udde0 **ANALYZING** \u2014 214,000 parameters: matchup matrices, starter form curves, park factors, market movement, travel spots\u2026"
+    "seq 37 executed 2026-07-21 21:56 UTC",
+    "purged 1 pin notices server-wide"
   ],
   "time_audit": {
     "at": "2026-07-21 21:37 UTC",
