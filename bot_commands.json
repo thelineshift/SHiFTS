@@ -1,15 +1,10 @@
 {
-  "seq": 39,
+  "seq": 40,
   "commands": [
     {
-      "action": "read_full",
-      "channel": "giveaway",
-      "limit": 3
-    },
-    {
       "action": "read_recent",
-      "channel": "promotions",
-      "limit": 2
+      "channel": "general-chat",
+      "limit": 3
     }
   ]
 }
