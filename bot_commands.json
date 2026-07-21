@@ -1,1 +1,23 @@
-{"seq": 4, "commands": [{"action": "rename_channel", "channel": "nightly-recap", "name": "\ud83e\uddfereceipts"}, {"action": "set_topic", "channel": "receipts", "topic": "Every result, every tier, posted as it lands \ud83e\uddfe Wins AND losses \u2014 transparency is the product"}]}
+{
+  "seq": 5,
+  "commands": [
+    {
+      "action": "list_roles"
+    },
+    {
+      "action": "audit_roles"
+    },
+    {
+      "action": "fix_role_hierarchy"
+    },
+    {
+      "action": "add_role",
+      "member": "hustlersdream353",
+      "role": "whale"
+    },
+    {
+      "action": "member_roles",
+      "member": "hustlersdream353"
+    }
+  ]
+}
