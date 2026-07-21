@@ -1,13 +1,13 @@
 {
-  "seq": 22,
+  "seq": 23,
   "commands": [
+    {
+      "action": "list_members"
+    },
     {
       "action": "add_role",
       "member": "hustlersdream353",
       "role": "sharp"
-    },
-    {
-      "action": "list_members"
     },
     {
       "action": "remove_role",
