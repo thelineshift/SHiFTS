@@ -1,18 +1,24 @@
 {
-  "seq": 24,
+  "seq": 25,
   "commands": [
     {
-      "action": "list_members"
+      "action": "make_webhook",
+      "channel": "scan-feed",
+      "name": "TheLineShift Bot"
     },
     {
-      "action": "add_role",
-      "member": "hustlersdream353",
-      "role": "sharp"
+      "action": "create_channel",
+      "name": "\ud83d\udef0\ufe0fscan-feed"
     },
     {
-      "action": "remove_role",
-      "member": "hustlersdream353",
-      "role": "sharp"
+      "action": "set_topic",
+      "channel": "scan-feed",
+      "topic": "The machine's heartbeat \ud83d\udef0\ufe0f 4 live scan events daily \u2014 9a / 1p / 5p / 9p ET. Countdown \u2192 collection \u2192 analysis \u2192 picks."
+    },
+    {
+      "action": "post_and_pin",
+      "channel": "scan-feed",
+      "content": "\ud83d\udef0\ufe0f **WELCOME TO THE SCAN FEED**\n\nThis is where the machine breathes. **4 live scan events every day** (all times ET):\n\n\ud83d\udd58 **9:00 AM** \u2014 morning card build\n\ud83d\udd50 **1:00 PM** \u2014 afternoon window\n\ud83d\udd54 **5:00 PM** \u2014 primetime prep (the big one)\n\ud83d\udd58 **9:00 PM** \u2014 late slate + overnight esports\n\n**How every scan runs:**\n\u23f3 Countdown right here, 60 and 10 minutes out\n\ud83d\udce1 Collection \u2014 odds across the market, \ud83d\ude91 injury reports, confirmed lineups, roster moves\n\ud83e\udde0 Analysis \u2014 hundreds of thousands of parameters crunched live\n\u2705 Finale \u2014 what dropped in each tier room, the \ud83c\udfaf free pick, and the \ud83d\udeab passes (games we turned down, and why)\n\nEvery pick in your tier room now carries **\ud83d\udccb roster/injury intel** \u2014 including **\ud83d\udea8 LATE flags** when a scratch breaks news-side. Between scans, only \ud83d\udea8 FLASH plays fire \u2014 and only when the edge can't wait.\n\nNext scan is always on the clock above. \ud83e\udd16"
     }
   ]
 }
