@@ -1,10 +1,10 @@
 {
-  "executed_seq": 40,
+  "executed_seq": 41,
   "last_log": [
-    "seq 40 executed 2026-07-21 23:01 UTC",
-    "#\ud83d\udcacgeneral-chat | LineShift Bot#8676: \u23f3 **SCAN IN 60 MINUTES** \u2014 the machine goes to work at 8 PM ET. Odds across the market, injury reports, confirmed lineups, roster moves \u2014 everything gets pulled. \ud83d\udef0\ufe0f",
-    "#\ud83d\udcacgeneral-chat | SHiFT#0000: \u2705 **SCAN COMPLETE \u2014 4:00 PM ET** \ud83e\udd16\n\n214,000 parameters crunched. Tonight's slate dissected. Here's what made the cut:\n\n\ud83d\udd12 **1 pick** \u2192 Lock Room\n\ud83d\udcca **1 pick** \u2192 Sharp\n\ud83d\udc0b **2",
-    "#\ud83d\udcacgeneral-chat | LineShift Bot#8676: \ud83d\udcc5 **HOW THE WEEK RUNS AT THELINESHIFT** *(all times ET)*\n\n\ud83d\udef0\ufe0f **4 LIVE SCAN EVENTS daily** \u2014 8:00 AM / 12:00 PM / 4:00 PM / 8:00 PM \u2014 right here in this channel\n\u23f3 Countdow"
+    "seq 41 executed 2026-07-21 23:13 UTC",
+    "ERROR set_avatar: 'url'",
+    "unknown action: set_nick",
+    "unknown action: set_status"
   ],
   "time_audit": {
     "at": "2026-07-21 23:02 UTC",
