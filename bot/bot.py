@@ -223,6 +223,24 @@ async def run_command(cmd, guild, log):
         m = await ch.send(cmd['content'])
         await m.pin()
         log.append(f'replaced pin in #{ch.name} (unpinned {removed})')
+    elif a == 'read_recent':
+        n = int(cmd.get('limit', 4))
+        if cmd.get('channel') == 'all':
+            targets = list(guild.text_channels)
+        else:
+            targets = [find_channel(guild, cmd['channel'])]
+        for ch in targets:
+            if ch is None:
+                continue
+            count = 0
+            try:
+                async for m in ch.history(limit=n):
+                    log.append(f'#{ch.name} | {str(m.author)[:22]}: {(m.content or "")[:170]}')
+                    count += 1
+            except Exception as e:
+                log.append(f'#{ch.name}: read error {e}')
+            if count == 0:
+                log.append(f'#{ch.name}: (empty)')
     elif a == 'check_giveaway':
         ch = find_channel(guild, cmd.get('channel', 'giveaway'))
         target = None
