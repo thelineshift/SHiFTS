@@ -1,5 +1,5 @@
 {
-  "seq": 17,
+  "seq": 18,
   "commands": [
     {
       "action": "delete_message",
