@@ -8,9 +8,19 @@ REPO = 'TheLineShift/AISportsBot'
 RAW = f'https://raw.githubusercontent.com/{REPO}/main'
 API = f'https://api.github.com/repos/{REPO}/contents'
 
-intents = discord.Intents.default()
-intents.guilds = True
-client = discord.Client(intents=intents)
+def make_client(privileged=True):
+    intents = discord.Intents.default()
+    intents.guilds = True
+    intents.members = privileged
+    intents.message_content = privileged
+    c = discord.Client(intents=intents)
+
+    @c.event
+    async def on_ready():
+        print(f'LineShift Bot online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        if not poll.is_running():
+            poll.start()
+    return c
 
 def gh_headers():
     return {'Authorization': f'token {GH_TOKEN}', 'User-Agent': 'lineshift-bot'}
@@ -72,6 +82,12 @@ async def resolve_member(guild, ident):
             return await guild.fetch_member(int(ident))
         except Exception:
             return None
+    try:
+        async for m in guild.fetch_members(limit=None):
+            if m.name.lower() == ident.lower():
+                return m
+    except Exception:
+        pass
     async for e in guild.audit_logs(limit=100):
         t = getattr(e, 'target', None)
         name = getattr(t, 'name', '') if t is not None else ''
@@ -206,6 +222,21 @@ async def run_command(cmd, guild, log):
         m = await ch.send(cmd['content'])
         await m.pin()
         log.append(f'replaced pin in #{ch.name} (unpinned {removed})')
+    elif a == 'check_giveaway':
+        ch = find_channel(guild, cmd.get('channel', 'giveaway'))
+        target = None
+        async for m in ch.history(limit=100):
+            if m.author == client.user and '\U0001F381' in (m.content or ''):
+                target = m
+                break
+        if target is None:
+            log.append('check_giveaway: no giveaway post found')
+        else:
+            n = 0
+            for react in target.reactions:
+                if str(react.emoji) == '\U0001F389':
+                    n = react.count
+            log.append(f'check_giveaway: post found, \U0001F389 reactions={n}')
     elif a == 'audit_all':
         lines = []
         async for e in guild.audit_logs(limit=25):
@@ -284,10 +315,10 @@ async def poll():
     except Exception as e:
         print('state push failed:', e)
 
-@client.event
-async def on_ready():
-    print(f'LineShift Bot online as {client.user} in {len(client.guilds)} guild(s)')
-    if not poll.is_running():
-        poll.start()
-
-client.run(DISCORD_TOKEN)
+client = make_client()
+try:
+    client.run(DISCORD_TOKEN)
+except discord.PrivilegedIntentsRequired:
+    print('PRIVILEGED INTENTS NOT ENABLED IN PORTAL - running degraded')
+    client = make_client(privileged=False)
+    client.run(DISCORD_TOKEN)
