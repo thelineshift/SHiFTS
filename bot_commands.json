@@ -1,17 +1,9 @@
 {
-  "seq": 6,
+  "seq": 7,
   "commands": [
     {
-      "action": "audit_all"
-    },
-    {
-      "action": "add_role",
-      "member": "hustlersdream353",
-      "role": "whale"
-    },
-    {
-      "action": "member_roles",
-      "member": "hustlersdream353"
+      "action": "read_pins",
+      "channel": "welcome"
     }
   ]
 }
