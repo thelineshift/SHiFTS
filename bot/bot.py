@@ -56,10 +56,10 @@ def fetch_commands():
 
 def get_state():
     try:
-        d = gh_get('bot_state.json')
+        d = gh_get('bot_state.json', ref=QUEUE_BRANCH)
         return json.loads(base64.b64decode(d['content']))
     except Exception:
-        return {'executed_seq': 0}
+        return None
 
 def find_channel(guild, name):
     n = name.lower().strip('#').replace(' ', '')
@@ -291,30 +291,35 @@ async def run_command(cmd, guild, log):
 
 @tasks.loop(seconds=60)
 async def poll():
-    if not GH_TOKEN:
-        return
-    data = await asyncio.to_thread(fetch_commands)
-    if not data:
-        return
-    seq = data.get('seq', 0)
-    state = await asyncio.to_thread(get_state)
-    if seq <= state.get('executed_seq', 0):
-        return
-    guild = client.guilds[0] if client.guilds else None
-    if not guild:
-        return
-    log = [f'seq {seq} executed {time.strftime("%Y-%m-%d %H:%M UTC")}']
-    for cmd in data.get('commands', []):
-        try:
-            await run_command(cmd, guild, log)
-        except Exception as e:
-            log.append(f'ERROR {cmd.get("action")}: {e}')
-    state['executed_seq'] = seq
-    state['last_log'] = log
     try:
-        await asyncio.to_thread(gh_put, 'bot_state.json', state, f'bot executed seq {seq}')
+        if not GH_TOKEN:
+            return
+        data = await asyncio.to_thread(fetch_commands)
+        if not data:
+            return
+        seq = data.get('seq', 0)
+        state = await asyncio.to_thread(get_state)
+        if not state:
+            return
+        if seq <= state.get('executed_seq', 0):
+            return
+        guild = client.guilds[0] if client.guilds else None
+        if not guild:
+            return
+        log = [f'seq {seq} executed {time.strftime("%Y-%m-%d %H:%M UTC")}']
+        for cmd in data.get('commands', []):
+            try:
+                await run_command(cmd, guild, log)
+            except Exception as e:
+                log.append(f'ERROR {cmd.get("action")}: {e}')
+        state['executed_seq'] = seq
+        state['last_log'] = log
+        try:
+            await asyncio.to_thread(gh_put, 'bot_state.json', state, f'bot executed seq {seq}')
+        except Exception as e:
+            print('state push failed:', e)
     except Exception as e:
-        print('state push failed:', e)
+        print('poll error:', e)
 
 client = make_client()
 try:
