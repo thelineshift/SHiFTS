@@ -1,10 +1,17 @@
 {
-  "seq": 40,
+  "seq": 41,
   "commands": [
     {
-      "action": "read_recent",
-      "channel": "general-chat",
-      "limit": 3
+      "action": "set_avatar",
+      "path": "assets/avatar.png"
+    },
+    {
+      "action": "set_nick",
+      "nick": "\ud83e\udd16 SHiFT"
+    },
+    {
+      "action": "set_status",
+      "status": "the board \ud83d\udef0\ufe0f"
     }
   ]
 }
