@@ -20,7 +20,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v7.5 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v7.5.1 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         if not poll.is_running():
             poll.start()
 
