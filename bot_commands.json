@@ -1,11 +1,10 @@
 {
-  "seq": 29,
+  "seq": 30,
   "commands": [
     {
-      "action": "replace_pinned",
+      "action": "delete_message",
       "channel": "general-chat",
-      "marker": "HOW THE WEEK RUNS",
-      "content": "\ud83d\udcc5 **HOW THE WEEK RUNS AT THELINESHIFT** *(all times ET)*\n\n\ud83d\udef0\ufe0f **4 LIVE SCAN EVENTS daily** \u2014 8:00 AM / 12:00 PM / 4:00 PM / 8:00 PM \u2014 right here in this channel\n\u23f3 Countdowns 60 + 10 min before each \u00b7 \ud83d\udce1 live collection \u00b7 \ud83e\udde0 analysis \u00b7 \u2705 picks per tier\n\ud83c\udfaf **Free pick daily** \u2192 <#1528794232666718260>\n\ud83e\uddfe **Receipts** \u2014 results as games end + nightly recap 11:30 PM \u2192 <#1528794285166559262>\n\ud83e\udde0 **Autopsies** after every result \u2014 why it won or lost, what the model changed\n\ud83d\udcca **Sundays 10 AM** \u2014 weekly analytics (\ud83d\udc0b full sheet)\n\ud83c\udf81 **Sundays 6 PM** \u2014 giveaway winner drawn + next one launches\n\ud83d\uddd3\ufe0f **1st of month, 6 PM** \u2014 \ud83d\udc0b monthly deep-dive\n\ud83c\udfc6 **$100 \u2192 $1,000 Challenge** \u2014 scoreboard updates as they settle\n\nBetween scans: \ud83d\udea8 FLASH plays only when the edge can't wait. Quiet never means idle \u2014 receipts and intel flow all day. \ud83e\udd16"
+      "marker": "SCAN COMPLETE"
     }
   ]
 }
