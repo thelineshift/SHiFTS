@@ -1,11 +1,6 @@
 {
-  "seq": 25,
+  "seq": 26,
   "commands": [
-    {
-      "action": "make_webhook",
-      "channel": "scan-feed",
-      "name": "TheLineShift Bot"
-    },
     {
       "action": "create_channel",
       "name": "\ud83d\udef0\ufe0fscan-feed"
@@ -14,6 +9,11 @@
       "action": "set_topic",
       "channel": "scan-feed",
       "topic": "The machine's heartbeat \ud83d\udef0\ufe0f 4 live scan events daily \u2014 9a / 1p / 5p / 9p ET. Countdown \u2192 collection \u2192 analysis \u2192 picks."
+    },
+    {
+      "action": "make_webhook",
+      "channel": "scan-feed",
+      "name": "TheLineShift Bot"
     },
     {
       "action": "post_and_pin",
