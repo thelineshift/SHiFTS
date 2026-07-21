@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T20:55:00Z",
+  "updated": "2026-07-21T04:20:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -45,9 +45,10 @@
       "odds": -219,
       "units": 1.5,
       "tier": "lock",
-      "result": "PENDING",
-      "profit": 0,
-      "analysis": "Biggest favorite on tonight's board at home. Books hanging -219 for a reason — strong spot, sized up to 1.5u."
+      "result": "WIN",
+      "profit": 0.68,
+      "analysis": "Biggest favorite on tonight's board at home. Books hanging -219 for a reason — strong spot, sized up to 1.5u.",
+      "finalScore": "NYM 3 — MIL 8"
     },
     {
       "id": "2026-07-20-rangers-ml",
@@ -60,9 +61,10 @@
       "odds": -171,
       "units": 1,
       "tier": "free",
-      "result": "PENDING",
-      "profit": 0,
-      "analysis": "Free pick of the day — home favorite vs a rebuilding White Sox club in the primetime slot."
+      "result": "LOSS",
+      "profit": -1,
+      "analysis": "Free pick of the day — home favorite vs a rebuilding White Sox club in the primetime slot.",
+      "finalScore": "CWS 10 — TEX 3"
     },
     {
       "id": "2026-07-20-bluejays-ml",
@@ -75,9 +77,10 @@
       "odds": -168,
       "units": 1,
       "tier": "sharp",
-      "result": "PENDING",
-      "profit": 0,
-      "analysis": "Lean — home favorite with the market leaning Toronto all day (-168 via DraftKings)."
+      "result": "LOSS",
+      "profit": -1,
+      "analysis": "Lean — home favorite with the market leaning Toronto all day (-168 via DraftKings).",
+      "finalScore": "TB 7 — TOR 1"
     },
     {
       "id": "2026-07-20-dbacks-ml",
@@ -105,9 +108,10 @@
       "odds": -218,
       "units": 1,
       "tier": "lock",
-      "result": "PENDING",
-      "profit": 0,
-      "analysis": "Liberty on the road but the class gap is real — books steady at -218 via DraftKings."
+      "result": "WIN",
+      "profit": 0.46,
+      "analysis": "Liberty on the road but the class gap is real — books steady at -218 via DraftKings.",
+      "finalScore": "NYL 99 — DAL 98 (OT)"
     },
     {
       "id": "2026-07-20-aces-ml",
@@ -120,9 +124,10 @@
       "odds": -575,
       "units": 0.5,
       "tier": "sharp",
-      "result": "PENDING",
-      "profit": 0,
-      "analysis": "Record-builder — heaviest chalk on the board. Thin value at -575, so it's sized at 0.5u. Honest sizing wins long-term."
+      "result": "WIN",
+      "profit": 0.09,
+      "analysis": "Record-builder — heaviest chalk on the board. Thin value at -575, so it's sized at 0.5u. Honest sizing wins long-term.",
+      "finalScore": "LV 109 — TOR 83"
     },
     {
       "id": "2026-07-20-cardinals-ml",
@@ -154,6 +159,22 @@
       "result": "PENDING",
       "profit": 0,
       "analysis": "WHALE EXCLUSIVE — two in-form starters (Leahy 3.73 ERA, 1 ER or fewer in 4 straight; Soriano 3.57 ERA) vs a 3-7 L10 Angels offense. Modal script is a low-scoring Cardinals win; pairs with the ML by design, combined exposure capped at 1.5u. -114 via DraftKings."
+    },
+    {
+      "id": "2026-07-21-valentova-ml",
+      "date": "2026-07-21",
+      "sport": "tennis",
+      "awayTeam": "Priscilla Hon",
+      "homeTeam": "Tereza Valentova",
+      "desc": "Valentova ML",
+      "market": "ML",
+      "odds": -770,
+      "units": 0.5,
+      "tier": "lock",
+      "result": "PENDING",
+      "profit": 0,
+      "finalScore": null,
+      "analysis": "Labeled 0.5u record-builder — home favorite in Prague R1, heaviest chalk on the board at 1.13 (line via 1xBet). Record-first sizing on a thin overnight slate."
     }
   ]
 }
