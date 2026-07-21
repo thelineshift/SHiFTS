@@ -20,7 +20,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v8.0 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v8.1 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         if not poll.is_running():
             poll.start()
         if not countdown.is_running():
@@ -39,6 +39,17 @@ def make_client(privileged=True):
             entry = links.setdefault(str(after.id), {'name': after.name, 'grants': []})
             entry.setdefault('grants', [])
             entry['name'] = after.name
+            def _parse_ts(s):
+                try:
+                    return datetime.datetime.strptime(s, '%Y-%m-%d %H:%M UTC').replace(tzinfo=datetime.timezone.utc).timestamp()
+                except Exception:
+                    return 0
+            # dedup: ignore re-fired member_update events for a tier already recorded in the last 6h
+            hits = [h for h in hits if not any(
+                g.get('tier') == h and time.time() - _parse_ts(g.get('at', '')) < 6 * 3600
+                for g in entry['grants'])]
+            if not hits:
+                return
             for h in hits:
                 entry['grants'].append({'tier': h, 'at': time.strftime('%Y-%m-%d %H:%M UTC')})
             await asyncio.to_thread(gh_put, 'member_links.json', links, f'tier grant: {after.name} -> {hits[-1]}')
@@ -472,6 +483,10 @@ async def countdown():
         if daykey in countdown.fired:
             return
         countdown.fired.add(daykey)
+        # prune: keep only today/yesterday keys so the set can't grow forever
+        today = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}'
+        yest = (datetime.date(now.tm_year, now.tm_mon, now.tm_mday) - datetime.timedelta(days=1)).strftime('%Y%m%d')
+        countdown.fired = {k for k in countdown.fired if k.startswith(today) or k.startswith(yest)}
         ch = find_channel(guild, 'general-chat')
         if not ch:
             return
@@ -565,6 +580,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
+            state['bot_version'] = '8.1'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
