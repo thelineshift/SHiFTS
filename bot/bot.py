@@ -1,4 +1,4 @@
-import os, json, time, base64, asyncio, urllib.request
+import os, json, time, base64, asyncio, urllib.request, random
 import discord
 from discord.ext import tasks
 
@@ -93,6 +93,30 @@ async def run_command(cmd, guild, log):
             setattr(ow, p, False)
         await ch.set_permissions(role, overwrite=ow)
         log.append(f'perms set on #{ch.name} for role {role.name}')
+    elif a == 'giveaway_winner':
+        ch = find_channel(guild, cmd.get('channel', 'giveaway'))
+        target = None
+        async for m in ch.history(limit=100):
+            if m.author == client.user and '\U0001F381' in (m.content or ''):
+                target = m
+                break
+        if target is None:
+            log.append('giveaway_winner: no giveaway post found')
+        else:
+            entrants = []
+            for react in target.reactions:
+                if str(react.emoji) == '\U0001F389':
+                    async for u in react.users():
+                        if not u.bot:
+                            entrants.append(u)
+            if not entrants:
+                await ch.send('\U0001F381 Giveaway closed — no valid entries this round. New one starts now!')
+                log.append('giveaway_winner: 0 entries')
+            else:
+                w = random.choice(entrants)
+                prize = cmd.get('prize', 'a FREE month of \U0001F512 Lock Room')
+                await ch.send(f"\U0001F381 **GIVEAWAY WINNER** \U0001F389\n\nCongratulations {w.mention} — you won **{prize}**!\n\nThe captain will get you set up within 24h. Thanks to all {len(entrants)} entries — the next giveaway starts RIGHT NOW \U0001F440")
+                log.append(f'giveaway_winner: {w.name} ({w.id}) from {len(entrants)} entries')
     elif a == 'set_icon':
         req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})
         data = urllib.request.urlopen(req, timeout=25).read()
