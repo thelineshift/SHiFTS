@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T04:20:00Z",
+  "updated": "2026-07-21T05:25:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -93,9 +93,10 @@
       "odds": -149,
       "units": 1,
       "tier": "whale",
-      "result": "PENDING",
-      "profit": 0,
-      "analysis": "Whale exclusive — late window, A's traveling into the desert, steady -149 all day."
+      "result": "LOSS",
+      "profit": -1.0,
+      "analysis": "Whale exclusive — late window, A's traveling into the desert, steady -149 all day. Graded: A's bullpen shut the door late in the desert.",
+      "finalScore": "ATH 5 — ARI 2"
     },
     {
       "id": "2026-07-20-liberty-ml",
@@ -140,9 +141,10 @@
       "odds": -108,
       "units": 1,
       "tier": "lock",
-      "result": "PENDING",
-      "profit": 0,
-      "analysis": "Near-pick'em price on a 51-47 club vs a 39-61 Angels team that's lost 4 straight. Leahy has allowed 1 ER or fewer in 4 consecutive starts; STL is 25-21 on the road. Model makes STL the clear side. -108 via DraftKings."
+      "result": "LOSS",
+      "profit": -1.0,
+      "analysis": "Near-pick'em price on a 51-47 club vs a 39-61 Angels team that's lost 4 straight. Leahy has allowed 1 ER or fewer in 4 consecutive starts; STL is 25-21 on the road. Model makes STL the clear side. -108 via DraftKings. Graded: Adell homer + Angels pen held the 3-2 line. Owned.",
+      "finalScore": "STL 2 — LAA 3"
     },
     {
       "id": "2026-07-20-cardinals-angels-under9",
@@ -156,9 +158,10 @@
       "odds": -114,
       "units": 0.5,
       "tier": "whale",
-      "result": "PENDING",
-      "profit": 0,
-      "analysis": "WHALE EXCLUSIVE — two in-form starters (Leahy 3.73 ERA, 1 ER or fewer in 4 straight; Soriano 3.57 ERA) vs a 3-7 L10 Angels offense. Modal script is a low-scoring Cardinals win; pairs with the ML by design, combined exposure capped at 1.5u. -114 via DraftKings."
+      "result": "WIN",
+      "profit": 0.44,
+      "analysis": "WHALE EXCLUSIVE — two in-form starters (Leahy 3.73 ERA, 1 ER or fewer in 4 straight; Soriano 3.57 ERA) vs a 3-7 L10 Angels offense. Modal script is a low-scoring Cardinals win; pairs with the ML by design, combined exposure capped at 1.5u. -114 via DraftKings. Graded: pitchers duel as called — 5 total runs, never in doubt after the 7th.",
+      "finalScore": "STL 2 — LAA 3 (5 total)"
     },
     {
       "id": "2026-07-21-valentova-ml",
