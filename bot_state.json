@@ -1,14 +1,8 @@
 {
-  "executed_seq": 3,
+  "executed_seq": 4,
   "last_log": [
-    "seq 3 executed 2026-07-21 13:09 UTC",
-    "created #\ud83d\udce3promotions",
-    "created #\ud83c\udf81giveaway",
-    "topic set on #\ud83d\udce3promotions",
-    "topic set on #\ud83c\udf81giveaway",
-    "posted+pinned in #\ud83d\udce3promotions",
-    "posted+pinned in #\ud83c\udf81giveaway",
-    "posted+pinned in #\ud83c\udfc6100-to-1000",
-    "posted+pinned in #\ud83d\udcacgeneral-chat"
+    "seq 4 executed 2026-07-21 13:30 UTC",
+    "renamed #\ud83c\udf19nightly-recap -> \ud83e\uddfereceipts",
+    "topic set on #\ud83e\uddfereceipts"
   ]
 }
