@@ -179,7 +179,13 @@ async def run_command(cmd, guild, log):
         if not pins:
             log.append(f'no pins in #{ch.name}')
         for i, m in enumerate(pins):
-            log.append(f'PIN{i} by {m.author}: {(m.content or "")[:500]}')
+            log.append(f'PIN{i} by {m.author}: {(m.content or "")[:400]}')
+            for e in m.embeds:
+                log.append(f'  EMBED title={e.title!r} desc={(e.description or "")[:600]!r}')
+                for f in e.fields:
+                    log.append(f'    FIELD {f.name!r}: {(f.value or "")[:300]!r}')
+            for att in m.attachments:
+                log.append(f'  ATTACH: {att.filename} {att.url[:120]}')
     elif a == 'replace_pinned':
         ch = find_channel(guild, cmd['channel'])
         pins = await ch.pins()
