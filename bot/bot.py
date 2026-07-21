@@ -20,7 +20,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v7.8 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v7.9 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         if not poll.is_running():
             poll.start()
         if not countdown.is_running():
@@ -281,7 +281,7 @@ async def run_command(cmd, guild, log):
             count = 0
             try:
                 async for m in ch.history(limit=n):
-                    body = (m.content or '')[:480].replace('\n', ' \\n ')
+                    body = (m.content or '')[:950].replace('\n', ' \\n ')
                     log.append(f'FULL #{ch.name} id={m.id} | {str(m.author)[:20]}: {body}')
                     count += 1
             except Exception as e:
