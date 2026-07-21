@@ -5,7 +5,8 @@ from discord.ext import tasks
 DISCORD_TOKEN = os.environ['DISCORD_BOT_TOKEN']
 GH_TOKEN = os.environ.get('GITHUB_TOKEN', '')
 REPO = 'TheLineShift/AISportsBot'
-RAW = f'https://raw.githubusercontent.com/{REPO}/main'
+QUEUE_BRANCH = 'commands'
+RAW = f'https://raw.githubusercontent.com/{REPO}/{QUEUE_BRANCH}'
 API = f'https://api.github.com/repos/{REPO}/contents'
 
 def make_client(privileged=True):
@@ -25,17 +26,17 @@ def make_client(privileged=True):
 def gh_headers():
     return {'Authorization': f'token {GH_TOKEN}', 'User-Agent': 'lineshift-bot'}
 
-def gh_get(path):
-    req = urllib.request.Request(f'{API}/{path}', headers=gh_headers())
+def gh_get(path, ref='main'):
+    req = urllib.request.Request(f'{API}/{path}?ref={ref}', headers=gh_headers())
     with urllib.request.urlopen(req, timeout=15) as r:
         return json.load(r)
 
 def gh_put(path, obj, message):
     try:
-        sha = gh_get(path).get('sha')
+        sha = gh_get(path, ref=QUEUE_BRANCH).get('sha')
     except Exception:
         sha = None
-    body = {'message': message,
+    body = {'message': message, 'branch': QUEUE_BRANCH,
             'content': base64.b64encode(json.dumps(obj, indent=2).encode()).decode()}
     if sha:
         body['sha'] = sha
@@ -180,7 +181,7 @@ async def run_command(cmd, guild, log):
         log.append(f'created #{ch.name}')
     elif a == 'list_roles':
         log.append('ROLES: ' + ' | '.join(
-            f'{r.name} (id={r.id}, pos={r.position})'
+            f'{r.name} (pos={r.position}, members={len(r.members)})'
             for r in sorted(guild.roles, key=lambda x: x.position, reverse=True)))
     elif a == 'audit_roles':
         lines = []
