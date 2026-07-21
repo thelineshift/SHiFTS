@@ -20,7 +20,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v7.6 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v7.6.1 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         if not poll.is_running():
             poll.start()
         if not countdown.is_running():
@@ -404,7 +404,7 @@ async def poll():
     except Exception as e:
         print('poll error:', e)
 
-SCAN_HOURS_ET = [9, 13, 17, 21]
+SCAN_HOURS_ET = [8, 12, 16, 20]
 
 @tasks.loop(seconds=60)
 async def countdown():
