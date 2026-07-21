@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T08:45:00Z",
+  "updated": "2026-07-21T14:20:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -16,7 +16,7 @@
       "result": "WIN",
       "profit": 1.82,
       "finalScore": "0-0 through 90'",
-      "analysis": "World Cup final \u2014 two elite defensive structures, everything to lose. Finals tighten up. Called pre-game."
+      "analysis": "World Cup final — two elite defensive structures, everything to lose. Finals tighten up. Called pre-game."
     },
     {
       "id": "2026-07-19-dodgers-ml",
@@ -31,8 +31,8 @@
       "tier": "lock",
       "result": "LOSS",
       "profit": -1,
-      "finalScore": "LAD 1 \u2014 NYY 2",
-      "analysis": "Best lineup in baseball as a road favorite in the nightcap. Yankees bullpen stole it \u2014 owned publicly."
+      "finalScore": "LAD 1 — NYY 2",
+      "analysis": "Best lineup in baseball as a road favorite in the nightcap. Yankees bullpen stole it — owned publicly."
     },
     {
       "id": "2026-07-20-brewers-ml",
@@ -47,8 +47,8 @@
       "tier": "lock",
       "result": "WIN",
       "profit": 0.68,
-      "analysis": "Biggest favorite on tonight's board at home. Books hanging -219 for a reason \u2014 strong spot, sized up to 1.5u.",
-      "finalScore": "NYM 3 \u2014 MIL 8"
+      "analysis": "Biggest favorite on tonight's board at home. Books hanging -219 for a reason — strong spot, sized up to 1.5u.",
+      "finalScore": "NYM 3 — MIL 8"
     },
     {
       "id": "2026-07-20-rangers-ml",
@@ -63,8 +63,8 @@
       "tier": "free",
       "result": "LOSS",
       "profit": -1,
-      "analysis": "Free pick of the day \u2014 home favorite vs a rebuilding White Sox club in the primetime slot.",
-      "finalScore": "CWS 10 \u2014 TEX 3"
+      "analysis": "Free pick of the day — home favorite vs a rebuilding White Sox club in the primetime slot.",
+      "finalScore": "CWS 10 — TEX 3"
     },
     {
       "id": "2026-07-20-bluejays-ml",
@@ -79,8 +79,8 @@
       "tier": "sharp",
       "result": "LOSS",
       "profit": -1,
-      "analysis": "Lean \u2014 home favorite with the market leaning Toronto all day (-168 via DraftKings).",
-      "finalScore": "TB 7 \u2014 TOR 1"
+      "analysis": "Lean — home favorite with the market leaning Toronto all day (-168 via DraftKings).",
+      "finalScore": "TB 7 — TOR 1"
     },
     {
       "id": "2026-07-20-dbacks-ml",
@@ -95,8 +95,8 @@
       "tier": "whale",
       "result": "LOSS",
       "profit": -1.0,
-      "analysis": "Whale exclusive \u2014 late window, A's traveling into the desert, steady -149 all day. Graded: A's bullpen shut the door late in the desert.",
-      "finalScore": "ATH 5 \u2014 ARI 2"
+      "analysis": "Whale exclusive — late window, A's traveling into the desert, steady -149 all day. Graded: A's bullpen shut the door late in the desert.",
+      "finalScore": "ATH 5 — ARI 2"
     },
     {
       "id": "2026-07-20-liberty-ml",
@@ -111,8 +111,8 @@
       "tier": "lock",
       "result": "WIN",
       "profit": 0.46,
-      "analysis": "Liberty on the road but the class gap is real \u2014 books steady at -218 via DraftKings.",
-      "finalScore": "NYL 99 \u2014 DAL 98 (OT)"
+      "analysis": "Liberty on the road but the class gap is real — books steady at -218 via DraftKings.",
+      "finalScore": "NYL 99 — DAL 98 (OT)"
     },
     {
       "id": "2026-07-20-aces-ml",
@@ -127,8 +127,8 @@
       "tier": "sharp",
       "result": "WIN",
       "profit": 0.09,
-      "analysis": "Record-builder \u2014 heaviest chalk on the board. Thin value at -575, so it's sized at 0.5u. Honest sizing wins long-term.",
-      "finalScore": "LV 109 \u2014 TOR 83"
+      "analysis": "Record-builder — heaviest chalk on the board. Thin value at -575, so it's sized at 0.5u. Honest sizing wins long-term.",
+      "finalScore": "LV 109 — TOR 83"
     },
     {
       "id": "2026-07-20-cardinals-ml",
@@ -144,7 +144,7 @@
       "result": "LOSS",
       "profit": -1.0,
       "analysis": "Near-pick'em price on a 51-47 club vs a 39-61 Angels team that's lost 4 straight. Leahy has allowed 1 ER or fewer in 4 consecutive starts; STL is 25-21 on the road. Model makes STL the clear side. -108 via DraftKings. Graded: Adell homer + Angels pen held the 3-2 line. Owned.",
-      "finalScore": "STL 2 \u2014 LAA 3"
+      "finalScore": "STL 2 — LAA 3"
     },
     {
       "id": "2026-07-20-cardinals-angels-under9",
@@ -160,8 +160,8 @@
       "tier": "whale",
       "result": "WIN",
       "profit": 0.44,
-      "analysis": "WHALE EXCLUSIVE \u2014 two in-form starters (Leahy 3.73 ERA, 1 ER or fewer in 4 straight; Soriano 3.57 ERA) vs a 3-7 L10 Angels offense. Modal script is a low-scoring Cardinals win; pairs with the ML by design, combined exposure capped at 1.5u. -114 via DraftKings. Graded: pitchers duel as called \u2014 5 total runs, never in doubt after the 7th.",
-      "finalScore": "STL 2 \u2014 LAA 3 (5 total)"
+      "analysis": "WHALE EXCLUSIVE — two in-form starters (Leahy 3.73 ERA, 1 ER or fewer in 4 straight; Soriano 3.57 ERA) vs a 3-7 L10 Angels offense. Modal script is a low-scoring Cardinals win; pairs with the ML by design, combined exposure capped at 1.5u. -114 via DraftKings. Graded: pitchers duel as called — 5 total runs, never in doubt after the 7th.",
+      "finalScore": "STL 2 — LAA 3 (5 total)"
     },
     {
       "id": "2026-07-21-valentova-ml",
@@ -174,10 +174,10 @@
       "odds": -770,
       "units": 0.5,
       "tier": "lock",
-      "result": "PENDING",
-      "profit": 0,
-      "finalScore": null,
-      "analysis": "Labeled 0.5u record-builder \u2014 home favorite in Prague R1, heaviest chalk on the board at 1.13 (line via 1xBet). Record-first sizing on a thin overnight slate."
+      "result": "WIN",
+      "profit": 0.06,
+      "finalScore": "HON 0-2 VAL (3-6, 1-6)",
+      "analysis": "Labeled 0.5u record-builder — home favorite in Prague R1, heaviest chalk on the board at 1.13 (line via 1xBet). Record-first sizing on a thin overnight slate. Graded: routine 6-3, 6-1 home win in 69 minutes — the 1.13 chalk never wobbled. Record-builder cashed."
     },
     {
       "id": "2026-07-21-geng-ml-kespa",
@@ -192,8 +192,8 @@
       "tier": "whale",
       "result": "LOSS",
       "profit": -1.0,
-      "analysis": "WHALE EXCLUSIVE \u2014 KeSPA Cup 2026 Group Stage BO1, 2:00 AM ET start. Gen.G owns the H2H (38-8 lifetime, both 2026 meetings) on a 3-series streak; market pricing HLE's #1 ranking. BO1 variance \u2014 1u. -115 (1.87) via esports books. Graded: HLE took the BO1 \u2014 #1 ranking held up at home. Owned publicly.",
-      "finalScore": "GEN 0 \u2014 HLE 1 (BO1)"
+      "analysis": "WHALE EXCLUSIVE — KeSPA Cup 2026 Group Stage BO1, 2:00 AM ET start. Gen.G owns the H2H (38-8 lifetime, both 2026 meetings) on a 3-series streak; market pricing HLE's #1 ranking. BO1 variance — 1u. -115 (1.87) via esports books. Graded: HLE took the BO1 — #1 ranking held up at home. Owned publicly.",
+      "finalScore": "GEN 0 — HLE 1 (BO1)"
     },
     {
       "id": "2026-07-21-fearx-ml-kespa",
@@ -208,8 +208,8 @@
       "tier": "whale",
       "result": "WIN",
       "profit": 0.17,
-      "analysis": "WHALE EXCLUSIVE \u2014 KeSPA Cup 2026 Group Stage BO1, 2:45 AM ET. FearX owns this matchup: 3 straight series wins incl. 3-0 sweep in LCK Cup lower final; DK mid lane slumping. Short price \u2014 0.5u in a BO1. ~-300 via GG.BET snapshot. Graded: FearX closed the BO1 as priced \u2014 4 straight over DK. Short chalk, cashed.",
-      "finalScore": "DK 0 \u2014 BFX 1 (BO1)"
+      "analysis": "WHALE EXCLUSIVE — KeSPA Cup 2026 Group Stage BO1, 2:45 AM ET. FearX owns this matchup: 3 straight series wins incl. 3-0 sweep in LCK Cup lower final; DK mid lane slumping. Short price — 0.5u in a BO1. ~-300 via GG.BET snapshot. Graded: FearX closed the BO1 as priced — 4 straight over DK. Short chalk, cashed.",
+      "finalScore": "DK 0 — BFX 1 (BO1)"
     },
     {
       "id": "2026-07-21-phillies-ml",
@@ -225,7 +225,7 @@
       "result": "PENDING",
       "profit": 0,
       "finalScore": null,
-      "analysis": "Best record in baseball (63-38) at home with Wheeler (10-1, 2.13 ERA, 108 K) vs a road lefty in the TBS national window. Highest win-probability spot on the board \u2014 sized to 1.5u. -136 via DraftKings."
+      "analysis": "Best record in baseball (63-38) at home with Wheeler (10-1, 2.13 ERA, 108 K) vs a road lefty in the TBS national window. Highest win-probability spot on the board — sized to 1.5u. -136 via DraftKings."
     },
     {
       "id": "2026-07-21-dodgers-phillies-under85",
@@ -242,7 +242,7 @@
       "result": "PENDING",
       "profit": 0,
       "finalScore": null,
-      "analysis": "Free pick of the day \u2014 TBS marquee with Wheeler (2.13 ERA) vs Wrobleski (2.69 ERA). Public pounds primetime overs; two top arms say otherwise. Total via DraftKings."
+      "analysis": "Free pick of the day — TBS marquee with Wheeler (2.13 ERA) vs Wrobleski (2.69 ERA). Public pounds primetime overs; two top arms say otherwise. Total via DraftKings."
     },
     {
       "id": "2026-07-21-mariners-ml",
@@ -258,7 +258,23 @@
       "result": "PENDING",
       "profit": 0,
       "finalScore": null,
-      "analysis": "Lean \u2014 models make Seattle ~58% at home: Kirby (3.76 ERA) vs Abbott (4.11 ERA), T-Mobile mutes road power bats, market pricing it like a coin flip. That gap is the edge. -114 via DraftKings."
+      "analysis": "Lean — models make Seattle ~58% at home: Kirby (3.76 ERA) vs Abbott (4.11 ERA), T-Mobile mutes road power bats, market pricing it like a coin flip. That gap is the edge. -114 via DraftKings."
+    },
+    {
+      "id": "2026-07-21-tigers-ml",
+      "date": "2026-07-21",
+      "sport": "mlb",
+      "awayTeam": "Detroit Tigers",
+      "homeTeam": "Chicago Cubs",
+      "desc": "Tigers ML",
+      "market": "ML",
+      "odds": 102,
+      "units": 1,
+      "tier": "sharp",
+      "result": "PENDING",
+      "profit": 0,
+      "finalScore": null,
+      "analysis": "Value lean — Tigers (56-44) have won 7 of their last 9 on the road and send Valdez (4.10 ERA) vs Peterson (4-7, 6.45 ERA), the worst starter ERA on tonight's board. Books hung Cubs -122 on home field and a 34-run week built against soft pitching. Near-even money on the better team with the better arm. +102 via DraftKings."
     }
   ]
 }
