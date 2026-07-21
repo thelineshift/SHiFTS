@@ -1,5 +1,5 @@
 {
-  "seq": 12,
+  "seq": 13,
   "commands": [
     {
       "action": "list_roles"
@@ -16,9 +16,6 @@
     {
       "action": "member_roles",
       "member": "hustlersdream353"
-    },
-    {
-      "action": "check_giveaway"
     }
   ]
 }
