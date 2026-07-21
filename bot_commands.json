@@ -1,6 +1,11 @@
 {
-  "seq": 30,
+  "seq": 31,
   "commands": [
+    {
+      "action": "read_recent",
+      "channel": "receipts",
+      "limit": 8
+    },
     {
       "action": "delete_message",
       "channel": "general-chat",
