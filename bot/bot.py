@@ -65,6 +65,23 @@ def find_role(guild, name):
             return r
     return None
 
+async def resolve_member(guild, ident):
+    ident = str(ident).strip()
+    if ident.isdigit():
+        try:
+            return await guild.fetch_member(int(ident))
+        except Exception:
+            return None
+    async for e in guild.audit_logs(limit=100):
+        t = getattr(e, 'target', None)
+        name = getattr(t, 'name', '') if t is not None else ''
+        if name.lower() == ident.lower():
+            try:
+                return await guild.fetch_member(t.id)
+            except Exception:
+                return None
+    return None
+
 async def run_command(cmd, guild, log):
     a = cmd.get('action')
     if a == 'list_channels':
@@ -135,6 +152,58 @@ async def run_command(cmd, guild, log):
                                         role: discord.PermissionOverwrite(view_channel=True)}
         ch = await guild.create_text_channel(cmd['name'], **kwargs)
         log.append(f'created #{ch.name}')
+    elif a == 'list_roles':
+        log.append('ROLES: ' + ' | '.join(
+            f'{r.name} (id={r.id}, pos={r.position})'
+            for r in sorted(guild.roles, key=lambda x: x.position, reverse=True)))
+    elif a == 'audit_roles':
+        lines = []
+        async for e in guild.audit_logs(action=discord.AuditLogAction.member_role_update, limit=25):
+            t = getattr(e, 'target', None)
+            if t is not None:
+                lines.append(f'{getattr(t, "name", "?")}({getattr(t, "id", "?")}) by {e.user} at {e.created_at:%m-%d %H:%M}')
+        log.append('AUDIT: ' + (' | '.join(lines) if lines else 'no member_role_update entries'))
+    elif a == 'add_role':
+        m = await resolve_member(guild, cmd.get('member', ''))
+        role = find_role(guild, cmd.get('role', ''))
+        if not m or not role:
+            log.append(f'add_role FAILED member={cmd.get("member")} found={bool(m)} role={cmd.get("role")} found={bool(role)}')
+        elif role in m.roles:
+            log.append(f'{m.name} already has {role.name}')
+        else:
+            await m.add_roles(role, reason='LineShift manual role fix')
+            log.append(f'added {role.name} -> {m.name}')
+    elif a == 'remove_role':
+        m = await resolve_member(guild, cmd.get('member', ''))
+        role = find_role(guild, cmd.get('role', ''))
+        if m and role and role in m.roles:
+            await m.remove_roles(role, reason='LineShift manual role fix')
+            log.append(f'removed {role.name} from {m.name}')
+        else:
+            log.append(f'remove_role skipped member_found={bool(m)} role_found={bool(role)}')
+    elif a == 'member_roles':
+        m = await resolve_member(guild, cmd.get('member', ''))
+        if m:
+            log.append(f'{m.name} roles: ' + ', '.join(r.name for r in m.roles))
+        else:
+            log.append(f'member not found: {cmd.get("member")}')
+    elif a == 'fix_role_hierarchy':
+        top = guild.me.top_role.position
+        updates = {}
+        whop = find_role(guild, 'whop')
+        if whop and whop.id != guild.me.top_role.id and whop.position != top - 1:
+            updates[whop] = top - 1
+        pos = 1
+        for key in ('lock', 'sharp', 'whale'):
+            r = find_role(guild, key)
+            if r:
+                updates[r] = pos
+                pos += 1
+        if updates:
+            await guild.edit_role_positions(updates, reason='LineShift hierarchy fix')
+            log.append('hierarchy: ' + ', '.join(f'{r.name}->{p}' for r, p in updates.items()))
+        else:
+            log.append('hierarchy: nothing to move')
     else:
         log.append(f'unknown action: {a}')
 
