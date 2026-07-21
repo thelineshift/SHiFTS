@@ -23,7 +23,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v8.2 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v8.3 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         try:
             await c.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=BOT_STATUS))
             g0 = c.guilds[0] if c.guilds else None
@@ -38,6 +38,8 @@ def make_client(privileged=True):
             countdown.start()
         if not audit.is_running():
             audit.start()
+        if not grader.is_running():
+            grader.start()
 
     @c.event
     async def on_member_update(before, after):
@@ -77,12 +79,12 @@ def gh_get(path, ref='main'):
     with urllib.request.urlopen(req, timeout=15) as r:
         return json.load(r)
 
-def gh_put(path, obj, message):
+def gh_put(path, obj, message, ref=QUEUE_BRANCH):
     try:
-        sha = gh_get(path, ref=QUEUE_BRANCH).get('sha')
+        sha = gh_get(path, ref=ref).get('sha')
     except Exception:
         sha = None
-    body = {'message': message, 'branch': QUEUE_BRANCH,
+    body = {'message': message, 'branch': ref,
             'content': base64.b64encode(json.dumps(obj, indent=2).encode()).decode()}
     if sha:
         body['sha'] = sha
@@ -601,7 +603,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.2'
+            state['bot_version'] = '8.3'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -609,6 +611,160 @@ async def audit():
         print(f'audit: time={len(flags)} res={len(res_flags)} chal={len(chal_flags)} gw={len(gw_flags)}')
     except Exception as e:
         print('audit error:', e)
+
+# ---------- AUTO-GRADER (v8.3): event-driven results, not clock-driven ----------
+ESPN = {'MLB': 'baseball/mlb', 'NBA': 'basketball/nba', 'WNBA': 'basketball/wnba',
+        'NHL': 'hockey/nhl', 'NFL': 'football/nfl'}
+TIER_BADGE = {'lock': '🔒 LOCK', 'sharp': '📊 SHARP', 'whale': '🐋 WHALE',
+              'free': '🆓 FREE', 'challenge': '💵 CHALLENGE'}
+
+def norm_txt(s):
+    return re.sub(r'[^a-z]', '', (s or '').lower())
+
+def espn_fetch(sport, ymd):
+    url = f'https://site.api.espn.com/apis/site/v2/sports/{ESPN[sport]}/scoreboard?dates={ymd}'
+    req = urllib.request.Request(url, headers={'User-Agent': 'lineshift-bot'})
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.load(r)
+
+def find_event(sb, away, home):
+    na, nh = norm_txt(away), norm_txt(home)
+    for ev in sb.get('events', []):
+        try:
+            comp = ev['competitions'][0]
+            teams = {c['homeAway']: c for c in comp['competitors']}
+            if na and na in norm_txt(teams['away']['team'].get('displayName', '')) \
+               and nh and nh in norm_txt(teams['home']['team'].get('displayName', '')):
+                completed = bool(comp.get('status', {}).get('type', {}).get('completed'))
+                return teams, completed
+        except Exception:
+            continue
+    return None, False
+
+def profit_units(odds, units):
+    o = float(odds)
+    return units * (o / 100.0 if o > 0 else 100.0 / abs(o))
+
+def grade_pick(p, away_s, home_s):
+    desc = (p.get('desc') or '').lower()
+    if (p.get('market') or '').lower() == 'total' or 'over' in desc or 'under' in desc:
+        m = re.search(r'(over|under)\s*(\d+(\.\d+)?)', desc)
+        if not m:
+            return None
+        line, tot = float(m.group(2)), away_s + home_s
+        if tot == line:
+            return 'PUSH', 0.0
+        won = (m.group(1) == 'over') == (tot > line)
+        u = float(p.get('units', 1) or 1)
+        return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
+    side = None
+    if norm_txt(p.get('homeTeam')) and norm_txt(p['homeTeam']) in norm_txt(desc):
+        side = 'home'
+    elif norm_txt(p.get('awayTeam')) and norm_txt(p['awayTeam']) in norm_txt(desc):
+        side = 'away'
+    if not side:
+        return None
+    won = (home_s > away_s) if side == 'home' else (away_s > home_s)
+    u = float(p.get('units', 1) or 1)
+    return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
+
+async def settle_challenge(guild, p):
+    try:
+        chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')
+        hit = None
+        for pl in chal.get('plays', []):
+            if pl.get('result') in (None, '') and pl.get('date') == p.get('date') \
+               and norm_txt(pl.get('pick')) and norm_txt(pl['pick']) in norm_txt(p.get('desc')):
+                hit = pl
+                break
+        if not hit:
+            return
+        hit['result'] = p['result']
+        if p['result'] == 'WIN':
+            chal['balance'] = round(chal.get('balance', 100) + float(hit.get('toWin', 0)), 2)
+            chal['record']['wins'] += 1
+        elif p['result'] == 'LOSS':
+            chal['balance'] = round(chal.get('balance', 100) - float(hit.get('stake', 0)), 2)
+            chal['record']['losses'] += 1
+        chal['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        await asyncio.to_thread(gh_put, 'challenge.json', chal, f"settle bet #{hit.get('n')}: {p['result']}", 'main')
+        ch = find_channel(guild, '100-to-1000')
+        if ch:
+            e = '✅' if p['result'] == 'WIN' else ('🟰' if p['result'] == 'PUSH' else '❌')
+            nxt = min(chal['balance'] * 0.2, chal['balance'])
+            await ch.send(f"💵 **CHALLENGE BET #{hit.get('n')} — {p['result']}** {e}\n"
+                          f"{p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
+                          f"**BALANCE: ${chal['balance']:.2f}** (goal: ${chal.get('goal', 1000):.0f}) · record {chal['record']['wins']}-{chal['record']['losses']}\n"
+                          f"BET #{hit.get('n') + 1} drops with tomorrow's card. — SHiFT 🤖")
+    except Exception as e:
+        print('settle_challenge error:', e)
+
+@tasks.loop(seconds=1200)
+async def grader():
+    try:
+        if not client.guilds:
+            return
+        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        new_results = []
+        for p in (doc.get('picks') or []):
+            try:
+                if str(p.get('result', '')).upper() not in ('', 'PENDING', 'NONE', 'NULL'):
+                    continue
+                sport = (p.get('sport') or '').upper()
+                if sport not in ESPN:
+                    continue  # tennis/esports/etc -> scan-engine research path
+                gt = pick_game_utc(p.get('date', ''), p.get('time_et'))
+                if not gt or time.time() < gt + 5400:
+                    continue  # earliest a final is possible
+                sb = await asyncio.to_thread(espn_fetch, sport, p['date'].replace('-', ''))
+                teams, ev_completed = find_event(sb, p.get('awayTeam'), p.get('homeTeam'))
+                if not teams or not ev_completed:
+                    continue
+                away_s = int(float(teams['away'].get('score') or 0))
+                home_s = int(float(teams['home'].get('score') or 0))
+                g = grade_pick(p, away_s, home_s)
+                if not g:
+                    continue
+                p['result'], u = g
+                p['score'] = f"{p.get('awayTeam')} {away_s}, {p.get('homeTeam')} {home_s}"
+                p['units_result'] = round(u, 2)
+                new_results.append(p)
+            except Exception:
+                continue
+        if not new_results:
+            return
+        doc['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        await asyncio.to_thread(gh_put, 'picks.json', doc,
+                                'auto-grade: ' + ', '.join(p['id'] for p in new_results), 'main')
+        guild = client.guilds[0]
+        ch = find_channel(guild, 'receipts')
+        state = await asyncio.to_thread(get_state)
+        for p in new_results:
+            e = '✅' if p['result'] == 'WIN' else ('🟰' if p['result'] == 'PUSH' else '❌')
+            u = p.get('units_result', 0)
+            us = f'+{u}u' if u > 0 else f'{u}u'
+            overnight = ''
+            gt = pick_game_utc(p.get('date', ''), p.get('time_et'))
+            if gt and (time.gmtime(gt).tm_hour - 4) % 24 < 6:
+                overnight = '\n📅 counts for tomorrow\'s card'
+            badge = TIER_BADGE.get(p.get('tier'), '')
+            if ch:
+                await ch.send(f"🧾 **RESULT {badge}:** {p.get('desc')} ({p.get('odds')}) {e} **{p['result']}** {us}\n"
+                              f"Final: {p.get('score')}{overnight}")
+            if p.get('tier') == 'challenge':
+                await settle_challenge(guild, p)
+            if state is not None:
+                state.setdefault('unannounced_results', []).append(
+                    {'id': p['id'], 'desc': p.get('desc'), 'odds': p.get('odds'), 'result': p['result'],
+                     'units': p.get('units_result'), 'score': p.get('score'), 'tier': p.get('tier')})
+        if state is not None:
+            try:
+                await asyncio.to_thread(gh_put, 'bot_state.json', state, 'grader results')
+            except Exception:
+                pass
+        print(f'grader: {len(new_results)} result(s) posted')
+    except Exception as e:
+        print('grader error:', e)
 
 client = make_client()
 try:
