@@ -1,10 +1,8 @@
 {
-  "executed_seq": 5,
+  "executed_seq": 6,
   "last_log": [
-    "seq 5 executed 2026-07-21 14:58 UTC",
-    "ROLES: Whop Bot (id=1528801407199875155, pos=5) | LineShift Bot (id=1529105570278277133, pos=4) | \ud83d\udc0b Whale (id=1528793151387730042, pos=3) | \ud83d\udcca Sharp (id=1528793132072833105, pos=2) | \ud83d\udd12 Lock Room (id=1528793092130476102, pos=1) | @everyone (id=1528792749162365133, pos=0)",
-    "AUDIT: no member_role_update entries",
-    "ERROR fix_role_hierarchy: 400 Bad Request (error code: 50013): Missing Permissions",
+    "seq 6 executed 2026-07-21 15:10 UTC",
+    "AUDITALL: channel_update target=\ud83e\uddfereceipts by=LineShift Bot#8676 | channel_update target=\ud83e\uddfereceipts by=LineShift Bot#8676 | message_pin target=LineShift Bot by=LineShift Bot#8676 | message_pin target=LineShift Bot by=LineShift Bot#8676 | message_pin target=LineShift Bot by=LineShift Bot#8676 | message_pin target=LineShift Bot by=LineShift Bot#8676 | channel_update target=\ud83c\udf81giveaway by=LineShift Bot#8676 | channel_update target=\ud83d\udce3promotions by=LineShift Bot#8676 | channel_create target=\ud83c\udf81giveaway by=LineShift Bot#8676 | channel_create target=\ud83d\udce3promotions by=LineShift Bot#8676 | guild_update target=TheLineShift by=LineShift Bot#8676 | overwrite_update target=\ud83c\udfc6100-to-1000 by=LineShift Bot#8676 | overwrite_update target=\ud83c\udfc6100-to-1000 by=LineShift Bot#8676 | overwrite_update target=\ud83c\udfc6100-to-1000 by=LineShift Bot#8676 | overwrite_update target=\ud83c\udfc6100-to-1000 by=LineShift Bot#8676 | overwrite_update target=\ud83d\udc0bdirect-line by=LineShift Bot#8676 | overwrite_update target=\ud83d\udc0bmonthly-deepdive by=LineShift Bot#8676 | overwrite_update target=\ud83d\udc0bmonthly-deepdive by=LineShift Bot#8676 | overwrite_update target=\ud83d\udc0bevery-play by=LineShift Bot#8676 | overwrite_update target=\ud83d\udccasharp-talk by=LineShift Bot#8676 | overwrite_update target=\ud83d\udccaweekly-analytics by=LineShift Bot#8676 | overwrite_update target=\ud83d\udccaweekly-analytics by=LineShift Bot#8676 | overwrite_update target=\ud83d\udccaall-picks by=LineShift Bot#8676 | overwrite_update target=\ud83d\udd12lock-lounge by=LineShift Bot#8676 | overwrite_update target=\ud83d\udd12daily-locks by=LineShift Bot#8676",
     "add_role FAILED member=hustlersdream353 found=False role=whale found=True",
     "member not found: hustlersdream353"
   ]
