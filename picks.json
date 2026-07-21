@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T20:17:50Z",
+  "updated": "2026-07-21T22:50:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -255,10 +255,10 @@
       "odds": -114,
       "units": 1,
       "tier": "sharp",
-      "result": "PENDING",
+      "result": "VOID",
       "profit": 0,
       "finalScore": null,
-      "analysis": "Lean \u2014 models make Seattle ~58% at home: Kirby (3.76 ERA) vs Abbott (4.11 ERA), T-Mobile mutes road power bats, market pricing it like a coin flip. That gap is the edge. -114 via DraftKings."
+      "analysis": "Lean \u2014 models make Seattle ~58% at home: Kirby (3.76 ERA) vs Abbott (4.11 ERA), T-Mobile mutes road power bats, market pricing it like a coin flip. That gap is the edge. -114 via DraftKings. | CANCELLED 6:30 PM ET: rotation change (Castillo not Kirby; Burns not Abbott) - edge gone, public PASS posted in sharp room."
     },
     {
       "id": "2026-07-21-tigers-ml",
@@ -271,10 +271,10 @@
       "odds": 102,
       "units": 1,
       "tier": "sharp",
-      "result": "PENDING",
+      "result": "VOID",
       "profit": 0,
       "finalScore": null,
-      "analysis": "Value lean \u2014 Tigers (56-44) have won 7 of their last 9 on the road and send Valdez (4.10 ERA) vs Peterson (4-7, 6.45 ERA), the worst starter ERA on tonight's board. Books hung Cubs -122 on home field and a 34-run week built against soft pitching. Near-even money on the better team with the better arm. +102 via DraftKings."
+      "analysis": "Value lean \u2014 Tigers (56-44) have won 7 of their last 9 on the road and send Valdez (4.10 ERA) vs Peterson (4-7, 6.45 ERA), the worst starter ERA on tonight's board. Books hung Cubs -122 on home field and a 34-run week built against soft pitching. Near-even money on the better team with the better arm. +102 via DraftKings. | DUPLICATE of the 4 PM Tigers ML (+100) post - official exposure 1u, grading the +100 entry only."
     },
     {
       "id": "2026-07-21-brewers-ml-2",
@@ -336,6 +336,36 @@
       "result": "PENDING",
       "time_et": "9:40 PM",
       "analysis": "Burns deals vs .688 OPS Seattle lineup in a pitcher's park. Sharp handle on the Under."
+    },
+    {
+      "id": "2026-07-21-nats-rox-o13",
+      "date": "2026-07-21",
+      "sport": "MLB",
+      "awayTeam": "Nationals",
+      "homeTeam": "Rockies",
+      "desc": "Nationals/Rockies Over 13",
+      "market": "total",
+      "odds": -108,
+      "units": 1,
+      "tier": "whale",
+      "result": "PENDING",
+      "time_et": "8:40 PM",
+      "analysis": "Whale exclusive. Mikolas 5.53 ERA vs Lorenzen 6.22 ERA at Coors, 92F, both pens bottom-6, Nats #1 runs scored, Nats games 57-39-5 to over."
+    },
+    {
+      "id": "2026-07-21-challenge-brewers",
+      "date": "2026-07-21",
+      "sport": "MLB",
+      "awayTeam": "Mets",
+      "homeTeam": "Brewers",
+      "desc": "Brewers ML",
+      "market": "ml",
+      "odds": -142,
+      "units": 0,
+      "tier": "challenge",
+      "result": "PENDING",
+      "time_et": "7:40 PM",
+      "analysis": "Challenge bet #1: $20 of $100 bankroll -> to win $14.08. Same play as Lock Room (model #1 confidence). Dollars tracked in challenge.json."
     }
   ]
 }
