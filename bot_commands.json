@@ -1,8 +1,15 @@
 {
-  "seq": 37,
+  "seq": 38,
   "commands": [
     {
-      "action": "purge_system"
+      "action": "read_full",
+      "channel": "all-picks",
+      "limit": 6
+    },
+    {
+      "action": "read_full",
+      "channel": "daily-locks",
+      "limit": 4
     }
   ]
 }
