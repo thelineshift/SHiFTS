@@ -9,6 +9,8 @@ QUEUE_BRANCH = 'commands'
 RAW = f'https://raw.githubusercontent.com/{REPO}/{QUEUE_BRANCH}'
 API = f'https://api.github.com/repos/{REPO}/contents'
 
+TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U0001F40B Whale': 'whale'}
+
 def make_client(privileged=True):
     intents = discord.Intents.default()
     intents.guilds = True
@@ -18,9 +20,27 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v7.4.2 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v7.5 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         if not poll.is_running():
             poll.start()
+
+    @c.event
+    async def on_member_update(before, after):
+        try:
+            added = [r for r in after.roles if r not in before.roles]
+            hits = [TIER_ROLES[r.name] for r in added if r.name in TIER_ROLES]
+            if not hits:
+                return
+            links = await asyncio.to_thread(gh_get_json, 'member_links.json')
+            entry = links.setdefault(str(after.id), {'name': after.name, 'grants': []})
+            entry.setdefault('grants', [])
+            entry['name'] = after.name
+            for h in hits:
+                entry['grants'].append({'tier': h, 'at': time.strftime('%Y-%m-%d %H:%M UTC')})
+            await asyncio.to_thread(gh_put, 'member_links.json', links, f'tier grant: {after.name} -> {hits[-1]}')
+            print(f'TIER GRANT recorded: {after.name} -> {hits}')
+        except Exception as e:
+            print('on_member_update error:', e)
     return c
 
 def gh_headers():
@@ -60,6 +80,13 @@ def get_state():
         return json.loads(base64.b64decode(d['content']))
     except Exception:
         return None
+
+def gh_get_json(path):
+    try:
+        d = gh_get(path, ref=QUEUE_BRANCH)
+        return json.loads(base64.b64decode(d['content']))
+    except Exception:
+        return {}
 
 def find_channel(guild, name):
     n = name.lower().strip('#').replace(' ', '')
@@ -279,6 +306,13 @@ async def run_command(cmd, guild, log):
                 if str(react.emoji) == '\U0001F389':
                     n = react.count
             log.append(f'check_giveaway: post found, \U0001F389 reactions={n}')
+    elif a == 'list_members':
+        count = 0
+        async for m in guild.fetch_members(limit=None):
+            roles = [r.name for r in m.roles if r.name != '@everyone']
+            log.append(f'{m.name} ({m.id}) joined {m.joined_at:%m-%d %H:%M} roles={roles}')
+            count += 1
+        log.append(f'total members: {count}')
     elif a == 'audit_all':
         lines = []
         async for e in guild.audit_logs(limit=25):
