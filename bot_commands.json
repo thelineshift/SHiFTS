@@ -1,15 +1,10 @@
 {
-  "seq": 31,
+  "seq": 32,
   "commands": [
     {
-      "action": "read_recent",
+      "action": "read_full",
       "channel": "receipts",
-      "limit": 8
-    },
-    {
-      "action": "delete_message",
-      "channel": "general-chat",
-      "marker": "SCAN COMPLETE"
+      "limit": 10
     }
   ]
 }
