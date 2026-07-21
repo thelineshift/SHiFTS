@@ -1,10 +1,9 @@
 {
-  "executed_seq": 28,
+  "executed_seq": 29,
   "last_log": [
-    "seq 28 executed 2026-07-21 20:13 UTC",
-    "deleted #\ud83d\udef0\ufe0fscan-feed",
-    "webhook for #\ud83d\udcacgeneral-chat: https://discord.com/api/webhooks/1529219888973873193/hUJR-gkvTB1IocmQSod10BPRzBwL5gq0fiFov7DTU4soNpEhZQAssWV31qJZwbyAbpLi",
-    "bot avatar updated"
+    "seq 29 executed 2026-07-21 20:24 UTC",
+    "old pinned message deleted",
+    "replaced pin in #\ud83d\udcacgeneral-chat (unpinned 1)"
   ],
   "time_audit": {
     "at": "2026-07-21 20:18 UTC",
