@@ -93,6 +93,11 @@ async def run_command(cmd, guild, log):
             setattr(ow, p, False)
         await ch.set_permissions(role, overwrite=ow)
         log.append(f'perms set on #{ch.name} for role {role.name}')
+    elif a == 'set_icon':
+        req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})
+        data = urllib.request.urlopen(req, timeout=25).read()
+        await guild.edit(icon=data)
+        log.append('server icon updated')
     elif a == 'delete_channel':
         ch = find_channel(guild, cmd['channel'])
         await ch.delete()
