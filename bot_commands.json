@@ -1,10 +1,8 @@
 {
-  "seq": 36,
+  "seq": 37,
   "commands": [
     {
-      "action": "read_full",
-      "channel": "general-chat",
-      "limit": 4
+      "action": "purge_system"
     }
   ]
 }
