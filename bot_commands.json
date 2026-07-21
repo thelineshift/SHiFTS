@@ -1,9 +1,8 @@
 {
-  "seq": 8,
+  "seq": 9,
   "commands": [
     {
-      "action": "read_pins",
-      "channel": "welcome"
+      "action": "list_channels"
     }
   ]
 }
