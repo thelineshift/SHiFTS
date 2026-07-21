@@ -1,15 +1,24 @@
 {
-  "seq": 11,
+  "seq": 12,
   "commands": [
     {
       "action": "list_roles"
     },
     {
-      "action": "check_giveaway"
+      "action": "member_roles",
+      "member": "hustlersdream353"
+    },
+    {
+      "action": "add_role",
+      "member": "hustlersdream353",
+      "role": "whale"
     },
     {
       "action": "member_roles",
       "member": "hustlersdream353"
+    },
+    {
+      "action": "check_giveaway"
     }
   ]
 }
