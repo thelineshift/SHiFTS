@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T06:30:00Z",
+  "updated": "2026-07-21T22:35:00Z",
   "bankrollStart": 100.0,
   "goal": 1000.0,
   "balance": 100.0,
@@ -7,5 +7,18 @@
     "wins": 0,
     "losses": 0
   },
-  "plays": []
+  "plays": [
+    {
+      "n": 1,
+      "date": "2026-07-21",
+      "pick": "Brewers ML",
+      "odds": -142,
+      "stake": 20.0,
+      "toWin": 14.08,
+      "time_et": "7:40 PM",
+      "result": null,
+      "posted": "2026-07-21T22:35:00Z",
+      "note": "Also Lock Room play - model #1 confidence"
+    }
+  ]
 }
