@@ -20,7 +20,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v7.6.1 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v7.7 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         if not poll.is_running():
             poll.start()
         if not countdown.is_running():
@@ -317,6 +317,11 @@ async def run_command(cmd, guild, log):
             log.append(f'{m.name} ({m.id}) joined {m.joined_at:%m-%d %H:%M} roles={roles}')
             count += 1
         log.append(f'total members: {count}')
+    elif a == 'set_avatar':
+        req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})
+        data = urllib.request.urlopen(req, timeout=25).read()
+        await client.user.edit(avatar=data)
+        log.append('bot avatar updated')
     elif a == 'make_webhook':
         ch = find_channel(guild, cmd['channel'])
         wh = await ch.create_webhook(name=cmd.get('name', 'TheLineShift Bot'))
@@ -427,7 +432,7 @@ async def countdown():
         if daykey in countdown.fired:
             return
         countdown.fired.add(daykey)
-        ch = find_channel(guild, 'scan-feed')
+        ch = find_channel(guild, 'general-chat')
         if not ch:
             return
         hh = marker[1] % 12 if marker[1] % 12 else 12
@@ -464,9 +469,20 @@ async def audit():
                         flags.append(f'#{ch.name} | msg {m.id} | {txt[:90]}')
             except Exception:
                 pass
+        pulse = {}
+        for ch in guild.text_channels:
+            if not any(k in ch.name for k in PICK_CHANNELS + ('receipts', 'giveaway', 'general-chat', 'promotions')):
+                continue
+            try:
+                msgs = [m async for m in ch.history(limit=1)]
+                if msgs:
+                    pulse[ch.name] = msgs[0].created_at.strftime('%Y-%m-%d %H:%M UTC')
+            except Exception:
+                pass
         state = await asyncio.to_thread(get_state)
         if state is not None:
             state['time_audit'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': flags[:10]}
+            state['room_pulse'] = pulse
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'time audit update')
             except Exception:
