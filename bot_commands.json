@@ -1,15 +1,10 @@
 {
-  "seq": 35,
+  "seq": 36,
   "commands": [
     {
       "action": "read_full",
-      "channel": "receipts",
-      "limit": 6
-    },
-    {
-      "action": "read_recent",
       "channel": "general-chat",
-      "limit": 2
+      "limit": 4
     }
   ]
 }
