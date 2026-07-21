@@ -1,10 +1,26 @@
 {
-  "seq": 14,
+  "seq": 15,
   "commands": [
     {
-      "action": "post_and_pin",
-      "channel": "general-chat",
-      "content": "\ud83d\udcc5 **HOW THE WEEK RUNS AT THELINESHIFT** *(all times ET)*\n\n\ud83e\udd16 **Scans every 2 hours** \u2014 the model hunts games starting 2-12h out: MLB, NBA, NFL, NHL, WNBA, tennis, UFC, soccer, LoL / Dota2 / CS2, snooker\n\ud83c\udf05 **Morning card ~8:30 AM** \u2014 the day's board drops per tier\n\ud83c\udfaf **Picks posted as they're found** \u2014 never held back, always with game time + units\n\ud83e\uddfe **Receipts** \u2014 results as games end + full nightly recap **11:30 PM** in <#1528794285166559262>\n\ud83e\udde0 **Autopsies after every result** \u2014 why it won or lost, and what the model changed\n\ud83d\udcca **Sundays 10 AM** \u2014 weekly analytics (\ud83d\udc0b gets the full sheet)\n\ud83c\udf81 **Sundays 6 PM** \u2014 giveaway winner drawn live + the next one launches instantly\n\ud83d\uddd3\ufe0f **1st of the month, 6 PM** \u2014 \ud83d\udc0b monthly deep-dive\n\ud83c\udfc6 **$100 \u2192 $1,000 Challenge** \u2014 picks and scoreboard updates as they settle\n\nQuiet window? Doesn't exist here \u2014 the next scan is always \u22642 hours away. \ud83e\udd16"
+      "action": "list_roles"
+    },
+    {
+      "action": "member_roles",
+      "member": "hustlersdream353"
+    },
+    {
+      "action": "add_role",
+      "member": "hustlersdream353",
+      "role": "whale"
+    },
+    {
+      "action": "member_roles",
+      "member": "hustlersdream353"
+    },
+    {
+      "action": "read_recent",
+      "channel": "all",
+      "limit": 3
     }
   ]
 }
