@@ -1,4 +1,4 @@
-import os, json, time, base64, asyncio, urllib.request, random, re
+import os, json, time, base64, asyncio, urllib.request, random, re, datetime
 import discord
 from discord.ext import tasks
 
@@ -20,7 +20,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v7.9 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v8.0 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         if not poll.is_running():
             poll.start()
         if not countdown.is_running():
@@ -91,6 +91,30 @@ def gh_get_json(path):
         return json.loads(base64.b64decode(d['content']))
     except Exception:
         return {}
+
+def gh_get_json_ref(path, ref):
+    try:
+        d = gh_get(path, ref=ref)
+        return json.loads(base64.b64decode(d['content']))
+    except Exception:
+        return {}
+
+def pick_game_utc(date_s, time_s):
+    # epoch (UTC) of a pick's game time; ET assumed, EDT = UTC-4
+    try:
+        t = (time_s or '11:00 PM').upper().replace('ET', '').strip()
+        m = re.match(r'(\d{1,2})(?::(\d{2}))?\s*(AM|PM)', t)
+        if not m:
+            return None
+        hh = int(m.group(1)) % 12
+        if m.group(3) == 'PM':
+            hh += 12
+        mm = int(m.group(2) or 0)
+        y, mo, dd = map(int, str(date_s).split('-'))
+        dt = datetime.datetime(y, mo, dd, hh, mm) + datetime.timedelta(hours=4)
+        return dt.replace(tzinfo=datetime.timezone.utc).timestamp()
+    except Exception:
+        return None
 
 def find_channel(guild, name):
     n = name.lower().strip('#').replace(' ', '')
@@ -495,15 +519,57 @@ async def audit():
                     pulse[ch.name] = msgs[0].created_at.strftime('%Y-%m-%d %H:%M UTC')
             except Exception:
                 pass
+        # --- resolution watch: every pick registered in picks.json must settle into receipts
+        now_ts = time.time()
+        res_flags = []
+        picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        for p in (picks_doc.get('picks') or []):
+            try:
+                if str(p.get('result', '')).upper() not in ('', 'PENDING', 'NONE', 'NULL'):
+                    continue
+                gt = pick_game_utc(p.get('date', ''), p.get('time_et'))
+                if gt and now_ts - gt > 4 * 3600:
+                    res_flags.append(f"{p.get('id')} | {p.get('desc')} {p.get('odds')} | tier={p.get('tier')}")
+            except Exception:
+                pass
+        # --- challenge watch: a bet must be registered daily by 6 PM ET
+        chal_flags = []
+        chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')
+        try:
+            now_et = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)
+            today_et = now_et.strftime('%Y-%m-%d')
+            plays = chal.get('plays') or []
+            if now_et.hour >= 18 and not any(pl.get('date') == today_et for pl in plays):
+                chal_flags.append(f'no challenge bet registered for {today_et} (due 6 PM ET)')
+            for pl in plays:
+                if pl.get('result') in (None, ''):
+                    gt = pick_game_utc(pl.get('date', ''), pl.get('time_et'))
+                    if gt and now_ts - gt > 4 * 3600:
+                        chal_flags.append(f"challenge bet #{pl.get('n')} unsettled: {pl.get('pick')}")
+        except Exception:
+            pass
+        # --- giveaway watch: Sunday 6 PM ET draw must be posted
+        gw_flags = []
+        try:
+            now_et2 = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)
+            if now_et2.strftime('%a') == 'Sun' and now_et2.hour >= 19:
+                gwp = pulse.get('\U0001F381giveaway', '')
+                if not gwp.startswith(now_et2.strftime('%Y-%m-%d')):
+                    gw_flags.append('giveaway: no winner post today (Sunday draw overdue)')
+        except Exception:
+            pass
         state = await asyncio.to_thread(get_state)
         if state is not None:
             state['time_audit'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': flags[:10]}
             state['room_pulse'] = pulse
+            state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
+            state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
+            state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
             try:
-                await asyncio.to_thread(gh_put, 'bot_state.json', state, 'time audit update')
+                await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
                 pass
-        print(f'time audit: {len(flags)} flag(s)')
+        print(f'audit: time={len(flags)} res={len(res_flags)} chal={len(chal_flags)} gw={len(gw_flags)}')
     except Exception as e:
         print('audit error:', e)
 
