@@ -1,5 +1,5 @@
 {
-  "seq": 7,
+  "seq": 8,
   "commands": [
     {
       "action": "read_pins",
