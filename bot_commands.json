@@ -1,15 +1,15 @@
 {
-  "seq": 38,
+  "seq": 39,
   "commands": [
     {
       "action": "read_full",
-      "channel": "all-picks",
-      "limit": 6
+      "channel": "giveaway",
+      "limit": 3
     },
     {
-      "action": "read_full",
-      "channel": "daily-locks",
-      "limit": 4
+      "action": "read_recent",
+      "channel": "promotions",
+      "limit": 2
     }
   ]
 }
