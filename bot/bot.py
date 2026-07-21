@@ -1,4 +1,4 @@
-import os, json, time, base64, asyncio, urllib.request, random
+import os, json, time, base64, asyncio, urllib.request, random, re
 import discord
 from discord.ext import tasks
 
@@ -20,9 +20,13 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v7.5.1 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v7.6 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         if not poll.is_running():
             poll.start()
+        if not countdown.is_running():
+            countdown.start()
+        if not audit.is_running():
+            audit.start()
 
     @c.event
     async def on_member_update(before, after):
@@ -313,6 +317,10 @@ async def run_command(cmd, guild, log):
             log.append(f'{m.name} ({m.id}) joined {m.joined_at:%m-%d %H:%M} roles={roles}')
             count += 1
         log.append(f'total members: {count}')
+    elif a == 'make_webhook':
+        ch = find_channel(guild, cmd['channel'])
+        wh = await ch.create_webhook(name=cmd.get('name', 'TheLineShift Bot'))
+        log.append(f'webhook for #{ch.name}: {wh.url}')
     elif a == 'audit_all':
         lines = []
         async for e in guild.audit_logs(limit=25):
@@ -395,6 +403,77 @@ async def poll():
             print('state push failed:', e)
     except Exception as e:
         print('poll error:', e)
+
+SCAN_HOURS_ET = [9, 13, 17, 21]
+
+@tasks.loop(seconds=60)
+async def countdown():
+    try:
+        if not client.guilds:
+            return
+        guild = client.guilds[0]
+        now = time.gmtime()
+        et_h = (now.tm_hour - 4) % 24
+        et_m = now.tm_min
+        marker = None
+        for h in SCAN_HOURS_ET:
+            if et_h == (h - 1) % 24 and et_m == 0:
+                marker = ('60', h)
+            elif et_h == (h - 1) % 24 and et_m == 50:
+                marker = ('10', h)
+        if not marker:
+            return
+        daykey = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}-{et_h:02d}{et_m:02d}'
+        if daykey in countdown.fired:
+            return
+        countdown.fired.add(daykey)
+        ch = find_channel(guild, 'scan-feed')
+        if not ch:
+            return
+        hh = marker[1] % 12 if marker[1] % 12 else 12
+        label = f'{hh} {"AM" if marker[1] < 12 else "PM"} ET'
+        if marker[0] == '60':
+            await ch.send(f'\u23F3 **SCAN IN 60 MINUTES** — the machine goes to work at {label}. Odds across the market, injury reports, confirmed lineups, roster moves — everything gets pulled. \U0001F6F0️')
+        else:
+            await ch.send(f'\U0001F6F0️ **SCAN IN 10 MINUTES** — systems hot. Picks land in your tier rooms right after. \U0001F525')
+    except Exception as e:
+        print('countdown error:', e)
+countdown.fired = set()
+
+PICK_ODDS = re.compile(r'[-+]\d{3}')
+UNITS_PAT = re.compile(r'\b\d+(\.\d+)?u\b')
+TIMEDATE_PAT = re.compile(r'(\b\d{1,2}(:\d{2})?\s?(AM|PM|am|pm)\b)|(\bET\b|EST|EDT)|tonight|today|tomorrow|(\b\d{1,2}/\d{1,2}\b)', re.I)
+PICK_CHANNELS = ('free-pick', 'daily-locks', 'all-picks', 'every-play', '100-to-1000')
+
+@tasks.loop(seconds=1800)
+async def audit():
+    try:
+        if not client.guilds:
+            return
+        guild = client.guilds[0]
+        flags = []
+        for ch in guild.text_channels:
+            if not any(k in ch.name for k in PICK_CHANNELS):
+                continue
+            try:
+                async for m in ch.history(limit=15):
+                    if client.user and m.author.id == client.user.id:
+                        continue
+                    txt = m.content or ''
+                    if PICK_ODDS.search(txt) and UNITS_PAT.search(txt) and not TIMEDATE_PAT.search(txt):
+                        flags.append(f'#{ch.name} | msg {m.id} | {txt[:90]}')
+            except Exception:
+                pass
+        state = await asyncio.to_thread(get_state)
+        if state is not None:
+            state['time_audit'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': flags[:10]}
+            try:
+                await asyncio.to_thread(gh_put, 'bot_state.json', state, 'time audit update')
+            except Exception:
+                pass
+        print(f'time audit: {len(flags)} flag(s)')
+    except Exception as e:
+        print('audit error:', e)
 
 client = make_client()
 try:
