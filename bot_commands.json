@@ -1,5 +1,5 @@
 {
-  "seq": 48,
+  "seq": 50,
   "commands": [
     {
       "action": "create_channel",
@@ -24,6 +24,14 @@
       "seq": 47,
       "action": "x_test",
       "text": "\ud83d\udef0\ufe0f SHiFT is now posting natively.\n\nFaster receipts. No middleman.\nScans daily: 12a / 4a / 8a / 12p / 4p / 8p ET.\n\nThe board never sleeps."
+    },
+    {
+      "seq": 48,
+      "action": "x_diag"
+    },
+    {
+      "seq": 49,
+      "action": "list_channels"
     }
   ]
 }
