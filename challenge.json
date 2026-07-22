@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-22T02:54:08Z",
+  "updated": "2026-07-22T22:18:06Z",
   "bankrollStart": 100.0,
   "goal": 1000.0,
-  "balance": 80.0,
+  "balance": 60.0,
   "record": {
     "wins": 0,
-    "losses": 1
+    "losses": 2
   },
   "plays": [
     {
@@ -28,9 +28,21 @@
       "stake": 20.0,
       "toWin": 12.12,
       "time_et": "1:05 PM",
-      "result": "PENDING",
+      "result": "LOSS",
       "posted": "2026-07-22T12:15:44Z",
       "note": "Mirrors Lock Room - model #1 confidence (61.6%)"
+    },
+    {
+      "n": 3,
+      "date": "2026-07-22",
+      "pick": "Cubs ML",
+      "odds": -125,
+      "stake": 20.0,
+      "toWin": 16.0,
+      "time_et": "8:00 PM",
+      "result": "PENDING",
+      "posted": "2026-07-22T22:18:06Z",
+      "note": "Mirrors Lock Room - model #1 confidence"
     }
   ],
   "current_bet": {
