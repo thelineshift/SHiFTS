@@ -1,0 +1,25 @@
+{
+  "exported": "2026-07-22T23:03:23Z",
+  "unique": 2,
+  "weighted_pool": 2,
+  "entries": [
+    {
+      "handle": "Em_jeiz26",
+      "discord": "emjeiz04017",
+      "discord_id": "1378025540937715772",
+      "tier": "free",
+      "weight": 1
+    },
+    {
+      "handle": "Hayjay_web3",
+      "discord": "oladimeji3124",
+      "discord_id": "894953724164849685",
+      "tier": "free",
+      "weight": 1
+    }
+  ],
+  "pool": [
+    "Em_jeiz26",
+    "Hayjay_web3"
+  ]
+}
