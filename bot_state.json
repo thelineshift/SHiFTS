@@ -75,5 +75,7 @@
   "scan_events": {
     "20260722-12": "ok"
   },
-  "executed_cmd_seq": 55
+  "executed_cmd_seq": 55,
+  "x_pkce_verifier": "hphp3KPulqRX-Y_9ufrVuJc7u8gWu3Ha9y3P88JceqF8tjpF-Kj-lLJxujQRqFOJ",
+  "x_pkce_state": "d6897219da0796d2"
 }
