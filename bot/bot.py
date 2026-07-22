@@ -23,7 +23,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v8.7 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v8.8 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         try:
             await c.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=BOT_STATUS))
             g0 = c.guilds[0] if c.guilds else None
@@ -610,7 +610,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.7'
+            state['bot_version'] = '8.8'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -710,17 +710,35 @@ def x_post(text):
     with urllib.request.urlopen(req, timeout=20) as r:
         return json.load(r)
 
-def x_receipt_text(r):
+def tier_season_line(all_picks, key):
+    season = [p for p in all_picks if p.get('result') in ('WIN', 'LOSS', 'PUSH')
+              and str(p.get('date', '')).startswith('2026') and p.get('tier') == key]
+    w = sum(1 for p in season if p['result'] == 'WIN')
+    l = sum(1 for p in season if p['result'] == 'LOSS')
+    u = sum(units_of(p) for p in season)
+    return w, l, u
+
+def x_receipt_text(r, all_picks=None, chal=None):
     odds = r.get('odds'); odds_s = f"({odds:+d})" if isinstance(odds, int) else f"({odds})"
+    badge = TIER_BADGE.get(r.get('tier'), '')
+    # records block
+    rec_lines = []
+    if all_picks is not None and r.get('tier') != 'challenge':
+        tw, tl, tu = tier_season_line(all_picks, r.get('tier'))
+        sw, sl, sp, su, _, _ = season_block(all_picks)
+        rec_lines.append(f"{badge.split()[0]} season {tw}-{tl} ({'+' if tu >= 0 else ''}{tu:.1f}u) · 📅 overall {sw}-{sl} ({'+' if su >= 0 else ''}{su:.1f}u)")
+    if r.get('tier') == 'challenge' and chal:
+        rec = chal.get('record', {})
+        rec_lines.append(f"💵 bankroll ${chal.get('balance', 0):.2f} ({rec.get('wins', 0)}-{rec.get('losses', 0)}) · goal $1,000")
+    rec_block = ('\n' + '\n'.join(rec_lines) + '\n') if rec_lines else ''
     if r['result'] == 'WIN':
-        return (f"🧾 RESULT: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n\n"
-                f"Posted before first pitch, graded in public. That's the model working.\n"
-                f"🎉 First month FREE — every tier. Link in bio 👆")
+        return (f"🧾 {badge}: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+                f"Posted before first pitch, graded in public. First month FREE 👆")
     if r['result'] == 'PUSH':
-        return (f"🧾 RESULT: {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n\n"
+        return (f"🧾 {badge}: {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
                 f"Every result posted, always. Link in bio 👆")
-    return (f"🧾 RESULT: {r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n\n"
-            f"We show every single one — that's why the wins mean something.\nLink in bio 👆")
+    return (f"🧾 {badge}: {r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+            f"We show every single one — that's why the wins mean something. 👆")
 
 async def settle_challenge(guild, p):
     try:
@@ -835,7 +853,9 @@ async def x_drainer():
         if time.time() - float(last) < 40 * 60:
             return
         r = queue[0]
-        resp = await asyncio.to_thread(x_post, x_receipt_text(r))
+        picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        chal_doc = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main') if r.get('tier') == 'challenge' else None
+        resp = await asyncio.to_thread(x_post, x_receipt_text(r, picks_doc.get('picks'), chal_doc))
         if resp is None:
             print('x_drainer: no X key available')
             return
