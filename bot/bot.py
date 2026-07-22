@@ -327,17 +327,20 @@ async def verify_giveaway_entry(message, handle):
         if not uid:
             await message.channel.send(f"🤖 SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
             return
+        if time.time() > c.get('oauth2_expires_at', 0):
+            c = await asyncio.to_thread(x_oauth2_refresh, c)
+        uat = c.get('oauth2_access', bt)
         try:
-            f = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/{uid}/following/{our_id}', bt)
+            f = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/{uid}/following/{our_id}', uat)
             followed = bool(f.get('data'))
         except Exception:
             followed = None
         try:
-            liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', bt)
+            liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', uat)
         except Exception:
             liked = None
         try:
-            reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', bt)
+            reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', uat)
         except Exception:
             reposted = None
         def mark(v):
@@ -616,6 +619,9 @@ async def run_command(cmd, guild, log):
                 state = await asyncio.to_thread(get_state)
                 post_id = (state or {}).get('giveaway_x_post', '')
                 our_id = '1831457082828021760'
+                if time.time() > c.get('oauth2_expires_at', 0):
+                    c = await asyncio.to_thread(x_oauth2_refresh, c)
+                uat = c.get('oauth2_access', bt)
                 try:
                     u = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/by/username/{handle}', bt)
                     uid = str(u.get('data', {}).get('id') or '')
@@ -625,17 +631,20 @@ async def run_command(cmd, guild, log):
                     await ch.send(f"🤖 SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
                 else:
                     try:
-                        f = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/{uid}/following/{our_id}', bt)
+                        f = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/{uid}/following/{our_id}', uat)
                         followed = bool(f.get('data'))
-                    except Exception:
+                    except Exception as _e:
+                        log.append(f'verify follow-check err: {str(_e)[:80]}')
                         followed = None
                     try:
-                        liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', bt)
-                    except Exception:
+                        liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', uat)
+                    except Exception as _e:
+                        log.append(f'verify like-check err: {str(_e)[:80]}')
                         liked = None
                     try:
-                        reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', bt)
-                    except Exception:
+                        reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', uat)
+                    except Exception as _e:
+                        log.append(f'verify repost-check err: {str(_e)[:80]}')
                         reposted = None
                     def mark(v):
                         return '✅' if v else ('❌' if v is False else '❓')
@@ -1269,7 +1278,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.20'
+            state['bot_version'] = '8.9.21'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
