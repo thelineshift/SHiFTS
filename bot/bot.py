@@ -246,6 +246,49 @@ async def run_command(cmd, guild, log):
                 prize = cmd.get('prize', 'a FREE month of \U0001F512 Lock Room')
                 await ch.send(f"\U0001F381 **GIVEAWAY WINNER** \U0001F389\n\nCongratulations {w.mention} — you won **{prize}**!\n\nThe captain will get you set up within 24h. Thanks to all {len(entrants)} entries — the next giveaway starts RIGHT NOW \U0001F440")
                 log.append(f'giveaway_winner: {w.name} ({w.id}) from {len(entrants)} entries')
+    elif a == 'x_link_start':
+        import secrets as _s, hashlib as _h
+        from urllib.parse import urlencode as _ue
+        ver = _s.token_urlsafe(64)[:64]
+        ch = base64.urlsafe_b64encode(_h.sha256(ver.encode()).digest()).decode().rstrip('=')
+        stt = await asyncio.to_thread(get_state)
+        stt['x_pkce_verifier'] = ver
+        stt['x_pkce_state'] = _s.token_hex(8)
+        await asyncio.to_thread(gh_put, 'bot_state.json', stt, 'pkce verifier stored')
+        c = x_creds_load()
+        q = _ue({'response_type': 'code', 'client_id': c.get('client_id', ''), 'redirect_uri': X_REDIRECT,
+                 'scope': 'tweet.read tweet.write users.read offline.access', 'state': stt['x_pkce_state'],
+                 'code_challenge': ch, 'code_challenge_method': 'S256'})
+        log.append('AUTH URL: https://twitter.com/i/oauth2/authorize?' + q)
+    elif a == 'x_link_finish':
+        from urllib.parse import urlparse, parse_qs, urlencode as _ue2
+        qs = parse_qs(urlparse(cmd['url']).query)
+        code = qs.get('code', [None])[0]
+        if not code:
+            log.append('x_link_finish: no code in URL')
+        else:
+            stt = await asyncio.to_thread(get_state)
+            c = x_creds_load()
+            basic = base64.b64encode(f"{c['client_id']}:{c['client_secret']}".encode()).decode()
+            data = {'grant_type': 'authorization_code', 'code': code, 'redirect_uri': X_REDIRECT,
+                    'code_verifier': stt.get('x_pkce_verifier', ''), 'client_id': c['client_id']}
+            req = urllib.request.Request('https://api.x.com/2/oauth2/token',
+                                         data=_ue2(data).encode(), method='POST',
+                                         headers={'Content-Type': 'application/x-www-form-urlencoded',
+                                                  'Authorization': f'Basic {basic}'})
+            try:
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    t = json.load(r)
+                c['oauth2_access'] = t['access_token']
+                c['oauth2_refresh'] = t.get('refresh_token', '')
+                c['oauth2_expires_at'] = time.time() + t.get('expires_in', 7200) - 120
+                await asyncio.to_thread(gh_put, 'x_creds.json', c, 'oauth2 user token linked')
+                res = await asyncio.to_thread(x_post_native, cmd.get('text', '\U0001F6F0\uFE0F SHiFT native X link online. The board never sleeps.'))
+                log.append(f'x_link_finish OK: tweet id {res.get("data", {}).get("id") if res else None}')
+            except urllib.error.HTTPError as e:
+                log.append(f'x_link_finish FAIL: HTTP {e.code}: {e.read()[:250]}')
+            except Exception as e:
+                log.append(f'x_link_finish FAIL: {e}')
     elif a == 'x_diag':
         c = x_creds_load()
         # (a) bearer app-only read
@@ -670,7 +713,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.2'
+            state['bot_version'] = '8.9.3'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -766,7 +809,41 @@ def x_creds_load():
     except Exception:
         return {}
 
+X_REDIRECT = 'https://thelineshift.com'
+
+def x_oauth2_refresh(c):
+    import urllib.parse
+    data = {'grant_type': 'refresh_token', 'refresh_token': c['oauth2_refresh'], 'client_id': c['client_id']}
+    basic = base64.b64encode(f"{c['client_id']}:{c['client_secret']}".encode()).decode()
+    req = urllib.request.Request('https://api.x.com/2/oauth2/token',
+                                 data=urllib.parse.urlencode(data).encode(), method='POST',
+                                 headers={'Content-Type': 'application/x-www-form-urlencoded',
+                                          'Authorization': f'Basic {basic}'})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        t = json.load(r)
+    c['oauth2_access'] = t['access_token']
+    c['oauth2_refresh'] = t.get('refresh_token', c['oauth2_refresh'])
+    c['oauth2_expires_at'] = time.time() + t.get('expires_in', 7200) - 120
+    gh_put('x_creds.json', c, 'oauth2 user token refresh')
+    return c
+
 def x_post_native(text):
+    c = x_creds_load()
+    if c.get('oauth2_access'):
+        if time.time() > c.get('oauth2_expires_at', 0):
+            c = x_oauth2_refresh(c)
+        req = urllib.request.Request('https://api.x.com/2/tweets',
+                                     data=json.dumps({'text': text}).encode(), method='POST',
+                                     headers={'Authorization': f"Bearer {c['oauth2_access']}",
+                                              'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
+        try:
+            with urllib.request.urlopen(req, timeout=25) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            raise Exception(f'HTTP {e.code}: {e.read()[:300]}')
+    return x_post_oauth1(text)
+
+def x_post_oauth1(text):
     import hmac, hashlib, secrets, urllib.parse
     c = x_creds_load()
     if not all(c.get(k) for k in ('api_key', 'api_secret', 'access_token', 'access_token_secret')):
