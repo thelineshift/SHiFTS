@@ -73,7 +73,8 @@
   "last_x_receipt_ts": 1784712244.7761345,
   "last_recap_date": "2026-07-21",
   "scan_events": {
-    "20260722-12": "ok"
+    "20260722-12": "ok",
+    "20260722-16": "ok"
   },
   "executed_cmd_seq": 60
 }
