@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T22:18:06Z",
+  "updated": "2026-07-22T22:18:26Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -430,7 +430,7 @@
       "odds": 100,
       "units": 1.0,
       "tier": "sharp",
-      "result": "PENDING",
+      "result": "WIN",
       "time_et": "3:40 PM",
       "analysis": "Sharp side: 90% of handle on under yesterday. Hancock (3.17) vs .230 CIN lineup at T-Mobile.",
       "live_odds": {
@@ -439,7 +439,9 @@
         "total": 8.5,
         "ts": 1784749313
       },
-      "last_alert_total": 8.5
+      "last_alert_total": 8.5,
+      "score": "Cincinnati Reds 5, Seattle Mariners 3",
+      "units_result": 1.0
     },
     {
       "id": "sea-ml-0722",
@@ -452,7 +454,7 @@
       "odds": -118,
       "units": 2.0,
       "tier": "whale",
-      "result": "PENDING",
+      "result": "LOSS",
       "time_et": "3:40 PM",
       "analysis": "Hancock (3.17) vs Singer (4-9, 4.56). SEA 30-22 home; model 55%. Sized up.",
       "live_odds": {
@@ -460,7 +462,9 @@
         "away_ml": null,
         "total": 8.5,
         "ts": 1784749313
-      }
+      },
+      "score": "Cincinnati Reds 5, Seattle Mariners 3",
+      "units_result": -2.0
     },
     {
       "id": "challenge-nyy-ml",
@@ -512,9 +516,11 @@
       "odds": -132,
       "units": 1.5,
       "tier": "lock",
-      "result": "PENDING",
+      "result": "WIN",
       "time_et": "3:10 PM",
-      "analysis": "WSN league-best ~5.5 rpg vs Hughes (3 career apps); COL bullpen 26th (4.91). Cavalli 10.2 K/9, 3.21 FIP. Model -147 vs -132. 94F Coors."
+      "analysis": "WSN league-best ~5.5 rpg vs Hughes (3 career apps); COL bullpen 26th (4.91). Cavalli 10.2 K/9, 3.21 FIP. Model -147 vs -132. 94F Coors.",
+      "score": "Washington Nationals 8, Colorado Rockies 0",
+      "units_result": 1.14
     },
     {
       "id": "kc-ml-0722",
