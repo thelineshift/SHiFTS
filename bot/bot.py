@@ -74,6 +74,33 @@ def make_client(privileged=True):
             print('on_message x-link error:', e)
 
     @c.event
+    async def on_raw_reaction_add(payload):
+        try:
+            state = await asyncio.to_thread(get_state)
+            if payload.message_id != state.get('scan_role_msg'):
+                return
+            guild = c.guilds[0] if c.guilds else None
+            role = guild.get_role(state.get('scan_role_id', 0)) if guild else None
+            if role and payload.member and not payload.member.bot:
+                await payload.member.add_roles(role, reason='scan alert opt-in')
+        except Exception as e:
+            print('reaction add error:', e)
+
+    @c.event
+    async def on_raw_reaction_remove(payload):
+        try:
+            state = await asyncio.to_thread(get_state)
+            if payload.message_id != state.get('scan_role_msg'):
+                return
+            guild = c.guilds[0] if c.guilds else None
+            role = guild.get_role(state.get('scan_role_id', 0)) if guild else None
+            member = guild.get_member(payload.user_id) if guild else None
+            if role and member and not member.bot:
+                await member.remove_roles(role, reason='scan alert opt-out')
+        except Exception as e:
+            print('reaction remove error:', e)
+
+    @c.event
     async def on_member_update(before, after):
         try:
             added = [r for r in after.roles if r not in before.roles]
@@ -280,6 +307,26 @@ async def run_command(cmd, guild, log):
                 prize = cmd.get('prize', 'a FREE month of \U0001F512 Lock Room')
                 await ch.send(f"\U0001F381 **GIVEAWAY WINNER** \U0001F389\n\nCongratulations {w.mention} — you won **{prize}**!\n\nThe captain will get you set up within 24h. Thanks to all {len(entrants)} entries — the next giveaway starts RIGHT NOW \U0001F440")
                 log.append(f'giveaway_winner: {w.name} ({w.id}) from {len(entrants)} entries')
+    elif a == 'setup_scan_role':
+        role = discord.utils.get(guild.roles, name='🛰️ Scan Alerts')
+        if role is None:
+            role = await guild.create_role(name='🛰️ Scan Alerts', mentionable=True, reason='scan alert opt-in')
+            log.append(f'created role {role.id}')
+        ch = find_channel(guild, 'general-chat')
+        msg = await ch.send("🛰️ **WANT THE HEADS-UP?**\nReact with 🛰️ and you'll get one quiet ping before each scan (6x daily — T-60 and T-10 only, nothing else). Remove your reaction anytime to opt out. No spam, just the warning. 🤖")
+        try:
+            await msg.add_reaction('🛰️')
+        except Exception:
+            pass
+        try:
+            await msg.pin()
+        except Exception:
+            pass
+        state = await asyncio.to_thread(get_state)
+        state['scan_role_id'] = role.id
+        state['scan_role_msg'] = msg.id
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'scan role setup')
+        log.append('scan role + opt-in post live')
     elif a == 'clean_general':
         ch = find_channel(guild, 'general-chat')
         if not ch:
@@ -837,10 +884,19 @@ async def countdown():
             return
         hh = marker[1] % 12 if marker[1] % 12 else 12
         label = f'{hh} {"AM" if marker[1] < 12 else "PM"} ET'
+        state = await asyncio.to_thread(get_state)
+        rid = state.get('scan_role_id')
+        mention = f'<@&{rid}> ' if rid else ''
         if marker[0] == '60':
-            await ch.send(f'\u23F3 **SCAN IN 60 MINUTES** — the machine goes to work at {label}. Odds across the market, injury reports, confirmed lineups, roster moves — everything gets pulled. \U0001F6F0️')
+            pool = COUNT_60
+            idx = state.get('count60_idx', 0)
+            state['count60_idx'] = idx + 1
         else:
-            await ch.send(f'\U0001F6F0️ **SCAN IN 10 MINUTES** — systems hot. Picks land in your tier rooms right after. \U0001F525')
+            pool = COUNT_10
+            idx = state.get('count10_idx', 0)
+            state['count10_idx'] = idx + 1
+        await ch.send(mention + pool[idx % len(pool)].format(label=label))
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'countdown rotation')
     except Exception as e:
         print('countdown error:', e)
 countdown.fired = set()
@@ -925,7 +981,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.12'
+            state['bot_version'] = '8.9.13'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -1518,6 +1574,23 @@ async def teaser_watch():
         await asyncio.to_thread(gh_put, 'bot_state.json', state, 'teaser check')
     except Exception as e:
         print('teaser_watch error:', e)
+
+COUNT_60 = [
+ "\u23F3 **SCAN IN 60 MINUTES** — the machine goes to work at {label}. Odds across the market, injury reports, confirmed lineups — everything gets pulled. \U0001F6F0\uFE0F",
+ "\u23F3 **T-60 TO SCAN** — next sweep at {label}. The board gets stripped down to the edges worth firing on. \U0001F4E1",
+ "\U0001F6F0\uFE0F **ONE HOUR OUT** — the {label} scan is loading. Six windows a day, zero guesswork.",
+ "\u23F3 **60-MINUTE WARNING** — the {label} sweep is next. Data first, picks after. \U0001F916",
+ "\U0001F6F0\uFE0F **SCAN APPROACHING** — {label}. The machine reads the whole board so you don't have to.",
+ "\u23F3 **NEXT SCAN: {label}** — one hour. Markets, lineups, weather, money flow. Watch it work. \U0001F4CA",
+]
+COUNT_10 = [
+ "\U0001F6F0\uFE0F **SCAN IN 10 MINUTES** — {label}. Sharpen up. \U0001F525",
+ "\u26A1 **T-10** — the {label} sweep is imminent. The free pick lands with the finale. \U0001F3AF",
+ "\U0001F6F0\uFE0F **10 MINUTES OUT** — {label}. The machine is warming up.",
+ "\U0001F3AF **T-10 TO SCAN** — {label}. Parameters loading...",
+ "\u23F1\uFE0F **FINAL 10** — the {label} sweep opens the board in minutes.",
+ "\U0001F52D **SCAN IMMINENT** — {label}. Watch the machine work. \U0001F6F0\uFE0F",
+]
 
 @tasks.loop(seconds=300)
 async def scan_event_watch():
