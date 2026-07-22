@@ -35,15 +35,6 @@
   "bot_version": "8.9.23",
   "unannounced_results": [
     {
-      "id": "sea-cin-under85",
-      "desc": "Mariners/Reds Under 8.5",
-      "odds": 100,
-      "result": "WIN",
-      "units": 1.0,
-      "score": "Cincinnati Reds 5, Seattle Mariners 3",
-      "tier": "sharp"
-    },
-    {
       "id": "sea-ml-0722",
       "desc": "Mariners ML",
       "odds": -118,
@@ -71,7 +62,7 @@
       "tier": "free"
     }
   ],
-  "last_x_receipt_ts": 1784761144.3189154,
+  "last_x_receipt_ts": 1784763551.1604974,
   "last_recap_date": "2026-07-21",
   "scan_events": {
     "20260722-12": "ok",
