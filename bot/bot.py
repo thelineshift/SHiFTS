@@ -246,6 +246,12 @@ async def run_command(cmd, guild, log):
                 prize = cmd.get('prize', 'a FREE month of \U0001F512 Lock Room')
                 await ch.send(f"\U0001F381 **GIVEAWAY WINNER** \U0001F389\n\nCongratulations {w.mention} — you won **{prize}**!\n\nThe captain will get you set up within 24h. Thanks to all {len(entrants)} entries — the next giveaway starts RIGHT NOW \U0001F440")
                 log.append(f'giveaway_winner: {w.name} ({w.id}) from {len(entrants)} entries')
+    elif a == 'x_test':
+        try:
+            res = await asyncio.to_thread(x_post_native, cmd.get('text', '\U0001F6F0\uFE0F SHiFT native X link online. The board never sleeps.'))
+            log.append(f'x_test OK: tweet id {res.get("data", {}).get("id") if res else None}')
+        except Exception as e:
+            log.append(f'x_test FAIL: {e}')
     elif a == 'set_icon':
         req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})
         data = urllib.request.urlopen(req, timeout=25).read()
@@ -610,7 +616,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.8'
+            state['bot_version'] = '8.9'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -699,7 +705,40 @@ def x_key_load():
     except Exception:
         return ''
 
+def x_creds_load():
+    try:
+        d = gh_get('x_creds.json', ref=QUEUE_BRANCH)
+        return json.loads(base64.b64decode(d['content']).decode())
+    except Exception:
+        return {}
+
+def x_post_native(text):
+    import hmac, hashlib, secrets, urllib.parse
+    c = x_creds_load()
+    if not all(c.get(k) for k in ('api_key', 'api_secret', 'access_token', 'access_token_secret')):
+        return None
+    url = 'https://api.x.com/2/tweets'
+    op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': secrets.token_hex(16),
+          'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+          'oauth_token': c['access_token'], 'oauth_version': '1.0'}
+    q = lambda s: urllib.parse.quote(str(s), safe='')
+    base = '&'.join(['POST', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+    key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
+    op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
+    hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+    req = urllib.request.Request(url, data=json.dumps({'text': text}).encode(), method='POST',
+                                 headers={'Authorization': hdr, 'Content-Type': 'application/json',
+                                          'User-Agent': 'TheLineShift/1.0'})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        return json.load(r)
+
 def x_post(text):
+    try:
+        res = x_post_native(text)
+        if res:
+            return res
+    except Exception as e:
+        print('native X post failed:', e)
     key = x_key_load()
     if not key:
         return None
