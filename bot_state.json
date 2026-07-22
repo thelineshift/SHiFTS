@@ -1,37 +1,9 @@
 {
-  "executed_seq": 93,
+  "executed_seq": 94,
   "last_log": [
-    "seq 93 executed 2026-07-22 18:54 UTC",
-    "delete 2077768008823443609 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077764947283501495 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077762745819140135 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077762688826962303 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077762248798351373 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077761699805892682 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077761038473195946 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077758036580376627 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077755557264453928 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077745131902357567 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077743813829812595 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077736710612324643 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077736234718310668 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077442289656316329 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077435609463800313 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077430621400416540 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077429438484996179 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077426653626556829 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077423436717047838 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077421164650021332 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077405729435050160 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077400414907969856 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077399600529322030 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077398436836487559 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077393462081491101 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077392395075809654 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077194612804817076 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077182031704793381 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077181048790659518 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'",
-    "delete 2077174325828825316 FAIL: HTTP Error 429: Too Many Requests b'{\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}'"
+    "seq 94 executed 2026-07-22 19:24 UTC",
+    "created role 1529569745517674599",
+    "scan role + opt-in post live"
   ],
   "time_audit": {
     "at": "2026-07-22 19:21 UTC",
@@ -78,7 +50,7 @@
     "20260722-12": "ok",
     "20260722-16": "ok"
   },
-  "executed_cmd_seq": 92,
+  "executed_cmd_seq": 93,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406
 }
