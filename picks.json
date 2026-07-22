@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T03:34:25Z",
+  "updated": "2026-07-22T04:34:44Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -337,9 +337,11 @@
       "odds": -113,
       "units": 1,
       "tier": "free",
-      "result": "PENDING",
+      "result": "WIN",
       "time_et": "9:40 PM",
-      "analysis": "Burns deals vs .688 OPS Seattle lineup in a pitcher's park. Sharp handle on the Under."
+      "analysis": "Burns deals vs .688 OPS Seattle lineup in a pitcher's park. Sharp handle on the Under.",
+      "score": "Cincinnati Reds 4, Seattle Mariners 2",
+      "units_result": 0.88
     },
     {
       "id": "2026-07-21-nats-rox-o13",
