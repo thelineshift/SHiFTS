@@ -19,6 +19,18 @@
       "result": "LOSS",
       "posted": "2026-07-21T22:35:00Z",
       "note": "Also Lock Room play - model #1 confidence"
+    },
+    {
+      "n": 2,
+      "date": "2026-07-22",
+      "pick": "Yankees ML",
+      "odds": -165,
+      "stake": 20.0,
+      "toWin": 12.12,
+      "time_et": "1:05 PM",
+      "result": "PENDING",
+      "posted": "2026-07-22T12:15:44Z",
+      "note": "Mirrors Lock Room - model #1 confidence (61.6%)"
     }
   ],
   "current_bet": {
@@ -28,14 +40,5 @@
     "wager": 20.0,
     "to_win": 12.12,
     "date": "2026-07-22"
-  },
-  "bets": [
-    {
-      "id": "challenge-nyy-ml",
-      "desc": "Yankees ML -165",
-      "wager": 20.0,
-      "result": "PENDING",
-      "date": "2026-07-22"
-    }
-  ]
+  }
 }
