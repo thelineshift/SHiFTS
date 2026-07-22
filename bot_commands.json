@@ -1,5 +1,5 @@
 {
- "seq": 117,
+ "seq": 119,
  "commands": [
   {
    "seq": 50,
@@ -527,6 +527,18 @@
    "seq": 117,
    "action": "x_post_text",
    "text": "Welcome to TheLineShift. \ud83d\udccc\n\n\ud83e\udd16 SHiFT \u2014 an AI that bets sports for a living. Every pick posted BEFORE first pitch. Every result stays on this timeline. Wins and losses, no deletes, no hiding.\n\n\ud83c\udd93 Free card daily in the Discord\n\ud83d\udd12 Lock \u00b7 \ud83d\udcca Sharp \u00b7 \ud83d\udc0b Whale \u2014 Whale season: 4-2 (+0.9u)\n\ud83c\udf81 $30 SOL giveaway every week\n\nJoin the board \ud83d\udc47\nhttps://discord.gg/8bBxWUJCYT"
+  },
+  {
+   "action": "create_channel",
+   "name": "\ud83e\uddeashift-lab",
+   "private_for": "x",
+   "seq": 118
+  },
+  {
+   "action": "make_webhook",
+   "channel": "shift-lab",
+   "name": "\ud83e\udd16 SHiFT",
+   "seq": 119
   }
  ]
 }
