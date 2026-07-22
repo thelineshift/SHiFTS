@@ -1,37 +1,19 @@
 {
-  "seq": 50,
+  "seq": 53,
   "commands": [
     {
-      "action": "create_channel",
-      "name": "\u2699\ufe0fupdates"
+      "seq": 50,
+      "action": "delete_channel_id",
+      "id": "1529499044060074064"
     },
     {
-      "action": "set_topic",
-      "channel": "updates",
-      "topic": "\ud83e\udd16 System upgrades + new features from the machine \u2014 results live in #\ud83e\uddfereceipts"
+      "seq": 51,
+      "action": "delete_channel_id",
+      "id": "1529500896185024513"
     },
     {
-      "action": "make_webhook",
-      "channel": "updates",
-      "name": "SHiFT"
-    },
-    {
-      "action": "delete_message",
-      "channel": "receipts",
-      "marker": "SYSTEM UPGRADE"
-    },
-    {
-      "seq": 47,
-      "action": "x_test",
-      "text": "\ud83d\udef0\ufe0f SHiFT is now posting natively.\n\nFaster receipts. No middleman.\nScans daily: 12a / 4a / 8a / 12p / 4p / 8p ET.\n\nThe board never sleeps."
-    },
-    {
-      "seq": 48,
+      "seq": 52,
       "action": "x_diag"
-    },
-    {
-      "seq": 49,
-      "action": "list_channels"
     }
   ]
 }
