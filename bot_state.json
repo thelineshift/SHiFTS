@@ -63,15 +63,6 @@
   "bot_version": "8.9.11",
   "unannounced_results": [
     {
-      "id": "2026-07-21-tigers-ml",
-      "desc": "Tigers ML",
-      "odds": 100,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Detroit Tigers 2, Chicago Cubs 11",
-      "tier": "sharp"
-    },
-    {
       "id": "2026-07-21-reds-ml",
       "desc": "Reds ML",
       "odds": -108,
@@ -81,7 +72,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1784743552.932371,
+  "last_x_receipt_ts": 1784746970.3154721,
   "last_recap_date": "2026-07-21",
   "scan_events": {
     "20260722-12": "ok",
