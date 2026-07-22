@@ -1,5 +1,5 @@
 {
- "seq": 136,
+ "seq": 138,
  "commands": [
   {
    "seq": 50,
@@ -634,6 +634,18 @@
    "handle": "Hayjay_web3",
    "channel": "giveaway",
    "seq": 136
+  },
+  {
+   "action": "verify_entry",
+   "handle": "Hayjay_web3",
+   "channel": "giveaway",
+   "seq": 137
+  },
+  {
+   "action": "verify_entry",
+   "handle": "Em_jeiz26",
+   "channel": "giveaway",
+   "seq": 138
   }
  ]
 }
