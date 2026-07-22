@@ -1,8 +1,10 @@
 {
-  "executed_seq": 63,
+  "executed_seq": 66,
   "last_log": [
-    "seq 63 executed 2026-07-22 16:47 UTC",
-    "x_link_finish FAIL: HTTP 400: b'{\"error\":\"invalid_request\",\"error_description\":\"Value passed for the authorization code was invalid.\"}'"
+    "seq 66 executed 2026-07-22 17:22 UTC",
+    "unknown action: x_post_text",
+    "unknown action: x_diag1",
+    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+offline.access&state=ecf4e9c03d51f954&code_challenge=zFpzEM5TePXKUOgh4HP4dN92uV4Ky16RI42h_-H1ePg&code_challenge_method=S256"
   ],
   "time_audit": {
     "at": "2026-07-22 17:15 UTC",
@@ -67,5 +69,5 @@
     "20260722-12": "ok",
     "20260722-16": "ok"
   },
-  "executed_cmd_seq": 62
+  "executed_cmd_seq": 65
 }
