@@ -383,6 +383,16 @@ async def run_command(cmd, guild, log):
         ch = find_channel(guild, cmd.get('channel', 'general-chat'))
         inv = await ch.create_invite(max_age=0, max_uses=0, reason='permanent invite for X/giveaways')
         log.append(f'INVITE: https://discord.gg/{inv.code}')
+    elif a == 'set_server_icon':
+        try:
+            ref = cmd.get('ref', 'main')
+            path = cmd.get('path', 'assets/server_icon.png')
+            remote = await asyncio.to_thread(gh_get, path, ref)
+            icon_bytes = base64.b64decode(remote['content'])
+            await guild.edit(icon=icon_bytes, reason='SHiFT server icon - brand mark')
+            log.append(f'server icon set from {path} ({len(icon_bytes)} bytes)')
+        except Exception as e:
+            log.append(f'set_server_icon FAILED: {type(e).__name__}: {e}')
     elif a == 'clean_general':
         ch = find_channel(guild, 'general-chat')
         if not ch:
@@ -1037,7 +1047,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.15'
+            state['bot_version'] = '8.9.16'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
