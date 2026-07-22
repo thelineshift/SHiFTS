@@ -1,5 +1,5 @@
 {
- "seq": 126,
+ "seq": 127,
  "commands": [
   {
    "seq": 50,
@@ -577,6 +577,11 @@
    "ref": "main",
    "path": "assets/giveaway_card.png",
    "seq": 126
+  },
+  {
+   "action": "export_entries",
+   "channel": "giveaway",
+   "seq": 127
   }
  ]
 }
