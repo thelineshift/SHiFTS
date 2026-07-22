@@ -673,6 +673,20 @@ async def run_command(cmd, guild, log):
                         log.append(f'verify_entry: @{handle} incomplete: {status}')
             except Exception as e:
                 log.append(f'verify_entry FAIL: {e}')
+    elif a == 'x_followers_probe':
+        try:
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            d = await asyncio.to_thread(x_get_json, 'https://api.x.com/2/users/1831457082828021760/followers?max_results=100', c.get('oauth2_access', ''))
+            ids = [str(x.get('id')) for x in d.get('data', [])]
+            log.append(f'x_followers_probe OK: {len(ids)} followers readable, next={bool(d.get("meta", {}).get("next_token"))}')
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:150]
+                except Exception: pass
+            log.append(f'x_followers_probe FAIL: {e} {body}')
     elif a == 'x_follow':
         try:
             c = x_creds_load()
@@ -1278,7 +1292,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.21'
+            state['bot_version'] = '8.9.22'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
