@@ -48,6 +48,8 @@ def make_client(privileged=True):
             recap_watch.start()
         if not teaser_watch.is_running():
             teaser_watch.start()
+        if not odds_watch.is_running():
+            odds_watch.start()
 
     @c.event
     async def on_message(message):
@@ -923,7 +925,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.11'
+            state['bot_version'] = '8.9.12'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -1379,6 +1381,112 @@ async def recap_watch():
         print('recap posted for', recap_date)
     except Exception as e:
         print('recap_watch error:', e)
+
+def side_ml(p, ho, ao):
+    d = (p.get('desc') or '').lower()
+    if 'over' in d or 'under' in d:
+        return None
+    if side_in_desc(p.get('awayTeam', ''), p.get('desc', '')):
+        return ao
+    if side_in_desc(p.get('homeTeam', ''), p.get('desc', '')):
+        return ho
+    return None
+
+def fmt_odds_num(n):
+    try:
+        n = int(n)
+        return f'+{n}' if n > 0 else str(n)
+    except Exception:
+        return str(n)
+
+def clv_note(p, ho, ao):
+    cur = side_ml(p, ho, ao)
+    if cur is None or p.get('odds') is None:
+        return ''
+    diff = int(p['odds']) - int(cur)
+    if diff >= 5:
+        return f'📈 CLV +{diff}c — we beat the close. That\'s the whole game.'
+    if diff <= -5:
+        return f'📉 CLV {diff}c — market moved against us.'
+    return '➡️ closed right at our number.'
+
+@tasks.loop(seconds=1800)
+async def odds_watch():
+    try:
+        if not client.guilds:
+            return
+        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        plist = doc.get('picks') or []
+        today = time.strftime('%Y-%m-%d', time.gmtime(time.time() - 4 * 3600))
+        pend = [p for p in plist if str(p.get('result', '')).upper() in ('', 'PENDING', 'NONE', 'NULL')
+                and (p.get('sport') or '').upper() in ESPN and p.get('date') == today]
+        if not pend:
+            return
+        guild = client.guilds[0]
+        ch = find_channel(guild, 'whale-talk')
+        changed = False
+        for p in pend:
+            try:
+                sport = (p.get('sport') or '').upper()
+                sb = await asyncio.to_thread(espn_fetch, sport, p['date'].replace('-', ''))
+                prefer = pick_start_ts(p)
+                na, nh = norm_txt(p.get('awayTeam', '')), norm_txt(p.get('homeTeam', ''))
+                best = None
+                for ev in sb.get('events', []):
+                    try:
+                        comp = ev['competitions'][0]
+                        teams = {c2['homeAway']: c2 for c2 in comp['competitors']}
+                        if na in norm_txt(teams['away']['team'].get('displayName', '')) and nh in norm_txt(teams['home']['team'].get('displayName', '')):
+                            try:
+                                start = time.mktime(time.strptime(ev['date'][:19], '%Y-%m-%dT%H:%M:%S'))
+                            except Exception:
+                                start = prefer or 0
+                            d = abs(start - (prefer or start))
+                            if best is None or d < best[0]:
+                                best = (d, comp)
+                    except Exception:
+                        continue
+                if not best:
+                    continue
+                comp = best[1]
+                odds = (comp.get('odds') or [{}])[0]
+                ho = (odds.get('homeTeamOdds') or {}).get('moneyLine')
+                ao = (odds.get('awayTeamOdds') or {}).get('moneyLine')
+                ou = odds.get('overUnder')
+                if ho is None and ao is None and ou is None:
+                    continue
+                p['live_odds'] = {'home_ml': ho, 'away_ml': ao, 'total': ou, 'ts': int(time.time())}
+                changed = True
+                stype = comp.get('status', {}).get('type', {})
+                started = stype.get('state') == 'in' or bool(stype.get('completed'))
+                if started and not p.get('closing_odds'):
+                    p['closing_odds'] = dict(p['live_odds'])
+                    if ch:
+                        await ch.send(f"🔒 **CLOSING LINE LOCKED** — {p.get('desc')}: we took {fmt_odds_num(p.get('odds'))}, closing {fmt_odds_num(side_ml(p, ho, ao)) if side_ml(p, ho, ao) is not None else 'total ' + str(ou)}. {clv_note(p, ho, ao)}")
+                elif not started:
+                    cur = side_ml(p, ho, ao)
+                    posted = p.get('odds')
+                    if cur is not None and posted is not None:
+                        anchor_o = p.get('last_alert_odds', posted)
+                        if abs(int(cur) - int(anchor_o)) >= 12 and ch:
+                            p['last_alert_odds'] = int(cur)
+                            verdict = 'we got the best of it ✅' if int(cur) < int(posted) else 'market moving against us 👀'
+                            await ch.send(f"⚠️ **LINE MOVE** — {p.get('desc')}: {fmt_odds_num(anchor_o)} → {fmt_odds_num(cur)}. Steam on this one — {verdict}")
+                    elif ou is not None and p.get('market') == 'total':
+                        try:
+                            posted_t = float(re.search(r'(\d+(\.\d+)?)', p.get('desc', '')).group(1))
+                            anchor_t = p.get('last_alert_total', posted_t)
+                            if abs(float(ou) - anchor_t) >= 0.5 and ch:
+                                p['last_alert_total'] = float(ou)
+                                await ch.send(f"⚠️ **TOTAL MOVE** — {p.get('desc')}: {anchor_t} → {ou}. {'Money pounding the over.' if float(ou) > anchor_t else 'Steam on the under.'}")
+                        except Exception:
+                            pass
+            except Exception as e:
+                print('odds_watch pick error:', e)
+        if changed:
+            await asyncio.to_thread(gh_put, 'picks.json', doc, 'odds watch update', 'main')
+    except Exception as e:
+        print('odds_watch error:', e)
 
 @tasks.loop(seconds=3600)
 async def teaser_watch():
