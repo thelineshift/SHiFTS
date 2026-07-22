@@ -1,31 +1,10 @@
 {
-  "executed_seq": 85,
+  "executed_seq": 88,
   "last_log": [
-    "seq 85 executed 2026-07-22 18:34 UTC",
-    "deleted duplicate ANALYZING post",
-    "finale reposted without whale leak",
-    "#\ud83d\udc4bwelcome (1528794081168326827) topic: Start here \ud83d\udc4b AI picks 6x daily \u2014 free pick in \ud83c\udfaffree-pick, fu",
-    "#\ud83d\udcdcrules (1528794145110364301) topic: Keep it clean: no spam, no scams, no touting other services.",
-    "#\ud83d\udc8eupgrade (1528794177549107394) topic: Unlock the full machine \ud83d\udc8e \ud83d\udd12 Lock / \ud83d\udcca Sharp / \ud83d\udc0b Whale \u2014 pick ",
-    "#\ud83c\udfaffree-pick (1528794232666718260) topic: One free pick daily \ud83c\udfaf Posted early with game times \u2014 tail it",
-    "#\ud83e\uddfereceipts (1528794285166559262) topic: Every result, every tier, posted as it lands \ud83e\uddfe Wins AND loss",
-    "#\ud83d\udcacgeneral-chat (1528794315613274212) topic: The lounge \ud83d\udcac Talk games, sweats, bad beats, react to picks \u2014",
-    "#\ud83d\udd12daily-locks (1528794374438256691) topic: NONE",
-    "#\ud83d\udd12lock-lounge (1528794401520746566) topic: NONE",
-    "#\ud83d\udccaall-picks (1528794462979887135) topic: NONE",
-    "#\ud83d\udccaweekly-analytics (1528794494282104864) topic: NONE",
-    "#\ud83d\udccasharp-talk (1528794521163399331) topic: NONE",
-    "#\ud83d\udc0bevery-play (1528794551450603580) topic: NONE",
-    "#\ud83d\udc0bmonthly-deepdive (1528794576821944420) topic: NONE",
-    "#\ud83d\udc0bdirect-line (1528794607771455661) topic: NONE",
-    "#\ud83c\udfc6100-to-1000 (1529016246228615218) topic: \ud83c\udfc6 $100 \u2192 $1,000 \u2014 every pick, stake, and receipt in public. ",
-    "#\ud83d\udce3promotions (1529113017248251945) topic: Deals only \ud83d\udce3 Promo codes, trials, limited spots \u2014 never pay ",
-    "#\ud83c\udf81giveaway (1529113020503031859) topic: Free stuff \ud83c\udf81 Active giveaways \u2014 react to enter, winners anno",
-    "#\u2699\ufe0fupdates (1529425152503185488) topic: \ud83e\udd16 System upgrades + new features from the machine \u2014 results ",
-    "BOT LineShift Bot | nick: \ud83e\udd16 SHiFT | avatar: custom",
-    "BOT Whop Bot | nick: None | avatar: custom",
-    "x_diag1 v1.1 FAIL: HTTP Error 401: Unauthorized b'{\"errors\":[{\"code\":32,\"message\":\"Could not authenticate you.\"}]}'",
-    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+offline.access&state=0eeb09c1b2ed05c1&code_challenge=JK51pTFMofzWNLIcDUVy5H9ZfGRJhHgkYxHj22CAImM&code_challenge_method=S256"
+    "seq 88 executed 2026-07-22 18:40 UTC",
+    "renamed #\ud83d\udc0bdirect-line -> \ud83d\udc0bwhale-talk",
+    "posted+pinned in #\ud83d\udc0bwhale-talk",
+    "unknown action: x_timeline"
   ],
   "time_audit": {
     "at": "2026-07-22 18:30 UTC",
@@ -81,5 +60,5 @@
     "20260722-12": "ok",
     "20260722-16": "ok"
   },
-  "executed_cmd_seq": 84
+  "executed_cmd_seq": 87
 }
