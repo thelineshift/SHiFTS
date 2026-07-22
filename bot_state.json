@@ -16,12 +16,12 @@
     "FULL #\ud83d\udcacgeneral-chat id=1529261875500421190 | LineShift Bot#8676: \u23f3 **SCAN IN 60 MINUTES** \u2014 the machine goes to work at 8 PM ET. Odds across the market, injury reports, confirmed lineups, roster moves \u2014 everything gets pulled. \ud83d\udef0\ufe0f"
   ],
   "time_audit": {
-    "at": "2026-07-22 07:35 UTC",
+    "at": "2026-07-22 07:54 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick": "2026-07-21 20:19 UTC",
-    "\ud83e\uddfereceipts": "2026-07-22 04:34 UTC",
+    "\ud83e\uddfereceipts": "2026-07-22 07:54 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-22 00:02 UTC",
     "\ud83d\udd12daily-locks": "2026-07-21 20:19 UTC",
     "\ud83d\udccaall-picks": "2026-07-21 22:16 UTC",
@@ -31,23 +31,18 @@
     "\ud83c\udf81giveaway": "2026-07-21 13:09 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-22 07:35 UTC",
-    "flags": [
-      "2026-07-21-phillies-ml | Phillies ML -136 | tier=lock",
-      "2026-07-21-brewers-ml-2 | Brewers ML -142 | tier=lock",
-      "2026-07-21-tigers-ml | Tigers ML 100 | tier=sharp",
-      "2026-07-21-reds-ml | Reds ML -108 | tier=whale"
-    ]
+    "at": "2026-07-22 07:54 UTC",
+    "flags": []
   },
   "challenge_watch": {
-    "at": "2026-07-22 07:35 UTC",
+    "at": "2026-07-22 07:54 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-22 07:35 UTC",
+    "at": "2026-07-22 07:54 UTC",
     "flags": []
   },
-  "bot_version": "8.3",
+  "bot_version": "8.4",
   "unannounced_results": [
     {
       "id": "2026-07-21-challenge-brewers",
