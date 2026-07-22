@@ -54,6 +54,15 @@
       "units": -1.0,
       "score": "Mets 4, Brewers 0",
       "tier": "challenge"
+    },
+    {
+      "id": "2026-07-21-nats-rox-o13",
+      "desc": "Nationals/Rockies Over 13",
+      "odds": -108,
+      "result": "WIN",
+      "units": 0.93,
+      "score": "Nationals 7, Rockies 8",
+      "tier": "whale"
     }
   ]
 }
