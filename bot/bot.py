@@ -105,7 +105,15 @@ def gh_get(path, ref='main'):
 
 def gh_put(path, obj, message, ref=QUEUE_BRANCH):
     try:
-        sha = gh_get(path, ref=ref).get('sha')
+        remote = gh_get(path, ref=ref)
+        sha = remote.get('sha')
+        if path == 'bot_state.json':
+            try:
+                base = json.loads(base64.b64decode(remote['content']).decode())
+                base.update(obj)
+                obj = base
+            except Exception:
+                pass
     except Exception:
         sha = None
     body = {'message': message, 'branch': ref,
@@ -759,7 +767,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.6'
+            state['bot_version'] = '8.9.7'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
