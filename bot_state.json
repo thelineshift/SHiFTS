@@ -34,6 +34,15 @@
   "bot_version": "8.9.17",
   "unannounced_results": [
     {
+      "id": "challenge-nyy-ml",
+      "desc": "Yankees ML",
+      "odds": -165,
+      "result": "LOSS",
+      "units": -0.0,
+      "score": "Pittsburgh Pirates 5, New York Yankees 3",
+      "tier": "challenge"
+    },
+    {
       "id": "kc-ml-0722",
       "desc": "Royals ML",
       "odds": -102,
@@ -41,9 +50,36 @@
       "units": 0.98,
       "score": "San Francisco Giants 4, Kansas City Royals 5",
       "tier": "sharp"
+    },
+    {
+      "id": "sea-cin-under85",
+      "desc": "Mariners/Reds Under 8.5",
+      "odds": 100,
+      "result": "WIN",
+      "units": 1.0,
+      "score": "Cincinnati Reds 5, Seattle Mariners 3",
+      "tier": "sharp"
+    },
+    {
+      "id": "sea-ml-0722",
+      "desc": "Mariners ML",
+      "odds": -118,
+      "result": "LOSS",
+      "units": -2.0,
+      "score": "Cincinnati Reds 5, Seattle Mariners 3",
+      "tier": "whale"
+    },
+    {
+      "id": "wsn-ml-0722",
+      "desc": "Nationals ML",
+      "odds": -132,
+      "result": "WIN",
+      "units": 1.14,
+      "score": "Washington Nationals 8, Colorado Rockies 0",
+      "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1784758707.705983,
+  "last_x_receipt_ts": 1784755994.7764368,
   "last_recap_date": "2026-07-21",
   "scan_events": {
     "20260722-12": "ok",
