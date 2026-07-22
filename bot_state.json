@@ -1,12 +1,12 @@
 {
-  "executed_seq": 76,
+  "executed_seq": 81,
   "last_log": [
-    "seq 76 executed 2026-07-22 18:22 UTC",
+    "seq 81 executed 2026-07-22 18:28 UTC",
     "unknown action: clean_general",
     "unknown action: audit_channels",
     "unknown action: x_post_text",
     "unknown action: x_diag1",
-    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+offline.access&state=4d5f809600db0f62&code_challenge=a6jJtW7JeVpHXk4h4vuZAz8Q7aJcskE7tXv4JsEdv1o&code_challenge_method=S256"
+    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+offline.access&state=33852d0ebdd28f24&code_challenge=TWEtsVrhJzQ-iBClgx5ohfxulvWKJwtP7li8ki6WQS4&code_challenge_method=S256"
   ],
   "time_audit": {
     "at": "2026-07-22 18:08 UTC",
@@ -62,5 +62,5 @@
     "20260722-12": "ok",
     "20260722-16": "ok"
   },
-  "executed_cmd_seq": 75
+  "executed_cmd_seq": 80
 }
