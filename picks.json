@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T12:15:10Z",
+  "updated": "2026-07-22T17:14:16Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -459,6 +459,51 @@
       "result": "PENDING",
       "time_et": "1:05 PM",
       "analysis": "Challenge BET #2: $20 -> $12.12. Bankroll $80.00."
+    },
+    {
+      "id": "stl-laa-under9",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "St. Louis Cardinals",
+      "homeTeam": "Los Angeles Angels",
+      "desc": "Cardinals/Angels Under 9.0",
+      "market": "total",
+      "odds": -119,
+      "units": 1.0,
+      "tier": "free",
+      "result": "PENDING",
+      "time_et": "4:07 PM",
+      "analysis": "Detmers 11.3 K/9; STL light road bats; Angel Stadium 0.97 run factor. Weather neutral (85F, light SW)."
+    },
+    {
+      "id": "wsn-ml-0722",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "Washington Nationals",
+      "homeTeam": "Colorado Rockies",
+      "desc": "Nationals ML",
+      "market": "ml",
+      "odds": -132,
+      "units": 1.5,
+      "tier": "lock",
+      "result": "PENDING",
+      "time_et": "3:10 PM",
+      "analysis": "WSN league-best ~5.5 rpg vs Hughes (3 career apps); COL bullpen 26th (4.91). Cavalli 10.2 K/9, 3.21 FIP. Model -147 vs -132. 94F Coors."
+    },
+    {
+      "id": "kc-ml-0722",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "San Francisco Giants",
+      "homeTeam": "Kansas City Royals",
+      "desc": "Royals ML",
+      "market": "ml",
+      "odds": -102,
+      "units": 1.0,
+      "tier": "sharp",
+      "result": "PENDING",
+      "time_et": "2:10 PM",
+      "analysis": "KC 4.8 rpg home vs 3.7 road; Lugo vs Roupp; SF bullpen 25th since 6/1 (5.47), lineup 25th in scoring."
     }
   ]
 }
