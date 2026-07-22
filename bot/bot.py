@@ -23,7 +23,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v8.5 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v8.6 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         try:
             await c.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=BOT_STATUS))
             g0 = c.guilds[0] if c.guilds else None
@@ -489,8 +489,8 @@ async def poll():
     except Exception as e:
         print('poll error:', e)
 
-SCAN_HOURS_ET = [8, 12, 16, 20]
-EVENT_HOURS_UTC = [0, 12, 16, 20]
+SCAN_HOURS_ET = [0, 4, 8, 12, 16, 20]
+EVENT_HOURS_UTC = [0, 4, 8, 12, 16, 20]
 
 @tasks.loop(seconds=60)
 async def countdown():
@@ -610,7 +610,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.5'
+            state['bot_version'] = '8.6'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
