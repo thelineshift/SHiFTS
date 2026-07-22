@@ -1,5 +1,5 @@
 {
-  "seq": 56,
+  "seq": 57,
   "commands": [
     {
       "seq": 50,
@@ -26,6 +26,10 @@
     },
     {
       "seq": 55,
+      "action": "x_link_start"
+    },
+    {
+      "seq": 56,
       "action": "x_link_start"
     }
   ]
