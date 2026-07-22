@@ -1,11 +1,11 @@
 {
-  "executed_seq": 131,
+  "executed_seq": 133,
   "last_log": [
-    "seq 131 executed 2026-07-22 23:08 UTC",
-    "verify_entry: @Em_jeiz26 incomplete: \u2753 follow   \u2753 like   \u2705 repost",
-    "verify_entry: @Hayjay_web3 incomplete: \u2753 follow   \u2753 like   \u274c repost",
-    "deleted post 2080047094564618471",
-    "x_post_text OK: id 2080067517423460510"
+    "seq 133 executed 2026-07-22 23:14 UTC",
+    "verify follow-check err: HTTP Error 403: Forbidden",
+    "verify_entry: @Em_jeiz26 incomplete: \u2753 follow   \u2705 like   \u2705 repost",
+    "verify follow-check err: HTTP Error 403: Forbidden",
+    "verify_entry: @Hayjay_web3 incomplete: \u2753 follow   \u274c like   \u274c repost"
   ],
   "time_audit": {
     "at": "2026-07-22 23:13 UTC",
@@ -80,7 +80,7 @@
     "20260722-16": "ok",
     "20260722-20": "ok"
   },
-  "executed_cmd_seq": 131,
+  "executed_cmd_seq": 133,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 2,
