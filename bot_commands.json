@@ -1,18 +1,15 @@
 {
-  "seq": 43,
+  "seq": 44,
   "commands": [
     {
-      "action": "delete_message",
-      "channel": "general-chat",
-      "marker": "HOW THE WEEK RUNS"
+      "action": "read_full",
+      "channel": "receipts",
+      "limit": 8
     },
     {
-      "action": "post_and_pin",
+      "action": "read_full",
       "channel": "general-chat",
-      "content": "\ud83d\udcc5 **HOW THE WEEK RUNS AT THELINESHIFT** *(all times ET)*\n\n\ud83d\udef0\ufe0f **4 LIVE SCAN EVENTS daily** \u2014 8:00 AM / 12:00 PM / 4:00 PM / 8:00 PM \u2014 right here in this channel\n\u23f3 Countdowns 60 + 10 min before each \u00b7 \ud83d\udce1 live collection \u00b7 \ud83e\udde0 analysis \u00b7 \u2705 picks per tier\n\ud83c\udfaf **Free pick daily** \u2192 <#1528794232666718260>\n\ud83e\uddfe **Receipts** \u2014 results posted as each game ends \u2192 <#1528794285166559262>\n\ud83c\udf19 **Nightly recap** \u2014 drops after the LAST game of the night ends: full board + the running \ud83d\udcc5 **2026 season record**. Games starting after midnight count for the next day's card.\n\ud83e\udde0 **Autopsies** after every result \u2014 the model shows its work\n\ud83d\udcb5 **$100 \u2192 $1,000 Challenge** \u2014 one bet daily, stakes + balance public (any tier gets in: <#1528794177549107394>)\n\ud83c\udf81 **Weekly giveaway** \u2014 winner drawn Sunday 6 PM\n\ud83d\udcca **Sunday analytics** 10 AM \u00b7 \ud83d\udc0b **Monthly deep-dive** on the 1st"
-    },
-    {
-      "action": "purge_system"
+      "limit": 4
     }
   ]
 }
