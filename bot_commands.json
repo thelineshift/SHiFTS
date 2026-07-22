@@ -1,5 +1,5 @@
 {
-  "seq": 98,
+  "seq": 102,
   "commands": [
     {
       "seq": 50,
@@ -328,6 +328,29 @@
     {
       "seq": 97,
       "action": "list_channels"
+    },
+    {
+      "seq": 98,
+      "action": "purge_channel",
+      "channel": "rules",
+      "limit": 20
+    },
+    {
+      "seq": 99,
+      "action": "post_and_pin",
+      "channel": "rules",
+      "content": "\ud83e\udd16 **HOUSE RULES \u2014 THELINESHIFT**\n*The machine runs on discipline. So does this room.*\n\n1. **\ud83e\uddfe RECEIPTS OR IT DIDN'T HAPPEN.** Every graded play posts publicly \u2014 wins AND losses. We never delete a loss. Anyone selling you perfection is lying to you.\n2. **\ud83d\udd12 TIER INTEGRITY.** Paid picks stay in paid rooms. Leaking tier content to non-members = instant removal, no refund, no appeal.\n3. **\ud83d\udef0\ufe0f SCANS 6X DAILY** \u2014 12a / 4a / 8a / 12p / 4p / 8p ET. Want the heads-up? Grab the \ud83d\udef0\ufe0f Scan Alerts role (pinned post in #\ud83d\udcacgeneral-chat). No @everyone spam, ever.\n4. **\ud83c\udfaf THE FREE PICK IS THE TEASE.** One free play per scan in #\ud83c\udfaffree-pick. The full card lives behind the tiers \u2014 don't beg for free looks in chat.\n5. **\ud83d\udcac TALK SHOP, NOT TRASH.** Debate picks all day. No harassment, no spam, no shilling other services, no \"DM me for picks\" parasites \u2014 insta-ban.\n6. **\ud83d\udc0b WHALE TALK IS SACRED.** Top tier gets the terminal: line moves, closing lines, the why. What's said there stays there.\n7. **\ud83d\udd1e 18+ ONLY.** Betting involves risk \u2014 never wager what you can't afford to lose. If it stops being fun, step away: 1-800-GAMBLER.\n8. **\ud83e\udd16 SHiFT IS LAW.** The bot runs the board 24/7/365. What it posts is official."
+    },
+    {
+      "seq": 100,
+      "action": "post_and_pin",
+      "channel": "giveaway",
+      "content": "\ud83c\udf81 **$30 SOL GIVEAWAY \u2014 THE GROWTH DROP**\n\n\ud83d\udcb0 **Grand prize: $25 in SOL**\n\ud83e\udd48 **Runner-up: $5 in SOL**\n\ud83d\udcc5 **Draw: Sunday July 27, 6:00 PM ET** \u2014 right here in this channel, tx-proof posted on the spot\n\n**TO ENTER \u2014 all 4 required:**\n1\ufe0f\u20e3 **Be in this Discord** (you're reading this \u2014 one down \ud83d\ude0f)\n2\ufe0f\u20e3 **Follow @TheLineShift** on X\n3\ufe0f\u20e3 **Like + Repost** the giveaway post on X\n4\ufe0f\u20e3 **Comment on the X post tagging 2 friends** \u2014 bring them in; if they join too, that's the whole point\n\n\u2705 **Then drop your X handle in this channel** \u2014 that's your ticket. Verified at draw time.\n\n\ud83d\udc8e **Paid members ride heavier:** \ud83d\udd12 2x entries \u00b7 \ud83d\udcca 3x \u00b7 \ud83d\udc0b 5x\n\ud83c\udfc6 Winner drawn provably fair, paid from the house wallet the same night \u2014 on-chain, receipt posted.\n\n*18+ \u00b7 no purchase necessary \u00b7 one entry per X handle (tier bonuses apply) \u00b7 prizes sent in SOL at market value*"
+    },
+    {
+      "seq": 101,
+      "action": "x_post_text",
+      "text": "\ud83c\udf81 $30 SOL GIVEAWAY\n\n\ud83d\udcb0 $25 in SOL to the winner \u00b7 $5 to a runner-up\n\nEnter \u2014 all 4:\n1\ufe0f\u20e3 Join the Discord: https://discord.gg/6sEufN9xRY\n2\ufe0f\u20e3 Follow @TheLineShift\n3\ufe0f\u20e3 Like + Repost this\n4\ufe0f\u20e3 Comment tagging 2 friends\n\nDraw Sunday 6 PM ET. Provably fair, paid on-chain with proof. 18+"
     }
   ]
 }
