@@ -70,6 +70,15 @@
       "units": 1.14,
       "score": "Washington Nationals 8, Colorado Rockies 0",
       "tier": "lock"
+    },
+    {
+      "id": "stl-laa-under9",
+      "desc": "Cardinals/Angels Under 9.0",
+      "odds": -119,
+      "result": "WIN",
+      "units": 0.84,
+      "score": "St. Louis Cardinals 1, Los Angeles Angels 0",
+      "tier": "free"
     }
   ],
   "last_x_receipt_ts": 1784758725.4114876,
