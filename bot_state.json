@@ -6,7 +6,7 @@
     "scan role + opt-in post live"
   ],
   "time_audit": {
-    "at": "2026-07-22 19:30 UTC",
+    "at": "2026-07-22 19:33 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -21,18 +21,18 @@
     "\ud83c\udf81giveaway": "2026-07-21 13:09 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-22 19:30 UTC",
+    "at": "2026-07-22 19:33 UTC",
     "flags": []
   },
   "challenge_watch": {
-    "at": "2026-07-22 19:30 UTC",
+    "at": "2026-07-22 19:33 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-22 19:30 UTC",
+    "at": "2026-07-22 19:33 UTC",
     "flags": []
   },
-  "bot_version": "8.9.13",
+  "bot_version": "8.9.14",
   "unannounced_results": [
     {
       "id": "2026-07-21-reds-ml",
