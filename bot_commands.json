@@ -1,5 +1,5 @@
 {
- "seq": 115,
+ "seq": 116,
  "commands": [
   {
    "seq": 50,
@@ -516,6 +516,12 @@
    "tag": "giveaway",
    "text": "\ud83c\udf81 $30 SOL GIVEAWAY \u2014 runs weekly\n\n\ud83e\udd47 $25 SOL  \u00b7  \ud83e\udd48 $5 SOL \u2014 two winners every Sunday\n\nEnter in 60 seconds:\n1\ufe0f\u20e3 Follow @TheLineShift\n2\ufe0f\u20e3 Like + repost this post\n3\ufe0f\u20e3 Join the Discord + drop your X handle in #\ud83c\udf81giveaway \u2014 SHiFT verifies your entry live\n\nPaid tiers earn up to 5x tickets. Provably fair draw, paid on-chain.\n\nJoin the board \ud83d\udc47\nhttps://discord.gg/8bBxWUJCYT",
    "seq": 115
+  },
+  {
+   "seq": 116,
+   "action": "x_post_text",
+   "tag": "giveaway",
+   "text": "\ud83c\udf81 $30 SOL GIVEAWAY \u2014 runs weekly\n\n\ud83e\udd47 $25 SOL  \u00b7  \ud83e\udd48 $5 SOL \u2014 two winners every Sunday\n\nEnter in 60 seconds:\n1\ufe0f\u20e3 Follow @TheLineShift\n2\ufe0f\u20e3 Like + repost this post\n3\ufe0f\u20e3 Join the Discord + drop your X handle in #\ud83c\udf81giveaway \u2014 SHiFT verifies your entry live\n\nPaid tiers earn up to 5x tickets. Provably fair draw, paid on-chain.\n\nJoin the board \ud83d\udc47\nhttps://discord.gg/8bBxWUJCYT\nhttps://raw.githubusercontent.com/thelineshift/AISportsBot/main/assets/giveaway_card.png"
   }
  ]
 }
