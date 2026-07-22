@@ -58,6 +58,10 @@ def make_client(privileged=True):
             url = content.split()[0]
             guild = message.guild or (c.guilds[0] if c.guilds else None)
             log = []
+            try:
+                await message.delete()
+            except Exception:
+                pass
             await run_command({'action': 'x_link_finish', 'url': url}, guild, log)
             ok = any('OK' in l for l in log)
             await message.reply('✅ X link complete — native posting is LIVE. First post fired.' if ok
@@ -767,7 +771,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.7'
+            state['bot_version'] = '8.9.8'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
