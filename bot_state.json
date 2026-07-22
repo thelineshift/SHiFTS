@@ -33,5 +33,16 @@
     "at": "2026-07-22 02:23 UTC",
     "flags": []
   },
-  "bot_version": "8.3"
+  "bot_version": "8.3",
+  "unannounced_results": [
+    {
+      "id": "2026-07-21-dodgers-phillies-under85",
+      "desc": "Dodgers/Phillies Under 8.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Los Angeles Dodgers 2, Philadelphia Phillies 1",
+      "tier": "free"
+    }
+  ]
 }
