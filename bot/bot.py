@@ -1190,7 +1190,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.17'
+            state['bot_version'] = '8.9.18'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -1393,10 +1393,36 @@ def tier_season_line(all_picks, key):
     u = sum(units_of(p) for p in season)
     return w, l, u
 
+CLOSERS_WIN = [
+    "Posted before first pitch, graded in public. 👆",
+    "Green before first pitch, green on the timeline.",
+    "Another one stamped. Receipts stay up forever.",
+    "Called it, posted it, cashed it.",
+    "The model saw it early. The timeline proves it.",
+    "Winners hit different when you post them in advance.",
+    "Clockwork. On to the next edge.",
+]
+CLOSERS_LOSS = [
+    "We show every single one — that's why the wins mean something. 👆",
+    "Losses stay up too. Always have.",
+    "Red on the board, posted anyway. Full ledger, always.",
+    "No deletes here. Next edge already loading.",
+    "That one hurt. It's staying up anyway.",
+    "Public picks, public losses. That's the deal.",
+]
+CLOSERS_PUSH = [
+    "Every result posted, always. Link in bio 👆",
+    "Stake back, board moves on.",
+    "Push. Nothing lost, nothing hidden.",
+]
+
+def _pick_closer(pool, seed):
+    import hashlib as _hh
+    return pool[int(_hh.md5(str(seed).encode()).hexdigest(), 16) % len(pool)]
+
 def x_receipt_text(r, all_picks=None, chal=None):
     odds = r.get('odds'); odds_s = f"({odds:+d})" if isinstance(odds, int) else f"({odds})"
     badge = TIER_BADGE.get(r.get('tier'), '')
-    # records block
     rec_lines = []
     if all_picks is not None and r.get('tier') != 'challenge':
         tw, tl, tu = tier_season_line(all_picks, r.get('tier'))
@@ -1406,14 +1432,15 @@ def x_receipt_text(r, all_picks=None, chal=None):
         rec = chal.get('record', {})
         rec_lines.append(f"💵 bankroll ${chal.get('balance', 0):.2f} ({rec.get('wins', 0)}-{rec.get('losses', 0)}) · goal $1,000")
     rec_block = ('\n' + '\n'.join(rec_lines) + '\n') if rec_lines else ''
+    seed = f"{r.get('id')}{r.get('date')}{r.get('result')}"
     if r['result'] == 'WIN':
         return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
-                f"Posted before first pitch, graded in public. First month FREE 👆")
+                + _pick_closer(CLOSERS_WIN, seed))
     if r['result'] == 'PUSH':
         return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
-                f"Every result posted, always. Link in bio 👆")
+                + _pick_closer(CLOSERS_PUSH, seed))
     return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
-            f"We show every single one — that's why the wins mean something. 👆")
+            + _pick_closer(CLOSERS_LOSS, seed))
 
 async def settle_challenge(guild, p):
     try:
