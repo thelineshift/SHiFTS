@@ -36,15 +36,6 @@
   "bot_version": "8.9.8",
   "unannounced_results": [
     {
-      "id": "2026-07-21-brewers-ml-2",
-      "desc": "Brewers ML",
-      "odds": -142,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "New York Mets 4, Milwaukee Brewers 0",
-      "tier": "lock"
-    },
-    {
       "id": "2026-07-21-tigers-ml",
       "desc": "Tigers ML",
       "odds": 100,
@@ -63,7 +54,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1784739952.7800977,
+  "last_x_receipt_ts": 1784743552.932371,
   "last_recap_date": "2026-07-21",
   "scan_events": {
     "20260722-12": "ok",
