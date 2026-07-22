@@ -37,15 +37,6 @@
   "bot_version": "8.6",
   "unannounced_results": [
     {
-      "id": "2026-07-21-nats-rox-o13",
-      "desc": "Nationals/Rockies Over 13",
-      "odds": -108,
-      "result": "WIN",
-      "units": 0.93,
-      "score": "Nationals 7, Rockies 8",
-      "tier": "whale"
-    },
-    {
       "id": "2026-07-21-phillies-ml",
       "desc": "Phillies ML",
       "odds": -136,
@@ -82,6 +73,6 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1784709416.8198223,
+  "last_x_receipt_ts": 1784712244.7761345,
   "last_recap_date": "2026-07-21"
 }
