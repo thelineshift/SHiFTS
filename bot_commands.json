@@ -1,5 +1,5 @@
 {
- "seq": 120,
+ "seq": 123,
  "commands": [
   {
    "seq": 50,
@@ -543,6 +543,23 @@
   {
    "action": "list_roles",
    "seq": 120
+  },
+  {
+   "action": "delete_channel",
+   "channel": "shift-lab",
+   "seq": 121
+  },
+  {
+   "action": "create_channel",
+   "name": "\ud83e\uddeashift-lab",
+   "private_for": "Sharp",
+   "seq": 122
+  },
+  {
+   "action": "make_webhook",
+   "channel": "shift-lab",
+   "name": "\ud83e\udd16 SHiFT",
+   "seq": 123
   }
  ]
 }
