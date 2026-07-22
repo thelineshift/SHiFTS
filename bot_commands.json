@@ -1,5 +1,5 @@
 {
-  "seq": 61,
+  "seq": 62,
   "commands": [
     {
       "seq": 50,
@@ -49,6 +49,10 @@
       "seq": 60,
       "action": "x_link_finish",
       "url": "https://thelineshift.com/?state=0068a96100b1e7da&code=a2lWLWFhSi1ub0tGRGhoSldDMi1uVGhocGtPQ2docHZUeC1IZnNZMkdJOHNOOjE3ODQ3MzY5MTAyMTY6MToxOmFjOjE"
+    },
+    {
+      "seq": 61,
+      "action": "x_link_scan"
     }
   ]
 }
