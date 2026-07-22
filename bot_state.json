@@ -1,8 +1,8 @@
 {
-  "executed_seq": 58,
+  "executed_seq": 59,
   "last_log": [
-    "seq 58 executed 2026-07-22 15:54 UTC",
-    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+offline.access&state=ef2a98aa30657184&code_challenge=77F4Emdab3s6Dzae7B9ZHDsyfYK_T8lxBw6tqqiSTD0&code_challenge_method=S256"
+    "seq 59 executed 2026-07-22 16:00 UTC",
+    "x_link_finish FAIL: HTTP 400: b'{\"error\":\"invalid_request\",\"error_description\":\"Missing required parameter [code_verifier].\"}'"
   ],
   "time_audit": {
     "at": "2026-07-22 15:44 UTC",
@@ -75,5 +75,5 @@
   "scan_events": {
     "20260722-12": "ok"
   },
-  "executed_cmd_seq": 57
+  "executed_cmd_seq": 58
 }
