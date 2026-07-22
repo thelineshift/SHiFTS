@@ -312,6 +312,13 @@ def gw_user_set(url, bearer):
     GW_CACHE[url] = (time.time(), ids)
     return ids
 
+def gw_followed(uid, uat):
+    try:
+        ids = gw_user_set('https://api.x.com/2/users/1831457082828021760/followers?max_results=100', uat)
+        return str(uid) in ids
+    except Exception:
+        return None
+
 async def verify_giveaway_entry(message, handle):
     try:
         c = await asyncio.to_thread(x_creds_load)
@@ -330,11 +337,7 @@ async def verify_giveaway_entry(message, handle):
         if time.time() > c.get('oauth2_expires_at', 0):
             c = await asyncio.to_thread(x_oauth2_refresh, c)
         uat = c.get('oauth2_access', bt)
-        try:
-            f = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/{uid}/following/{our_id}', uat)
-            followed = bool(f.get('data'))
-        except Exception:
-            followed = None
+        followed = await asyncio.to_thread(gw_followed, uid, uat)
         try:
             liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', uat)
         except Exception:
@@ -630,12 +633,7 @@ async def run_command(cmd, guild, log):
                 if not uid:
                     await ch.send(f"🤖 SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
                 else:
-                    try:
-                        f = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/{uid}/following/{our_id}', uat)
-                        followed = bool(f.get('data'))
-                    except Exception as _e:
-                        log.append(f'verify follow-check err: {str(_e)[:80]}')
-                        followed = None
+                    followed = await asyncio.to_thread(gw_followed, uid, uat)
                     try:
                         liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', uat)
                     except Exception as _e:
@@ -1292,7 +1290,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.22'
+            state['bot_version'] = '8.9.23'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
