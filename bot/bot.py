@@ -46,6 +46,8 @@ def make_client(privileged=True):
             scan_event_watch.start()
         if not recap_watch.is_running():
             recap_watch.start()
+        if not teaser_watch.is_running():
+            teaser_watch.start()
 
     @c.event
     async def on_message(message):
@@ -321,6 +323,81 @@ async def run_command(cmd, guild, log):
         for b in bots:
             av = 'custom' if b.avatar else 'DEFAULT'
             log.append(f'BOT {b.name} | nick: {b.nick} | avatar: {av}')
+    elif a == 'x_timeline':
+        c = x_creds_load()
+        try:
+            url = 'https://api.x.com/2/users/1831457082828021760/tweets?max_results=100&tweet.fields=created_at,referenced_tweets'
+            req = urllib.request.Request(url, headers={'Authorization': f"Bearer {c['bearer_token']}"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            for t in d.get('data', []):
+                refs = t.get('referenced_tweets', [])
+                kind = refs[0].get('type', 'post') if refs else 'post'
+                log.append(f"{t['id']} | {t.get('created_at', '')[:16]} | {kind} | {t['text'][:70]}")
+            if not d.get('data'):
+                log.append('x_timeline: no posts')
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_timeline FAIL: {e} {body}')
+    elif a == 'x_delete':
+        c = x_creds_load()
+        if time.time() > c.get('oauth2_expires_at', 0):
+            c = await asyncio.to_thread(x_oauth2_refresh, c)
+        for tid in cmd.get('ids', []):
+            try:
+                req = urllib.request.Request(f'https://api.x.com/2/tweets/{tid}', method='DELETE',
+                                             headers={'Authorization': f"Bearer {c['oauth2_access']}"})
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    json.load(r)
+                log.append(f'deleted post {tid}')
+            except Exception as e:
+                body = ''
+                if hasattr(e, 'read'):
+                    try: body = e.read()[:150]
+                    except Exception: pass
+                log.append(f'delete {tid} FAIL: {e} {body}')
+    elif a == 'x_follow':
+        try:
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            uname = cmd.get('username', '').lstrip('@')
+            req = urllib.request.Request(f'https://api.x.com/2/users/by/username/{uname}',
+                                         headers={'Authorization': f"Bearer {c['bearer_token']}"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                uid = json.load(r)['data']['id']
+            req = urllib.request.Request('https://api.x.com/2/users/1831457082828021760/following',
+                                         data=json.dumps({'target_user_id': uid}).encode(), method='POST',
+                                         headers={'Authorization': f"Bearer {c['oauth2_access']}", 'Content-Type': 'application/json'})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                json.load(r)
+            log.append(f'followed @{uname}')
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:150]
+                except Exception: pass
+            log.append(f'x_follow FAIL: {e} {body}')
+    elif a == 'x_like':
+        try:
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            req = urllib.request.Request('https://api.x.com/2/users/1831457082828021760/likes',
+                                         data=json.dumps({'tweet_id': cmd['id']}).encode(), method='POST',
+                                         headers={'Authorization': f"Bearer {c['oauth2_access']}", 'Content-Type': 'application/json'})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                json.load(r)
+            log.append(f"liked {cmd['id']}")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:150]
+                except Exception: pass
+            log.append(f'x_like FAIL: {e} {body}')
     elif a == 'x_post_text':
         try:
             res = await asyncio.to_thread(x_post, cmd['text'])
@@ -846,7 +923,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.10'
+            state['bot_version'] = '8.9.11'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -1063,12 +1140,12 @@ def x_receipt_text(r, all_picks=None, chal=None):
         rec_lines.append(f"💵 bankroll ${chal.get('balance', 0):.2f} ({rec.get('wins', 0)}-{rec.get('losses', 0)}) · goal $1,000")
     rec_block = ('\n' + '\n'.join(rec_lines) + '\n') if rec_lines else ''
     if r['result'] == 'WIN':
-        return (f"🧾 {badge}: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+        return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
                 f"Posted before first pitch, graded in public. First month FREE 👆")
     if r['result'] == 'PUSH':
-        return (f"🧾 {badge}: {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
+        return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
                 f"Every result posted, always. Link in bio 👆")
-    return (f"🧾 {badge}: {r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+    return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
             f"We show every single one — that's why the wins mean something. 👆")
 
 async def settle_challenge(guild, p):
@@ -1302,6 +1379,37 @@ async def recap_watch():
         print('recap posted for', recap_date)
     except Exception as e:
         print('recap_watch error:', e)
+
+@tasks.loop(seconds=3600)
+async def teaser_watch():
+    try:
+        if not client.guilds:
+            return
+        guild = client.guilds[0]
+        now = time.gmtime()
+        if now.tm_hour != 12:
+            return
+        state = await asyncio.to_thread(get_state)
+        tz = state.setdefault('teasers', {})
+        import datetime as _dt
+        today = _dt.date(now.tm_year, now.tm_mon, now.tm_mday)
+        next_sun = today + _dt.timedelta(days=(6 - today.weekday()) % 7)
+        ws = next_sun.isoformat()
+        if tz.get('weekly') != ws:
+            ch = find_channel(guild, 'weekly-analytics')
+            if ch:
+                await ch.send(f"📊 **WEEKLY ANALYTICS — next report: Sunday {next_sun.strftime('%b %d')}, 10:00 AM ET**\nFull-board review: tier-by-tier records, units chart, best/worst reads of the week, and what changes next week. 🎯")
+                tz['weekly'] = ws
+        nm = _dt.date(today.year + (1 if today.month == 12 else 0), 1 if today.month == 12 else today.month + 1, 1)
+        ms = nm.isoformat()
+        if tz.get('monthly') != ms:
+            ch = find_channel(guild, 'monthly-deepdive')
+            if ch:
+                await ch.send(f"🐋 **MONTHLY DEEP-DIVE — next report: {nm.strftime('%b %d')}, 6:00 PM ET**\nWhale-tier masterclass: full-month model autopsy, where the edge came from, bankroll math, and next month's attack plan.")
+                tz['monthly'] = ms
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'teaser check')
+    except Exception as e:
+        print('teaser_watch error:', e)
 
 @tasks.loop(seconds=300)
 async def scan_event_watch():
