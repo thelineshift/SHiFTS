@@ -1,5 +1,5 @@
 {
- "seq": 119,
+ "seq": 120,
  "commands": [
   {
    "seq": 50,
@@ -539,6 +539,10 @@
    "channel": "shift-lab",
    "name": "\ud83e\udd16 SHiFT",
    "seq": 119
+  },
+  {
+   "action": "list_roles",
+   "seq": 120
   }
  ]
 }
