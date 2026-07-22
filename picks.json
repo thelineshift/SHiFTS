@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T02:54:06Z",
+  "updated": "2026-07-22T03:34:25Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -352,9 +352,11 @@
       "odds": -108,
       "units": 1,
       "tier": "whale",
-      "result": "PENDING",
+      "result": "WIN",
       "time_et": "8:40 PM",
-      "analysis": "Whale exclusive. Mikolas 5.53 ERA vs Lorenzen 6.22 ERA at Coors, 92F, both pens bottom-6, Nats #1 runs scored, Nats games 57-39-5 to over."
+      "analysis": "Whale exclusive. Mikolas 5.53 ERA vs Lorenzen 6.22 ERA at Coors, 92F, both pens bottom-6, Nats #1 runs scored, Nats games 57-39-5 to over.",
+      "score": "Nationals 7, Rockies 8",
+      "units_result": 0.93
     },
     {
       "id": "2026-07-21-challenge-brewers",
