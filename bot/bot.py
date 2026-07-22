@@ -264,6 +264,33 @@ async def run_command(cmd, guild, log):
                 prize = cmd.get('prize', 'a FREE month of \U0001F512 Lock Room')
                 await ch.send(f"\U0001F381 **GIVEAWAY WINNER** \U0001F389\n\nCongratulations {w.mention} — you won **{prize}**!\n\nThe captain will get you set up within 24h. Thanks to all {len(entrants)} entries — the next giveaway starts RIGHT NOW \U0001F440")
                 log.append(f'giveaway_winner: {w.name} ({w.id}) from {len(entrants)} entries')
+    elif a == 'x_link_scan':
+        target = None
+        for tch in guild.text_channels:
+            if 'updates' in tch.name:
+                target = tch
+                break
+        if target is None:
+            log.append('x_link_scan: updates channel not found')
+        else:
+            found = False
+            async for m in target.history(limit=50):
+                cont = (m.content or '')
+                if m.author.bot or 'thelineshift.com' not in cont or 'code=' not in cont:
+                    continue
+                url = cont.strip().strip('`').strip('<>').split()[0]
+                if x_creds_load().get('oauth2_access'):
+                    log.append('already linked; skipping exchange')
+                else:
+                    await run_command({'action': 'x_link_finish', 'url': url}, guild, log)
+                try:
+                    await m.delete()
+                    log.append('deleted link message from #updates')
+                except Exception as e:
+                    log.append(f'delete failed: {e}')
+                found = True
+            if not found:
+                log.append('x_link_scan: no link message found in #updates')
     elif a == 'x_link_start':
         import secrets as _s, hashlib as _h
         from urllib.parse import urlencode as _ue
@@ -732,7 +759,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.5'
+            state['bot_version'] = '8.9.6'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
