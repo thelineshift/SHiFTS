@@ -1,12 +1,15 @@
 {
-  "executed_seq": 48,
+  "executed_seq": 50,
   "last_log": [
-    "seq 48 executed 2026-07-22 14:43 UTC",
+    "seq 50 executed 2026-07-22 14:50 UTC",
     "created #\u2699\ufe0fupdates",
     "topic set on #\u2699\ufe0fupdates",
-    "webhook for #\u2699\ufe0fupdates: https://discord.com/api/webhooks/1529499045209313393/RMn8YXP9QxUNpltUWYS80q9h8SAH9zBsXldhc53YrSvXUzzNHjFPQAas2l87cG2j656-",
+    "webhook for #\u2699\ufe0fupdates: https://discord.com/api/webhooks/1529500898550747277/ADpwqm_ko-efC8JbvUrHxJeGIGGWEQ0hGZ22My1PqIHzUOHb9qsSCR_G4wUpMd-NSEOI",
     "delete_message: marker not found in #\ud83e\uddfereceipts",
-    "x_test FAIL: HTTP Error 401: Unauthorized"
+    "x_test FAIL: HTTP 401: b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'",
+    "x_diag bearer FAIL: cannot access local variable 'urllib' where it is not associated with a value ",
+    "x_diag oauth1 GET FAIL: HTTP Error 401: Unauthorized b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'",
+    "channels: \ud83d\udc4bwelcome (1528794081168326827) | \ud83d\udcdcrules (1528794145110364301) | \ud83d\udc8eupgrade (1528794177549107394) | \ud83c\udfaffree-pick (1528794232666718260) | \ud83e\uddfereceipts (1528794285166559262) | \ud83d\udcacgeneral-chat (1528794315613274212) | \ud83d\udd12daily-locks (1528794374438256691) | \ud83d\udd12lock-lounge (1528794401520746566) | \ud83d\udccaall-picks (1528794462979887135) | \ud83d\udccaweekly-analytics (1528794494282104864) | \ud83d\udccasharp-talk (1528794521163399331) | \ud83d\udc0bevery-play (1528794551450603580) | \ud83d\udc0bmonthly-deepdive (1528794576821944420) | \ud83d\udc0bdirect-line (1528794607771455661) | \ud83c\udfc6100-to-1000 (1529016246228615218) | \ud83d\udce3promotions (1529113017248251945) | \ud83c\udf81giveaway (1529113020503031859) | \u2699\ufe0fupdates (1529425152503185488) | \u2699\ufe0fupdates (1529499044060074064) | \u2699\ufe0fupdates (1529500896185024513)"
   ],
   "time_audit": {
     "at": "2026-07-22 14:48 UTC",
