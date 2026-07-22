@@ -603,6 +603,67 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:200]
                 except Exception: pass
             log.append(f'x_media_probe FAIL: {e} {body}')
+    elif a == 'verify_entry':
+        # manual entry verification: check a handle's follow/like/repost vs the live giveaway post
+        handle = cmd.get('handle', '').lstrip('@')
+        ch = find_channel(guild, cmd.get('channel', 'giveaway'))
+        if not handle or not ch:
+            log.append('verify_entry: need handle + channel')
+        else:
+            try:
+                c = x_creds_load()
+                bt = c['bearer_token']
+                state = await asyncio.to_thread(get_state)
+                post_id = (state or {}).get('giveaway_x_post', '')
+                our_id = '1831457082828021760'
+                try:
+                    u = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/by/username/{handle}', bt)
+                    uid = str(u.get('data', {}).get('id') or '')
+                except Exception:
+                    uid = ''
+                if not uid:
+                    await ch.send(f"🤖 SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
+                else:
+                    try:
+                        f = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/{uid}/following/{our_id}', bt)
+                        followed = bool(f.get('data'))
+                    except Exception:
+                        followed = None
+                    try:
+                        liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', bt)
+                    except Exception:
+                        liked = None
+                    try:
+                        reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', bt)
+                    except Exception:
+                        reposted = None
+                    def mark(v):
+                        return '✅' if v else ('❌' if v is False else '❓')
+                    missing = []
+                    if followed is False: missing.append('follow @TheLineShift')
+                    if liked is False: missing.append('like the giveaway post')
+                    if reposted is False: missing.append('repost the giveaway post')
+                    status = f"{mark(followed)} follow   {mark(liked)} like   {mark(reposted)} repost"
+                    if not missing and followed and liked and reposted:
+                        # tier: look up the discord member who posted the handle (from entries export if given)
+                        mult, dname, did = 1, '', ''
+                        ent = await asyncio.to_thread(gh_get_json_ref, 'giveaway_entries.json', 'main')
+                        for e in (ent or {}).get('entries', []):
+                            if e.get('handle', '').lower() == handle.lower():
+                                mult = int(e.get('weight', 1)); dname = e.get('discord', ''); did = e.get('discord_id', '')
+                                break
+                        state.setdefault('giveaway_confirmed', {})[handle.lower()] = {
+                            'handle': handle, 'discord': dname, 'discord_id': did,
+                            'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
+                        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'giveaway confirm ' + handle)
+                        await ch.send(f"🎫 **ENTRY CONFIRMED — @{handle}**\n{status}\nYou're in the pool with **{mult}x ticket{'s' if mult > 1 else ''}**. Draw: Sunday 6 PM ET, provably fair, paid on-chain. 🤖")
+                        log.append(f'verify_entry: CONFIRMED @{handle} ({mult}x)')
+                    else:
+                        todo = '; '.join(missing) if missing else 'give X a minute to register it, then re-drop the handle'
+                        await ch.send(f"🤖 SHiFT entry check for **@{handle}**:\n{status}\nNot locked in yet — {todo}, then drop your handle here again and I'll re-scan it.")
+                        log.append(f'verify_entry: @{handle} incomplete: {status}')
+            except Exception as e:
+                log.append(f'verify_entry FAIL: {e}')
     elif a == 'x_follow':
         try:
             c = x_creds_load()
@@ -1208,7 +1269,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.19'
+            state['bot_version'] = '8.9.20'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
