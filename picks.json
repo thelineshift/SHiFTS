@@ -432,10 +432,10 @@
       "live_odds": {
         "home_ml": null,
         "away_ml": null,
-        "total": 8.0,
-        "ts": 1784748600
+        "total": 8.5,
+        "ts": 1784748797
       },
-      "last_alert_total": 8.0
+      "last_alert_total": 8.5
     },
     {
       "id": "sea-ml-0722",
@@ -454,8 +454,8 @@
       "live_odds": {
         "home_ml": null,
         "away_ml": null,
-        "total": 8.0,
-        "ts": 1784748600
+        "total": 8.5,
+        "ts": 1784748800
       }
     },
     {
@@ -491,7 +491,7 @@
         "home_ml": null,
         "away_ml": null,
         "total": 8.5,
-        "ts": 1784748600
+        "ts": 1784748800
       },
       "last_alert_total": 8.5
     },
