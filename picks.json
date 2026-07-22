@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T22:18:26Z",
+  "updated": "2026-07-22T22:42:19Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -494,7 +494,7 @@
       "odds": -119,
       "units": 1.0,
       "tier": "free",
-      "result": "PENDING",
+      "result": "WIN",
       "time_et": "4:07 PM",
       "analysis": "Detmers 11.3 K/9; STL light road bats; Angel Stadium 0.97 run factor. Weather neutral (85F, light SW).",
       "live_odds": {
@@ -503,7 +503,9 @@
         "total": 8.5,
         "ts": 1784750842
       },
-      "last_alert_total": 8.5
+      "last_alert_total": 8.5,
+      "score": "St. Louis Cardinals 1, Los Angeles Angels 0",
+      "units_result": 0.84
     },
     {
       "id": "wsn-ml-0722",
