@@ -1,8 +1,8 @@
 {
-  "executed_seq": 56,
+  "executed_seq": 57,
   "last_log": [
-    "seq 56 executed 2026-07-22 15:14 UTC",
-    "unknown action: x_link_start"
+    "seq 57 executed 2026-07-22 15:16 UTC",
+    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=Smt0eVBGb1RxMTFfRjZ3UlQ0VVk6MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+offline.access&state=d6897219da0796d2&code_challenge=nefkibkCuNTvalUsAf_j0UIQKkBVqNIRjYXkGtO04JI&code_challenge_method=S256"
   ],
   "time_audit": {
     "at": "2026-07-22 15:14 UTC",
@@ -75,7 +75,5 @@
   "scan_events": {
     "20260722-12": "ok"
   },
-  "executed_cmd_seq": 55,
-  "x_pkce_verifier": "hphp3KPulqRX-Y_9ufrVuJc7u8gWu3Ha9y3P88JceqF8tjpF-Kj-lLJxujQRqFOJ",
-  "x_pkce_state": "d6897219da0796d2"
+  "executed_cmd_seq": 56
 }
