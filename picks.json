@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T17:14:16Z",
+  "updated": "2026-07-22T20:32:30Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -396,9 +396,11 @@
       "odds": -110,
       "units": 1.0,
       "tier": "free",
-      "result": "PENDING",
+      "result": "WIN",
       "time_et": "1:05 PM",
-      "analysis": "Cole (3.93 ERA) at home; NYY bats cold (5 runs in last 3, under 5-1 in last 6). Model total 8.4."
+      "analysis": "Cole (3.93 ERA) at home; NYY bats cold (5 runs in last 3, under 5-1 in last 6). Model total 8.4.",
+      "score": "Pittsburgh Pirates 5, New York Yankees 3",
+      "units_result": 0.91
     },
     {
       "id": "nyy-ml-0722",
@@ -411,9 +413,11 @@
       "odds": -165,
       "units": 1.5,
       "tier": "lock",
-      "result": "PENDING",
+      "result": "LOSS",
       "time_et": "1:05 PM",
-      "analysis": "Model 61.6% \u2014 slate-high. Cole vs Keller (6-7, 5.40 ERA); PIT weak vs RHP."
+      "analysis": "Model 61.6% \u2014 slate-high. Cole vs Keller (6-7, 5.40 ERA); PIT weak vs RHP.",
+      "score": "Pittsburgh Pirates 5, New York Yankees 3",
+      "units_result": -1.5
     },
     {
       "id": "sea-cin-under85",
@@ -469,9 +473,11 @@
       "odds": -165,
       "units": 0,
       "tier": "challenge",
-      "result": "PENDING",
+      "result": "LOSS",
       "time_et": "1:05 PM",
-      "analysis": "Challenge BET #2: $20 -> $12.12. Bankroll $80.00."
+      "analysis": "Challenge BET #2: $20 -> $12.12. Bankroll $80.00.",
+      "score": "Pittsburgh Pirates 5, New York Yankees 3",
+      "units_result": -0.0
     },
     {
       "id": "stl-laa-under9",
@@ -521,9 +527,11 @@
       "odds": -102,
       "units": 1.0,
       "tier": "sharp",
-      "result": "PENDING",
+      "result": "WIN",
       "time_et": "2:10 PM",
-      "analysis": "KC 4.8 rpg home vs 3.7 road; Lugo vs Roupp; SF bullpen 25th since 6/1 (5.47), lineup 25th in scoring."
+      "analysis": "KC 4.8 rpg home vs 3.7 road; Lugo vs Roupp; SF bullpen 25th since 6/1 (5.47), lineup 25th in scoring.",
+      "score": "San Francisco Giants 4, Kansas City Royals 5",
+      "units_result": 0.98
     }
   ]
 }
