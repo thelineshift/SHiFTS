@@ -35,18 +35,8 @@
     "flags": []
   },
   "bot_version": "8.9.14",
-  "unannounced_results": [
-    {
-      "id": "2026-07-21-reds-ml",
-      "desc": "Reds ML",
-      "odds": -108,
-      "result": "WIN",
-      "units": 1.39,
-      "score": "Cincinnati Reds 4, Seattle Mariners 2",
-      "tier": "whale"
-    }
-  ],
-  "last_x_receipt_ts": 1784746970.3154721,
+  "unannounced_results": [],
+  "last_x_receipt_ts": 1784749467.4343963,
   "last_recap_date": "2026-07-21",
   "scan_events": {
     "20260722-12": "ok",
