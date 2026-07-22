@@ -1,5 +1,5 @@
 {
- "seq": 138,
+ "seq": 140,
  "commands": [
   {
    "seq": 50,
@@ -646,6 +646,18 @@
    "handle": "Em_jeiz26",
    "channel": "giveaway",
    "seq": 138
+  },
+  {
+   "action": "post_and_pin",
+   "channel": "weekly-analytics",
+   "content": "\ud83d\udcca **WEEKLY ANALYTICS \u2014 the numbers room.**\nEvery **Sunday 10:00 AM ET** the full week goes under the light here: every pick graded, room-by-room records, units trend, challenge progress, what the model nailed and what it missed, and a look at the week ahead.\n\n**MID-WEEK SNAPSHOT (through 7/22):**\n\ud83d\udcc5 Season: **16-13 (-0.8u)**\n\ud83d\udd12 Lock Room 4-5 (-4.2u) \u00b7 \ud83d\udcca Sharp Room 3-2 (+0.1u) \u00b7 \ud83d\udc0b Whale Room 4-3 (-1.1u) \u00b7 \ud83c\udd93 Free 5-1 (+4.4u)\n\ud83d\udcb5 $100\u2192$1,000 Challenge: bankroll **$60.00** (0-2) \u2014 bet #3 rides tonight's card\n\n\ud83d\uddd3\ufe0f **Next full report: SUNDAY JULY 27, 10:00 AM ET** \u2014 first edition, right here. \ud83e\udd16",
+   "seq": 139
+  },
+  {
+   "action": "post_and_pin",
+   "channel": "monthly-deepdive",
+   "content": "\ud83d\udc0b **MONTHLY DEEP-DIVE \u2014 Whale Room intelligence.**\nThe **1st of every month, 6:00 PM ET**, the entire month goes under the microscope: every pick re-graded, closing line value on every play, room-by-room ROI, model diagnostics \u2014 where the edge came from, where it leaked, and the attack plan for the month ahead. This is the report that makes the Whale Room the Whale Room.\n\n\ud83d\uddd3\ufe0f **Next drop: FRIDAY AUGUST 1, 6:00 PM ET** \u2014 the July edition, first of the series. \ud83e\udd16",
+   "seq": 140
   }
  ]
 }
