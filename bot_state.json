@@ -1,8 +1,8 @@
 {
-  "executed_seq": 104,
+  "executed_seq": 107,
   "last_log": [
-    "seq 104 executed 2026-07-22 20:20 UTC",
-    "x_post_text OK: id 2080025215321690617"
+    "seq 107 executed 2026-07-22 20:26 UTC",
+    "INVITE: https://discord.gg/8bBxWUJCYT"
   ],
   "time_audit": {
     "at": "2026-07-22 20:12 UTC",
@@ -40,7 +40,7 @@
     "20260722-16": "ok",
     "20260722-20": "ok"
   },
-  "executed_cmd_seq": 104,
+  "executed_cmd_seq": 107,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 2
