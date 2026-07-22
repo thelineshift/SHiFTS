@@ -64,8 +64,8 @@ def make_client(privileged=True):
                 pass
             await run_command({'action': 'x_link_finish', 'url': url}, guild, log)
             ok = any('OK' in l for l in log)
-            await message.reply('✅ X link complete — native posting is LIVE. First post fired.' if ok
-                                else '❌ Exchange failed: ' + ' | '.join(log)[-300:])
+            await message.channel.send('✅ X link complete — native posting is LIVE. First post fired.' if ok
+                                       else '❌ Exchange failed: ' + ' | '.join(log)[-300:])
         except Exception as e:
             print('on_message x-link error:', e)
 
@@ -276,6 +276,36 @@ async def run_command(cmd, guild, log):
                 prize = cmd.get('prize', 'a FREE month of \U0001F512 Lock Room')
                 await ch.send(f"\U0001F381 **GIVEAWAY WINNER** \U0001F389\n\nCongratulations {w.mention} — you won **{prize}**!\n\nThe captain will get you set up within 24h. Thanks to all {len(entrants)} entries — the next giveaway starts RIGHT NOW \U0001F440")
                 log.append(f'giveaway_winner: {w.name} ({w.id}) from {len(entrants)} entries')
+    elif a == 'x_post_text':
+        try:
+            res = await asyncio.to_thread(x_post, cmd['text'])
+            log.append(f'x_post_text OK: id {res.get("data", {}).get("id") if res else None}')
+        except Exception as e:
+            log.append(f'x_post_text FAIL: {e}')
+    elif a == 'x_diag1':
+        try:
+            import hmac as _hmac, hashlib as _hl, secrets as _sc
+            from urllib.parse import quote as _qq
+            c = x_creds_load()
+            url = 'https://api.twitter.com/1.1/account/verify_credentials.json'
+            op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': _sc.token_hex(16),
+                  'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+                  'oauth_token': c['access_token'], 'oauth_version': '1.0'}
+            q = lambda s: _qq(str(s), safe='')
+            base = '&'.join(['GET', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+            key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
+            op['oauth_signature'] = base64.b64encode(_hmac.new(key.encode(), base.encode(), _hl.sha1).digest()).decode()
+            hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+            req = urllib.request.Request(url, headers={'Authorization': hdr})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            log.append(f"x_diag1 v1.1 OK: @{d.get('screen_name')} — bio/logo endpoints reachable")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_diag1 v1.1 FAIL: {e} {body}')
     elif a == 'x_link_scan':
         target = None
         for tch in guild.text_channels:
@@ -312,7 +342,7 @@ async def run_command(cmd, guild, log):
         await asyncio.to_thread(gh_put, 'x_pkce.json', pk, 'pkce link')
         c = x_creds_load()
         q = _ue({'response_type': 'code', 'client_id': c.get('client_id', ''), 'redirect_uri': X_REDIRECT,
-                 'scope': 'tweet.read tweet.write users.read offline.access', 'state': pk['state'],
+                 'scope': 'tweet.read tweet.write users.read follows.read follows.write like.read like.write offline.access', 'state': pk['state'],
                  'code_challenge': ch, 'code_challenge_method': 'S256'})
         log.append('AUTH URL: https://twitter.com/i/oauth2/authorize?' + q)
     elif a == 'x_link_finish':
@@ -771,7 +801,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.8'
+            state['bot_version'] = '8.9.9'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -808,8 +838,9 @@ def espn_fetch(sport, ymd):
     with urllib.request.urlopen(req, timeout=15) as r:
         return json.load(r)
 
-def find_event(sb, away, home):
+def find_event(sb, away, home, prefer_ts=None):
     na, nh = norm_txt(away), norm_txt(home)
+    best = None
     for ev in sb.get('events', []):
         try:
             comp = ev['competitions'][0]
@@ -817,10 +848,34 @@ def find_event(sb, away, home):
             if na and na in norm_txt(teams['away']['team'].get('displayName', '')) \
                and nh and nh in norm_txt(teams['home']['team'].get('displayName', '')):
                 completed = bool(comp.get('status', {}).get('type', {}).get('completed'))
-                return teams, completed
+                if prefer_ts is None:
+                    return teams, completed
+                try:
+                    start = time.mktime(time.strptime(ev['date'][:19], '%Y-%m-%dT%H:%M:%S'))
+                except Exception:
+                    start = prefer_ts
+                d = abs(start - prefer_ts)
+                if best is None or d < best[0]:
+                    best = (d, teams, completed)
         except Exception:
             continue
+    if best is not None:
+        return best[1], best[2]
     return None, False
+
+def pick_start_ts(p):
+    try:
+        d = p.get('date', '')
+        t = (p.get('time_et') or '').strip().upper()
+        m = re.match(r'^(\d{1,2}):(\d{2})\s*(AM|PM)$', t)
+        if not d or not m:
+            return None
+        hh = int(m.group(1)) % 12 + (12 if m.group(3) == 'PM' else 0)
+        y, mo, dd = int(d[:4]), int(d[5:7]), int(d[8:10])
+        import calendar
+        return calendar.timegm((y, mo, dd, hh, int(m.group(2)), 0)) + 4 * 3600
+    except Exception:
+        return None
 
 def profit_units(odds, units):
     o = float(odds)
@@ -1020,7 +1075,7 @@ async def grader():
                 if not gt or time.time() < gt + 5400:
                     continue  # earliest a final is possible
                 sb = await asyncio.to_thread(espn_fetch, sport, p['date'].replace('-', ''))
-                teams, ev_completed = find_event(sb, p.get('awayTeam'), p.get('homeTeam'))
+                teams, ev_completed = find_event(sb, p.get('awayTeam'), p.get('homeTeam'), pick_start_ts(p))
                 if not teams or not ev_completed:
                     continue
                 away_s = int(float(teams['away'].get('score') or 0))
@@ -1224,13 +1279,35 @@ async def scan_event_watch():
         if not ch:
             return
         fired = False
-        async for m in ch.history(limit=12):
+        finished = False
+        passed = False
+        async for m in ch.history(limit=14):
             txt = (m.content or '')
-            if any(k in txt for k in ('SCAN COMPLETE', 'SCAN INITIATED', 'ANALYZING', 'COLLECTING', 'SCAN IN 10')):
+            if any(k in txt for k in ('SCAN COMPLETE', 'SCAN INITIATED', 'ANALYZING', 'COLLECTING')):
                 fired = True
-                break
-        if fired:
+            if 'SCAN COMPLETE' in txt:
+                finished = True
+            if 'PASSED' in txt or 'no viable' in txt.lower():
+                passed = True
+        if fired and finished:
             events[slot] = 'ok'
+            # PICK GUARD: theater completed — picks.json must show a fresh registration this window (unless discipline pass)
+            if not passed:
+                try:
+                    pj = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+                    upd = pj.get('updated', '') if isinstance(pj, dict) else ''
+                    upd_ts = time.mktime(time.strptime(upd[:19], '%Y-%m-%dT%H:%M:%S')) if upd else 0
+                    slot_ts = time.mktime((now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, 0, 0, 0, 0, 0))
+                    if upd_ts < slot_ts - 3900:
+                        await ch.send("⚠️ **PICK GUARD** — theater ran but no card registered this window. SHiFT is re-running the drop now; picks land within the hour. 🤖")
+                        state.setdefault('pick_guard_alerts', []).append(slot)
+                        print(f'pick_guard: slot {slot} theater w/o picks')
+                except Exception as e:
+                    print('pick_guard error:', e)
+        elif fired:
+            events[slot] = 'partial'
+            await ch.send("⚠️ **SCAN STALLED** — collection started but never completed. SHiFT is re-running this event; card drops within the hour. 🤖")
+            state.setdefault('scan_event_misses', []).append(slot)
         else:
             await ch.send("🛰️ **SCAN DELAYED** — the machine hit a snag on this run. SHiFT is catching up; the card drops shortly. 🤖")
             events[slot] = 'missed'
