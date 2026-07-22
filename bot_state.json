@@ -7,7 +7,7 @@
     "purged 1 pin notices server-wide"
   ],
   "time_audit": {
-    "at": "2026-07-22 04:04 UTC",
+    "at": "2026-07-22 04:34 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -22,18 +22,19 @@
     "\ud83c\udf81giveaway": "2026-07-21 13:09 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-22 04:04 UTC",
+    "at": "2026-07-22 04:34 UTC",
     "flags": [
       "2026-07-21-phillies-ml | Phillies ML -136 | tier=lock",
-      "2026-07-21-brewers-ml-2 | Brewers ML -142 | tier=lock"
+      "2026-07-21-brewers-ml-2 | Brewers ML -142 | tier=lock",
+      "2026-07-21-tigers-ml | Tigers ML 100 | tier=sharp"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-22 04:04 UTC",
+    "at": "2026-07-22 04:34 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-22 04:04 UTC",
+    "at": "2026-07-22 04:34 UTC",
     "flags": []
   },
   "bot_version": "8.3",
