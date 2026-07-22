@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T04:34:44Z",
+  "updated": "2026-07-22T07:54:02Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -222,11 +222,13 @@
       "odds": -136,
       "units": 1.5,
       "tier": "lock",
-      "result": "PENDING",
+      "result": "LOSS",
       "profit": 0,
       "finalScore": null,
       "analysis": "Best record in baseball (63-38) at home with Wheeler (10-1, 2.13 ERA, 108 K) vs a road lefty in the TBS national window. Highest win-probability spot on the board \u2014 sized to 1.5u. -136 via DraftKings.",
-      "time_et": "6:40 PM"
+      "time_et": "6:40 PM",
+      "score": "Los Angeles Dodgers 2, Philadelphia Phillies 1",
+      "units_result": -1.5
     },
     {
       "id": "2026-07-21-dodgers-phillies-under85",
@@ -291,9 +293,11 @@
       "odds": -142,
       "units": 1.5,
       "tier": "lock",
-      "result": "PENDING",
+      "result": "LOSS",
       "time_et": "7:40 PM",
-      "analysis": "Best record in baseball (63-37) at home vs 42-59 Mets. Sproat 5.16 ERA vs Thornton. Took Monday's opener 8-3."
+      "analysis": "Best record in baseball (63-37) at home vs 42-59 Mets. Sproat 5.16 ERA vs Thornton. Took Monday's opener 8-3.",
+      "score": "New York Mets 4, Milwaukee Brewers 0",
+      "units_result": -1.5
     },
     {
       "id": "2026-07-21-tigers-ml",
@@ -306,9 +310,11 @@
       "odds": 100,
       "units": 1,
       "tier": "sharp",
-      "result": "PENDING",
+      "result": "LOSS",
       "time_et": "8:05 PM",
-      "analysis": "Even money on the better arm: Valdez 4.10 (7IP/1ER/9K last out) vs Peterson 6.45 ERA, 12.27 at Wrigley."
+      "analysis": "Even money on the better arm: Valdez 4.10 (7IP/1ER/9K last out) vs Peterson 6.45 ERA, 12.27 at Wrigley.",
+      "score": "Detroit Tigers 2, Chicago Cubs 11",
+      "units_result": -1.0
     },
     {
       "id": "2026-07-21-reds-ml",
@@ -321,9 +327,11 @@
       "odds": -108,
       "units": 1.5,
       "tier": "whale",
-      "result": "PENDING",
+      "result": "WIN",
       "time_et": "9:40 PM",
-      "analysis": "Chase Burns 11-1 2.54 vs Castillo 3-8 4.93. 76% of money on CIN vs 53% of tickets = sharp side."
+      "analysis": "Chase Burns 11-1 2.54 vs Castillo 3-8 4.93. 76% of money on CIN vs 53% of tickets = sharp side.",
+      "score": "Cincinnati Reds 4, Seattle Mariners 2",
+      "units_result": 1.39
     },
     {
       "id": "2026-07-21-reds-under75",
