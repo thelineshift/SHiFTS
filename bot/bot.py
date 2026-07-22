@@ -23,7 +23,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v8.3 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v8.4 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         try:
             await c.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=BOT_STATUS))
             g0 = c.guilds[0] if c.guilds else None
@@ -40,6 +40,10 @@ def make_client(privileged=True):
             audit.start()
         if not grader.is_running():
             grader.start()
+        if not x_drainer.is_running():
+            x_drainer.start()
+        if not scan_event_watch.is_running():
+            scan_event_watch.start()
 
     @c.event
     async def on_member_update(before, after):
@@ -484,6 +488,7 @@ async def poll():
         print('poll error:', e)
 
 SCAN_HOURS_ET = [8, 12, 16, 20]
+EVENT_HOURS_UTC = [0, 12, 16, 20]
 
 @tasks.loop(seconds=60)
 async def countdown():
@@ -603,7 +608,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.3'
+            state['bot_version'] = '8.4'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -620,6 +625,19 @@ TIER_BADGE = {'lock': '🔒 LOCK', 'sharp': '📊 SHARP', 'whale': '🐋 WHALE',
 
 def norm_txt(s):
     return re.sub(r'[^a-z]', '', (s or '').lower())
+
+def team_tokens(s):
+    return re.findall(r'[a-z]+', (s or '').lower())
+
+def side_in_desc(team_field, desc):
+    # match by full name OR nickname (last token) as a WHOLE token in desc
+    if not team_field:
+        return False
+    if norm_txt(team_field) in norm_txt(desc):
+        return True
+    toks = team_tokens(team_field)
+    nick = toks[-1] if toks else ''
+    return bool(nick) and nick in set(team_tokens(desc))
 
 def espn_fetch(sport, ymd):
     url = f'https://site.api.espn.com/apis/site/v2/sports/{ESPN[sport]}/scoreboard?dates={ymd}'
@@ -658,15 +676,49 @@ def grade_pick(p, away_s, home_s):
         u = float(p.get('units', 1) or 1)
         return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
     side = None
-    if norm_txt(p.get('homeTeam')) and norm_txt(p['homeTeam']) in norm_txt(desc):
+    if side_in_desc(p.get('homeTeam'), desc):
         side = 'home'
-    elif norm_txt(p.get('awayTeam')) and norm_txt(p['awayTeam']) in norm_txt(desc):
+    elif side_in_desc(p.get('awayTeam'), desc):
         side = 'away'
     if not side:
         return None
     won = (home_s > away_s) if side == 'home' else (away_s > home_s)
     u = float(p.get('units', 1) or 1)
     return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
+
+XKEY = os.environ.get('X_SCHEDULER_KEY', '')
+
+def x_key_load():
+    if XKEY:
+        return XKEY
+    try:
+        d = gh_get('x_key.txt', ref=QUEUE_BRANCH)
+        return base64.b64decode(d['content']).decode().strip()
+    except Exception:
+        return ''
+
+def x_post(text):
+    key = x_key_load()
+    if not key:
+        return None
+    body = {"platforms": {"x": {"enabled": True, "posts": [{"text": text}]}}, "publish_at": "now"}
+    req = urllib.request.Request("https://api.typefully.com/v2/social-sets/321722/drafts",
+                                 data=json.dumps(body).encode(), method="POST",
+                                 headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.load(r)
+
+def x_receipt_text(r):
+    odds = r.get('odds'); odds_s = f"({odds:+d})" if isinstance(odds, int) else f"({odds})"
+    if r['result'] == 'WIN':
+        return (f"🧾 RESULT: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n\n"
+                f"Posted before first pitch, graded in public. That's the model working.\n"
+                f"🎉 First month FREE — every tier. Link in bio 👆")
+    if r['result'] == 'PUSH':
+        return (f"🧾 RESULT: {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n\n"
+                f"Every result posted, always. Link in bio 👆")
+    return (f"🧾 RESULT: {r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n\n"
+            f"We show every single one — that's why the wins mean something.\nLink in bio 👆")
 
 async def settle_challenge(guild, p):
     try:
@@ -763,8 +815,71 @@ async def grader():
             except Exception:
                 pass
         print(f'grader: {len(new_results)} result(s) posted')
+        # X drain happens in its own paced block below
     except Exception as e:
         print('grader error:', e)
+
+@tasks.loop(seconds=1200)
+async def x_drainer():
+    # posts queued results to X — max 1 per cycle, >=40 min between X receipts (pacing rule)
+    try:
+        state = await asyncio.to_thread(get_state)
+        if state is None:
+            return
+        queue = state.get('unannounced_results') or []
+        if not queue:
+            return
+        last = state.get('last_x_receipt_ts', 0)
+        if time.time() - float(last) < 40 * 60:
+            return
+        r = queue[0]
+        resp = await asyncio.to_thread(x_post, x_receipt_text(r))
+        if resp is None:
+            print('x_drainer: no X key available')
+            return
+        state['unannounced_results'] = queue[1:]
+        state['last_x_receipt_ts'] = time.time()
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, f"x receipt posted: {r.get('id')}")
+        print(f"x_drainer: posted {r.get('id')}, {len(queue) - 1} left")
+    except Exception as e:
+        print('x_drainer error:', e)
+
+@tasks.loop(seconds=300)
+async def scan_event_watch():
+    # if no scan theater in general-chat within ~25 min of an event slot, the event MISSED -> fallback post + flag
+    try:
+        if not client.guilds:
+            return
+        now = time.gmtime()
+        if now.tm_hour not in EVENT_HOURS_UTC or now.tm_min < 20:
+            return
+        slot = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}-{now.tm_hour:02d}'
+        state = await asyncio.to_thread(get_state)
+        if state is None:
+            return
+        events = state.setdefault('scan_events', {})
+        if events.get(slot):
+            return
+        guild = client.guilds[0]
+        ch = find_channel(guild, 'general-chat')
+        if not ch:
+            return
+        fired = False
+        async for m in ch.history(limit=12):
+            txt = (m.content or '')
+            if any(k in txt for k in ('SCAN COMPLETE', 'SCAN INITIATED', 'ANALYZING', 'COLLECTING', 'SCAN IN 10')):
+                fired = True
+                break
+        if fired:
+            events[slot] = 'ok'
+        else:
+            await ch.send("🛰️ **SCAN DELAYED** — the machine hit a snag on this run. SHiFT is catching up; the card drops shortly. 🤖")
+            events[slot] = 'missed'
+            state.setdefault('scan_event_misses', []).append(slot)
+            print(f'scan_event_watch: slot {slot} MISSED, fallback posted')
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, f'scan event {slot}: {events[slot]}')
+    except Exception as e:
+        print('scan_event_watch error:', e)
 
 client = make_client()
 try:
