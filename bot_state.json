@@ -35,15 +35,6 @@
   "bot_version": "8.9.19",
   "unannounced_results": [
     {
-      "id": "kc-ml-0722",
-      "desc": "Royals ML",
-      "odds": -102,
-      "result": "WIN",
-      "units": 0.98,
-      "score": "San Francisco Giants 4, Kansas City Royals 5",
-      "tier": "sharp"
-    },
-    {
       "id": "sea-cin-under85",
       "desc": "Mariners/Reds Under 8.5",
       "odds": 100,
@@ -80,7 +71,7 @@
       "tier": "free"
     }
   ],
-  "last_x_receipt_ts": 1784758725.4114876,
+  "last_x_receipt_ts": 1784761144.3189154,
   "last_recap_date": "2026-07-21",
   "scan_events": {
     "20260722-12": "ok",
