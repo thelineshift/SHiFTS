@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-21T22:35:00Z",
+  "updated": "2026-07-22T02:54:08Z",
   "bankrollStart": 100.0,
   "goal": 1000.0,
-  "balance": 100.0,
+  "balance": 80.0,
   "record": {
     "wins": 0,
-    "losses": 0
+    "losses": 1
   },
   "plays": [
     {
@@ -16,7 +16,7 @@
       "stake": 20.0,
       "toWin": 14.08,
       "time_et": "7:40 PM",
-      "result": null,
+      "result": "LOSS",
       "posted": "2026-07-21T22:35:00Z",
       "note": "Also Lock Room play - model #1 confidence"
     }
