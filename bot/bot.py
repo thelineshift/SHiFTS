@@ -246,6 +246,43 @@ async def run_command(cmd, guild, log):
                 prize = cmd.get('prize', 'a FREE month of \U0001F512 Lock Room')
                 await ch.send(f"\U0001F381 **GIVEAWAY WINNER** \U0001F389\n\nCongratulations {w.mention} — you won **{prize}**!\n\nThe captain will get you set up within 24h. Thanks to all {len(entrants)} entries — the next giveaway starts RIGHT NOW \U0001F440")
                 log.append(f'giveaway_winner: {w.name} ({w.id}) from {len(entrants)} entries')
+    elif a == 'x_diag':
+        c = x_creds_load()
+        # (a) bearer app-only read
+        try:
+            req = urllib.request.Request('https://api.x.com/2/users/by/username/TheLineShift',
+                                         headers={'Authorization': f"Bearer {c.get('bearer_token', '')}"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            log.append(f"x_diag bearer OK: id {d.get('data', {}).get('id')}")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_diag bearer FAIL: {e} {body}')
+        # (b) oauth1 user-context read
+        try:
+            import hmac, hashlib, secrets, urllib.parse
+            url = 'https://api.x.com/2/users/me'
+            op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': secrets.token_hex(16),
+                  'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+                  'oauth_token': c['access_token'], 'oauth_version': '1.0'}
+            q = lambda s: urllib.parse.quote(str(s), safe='')
+            base = '&'.join(['GET', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+            key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
+            op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
+            hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+            req = urllib.request.Request(url, headers={'Authorization': hdr})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            log.append(f"x_diag oauth1 GET OK: @{d.get('data', {}).get('username')}")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_diag oauth1 GET FAIL: {e} {body}')
     elif a == 'x_test':
         try:
             res = await asyncio.to_thread(x_post_native, cmd.get('text', '\U0001F6F0\uFE0F SHiFT native X link online. The board never sleeps.'))
@@ -616,7 +653,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9'
+            state['bot_version'] = '8.9.1'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -729,8 +766,11 @@ def x_post_native(text):
     req = urllib.request.Request(url, data=json.dumps({'text': text}).encode(), method='POST',
                                  headers={'Authorization': hdr, 'Content-Type': 'application/json',
                                           'User-Agent': 'TheLineShift/1.0'})
-    with urllib.request.urlopen(req, timeout=25) as r:
-        return json.load(r)
+    try:
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        raise Exception(f'HTTP {e.code}: {e.read()[:300]}')
 
 def x_post(text):
     try:
