@@ -34,7 +34,44 @@
     "flags": []
   },
   "bot_version": "8.9.16",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "nyy-pit-under95",
+      "desc": "Yankees/Pirates Under 9.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Pittsburgh Pirates 5, New York Yankees 3",
+      "tier": "free"
+    },
+    {
+      "id": "nyy-ml-0722",
+      "desc": "Yankees ML",
+      "odds": -165,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "Pittsburgh Pirates 5, New York Yankees 3",
+      "tier": "lock"
+    },
+    {
+      "id": "challenge-nyy-ml",
+      "desc": "Yankees ML",
+      "odds": -165,
+      "result": "LOSS",
+      "units": -0.0,
+      "score": "Pittsburgh Pirates 5, New York Yankees 3",
+      "tier": "challenge"
+    },
+    {
+      "id": "kc-ml-0722",
+      "desc": "Royals ML",
+      "odds": -102,
+      "result": "WIN",
+      "units": 0.98,
+      "score": "San Francisco Giants 4, Kansas City Royals 5",
+      "tier": "sharp"
+    }
+  ],
   "last_x_receipt_ts": 1784749467.4343963,
   "last_recap_date": "2026-07-21",
   "scan_events": {
