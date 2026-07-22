@@ -23,7 +23,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v8.6 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v8.7 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         try:
             await c.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=BOT_STATUS))
             g0 = c.guilds[0] if c.guilds else None
@@ -610,7 +610,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.6'
+            state['bot_version'] = '8.7'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -675,7 +675,7 @@ def grade_pick(p, away_s, home_s):
         if tot == line:
             return 'PUSH', 0.0
         won = (m.group(1) == 'over') == (tot > line)
-        u = float(p.get('units', 1) or 1)
+        u = float(p['units']) if p.get('units') is not None else 1.0
         return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
     side = None
     if side_in_desc(p.get('homeTeam'), desc):
@@ -685,7 +685,7 @@ def grade_pick(p, away_s, home_s):
     if not side:
         return None
     won = (home_s > away_s) if side == 'home' else (away_s > home_s)
-    u = float(p.get('units', 1) or 1)
+    u = float(p['units']) if p.get('units') is not None else 1.0
     return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
 
 XKEY = os.environ.get('X_SCHEDULER_KEY', '')
@@ -849,11 +849,35 @@ async def x_drainer():
 def units_of(p):
     if p.get('units_result') is not None:
         return float(p['units_result'])
+    u = float(p['units']) if p.get('units') is not None else 1.0
     if p.get('result') == 'WIN':
-        return profit_units(p.get('odds', -110), float(p.get('units', 1) or 1))
+        return profit_units(p.get('odds', -110), u)
     if p.get('result') == 'LOSS':
-        return -float(p.get('units', 1) or 1)
+        return -u
     return 0.0
+
+def season_block(all_picks):
+    # per-tier season records for the 4 rooms; overall = SUM of the rooms by construction.
+    # challenge is reported separately (it often mirrors a room pick - never double-counted).
+    tiers = [('lock', '🔒'), ('sharp', '📊'), ('whale', '🐋'), ('free', '🆓')]
+    season = [p for p in all_picks if p.get('result') in ('WIN', 'LOSS', 'PUSH')
+              and str(p.get('date', '')).startswith('2026')]
+    parts, tot_w, tot_l, tot_p, tot_u = [], 0, 0, 0, 0.0
+    for key, badge in tiers:
+        tp = [p for p in season if p.get('tier') == key]
+        if not tp:
+            continue
+        w = sum(1 for p in tp if p['result'] == 'WIN')
+        l = sum(1 for p in tp if p['result'] == 'LOSS')
+        pu = sum(1 for p in tp if p['result'] == 'PUSH')
+        u = sum(units_of(p) for p in tp)
+        tot_w += w; tot_l += l; tot_p += pu; tot_u += u
+        rec = f"{w}-{l}" + (f"-{pu}" if pu else "")
+        parts.append(f"{badge} {rec} ({'+' if u >= 0 else ''}{u:.2f}u)")
+    chal = [p for p in season if p.get('tier') == 'challenge']
+    cw = sum(1 for p in chal if p['result'] == 'WIN')
+    cl = sum(1 for p in chal if p['result'] == 'LOSS')
+    return tot_w, tot_l, tot_p, tot_u, ' · '.join(parts), (cw, cl)
 
 @tasks.loop(seconds=900)
 async def recap_watch():
@@ -901,13 +925,10 @@ async def recap_watch():
                 uu = units_of(p)
                 lines.append(f"{e} {p.get('desc')} ({p.get('odds')}) → {p.get('score', 'final')} → {'+' if uu >= 0 else ''}{uu:.2f}u")
             lines.append("")
-        season = [p for p in all_picks if p.get('result') in ('WIN', 'LOSS', 'PUSH')
-                  and str(p.get('date', '')).startswith('2026') and p.get('tier') != 'challenge']
-        sw = sum(1 for p in season if p['result'] == 'WIN')
-        sl = sum(1 for p in season if p['result'] == 'LOSS')
-        su = sum(units_of(p) for p in season)
+        sw, sl, sp, su, tier_split, chal_rec = season_block(all_picks)
         lines.append(f"**FULL BOARD: {tot_w}-{tot_l}" + (f"-{tot_p}" if tot_p else "") + f" ({'+' if tot_u >= 0 else ''}{tot_u:.2f}u).**")
-        lines.append(f"📅 **2026 SEASON: {sw}-{sl} ({'+' if su >= 0 else ''}{su:.2f}u)**")
+        lines.append(f"📅 **2026 SEASON: {sw}-{sl}" + (f"-{sp}" if sp else "") + f" ({'+' if su >= 0 else ''}{su:.2f}u)**")
+        lines.append(tier_split + f"  |  💵 challenge {chal_rec[0]}-{chal_rec[1]} (tracked in dollars)")
         try:
             chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')
             rec = chal.get('record', {})
@@ -921,7 +942,8 @@ async def recap_watch():
         await asyncio.to_thread(gh_put, 'bot_state.json', state, f'recap posted {recap_date}')
         try:
             xt = (f"🌙 FULL BOARD {mmdd}: {tot_w}-{tot_l} ({'+' if tot_u >= 0 else ''}{tot_u:.1f}u)\n"
-                  f"📅 2026 season: {sw}-{sl} ({'+' if su >= 0 else ''}{su:.1f}u)\n\n"
+                  f"📅 2026 season: {sw}-{sl} ({'+' if su >= 0 else ''}{su:.1f}u)\n"
+                  f"{tier_split}\n\n"
                   f"Every pick posted early, every result graded in public. First month FREE 👆")
             await asyncio.to_thread(x_post, xt)
         except Exception as e:
