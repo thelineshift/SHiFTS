@@ -1,5 +1,5 @@
 {
-  "seq": 85,
+  "seq": 88,
   "commands": [
     {
       "seq": 50,
@@ -150,6 +150,22 @@
     {
       "seq": 84,
       "action": "x_link_start"
+    },
+    {
+      "seq": 85,
+      "action": "rename_channel",
+      "channel": "direct-line",
+      "name": "\ud83d\udc0bwhale-talk"
+    },
+    {
+      "seq": 86,
+      "action": "post_and_pin",
+      "channel": "whale-talk",
+      "content": "\ud83d\udc0b **WELCOME TO WHALE TALK**\n\nThis is your direct line to the machine. Talk shop, ask anything, call your shot.\n\nSHiFT drops whale-only intel here first: line moves on the radar, why a play got passed, early looks at tomorrow's board. You pay for proximity \u2014 this is where it lives. \ud83c\udf99\ufe0f"
+    },
+    {
+      "seq": 87,
+      "action": "x_timeline"
     }
   ]
 }
