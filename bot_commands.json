@@ -1,5 +1,5 @@
 {
- "seq": 123,
+ "seq": 124,
  "commands": [
   {
    "seq": 50,
@@ -560,6 +560,10 @@
    "channel": "shift-lab",
    "name": "\ud83e\udd16 SHiFT",
    "seq": 123
+  },
+  {
+   "action": "x_timeline",
+   "seq": 124
   }
  ]
 }
