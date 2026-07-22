@@ -66,6 +66,42 @@
       "units": 0.93,
       "score": "Nationals 7, Rockies 8",
       "tier": "whale"
+    },
+    {
+      "id": "2026-07-21-phillies-ml",
+      "desc": "Phillies ML",
+      "odds": -136,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "Los Angeles Dodgers 2, Philadelphia Phillies 1",
+      "tier": "lock"
+    },
+    {
+      "id": "2026-07-21-brewers-ml-2",
+      "desc": "Brewers ML",
+      "odds": -142,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "New York Mets 4, Milwaukee Brewers 0",
+      "tier": "lock"
+    },
+    {
+      "id": "2026-07-21-tigers-ml",
+      "desc": "Tigers ML",
+      "odds": 100,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Detroit Tigers 2, Chicago Cubs 11",
+      "tier": "sharp"
+    },
+    {
+      "id": "2026-07-21-reds-ml",
+      "desc": "Reds ML",
+      "odds": -108,
+      "result": "WIN",
+      "units": 1.39,
+      "score": "Cincinnati Reds 4, Seattle Mariners 2",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1784706842.758348
