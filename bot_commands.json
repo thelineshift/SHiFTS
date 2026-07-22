@@ -1,5 +1,5 @@
 {
-  "seq": 47,
+  "seq": 48,
   "commands": [
     {
       "action": "create_channel",
@@ -19,6 +19,11 @@
       "action": "delete_message",
       "channel": "receipts",
       "marker": "SYSTEM UPGRADE"
+    },
+    {
+      "seq": 47,
+      "action": "x_test",
+      "text": "\ud83d\udef0\ufe0f SHiFT is now posting natively.\n\nFaster receipts. No middleman.\nScans daily: 12a / 4a / 8a / 12p / 4p / 8p ET.\n\nThe board never sleeps."
     }
   ]
 }
