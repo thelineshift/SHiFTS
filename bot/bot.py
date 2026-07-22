@@ -263,12 +263,13 @@ async def run_command(cmd, guild, log):
             log.append(f'x_diag bearer FAIL: {e} {body}')
         # (b) oauth1 user-context read
         try:
-            import hmac, hashlib, secrets, urllib.parse
+            import hmac, hashlib, secrets
+            from urllib.parse import quote as _uq
             url = 'https://api.x.com/2/users/me'
             op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': secrets.token_hex(16),
                   'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
                   'oauth_token': c['access_token'], 'oauth_version': '1.0'}
-            q = lambda s: urllib.parse.quote(str(s), safe='')
+            q = lambda s: _uq(str(s), safe='')
             base = '&'.join(['GET', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
             key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
             op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
@@ -294,6 +295,13 @@ async def run_command(cmd, guild, log):
         data = urllib.request.urlopen(req, timeout=25).read()
         await guild.edit(icon=data)
         log.append('server icon updated')
+    elif a == 'delete_channel_id':
+        ch = guild.get_channel(int(cmd['id']))
+        if ch:
+            await ch.delete()
+            log.append(f'deleted #{ch.name} ({cmd["id"]})')
+        else:
+            log.append(f'delete_channel_id: {cmd["id"]} not found')
     elif a == 'delete_channel':
         ch = find_channel(guild, cmd['channel'])
         await ch.delete()
@@ -517,12 +525,21 @@ async def poll():
         guild = client.guilds[0] if client.guilds else None
         if not guild:
             return
+        done_cmd = state.get('executed_cmd_seq', 0)
         log = [f'seq {seq} executed {time.strftime("%Y-%m-%d %H:%M UTC")}']
+        ran = 0
         for cmd in data.get('commands', []):
+            if cmd.get('seq', 0) <= done_cmd:
+                continue
             try:
                 await run_command(cmd, guild, log)
+                ran += 1
+                done_cmd = max(done_cmd, cmd.get('seq', 0))
             except Exception as e:
                 log.append(f'ERROR {cmd.get("action")}: {e}')
+        state['executed_cmd_seq'] = done_cmd
+        if ran == 0:
+            log.append('no new commands')
         state['executed_seq'] = seq
         state['last_log'] = log
         try:
@@ -653,7 +670,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.1'
+            state['bot_version'] = '8.9.2'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
