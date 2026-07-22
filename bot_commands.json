@@ -1,356 +1,360 @@
 {
-  "seq": 102,
-  "commands": [
-    {
-      "seq": 50,
-      "action": "delete_channel_id",
-      "id": "1529499044060074064"
-    },
-    {
-      "seq": 51,
-      "action": "delete_channel_id",
-      "id": "1529500896185024513"
-    },
-    {
-      "seq": 52,
-      "action": "x_diag"
-    },
-    {
-      "seq": 53,
-      "action": "x_diag"
-    },
-    {
-      "seq": 54,
-      "action": "x_test",
-      "text": "\ud83d\udef0\ufe0f SHiFT is now posting natively.\n\nFaster receipts. No middleman.\nScans daily: 12a / 4a / 8a / 12p / 4p / 8p ET.\n\nThe board never sleeps."
-    },
-    {
-      "seq": 55,
-      "action": "x_link_start"
-    },
-    {
-      "seq": 56,
-      "action": "x_link_start"
-    },
-    {
-      "seq": 57,
-      "action": "x_link_start"
-    },
-    {
-      "seq": 58,
-      "action": "x_link_finish",
-      "url": "https://thelineshift.com/?state=ef2a98aa30657184&code=YTNqMzhXc0tOSkh2M0VqVkVlSFZ2ZTlVRGhhdkk1WGtpOUFzWS04Y2hZalo0OjE3ODQ3MzU4MzczOTI6MTowOmFjOjE"
-    },
-    {
-      "seq": 59,
-      "action": "x_link_start"
-    },
-    {
-      "seq": 60,
-      "action": "x_link_finish",
-      "url": "https://thelineshift.com/?state=0068a96100b1e7da&code=a2lWLWFhSi1ub0tGRGhoSldDMi1uVGhocGtPQ2docHZUeC1IZnNZMkdJOHNOOjE3ODQ3MzY5MTAyMTY6MToxOmFjOjE"
-    },
-    {
-      "seq": 61,
-      "action": "x_link_scan"
-    },
-    {
-      "seq": 62,
-      "action": "x_link_finish",
-      "url": "https://thelineshift.com/?state=0068a96100b1e7da&code=TVNJWmFHQjhpenlNMG1rd3g5ZUdieEJrRkFOSThYWTl5bVlKYlVxSUxYUTNIOjE3ODQ3Mzg3MzA3OTI6MToxOmFjOjE"
-    },
-    {
-      "seq": 63,
-      "action": "x_post_text",
-      "text": "\ud83d\udef0\ufe0f 12PM SCAN \u2014 makeup run\n\n\ud83c\udd93 FREE PICK: Cardinals/Angels Under 9.0 (-119)\nDetmers' 11.3 K/9 strangles rallies before they start. STL bats quiet on the road.\n\n\ud83d\udd12 Nationals ML (3:10 ET) \u00b7 \ud83d\udcca Royals ML (2:10 ET) \u00b7 \ud83d\udc0b Mariners ML 2u already live\n\nEvery result posts with full records. Join the board \ud83d\udc46"
-    },
-    {
-      "seq": 64,
-      "action": "x_diag1"
-    },
-    {
-      "seq": 65,
-      "action": "x_link_start"
-    },
-    {
-      "seq": 66,
-      "action": "clean_general"
-    },
-    {
-      "seq": 67,
-      "action": "audit_channels"
-    },
-    {
-      "seq": 68,
-      "action": "x_post_text",
-      "text": "\ud83d\udef0\ufe0f 12PM SCAN \u2014 makeup run\n\n\ud83c\udd93 FREE PICK: Cardinals/Angels Under 9.0 (-119)\nDetmers' 11.3 K/9 strangles rallies before they start. STL bats quiet on the road.\n\n\ud83d\udd12 Nationals ML (3:10 ET) \u00b7 \ud83d\udcca Royals ML (2:10 ET) \u00b7 \ud83d\udc0b whale card already live\n\nEvery result posts with full records. Join the board \ud83d\udc46"
-    },
-    {
-      "seq": 69,
-      "action": "x_diag1"
-    },
-    {
-      "seq": 70,
-      "action": "x_link_start"
-    },
-    {
-      "seq": 71,
-      "action": "clean_general"
-    },
-    {
-      "seq": 72,
-      "action": "audit_channels"
-    },
-    {
-      "seq": 73,
-      "action": "x_post_text",
-      "text": "\ud83d\udef0\ufe0f 12PM SCAN \u2014 makeup run\n\n\ud83c\udd93 FREE PICK: Cardinals/Angels Under 9.0 (-119)\nDetmers' 11.3 K/9 strangles rallies before they start. STL bats quiet on the road.\n\n\ud83d\udd12 Nationals ML (3:10 ET) \u00b7 \ud83d\udcca Royals ML (2:10 ET) \u00b7 \ud83d\udc0b whale card already live\n\nEvery result posts with full records. Join the board \ud83d\udc46"
-    },
-    {
-      "seq": 74,
-      "action": "x_diag1"
-    },
-    {
-      "seq": 75,
-      "action": "x_link_start"
-    },
-    {
-      "seq": 76,
-      "action": "clean_general"
-    },
-    {
-      "seq": 77,
-      "action": "audit_channels"
-    },
-    {
-      "seq": 78,
-      "action": "x_post_text",
-      "text": "\ud83d\udef0\ufe0f 12PM SCAN \u2014 makeup run\n\n\ud83c\udd93 FREE PICK: Cardinals/Angels Under 9.0 (-119)\nDetmers' 11.3 K/9 strangles rallies before they start. STL bats quiet on the road.\n\n\ud83d\udd12 Nationals ML (3:10 ET) \u00b7 \ud83d\udcca Royals ML (2:10 ET) \u00b7 \ud83d\udc0b whale card already live\n\nEvery result posts with full records. Join the board \ud83d\udc46"
-    },
-    {
-      "seq": 79,
-      "action": "x_diag1"
-    },
-    {
-      "seq": 80,
-      "action": "x_link_start"
-    },
-    {
-      "seq": 81,
-      "action": "clean_general"
-    },
-    {
-      "seq": 82,
-      "action": "audit_channels"
-    },
-    {
-      "seq": 83,
-      "action": "x_diag1"
-    },
-    {
-      "seq": 84,
-      "action": "x_link_start"
-    },
-    {
-      "seq": 85,
-      "action": "rename_channel",
-      "channel": "direct-line",
-      "name": "\ud83d\udc0bwhale-talk"
-    },
-    {
-      "seq": 86,
-      "action": "post_and_pin",
-      "channel": "whale-talk",
-      "content": "\ud83d\udc0b **WELCOME TO WHALE TALK**\n\nThis is your direct line to the machine. Talk shop, ask anything, call your shot.\n\nSHiFT drops whale-only intel here first: line moves on the radar, why a play got passed, early looks at tomorrow's board. You pay for proximity \u2014 this is where it lives. \ud83c\udf99\ufe0f"
-    },
-    {
-      "seq": 87,
-      "action": "x_timeline"
-    },
-    {
-      "seq": 88,
-      "action": "x_timeline"
-    },
-    {
-      "seq": 89,
-      "action": "x_delete",
-      "ids": [
-        "2079991332970643592",
-        "2079976232805089377",
-        "2079339397145829840",
-        "2079329285081296968",
-        "2079328645907206636",
-        "2079302041327853991",
-        "2079301048997679202",
-        "2079206603815887057",
-        "2079160632302031192",
-        "2079153864943534253",
-        "2079029346618995121",
-        "2078977370761920854",
-        "2078963631580955036",
-        "2078961615102173331",
-        "2078836250522656982",
-        "2078834964360044779",
-        "2078829928590487725",
-        "2078829157799084154",
-        "2078828315633144253",
-        "2078827378105593941",
-        "2078825991443566693",
-        "2078816836167094645",
-        "2078813363467964620",
-        "2078720455058374799",
-        "2078720288057864500",
-        "2078720174870389006",
-        "2078288593726972130",
-        "2078261680786505857",
-        "2078244251532513428",
-        "2078126078263005335",
-        "2078125375964459299",
-        "2078125024376967233",
-        "2077910875093008758",
-        "2077882319688393087",
-        "2077866467714896000",
-        "2077864908541030795",
-        "2077859936831152131",
-        "2077850504588067186",
-        "2077850159929610698",
-        "2077849448219017403",
-        "2077833796343267592",
-        "2077827074560032885",
-        "2077826750881407400",
-        "2077826716437770397",
-        "2077825297504727159",
-        "2077823047348695543",
-        "2077800301440991513",
-        "2077800030472192019",
-        "2077798269376237892",
-        "2077787318723686851",
-        "2077768008823443609",
-        "2077764947283501495",
-        "2077762745819140135",
-        "2077762688826962303",
-        "2077762248798351373",
-        "2077761699805892682",
-        "2077761038473195946",
-        "2077758036580376627",
-        "2077755557264453928",
-        "2077745131902357567",
-        "2077743813829812595",
-        "2077736710612324643",
-        "2077736234718310668",
-        "2077442289656316329",
-        "2077435609463800313",
-        "2077430621400416540",
-        "2077429438484996179",
-        "2077426653626556829",
-        "2077423436717047838",
-        "2077421164650021332",
-        "2077405729435050160",
-        "2077400414907969856",
-        "2077399600529322030",
-        "2077398436836487559",
-        "2077393462081491101",
-        "2077392395075809654",
-        "2077194612804817076",
-        "2077182031704793381",
-        "2077181048790659518",
-        "2077174325828825316"
-      ]
-    },
-    {
-      "seq": 90,
-      "action": "x_post_text",
-      "text": "\ud83e\uddfe RESULT \ud83d\udd12 LOCK: Phillies ML (-136) \u274c -1.5u\nLos Angeles Dodgers 2, Philadelphia Phillies 1\n\ud83d\udd12 season 3-4 (-3.00u) \u00b7 \ud83d\udcc5 overall 11-9 (+0.11u)\n\nWe show every single one. Receipts don't lie. \ud83d\udc46"
-    },
-    {
-      "seq": 91,
-      "action": "x_post_text",
-      "text": "\ud83e\uddfe RESULT \ud83d\udd12 LOCK: Brewers ML (-142) \u274c -1.5u\nNew York Mets 4, Milwaukee Brewers 0\n\ud83d\udd12 season 3-4 (-3.00u) \u00b7 \ud83d\udcc5 overall 11-9 (+0.11u)\n\nWe show every single one. Receipts don't lie. \ud83d\udc46"
-    },
-    {
-      "seq": 92,
-      "action": "x_delete",
-      "ids": [
-        "2077768008823443609",
-        "2077764947283501495",
-        "2077762745819140135",
-        "2077762688826962303",
-        "2077762248798351373",
-        "2077761699805892682",
-        "2077761038473195946",
-        "2077758036580376627",
-        "2077755557264453928",
-        "2077745131902357567",
-        "2077743813829812595",
-        "2077736710612324643",
-        "2077736234718310668",
-        "2077442289656316329",
-        "2077435609463800313",
-        "2077430621400416540",
-        "2077429438484996179",
-        "2077426653626556829",
-        "2077423436717047838",
-        "2077421164650021332",
-        "2077405729435050160",
-        "2077400414907969856",
-        "2077399600529322030",
-        "2077398436836487559",
-        "2077393462081491101",
-        "2077392395075809654",
-        "2077194612804817076",
-        "2077182031704793381",
-        "2077181048790659518",
-        "2077174325828825316"
-      ]
-    },
-    {
-      "seq": 93,
-      "action": "setup_scan_role"
-    },
-    {
-      "seq": 94,
-      "action": "purge_channel",
-      "channel": "giveaway",
-      "limit": 30
-    },
-    {
-      "seq": 95,
-      "action": "make_invite",
-      "channel": "general-chat"
-    },
-    {
-      "seq": 96,
-      "action": "x_delete",
-      "ids": [
-        "2079557799059804474"
-      ]
-    },
-    {
-      "seq": 97,
-      "action": "list_channels"
-    },
-    {
-      "seq": 98,
-      "action": "purge_channel",
-      "channel": "rules",
-      "limit": 20
-    },
-    {
-      "seq": 99,
-      "action": "post_and_pin",
-      "channel": "rules",
-      "content": "\ud83e\udd16 **HOUSE RULES \u2014 THELINESHIFT**\n*The machine runs on discipline. So does this room.*\n\n1. **\ud83e\uddfe RECEIPTS OR IT DIDN'T HAPPEN.** Every graded play posts publicly \u2014 wins AND losses. We never delete a loss. Anyone selling you perfection is lying to you.\n2. **\ud83d\udd12 TIER INTEGRITY.** Paid picks stay in paid rooms. Leaking tier content to non-members = instant removal, no refund, no appeal.\n3. **\ud83d\udef0\ufe0f SCANS 6X DAILY** \u2014 12a / 4a / 8a / 12p / 4p / 8p ET. Want the heads-up? Grab the \ud83d\udef0\ufe0f Scan Alerts role (pinned post in #\ud83d\udcacgeneral-chat). No @everyone spam, ever.\n4. **\ud83c\udfaf THE FREE PICK IS THE TEASE.** One free play per scan in #\ud83c\udfaffree-pick. The full card lives behind the tiers \u2014 don't beg for free looks in chat.\n5. **\ud83d\udcac TALK SHOP, NOT TRASH.** Debate picks all day. No harassment, no spam, no shilling other services, no \"DM me for picks\" parasites \u2014 insta-ban.\n6. **\ud83d\udc0b WHALE TALK IS SACRED.** Top tier gets the terminal: line moves, closing lines, the why. What's said there stays there.\n7. **\ud83d\udd1e 18+ ONLY.** Betting involves risk \u2014 never wager what you can't afford to lose. If it stops being fun, step away: 1-800-GAMBLER.\n8. **\ud83e\udd16 SHiFT IS LAW.** The bot runs the board 24/7/365. What it posts is official."
-    },
-    {
-      "seq": 100,
-      "action": "post_and_pin",
-      "channel": "giveaway",
-      "content": "\ud83c\udf81 **$30 SOL GIVEAWAY \u2014 THE GROWTH DROP**\n\n\ud83d\udcb0 **Grand prize: $25 in SOL**\n\ud83e\udd48 **Runner-up: $5 in SOL**\n\ud83d\udcc5 **Draw: Sunday July 27, 6:00 PM ET** \u2014 right here in this channel, tx-proof posted on the spot\n\n**TO ENTER \u2014 all 4 required:**\n1\ufe0f\u20e3 **Be in this Discord** (you're reading this \u2014 one down \ud83d\ude0f)\n2\ufe0f\u20e3 **Follow @TheLineShift** on X\n3\ufe0f\u20e3 **Like + Repost** the giveaway post on X\n4\ufe0f\u20e3 **Comment on the X post tagging 2 friends** \u2014 bring them in; if they join too, that's the whole point\n\n\u2705 **Then drop your X handle in this channel** \u2014 that's your ticket. Verified at draw time.\n\n\ud83d\udc8e **Paid members ride heavier:** \ud83d\udd12 2x entries \u00b7 \ud83d\udcca 3x \u00b7 \ud83d\udc0b 5x\n\ud83c\udfc6 Winner drawn provably fair, paid from the house wallet the same night \u2014 on-chain, receipt posted.\n\n*18+ \u00b7 no purchase necessary \u00b7 one entry per X handle (tier bonuses apply) \u00b7 prizes sent in SOL at market value*"
-    },
-    {
-      "seq": 101,
-      "action": "x_post_text",
-      "text": "\ud83c\udf81 $30 SOL GIVEAWAY\n\n\ud83d\udcb0 $25 in SOL to the winner \u00b7 $5 to a runner-up\n\nEnter \u2014 all 4:\n1\ufe0f\u20e3 Join the Discord: https://discord.gg/6sEufN9xRY\n2\ufe0f\u20e3 Follow @TheLineShift\n3\ufe0f\u20e3 Like + Repost this\n4\ufe0f\u20e3 Comment tagging 2 friends\n\nDraw Sunday 6 PM ET. Provably fair, paid on-chain with proof. 18+"
-    }
-  ]
+ "seq": 103,
+ "commands": [
+  {
+   "seq": 50,
+   "action": "delete_channel_id",
+   "id": "1529499044060074064"
+  },
+  {
+   "seq": 51,
+   "action": "delete_channel_id",
+   "id": "1529500896185024513"
+  },
+  {
+   "seq": 52,
+   "action": "x_diag"
+  },
+  {
+   "seq": 53,
+   "action": "x_diag"
+  },
+  {
+   "seq": 54,
+   "action": "x_test",
+   "text": "\ud83d\udef0\ufe0f SHiFT is now posting natively.\n\nFaster receipts. No middleman.\nScans daily: 12a / 4a / 8a / 12p / 4p / 8p ET.\n\nThe board never sleeps."
+  },
+  {
+   "seq": 55,
+   "action": "x_link_start"
+  },
+  {
+   "seq": 56,
+   "action": "x_link_start"
+  },
+  {
+   "seq": 57,
+   "action": "x_link_start"
+  },
+  {
+   "seq": 58,
+   "action": "x_link_finish",
+   "url": "https://thelineshift.com/?state=ef2a98aa30657184&code=YTNqMzhXc0tOSkh2M0VqVkVlSFZ2ZTlVRGhhdkk1WGtpOUFzWS04Y2hZalo0OjE3ODQ3MzU4MzczOTI6MTowOmFjOjE"
+  },
+  {
+   "seq": 59,
+   "action": "x_link_start"
+  },
+  {
+   "seq": 60,
+   "action": "x_link_finish",
+   "url": "https://thelineshift.com/?state=0068a96100b1e7da&code=a2lWLWFhSi1ub0tGRGhoSldDMi1uVGhocGtPQ2docHZUeC1IZnNZMkdJOHNOOjE3ODQ3MzY5MTAyMTY6MToxOmFjOjE"
+  },
+  {
+   "seq": 61,
+   "action": "x_link_scan"
+  },
+  {
+   "seq": 62,
+   "action": "x_link_finish",
+   "url": "https://thelineshift.com/?state=0068a96100b1e7da&code=TVNJWmFHQjhpenlNMG1rd3g5ZUdieEJrRkFOSThYWTl5bVlKYlVxSUxYUTNIOjE3ODQ3Mzg3MzA3OTI6MToxOmFjOjE"
+  },
+  {
+   "seq": 63,
+   "action": "x_post_text",
+   "text": "\ud83d\udef0\ufe0f 12PM SCAN \u2014 makeup run\n\n\ud83c\udd93 FREE PICK: Cardinals/Angels Under 9.0 (-119)\nDetmers' 11.3 K/9 strangles rallies before they start. STL bats quiet on the road.\n\n\ud83d\udd12 Nationals ML (3:10 ET) \u00b7 \ud83d\udcca Royals ML (2:10 ET) \u00b7 \ud83d\udc0b Mariners ML 2u already live\n\nEvery result posts with full records. Join the board \ud83d\udc46"
+  },
+  {
+   "seq": 64,
+   "action": "x_diag1"
+  },
+  {
+   "seq": 65,
+   "action": "x_link_start"
+  },
+  {
+   "seq": 66,
+   "action": "clean_general"
+  },
+  {
+   "seq": 67,
+   "action": "audit_channels"
+  },
+  {
+   "seq": 68,
+   "action": "x_post_text",
+   "text": "\ud83d\udef0\ufe0f 12PM SCAN \u2014 makeup run\n\n\ud83c\udd93 FREE PICK: Cardinals/Angels Under 9.0 (-119)\nDetmers' 11.3 K/9 strangles rallies before they start. STL bats quiet on the road.\n\n\ud83d\udd12 Nationals ML (3:10 ET) \u00b7 \ud83d\udcca Royals ML (2:10 ET) \u00b7 \ud83d\udc0b whale card already live\n\nEvery result posts with full records. Join the board \ud83d\udc46"
+  },
+  {
+   "seq": 69,
+   "action": "x_diag1"
+  },
+  {
+   "seq": 70,
+   "action": "x_link_start"
+  },
+  {
+   "seq": 71,
+   "action": "clean_general"
+  },
+  {
+   "seq": 72,
+   "action": "audit_channels"
+  },
+  {
+   "seq": 73,
+   "action": "x_post_text",
+   "text": "\ud83d\udef0\ufe0f 12PM SCAN \u2014 makeup run\n\n\ud83c\udd93 FREE PICK: Cardinals/Angels Under 9.0 (-119)\nDetmers' 11.3 K/9 strangles rallies before they start. STL bats quiet on the road.\n\n\ud83d\udd12 Nationals ML (3:10 ET) \u00b7 \ud83d\udcca Royals ML (2:10 ET) \u00b7 \ud83d\udc0b whale card already live\n\nEvery result posts with full records. Join the board \ud83d\udc46"
+  },
+  {
+   "seq": 74,
+   "action": "x_diag1"
+  },
+  {
+   "seq": 75,
+   "action": "x_link_start"
+  },
+  {
+   "seq": 76,
+   "action": "clean_general"
+  },
+  {
+   "seq": 77,
+   "action": "audit_channels"
+  },
+  {
+   "seq": 78,
+   "action": "x_post_text",
+   "text": "\ud83d\udef0\ufe0f 12PM SCAN \u2014 makeup run\n\n\ud83c\udd93 FREE PICK: Cardinals/Angels Under 9.0 (-119)\nDetmers' 11.3 K/9 strangles rallies before they start. STL bats quiet on the road.\n\n\ud83d\udd12 Nationals ML (3:10 ET) \u00b7 \ud83d\udcca Royals ML (2:10 ET) \u00b7 \ud83d\udc0b whale card already live\n\nEvery result posts with full records. Join the board \ud83d\udc46"
+  },
+  {
+   "seq": 79,
+   "action": "x_diag1"
+  },
+  {
+   "seq": 80,
+   "action": "x_link_start"
+  },
+  {
+   "seq": 81,
+   "action": "clean_general"
+  },
+  {
+   "seq": 82,
+   "action": "audit_channels"
+  },
+  {
+   "seq": 83,
+   "action": "x_diag1"
+  },
+  {
+   "seq": 84,
+   "action": "x_link_start"
+  },
+  {
+   "seq": 85,
+   "action": "rename_channel",
+   "channel": "direct-line",
+   "name": "\ud83d\udc0bwhale-talk"
+  },
+  {
+   "seq": 86,
+   "action": "post_and_pin",
+   "channel": "whale-talk",
+   "content": "\ud83d\udc0b **WELCOME TO WHALE TALK**\n\nThis is your direct line to the machine. Talk shop, ask anything, call your shot.\n\nSHiFT drops whale-only intel here first: line moves on the radar, why a play got passed, early looks at tomorrow's board. You pay for proximity \u2014 this is where it lives. \ud83c\udf99\ufe0f"
+  },
+  {
+   "seq": 87,
+   "action": "x_timeline"
+  },
+  {
+   "seq": 88,
+   "action": "x_timeline"
+  },
+  {
+   "seq": 89,
+   "action": "x_delete",
+   "ids": [
+    "2079991332970643592",
+    "2079976232805089377",
+    "2079339397145829840",
+    "2079329285081296968",
+    "2079328645907206636",
+    "2079302041327853991",
+    "2079301048997679202",
+    "2079206603815887057",
+    "2079160632302031192",
+    "2079153864943534253",
+    "2079029346618995121",
+    "2078977370761920854",
+    "2078963631580955036",
+    "2078961615102173331",
+    "2078836250522656982",
+    "2078834964360044779",
+    "2078829928590487725",
+    "2078829157799084154",
+    "2078828315633144253",
+    "2078827378105593941",
+    "2078825991443566693",
+    "2078816836167094645",
+    "2078813363467964620",
+    "2078720455058374799",
+    "2078720288057864500",
+    "2078720174870389006",
+    "2078288593726972130",
+    "2078261680786505857",
+    "2078244251532513428",
+    "2078126078263005335",
+    "2078125375964459299",
+    "2078125024376967233",
+    "2077910875093008758",
+    "2077882319688393087",
+    "2077866467714896000",
+    "2077864908541030795",
+    "2077859936831152131",
+    "2077850504588067186",
+    "2077850159929610698",
+    "2077849448219017403",
+    "2077833796343267592",
+    "2077827074560032885",
+    "2077826750881407400",
+    "2077826716437770397",
+    "2077825297504727159",
+    "2077823047348695543",
+    "2077800301440991513",
+    "2077800030472192019",
+    "2077798269376237892",
+    "2077787318723686851",
+    "2077768008823443609",
+    "2077764947283501495",
+    "2077762745819140135",
+    "2077762688826962303",
+    "2077762248798351373",
+    "2077761699805892682",
+    "2077761038473195946",
+    "2077758036580376627",
+    "2077755557264453928",
+    "2077745131902357567",
+    "2077743813829812595",
+    "2077736710612324643",
+    "2077736234718310668",
+    "2077442289656316329",
+    "2077435609463800313",
+    "2077430621400416540",
+    "2077429438484996179",
+    "2077426653626556829",
+    "2077423436717047838",
+    "2077421164650021332",
+    "2077405729435050160",
+    "2077400414907969856",
+    "2077399600529322030",
+    "2077398436836487559",
+    "2077393462081491101",
+    "2077392395075809654",
+    "2077194612804817076",
+    "2077182031704793381",
+    "2077181048790659518",
+    "2077174325828825316"
+   ]
+  },
+  {
+   "seq": 90,
+   "action": "x_post_text",
+   "text": "\ud83e\uddfe RESULT \ud83d\udd12 LOCK: Phillies ML (-136) \u274c -1.5u\nLos Angeles Dodgers 2, Philadelphia Phillies 1\n\ud83d\udd12 season 3-4 (-3.00u) \u00b7 \ud83d\udcc5 overall 11-9 (+0.11u)\n\nWe show every single one. Receipts don't lie. \ud83d\udc46"
+  },
+  {
+   "seq": 91,
+   "action": "x_post_text",
+   "text": "\ud83e\uddfe RESULT \ud83d\udd12 LOCK: Brewers ML (-142) \u274c -1.5u\nNew York Mets 4, Milwaukee Brewers 0\n\ud83d\udd12 season 3-4 (-3.00u) \u00b7 \ud83d\udcc5 overall 11-9 (+0.11u)\n\nWe show every single one. Receipts don't lie. \ud83d\udc46"
+  },
+  {
+   "seq": 92,
+   "action": "x_delete",
+   "ids": [
+    "2077768008823443609",
+    "2077764947283501495",
+    "2077762745819140135",
+    "2077762688826962303",
+    "2077762248798351373",
+    "2077761699805892682",
+    "2077761038473195946",
+    "2077758036580376627",
+    "2077755557264453928",
+    "2077745131902357567",
+    "2077743813829812595",
+    "2077736710612324643",
+    "2077736234718310668",
+    "2077442289656316329",
+    "2077435609463800313",
+    "2077430621400416540",
+    "2077429438484996179",
+    "2077426653626556829",
+    "2077423436717047838",
+    "2077421164650021332",
+    "2077405729435050160",
+    "2077400414907969856",
+    "2077399600529322030",
+    "2077398436836487559",
+    "2077393462081491101",
+    "2077392395075809654",
+    "2077194612804817076",
+    "2077182031704793381",
+    "2077181048790659518",
+    "2077174325828825316"
+   ]
+  },
+  {
+   "seq": 93,
+   "action": "setup_scan_role"
+  },
+  {
+   "seq": 94,
+   "action": "purge_channel",
+   "channel": "giveaway",
+   "limit": 30
+  },
+  {
+   "seq": 95,
+   "action": "make_invite",
+   "channel": "general-chat"
+  },
+  {
+   "seq": 96,
+   "action": "x_delete",
+   "ids": [
+    "2079557799059804474"
+   ]
+  },
+  {
+   "seq": 97,
+   "action": "list_channels"
+  },
+  {
+   "seq": 98,
+   "action": "purge_channel",
+   "channel": "rules",
+   "limit": 20
+  },
+  {
+   "seq": 99,
+   "action": "post_and_pin",
+   "channel": "rules",
+   "content": "\ud83e\udd16 **HOUSE RULES \u2014 THELINESHIFT**\n*The machine runs on discipline. So does this room.*\n\n1. **\ud83e\uddfe RECEIPTS OR IT DIDN'T HAPPEN.** Every graded play posts publicly \u2014 wins AND losses. We never delete a loss. Anyone selling you perfection is lying to you.\n2. **\ud83d\udd12 TIER INTEGRITY.** Paid picks stay in paid rooms. Leaking tier content to non-members = instant removal, no refund, no appeal.\n3. **\ud83d\udef0\ufe0f SCANS 6X DAILY** \u2014 12a / 4a / 8a / 12p / 4p / 8p ET. Want the heads-up? Grab the \ud83d\udef0\ufe0f Scan Alerts role (pinned post in #\ud83d\udcacgeneral-chat). No @everyone spam, ever.\n4. **\ud83c\udfaf THE FREE PICK IS THE TEASE.** One free play per scan in #\ud83c\udfaffree-pick. The full card lives behind the tiers \u2014 don't beg for free looks in chat.\n5. **\ud83d\udcac TALK SHOP, NOT TRASH.** Debate picks all day. No harassment, no spam, no shilling other services, no \"DM me for picks\" parasites \u2014 insta-ban.\n6. **\ud83d\udc0b WHALE TALK IS SACRED.** Top tier gets the terminal: line moves, closing lines, the why. What's said there stays there.\n7. **\ud83d\udd1e 18+ ONLY.** Betting involves risk \u2014 never wager what you can't afford to lose. If it stops being fun, step away: 1-800-GAMBLER.\n8. **\ud83e\udd16 SHiFT IS LAW.** The bot runs the board 24/7/365. What it posts is official."
+  },
+  {
+   "seq": 100,
+   "action": "post_and_pin",
+   "channel": "giveaway",
+   "content": "\ud83c\udf81 **$30 SOL GIVEAWAY \u2014 THE GROWTH DROP**\n\n\ud83d\udcb0 **Grand prize: $25 in SOL**\n\ud83e\udd48 **Runner-up: $5 in SOL**\n\ud83d\udcc5 **Draw: Sunday July 27, 6:00 PM ET** \u2014 right here in this channel, tx-proof posted on the spot\n\n**TO ENTER \u2014 all 4 required:**\n1\ufe0f\u20e3 **Be in this Discord** (you're reading this \u2014 one down \ud83d\ude0f)\n2\ufe0f\u20e3 **Follow @TheLineShift** on X\n3\ufe0f\u20e3 **Like + Repost** the giveaway post on X\n4\ufe0f\u20e3 **Comment on the X post tagging 2 friends** \u2014 bring them in; if they join too, that's the whole point\n\n\u2705 **Then drop your X handle in this channel** \u2014 that's your ticket. Verified at draw time.\n\n\ud83d\udc8e **Paid members ride heavier:** \ud83d\udd12 2x entries \u00b7 \ud83d\udcca 3x \u00b7 \ud83d\udc0b 5x\n\ud83c\udfc6 Winner drawn provably fair, paid from the house wallet the same night \u2014 on-chain, receipt posted.\n\n*18+ \u00b7 no purchase necessary \u00b7 one entry per X handle (tier bonuses apply) \u00b7 prizes sent in SOL at market value*"
+  },
+  {
+   "seq": 101,
+   "action": "x_post_text",
+   "text": "\ud83c\udf81 $30 SOL GIVEAWAY\n\n\ud83d\udcb0 $25 in SOL to the winner \u00b7 $5 to a runner-up\n\nEnter \u2014 all 4:\n1\ufe0f\u20e3 Join the Discord: https://discord.gg/6sEufN9xRY\n2\ufe0f\u20e3 Follow @TheLineShift\n3\ufe0f\u20e3 Like + Repost this\n4\ufe0f\u20e3 Comment tagging 2 friends\n\nDraw Sunday 6 PM ET. Provably fair, paid on-chain with proof. 18+"
+  },
+  {
+   "seq": 103,
+   "action": "set_server_icon"
+  }
+ ]
 }
