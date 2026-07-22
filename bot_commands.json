@@ -1,5 +1,5 @@
 {
-  "seq": 81,
+  "seq": 85,
   "commands": [
     {
       "seq": 50,
@@ -133,6 +133,22 @@
     },
     {
       "seq": 80,
+      "action": "x_link_start"
+    },
+    {
+      "seq": 81,
+      "action": "clean_general"
+    },
+    {
+      "seq": 82,
+      "action": "audit_channels"
+    },
+    {
+      "seq": 83,
+      "action": "x_diag1"
+    },
+    {
+      "seq": 84,
       "action": "x_link_start"
     }
   ]
