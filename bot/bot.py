@@ -327,6 +327,41 @@ async def run_command(cmd, guild, log):
         state['scan_role_msg'] = msg.id
         await asyncio.to_thread(gh_put, 'bot_state.json', state, 'scan role setup')
         log.append('scan role + opt-in post live')
+    elif a == 'export_entries':
+        ch = find_channel(guild, cmd.get('channel', 'giveaway'))
+        if not ch:
+            log.append('export_entries: giveaway channel not found')
+        else:
+            tier_of = {}
+            for m in guild.members:
+                names = [r.name for r in m.roles]
+                if any('Whale' in n or '🐋' in n for n in names):
+                    tier_of[m.id] = ('whale', 5)
+                elif any('Sharp' in n or '📊' in n for n in names):
+                    tier_of[m.id] = ('sharp', 3)
+                elif any('Lock' in n or '🔒' in n for n in names):
+                    tier_of[m.id] = ('lock', 2)
+            entries = {}
+            async for msg in ch.history(limit=400):
+                if msg.author.bot:
+                    continue
+                for h in re.findall(r'@([A-Za-z0-9_]{4,15})\b', msg.content or ''):
+                    key = h.lower()
+                    if key in ('thelineshift', 'everyone', 'here'):
+                        continue
+                    tname, weight = tier_of.get(msg.author.id, ('free', 1))
+                    cur = entries.get(key)
+                    if cur is None or weight > cur['weight']:
+                        entries[key] = {'handle': h, 'discord': str(msg.author), 'discord_id': str(msg.author.id),
+                                        'tier': tname, 'weight': weight}
+            pool = []
+            for e in entries.values():
+                pool += [e['handle']] * e['weight']
+            doc = {'exported': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                   'unique': len(entries), 'weighted_pool': len(pool),
+                   'entries': sorted(entries.values(), key=lambda x: x['handle'].lower()), 'pool': sorted(pool)}
+            await asyncio.to_thread(gh_put, 'giveaway_entries.json', doc, 'entry export', 'main')
+            log.append(f"exported {len(entries)} unique entries ({len(pool)} weighted tickets) -> giveaway_entries.json")
     elif a == 'purge_channel':
         ch = find_channel(guild, cmd['channel'])
         if not ch:
@@ -1002,7 +1037,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.14'
+            state['bot_version'] = '8.9.15'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
