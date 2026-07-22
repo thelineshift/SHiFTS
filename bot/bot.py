@@ -276,6 +276,51 @@ async def run_command(cmd, guild, log):
                 prize = cmd.get('prize', 'a FREE month of \U0001F512 Lock Room')
                 await ch.send(f"\U0001F381 **GIVEAWAY WINNER** \U0001F389\n\nCongratulations {w.mention} — you won **{prize}**!\n\nThe captain will get you set up within 24h. Thanks to all {len(entrants)} entries — the next giveaway starts RIGHT NOW \U0001F440")
                 log.append(f'giveaway_winner: {w.name} ({w.id}) from {len(entrants)} entries')
+    elif a == 'clean_general':
+        ch = find_channel(guild, 'general-chat')
+        if not ch:
+            log.append('clean_general: channel not found')
+        else:
+            seen, dups, finale = set(), [], None
+            async for m in ch.history(limit=60):
+                txt = (m.content or '')
+                if 'crunching' in txt and 'parameters' in txt:
+                    keyt = txt[:60]
+                    if keyt in seen and m.author.bot:
+                        dups.append(m)
+                    else:
+                        seen.add(keyt)
+                if 'SCAN COMPLETE' in txt and 'MAKEUP' in txt.upper() and finale is None:
+                    finale = m
+            for m in dups:
+                try:
+                    await m.delete()
+                    log.append('deleted duplicate ANALYZING post')
+                except Exception as e:
+                    log.append(f'dup delete fail: {e}')
+            if finale is not None:
+                try:
+                    fixed = (finale.content or '').replace('card already live from 8 AM (Mariners ML 2u, 3:40 PM ET) — no forced adds',
+                                                           'card already live from the 8 AM scan — no forced adds')
+                    fixed = fixed.replace('Mariners ML 2u live', 'whale card live')
+                    if fixed != (finale.content or ''):
+                        await finale.delete()
+                        await ch.send(fixed)
+                        log.append('finale reposted without whale leak')
+                    else:
+                        log.append('finale had no leak text')
+                except Exception as e:
+                    log.append(f'finale fix fail: {e}')
+            if not dups and finale is None:
+                log.append('clean_general: nothing to fix')
+    elif a == 'audit_channels':
+        for c2 in guild.text_channels:
+            topic = (c2.topic or '')[:60]
+            log.append(f'#{c2.name} ({c2.id}) topic: {topic or "NONE"}')
+        bots = [m for m in guild.members if m.bot]
+        for b in bots:
+            av = 'custom' if b.avatar else 'DEFAULT'
+            log.append(f'BOT {b.name} | nick: {b.nick} | avatar: {av}')
     elif a == 'x_post_text':
         try:
             res = await asyncio.to_thread(x_post, cmd['text'])
@@ -801,7 +846,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.9'
+            state['bot_version'] = '8.9.10'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
