@@ -1,5 +1,5 @@
 {
-  "seq": 94,
+  "seq": 98,
   "commands": [
     {
       "seq": 50,
@@ -306,6 +306,28 @@
     {
       "seq": 93,
       "action": "setup_scan_role"
+    },
+    {
+      "seq": 94,
+      "action": "purge_channel",
+      "channel": "giveaway",
+      "limit": 30
+    },
+    {
+      "seq": 95,
+      "action": "make_invite",
+      "channel": "general-chat"
+    },
+    {
+      "seq": 96,
+      "action": "x_delete",
+      "ids": [
+        "2079557799059804474"
+      ]
+    },
+    {
+      "seq": 97,
+      "action": "list_channels"
     }
   ]
 }
