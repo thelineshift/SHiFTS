@@ -1,5 +1,5 @@
 {
-  "seq": 55,
+  "seq": 56,
   "commands": [
     {
       "seq": 50,
@@ -23,6 +23,10 @@
       "seq": 54,
       "action": "x_test",
       "text": "\ud83d\udef0\ufe0f SHiFT is now posting natively.\n\nFaster receipts. No middleman.\nScans daily: 12a / 4a / 8a / 12p / 4p / 8p ET.\n\nThe board never sleeps."
+    },
+    {
+      "seq": 55,
+      "action": "x_link_start"
     }
   ]
 }
