@@ -275,17 +275,20 @@ def x_oauth1_sign(method, url, c):
     op['oauth_signature'] = base64.b64encode(_h.new(key.encode(), base.encode(), _hl.sha1).digest()).decode()
     return 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
 
-def x_upload_media(img_bytes, mime='image/png'):
-    c = x_creds_load()
-    url = 'https://upload.twitter.com/1.1/media/upload.json'
+def x_upload_media(img_bytes, mime='image/png', c=None):
+    # v2 upload with OAuth2 user context (media.write); falls back to legacy OAuth1 attempt
+    if c is None:
+        c = x_creds_load()
+    url = 'https://upload.x.com/2/media/upload'
     boundary = 'lineshift' + str(int(time.time()))
     body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="card.png"\r\n'
             f'Content-Type: {mime}\r\n\r\n').encode() + img_bytes + f'\r\n--{boundary}--\r\n'.encode()
     req = urllib.request.Request(url, data=body, method='POST',
-                                 headers={'Authorization': x_oauth1_sign('POST', url, c),
+                                 headers={'Authorization': f"Bearer {c['oauth2_access']}",
                                           'Content-Type': f'multipart/form-data; boundary={boundary}'})
     with urllib.request.urlopen(req, timeout=40) as r:
-        return json.load(r)['media_id_string']
+        d = json.load(r)
+    return str(d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id'))
 
 def x_get_json(url, bearer):
     req = urllib.request.Request(url, headers={'Authorization': f'Bearer {bearer}'})
@@ -585,6 +588,21 @@ async def run_command(cmd, guild, log):
                     try: body = e.read()[:150]
                     except Exception: pass
                 log.append(f'delete {tid} FAIL: {e} {body}')
+    elif a == 'x_media_probe':
+        try:
+            remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
+            img = base64.b64decode(remote['content'])
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            mid = await asyncio.to_thread(x_upload_media, img, 'image/png', c)
+            log.append(f'x_media_probe OK: media_id {mid} ({len(img)} bytes) — native image posts LIVE')
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_media_probe FAIL: {e} {body}')
     elif a == 'x_follow':
         try:
             c = x_creds_load()
@@ -640,10 +658,10 @@ async def run_command(cmd, guild, log):
         try:
             remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
             img = base64.b64decode(remote['content'])
-            media_id = await asyncio.to_thread(x_upload_media, img)
             c = x_creds_load()
             if time.time() > c.get('oauth2_expires_at', 0):
                 c = await asyncio.to_thread(x_oauth2_refresh, c)
+            media_id = await asyncio.to_thread(x_upload_media, img, 'image/png', c)
             body = json.dumps({'text': cmd['text'], 'media': {'media_ids': [media_id]}}).encode()
             req = urllib.request.Request('https://api.x.com/2/tweets', data=body, method='POST',
                                          headers={'Authorization': f"Bearer {c['oauth2_access']}", 'Content-Type': 'application/json'})
@@ -1190,7 +1208,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.18'
+            state['bot_version'] = '8.9.19'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
