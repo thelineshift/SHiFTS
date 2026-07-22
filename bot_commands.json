@@ -1,5 +1,5 @@
 {
- "seq": 104,
+ "seq": 107,
  "commands": [
   {
    "seq": 50,
@@ -360,6 +360,21 @@
    "seq": 104,
    "action": "x_post_text",
    "text": "The server finally has a face. \ud83e\udd16\ud83d\udcc8\n\nSHiFT mark is live on the Discord \u2014 and the $30 SOL giveaway is still open:\n\n\ud83e\udd47 $25 SOL + \ud83e\udd48 $5 SOL\nEnter: follow @TheLineShift + like + repost + reply with your X handle\nDraw: Sunday 6 PM ET, provably fair, paid on-chain.\n\nJoin the board \ud83d\udc47\nhttps://discord.gg/6sEufN9xRY"
+  },
+  {
+   "seq": 105,
+   "action": "make_invite",
+   "channel": "general-chat"
+  },
+  {
+   "seq": 106,
+   "action": "x_delete",
+   "id": "2080015233599652141"
+  },
+  {
+   "seq": 107,
+   "action": "x_delete",
+   "id": "2080025215321690617"
   }
  ]
 }
