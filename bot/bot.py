@@ -23,7 +23,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v8.4 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v8.5 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         try:
             await c.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=BOT_STATUS))
             g0 = c.guilds[0] if c.guilds else None
@@ -44,6 +44,8 @@ def make_client(privileged=True):
             x_drainer.start()
         if not scan_event_watch.is_running():
             scan_event_watch.start()
+        if not recap_watch.is_running():
+            recap_watch.start()
 
     @c.event
     async def on_member_update(before, after):
@@ -608,7 +610,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.4'
+            state['bot_version'] = '8.5'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -843,6 +845,90 @@ async def x_drainer():
         print(f"x_drainer: posted {r.get('id')}, {len(queue) - 1} left")
     except Exception as e:
         print('x_drainer error:', e)
+
+def units_of(p):
+    if p.get('units_result') is not None:
+        return float(p['units_result'])
+    if p.get('result') == 'WIN':
+        return profit_units(p.get('odds', -110), float(p.get('units', 1) or 1))
+    if p.get('result') == 'LOSS':
+        return -float(p.get('units', 1) or 1)
+    return 0.0
+
+@tasks.loop(seconds=900)
+async def recap_watch():
+    # server-side nightly recap: posts when every today-starting (ET) game is settled. Never missed.
+    try:
+        if not client.guilds:
+            return
+        state = await asyncio.to_thread(get_state)
+        if state is None:
+            return
+        now_et = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)
+        if 6 <= now_et.hour < 21:
+            return  # recap window is 9 PM - 6 AM ET
+        recap_date = now_et.strftime('%Y-%m-%d') if now_et.hour >= 21 else (now_et - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
+        if state.get('last_recap_date') == recap_date:
+            return
+        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        all_picks = doc.get('picks') or []
+        day = [p for p in all_picks if p.get('date') == recap_date]
+        if not day:
+            return
+        if any(str(p.get('result', '')).upper() in ('', 'PENDING', 'NONE', 'NULL') for p in day):
+            return  # games still live
+        settled = [p for p in day if p.get('result') in ('WIN', 'LOSS', 'PUSH')]
+        if not settled:
+            return
+        tiers = [('lock', '🔒 LOCK ROOM'), ('sharp', '📊 SHARP'), ('whale', '🐋 WHALE'), ('free', '🆓 FREE PICK')]
+        mmdd = recap_date[5:].replace('-', '/')
+        lines = [f"🌙 **THELINESHIFT NIGHTLY RECAP — {mmdd}**", "(every tier, every result — graded in public)", ""]
+        tot_w = tot_l = tot_p = 0
+        tot_u = 0.0
+        for key, label in tiers:
+            tp = [p for p in settled if p.get('tier') == key]
+            if not tp:
+                continue
+            w = sum(1 for p in tp if p['result'] == 'WIN')
+            l = sum(1 for p in tp if p['result'] == 'LOSS')
+            pu = sum(1 for p in tp if p['result'] == 'PUSH')
+            u = sum(units_of(p) for p in tp)
+            tot_w += w; tot_l += l; tot_p += pu; tot_u += u
+            suffix = f"-{pu}" if pu else ""
+            lines.append(f"{label} — {w}-{l}{suffix}, {'+' if u >= 0 else ''}{u:.2f}u " + ('✅' if u > 0 else '❌' if u < 0 else ''))
+            for p in tp:
+                e = '✅' if p['result'] == 'WIN' else ('🟰' if p['result'] == 'PUSH' else '❌')
+                uu = units_of(p)
+                lines.append(f"{e} {p.get('desc')} ({p.get('odds')}) → {p.get('score', 'final')} → {'+' if uu >= 0 else ''}{uu:.2f}u")
+            lines.append("")
+        season = [p for p in all_picks if p.get('result') in ('WIN', 'LOSS', 'PUSH')
+                  and str(p.get('date', '')).startswith('2026') and p.get('tier') != 'challenge']
+        sw = sum(1 for p in season if p['result'] == 'WIN')
+        sl = sum(1 for p in season if p['result'] == 'LOSS')
+        su = sum(units_of(p) for p in season)
+        lines.append(f"**FULL BOARD: {tot_w}-{tot_l}" + (f"-{tot_p}" if tot_p else "") + f" ({'+' if tot_u >= 0 else ''}{tot_u:.2f}u).**")
+        lines.append(f"📅 **2026 SEASON: {sw}-{sl} ({'+' if su >= 0 else ''}{su:.2f}u)**")
+        try:
+            chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')
+            rec = chal.get('record', {})
+            lines.append(f"💵 Challenge: balance ${chal.get('balance', 0):.2f} ({rec.get('wins', 0)}-{rec.get('losses', 0)}) — goal $1,000")
+        except Exception:
+            pass
+        ch = find_channel(client.guilds[0], 'receipts')
+        if ch:
+            await ch.send('\n'.join(lines))
+        state['last_recap_date'] = recap_date
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, f'recap posted {recap_date}')
+        try:
+            xt = (f"🌙 FULL BOARD {mmdd}: {tot_w}-{tot_l} ({'+' if tot_u >= 0 else ''}{tot_u:.1f}u)\n"
+                  f"📅 2026 season: {sw}-{sl} ({'+' if su >= 0 else ''}{su:.1f}u)\n\n"
+                  f"Every pick posted early, every result graded in public. First month FREE 👆")
+            await asyncio.to_thread(x_post, xt)
+        except Exception as e:
+            print('recap X error:', e)
+        print('recap posted for', recap_date)
+    except Exception as e:
+        print('recap_watch error:', e)
 
 @tasks.loop(seconds=300)
 async def scan_event_watch():
