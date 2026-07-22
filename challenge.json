@@ -20,5 +20,22 @@
       "posted": "2026-07-21T22:35:00Z",
       "note": "Also Lock Room play - model #1 confidence"
     }
+  ],
+  "current_bet": {
+    "id": "challenge-nyy-ml",
+    "desc": "Yankees ML",
+    "odds": -165,
+    "wager": 20.0,
+    "to_win": 12.12,
+    "date": "2026-07-22"
+  },
+  "bets": [
+    {
+      "id": "challenge-nyy-ml",
+      "desc": "Yankees ML -165",
+      "wager": 20.0,
+      "result": "PENDING",
+      "date": "2026-07-22"
+    }
   ]
 }
