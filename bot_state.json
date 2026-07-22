@@ -50,15 +50,6 @@
   "bot_version": "8.3",
   "unannounced_results": [
     {
-      "id": "2026-07-21-dodgers-phillies-under85",
-      "desc": "Dodgers/Phillies Under 8.5",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "Los Angeles Dodgers 2, Philadelphia Phillies 1",
-      "tier": "free"
-    },
-    {
       "id": "2026-07-21-challenge-brewers",
       "desc": "Brewers ML",
       "odds": -142,
@@ -76,5 +67,6 @@
       "score": "Nationals 7, Rockies 8",
       "tier": "whale"
     }
-  ]
+  ],
+  "last_x_receipt_ts": 1784706842.758348
 }
