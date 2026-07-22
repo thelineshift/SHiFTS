@@ -56,6 +56,13 @@ def make_client(privileged=True):
         try:
             if message.author.bot:
                 return
+            chname = (getattr(message.channel, 'name', '') or '').lower()
+            if 'giveaway' in chname:
+                hs = [h for h in re.findall(r'@([A-Za-z0-9_]{4,15})\b', message.content or '')
+                      if h.lower() not in ('thelineshift', 'everyone', 'here')]
+                if hs:
+                    await verify_giveaway_entry(message, hs[0])
+                return
             content = (message.content or '').strip().strip('`').strip('<>')
             if 'thelineshift.com' not in content or 'code=' not in content:
                 return
@@ -254,6 +261,110 @@ async def resolve_member(guild, ident):
         except Exception:
             pass
     return None
+
+
+def x_oauth1_sign(method, url, c):
+    import hmac as _h, hashlib as _hl, secrets as _sc
+    from urllib.parse import quote as _qq
+    op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': _sc.token_hex(16),
+          'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+          'oauth_token': c['access_token'], 'oauth_version': '1.0'}
+    q = lambda s: _qq(str(s), safe='')
+    base = '&'.join([method, q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+    key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
+    op['oauth_signature'] = base64.b64encode(_h.new(key.encode(), base.encode(), _hl.sha1).digest()).decode()
+    return 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+
+def x_upload_media(img_bytes, mime='image/png'):
+    c = x_creds_load()
+    url = 'https://upload.twitter.com/1.1/media/upload.json'
+    boundary = 'lineshift' + str(int(time.time()))
+    body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="card.png"\r\n'
+            f'Content-Type: {mime}\r\n\r\n').encode() + img_bytes + f'\r\n--{boundary}--\r\n'.encode()
+    req = urllib.request.Request(url, data=body, method='POST',
+                                 headers={'Authorization': x_oauth1_sign('POST', url, c),
+                                          'Content-Type': f'multipart/form-data; boundary={boundary}'})
+    with urllib.request.urlopen(req, timeout=40) as r:
+        return json.load(r)['media_id_string']
+
+def x_get_json(url, bearer):
+    req = urllib.request.Request(url, headers={'Authorization': f'Bearer {bearer}'})
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.load(r)
+
+GW_CACHE = {}
+def gw_user_set(url, bearer):
+    ts, ids = GW_CACHE.get(url, (0, set()))
+    if time.time() - ts < 240:
+        return ids
+    ids, tok, pages = set(), None, 0
+    while pages < 3:
+        u = url + ('&pagination_token=' + tok if tok else '')
+        d = x_get_json(u, bearer)
+        ids |= {str(x.get('id')) for x in d.get('data', [])}
+        tok = d.get('meta', {}).get('next_token')
+        pages += 1
+        if not tok:
+            break
+    GW_CACHE[url] = (time.time(), ids)
+    return ids
+
+async def verify_giveaway_entry(message, handle):
+    try:
+        c = await asyncio.to_thread(x_creds_load)
+        bt = c['bearer_token']
+        state = await asyncio.to_thread(get_state)
+        post_id = (state or {}).get('giveaway_x_post', '2080027230839931367')
+        our_id = '1831457082828021760'
+        try:
+            u = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/by/username/{handle}', bt)
+            uid = str(u.get('data', {}).get('id') or '')
+        except Exception:
+            uid = ''
+        if not uid:
+            await message.channel.send(f"🤖 SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
+            return
+        try:
+            f = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/{uid}/following/{our_id}', bt)
+            followed = bool(f.get('data'))
+        except Exception:
+            followed = None
+        try:
+            liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', bt)
+        except Exception:
+            liked = None
+        try:
+            reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', bt)
+        except Exception:
+            reposted = None
+        def mark(v):
+            return '✅' if v else ('❌' if v is False else '❓')
+        missing = []
+        if followed is False: missing.append('follow @TheLineShift')
+        if liked is False: missing.append('like the giveaway post')
+        if reposted is False: missing.append('repost the giveaway post')
+        status = (f"{mark(followed)} follow   {mark(liked)} like   {mark(reposted)} repost")
+        if not missing and followed and liked and reposted:
+            names = [r.name for r in getattr(message.author, 'roles', [])]
+            mult = 5 if any('Whale' in n or '🐋' in n for n in names) else 3 if any('Sharp' in n or '📊' in n for n in names) else 2 if any('Lock' in n or '🔒' in n for n in names) else 1
+            state.setdefault('giveaway_confirmed', {})[handle.lower()] = {
+                'handle': handle, 'discord': str(message.author), 'discord_id': str(message.author.id),
+                'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
+            await asyncio.to_thread(gh_put, 'bot_state.json', state, 'giveaway confirm ' + handle)
+            try:
+                await message.add_reaction('✅')
+            except Exception:
+                pass
+            await message.channel.send(
+                f"🎫 **ENTRY CONFIRMED — @{handle}**\n{status}\n"
+                f"You're in the pool with **{mult}x ticket{'s' if mult > 1 else ''}** at your tier. Draw: Sunday 6 PM ET, provably fair, paid on-chain. 🤖")
+        else:
+            todo = ('; '.join(missing)) if missing else 'give X a minute to register it, then re-drop your handle'
+            await message.channel.send(
+                f"🤖 SHiFT entry check for **@{handle}**:\n{status}\n"
+                f"Not locked in yet — {todo}, then drop your handle here again and I'll re-scan it.")
+    except Exception as e:
+        print('giveaway verify error:', e)
 
 async def run_command(cmd, guild, log):
     a = cmd.get('action')
@@ -516,9 +627,41 @@ async def run_command(cmd, guild, log):
     elif a == 'x_post_text':
         try:
             res = await asyncio.to_thread(x_post, cmd['text'])
-            log.append(f'x_post_text OK: id {res.get("data", {}).get("id") if res else None}')
+            tid = res.get('data', {}).get('id') if res else None
+            log.append(f'x_post_text OK: id {tid}')
+            if cmd.get('tag') == 'giveaway' and tid:
+                st2 = await asyncio.to_thread(get_state)
+                if st2 is not None:
+                    st2['giveaway_x_post'] = tid
+                    await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id')
         except Exception as e:
             log.append(f'x_post_text FAIL: {e}')
+    elif a == 'x_post_media':
+        try:
+            remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
+            img = base64.b64decode(remote['content'])
+            media_id = await asyncio.to_thread(x_upload_media, img)
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            body = json.dumps({'text': cmd['text'], 'media': {'media_ids': [media_id]}}).encode()
+            req = urllib.request.Request('https://api.x.com/2/tweets', data=body, method='POST',
+                                         headers={'Authorization': f"Bearer {c['oauth2_access']}", 'Content-Type': 'application/json'})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                res = json.load(r)
+            tid = res.get('data', {}).get('id')
+            log.append(f'x_post_media OK: id {tid}')
+            if cmd.get('tag') == 'giveaway' and tid:
+                st2 = await asyncio.to_thread(get_state)
+                if st2 is not None:
+                    st2['giveaway_x_post'] = tid
+                    await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id')
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_post_media FAIL: {e} {body}')
     elif a == 'x_diag1':
         try:
             import hmac as _hmac, hashlib as _hl, secrets as _sc
@@ -1047,7 +1190,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.16'
+            state['bot_version'] = '8.9.17'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -1678,10 +1821,14 @@ async def scan_event_watch():
         ch = find_channel(guild, 'general-chat')
         if not ch:
             return
+        import datetime as _dt
+        slot_dt = _dt.datetime(now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, 0, 0, tzinfo=_dt.timezone.utc)
+        slot_ts = slot_dt.timestamp()
         fired = False
         finished = False
         passed = False
-        async for m in ch.history(limit=14):
+        # TIME-SCOPED: only messages posted AFTER this slot started count — an old SCAN COMPLETE can never satisfy a new slot
+        async for m in ch.history(limit=40, after=slot_dt):
             txt = (m.content or '')
             if any(k in txt for k in ('SCAN COMPLETE', 'SCAN INITIATED', 'ANALYZING', 'COLLECTING')):
                 fired = True
@@ -1690,20 +1837,23 @@ async def scan_event_watch():
             if 'PASSED' in txt or 'no viable' in txt.lower():
                 passed = True
         if fired and finished:
-            events[slot] = 'ok'
-            # PICK GUARD: theater completed — picks.json must show a fresh registration this window (unless discipline pass)
+            # 'ok' REQUIRES fresh picks registered after slot start (or a deliberate discipline pass)
+            fresh = False
             if not passed:
                 try:
                     pj = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
                     upd = pj.get('updated', '') if isinstance(pj, dict) else ''
                     upd_ts = time.mktime(time.strptime(upd[:19], '%Y-%m-%dT%H:%M:%S')) if upd else 0
-                    slot_ts = time.mktime((now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, 0, 0, 0, 0, 0))
-                    if upd_ts < slot_ts - 3900:
-                        await ch.send("⚠️ **PICK GUARD** — theater ran but no card registered this window. SHiFT is re-running the drop now; picks land within the hour. 🤖")
-                        state.setdefault('pick_guard_alerts', []).append(slot)
-                        print(f'pick_guard: slot {slot} theater w/o picks')
+                    fresh = upd_ts >= slot_ts - 300
                 except Exception as e:
-                    print('pick_guard error:', e)
+                    print('pick_guard fresh-check error:', e)
+            if passed or fresh:
+                events[slot] = 'ok'
+            else:
+                events[slot] = 'makeup_needed'
+                await ch.send("⚠️ **PICK GUARD** — theater ran but no card registered this window. SHiFT is re-running the drop now; picks land within the hour. 🤖")
+                state.setdefault('pick_guard_alerts', []).append(slot)
+                print(f'pick_guard: slot {slot} theater w/o picks')
         elif fired:
             events[slot] = 'partial'
             await ch.send("⚠️ **SCAN STALLED** — collection started but never completed. SHiFT is re-running this event; card drops within the hour. 🤖")
