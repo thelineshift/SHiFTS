@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T07:54:02Z",
+  "updated": "2026-07-22T12:15:10Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -384,6 +384,81 @@
       "analysis": "Challenge bet #1: $20 of $100 bankroll -> to win $14.08. Same play as Lock Room (model #1 confidence). Dollars tracked in challenge.json.",
       "score": "Mets 4, Brewers 0",
       "units_result": 0.0
+    },
+    {
+      "id": "nyy-pit-under95",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "Pittsburgh Pirates",
+      "homeTeam": "New York Yankees",
+      "desc": "Yankees/Pirates Under 9.5",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "free",
+      "result": "PENDING",
+      "time_et": "1:05 PM",
+      "analysis": "Cole (3.93 ERA) at home; NYY bats cold (5 runs in last 3, under 5-1 in last 6). Model total 8.4."
+    },
+    {
+      "id": "nyy-ml-0722",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "Pittsburgh Pirates",
+      "homeTeam": "New York Yankees",
+      "desc": "Yankees ML",
+      "market": "ml",
+      "odds": -165,
+      "units": 1.5,
+      "tier": "lock",
+      "result": "PENDING",
+      "time_et": "1:05 PM",
+      "analysis": "Model 61.6% \u2014 slate-high. Cole vs Keller (6-7, 5.40 ERA); PIT weak vs RHP."
+    },
+    {
+      "id": "sea-cin-under85",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "Cincinnati Reds",
+      "homeTeam": "Seattle Mariners",
+      "desc": "Mariners/Reds Under 8.5",
+      "market": "total",
+      "odds": 100,
+      "units": 1.0,
+      "tier": "sharp",
+      "result": "PENDING",
+      "time_et": "3:40 PM",
+      "analysis": "Sharp side: 90% of handle on under yesterday. Hancock (3.17) vs .230 CIN lineup at T-Mobile."
+    },
+    {
+      "id": "sea-ml-0722",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "Cincinnati Reds",
+      "homeTeam": "Seattle Mariners",
+      "desc": "Mariners ML",
+      "market": "ml",
+      "odds": -118,
+      "units": 2.0,
+      "tier": "whale",
+      "result": "PENDING",
+      "time_et": "3:40 PM",
+      "analysis": "Hancock (3.17) vs Singer (4-9, 4.56). SEA 30-22 home; model 55%. Sized up."
+    },
+    {
+      "id": "challenge-nyy-ml",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "Pittsburgh Pirates",
+      "homeTeam": "New York Yankees",
+      "desc": "Yankees ML",
+      "market": "ml",
+      "odds": -165,
+      "units": 0,
+      "tier": "challenge",
+      "result": "PENDING",
+      "time_et": "1:05 PM",
+      "analysis": "Challenge BET #2: $20 -> $12.12. Bankroll $80.00."
     }
   ]
 }
