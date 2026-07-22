@@ -1,5 +1,5 @@
 {
-  "seq": 53,
+  "seq": 54,
   "commands": [
     {
       "seq": 50,
@@ -13,6 +13,10 @@
     },
     {
       "seq": 52,
+      "action": "x_diag"
+    },
+    {
+      "seq": 53,
       "action": "x_diag"
     }
   ]
