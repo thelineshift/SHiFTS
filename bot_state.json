@@ -81,15 +81,6 @@
   "bot_version": "8.9.16",
   "unannounced_results": [
     {
-      "id": "nyy-ml-0722",
-      "desc": "Yankees ML",
-      "odds": -165,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "Pittsburgh Pirates 5, New York Yankees 3",
-      "tier": "lock"
-    },
-    {
       "id": "challenge-nyy-ml",
       "desc": "Yankees ML",
       "odds": -165,
@@ -108,7 +99,7 @@
       "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1784752394.7250392,
+  "last_x_receipt_ts": 1784755994.7764368,
   "last_recap_date": "2026-07-21",
   "scan_events": {
     "20260722-12": "ok",
