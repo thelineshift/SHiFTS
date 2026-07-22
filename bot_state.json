@@ -36,15 +36,6 @@
   "bot_version": "8.9.16",
   "unannounced_results": [
     {
-      "id": "nyy-pit-under95",
-      "desc": "Yankees/Pirates Under 9.5",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "Pittsburgh Pirates 5, New York Yankees 3",
-      "tier": "free"
-    },
-    {
       "id": "nyy-ml-0722",
       "desc": "Yankees ML",
       "odds": -165,
@@ -72,7 +63,7 @@
       "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1784749467.4343963,
+  "last_x_receipt_ts": 1784752394.7250392,
   "last_recap_date": "2026-07-21",
   "scan_events": {
     "20260722-12": "ok",
