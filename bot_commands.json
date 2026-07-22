@@ -1,5 +1,5 @@
 {
-  "seq": 88,
+  "seq": 89,
   "commands": [
     {
       "seq": 50,
@@ -165,6 +165,10 @@
     },
     {
       "seq": 87,
+      "action": "x_timeline"
+    },
+    {
+      "seq": 88,
       "action": "x_timeline"
     }
   ]
