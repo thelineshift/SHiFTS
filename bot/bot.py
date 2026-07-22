@@ -251,13 +251,11 @@ async def run_command(cmd, guild, log):
         from urllib.parse import urlencode as _ue
         ver = _s.token_urlsafe(64)[:64]
         ch = base64.urlsafe_b64encode(_h.sha256(ver.encode()).digest()).decode().rstrip('=')
-        stt = await asyncio.to_thread(get_state)
-        stt['x_pkce_verifier'] = ver
-        stt['x_pkce_state'] = _s.token_hex(8)
-        await asyncio.to_thread(gh_put, 'bot_state.json', stt, 'pkce verifier stored')
+        pk = {'verifier': ver, 'state': _s.token_hex(8)}
+        await asyncio.to_thread(gh_put, 'x_pkce.json', pk, 'pkce link')
         c = x_creds_load()
         q = _ue({'response_type': 'code', 'client_id': c.get('client_id', ''), 'redirect_uri': X_REDIRECT,
-                 'scope': 'tweet.read tweet.write users.read offline.access', 'state': stt['x_pkce_state'],
+                 'scope': 'tweet.read tweet.write users.read offline.access', 'state': pk['state'],
                  'code_challenge': ch, 'code_challenge_method': 'S256'})
         log.append('AUTH URL: https://twitter.com/i/oauth2/authorize?' + q)
     elif a == 'x_link_finish':
@@ -267,11 +265,14 @@ async def run_command(cmd, guild, log):
         if not code:
             log.append('x_link_finish: no code in URL')
         else:
-            stt = await asyncio.to_thread(get_state)
             c = x_creds_load()
+            try:
+                pk = json.loads(base64.b64decode(gh_get('x_pkce.json', ref=QUEUE_BRANCH)['content']).decode())
+            except Exception:
+                pk = {}
             basic = base64.b64encode(f"{c['client_id']}:{c['client_secret']}".encode()).decode()
             data = {'grant_type': 'authorization_code', 'code': code, 'redirect_uri': X_REDIRECT,
-                    'code_verifier': stt.get('x_pkce_verifier', ''), 'client_id': c['client_id']}
+                    'code_verifier': pk.get('verifier', ''), 'client_id': c['client_id']}
             req = urllib.request.Request('https://api.x.com/2/oauth2/token',
                                          data=_ue2(data).encode(), method='POST',
                                          headers={'Content-Type': 'application/x-www-form-urlencoded',
@@ -713,7 +714,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.3'
+            state['bot_version'] = '8.9.4'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
