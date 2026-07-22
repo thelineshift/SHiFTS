@@ -428,7 +428,14 @@
       "tier": "sharp",
       "result": "PENDING",
       "time_et": "3:40 PM",
-      "analysis": "Sharp side: 90% of handle on under yesterday. Hancock (3.17) vs .230 CIN lineup at T-Mobile."
+      "analysis": "Sharp side: 90% of handle on under yesterday. Hancock (3.17) vs .230 CIN lineup at T-Mobile.",
+      "live_odds": {
+        "home_ml": null,
+        "away_ml": null,
+        "total": 8.0,
+        "ts": 1784747630
+      },
+      "last_alert_total": 8.0
     },
     {
       "id": "sea-ml-0722",
@@ -443,7 +450,13 @@
       "tier": "whale",
       "result": "PENDING",
       "time_et": "3:40 PM",
-      "analysis": "Hancock (3.17) vs Singer (4-9, 4.56). SEA 30-22 home; model 55%. Sized up."
+      "analysis": "Hancock (3.17) vs Singer (4-9, 4.56). SEA 30-22 home; model 55%. Sized up.",
+      "live_odds": {
+        "home_ml": null,
+        "away_ml": null,
+        "total": 8.0,
+        "ts": 1784747630
+      }
     },
     {
       "id": "challenge-nyy-ml",
@@ -473,7 +486,14 @@
       "tier": "free",
       "result": "PENDING",
       "time_et": "4:07 PM",
-      "analysis": "Detmers 11.3 K/9; STL light road bats; Angel Stadium 0.97 run factor. Weather neutral (85F, light SW)."
+      "analysis": "Detmers 11.3 K/9; STL light road bats; Angel Stadium 0.97 run factor. Weather neutral (85F, light SW).",
+      "live_odds": {
+        "home_ml": null,
+        "away_ml": null,
+        "total": 8.5,
+        "ts": 1784747631
+      },
+      "last_alert_total": 8.5
     },
     {
       "id": "wsn-ml-0722",
