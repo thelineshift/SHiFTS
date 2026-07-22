@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T20:32:30Z",
+  "updated": "2026-07-22T22:18:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -532,6 +532,66 @@
       "analysis": "KC 4.8 rpg home vs 3.7 road; Lugo vs Roupp; SF bullpen 25th since 6/1 (5.47), lineup 25th in scoring.",
       "score": "San Francisco Giants 4, Kansas City Royals 5",
       "units_result": 0.98
+    },
+    {
+      "id": "chc-ml-0722",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "Detroit Tigers",
+      "homeTeam": "Chicago Cubs",
+      "desc": "Cubs ML",
+      "market": "ml",
+      "odds": -125,
+      "units": 1.5,
+      "tier": "lock",
+      "result": "PENDING",
+      "time_et": "8:00 PM",
+      "analysis": "CHC 5.1 rpg home vs DET 3.9 road; Boyd 3.38 FIP at Wrigley vs Morton 4.60 road; DET pen 24th. Model -141 vs -125. Wrigley outdoor 70F, wind 7 in from LF, 0% rain."
+    },
+    {
+      "id": "atl-ml-0722",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "San Diego Padres",
+      "homeTeam": "Atlanta Braves",
+      "desc": "Braves ML",
+      "market": "ml",
+      "odds": -114,
+      "units": 1.5,
+      "tier": "whale",
+      "result": "PENDING",
+      "time_et": "7:15 PM",
+      "analysis": "ATL 4.9 rpg home; SD pen 27th since 7/1 (5.20); Strider 10.6 K/9 at Truist vs Pivetta 4.40 road. Model -128 vs -114. Truist outdoor 86F humid, wind 9."
+    },
+    {
+      "id": "cws-ml-0722",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "Chicago White Sox",
+      "homeTeam": "Texas Rangers",
+      "desc": "White Sox ML",
+      "market": "ml",
+      "odds": -122,
+      "units": 1.0,
+      "tier": "sharp",
+      "result": "PENDING",
+      "time_et": "8:05 PM",
+      "analysis": "CWS pen 3.20 ERA L14 vs TEX 5.10; TEX 22nd home scoring. Model -134 vs -122. Globe Life roof closed, 72F indoor."
+    },
+    {
+      "id": "tb-tor-under75",
+      "date": "2026-07-22",
+      "sport": "mlb",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Toronto Blue Jays",
+      "desc": "Rays/Blue Jays Under 7.5",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "free",
+      "result": "PENDING",
+      "time_et": "7:07 PM",
+      "analysis": "Rogers dome \u2014 weather zeroed; both pens rested; Littell 3.10 FIP vs Berrios 3.60 home. Model total 6.9 vs 7.5."
     }
   ]
 }
