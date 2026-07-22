@@ -1,11 +1,11 @@
 {
-  "executed_seq": 45,
+  "executed_seq": 46,
   "last_log": [
-    "seq 45 executed 2026-07-22 08:13 UTC",
-    "FULL #\ud83e\uddfereceipts id=1529396820533575740 | LineShift Bot#8676: \ud83c\udf19 **THELINESHIFT NIGHTLY RECAP \u2014 07/21** \\n (every tier, every result \u2014 graded in public) \\n  \\n \ud83d\udd12 LOCK ROOM \u2014 1-2, -2.94u \u274c \\n \u2705 Valentova ML (-770) \u2192 final \u2192 +0.06u \\n \u274c Phillies ML (-136) \u2192 Los Angeles Dodgers 2, Philadelphia Phillies 1 \u2192 -1.50u \\n \u274c Brewers ML (-142) \u2192 New York Mets 4, Milwaukee Brewers 0 \u2192 -1.50u \\n  \\n \ud83d\udcca SHARP \u2014 0-1, -1.00u \u274c \\n \u274c Tigers ML (100) \u2192 Detroit Tigers 2, Chicago Cubs 11 \u2192 -1.00u \\n  \\n \ud83d\udc0b WHALE \u2014 3-1, +1.49u \u2705 \\n \u274c Gen.G ML (KeSPA Cup BO1) (-115) \u2192 final \u2192 -1.00u \\n \u2705 FearX ML (KeSPA Cup BO1) (-300) \u2192 final \u2192 +0.17u \\n \u2705 Reds ML (-108) \u2192 Cincinnati Reds 4, Seattle Mariners 2 \u2192 +1.39u \\n \u2705 Nationals/Rockies Over 13 (-108) \u2192 Nationals 7, Rockies 8 \u2192 +0.93u \\n  \\n \ud83c\udd93 FREE PICK \u2014 2-0, +1.79u \u2705 \\n \u2705 Dodgers/Phillies Under 8.5 (-110) \u2192 Los Angeles Dodgers 2, Philadelphia Phillies 1 \u2192 +0.91u \\n \u2705 Under 7.5 (-113) \u2192 Cincinnati Reds 4, Seattle Mariners 2 \u2192 +0.88u \\n  \\n **FULL BOARD: 6-4 (-0.66u).** \\n \ud83d\udcc5 **2026 SEASON: 11-9 (-2.17u)** \\n \ud83d\udcb5 Challenge: balance $80.00 (0-1) \u2014 goal $1",
-    "FULL #\ud83e\uddfereceipts id=1529396100455469167 | LineShift Bot#8676: \ud83e\uddfe **RESULT \ud83d\udc0b WHALE:** Reds ML (-108) \u2705 **WIN** +1.39u \\n Final: Cincinnati Reds 4, Seattle Mariners 2",
-    "FULL #\ud83e\uddfereceipts id=1529396099616346173 | LineShift Bot#8676: \ud83e\uddfe **RESULT \ud83d\udcca SHARP:** Tigers ML (100) \u274c **LOSS** -1.0u \\n Final: Detroit Tigers 2, Chicago Cubs 11",
-    "FULL #\ud83e\uddfereceipts id=1529396098223964191 | LineShift Bot#8676: \ud83e\uddfe **RESULT \ud83d\udd12 LOCK:** Brewers ML (-142) \u274c **LOSS** -1.5u \\n Final: New York Mets 4, Milwaukee Brewers 0"
+    "seq 46 executed 2026-07-22 09:10 UTC",
+    "deleted message in #\ud83d\udcacgeneral-chat (marker match)",
+    "posted+pinned in #\ud83d\udcacgeneral-chat",
+    "deleted message in #\ud83e\uddfereceipts (marker match)",
+    "purged 1 pin notices server-wide"
   ],
   "time_audit": {
     "at": "2026-07-22 09:04 UTC",
