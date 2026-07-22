@@ -1,14 +1,9 @@
 {
-  "seq": 44,
+  "seq": 45,
   "commands": [
     {
       "action": "read_full",
       "channel": "receipts",
-      "limit": 8
-    },
-    {
-      "action": "read_full",
-      "channel": "general-chat",
       "limit": 4
     }
   ]
