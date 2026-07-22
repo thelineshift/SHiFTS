@@ -1,5 +1,5 @@
 {
- "seq": 124,
+ "seq": 126,
  "commands": [
   {
    "seq": 50,
@@ -564,6 +564,19 @@
   {
    "action": "x_timeline",
    "seq": 124
+  },
+  {
+   "action": "x_delete",
+   "ids": [
+    "2080054970884432163"
+   ],
+   "seq": 125
+  },
+  {
+   "action": "x_media_probe",
+   "ref": "main",
+   "path": "assets/giveaway_card.png",
+   "seq": 126
   }
  ]
 }
