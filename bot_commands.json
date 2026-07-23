@@ -1,5 +1,5 @@
 {
- "seq": 178,
+ "seq": 179,
  "commands": [
   {
    "seq": 50,
@@ -862,6 +862,12 @@
    "ids": [
     "2080209960131236240"
    ]
+  },
+  {
+   "seq": 179,
+   "action": "read_recent",
+   "channel": "shift-lab",
+   "limit": 6
   }
  ]
 }
