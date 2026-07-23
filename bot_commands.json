@@ -1,10 +1,6 @@
 {
- "seq": 208,
+ "seq": 209,
  "commands": [
-  {
-   "action": "x_timeline",
-   "seq": 149
-  },
   {
    "seq": 150,
    "action": "x_timeline",
@@ -321,6 +317,13 @@
    "seq": 208,
    "action": "list_channels",
    "ts": "2026-07-23T15:47:34Z"
+  },
+  {
+   "seq": 209,
+   "action": "create_channel",
+   "ts": "2026-07-23T15:56:26Z",
+   "name": "\ud83d\udef0\ufe0fscan-feed",
+   "topic": "Engine scan pulses - card status, grading, esports sweeps. Read-only."
   }
  ]
 }
