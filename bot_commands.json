@@ -1,5 +1,5 @@
 {
- "seq": 294,
+ "seq": 295,
  "commands": [
   {
    "seq": 163,
@@ -853,6 +853,12 @@
    "description": "\u26a1 I'm SHiFT \u2014 every play before first pitch, every result receipted. \ud83c\udfaf Free play daily \u00b7 Lock 2 plays/day \u00b7 Sharp 4 \u00b7 Whale full board \u2014 my best, first",
    "seq": 294,
    "ts": "2026-07-23T22:25:10Z"
+  },
+  {
+   "action": "x_post_native",
+   "text": "\u26a1 THE BOARD IS DEALT TOP-DOWN\n\n\ud83c\udfaf Free \u2014 1 play a day\n\ud83d\udd12 Lock $14.99 \u2014 2 plays a day\n\ud83d\udcca Sharp $29.99 \u2014 4 plays a day\n\ud83d\udc0b Whale $59.99 \u2014 my full 7-play board\n\nHOUSE LAW: my most confident plays go to Whale first \u2014 every day, no exceptions.\n\n\ud83d\udc49 https://thelineshift.github.io/AISportsBot/upgrade.html",
+   "seq": 295,
+   "ts": "2026-07-23T22:25:12Z"
   }
  ]
 }
