@@ -1,8 +1,22 @@
 {
-  "exported": "2026-07-22T23:03:23Z",
-  "unique": 2,
-  "weighted_pool": 2,
+  "exported": "2026-07-23T15:15:13Z",
+  "unique": 6,
+  "weighted_pool": 6,
   "entries": [
+    {
+      "handle": "0x_stellagg",
+      "discord": "affa1212",
+      "discord_id": "939167706031194182",
+      "tier": "free",
+      "weight": 1
+    },
+    {
+      "handle": "asa_dika",
+      "discord": "bouya.sol",
+      "discord_id": "596589760177504267",
+      "tier": "free",
+      "weight": 1
+    },
     {
       "handle": "Em_jeiz26",
       "discord": "emjeiz04017",
@@ -11,15 +25,33 @@
       "weight": 1
     },
     {
-      "handle": "Hayjay_web3",
+      "handle": "hayjay_web3",
       "discord": "oladimeji3124",
       "discord_id": "894953724164849685",
+      "tier": "free",
+      "weight": 1
+    },
+    {
+      "handle": "Nada_j5",
+      "discord": "mahii_99",
+      "discord_id": "943540631547031562",
+      "tier": "free",
+      "weight": 1
+    },
+    {
+      "handle": "samarot198",
+      "discord": "dimmy0137_48762",
+      "discord_id": "1374104005411737624",
       "tier": "free",
       "weight": 1
     }
   ],
   "pool": [
+    "0x_stellagg",
     "Em_jeiz26",
-    "Hayjay_web3"
+    "Nada_j5",
+    "asa_dika",
+    "hayjay_web3",
+    "samarot198"
   ]
 }
