@@ -1,8 +1,9 @@
 {
-  "executed_seq": 174,
+  "executed_seq": 176,
   "last_log": [
-    "seq 174 executed 2026-07-23 08:32 UTC",
-    "x_media_test FAIL: legacy HTTP 401: b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'"
+    "seq 176 executed 2026-07-23 08:34 UTC",
+    "x_post_text OK: id 2080209960131236240",
+    "deleted post 2080121876249247791"
   ],
   "time_audit": {
     "at": "2026-07-23 08:29 UTC",
@@ -49,11 +50,11 @@
     "20260723-08": "ok",
     "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)"
   },
-  "executed_cmd_seq": 174,
+  "executed_cmd_seq": 176,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 7,
-  "giveaway_x_post": "2080209960131236240",
+  "giveaway_x_post": "2080045584183136495",
   "count60_idx": 5,
   "giveaway_confirmed": {
     "em_jeiz26": {
