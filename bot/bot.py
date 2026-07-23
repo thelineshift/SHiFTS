@@ -1162,6 +1162,22 @@ async def run_command(cmd, guild, log):
                     log.append(f'crypto payment {pid} for {member} ({coin})')
         except Exception as e:
             log.append(f'crypto_checkout FAIL: {e}')
+    elif a == 'audit_channels':
+        try:
+            rep = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'channels': []}
+            for ch in guild.text_channels:
+                last = None
+                try:
+                    async for m in ch.history(limit=1):
+                        last = {'author': str(m.author), 'ts': m.created_at.strftime('%Y-%m-%dT%H:%M:%SZ'),
+                                'preview': (m.content or '(embed/attachment)')[:140]}
+                except Exception:
+                    pass
+                rep['channels'].append({'name': ch.name, 'topic': (ch.topic or ''), 'last': last})
+            await asyncio.to_thread(gh_put, 'channels_audit.json', rep, 'channel audit')
+            log.append(f"channel audit: {len(rep['channels'])} channels -> channels_audit.json")
+        except Exception as e:
+            log.append(f'audit_channels FAIL: {e}')
     elif a == 'purge_whop':
         try:
             n = 0
@@ -2118,7 +2134,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.42c'
+            state['bot_version'] = '8.9.43'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
