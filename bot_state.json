@@ -1,8 +1,8 @@
 {
-  "executed_seq": 195,
+  "executed_seq": 196,
   "last_log": [
-    "seq 195 executed 2026-07-23 11:18 UTC",
-    "posted+pinned in #\ud83d\udee0\ufe0fissues"
+    "seq 196 executed 2026-07-23 11:21 UTC",
+    "metrics FAIL: name 'x_creds' is not defined"
   ],
   "time_audit": {
     "at": "2026-07-23 11:21 UTC",
@@ -49,7 +49,7 @@
     "20260723-08": "ok",
     "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)"
   },
-  "executed_cmd_seq": 195,
+  "executed_cmd_seq": 196,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 7,
