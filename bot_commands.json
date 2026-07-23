@@ -1,12 +1,6 @@
 {
- "seq": 209,
+ "seq": 210,
  "commands": [
-  {
-   "seq": 150,
-   "action": "x_timeline",
-   "n": 60,
-   "id": "tl-count"
-  },
   {
    "seq": 151,
    "action": "read_recent",
@@ -324,6 +318,12 @@
    "ts": "2026-07-23T15:56:26Z",
    "name": "\ud83d\udef0\ufe0fscan-feed",
    "topic": "Engine scan pulses - card status, grading, esports sweeps. Read-only."
+  },
+  {
+   "seq": 210,
+   "action": "make_webhook",
+   "ts": "2026-07-23T15:56:30Z",
+   "channel": "scan-feed"
   }
  ]
 }
