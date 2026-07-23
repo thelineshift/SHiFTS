@@ -1,14 +1,6 @@
 {
- "seq": 200,
+ "seq": 201,
  "commands": [
-  {
-   "action": "purge_channel",
-   "channel": "monthly-deepdive",
-   "limit": 20,
-   "marker": "MONTHLY DEEP-DIVE",
-   "bots_only": true,
-   "seq": 141
-  },
   {
    "action": "post_and_pin",
    "channel": "monthly-deepdive",
@@ -330,6 +322,11 @@
    "seq": 200,
    "action": "lockdown_channels",
    "ts": "2026-07-23T15:01:21Z"
+  },
+  {
+   "seq": 201,
+   "action": "purge_whop",
+   "ts": "2026-07-23T15:01:25Z"
   }
  ]
 }
