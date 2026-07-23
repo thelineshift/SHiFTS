@@ -1,5 +1,5 @@
 {
- "seq": 142,
+ "seq": 143,
  "commands": [
   {
    "seq": 50,
@@ -672,6 +672,12 @@
    "channel": "monthly-deepdive",
    "content": "\ud83d\udc0b **MONTHLY DEEP-DIVE \u2014 the Whale Room's signature report.**\nThe **1st of every month, 6:00 PM ET**, the whole month goes under the knife. Lower rooms get the scoreboard \u2014 you get the autopsy:\n\n\ud83d\udcca **The Ledger** \u2014 every pick re-graded, ROI per room\n\ud83d\udcc8 **The CLV Ledger** \u2014 our price vs the closing price on every play. Beat-the-close % and average CLV. The number pros judge a service by. *(Whale-only \u2014 never leaves this room.)*\n\ud83e\udde0 **Model Internals** \u2014 calibration by price band, which parameter families earned their keep, biggest miss + the exact fix applied\n\ud83c\udfaf **The Edge Map** \u2014 ROI by market, sport, and price band: where next month's volume goes\n\ud83e\ude78 **Drawdown Autopsy** \u2014 worst streak, root cause, and the rule now in place\n\ud83c\udfe6 **Bankroll Lab** \u2014 unit-sizing guidance for a whale bankroll, challenge ledger, projected path\n\ud83d\udd2d **Next Month's Attack Plan** \u2014 new edges the model is testing. You see them weeks before anyone else.\n\n\ud83d\uddd3\ufe0f **Next drop: FRIDAY AUGUST 1, 6:00 PM ET** \u2014 the July edition. \ud83e\udd16",
    "seq": 142
+  },
+  {
+   "action": "verify_entry",
+   "handle": "sauki",
+   "channel": "giveaway",
+   "seq": 143
   }
  ]
 }
