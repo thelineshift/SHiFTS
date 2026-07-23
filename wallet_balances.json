@@ -1,5 +1,5 @@
 {
-  "ts": "2026-07-23T16:32:30Z",
+  "ts": "2026-07-23T21:10:03Z",
   "wallets": [
     {
       "chain": "solana",
@@ -7,8 +7,8 @@
       "label": "\ud83c\udf81 GIVEAWAY WALLET",
       "address": "5rw9dnpwi9ER6MQf3yL9obKyM3PSjxd4w9AvzqwW6nG3",
       "note": "weekly SOL giveaway prizes pay out from here",
-      "balance": 0.40559,
-      "usd": 30.84
+      "balance": 0.73984,
+      "usd": 56.31
     },
     {
       "chain": "solana",
@@ -27,7 +27,7 @@
       "note": "same address on ETH, Base, Polygon, BSC, Arbitrum",
       "balance": null,
       "usd": null,
-      "error": "HTTP Error 403: Forbidden"
+      "error": "'result'"
     },
     {
       "chain": "bitcoin",
