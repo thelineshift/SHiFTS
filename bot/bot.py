@@ -1218,18 +1218,22 @@ async def countdown():
         if daykey in countdown.fired:
             return
         countdown.fired.add(daykey)
-        # prune: keep only today/yesterday keys so the set can't grow forever
-        today = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}'
-        yest = (datetime.date(now.tm_year, now.tm_mon, now.tm_mday) - datetime.timedelta(days=1)).strftime('%Y%m%d')
-        countdown.fired = {k for k in countdown.fired if k.startswith(today) or k.startswith(yest)}
         ch = find_channel(guild, 'general-chat')
         if not ch:
             return
         hh = marker[1] % 12 if marker[1] % 12 else 12
         label = f'{hh} {"AM" if marker[1] < 12 else "PM"} ET'
         state = await asyncio.to_thread(get_state)
+        # PERSISTED dedupe (survives restarts + blocks duplicate replicas):
+        fired = state.get('count_fired', [])
+        if daykey in fired:
+            return
+        today = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}'
+        yest = (datetime.date(now.tm_year, now.tm_mon, now.tm_mday) - datetime.timedelta(days=1)).strftime('%Y%m%d')
+        state['count_fired'] = [k for k in fired + [daykey] if k.startswith(today) or k.startswith(yest)]
         rid = state.get('scan_role_id')
-        mention = f'<@&{rid}> ' if rid else ''
+        # SPAM LAW: exactly ONE notification per scan — T-10 pings the role, T-60 is text-only hype
+        mention = f'<@&{rid}> ' if (rid and marker[0] == '10') else ''
         if marker[0] == '60':
             pool = COUNT_60
             idx = state.get('count60_idx', 0)
@@ -1238,8 +1242,8 @@ async def countdown():
             pool = COUNT_10
             idx = state.get('count10_idx', 0)
             state['count10_idx'] = idx + 1
-        await ch.send(mention + pool[idx % len(pool)].format(label=label))
         await asyncio.to_thread(gh_put, 'bot_state.json', state, 'countdown rotation')
+        await ch.send(mention + pool[idx % len(pool)].format(label=label))
     except Exception as e:
         print('countdown error:', e)
 countdown.fired = set()
@@ -1324,7 +1328,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.28'
+            state['bot_version'] = '8.9.29'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
