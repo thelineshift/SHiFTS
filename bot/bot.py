@@ -11,7 +11,7 @@ API = f'https://api.github.com/repos/{REPO}/contents'
 
 TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U0001F40B Whale': 'whale'}
 
-BOT_NICK = '🤖 SHiFT'
+BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
@@ -128,7 +128,7 @@ async def handle_issue(message, guild):
             if lab:
                 asyncio.ensure_future(lab.send(f'🚨 ESCALATED ticket #{t["id"]} — {author} ({author.id}): {t.get("summary","")[:200]} — auto-fix failed, needs admin.'))
         else:
-            reply = f'🤖 Ticket **#{t["id"]}** is waiting on your confirmation — did the fix work? Reply **yes** or **no**.'
+            reply = f'⚡ Ticket **#{t["id"]}** is waiting on your confirmation — did the fix work? Reply **yes** or **no**.'
     elif not t:
         tid = issues.get('next_id', 1); issues['next_id'] = tid + 1
         t = {'id': tid, 'user_id': str(author.id), 'user': str(author), 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
@@ -182,7 +182,7 @@ async def handle_issue(message, guild):
             asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_opened', f'ticket #{tid} other ({author}): {content[:150]}'))
     else:
         t['summary'] = (t.get('summary', '') + ' | ' + content)[:250]
-        reply = f'🤖 Added that to ticket **#{t["id"]}** — still on it.'
+        reply = f'⚡ Added that to ticket **#{t["id"]}** — still on it.'
     try:
         gh_put('issues.json', issues, f'issue ticket update ({author.id})')
     except Exception as e:
@@ -652,7 +652,7 @@ async def verify_giveaway_entry(message, handle):
         except Exception:
             uid = ''
         if not uid:
-            await message.channel.send(f"🤖 SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
+            await message.channel.send(f"⚡ SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
             return
         if time.time() > c.get('oauth2_expires_at', 0):
             c = await asyncio.to_thread(x_oauth2_refresh, c)
@@ -676,7 +676,7 @@ async def verify_giveaway_entry(message, handle):
         if not missing and followed and liked and reposted:
             conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
             if handle.lower() in (conf or {}):
-                await message.channel.send(f"🎫 **@{handle}** — you're already locked in the pool. Sit tight for Sunday 6 PM ET. 🤖")
+                await message.channel.send(f"🎫 **@{handle}** — you're already locked in the pool. Sit tight for Sunday 6 PM ET. ⚡")
                 return
             names = [r.name for r in getattr(message.author, 'roles', [])]
             tkey = 'whale' if any('Whale' in n or '🐋' in n for n in names) else 'sharp' if any('Sharp' in n or '📊' in n for n in names) else 'lock' if any('Lock' in n or '🔒' in n for n in names) else 'free'
@@ -692,11 +692,11 @@ async def verify_giveaway_entry(message, handle):
             except Exception:
                 pass
             await message.channel.send(
-                f"🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. 🤖")
+                f"🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. ⚡")
         else:
             steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else 'X is still registering your activity —'
             await message.channel.send(
-                f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. 🤖")
+                f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. ⚡")
     except Exception as e:
         print('giveaway verify error:', e)
 
@@ -758,7 +758,7 @@ async def run_command(cmd, guild, log):
             role = await guild.create_role(name='🛰️ Scan Alerts', mentionable=True, reason='scan alert opt-in')
             log.append(f'created role {role.id}')
         ch = find_channel(guild, 'general-chat')
-        msg = await ch.send("🛰️ **WANT THE HEADS-UP?**\nReact with 🛰️ and you'll get one quiet ping before each scan (6x daily — T-60 and T-10 only, nothing else). Remove your reaction anytime to opt out. No spam, just the warning. 🤖")
+        msg = await ch.send("🛰️ **WANT THE HEADS-UP?**\nReact with 🛰️ and you'll get one quiet ping before each scan (6x daily — T-60 and T-10 only, nothing else). Remove your reaction anytime to opt out. No spam, just the warning. ⚡")
         try:
             await msg.add_reaction('🛰️')
         except Exception:
@@ -985,7 +985,7 @@ async def run_command(cmd, guild, log):
                 except Exception:
                     uid = ''
                 if not uid:
-                    await ch.send(f"🤖 SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
+                    await ch.send(f"⚡ SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
                 else:
                     followed = await asyncio.to_thread(gw_followed, uid, uat)
                     try:
@@ -1008,7 +1008,7 @@ async def run_command(cmd, guild, log):
                     if not missing and followed and liked and reposted:
                         conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
                         if handle.lower() in (conf or {}):
-                            await ch.send(f"🎫 **@{handle}** — already locked in the pool. Sunday 6 PM ET. 🤖")
+                            await ch.send(f"🎫 **@{handle}** — already locked in the pool. Sunday 6 PM ET. ⚡")
                             log.append(f'verify_entry: @{handle} already confirmed')
                         else:
                             mult, dname, did, tkey = 1, '', '', 'free'
@@ -1024,11 +1024,11 @@ async def run_command(cmd, guild, log):
                                 'handle': handle, 'discord': dname, 'discord_id': did,
                                 'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
                             await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway confirm ' + handle, QUEUE_BRANCH)
-                            await ch.send(f"🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. 🤖")
+                            await ch.send(f"🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. ⚡")
                             log.append(f'verify_entry: CONFIRMED @{handle} ({mult}x)')
                     else:
                         steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else 'X is still registering your activity —'
-                        await ch.send(f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. 🤖")
+                        await ch.send(f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. ⚡")
                         log.append(f'verify_entry: @{handle} incomplete ({len(missing)} left)')
             except Exception as e:
                 log.append(f'verify_entry FAIL: {e}')
@@ -2124,7 +2124,7 @@ async def stripe_sync():
                 info['welcomed'] = True
                 gen = find_channel(guild, 'general-chat')
                 if gen:
-                    await gen.send(f"🎉 Welcome {member.mention} to **{info.get('tier', '').upper()}** — your room access is live! Check your new channels. 🤖")
+                    await gen.send(f"🎉 Welcome {member.mention} to **{info.get('tier', '').upper()}** — your room access is live! Check your new channels. ⚡")
                 await asyncio.to_thread(log_event, 'new_sub', f"{info.get('username')} subscribed {info.get('tier')}")
             if status == 'past_due' and not info.get('pd_alert'):
                 info['pd_alert'] = True
@@ -2292,7 +2292,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.50'
+            state['bot_version'] = '8.9.51'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -2702,7 +2702,7 @@ async def settle_challenge(guild, p):
             await ch.send(f"💵 **CHALLENGE BET #{hit.get('n')} — {p['result']}** {e}\n"
                           f"{p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
                           f"**BALANCE: ${chal['balance']:.2f}** (goal: ${chal.get('goal', 1000):.0f}) · record {chal['record']['wins']}-{chal['record']['losses']}\n"
-                          f"BET #{hit.get('n') + 1} drops with tomorrow's card. — SHiFT 🤖")
+                          f"BET #{hit.get('n') + 1} drops with tomorrow's card. — SHiFT ⚡")
     except Exception as e:
         print('settle_challenge error:', e)
 
@@ -3159,15 +3159,15 @@ async def scan_event_watch():
                 events[slot] = 'ok'
             else:
                 events[slot] = 'makeup_needed'
-                await ch.send("⚠️ **PICK GUARD** — theater ran but no card registered this window. SHiFT is re-running the drop now; picks land within the hour. 🤖")
+                await ch.send("⚠️ **PICK GUARD** — theater ran but no card registered this window. SHiFT is re-running the drop now; picks land within the hour. ⚡")
                 state.setdefault('pick_guard_alerts', []).append(slot)
                 print(f'pick_guard: slot {slot} theater w/o picks')
         elif fired:
             events[slot] = 'partial'
-            await ch.send("⚠️ **SCAN STALLED** — collection started but never completed. SHiFT is re-running this event; card drops within the hour. 🤖")
+            await ch.send("⚠️ **SCAN STALLED** — collection started but never completed. SHiFT is re-running this event; card drops within the hour. ⚡")
             state.setdefault('scan_event_misses', []).append(slot)
         else:
-            await ch.send("🛰️ **SCAN DELAYED** — the machine hit a snag on this run. SHiFT is catching up; the card drops shortly. 🤖")
+            await ch.send("🛰️ **SCAN DELAYED** — the machine hit a snag on this run. SHiFT is catching up; the card drops shortly. ⚡")
             events[slot] = 'missed'
             state.setdefault('scan_event_misses', []).append(slot)
             print(f'scan_event_watch: slot {slot} MISSED, fallback posted')
