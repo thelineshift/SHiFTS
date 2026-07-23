@@ -2218,7 +2218,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.48'
+            state['bot_version'] = '8.9.49'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -2357,13 +2357,16 @@ def x_oauth2_refresh(c):
     gh_put('x_creds.json', c, 'oauth2 user token refresh')
     return c
 
-def x_post_native(text):
+def x_post_native(text, quote_id=None):
     c = x_creds_load()
     if c.get('oauth2_access'):
         if time.time() > c.get('oauth2_expires_at', 0):
             c = x_oauth2_refresh(c)
+        body = {'text': text}
+        if quote_id:
+            body['quote_tweet_id'] = str(quote_id)
         req = urllib.request.Request('https://api.x.com/2/tweets',
-                                     data=json.dumps({'text': text}).encode(), method='POST',
+                                     data=json.dumps(body).encode(), method='POST',
                                      headers={'Authorization': f"Bearer {c['oauth2_access']}",
                                               'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
         try:
@@ -2373,7 +2376,7 @@ def x_post_native(text):
             raise Exception(f'HTTP {e.code}: {e.read()[:300]}')
     return x_post_oauth1(text)
 
-def x_post_oauth1(text):
+def x_post_oauth1(text, quote_id=None):
     import hmac, hashlib, secrets, urllib.parse
     c = x_creds_load()
     if not all(c.get(k) for k in ('api_key', 'api_secret', 'access_token', 'access_token_secret')):
@@ -2387,7 +2390,10 @@ def x_post_oauth1(text):
     key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
     op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
     hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
-    req = urllib.request.Request(url, data=json.dumps({'text': text}).encode(), method='POST',
+    payload = {'text': text}
+    if quote_id:
+        payload['quote_tweet_id'] = str(quote_id)
+    req = urllib.request.Request(url, data=json.dumps(payload).encode(), method='POST',
                                  headers={'Authorization': hdr, 'Content-Type': 'application/json',
                                           'User-Agent': 'TheLineShift/1.0'})
     try:
@@ -2521,9 +2527,9 @@ def x_post_media_oauth1(text, media_id, cred_name=None):
             last = f'{name}: {e}'
     raise Exception(last or 'media tweet failed')
 
-def x_post(text):
+def x_post(text, quote_id=None):
     try:
-        res = x_post_native(text)
+        res = x_post_native(text, quote_id)
         if res:
             return res
     except Exception as e:
@@ -2710,7 +2716,13 @@ async def x_drainer():
         r = queue[0]
         picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
         chal_doc = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main') if r.get('tier') == 'challenge' else None
-        resp = await asyncio.to_thread(x_post, x_receipt_text(r, picks_doc.get('picks'), chal_doc))
+        receipt = x_receipt_text(r, picks_doc.get('picks'), chal_doc)
+        quote_id = None
+        if r.get('tier') == 'free' and r.get('result') == 'WIN':
+            quote_id = await asyncio.to_thread(x_find_pick_post, r.get('desc'), 'free')
+            if quote_id:
+                receipt += '\n\nThe call, pre-game \U0001F447'
+        resp = await asyncio.to_thread(x_post, receipt, quote_id)
         if resp is None:
             print('x_drainer: no X key available')
             return
@@ -2720,6 +2732,27 @@ async def x_drainer():
         print(f"x_drainer: posted {r.get('id')}, {len(queue) - 1} left")
     except Exception as e:
         print('x_drainer error:', e)
+
+def x_find_pick_post(desc, tier_key):
+    """Locate our original X announcement of a pick so a WIN receipt can QUOTE it (transparency law)."""
+    try:
+        c = x_creds_load()
+        uid = c.get('user_id') or '1831457082828021760'
+        d = x_get_json(f'https://api.x.com/2/users/{uid}/tweets?max_results=50', c['bearer_token'])
+        toks = [t for t in re.findall(r'[a-z]{4,}', (desc or '').lower())
+                if t not in ('under', 'over', 'pick', 'free', 'play', 'game', 'with', 'total', 'runs')]
+        if not toks:
+            return None
+        for t in d.get('data', []):
+            low = (t.get('text') or '').lower()
+            if tier_key == 'free' and 'free' not in low:
+                continue
+            if all(tk in low for tk in toks[:2]):
+                return t['id']
+        return None
+    except Exception as e:
+        print('x_find_pick_post:', e)
+        return None
 
 def units_of(p):
     if p.get('units_result') is not None:
@@ -3091,5 +3124,6 @@ def run_guarded():
     else:
         print('clean disconnect - sleeping 2min before exit (restart throttle)')
         time.sleep(120)
+    sys.exit(1)  # non-zero so Railway actually restarts us after the throttle nap
 
 run_guarded()
