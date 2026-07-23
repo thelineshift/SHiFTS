@@ -1,21 +1,33 @@
 {
- "updated": "2026-07-23T15:17:01Z",
+ "updated": "2026-07-23T16:26:20Z",
  "wallets": [
   {
    "chain": "solana",
    "symbol": "SOL",
-   "address": "CXMSPuotirZU1shtrVL21SiobsDyXf7m7CYoS2W2kTWj"
+   "label": "\ud83c\udf81 GIVEAWAY WALLET",
+   "address": "5rw9dnpwi9ER6MQf3yL9obKyM3PSjxd4w9AvzqwW6nG3",
+   "note": "weekly SOL giveaway prizes pay out from here"
+  },
+  {
+   "chain": "solana",
+   "symbol": "SOL",
+   "label": "\ud83d\udcbc OPS WALLET",
+   "address": "CXMSPuotirZU1shtrVL21SiobsDyXf7m7CYoS2W2kTWj",
+   "note": "crypto subscription revenue (SOL/USDC)"
   },
   {
    "chain": "ethereum",
    "symbol": "ETH/EVM",
+   "label": "\ud83d\udcbc OPS WALLET",
    "address": "0x54D66ffE2492a015A826bDE45c2F321Cec5751d5",
-   "note": "same address on Base, Polygon, BSC, Arbitrum"
+   "note": "same address on ETH, Base, Polygon, BSC, Arbitrum"
   },
   {
    "chain": "bitcoin",
    "symbol": "BTC",
-   "address": "14C6FDubcA5baeAkCtSzbjENvBVuQGdHrz"
+   "label": "\ud83d\udcbc OPS WALLET",
+   "address": "14C6FDubcA5baeAkCtSzbjENvBVuQGdHrz",
+   "note": "BTC revenue"
   }
  ]
 }
