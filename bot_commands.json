@@ -1,5 +1,5 @@
 {
- "seq": 187,
+ "seq": 188,
  "commands": [
   {
    "seq": 50,
@@ -912,6 +912,10 @@
    "author": "SHiFT",
    "limit": 15,
    "max": 1
+  },
+  {
+   "seq": 188,
+   "action": "harden_guild"
   }
  ]
 }
