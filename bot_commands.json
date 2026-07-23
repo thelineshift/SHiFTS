@@ -1,5 +1,5 @@
 {
- "seq": 165,
+ "seq": 166,
  "commands": [
   {
    "seq": 50,
@@ -787,6 +787,12 @@
    "action": "read_recent",
    "channel": "free-pick",
    "limit": 4
+  },
+  {
+   "seq": 166,
+   "action": "read_recent",
+   "channel": "daily-locks",
+   "limit": 3
   }
  ]
 }
