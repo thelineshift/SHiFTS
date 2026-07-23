@@ -770,6 +770,40 @@ async def run_command(cmd, guild, log):
                     await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id')
         except Exception as e:
             log.append(f'x_post_text FAIL: {e}')
+    elif a == 'x_refresh':
+        try:
+            c = x_creds_load()
+            c = await asyncio.to_thread(x_oauth2_refresh, c)
+            log.append(f"x_refresh OK: token now expires {time.strftime('%H:%M UTC', time.gmtime(c.get('oauth2_expires_at', 0)))}")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:250]
+                except Exception: pass
+            log.append(f'x_refresh FAIL: {e} {body}')
+    elif a == 'x_media_test':
+        try:
+            remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
+            img = base64.b64decode(remote['content'])
+            cname, mid = await asyncio.to_thread(x_upload_media_oauth1, img)
+            log.append(f'x_media_test OK: media_id {mid} via {cname} ({len(img)} bytes) — native image posts LIVE')
+        except Exception as e:
+            log.append(f'x_media_test FAIL: {e}')
+    elif a == 'x_post_media_native':
+        try:
+            remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
+            img = base64.b64decode(remote['content'])
+            cname, mid = await asyncio.to_thread(x_upload_media_oauth1, img)
+            res = await asyncio.to_thread(x_post_media_oauth1, cmd['text'], mid, cname)
+            tid = res.get('data', {}).get('id') if res else None
+            log.append(f'x_post_media_native OK: tweet {tid} with media {mid} via {cname}')
+            if cmd.get('tag') == 'giveaway' and tid:
+                st2 = await asyncio.to_thread(get_state)
+                if st2 is not None:
+                    st2['giveaway_x_post'] = str(tid)
+                    await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id (native media)')
+        except Exception as e:
+            log.append(f'x_post_media_native FAIL: {e}')
     elif a == 'x_post_media':
         try:
             remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
@@ -1328,7 +1362,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.29'
+            state['bot_version'] = '8.9.30'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -1505,6 +1539,88 @@ def x_post_oauth1(text):
             return json.load(r)
     except urllib.error.HTTPError as e:
         raise Exception(f'HTTP {e.code}: {e.read()[:300]}')
+
+
+def x_oauth1_sign(method, url, ck, cs, at, ats):
+    import hmac, hashlib, secrets, urllib.parse
+    op = {'oauth_consumer_key': ck, 'oauth_nonce': secrets.token_hex(16),
+          'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+          'oauth_version': '1.0'}
+    if at:
+        op['oauth_token'] = at
+    q = lambda s: urllib.parse.quote(str(s), safe='')
+    base = '&'.join([method.upper(), q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+    key = f"{q(cs)}&{q(ats or '')}"
+    op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
+    return 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+
+def x_oauth1_sets(c):
+    sets = []
+    o1 = c.get('oauth1') or {}
+    if all(o1.get(k) for k in ('consumer_key', 'consumer_secret', 'access_token', 'access_token_secret')):
+        sets.append(('app2', o1['consumer_key'], o1['consumer_secret'], o1['access_token'], o1['access_token_secret']))
+    if all(c.get(k) for k in ('api_key', 'api_secret', 'access_token', 'access_token_secret')):
+        sets.append(('legacy', c['api_key'], c['api_secret'], c['access_token'], c['access_token_secret']))
+    return sets
+
+def x_upload_media_oauth1(img, filename='image.png'):
+    import secrets
+    c = x_creds_load()
+    sets = x_oauth1_sets(c)
+    if not sets:
+        raise Exception('no complete oauth1 credential set')
+    url = 'https://upload.x.com/2/media/upload'
+    last = None
+    for name, ck, cs, at, ats in sets:
+        try:
+            boundary = '----shift' + secrets.token_hex(8)
+            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)
+            body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="{filename}"\r\n'
+                    f'Content-Type: image/png\r\n\r\n').encode() + img + f'\r\n--{boundary}--\r\n'.encode()
+            req = urllib.request.Request(url, data=body, method='POST',
+                headers={'Authorization': hdr,
+                         'Content-Type': f'multipart/form-data; boundary={boundary}',
+                         'User-Agent': 'TheLineShift/1.0'})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                d = json.load(r)
+            mid = d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id')
+            if not mid:
+                raise Exception(f'no media id in {str(d)[:200]}')
+            return name, str(mid)
+        except urllib.error.HTTPError as e:
+            try:
+                eb = e.read()[:250]
+            except Exception:
+                eb = b''
+            last = f'{name} HTTP {e.code}: {eb}'
+        except Exception as e:
+            last = f'{name}: {e}'
+    raise Exception(last or 'upload failed')
+
+def x_post_media_oauth1(text, media_id, cred_name=None):
+    c = x_creds_load()
+    sets = x_oauth1_sets(c)
+    if cred_name:
+        sets = [s for s in sets if s[0] == cred_name] or sets
+    url = 'https://api.x.com/2/tweets'
+    payload = json.dumps({'text': text, 'media': {'media_ids': [str(media_id)]}}).encode()
+    last = None
+    for name, ck, cs, at, ats in sets:
+        try:
+            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)
+            req = urllib.request.Request(url, data=payload, method='POST',
+                headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
+            with urllib.request.urlopen(req, timeout=25) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            try:
+                eb = e.read()[:250]
+            except Exception:
+                eb = b''
+            last = f'{name} HTTP {e.code}: {eb}'
+        except Exception as e:
+            last = f'{name}: {e}'
+    raise Exception(last or 'media tweet failed')
 
 def x_post(text):
     try:
