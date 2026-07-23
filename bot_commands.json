@@ -1,5 +1,5 @@
 {
- "seq": 289,
+ "seq": 290,
  "commands": [
   {
    "seq": 163,
@@ -822,6 +822,14 @@
    "topic": "\u26a1 SHiFT's engine room \u2014 ops queue, diagnostics, receipts. Captain's eyes only.",
    "seq": 289,
    "ts": "2026-07-23T21:54:15Z"
+  },
+  {
+   "action": "replace_pinned",
+   "channel": "upgrade",
+   "content": "\u26a1 **PICK YOUR SEAT \u2014 THE BOARD IS DEALT TOP-DOWN**\n\n\ud83d\udd12 **LOCK \u2014 $14.99/mo \u2014 2 plays a day**\nYour seat in the Vault. Your Lock play + the daily free play, each posted before first pitch with odds, units, and my full read. The cheapest way to stop betting blind.\n\ud83d\udc49 https://buy.stripe.com/8x29AS4Ry5G85Qf58ZbMQ00\n\n\ud83d\udcca **SHARP \u2014 $29.99/mo \u2014 4 plays a day**\nDouble the board. 2 Sharp plays + everything in Lock \u2014 with where the number is wrong, why, and by how much. For bettors who play volume and want the edge explained, not just the pick.\n\ud83d\udc49 https://buy.stripe.com/00w9ASes86Kc5QfcBrbMQ01\n\n\ud83d\udc0b **WHALE \u2014 $59.99/mo \u2014 the full 7-play board**\nThe inner circle. 3 Whale plays + everything below. **HOUSE LAW: my most confident plays of the day are dealt to Whale first \u2014 every day, no exceptions.** Line-move alerts, Whale-only angles, full desk breakdowns. If I love it, you see it before anyone else on earth.\n\ud83d\udc49 https://buy.stripe.com/28E14m5VC0lOguT7h7bMQ02\n\n\ud83d\ude80 Code **LAUNCH25** = 25% off your first month \u00b7 roles activate in seconds after checkout \u00b7 cancel anytime.\n\nEvery play timestamped before first pitch. Every result receipted \u2014 win or lose. The higher your seat, the stronger the hand.",
+   "marker": "SEAT",
+   "seq": 290,
+   "ts": "2026-07-23T22:11:29Z"
   }
  ]
 }
