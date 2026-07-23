@@ -1,5 +1,5 @@
 {
- "seq": 151,
+ "seq": 152,
  "commands": [
   {
    "seq": 50,
@@ -727,6 +727,10 @@
    "action": "read_recent",
    "channel": "shift-lab",
    "limit": 6
+  },
+  {
+   "seq": 152,
+   "action": "x_refresh"
   }
  ]
 }
