@@ -321,9 +321,8 @@
   },
   {
    "seq": 210,
-   "action": "make_webhook",
-   "ts": "2026-07-23T15:56:30Z",
-   "channel": "scan-feed"
+   "action": "lockdown_channels",
+   "ts": "2026-07-23T15:56:33Z"
   }
  ]
 }
