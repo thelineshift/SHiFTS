@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-23T06:40:00Z",
+ "updated": "2026-07-23T08:30:00Z",
  "bankrollStart": 100.0,
  "goal": 1000.0,
  "balance": 40.0,
@@ -43,6 +43,17 @@
    "result": "LOSS",
    "posted": "2026-07-22T22:18:06Z",
    "note": "Mirrors Lock Room - model #1 confidence | settled: Tigers 5, Cubs 1"
+  },
+  {
+   "n": 4,
+   "date": "2026-07-23",
+   "pick": "Cardinals ML",
+   "odds": -123,
+   "stake": 20.0,
+   "toWin": 16.26,
+   "time_et": "5:15 PM",
+   "posted": "2026-07-23T08:30:00Z",
+   "note": "Also Lock Room play - McGreevy 2.92 vs Pfaadt 4.58"
   }
  ],
  "current_bet": {
