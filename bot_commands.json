@@ -1,5 +1,5 @@
 {
- "seq": 170,
+ "seq": 171,
  "commands": [
   {
    "seq": 50,
@@ -817,6 +817,12 @@
    "action": "read_recent",
    "channel": "shift-lab",
    "limit": 8
+  },
+  {
+   "seq": 171,
+   "action": "read_recent",
+   "channel": "general-chat",
+   "limit": 6
   }
  ]
 }
