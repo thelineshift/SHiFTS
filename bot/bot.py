@@ -58,8 +58,10 @@ def make_client(privileged=True):
                 return
             chname = (getattr(message.channel, 'name', '') or '').lower()
             if 'giveaway' in chname:
-                hs = [h for h in re.findall(r'@([A-Za-z0-9_]{4,15})\b', message.content or '')
-                      if h.lower() not in ('thelineshift', 'everyone', 'here')]
+                raw = message.content or ''
+                hs = list(re.findall(r'@([A-Za-z0-9_]{4,15})\b', raw))
+                hs += re.findall(r'(?:https?://)?(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{4,15})', raw, flags=re.I)
+                hs = [h for h in hs if h.lower() not in ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i')]
                 if hs:
                     await verify_giveaway_entry(message, hs[0])
                 return
@@ -152,6 +154,12 @@ def gh_put(path, obj, message, ref=QUEUE_BRANCH):
         if path == 'bot_state.json':
             try:
                 base = json.loads(base64.b64decode(remote['content']).decode())
+                # deep-merge append-only dicts so concurrent writers can't clobber entries (Stella wipe 7/23)
+                for dk in ('giveaway_confirmed', 'scan_events'):
+                    if isinstance(base.get(dk), dict) and isinstance(obj.get(dk), dict):
+                        m = {**base[dk], **obj[dk]}
+                        base[dk] = m
+                        obj = {**obj, dk: m}
                 base.update(obj)
                 obj = base
             except Exception:
@@ -319,6 +327,18 @@ def gw_followed(uid, uat):
     except Exception:
         return None
 
+
+TIER_ROOM = {'lock': '🔒 Lock Room', 'sharp': '📊 Sharp Room', 'whale': '🐋 Whale Room', 'free': '🆓 Free'}
+def entry_checklist(handle, followed, liked, reposted):
+    def line(ok, label):
+        return f"{'✅' if ok else '❌'} {label}"
+    lines = [line(followed, 'Follow @TheLineShift'),
+             line(liked, 'Like the giveaway post'),
+             line(reposted, 'Repost the giveaway post')]
+    missing = [l for ok, l in zip((followed, liked, reposted),
+                                  ('follow @TheLineShift', 'like the giveaway post', 'repost the giveaway post')) if not ok]
+    return lines, missing
+
 async def verify_giveaway_entry(message, handle):
     try:
         c = await asyncio.to_thread(x_creds_load)
@@ -346,32 +366,37 @@ async def verify_giveaway_entry(message, handle):
             reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', uat)
         except Exception:
             reposted = None
-        def mark(v):
-            return '✅' if v else ('❌' if v is False else '❓')
+        def ic(ok, label):
+            return f"{'✅' if ok else ('❌' if ok is False else '❓')} {label}"
+        checklist = "\n".join([ic(followed, 'Follow @TheLineShift'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
         missing = []
         if followed is False: missing.append('follow @TheLineShift')
         if liked is False: missing.append('like the giveaway post')
         if reposted is False: missing.append('repost the giveaway post')
-        status = (f"{mark(followed)} follow   {mark(liked)} like   {mark(reposted)} repost")
         if not missing and followed and liked and reposted:
+            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+            if handle.lower() in (conf or {}):
+                await message.channel.send(f"🎫 **@{handle}** — you're already locked in the pool. Sit tight for Sunday 6 PM ET. 🤖")
+                return
             names = [r.name for r in getattr(message.author, 'roles', [])]
-            mult = 5 if any('Whale' in n or '🐋' in n for n in names) else 3 if any('Sharp' in n or '📊' in n for n in names) else 2 if any('Lock' in n or '🔒' in n for n in names) else 1
-            state.setdefault('giveaway_confirmed', {})[handle.lower()] = {
+            tkey = 'whale' if any('Whale' in n or '🐋' in n for n in names) else 'sharp' if any('Sharp' in n or '📊' in n for n in names) else 'lock' if any('Lock' in n or '🔒' in n for n in names) else 'free'
+            mult = {'whale': 5, 'sharp': 3, 'lock': 2, 'free': 1}[tkey]
+            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+            conf = conf or {}
+            conf[handle.lower()] = {
                 'handle': handle, 'discord': str(message.author), 'discord_id': str(message.author.id),
                 'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
-            await asyncio.to_thread(gh_put, 'bot_state.json', state, 'giveaway confirm ' + handle)
+            await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway confirm ' + handle, QUEUE_BRANCH)
             try:
                 await message.add_reaction('✅')
             except Exception:
                 pass
             await message.channel.send(
-                f"🎫 **ENTRY CONFIRMED — @{handle}**\n{status}\n"
-                f"You're in the pool with **{mult}x ticket{'s' if mult > 1 else ''}** at your tier. Draw: Sunday 6 PM ET, provably fair, paid on-chain. 🤖")
+                f"🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. 🤖")
         else:
-            todo = ('; '.join(missing)) if missing else 'give X a minute to register it, then re-drop your handle'
+            steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else 'X is still registering your activity —'
             await message.channel.send(
-                f"🤖 SHiFT entry check for **@{handle}**:\n{status}\n"
-                f"Not locked in yet — {todo}, then drop your handle here again and I'll re-scan it.")
+                f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. 🤖")
     except Exception as e:
         print('giveaway verify error:', e)
 
@@ -465,9 +490,11 @@ async def run_command(cmd, guild, log):
             async for msg in ch.history(limit=400):
                 if msg.author.bot:
                     continue
-                for h in re.findall(r'@([A-Za-z0-9_]{4,15})\b', msg.content or ''):
+                pats = list(re.findall(r'@([A-Za-z0-9_]{4,15})\b', msg.content or ''))
+                pats += re.findall(r'(?:https?://)?(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{4,15})', msg.content or '', flags=re.I)
+                for h in pats:
                     key = h.lower()
-                    if key in ('thelineshift', 'everyone', 'here'):
+                    if key in ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i'):
                         continue
                     tname, weight = tier_of.get(msg.author.id, ('free', 1))
                     cur = entries.get(key)
@@ -644,31 +671,38 @@ async def run_command(cmd, guild, log):
                     except Exception as _e:
                         log.append(f'verify repost-check err: {str(_e)[:80]}')
                         reposted = None
-                    def mark(v):
-                        return '✅' if v else ('❌' if v is False else '❓')
+                    def ic(ok, label):
+                        return f"{'✅' if ok else ('❌' if ok is False else '❓')} {label}"
+                    checklist = "\n".join([ic(followed, 'Follow @TheLineShift'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
                     missing = []
                     if followed is False: missing.append('follow @TheLineShift')
                     if liked is False: missing.append('like the giveaway post')
                     if reposted is False: missing.append('repost the giveaway post')
-                    status = f"{mark(followed)} follow   {mark(liked)} like   {mark(reposted)} repost"
                     if not missing and followed and liked and reposted:
-                        # tier: look up the discord member who posted the handle (from entries export if given)
-                        mult, dname, did = 1, '', ''
-                        ent = await asyncio.to_thread(gh_get_json_ref, 'giveaway_entries.json', 'main')
-                        for e in (ent or {}).get('entries', []):
-                            if e.get('handle', '').lower() == handle.lower():
-                                mult = int(e.get('weight', 1)); dname = e.get('discord', ''); did = e.get('discord_id', '')
-                                break
-                        state.setdefault('giveaway_confirmed', {})[handle.lower()] = {
-                            'handle': handle, 'discord': dname, 'discord_id': did,
-                            'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
-                        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'giveaway confirm ' + handle)
-                        await ch.send(f"🎫 **ENTRY CONFIRMED — @{handle}**\n{status}\nYou're in the pool with **{mult}x ticket{'s' if mult > 1 else ''}**. Draw: Sunday 6 PM ET, provably fair, paid on-chain. 🤖")
-                        log.append(f'verify_entry: CONFIRMED @{handle} ({mult}x)')
+                        conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+                        if handle.lower() in (conf or {}):
+                            await ch.send(f"🎫 **@{handle}** — already locked in the pool. Sunday 6 PM ET. 🤖")
+                            log.append(f'verify_entry: @{handle} already confirmed')
+                        else:
+                            mult, dname, did, tkey = 1, '', '', 'free'
+                            ent = await asyncio.to_thread(gh_get_json_ref, 'giveaway_entries.json', 'main')
+                            for e in (ent or {}).get('entries', []):
+                                if e.get('handle', '').lower() == handle.lower():
+                                    mult = int(e.get('weight', 1)); dname = e.get('discord', ''); did = e.get('discord_id', '')
+                                    tkey = e.get('tier', 'free')
+                                    break
+                            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+                            conf = conf or {}
+                            conf[handle.lower()] = {
+                                'handle': handle, 'discord': dname, 'discord_id': did,
+                                'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
+                            await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway confirm ' + handle, QUEUE_BRANCH)
+                            await ch.send(f"🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. 🤖")
+                            log.append(f'verify_entry: CONFIRMED @{handle} ({mult}x)')
                     else:
-                        todo = '; '.join(missing) if missing else 'give X a minute to register it, then re-drop the handle'
-                        await ch.send(f"🤖 SHiFT entry check for **@{handle}**:\n{status}\nNot locked in yet — {todo}, then drop your handle here again and I'll re-scan it.")
-                        log.append(f'verify_entry: @{handle} incomplete: {status}')
+                        steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else 'X is still registering your activity —'
+                        await ch.send(f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. 🤖")
+                        log.append(f'verify_entry: @{handle} incomplete ({len(missing)} left)')
             except Exception as e:
                 log.append(f'verify_entry FAIL: {e}')
     elif a == 'x_followers_probe':
@@ -1290,7 +1324,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.23'
+            state['bot_version'] = '8.9.28'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -1302,8 +1336,8 @@ async def audit():
 # ---------- AUTO-GRADER (v8.3): event-driven results, not clock-driven ----------
 ESPN = {'MLB': 'baseball/mlb', 'NBA': 'basketball/nba', 'WNBA': 'basketball/wnba',
         'NHL': 'hockey/nhl', 'NFL': 'football/nfl'}
-TIER_BADGE = {'lock': '🔒 LOCK', 'sharp': '📊 SHARP', 'whale': '🐋 WHALE',
-              'free': '🆓 FREE', 'challenge': '💵 CHALLENGE'}
+TIER_BADGE = {'lock': '🔒 LOCK ROOM', 'sharp': '📊 SHARP ROOM', 'whale': '🐋 WHALE ROOM',
+              'free': '🆓 FREE PICK', 'challenge': '💵 CHALLENGE'}
 
 def norm_txt(s):
     return re.sub(r'[^a-z]', '', (s or '').lower())
@@ -1954,6 +1988,7 @@ async def scan_event_watch():
         fired = False
         finished = False
         passed = False
+        resolved = False
         # TIME-SCOPED: only messages posted AFTER this slot started count — an old SCAN COMPLETE can never satisfy a new slot
         async for m in ch.history(limit=40, after=slot_dt):
             txt = (m.content or '')
@@ -1963,7 +1998,12 @@ async def scan_event_watch():
                 finished = True
             if 'PASSED' in txt or 'no viable' in txt.lower():
                 passed = True
-        if fired and finished:
+            if 'SCAN — RESOLUTION' in txt or 'SCAN RESOLUTION' in txt or 'discipline pass' in txt.lower() or 'slate covered' in txt.lower():
+                resolved = True
+        if resolved:
+            # a public resolution (card / discipline pass / slate-covered) already closed this slot — never cry delay
+            events[slot] = 'ok'
+        elif fired and finished:
             # 'ok' REQUIRES fresh picks registered after slot start (or a deliberate discipline pass)
             fresh = False
             if not passed:
