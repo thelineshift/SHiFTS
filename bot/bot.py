@@ -986,6 +986,53 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:250]
                 except Exception: pass
             log.append(f'x_me FAIL: {e} {body}')
+    elif a == 'audit_permissions':
+        try:
+            ev_role = guild.default_role
+            roles = {w: next((r for r in guild.roles if w.lower() in r.name.lower()), None)
+                     for w in ('Lock', 'Sharp', 'Whale')}
+            POLICY = [
+                (('daily-locks',), {'Lock', 'Sharp', 'Whale'}),
+                (('all-picks', 'weekly-analytics'), {'Sharp', 'Whale'}),
+                (('every-play', 'monthly-deepdive'), {'Whale'}),
+                (('100-to-1000',), {'Lock', 'Sharp', 'Whale'}),
+                (('shift-lab',), set()),
+            ]
+            lines = ['🛡️ **PERMISSION AUDIT** — ' + time.strftime('%Y-%m-%d %H:%M UTC')]
+            leaks = 0
+            for ch in guild.text_channels:
+                name = ch.name.lower()
+                allowed = None
+                for keys, allow in POLICY:
+                    if any(k in name for k in keys):
+                        allowed = allow
+                        break
+                if allowed is None:
+                    continue
+                can_ev = ch.permissions_for(ev_role).view_channel
+                can = {w: (ch.permissions_for(r).view_channel if r else None) for w, r in roles.items()}
+                status = []
+                if can_ev:
+                    status.append('🚨@everyone CAN SEE'); leaks += 1
+                for w in ('Lock', 'Sharp', 'Whale'):
+                    want = w in allowed
+                    got = bool(can[w])
+                    if roles[w] is None:
+                        status.append(f'⚠️{w} role missing'); continue
+                    if got and not want:
+                        status.append(f'🚨{w} leak'); leaks += 1
+                    elif want and not got:
+                        status.append(f'⚠️{w} locked out'); leaks += 1
+                flag = '✅' if not status else ' | '.join(status)
+                lines.append(f'#{ch.name}: {flag}')
+            lab = find_channel(guild, 'shift-lab')
+            report = '\n'.join(lines)[:1900]
+            if lab:
+                await lab.send(report)
+            log.append(f'audit: {leaks} leak(s) across {len(guild.text_channels)} channels')
+            await asyncio.to_thread(log_event, 'audit', f'permission audit: {leaks} leak(s)')
+        except Exception as e:
+            log.append(f'audit FAIL: {e}')
     elif a == 'collect_metrics':
         try:
             counts = {'members': guild.member_count}
@@ -1713,7 +1760,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.37b'
+            state['bot_version'] = '8.9.38'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -2548,10 +2595,42 @@ async def scan_event_watch():
     except Exception as e:
         print('scan_event_watch error:', e)
 
-client = make_client()
-try:
-    client.run(DISCORD_TOKEN)
-except discord.PrivilegedIntentsRequired:
-    print('PRIVILEGED INTENTS NOT ENABLED IN PORTAL - running degraded')
-    client = make_client(privileged=False)
-    client.run(DISCORD_TOKEN)
+def boot_marker():
+    try:
+        st = get_state()
+        boots = st.setdefault('boot_log', [])
+        boots.append(time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()))
+        st['boot_log'] = boots[-60:]
+        gh_put('bot_state.json', st, 'boot marker')
+        return len(boots)
+    except Exception as e:
+        print('boot marker failed:', e)
+        return -1
+
+def run_guarded():
+    # CONNECTION-STORM GUARD: Discord resets tokens after ~1000 gateway connects in a short
+    # window. One process = one connection, so storms only come from crash/restart loops.
+    # Throttle every exit path so a looping host can never hammer Discord again.
+    n = boot_marker()
+    print(f'boot #{n}')
+    try:
+        client = make_client()
+        try:
+            client.run(DISCORD_TOKEN)
+        except discord.PrivilegedIntentsRequired:
+            print('PRIVILEGED INTENTS NOT ENABLED IN PORTAL - running degraded')
+            client = make_client(privileged=False)
+            client.run(DISCORD_TOKEN)
+    except discord.LoginFailure as e:
+        print('LOGIN FAILURE (token dead/reset):', e)
+        print('sleeping 1h so the host cannot restart-loop against Discord...')
+        time.sleep(3600)
+    except Exception as e:
+        print('fatal run error:', e)
+        print('sleeping 5min before exit (restart throttle)')
+        time.sleep(300)
+    else:
+        print('clean disconnect - sleeping 2min before exit (restart throttle)')
+        time.sleep(120)
+
+run_guarded()
