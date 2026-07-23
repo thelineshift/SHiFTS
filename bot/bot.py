@@ -271,6 +271,12 @@ async def resolve_member(guild, ident):
     return None
 
 
+def gh_raw_bytes(path, ref='main'):
+    req = urllib.request.Request(f'https://raw.githubusercontent.com/{REPO}/{ref}/{path}?t={int(time.time())}',
+                                 headers={'User-Agent': 'lineshift-bot'})
+    with urllib.request.urlopen(req, timeout=40) as r:
+        return r.read()
+
 def x_oauth1_sign(method, url, c):
     import hmac as _h, hashlib as _hl, secrets as _sc
     from urllib.parse import quote as _qq
@@ -783,16 +789,18 @@ async def run_command(cmd, guild, log):
             log.append(f'x_refresh FAIL: {e} {body}')
     elif a == 'x_media_test':
         try:
-            remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
-            img = base64.b64decode(remote['content'])
+            img = await asyncio.to_thread(gh_raw_bytes, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
+            if len(img) < 1000:
+                raise Exception(f'image fetch too small: {len(img)} bytes')
             cname, mid = await asyncio.to_thread(x_upload_media_oauth1, img)
             log.append(f'x_media_test OK: media_id {mid} via {cname} ({len(img)} bytes) — native image posts LIVE')
         except Exception as e:
             log.append(f'x_media_test FAIL: {e}')
     elif a == 'x_post_media_native':
         try:
-            remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
-            img = base64.b64decode(remote['content'])
+            img = await asyncio.to_thread(gh_raw_bytes, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
+            if len(img) < 1000:
+                raise Exception(f'image fetch too small: {len(img)} bytes')
             cname, mid = await asyncio.to_thread(x_upload_media_oauth1, img)
             res = await asyncio.to_thread(x_post_media_oauth1, cmd['text'], mid, cname)
             tid = res.get('data', {}).get('id') if res else None
