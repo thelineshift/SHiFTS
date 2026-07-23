@@ -1,5 +1,5 @@
 {
- "seq": 265,
+ "seq": 266,
  "commands": [
   {
    "seq": 163,
@@ -661,6 +661,13 @@
    "content": "\ud83c\udf81 **THIS WEEK'S GIVEAWAY: $50 SOL POOL** \ud83d\udcb0\nSunday's draw is boosted \u2014 \ud83e\udd47 **$35 SOL** + \ud83e\udd48 **$15 SOL**, free entry, paid on-chain with proof.\nFollow + like + repost on X, then drop your handle in **#giveaway**. Entries close Sunday 5:55 PM ET.\nPaid members stack tickets: \ud83d\udd12 2x \u00b7 \ud83d\udcca 3x \u00b7 \ud83d\udc0b 5x \u2192 <#1528794177549107394>",
    "seq": 265,
    "ts": "2026-07-23T20:46:49Z"
+  },
+  {
+   "action": "read_recent",
+   "channel": "rules",
+   "limit": 12,
+   "seq": 266,
+   "ts": "2026-07-23T20:49:37Z"
   }
  ]
 }
