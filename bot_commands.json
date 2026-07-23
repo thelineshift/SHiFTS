@@ -1,12 +1,6 @@
 {
- "seq": 199,
+ "seq": 200,
  "commands": [
-  {
-   "action": "post_and_pin",
-   "channel": "monthly-deepdive",
-   "content": "\ud83d\udc0b **MONTHLY DEEP-DIVE \u2014 Whale Room intelligence.**\nThe **1st of every month, 6:00 PM ET**, the entire month goes under the microscope: every pick re-graded, closing line value on every play, room-by-room ROI, model diagnostics \u2014 where the edge came from, where it leaked, and the attack plan for the month ahead. This is the report that makes the Whale Room the Whale Room.\n\n\ud83d\uddd3\ufe0f **Next drop: FRIDAY AUGUST 1, 6:00 PM ET** \u2014 the July edition, first of the series. \ud83e\udd16",
-   "seq": 140
-  },
   {
    "action": "purge_channel",
    "channel": "monthly-deepdive",
@@ -331,6 +325,11 @@
    "seq": 199,
    "action": "collect_metrics",
    "ts": "2026-07-23T14:14:27Z"
+  },
+  {
+   "seq": 200,
+   "action": "lockdown_channels",
+   "ts": "2026-07-23T15:01:21Z"
   }
  ]
 }
