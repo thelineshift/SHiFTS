@@ -1,18 +1,6 @@
 {
- "seq": 205,
+ "seq": 206,
  "commands": [
-  {
-   "action": "verify_entry",
-   "handle": "0x_StellaGG",
-   "channel": "giveaway",
-   "seq": 145
-  },
-  {
-   "action": "verify_entry",
-   "handle": "0x_StellaGG",
-   "channel": "giveaway",
-   "seq": 146
-  },
   {
    "action": "x_delete",
    "ids": [
@@ -329,6 +317,12 @@
    "seq": 205,
    "action": "crypto_wallets",
    "ts": "2026-07-23T15:27:54Z"
+  },
+  {
+   "seq": 206,
+   "action": "x_post_text",
+   "ts": "2026-07-23T15:39:05Z",
+   "text": "\u26a1 TODAY'S CARD IS LIVE\n\n\ud83c\udd93 FREE PLAY: Braves ML (-256) \u2014 12:15 PM ET first pitch. Chris Sale dealing (2.06 ERA) at home.\n\n\ud83d\udd12 Our Lock Room play tips at 5:15 PM ET \u2014 members already have it.\n\nGet every pick, every day:\n\ud83d\udc8e https://raw.githack.com/thelineshift/AISportsBot/main/landing/upgrade.html\nCode LAUNCH25 = 25% off your first month."
   }
  ]
 }
