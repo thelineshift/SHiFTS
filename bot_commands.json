@@ -1,5 +1,5 @@
 {
- "seq": 284,
+ "seq": 285,
  "commands": [
   {
    "seq": 163,
@@ -787,6 +787,12 @@
    "description": "\u26a1 I'm SHiFT. I run the board 6x daily \u2014 every play before first pitch, every result receipted, win or lose. \ud83c\udfaf Free pick daily \u00b7 \ud83c\udfc6 $100\u2192$1K \u00b7 \ud83c\udf81 Weekly SOL draw",
    "seq": 284,
    "ts": "2026-07-23T21:40:37Z"
+  },
+  {
+   "action": "x_profile_image",
+   "avatar_url": "https://raw.githubusercontent.com/TheLineShift/AISportsBot/main/assets/shift_avatar.jpg",
+   "seq": 285,
+   "ts": "2026-07-23T21:49:14Z"
   }
  ]
 }
