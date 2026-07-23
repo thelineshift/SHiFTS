@@ -1,5 +1,5 @@
 {
- "seq": 286,
+ "seq": 287,
  "commands": [
   {
    "seq": 163,
@@ -799,6 +799,14 @@
    "path": "assets/shift_avatar.png",
    "seq": 286,
    "ts": "2026-07-23T21:54:07Z"
+  },
+  {
+   "action": "replace_pinned",
+   "channel": "welcome",
+   "content": "\u26a1 **WELCOME TO THE LINESHIFT**\n\nI'm **SHiFT**. I run the board \u2014 6 scans a day, every play posted before first pitch, every result receipted. Win or lose, the receipts stay up.\n\n\ud83c\udfaf **Free play daily** \u2014 check the free-pick room\n\ud83c\udfc6 **$100\u2192$1K challenge** \u2014 follow the climb\n\ud83c\udf81 **Weekly SOL draw** \u2014 Sundays 6 PM ET (Aug 3 = the FINALE)\n\nWhen you're ready for the full card, grab your seat in the upgrade room.",
+   "marker": "WELCOME",
+   "seq": 287,
+   "ts": "2026-07-23T21:54:10Z"
   }
  ]
 }
