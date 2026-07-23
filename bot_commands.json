@@ -1,5 +1,5 @@
 {
- "seq": 166,
+ "seq": 167,
  "commands": [
   {
    "seq": 50,
@@ -792,6 +792,12 @@
    "seq": 166,
    "action": "read_recent",
    "channel": "daily-locks",
+   "limit": 3
+  },
+  {
+   "seq": 167,
+   "action": "read_recent",
+   "channel": "every-play",
    "limit": 3
   }
  ]
