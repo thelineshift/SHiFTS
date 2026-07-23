@@ -34,15 +34,6 @@
   "bot_version": "8.9.31",
   "unannounced_results": [
     {
-      "id": "atl-ml-0722",
-      "desc": "Braves ML",
-      "odds": -114,
-      "result": "WIN",
-      "units": 1.32,
-      "score": "San Diego Padres 6, Atlanta Braves 7",
-      "tier": "whale"
-    },
-    {
       "id": "chc-ml-0722",
       "desc": "Cubs ML",
       "odds": -125,
@@ -61,7 +52,7 @@
       "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1784777125.6599834,
+  "last_x_receipt_ts": 1784780725.6985471,
   "last_recap_date": "2026-07-22",
   "scan_events": {
     "20260722-12": "ok",
