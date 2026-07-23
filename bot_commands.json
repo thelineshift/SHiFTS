@@ -1,5 +1,5 @@
 {
- "seq": 262,
+ "seq": 265,
  "commands": [
   {
    "seq": 163,
@@ -640,6 +640,27 @@
    "limit": 5,
    "seq": 262,
    "ts": "2026-07-23T20:42:26Z"
+  },
+  {
+   "action": "replace_pinned",
+   "channel": "giveaway",
+   "content": "\ud83c\udf81 **WEEKLY SOL GIVEAWAY \u2014 $50 POOL THIS WEEK** \ud83d\udcb0\n\n\ud83e\udd47 **$35 SOL grand prize** + \ud83e\udd48 **$15 SOL runner-up** \u2014 drawn Sunday 6 PM ET, paid on-chain with public tx proof.\n\n**HOW TO ENTER (free):**\n1\ufe0f\u20e3 Follow **@TheLineShift** on X\n2\ufe0f\u20e3 Like + repost the giveaway post\n3\ufe0f\u20e3 Drop your **X @handle** below \u2014 SHiFT scans you in seconds and confirms live\n\n\ud83c\udf9f\ufe0f Members stack tickets: \ud83d\udd12 Lock 2x \u00b7 \ud83d\udcca Sharp 3x \u00b7 \ud83d\udc0b Whale 5x\nEntries close Sunday 5:55 PM ET. Provably fair \u2014 commit hash posts before the draw. \ud83e\udd16",
+   "seq": 263,
+   "ts": "2026-07-23T20:46:49Z"
+  },
+  {
+   "action": "replace_pinned",
+   "channel": "welcome",
+   "content": "\ud83d\udc4b **WELCOME TO THELINESHIFT** \ud83e\udd16\n\nThe AI capper that never sleeps \u2014 **6 scans a day** (12a / 4a / 8a / 12p / 4p / 8p ET) across MLB, esports, and every major slate. Every play posted before first pitch. Every result receipted \u2014 wins AND losses, always in public.\n\n\ud83c\udfaf <#1528794232666718260> \u2014 one model play free every day\n\ud83c\udf81 **#giveaway** \u2014 weekly SOL draw \u00b7 **$50 pool this week ($35 + $15)**, free to enter\n\ud83e\uddfe **#receipts** \u2014 the unedited public ledger\n\ud83d\udcac **#general-chat** \u2014 scan shows, live sweats, the community\n\ud83d\udc8e <#1528794177549107394> \u2014 Lock $14.99 \u00b7 Sharp $29.99 \u00b7 Whale $59.99 \u2014 cards or 300+ crypto\n\nRead **#rules**, grab today's free pick, and tail responsibly. \ud83e\udee1",
+   "seq": 264,
+   "ts": "2026-07-23T20:46:49Z"
+  },
+  {
+   "action": "post_and_pin",
+   "channel": "promotions",
+   "content": "\ud83c\udf81 **THIS WEEK'S GIVEAWAY: $50 SOL POOL** \ud83d\udcb0\nSunday's draw is boosted \u2014 \ud83e\udd47 **$35 SOL** + \ud83e\udd48 **$15 SOL**, free entry, paid on-chain with proof.\nFollow + like + repost on X, then drop your handle in **#giveaway**. Entries close Sunday 5:55 PM ET.\nPaid members stack tickets: \ud83d\udd12 2x \u00b7 \ud83d\udcca 3x \u00b7 \ud83d\udc0b 5x \u2192 <#1528794177549107394>",
+   "seq": 265,
+   "ts": "2026-07-23T20:46:49Z"
   }
  ]
 }
