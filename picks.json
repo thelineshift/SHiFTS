@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-23T06:40:00Z",
+ "updated": "2026-07-23T08:30:00Z",
  "picks": [
   {
    "id": "2026-07-19-under15-final",
@@ -636,6 +636,34 @@
    "score": "Tampa Bay Rays 4, Toronto Blue Jays 2",
    "units_result": 0.91,
    "profit": 0.91
+  },
+  {
+   "id": "atl-ml-0723",
+   "date": "2026-07-23",
+   "sport": "mlb",
+   "awayTeam": "San Diego Padres",
+   "homeTeam": "Atlanta Braves",
+   "desc": "Braves ML",
+   "market": "ML",
+   "odds": -256,
+   "units": 1.0,
+   "tier": "free",
+   "analysis": "Sale 2.06 vs Canning 6.67; SD pen 27th since 7/1; ATL 4.9 rpg home; 86F 1% rain.",
+   "time_et": "12:15 PM"
+  },
+  {
+   "id": "stl-ml-0723",
+   "date": "2026-07-23",
+   "sport": "mlb",
+   "awayTeam": "Arizona Diamondbacks",
+   "homeTeam": "St. Louis Cardinals",
+   "desc": "Cardinals ML",
+   "market": "ML",
+   "odds": -123,
+   "units": 1.5,
+   "tier": "lock",
+   "analysis": "McGreevy 2.92 vs Pfaadt 4.58 at Busch; market 55% vs model 60%; 84F wind in.",
+   "time_et": "5:15 PM"
   }
  ]
 }
