@@ -1151,12 +1151,48 @@ async def run_command(cmd, guild, log):
             uid = me.get('data', {}).get('id')
             tid = str(cmd['tweet_id'])
             payload = json.dumps({'tweet_id': tid}).encode()
-            req = urllib.request.Request(f'https://api.x.com/2/users/{uid}/pinned_tweets',
-                data=payload, headers={'Authorization': f"Bearer {c['oauth2_access']}",
-                                       'Content-Type': 'application/json'}, method='PUT')
-            with urllib.request.urlopen(req, timeout=20) as r:
-                d = json.load(r)
-            log.append(f"x_pin: pinned {tid} -> {d.get('data')}")
+            ok = False
+            for host in ['api.x.com', 'api.twitter.com']:
+                try:
+                    req = urllib.request.Request(f'https://{host}/2/users/{uid}/pinned_tweets',
+                        data=payload, headers={'Authorization': f"Bearer {c['oauth2_access']}",
+                                               'Content-Type': 'application/json'}, method='PUT')
+                    with urllib.request.urlopen(req, timeout=20) as r:
+                        d = json.load(r)
+                    log.append(f"x_pin: pinned {tid} via oauth2 {host} -> {d.get('data')}")
+                    ok = True; break
+                except urllib.error.HTTPError as e:
+                    try: eb = e.read()[:200]
+                    except Exception: eb = b''
+                    log.append(f'x_pin oauth2 {host} HTTP {e.code}: {eb}')
+            if not ok:
+                import hmac, hashlib, secrets
+                import urllib.parse as _up
+                for name, ck, cs, at, ats in x_oauth1_sets(c):
+                    for host in ['api.x.com', 'api.twitter.com']:
+                        endpoint = f'https://{host}/2/users/{uid}/pinned_tweets'
+                        try:
+                            op = {'oauth_consumer_key': ck, 'oauth_nonce': secrets.token_hex(16),
+                                  'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+                                  'oauth_token': at, 'oauth_version': '1.0'}
+                            q = lambda s: _up.quote(str(s), safe='')
+                            base = '&'.join(['PUT', q(endpoint), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+                            key = f'{q(cs)}&{q(ats)}'
+                            op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
+                            hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+                            req = urllib.request.Request(endpoint, data=payload, method='PUT',
+                                headers={'Authorization': hdr, 'Content-Type': 'application/json'})
+                            with urllib.request.urlopen(req, timeout=20) as r:
+                                d = json.load(r)
+                            log.append(f"x_pin: pinned {tid} via oauth1[{name}] {host} -> {d.get('data')}")
+                            ok = True; break
+                        except urllib.error.HTTPError as e:
+                            try: eb = e.read()[:200]
+                            except Exception: eb = b''
+                            log.append(f'x_pin oauth1[{name}] {host} HTTP {e.code}: {eb}')
+                    if ok: break
+            if not ok:
+                log.append('x_pin: all attempts failed')
         except Exception as e:
             body = ''
             if hasattr(e, 'read'):
@@ -2331,7 +2367,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.52'
+            state['bot_version'] = '8.9.53'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
