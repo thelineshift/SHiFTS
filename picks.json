@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23T20:36:33Z",
+  "updated": "2026-07-23T21:20:17Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -716,7 +716,7 @@
       "odds": -114,
       "units": 1.5,
       "tier": "sharp",
-      "result": null,
+      "result": "LOSS",
       "time_et": "3:07 PM",
       "analysis": "Bieber 5.70 ERA 1.73 WHIP since return; TB bullpen day vs cold TOR bats; market -114 vs model ~58%",
       "live_odds": {
@@ -724,7 +724,9 @@
         "away_ml": null,
         "total": 8.5,
         "ts": 1784833613
-      }
+      },
+      "score": "Rays 1, Blue Jays 3",
+      "units_result": -1.5
     },
     {
       "id": "kc-det-u85-0723",
