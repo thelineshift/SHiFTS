@@ -1,5 +1,5 @@
 {
- "seq": 188,
+ "seq": 189,
  "commands": [
   {
    "seq": 50,
@@ -916,6 +916,10 @@
   {
    "seq": 188,
    "action": "harden_guild"
+  },
+  {
+   "seq": 189,
+   "action": "lockdown_channels"
   }
  ]
 }
