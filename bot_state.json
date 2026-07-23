@@ -1,8 +1,12 @@
 {
-  "executed_seq": 185,
+  "executed_seq": 186,
   "last_log": [
-    "seq 185 executed 2026-07-23 09:46 UTC",
-    "deleted post 2080217451472806231"
+    "seq 186 executed 2026-07-23 09:50 UTC",
+    "#\ud83d\udcacgeneral-chat | wills570: <@551582227188809738>  pls check in Dm mate",
+    "#\ud83d\udcacgeneral-chat | \ud83e\udd16 SHiFT#0000: \u2705 **4 AM SCAN \u2014 CARD POSTED.**\n\ud83c\udd93 Braves ML (-256) \u00b7 Sale 2.06 vs Canning 6.67 \u2014 12:15 PM\n\ud83d\udd12 Cardinals ML (-123) \u00b7 McGreevy 2.92 vs Pfaadt 4.58 \u2014 5:15 PM\n\ud83d\udcca\ud83d\udc0b Sharp/Whale: di",
+    "#\ud83d\udcacgeneral-chat | LineShift Bot#8676: \ud83d\udef0\ufe0f **SCAN DELAYED** \u2014 the machine hit a snag on this run. SHiFT is catching up; the card drops shortly. \ud83e\udd16",
+    "#\ud83d\udcacgeneral-chat | LineShift Bot#8676: <@&1529569745517674599> \ud83d\udef0\ufe0f **SCAN IN 10 MINUTES** \u2014 4 AM ET. Sharpen up. \ud83d\udd25",
+    "#\ud83d\udcacgeneral-chat | LineShift Bot#8676: \ud83d\udef0\ufe0f **SCAN APPROACHING** \u2014 4 AM ET. The machine reads the whole board so you don't have to."
   ],
   "time_audit": {
     "at": "2026-07-23 09:49 UTC",
@@ -49,7 +53,7 @@
     "20260723-08": "ok",
     "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)"
   },
-  "executed_cmd_seq": 185,
+  "executed_cmd_seq": 186,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 7,
