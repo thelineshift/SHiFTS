@@ -1,21 +1,12 @@
 {
-  "executed_seq": 277,
+  "executed_seq": 282,
   "last_log": [
-    "seq 277 executed 2026-07-23 21:20 UTC",
-    "CAT [\ud83d\udccc START HERE] :: \ud83d\udc4bwelcome, \ud83d\udcdcrules, \ud83d\udc8eupgrade",
-    "CAT [\ud83c\udd93 THE FREE ROOM] :: \ud83c\udfaffree-pick, \ud83e\uddfereceipts, \ud83d\udcacgeneral-chat",
-    "CAT [\ud83d\udd12 LOCK ROOM] :: \ud83d\udd12daily-locks, \ud83d\udd12lock-lounge",
-    "CAT [\ud83d\udcca SHARP] :: \ud83d\udccaall-picks, \ud83d\udccaweekly-analytics, \ud83d\udccasharp-talk",
-    "CAT [\ud83d\udc0b WHALE] :: \ud83d\udc0bevery-play, \ud83d\udc0bmonthly-deepdive, \ud83d\udc0bwhale-talk",
-    "guild_map: 5 categories, 20 channels",
-    "renamed #\ud83d\udd12daily-locks -> \ud83d\udd12lock-room-4-7",
-    "renamed #\ud83d\udccaall-picks -> \ud83d\udccasharp-room-4-2",
-    "renamed #\ud83d\udc0bevery-play -> \ud83d\udc0bwhale-room-5-3",
-    "renamed #\ud83c\udfaffree-pick -> \ud83c\udfaffree-pick-7-1",
-    "renamed #\ud83d\udccaweekly-analytics -> \ud83d\udccasharp-analytics",
-    "renamed #\ud83d\udc0bmonthly-deepdive -> \ud83d\udc0bwhale-deepdive",
-    "renamed #\ud83c\udfc6100-to-1000 -> \ud83c\udfc6100-to-1000-40",
-    "x_profile_image: avatar set [app2] | banner set [app2]"
+    "seq 282 executed 2026-07-23 21:24 UTC",
+    "category [\ud83d\udccc START HERE] -> [\ud83d\udccc THE LOBBY]",
+    "category [\ud83c\udd93 THE FREE ROOM] -> [\ud83c\udd93 THE FREE SEATS]",
+    "category [\ud83d\udd12 LOCK ROOM] -> [\ud83d\udd12 THE VAULT]",
+    "category [\ud83d\udcca SHARP] -> [\ud83d\udcca THE SHARP DESK]",
+    "category [\ud83d\udc0b WHALE] -> [\ud83d\udc0b THE WHALE POD]"
   ],
   "time_audit": {
     "at": "2026-07-23 21:24 UTC",
@@ -70,7 +61,7 @@
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
     "20260723-20": "ok"
   },
-  "executed_cmd_seq": 277,
+  "executed_cmd_seq": 282,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
