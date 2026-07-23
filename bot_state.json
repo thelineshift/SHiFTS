@@ -1,11 +1,9 @@
 {
-  "executed_seq": 155,
+  "executed_seq": 157,
   "last_log": [
-    "seq 155 executed 2026-07-23 02:02 UTC",
-    "x_refresh FAIL: HTTP Error 400: Bad Request b'{\"error\":\"invalid_request\",\"error_description\":\"Value passed for the token was invalid.\"}'",
-    "x_media_test FAIL: legacy HTTP 410: b'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.\\n'",
-    "x_refresh FAIL: HTTP Error 400: Bad Request b'{\"error\":\"invalid_request\",\"error_description\":\"Value passed for the token was invalid.\"}'",
-    "x_media_test FAIL: legacy HTTP 410: b'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.\\n'"
+    "seq 157 executed 2026-07-23 02:07 UTC",
+    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+offline.access&state=dd315626932ee3e1&code_challenge=UWXIsrIZuCkpEpZfqVC3kyzfFmWh2aNOnPiMGkI_Dls&code_challenge_method=S256",
+    "x_media_test FAIL: legacy HTTP 401: b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'"
   ],
   "time_audit": {
     "at": "2026-07-23 02:05 UTC",
@@ -63,7 +61,7 @@
     "20260722-20": "ok",
     "20260723-00": "ok"
   },
-  "executed_cmd_seq": 155,
+  "executed_cmd_seq": 157,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 5,
