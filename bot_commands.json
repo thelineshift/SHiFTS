@@ -1,10 +1,6 @@
 {
- "seq": 218,
+ "seq": 219,
  "commands": [
-  {
-   "seq": 159,
-   "action": "x_media_test"
-  },
   {
    "seq": 160,
    "action": "x_me"
@@ -337,6 +333,12 @@
    "action": "x_delete",
    "ts": "2026-07-23T16:48:25Z",
    "id": "2080226769555312803"
+  },
+  {
+   "seq": 219,
+   "action": "giveaway_x_post",
+   "ts": "2026-07-23T16:48:29Z",
+   "text": "\ud83c\udf81 WEEKLY SOL GIVEAWAY \ud83c\udf81\n\nWin free $SOL every single week \u2014 Sunday 6 PM ET draw.\n\nEnter in 60 seconds:\n1\ufe0f\u20e3 Join the Discord\n2\ufe0f\u20e3 Drop your X handle in #\ud83c\udf81giveaway\n3\ufe0f\u20e3 SHiFT verifies you live + confirms your entry\n\nPremium members get bonus entries. \ud83d\udc0b\ud83d\udcca\ud83d\udd12\n\ud83d\udc49 https://thelineshift.github.io/AISportsBot/giveaway.html"
   }
  ]
 }
