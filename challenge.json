@@ -57,11 +57,11 @@
   }
  ],
  "current_bet": {
-  "id": "challenge-nyy-ml",
-  "desc": "Yankees ML",
-  "odds": -165,
+  "id": "challenge-stl-ml",
+  "desc": "Cardinals ML",
+  "odds": -123,
   "wager": 20.0,
-  "to_win": 12.12,
-  "date": "2026-07-22"
+  "to_win": 16.26,
+  "date": "2026-07-23"
  }
 }
