@@ -51,6 +51,15 @@
       "units": 0.91,
       "score": "Tampa Bay Rays 4, Toronto Blue Jays 2",
       "tier": "free"
+    },
+    {
+      "id": "atl-ml-0722",
+      "desc": "Braves ML",
+      "odds": -114,
+      "result": "WIN",
+      "units": 1.32,
+      "score": "San Diego Padres 6, Atlanta Braves 7",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1784769424.48099,
