@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23T16:19:09Z",
+  "updated": "2026-07-23T18:50:24Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -655,7 +655,10 @@
         "away_ml": null,
         "total": 8.0,
         "ts": 1784823302
-      }
+      },
+      "result": "WIN",
+      "score": "San Diego Padres 5, Atlanta Braves 6",
+      "units_result": 0.39
     },
     {
       "id": "stl-ml-0723",
