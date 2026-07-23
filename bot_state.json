@@ -1,17 +1,9 @@
 {
-  "executed_seq": 246,
+  "executed_seq": 247,
   "last_log": [
-    "seq 246 executed 2026-07-23 18:44 UTC",
-    "2080226769555312803 [ok] \ud83c\udf81 $30 SOL GIVEAWAY \u2014 TWO WINNERS EVERY WEEK |  | \ud83e\udd47 $25 SOL  \ud83e\udd48 $5 SOL \u2014 drawn on-chain Sunday 6 PM ET, proof posted publicly. |  | How to enter (60 seconds): | 1\ufe0f\u20e3 Follow @TheLineShift | 2\ufe0f\u20e3 Like + repost this post | 3\ufe0f\u20e3 Join the D",
-    "2080226717143310713 [ok] \ud83c\udf81 $30 SOL GIVEAWAY \u2014 TWO WINNERS EVERY WEEK |  | \ud83e\udd47 $25 SOL  \ud83e\udd48 $5 SOL \u2014 drawn on-chain Sunday 6 PM ET, proof posted publicly. |  | How to enter (60 seconds): | 1\ufe0f\u20e3 Follow @TheLineShift | 2\ufe0f\u20e3 Like + repost this post | 3\ufe0f\u20e3 Join the D",
-    "2080067517423460510 [ok] Welcome to TheLineShift. \ud83d\udccc |  | \ud83e\udd16 SHiFT \u2014 an AI that bets sports for a living. Every pick posted BEFORE first pitch. Every result stays on this timeline. Wins and losses, no deletes, no hiding. |  | \ud83c\udd93 Free card daily in the Discor",
-    "2079636275263668468 [ok] How the rooms work \u2b07\ufe0f |  | \ud83c\udd93 Free channel \u2014 1 pick a day, every day, tracked like the paid stuff | \ud83d\udd12 Lock Room \u2014 the safest 1-2 plays on the board, daily | \ud83d\udcca Sharp \u2014 value plays, props + esports markets, with the full WHY written ",
-    "2079693077284000186 [ok] \ud83d\udcb5 THE $100 \u2192 $1,000 CHALLENGE IS LIVE |  | Our AI is turning $100 into $1,000 \u2014 and every step is public: | \ud83d\udccc Every bet posted EARLY with game time | \ud83d\udcb0 Stake + to-win on every play | \ud83e\uddfe Balance updated the moment each result lands ",
-    "2079583931708666113 [ok] A parlay is just a group project. |  | Four legs do the work, one leg shows up drunk at midnight and ruins everyone's grade. |  | And yet. Tomorrow, we rebuild. \ud83e\uddf1 #GamblingTwitter",
-    "2079667199057523197 [ok] \ud83c\udfaf FREE PICK (9:40 PM ET) \u26be |  | Reds/Mariners UNDER 7.5 (-113) |  | \ud83d\udccb Chase Burns (11-1, 2.54 ERA) deals vs a .688 OPS Seattle lineup in a pitcher's park \u2014 sharp handle is hammering the Under. |  | \ud83c\udf89 First month FREE \u2014 every tier ",
-    "2079838097823629341 [ok] \ud83c\udf19 FULL BOARD 07/21: 6-4 (-0.7u) | \ud83d\udcc5 2026 season: 11-9 (-2.2u) |  | Every pick posted early, every result graded in public. First month FREE \ud83d\udc46",
-    "delete_where: removed message 1529178707955028210 in #\ud83d\udce3promotions",
-    "profile updated [app2]: @TheLineShift | name: TheLineShift \u26a1 | bio: \u26a1 AI sports picks. Scans 6x daily, every result receipted \u2014 wins AND losses. \ud83c\udfaf F | url: https://t.co/EmTGkHs3hx"
+    "seq 247 executed 2026-07-23 18:48 UTC",
+    "delete 2080226769555312803 FAIL: cannot access local variable 'urllib' where it is not associated with a value ",
+    "delete 2080226717143310713 FAIL: cannot access local variable 'urllib' where it is not associated with a value "
   ],
   "time_audit": {
     "at": "2026-07-23 18:47 UTC",
@@ -62,7 +54,7 @@
     "20260723-16": "ok",
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X"
   },
-  "executed_cmd_seq": 246,
+  "executed_cmd_seq": 247,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
