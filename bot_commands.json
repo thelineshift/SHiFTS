@@ -1,5 +1,5 @@
 {
- "seq": 254,
+ "seq": 256,
  "commands": [
   {
    "seq": 163,
@@ -587,6 +587,21 @@
    "limit": 30,
    "seq": 254,
    "ts": "2026-07-23T19:30:04Z"
+  },
+  {
+   "action": "x_delete",
+   "ids": [
+    "2080226769555312803",
+    "2080226717143310713"
+   ],
+   "seq": 255,
+   "ts": "2026-07-23T20:19:22Z"
+  },
+  {
+   "action": "x_post_text",
+   "text": "\ud83c\udd93 FREE PICK (5:15 PM ET)\n\u26be Diamondbacks/Cardinals OVER 7.5 (-110)\nPfaadt's 4.58 ERA is the most hittable arm on the board and 7.5 is a low bar on a warm Busch night.\n\ud83e\uddfe We post every result \u2014 wins AND losses.\nLink in bio for the rooms. #MLB #SportsBetting",
+   "seq": 256,
+   "ts": "2026-07-23T20:19:22Z"
   }
  ]
 }
