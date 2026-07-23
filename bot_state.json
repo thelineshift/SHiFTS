@@ -56,7 +56,8 @@
     "20260723-08": "ok",
     "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)",
     "20260723-12": "ok",
-    "20260723-12-note": "noon slot: card already live since 08:30 UTC; status absorbed into 16:00 UTC full sweep (engine recovering from outage)"
+    "20260723-12-note": "noon slot: card already live since 08:30 UTC; status absorbed into 16:00 UTC full sweep (engine recovering from outage)",
+    "20260723-16": "missed"
   },
   "executed_cmd_seq": 214,
   "scan_role_id": 1529569745517674599,
@@ -76,7 +77,8 @@
   "scan_event_misses": [
     "20260723-00",
     "20260723-04",
-    "20260723-08"
+    "20260723-08",
+    "20260723-16"
   ],
   "count_fired": [
     "20260723-2300",
