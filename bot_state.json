@@ -74,7 +74,7 @@
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 5,
   "giveaway_x_post": "2080045584183136495",
-  "count60_idx": 3,
+  "count60_idx": 4,
   "giveaway_confirmed": {
     "em_jeiz26": {
       "handle": "Em_jeiz26",
@@ -86,5 +86,8 @@
   },
   "scan_event_misses": [
     "20260723-00"
+  ],
+  "count_fired": [
+    "20260723-2300"
   ]
 }
