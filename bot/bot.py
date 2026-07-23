@@ -818,7 +818,10 @@ async def run_command(cmd, guild, log):
             if len(img) < 1000:
                 raise Exception(f'image fetch too small: {len(img)} bytes')
             cname, mid = await asyncio.to_thread(x_upload_media_oauth1, img)
-            res = await asyncio.to_thread(x_post_media_oauth1, cmd['text'], mid, cname)
+            if cname == 'oauth2':
+                res = await asyncio.to_thread(x_post_media_oauth2, cmd['text'], mid)
+            else:
+                res = await asyncio.to_thread(x_post_media_oauth1, cmd['text'], mid, cname)
             tid = res.get('data', {}).get('id') if res else None
             log.append(f'x_post_media_native OK: tweet {tid} with media {mid} via {cname}')
             if cmd.get('tag') == 'giveaway' and tid:
@@ -1645,6 +1648,20 @@ def x_upload_media_oauth1(img, filename='image.png'):
         except Exception as e:
             last = f'{name}: {e}'
     raise Exception(last or 'upload failed')
+
+def x_post_media_oauth2(text, media_id):
+    c = x_creds_load()
+    if time.time() > c.get('oauth2_expires_at', 0):
+        c = x_oauth2_refresh(c)
+    payload = json.dumps({'text': text, 'media': {'media_ids': [str(media_id)]}}).encode()
+    req = urllib.request.Request('https://api.x.com/2/tweets', data=payload, method='POST',
+        headers={'Authorization': f"Bearer {c['oauth2_access']}", 'Content-Type': 'application/json',
+                 'User-Agent': 'TheLineShift/1.0'})
+    try:
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        raise Exception(f'HTTP {e.code}: {e.read()[:300]}')
 
 def x_post_media_oauth1(text, media_id, cred_name=None):
     c = x_creds_load()
