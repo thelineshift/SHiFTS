@@ -1,12 +1,6 @@
 {
- "seq": 196,
+ "seq": 197,
  "commands": [
-  {
-   "action": "verify_entry",
-   "handle": "Hayjay_web3",
-   "channel": "giveaway",
-   "seq": 137
-  },
   {
    "action": "verify_entry",
    "handle": "Em_jeiz26",
@@ -334,6 +328,11 @@
    "seq": 196,
    "action": "collect_metrics",
    "ts": "2026-07-23T11:19:58Z"
+  },
+  {
+   "seq": 197,
+   "action": "collect_metrics",
+   "ts": "2026-07-23T11:27:52Z"
   }
  ]
 }
