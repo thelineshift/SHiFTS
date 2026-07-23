@@ -946,8 +946,14 @@ async def run_command(cmd, guild, log):
                 c['oauth2_refresh'] = t.get('refresh_token', '')
                 c['oauth2_expires_at'] = time.time() + t.get('expires_in', 7200) - 120
                 await asyncio.to_thread(gh_put, 'x_creds.json', c, 'oauth2 user token linked')
-                res = await asyncio.to_thread(x_post_native, cmd.get('text', '\U0001F6F0\uFE0F SHiFT native X link online. The board never sleeps.'))
-                log.append(f'x_link_finish OK: tweet id {res.get("data", {}).get("id") if res else None}')
+                res = None
+                log.append('x_link_finish OK: tokens stored — X user link LIVE')
+                try:
+                    hello = cmd.get('text') or f'🛰️ SHiFT native X link online ({time.strftime("%H:%M UTC")}).'
+                    res = await asyncio.to_thread(x_post_native, hello)
+                    log.append(f'x_link_finish hello-post OK: tweet id {res.get("data", {}).get("id") if res else None}')
+                except Exception as he:
+                    log.append(f'x_link_finish hello-post skipped (link still LIVE): {he}')
             except urllib.error.HTTPError as e:
                 log.append(f'x_link_finish FAIL: HTTP {e.code}: {e.read()[:250]}')
             except Exception as e:
@@ -1389,7 +1395,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.31'
+            state['bot_version'] = '8.9.32'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
