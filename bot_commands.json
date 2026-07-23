@@ -1,5 +1,5 @@
 {
- "seq": 180,
+ "seq": 181,
  "commands": [
   {
    "seq": 50,
@@ -872,6 +872,10 @@
   {
    "seq": 180,
    "action": "x_media_test"
+  },
+  {
+   "seq": 181,
+   "action": "x_oauth1_me"
   }
  ]
 }
