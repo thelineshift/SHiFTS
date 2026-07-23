@@ -1,9 +1,8 @@
 {
-  "executed_seq": 204,
+  "executed_seq": 205,
   "last_log": [
-    "seq 204 executed 2026-07-23 15:15 UTC",
-    "whop purge complete: 1 removed",
-    "exported 6 unique entries (6 weighted tickets) -> giveaway_entries.json"
+    "seq 205 executed 2026-07-23 15:31 UTC",
+    "crypto_wallets FAIL: HTTP Error 409: Conflict"
   ],
   "time_audit": {
     "at": "2026-07-23 15:30 UTC",
@@ -50,7 +49,7 @@
     "20260723-08": "ok",
     "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)"
   },
-  "executed_cmd_seq": 204,
+  "executed_cmd_seq": 205,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 7,
