@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23T20:14:44Z",
+  "updated": "2026-07-23T20:36:33Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -692,7 +692,7 @@
       "odds": -149,
       "units": 1.0,
       "tier": "lock",
-      "result": null,
+      "result": "LOSS",
       "time_et": "1:10 PM",
       "analysis": "Williams 1.15 WHIP at home vs Bradley 3.85/1.25; CLE pen edge; 74F 0% rain",
       "live_odds": {
@@ -700,7 +700,9 @@
         "away_ml": null,
         "total": 7.5,
         "ts": 1784826586
-      }
+      },
+      "score": "Twins 3, Guardians 1",
+      "units_result": -1.0
     },
     {
       "id": "tb-ml-0723",
