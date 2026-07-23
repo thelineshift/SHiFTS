@@ -721,6 +721,12 @@
    "action": "x_timeline",
    "n": 60,
    "id": "tl-count"
+  },
+  {
+   "seq": 151,
+   "action": "read_recent",
+   "channel": "shift-lab",
+   "limit": 6
   }
  ]
 }
