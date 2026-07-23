@@ -1,5 +1,5 @@
 {
- "seq": 163,
+ "seq": 164,
  "commands": [
   {
    "seq": 50,
@@ -775,6 +775,12 @@
   {
    "seq": 163,
    "action": "x_link_start"
+  },
+  {
+   "seq": 164,
+   "action": "read_recent",
+   "channel": "general-chat",
+   "limit": 25
   }
  ]
 }
