@@ -1,5 +1,5 @@
 {
- "seq": 243,
+ "seq": 246,
  "commands": [
   {
    "seq": 163,
@@ -485,6 +485,39 @@
    "action": "x_me",
    "seq": 243,
    "ts": "2026-07-23T18:32:14Z"
+  },
+  {
+   "action": "x_read",
+   "ids": [
+    "2080226769555312803",
+    "2080226717143310713",
+    "2080067517423460510",
+    "2079636275263668468",
+    "2079693077284000186",
+    "2079583931708666113",
+    "2079667199057523197",
+    "2079838097823629341"
+   ],
+   "seq": 244,
+   "ts": "2026-07-23T18:43:52Z"
+  },
+  {
+   "action": "delete_where",
+   "channel": "promotions",
+   "contains": "FIRST MONTH FREE",
+   "limit": 15,
+   "max": 1,
+   "seq": 245,
+   "ts": "2026-07-23T18:43:52Z"
+  },
+  {
+   "action": "x_profile_update",
+   "name": "TheLineShift \u26a1",
+   "description": "\u26a1 AI sports picks. Scans 6x daily, every result receipted \u2014 wins AND losses. \ud83c\udfaf Free pick daily \u00b7 \ud83c\udfc6 $100\u2192$1K challenge \u00b7 \ud83c\udf81 Weekly SOL giveaway",
+   "url": "https://thelineshift.github.io/AISportsBot/",
+   "location": "The Board \ud83c\udf10",
+   "seq": 246,
+   "ts": "2026-07-23T18:43:52Z"
   }
  ]
 }
