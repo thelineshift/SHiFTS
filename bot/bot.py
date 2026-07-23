@@ -74,10 +74,123 @@ async def shift_guard(message, guild):
         lab = find_channel(guild, 'shift-lab')
         if lab:
             await lab.send(f"\U0001F6E1\uFE0F **SHiFT GUARD** — {action}\n\U0001F464 {member} (`{member.id}`) in #{message.channel.name}\n\u2696\uFE0F {reason}\n\U0001F4DD {snippet or '(no text)'}")
+        await asyncio.to_thread(log_event, 'guard_action', f'{action} {member} in #{message.channel.name}: {reason}')
         return True
     except Exception as e:
         print('shift_guard error:', e)
         return False
+
+def log_event(type_, detail):
+    """Append an event to the ops event log (dashboard Event Log feed)."""
+    try:
+        ev = gh_get_json('events.json') or {'events': [], 'next_id': 1}
+        ev.setdefault('events', []).append({'id': ev.get('next_id', 1), 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                                            'type': type_, 'detail': str(detail)[:300]})
+        ev['next_id'] = ev.get('next_id', 1) + 1
+        ev['events'] = ev['events'][-250:]
+        gh_put('events.json', ev, 'event: ' + type_)
+    except Exception as e:
+        print('[event] log failed:', e)
+
+
+ISSUE_RX_PAYMENT = re.compile(r'(charg|payment|paid|refund|whop|stripe|billing|invoice|card|subscri)', re.I)
+ISSUE_RX_ROLE = re.compile(r"(role|tier|access|can't see|cannot see|locked out|missing.*(channel|room)|upgrade|downgrade)", re.I)
+ISSUE_RX_DATA = re.compile(r'(wrong|incorrect|error|typo|bug|broken|picture|image|photo|weather|matchup|odds|line|score|missing pick)', re.I)
+ISSUE_RX_YES = re.compile(r'^\s*(yes|yeah|yep|yup|fixed|works|working now|all good|confirmed|it works)\b', re.I)
+ISSUE_RX_NO = re.compile(r"^\s*(no|nope|not fixed|still|doesn't work|didn't work|not working)\b", re.I)
+
+
+async def handle_issue(message, guild):
+    """issues channel: triage, auto-fix what is fixable, verify with the user, escalate the rest."""
+    chname = getattr(message.channel, 'name', '') or ''
+    author = message.author
+    if 'issues' not in chname or author.bot:
+        return
+    content = (message.content or '').strip()
+    if not content:
+        return
+    issues = gh_get_json('issues.json') or {'tickets': [], 'next_id': 1}
+    tickets = issues.setdefault('tickets', [])
+    t = next((x for x in reversed(tickets) if x.get('user_id') == str(author.id)
+              and x.get('status') in ('open', 'awaiting_user')), None)
+    reply = None
+    if t and t.get('status') == 'awaiting_user':
+        if ISSUE_RX_YES.search(content):
+            t['status'] = 'resolved'; t['resolved_ts'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            reply = f'✅ Ticket **#{t["id"]}** marked resolved. Thanks for confirming, {author.mention}!'
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_resolved', f'ticket #{t["id"]} ({author}) self-confirmed fixed'))
+        elif ISSUE_RX_NO.search(content):
+            t['status'] = 'escalated'; t['escalated_ts'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            reply = (f"📨 Got it — I've **escalated ticket #{t['id']} to the admin**. "
+                     f"We'll get back to you as soon as an admin is available to fix your issue.")
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_escalated', f'ticket #{t["id"]} ({author}): fix not confirmed'))
+            lab = find_channel(guild, 'shift-lab')
+            if lab:
+                asyncio.ensure_future(lab.send(f'🚨 ESCALATED ticket #{t["id"]} — {author} ({author.id}): {t.get("summary","")[:200]} — auto-fix failed, needs admin.'))
+        else:
+            reply = f'🤖 Ticket **#{t["id"]}** is waiting on your confirmation — did the fix work? Reply **yes** or **no**.'
+    elif not t:
+        tid = issues.get('next_id', 1); issues['next_id'] = tid + 1
+        t = {'id': tid, 'user_id': str(author.id), 'user': str(author), 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+             'status': 'open', 'summary': content[:250]}
+        tickets.append(t)
+        kind = ('payment' if ISSUE_RX_PAYMENT.search(content) else
+                'access' if ISSUE_RX_ROLE.search(content) else
+                'data' if ISSUE_RX_DATA.search(content) else 'other')
+        t['kind'] = kind
+        lab = find_channel(guild, 'shift-lab')
+        if kind == 'payment':
+            t['status'] = 'escalated'; t['escalated_ts'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            reply = (f"🎫 Ticket **#{tid}** opened (billing). Payment issues need the admin — I've **escalated this to the admin** "
+                     f"and we'll get back to you as soon as an admin is available to fix your issue.")
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_escalated', f'ticket #{tid} payment ({author})'))
+            if lab:
+                asyncio.ensure_future(lab.send(f'🚨 PAYMENT ticket #{tid} — {author} ({author.id}): {content[:300]}'))
+        elif kind == 'access':
+            fixed = False
+            try:
+                member = guild.get_member(author.id)
+                if member:
+                    names = [r.name for r in member.roles]
+                    want = []
+                    if any('whale' in n.lower() for n in names):
+                        want = ['Sharp', 'Lock']
+                    elif any('sharp' in n.lower() for n in names):
+                        want = ['Lock']
+                    for word in want:
+                        for r in guild.roles:
+                            if word.lower() in r.name.lower() and r not in member.roles:
+                                asyncio.ensure_future(member.add_roles(r, reason=f'issues ticket #{tid} hierarchy fix'))
+                                fixed = True
+            except Exception as e:
+                print('[issues] role fix failed:', e)
+            t['status'] = 'awaiting_user'
+            reply = (f"🎫 Ticket **#{tid}** opened (access). I've checked your tier roles and restored the room access your tier includes. "
+                     f"**Can you confirm it's fixed?** Reply **yes** or **no** — if it's still broken I'll escalate this to the admin immediately.")
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_opened', f'ticket #{tid} access ({author}) auto-fix={fixed}'))
+        elif kind == 'data':
+            t['status'] = 'open'
+            reply = (f"🎫 Ticket **#{tid}** opened. Thanks for flagging it — I'm reviewing the data/post now and will correct anything "
+                     f"that's wrong. I'll follow up here shortly.")
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_opened', f'ticket #{tid} data ({author}): {content[:150]}'))
+            if lab:
+                asyncio.ensure_future(lab.send(f'🛠️ DATA ticket #{tid} — {author}: {content[:300]}'))
+        else:
+            t['status'] = 'open'
+            reply = (f"🎫 Ticket **#{tid}** opened. Can you give me a bit more detail (what you expected vs what you're seeing)? "
+                     f"If I can't fix it myself I'll escalate it to the admin right away.")
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_opened', f'ticket #{tid} other ({author}): {content[:150]}'))
+    else:
+        t['summary'] = (t.get('summary', '') + ' | ' + content)[:250]
+        reply = f'🤖 Added that to ticket **#{t["id"]}** — still on it.'
+    try:
+        gh_put('issues.json', issues, f'issue ticket update ({author.id})')
+    except Exception as e:
+        print('[issues] state write failed:', e)
+    if reply:
+        await message.reply(reply, mention_author=False)
+
+
 
 def make_client(privileged=True):
     intents = discord.Intents.default()
@@ -131,6 +244,9 @@ def make_client(privileged=True):
                 hs = [h for h in hs if h.lower() not in ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i')]
                 if hs:
                     await verify_giveaway_entry(message, hs[0])
+                return
+            if 'issues' in chname:
+                await handle_issue(message, message.guild or (c.guilds[0] if c.guilds else None))
                 return
             content = (message.content or '').strip().strip('`').strip('<>')
             if 'thelineshift.com' not in content or 'code=' not in content:
@@ -870,6 +986,30 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:250]
                 except Exception: pass
             log.append(f'x_me FAIL: {e} {body}')
+    elif a == 'collect_metrics':
+        try:
+            counts = {'members': guild.member_count}
+            for word, key in [('Lock', 'lock'), ('Sharp', 'sharp'), ('Whale', 'whale')]:
+                n = sum(1 for mem in guild.members if any(word.lower() in r.name.lower() for r in mem.roles))
+                counts[key] = n
+            snap = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), **counts}
+            xc = x_creds()
+            bt = (xc.get('bearer') or '').strip()
+            if bt:
+                xr = xrequests.get('https://api.x.com/2/users/1831457082828021760?user.fields=public_metrics',
+                                   headers={'Authorization': f'Bearer {bt}'}, timeout=15)
+                if xr.status_code == 200:
+                    d = xr.json()['data']['public_metrics']
+                    snap['x_followers'] = d['followers_count']
+                    snap['x_tweets'] = d['tweet_count']
+            m = await asyncio.to_thread(gh_get_json, 'metrics.json')
+            m = m or {'snapshots': []}
+            m.setdefault('snapshots', []).append(snap)
+            m['snapshots'] = m['snapshots'][-400:]
+            await asyncio.to_thread(gh_put, 'metrics.json', m, 'metrics snapshot')
+            log.append(f'metrics: {snap}')
+        except Exception as e:
+            log.append(f'metrics FAIL: {e}')
     elif a == 'harden_guild':
         try:
             await guild.edit(explicit_content_filter=discord.ContentFilter.all_members, reason='SHiFT harden')
@@ -901,7 +1041,7 @@ async def run_command(cmd, guild, log):
                 if word.lower() in r.name.lower():
                     return r
             return None
-        OPEN_SEND = ['general-chat', 'giveaway']
+        OPEN_SEND = ['general-chat', 'giveaway', 'issues']
         OPEN_READ = ['free-pick', 'receipts', 'scan-feed', 'updates']
         STAFF_ONLY = ['shift-lab']
         PAID = {'daily-locks': ['Lock', 'Sharp', 'Whale'], 'all-picks': ['Sharp', 'Whale'],
@@ -1569,7 +1709,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.36'
+            state['bot_version'] = '8.9.37'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
