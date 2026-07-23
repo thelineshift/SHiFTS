@@ -1,10 +1,6 @@
 {
- "seq": 217,
+ "seq": 218,
  "commands": [
-  {
-   "seq": 158,
-   "action": "x_me"
-  },
   {
    "seq": 159,
    "action": "x_media_test"
@@ -335,6 +331,12 @@
    "seq": 217,
    "action": "crypto_wallets",
    "ts": "2026-07-23T16:31:13Z"
+  },
+  {
+   "seq": 218,
+   "action": "x_delete",
+   "ts": "2026-07-23T16:48:25Z",
+   "id": "2080226769555312803"
   }
  ]
 }
