@@ -23,7 +23,13 @@
       "ts": "2026-07-23T15:15:12Z",
       "type": "whop_purge",
       "detail": "1 whop entities removed (bot kicked, roles deleted)"
+    },
+    {
+      "id": 5,
+      "ts": "2026-07-23T15:57:57Z",
+      "type": "audit",
+      "detail": "permission audit: 0 leak(s)"
     }
   ],
-  "next_id": 5
+  "next_id": 6
 }
