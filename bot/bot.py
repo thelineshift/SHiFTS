@@ -1395,9 +1395,11 @@ async def run_command(cmd, guild, log):
             else:
                 d = await asyncio.to_thread(x_get_json, 'https://api.x.com/2/tweets?ids=' + ','.join(str(i) for i in ids), c['bearer_token'])
                 for t in d.get('data', []):
-                    txt = (t.get('text') or '').replace('\n', ' | ')
-                    flag = 'GITHACK!' if 'githack' in txt.lower() else ('WHOP!' if 'whop' in txt.lower() else 'ok')
-                    log.append(f"{t['id']} [{flag}] {txt[:230]}")
+                    full = t.get('text') or ''
+                    urls = re.findall(r'https?://\S+', full)
+                    txt = full.replace('\n', ' | ')
+                    flag = 'GITHACK!' if 'githack' in full.lower() else ('WHOP!' if 'whop' in full.lower() else 'ok')
+                    log.append(f"{t['id']} [{flag}] urls={urls} :: {txt[:110]}")
         except Exception as e:
             log.append(f'x_read FAIL: {e}')
     elif a == 'x_profile_update':
@@ -2125,6 +2127,8 @@ async def audit():
                 async for m in ch.history(limit=15):
                     if client.user and m.author.id == client.user.id:
                         continue
+                    if getattr(m, 'webhook_message', False):
+                        continue  # our own webhook posts (engine cards/receipts) are trusted
                     txt = m.content or ''
                     if PICK_ODDS.search(txt) and UNITS_PAT.search(txt) and not TIMEDATE_PAT.search(txt):
                         flags.append(f'#{ch.name} | msg {m.id} | {txt[:90]}')
@@ -2186,7 +2190,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.45'
+            state['bot_version'] = '8.9.46'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
