@@ -677,7 +677,7 @@
         "home_ml": null,
         "away_ml": null,
         "total": 8.0,
-        "ts": 1784839858
+        "ts": 1784839873
       }
     },
     {
@@ -745,7 +745,7 @@
         "home_ml": null,
         "away_ml": null,
         "total": 8.5,
-        "ts": 1784839858
+        "ts": 1784839873
       }
     },
     {
@@ -766,7 +766,7 @@
         "home_ml": null,
         "away_ml": null,
         "total": 8.0,
-        "ts": 1784839858
+        "ts": 1784839873
       },
       "last_alert_total": 8.0
     },
@@ -787,7 +787,7 @@
         "home_ml": null,
         "away_ml": null,
         "total": 8.5,
-        "ts": 1784839858
+        "ts": 1784839874
       }
     }
   ]
