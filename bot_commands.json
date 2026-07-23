@@ -1,5 +1,5 @@
 {
- "seq": 153,
+ "seq": 154,
  "commands": [
   {
    "seq": 50,
@@ -735,6 +735,10 @@
   {
    "seq": 153,
    "action": "x_media_test"
+  },
+  {
+   "seq": 154,
+   "action": "x_refresh"
   }
  ]
 }
