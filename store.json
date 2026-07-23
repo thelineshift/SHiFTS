@@ -1,0 +1,38 @@
+{
+ "updated": "2026-07-23T14:38:04Z",
+ "tiers": {
+  "lock": {
+   "price_id": "price_1TwNi6AOKBVQvJ6xl5MYFnDF",
+   "product_id": "prod_UwGEGi6LdFMiQ8",
+   "link": "https://buy.stripe.com/8x29AS4Ry5G85Qf58ZbMQ00"
+  },
+  "sharp": {
+   "price_id": "price_1TwNi7AOKBVQvJ6xlPHXoIxu",
+   "product_id": "prod_UwGEJiXLNWzl1S",
+   "link": "https://buy.stripe.com/00w9ASes86Kc5QfcBrbMQ01"
+  },
+  "whale": {
+   "price_id": "price_1TwNi9AOKBVQvJ6xAI10ePgR",
+   "product_id": "prod_UwGEaHuA0vRak2",
+   "link": "https://buy.stripe.com/28E14m5VC0lOguT7h7bMQ02"
+  }
+ },
+ "promos": {
+  "LAUNCH25": "25% off first month",
+  "GIVEAWAY100": "giveaway winner free month (max 3)"
+ },
+ "role_map": {
+  "lock": [
+   "Lock"
+  ],
+  "sharp": [
+   "Sharp",
+   "Lock"
+  ],
+  "whale": [
+   "Whale",
+   "Sharp",
+   "Lock"
+  ]
+ }
+}
