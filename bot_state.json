@@ -1,12 +1,9 @@
 {
-  "executed_seq": 265,
+  "executed_seq": 266,
   "last_log": [
-    "seq 265 executed 2026-07-23 20:47 UTC",
-    "old pinned message deleted",
-    "replaced pin in #\ud83c\udf81giveaway (unpinned 1)",
-    "old pinned message deleted",
-    "replaced pin in #\ud83d\udc4bwelcome (unpinned 1)",
-    "posted+pinned in #\ud83d\udce3promotions"
+    "seq 266 executed 2026-07-23 20:53 UTC",
+    "#\ud83d\udcdcrules | LineShift Bot#8676: ",
+    "#\ud83d\udcdcrules | LineShift Bot#8676: \ud83e\udd16 **HOUSE RULES \u2014 THELINESHIFT**\n*The machine runs on discipline. So does this room.*\n\n1. **\ud83e\uddfe RECEIPTS OR IT DIDN'T HAPPEN.** Every graded play posts publicly \u2014 wins AND "
   ],
   "time_audit": {
     "at": "2026-07-23 20:53 UTC",
@@ -58,7 +55,7 @@
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
     "20260723-20": "ok"
   },
-  "executed_cmd_seq": 265,
+  "executed_cmd_seq": 266,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
