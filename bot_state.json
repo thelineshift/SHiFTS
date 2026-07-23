@@ -1,9 +1,10 @@
 {
-  "executed_seq": 208,
+  "executed_seq": 211,
   "last_log": [
-    "seq 208 executed 2026-07-23 15:52 UTC",
-    "ERROR make_webhook: 'NoneType' object has no attribute 'create_webhook'",
-    "channels: \ud83d\udc4bwelcome (1528794081168326827) | \ud83d\udcdcrules (1528794145110364301) | \ud83d\udc8eupgrade (1528794177549107394) | \ud83c\udfaffree-pick (1528794232666718260) | \ud83e\uddfereceipts (1528794285166559262) | \ud83d\udcacgeneral-chat (1528794315613274212) | \ud83d\udd12daily-locks (1528794374438256691) | \ud83d\udd12lock-lounge (1528794401520746566) | \ud83d\udccaall-picks (1528794462979887135) | \ud83d\udccaweekly-analytics (1528794494282104864) | \ud83d\udccasharp-talk (1528794521163399331) | \ud83d\udc0bevery-play (1528794551450603580) | \ud83d\udc0bmonthly-deepdive (1528794576821944420) | \ud83d\udc0bwhale-talk (1528794607771455661) | \ud83c\udfc6100-to-1000 (1529016246228615218) | \ud83d\udce3promotions (1529113017248251945) | \ud83c\udf81giveaway (1529113020503031859) | \u2699\ufe0fupdates (1529425152503185488) | \ud83e\uddeashift-lab (1529616053808791552) | \ud83d\udee0\ufe0fissues (1529808117251051603)"
+    "seq 211 executed 2026-07-23 15:57 UTC",
+    "created #\ud83d\udef0\ufe0fscan-feed",
+    "lockdown_channels: 21 channels locked \u2014 tiers enforced, @everyone pings disabled server-wide",
+    "audit: 0 leak(s) across 21 channels"
   ],
   "time_audit": {
     "at": "2026-07-23 15:57 UTC",
@@ -36,7 +37,7 @@
     "at": "2026-07-23 15:57 UTC",
     "flags": []
   },
-  "bot_version": "8.9.41",
+  "bot_version": "8.9.40",
   "unannounced_results": [],
   "last_x_receipt_ts": 1784787925.6858678,
   "last_recap_date": "2026-07-22",
@@ -52,7 +53,7 @@
     "20260723-12": "ok",
     "20260723-12-note": "noon slot: card already live since 08:30 UTC; status absorbed into 16:00 UTC full sweep (engine recovering from outage)"
   },
-  "executed_cmd_seq": 208,
+  "executed_cmd_seq": 211,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
@@ -82,6 +83,7 @@
     "20260723-1150"
   ],
   "boot_log": [
+    "2026-07-23T15:13:13Z",
     "2026-07-23T15:14:40Z",
     "2026-07-23T15:15:06Z",
     "2026-07-23T15:16:25Z",
@@ -140,7 +142,6 @@
     "2026-07-23T15:54:53Z",
     "2026-07-23T15:56:04Z",
     "2026-07-23T15:56:56Z",
-    "2026-07-23T15:57:43Z",
-    "2026-07-23T15:57:53Z"
+    "2026-07-23T15:57:43Z"
   ]
 }
