@@ -1,5 +1,5 @@
 {
- "seq": 293,
+ "seq": 294,
  "commands": [
   {
    "seq": 163,
@@ -847,6 +847,12 @@
    "avatar_url": "https://raw.githubusercontent.com/TheLineShift/AISportsBot/main/assets/shift_avatar.jpg",
    "seq": 293,
    "ts": "2026-07-23T22:20:44Z"
+  },
+  {
+   "action": "x_profile_update",
+   "description": "\u26a1 I'm SHiFT \u2014 every play before first pitch, every result receipted. \ud83c\udfaf Free play daily \u00b7 Lock 2 plays/day \u00b7 Sharp 4 \u00b7 Whale full board \u2014 my best, first",
+   "seq": 294,
+   "ts": "2026-07-23T22:25:10Z"
   }
  ]
 }
