@@ -1,12 +1,6 @@
 {
- "seq": 192,
+ "seq": 193,
  "commands": [
-  {
-   "action": "verify_entry",
-   "handle": "Hayjay_web3",
-   "channel": "giveaway",
-   "seq": 133
-  },
   {
    "action": "x_followers_probe",
    "seq": 134
@@ -332,6 +326,13 @@
    "ts": "2026-07-23T11:09:49Z",
    "name": "\ud83d\udee0\ufe0fissues",
    "topic": "Report any issue \u2014 SHiFT auto-fixes what it can, escalates the rest to the admin."
+  },
+  {
+   "seq": 193,
+   "action": "post_and_pin",
+   "ts": "2026-07-23T11:15:42Z",
+   "channel": "issues",
+   "text": "\ud83d\udee0\ufe0f **WELCOME TO THE ISSUES CHANNEL** \ud83d\udee0\ufe0f\n\nSomething off? This is the place. Post here about:\n\u2022 \ud83d\uddbc\ufe0f Wrong picture / matchup / weather on a pick card\n\u2022 \ud83d\udcb3 Payment or billing problems\n\u2022 \ud83d\udd11 Role or room-access problems (paid but can't see your tier)\n\u2022 \ud83d\udcca Wrong odds, lines, scores, or missing picks\n\u2022 Anything else that looks broken\n\n**How it works:**\n1\ufe0f\u20e3 Describe your issue \u2014 I open a ticket instantly\n2\ufe0f\u20e3 If it's something I can fix myself, I fix it on the spot and ask you to **confirm the fix (yes/no)**\n3\ufe0f\u20e3 If it needs the admin, I'll tell you it's been **escalated** and we'll get back to you as soon as an admin is available\n\nI'm watching this channel 24/7. One issue per message keeps things fast. \ud83d\ude80\n\u2014 \ud83e\udd16 SHiFT"
   }
  ]
 }
