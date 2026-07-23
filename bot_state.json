@@ -1,8 +1,21 @@
 {
-  "executed_seq": 268,
+  "executed_seq": 277,
   "last_log": [
-    "seq 268 executed 2026-07-23 21:10 UTC",
-    "metrics: {'ts': '2026-07-23T21:10:45Z', 'members': 35, 'lock': 0, 'sharp': 0, 'whale': 0, 'x_followers': 66, 'x_tweets': 1293}"
+    "seq 277 executed 2026-07-23 21:20 UTC",
+    "CAT [\ud83d\udccc START HERE] :: \ud83d\udc4bwelcome, \ud83d\udcdcrules, \ud83d\udc8eupgrade",
+    "CAT [\ud83c\udd93 THE FREE ROOM] :: \ud83c\udfaffree-pick, \ud83e\uddfereceipts, \ud83d\udcacgeneral-chat",
+    "CAT [\ud83d\udd12 LOCK ROOM] :: \ud83d\udd12daily-locks, \ud83d\udd12lock-lounge",
+    "CAT [\ud83d\udcca SHARP] :: \ud83d\udccaall-picks, \ud83d\udccaweekly-analytics, \ud83d\udccasharp-talk",
+    "CAT [\ud83d\udc0b WHALE] :: \ud83d\udc0bevery-play, \ud83d\udc0bmonthly-deepdive, \ud83d\udc0bwhale-talk",
+    "guild_map: 5 categories, 20 channels",
+    "renamed #\ud83d\udd12daily-locks -> \ud83d\udd12lock-room-4-7",
+    "renamed #\ud83d\udccaall-picks -> \ud83d\udccasharp-room-4-2",
+    "renamed #\ud83d\udc0bevery-play -> \ud83d\udc0bwhale-room-5-3",
+    "renamed #\ud83c\udfaffree-pick -> \ud83c\udfaffree-pick-7-1",
+    "renamed #\ud83d\udccaweekly-analytics -> \ud83d\udccasharp-analytics",
+    "renamed #\ud83d\udc0bmonthly-deepdive -> \ud83d\udc0bwhale-deepdive",
+    "renamed #\ud83c\udfc6100-to-1000 -> \ud83c\udfc6100-to-1000-40",
+    "x_profile_image: avatar set [app2] | banner set [app2]"
   ],
   "time_audit": {
     "at": "2026-07-23 21:20 UTC",
@@ -36,8 +49,18 @@
     "flags": []
   },
   "bot_version": "8.9.50",
-  "unannounced_results": [],
-  "last_x_receipt_ts": 1784841632.968444,
+  "unannounced_results": [
+    {
+      "id": "tb-ml-0723",
+      "desc": "Rays ML",
+      "odds": -114,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "Rays 1, Blue Jays 3",
+      "tier": "sharp"
+    }
+  ],
+  "last_x_receipt_ts": 1784839026.6286016,
   "last_recap_date": "2026-07-22",
   "scan_events": {
     "20260722-12": "ok",
@@ -54,7 +77,7 @@
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
     "20260723-20": "ok"
   },
-  "executed_cmd_seq": 268,
+  "executed_cmd_seq": 277,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
@@ -86,6 +109,7 @@
     "20260723-1500"
   ],
   "boot_log": [
+    "2026-07-23T21:03:45Z",
     "2026-07-23T21:03:47Z",
     "2026-07-23T21:04:06Z",
     "2026-07-23T21:04:30Z",
@@ -144,7 +168,6 @@
     "2026-07-23T21:19:51Z",
     "2026-07-23T21:20:06Z",
     "2026-07-23T21:20:12Z",
-    "2026-07-23T21:20:28Z",
-    "2026-07-23T21:20:34Z"
+    "2026-07-23T21:20:28Z"
   ]
 }
