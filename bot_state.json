@@ -36,7 +36,17 @@
     "flags": []
   },
   "bot_version": "8.9.49",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "cle-ml-0723",
+      "desc": "Guardians ML",
+      "odds": -149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Twins 3, Guardians 1",
+      "tier": "lock"
+    }
+  ],
   "last_x_receipt_ts": 1784832660.4370146,
   "last_recap_date": "2026-07-22",
   "scan_events": {
