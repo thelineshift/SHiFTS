@@ -1,10 +1,8 @@
 {
-  "executed_seq": 256,
+  "executed_seq": 257,
   "last_log": [
-    "seq 256 executed 2026-07-23 20:21 UTC",
-    "deleted post 2080226769555312803 (oauth2)",
-    "deleted post 2080226717143310713 (oauth2)",
-    "x_post_text OK: id 2080387905927946483"
+    "seq 257 executed 2026-07-23 20:31 UTC",
+    "profile updated [app2]: @TheLineShift | name: TheLineShift \u26a1 | bio: \u26a1 AI sports picks. Scans 6x daily, every result receipted \u2014 wins AND losses. \ud83c\udfaf F | url: https://t.co/jspOQEeeQa"
   ],
   "time_audit": {
     "at": "2026-07-23 20:31 UTC",
@@ -56,7 +54,7 @@
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
     "20260723-20": "ok"
   },
-  "executed_cmd_seq": 256,
+  "executed_cmd_seq": 257,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
