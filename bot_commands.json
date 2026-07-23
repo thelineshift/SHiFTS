@@ -1,5 +1,5 @@
 {
- "seq": 190,
+ "seq": 191,
  "commands": [
   {
    "seq": 50,
@@ -929,6 +929,14 @@
    "author": "SHiFT",
    "limit": 25,
    "max": 1
+  },
+  {
+   "seq": 191,
+   "action": "delete_where",
+   "channel": "general-chat",
+   "contains": "8PM SCAN \u2014 RESOLUTION",
+   "limit": 25,
+   "max": 2
   }
  ]
 }
