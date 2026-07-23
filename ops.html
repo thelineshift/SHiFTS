@@ -366,7 +366,7 @@ function renderBizChart(metrics){
   if(charts.b) charts.b.destroy();
   charts.b = new Chart(chBiz, {type:'line',
     data:{labels, datasets:[ds('x_followers','#4da3ff','𝕏 followers'), ds('members','#2dd4bf','members'),
-      ds('lock','#f5c518','🔒'), ds('sharp','#c084fc','📊'), ds('whale','#34d399','🐋')]},
+      ds('lock','#f5c518','🔒'), ds('sharp','#c084fc','📊'), ds('whale','#f472b6','🐋')]},
     options:{responsive:true, maintainAspectRatio:false,
       plugins:{legend:{labels:{color:'#8ba7c4', boxWidth:10, font:{size:10}}}},
       scales:{x:{ticks:{color:'#8ba7c4',maxTicksLimit:6}, grid:{color:'#16304e'}},
