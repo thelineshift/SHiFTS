@@ -32,18 +32,8 @@
     "flags": []
   },
   "bot_version": "8.9.31",
-  "unannounced_results": [
-    {
-      "id": "cws-ml-0722",
-      "desc": "White Sox ML",
-      "odds": -122,
-      "result": "WIN",
-      "units": 0.82,
-      "score": "Chicago White Sox 4, Texas Rangers 2",
-      "tier": "sharp"
-    }
-  ],
-  "last_x_receipt_ts": 1784784326.9848,
+  "unannounced_results": [],
+  "last_x_receipt_ts": 1784787925.6858678,
   "last_recap_date": "2026-07-22",
   "scan_events": {
     "20260722-12": "ok",
