@@ -1,1 +1,4 @@
 discord.py>=2.3.2
+solders>=0.21.0
+eth-account>=0.11.0
+bit>=0.8.0
