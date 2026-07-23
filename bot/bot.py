@@ -1411,7 +1411,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.33'
+            state['bot_version'] = '8.9.34'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -1622,7 +1622,8 @@ def x_upload_media_oauth1(img, filename='image.png'):
             if time.time() > c.get('oauth2_expires_at', 0):
                 c = x_oauth2_refresh(c)
             boundary = '----shift' + secrets.token_hex(8)
-            body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="{filename}"\r\n'
+            body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media_category"\r\n\r\ntweet_image\r\n'
+                    f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="{filename}"\r\n'
                     f'Content-Type: image/png\r\n\r\n').encode() + img + f'\r\n--{boundary}--\r\n'.encode()
             req = urllib.request.Request(url, data=body, method='POST',
                 headers={'Authorization': f"Bearer {c['oauth2_access']}",
@@ -1650,7 +1651,8 @@ def x_upload_media_oauth1(img, filename='image.png'):
         try:
             boundary = '----shift' + secrets.token_hex(8)
             hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)
-            body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="{filename}"\r\n'
+            body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media_category"\r\n\r\ntweet_image\r\n'
+                    f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="{filename}"\r\n'
                     f'Content-Type: image/png\r\n\r\n').encode() + img + f'\r\n--{boundary}--\r\n'.encode()
             req = urllib.request.Request(url, data=body, method='POST',
                 headers={'Authorization': hdr,
