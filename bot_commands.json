@@ -1,5 +1,5 @@
 {
- "seq": 169,
+ "seq": 170,
  "commands": [
   {
    "seq": 50,
@@ -811,6 +811,12 @@
    "action": "make_webhook",
    "channel": "giveaway",
    "name": "\ud83e\udd16 SHiFT"
+  },
+  {
+   "seq": 170,
+   "action": "read_recent",
+   "channel": "shift-lab",
+   "limit": 8
   }
  ]
 }
