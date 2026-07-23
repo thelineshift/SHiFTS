@@ -1,5 +1,5 @@
 {
- "seq": 290,
+ "seq": 291,
  "commands": [
   {
    "seq": 163,
@@ -830,6 +830,12 @@
    "marker": "SEAT",
    "seq": 290,
    "ts": "2026-07-23T22:11:29Z"
+  },
+  {
+   "action": "x_profile_update",
+   "description": "\u26a1 I'm SHiFT \u2014 every play before first pitch, every result receipted. \ud83c\udfaf Free play daily \u00b7 \ud83d\udd12 2 plays/day \u00b7 \ud83d\udcca 4 \u00b7 \ud83d\udc0b full board \u2014 Whale gets my best first",
+   "seq": 291,
+   "ts": "2026-07-23T22:20:38Z"
   }
  ]
 }
