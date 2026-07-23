@@ -17,7 +17,13 @@
       "ts": "2026-07-23T15:01:51Z",
       "type": "whop_purge",
       "detail": "0 whop entities removed (bot kicked, roles deleted)"
+    },
+    {
+      "id": 4,
+      "ts": "2026-07-23T15:15:12Z",
+      "type": "whop_purge",
+      "detail": "1 whop entities removed (bot kicked, roles deleted)"
     }
   ],
-  "next_id": 4
+  "next_id": 5
 }
