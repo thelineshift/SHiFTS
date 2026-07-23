@@ -34,15 +34,6 @@
   "bot_version": "8.9.31",
   "unannounced_results": [
     {
-      "id": "chc-ml-0722",
-      "desc": "Cubs ML",
-      "odds": -125,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "Detroit Tigers 5, Chicago Cubs 1",
-      "tier": "lock"
-    },
-    {
       "id": "cws-ml-0722",
       "desc": "White Sox ML",
       "odds": -122,
@@ -52,7 +43,7 @@
       "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1784780725.6985471,
+  "last_x_receipt_ts": 1784784326.9848,
   "last_recap_date": "2026-07-22",
   "scan_events": {
     "20260722-12": "ok",
