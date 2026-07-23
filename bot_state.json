@@ -59,6 +59,15 @@
       "units": -1.5,
       "score": "Detroit Tigers 5, Chicago Cubs 1",
       "tier": "lock"
+    },
+    {
+      "id": "cws-ml-0722",
+      "desc": "White Sox ML",
+      "odds": -122,
+      "result": "WIN",
+      "units": 0.82,
+      "score": "Chicago White Sox 4, Texas Rangers 2",
+      "tier": "sharp"
     }
   ],
   "last_x_receipt_ts": 1784774702.442015,
