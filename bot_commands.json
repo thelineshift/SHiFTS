@@ -1,5 +1,5 @@
 {
- "seq": 267,
+ "seq": 268,
  "commands": [
   {
    "seq": 163,
@@ -673,6 +673,11 @@
    "action": "list_members",
    "seq": 267,
    "ts": "2026-07-23T21:03:11Z"
+  },
+  {
+   "action": "collect_metrics",
+   "seq": 268,
+   "ts": "2026-07-23T21:08:39Z"
   }
  ]
 }
