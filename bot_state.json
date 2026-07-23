@@ -37,18 +37,8 @@
     "flags": []
   },
   "bot_version": "8.9.46",
-  "unannounced_results": [
-    {
-      "id": "atl-ml-0723",
-      "desc": "Braves ML",
-      "odds": -256,
-      "result": "WIN",
-      "units": 0.39,
-      "score": "San Diego Padres 5, Atlanta Braves 6",
-      "tier": "free"
-    }
-  ],
-  "last_x_receipt_ts": 1784787925.6858678,
+  "unannounced_results": [],
+  "last_x_receipt_ts": 1784832660.4370146,
   "last_recap_date": "2026-07-22",
   "scan_events": {
     "20260722-12": "ok",
