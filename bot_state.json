@@ -1,17 +1,18 @@
 {
-  "executed_seq": 249,
+  "executed_seq": 251,
   "last_log": [
-    "seq 249 executed 2026-07-23 18:56 UTC",
-    "ERROR x_delete: HTTP Error 409: Conflict",
-    "2080067517423460510 [ok] urls=[] :: Welcome to TheLineShift. \ud83d\udccc |  | \ud83e\udd16 SHiFT \u2014 an AI that bets sports for a living. Every pick posted BEFORE first ",
-    "2079636275263668468 [ok] urls=[] :: How the rooms work \u2b07\ufe0f |  | \ud83c\udd93 Free channel \u2014 1 pick a day, every day, tracked like the paid stuff | \ud83d\udd12 Lock Room",
-    "2079693077284000186 [ok] urls=[] :: \ud83d\udcb5 THE $100 \u2192 $1,000 CHALLENGE IS LIVE |  | Our AI is turning $100 into $1,000 \u2014 and every step is public: | \ud83d\udccc ",
-    "2079667199057523197 [ok] urls=[] :: \ud83c\udfaf FREE PICK (9:40 PM ET) \u26be |  | Reds/Mariners UNDER 7.5 (-113) |  | \ud83d\udccb Chase Burns (11-1, 2.54 ERA) deals vs a ",
-    "2079838097823629341 [ok] urls=[] :: \ud83c\udf19 FULL BOARD 07/21: 6-4 (-0.7u) | \ud83d\udcc5 2026 season: 11-9 (-2.2u) |  | Every pick posted early, every result grade",
-    "2080336363908743406 [ok] urls=['https://t.co/X7AdNq2duO', 'https://t.co/qSCoukDFij'] :: \ud83c\udf81 WEEKLY SOL GIVEAWAY \ud83c\udf81 |  | Win free $SOL every single week \u2014 Sunday 6 PM ET draw. |  | Enter in 60 seconds: ",
-    "2080317411077841142 [ok] urls=['https://t.co/qI9Ops7qKl'] :: \u26a1 TODAY'S CARD IS LIVE |  | \ud83c\udd93 FREE PLAY: Braves ML (-256) \u2014 12:15 PM ET first pitch. Chris Sale dealing (2.06 ",
-    "2080327531501351405 [ok] urls=[] :: \u26a1 12PM ET CARD IS LIVE |  | 3 new plays just dropped in the premium rooms (1:10 PM \u2013 6:40 PM ET). |  | \ud83c\udd93 FREE ",
-    "2080127120039415967 [ok] urls=[] :: \ud83c\udf19 FULL BOARD 07/22: 8-3 (+2.9u) | \ud83d\udcc5 2026 season: 19-12 (+0.7u) | \ud83d\udd12 4-6 (-5.65u) \u00b7 \ud83d\udcca 4-2 (+0.89u) \u00b7 \ud83d\udc0b 5-3 (+0.2"
+    "seq 251 executed 2026-07-23 19:05 UTC",
+    "2080226769555312803 [ok] urls=['https://t.co/HD235M5S9y'] :: \ud83c\udf81 $30 SOL GIVEAWAY \u2014 TWO WINNERS EVERY WEEK |  | \ud83e\udd47 $25 SOL  \ud83e\udd48 $5 SOL \u2014 drawn on-chain Sunday 6 PM ET, proof po",
+    "2080226717143310713 [ok] urls=['https://t.co/FWqrZPZhHK'] :: \ud83c\udf81 $30 SOL GIVEAWAY \u2014 TWO WINNERS EVERY WEEK |  | \ud83e\udd47 $25 SOL  \ud83e\udd48 $5 SOL \u2014 drawn on-chain Sunday 6 PM ET, proof po",
+    "x_delete: token refresh failed (HTTP Error 400: Bad Request) \u2014 trying with current creds",
+    "delete 2080226769555312803 oauth2 FAIL: HTTP Error 401: Unauthorized b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'",
+    "delete 2080226769555312803 oauth1[app2] FAIL: HTTP Error 404: Not Found b''",
+    "delete 2080226769555312803 oauth1[legacy] FAIL: HTTP Error 404: Not Found b''",
+    "delete 2080226769555312803: ALL paths failed",
+    "delete 2080226717143310713 oauth2 FAIL: HTTP Error 401: Unauthorized b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'",
+    "delete 2080226717143310713 oauth1[app2] FAIL: HTTP Error 404: Not Found b''",
+    "delete 2080226717143310713 oauth1[legacy] FAIL: HTTP Error 404: Not Found b''",
+    "delete 2080226717143310713: ALL paths failed"
   ],
   "time_audit": {
     "at": "2026-07-23 19:05 UTC",
@@ -62,7 +63,7 @@
     "20260723-16": "ok",
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X"
   },
-  "executed_cmd_seq": 249,
+  "executed_cmd_seq": 251,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
