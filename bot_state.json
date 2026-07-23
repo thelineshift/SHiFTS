@@ -1,8 +1,15 @@
 {
-  "executed_seq": 212,
+  "executed_seq": 214,
   "last_log": [
-    "seq 212 executed 2026-07-23 16:03 UTC",
-    "webhook for #\ud83d\udef0\ufe0fscan-feed: https://discord.com/api/webhooks/1529881550974488688/gcEIeVw5D94lE7uBT0zDOvwPkKbJL4SrYeThCZpHiRkB7_qjmLMLiYaOdbGzUzWHJws2"
+    "seq 214 executed 2026-07-23 16:16 UTC",
+    "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \ud83c\udd93 **FREE PICK (12:15 PM ET)**\n\u26be **Atlanta Braves ML (-256)** vs San Diego \u2014 Truist Park\n\ud83d\udcca 1 unit\n\n\ud83d\udccb **INTEL:** Mismatch of the day. Chris Sale (10-6, **2.06 ERA**) on the",
+    "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \u2705 **12 AM \u2014 RESOLUTION (makeup).** Evening receipts posted above \u2705. Overnight board scanned (incl. our first HLTV CS2 pass \u2014 favorites too juiced, discipline pass). Next ",
+    "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \ud83e\uddfe **RECEIPT \u2014 \ud83c\udd93 Rays/Blue Jays Under 7.5 (-110) \u2705 +0.91u**\nFinal 4-2 = 6 total, never sweated. Rested pens, quiet bats \u2014 the read was clean.\nFree room cashes again. Full ",
+    "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \u2705 **8PM SCAN \u2014 RESOLUTION (Free)**\nYour free play tonight: **Rays/Blue Jays Under 7.5 (-110)** \u2014 posted 6:20 PM, beat the 7:07 first pitch.\nLate board had nothing worth a",
+    "#\ud83d\udd12daily-locks | \ud83e\udd16 SHiFT#0000: \ud83d\udd12 **DAILY LOCK (1.5u) \u2014 5:15 PM ET**\n\u26be **St. Louis Cardinals ML (-123)** vs Arizona \u2014 Busch Stadium\n\ud83d\udccb **INTEL:** Michael McGreevy (**2.92 ERA**) at home vs Brandon Pfaadt",
+    "#\ud83d\udd12daily-locks | \ud83e\udd16 SHiFT#0000: \u2705 **12 AM \u2014 RESOLUTION (makeup).** Evening receipts posted above \u2705. Overnight board scanned (incl. our first HLTV CS2 pass \u2014 favorites too juiced, discipline pass). Next ",
+    "#\ud83d\udd12daily-locks | \ud83e\udd16 SHiFT#0000: \ud83e\uddfe **RECEIPT \u2014 \ud83d\udd12 Cubs ML (-125) \u274c -1.5u**\nDetroit 5, Cubs 1. Never competitive \u2014 Tigers jumped Boyd early and the bats stayed quiet.\nLock room takes the L on the chin and ",
+    "#\ud83d\udd12daily-locks | \ud83e\udd16 SHiFT#0000: \u2705 **8PM SCAN \u2014 RESOLUTION (\ud83d\udd12 Lock Room)**\nTonight's Lock: **Cubs ML (-125), 1.5u** \u2014 posted 6:20 PM, in progress now.\nNo second lock on the late board \u2014 discipline pass. "
   ],
   "time_audit": {
     "at": "2026-07-23 16:15 UTC",
@@ -51,7 +58,7 @@
     "20260723-12": "ok",
     "20260723-12-note": "noon slot: card already live since 08:30 UTC; status absorbed into 16:00 UTC full sweep (engine recovering from outage)"
   },
-  "executed_cmd_seq": 212,
+  "executed_cmd_seq": 214,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
