@@ -14,6 +14,71 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 BOT_NICK = '🤖 SHiFT'
 BOT_STATUS = 'the board 🛰️'
 
+SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
+           r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
+           r'airdrop', r'double your', r'forex', r'investment platform', r'guaranteed profit',
+           r'trading (expert|guru|signals)', r'contact (me|admin) (on|via)']
+OUR_INVITE = '8bBxWUJCYT'
+
+async def shift_guard(message, guild):
+    try:
+        member = message.author
+        if getattr(member, 'bot', False):
+            return False
+        try:
+            if member == guild.owner or member.guild_permissions.administrator or member.guild_permissions.manage_guild:
+                return False
+        except Exception:
+            pass
+        content = message.content or ''
+        low = content.lower()
+        reason = None
+        if message.mention_everyone:
+            reason = '@everyone/@here ping by non-staff'
+        else:
+            for pat in SCAM_RX:
+                if re.search(pat, low):
+                    reason = 'scam pattern'
+                    break
+            if not reason:
+                invites = re.findall(r'(?:discord\.gg/|discord\.com/invite/)([A-Za-z0-9]+)', content)
+                if any(code != OUR_INVITE for code in invites):
+                    reason = 'foreign discord invite'
+            if not reason and len(message.mentions) >= 4:
+                reason = f'mass mentions ({len(message.mentions)})'
+        if not reason:
+            return False
+        st = await asyncio.to_thread(get_state)
+        offs = st.setdefault('mod_offenses', {})
+        uid = str(member.id)
+        offs[uid] = offs.get(uid, 0) + 1
+        await asyncio.to_thread(gh_put, 'bot_state.json', st, 'mod offense ' + uid)
+        snippet = content[:180]
+        try:
+            await message.delete()
+        except Exception:
+            pass
+        action = 'deleted'
+        try:
+            import datetime as _dt
+            await member.timeout(_dt.timedelta(minutes=60), reason='SHiFT guard: ' + reason)
+            action += ' + 60min timeout'
+        except Exception:
+            pass
+        if offs[uid] >= 2:
+            try:
+                await member.kick(reason='repeat scam offenses')
+                action += ' + KICKED (repeat)'
+            except Exception:
+                pass
+        lab = find_channel(guild, 'shift-lab')
+        if lab:
+            await lab.send(f"\U0001F6E1\uFE0F **SHiFT GUARD** — {action}\n\U0001F464 {member} (`{member.id}`) in #{message.channel.name}\n\u2696\uFE0F {reason}\n\U0001F4DD {snippet or '(no text)'}")
+        return True
+    except Exception as e:
+        print('shift_guard error:', e)
+        return False
+
 def make_client(privileged=True):
     intents = discord.Intents.default()
     intents.guilds = True
@@ -55,6 +120,8 @@ def make_client(privileged=True):
     async def on_message(message):
         try:
             if message.author.bot:
+                return
+            if message.guild and await shift_guard(message, message.guild):
                 return
             chname = (getattr(message.channel, 'name', '') or '').lower()
             if 'giveaway' in chname:
@@ -803,6 +870,81 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:250]
                 except Exception: pass
             log.append(f'x_me FAIL: {e} {body}')
+    elif a == 'harden_guild':
+        try:
+            await guild.edit(explicit_content_filter=discord.ContentFilter.all_members, reason='SHiFT harden')
+            log.append('harden_guild: explicit content filter = ALL members')
+        except Exception as e:
+            log.append(f'harden_guild filter FAIL: {e}')
+        try:
+            trig = discord.AutoModTrigger(type=discord.AutoModRuleTriggerType.mention_spam, mention_limit=5)
+            acts = [discord.AutoModRuleAction(type=discord.AutoModRuleActionType.block_message)]
+            await guild.create_automod_rule(name='SHiFT mention guard', event_type=discord.AutoModRuleEventType.message_send,
+                                            trigger=trig, actions=acts, enabled=True, reason='harden')
+            log.append('harden_guild: AutoMod mention-spam rule ON')
+        except Exception as e:
+            log.append(f'harden_guild automod mention FAIL: {e}')
+        try:
+            trig2 = discord.AutoModTrigger(type=discord.AutoModRuleTriggerType.keyword,
+                keyword_filter=['dm me','send me a dm','d.m me','telegram','t.me/','whatsapp','free nitro','airdrop','double your','forex','guaranteed profit','claim your'])
+            acts2 = [discord.AutoModRuleAction(type=discord.AutoModRuleActionType.block_message)]
+            await guild.create_automod_rule(name='SHiFT scam filter', event_type=discord.AutoModRuleEventType.message_send,
+                                            trigger=trig2, actions=acts2, enabled=True, reason='harden')
+            log.append('harden_guild: AutoMod scam-keyword rule ON')
+        except Exception as e:
+            log.append(f'harden_guild automod keyword FAIL: {e}')
+    elif a == 'lockdown_channels':
+        def _frag(s):
+            return ''.join(c for c in s.lower() if c.isalnum() or c == '-')
+        def _tier_role(word):
+            for r in guild.roles:
+                if word.lower() in r.name.lower():
+                    return r
+            return None
+        OPEN_SEND = ['general-chat', 'giveaway']
+        OPEN_READ = ['free-pick', 'receipts', 'scan-feed', 'updates']
+        STAFF_ONLY = ['shift-lab']
+        PAID = {'daily-locks': ['Lock', 'Sharp', 'Whale'], 'all-picks': ['Sharp', 'Whale'],
+                'every-play': ['Whale'], 'weekly-analytics': ['Sharp', 'Whale'],
+                'monthly-deepdive': ['Whale'], '100-to-1000': ['Lock', 'Sharp', 'Whale']}
+        n = 0
+        for ch in guild.text_channels:
+            nm = _frag(ch.name)
+            try:
+                if any(_frag(k) in nm for k in STAFF_ONLY):
+                    await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=False))
+                    for w in ('Lock', 'Sharp', 'Whale'):
+                        r = _tier_role(w)
+                        if r:
+                            await ch.set_permissions(r, overwrite=discord.PermissionOverwrite(view_channel=False))
+                    n += 1
+                elif any(_frag(k) in nm for k in OPEN_SEND):
+                    await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=True, send_messages=True, read_message_history=True, mention_everyone=False))
+                    n += 1
+                elif any(_frag(k) in nm for k in OPEN_READ):
+                    await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=True, send_messages=False, read_message_history=True, mention_everyone=False))
+                    n += 1
+                else:
+                    hit = None
+                    for key, roles in PAID.items():
+                        if _frag(key) in nm:
+                            hit = roles
+                            break
+                    if hit is not None:
+                        await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=False))
+                        for w in ('Lock', 'Sharp', 'Whale'):
+                            r = _tier_role(w)
+                            if not r:
+                                continue
+                            if w in hit:
+                                can_send = key in ('daily-locks', 'all-picks', 'every-play')
+                                await ch.set_permissions(r, overwrite=discord.PermissionOverwrite(view_channel=True, send_messages=can_send, read_message_history=True, mention_everyone=False))
+                            else:
+                                await ch.set_permissions(r, overwrite=discord.PermissionOverwrite(view_channel=False))
+                        n += 1
+            except Exception as e:
+                log.append(f'lockdown FAIL #{ch.name}: {e}')
+        log.append(f'lockdown_channels: {n} channels locked — tiers enforced, @everyone pings disabled server-wide')
     elif a == 'delete_where':
         try:
             ch = find_channel(guild, cmd['channel'])
@@ -1427,7 +1569,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.35'
+            state['bot_version'] = '8.9.36'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
