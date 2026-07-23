@@ -204,32 +204,33 @@ def _http_json(url, payload=None, headers=None, timeout=20):
         return json.load(r)
 
 def wallet_balances():
-    """On-chain balances for our hot wallets + USD values. Never raises."""
+    """On-chain balances for all hot wallets + USD values. Never raises."""
     out = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'wallets': []}
     try:
-        addrs = {'solana': None, 'ethereum': None, 'bitcoin': None}
         w = gh_get_json('wallets.json') or {}
-        for x in w.get('wallets', []):
-            addrs[x['chain']] = x['address']
         px = _http_json('https://api.coingecko.com/api/v3/simple/price?ids=solana,ethereum,bitcoin&vs_currencies=usd')
-        if addrs.get('solana'):
-            b = _http_json('https://api.mainnet-beta.solana.com',
-                           {'jsonrpc': '2.0', 'id': 1, 'method': 'getBalance', 'params': [addrs['solana']]})
-            sol = b['result']['value'] / 1e9
-            out['wallets'].append({'chain': 'solana', 'symbol': 'SOL', 'address': addrs['solana'],
-                                   'balance': round(sol, 5), 'usd': round(sol * px['solana']['usd'], 2)})
-        if addrs.get('ethereum'):
-            b = _http_json('https://eth.llamarpc.com',
-                           {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addrs['ethereum'], 'latest']})
-            eth = int(b['result'], 16) / 1e18
-            out['wallets'].append({'chain': 'ethereum', 'symbol': 'ETH/EVM', 'address': addrs['ethereum'],
-                                   'balance': round(eth, 6), 'usd': round(eth * px['ethereum']['usd'], 2)})
-        if addrs.get('bitcoin'):
-            b = _http_json(f"https://blockstream.info/api/address/{addrs['bitcoin']}")
-            sats = b['chain_stats']['funded_txo_sum'] - b['chain_stats']['spent_txo_sum']
-            btc = sats / 1e8
-            out['wallets'].append({'chain': 'bitcoin', 'symbol': 'BTC', 'address': addrs['bitcoin'],
-                                   'balance': round(btc, 8), 'usd': round(btc * px['bitcoin']['usd'], 2)})
+        for x in w.get('wallets', []):
+            ch, addr = x['chain'], x['address']
+            entry = {'chain': ch, 'symbol': x.get('symbol', ch.upper()), 'label': x.get('label', '💼 OPS WALLET'),
+                     'address': addr, 'note': x.get('note', '')}
+            try:
+                if ch == 'solana':
+                    b = _http_json('https://api.mainnet-beta.solana.com',
+                                   {'jsonrpc': '2.0', 'id': 1, 'method': 'getBalance', 'params': [addr]})
+                    bal = b['result']['value'] / 1e9
+                    entry.update(balance=round(bal, 5), usd=round(bal * px['solana']['usd'], 2))
+                elif ch == 'ethereum':
+                    b = _http_json('https://eth.llamarpc.com',
+                                   {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addr, 'latest']})
+                    bal = int(b['result'], 16) / 1e18
+                    entry.update(balance=round(bal, 6), usd=round(bal * px['ethereum']['usd'], 2))
+                elif ch == 'bitcoin':
+                    b = _http_json(f'https://blockstream.info/api/address/{addr}')
+                    bal = (b['chain_stats']['funded_txo_sum'] - b['chain_stats']['spent_txo_sum']) / 1e8
+                    entry.update(balance=round(bal, 8), usd=round(bal * px['bitcoin']['usd'], 2))
+            except Exception as e:
+                entry.update(balance=None, usd=None, error=str(e)[:80])
+            out['wallets'].append(entry)
     except Exception as e:
         out['error'] = str(e)[:200]
     return out
@@ -2111,7 +2112,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.42'
+            state['bot_version'] = '8.9.42b'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
