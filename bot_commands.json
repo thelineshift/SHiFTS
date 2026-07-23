@@ -1,5 +1,5 @@
 {
- "seq": 161,
+ "seq": 162,
  "commands": [
   {
    "seq": 50,
@@ -767,6 +767,10 @@
   {
    "seq": 161,
    "action": "x_media_test"
+  },
+  {
+   "seq": 162,
+   "action": "x_me"
   }
  ]
 }
