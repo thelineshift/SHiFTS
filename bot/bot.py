@@ -1863,7 +1863,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.39'
+            state['bot_version'] = '8.9.39b'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -2711,6 +2711,7 @@ def boot_marker():
         return -1
 
 def run_guarded():
+    global client
     # CONNECTION-STORM GUARD: Discord resets tokens after ~1000 gateway connects in a short
     # window. One process = one connection, so storms only come from crash/restart loops.
     # Throttle every exit path so a looping host can never hammer Discord again.
