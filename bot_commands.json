@@ -1,5 +1,5 @@
 {
- "seq": 167,
+ "seq": 168,
  "commands": [
   {
    "seq": 50,
@@ -799,6 +799,12 @@
    "action": "read_recent",
    "channel": "every-play",
    "limit": 3
+  },
+  {
+   "seq": 168,
+   "action": "read_recent",
+   "channel": "giveaway",
+   "limit": 12
   }
  ]
 }
