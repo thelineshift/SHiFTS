@@ -803,6 +803,22 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:250]
                 except Exception: pass
             log.append(f'x_me FAIL: {e} {body}')
+    elif a == 'x_oauth1_me':
+        for name, ck, cs, at, ats in x_oauth1_sets(x_creds_load()):
+            try:
+                hdr = x_oauth1_sign('GET', 'https://api.x.com/2/users/me', ck, cs, at, ats)
+                req = urllib.request.Request('https://api.x.com/2/users/me', headers={'Authorization': hdr})
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    d = json.load(r)
+                log.append(f"x_oauth1_me [{name}] OK: @{d.get('data', {}).get('username')} id {d.get('data', {}).get('id')}")
+            except urllib.error.HTTPError as e:
+                try:
+                    eb = e.read()[:220]
+                except Exception:
+                    eb = b''
+                log.append(f'x_oauth1_me [{name}] HTTP {e.code}: {eb}')
+            except Exception as e:
+                log.append(f'x_oauth1_me [{name}] FAIL: {e}')
     elif a == 'x_media_test':
         try:
             img = await asyncio.to_thread(gh_raw_bytes, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
@@ -1395,7 +1411,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.32'
+            state['bot_version'] = '8.9.33'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -1628,6 +1644,7 @@ def x_upload_media_oauth1(img, filename='image.png'):
     sets = x_oauth1_sets(c)
     if not sets:
         raise Exception('no working media credential (oauth2 rejected, no complete oauth1 set)')
+    errs = []
     last = None
     for name, ck, cs, at, ats in sets:
         try:
@@ -1653,7 +1670,8 @@ def x_upload_media_oauth1(img, filename='image.png'):
             last = f'{name} HTTP {e.code}: {eb}'
         except Exception as e:
             last = f'{name}: {e}'
-    raise Exception(last or 'upload failed')
+        errs.append(str(last))
+    raise Exception(' || '.join(errs) if errs else 'upload failed')
 
 def x_post_media_oauth2(text, media_id):
     c = x_creds_load()
