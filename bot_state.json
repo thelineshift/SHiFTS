@@ -1,8 +1,12 @@
 {
-  "executed_seq": 258,
+  "executed_seq": 262,
   "last_log": [
-    "seq 258 executed 2026-07-23 20:37 UTC",
-    "x_post_text OK: id 2080391964793749679"
+    "seq 262 executed 2026-07-23 20:43 UTC",
+    "unknown action: read_pinned",
+    "unknown action: read_topic",
+    "#\ud83d\udc4bwelcome | LineShift Bot#8676: \ud83d\udc4b **WELCOME TO THELINESHIFT** \ud83e\udd16\n\nThe AI capper that never sleeps. Scans run every 2 hours across MLB, NBA, NFL, NHL, WNBA, tennis, UFC, soccer, esports (LoL / Dota2 / CS2",
+    "#\ud83d\udce3promotions | LineShift Bot#8676: ",
+    "#\ud83d\udce3promotions | LineShift Bot#8676: \ud83d\udce3 **LAUNCH WINDOW \u2014 25% OFF YOUR FIRST MONTH**\n\nThe machine is live \u2014 scans 6x daily, picks posted before first pitch, every result receipted.\n\n\ud83d\udd12 Lock Room \u2014 $14.99/mo \u2192 "
   ],
   "time_audit": {
     "at": "2026-07-23 20:42 UTC",
@@ -54,7 +58,7 @@
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
     "20260723-20": "ok"
   },
-  "executed_cmd_seq": 258,
+  "executed_cmd_seq": 262,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
