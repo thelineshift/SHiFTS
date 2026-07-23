@@ -1,14 +1,9 @@
 {
-  "executed_seq": 299,
+  "executed_seq": 300,
   "last_log": [
-    "seq 299 executed 2026-07-23 22:39 UTC",
-    "x_pin oauth2 api.x.com HTTP 404: b''",
-    "x_pin oauth2 api.twitter.com HTTP 404: b''",
-    "x_pin oauth1[app2] api.x.com HTTP 404: b''",
-    "x_pin oauth1[app2] api.twitter.com HTTP 404: b''",
-    "x_pin oauth1[legacy] api.x.com HTTP 404: b''",
-    "x_pin oauth1[legacy] api.twitter.com HTTP 404: b''",
-    "x_pin: all attempts failed"
+    "seq 300 executed 2026-07-23 23:20 UTC",
+    "x_pinned: 2080419904378015798",
+    "pinned text: \u26a1 THE BOARD IS DEALT TOP-DOWN\n\n\ud83c\udfaf Free \u2014 1 play a day\n\ud83d\udd12 Lock $14.99 \u2014 2 plays a day\n\ud83d\udcca Sharp $29.99 \u2014 4 plays a day\n\ud83d\udc0b Whale $59.99 \u2014 my full 7-play board\n\nHOUSE LAW: my most confident plays go to Whale "
   ],
   "time_audit": {
     "at": "2026-07-23 23:19 UTC",
@@ -63,7 +58,7 @@
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
     "20260723-20": "ok"
   },
-  "executed_cmd_seq": 299,
+  "executed_cmd_seq": 300,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
