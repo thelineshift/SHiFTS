@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T22:42:19Z",
+  "updated": "2026-07-23T01:56:15Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -615,7 +615,7 @@
       "odds": -110,
       "units": 1.0,
       "tier": "free",
-      "result": "PENDING",
+      "result": "WIN",
       "time_et": "7:07 PM",
       "analysis": "Rogers dome \u2014 weather zeroed; both pens rested; Littell 3.10 FIP vs Berrios 3.60 home. Model total 6.9 vs 7.5.",
       "live_odds": {
@@ -623,7 +623,9 @@
         "away_ml": null,
         "total": 7.5,
         "ts": 1784761660
-      }
+      },
+      "score": "Tampa Bay Rays 4, Toronto Blue Jays 2",
+      "units_result": 0.91
     }
   ]
 }
