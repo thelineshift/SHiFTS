@@ -1,5 +1,5 @@
 {
- "seq": 258,
+ "seq": 262,
  "commands": [
   {
    "seq": 163,
@@ -614,6 +614,32 @@
    "text": "\ud83d\udcb0 SUNDAY'S POOL JUST GOT BOOSTED \u2014 $50 in $SOL, TWO winners\n\ud83e\udd47 $35 \u00b7 \ud83e\udd48 $15\n\nEntry is free: follow + like + repost + drop your X handle in the Discord.\nDraw Sunday 6 PM ET, paid on-chain with proof.\nLink in bio. #SOL #Giveaway",
    "seq": 258,
    "ts": "2026-07-23T20:35:23Z"
+  },
+  {
+   "action": "read_pinned",
+   "channel": "giveaway",
+   "seq": 259,
+   "ts": "2026-07-23T20:42:26Z"
+  },
+  {
+   "action": "read_topic",
+   "channel": "giveaway",
+   "seq": 260,
+   "ts": "2026-07-23T20:42:26Z"
+  },
+  {
+   "action": "read_recent",
+   "channel": "welcome",
+   "limit": 10,
+   "seq": 261,
+   "ts": "2026-07-23T20:42:26Z"
+  },
+  {
+   "action": "read_recent",
+   "channel": "promotions",
+   "limit": 5,
+   "seq": 262,
+   "ts": "2026-07-23T20:42:26Z"
   }
  ]
 }
