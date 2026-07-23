@@ -1,10 +1,8 @@
 {
-  "executed_seq": 182,
+  "executed_seq": 183,
   "last_log": [
-    "seq 182 executed 2026-07-23 09:25 UTC",
-    "x_oauth1_me [app2] OK: @TheLineShift id 1831457082828021760",
-    "x_oauth1_me [legacy] HTTP 401: b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'",
-    "x_media_test FAIL: app2 HTTP 400: b'{\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"Missing media_category field\",\"parameters\":{\"media_category\":[]}}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}' || legacy HTTP 401: b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'"
+    "seq 183 executed 2026-07-23 09:32 UTC",
+    "x_media_test OK: media_id 2080224519801978881 via oauth2 (1673679 bytes) \u2014 native image posts LIVE"
   ],
   "time_audit": {
     "at": "2026-07-23 09:32 UTC",
@@ -51,7 +49,7 @@
     "20260723-08": "ok",
     "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)"
   },
-  "executed_cmd_seq": 182,
+  "executed_cmd_seq": 183,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 7,
