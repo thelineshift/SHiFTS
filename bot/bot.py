@@ -901,20 +901,47 @@ async def run_command(cmd, guild, log):
     elif a == 'x_delete':
         c = x_creds_load()
         if time.time() > c.get('oauth2_expires_at', 0):
-            c = await asyncio.to_thread(x_oauth2_refresh, c)
+            try:
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            except Exception as e:
+                log.append(f'x_delete: token refresh failed ({e}) — trying with current creds')
         for tid in cmd.get('ids', []):
+            ok = False
+            # path 1: OAuth2 user-context delete
             try:
                 req = urllib.request.Request(f'https://api.x.com/2/tweets/{tid}', method='DELETE',
                                              headers={'Authorization': f"Bearer {c['oauth2_access']}"})
                 with urllib.request.urlopen(req, timeout=20) as r:
                     json.load(r)
-                log.append(f'deleted post {tid}')
+                log.append(f'deleted post {tid} (oauth2)')
+                ok = True
             except Exception as e:
                 body = ''
                 if hasattr(e, 'read'):
                     try: body = e.read()[:150]
                     except Exception: pass
-                log.append(f'delete {tid} FAIL: {e} {body}')
+                log.append(f'delete {tid} oauth2 FAIL: {e} {body}')
+            # path 2: OAuth1 v1.1 statuses/destroy
+            if not ok:
+                for name, ck, cs, at, ats in x_oauth1_sets(c):
+                    try:
+                        durl = f'https://api.x.com/1.1/statuses/destroy/{tid}.json'
+                        hdr = x_oauth1_sign('POST', durl, ck, cs, at, ats)
+                        req = urllib.request.Request(durl, data=b'', method='POST',
+                                                     headers={'Authorization': hdr})
+                        with urllib.request.urlopen(req, timeout=20) as r:
+                            json.load(r)
+                        log.append(f'deleted post {tid} (oauth1 {name})')
+                        ok = True
+                        break
+                    except Exception as e:
+                        body = ''
+                        if hasattr(e, 'read'):
+                            try: body = e.read()[:150]
+                            except Exception: pass
+                        log.append(f'delete {tid} oauth1[{name}] FAIL: {e} {body}')
+            if not ok:
+                log.append(f'delete {tid}: ALL paths failed')
     elif a == 'x_media_probe':
         try:
             remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
@@ -2191,7 +2218,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.47'
+            state['bot_version'] = '8.9.48'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
