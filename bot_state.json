@@ -1,10 +1,8 @@
 {
-  "executed_seq": 211,
+  "executed_seq": 212,
   "last_log": [
-    "seq 211 executed 2026-07-23 15:57 UTC",
-    "created #\ud83d\udef0\ufe0fscan-feed",
-    "lockdown_channels: 22 channels locked \u2014 tiers enforced, @everyone pings disabled server-wide",
-    "audit: 0 leak(s) across 22 channels"
+    "seq 212 executed 2026-07-23 16:03 UTC",
+    "webhook for #\ud83d\udef0\ufe0fscan-feed: https://discord.com/api/webhooks/1529881550974488688/gcEIeVw5D94lE7uBT0zDOvwPkKbJL4SrYeThCZpHiRkB7_qjmLMLiYaOdbGzUzWHJws2"
   ],
   "time_audit": {
     "at": "2026-07-23 16:01 UTC",
@@ -53,7 +51,7 @@
     "20260723-12": "ok",
     "20260723-12-note": "noon slot: card already live since 08:30 UTC; status absorbed into 16:00 UTC full sweep (engine recovering from outage)"
   },
-  "executed_cmd_seq": 211,
+  "executed_cmd_seq": 212,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
