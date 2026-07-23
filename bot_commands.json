@@ -1,5 +1,5 @@
 {
- "seq": 288,
+ "seq": 289,
  "commands": [
   {
    "seq": 163,
@@ -815,6 +815,13 @@
    "marker": "SEAT",
    "seq": 288,
    "ts": "2026-07-23T21:54:13Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "shift-lab",
+   "topic": "\u26a1 SHiFT's engine room \u2014 ops queue, diagnostics, receipts. Captain's eyes only.",
+   "seq": 289,
+   "ts": "2026-07-23T21:54:15Z"
   }
  ]
 }
