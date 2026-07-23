@@ -676,8 +676,8 @@
       "live_odds": {
         "home_ml": null,
         "away_ml": null,
-        "total": 8.0,
-        "ts": 1784839985
+        "total": 7.5,
+        "ts": 1784840004
       }
     },
     {
@@ -745,7 +745,7 @@
         "home_ml": null,
         "away_ml": null,
         "total": 8.5,
-        "ts": 1784839985
+        "ts": 1784840004
       }
     },
     {
@@ -765,10 +765,10 @@
       "live_odds": {
         "home_ml": null,
         "away_ml": null,
-        "total": 8.0,
-        "ts": 1784839985
+        "total": 7.5,
+        "ts": 1784840004
       },
-      "last_alert_total": 8.0
+      "last_alert_total": 7.5
     },
     {
       "id": "det-ml-0723",
@@ -787,7 +787,7 @@
         "home_ml": null,
         "away_ml": null,
         "total": 8.5,
-        "ts": 1784839985
+        "ts": 1784840004
       }
     }
   ]
