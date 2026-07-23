@@ -1,56 +1,56 @@
 {
-  "updated": "2026-07-22T22:18:06Z",
-  "bankrollStart": 100.0,
-  "goal": 1000.0,
-  "balance": 60.0,
-  "record": {
-    "wins": 0,
-    "losses": 2
+ "updated": "2026-07-23T06:40:00Z",
+ "bankrollStart": 100.0,
+ "goal": 1000.0,
+ "balance": 40.0,
+ "record": {
+  "wins": 0,
+  "losses": 3
+ },
+ "plays": [
+  {
+   "n": 1,
+   "date": "2026-07-21",
+   "pick": "Brewers ML",
+   "odds": -142,
+   "stake": 20.0,
+   "toWin": 14.08,
+   "time_et": "7:40 PM",
+   "result": "LOSS",
+   "posted": "2026-07-21T22:35:00Z",
+   "note": "Also Lock Room play - model #1 confidence"
   },
-  "plays": [
-    {
-      "n": 1,
-      "date": "2026-07-21",
-      "pick": "Brewers ML",
-      "odds": -142,
-      "stake": 20.0,
-      "toWin": 14.08,
-      "time_et": "7:40 PM",
-      "result": "LOSS",
-      "posted": "2026-07-21T22:35:00Z",
-      "note": "Also Lock Room play - model #1 confidence"
-    },
-    {
-      "n": 2,
-      "date": "2026-07-22",
-      "pick": "Yankees ML",
-      "odds": -165,
-      "stake": 20.0,
-      "toWin": 12.12,
-      "time_et": "1:05 PM",
-      "result": "LOSS",
-      "posted": "2026-07-22T12:15:44Z",
-      "note": "Mirrors Lock Room - model #1 confidence (61.6%)"
-    },
-    {
-      "n": 3,
-      "date": "2026-07-22",
-      "pick": "Cubs ML",
-      "odds": -125,
-      "stake": 20.0,
-      "toWin": 16.0,
-      "time_et": "8:00 PM",
-      "result": "PENDING",
-      "posted": "2026-07-22T22:18:06Z",
-      "note": "Mirrors Lock Room - model #1 confidence"
-    }
-  ],
-  "current_bet": {
-    "id": "challenge-nyy-ml",
-    "desc": "Yankees ML",
-    "odds": -165,
-    "wager": 20.0,
-    "to_win": 12.12,
-    "date": "2026-07-22"
+  {
+   "n": 2,
+   "date": "2026-07-22",
+   "pick": "Yankees ML",
+   "odds": -165,
+   "stake": 20.0,
+   "toWin": 12.12,
+   "time_et": "1:05 PM",
+   "result": "LOSS",
+   "posted": "2026-07-22T12:15:44Z",
+   "note": "Mirrors Lock Room - model #1 confidence (61.6%)"
+  },
+  {
+   "n": 3,
+   "date": "2026-07-22",
+   "pick": "Cubs ML",
+   "odds": -125,
+   "stake": 20.0,
+   "toWin": 16.0,
+   "time_et": "8:00 PM",
+   "result": "LOSS",
+   "posted": "2026-07-22T22:18:06Z",
+   "note": "Mirrors Lock Room - model #1 confidence | settled: Tigers 5, Cubs 1"
   }
+ ],
+ "current_bet": {
+  "id": "challenge-nyy-ml",
+  "desc": "Yankees ML",
+  "odds": -165,
+  "wager": 20.0,
+  "to_win": 12.12,
+  "date": "2026-07-22"
+ }
 }
