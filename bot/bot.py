@@ -334,12 +334,13 @@ def make_client(privileged=True):
             if (message.content or '').strip().lower().startswith('!crypto'):
                 parts = (message.content or '').strip().split()
                 tier = parts[1].lower() if len(parts) > 1 else ''
-                if tier not in CRYPTO_TIERS:
-                    await message.reply('🪙 Usage: `!crypto lock` · `!crypto sharp` · `!crypto whale` — I will DM your checkout link.', mention_author=False)
+                coin = parts[2].lower() if len(parts) > 2 else ''
+                if tier not in CRYPTO_TIERS or not coin:
+                    await message.reply('🪙 Usage: `!crypto <tier> <coin>` — e.g. `!crypto sharp sol`\nCoins: **btc, eth, sol, usdt, usdc, doge, ltc, trx, bnb** (+300 more — just ask). I will DM your payment address.', mention_author=False)
                 else:
-                    await message.reply(f'🪙 Generating your **{tier.upper()}** crypto checkout — check your DMs!', mention_author=False)
+                    await message.reply(f'🪙 Generating your **{tier.upper()}** checkout in **{coin.upper()}** — check your DMs!', mention_author=False)
                     _log = []
-                    await run_command({'action': 'crypto_checkout', 'tier': tier, 'user': str(message.author.id)}, message.guild, _log)
+                    await run_command({'action': 'crypto_checkout', 'tier': tier, 'coin': coin, 'user': str(message.author.id)}, message.guild, _log)
                     print('crypto cmd:', _log)
                 return
             if 'issues' in chname:
@@ -1118,6 +1119,9 @@ async def run_command(cmd, guild, log):
     elif a == 'crypto_checkout':
         try:
             tier = str(cmd.get('tier', '')).lower()
+            coin = str(cmd.get('coin', 'usdt')).lower()
+            aliases = {'usdt': 'usdttrc20', 'bnb': 'bnbbsc'}
+            coin = aliases.get(coin, coin)
             member = await resolve_member(guild, str(cmd.get('user', '')))
             np_key = os.environ.get('NOWPAYMENTS_KEY', '')
             if not np_key:
@@ -1125,17 +1129,30 @@ async def run_command(cmd, guild, log):
             elif tier not in CRYPTO_TIERS or not member:
                 log.append(f'crypto checkout: bad tier/user {tier} {cmd.get("user")}')
             else:
-                inv = await asyncio.to_thread(_http_json, 'https://api.nowpayments.io/v1/invoice',
-                    {'price_amount': CRYPTO_TIERS[tier], 'price_currency': 'usd',
-                     'order_id': f'{member.id}:{tier}', 'order_description': f'TheLineShift {tier.title()} - 30 days',
-                     'success_url': 'https://discord.gg/8bBxWUJCYT', 'is_fixed_rate': True},
-                    {'x-api-key': np_key})
-                url = inv.get('invoice_url')
-                try:
-                    await member.send(f"🪙 Your **{tier.upper()}** crypto checkout (30 days): {url}\nPay with any major coin — access activates automatically when the payment confirms.")
-                except Exception:
-                    pass
-                log.append(f'crypto invoice for {member}: {url}')
+                pay = await asyncio.to_thread(_http_json, 'https://api.nowpayments.io/v1/payment',
+                    {'price_amount': CRYPTO_TIERS[tier], 'price_currency': 'usd', 'pay_currency': coin,
+                     'order_id': f'{member.id}:{tier}', 'order_description': f'TheLineShift {tier.title()} 30 days',
+                     'is_fixed_rate': True}, {'x-api-key': np_key})
+                pid = pay.get('payment_id')
+                if not pid:
+                    log.append(f'crypto checkout failed: {str(pay)[:200]}')
+                else:
+                    known = await asyncio.to_thread(gh_get_json, 'crypto_members.json') or {'members': []}
+                    known.setdefault('members', [])
+                    known['members'].append({'payment_id': pid, 'discord_id': str(member.id), 'tier': tier,
+                                             'status': pay.get('payment_status', 'waiting'), 'coin': coin,
+                                             'pay_address': pay.get('pay_address'), 'pay_amount': pay.get('pay_amount'),
+                                             'created': time.time(), 'expires': None})
+                    await asyncio.to_thread(gh_put, 'crypto_members.json', known, 'crypto checkout created')
+                    try:
+                        await member.send(
+                            f"🪙 **{tier.upper()} — crypto checkout (30 days)**\n"
+                            f"Send **{pay.get('pay_amount')} {coin.upper()}** to:\n`{pay.get('pay_address')}`\n"
+                            f"Your access activates **automatically** when the payment confirms on-chain. "
+                            f"Questions? #🛠️issues.")
+                    except Exception:
+                        pass
+                    log.append(f'crypto payment {pid} for {member} ({coin})')
         except Exception as e:
             log.append(f'crypto_checkout FAIL: {e}')
     elif a == 'purge_whop':
@@ -1950,35 +1967,50 @@ async def crypto_sync():
         if not key or not client.guilds:
             return
         guild = client.guilds[0]
-        pays = await asyncio.to_thread(_http_json, 'https://api.nowpayments.io/v1/payment?limit=100&sortBy=created_at&sortOrder=desc',
-                                       None, {'x-api-key': key})
         known = await asyncio.to_thread(gh_get_json, 'crypto_members.json') or {'members': []}
-        known.setdefault('members', [])
+        members = known.setdefault('members', [])
         changed = False
         lab = find_channel(guild, 'shift-lab')
-        for p in pays.get('data', []):
-            oid = p.get('order_id', '')
-            if ':' not in oid:
+        for m in members:
+            if m.get('expires') or m.get('expired'):
                 continue
-            uid, tier = oid.split(':', 1)
-            if p.get('payment_status') in ('finished', 'confirmed') and not any(m.get('payment_id') == p.get('payment_id') for m in known['members']):
-                known['members'].append({'payment_id': p.get('payment_id'), 'discord_id': uid, 'tier': tier,
-                                         'expires': time.time() + 30 * 86400,
-                                         'amount': p.get('price_amount'), 'coin': p.get('pay_currency')})
-                changed = True
-                member = guild.get_member(int(uid)) if uid.isdigit() else None
+            pid = m.get('payment_id')
+            if not pid:
+                continue
+            try:
+                p = await asyncio.to_thread(_http_json, f'https://api.nowpayments.io/v1/payment/{pid}', None, {'x-api-key': key})
+            except Exception:
+                continue
+            status = p.get('payment_status', '')
+            if status == m.get('status'):
+                continue
+            m['status'] = status
+            changed = True
+            member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None
+            if status in ('finished', 'confirmed'):
+                m['expires'] = time.time() + 30 * 86400
                 if member:
-                    for word in {'lock': ['lock'], 'sharp': ['sharp', 'lock'], 'whale': ['whale', 'sharp', 'lock']}.get(tier, []):
+                    for word in {'lock': ['lock'], 'sharp': ['sharp', 'lock'], 'whale': ['whale', 'sharp', 'lock']}.get(m['tier'], []):
                         role = next((r for r in guild.roles if word in r.name.lower()), None)
                         if role and role not in member.roles:
                             await member.add_roles(role, reason='crypto payment confirmed')
                     gen = find_channel(guild, 'general-chat')
                     if gen:
-                        await gen.send(f'🎉 Welcome {member.mention} to **{tier.upper()}** (crypto) — 30 days of access is live!')
-                    await asyncio.to_thread(log_event, 'crypto_sub', f'{member} paid {p.get("pay_currency")} for {tier}')
+                        await gen.send(f'🎉 Welcome {member.mention} to **{m["tier"].upper()}** (crypto) — 30 days of access is live!')
+                    await asyncio.to_thread(log_event, 'crypto_sub', f'{member} paid {m.get("coin")} for {m["tier"]}')
+            elif status in ('failed', 'expired', 'refunded'):
+                m['expired'] = True
+                if member:
+                    try:
+                        await member.send(f"❌ Your crypto payment {pid} ended with status **{status}** — no charge completed. Try again anytime with `!crypto {m['tier']} <coin>` in #💎upgrade.")
+                    except Exception:
+                        pass
+                await asyncio.to_thread(log_event, 'crypto_failed', f'{pid} {status}')
         now = time.time()
-        for m in known['members']:
-            if now > m.get('expires', 0) + 3 * 86400 and not m.get('expired'):
+        for m in members:
+            if not m.get('expires') or m.get('expired'):
+                continue
+            if now > m['expires'] + 3 * 86400 and not m.get('expired'):
                 m['expired'] = True
                 changed = True
                 member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None
@@ -1990,13 +2022,13 @@ async def crypto_sync():
                     await asyncio.to_thread(log_event, 'crypto_expired', f"{m['discord_id']} {m['tier']} expired - roles removed")
                     if lab:
                         await lab.send(f"⏰ Crypto access expired for <@{m['discord_id']}> ({m['tier']}) — roles removed.")
-            elif now > m.get('expires', 0) - 2 * 86400 and not m.get('reminded'):
+            elif now > m['expires'] - 2 * 86400 and not m.get('reminded'):
                 m['reminded'] = True
                 changed = True
                 member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None
                 if member:
                     try:
-                        await member.send(f"⏰ Your **{m['tier'].upper()}** crypto access expires in ~2 days. Renew anytime with `!crypto {m['tier']}` in #💎upgrade!")
+                        await member.send(f"⏰ Your **{m['tier'].upper()}** crypto access expires in ~2 days. Renew anytime with `!crypto {m['tier']} <coin>` in #💎upgrade!")
                     except Exception:
                         pass
         if changed:
@@ -2079,7 +2111,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.41'
+            state['bot_version'] = '8.9.42'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
