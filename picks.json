@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23T01:56:15Z",
+  "updated": "2026-07-23T02:12:52Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -573,7 +573,7 @@
       "odds": -114,
       "units": 1.5,
       "tier": "whale",
-      "result": "PENDING",
+      "result": "WIN",
       "time_et": "7:15 PM",
       "analysis": "ATL 4.9 rpg home; SD pen 27th since 7/1 (5.20); Strider 10.6 K/9 at Truist vs Pivetta 4.40 road. Model -128 vs -114. Truist outdoor 86F humid, wind 9.",
       "live_odds": {
@@ -581,7 +581,9 @@
         "away_ml": null,
         "total": 8.5,
         "ts": 1784762166
-      }
+      },
+      "score": "San Diego Padres 6, Atlanta Braves 7",
+      "units_result": 1.32
     },
     {
       "id": "cws-ml-0722",
