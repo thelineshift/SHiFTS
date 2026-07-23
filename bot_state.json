@@ -58,7 +58,8 @@
     "20260722-20": "ok",
     "20260723-00": "ok",
     "20260723-04": "ok",
-    "20260723-04-note": "makeup posted 06:45 UTC \u2014 engine stalled on dead X token; receipts+resolution delivered"
+    "20260723-04-note": "makeup posted 06:45 UTC \u2014 engine stalled on dead X token; receipts+resolution delivered",
+    "20260723-08": "missed"
   },
   "executed_cmd_seq": 171,
   "scan_role_id": 1529569745517674599,
@@ -77,7 +78,8 @@
   },
   "scan_event_misses": [
     "20260723-00",
-    "20260723-04"
+    "20260723-04",
+    "20260723-08"
   ],
   "count_fired": [
     "20260723-2300",
