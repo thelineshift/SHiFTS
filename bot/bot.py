@@ -1165,10 +1165,9 @@ async def run_command(cmd, guild, log):
             roles = {w: next((r for r in guild.roles if w.lower() in r.name.lower()), None)
                      for w in ('Lock', 'Sharp', 'Whale')}
             POLICY = [
-                (('daily-locks',), {'Lock', 'Sharp', 'Whale'}),
-                (('all-picks', 'weekly-analytics'), {'Sharp', 'Whale'}),
-                (('every-play', 'monthly-deepdive'), {'Whale'}),
-                (('100-to-1000',), {'Lock', 'Sharp', 'Whale'}),
+                (('daily-locks', 'lock-lounge', '100-to-1000'), {'Lock', 'Sharp', 'Whale'}),
+                (('all-picks', 'weekly-analytics', 'sharp-talk'), {'Sharp', 'Whale'}),
+                (('every-play', 'monthly-deepdive', 'whale-talk'), {'Whale'}),
                 (('shift-lab',), set()),
             ]
             lines = ['🛡️ **PERMISSION AUDIT** — ' + time.strftime('%Y-%m-%d %H:%M UTC')]
@@ -1270,12 +1269,13 @@ async def run_command(cmd, guild, log):
                 if word.lower() in r.name.lower():
                     return r
             return None
-        OPEN_SEND = ['general-chat', 'giveaway', 'issues']
-        OPEN_READ = ['free-pick', 'receipts', 'scan-feed', 'updates']
+        OPEN_SEND = ['general-chat', 'giveaway', 'issues', 'upgrade']
+        OPEN_READ = ['free-pick', 'receipts', 'scan-feed', 'updates', 'welcome', 'rules', 'promotions']
         STAFF_ONLY = ['shift-lab']
-        PAID = {'daily-locks': ['Lock', 'Sharp', 'Whale'], 'all-picks': ['Sharp', 'Whale'],
-                'every-play': ['Whale'], 'weekly-analytics': ['Sharp', 'Whale'],
-                'monthly-deepdive': ['Whale'], '100-to-1000': ['Lock', 'Sharp', 'Whale']}
+        PAID = {'daily-locks': ['Lock', 'Sharp', 'Whale'], 'lock-lounge': ['Lock', 'Sharp', 'Whale'],
+                '100-to-1000': ['Lock', 'Sharp', 'Whale'], 'all-picks': ['Sharp', 'Whale'],
+                'weekly-analytics': ['Sharp', 'Whale'], 'sharp-talk': ['Sharp', 'Whale'],
+                'every-play': ['Whale'], 'monthly-deepdive': ['Whale'], 'whale-talk': ['Whale']}
         n = 0
         for ch in guild.text_channels:
             nm = _frag(ch.name)
@@ -2079,7 +2079,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.40'
+            state['bot_version'] = '8.9.41'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
