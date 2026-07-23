@@ -192,6 +192,88 @@ async def handle_issue(message, guild):
 
 
 
+CRYPTO_TIERS = {'lock': 14.99, 'sharp': 29.99, 'whale': 59.99}
+
+def _http_json(url, payload=None, headers=None, timeout=20):
+    h = {'Content-Type': 'application/json'}
+    if headers:
+        h.update(headers)
+    data = json.dumps(payload).encode() if payload is not None else None
+    req = urllib.request.Request(url, data=data, headers=h, method='POST' if data else 'GET')
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.load(r)
+
+def wallet_balances():
+    """On-chain balances for our hot wallets + USD values. Never raises."""
+    out = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'wallets': []}
+    try:
+        addrs = {'solana': None, 'ethereum': None, 'bitcoin': None}
+        w = gh_get_json('wallets.json') or {}
+        for x in w.get('wallets', []):
+            addrs[x['chain']] = x['address']
+        px = _http_json('https://api.coingecko.com/api/v3/simple/price?ids=solana,ethereum,bitcoin&vs_currencies=usd')
+        if addrs.get('solana'):
+            b = _http_json('https://api.mainnet-beta.solana.com',
+                           {'jsonrpc': '2.0', 'id': 1, 'method': 'getBalance', 'params': [addrs['solana']]})
+            sol = b['result']['value'] / 1e9
+            out['wallets'].append({'chain': 'solana', 'symbol': 'SOL', 'address': addrs['solana'],
+                                   'balance': round(sol, 5), 'usd': round(sol * px['solana']['usd'], 2)})
+        if addrs.get('ethereum'):
+            b = _http_json('https://eth.llamarpc.com',
+                           {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addrs['ethereum'], 'latest']})
+            eth = int(b['result'], 16) / 1e18
+            out['wallets'].append({'chain': 'ethereum', 'symbol': 'ETH/EVM', 'address': addrs['ethereum'],
+                                   'balance': round(eth, 6), 'usd': round(eth * px['ethereum']['usd'], 2)})
+        if addrs.get('bitcoin'):
+            b = _http_json(f"https://blockstream.info/api/address/{addrs['bitcoin']}")
+            sats = b['chain_stats']['funded_txo_sum'] - b['chain_stats']['spent_txo_sum']
+            btc = sats / 1e8
+            out['wallets'].append({'chain': 'bitcoin', 'symbol': 'BTC', 'address': addrs['bitcoin'],
+                                   'balance': round(btc, 8), 'usd': round(btc * px['bitcoin']['usd'], 2)})
+    except Exception as e:
+        out['error'] = str(e)[:200]
+    return out
+
+def crypto_withdraw(chain, to, amount):
+    """Sign and broadcast a withdrawal from a hot wallet. Returns txid string."""
+    keys = gh_get_json('wallets_secret.json') or {}
+    if chain == 'solana':
+        from solders.keypair import Keypair
+        from solders.pubkey import Pubkey
+        from solders.system_program import transfer, TransferParams
+        from solders.message import Message
+        from solders.transaction import Transaction
+        from solders.hash import Hash
+        kp = Keypair.from_bytes(bytes.fromhex(keys['solana']['secret_hex']))
+        lamports = int(float(amount) * 1e9)
+        bh = _http_json('https://api.mainnet-beta.solana.com',
+                        {'jsonrpc': '2.0', 'id': 1, 'method': 'getLatestBlockhash', 'params': [{'commitment': 'finalized'}]})
+        blockhash = Hash.from_string(bh['result']['value']['blockhash'])
+        ix = transfer(TransferParams(from_pubkey=kp.pubkey(), to_pubkey=Pubkey.from_string(to), lamports=lamports))
+        tx = Transaction([kp], Message([ix], kp.pubkey()), blockhash)
+        sig = _http_json('https://api.mainnet-beta.solana.com',
+                         {'jsonrpc': '2.0', 'id': 1, 'method': 'sendTransaction',
+                          'params': [__import__('base64').b64encode(bytes(tx)).decode(), {'encoding': 'base64'}]})
+        return 'SOL tx: ' + sig['result']
+    if chain == 'evm':
+        from eth_account import Account
+        acct = Account.from_key(keys['evm']['private_key'])
+        nonce_r = _http_json('https://eth.llamarpc.com',
+                             {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getTransactionCount', 'params': [acct.address, 'latest']})
+        gas_r = _http_json('https://eth.llamarpc.com', {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_gasPrice', 'params': []})
+        tx = {'chainId': 1, 'nonce': int(nonce_r['result'], 16), 'to': to, 'value': int(float(amount) * 1e18),
+              'gas': 21000, 'gasPrice': int(gas_r['result'], 16)}
+        signed = acct.sign_transaction(tx)
+        sent = _http_json('https://eth.llamarpc.com',
+                          {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_sendRawTransaction', 'params': [signed.raw_transaction.hex()]})
+        return 'ETH tx: ' + sent['result']
+    if chain == 'bitcoin':
+        from bit import Key
+        k = Key(keys['bitcoin']['wif'])
+        return 'BTC tx: ' + k.send([(to, float(amount), 'btc')], fee=10)
+    raise ValueError('unknown chain: ' + chain)
+
+
 def make_client(privileged=True):
     intents = discord.Intents.default()
     intents.guilds = True
@@ -230,6 +312,8 @@ def make_client(privileged=True):
             odds_watch.start()
         if not stripe_sync.is_running():
             stripe_sync.start()
+        if not crypto_sync.is_running():
+            crypto_sync.start()
 
     @c.event
     async def on_message(message):
@@ -246,6 +330,17 @@ def make_client(privileged=True):
                 hs = [h for h in hs if h.lower() not in ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i')]
                 if hs:
                     await verify_giveaway_entry(message, hs[0])
+                return
+            if (message.content or '').strip().lower().startswith('!crypto'):
+                parts = (message.content or '').strip().split()
+                tier = parts[1].lower() if len(parts) > 1 else ''
+                if tier not in CRYPTO_TIERS:
+                    await message.reply('🪙 Usage: `!crypto lock` · `!crypto sharp` · `!crypto whale` — I will DM your checkout link.', mention_author=False)
+                else:
+                    await message.reply(f'🪙 Generating your **{tier.upper()}** crypto checkout — check your DMs!', mention_author=False)
+                    _log = []
+                    await run_command({'action': 'crypto_checkout', 'tier': tier, 'user': str(message.author.id)}, message.guild, _log)
+                    print('crypto cmd:', _log)
                 return
             if 'issues' in chname:
                 await handle_issue(message, message.guild or (c.guilds[0] if c.guilds else None))
@@ -988,6 +1083,61 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:250]
                 except Exception: pass
             log.append(f'x_me FAIL: {e} {body}')
+    elif a == 'crypto_wallets':
+        try:
+            bal = await asyncio.to_thread(wallet_balances)
+            await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances')
+            tot = sum(w.get('usd', 0) for w in bal.get('wallets', []))
+            lines = [f"👛 **HOT WALLETS** — ${tot:,.2f} total"]
+            for w in bal.get('wallets', []):
+                lines.append(f"• **{w['symbol']}** `{w['address']}` — {w['balance']} (${w['usd']:,.2f})")
+            lab = find_channel(guild, 'shift-lab')
+            if lab:
+                await lab.send('\n'.join(lines)[:1900])
+            log.append(f"wallet report: ${tot:,.2f}")
+        except Exception as e:
+            log.append(f'crypto_wallets FAIL: {e}')
+    elif a == 'crypto_withdraw':
+        try:
+            chain = str(cmd.get('chain', '')).lower()
+            to = cmd.get('to', '')
+            amount = cmd.get('amount', 0)
+            txid = await asyncio.to_thread(crypto_withdraw, chain, to, amount)
+            await asyncio.to_thread(log_event, 'crypto_withdraw', f'{amount} {chain} -> {to[:12]}... : {txid}')
+            lab = find_channel(guild, 'shift-lab')
+            if lab:
+                await lab.send(f"💸 **WITHDRAWAL SENT** — {amount} {chain.upper()} → `{to}`\n{txid}")
+            log.append(f'withdraw: {txid}')
+            bal = await asyncio.to_thread(wallet_balances)
+            await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances post-withdraw')
+        except Exception as e:
+            log.append(f'crypto_withdraw FAIL: {e}')
+            lab = find_channel(guild, 'shift-lab')
+            if lab:
+                await lab.send(f"❌ WITHDRAW FAILED — {cmd.get('chain')} {cmd.get('amount')}: {e}")
+    elif a == 'crypto_checkout':
+        try:
+            tier = str(cmd.get('tier', '')).lower()
+            member = await resolve_member(guild, str(cmd.get('user', '')))
+            np_key = os.environ.get('NOWPAYMENTS_KEY', '')
+            if not np_key:
+                log.append('crypto checkout: NOWPAYMENTS_KEY not set')
+            elif tier not in CRYPTO_TIERS or not member:
+                log.append(f'crypto checkout: bad tier/user {tier} {cmd.get("user")}')
+            else:
+                inv = await asyncio.to_thread(_http_json, 'https://api.nowpayments.io/v1/invoice',
+                    {'price_amount': CRYPTO_TIERS[tier], 'price_currency': 'usd',
+                     'order_id': f'{member.id}:{tier}', 'order_description': f'TheLineShift {tier.title()} - 30 days',
+                     'success_url': 'https://discord.gg/8bBxWUJCYT', 'is_fixed_rate': True},
+                    {'x-api-key': np_key})
+                url = inv.get('invoice_url')
+                try:
+                    await member.send(f"🪙 Your **{tier.upper()}** crypto checkout (30 days): {url}\nPay with any major coin — access activates automatically when the payment confirms.")
+                except Exception:
+                    pass
+                log.append(f'crypto invoice for {member}: {url}')
+        except Exception as e:
+            log.append(f'crypto_checkout FAIL: {e}')
     elif a == 'purge_whop':
         try:
             n = 0
@@ -1076,6 +1226,11 @@ async def run_command(cmd, guild, log):
                 snap['x_tweets'] = d['tweet_count']
             except Exception as e:
                 log.append(f'metrics X fetch failed: {e}')
+            try:
+                bal = await asyncio.to_thread(wallet_balances)
+                await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances')
+            except Exception as e:
+                log.append(f'wallet balances failed: {e}')
             m = await asyncio.to_thread(gh_get_json, 'metrics.json')
             m = m or {'snapshots': []}
             m.setdefault('snapshots', []).append(snap)
@@ -1788,6 +1943,67 @@ async def stripe_sync():
     except Exception as e:
         print('stripe_sync error:', e)
 
+@tasks.loop(seconds=300)
+async def crypto_sync():
+    try:
+        key = os.environ.get('NOWPAYMENTS_KEY', '')
+        if not key or not client.guilds:
+            return
+        guild = client.guilds[0]
+        pays = await asyncio.to_thread(_http_json, 'https://api.nowpayments.io/v1/payment?limit=100&sortBy=created_at&sortOrder=desc',
+                                       None, {'x-api-key': key})
+        known = await asyncio.to_thread(gh_get_json, 'crypto_members.json') or {'members': []}
+        known.setdefault('members', [])
+        changed = False
+        lab = find_channel(guild, 'shift-lab')
+        for p in pays.get('data', []):
+            oid = p.get('order_id', '')
+            if ':' not in oid:
+                continue
+            uid, tier = oid.split(':', 1)
+            if p.get('payment_status') in ('finished', 'confirmed') and not any(m.get('payment_id') == p.get('payment_id') for m in known['members']):
+                known['members'].append({'payment_id': p.get('payment_id'), 'discord_id': uid, 'tier': tier,
+                                         'expires': time.time() + 30 * 86400,
+                                         'amount': p.get('price_amount'), 'coin': p.get('pay_currency')})
+                changed = True
+                member = guild.get_member(int(uid)) if uid.isdigit() else None
+                if member:
+                    for word in {'lock': ['lock'], 'sharp': ['sharp', 'lock'], 'whale': ['whale', 'sharp', 'lock']}.get(tier, []):
+                        role = next((r for r in guild.roles if word in r.name.lower()), None)
+                        if role and role not in member.roles:
+                            await member.add_roles(role, reason='crypto payment confirmed')
+                    gen = find_channel(guild, 'general-chat')
+                    if gen:
+                        await gen.send(f'🎉 Welcome {member.mention} to **{tier.upper()}** (crypto) — 30 days of access is live!')
+                    await asyncio.to_thread(log_event, 'crypto_sub', f'{member} paid {p.get("pay_currency")} for {tier}')
+        now = time.time()
+        for m in known['members']:
+            if now > m.get('expires', 0) + 3 * 86400 and not m.get('expired'):
+                m['expired'] = True
+                changed = True
+                member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None
+                if member:
+                    for word in ('lock', 'sharp', 'whale'):
+                        role = next((r for r in guild.roles if word in r.name.lower()), None)
+                        if role and role in member.roles:
+                            await member.remove_roles(role, reason='crypto 30-day access expired')
+                    await asyncio.to_thread(log_event, 'crypto_expired', f"{m['discord_id']} {m['tier']} expired - roles removed")
+                    if lab:
+                        await lab.send(f"⏰ Crypto access expired for <@{m['discord_id']}> ({m['tier']}) — roles removed.")
+            elif now > m.get('expires', 0) - 2 * 86400 and not m.get('reminded'):
+                m['reminded'] = True
+                changed = True
+                member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None
+                if member:
+                    try:
+                        await member.send(f"⏰ Your **{m['tier'].upper()}** crypto access expires in ~2 days. Renew anytime with `!crypto {m['tier']}` in #💎upgrade!")
+                    except Exception:
+                        pass
+        if changed:
+            await asyncio.to_thread(gh_put, 'crypto_members.json', known, 'crypto sync')
+    except Exception as e:
+        print('crypto_sync error:', e)
+
 @tasks.loop(seconds=1800)
 async def audit():
     try:
@@ -1863,7 +2079,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.39b'
+            state['bot_version'] = '8.9.40'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
