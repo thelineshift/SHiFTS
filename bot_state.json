@@ -1,9 +1,13 @@
 {
-  "executed_seq": 178,
+  "executed_seq": 179,
   "last_log": [
-    "seq 178 executed 2026-07-23 09:04 UTC",
-    "x_post_text OK: id 2080217451472806231",
-    "deleted post 2080209960131236240"
+    "seq 179 executed 2026-07-23 09:15 UTC",
+    "#\ud83e\uddeashift-lab | odin1h: 1831457082828021760-MuXeIDeU1rsL4Vlc4VI1MB5FJageci that\u2019s the access token and 86hCo1zysOjWyXAoPzOIt0sdPSp5zF0IfxtAU3T4PxCZg is the secret token",
+    "#\ud83e\uddeashift-lab | \ud83e\udd16 SHiFT#0000: \u2705 **X STATUS BOARD \u2014 all green**\n\n\ud83d\udd17 X link: **LIVE** (refresh verified \u2014 token now auto-renews cleanly). The \"exchange failed\" messages you saw were a false alarm: the li",
+    "#\ud83e\uddeashift-lab | LineShift Bot#8676: \u274c Exchange failed: x_link_finish FAIL: HTTP 403: b'{\"detail\":\"You are not allowed to create a Tweet with duplicate content.\",\"status\":403,\"title\":\"Forbidden\",\"type\":\"abou",
+    "#\ud83e\uddeashift-lab | \ud83e\udd16 SHiFT#0000: \ud83d\udd17 **X RE-LINK \u2014 use THIS link (the newest one, ignore my earlier one)**\n\nThe portal token got rejected by X, so we do it the reliable way \u2014 same flow that worked yesterda",
+    "#\ud83e\uddeashift-lab | LineShift Bot#8676: \u274c Exchange failed: x_link_finish FAIL: HTTP 403: b'{\"detail\":\"You are not allowed to create a Tweet with duplicate content.\",\"status\":403,\"title\":\"Forbidden\",\"type\":\"abou",
+    "#\ud83e\uddeashift-lab | \ud83e\udd16 SHiFT#0000: \ud83d\udd17 **X RE-LINK NEEDED (2 minutes, both on your phone)**\n\nThe portal regeneration invalidated our X connection \u2014 it fully dies at 02:59 UTC if not re-linked. Two steps:\n\n**"
   ],
   "time_audit": {
     "at": "2026-07-23 09:15 UTC",
@@ -50,7 +54,7 @@
     "20260723-08": "ok",
     "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)"
   },
-  "executed_cmd_seq": 178,
+  "executed_cmd_seq": 179,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 7,
