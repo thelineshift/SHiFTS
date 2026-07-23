@@ -1,5 +1,5 @@
 {
- "seq": 183,
+ "seq": 184,
  "commands": [
   {
    "seq": 50,
@@ -884,6 +884,12 @@
   {
    "seq": 183,
    "action": "x_media_test"
+  },
+  {
+   "seq": 184,
+   "action": "x_post_media_native",
+   "text": "\ud83c\udf81 $30 SOL GIVEAWAY \u2014 TWO WINNERS EVERY WEEK\n\n\ud83e\udd47 $25 SOL  \ud83e\udd48 $5 SOL \u2014 drawn on-chain Sunday 6 PM ET, proof posted publicly.\n\nHow to enter (60 seconds):\n1\ufe0f\u20e3 Follow @TheLineShift\n2\ufe0f\u20e3 Like + repost this post\n3\ufe0f\u20e3 Join the Discord + post your X handle in the #giveaway channel \u2014 SHiFT instantly replies \u2705 confirmed, or \u274c with the exact step you're missing\n\n\ud83d\udd12 Lock Room 2x \u00b7 \ud83d\udcca Sharp Room 3x \u00b7 \ud83d\udc0b Whale Room 5x tickets\n\n\ud83d\udc47 Join + enter\nhttps://discord.gg/8bBxWUJCYT",
+   "tag": "giveaway"
   }
  ]
 }
