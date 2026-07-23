@@ -1,8 +1,14 @@
 {
-  "executed_seq": 298,
+  "executed_seq": 299,
   "last_log": [
-    "seq 298 executed 2026-07-23 22:33 UTC",
-    "x_pin FAIL: HTTP Error 404: Not Found b''"
+    "seq 299 executed 2026-07-23 22:39 UTC",
+    "x_pin oauth2 api.x.com HTTP 404: b''",
+    "x_pin oauth2 api.twitter.com HTTP 404: b''",
+    "x_pin oauth1[app2] api.x.com HTTP 404: b''",
+    "x_pin oauth1[app2] api.twitter.com HTTP 404: b''",
+    "x_pin oauth1[legacy] api.x.com HTTP 404: b''",
+    "x_pin oauth1[legacy] api.twitter.com HTTP 404: b''",
+    "x_pin: all attempts failed"
   ],
   "time_audit": {
     "at": "2026-07-23 22:39 UTC",
@@ -57,7 +63,7 @@
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
     "20260723-20": "ok"
   },
-  "executed_cmd_seq": 298,
+  "executed_cmd_seq": 299,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
