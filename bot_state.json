@@ -1,9 +1,10 @@
 {
-  "executed_seq": 157,
+  "executed_seq": 160,
   "last_log": [
-    "seq 157 executed 2026-07-23 02:07 UTC",
-    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+offline.access&state=dd315626932ee3e1&code_challenge=UWXIsrIZuCkpEpZfqVC3kyzfFmWh2aNOnPiMGkI_Dls&code_challenge_method=S256",
-    "x_media_test FAIL: legacy HTTP 401: b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'"
+    "seq 160 executed 2026-07-23 02:15 UTC",
+    "x_me FAIL: HTTP Error 401: Unauthorized b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'",
+    "x_media_test FAIL: legacy HTTP 401: b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'",
+    "x_me FAIL: HTTP Error 401: Unauthorized b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'"
   ],
   "time_audit": {
     "at": "2026-07-23 02:13 UTC",
@@ -70,7 +71,7 @@
     "20260722-20": "ok",
     "20260723-00": "ok"
   },
-  "executed_cmd_seq": 157,
+  "executed_cmd_seq": 160,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 5,
