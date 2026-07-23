@@ -72,7 +72,7 @@
   "executed_cmd_seq": 163,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
-  "count10_idx": 5,
+  "count10_idx": 6,
   "giveaway_x_post": "2080045584183136495",
   "count60_idx": 4,
   "giveaway_confirmed": {
@@ -88,6 +88,7 @@
     "20260723-00"
   ],
   "count_fired": [
-    "20260723-2300"
+    "20260723-2300",
+    "20260723-2350"
   ]
 }
