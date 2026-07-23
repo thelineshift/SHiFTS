@@ -1,5 +1,5 @@
 {
- "seq": 189,
+ "seq": 190,
  "commands": [
   {
    "seq": 50,
@@ -920,6 +920,15 @@
   {
    "seq": 189,
    "action": "lockdown_channels"
+  },
+  {
+   "seq": 190,
+   "action": "delete_where",
+   "channel": "general-chat",
+   "contains": "FULL BOARD \u2014 7/22 EVENING",
+   "author": "SHiFT",
+   "limit": 25,
+   "max": 1
   }
  ]
 }
