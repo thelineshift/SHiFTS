@@ -1,11 +1,12 @@
 {
-  "executed_seq": 192,
+  "executed_seq": 194,
   "last_log": [
-    "seq 192 executed 2026-07-23 11:11 UTC",
-    "created #\ud83d\udee0\ufe0fissues"
+    "seq 194 executed 2026-07-23 11:16 UTC",
+    "ERROR post_and_pin: 'content'",
+    "lockdown_channels: 13 channels locked \u2014 tiers enforced, @everyone pings disabled server-wide"
   ],
   "time_audit": {
-    "at": "2026-07-23 11:16 UTC",
+    "at": "2026-07-23 11:15 UTC",
     "flags": [
       "#\ud83d\udd12daily-locks | msg 1529740833081790484 | \ud83e\uddfe **RECEIPT \u2014 \ud83d\udd12 Cubs ML (-125) \u274c -1.5u**\nDetroit 5, Cubs 1. Never competitive \u2014 Tigers jum",
       "#\ud83d\udccaall-picks | msg 1529740857870123070 | \ud83e\uddfe **RECEIPT \u2014 \ud83d\udcca White Sox ML (-122) \u2705 +0.82u**\nWhite Sox 4, Rangers 2. Road form > home pa",
@@ -24,15 +25,15 @@
     "\ud83c\udf81giveaway": "2026-07-23 09:03 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-23 11:16 UTC",
+    "at": "2026-07-23 11:15 UTC",
     "flags": []
   },
   "challenge_watch": {
-    "at": "2026-07-23 11:16 UTC",
+    "at": "2026-07-23 11:15 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-23 11:16 UTC",
+    "at": "2026-07-23 11:15 UTC",
     "flags": []
   },
   "bot_version": "8.9.37",
@@ -49,7 +50,7 @@
     "20260723-08": "ok",
     "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)"
   },
-  "executed_cmd_seq": 192,
+  "executed_cmd_seq": 194,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 7,
