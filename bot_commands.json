@@ -1,14 +1,6 @@
 {
- "seq": 203,
+ "seq": 204,
  "commands": [
-  {
-   "action": "purge_channel",
-   "channel": "general-chat",
-   "limit": 30,
-   "marker": "SCAN DELAYED",
-   "bots_only": true,
-   "seq": 144
-  },
   {
    "action": "verify_entry",
    "handle": "0x_StellaGG",
@@ -327,6 +319,11 @@
    "seq": 203,
    "action": "purge_whop",
    "ts": "2026-07-23T15:14:01Z"
+  },
+  {
+   "seq": 204,
+   "action": "export_entries",
+   "ts": "2026-07-23T15:14:05Z"
   }
  ]
 }
