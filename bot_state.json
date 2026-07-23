@@ -1,78 +1,79 @@
 {
- "executed_seq": 167,
- "last_log": [
-  "seq 167 executed 2026-07-23 06:36 UTC",
-  "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \u2705 **8PM SCAN \u2014 RESOLUTION (Free)**\nYour free play tonight: **Rays/Blue Jays Under 7.5 (-110)** \u2014 posted 6:20 PM, beat the 7:07 first pitch.\nLate board had nothing worth a",
-  "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \ud83c\udd93 **FREE PICK (7:07 PM ET)**\n\u26be **Rays/Blue Jays UNDER 7.5 (-110)**\n\ud83d\udccb Rogers Centre dome \u2014 weather zeroed. Both bullpens rested off the 7/20 off-day. Littell 3.10 FIP vs B",
-  "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \ud83c\udd93 **FREE PICK \u2014 12:00 PM MAKEUP SCAN**\n\n\u26be **Cardinals/Angels UNDER 9.0** (-119)\n\ud83d\udcc5 Today 4:07 PM ET \u00b7 Angel Stadium\n\ud83d\udcca 1 unit\n\n\ud83d\udccb **INTEL:** Reid Detmers is running an elite",
-  "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \ud83c\udd93 **FREE PICK \u2014 8:00 AM SCAN**\n\n\u26be **Yankees/Pirates UNDER 9.5** (-110)\n\ud83d\udcc5 Today 1:05 PM ET \u00b7 Yankee Stadium\n\ud83d\udcca 1 unit\n\n\ud83d\udccb **INTEL:** Gerrit Cole (3.93 ERA) on the mound at h",
-  "#\ud83d\udd12daily-locks | \ud83e\udd16 SHiFT#0000: \u2705 **8PM SCAN \u2014 RESOLUTION (\ud83d\udd12 Lock Room)**\nTonight's Lock: **Cubs ML (-125), 1.5u** \u2014 posted 6:20 PM, in progress now.\nNo second lock on the late board \u2014 discipline pass. ",
-  "#\ud83d\udd12daily-locks | \ud83e\udd16 SHiFT#0000: \ud83d\udd12 **LOCK OF THE NIGHT (1.5u)**\n\u26be **Chicago Cubs ML (-125)** vs Detroit Tigers \u2014 8:00 PM ET\n\ud83d\udccb CHC 5.1 rpg at home vs DET 3.9 on the road. Boyd 3.38 FIP at Wrigley vs Morto",
-  "#\ud83d\udd12daily-locks | \ud83e\udd16 SHiFT#0000: \ud83d\udd12 **DAILY LOCK #2 \u2014 12:00 PM MAKEUP SCAN**\n\n\u26be **Washington Nationals ML** (-132)\n\ud83d\udcc5 Today 3:10 PM ET at Colorado\n\ud83d\udcca 1.5 units\n\n\ud83d\udccb **INTEL:** The Nats lead the league at ~5.5",
-  "#\ud83d\udc0bevery-play | \ud83e\udd16 SHiFT#0000: \u2705 **8PM SCAN \u2014 RESOLUTION (\ud83d\udc0b Whale Room)**\nTonight's Whale play: **Braves ML (-114), 1.5u** \u2014 posted 6:20 PM, live now.\nLate board = pass. CLV verdict posts once lines cl",
-  "#\ud83d\udc0bevery-play | \ud83e\udd16 SHiFT#0000: \ud83d\udc0b **WHALE PLAY (1.5u)**\n\u26be **Atlanta Braves ML (-114)** vs San Diego Padres \u2014 7:15 PM ET\n\ud83d\udccb ATL 4.9 rpg at home. SD bullpen 27th since 7/1 (5.20). Strider 10.6 K/9 at Truis",
-  "#\ud83d\udc0bevery-play | \ud83e\udd16 SHiFT#0000: \ud83d\udc0b **WHALE DESK \u2014 12:00 PM NOTE**\n\nNo new add this window \u2014 your card is already live and sized: **Mariners ML (-118) 2u at 3:40 PM ET**. SHiFT doesn't stack volume on a m"
- ],
- "time_audit": {
-  "at": "2026-07-23 06:43 UTC",
-  "flags": []
- },
- "room_pulse": {
-  "\ud83c\udfaffree-pick": "2026-07-23 00:18 UTC",
-  "\ud83e\uddfereceipts": "2026-07-23 03:05 UTC",
-  "\ud83d\udcacgeneral-chat": "2026-07-23 04:20 UTC",
-  "\ud83d\udd12daily-locks": "2026-07-23 00:18 UTC",
-  "\ud83d\udccaall-picks": "2026-07-23 00:18 UTC",
-  "\ud83d\udc0bevery-play": "2026-07-23 00:19 UTC",
-  "\ud83c\udfc6100-to-1000": "2026-07-23 00:19 UTC",
-  "\ud83d\udce3promotions": "2026-07-21 17:30 UTC",
-  "\ud83c\udf81giveaway": "2026-07-23 00:37 UTC"
- },
- "resolution_watch": {
-  "at": "2026-07-23 06:43 UTC",
-  "flags": []
- },
- "challenge_watch": {
-  "at": "2026-07-23 06:43 UTC",
-  "flags": []
- },
- "giveaway_watch": {
-  "at": "2026-07-23 06:43 UTC",
-  "flags": []
- },
- "bot_version": "8.9.31",
- "unannounced_results": [],
- "last_x_receipt_ts": 1784787925.6858678,
- "last_recap_date": "2026-07-22",
- "scan_events": {
-  "20260722-12": "ok",
-  "20260722-16": "ok",
-  "20260722-20": "ok",
-  "20260723-00": "ok",
-  "20260723-04": "ok",
-  "20260723-04-note": "makeup posted 06:45 UTC \u2014 engine stalled on dead X token; receipts+resolution delivered"
- },
- "executed_cmd_seq": 167,
- "scan_role_id": 1529569745517674599,
- "scan_role_msg": 1529569746620645406,
- "count10_idx": 6,
- "giveaway_x_post": "2080045584183136495",
- "count60_idx": 4,
- "giveaway_confirmed": {
-  "em_jeiz26": {
-   "handle": "Em_jeiz26",
-   "discord": "emjeiz04017",
-   "discord_id": "1378025540937715772",
-   "mult": 1,
-   "ts": "2026-07-22T23:24:48Z"
-  }
- },
- "scan_event_misses": [
-  "20260723-00",
-  "20260723-04"
- ],
- "count_fired": [
-  "20260723-2300",
-  "20260723-2350"
- ]
+  "executed_seq": 167,
+  "last_log": [
+    "seq 167 executed 2026-07-23 06:36 UTC",
+    "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \u2705 **8PM SCAN \u2014 RESOLUTION (Free)**\nYour free play tonight: **Rays/Blue Jays Under 7.5 (-110)** \u2014 posted 6:20 PM, beat the 7:07 first pitch.\nLate board had nothing worth a",
+    "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \ud83c\udd93 **FREE PICK (7:07 PM ET)**\n\u26be **Rays/Blue Jays UNDER 7.5 (-110)**\n\ud83d\udccb Rogers Centre dome \u2014 weather zeroed. Both bullpens rested off the 7/20 off-day. Littell 3.10 FIP vs B",
+    "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \ud83c\udd93 **FREE PICK \u2014 12:00 PM MAKEUP SCAN**\n\n\u26be **Cardinals/Angels UNDER 9.0** (-119)\n\ud83d\udcc5 Today 4:07 PM ET \u00b7 Angel Stadium\n\ud83d\udcca 1 unit\n\n\ud83d\udccb **INTEL:** Reid Detmers is running an elite",
+    "#\ud83c\udfaffree-pick | \ud83e\udd16 SHiFT#0000: \ud83c\udd93 **FREE PICK \u2014 8:00 AM SCAN**\n\n\u26be **Yankees/Pirates UNDER 9.5** (-110)\n\ud83d\udcc5 Today 1:05 PM ET \u00b7 Yankee Stadium\n\ud83d\udcca 1 unit\n\n\ud83d\udccb **INTEL:** Gerrit Cole (3.93 ERA) on the mound at h",
+    "#\ud83d\udd12daily-locks | \ud83e\udd16 SHiFT#0000: \u2705 **8PM SCAN \u2014 RESOLUTION (\ud83d\udd12 Lock Room)**\nTonight's Lock: **Cubs ML (-125), 1.5u** \u2014 posted 6:20 PM, in progress now.\nNo second lock on the late board \u2014 discipline pass. ",
+    "#\ud83d\udd12daily-locks | \ud83e\udd16 SHiFT#0000: \ud83d\udd12 **LOCK OF THE NIGHT (1.5u)**\n\u26be **Chicago Cubs ML (-125)** vs Detroit Tigers \u2014 8:00 PM ET\n\ud83d\udccb CHC 5.1 rpg at home vs DET 3.9 on the road. Boyd 3.38 FIP at Wrigley vs Morto",
+    "#\ud83d\udd12daily-locks | \ud83e\udd16 SHiFT#0000: \ud83d\udd12 **DAILY LOCK #2 \u2014 12:00 PM MAKEUP SCAN**\n\n\u26be **Washington Nationals ML** (-132)\n\ud83d\udcc5 Today 3:10 PM ET at Colorado\n\ud83d\udcca 1.5 units\n\n\ud83d\udccb **INTEL:** The Nats lead the league at ~5.5",
+    "#\ud83d\udc0bevery-play | \ud83e\udd16 SHiFT#0000: \u2705 **8PM SCAN \u2014 RESOLUTION (\ud83d\udc0b Whale Room)**\nTonight's Whale play: **Braves ML (-114), 1.5u** \u2014 posted 6:20 PM, live now.\nLate board = pass. CLV verdict posts once lines cl",
+    "#\ud83d\udc0bevery-play | \ud83e\udd16 SHiFT#0000: \ud83d\udc0b **WHALE PLAY (1.5u)**\n\u26be **Atlanta Braves ML (-114)** vs San Diego Padres \u2014 7:15 PM ET\n\ud83d\udccb ATL 4.9 rpg at home. SD bullpen 27th since 7/1 (5.20). Strider 10.6 K/9 at Truis",
+    "#\ud83d\udc0bevery-play | \ud83e\udd16 SHiFT#0000: \ud83d\udc0b **WHALE DESK \u2014 12:00 PM NOTE**\n\nNo new add this window \u2014 your card is already live and sized: **Mariners ML (-118) 2u at 3:40 PM ET**. SHiFT doesn't stack volume on a m"
+  ],
+  "time_audit": {
+    "at": "2026-07-23 06:43 UTC",
+    "flags": []
+  },
+  "room_pulse": {
+    "\ud83c\udfaffree-pick": "2026-07-23 00:18 UTC",
+    "\ud83e\uddfereceipts": "2026-07-23 03:05 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-23 04:20 UTC",
+    "\ud83d\udd12daily-locks": "2026-07-23 00:18 UTC",
+    "\ud83d\udccaall-picks": "2026-07-23 00:18 UTC",
+    "\ud83d\udc0bevery-play": "2026-07-23 00:19 UTC",
+    "\ud83c\udfc6100-to-1000": "2026-07-23 00:19 UTC",
+    "\ud83d\udce3promotions": "2026-07-21 17:30 UTC",
+    "\ud83c\udf81giveaway": "2026-07-23 00:37 UTC"
+  },
+  "resolution_watch": {
+    "at": "2026-07-23 06:43 UTC",
+    "flags": []
+  },
+  "challenge_watch": {
+    "at": "2026-07-23 06:43 UTC",
+    "flags": []
+  },
+  "giveaway_watch": {
+    "at": "2026-07-23 06:43 UTC",
+    "flags": []
+  },
+  "bot_version": "8.9.31",
+  "unannounced_results": [],
+  "last_x_receipt_ts": 1784787925.6858678,
+  "last_recap_date": "2026-07-22",
+  "scan_events": {
+    "20260722-12": "ok",
+    "20260722-16": "ok",
+    "20260722-20": "ok",
+    "20260723-00": "ok",
+    "20260723-04": "ok",
+    "20260723-04-note": "makeup posted 06:45 UTC \u2014 engine stalled on dead X token; receipts+resolution delivered"
+  },
+  "executed_cmd_seq": 167,
+  "scan_role_id": 1529569745517674599,
+  "scan_role_msg": 1529569746620645406,
+  "count10_idx": 6,
+  "giveaway_x_post": "2080045584183136495",
+  "count60_idx": 5,
+  "giveaway_confirmed": {
+    "em_jeiz26": {
+      "handle": "Em_jeiz26",
+      "discord": "emjeiz04017",
+      "discord_id": "1378025540937715772",
+      "mult": 1,
+      "ts": "2026-07-22T23:24:48Z"
+    }
+  },
+  "scan_event_misses": [
+    "20260723-00",
+    "20260723-04"
+  ],
+  "count_fired": [
+    "20260723-2300",
+    "20260723-2350",
+    "20260723-0300"
+  ]
 }
