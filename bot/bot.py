@@ -220,8 +220,14 @@ def wallet_balances():
                     bal = b['result']['value'] / 1e9
                     entry.update(balance=round(bal, 5), usd=round(bal * px['solana']['usd'], 2))
                 elif ch == 'ethereum':
-                    b = _http_json('https://eth.llamarpc.com',
-                                   {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addr, 'latest']})
+                    b = None
+                    for rpc in ('https://eth.llamarpc.com', 'https://cloudflare-eth.com', 'https://rpc.ankr.com/eth'):
+                        try:
+                            b = _http_json(rpc, {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addr, 'latest']})
+                            if b.get('result'):
+                                break
+                        except Exception:
+                            continue
                     bal = int(b['result'], 16) / 1e18
                     entry.update(balance=round(bal, 6), usd=round(bal * px['ethereum']['usd'], 2))
                 elif ch == 'bitcoin':
@@ -1089,7 +1095,7 @@ async def run_command(cmd, guild, log):
         try:
             bal = await asyncio.to_thread(wallet_balances)
             await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances')
-            tot = sum(w.get('usd', 0) for w in bal.get('wallets', []))
+            tot = sum(w.get('usd') or 0 for w in bal.get('wallets', []))
             lines = [f"👛 **HOT WALLETS** — ${tot:,.2f} total"]
             for w in bal.get('wallets', []):
                 lines.append(f"• **{w['symbol']}** `{w['address']}` — {w['balance']} (${w['usd']:,.2f})")
@@ -2112,7 +2118,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.42b'
+            state['bot_version'] = '8.9.42c'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
