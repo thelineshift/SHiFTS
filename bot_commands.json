@@ -1,5 +1,5 @@
 {
- "seq": 177,
+ "seq": 178,
  "commands": [
   {
    "seq": 50,
@@ -855,6 +855,13 @@
    "action": "x_post_text",
    "text": "\ud83c\udf81 $30 IN SOLANA \u2014 TWO WINNERS EVERY WEEK\n\n\ud83e\udd47 $25 SOL  \ud83e\udd48 $5 SOL \u2014 drawn on-chain, proof posted.\n\n3 steps, 60 seconds:\n1\ufe0f\u20e3 Follow @TheLineShift\n2\ufe0f\u20e3 Like + repost this post\n3\ufe0f\u20e3 Join our Discord + drop your X handle in the #giveaway channel\n\n\ud83e\udd16 SHiFT replies instantly: \u2705 entry confirmed \u2014 or \u274c with exactly which step you're missing, so you can finish it and come back.\n\nMembers get bonus tickets: \ud83d\udd12 Lock Room 2x \u00b7 \ud83d\udcca Sharp Room 3x \u00b7 \ud83d\udc0b Whale Room 5x\n\nDraw: Sunday 6 PM ET \ud83d\udc47\nhttps://raw.githack.com/thelineshift/AISportsBot/main/landing/giveaway2.html",
    "tag": "giveaway"
+  },
+  {
+   "seq": 178,
+   "action": "x_delete",
+   "ids": [
+    "2080209960131236240"
+   ]
   }
  ]
 }
