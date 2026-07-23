@@ -1,0 +1,21 @@
+{
+ "updated": "2026-07-23T15:17:01Z",
+ "wallets": [
+  {
+   "chain": "solana",
+   "symbol": "SOL",
+   "address": "CXMSPuotirZU1shtrVL21SiobsDyXf7m7CYoS2W2kTWj"
+  },
+  {
+   "chain": "ethereum",
+   "symbol": "ETH/EVM",
+   "address": "0x54D66ffE2492a015A826bDE45c2F321Cec5751d5",
+   "note": "same address on Base, Polygon, BSC, Arbitrum"
+  },
+  {
+   "chain": "bitcoin",
+   "symbol": "BTC",
+   "address": "14C6FDubcA5baeAkCtSzbjENvBVuQGdHrz"
+  }
+ ]
+}
