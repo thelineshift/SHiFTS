@@ -293,7 +293,7 @@ def x_upload_media(img_bytes, mime='image/png', c=None):
     # v2 upload with OAuth2 user context (media.write); falls back to legacy OAuth1 attempt
     if c is None:
         c = x_creds_load()
-    url = 'https://upload.x.com/2/media/upload'
+    url = 'https://api.x.com/2/media/upload'
     boundary = 'lineshift' + str(int(time.time()))
     body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="card.png"\r\n'
             f'Content-Type: {mime}\r\n\r\n').encode() + img_bytes + f'\r\n--{boundary}--\r\n'.encode()
@@ -1577,7 +1577,7 @@ def x_upload_media_oauth1(img, filename='image.png'):
     sets = x_oauth1_sets(c)
     if not sets:
         raise Exception('no complete oauth1 credential set')
-    url = 'https://upload.x.com/2/media/upload'
+    url = 'https://api.x.com/2/media/upload'
     last = None
     for name, ck, cs, at, ats in sets:
         try:
