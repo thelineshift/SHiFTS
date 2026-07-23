@@ -34,15 +34,6 @@
   "bot_version": "8.9.31",
   "unannounced_results": [
     {
-      "id": "stl-laa-under9",
-      "desc": "Cardinals/Angels Under 9.0",
-      "odds": -119,
-      "result": "WIN",
-      "units": 0.84,
-      "score": "St. Louis Cardinals 1, Los Angeles Angels 0",
-      "tier": "free"
-    },
-    {
       "id": "tb-tor-under75",
       "desc": "Rays/Blue Jays Under 7.5",
       "odds": -110,
@@ -61,7 +52,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1784769424.48099,
+  "last_x_receipt_ts": 1784774676.8807561,
   "last_recap_date": "2026-07-21",
   "scan_events": {
     "20260722-12": "ok",
