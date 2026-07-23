@@ -1,12 +1,6 @@
 {
- "seq": 202,
+ "seq": 203,
  "commands": [
-  {
-   "action": "verify_entry",
-   "handle": "sauki",
-   "channel": "giveaway",
-   "seq": 143
-  },
   {
    "action": "purge_channel",
    "channel": "general-chat",
@@ -328,6 +322,11 @@
    "ts": "2026-07-23T15:01:29Z",
    "channel": "upgrade",
    "content": "\ud83d\udc8e **THELINESHIFT PREMIUM \u2014 NEW STORE IS LIVE** \ud83d\udc8e\n\nWe've moved to our own payment system \u2014 faster, safer, and **your roles activate automatically within seconds of checkout**. No more waiting.\n\n\ud83d\udd12 **LOCK ROOM \u2014 $14.99/mo**\nThe daily lock: one highest-confidence pick every day + challenge ladder\n\ud83d\udc49 https://buy.stripe.com/8x29AS4Ry5G85Qf58ZbMQ00\n\n\ud83d\udcca **SHARP \u2014 $29.99/mo**\nEverything in Lock + the full daily card, all sports + esports + weekly analytics\n\ud83d\udc49 https://buy.stripe.com/00w9ASes86Kc5QfcBrbMQ01\n\n\ud83d\udc0b **WHALE \u2014 $59.99/mo**\nEverything in Sharp + every single play + monthly deep dive + max allocations\n\ud83d\udc49 https://buy.stripe.com/28E14m5VC0lOguT7h7bMQ02\n\n\ud83d\ude80 **LAUNCH SPECIAL:** code `LAUNCH25` = **25% off your first month** on any tier.\n\n**How it works:**\n1\ufe0f\u20e3 Click your tier's link\n2\ufe0f\u20e3 At checkout, enter your **Discord username** (required \u2014 it's how SHiFT finds you)\n3\ufe0f\u20e3 Roles activate in seconds and your rooms unlock automatically\n\nCancel anytime \u2014 access removes itself automatically. Questions? Post in #\ud83d\udee0\ufe0fissues. \ud83e\udd16"
+  },
+  {
+   "seq": 203,
+   "action": "purge_whop",
+   "ts": "2026-07-23T15:14:01Z"
   }
  ]
 }
