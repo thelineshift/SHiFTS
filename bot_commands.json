@@ -345,6 +345,94 @@
    "seq": 222,
    "action": "audit_channels",
    "ts": "2026-07-23T17:13:21Z"
+  },
+  {
+   "action": "delete_channel_id",
+   "id": "1529880262249287831",
+   "seq": 223,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "daily-locks",
+   "topic": "\ud83d\udd12 LOCK ROOM \u2014 1-3 model plays a day with odds, units + intel, posted before first pitch. $14.99/mo \u2014 join in #\ud83d\udc8eupgrade",
+   "seq": 224,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "lock-lounge",
+   "topic": "\ud83d\udd12 Lock Room lounge \u2014 talk today's locks, live sweats, and results. Lock members and up.",
+   "seq": 225,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "all-picks",
+   "topic": "\ud83d\udcca SHARP ROOM \u2014 the full card: every Lock + Sharp play daily with deeper market intel. $29.99/mo \u2014 join in #\ud83d\udc8eupgrade",
+   "seq": 226,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "weekly-analytics",
+   "topic": "\ud83d\udcca Weekly model report \u2014 tier records, units, ROI, and what the machine learned. Drops every Sunday.",
+   "seq": 227,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "sharp-talk",
+   "topic": "\ud83d\udcca Sharp lounge \u2014 markets, edges, line value, and today's card. Sharp + Whale members.",
+   "seq": 228,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "every-play",
+   "topic": "\ud83d\udc0b WHALE ROOM \u2014 every play the model fires across every tier, plus Whale-only angles + full breakdowns. $59.99/mo \u2014 join in #\ud83d\udc8eupgrade",
+   "seq": 229,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "monthly-deepdive",
+   "topic": "\ud83d\udc0b Monthly deep dive \u2014 long-form model breakdown: performance, leaks, adjustments. 1st of every month.",
+   "seq": 230,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "whale-talk",
+   "topic": "\ud83d\udc0b Whale lounge \u2014 highest-conviction talk: line movement, alt angles, full model readouts.",
+   "seq": 231,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "shift-lab",
+   "topic": "\ud83e\uddea SHiFT LAB \u2014 staff only. Bot tests, deploys, and experiments run here.",
+   "seq": 232,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "set_topic",
+   "channel": "issues",
+   "topic": "\ud83d\udee0\ufe0f ISSUES \u2014 broken link, missing role, wrong grade? Post it here and SHiFT jumps on it.",
+   "seq": 233,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "post_and_pin",
+   "channel": "promotions",
+   "content": "\ud83d\udce3 **LAUNCH WINDOW \u2014 25% OFF YOUR FIRST MONTH**\n\nThe machine is live \u2014 scans 6x daily, picks posted before first pitch, every result receipted.\n\n\ud83d\udd12 Lock Room \u2014 $14.99/mo \u2192 **$11.24** first month\n\ud83d\udcca Sharp Room \u2014 $29.99/mo \u2192 **$22.49** first month\n\ud83d\udc0b Whale Room \u2014 $59.99/mo \u2192 **$44.99** first month\n\nUse code **LAUNCH25** at checkout \ud83d\udc47\n\ud83d\udc8e Store: https://thelineshift.github.io/AISportsBot/upgrade.html\n\nLimited window. When it's gone, it's gone.",
+   "seq": 234,
+   "ts": "2026-07-23T17:34:25Z"
+  },
+  {
+   "action": "audit_channels",
+   "seq": 235,
+   "ts": "2026-07-23T17:34:25Z"
   }
  ]
 }
