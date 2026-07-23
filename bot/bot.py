@@ -1,1 +1,3011 @@
-"import os, json, time, base64, asyncio, urllib.request, random, re, datetime\nimport discord\nfrom discord.ext import tasks\n\nDISCORD_TOKEN = os.environ['DISCORD_BOT_TOKEN']\nGH_TOKEN = os.environ.get('GITHUB_TOKEN', '')\nREPO = 'TheLineShift/AISportsBot'\nQUEUE_BRANCH = 'commands'\nRAW = f'https://raw.githubusercontent.com/{REPO}/{QUEUE_BRANCH}'\nAPI = f'https://api.github.com/repos/{REPO}/contents'\n\nTIER_ROLES = {'\\U0001F512 Lock Room': 'lock', '\\U0001F4CA Sharp': 'sharp', '\\U0001F40B Whale': 'whale'}\n\nBOT_NICK = '\ud83e\udd16 SHiFT'\nBOT_STATUS = 'the board \ud83d\udef0\ufe0f'\n\nSCAM_RX = [r'\\bd[\\.\\s]*m[\\.\\s]*me\\b', r'send (me )?a d[\\.\\s]*m', r'\\bdm for\\b', r'direct message me',\n           r't\\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',\n           r'airdrop', r'double your', r'forex', r'investment platform', r'guaranteed profit',\n           r'trading (expert|guru|signals)', r'contact (me|admin) (on|via)']\nOUR_INVITE = '8bBxWUJCYT'\n\nasync def shift_guard(message, guild):\n    try:\n        member = message.author\n        if getattr(member, 'bot', False):\n            return False\n        try:\n            if member == guild.owner or member.guild_permissions.administrator or member.guild_permissions.manage_guild:\n                return False\n        except Exception:\n            pass\n        content = message.content or ''\n        low = content.lower()\n        reason = None\n        if message.mention_everyone:\n            reason = '@everyone/@here ping by non-staff'\n        else:\n            for pat in SCAM_RX:\n                if re.search(pat, low):\n                    reason = 'scam pattern'\n                    break\n            if not reason:\n                invites = re.findall(r'(?:discord\\.gg/|discord\\.com/invite/)([A-Za-z0-9]+)', content)\n                if any(code != OUR_INVITE for code in invites):\n                    reason = 'foreign discord invite'\n            if not reason and len(message.mentions) >= 4:\n                reason = f'mass mentions ({len(message.mentions)})'\n        if not reason:\n            return False\n        st = await asyncio.to_thread(get_state)\n        offs = st.setdefault('mod_offenses', {})\n        uid = str(member.id)\n        offs[uid] = offs.get(uid, 0) + 1\n        await asyncio.to_thread(gh_put, 'bot_state.json', st, 'mod offense ' + uid)\n        snippet = content[:180]\n        try:\n            await message.delete()\n        except Exception:\n            pass\n        action = 'deleted'\n        try:\n            import datetime as _dt\n            await member.timeout(_dt.timedelta(minutes=60), reason='SHiFT guard: ' + reason)\n            action += ' + 60min timeout'\n        except Exception:\n            pass\n        if offs[uid] >= 2:\n            try:\n                await member.kick(reason='repeat scam offenses')\n                action += ' + KICKED (repeat)'\n            except Exception:\n                pass\n        lab = find_channel(guild, 'shift-lab')\n        if lab:\n            await lab.send(f\"\\U0001F6E1\\uFE0F **SHiFT GUARD** \u2014 {action}\\n\\U0001F464 {member} (`{member.id}`) in #{message.channel.name}\\n\\u2696\\uFE0F {reason}\\n\\U0001F4DD {snippet or '(no text)'}\")\n        await asyncio.to_thread(log_event, 'guard_action', f'{action} {member} in #{message.channel.name}: {reason}')\n        return True\n    except Exception as e:\n        print('shift_guard error:', e)\n        return False\n\ndef log_event(type_, detail):\n    \"\"\"Append an event to the ops event log (dashboard Event Log feed).\"\"\"\n    try:\n        ev = gh_get_json('events.json') or {'events': [], 'next_id': 1}\n        ev.setdefault('events', []).append({'id': ev.get('next_id', 1), 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),\n                                            'type': type_, 'detail': str(detail)[:300]})\n        ev['next_id'] = ev.get('next_id', 1) + 1\n        ev['events'] = ev['events'][-250:]\n        gh_put('events.json', ev, 'event: ' + type_)\n    except Exception as e:\n        print('[event] log failed:', e)\n\n\nISSUE_RX_PAYMENT = re.compile(r'(charg|payment|paid|refund|whop|stripe|billing|invoice|card|subscri)', re.I)\nISSUE_RX_ROLE = re.compile(r\"(role|tier|access|can't see|cannot see|locked out|missing.*(channel|room)|upgrade|downgrade)\", re.I)\nISSUE_RX_DATA = re.compile(r'(wrong|incorrect|error|typo|bug|broken|picture|image|photo|weather|matchup|odds|line|score|missing pick)', re.I)\nISSUE_RX_YES = re.compile(r'^\\s*(yes|yeah|yep|yup|fixed|works|working now|all good|confirmed|it works)\\b', re.I)\nISSUE_RX_NO = re.compile(r\"^\\s*(no|nope|not fixed|still|doesn't work|didn't work|not working)\\b\", re.I)\n\n\nasync def handle_issue(message, guild):\n    \"\"\"issues channel: triage, auto-fix what is fixable, verify with the user, escalate the rest.\"\"\"\n    chname = getattr(message.channel, 'name', '') or ''\n    author = message.author\n    if 'issues' not in chname or author.bot:\n        return\n    content = (message.content or '').strip()\n    if not content:\n        return\n    issues = gh_get_json('issues.json') or {'tickets': [], 'next_id': 1}\n    tickets = issues.setdefault('tickets', [])\n    t = next((x for x in reversed(tickets) if x.get('user_id') == str(author.id)\n              and x.get('status') in ('open', 'awaiting_user')), None)\n    reply = None\n    if t and t.get('status') == 'awaiting_user':\n        if ISSUE_RX_YES.search(content):\n            t['status'] = 'resolved'; t['resolved_ts'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())\n            reply = f'\u2705 Ticket **#{t[\"id\"]}** marked resolved. Thanks for confirming, {author.mention}!'\n            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_resolved', f'ticket #{t[\"id\"]} ({author}) self-confirmed fixed'))\n        elif ISSUE_RX_NO.search(content):\n            t['status'] = 'escalated'; t['escalated_ts'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())\n            reply = (f\"\ud83d\udce8 Got it \u2014 I've **escalated ticket #{t['id']} to the admin**. \"\n                     f\"We'll get back to you as soon as an admin is available to fix your issue.\")\n            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_escalated', f'ticket #{t[\"id\"]} ({author}): fix not confirmed'))\n            lab = find_channel(guild, 'shift-lab')\n            if lab:\n                asyncio.ensure_future(lab.send(f'\ud83d\udea8 ESCALATED ticket #{t[\"id\"]} \u2014 {author} ({author.id}): {t.get(\"summary\",\"\")[:200]} \u2014 auto-fix failed, needs admin.'))\n        else:\n            reply = f'\ud83e\udd16 Ticket **#{t[\"id\"]}** is waiting on your confirmation \u2014 did the fix work? Reply **yes** or **no**.'\n    elif not t:\n        tid = issues.get('next_id', 1); issues['next_id'] = tid + 1\n        t = {'id': tid, 'user_id': str(author.id), 'user': str(author), 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),\n             'status': 'open', 'summary': content[:250]}\n        tickets.append(t)\n        kind = ('payment' if ISSUE_RX_PAYMENT.search(content) else\n                'access' if ISSUE_RX_ROLE.search(content) else\n                'data' if ISSUE_RX_DATA.search(content) else 'other')\n        t['kind'] = kind\n        lab = find_channel(guild, 'shift-lab')\n        if kind == 'payment':\n            t['status'] = 'escalated'; t['escalated_ts'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())\n            reply = (f\"\ud83c\udfab Ticket **#{tid}** opened (billing). Payment issues need the admin \u2014 I've **escalated this to the admin** \"\n                     f\"and we'll get back to you as soon as an admin is available to fix your issue.\")\n            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_escalated', f'ticket #{tid} payment ({author})'))\n            if lab:\n                asyncio.ensure_future(lab.send(f'\ud83d\udea8 PAYMENT ticket #{tid} \u2014 {author} ({author.id}): {content[:300]}'))\n        elif kind == 'access':\n            fixed = False\n            try:\n                member = guild.get_member(author.id)\n                if member:\n                    names = [r.name for r in member.roles]\n                    want = []\n                    if any('whale' in n.lower() for n in names):\n                        want = ['Sharp', 'Lock']\n                    elif any('sharp' in n.lower() for n in names):\n                        want = ['Lock']\n                    for word in want:\n                        for r in guild.roles:\n                            if word.lower() in r.name.lower() and r not in member.roles:\n                                asyncio.ensure_future(member.add_roles(r, reason=f'issues ticket #{tid} hierarchy fix'))\n                                fixed = True\n            except Exception as e:\n                print('[issues] role fix failed:', e)\n            t['status'] = 'awaiting_user'\n            reply = (f\"\ud83c\udfab Ticket **#{tid}** opened (access). I've checked your tier roles and restored the room access your tier includes. \"\n                     f\"**Can you confirm it's fixed?** Reply **yes** or **no** \u2014 if it's still broken I'll escalate this to the admin immediately.\")\n            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_opened', f'ticket #{tid} access ({author}) auto-fix={fixed}'))\n        elif kind == 'data':\n            t['status'] = 'open'\n            reply = (f\"\ud83c\udfab Ticket **#{tid}** opened. Thanks for flagging it \u2014 I'm reviewing the data/post now and will correct anything \"\n                     f\"that's wrong. I'll follow up here shortly.\")\n            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_opened', f'ticket #{tid} data ({author}): {content[:150]}'))\n            if lab:\n                asyncio.ensure_future(lab.send(f'\ud83d\udee0\ufe0f DATA ticket #{tid} \u2014 {author}: {content[:300]}'))\n        else:\n            t['status'] = 'open'\n            reply = (f\"\ud83c\udfab Ticket **#{tid}** opened. Can you give me a bit more detail (what you expected vs what you're seeing)? \"\n                     f\"If I can't fix it myself I'll escalate it to the admin right away.\")\n            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_opened', f'ticket #{tid} other ({author}): {content[:150]}'))\n    else:\n        t['summary'] = (t.get('summary', '') + ' | ' + content)[:250]\n        reply = f'\ud83e\udd16 Added that to ticket **#{t[\"id\"]}** \u2014 still on it.'\n    try:\n        gh_put('issues.json', issues, f'issue ticket update ({author.id})')\n    except Exception as e:\n        print('[issues] state write failed:', e)\n    if reply:\n        await message.reply(reply, mention_author=False)\n\n\n\nCRYPTO_TIERS = {'lock': 14.99, 'sharp': 29.99, 'whale': 59.99}\n\ndef _http_json(url, payload=None, headers=None, timeout=20):\n    h = {'Content-Type': 'application/json'}\n    if headers:\n        h.update(headers)\n    data = json.dumps(payload).encode() if payload is not None else None\n    req = urllib.request.Request(url, data=data, headers=h, method='POST' if data else 'GET')\n    with urllib.request.urlopen(req, timeout=timeout) as r:\n        return json.load(r)\n\ndef wallet_balances():\n    \"\"\"On-chain balances for all hot wallets + USD values. Never raises.\"\"\"\n    out = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'wallets': []}\n    try:\n        w = gh_get_json('wallets.json') or {}\n        px = _http_json('https://api.coingecko.com/api/v3/simple/price?ids=solana,ethereum,bitcoin&vs_currencies=usd')\n        for x in w.get('wallets', []):\n            ch, addr = x['chain'], x['address']\n            entry = {'chain': ch, 'symbol': x.get('symbol', ch.upper()), 'label': x.get('label', '\ud83d\udcbc OPS WALLET'),\n                     'address': addr, 'note': x.get('note', '')}\n            try:\n                if ch == 'solana':\n                    b = _http_json('https://api.mainnet-beta.solana.com',\n                                   {'jsonrpc': '2.0', 'id': 1, 'method': 'getBalance', 'params': [addr]})\n                    bal = b['result']['value'] / 1e9\n                    entry.update(balance=round(bal, 5), usd=round(bal * px['solana']['usd'], 2))\n                elif ch == 'ethereum':\n                    b = None\n                    for rpc in ('https://eth.llamarpc.com', 'https://cloudflare-eth.com', 'https://rpc.ankr.com/eth'):\n                        try:\n                            b = _http_json(rpc, {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addr, 'latest']})\n                            if b.get('result'):\n                                break\n                        except Exception:\n                            continue\n                    bal = int(b['result'], 16) / 1e18\n                    entry.update(balance=round(bal, 6), usd=round(bal * px['ethereum']['usd'], 2))\n                elif ch == 'bitcoin':\n                    b = _http_json(f'https://blockstream.info/api/address/{addr}')\n                    bal = (b['chain_stats']['funded_txo_sum'] - b['chain_stats']['spent_txo_sum']) / 1e8\n                    entry.update(balance=round(bal, 8), usd=round(bal * px['bitcoin']['usd'], 2))\n            except Exception as e:\n                entry.update(balance=None, usd=None, error=str(e)[:80])\n            out['wallets'].append(entry)\n    except Exception as e:\n        out['error'] = str(e)[:200]\n    return out\n\ndef crypto_withdraw(chain, to, amount):\n    \"\"\"Sign and broadcast a withdrawal from a hot wallet. Returns txid string.\"\"\"\n    keys = gh_get_json('wallets_secret.json') or {}\n    if chain == 'solana':\n        from solders.keypair import Keypair\n        from solders.pubkey import Pubkey\n        from solders.system_program import transfer, TransferParams\n        from solders.message import Message\n        from solders.transaction import Transaction\n        from solders.hash import Hash\n        kp = Keypair.from_bytes(bytes.fromhex(keys['solana']['secret_hex']))\n        lamports = int(float(amount) * 1e9)\n        bh = _http_json('https://api.mainnet-beta.solana.com',\n                        {'jsonrpc': '2.0', 'id': 1, 'method': 'getLatestBlockhash', 'params': [{'commitment': 'finalized'}]})\n        blockhash = Hash.from_string(bh['result']['value']['blockhash'])\n        ix = transfer(TransferParams(from_pubkey=kp.pubkey(), to_pubkey=Pubkey.from_string(to), lamports=lamports))\n        tx = Transaction([kp], Message([ix], kp.pubkey()), blockhash)\n        sig = _http_json('https://api.mainnet-beta.solana.com',\n                         {'jsonrpc': '2.0', 'id': 1, 'method': 'sendTransaction',\n                          'params': [__import__('base64').b64encode(bytes(tx)).decode(), {'encoding': 'base64'}]})\n        return 'SOL tx: ' + sig['result']\n    if chain == 'evm':\n        from eth_account import Account\n        acct = Account.from_key(keys['evm']['private_key'])\n        nonce_r = _http_json('https://eth.llamarpc.com',\n                             {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getTransactionCount', 'params': [acct.address, 'latest']})\n        gas_r = _http_json('https://eth.llamarpc.com', {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_gasPrice', 'params': []})\n        tx = {'chainId': 1, 'nonce': int(nonce_r['result'], 16), 'to': to, 'value': int(float(amount) * 1e18),\n              'gas': 21000, 'gasPrice': int(gas_r['result'], 16)}\n        signed = acct.sign_transaction(tx)\n        sent = _http_json('https://eth.llamarpc.com',\n                          {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_sendRawTransaction', 'params': [signed.raw_transaction.hex()]})\n        return 'ETH tx: ' + sent['result']\n    if chain == 'bitcoin':\n        from bit import Key\n        k = Key(keys['bitcoin']['wif'])\n        return 'BTC tx: ' + k.send([(to, float(amount), 'btc')], fee=10)\n    raise ValueError('unknown chain: ' + chain)\n\n\ndef make_client(privileged=True):\n    intents = discord.Intents.default()\n    intents.guilds = True\n    intents.members = privileged\n    intents.message_content = privileged\n    c = discord.Client(intents=intents)\n\n    @c.event\n    async def on_ready():\n        print(f'LineShift Bot v8.8 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')\n        try:\n            await c.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=BOT_STATUS))\n            g0 = c.guilds[0] if c.guilds else None\n            if g0 and g0.me and g0.me.nick != BOT_NICK:\n                await g0.me.edit(nick=BOT_NICK)\n                print('nick applied:', BOT_NICK)\n        except Exception as e:\n            print('presence/nick error:', e)\n        if not poll.is_running():\n            poll.start()\n        if not countdown.is_running():\n            countdown.start()\n        if not audit.is_running():\n            audit.start()\n        if not grader.is_running():\n            grader.start()\n        if not x_drainer.is_running():\n            x_drainer.start()\n        if not scan_event_watch.is_running():\n            scan_event_watch.start()\n        if not recap_watch.is_running():\n            recap_watch.start()\n        if not teaser_watch.is_running():\n            teaser_watch.start()\n        if not odds_watch.is_running():\n            odds_watch.start()\n        if not stripe_sync.is_running():\n            stripe_sync.start()\n        if not crypto_sync.is_running():\n            crypto_sync.start()\n\n    @c.event\n    async def on_message(message):\n        try:\n            if message.author.bot:\n                return\n            if message.guild and await shift_guard(message, message.guild):\n                return\n            chname = (getattr(message.channel, 'name', '') or '').lower()\n            if 'giveaway' in chname:\n                raw = message.content or ''\n                hs = list(re.findall(r'@([A-Za-z0-9_]{4,15})\\b', raw))\n                hs += re.findall(r'(?:https?://)?(?:www\\.)?(?:x|twitter)\\.com/([A-Za-z0-9_]{4,15})', raw, flags=re.I)\n                hs = [h for h in hs if h.lower() not in ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i')]\n                if hs:\n                    await verify_giveaway_entry(message, hs[0])\n                return\n            if (message.content or '').strip().lower().startswith('!crypto'):\n                parts = (message.content or '').strip().split()\n                tier = parts[1].lower() if len(parts) > 1 else ''\n                coin = parts[2].lower() if len(parts) > 2 else ''\n                if tier not in CRYPTO_TIERS or not coin:\n                    await message.reply('\ud83e\ude99 Usage: `!crypto <tier> <coin>` \u2014 e.g. `!crypto sharp sol`\\nCoins: **btc, eth, sol, usdt, usdc, doge, ltc, trx, bnb** (+300 more \u2014 just ask). I will DM your payment address.', mention_author=False)\n                else:\n                    await message.reply(f'\ud83e\ude99 Generating your **{tier.upper()}** checkout in **{coin.upper()}** \u2014 check your DMs!', mention_author=False)\n                    _log = []\n                    await run_command({'action': 'crypto_checkout', 'tier': tier, 'coin': coin, 'user': str(message.author.id)}, message.guild, _log)\n                    print('crypto cmd:', _log)\n                return\n            if 'issues' in chname:\n                await handle_issue(message, message.guild or (c.guilds[0] if c.guilds else None))\n                return\n            content = (message.content or '').strip().strip('`').strip('<>')\n            if 'thelineshift.com' not in content or 'code=' not in content:\n                return\n            url = content.split()[0]\n            guild = message.guild or (c.guilds[0] if c.guilds else None)\n            log = []\n            try:\n                await message.delete()\n            except Exception:\n                pass\n            await run_command({'action': 'x_link_finish', 'url': url}, guild, log)\n            ok = any('OK' in l for l in log)\n            await message.channel.send('\u2705 X link complete \u2014 native posting is LIVE. First post fired.' if ok\n                                       else '\u274c Exchange failed: ' + ' | '.join(log)[-300:])\n        except Exception as e:\n            print('on_message x-link error:', e)\n\n    @c.event\n    async def on_raw_reaction_add(payload):\n        try:\n            state = await asyncio.to_thread(get_state)\n            if payload.message_id != state.get('scan_role_msg'):\n                return\n            guild = c.guilds[0] if c.guilds else None\n            role = guild.get_role(state.get('scan_role_id', 0)) if guild else None\n            if role and payload.member and not payload.member.bot:\n                await payload.member.add_roles(role, reason='scan alert opt-in')\n        except Exception as e:\n            print('reaction add error:', e)\n\n    @c.event\n    async def on_raw_reaction_remove(payload):\n        try:\n            state = await asyncio.to_thread(get_state)\n            if payload.message_id != state.get('scan_role_msg'):\n                return\n            guild = c.guilds[0] if c.guilds else None\n            role = guild.get_role(state.get('scan_role_id', 0)) if guild else None\n            member = guild.get_member(payload.user_id) if guild else None\n            if role and member and not member.bot:\n                await member.remove_roles(role, reason='scan alert opt-out')\n        except Exception as e:\n            print('reaction remove error:', e)\n\n    @c.event\n    async def on_member_update(before, after):\n        try:\n            added = [r for r in after.roles if r not in before.roles]\n            hits = [TIER_ROLES[r.name] for r in added if r.name in TIER_ROLES]\n            if not hits:\n                return\n            links = await asyncio.to_thread(gh_get_json, 'member_links.json')\n            entry = links.setdefault(str(after.id), {'name': after.name, 'grants': []})\n            entry.setdefault('grants', [])\n            entry['name'] = after.name\n            def _parse_ts(s):\n                try:\n                    return datetime.datetime.strptime(s, '%Y-%m-%d %H:%M UTC').replace(tzinfo=datetime.timezone.utc).timestamp()\n                except Exception:\n                    return 0\n            # dedup: ignore re-fired member_update events for a tier already recorded in the last 6h\n            hits = [h for h in hits if not any(\n                g.get('tier') == h and time.time() - _parse_ts(g.get('at', '')) < 6 * 3600\n                for g in entry['grants'])]\n            if not hits:\n                return\n            for h in hits:\n                entry['grants'].append({'tier': h, 'at': time.strftime('%Y-%m-%d %H:%M UTC')})\n            await asyncio.to_thread(gh_put, 'member_links.json', links, f'tier grant: {after.name} -> {hits[-1]}')\n            print(f'TIER GRANT recorded: {after.name} -> {hits}')\n        except Exception as e:\n            print('on_member_update error:', e)\n    return c\n\ndef gh_headers():\n    return {'Authorization': f'token {GH_TOKEN}', 'User-Agent': 'lineshift-bot'}\n\ndef gh_get(path, ref='main'):\n    req = urllib.request.Request(f'{API}/{path}?ref={ref}', headers=gh_headers())\n    with urllib.request.urlopen(req, timeout=15) as r:\n        return json.load(r)\n\ndef gh_put(path, obj, message, ref=QUEUE_BRANCH):\n    try:\n        remote = gh_get(path, ref=ref)\n        sha = remote.get('sha')\n        if path == 'bot_state.json':\n            try:\n                base = json.loads(base64.b64decode(remote['content']).decode())\n                # deep-merge append-only dicts so concurrent writers can't clobber entries (Stella wipe 7/23)\n                for dk in ('giveaway_confirmed', 'scan_events'):\n                    if isinstance(base.get(dk), dict) and isinstance(obj.get(dk), dict):\n                        m = {**base[dk], **obj[dk]}\n                        base[dk] = m\n                        obj = {**obj, dk: m}\n                base.update(obj)\n                obj = base\n            except Exception:\n                pass\n    except Exception:\n        sha = None\n    body = {'message': message, 'branch': ref,\n            'content': base64.b64encode(json.dumps(obj, indent=2).encode()).decode()}\n    if sha:\n        body['sha'] = sha\n    req = urllib.request.Request(f'{API}/{path}', data=json.dumps(body).encode(),\n                                 method='PUT', headers={**gh_headers(), 'Content-Type': 'application/json'})\n    with urllib.request.urlopen(req, timeout=15) as r:\n        return json.load(r)\n\ndef fetch_commands():\n    try:\n        req = urllib.request.Request(f'{RAW}/bot_commands.json?t={int(time.time())}',\n                                     headers={'User-Agent': 'lineshift-bot'})\n        with urllib.request.urlopen(req, timeout=15) as r:\n            return json.load(r)\n    except Exception:\n        return None\n\ndef get_state():\n    try:\n        d = gh_get('bot_state.json', ref=QUEUE_BRANCH)\n        return json.loads(base64.b64decode(d['content']))\n    except Exception:\n        return None\n\ndef gh_get_json(path):\n    try:\n        d = gh_get(path, ref=QUEUE_BRANCH)\n        return json.loads(base64.b64decode(d['content']))\n    except Exception:\n        return {}\n\ndef gh_get_json_ref(path, ref):\n    try:\n        d = gh_get(path, ref=ref)\n        return json.loads(base64.b64decode(d['content']))\n    except Exception:\n        return {}\n\ndef pick_game_utc(date_s, time_s):\n    # epoch (UTC) of a pick's game time; ET assumed, EDT = UTC-4\n    try:\n        t = (time_s or '11:00 PM').upper().replace('ET', '').strip()\n        m = re.match(r'(\\d{1,2})(?::(\\d{2}))?\\s*(AM|PM)', t)\n        if not m:\n            return None\n        hh = int(m.group(1)) % 12\n        if m.group(3) == 'PM':\n            hh += 12\n        mm = int(m.group(2) or 0)\n        y, mo, dd = map(int, str(date_s).split('-'))\n        dt = datetime.datetime(y, mo, dd, hh, mm) + datetime.timedelta(hours=4)\n        return dt.replace(tzinfo=datetime.timezone.utc).timestamp()\n    except Exception:\n        return None\n\ndef find_channel(guild, name):\n    n = name.lower().strip('#').replace(' ', '')\n    for ch in guild.text_channels:\n        cn = ch.name.lower().replace('-', '').replace('_', '')\n        if n.replace('-', '').replace('_', '') in cn:\n            return ch\n    return None\n\ndef find_role(guild, name):\n    n = name.lower()\n    for r in guild.roles:\n        if n in r.name.lower():\n            return r\n    return None\n\nasync def resolve_member(guild, ident):\n    ident = str(ident).strip()\n    if ident.isdigit():\n        try:\n            return await guild.fetch_member(int(ident))\n        except Exception:\n            return None\n    try:\n        async for m in guild.fetch_members(limit=None):\n            if m.name.lower() == ident.lower():\n                return m\n    except Exception:\n        pass\n    async for e in guild.audit_logs(limit=100):\n        t = getattr(e, 'target', None)\n        name = getattr(t, 'name', '') if t is not None else ''\n        if name.lower() == ident.lower():\n            try:\n                return await guild.fetch_member(t.id)\n            except Exception:\n                return None\n    for ch in guild.text_channels:\n        try:\n            async for msg in ch.history(limit=200):\n                if msg.author.name.lower() == ident.lower():\n                    try:\n                        return await guild.fetch_member(msg.author.id)\n                    except Exception:\n                        return None\n        except Exception:\n            pass\n    return None\n\n\ndef gh_raw_bytes(path, ref='main'):\n    req = urllib.request.Request(f'https://raw.githubusercontent.com/{REPO}/{ref}/{path}?t={int(time.time())}',\n                                 headers={'User-Agent': 'lineshift-bot'})\n    with urllib.request.urlopen(req, timeout=40) as r:\n        return r.read()\n\ndef x_oauth1_sign(method, url, c):\n    import hmac as _h, hashlib as _hl, secrets as _sc\n    from urllib.parse import quote as _qq\n    op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': _sc.token_hex(16),\n          'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),\n          'oauth_token': c['access_token'], 'oauth_version': '1.0'}\n    q = lambda s: _qq(str(s), safe='')\n    base = '&'.join([method, q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])\n    key = f\"{q(c['api_secret'])}&{q(c['access_token_secret'])}\"\n    op['oauth_signature'] = base64.b64encode(_h.new(key.encode(), base.encode(), _hl.sha1).digest()).decode()\n    return 'OAuth ' + ', '.join(f'{k}=\"{q(v)}\"' for k, v in sorted(op.items()))\n\ndef x_upload_media(img_bytes, mime='image/png', c=None):\n    # v2 upload with OAuth2 user context (media.write); falls back to legacy OAuth1 attempt\n    if c is None:\n        c = x_creds_load()\n    url = 'https://api.x.com/2/media/upload'\n    boundary = 'lineshift' + str(int(time.time()))\n    body = (f'--{boundary}\\r\\nContent-Disposition: form-data; name=\"media\"; filename=\"card.png\"\\r\\n'\n            f'Content-Type: {mime}\\r\\n\\r\\n').encode() + img_bytes + f'\\r\\n--{boundary}--\\r\\n'.encode()\n    req = urllib.request.Request(url, data=body, method='POST',\n                                 headers={'Authorization': f\"Bearer {c['oauth2_access']}\",\n                                          'Content-Type': f'multipart/form-data; boundary={boundary}'})\n    with urllib.request.urlopen(req, timeout=40) as r:\n        d = json.load(r)\n    return str(d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id'))\n\ndef x_get_json(url, bearer):\n    req = urllib.request.Request(url, headers={'Authorization': f'Bearer {bearer}'})\n    with urllib.request.urlopen(req, timeout=15) as r:\n        return json.load(r)\n\nGW_CACHE = {}\ndef gw_user_set(url, bearer):\n    ts, ids = GW_CACHE.get(url, (0, set()))\n    if time.time() - ts < 240:\n        return ids\n    ids, tok, pages = set(), None, 0\n    while pages < 3:\n        u = url + ('&pagination_token=' + tok if tok else '')\n        d = x_get_json(u, bearer)\n        ids |= {str(x.get('id')) for x in d.get('data', [])}\n        tok = d.get('meta', {}).get('next_token')\n        pages += 1\n        if not tok:\n            break\n    GW_CACHE[url] = (time.time(), ids)\n    return ids\n\ndef gw_followed(uid, uat):\n    try:\n        ids = gw_user_set('https://api.x.com/2/users/1831457082828021760/followers?max_results=100', uat)\n        return str(uid) in ids\n    except Exception:\n        return None\n\n\nTIER_ROOM = {'lock': '\ud83d\udd12 Lock Room', 'sharp': '\ud83d\udcca Sharp Room', 'whale': '\ud83d\udc0b Whale Room', 'free': '\ud83c\udd93 Free'}\ndef entry_checklist(handle, followed, liked, reposted):\n    def line(ok, label):\n        return f\"{'\u2705' if ok else '\u274c'} {label}\"\n    lines = [line(followed, 'Follow @TheLineShift'),\n             line(liked, 'Like the giveaway post'),\n             line(reposted, 'Repost the giveaway post')]\n    missing = [l for ok, l in zip((followed, liked, reposted),\n                                  ('follow @TheLineShift', 'like the giveaway post', 'repost the giveaway post')) if not ok]\n    return lines, missing\n\nasync def verify_giveaway_entry(message, handle):\n    try:\n        c = await asyncio.to_thread(x_creds_load)\n        bt = c['bearer_token']\n        state = await asyncio.to_thread(get_state)\n        post_id = (state or {}).get('giveaway_x_post', '2080027230839931367')\n        our_id = '1831457082828021760'\n        try:\n            u = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/by/username/{handle}', bt)\n            uid = str(u.get('data', {}).get('id') or '')\n        except Exception:\n            uid = ''\n        if not uid:\n            await message.channel.send(f\"\ud83e\udd16 SHiFT entry check: can't find an X account **@{handle}** \u2014 double-check the spelling and drop it again.\")\n            return\n        if time.time() > c.get('oauth2_expires_at', 0):\n            c = await asyncio.to_thread(x_oauth2_refresh, c)\n        uat = c.get('oauth2_access', bt)\n        followed = await asyncio.to_thread(gw_followed, uid, uat)\n        try:\n            liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', uat)\n        except Exception:\n            liked = None\n        try:\n            reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', uat)\n        except Exception:\n            reposted = None\n        def ic(ok, label):\n            return f\"{'\u2705' if ok else ('\u274c' if ok is False else '\u2753')} {label}\"\n        checklist = \"\\n\".join([ic(followed, 'Follow @TheLineShift'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])\n        missing = []\n        if followed is False: missing.append('follow @TheLineShift')\n        if liked is False: missing.append('like the giveaway post')\n        if reposted is False: missing.append('repost the giveaway post')\n        if not missing and followed and liked and reposted:\n            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)\n            if handle.lower() in (conf or {}):\n                await message.channel.send(f\"\ud83c\udfab **@{handle}** \u2014 you're already locked in the pool. Sit tight for Sunday 6 PM ET. \ud83e\udd16\")\n                return\n            names = [r.name for r in getattr(message.author, 'roles', [])]\n            tkey = 'whale' if any('Whale' in n or '\ud83d\udc0b' in n for n in names) else 'sharp' if any('Sharp' in n or '\ud83d\udcca' in n for n in names) else 'lock' if any('Lock' in n or '\ud83d\udd12' in n for n in names) else 'free'\n            mult = {'whale': 5, 'sharp': 3, 'lock': 2, 'free': 1}[tkey]\n            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)\n            conf = conf or {}\n            conf[handle.lower()] = {\n                'handle': handle, 'discord': str(message.author), 'discord_id': str(message.author.id),\n                'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}\n            await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway confirm ' + handle, QUEUE_BRANCH)\n            try:\n                await message.add_reaction('\u2705')\n            except Exception:\n                pass\n            await message.channel.send(\n                f\"\ud83c\udfab **ENTRY CONFIRMED \u2014 @{handle}**\\n\\n{checklist}\\n\ud83c\udf9f\ufe0f **Tickets: {mult}x \u2014 {TIER_ROOM.get(tkey, tkey)}**\\n\\nDraw: Sunday 6 PM ET \u2014 provably fair, paid on-chain. \ud83e\udd16\")\n        else:\n            steps = (f\"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** \" + ' + '.join(missing)) if missing else 'X is still registering your activity \u2014'\n            await message.channel.send(\n                f\"\ud83c\udfab **ENTRY CHECK \u2014 @{handle}**\\n\\n{checklist}\\n\\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. \ud83e\udd16\")\n    except Exception as e:\n        print('giveaway verify error:', e)\n\nasync def run_command(cmd, guild, log):\n    a = cmd.get('action')\n    if a == 'list_channels':\n        log.append('channels: ' + ' | '.join(f'{c.name} ({c.id})' for c in guild.text_channels))\n    elif a == 'rename_channel':\n        ch = find_channel(guild, cmd['channel'])\n        old = ch.name\n        await ch.edit(name=cmd['name'])\n        log.append(f'renamed #{old} -> {cmd[\"name\"]}')\n    elif a == 'set_topic':\n        ch = find_channel(guild, cmd['channel'])\n        await ch.edit(topic=cmd['topic'])\n        log.append(f'topic set on #{ch.name}')\n    elif a == 'post_and_pin':\n        ch = find_channel(guild, cmd['channel'])\n        m = await ch.send(cmd['content'])\n        await m.pin()\n        log.append(f'posted+pinned in #{ch.name}')\n    elif a == 'set_permissions':\n        ch = find_channel(guild, cmd['channel'])\n        role = find_role(guild, cmd['role'])\n        ow = discord.PermissionOverwrite()\n        for p in cmd.get('allow', []):\n            setattr(ow, p, True)\n        for p in cmd.get('deny', []):\n            setattr(ow, p, False)\n        await ch.set_permissions(role, overwrite=ow)\n        log.append(f'perms set on #{ch.name} for role {role.name}')\n    elif a == 'giveaway_winner':\n        ch = find_channel(guild, cmd.get('channel', 'giveaway'))\n        target = None\n        async for m in ch.history(limit=100):\n            if m.author == client.user and '\\U0001F381' in (m.content or ''):\n                target = m\n                break\n        if target is None:\n            log.append('giveaway_winner: no giveaway post found')\n        else:\n            entrants = []\n            for react in target.reactions:\n                if str(react.emoji) == '\\U0001F389':\n                    async for u in react.users():\n                        if not u.bot:\n                            entrants.append(u)\n            if not entrants:\n                await ch.send('\\U0001F381 Giveaway closed \u2014 no valid entries this round. New one starts now!')\n                log.append('giveaway_winner: 0 entries')\n            else:\n                w = random.choice(entrants)\n                prize = cmd.get('prize', 'a FREE month of \\U0001F512 Lock Room')\n                await ch.send(f\"\\U0001F381 **GIVEAWAY WINNER** \\U0001F389\\n\\nCongratulations {w.mention} \u2014 you won **{prize}**!\\n\\nThe captain will get you set up within 24h. Thanks to all {len(entrants)} entries \u2014 the next giveaway starts RIGHT NOW \\U0001F440\")\n                log.append(f'giveaway_winner: {w.name} ({w.id}) from {len(entrants)} entries')\n    elif a == 'setup_scan_role':\n        role = discord.utils.get(guild.roles, name='\ud83d\udef0\ufe0f Scan Alerts')\n        if role is None:\n            role = await guild.create_role(name='\ud83d\udef0\ufe0f Scan Alerts', mentionable=True, reason='scan alert opt-in')\n            log.append(f'created role {role.id}')\n        ch = find_channel(guild, 'general-chat')\n        msg = await ch.send(\"\ud83d\udef0\ufe0f **WANT THE HEADS-UP?**\\nReact with \ud83d\udef0\ufe0f and you'll get one quiet ping before each scan (6x daily \u2014 T-60 and T-10 only, nothing else). Remove your reaction anytime to opt out. No spam, just the warning. \ud83e\udd16\")\n        try:\n            await msg.add_reaction('\ud83d\udef0\ufe0f')\n        except Exception:\n            pass\n        try:\n            await msg.pin()\n        except Exception:\n            pass\n        state = await asyncio.to_thread(get_state)\n        state['scan_role_id'] = role.id\n        state['scan_role_msg'] = msg.id\n        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'scan role setup')\n        log.append('scan role + opt-in post live')\n    elif a == 'export_entries':\n        ch = find_channel(guild, cmd.get('channel', 'giveaway'))\n        if not ch:\n            log.append('export_entries: giveaway channel not found')\n        else:\n            tier_of = {}\n            for m in guild.members:\n                names = [r.name for r in m.roles]\n                if any('Whale' in n or '\ud83d\udc0b' in n for n in names):\n                    tier_of[m.id] = ('whale', 5)\n                elif any('Sharp' in n or '\ud83d\udcca' in n for n in names):\n                    tier_of[m.id] = ('sharp', 3)\n                elif any('Lock' in n or '\ud83d\udd12' in n for n in names):\n                    tier_of[m.id] = ('lock', 2)\n            entries = {}\n            async for msg in ch.history(limit=400):\n                if msg.author.bot:\n                    continue\n                pats = list(re.findall(r'@([A-Za-z0-9_]{4,15})\\b', msg.content or ''))\n                pats += re.findall(r'(?:https?://)?(?:www\\.)?(?:x|twitter)\\.com/([A-Za-z0-9_]{4,15})', msg.content or '', flags=re.I)\n                for h in pats:\n                    key = h.lower()\n                    if key in ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i'):\n                        continue\n                    tname, weight = tier_of.get(msg.author.id, ('free', 1))\n                    cur = entries.get(key)\n                    if cur is None or weight > cur['weight']:\n                        entries[key] = {'handle': h, 'discord': str(msg.author), 'discord_id': str(msg.author.id),\n                                        'tier': tname, 'weight': weight}\n            pool = []\n            for e in entries.values():\n                pool += [e['handle']] * e['weight']\n            doc = {'exported': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),\n                   'unique': len(entries), 'weighted_pool': len(pool),\n                   'entries': sorted(entries.values(), key=lambda x: x['handle'].lower()), 'pool': sorted(pool)}\n            await asyncio.to_thread(gh_put, 'giveaway_entries.json', doc, 'entry export', 'main')\n            log.append(f\"exported {len(entries)} unique entries ({len(pool)} weighted tickets) -> giveaway_entries.json\")\n    elif a == 'purge_channel':\n        ch = find_channel(guild, cmd['channel'])\n        if not ch:\n            log.append(f'purge_channel: #{cmd[\"channel\"]} not found')\n        else:\n            n = 0\n            async for m in ch.history(limit=int(cmd.get('limit', 50))):\n                if cmd.get('bots_only') and not m.author.bot:\n                    continue\n                if cmd.get('marker') and cmd['marker'].lower() not in (m.content or '').lower():\n                    continue\n                try:\n                    await m.delete()\n                    n += 1\n                except Exception:\n                    pass\n            log.append(f'purged {n} messages in #{ch.name}')\n    elif a == 'make_invite':\n        ch = find_channel(guild, cmd.get('channel', 'general-chat'))\n        inv = await ch.create_invite(max_age=0, max_uses=0, reason='permanent invite for X/giveaways')\n        log.append(f'INVITE: https://discord.gg/{inv.code}')\n    elif a == 'set_server_icon':\n        try:\n            ref = cmd.get('ref', 'main')\n            path = cmd.get('path', 'assets/server_icon.png')\n            remote = await asyncio.to_thread(gh_get, path, ref)\n            icon_bytes = base64.b64decode(remote['content'])\n            await guild.edit(icon=icon_bytes, reason='SHiFT server icon - brand mark')\n            log.append(f'server icon set from {path} ({len(icon_bytes)} bytes)')\n        except Exception as e:\n            log.append(f'set_server_icon FAILED: {type(e).__name__}: {e}')\n    elif a == 'clean_general':\n        ch = find_channel(guild, 'general-chat')\n        if not ch:\n            log.append('clean_general: channel not found')\n        else:\n            seen, dups, finale = set(), [], None\n            async for m in ch.history(limit=60):\n                txt = (m.content or '')\n                if 'crunching' in txt and 'parameters' in txt:\n                    keyt = txt[:60]\n                    if keyt in seen and m.author.bot:\n                        dups.append(m)\n                    else:\n                        seen.add(keyt)\n                if 'SCAN COMPLETE' in txt and 'MAKEUP' in txt.upper() and finale is None:\n                    finale = m\n            for m in dups:\n                try:\n                    await m.delete()\n                    log.append('deleted duplicate ANALYZING post')\n                except Exception as e:\n                    log.append(f'dup delete fail: {e}')\n            if finale is not None:\n                try:\n                    fixed = (finale.content or '').replace('card already live from 8 AM (Mariners ML 2u, 3:40 PM ET) \u2014 no forced adds',\n                                                           'card already live from the 8 AM scan \u2014 no forced adds')\n                    fixed = fixed.replace('Mariners ML 2u live', 'whale card live')\n                    if fixed != (finale.content or ''):\n                        await finale.delete()\n                        await ch.send(fixed)\n                        log.append('finale reposted without whale leak')\n                    else:\n                        log.append('finale had no leak text')\n                except Exception as e:\n                    log.append(f'finale fix fail: {e}')\n            if not dups and finale is None:\n                log.append('clean_general: nothing to fix')\n    elif a == 'audit_channels':\n        for c2 in guild.text_channels:\n            topic = (c2.topic or '')[:60]\n            log.append(f'#{c2.name} ({c2.id}) topic: {topic or \"NONE\"}')\n        bots = [m for m in guild.members if m.bot]\n        for b in bots:\n            av = 'custom' if b.avatar else 'DEFAULT'\n            log.append(f'BOT {b.name} | nick: {b.nick} | avatar: {av}')\n    elif a == 'x_timeline':\n        c = x_creds_load()\n        try:\n            url = 'https://api.x.com/2/users/1831457082828021760/tweets?max_results=100&tweet.fields=created_at,referenced_tweets'\n            req = urllib.request.Request(url, headers={'Authorization': f\"Bearer {c['bearer_token']}\"})\n            with urllib.request.urlopen(req, timeout=20) as r:\n                d = json.load(r)\n            for t in d.get('data', []):\n                refs = t.get('referenced_tweets', [])\n                kind = refs[0].get('type', 'post') if refs else 'post'\n                log.append(f\"{t['id']} | {t.get('created_at', '')[:16]} | {kind} | {t['text'][:70]}\")\n            if not d.get('data'):\n                log.append('x_timeline: no posts')\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:200]\n                except Exception: pass\n            log.append(f'x_timeline FAIL: {e} {body}')\n    elif a == 'x_delete':\n        c = x_creds_load()\n        if time.time() > c.get('oauth2_expires_at', 0):\n            c = await asyncio.to_thread(x_oauth2_refresh, c)\n        for tid in cmd.get('ids', []):\n            try:\n                req = urllib.request.Request(f'https://api.x.com/2/tweets/{tid}', method='DELETE',\n                                             headers={'Authorization': f\"Bearer {c['oauth2_access']}\"})\n                with urllib.request.urlopen(req, timeout=20) as r:\n                    json.load(r)\n                log.append(f'deleted post {tid}')\n            except Exception as e:\n                body = ''\n                if hasattr(e, 'read'):\n                    try: body = e.read()[:150]\n                    except Exception: pass\n                log.append(f'delete {tid} FAIL: {e} {body}')\n    elif a == 'x_media_probe':\n        try:\n            remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))\n            img = base64.b64decode(remote['content'])\n            c = x_creds_load()\n            if time.time() > c.get('oauth2_expires_at', 0):\n                c = await asyncio.to_thread(x_oauth2_refresh, c)\n            mid = await asyncio.to_thread(x_upload_media, img, 'image/png', c)\n            log.append(f'x_media_probe OK: media_id {mid} ({len(img)} bytes) \u2014 native image posts LIVE')\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:200]\n                except Exception: pass\n            log.append(f'x_media_probe FAIL: {e} {body}')\n    elif a == 'verify_entry':\n        # manual entry verification: check a handle's follow/like/repost vs the live giveaway post\n        handle = cmd.get('handle', '').lstrip('@')\n        ch = find_channel(guild, cmd.get('channel', 'giveaway'))\n        if not handle or not ch:\n            log.append('verify_entry: need handle + channel')\n        else:\n            try:\n                c = x_creds_load()\n                bt = c['bearer_token']\n                state = await asyncio.to_thread(get_state)\n                post_id = (state or {}).get('giveaway_x_post', '')\n                our_id = '1831457082828021760'\n                if time.time() > c.get('oauth2_expires_at', 0):\n                    c = await asyncio.to_thread(x_oauth2_refresh, c)\n                uat = c.get('oauth2_access', bt)\n                try:\n                    u = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/by/username/{handle}', bt)\n                    uid = str(u.get('data', {}).get('id') or '')\n                except Exception:\n                    uid = ''\n                if not uid:\n                    await ch.send(f\"\ud83e\udd16 SHiFT entry check: can't find an X account **@{handle}** \u2014 double-check the spelling and drop it again.\")\n                else:\n                    followed = await asyncio.to_thread(gw_followed, uid, uat)\n                    try:\n                        liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', uat)\n                    except Exception as _e:\n                        log.append(f'verify like-check err: {str(_e)[:80]}')\n                        liked = None\n                    try:\n                        reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', uat)\n                    except Exception as _e:\n                        log.append(f'verify repost-check err: {str(_e)[:80]}')\n                        reposted = None\n                    def ic(ok, label):\n                        return f\"{'\u2705' if ok else ('\u274c' if ok is False else '\u2753')} {label}\"\n                    checklist = \"\\n\".join([ic(followed, 'Follow @TheLineShift'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])\n                    missing = []\n                    if followed is False: missing.append('follow @TheLineShift')\n                    if liked is False: missing.append('like the giveaway post')\n                    if reposted is False: missing.append('repost the giveaway post')\n                    if not missing and followed and liked and reposted:\n                        conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)\n                        if handle.lower() in (conf or {}):\n                            await ch.send(f\"\ud83c\udfab **@{handle}** \u2014 already locked in the pool. Sunday 6 PM ET. \ud83e\udd16\")\n                            log.append(f'verify_entry: @{handle} already confirmed')\n                        else:\n                            mult, dname, did, tkey = 1, '', '', 'free'\n                            ent = await asyncio.to_thread(gh_get_json_ref, 'giveaway_entries.json', 'main')\n                            for e in (ent or {}).get('entries', []):\n                                if e.get('handle', '').lower() == handle.lower():\n                                    mult = int(e.get('weight', 1)); dname = e.get('discord', ''); did = e.get('discord_id', '')\n                                    tkey = e.get('tier', 'free')\n                                    break\n                            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)\n                            conf = conf or {}\n                            conf[handle.lower()] = {\n                                'handle': handle, 'discord': dname, 'discord_id': did,\n                                'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}\n                            await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway confirm ' + handle, QUEUE_BRANCH)\n                            await ch.send(f\"\ud83c\udfab **ENTRY CONFIRMED \u2014 @{handle}**\\n\\n{checklist}\\n\ud83c\udf9f\ufe0f **Tickets: {mult}x \u2014 {TIER_ROOM.get(tkey, tkey)}**\\n\\nDraw: Sunday 6 PM ET \u2014 provably fair, paid on-chain. \ud83e\udd16\")\n                            log.append(f'verify_entry: CONFIRMED @{handle} ({mult}x)')\n                    else:\n                        steps = (f\"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** \" + ' + '.join(missing)) if missing else 'X is still registering your activity \u2014'\n                        await ch.send(f\"\ud83c\udfab **ENTRY CHECK \u2014 @{handle}**\\n\\n{checklist}\\n\\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. \ud83e\udd16\")\n                        log.append(f'verify_entry: @{handle} incomplete ({len(missing)} left)')\n            except Exception as e:\n                log.append(f'verify_entry FAIL: {e}')\n    elif a == 'x_followers_probe':\n        try:\n            c = x_creds_load()\n            if time.time() > c.get('oauth2_expires_at', 0):\n                c = await asyncio.to_thread(x_oauth2_refresh, c)\n            d = await asyncio.to_thread(x_get_json, 'https://api.x.com/2/users/1831457082828021760/followers?max_results=100', c.get('oauth2_access', ''))\n            ids = [str(x.get('id')) for x in d.get('data', [])]\n            log.append(f'x_followers_probe OK: {len(ids)} followers readable, next={bool(d.get(\"meta\", {}).get(\"next_token\"))}')\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:150]\n                except Exception: pass\n            log.append(f'x_followers_probe FAIL: {e} {body}')\n    elif a == 'x_follow':\n        try:\n            c = x_creds_load()\n            if time.time() > c.get('oauth2_expires_at', 0):\n                c = await asyncio.to_thread(x_oauth2_refresh, c)\n            uname = cmd.get('username', '').lstrip('@')\n            req = urllib.request.Request(f'https://api.x.com/2/users/by/username/{uname}',\n                                         headers={'Authorization': f\"Bearer {c['bearer_token']}\"})\n            with urllib.request.urlopen(req, timeout=20) as r:\n                uid = json.load(r)['data']['id']\n            req = urllib.request.Request('https://api.x.com/2/users/1831457082828021760/following',\n                                         data=json.dumps({'target_user_id': uid}).encode(), method='POST',\n                                         headers={'Authorization': f\"Bearer {c['oauth2_access']}\", 'Content-Type': 'application/json'})\n            with urllib.request.urlopen(req, timeout=20) as r:\n                json.load(r)\n            log.append(f'followed @{uname}')\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:150]\n                except Exception: pass\n            log.append(f'x_follow FAIL: {e} {body}')\n    elif a == 'x_like':\n        try:\n            c = x_creds_load()\n            if time.time() > c.get('oauth2_expires_at', 0):\n                c = await asyncio.to_thread(x_oauth2_refresh, c)\n            req = urllib.request.Request('https://api.x.com/2/users/1831457082828021760/likes',\n                                         data=json.dumps({'tweet_id': cmd['id']}).encode(), method='POST',\n                                         headers={'Authorization': f\"Bearer {c['oauth2_access']}\", 'Content-Type': 'application/json'})\n            with urllib.request.urlopen(req, timeout=20) as r:\n                json.load(r)\n            log.append(f\"liked {cmd['id']}\")\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:150]\n                except Exception: pass\n            log.append(f'x_like FAIL: {e} {body}')\n    elif a == 'x_post_text':\n        try:\n            res = await asyncio.to_thread(x_post, cmd['text'])\n            tid = res.get('data', {}).get('id') if res else None\n            log.append(f'x_post_text OK: id {tid}')\n            if cmd.get('tag') == 'giveaway' and tid:\n                st2 = await asyncio.to_thread(get_state)\n                if st2 is not None:\n                    st2['giveaway_x_post'] = tid\n                    await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id')\n        except Exception as e:\n            log.append(f'x_post_text FAIL: {e}')\n    elif a == 'x_refresh':\n        try:\n            c = x_creds_load()\n            c = await asyncio.to_thread(x_oauth2_refresh, c)\n            log.append(f\"x_refresh OK: token now expires {time.strftime('%H:%M UTC', time.gmtime(c.get('oauth2_expires_at', 0)))}\")\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:250]\n                except Exception: pass\n            log.append(f'x_refresh FAIL: {e} {body}')\n    elif a == 'x_me':\n        try:\n            c = x_creds_load()\n            if time.time() > c.get('oauth2_expires_at', 0):\n                c = await asyncio.to_thread(x_oauth2_refresh, c)\n            req = urllib.request.Request('https://api.x.com/2/users/me',\n                                         headers={'Authorization': f\"Bearer {c['oauth2_access']}\"})\n            with urllib.request.urlopen(req, timeout=20) as r:\n                d = json.load(r)\n            log.append(f\"x_me OK: @{d.get('data', {}).get('username')} id {d.get('data', {}).get('id')} \u2014 oauth2 user token LIVE\")\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:250]\n                except Exception: pass\n            log.append(f'x_me FAIL: {e} {body}')\n    elif a == 'crypto_wallets':\n        try:\n            bal = await asyncio.to_thread(wallet_balances)\n            await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances')\n            tot = sum(w.get('usd') or 0 for w in bal.get('wallets', []))\n            lines = [f\"\ud83d\udc5b **HOT WALLETS** \u2014 ${tot:,.2f} total\"]\n            for w in bal.get('wallets', []):\n                lines.append(f\"\u2022 **{w['symbol']}** `{w['address']}` \u2014 {w['balance']} (${w['usd']:,.2f})\")\n            lab = find_channel(guild, 'shift-lab')\n            if lab:\n                await lab.send('\\n'.join(lines)[:1900])\n            log.append(f\"wallet report: ${tot:,.2f}\")\n        except Exception as e:\n            log.append(f'crypto_wallets FAIL: {e}')\n    elif a == 'crypto_withdraw':\n        try:\n            chain = str(cmd.get('chain', '')).lower()\n            to = cmd.get('to', '')\n            amount = cmd.get('amount', 0)\n            txid = await asyncio.to_thread(crypto_withdraw, chain, to, amount)\n            await asyncio.to_thread(log_event, 'crypto_withdraw', f'{amount} {chain} -> {to[:12]}... : {txid}')\n            lab = find_channel(guild, 'shift-lab')\n            if lab:\n                await lab.send(f\"\ud83d\udcb8 **WITHDRAWAL SENT** \u2014 {amount} {chain.upper()} \u2192 `{to}`\\n{txid}\")\n            log.append(f'withdraw: {txid}')\n            bal = await asyncio.to_thread(wallet_balances)\n            await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances post-withdraw')\n        except Exception as e:\n            log.append(f'crypto_withdraw FAIL: {e}')\n            lab = find_channel(guild, 'shift-lab')\n            if lab:\n                await lab.send(f\"\u274c WITHDRAW FAILED \u2014 {cmd.get('chain')} {cmd.get('amount')}: {e}\")\n    elif a == 'crypto_checkout':\n        try:\n            tier = str(cmd.get('tier', '')).lower()\n            coin = str(cmd.get('coin', 'usdt')).lower()\n            aliases = {'usdt': 'usdttrc20', 'bnb': 'bnbbsc'}\n            coin = aliases.get(coin, coin)\n            member = await resolve_member(guild, str(cmd.get('user', '')))\n            np_key = os.environ.get('NOWPAYMENTS_KEY', '')\n            if not np_key:\n                log.append('crypto checkout: NOWPAYMENTS_KEY not set')\n            elif tier not in CRYPTO_TIERS or not member:\n                log.append(f'crypto checkout: bad tier/user {tier} {cmd.get(\"user\")}')\n            else:\n                pay = await asyncio.to_thread(_http_json, 'https://api.nowpayments.io/v1/payment',\n                    {'price_amount': CRYPTO_TIERS[tier], 'price_currency': 'usd', 'pay_currency': coin,\n                     'order_id': f'{member.id}:{tier}', 'order_description': f'TheLineShift {tier.title()} 30 days',\n                     'is_fixed_rate': True}, {'x-api-key': np_key})\n                pid = pay.get('payment_id')\n                if not pid:\n                    log.append(f'crypto checkout failed: {str(pay)[:200]}')\n                else:\n                    known = await asyncio.to_thread(gh_get_json, 'crypto_members.json') or {'members': []}\n                    known.setdefault('members', [])\n                    known['members'].append({'payment_id': pid, 'discord_id': str(member.id), 'tier': tier,\n                                             'status': pay.get('payment_status', 'waiting'), 'coin': coin,\n                                             'pay_address': pay.get('pay_address'), 'pay_amount': pay.get('pay_amount'),\n                                             'created': time.time(), 'expires': None})\n                    await asyncio.to_thread(gh_put, 'crypto_members.json', known, 'crypto checkout created')\n                    try:\n                        await member.send(\n                            f\"\ud83e\ude99 **{tier.upper()} \u2014 crypto checkout (30 days)**\\n\"\n                            f\"Send **{pay.get('pay_amount')} {coin.upper()}** to:\\n`{pay.get('pay_address')}`\\n\"\n                            f\"Your access activates **automatically** when the payment confirms on-chain. \"\n                            f\"Questions? #\ud83d\udee0\ufe0fissues.\")\n                    except Exception:\n                        pass\n                    log.append(f'crypto payment {pid} for {member} ({coin})')\n        except Exception as e:\n            log.append(f'crypto_checkout FAIL: {e}')\n    elif a == 'audit_channels':\n        try:\n            rep = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'channels': []}\n            for ch in guild.text_channels:\n                last = None\n                try:\n                    async for m in ch.history(limit=1):\n                        last = {'author': str(m.author), 'ts': m.created_at.strftime('%Y-%m-%dT%H:%M:%SZ'),\n                                'preview': (m.content or '(embed/attachment)')[:140]}\n                except Exception:\n                    pass\n                rep['channels'].append({'name': ch.name, 'topic': (ch.topic or ''), 'last': last})\n            await asyncio.to_thread(gh_put, 'channels_audit.json', rep, 'channel audit')\n            log.append(f\"channel audit: {len(rep['channels'])} channels -> channels_audit.json\")\n        except Exception as e:\n            log.append(f'audit_channels FAIL: {e}')\n    elif a == 'purge_whop':\n        try:\n            n = 0\n            for m in list(guild.members):\n                if m.bot and 'whop' in m.name.lower():\n                    try:\n                        await guild.kick(m, reason='whop purge - platform retired')\n                        n += 1\n                    except Exception as e:\n                        log.append(f'whop kick failed: {e}')\n            for r in list(guild.roles):\n                if 'whop' in r.name.lower():\n                    try:\n                        await r.delete(reason='whop purge - platform retired')\n                        n += 1\n                    except Exception as e:\n                        log.append(f'whop role delete failed: {e}')\n            await asyncio.to_thread(log_event, 'whop_purge', f'{n} whop entities removed (bot kicked, roles deleted)')\n            log.append(f'whop purge complete: {n} removed')\n        except Exception as e:\n            log.append(f'purge_whop FAIL: {e}')\n    elif a == 'audit_permissions':\n        try:\n            ev_role = guild.default_role\n            roles = {w: next((r for r in guild.roles if w.lower() in r.name.lower()), None)\n                     for w in ('Lock', 'Sharp', 'Whale')}\n            POLICY = [\n                (('daily-locks', 'lock-lounge', '100-to-1000'), {'Lock', 'Sharp', 'Whale'}),\n                (('all-picks', 'weekly-analytics', 'sharp-talk'), {'Sharp', 'Whale'}),\n                (('every-play', 'monthly-deepdive', 'whale-talk'), {'Whale'}),\n                (('shift-lab',), set()),\n            ]\n            lines = ['\ud83d\udee1\ufe0f **PERMISSION AUDIT** \u2014 ' + time.strftime('%Y-%m-%d %H:%M UTC')]\n            leaks = 0\n            for ch in guild.text_channels:\n                name = ch.name.lower()\n                allowed = None\n                for keys, allow in POLICY:\n                    if any(k in name for k in keys):\n                        allowed = allow\n                        break\n                if allowed is None:\n                    continue\n                can_ev = ch.permissions_for(ev_role).view_channel\n                can = {w: (ch.permissions_for(r).view_channel if r else None) for w, r in roles.items()}\n                status = []\n                if can_ev:\n                    status.append('\ud83d\udea8@everyone CAN SEE'); leaks += 1\n                for w in ('Lock', 'Sharp', 'Whale'):\n                    want = w in allowed\n                    got = bool(can[w])\n                    if roles[w] is None:\n                        status.append(f'\u26a0\ufe0f{w} role missing'); continue\n                    if got and not want:\n                        status.append(f'\ud83d\udea8{w} leak'); leaks += 1\n                    elif want and not got:\n                        status.append(f'\u26a0\ufe0f{w} locked out'); leaks += 1\n                flag = '\u2705' if not status else ' | '.join(status)\n                lines.append(f'#{ch.name}: {flag}')\n            lab = find_channel(guild, 'shift-lab')\n            report = '\\n'.join(lines)[:1900]\n            if lab:\n                await lab.send(report)\n            log.append(f'audit: {leaks} leak(s) across {len(guild.text_channels)} channels')\n            await asyncio.to_thread(log_event, 'audit', f'permission audit: {leaks} leak(s)')\n        except Exception as e:\n            log.append(f'audit FAIL: {e}')\n    elif a == 'collect_metrics':\n        try:\n            counts = {'members': guild.member_count}\n            for word, key in [('Lock', 'lock'), ('Sharp', 'sharp'), ('Whale', 'whale')]:\n                n = sum(1 for mem in guild.members if any(word.lower() in r.name.lower() for r in mem.roles))\n                counts[key] = n\n            snap = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), **counts}\n            try:\n                c = x_creds_load()\n                if time.time() > c.get('oauth2_expires_at', 0):\n                    c = await asyncio.to_thread(x_oauth2_refresh, c)\n                uid = c.get('user_id') or '1831457082828021760'\n                req = urllib.request.Request(f'https://api.x.com/2/users/{uid}?user.fields=public_metrics',\n                                             headers={'Authorization': f\"Bearer {c['oauth2_access']}\"})\n                with urllib.request.urlopen(req, timeout=20) as r:\n                    d = json.load(r)['data']['public_metrics']\n                snap['x_followers'] = d['followers_count']\n                snap['x_tweets'] = d['tweet_count']\n            except Exception as e:\n                log.append(f'metrics X fetch failed: {e}')\n            try:\n                bal = await asyncio.to_thread(wallet_balances)\n                await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances')\n            except Exception as e:\n                log.append(f'wallet balances failed: {e}')\n            m = await asyncio.to_thread(gh_get_json, 'metrics.json')\n            m = m or {'snapshots': []}\n            m.setdefault('snapshots', []).append(snap)\n            m['snapshots'] = m['snapshots'][-400:]\n            await asyncio.to_thread(gh_put, 'metrics.json', m, 'metrics snapshot')\n            log.append(f'metrics: {snap}')\n        except Exception as e:\n            log.append(f'metrics FAIL: {e}')\n    elif a == 'harden_guild':\n        try:\n            await guild.edit(explicit_content_filter=discord.ContentFilter.all_members, reason='SHiFT harden')\n            log.append('harden_guild: explicit content filter = ALL members')\n        except Exception as e:\n            log.append(f'harden_guild filter FAIL: {e}')\n        try:\n            trig = discord.AutoModTrigger(type=discord.AutoModRuleTriggerType.mention_spam, mention_limit=5)\n            acts = [discord.AutoModRuleAction(type=discord.AutoModRuleActionType.block_message)]\n            await guild.create_automod_rule(name='SHiFT mention guard', event_type=discord.AutoModRuleEventType.message_send,\n                                            trigger=trig, actions=acts, enabled=True, reason='harden')\n            log.append('harden_guild: AutoMod mention-spam rule ON')\n        except Exception as e:\n            log.append(f'harden_guild automod mention FAIL: {e}')\n        try:\n            trig2 = discord.AutoModTrigger(type=discord.AutoModRuleTriggerType.keyword,\n                keyword_filter=['dm me','send me a dm','d.m me','telegram','t.me/','whatsapp','free nitro','airdrop','double your','forex','guaranteed profit','claim your'])\n            acts2 = [discord.AutoModRuleAction(type=discord.AutoModRuleActionType.block_message)]\n            await guild.create_automod_rule(name='SHiFT scam filter', event_type=discord.AutoModRuleEventType.message_send,\n                                            trigger=trig2, actions=acts2, enabled=True, reason='harden')\n            log.append('harden_guild: AutoMod scam-keyword rule ON')\n        except Exception as e:\n            log.append(f'harden_guild automod keyword FAIL: {e}')\n    elif a == 'lockdown_channels':\n        def _frag(s):\n            return ''.join(c for c in s.lower() if c.isalnum() or c == '-')\n        def _tier_role(word):\n            for r in guild.roles:\n                if word.lower() in r.name.lower():\n                    return r\n            return None\n        OPEN_SEND = ['general-chat', 'giveaway', 'issues', 'upgrade']\n        OPEN_READ = ['free-pick', 'receipts', 'updates', 'welcome', 'rules', 'promotions']\n        STAFF_ONLY = ['shift-lab']\n        PAID = {'daily-locks': ['Lock', 'Sharp', 'Whale'], 'lock-lounge': ['Lock', 'Sharp', 'Whale'],\n                '100-to-1000': ['Lock', 'Sharp', 'Whale'], 'all-picks': ['Sharp', 'Whale'],\n                'weekly-analytics': ['Sharp', 'Whale'], 'sharp-talk': ['Sharp', 'Whale'],\n                'every-play': ['Whale'], 'monthly-deepdive': ['Whale'], 'whale-talk': ['Whale']}\n        n = 0\n        for ch in guild.text_channels:\n            nm = _frag(ch.name)\n            try:\n                if any(_frag(k) in nm for k in STAFF_ONLY):\n                    await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=False))\n                    for w in ('Lock', 'Sharp', 'Whale'):\n                        r = _tier_role(w)\n                        if r:\n                            await ch.set_permissions(r, overwrite=discord.PermissionOverwrite(view_channel=False))\n                    n += 1\n                elif any(_frag(k) in nm for k in OPEN_SEND):\n                    await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=True, send_messages=True, read_message_history=True, mention_everyone=False))\n                    n += 1\n                elif any(_frag(k) in nm for k in OPEN_READ):\n                    await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=True, send_messages=False, read_message_history=True, mention_everyone=False))\n                    n += 1\n                else:\n                    hit = None\n                    for key, roles in PAID.items():\n                        if _frag(key) in nm:\n                            hit = roles\n                            break\n                    if hit is not None:\n                        await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=False))\n                        for w in ('Lock', 'Sharp', 'Whale'):\n                            r = _tier_role(w)\n                            if not r:\n                                continue\n                            if w in hit:\n                                can_send = key in ('daily-locks', 'all-picks', 'every-play')\n                                await ch.set_permissions(r, overwrite=discord.PermissionOverwrite(view_channel=True, send_messages=can_send, read_message_history=True, mention_everyone=False))\n                            else:\n                                await ch.set_permissions(r, overwrite=discord.PermissionOverwrite(view_channel=False))\n                        n += 1\n            except Exception as e:\n                log.append(f'lockdown FAIL #{ch.name}: {e}')\n        log.append(f'lockdown_channels: {n} channels locked \u2014 tiers enforced, @everyone pings disabled server-wide')\n    elif a == 'delete_where':\n        try:\n            ch = find_channel(guild, cmd['channel'])\n            n = 0\n            if ch:\n                async for m in ch.history(limit=cmd.get('limit', 15)):\n                    if cmd['contains'] in (m.content or '') and (not cmd.get('author') or cmd['author'] in (m.author.name or '')):\n                        await m.delete()\n                        n += 1\n                        log.append(f'delete_where: removed message {m.id} in #{ch.name}')\n                        if n >= cmd.get('max', 1):\n                            break\n            if n == 0:\n                log.append('delete_where: no matching message found')\n        except Exception as e:\n            log.append(f'delete_where FAIL: {e}')\n    elif a == 'x_oauth1_me':\n        for name, ck, cs, at, ats in x_oauth1_sets(x_creds_load()):\n            try:\n                hdr = x_oauth1_sign('GET', 'https://api.x.com/2/users/me', ck, cs, at, ats)\n                req = urllib.request.Request('https://api.x.com/2/users/me', headers={'Authorization': hdr})\n                with urllib.request.urlopen(req, timeout=20) as r:\n                    d = json.load(r)\n                log.append(f\"x_oauth1_me [{name}] OK: @{d.get('data', {}).get('username')} id {d.get('data', {}).get('id')}\")\n            except urllib.error.HTTPError as e:\n                try:\n                    eb = e.read()[:220]\n                except Exception:\n                    eb = b''\n                log.append(f'x_oauth1_me [{name}] HTTP {e.code}: {eb}')\n            except Exception as e:\n                log.append(f'x_oauth1_me [{name}] FAIL: {e}')\n    elif a == 'x_media_test':\n        try:\n            img = await asyncio.to_thread(gh_raw_bytes, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))\n            if len(img) < 1000:\n                raise Exception(f'image fetch too small: {len(img)} bytes')\n            cname, mid = await asyncio.to_thread(x_upload_media_oauth1, img)\n            log.append(f'x_media_test OK: media_id {mid} via {cname} ({len(img)} bytes) \u2014 native image posts LIVE')\n        except Exception as e:\n            log.append(f'x_media_test FAIL: {e}')\n    elif a == 'x_post_media_native':\n        try:\n            img = await asyncio.to_thread(gh_raw_bytes, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))\n            if len(img) < 1000:\n                raise Exception(f'image fetch too small: {len(img)} bytes')\n            cname, mid = await asyncio.to_thread(x_upload_media_oauth1, img)\n            if cname == 'oauth2':\n                res = await asyncio.to_thread(x_post_media_oauth2, cmd['text'], mid)\n            else:\n                res = await asyncio.to_thread(x_post_media_oauth1, cmd['text'], mid, cname)\n            tid = res.get('data', {}).get('id') if res else None\n            log.append(f'x_post_media_native OK: tweet {tid} with media {mid} via {cname}')\n            if cmd.get('tag') == 'giveaway' and tid:\n                st2 = await asyncio.to_thread(get_state)\n                if st2 is not None:\n                    st2['giveaway_x_post'] = str(tid)\n                    await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id (native media)')\n        except Exception as e:\n            log.append(f'x_post_media_native FAIL: {e}')\n    elif a == 'x_post_media':\n        try:\n            remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))\n            img = base64.b64decode(remote['content'])\n            c = x_creds_load()\n            if time.time() > c.get('oauth2_expires_at', 0):\n                c = await asyncio.to_thread(x_oauth2_refresh, c)\n            media_id = await asyncio.to_thread(x_upload_media, img, 'image/png', c)\n            body = json.dumps({'text': cmd['text'], 'media': {'media_ids': [media_id]}}).encode()\n            req = urllib.request.Request('https://api.x.com/2/tweets', data=body, method='POST',\n                                         headers={'Authorization': f\"Bearer {c['oauth2_access']}\", 'Content-Type': 'application/json'})\n            with urllib.request.urlopen(req, timeout=20) as r:\n                res = json.load(r)\n            tid = res.get('data', {}).get('id')\n            log.append(f'x_post_media OK: id {tid}')\n            if cmd.get('tag') == 'giveaway' and tid:\n                st2 = await asyncio.to_thread(get_state)\n                if st2 is not None:\n                    st2['giveaway_x_post'] = tid\n                    await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id')\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:200]\n                except Exception: pass\n            log.append(f'x_post_media FAIL: {e} {body}')\n    elif a == 'x_diag1':\n        try:\n            import hmac as _hmac, hashlib as _hl, secrets as _sc\n            from urllib.parse import quote as _qq\n            c = x_creds_load()\n            url = 'https://api.twitter.com/1.1/account/verify_credentials.json'\n            op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': _sc.token_hex(16),\n                  'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),\n                  'oauth_token': c['access_token'], 'oauth_version': '1.0'}\n            q = lambda s: _qq(str(s), safe='')\n            base = '&'.join(['GET', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])\n            key = f\"{q(c['api_secret'])}&{q(c['access_token_secret'])}\"\n            op['oauth_signature'] = base64.b64encode(_hmac.new(key.encode(), base.encode(), _hl.sha1).digest()).decode()\n            hdr = 'OAuth ' + ', '.join(f'{k}=\"{q(v)}\"' for k, v in sorted(op.items()))\n            req = urllib.request.Request(url, headers={'Authorization': hdr})\n            with urllib.request.urlopen(req, timeout=20) as r:\n                d = json.load(r)\n            log.append(f\"x_diag1 v1.1 OK: @{d.get('screen_name')} \u2014 bio/logo endpoints reachable\")\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:200]\n                except Exception: pass\n            log.append(f'x_diag1 v1.1 FAIL: {e} {body}')\n    elif a == 'x_link_scan':\n        target = None\n        for tch in guild.text_channels:\n            if 'updates' in tch.name:\n                target = tch\n                break\n        if target is None:\n            log.append('x_link_scan: updates channel not found')\n        else:\n            found = False\n            async for m in target.history(limit=50):\n                cont = (m.content or '')\n                if m.author.bot or 'thelineshift.com' not in cont or 'code=' not in cont:\n                    continue\n                url = cont.strip().strip('`').strip('<>').split()[0]\n                if x_creds_load().get('oauth2_access'):\n                    log.append('already linked; skipping exchange')\n                else:\n                    await run_command({'action': 'x_link_finish', 'url': url}, guild, log)\n                try:\n                    await m.delete()\n                    log.append('deleted link message from #updates')\n                except Exception as e:\n                    log.append(f'delete failed: {e}')\n                found = True\n            if not found:\n                log.append('x_link_scan: no link message found in #updates')\n    elif a == 'x_link_start':\n        import secrets as _s, hashlib as _h\n        from urllib.parse import urlencode as _ue\n        ver = _s.token_urlsafe(64)[:64]\n        ch = base64.urlsafe_b64encode(_h.sha256(ver.encode()).digest()).decode().rstrip('=')\n        pk = {'verifier': ver, 'state': _s.token_hex(8)}\n        await asyncio.to_thread(gh_put, 'x_pkce.json', pk, 'pkce link')\n        c = x_creds_load()\n        q = _ue({'response_type': 'code', 'client_id': c.get('client_id', ''), 'redirect_uri': X_REDIRECT,\n                 'scope': 'tweet.read tweet.write users.read follows.read follows.write like.read like.write media.write offline.access', 'state': pk['state'],\n                 'code_challenge': ch, 'code_challenge_method': 'S256'})\n        log.append('AUTH URL: https://twitter.com/i/oauth2/authorize?' + q)\n    elif a == 'x_link_finish':\n        from urllib.parse import urlparse, parse_qs, urlencode as _ue2\n        qs = parse_qs(urlparse(cmd['url']).query)\n        code = qs.get('code', [None])[0]\n        if not code:\n            log.append('x_link_finish: no code in URL')\n        else:\n            c = x_creds_load()\n            try:\n                pk = json.loads(base64.b64decode(gh_get('x_pkce.json', ref=QUEUE_BRANCH)['content']).decode())\n            except Exception:\n                pk = {}\n            basic = base64.b64encode(f\"{c['client_id']}:{c['client_secret']}\".encode()).decode()\n            data = {'grant_type': 'authorization_code', 'code': code, 'redirect_uri': X_REDIRECT,\n                    'code_verifier': pk.get('verifier', ''), 'client_id': c['client_id']}\n            req = urllib.request.Request('https://api.x.com/2/oauth2/token',\n                                         data=_ue2(data).encode(), method='POST',\n                                         headers={'Content-Type': 'application/x-www-form-urlencoded',\n                                                  'Authorization': f'Basic {basic}'})\n            try:\n                with urllib.request.urlopen(req, timeout=20) as r:\n                    t = json.load(r)\n                c['oauth2_access'] = t['access_token']\n                c['oauth2_refresh'] = t.get('refresh_token', '')\n                c['oauth2_expires_at'] = time.time() + t.get('expires_in', 7200) - 120\n                await asyncio.to_thread(gh_put, 'x_creds.json', c, 'oauth2 user token linked')\n                res = None\n                log.append('x_link_finish OK: tokens stored \u2014 X user link LIVE')\n                try:\n                    hello = cmd.get('text') or f'\ud83d\udef0\ufe0f SHiFT native X link online ({time.strftime(\"%H:%M UTC\")}).'\n                    res = await asyncio.to_thread(x_post_native, hello)\n                    log.append(f'x_link_finish hello-post OK: tweet id {res.get(\"data\", {}).get(\"id\") if res else None}')\n                except Exception as he:\n                    log.append(f'x_link_finish hello-post skipped (link still LIVE): {he}')\n            except urllib.error.HTTPError as e:\n                log.append(f'x_link_finish FAIL: HTTP {e.code}: {e.read()[:250]}')\n            except Exception as e:\n                log.append(f'x_link_finish FAIL: {e}')\n    elif a == 'x_diag':\n        c = x_creds_load()\n        # (a) bearer app-only read\n        try:\n            req = urllib.request.Request('https://api.x.com/2/users/by/username/TheLineShift',\n                                         headers={'Authorization': f\"Bearer {c.get('bearer_token', '')}\"})\n            with urllib.request.urlopen(req, timeout=20) as r:\n                d = json.load(r)\n            log.append(f\"x_diag bearer OK: id {d.get('data', {}).get('id')}\")\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:200]\n                except Exception: pass\n            log.append(f'x_diag bearer FAIL: {e} {body}')\n        # (b) oauth1 user-context read\n        try:\n            import hmac, hashlib, secrets\n            from urllib.parse import quote as _uq\n            url = 'https://api.x.com/2/users/me'\n            op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': secrets.token_hex(16),\n                  'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),\n                  'oauth_token': c['access_token'], 'oauth_version': '1.0'}\n            q = lambda s: _uq(str(s), safe='')\n            base = '&'.join(['GET', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])\n            key = f\"{q(c['api_secret'])}&{q(c['access_token_secret'])}\"\n            op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()\n            hdr = 'OAuth ' + ', '.join(f'{k}=\"{q(v)}\"' for k, v in sorted(op.items()))\n            req = urllib.request.Request(url, headers={'Authorization': hdr})\n            with urllib.request.urlopen(req, timeout=20) as r:\n                d = json.load(r)\n            log.append(f\"x_diag oauth1 GET OK: @{d.get('data', {}).get('username')}\")\n        except Exception as e:\n            body = ''\n            if hasattr(e, 'read'):\n                try: body = e.read()[:200]\n                except Exception: pass\n            log.append(f'x_diag oauth1 GET FAIL: {e} {body}')\n    elif a == 'x_test':\n        try:\n            res = await asyncio.to_thread(x_post_native, cmd.get('text', '\\U0001F6F0\\uFE0F SHiFT native X link online. The board never sleeps.'))\n            log.append(f'x_test OK: tweet id {res.get(\"data\", {}).get(\"id\") if res else None}')\n        except Exception as e:\n            log.append(f'x_test FAIL: {e}')\n    elif a == 'set_icon':\n        req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})\n        data = urllib.request.urlopen(req, timeout=25).read()\n        await guild.edit(icon=data)\n        log.append('server icon updated')\n    elif a == 'delete_channel_id':\n        ch = guild.get_channel(int(cmd['id']))\n        if ch:\n            await ch.delete()\n            log.append(f'deleted #{ch.name} ({cmd[\"id\"]})')\n        else:\n            log.append(f'delete_channel_id: {cmd[\"id\"]} not found')\n    elif a == 'delete_channel':\n        ch = find_channel(guild, cmd['channel'])\n        await ch.delete()\n        log.append(f'deleted #{ch.name}')\n    elif a == 'create_channel':\n        kwargs = {}\n        if cmd.get('private_for'):\n            role = find_role(guild, cmd['private_for'])\n            if role:\n                kwargs['overwrites'] = {guild.default_role: discord.PermissionOverwrite(view_channel=False),\n                                        role: discord.PermissionOverwrite(view_channel=True)}\n        ch = await guild.create_text_channel(cmd['name'], **kwargs)\n        log.append(f'created #{ch.name}')\n    elif a == 'list_roles':\n        log.append('ROLES: ' + ' | '.join(\n            f'{r.name} (pos={r.position}, members={len(r.members)})'\n            for r in sorted(guild.roles, key=lambda x: x.position, reverse=True)))\n    elif a == 'audit_roles':\n        lines = []\n        async for e in guild.audit_logs(action=discord.AuditLogAction.member_role_update, limit=25):\n            t = getattr(e, 'target', None)\n            if t is not None:\n                lines.append(f'{getattr(t, \"name\", \"?\")}({getattr(t, \"id\", \"?\")}) by {e.user} at {e.created_at:%m-%d %H:%M}')\n        log.append('AUDIT: ' + (' | '.join(lines) if lines else 'no member_role_update entries'))\n    elif a == 'read_pins':\n        ch = find_channel(guild, cmd['channel'])\n        pins = await ch.pins()\n        if not pins:\n            log.append(f'no pins in #{ch.name}')\n        for i, m in enumerate(pins):\n            log.append(f'PIN{i} by {m.author}: {(m.content or \"\")[:400]}')\n            for e in m.embeds:\n                log.append(f'  EMBED title={e.title!r} desc={(e.description or \"\")[:600]!r}')\n                for f in e.fields:\n                    log.append(f'    FIELD {f.name!r}: {(f.value or \"\")[:300]!r}')\n            for att in m.attachments:\n                log.append(f'  ATTACH: {att.filename} {att.url[:120]}')\n    elif a == 'replace_pinned':\n        ch = find_channel(guild, cmd['channel'])\n        pins = await ch.pins()\n        marker = cmd.get('marker', '')\n        removed = 0\n        for m in pins:\n            if not marker or marker.lower() in (m.content or '').lower() or len(pins) == 1:\n                try:\n                    await m.unpin()\n                    removed += 1\n                except Exception:\n                    pass\n                try:\n                    await m.delete()\n                    log.append('old pinned message deleted')\n                except Exception:\n                    log.append('old pinned message unpinned (could not delete - not mine)')\n        m = await ch.send(cmd['content'])\n        await m.pin()\n        log.append(f'replaced pin in #{ch.name} (unpinned {removed})')\n    elif a == 'read_recent':\n        n = int(cmd.get('limit', 4))\n        if cmd.get('channel') == 'all':\n            targets = list(guild.text_channels)\n        else:\n            targets = [find_channel(guild, cmd['channel'])]\n        for ch in targets:\n            if ch is None:\n                continue\n            count = 0\n            try:\n                async for m in ch.history(limit=n):\n                    log.append(f'#{ch.name} | {str(m.author)[:22]}: {(m.content or \"\")[:170]}')\n                    count += 1\n            except Exception as e:\n                log.append(f'#{ch.name}: read error {e}')\n            if count == 0:\n                log.append(f'#{ch.name}: (empty)')\n    elif a == 'read_full':\n        n = int(cmd.get('limit', 6))\n        ch = find_channel(guild, cmd['channel'])\n        if ch is None:\n            log.append(f\"read_full: channel {cmd.get('channel')} not found\")\n        else:\n            count = 0\n            try:\n                async for m in ch.history(limit=n):\n                    body = (m.content or '')[:950].replace('\\n', ' \\\\n ')\n                    log.append(f'FULL #{ch.name} id={m.id} | {str(m.author)[:20]}: {body}')\n                    count += 1\n            except Exception as e:\n                log.append(f'#{ch.name}: read_full error {e}')\n            if count == 0:\n                log.append(f'#{ch.name}: (empty)')\n    elif a == 'delete_message':\n        ch = find_channel(guild, cmd['channel'])\n        marker = cmd.get('marker', '')\n        done = False\n        async for m in ch.history(limit=50):\n            if marker.lower() in (m.content or '').lower():\n                await m.delete()\n                log.append(f'deleted message in #{ch.name} (marker match)')\n                done = True\n                break\n        if not done:\n            log.append(f'delete_message: marker not found in #{ch.name}')\n    elif a == 'purge_system':\n        total = 0\n        for ch in guild.text_channels:\n            try:\n                async for m in ch.history(limit=30):\n                    if m.type == discord.MessageType.pins_add:\n                        await m.delete()\n                        total += 1\n            except Exception:\n                pass\n        log.append(f'purged {total} pin notices server-wide')\n    elif a == 'check_giveaway':\n        ch = find_channel(guild, cmd.get('channel', 'giveaway'))\n        target = None\n        async for m in ch.history(limit=100):\n            if m.author == client.user and '\\U0001F381' in (m.content or ''):\n                target = m\n                break\n        if target is None:\n            log.append('check_giveaway: no giveaway post found')\n        else:\n            n = 0\n            for react in target.reactions:\n                if str(react.emoji) == '\\U0001F389':\n                    n = react.count\n            log.append(f'check_giveaway: post found, \\U0001F389 reactions={n}')\n    elif a == 'list_members':\n        count = 0\n        async for m in guild.fetch_members(limit=None):\n            roles = [r.name for r in m.roles if r.name != '@everyone']\n            log.append(f'{m.name} ({m.id}) joined {m.joined_at:%m-%d %H:%M} roles={roles}')\n            count += 1\n        log.append(f'total members: {count}')\n    elif a == 'set_avatar':\n        if cmd.get('path'):\n            d = await asyncio.to_thread(gh_get, cmd['path'], 'main')\n            data = base64.b64decode(d['content'])\n        else:\n            req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})\n            data = urllib.request.urlopen(req, timeout=25).read()\n        await client.user.edit(avatar=data)\n        log.append(f'bot avatar updated ({len(data) // 1024} KB)')\n    elif a == 'set_nick':\n        await guild.me.edit(nick=cmd.get('nick', BOT_NICK))\n        log.append(f'nick set -> {guild.me.nick}')\n    elif a == 'set_status':\n        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=cmd.get('status', BOT_STATUS)))\n        log.append('status set')\n    elif a == 'make_webhook':\n        ch = find_channel(guild, cmd['channel'])\n        wh = await ch.create_webhook(name=cmd.get('name', 'TheLineShift Bot'))\n        log.append(f'webhook for #{ch.name}: {wh.url}')\n    elif a == 'audit_all':\n        lines = []\n        async for e in guild.audit_logs(limit=25):\n            t = getattr(e, 'target', None)\n            tn = getattr(t, 'name', None) or str(getattr(t, 'id', '?'))\n            lines.append(f'{e.action.name} target={tn} by={e.user}')\n        log.append('AUDITALL: ' + (' | '.join(lines) if lines else 'empty'))\n    elif a == 'add_role':\n        m = await resolve_member(guild, cmd.get('member', ''))\n        role = find_role(guild, cmd.get('role', ''))\n        if not m or not role:\n            log.append(f'add_role FAILED member={cmd.get(\"member\")} found={bool(m)} role={cmd.get(\"role\")} found={bool(role)}')\n        elif role in m.roles:\n            log.append(f'{m.name} already has {role.name}')\n        else:\n            await m.add_roles(role, reason='LineShift manual role fix')\n            log.append(f'added {role.name} -> {m.name}')\n    elif a == 'remove_role':\n        m = await resolve_member(guild, cmd.get('member', ''))\n        role = find_role(guild, cmd.get('role', ''))\n        if m and role and role in m.roles:\n            await m.remove_roles(role, reason='LineShift manual role fix')\n            log.append(f'removed {role.name} from {m.name}')\n        else:\n            log.append(f'remove_role skipped member_found={bool(m)} role_found={bool(role)}')\n    elif a == 'member_roles':\n        m = await resolve_member(guild, cmd.get('member', ''))\n        if m:\n            log.append(f'{m.name} roles: ' + ', '.join(r.name for r in m.roles))\n        else:\n            log.append(f'member not found: {cmd.get(\"member\")}')\n    elif a == 'fix_role_hierarchy':\n        top = guild.me.top_role.position\n        updates = {}\n        pos = 1\n        for key in ('lock', 'sharp', 'whale'):\n            r = find_role(guild, key)\n            if r:\n                updates[r] = pos\n                pos += 1\n        if updates:\n            await guild.edit_role_positions(updates, reason='LineShift hierarchy fix')\n            log.append('hierarchy: ' + ', '.join(f'{r.name}->{p}' for r, p in updates.items()))\n        else:\n            log.append('hierarchy: nothing to move')\n    else:\n        log.append(f'unknown action: {a}')\n\n@tasks.loop(seconds=60)\nasync def poll():\n    try:\n        if not GH_TOKEN:\n            return\n        data = await asyncio.to_thread(fetch_commands)\n        if not data:\n            return\n        seq = data.get('seq', 0)\n        state = await asyncio.to_thread(get_state)\n        if not state:\n            return\n        if seq <= state.get('executed_seq', 0):\n            return\n        guild = client.guilds[0] if client.guilds else None\n        if not guild:\n            return\n        done_cmd = state.get('executed_cmd_seq', 0)\n        log = [f'seq {seq} executed {time.strftime(\"%Y-%m-%d %H:%M UTC\")}']\n        ran = 0\n        for cmd in data.get('commands', []):\n            if cmd.get('seq', 0) <= done_cmd:\n                continue\n            try:\n                await run_command(cmd, guild, log)\n                ran += 1\n                done_cmd = max(done_cmd, cmd.get('seq', 0))\n            except Exception as e:\n                log.append(f'ERROR {cmd.get(\"action\")}: {e}')\n        state['executed_cmd_seq'] = done_cmd\n        if ran == 0:\n            log.append('no new commands')\n        state['executed_seq'] = seq\n        state['last_log'] = log\n        try:\n            await asyncio.to_thread(gh_put, 'bot_state.json', state, f'bot executed seq {seq}')\n        except Exception as e:\n            print('state push failed:', e)\n    except Exception as e:\n        print('poll error:', e)\n\nSCAN_HOURS_ET = [0, 4, 8, 12, 16, 20]\nEVENT_HOURS_UTC = [0, 4, 8, 12, 16, 20]\n\n@tasks.loop(seconds=60)\nasync def countdown():\n    try:\n        if not client.guilds:\n            return\n        guild = client.guilds[0]\n        now = time.gmtime()\n        et_h = (now.tm_hour - 4) % 24\n        et_m = now.tm_min\n        marker = None\n        for h in SCAN_HOURS_ET:\n            if et_h == (h - 1) % 24 and et_m == 0:\n                marker = ('60', h)\n            elif et_h == (h - 1) % 24 and et_m == 50:\n                marker = ('10', h)\n        if not marker:\n            return\n        daykey = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}-{et_h:02d}{et_m:02d}'\n        if daykey in countdown.fired:\n            return\n        countdown.fired.add(daykey)\n        ch = find_channel(guild, 'general-chat')\n        if not ch:\n            return\n        hh = marker[1] % 12 if marker[1] % 12 else 12\n        label = f'{hh} {\"AM\" if marker[1] < 12 else \"PM\"} ET'\n        state = await asyncio.to_thread(get_state)\n        # PERSISTED dedupe (survives restarts + blocks duplicate replicas):\n        fired = state.get('count_fired', [])\n        if daykey in fired:\n            return\n        today = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}'\n        yest = (datetime.date(now.tm_year, now.tm_mon, now.tm_mday) - datetime.timedelta(days=1)).strftime('%Y%m%d')\n        state['count_fired'] = [k for k in fired + [daykey] if k.startswith(today) or k.startswith(yest)]\n        rid = state.get('scan_role_id')\n        # SPAM LAW: exactly ONE notification per scan \u2014 T-10 pings the role, T-60 is text-only hype\n        mention = f'<@&{rid}> ' if (rid and marker[0] == '10') else ''\n        if marker[0] == '60':\n            pool = COUNT_60\n            idx = state.get('count60_idx', 0)\n            state['count60_idx'] = idx + 1\n        else:\n            pool = COUNT_10\n            idx = state.get('count10_idx', 0)\n            state['count10_idx'] = idx + 1\n        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'countdown rotation')\n        await ch.send(mention + pool[idx % len(pool)].format(label=label))\n    except Exception as e:\n        print('countdown error:', e)\ncountdown.fired = set()\n\nPICK_ODDS = re.compile(r'[-+]\\d{3}')\nUNITS_PAT = re.compile(r'\\b\\d+(\\.\\d+)?u\\b')\nTIMEDATE_PAT = re.compile(r'(\\b\\d{1,2}(:\\d{2})?\\s?(AM|PM|am|pm)\\b)|(\\bET\\b|EST|EDT)|tonight|today|tomorrow|(\\b\\d{1,2}/\\d{1,2}\\b)', re.I)\nPICK_CHANNELS = ('free-pick', 'daily-locks', 'all-picks', 'every-play', '100-to-1000')\n\n@tasks.loop(seconds=60)\nasync def stripe_sync():\n    try:\n        key = os.environ.get('STRIPE_KEY', '')\n        if not key or not client.guilds:\n            return\n        guild = client.guilds[0]\n        def sget(path):\n            req = urllib.request.Request('https://api.stripe.com/v1/' + path,\n                                         headers={'Authorization': f'Bearer {key}'})\n            with urllib.request.urlopen(req, timeout=20) as r:\n                return json.load(r)\n        sessions = await asyncio.to_thread(sget, 'checkout/sessions?limit=100')\n        subs = await asyncio.to_thread(sget, 'subscriptions?limit=100&status=all')\n        known = await asyncio.to_thread(gh_get_json, 'stripe_members.json') or {'members': {}}\n        members = known.setdefault('members', {})\n        for s in sessions.get('data', []):\n            if s.get('mode') != 'subscription' or not s.get('customer'):\n                continue\n            uname = next((f.get('text', {}).get('value') for f in (s.get('custom_fields') or [])\n                          if f.get('key') == 'discord_username'), None)\n            tier = (s.get('metadata') or {}).get('tier')\n            cid = s['customer']\n            if cid not in members and uname and tier:\n                members[cid] = {'username': uname.strip().lstrip('@'), 'tier': tier,\n                                'discord_id': None, 'status': None, 'welcomed': False}\n        sub_status = {s['customer']: s for s in subs.get('data', [])}\n        lab = find_channel(guild, 'shift-lab')\n        changed = False\n        for cid, info in members.items():\n            sub = sub_status.get(cid)\n            status = sub['status'] if sub else 'canceled'\n            prev = info.get('status')\n            if prev == status:\n                continue\n            info['status'] = status\n            changed = True\n            member = None\n            if info.get('discord_id'):\n                member = guild.get_member(int(info['discord_id']))\n            if not member:\n                member = await resolve_member(guild, info.get('username', ''))\n                if member:\n                    info['discord_id'] = str(member.id)\n            if not member:\n                if status in ('active', 'trialing') and not info.get('alerted'):\n                    info['alerted'] = True\n                    if lab:\n                        await lab.send(f\"\u26a0\ufe0f STRIPE: paid {info.get('tier')} sub but Discord user `{info.get('username')}` not found (customer {cid}) \u2014 needs manual role.\")\n                continue\n            active = status in ('active', 'trialing')\n            expanded = []\n            if active:\n                expanded = {'lock': ['lock'], 'sharp': ['sharp', 'lock'], 'whale': ['whale', 'sharp', 'lock']}.get(info.get('tier'), [])\n            for word in ('lock', 'sharp', 'whale'):\n                role = next((r for r in guild.roles if word in r.name.lower()), None)\n                if not role:\n                    continue\n                has = role in member.roles\n                should = word in expanded\n                if should and not has:\n                    await member.add_roles(role, reason='stripe subscription active')\n                elif has and not should and not active:\n                    await member.remove_roles(role, reason='stripe subscription ' + status)\n            if active and not info.get('welcomed'):\n                info['welcomed'] = True\n                gen = find_channel(guild, 'general-chat')\n                if gen:\n                    await gen.send(f\"\ud83c\udf89 Welcome {member.mention} to **{info.get('tier', '').upper()}** \u2014 your room access is live! Check your new channels. \ud83e\udd16\")\n                await asyncio.to_thread(log_event, 'new_sub', f\"{info.get('username')} subscribed {info.get('tier')}\")\n            if status == 'past_due' and not info.get('pd_alert'):\n                info['pd_alert'] = True\n                if lab:\n                    await lab.send(f\"\u26a0\ufe0f STRIPE: {info.get('username')} ({info.get('tier')}) payment PAST DUE \u2014 roles kept during grace.\")\n            if status == 'canceled' and prev in ('active', 'trialing', 'past_due'):\n                await asyncio.to_thread(log_event, 'sub_canceled', f\"{info.get('username')} canceled {info.get('tier')} \u2014 roles removed\")\n                if lab:\n                    await lab.send(f\"\ud83d\udcc9 STRIPE: {info.get('username')} canceled ({info.get('tier')}) \u2014 roles removed.\")\n        if changed:\n            await asyncio.to_thread(gh_put, 'stripe_members.json', known, 'stripe sync')\n    except Exception as e:\n        print('stripe_sync error:', e)\n\n@tasks.loop(seconds=300)\nasync def crypto_sync():\n    try:\n        key = os.environ.get('NOWPAYMENTS_KEY', '')\n        if not key or not client.guilds:\n            return\n        guild = client.guilds[0]\n        known = await asyncio.to_thread(gh_get_json, 'crypto_members.json') or {'members': []}\n        members = known.setdefault('members', [])\n        changed = False\n        lab = find_channel(guild, 'shift-lab')\n        for m in members:\n            if m.get('expires') or m.get('expired'):\n                continue\n            pid = m.get('payment_id')\n            if not pid:\n                continue\n            try:\n                p = await asyncio.to_thread(_http_json, f'https://api.nowpayments.io/v1/payment/{pid}', None, {'x-api-key': key})\n            except Exception:\n                continue\n            status = p.get('payment_status', '')\n            if status == m.get('status'):\n                continue\n            m['status'] = status\n            changed = True\n            member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None\n            if status in ('finished', 'confirmed'):\n                m['expires'] = time.time() + 30 * 86400\n                if member:\n                    for word in {'lock': ['lock'], 'sharp': ['sharp', 'lock'], 'whale': ['whale', 'sharp', 'lock']}.get(m['tier'], []):\n                        role = next((r for r in guild.roles if word in r.name.lower()), None)\n                        if role and role not in member.roles:\n                            await member.add_roles(role, reason='crypto payment confirmed')\n                    gen = find_channel(guild, 'general-chat')\n                    if gen:\n                        await gen.send(f'\ud83c\udf89 Welcome {member.mention} to **{m[\"tier\"].upper()}** (crypto) \u2014 30 days of access is live!')\n                    await asyncio.to_thread(log_event, 'crypto_sub', f'{member} paid {m.get(\"coin\")} for {m[\"tier\"]}')\n            elif status in ('failed', 'expired', 'refunded'):\n                m['expired'] = True\n                if member:\n                    try:\n                        await member.send(f\"\u274c Your crypto payment {pid} ended with status **{status}** \u2014 no charge completed. Try again anytime with `!crypto {m['tier']} <coin>` in #\ud83d\udc8eupgrade.\")\n                    except Exception:\n                        pass\n                await asyncio.to_thread(log_event, 'crypto_failed', f'{pid} {status}')\n        now = time.time()\n        for m in members:\n            if not m.get('expires') or m.get('expired'):\n                continue\n            if now > m['expires'] + 3 * 86400 and not m.get('expired'):\n                m['expired'] = True\n                changed = True\n                member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None\n                if member:\n                    for word in ('lock', 'sharp', 'whale'):\n                        role = next((r for r in guild.roles if word in r.name.lower()), None)\n                        if role and role in member.roles:\n                            await member.remove_roles(role, reason='crypto 30-day access expired')\n                    await asyncio.to_thread(log_event, 'crypto_expired', f\"{m['discord_id']} {m['tier']} expired - roles removed\")\n                    if lab:\n                        await lab.send(f\"\u23f0 Crypto access expired for <@{m['discord_id']}> ({m['tier']}) \u2014 roles removed.\")\n            elif now > m['expires'] - 2 * 86400 and not m.get('reminded'):\n                m['reminded'] = True\n                changed = True\n                member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None\n                if member:\n                    try:\n                        await member.send(f\"\u23f0 Your **{m['tier'].upper()}** crypto access expires in ~2 days. Renew anytime with `!crypto {m['tier']} <coin>` in #\ud83d\udc8eupgrade!\")\n                    except Exception:\n                        pass\n        if changed:\n            await asyncio.to_thread(gh_put, 'crypto_members.json', known, 'crypto sync')\n    except Exception as e:\n        print('crypto_sync error:', e)\n\n@tasks.loop(seconds=1800)\nasync def audit():\n    try:\n        if not client.guilds:\n            return\n        guild = client.guilds[0]\n        flags = []\n        for ch in guild.text_channels:\n            if not any(k in ch.name for k in PICK_CHANNELS):\n                continue\n            try:\n                async for m in ch.history(limit=15):\n                    if client.user and m.author.id == client.user.id:\n                        continue\n                    txt = m.content or ''\n                    if PICK_ODDS.search(txt) and UNITS_PAT.search(txt) and not TIMEDATE_PAT.search(txt):\n                        flags.append(f'#{ch.name} | msg {m.id} | {txt[:90]}')\n            except Exception:\n                pass\n        pulse = {}\n        for ch in guild.text_channels:\n            if not any(k in ch.name for k in PICK_CHANNELS + ('receipts', 'giveaway', 'general-chat', 'promotions')):\n                continue\n            try:\n                msgs = [m async for m in ch.history(limit=1)]\n                if msgs:\n                    pulse[ch.name] = msgs[0].created_at.strftime('%Y-%m-%d %H:%M UTC')\n            except Exception:\n                pass\n        # --- resolution watch: every pick registered in picks.json must settle into receipts\n        now_ts = time.time()\n        res_flags = []\n        picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')\n        for p in (picks_doc.get('picks') or []):\n            try:\n                if str(p.get('result', '')).upper() not in ('', 'PENDING', 'NONE', 'NULL'):\n                    continue\n                gt = pick_game_utc(p.get('date', ''), p.get('time_et'))\n                if gt and now_ts - gt > 4 * 3600:\n                    res_flags.append(f\"{p.get('id')} | {p.get('desc')} {p.get('odds')} | tier={p.get('tier')}\")\n            except Exception:\n                pass\n        # --- challenge watch: a bet must be registered daily by 6 PM ET\n        chal_flags = []\n        chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')\n        try:\n            now_et = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)\n            today_et = now_et.strftime('%Y-%m-%d')\n            plays = chal.get('plays') or []\n            if now_et.hour >= 18 and not any(pl.get('date') == today_et for pl in plays):\n                chal_flags.append(f'no challenge bet registered for {today_et} (due 6 PM ET)')\n            for pl in plays:\n                if pl.get('result') in (None, ''):\n                    gt = pick_game_utc(pl.get('date', ''), pl.get('time_et'))\n                    if gt and now_ts - gt > 4 * 3600:\n                        chal_flags.append(f\"challenge bet #{pl.get('n')} unsettled: {pl.get('pick')}\")\n        except Exception:\n            pass\n        # --- giveaway watch: Sunday 6 PM ET draw must be posted\n        gw_flags = []\n        try:\n            now_et2 = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)\n            if now_et2.strftime('%a') == 'Sun' and now_et2.hour >= 19:\n                gwp = pulse.get('\\U0001F381giveaway', '')\n                if not gwp.startswith(now_et2.strftime('%Y-%m-%d')):\n                    gw_flags.append('giveaway: no winner post today (Sunday draw overdue)')\n        except Exception:\n            pass\n        state = await asyncio.to_thread(get_state)\n        if state is not None:\n            state['time_audit'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': flags[:10]}\n            state['room_pulse'] = pulse\n            state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}\n            state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}\n            state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}\n            state['bot_version'] = '8.9.44'\n            try:\n                await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')\n            except Exception:\n                pass\n        print(f'audit: time={len(flags)} res={len(res_flags)} chal={len(chal_flags)} gw={len(gw_flags)}')\n    except Exception as e:\n        print('audit error:', e)\n\n# ---------- AUTO-GRADER (v8.3): event-driven results, not clock-driven ----------\nESPN = {'MLB': 'baseball/mlb', 'NBA': 'basketball/nba', 'WNBA': 'basketball/wnba',\n        'NHL': 'hockey/nhl', 'NFL': 'football/nfl'}\nTIER_BADGE = {'lock': '\ud83d\udd12 LOCK ROOM', 'sharp': '\ud83d\udcca SHARP ROOM', 'whale': '\ud83d\udc0b WHALE ROOM',\n              'free': '\ud83c\udd93 FREE PICK', 'challenge': '\ud83d\udcb5 CHALLENGE'}\n\ndef norm_txt(s):\n    return re.sub(r'[^a-z]', '', (s or '').lower())\n\ndef team_tokens(s):\n    return re.findall(r'[a-z]+', (s or '').lower())\n\ndef side_in_desc(team_field, desc):\n    # match by full name OR nickname (last token) as a WHOLE token in desc\n    if not team_field:\n        return False\n    if norm_txt(team_field) in norm_txt(desc):\n        return True\n    toks = team_tokens(team_field)\n    nick = toks[-1] if toks else ''\n    return bool(nick) and nick in set(team_tokens(desc))\n\ndef espn_fetch(sport, ymd):\n    url = f'https://site.api.espn.com/apis/site/v2/sports/{ESPN[sport]}/scoreboard?dates={ymd}'\n    req = urllib.request.Request(url, headers={'User-Agent': 'lineshift-bot'})\n    with urllib.request.urlopen(req, timeout=15) as r:\n        return json.load(r)\n\ndef find_event(sb, away, home, prefer_ts=None):\n    na, nh = norm_txt(away), norm_txt(home)\n    best = None\n    for ev in sb.get('events', []):\n        try:\n            comp = ev['competitions'][0]\n            teams = {c['homeAway']: c for c in comp['competitors']}\n            if na and na in norm_txt(teams['away']['team'].get('displayName', '')) \\\n               and nh and nh in norm_txt(teams['home']['team'].get('displayName', '')):\n                completed = bool(comp.get('status', {}).get('type', {}).get('completed'))\n                if prefer_ts is None:\n                    return teams, completed\n                try:\n                    start = time.mktime(time.strptime(ev['date'][:19], '%Y-%m-%dT%H:%M:%S'))\n                except Exception:\n                    start = prefer_ts\n                d = abs(start - prefer_ts)\n                if best is None or d < best[0]:\n                    best = (d, teams, completed)\n        except Exception:\n            continue\n    if best is not None:\n        return best[1], best[2]\n    return None, False\n\ndef pick_start_ts(p):\n    try:\n        d = p.get('date', '')\n        t = (p.get('time_et') or '').strip().upper()\n        m = re.match(r'^(\\d{1,2}):(\\d{2})\\s*(AM|PM)$', t)\n        if not d or not m:\n            return None\n        hh = int(m.group(1)) % 12 + (12 if m.group(3) == 'PM' else 0)\n        y, mo, dd = int(d[:4]), int(d[5:7]), int(d[8:10])\n        import calendar\n        return calendar.timegm((y, mo, dd, hh, int(m.group(2)), 0)) + 4 * 3600\n    except Exception:\n        return None\n\ndef profit_units(odds, units):\n    o = float(odds)\n    return units * (o / 100.0 if o > 0 else 100.0 / abs(o))\n\ndef grade_pick(p, away_s, home_s):\n    desc = (p.get('desc') or '').lower()\n    if (p.get('market') or '').lower() == 'total' or 'over' in desc or 'under' in desc:\n        m = re.search(r'(over|under)\\s*(\\d+(\\.\\d+)?)', desc)\n        if not m:\n            return None\n        line, tot = float(m.group(2)), away_s + home_s\n        if tot == line:\n            return 'PUSH', 0.0\n        won = (m.group(1) == 'over') == (tot > line)\n        u = float(p['units']) if p.get('units') is not None else 1.0\n        return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)\n    side = None\n    if side_in_desc(p.get('homeTeam'), desc):\n        side = 'home'\n    elif side_in_desc(p.get('awayTeam'), desc):\n        side = 'away'\n    if not side:\n        return None\n    won = (home_s > away_s) if side == 'home' else (away_s > home_s)\n    u = float(p['units']) if p.get('units') is not None else 1.0\n    return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)\n\nXKEY = os.environ.get('X_SCHEDULER_KEY', '')\n\ndef x_key_load():\n    if XKEY:\n        return XKEY\n    try:\n        d = gh_get('x_key.txt', ref=QUEUE_BRANCH)\n        return base64.b64decode(d['content']).decode().strip()\n    except Exception:\n        return ''\n\ndef x_creds_load():\n    try:\n        d = gh_get('x_creds.json', ref=QUEUE_BRANCH)\n        return json.loads(base64.b64decode(d['content']).decode())\n    except Exception:\n        return {}\n\nX_REDIRECT = 'https://thelineshift.com'\n\ndef x_oauth2_refresh(c):\n    import urllib.parse\n    data = {'grant_type': 'refresh_token', 'refresh_token': c['oauth2_refresh'], 'client_id': c['client_id']}\n    basic = base64.b64encode(f\"{c['client_id']}:{c['client_secret']}\".encode()).decode()\n    req = urllib.request.Request('https://api.x.com/2/oauth2/token',\n                                 data=urllib.parse.urlencode(data).encode(), method='POST',\n                                 headers={'Content-Type': 'application/x-www-form-urlencoded',\n                                          'Authorization': f'Basic {basic}'})\n    with urllib.request.urlopen(req, timeout=20) as r:\n        t = json.load(r)\n    c['oauth2_access'] = t['access_token']\n    c['oauth2_refresh'] = t.get('refresh_token', c['oauth2_refresh'])\n    c['oauth2_expires_at'] = time.time() + t.get('expires_in', 7200) - 120\n    gh_put('x_creds.json', c, 'oauth2 user token refresh')\n    return c\n\ndef x_post_native(text):\n    c = x_creds_load()\n    if c.get('oauth2_access'):\n        if time.time() > c.get('oauth2_expires_at', 0):\n            c = x_oauth2_refresh(c)\n        req = urllib.request.Request('https://api.x.com/2/tweets',\n                                     data=json.dumps({'text': text}).encode(), method='POST',\n                                     headers={'Authorization': f\"Bearer {c['oauth2_access']}\",\n                                              'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})\n        try:\n            with urllib.request.urlopen(req, timeout=25) as r:\n                return json.load(r)\n        except urllib.error.HTTPError as e:\n            raise Exception(f'HTTP {e.code}: {e.read()[:300]}')\n    return x_post_oauth1(text)\n\ndef x_post_oauth1(text):\n    import hmac, hashlib, secrets, urllib.parse\n    c = x_creds_load()\n    if not all(c.get(k) for k in ('api_key', 'api_secret', 'access_token', 'access_token_secret')):\n        return None\n    url = 'https://api.x.com/2/tweets'\n    op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': secrets.token_hex(16),\n          'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),\n          'oauth_token': c['access_token'], 'oauth_version': '1.0'}\n    q = lambda s: urllib.parse.quote(str(s), safe='')\n    base = '&'.join(['POST', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])\n    key = f\"{q(c['api_secret'])}&{q(c['access_token_secret'])}\"\n    op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()\n    hdr = 'OAuth ' + ', '.join(f'{k}=\"{q(v)}\"' for k, v in sorted(op.items()))\n    req = urllib.request.Request(url, data=json.dumps({'text': text}).encode(), method='POST',\n                                 headers={'Authorization': hdr, 'Content-Type': 'application/json',\n                                          'User-Agent': 'TheLineShift/1.0'})\n    try:\n        with urllib.request.urlopen(req, timeout=25) as r:\n            return json.load(r)\n    except urllib.error.HTTPError as e:\n        raise Exception(f'HTTP {e.code}: {e.read()[:300]}')\n\n\ndef x_oauth1_sign(method, url, ck, cs, at, ats):\n    import hmac, hashlib, secrets, urllib.parse\n    op = {'oauth_consumer_key': ck, 'oauth_nonce': secrets.token_hex(16),\n          'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),\n          'oauth_version': '1.0'}\n    if at:\n        op['oauth_token'] = at\n    q = lambda s: urllib.parse.quote(str(s), safe='')\n    base = '&'.join([method.upper(), q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])\n    key = f\"{q(cs)}&{q(ats or '')}\"\n    op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()\n    return 'OAuth ' + ', '.join(f'{k}=\"{q(v)}\"' for k, v in sorted(op.items()))\n\ndef x_oauth1_sets(c):\n    sets = []\n    o1 = c.get('oauth1') or {}\n    if all(o1.get(k) for k in ('consumer_key', 'consumer_secret', 'access_token', 'access_token_secret')):\n        sets.append(('app2', o1['consumer_key'], o1['consumer_secret'], o1['access_token'], o1['access_token_secret']))\n    if all(c.get(k) for k in ('api_key', 'api_secret', 'access_token', 'access_token_secret')):\n        sets.append(('legacy', c['api_key'], c['api_secret'], c['access_token'], c['access_token_secret']))\n    return sets\n\ndef x_upload_media_oauth1(img, filename='image.png'):\n    import secrets\n    c = x_creds_load()\n    url = 'https://api.x.com/2/media/upload'\n    # path 1: OAuth2 user-context (works when token carries media.write scope)\n    if c.get('oauth2_access'):\n        try:\n            if time.time() > c.get('oauth2_expires_at', 0):\n                c = x_oauth2_refresh(c)\n            boundary = '----shift' + secrets.token_hex(8)\n            body = (f'--{boundary}\\r\\nContent-Disposition: form-data; name=\"media_category\"\\r\\n\\r\\ntweet_image\\r\\n'\n                    f'--{boundary}\\r\\nContent-Disposition: form-data; name=\"media\"; filename=\"{filename}\"\\r\\n'\n                    f'Content-Type: image/png\\r\\n\\r\\n').encode() + img + f'\\r\\n--{boundary}--\\r\\n'.encode()\n            req = urllib.request.Request(url, data=body, method='POST',\n                headers={'Authorization': f\"Bearer {c['oauth2_access']}\",\n                         'Content-Type': f'multipart/form-data; boundary={boundary}',\n                         'User-Agent': 'TheLineShift/1.0'})\n            with urllib.request.urlopen(req, timeout=60) as r:\n                d = json.load(r)\n            mid = d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id')\n            if mid:\n                return 'oauth2', str(mid)\n        except urllib.error.HTTPError as e:\n            try:\n                eb = e.read()[:250]\n            except Exception:\n                eb = b''\n            print(f'oauth2 upload path failed: HTTP {e.code}: {eb}')\n        except Exception as e:\n            print('oauth2 upload path failed:', e)\n    sets = x_oauth1_sets(c)\n    if not sets:\n        raise Exception('no working media credential (oauth2 rejected, no complete oauth1 set)')\n    errs = []\n    last = None\n    for name, ck, cs, at, ats in sets:\n        try:\n            boundary = '----shift' + secrets.token_hex(8)\n            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)\n            body = (f'--{boundary}\\r\\nContent-Disposition: form-data; name=\"media_category\"\\r\\n\\r\\ntweet_image\\r\\n'\n                    f'--{boundary}\\r\\nContent-Disposition: form-data; name=\"media\"; filename=\"{filename}\"\\r\\n'\n                    f'Content-Type: image/png\\r\\n\\r\\n').encode() + img + f'\\r\\n--{boundary}--\\r\\n'.encode()\n            req = urllib.request.Request(url, data=body, method='POST',\n                headers={'Authorization': hdr,\n                         'Content-Type': f'multipart/form-data; boundary={boundary}',\n                         'User-Agent': 'TheLineShift/1.0'})\n            with urllib.request.urlopen(req, timeout=60) as r:\n                d = json.load(r)\n            mid = d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id')\n            if not mid:\n                raise Exception(f'no media id in {str(d)[:200]}')\n            return name, str(mid)\n        except urllib.error.HTTPError as e:\n            try:\n                eb = e.read()[:250]\n            except Exception:\n                eb = b''\n            last = f'{name} HTTP {e.code}: {eb}'\n        except Exception as e:\n            last = f'{name}: {e}'\n        errs.append(str(last))\n    raise Exception(' || '.join(errs) if errs else 'upload failed')\n\ndef x_post_media_oauth2(text, media_id):\n    c = x_creds_load()\n    if time.time() > c.get('oauth2_expires_at', 0):\n        c = x_oauth2_refresh(c)\n    payload = json.dumps({'text': text, 'media': {'media_ids': [str(media_id)]}}).encode()\n    req = urllib.request.Request('https://api.x.com/2/tweets', data=payload, method='POST',\n        headers={'Authorization': f\"Bearer {c['oauth2_access']}\", 'Content-Type': 'application/json',\n                 'User-Agent': 'TheLineShift/1.0'})\n    try:\n        with urllib.request.urlopen(req, timeout=25) as r:\n            return json.load(r)\n    except urllib.error.HTTPError as e:\n        raise Exception(f'HTTP {e.code}: {e.read()[:300]}')\n\ndef x_post_media_oauth1(text, media_id, cred_name=None):\n    c = x_creds_load()\n    sets = x_oauth1_sets(c)\n    if cred_name:\n        sets = [s for s in sets if s[0] == cred_name] or sets\n    url = 'https://api.x.com/2/tweets'\n    payload = json.dumps({'text': text, 'media': {'media_ids': [str(media_id)]}}).encode()\n    last = None\n    for name, ck, cs, at, ats in sets:\n        try:\n            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)\n            req = urllib.request.Request(url, data=payload, method='POST',\n                headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})\n            with urllib.request.urlopen(req, timeout=25) as r:\n                return json.load(r)\n        except urllib.error.HTTPError as e:\n            try:\n                eb = e.read()[:250]\n            except Exception:\n                eb = b''\n            last = f'{name} HTTP {e.code}: {eb}'\n        except Exception as e:\n            last = f'{name}: {e}'\n    raise Exception(last or 'media tweet failed')\n\ndef x_post(text):\n    try:\n        res = x_post_native(text)\n        if res:\n            return res\n    except Exception as e:\n        print('native X post failed:', e)\n    key = x_key_load()\n    if not key:\n        return None\n    body = {\"platforms\": {\"x\": {\"enabled\": True, \"posts\": [{\"text\": text}]}}, \"publish_at\": \"now\"}\n    req = urllib.request.Request(\"https://api.typefully.com/v2/social-sets/321722/drafts\",\n                                 data=json.dumps(body).encode(), method=\"POST\",\n                                 headers={\"Authorization\": f\"Bearer {key}\", \"Content-Type\": \"application/json\"})\n    with urllib.request.urlopen(req, timeout=20) as r:\n        return json.load(r)\n\ndef tier_season_line(all_picks, key):\n    season = [p for p in all_picks if p.get('result') in ('WIN', 'LOSS', 'PUSH')\n              and str(p.get('date', '')).startswith('2026') and p.get('tier') == key]\n    w = sum(1 for p in season if p['result'] == 'WIN')\n    l = sum(1 for p in season if p['result'] == 'LOSS')\n    u = sum(units_of(p) for p in season)\n    return w, l, u\n\nCLOSERS_WIN = [\n    \"Posted before first pitch, graded in public. \ud83d\udc46\",\n    \"Green before first pitch, green on the timeline.\",\n    \"Another one stamped. Receipts stay up forever.\",\n    \"Called it, posted it, cashed it.\",\n    \"The model saw it early. The timeline proves it.\",\n    \"Winners hit different when you post them in advance.\",\n    \"Clockwork. On to the next edge.\",\n]\nCLOSERS_LOSS = [\n    \"We show every single one \u2014 that's why the wins mean something. \ud83d\udc46\",\n    \"Losses stay up too. Always have.\",\n    \"Red on the board, posted anyway. Full ledger, always.\",\n    \"No deletes here. Next edge already loading.\",\n    \"That one hurt. It's staying up anyway.\",\n    \"Public picks, public losses. That's the deal.\",\n]\nCLOSERS_PUSH = [\n    \"Every result posted, always. Link in bio \ud83d\udc46\",\n    \"Stake back, board moves on.\",\n    \"Push. Nothing lost, nothing hidden.\",\n]\n\ndef _pick_closer(pool, seed):\n    import hashlib as _hh\n    return pool[int(_hh.md5(str(seed).encode()).hexdigest(), 16) % len(pool)]\n\ndef x_receipt_text(r, all_picks=None, chal=None):\n    odds = r.get('odds'); odds_s = f\"({odds:+d})\" if isinstance(odds, int) else f\"({odds})\"\n    badge = TIER_BADGE.get(r.get('tier'), '')\n    rec_lines = []\n    if all_picks is not None and r.get('tier') != 'challenge':\n        tw, tl, tu = tier_season_line(all_picks, r.get('tier'))\n        sw, sl, sp, su, _, _ = season_block(all_picks)\n        rec_lines.append(f\"{badge.split()[0]} season {tw}-{tl} ({'+' if tu >= 0 else ''}{tu:.1f}u) \u00b7 \ud83d\udcc5 overall {sw}-{sl} ({'+' if su >= 0 else ''}{su:.1f}u)\")\n    if r.get('tier') == 'challenge' and chal:\n        rec = chal.get('record', {})\n        rec_lines.append(f\"\ud83d\udcb5 bankroll ${chal.get('balance', 0):.2f} ({rec.get('wins', 0)}-{rec.get('losses', 0)}) \u00b7 goal $1,000\")\n    rec_block = ('\\n' + '\\n'.join(rec_lines) + '\\n') if rec_lines else ''\n    seed = f\"{r.get('id')}{r.get('date')}{r.get('result')}\"\n    if r['result'] == 'WIN':\n        return (f\"\ud83e\uddfe RESULT {badge}: {r['desc']} {odds_s} \u2705 +{r.get('units')}u\\n{r.get('score')}\\n{rec_block}\\n\"\n                + _pick_closer(CLOSERS_WIN, seed))\n    if r['result'] == 'PUSH':\n        return (f\"\ud83e\uddfe RESULT {badge}: {r['desc']} {odds_s} \ud83d\udff0 PUSH \u2014 stake back.\\n{r.get('score')}\\n{rec_block}\\n\"\n                + _pick_closer(CLOSERS_PUSH, seed))\n    return (f\"\ud83e\uddfe RESULT {badge}: {r['desc']} {odds_s} \u274c {r.get('units')}u\\n{r.get('score')}\\n{rec_block}\\n\"\n            + _pick_closer(CLOSERS_LOSS, seed))\n\nasync def settle_challenge(guild, p):\n    try:\n        chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')\n        hit = None\n        for pl in chal.get('plays', []):\n            if pl.get('result') in (None, '') and pl.get('date') == p.get('date') \\\n               and norm_txt(pl.get('pick')) and norm_txt(pl['pick']) in norm_txt(p.get('desc')):\n                hit = pl\n                break\n        if not hit:\n            return\n        hit['result'] = p['result']\n        if p['result'] == 'WIN':\n            chal['balance'] = round(chal.get('balance', 100) + float(hit.get('toWin', 0)), 2)\n            chal['record']['wins'] += 1\n        elif p['result'] == 'LOSS':\n            chal['balance'] = round(chal.get('balance', 100) - float(hit.get('stake', 0)), 2)\n            chal['record']['losses'] += 1\n        chal['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())\n        await asyncio.to_thread(gh_put, 'challenge.json', chal, f\"settle bet #{hit.get('n')}: {p['result']}\", 'main')\n        ch = find_channel(guild, '100-to-1000')\n        if ch:\n            e = '\u2705' if p['result'] == 'WIN' else ('\ud83d\udff0' if p['result'] == 'PUSH' else '\u274c')\n            nxt = min(chal['balance'] * 0.2, chal['balance'])\n            await ch.send(f\"\ud83d\udcb5 **CHALLENGE BET #{hit.get('n')} \u2014 {p['result']}** {e}\\n\"\n                          f\"{p.get('desc')} ({p.get('odds')}) \u00b7 Final: {p.get('score')}\\n\"\n                          f\"**BALANCE: ${chal['balance']:.2f}** (goal: ${chal.get('goal', 1000):.0f}) \u00b7 record {chal['record']['wins']}-{chal['record']['losses']}\\n\"\n                          f\"BET #{hit.get('n') + 1} drops with tomorrow's card. \u2014 SHiFT \ud83e\udd16\")\n    except Exception as e:\n        print('settle_challenge error:', e)\n\n@tasks.loop(seconds=1200)\nasync def grader():\n    try:\n        if not client.guilds:\n            return\n        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')\n        new_results = []\n        for p in (doc.get('picks') or []):\n            try:\n                if str(p.get('result', '')).upper() not in ('', 'PENDING', 'NONE', 'NULL'):\n                    continue\n                sport = (p.get('sport') or '').upper()\n                if sport not in ESPN:\n                    continue  # tennis/esports/etc -> scan-engine research path\n                gt = pick_game_utc(p.get('date', ''), p.get('time_et'))\n                if not gt or time.time() < gt + 5400:\n                    continue  # earliest a final is possible\n                sb = await asyncio.to_thread(espn_fetch, sport, p['date'].replace('-', ''))\n                teams, ev_completed = find_event(sb, p.get('awayTeam'), p.get('homeTeam'), pick_start_ts(p))\n                if not teams or not ev_completed:\n                    continue\n                away_s = int(float(teams['away'].get('score') or 0))\n                home_s = int(float(teams['home'].get('score') or 0))\n                g = grade_pick(p, away_s, home_s)\n                if not g:\n                    continue\n                p['result'], u = g\n                p['score'] = f\"{p.get('awayTeam')} {away_s}, {p.get('homeTeam')} {home_s}\"\n                p['units_result'] = round(u, 2)\n                new_results.append(p)\n            except Exception:\n                continue\n        if not new_results:\n            return\n        doc['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())\n        await asyncio.to_thread(gh_put, 'picks.json', doc,\n                                'auto-grade: ' + ', '.join(p['id'] for p in new_results), 'main')\n        guild = client.guilds[0]\n        ch = find_channel(guild, 'receipts')\n        state = await asyncio.to_thread(get_state)\n        for p in new_results:\n            e = '\u2705' if p['result'] == 'WIN' else ('\ud83d\udff0' if p['result'] == 'PUSH' else '\u274c')\n            u = p.get('units_result', 0)\n            us = f'+{u}u' if u > 0 else f'{u}u'\n            overnight = ''\n            gt = pick_game_utc(p.get('date', ''), p.get('time_et'))\n            if gt and (time.gmtime(gt).tm_hour - 4) % 24 < 6:\n                overnight = '\\n\ud83d\udcc5 counts for tomorrow\\'s card'\n            badge = TIER_BADGE.get(p.get('tier'), '')\n            if ch:\n                await ch.send(f\"\ud83e\uddfe **RESULT {badge}:** {p.get('desc')} ({p.get('odds')}) {e} **{p['result']}** {us}\\n\"\n                              f\"Final: {p.get('score')}{overnight}\")\n            if p.get('tier') == 'challenge':\n                await settle_challenge(guild, p)\n            if state is not None:\n                state.setdefault('unannounced_results', []).append(\n                    {'id': p['id'], 'desc': p.get('desc'), 'odds': p.get('odds'), 'result': p['result'],\n                     'units': p.get('units_result'), 'score': p.get('score'), 'tier': p.get('tier')})\n        if state is not None:\n            try:\n                await asyncio.to_thread(gh_put, 'bot_state.json', state, 'grader results')\n            except Exception:\n                pass\n        print(f'grader: {len(new_results)} result(s) posted')\n        # X drain happens in its own paced block below\n    except Exception as e:\n        print('grader error:', e)\n\n@tasks.loop(seconds=1200)\nasync def x_drainer():\n    # posts queued results to X \u2014 max 1 per cycle, >=40 min between X receipts (pacing rule)\n    try:\n        state = await asyncio.to_thread(get_state)\n        if state is None:\n            return\n        queue = state.get('unannounced_results') or []\n        if not queue:\n            return\n        last = state.get('last_x_receipt_ts', 0)\n        if time.time() - float(last) < 40 * 60:\n            return\n        r = queue[0]\n        picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')\n        chal_doc = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main') if r.get('tier') == 'challenge' else None\n        resp = await asyncio.to_thread(x_post, x_receipt_text(r, picks_doc.get('picks'), chal_doc))\n        if resp is None:\n            print('x_drainer: no X key available')\n            return\n        state['unannounced_results'] = queue[1:]\n        state['last_x_receipt_ts'] = time.time()\n        await asyncio.to_thread(gh_put, 'bot_state.json', state, f\"x receipt posted: {r.get('id')}\")\n        print(f\"x_drainer: posted {r.get('id')}, {len(queue) - 1} left\")\n    except Exception as e:\n        print('x_drainer error:', e)\n\ndef units_of(p):\n    if p.get('units_result') is not None:\n        return float(p['units_result'])\n    u = float(p['units']) if p.get('units') is not None else 1.0\n    if p.get('result') == 'WIN':\n        return profit_units(p.get('odds', -110), u)\n    if p.get('result') == 'LOSS':\n        return -u\n    return 0.0\n\ndef season_block(all_picks):\n    # per-tier season records for the 4 rooms; overall = SUM of the rooms by construction.\n    # challenge is reported separately (it often mirrors a room pick - never double-counted).\n    tiers = [('lock', '\ud83d\udd12'), ('sharp', '\ud83d\udcca'), ('whale', '\ud83d\udc0b'), ('free', '\ud83c\udd93')]\n    season = [p for p in all_picks if p.get('result') in ('WIN', 'LOSS', 'PUSH')\n              and str(p.get('date', '')).startswith('2026')]\n    parts, tot_w, tot_l, tot_p, tot_u = [], 0, 0, 0, 0.0\n    for key, badge in tiers:\n        tp = [p for p in season if p.get('tier') == key]\n        if not tp:\n            continue\n        w = sum(1 for p in tp if p['result'] == 'WIN')\n        l = sum(1 for p in tp if p['result'] == 'LOSS')\n        pu = sum(1 for p in tp if p['result'] == 'PUSH')\n        u = sum(units_of(p) for p in tp)\n        tot_w += w; tot_l += l; tot_p += pu; tot_u += u\n        rec = f\"{w}-{l}\" + (f\"-{pu}\" if pu else \"\")\n        parts.append(f\"{badge} {rec} ({'+' if u >= 0 else ''}{u:.2f}u)\")\n    chal = [p for p in season if p.get('tier') == 'challenge']\n    cw = sum(1 for p in chal if p['result'] == 'WIN')\n    cl = sum(1 for p in chal if p['result'] == 'LOSS')\n    return tot_w, tot_l, tot_p, tot_u, ' \u00b7 '.join(parts), (cw, cl)\n\n@tasks.loop(seconds=900)\nasync def recap_watch():\n    # server-side nightly recap: posts when every today-starting (ET) game is settled. Never missed.\n    try:\n        if not client.guilds:\n            return\n        state = await asyncio.to_thread(get_state)\n        if state is None:\n            return\n        now_et = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)\n        if 6 <= now_et.hour < 21:\n            return  # recap window is 9 PM - 6 AM ET\n        recap_date = now_et.strftime('%Y-%m-%d') if now_et.hour >= 21 else (now_et - datetime.timedelta(days=1)).strftime('%Y-%m-%d')\n        if state.get('last_recap_date') == recap_date:\n            return\n        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')\n        all_picks = doc.get('picks') or []\n        day = [p for p in all_picks if p.get('date') == recap_date]\n        if not day:\n            return\n        if any(str(p.get('result', '')).upper() in ('', 'PENDING', 'NONE', 'NULL') for p in day):\n            return  # games still live\n        settled = [p for p in day if p.get('result') in ('WIN', 'LOSS', 'PUSH')]\n        if not settled:\n            return\n        tiers = [('lock', '\ud83d\udd12 LOCK ROOM'), ('sharp', '\ud83d\udcca SHARP'), ('whale', '\ud83d\udc0b WHALE'), ('free', '\ud83c\udd93 FREE PICK')]\n        mmdd = recap_date[5:].replace('-', '/')\n        lines = [f\"\ud83c\udf19 **THELINESHIFT NIGHTLY RECAP \u2014 {mmdd}**\", \"(every tier, every result \u2014 graded in public)\", \"\"]\n        tot_w = tot_l = tot_p = 0\n        tot_u = 0.0\n        for key, label in tiers:\n            tp = [p for p in settled if p.get('tier') == key]\n            if not tp:\n                continue\n            w = sum(1 for p in tp if p['result'] == 'WIN')\n            l = sum(1 for p in tp if p['result'] == 'LOSS')\n            pu = sum(1 for p in tp if p['result'] == 'PUSH')\n            u = sum(units_of(p) for p in tp)\n            tot_w += w; tot_l += l; tot_p += pu; tot_u += u\n            suffix = f\"-{pu}\" if pu else \"\"\n            lines.append(f\"{label} \u2014 {w}-{l}{suffix}, {'+' if u >= 0 else ''}{u:.2f}u \" + ('\u2705' if u > 0 else '\u274c' if u < 0 else ''))\n            for p in tp:\n                e = '\u2705' if p['result'] == 'WIN' else ('\ud83d\udff0' if p['result'] == 'PUSH' else '\u274c')\n                uu = units_of(p)\n                lines.append(f\"{e} {p.get('desc')} ({p.get('odds')}) \u2192 {p.get('score', 'final')} \u2192 {'+' if uu >= 0 else ''}{uu:.2f}u\")\n            lines.append(\"\")\n        sw, sl, sp, su, tier_split, chal_rec = season_block(all_picks)\n        lines.append(f\"**FULL BOARD: {tot_w}-{tot_l}\" + (f\"-{tot_p}\" if tot_p else \"\") + f\" ({'+' if tot_u >= 0 else ''}{tot_u:.2f}u).**\")\n        lines.append(f\"\ud83d\udcc5 **2026 SEASON: {sw}-{sl}\" + (f\"-{sp}\" if sp else \"\") + f\" ({'+' if su >= 0 else ''}{su:.2f}u)**\")\n        lines.append(tier_split + f\"  |  \ud83d\udcb5 challenge {chal_rec[0]}-{chal_rec[1]} (tracked in dollars)\")\n        try:\n            chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')\n            rec = chal.get('record', {})\n            lines.append(f\"\ud83d\udcb5 Challenge: balance ${chal.get('balance', 0):.2f} ({rec.get('wins', 0)}-{rec.get('losses', 0)}) \u2014 goal $1,000\")\n        except Exception:\n            pass\n        ch = find_channel(client.guilds[0], 'receipts')\n        if ch:\n            await ch.send('\\n'.join(lines))\n        state['last_recap_date'] = recap_date\n        await asyncio.to_thread(gh_put, 'bot_state.json', state, f'recap posted {recap_date}')\n        try:\n            xt = (f\"\ud83c\udf19 FULL BOARD {mmdd}: {tot_w}-{tot_l} ({'+' if tot_u >= 0 else ''}{tot_u:.1f}u)\\n\"\n                  f\"\ud83d\udcc5 2026 season: {sw}-{sl} ({'+' if su >= 0 else ''}{su:.1f}u)\\n\"\n                  f\"{tier_split}\\n\\n\"\n                  f\"Every pick posted early, every result graded in public. First month FREE \ud83d\udc46\")\n            await asyncio.to_thread(x_post, xt)\n        except Exception as e:\n            print('recap X error:', e)\n        print('recap posted for', recap_date)\n    except Exception as e:\n        print('recap_watch error:', e)\n\ndef side_ml(p, ho, ao):\n    d = (p.get('desc') or '').lower()\n    if 'over' in d or 'under' in d:\n        return None\n    if side_in_desc(p.get('awayTeam', ''), p.get('desc', '')):\n        return ao\n    if side_in_desc(p.get('homeTeam', ''), p.get('desc', '')):\n        return ho\n    return None\n\ndef fmt_odds_num(n):\n    try:\n        n = int(n)\n        return f'+{n}' if n > 0 else str(n)\n    except Exception:\n        return str(n)\n\ndef clv_note(p, ho, ao):\n    cur = side_ml(p, ho, ao)\n    if cur is None or p.get('odds') is None:\n        return ''\n    diff = int(p['odds']) - int(cur)\n    if diff >= 5:\n        return f'\ud83d\udcc8 CLV +{diff}c \u2014 we beat the close. That\\'s the whole game.'\n    if diff <= -5:\n        return f'\ud83d\udcc9 CLV {diff}c \u2014 market moved against us.'\n    return '\u27a1\ufe0f closed right at our number.'\n\n@tasks.loop(seconds=1800)\nasync def odds_watch():\n    try:\n        if not client.guilds:\n            return\n        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')\n        plist = doc.get('picks') or []\n        today = time.strftime('%Y-%m-%d', time.gmtime(time.time() - 4 * 3600))\n        pend = [p for p in plist if str(p.get('result', '')).upper() in ('', 'PENDING', 'NONE', 'NULL')\n                and (p.get('sport') or '').upper() in ESPN and p.get('date') == today]\n        if not pend:\n            return\n        guild = client.guilds[0]\n        ch = find_channel(guild, 'whale-talk')\n        changed = False\n        for p in pend:\n            try:\n                sport = (p.get('sport') or '').upper()\n                sb = await asyncio.to_thread(espn_fetch, sport, p['date'].replace('-', ''))\n                prefer = pick_start_ts(p)\n                na, nh = norm_txt(p.get('awayTeam', '')), norm_txt(p.get('homeTeam', ''))\n                best = None\n                for ev in sb.get('events', []):\n                    try:\n                        comp = ev['competitions'][0]\n                        teams = {c2['homeAway']: c2 for c2 in comp['competitors']}\n                        if na in norm_txt(teams['away']['team'].get('displayName', '')) and nh in norm_txt(teams['home']['team'].get('displayName', '')):\n                            try:\n                                start = time.mktime(time.strptime(ev['date'][:19], '%Y-%m-%dT%H:%M:%S'))\n                            except Exception:\n                                start = prefer or 0\n                            d = abs(start - (prefer or start))\n                            if best is None or d < best[0]:\n                                best = (d, comp)\n                    except Exception:\n                        continue\n                if not best:\n                    continue\n                comp = best[1]\n                odds = (comp.get('odds') or [{}])[0]\n                ho = (odds.get('homeTeamOdds') or {}).get('moneyLine')\n                ao = (odds.get('awayTeamOdds') or {}).get('moneyLine')\n                ou = odds.get('overUnder')\n                if ho is None and ao is None and ou is None:\n                    continue\n                p['live_odds'] = {'home_ml': ho, 'away_ml': ao, 'total': ou, 'ts': int(time.time())}\n                changed = True\n                stype = comp.get('status', {}).get('type', {})\n                started = stype.get('state') == 'in' or bool(stype.get('completed'))\n                if started and not p.get('closing_odds'):\n                    p['closing_odds'] = dict(p['live_odds'])\n                    if ch:\n                        await ch.send(f\"\ud83d\udd12 **CLOSING LINE LOCKED** \u2014 {p.get('desc')}: we took {fmt_odds_num(p.get('odds'))}, closing {fmt_odds_num(side_ml(p, ho, ao)) if side_ml(p, ho, ao) is not None else 'total ' + str(ou)}. {clv_note(p, ho, ao)}\")\n                elif not started:\n                    cur = side_ml(p, ho, ao)\n                    posted = p.get('odds')\n                    if cur is not None and posted is not None:\n                        anchor_o = p.get('last_alert_odds', posted)\n                        if abs(int(cur) - int(anchor_o)) >= 12 and ch:\n                            p['last_alert_odds'] = int(cur)\n                            verdict = 'we got the best of it \u2705' if int(cur) < int(posted) else 'market moving against us \ud83d\udc40'\n                            await ch.send(f\"\u26a0\ufe0f **LINE MOVE** \u2014 {p.get('desc')}: {fmt_odds_num(anchor_o)} \u2192 {fmt_odds_num(cur)}. Steam on this one \u2014 {verdict}\")\n                    elif ou is not None and p.get('market') == 'total':\n                        try:\n                            posted_t = float(re.search(r'(\\d+(\\.\\d+)?)', p.get('desc', '')).group(1))\n                            anchor_t = p.get('last_alert_total', posted_t)\n                            if abs(float(ou) - anchor_t) >= 0.5 and ch:\n                                p['last_alert_total'] = float(ou)\n                                await ch.send(f\"\u26a0\ufe0f **TOTAL MOVE** \u2014 {p.get('desc')}: {anchor_t} \u2192 {ou}. {'Money pounding the over.' if float(ou) > anchor_t else 'Steam on the under.'}\")\n                        except Exception:\n                            pass\n            except Exception as e:\n                print('odds_watch pick error:', e)\n        if changed:\n            await asyncio.to_thread(gh_put, 'picks.json', doc, 'odds watch update', 'main')\n    except Exception as e:\n        print('odds_watch error:', e)\n\n@tasks.loop(seconds=3600)\nasync def teaser_watch():\n    try:\n        if not client.guilds:\n            return\n        guild = client.guilds[0]\n        now = time.gmtime()\n        if now.tm_hour != 12:\n            return\n        state = await asyncio.to_thread(get_state)\n        tz = state.setdefault('teasers', {})\n        import datetime as _dt\n        today = _dt.date(now.tm_year, now.tm_mon, now.tm_mday)\n        next_sun = today + _dt.timedelta(days=(6 - today.weekday()) % 7)\n        ws = next_sun.isoformat()\n        if tz.get('weekly') != ws:\n            ch = find_channel(guild, 'weekly-analytics')\n            if ch:\n                await ch.send(f\"\ud83d\udcca **WEEKLY ANALYTICS \u2014 next report: Sunday {next_sun.strftime('%b %d')}, 10:00 AM ET**\\nFull-board review: tier-by-tier records, units chart, best/worst reads of the week, and what changes next week. \ud83c\udfaf\")\n                tz['weekly'] = ws\n        nm = _dt.date(today.year + (1 if today.month == 12 else 0), 1 if today.month == 12 else today.month + 1, 1)\n        ms = nm.isoformat()\n        if tz.get('monthly') != ms:\n            ch = find_channel(guild, 'monthly-deepdive')\n            if ch:\n                await ch.send(f\"\ud83d\udc0b **MONTHLY DEEP-DIVE \u2014 next report: {nm.strftime('%b %d')}, 6:00 PM ET**\\nWhale-tier masterclass: full-month model autopsy, where the edge came from, bankroll math, and next month's attack plan.\")\n                tz['monthly'] = ms\n        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'teaser check')\n    except Exception as e:\n        print('teaser_watch error:', e)\n\nCOUNT_60 = [\n \"\\u23F3 **SCAN IN 60 MINUTES** \u2014 the machine goes to work at {label}. Odds across the market, injury reports, confirmed lineups \u2014 everything gets pulled. \\U0001F6F0\\uFE0F\",\n \"\\u23F3 **T-60 TO SCAN** \u2014 next sweep at {label}. The board gets stripped down to the edges worth firing on. \\U0001F4E1\",\n \"\\U0001F6F0\\uFE0F **ONE HOUR OUT** \u2014 the {label} scan is loading. Six windows a day, zero guesswork.\",\n \"\\u23F3 **60-MINUTE WARNING** \u2014 the {label} sweep is next. Data first, picks after. \\U0001F916\",\n \"\\U0001F6F0\\uFE0F **SCAN APPROACHING** \u2014 {label}. The machine reads the whole board so you don't have to.\",\n \"\\u23F3 **NEXT SCAN: {label}** \u2014 one hour. Markets, lineups, weather, money flow. Watch it work. \\U0001F4CA\",\n]\nCOUNT_10 = [\n \"\\U0001F6F0\\uFE0F **SCAN IN 10 MINUTES** \u2014 {label}. Sharpen up. \\U0001F525\",\n \"\\u26A1 **T-10** \u2014 the {label} sweep is imminent. The free pick lands with the finale. \\U0001F3AF\",\n \"\\U0001F6F0\\uFE0F **10 MINUTES OUT** \u2014 {label}. The machine is warming up.\",\n \"\\U0001F3AF **T-10 TO SCAN** \u2014 {label}. Parameters loading...\",\n \"\\u23F1\\uFE0F **FINAL 10** \u2014 the {label} sweep opens the board in minutes.\",\n \"\\U0001F52D **SCAN IMMINENT** \u2014 {label}. Watch the machine work. \\U0001F6F0\\uFE0F\",\n]\n\n@tasks.loop(seconds=300)\nasync def scan_event_watch():\n    # if no scan theater in general-chat within ~25 min of an event slot, the event MISSED -> fallback post + flag\n    try:\n        if not client.guilds:\n            return\n        now = time.gmtime()\n        if now.tm_hour not in EVENT_HOURS_UTC or now.tm_min < 20:\n            return\n        slot = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}-{now.tm_hour:02d}'\n        state = await asyncio.to_thread(get_state)\n        if state is None:\n            return\n        events = state.setdefault('scan_events', {})\n        if events.get(slot):\n            return\n        guild = client.guilds[0]\n        ch = find_channel(guild, 'general-chat')\n        if not ch:\n            return\n        import datetime as _dt\n        slot_dt = _dt.datetime(now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, 0, 0, tzinfo=_dt.timezone.utc)\n        slot_ts = slot_dt.timestamp()\n        fired = False\n        finished = False\n        passed = False\n        resolved = False\n        # TIME-SCOPED: only messages posted AFTER this slot started count \u2014 an old SCAN COMPLETE can never satisfy a new slot\n        async for m in ch.history(limit=40, after=slot_dt):\n            txt = (m.content or '')\n            if any(k in txt for k in ('SCAN COMPLETE', 'SCAN INITIATED', 'ANALYZING', 'COLLECTING')):\n                fired = True\n            if 'SCAN COMPLETE' in txt:\n                finished = True\n            if 'PASSED' in txt or 'no viable' in txt.lower():\n                passed = True\n            if 'SCAN \u2014 RESOLUTION' in txt or 'SCAN RESOLUTION' in txt or 'discipline pass' in txt.lower() or 'slate covered' in txt.lower():\n                resolved = True\n        if resolved:\n            # a public resolution (card / discipline pass / slate-covered) already closed this slot \u2014 never cry delay\n            events[slot] = 'ok'\n        elif fired and finished:\n            # 'ok' REQUIRES fresh picks registered after slot start (or a deliberate discipline pass)\n            fresh = False\n            if not passed:\n                try:\n                    pj = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')\n                    upd = pj.get('updated', '') if isinstance(pj, dict) else ''\n                    upd_ts = time.mktime(time.strptime(upd[:19], '%Y-%m-%dT%H:%M:%S')) if upd else 0\n                    fresh = upd_ts >= slot_ts - 300\n                except Exception as e:\n                    print('pick_guard fresh-check error:', e)\n            if passed or fresh:\n                events[slot] = 'ok'\n            else:\n                events[slot] = 'makeup_needed'\n                await ch.send(\"\u26a0\ufe0f **PICK GUARD** \u2014 theater ran but no card registered this window. SHiFT is re-running the drop now; picks land within the hour. \ud83e\udd16\")\n                state.setdefault('pick_guard_alerts', []).append(slot)\n                print(f'pick_guard: slot {slot} theater w/o picks')\n        elif fired:\n            events[slot] = 'partial'\n            await ch.send(\"\u26a0\ufe0f **SCAN STALLED** \u2014 collection started but never completed. SHiFT is re-running this event; card drops within the hour. \ud83e\udd16\")\n            state.setdefault('scan_event_misses', []).append(slot)\n        else:\n            await ch.send(\"\ud83d\udef0\ufe0f **SCAN DELAYED** \u2014 the machine hit a snag on this run. SHiFT is catching up; the card drops shortly. \ud83e\udd16\")\n            events[slot] = 'missed'\n            state.setdefault('scan_event_misses', []).append(slot)\n            print(f'scan_event_watch: slot {slot} MISSED, fallback posted')\n        await asyncio.to_thread(gh_put, 'bot_state.json', state, f'scan event {slot}: {events[slot]}')\n    except Exception as e:\n        print('scan_event_watch error:', e)\n\ndef boot_marker():\n    try:\n        st = get_state()\n        boots = st.setdefault('boot_log', [])\n        boots.append(time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()))\n        st['boot_log'] = boots[-60:]\n        gh_put('bot_state.json', st, 'boot marker')\n        return len(boots)\n    except Exception as e:\n        print('boot marker failed:', e)\n        return -1\n\ndef run_guarded():\n    global client\n    # CONNECTION-STORM GUARD: Discord resets tokens after ~1000 gateway connects in a short\n    # window. One process = one connection, so storms only come from crash/restart loops.\n    # Throttle every exit path so a looping host can never hammer Discord again.\n    n = boot_marker()\n    print(f'boot #{n}')\n    try:\n        client = make_client()\n        try:\n            client.run(DISCORD_TOKEN)\n        except discord.PrivilegedIntentsRequired:\n            print('PRIVILEGED INTENTS NOT ENABLED IN PORTAL - running degraded')\n            client = make_client(privileged=False)\n            client.run(DISCORD_TOKEN)\n    except discord.LoginFailure as e:\n        print('LOGIN FAILURE (token dead/reset):', e)\n        print('sleeping 1h so the host cannot restart-loop against Discord...')\n        time.sleep(3600)\n    except Exception as e:\n        print('fatal run error:', e)\n        print('sleeping 5min before exit (restart throttle)')\n        time.sleep(300)\n    else:\n        print('clean disconnect - sleeping 2min before exit (restart throttle)')\n        time.sleep(120)\n\nrun_guarded()\n"
+import os, json, time, base64, asyncio, urllib.request, random, re, datetime
+import discord
+from discord.ext import tasks
+
+DISCORD_TOKEN = os.environ['DISCORD_BOT_TOKEN']
+GH_TOKEN = os.environ.get('GITHUB_TOKEN', '')
+REPO = 'TheLineShift/AISportsBot'
+QUEUE_BRANCH = 'commands'
+RAW = f'https://raw.githubusercontent.com/{REPO}/{QUEUE_BRANCH}'
+API = f'https://api.github.com/repos/{REPO}/contents'
+
+TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U0001F40B Whale': 'whale'}
+
+BOT_NICK = '🤖 SHiFT'
+BOT_STATUS = 'the board 🛰️'
+
+SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
+           r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
+           r'airdrop', r'double your', r'forex', r'investment platform', r'guaranteed profit',
+           r'trading (expert|guru|signals)', r'contact (me|admin) (on|via)']
+OUR_INVITE = '8bBxWUJCYT'
+
+async def shift_guard(message, guild):
+    try:
+        member = message.author
+        if getattr(member, 'bot', False):
+            return False
+        try:
+            if member == guild.owner or member.guild_permissions.administrator or member.guild_permissions.manage_guild:
+                return False
+        except Exception:
+            pass
+        content = message.content or ''
+        low = content.lower()
+        reason = None
+        if message.mention_everyone:
+            reason = '@everyone/@here ping by non-staff'
+        else:
+            for pat in SCAM_RX:
+                if re.search(pat, low):
+                    reason = 'scam pattern'
+                    break
+            if not reason:
+                invites = re.findall(r'(?:discord\.gg/|discord\.com/invite/)([A-Za-z0-9]+)', content)
+                if any(code != OUR_INVITE for code in invites):
+                    reason = 'foreign discord invite'
+            if not reason and len(message.mentions) >= 4:
+                reason = f'mass mentions ({len(message.mentions)})'
+        if not reason:
+            return False
+        st = await asyncio.to_thread(get_state)
+        offs = st.setdefault('mod_offenses', {})
+        uid = str(member.id)
+        offs[uid] = offs.get(uid, 0) + 1
+        await asyncio.to_thread(gh_put, 'bot_state.json', st, 'mod offense ' + uid)
+        snippet = content[:180]
+        try:
+            await message.delete()
+        except Exception:
+            pass
+        action = 'deleted'
+        try:
+            import datetime as _dt
+            await member.timeout(_dt.timedelta(minutes=60), reason='SHiFT guard: ' + reason)
+            action += ' + 60min timeout'
+        except Exception:
+            pass
+        if offs[uid] >= 2:
+            try:
+                await member.kick(reason='repeat scam offenses')
+                action += ' + KICKED (repeat)'
+            except Exception:
+                pass
+        lab = find_channel(guild, 'shift-lab')
+        if lab:
+            await lab.send(f"\U0001F6E1\uFE0F **SHiFT GUARD** — {action}\n\U0001F464 {member} (`{member.id}`) in #{message.channel.name}\n\u2696\uFE0F {reason}\n\U0001F4DD {snippet or '(no text)'}")
+        await asyncio.to_thread(log_event, 'guard_action', f'{action} {member} in #{message.channel.name}: {reason}')
+        return True
+    except Exception as e:
+        print('shift_guard error:', e)
+        return False
+
+def log_event(type_, detail):
+    """Append an event to the ops event log (dashboard Event Log feed)."""
+    try:
+        ev = gh_get_json('events.json') or {'events': [], 'next_id': 1}
+        ev.setdefault('events', []).append({'id': ev.get('next_id', 1), 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                                            'type': type_, 'detail': str(detail)[:300]})
+        ev['next_id'] = ev.get('next_id', 1) + 1
+        ev['events'] = ev['events'][-250:]
+        gh_put('events.json', ev, 'event: ' + type_)
+    except Exception as e:
+        print('[event] log failed:', e)
+
+
+ISSUE_RX_PAYMENT = re.compile(r'(charg|payment|paid|refund|whop|stripe|billing|invoice|card|subscri)', re.I)
+ISSUE_RX_ROLE = re.compile(r"(role|tier|access|can't see|cannot see|locked out|missing.*(channel|room)|upgrade|downgrade)", re.I)
+ISSUE_RX_DATA = re.compile(r'(wrong|incorrect|error|typo|bug|broken|picture|image|photo|weather|matchup|odds|line|score|missing pick)', re.I)
+ISSUE_RX_YES = re.compile(r'^\s*(yes|yeah|yep|yup|fixed|works|working now|all good|confirmed|it works)\b', re.I)
+ISSUE_RX_NO = re.compile(r"^\s*(no|nope|not fixed|still|doesn't work|didn't work|not working)\b", re.I)
+
+
+async def handle_issue(message, guild):
+    """issues channel: triage, auto-fix what is fixable, verify with the user, escalate the rest."""
+    chname = getattr(message.channel, 'name', '') or ''
+    author = message.author
+    if 'issues' not in chname or author.bot:
+        return
+    content = (message.content or '').strip()
+    if not content:
+        return
+    issues = gh_get_json('issues.json') or {'tickets': [], 'next_id': 1}
+    tickets = issues.setdefault('tickets', [])
+    t = next((x for x in reversed(tickets) if x.get('user_id') == str(author.id)
+              and x.get('status') in ('open', 'awaiting_user')), None)
+    reply = None
+    if t and t.get('status') == 'awaiting_user':
+        if ISSUE_RX_YES.search(content):
+            t['status'] = 'resolved'; t['resolved_ts'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            reply = f'✅ Ticket **#{t["id"]}** marked resolved. Thanks for confirming, {author.mention}!'
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_resolved', f'ticket #{t["id"]} ({author}) self-confirmed fixed'))
+        elif ISSUE_RX_NO.search(content):
+            t['status'] = 'escalated'; t['escalated_ts'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            reply = (f"📨 Got it — I've **escalated ticket #{t['id']} to the admin**. "
+                     f"We'll get back to you as soon as an admin is available to fix your issue.")
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_escalated', f'ticket #{t["id"]} ({author}): fix not confirmed'))
+            lab = find_channel(guild, 'shift-lab')
+            if lab:
+                asyncio.ensure_future(lab.send(f'🚨 ESCALATED ticket #{t["id"]} — {author} ({author.id}): {t.get("summary","")[:200]} — auto-fix failed, needs admin.'))
+        else:
+            reply = f'🤖 Ticket **#{t["id"]}** is waiting on your confirmation — did the fix work? Reply **yes** or **no**.'
+    elif not t:
+        tid = issues.get('next_id', 1); issues['next_id'] = tid + 1
+        t = {'id': tid, 'user_id': str(author.id), 'user': str(author), 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+             'status': 'open', 'summary': content[:250]}
+        tickets.append(t)
+        kind = ('payment' if ISSUE_RX_PAYMENT.search(content) else
+                'access' if ISSUE_RX_ROLE.search(content) else
+                'data' if ISSUE_RX_DATA.search(content) else 'other')
+        t['kind'] = kind
+        lab = find_channel(guild, 'shift-lab')
+        if kind == 'payment':
+            t['status'] = 'escalated'; t['escalated_ts'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            reply = (f"🎫 Ticket **#{tid}** opened (billing). Payment issues need the admin — I've **escalated this to the admin** "
+                     f"and we'll get back to you as soon as an admin is available to fix your issue.")
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_escalated', f'ticket #{tid} payment ({author})'))
+            if lab:
+                asyncio.ensure_future(lab.send(f'🚨 PAYMENT ticket #{tid} — {author} ({author.id}): {content[:300]}'))
+        elif kind == 'access':
+            fixed = False
+            try:
+                member = guild.get_member(author.id)
+                if member:
+                    names = [r.name for r in member.roles]
+                    want = []
+                    if any('whale' in n.lower() for n in names):
+                        want = ['Sharp', 'Lock']
+                    elif any('sharp' in n.lower() for n in names):
+                        want = ['Lock']
+                    for word in want:
+                        for r in guild.roles:
+                            if word.lower() in r.name.lower() and r not in member.roles:
+                                asyncio.ensure_future(member.add_roles(r, reason=f'issues ticket #{tid} hierarchy fix'))
+                                fixed = True
+            except Exception as e:
+                print('[issues] role fix failed:', e)
+            t['status'] = 'awaiting_user'
+            reply = (f"🎫 Ticket **#{tid}** opened (access). I've checked your tier roles and restored the room access your tier includes. "
+                     f"**Can you confirm it's fixed?** Reply **yes** or **no** — if it's still broken I'll escalate this to the admin immediately.")
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_opened', f'ticket #{tid} access ({author}) auto-fix={fixed}'))
+        elif kind == 'data':
+            t['status'] = 'open'
+            reply = (f"🎫 Ticket **#{tid}** opened. Thanks for flagging it — I'm reviewing the data/post now and will correct anything "
+                     f"that's wrong. I'll follow up here shortly.")
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_opened', f'ticket #{tid} data ({author}): {content[:150]}'))
+            if lab:
+                asyncio.ensure_future(lab.send(f'🛠️ DATA ticket #{tid} — {author}: {content[:300]}'))
+        else:
+            t['status'] = 'open'
+            reply = (f"🎫 Ticket **#{tid}** opened. Can you give me a bit more detail (what you expected vs what you're seeing)? "
+                     f"If I can't fix it myself I'll escalate it to the admin right away.")
+            asyncio.ensure_future(asyncio.to_thread(log_event, 'issue_opened', f'ticket #{tid} other ({author}): {content[:150]}'))
+    else:
+        t['summary'] = (t.get('summary', '') + ' | ' + content)[:250]
+        reply = f'🤖 Added that to ticket **#{t["id"]}** — still on it.'
+    try:
+        gh_put('issues.json', issues, f'issue ticket update ({author.id})')
+    except Exception as e:
+        print('[issues] state write failed:', e)
+    if reply:
+        await message.reply(reply, mention_author=False)
+
+
+
+CRYPTO_TIERS = {'lock': 14.99, 'sharp': 29.99, 'whale': 59.99}
+
+def _http_json(url, payload=None, headers=None, timeout=20):
+    h = {'Content-Type': 'application/json'}
+    if headers:
+        h.update(headers)
+    data = json.dumps(payload).encode() if payload is not None else None
+    req = urllib.request.Request(url, data=data, headers=h, method='POST' if data else 'GET')
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.load(r)
+
+def wallet_balances():
+    """On-chain balances for all hot wallets + USD values. Never raises."""
+    out = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'wallets': []}
+    try:
+        w = gh_get_json('wallets.json') or {}
+        px = _http_json('https://api.coingecko.com/api/v3/simple/price?ids=solana,ethereum,bitcoin&vs_currencies=usd')
+        for x in w.get('wallets', []):
+            ch, addr = x['chain'], x['address']
+            entry = {'chain': ch, 'symbol': x.get('symbol', ch.upper()), 'label': x.get('label', '💼 OPS WALLET'),
+                     'address': addr, 'note': x.get('note', '')}
+            try:
+                if ch == 'solana':
+                    b = _http_json('https://api.mainnet-beta.solana.com',
+                                   {'jsonrpc': '2.0', 'id': 1, 'method': 'getBalance', 'params': [addr]})
+                    bal = b['result']['value'] / 1e9
+                    entry.update(balance=round(bal, 5), usd=round(bal * px['solana']['usd'], 2))
+                elif ch == 'ethereum':
+                    b = None
+                    for rpc in ('https://eth.llamarpc.com', 'https://cloudflare-eth.com', 'https://rpc.ankr.com/eth'):
+                        try:
+                            b = _http_json(rpc, {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addr, 'latest']})
+                            if b.get('result'):
+                                break
+                        except Exception:
+                            continue
+                    bal = int(b['result'], 16) / 1e18
+                    entry.update(balance=round(bal, 6), usd=round(bal * px['ethereum']['usd'], 2))
+                elif ch == 'bitcoin':
+                    b = _http_json(f'https://blockstream.info/api/address/{addr}')
+                    bal = (b['chain_stats']['funded_txo_sum'] - b['chain_stats']['spent_txo_sum']) / 1e8
+                    entry.update(balance=round(bal, 8), usd=round(bal * px['bitcoin']['usd'], 2))
+            except Exception as e:
+                entry.update(balance=None, usd=None, error=str(e)[:80])
+            out['wallets'].append(entry)
+    except Exception as e:
+        out['error'] = str(e)[:200]
+    return out
+
+def crypto_withdraw(chain, to, amount):
+    """Sign and broadcast a withdrawal from a hot wallet. Returns txid string."""
+    keys = gh_get_json('wallets_secret.json') or {}
+    if chain == 'solana':
+        from solders.keypair import Keypair
+        from solders.pubkey import Pubkey
+        from solders.system_program import transfer, TransferParams
+        from solders.message import Message
+        from solders.transaction import Transaction
+        from solders.hash import Hash
+        kp = Keypair.from_bytes(bytes.fromhex(keys['solana']['secret_hex']))
+        lamports = int(float(amount) * 1e9)
+        bh = _http_json('https://api.mainnet-beta.solana.com',
+                        {'jsonrpc': '2.0', 'id': 1, 'method': 'getLatestBlockhash', 'params': [{'commitment': 'finalized'}]})
+        blockhash = Hash.from_string(bh['result']['value']['blockhash'])
+        ix = transfer(TransferParams(from_pubkey=kp.pubkey(), to_pubkey=Pubkey.from_string(to), lamports=lamports))
+        tx = Transaction([kp], Message([ix], kp.pubkey()), blockhash)
+        sig = _http_json('https://api.mainnet-beta.solana.com',
+                         {'jsonrpc': '2.0', 'id': 1, 'method': 'sendTransaction',
+                          'params': [__import__('base64').b64encode(bytes(tx)).decode(), {'encoding': 'base64'}]})
+        return 'SOL tx: ' + sig['result']
+    if chain == 'evm':
+        from eth_account import Account
+        acct = Account.from_key(keys['evm']['private_key'])
+        nonce_r = _http_json('https://eth.llamarpc.com',
+                             {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getTransactionCount', 'params': [acct.address, 'latest']})
+        gas_r = _http_json('https://eth.llamarpc.com', {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_gasPrice', 'params': []})
+        tx = {'chainId': 1, 'nonce': int(nonce_r['result'], 16), 'to': to, 'value': int(float(amount) * 1e18),
+              'gas': 21000, 'gasPrice': int(gas_r['result'], 16)}
+        signed = acct.sign_transaction(tx)
+        sent = _http_json('https://eth.llamarpc.com',
+                          {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_sendRawTransaction', 'params': [signed.raw_transaction.hex()]})
+        return 'ETH tx: ' + sent['result']
+    if chain == 'bitcoin':
+        from bit import Key
+        k = Key(keys['bitcoin']['wif'])
+        return 'BTC tx: ' + k.send([(to, float(amount), 'btc')], fee=10)
+    raise ValueError('unknown chain: ' + chain)
+
+
+def make_client(privileged=True):
+    intents = discord.Intents.default()
+    intents.guilds = True
+    intents.members = privileged
+    intents.message_content = privileged
+    c = discord.Client(intents=intents)
+
+    @c.event
+    async def on_ready():
+        print(f'LineShift Bot v8.8 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        try:
+            await c.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=BOT_STATUS))
+            g0 = c.guilds[0] if c.guilds else None
+            if g0 and g0.me and g0.me.nick != BOT_NICK:
+                await g0.me.edit(nick=BOT_NICK)
+                print('nick applied:', BOT_NICK)
+        except Exception as e:
+            print('presence/nick error:', e)
+        if not poll.is_running():
+            poll.start()
+        if not countdown.is_running():
+            countdown.start()
+        if not audit.is_running():
+            audit.start()
+        if not grader.is_running():
+            grader.start()
+        if not x_drainer.is_running():
+            x_drainer.start()
+        if not scan_event_watch.is_running():
+            scan_event_watch.start()
+        if not recap_watch.is_running():
+            recap_watch.start()
+        if not teaser_watch.is_running():
+            teaser_watch.start()
+        if not odds_watch.is_running():
+            odds_watch.start()
+        if not stripe_sync.is_running():
+            stripe_sync.start()
+        if not crypto_sync.is_running():
+            crypto_sync.start()
+
+    @c.event
+    async def on_message(message):
+        try:
+            if message.author.bot:
+                return
+            if message.guild and await shift_guard(message, message.guild):
+                return
+            chname = (getattr(message.channel, 'name', '') or '').lower()
+            if 'giveaway' in chname:
+                raw = message.content or ''
+                hs = list(re.findall(r'@([A-Za-z0-9_]{4,15})\b', raw))
+                hs += re.findall(r'(?:https?://)?(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{4,15})', raw, flags=re.I)
+                hs = [h for h in hs if h.lower() not in ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i')]
+                if hs:
+                    await verify_giveaway_entry(message, hs[0])
+                return
+            if (message.content or '').strip().lower().startswith('!crypto'):
+                parts = (message.content or '').strip().split()
+                tier = parts[1].lower() if len(parts) > 1 else ''
+                coin = parts[2].lower() if len(parts) > 2 else ''
+                if tier not in CRYPTO_TIERS or not coin:
+                    await message.reply('🪙 Usage: `!crypto <tier> <coin>` — e.g. `!crypto sharp sol`\nCoins: **btc, eth, sol, usdt, usdc, doge, ltc, trx, bnb** (+300 more — just ask). I will DM your payment address.', mention_author=False)
+                else:
+                    await message.reply(f'🪙 Generating your **{tier.upper()}** checkout in **{coin.upper()}** — check your DMs!', mention_author=False)
+                    _log = []
+                    await run_command({'action': 'crypto_checkout', 'tier': tier, 'coin': coin, 'user': str(message.author.id)}, message.guild, _log)
+                    print('crypto cmd:', _log)
+                return
+            if 'issues' in chname:
+                await handle_issue(message, message.guild or (c.guilds[0] if c.guilds else None))
+                return
+            content = (message.content or '').strip().strip('`').strip('<>')
+            if 'thelineshift.com' not in content or 'code=' not in content:
+                return
+            url = content.split()[0]
+            guild = message.guild or (c.guilds[0] if c.guilds else None)
+            log = []
+            try:
+                await message.delete()
+            except Exception:
+                pass
+            await run_command({'action': 'x_link_finish', 'url': url}, guild, log)
+            ok = any('OK' in l for l in log)
+            await message.channel.send('✅ X link complete — native posting is LIVE. First post fired.' if ok
+                                       else '❌ Exchange failed: ' + ' | '.join(log)[-300:])
+        except Exception as e:
+            print('on_message x-link error:', e)
+
+    @c.event
+    async def on_raw_reaction_add(payload):
+        try:
+            state = await asyncio.to_thread(get_state)
+            if payload.message_id != state.get('scan_role_msg'):
+                return
+            guild = c.guilds[0] if c.guilds else None
+            role = guild.get_role(state.get('scan_role_id', 0)) if guild else None
+            if role and payload.member and not payload.member.bot:
+                await payload.member.add_roles(role, reason='scan alert opt-in')
+        except Exception as e:
+            print('reaction add error:', e)
+
+    @c.event
+    async def on_raw_reaction_remove(payload):
+        try:
+            state = await asyncio.to_thread(get_state)
+            if payload.message_id != state.get('scan_role_msg'):
+                return
+            guild = c.guilds[0] if c.guilds else None
+            role = guild.get_role(state.get('scan_role_id', 0)) if guild else None
+            member = guild.get_member(payload.user_id) if guild else None
+            if role and member and not member.bot:
+                await member.remove_roles(role, reason='scan alert opt-out')
+        except Exception as e:
+            print('reaction remove error:', e)
+
+    @c.event
+    async def on_member_update(before, after):
+        try:
+            added = [r for r in after.roles if r not in before.roles]
+            hits = [TIER_ROLES[r.name] for r in added if r.name in TIER_ROLES]
+            if not hits:
+                return
+            links = await asyncio.to_thread(gh_get_json, 'member_links.json')
+            entry = links.setdefault(str(after.id), {'name': after.name, 'grants': []})
+            entry.setdefault('grants', [])
+            entry['name'] = after.name
+            def _parse_ts(s):
+                try:
+                    return datetime.datetime.strptime(s, '%Y-%m-%d %H:%M UTC').replace(tzinfo=datetime.timezone.utc).timestamp()
+                except Exception:
+                    return 0
+            # dedup: ignore re-fired member_update events for a tier already recorded in the last 6h
+            hits = [h for h in hits if not any(
+                g.get('tier') == h and time.time() - _parse_ts(g.get('at', '')) < 6 * 3600
+                for g in entry['grants'])]
+            if not hits:
+                return
+            for h in hits:
+                entry['grants'].append({'tier': h, 'at': time.strftime('%Y-%m-%d %H:%M UTC')})
+            await asyncio.to_thread(gh_put, 'member_links.json', links, f'tier grant: {after.name} -> {hits[-1]}')
+            print(f'TIER GRANT recorded: {after.name} -> {hits}')
+        except Exception as e:
+            print('on_member_update error:', e)
+    return c
+
+def gh_headers():
+    return {'Authorization': f'token {GH_TOKEN}', 'User-Agent': 'lineshift-bot'}
+
+def gh_get(path, ref='main'):
+    req = urllib.request.Request(f'{API}/{path}?ref={ref}', headers=gh_headers())
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.load(r)
+
+def gh_put(path, obj, message, ref=QUEUE_BRANCH):
+    try:
+        remote = gh_get(path, ref=ref)
+        sha = remote.get('sha')
+        if path == 'bot_state.json':
+            try:
+                base = json.loads(base64.b64decode(remote['content']).decode())
+                # deep-merge append-only dicts so concurrent writers can't clobber entries (Stella wipe 7/23)
+                for dk in ('giveaway_confirmed', 'scan_events'):
+                    if isinstance(base.get(dk), dict) and isinstance(obj.get(dk), dict):
+                        m = {**base[dk], **obj[dk]}
+                        base[dk] = m
+                        obj = {**obj, dk: m}
+                base.update(obj)
+                obj = base
+            except Exception:
+                pass
+    except Exception:
+        sha = None
+    body = {'message': message, 'branch': ref,
+            'content': base64.b64encode(json.dumps(obj, indent=2).encode()).decode()}
+    if sha:
+        body['sha'] = sha
+    req = urllib.request.Request(f'{API}/{path}', data=json.dumps(body).encode(),
+                                 method='PUT', headers={**gh_headers(), 'Content-Type': 'application/json'})
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.load(r)
+
+def fetch_commands():
+    try:
+        req = urllib.request.Request(f'{RAW}/bot_commands.json?t={int(time.time())}',
+                                     headers={'User-Agent': 'lineshift-bot'})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return json.load(r)
+    except Exception:
+        return None
+
+def get_state():
+    try:
+        d = gh_get('bot_state.json', ref=QUEUE_BRANCH)
+        return json.loads(base64.b64decode(d['content']))
+    except Exception:
+        return None
+
+def gh_get_json(path):
+    try:
+        d = gh_get(path, ref=QUEUE_BRANCH)
+        return json.loads(base64.b64decode(d['content']))
+    except Exception:
+        return {}
+
+def gh_get_json_ref(path, ref):
+    try:
+        d = gh_get(path, ref=ref)
+        return json.loads(base64.b64decode(d['content']))
+    except Exception:
+        return {}
+
+def pick_game_utc(date_s, time_s):
+    # epoch (UTC) of a pick's game time; ET assumed, EDT = UTC-4
+    try:
+        t = (time_s or '11:00 PM').upper().replace('ET', '').strip()
+        m = re.match(r'(\d{1,2})(?::(\d{2}))?\s*(AM|PM)', t)
+        if not m:
+            return None
+        hh = int(m.group(1)) % 12
+        if m.group(3) == 'PM':
+            hh += 12
+        mm = int(m.group(2) or 0)
+        y, mo, dd = map(int, str(date_s).split('-'))
+        dt = datetime.datetime(y, mo, dd, hh, mm) + datetime.timedelta(hours=4)
+        return dt.replace(tzinfo=datetime.timezone.utc).timestamp()
+    except Exception:
+        return None
+
+def find_channel(guild, name):
+    n = name.lower().strip('#').replace(' ', '')
+    for ch in guild.text_channels:
+        cn = ch.name.lower().replace('-', '').replace('_', '')
+        if n.replace('-', '').replace('_', '') in cn:
+            return ch
+    return None
+
+def find_role(guild, name):
+    n = name.lower()
+    for r in guild.roles:
+        if n in r.name.lower():
+            return r
+    return None
+
+async def resolve_member(guild, ident):
+    ident = str(ident).strip()
+    if ident.isdigit():
+        try:
+            return await guild.fetch_member(int(ident))
+        except Exception:
+            return None
+    try:
+        async for m in guild.fetch_members(limit=None):
+            if m.name.lower() == ident.lower():
+                return m
+    except Exception:
+        pass
+    async for e in guild.audit_logs(limit=100):
+        t = getattr(e, 'target', None)
+        name = getattr(t, 'name', '') if t is not None else ''
+        if name.lower() == ident.lower():
+            try:
+                return await guild.fetch_member(t.id)
+            except Exception:
+                return None
+    for ch in guild.text_channels:
+        try:
+            async for msg in ch.history(limit=200):
+                if msg.author.name.lower() == ident.lower():
+                    try:
+                        return await guild.fetch_member(msg.author.id)
+                    except Exception:
+                        return None
+        except Exception:
+            pass
+    return None
+
+
+def gh_raw_bytes(path, ref='main'):
+    req = urllib.request.Request(f'https://raw.githubusercontent.com/{REPO}/{ref}/{path}?t={int(time.time())}',
+                                 headers={'User-Agent': 'lineshift-bot'})
+    with urllib.request.urlopen(req, timeout=40) as r:
+        return r.read()
+
+def x_oauth1_sign(method, url, c):
+    import hmac as _h, hashlib as _hl, secrets as _sc
+    from urllib.parse import quote as _qq
+    op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': _sc.token_hex(16),
+          'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+          'oauth_token': c['access_token'], 'oauth_version': '1.0'}
+    q = lambda s: _qq(str(s), safe='')
+    base = '&'.join([method, q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+    key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
+    op['oauth_signature'] = base64.b64encode(_h.new(key.encode(), base.encode(), _hl.sha1).digest()).decode()
+    return 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+
+def x_upload_media(img_bytes, mime='image/png', c=None):
+    # v2 upload with OAuth2 user context (media.write); falls back to legacy OAuth1 attempt
+    if c is None:
+        c = x_creds_load()
+    url = 'https://api.x.com/2/media/upload'
+    boundary = 'lineshift' + str(int(time.time()))
+    body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="card.png"\r\n'
+            f'Content-Type: {mime}\r\n\r\n').encode() + img_bytes + f'\r\n--{boundary}--\r\n'.encode()
+    req = urllib.request.Request(url, data=body, method='POST',
+                                 headers={'Authorization': f"Bearer {c['oauth2_access']}",
+                                          'Content-Type': f'multipart/form-data; boundary={boundary}'})
+    with urllib.request.urlopen(req, timeout=40) as r:
+        d = json.load(r)
+    return str(d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id'))
+
+def x_get_json(url, bearer):
+    req = urllib.request.Request(url, headers={'Authorization': f'Bearer {bearer}'})
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.load(r)
+
+GW_CACHE = {}
+def gw_user_set(url, bearer):
+    ts, ids = GW_CACHE.get(url, (0, set()))
+    if time.time() - ts < 240:
+        return ids
+    ids, tok, pages = set(), None, 0
+    while pages < 3:
+        u = url + ('&pagination_token=' + tok if tok else '')
+        d = x_get_json(u, bearer)
+        ids |= {str(x.get('id')) for x in d.get('data', [])}
+        tok = d.get('meta', {}).get('next_token')
+        pages += 1
+        if not tok:
+            break
+    GW_CACHE[url] = (time.time(), ids)
+    return ids
+
+def gw_followed(uid, uat):
+    try:
+        ids = gw_user_set('https://api.x.com/2/users/1831457082828021760/followers?max_results=100', uat)
+        return str(uid) in ids
+    except Exception:
+        return None
+
+
+TIER_ROOM = {'lock': '🔒 Lock Room', 'sharp': '📊 Sharp Room', 'whale': '🐋 Whale Room', 'free': '🆓 Free'}
+def entry_checklist(handle, followed, liked, reposted):
+    def line(ok, label):
+        return f"{'✅' if ok else '❌'} {label}"
+    lines = [line(followed, 'Follow @TheLineShift'),
+             line(liked, 'Like the giveaway post'),
+             line(reposted, 'Repost the giveaway post')]
+    missing = [l for ok, l in zip((followed, liked, reposted),
+                                  ('follow @TheLineShift', 'like the giveaway post', 'repost the giveaway post')) if not ok]
+    return lines, missing
+
+async def verify_giveaway_entry(message, handle):
+    try:
+        c = await asyncio.to_thread(x_creds_load)
+        bt = c['bearer_token']
+        state = await asyncio.to_thread(get_state)
+        post_id = (state or {}).get('giveaway_x_post', '2080027230839931367')
+        our_id = '1831457082828021760'
+        try:
+            u = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/by/username/{handle}', bt)
+            uid = str(u.get('data', {}).get('id') or '')
+        except Exception:
+            uid = ''
+        if not uid:
+            await message.channel.send(f"🤖 SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
+            return
+        if time.time() > c.get('oauth2_expires_at', 0):
+            c = await asyncio.to_thread(x_oauth2_refresh, c)
+        uat = c.get('oauth2_access', bt)
+        followed = await asyncio.to_thread(gw_followed, uid, uat)
+        try:
+            liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', uat)
+        except Exception:
+            liked = None
+        try:
+            reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', uat)
+        except Exception:
+            reposted = None
+        def ic(ok, label):
+            return f"{'✅' if ok else ('❌' if ok is False else '❓')} {label}"
+        checklist = "\n".join([ic(followed, 'Follow @TheLineShift'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
+        missing = []
+        if followed is False: missing.append('follow @TheLineShift')
+        if liked is False: missing.append('like the giveaway post')
+        if reposted is False: missing.append('repost the giveaway post')
+        if not missing and followed and liked and reposted:
+            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+            if handle.lower() in (conf or {}):
+                await message.channel.send(f"🎫 **@{handle}** — you're already locked in the pool. Sit tight for Sunday 6 PM ET. 🤖")
+                return
+            names = [r.name for r in getattr(message.author, 'roles', [])]
+            tkey = 'whale' if any('Whale' in n or '🐋' in n for n in names) else 'sharp' if any('Sharp' in n or '📊' in n for n in names) else 'lock' if any('Lock' in n or '🔒' in n for n in names) else 'free'
+            mult = {'whale': 5, 'sharp': 3, 'lock': 2, 'free': 1}[tkey]
+            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+            conf = conf or {}
+            conf[handle.lower()] = {
+                'handle': handle, 'discord': str(message.author), 'discord_id': str(message.author.id),
+                'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
+            await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway confirm ' + handle, QUEUE_BRANCH)
+            try:
+                await message.add_reaction('✅')
+            except Exception:
+                pass
+            await message.channel.send(
+                f"🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. 🤖")
+        else:
+            steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else 'X is still registering your activity —'
+            await message.channel.send(
+                f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. 🤖")
+    except Exception as e:
+        print('giveaway verify error:', e)
+
+async def run_command(cmd, guild, log):
+    a = cmd.get('action')
+    if a == 'list_channels':
+        log.append('channels: ' + ' | '.join(f'{c.name} ({c.id})' for c in guild.text_channels))
+    elif a == 'rename_channel':
+        ch = find_channel(guild, cmd['channel'])
+        old = ch.name
+        await ch.edit(name=cmd['name'])
+        log.append(f'renamed #{old} -> {cmd["name"]}')
+    elif a == 'set_topic':
+        ch = find_channel(guild, cmd['channel'])
+        await ch.edit(topic=cmd['topic'])
+        log.append(f'topic set on #{ch.name}')
+    elif a == 'post_and_pin':
+        ch = find_channel(guild, cmd['channel'])
+        m = await ch.send(cmd['content'])
+        await m.pin()
+        log.append(f'posted+pinned in #{ch.name}')
+    elif a == 'set_permissions':
+        ch = find_channel(guild, cmd['channel'])
+        role = find_role(guild, cmd['role'])
+        ow = discord.PermissionOverwrite()
+        for p in cmd.get('allow', []):
+            setattr(ow, p, True)
+        for p in cmd.get('deny', []):
+            setattr(ow, p, False)
+        await ch.set_permissions(role, overwrite=ow)
+        log.append(f'perms set on #{ch.name} for role {role.name}')
+    elif a == 'giveaway_winner':
+        ch = find_channel(guild, cmd.get('channel', 'giveaway'))
+        target = None
+        async for m in ch.history(limit=100):
+            if m.author == client.user and '\U0001F381' in (m.content or ''):
+                target = m
+                break
+        if target is None:
+            log.append('giveaway_winner: no giveaway post found')
+        else:
+            entrants = []
+            for react in target.reactions:
+                if str(react.emoji) == '\U0001F389':
+                    async for u in react.users():
+                        if not u.bot:
+                            entrants.append(u)
+            if not entrants:
+                await ch.send('\U0001F381 Giveaway closed — no valid entries this round. New one starts now!')
+                log.append('giveaway_winner: 0 entries')
+            else:
+                w = random.choice(entrants)
+                prize = cmd.get('prize', 'a FREE month of \U0001F512 Lock Room')
+                await ch.send(f"\U0001F381 **GIVEAWAY WINNER** \U0001F389\n\nCongratulations {w.mention} — you won **{prize}**!\n\nThe captain will get you set up within 24h. Thanks to all {len(entrants)} entries — the next giveaway starts RIGHT NOW \U0001F440")
+                log.append(f'giveaway_winner: {w.name} ({w.id}) from {len(entrants)} entries')
+    elif a == 'setup_scan_role':
+        role = discord.utils.get(guild.roles, name='🛰️ Scan Alerts')
+        if role is None:
+            role = await guild.create_role(name='🛰️ Scan Alerts', mentionable=True, reason='scan alert opt-in')
+            log.append(f'created role {role.id}')
+        ch = find_channel(guild, 'general-chat')
+        msg = await ch.send("🛰️ **WANT THE HEADS-UP?**\nReact with 🛰️ and you'll get one quiet ping before each scan (6x daily — T-60 and T-10 only, nothing else). Remove your reaction anytime to opt out. No spam, just the warning. 🤖")
+        try:
+            await msg.add_reaction('🛰️')
+        except Exception:
+            pass
+        try:
+            await msg.pin()
+        except Exception:
+            pass
+        state = await asyncio.to_thread(get_state)
+        state['scan_role_id'] = role.id
+        state['scan_role_msg'] = msg.id
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'scan role setup')
+        log.append('scan role + opt-in post live')
+    elif a == 'export_entries':
+        ch = find_channel(guild, cmd.get('channel', 'giveaway'))
+        if not ch:
+            log.append('export_entries: giveaway channel not found')
+        else:
+            tier_of = {}
+            for m in guild.members:
+                names = [r.name for r in m.roles]
+                if any('Whale' in n or '🐋' in n for n in names):
+                    tier_of[m.id] = ('whale', 5)
+                elif any('Sharp' in n or '📊' in n for n in names):
+                    tier_of[m.id] = ('sharp', 3)
+                elif any('Lock' in n or '🔒' in n for n in names):
+                    tier_of[m.id] = ('lock', 2)
+            entries = {}
+            async for msg in ch.history(limit=400):
+                if msg.author.bot:
+                    continue
+                pats = list(re.findall(r'@([A-Za-z0-9_]{4,15})\b', msg.content or ''))
+                pats += re.findall(r'(?:https?://)?(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{4,15})', msg.content or '', flags=re.I)
+                for h in pats:
+                    key = h.lower()
+                    if key in ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i'):
+                        continue
+                    tname, weight = tier_of.get(msg.author.id, ('free', 1))
+                    cur = entries.get(key)
+                    if cur is None or weight > cur['weight']:
+                        entries[key] = {'handle': h, 'discord': str(msg.author), 'discord_id': str(msg.author.id),
+                                        'tier': tname, 'weight': weight}
+            pool = []
+            for e in entries.values():
+                pool += [e['handle']] * e['weight']
+            doc = {'exported': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                   'unique': len(entries), 'weighted_pool': len(pool),
+                   'entries': sorted(entries.values(), key=lambda x: x['handle'].lower()), 'pool': sorted(pool)}
+            await asyncio.to_thread(gh_put, 'giveaway_entries.json', doc, 'entry export', 'main')
+            log.append(f"exported {len(entries)} unique entries ({len(pool)} weighted tickets) -> giveaway_entries.json")
+    elif a == 'purge_channel':
+        ch = find_channel(guild, cmd['channel'])
+        if not ch:
+            log.append(f'purge_channel: #{cmd["channel"]} not found')
+        else:
+            n = 0
+            async for m in ch.history(limit=int(cmd.get('limit', 50))):
+                if cmd.get('bots_only') and not m.author.bot:
+                    continue
+                if cmd.get('marker') and cmd['marker'].lower() not in (m.content or '').lower():
+                    continue
+                try:
+                    await m.delete()
+                    n += 1
+                except Exception:
+                    pass
+            log.append(f'purged {n} messages in #{ch.name}')
+    elif a == 'make_invite':
+        ch = find_channel(guild, cmd.get('channel', 'general-chat'))
+        inv = await ch.create_invite(max_age=0, max_uses=0, reason='permanent invite for X/giveaways')
+        log.append(f'INVITE: https://discord.gg/{inv.code}')
+    elif a == 'set_server_icon':
+        try:
+            ref = cmd.get('ref', 'main')
+            path = cmd.get('path', 'assets/server_icon.png')
+            remote = await asyncio.to_thread(gh_get, path, ref)
+            icon_bytes = base64.b64decode(remote['content'])
+            await guild.edit(icon=icon_bytes, reason='SHiFT server icon - brand mark')
+            log.append(f'server icon set from {path} ({len(icon_bytes)} bytes)')
+        except Exception as e:
+            log.append(f'set_server_icon FAILED: {type(e).__name__}: {e}')
+    elif a == 'clean_general':
+        ch = find_channel(guild, 'general-chat')
+        if not ch:
+            log.append('clean_general: channel not found')
+        else:
+            seen, dups, finale = set(), [], None
+            async for m in ch.history(limit=60):
+                txt = (m.content or '')
+                if 'crunching' in txt and 'parameters' in txt:
+                    keyt = txt[:60]
+                    if keyt in seen and m.author.bot:
+                        dups.append(m)
+                    else:
+                        seen.add(keyt)
+                if 'SCAN COMPLETE' in txt and 'MAKEUP' in txt.upper() and finale is None:
+                    finale = m
+            for m in dups:
+                try:
+                    await m.delete()
+                    log.append('deleted duplicate ANALYZING post')
+                except Exception as e:
+                    log.append(f'dup delete fail: {e}')
+            if finale is not None:
+                try:
+                    fixed = (finale.content or '').replace('card already live from 8 AM (Mariners ML 2u, 3:40 PM ET) — no forced adds',
+                                                           'card already live from the 8 AM scan — no forced adds')
+                    fixed = fixed.replace('Mariners ML 2u live', 'whale card live')
+                    if fixed != (finale.content or ''):
+                        await finale.delete()
+                        await ch.send(fixed)
+                        log.append('finale reposted without whale leak')
+                    else:
+                        log.append('finale had no leak text')
+                except Exception as e:
+                    log.append(f'finale fix fail: {e}')
+            if not dups and finale is None:
+                log.append('clean_general: nothing to fix')
+    elif a == 'audit_channels':
+        for c2 in guild.text_channels:
+            topic = (c2.topic or '')[:60]
+            log.append(f'#{c2.name} ({c2.id}) topic: {topic or "NONE"}')
+        bots = [m for m in guild.members if m.bot]
+        for b in bots:
+            av = 'custom' if b.avatar else 'DEFAULT'
+            log.append(f'BOT {b.name} | nick: {b.nick} | avatar: {av}')
+    elif a == 'x_timeline':
+        c = x_creds_load()
+        try:
+            url = 'https://api.x.com/2/users/1831457082828021760/tweets?max_results=100&tweet.fields=created_at,referenced_tweets'
+            req = urllib.request.Request(url, headers={'Authorization': f"Bearer {c['bearer_token']}"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            for t in d.get('data', []):
+                refs = t.get('referenced_tweets', [])
+                kind = refs[0].get('type', 'post') if refs else 'post'
+                log.append(f"{t['id']} | {t.get('created_at', '')[:16]} | {kind} | {t['text'][:70]}")
+            if not d.get('data'):
+                log.append('x_timeline: no posts')
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_timeline FAIL: {e} {body}')
+    elif a == 'x_delete':
+        c = x_creds_load()
+        if time.time() > c.get('oauth2_expires_at', 0):
+            c = await asyncio.to_thread(x_oauth2_refresh, c)
+        for tid in cmd.get('ids', []):
+            try:
+                req = urllib.request.Request(f'https://api.x.com/2/tweets/{tid}', method='DELETE',
+                                             headers={'Authorization': f"Bearer {c['oauth2_access']}"})
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    json.load(r)
+                log.append(f'deleted post {tid}')
+            except Exception as e:
+                body = ''
+                if hasattr(e, 'read'):
+                    try: body = e.read()[:150]
+                    except Exception: pass
+                log.append(f'delete {tid} FAIL: {e} {body}')
+    elif a == 'x_media_probe':
+        try:
+            remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
+            img = base64.b64decode(remote['content'])
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            mid = await asyncio.to_thread(x_upload_media, img, 'image/png', c)
+            log.append(f'x_media_probe OK: media_id {mid} ({len(img)} bytes) — native image posts LIVE')
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_media_probe FAIL: {e} {body}')
+    elif a == 'verify_entry':
+        # manual entry verification: check a handle's follow/like/repost vs the live giveaway post
+        handle = cmd.get('handle', '').lstrip('@')
+        ch = find_channel(guild, cmd.get('channel', 'giveaway'))
+        if not handle or not ch:
+            log.append('verify_entry: need handle + channel')
+        else:
+            try:
+                c = x_creds_load()
+                bt = c['bearer_token']
+                state = await asyncio.to_thread(get_state)
+                post_id = (state or {}).get('giveaway_x_post', '')
+                our_id = '1831457082828021760'
+                if time.time() > c.get('oauth2_expires_at', 0):
+                    c = await asyncio.to_thread(x_oauth2_refresh, c)
+                uat = c.get('oauth2_access', bt)
+                try:
+                    u = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/by/username/{handle}', bt)
+                    uid = str(u.get('data', {}).get('id') or '')
+                except Exception:
+                    uid = ''
+                if not uid:
+                    await ch.send(f"🤖 SHiFT entry check: can't find an X account **@{handle}** — double-check the spelling and drop it again.")
+                else:
+                    followed = await asyncio.to_thread(gw_followed, uid, uat)
+                    try:
+                        liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', uat)
+                    except Exception as _e:
+                        log.append(f'verify like-check err: {str(_e)[:80]}')
+                        liked = None
+                    try:
+                        reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', uat)
+                    except Exception as _e:
+                        log.append(f'verify repost-check err: {str(_e)[:80]}')
+                        reposted = None
+                    def ic(ok, label):
+                        return f"{'✅' if ok else ('❌' if ok is False else '❓')} {label}"
+                    checklist = "\n".join([ic(followed, 'Follow @TheLineShift'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
+                    missing = []
+                    if followed is False: missing.append('follow @TheLineShift')
+                    if liked is False: missing.append('like the giveaway post')
+                    if reposted is False: missing.append('repost the giveaway post')
+                    if not missing and followed and liked and reposted:
+                        conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+                        if handle.lower() in (conf or {}):
+                            await ch.send(f"🎫 **@{handle}** — already locked in the pool. Sunday 6 PM ET. 🤖")
+                            log.append(f'verify_entry: @{handle} already confirmed')
+                        else:
+                            mult, dname, did, tkey = 1, '', '', 'free'
+                            ent = await asyncio.to_thread(gh_get_json_ref, 'giveaway_entries.json', 'main')
+                            for e in (ent or {}).get('entries', []):
+                                if e.get('handle', '').lower() == handle.lower():
+                                    mult = int(e.get('weight', 1)); dname = e.get('discord', ''); did = e.get('discord_id', '')
+                                    tkey = e.get('tier', 'free')
+                                    break
+                            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+                            conf = conf or {}
+                            conf[handle.lower()] = {
+                                'handle': handle, 'discord': dname, 'discord_id': did,
+                                'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
+                            await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway confirm ' + handle, QUEUE_BRANCH)
+                            await ch.send(f"🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. 🤖")
+                            log.append(f'verify_entry: CONFIRMED @{handle} ({mult}x)')
+                    else:
+                        steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else 'X is still registering your activity —'
+                        await ch.send(f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. 🤖")
+                        log.append(f'verify_entry: @{handle} incomplete ({len(missing)} left)')
+            except Exception as e:
+                log.append(f'verify_entry FAIL: {e}')
+    elif a == 'x_followers_probe':
+        try:
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            d = await asyncio.to_thread(x_get_json, 'https://api.x.com/2/users/1831457082828021760/followers?max_results=100', c.get('oauth2_access', ''))
+            ids = [str(x.get('id')) for x in d.get('data', [])]
+            log.append(f'x_followers_probe OK: {len(ids)} followers readable, next={bool(d.get("meta", {}).get("next_token"))}')
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:150]
+                except Exception: pass
+            log.append(f'x_followers_probe FAIL: {e} {body}')
+    elif a == 'x_follow':
+        try:
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            uname = cmd.get('username', '').lstrip('@')
+            req = urllib.request.Request(f'https://api.x.com/2/users/by/username/{uname}',
+                                         headers={'Authorization': f"Bearer {c['bearer_token']}"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                uid = json.load(r)['data']['id']
+            req = urllib.request.Request('https://api.x.com/2/users/1831457082828021760/following',
+                                         data=json.dumps({'target_user_id': uid}).encode(), method='POST',
+                                         headers={'Authorization': f"Bearer {c['oauth2_access']}", 'Content-Type': 'application/json'})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                json.load(r)
+            log.append(f'followed @{uname}')
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:150]
+                except Exception: pass
+            log.append(f'x_follow FAIL: {e} {body}')
+    elif a == 'x_like':
+        try:
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            req = urllib.request.Request('https://api.x.com/2/users/1831457082828021760/likes',
+                                         data=json.dumps({'tweet_id': cmd['id']}).encode(), method='POST',
+                                         headers={'Authorization': f"Bearer {c['oauth2_access']}", 'Content-Type': 'application/json'})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                json.load(r)
+            log.append(f"liked {cmd['id']}")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:150]
+                except Exception: pass
+            log.append(f'x_like FAIL: {e} {body}')
+    elif a == 'x_post_text':
+        try:
+            res = await asyncio.to_thread(x_post, cmd['text'])
+            tid = res.get('data', {}).get('id') if res else None
+            log.append(f'x_post_text OK: id {tid}')
+            if cmd.get('tag') == 'giveaway' and tid:
+                st2 = await asyncio.to_thread(get_state)
+                if st2 is not None:
+                    st2['giveaway_x_post'] = tid
+                    await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id')
+        except Exception as e:
+            log.append(f'x_post_text FAIL: {e}')
+    elif a == 'x_refresh':
+        try:
+            c = x_creds_load()
+            c = await asyncio.to_thread(x_oauth2_refresh, c)
+            log.append(f"x_refresh OK: token now expires {time.strftime('%H:%M UTC', time.gmtime(c.get('oauth2_expires_at', 0)))}")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:250]
+                except Exception: pass
+            log.append(f'x_refresh FAIL: {e} {body}')
+    elif a == 'x_me':
+        try:
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            req = urllib.request.Request('https://api.x.com/2/users/me',
+                                         headers={'Authorization': f"Bearer {c['oauth2_access']}"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            log.append(f"x_me OK: @{d.get('data', {}).get('username')} id {d.get('data', {}).get('id')} — oauth2 user token LIVE")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:250]
+                except Exception: pass
+            log.append(f'x_me FAIL: {e} {body}')
+    elif a == 'crypto_wallets':
+        try:
+            bal = await asyncio.to_thread(wallet_balances)
+            await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances')
+            tot = sum(w.get('usd') or 0 for w in bal.get('wallets', []))
+            lines = [f"👛 **HOT WALLETS** — ${tot:,.2f} total"]
+            for w in bal.get('wallets', []):
+                lines.append(f"• **{w['symbol']}** `{w['address']}` — {w['balance']} (${w['usd']:,.2f})")
+            lab = find_channel(guild, 'shift-lab')
+            if lab:
+                await lab.send('\n'.join(lines)[:1900])
+            log.append(f"wallet report: ${tot:,.2f}")
+        except Exception as e:
+            log.append(f'crypto_wallets FAIL: {e}')
+    elif a == 'crypto_withdraw':
+        try:
+            chain = str(cmd.get('chain', '')).lower()
+            to = cmd.get('to', '')
+            amount = cmd.get('amount', 0)
+            txid = await asyncio.to_thread(crypto_withdraw, chain, to, amount)
+            await asyncio.to_thread(log_event, 'crypto_withdraw', f'{amount} {chain} -> {to[:12]}... : {txid}')
+            lab = find_channel(guild, 'shift-lab')
+            if lab:
+                await lab.send(f"💸 **WITHDRAWAL SENT** — {amount} {chain.upper()} → `{to}`\n{txid}")
+            log.append(f'withdraw: {txid}')
+            bal = await asyncio.to_thread(wallet_balances)
+            await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances post-withdraw')
+        except Exception as e:
+            log.append(f'crypto_withdraw FAIL: {e}')
+            lab = find_channel(guild, 'shift-lab')
+            if lab:
+                await lab.send(f"❌ WITHDRAW FAILED — {cmd.get('chain')} {cmd.get('amount')}: {e}")
+    elif a == 'crypto_checkout':
+        try:
+            tier = str(cmd.get('tier', '')).lower()
+            coin = str(cmd.get('coin', 'usdt')).lower()
+            aliases = {'usdt': 'usdttrc20', 'bnb': 'bnbbsc'}
+            coin = aliases.get(coin, coin)
+            member = await resolve_member(guild, str(cmd.get('user', '')))
+            np_key = os.environ.get('NOWPAYMENTS_KEY', '')
+            if not np_key:
+                log.append('crypto checkout: NOWPAYMENTS_KEY not set')
+            elif tier not in CRYPTO_TIERS or not member:
+                log.append(f'crypto checkout: bad tier/user {tier} {cmd.get("user")}')
+            else:
+                pay = await asyncio.to_thread(_http_json, 'https://api.nowpayments.io/v1/payment',
+                    {'price_amount': CRYPTO_TIERS[tier], 'price_currency': 'usd', 'pay_currency': coin,
+                     'order_id': f'{member.id}:{tier}', 'order_description': f'TheLineShift {tier.title()} 30 days',
+                     'is_fixed_rate': True}, {'x-api-key': np_key})
+                pid = pay.get('payment_id')
+                if not pid:
+                    log.append(f'crypto checkout failed: {str(pay)[:200]}')
+                else:
+                    known = await asyncio.to_thread(gh_get_json, 'crypto_members.json') or {'members': []}
+                    known.setdefault('members', [])
+                    known['members'].append({'payment_id': pid, 'discord_id': str(member.id), 'tier': tier,
+                                             'status': pay.get('payment_status', 'waiting'), 'coin': coin,
+                                             'pay_address': pay.get('pay_address'), 'pay_amount': pay.get('pay_amount'),
+                                             'created': time.time(), 'expires': None})
+                    await asyncio.to_thread(gh_put, 'crypto_members.json', known, 'crypto checkout created')
+                    try:
+                        await member.send(
+                            f"🪙 **{tier.upper()} — crypto checkout (30 days)**\n"
+                            f"Send **{pay.get('pay_amount')} {coin.upper()}** to:\n`{pay.get('pay_address')}`\n"
+                            f"Your access activates **automatically** when the payment confirms on-chain. "
+                            f"Questions? #🛠️issues.")
+                    except Exception:
+                        pass
+                    log.append(f'crypto payment {pid} for {member} ({coin})')
+        except Exception as e:
+            log.append(f'crypto_checkout FAIL: {e}')
+    elif a == 'audit_channels':
+        try:
+            rep = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'channels': []}
+            for ch in guild.text_channels:
+                last = None
+                try:
+                    async for m in ch.history(limit=1):
+                        last = {'author': str(m.author), 'ts': m.created_at.strftime('%Y-%m-%dT%H:%M:%SZ'),
+                                'preview': (m.content or '(embed/attachment)')[:140]}
+                except Exception:
+                    pass
+                rep['channels'].append({'name': ch.name, 'topic': (ch.topic or ''), 'last': last})
+            await asyncio.to_thread(gh_put, 'channels_audit.json', rep, 'channel audit')
+            log.append(f"channel audit: {len(rep['channels'])} channels -> channels_audit.json")
+        except Exception as e:
+            log.append(f'audit_channels FAIL: {e}')
+    elif a == 'purge_whop':
+        try:
+            n = 0
+            for m in list(guild.members):
+                if m.bot and 'whop' in m.name.lower():
+                    try:
+                        await guild.kick(m, reason='whop purge - platform retired')
+                        n += 1
+                    except Exception as e:
+                        log.append(f'whop kick failed: {e}')
+            for r in list(guild.roles):
+                if 'whop' in r.name.lower():
+                    try:
+                        await r.delete(reason='whop purge - platform retired')
+                        n += 1
+                    except Exception as e:
+                        log.append(f'whop role delete failed: {e}')
+            await asyncio.to_thread(log_event, 'whop_purge', f'{n} whop entities removed (bot kicked, roles deleted)')
+            log.append(f'whop purge complete: {n} removed')
+        except Exception as e:
+            log.append(f'purge_whop FAIL: {e}')
+    elif a == 'audit_permissions':
+        try:
+            ev_role = guild.default_role
+            roles = {w: next((r for r in guild.roles if w.lower() in r.name.lower()), None)
+                     for w in ('Lock', 'Sharp', 'Whale')}
+            POLICY = [
+                (('daily-locks', 'lock-lounge', '100-to-1000'), {'Lock', 'Sharp', 'Whale'}),
+                (('all-picks', 'weekly-analytics', 'sharp-talk'), {'Sharp', 'Whale'}),
+                (('every-play', 'monthly-deepdive', 'whale-talk'), {'Whale'}),
+                (('shift-lab',), set()),
+            ]
+            lines = ['🛡️ **PERMISSION AUDIT** — ' + time.strftime('%Y-%m-%d %H:%M UTC')]
+            leaks = 0
+            for ch in guild.text_channels:
+                name = ch.name.lower()
+                allowed = None
+                for keys, allow in POLICY:
+                    if any(k in name for k in keys):
+                        allowed = allow
+                        break
+                if allowed is None:
+                    continue
+                can_ev = ch.permissions_for(ev_role).view_channel
+                can = {w: (ch.permissions_for(r).view_channel if r else None) for w, r in roles.items()}
+                status = []
+                if can_ev:
+                    status.append('🚨@everyone CAN SEE'); leaks += 1
+                for w in ('Lock', 'Sharp', 'Whale'):
+                    want = w in allowed
+                    got = bool(can[w])
+                    if roles[w] is None:
+                        status.append(f'⚠️{w} role missing'); continue
+                    if got and not want:
+                        status.append(f'🚨{w} leak'); leaks += 1
+                    elif want and not got:
+                        status.append(f'⚠️{w} locked out'); leaks += 1
+                flag = '✅' if not status else ' | '.join(status)
+                lines.append(f'#{ch.name}: {flag}')
+            lab = find_channel(guild, 'shift-lab')
+            report = '\n'.join(lines)[:1900]
+            if lab:
+                await lab.send(report)
+            log.append(f'audit: {leaks} leak(s) across {len(guild.text_channels)} channels')
+            await asyncio.to_thread(log_event, 'audit', f'permission audit: {leaks} leak(s)')
+        except Exception as e:
+            log.append(f'audit FAIL: {e}')
+    elif a == 'collect_metrics':
+        try:
+            counts = {'members': guild.member_count}
+            for word, key in [('Lock', 'lock'), ('Sharp', 'sharp'), ('Whale', 'whale')]:
+                n = sum(1 for mem in guild.members if any(word.lower() in r.name.lower() for r in mem.roles))
+                counts[key] = n
+            snap = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), **counts}
+            try:
+                c = x_creds_load()
+                if time.time() > c.get('oauth2_expires_at', 0):
+                    c = await asyncio.to_thread(x_oauth2_refresh, c)
+                uid = c.get('user_id') or '1831457082828021760'
+                req = urllib.request.Request(f'https://api.x.com/2/users/{uid}?user.fields=public_metrics',
+                                             headers={'Authorization': f"Bearer {c['oauth2_access']}"})
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    d = json.load(r)['data']['public_metrics']
+                snap['x_followers'] = d['followers_count']
+                snap['x_tweets'] = d['tweet_count']
+            except Exception as e:
+                log.append(f'metrics X fetch failed: {e}')
+            try:
+                bal = await asyncio.to_thread(wallet_balances)
+                await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances')
+            except Exception as e:
+                log.append(f'wallet balances failed: {e}')
+            m = await asyncio.to_thread(gh_get_json, 'metrics.json')
+            m = m or {'snapshots': []}
+            m.setdefault('snapshots', []).append(snap)
+            m['snapshots'] = m['snapshots'][-400:]
+            await asyncio.to_thread(gh_put, 'metrics.json', m, 'metrics snapshot')
+            log.append(f'metrics: {snap}')
+        except Exception as e:
+            log.append(f'metrics FAIL: {e}')
+    elif a == 'harden_guild':
+        try:
+            await guild.edit(explicit_content_filter=discord.ContentFilter.all_members, reason='SHiFT harden')
+            log.append('harden_guild: explicit content filter = ALL members')
+        except Exception as e:
+            log.append(f'harden_guild filter FAIL: {e}')
+        try:
+            trig = discord.AutoModTrigger(type=discord.AutoModRuleTriggerType.mention_spam, mention_limit=5)
+            acts = [discord.AutoModRuleAction(type=discord.AutoModRuleActionType.block_message)]
+            await guild.create_automod_rule(name='SHiFT mention guard', event_type=discord.AutoModRuleEventType.message_send,
+                                            trigger=trig, actions=acts, enabled=True, reason='harden')
+            log.append('harden_guild: AutoMod mention-spam rule ON')
+        except Exception as e:
+            log.append(f'harden_guild automod mention FAIL: {e}')
+        try:
+            trig2 = discord.AutoModTrigger(type=discord.AutoModRuleTriggerType.keyword,
+                keyword_filter=['dm me','send me a dm','d.m me','telegram','t.me/','whatsapp','free nitro','airdrop','double your','forex','guaranteed profit','claim your'])
+            acts2 = [discord.AutoModRuleAction(type=discord.AutoModRuleActionType.block_message)]
+            await guild.create_automod_rule(name='SHiFT scam filter', event_type=discord.AutoModRuleEventType.message_send,
+                                            trigger=trig2, actions=acts2, enabled=True, reason='harden')
+            log.append('harden_guild: AutoMod scam-keyword rule ON')
+        except Exception as e:
+            log.append(f'harden_guild automod keyword FAIL: {e}')
+    elif a == 'lockdown_channels':
+        def _frag(s):
+            return ''.join(c for c in s.lower() if c.isalnum() or c == '-')
+        def _tier_role(word):
+            for r in guild.roles:
+                if word.lower() in r.name.lower():
+                    return r
+            return None
+        OPEN_SEND = ['general-chat', 'giveaway', 'issues', 'upgrade']
+        OPEN_READ = ['free-pick', 'receipts', 'updates', 'welcome', 'rules', 'promotions']
+        STAFF_ONLY = ['shift-lab']
+        PAID = {'daily-locks': ['Lock', 'Sharp', 'Whale'], 'lock-lounge': ['Lock', 'Sharp', 'Whale'],
+                '100-to-1000': ['Lock', 'Sharp', 'Whale'], 'all-picks': ['Sharp', 'Whale'],
+                'weekly-analytics': ['Sharp', 'Whale'], 'sharp-talk': ['Sharp', 'Whale'],
+                'every-play': ['Whale'], 'monthly-deepdive': ['Whale'], 'whale-talk': ['Whale']}
+        n = 0
+        for ch in guild.text_channels:
+            nm = _frag(ch.name)
+            try:
+                if any(_frag(k) in nm for k in STAFF_ONLY):
+                    await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=False))
+                    for w in ('Lock', 'Sharp', 'Whale'):
+                        r = _tier_role(w)
+                        if r:
+                            await ch.set_permissions(r, overwrite=discord.PermissionOverwrite(view_channel=False))
+                    n += 1
+                elif any(_frag(k) in nm for k in OPEN_SEND):
+                    await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=True, send_messages=True, read_message_history=True, mention_everyone=False))
+                    n += 1
+                elif any(_frag(k) in nm for k in OPEN_READ):
+                    await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=True, send_messages=False, read_message_history=True, mention_everyone=False))
+                    n += 1
+                else:
+                    hit = None
+                    for key, roles in PAID.items():
+                        if _frag(key) in nm:
+                            hit = roles
+                            break
+                    if hit is not None:
+                        await ch.set_permissions(guild.default_role, overwrite=discord.PermissionOverwrite(view_channel=False))
+                        for w in ('Lock', 'Sharp', 'Whale'):
+                            r = _tier_role(w)
+                            if not r:
+                                continue
+                            if w in hit:
+                                can_send = key in ('daily-locks', 'all-picks', 'every-play')
+                                await ch.set_permissions(r, overwrite=discord.PermissionOverwrite(view_channel=True, send_messages=can_send, read_message_history=True, mention_everyone=False))
+                            else:
+                                await ch.set_permissions(r, overwrite=discord.PermissionOverwrite(view_channel=False))
+                        n += 1
+            except Exception as e:
+                log.append(f'lockdown FAIL #{ch.name}: {e}')
+        log.append(f'lockdown_channels: {n} channels locked — tiers enforced, @everyone pings disabled server-wide')
+    elif a == 'delete_where':
+        try:
+            ch = find_channel(guild, cmd['channel'])
+            n = 0
+            if ch:
+                async for m in ch.history(limit=cmd.get('limit', 15)):
+                    if cmd['contains'] in (m.content or '') and (not cmd.get('author') or cmd['author'] in (m.author.name or '')):
+                        await m.delete()
+                        n += 1
+                        log.append(f'delete_where: removed message {m.id} in #{ch.name}')
+                        if n >= cmd.get('max', 1):
+                            break
+            if n == 0:
+                log.append('delete_where: no matching message found')
+        except Exception as e:
+            log.append(f'delete_where FAIL: {e}')
+    elif a == 'x_oauth1_me':
+        for name, ck, cs, at, ats in x_oauth1_sets(x_creds_load()):
+            try:
+                hdr = x_oauth1_sign('GET', 'https://api.x.com/2/users/me', ck, cs, at, ats)
+                req = urllib.request.Request('https://api.x.com/2/users/me', headers={'Authorization': hdr})
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    d = json.load(r)
+                log.append(f"x_oauth1_me [{name}] OK: @{d.get('data', {}).get('username')} id {d.get('data', {}).get('id')}")
+            except urllib.error.HTTPError as e:
+                try:
+                    eb = e.read()[:220]
+                except Exception:
+                    eb = b''
+                log.append(f'x_oauth1_me [{name}] HTTP {e.code}: {eb}')
+            except Exception as e:
+                log.append(f'x_oauth1_me [{name}] FAIL: {e}')
+    elif a == 'x_media_test':
+        try:
+            img = await asyncio.to_thread(gh_raw_bytes, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
+            if len(img) < 1000:
+                raise Exception(f'image fetch too small: {len(img)} bytes')
+            cname, mid = await asyncio.to_thread(x_upload_media_oauth1, img)
+            log.append(f'x_media_test OK: media_id {mid} via {cname} ({len(img)} bytes) — native image posts LIVE')
+        except Exception as e:
+            log.append(f'x_media_test FAIL: {e}')
+    elif a == 'x_post_media_native':
+        try:
+            img = await asyncio.to_thread(gh_raw_bytes, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
+            if len(img) < 1000:
+                raise Exception(f'image fetch too small: {len(img)} bytes')
+            cname, mid = await asyncio.to_thread(x_upload_media_oauth1, img)
+            if cname == 'oauth2':
+                res = await asyncio.to_thread(x_post_media_oauth2, cmd['text'], mid)
+            else:
+                res = await asyncio.to_thread(x_post_media_oauth1, cmd['text'], mid, cname)
+            tid = res.get('data', {}).get('id') if res else None
+            log.append(f'x_post_media_native OK: tweet {tid} with media {mid} via {cname}')
+            if cmd.get('tag') == 'giveaway' and tid:
+                st2 = await asyncio.to_thread(get_state)
+                if st2 is not None:
+                    st2['giveaway_x_post'] = str(tid)
+                    await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id (native media)')
+        except Exception as e:
+            log.append(f'x_post_media_native FAIL: {e}')
+    elif a == 'x_post_media':
+        try:
+            remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
+            img = base64.b64decode(remote['content'])
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            media_id = await asyncio.to_thread(x_upload_media, img, 'image/png', c)
+            body = json.dumps({'text': cmd['text'], 'media': {'media_ids': [media_id]}}).encode()
+            req = urllib.request.Request('https://api.x.com/2/tweets', data=body, method='POST',
+                                         headers={'Authorization': f"Bearer {c['oauth2_access']}", 'Content-Type': 'application/json'})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                res = json.load(r)
+            tid = res.get('data', {}).get('id')
+            log.append(f'x_post_media OK: id {tid}')
+            if cmd.get('tag') == 'giveaway' and tid:
+                st2 = await asyncio.to_thread(get_state)
+                if st2 is not None:
+                    st2['giveaway_x_post'] = tid
+                    await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id')
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_post_media FAIL: {e} {body}')
+    elif a == 'x_diag1':
+        try:
+            import hmac as _hmac, hashlib as _hl, secrets as _sc
+            from urllib.parse import quote as _qq
+            c = x_creds_load()
+            url = 'https://api.twitter.com/1.1/account/verify_credentials.json'
+            op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': _sc.token_hex(16),
+                  'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+                  'oauth_token': c['access_token'], 'oauth_version': '1.0'}
+            q = lambda s: _qq(str(s), safe='')
+            base = '&'.join(['GET', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+            key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
+            op['oauth_signature'] = base64.b64encode(_hmac.new(key.encode(), base.encode(), _hl.sha1).digest()).decode()
+            hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+            req = urllib.request.Request(url, headers={'Authorization': hdr})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            log.append(f"x_diag1 v1.1 OK: @{d.get('screen_name')} — bio/logo endpoints reachable")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_diag1 v1.1 FAIL: {e} {body}')
+    elif a == 'x_link_scan':
+        target = None
+        for tch in guild.text_channels:
+            if 'updates' in tch.name:
+                target = tch
+                break
+        if target is None:
+            log.append('x_link_scan: updates channel not found')
+        else:
+            found = False
+            async for m in target.history(limit=50):
+                cont = (m.content or '')
+                if m.author.bot or 'thelineshift.com' not in cont or 'code=' not in cont:
+                    continue
+                url = cont.strip().strip('`').strip('<>').split()[0]
+                if x_creds_load().get('oauth2_access'):
+                    log.append('already linked; skipping exchange')
+                else:
+                    await run_command({'action': 'x_link_finish', 'url': url}, guild, log)
+                try:
+                    await m.delete()
+                    log.append('deleted link message from #updates')
+                except Exception as e:
+                    log.append(f'delete failed: {e}')
+                found = True
+            if not found:
+                log.append('x_link_scan: no link message found in #updates')
+    elif a == 'x_link_start':
+        import secrets as _s, hashlib as _h
+        from urllib.parse import urlencode as _ue
+        ver = _s.token_urlsafe(64)[:64]
+        ch = base64.urlsafe_b64encode(_h.sha256(ver.encode()).digest()).decode().rstrip('=')
+        pk = {'verifier': ver, 'state': _s.token_hex(8)}
+        await asyncio.to_thread(gh_put, 'x_pkce.json', pk, 'pkce link')
+        c = x_creds_load()
+        q = _ue({'response_type': 'code', 'client_id': c.get('client_id', ''), 'redirect_uri': X_REDIRECT,
+                 'scope': 'tweet.read tweet.write users.read follows.read follows.write like.read like.write media.write offline.access', 'state': pk['state'],
+                 'code_challenge': ch, 'code_challenge_method': 'S256'})
+        log.append('AUTH URL: https://twitter.com/i/oauth2/authorize?' + q)
+    elif a == 'x_link_finish':
+        from urllib.parse import urlparse, parse_qs, urlencode as _ue2
+        qs = parse_qs(urlparse(cmd['url']).query)
+        code = qs.get('code', [None])[0]
+        if not code:
+            log.append('x_link_finish: no code in URL')
+        else:
+            c = x_creds_load()
+            try:
+                pk = json.loads(base64.b64decode(gh_get('x_pkce.json', ref=QUEUE_BRANCH)['content']).decode())
+            except Exception:
+                pk = {}
+            basic = base64.b64encode(f"{c['client_id']}:{c['client_secret']}".encode()).decode()
+            data = {'grant_type': 'authorization_code', 'code': code, 'redirect_uri': X_REDIRECT,
+                    'code_verifier': pk.get('verifier', ''), 'client_id': c['client_id']}
+            req = urllib.request.Request('https://api.x.com/2/oauth2/token',
+                                         data=_ue2(data).encode(), method='POST',
+                                         headers={'Content-Type': 'application/x-www-form-urlencoded',
+                                                  'Authorization': f'Basic {basic}'})
+            try:
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    t = json.load(r)
+                c['oauth2_access'] = t['access_token']
+                c['oauth2_refresh'] = t.get('refresh_token', '')
+                c['oauth2_expires_at'] = time.time() + t.get('expires_in', 7200) - 120
+                await asyncio.to_thread(gh_put, 'x_creds.json', c, 'oauth2 user token linked')
+                res = None
+                log.append('x_link_finish OK: tokens stored — X user link LIVE')
+                try:
+                    hello = cmd.get('text') or f'🛰️ SHiFT native X link online ({time.strftime("%H:%M UTC")}).'
+                    res = await asyncio.to_thread(x_post_native, hello)
+                    log.append(f'x_link_finish hello-post OK: tweet id {res.get("data", {}).get("id") if res else None}')
+                except Exception as he:
+                    log.append(f'x_link_finish hello-post skipped (link still LIVE): {he}')
+            except urllib.error.HTTPError as e:
+                log.append(f'x_link_finish FAIL: HTTP {e.code}: {e.read()[:250]}')
+            except Exception as e:
+                log.append(f'x_link_finish FAIL: {e}')
+    elif a == 'x_diag':
+        c = x_creds_load()
+        # (a) bearer app-only read
+        try:
+            req = urllib.request.Request('https://api.x.com/2/users/by/username/TheLineShift',
+                                         headers={'Authorization': f"Bearer {c.get('bearer_token', '')}"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            log.append(f"x_diag bearer OK: id {d.get('data', {}).get('id')}")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_diag bearer FAIL: {e} {body}')
+        # (b) oauth1 user-context read
+        try:
+            import hmac, hashlib, secrets
+            from urllib.parse import quote as _uq
+            url = 'https://api.x.com/2/users/me'
+            op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': secrets.token_hex(16),
+                  'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+                  'oauth_token': c['access_token'], 'oauth_version': '1.0'}
+            q = lambda s: _uq(str(s), safe='')
+            base = '&'.join(['GET', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+            key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
+            op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
+            hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+            req = urllib.request.Request(url, headers={'Authorization': hdr})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            log.append(f"x_diag oauth1 GET OK: @{d.get('data', {}).get('username')}")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:200]
+                except Exception: pass
+            log.append(f'x_diag oauth1 GET FAIL: {e} {body}')
+    elif a == 'x_test':
+        try:
+            res = await asyncio.to_thread(x_post_native, cmd.get('text', '\U0001F6F0\uFE0F SHiFT native X link online. The board never sleeps.'))
+            log.append(f'x_test OK: tweet id {res.get("data", {}).get("id") if res else None}')
+        except Exception as e:
+            log.append(f'x_test FAIL: {e}')
+    elif a == 'set_icon':
+        req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})
+        data = urllib.request.urlopen(req, timeout=25).read()
+        await guild.edit(icon=data)
+        log.append('server icon updated')
+    elif a == 'delete_channel_id':
+        ch = guild.get_channel(int(cmd['id']))
+        if ch:
+            await ch.delete()
+            log.append(f'deleted #{ch.name} ({cmd["id"]})')
+        else:
+            log.append(f'delete_channel_id: {cmd["id"]} not found')
+    elif a == 'delete_channel':
+        ch = find_channel(guild, cmd['channel'])
+        await ch.delete()
+        log.append(f'deleted #{ch.name}')
+    elif a == 'create_channel':
+        kwargs = {}
+        if cmd.get('private_for'):
+            role = find_role(guild, cmd['private_for'])
+            if role:
+                kwargs['overwrites'] = {guild.default_role: discord.PermissionOverwrite(view_channel=False),
+                                        role: discord.PermissionOverwrite(view_channel=True)}
+        ch = await guild.create_text_channel(cmd['name'], **kwargs)
+        log.append(f'created #{ch.name}')
+    elif a == 'list_roles':
+        log.append('ROLES: ' + ' | '.join(
+            f'{r.name} (pos={r.position}, members={len(r.members)})'
+            for r in sorted(guild.roles, key=lambda x: x.position, reverse=True)))
+    elif a == 'audit_roles':
+        lines = []
+        async for e in guild.audit_logs(action=discord.AuditLogAction.member_role_update, limit=25):
+            t = getattr(e, 'target', None)
+            if t is not None:
+                lines.append(f'{getattr(t, "name", "?")}({getattr(t, "id", "?")}) by {e.user} at {e.created_at:%m-%d %H:%M}')
+        log.append('AUDIT: ' + (' | '.join(lines) if lines else 'no member_role_update entries'))
+    elif a == 'read_pins':
+        ch = find_channel(guild, cmd['channel'])
+        pins = await ch.pins()
+        if not pins:
+            log.append(f'no pins in #{ch.name}')
+        for i, m in enumerate(pins):
+            log.append(f'PIN{i} by {m.author}: {(m.content or "")[:400]}')
+            for e in m.embeds:
+                log.append(f'  EMBED title={e.title!r} desc={(e.description or "")[:600]!r}')
+                for f in e.fields:
+                    log.append(f'    FIELD {f.name!r}: {(f.value or "")[:300]!r}')
+            for att in m.attachments:
+                log.append(f'  ATTACH: {att.filename} {att.url[:120]}')
+    elif a == 'replace_pinned':
+        ch = find_channel(guild, cmd['channel'])
+        pins = await ch.pins()
+        marker = cmd.get('marker', '')
+        removed = 0
+        for m in pins:
+            if not marker or marker.lower() in (m.content or '').lower() or len(pins) == 1:
+                try:
+                    await m.unpin()
+                    removed += 1
+                except Exception:
+                    pass
+                try:
+                    await m.delete()
+                    log.append('old pinned message deleted')
+                except Exception:
+                    log.append('old pinned message unpinned (could not delete - not mine)')
+        m = await ch.send(cmd['content'])
+        await m.pin()
+        log.append(f'replaced pin in #{ch.name} (unpinned {removed})')
+    elif a == 'read_recent':
+        n = int(cmd.get('limit', 4))
+        if cmd.get('channel') == 'all':
+            targets = list(guild.text_channels)
+        else:
+            targets = [find_channel(guild, cmd['channel'])]
+        for ch in targets:
+            if ch is None:
+                continue
+            count = 0
+            try:
+                async for m in ch.history(limit=n):
+                    log.append(f'#{ch.name} | {str(m.author)[:22]}: {(m.content or "")[:170]}')
+                    count += 1
+            except Exception as e:
+                log.append(f'#{ch.name}: read error {e}')
+            if count == 0:
+                log.append(f'#{ch.name}: (empty)')
+    elif a == 'read_full':
+        n = int(cmd.get('limit', 6))
+        ch = find_channel(guild, cmd['channel'])
+        if ch is None:
+            log.append(f"read_full: channel {cmd.get('channel')} not found")
+        else:
+            count = 0
+            try:
+                async for m in ch.history(limit=n):
+                    body = (m.content or '')[:950].replace('\n', ' \\n ')
+                    log.append(f'FULL #{ch.name} id={m.id} | {str(m.author)[:20]}: {body}')
+                    count += 1
+            except Exception as e:
+                log.append(f'#{ch.name}: read_full error {e}')
+            if count == 0:
+                log.append(f'#{ch.name}: (empty)')
+    elif a == 'delete_message':
+        ch = find_channel(guild, cmd['channel'])
+        marker = cmd.get('marker', '')
+        done = False
+        async for m in ch.history(limit=50):
+            if marker.lower() in (m.content or '').lower():
+                await m.delete()
+                log.append(f'deleted message in #{ch.name} (marker match)')
+                done = True
+                break
+        if not done:
+            log.append(f'delete_message: marker not found in #{ch.name}')
+    elif a == 'purge_system':
+        total = 0
+        for ch in guild.text_channels:
+            try:
+                async for m in ch.history(limit=30):
+                    if m.type == discord.MessageType.pins_add:
+                        await m.delete()
+                        total += 1
+            except Exception:
+                pass
+        log.append(f'purged {total} pin notices server-wide')
+    elif a == 'check_giveaway':
+        ch = find_channel(guild, cmd.get('channel', 'giveaway'))
+        target = None
+        async for m in ch.history(limit=100):
+            if m.author == client.user and '\U0001F381' in (m.content or ''):
+                target = m
+                break
+        if target is None:
+            log.append('check_giveaway: no giveaway post found')
+        else:
+            n = 0
+            for react in target.reactions:
+                if str(react.emoji) == '\U0001F389':
+                    n = react.count
+            log.append(f'check_giveaway: post found, \U0001F389 reactions={n}')
+    elif a == 'list_members':
+        count = 0
+        async for m in guild.fetch_members(limit=None):
+            roles = [r.name for r in m.roles if r.name != '@everyone']
+            log.append(f'{m.name} ({m.id}) joined {m.joined_at:%m-%d %H:%M} roles={roles}')
+            count += 1
+        log.append(f'total members: {count}')
+    elif a == 'set_avatar':
+        if cmd.get('path'):
+            d = await asyncio.to_thread(gh_get, cmd['path'], 'main')
+            data = base64.b64decode(d['content'])
+        else:
+            req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})
+            data = urllib.request.urlopen(req, timeout=25).read()
+        await client.user.edit(avatar=data)
+        log.append(f'bot avatar updated ({len(data) // 1024} KB)')
+    elif a == 'set_nick':
+        await guild.me.edit(nick=cmd.get('nick', BOT_NICK))
+        log.append(f'nick set -> {guild.me.nick}')
+    elif a == 'set_status':
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=cmd.get('status', BOT_STATUS)))
+        log.append('status set')
+    elif a == 'make_webhook':
+        ch = find_channel(guild, cmd['channel'])
+        wh = await ch.create_webhook(name=cmd.get('name', 'TheLineShift Bot'))
+        log.append(f'webhook for #{ch.name}: {wh.url}')
+    elif a == 'audit_all':
+        lines = []
+        async for e in guild.audit_logs(limit=25):
+            t = getattr(e, 'target', None)
+            tn = getattr(t, 'name', None) or str(getattr(t, 'id', '?'))
+            lines.append(f'{e.action.name} target={tn} by={e.user}')
+        log.append('AUDITALL: ' + (' | '.join(lines) if lines else 'empty'))
+    elif a == 'add_role':
+        m = await resolve_member(guild, cmd.get('member', ''))
+        role = find_role(guild, cmd.get('role', ''))
+        if not m or not role:
+            log.append(f'add_role FAILED member={cmd.get("member")} found={bool(m)} role={cmd.get("role")} found={bool(role)}')
+        elif role in m.roles:
+            log.append(f'{m.name} already has {role.name}')
+        else:
+            await m.add_roles(role, reason='LineShift manual role fix')
+            log.append(f'added {role.name} -> {m.name}')
+    elif a == 'remove_role':
+        m = await resolve_member(guild, cmd.get('member', ''))
+        role = find_role(guild, cmd.get('role', ''))
+        if m and role and role in m.roles:
+            await m.remove_roles(role, reason='LineShift manual role fix')
+            log.append(f'removed {role.name} from {m.name}')
+        else:
+            log.append(f'remove_role skipped member_found={bool(m)} role_found={bool(role)}')
+    elif a == 'member_roles':
+        m = await resolve_member(guild, cmd.get('member', ''))
+        if m:
+            log.append(f'{m.name} roles: ' + ', '.join(r.name for r in m.roles))
+        else:
+            log.append(f'member not found: {cmd.get("member")}')
+    elif a == 'fix_role_hierarchy':
+        top = guild.me.top_role.position
+        updates = {}
+        pos = 1
+        for key in ('lock', 'sharp', 'whale'):
+            r = find_role(guild, key)
+            if r:
+                updates[r] = pos
+                pos += 1
+        if updates:
+            await guild.edit_role_positions(updates, reason='LineShift hierarchy fix')
+            log.append('hierarchy: ' + ', '.join(f'{r.name}->{p}' for r, p in updates.items()))
+        else:
+            log.append('hierarchy: nothing to move')
+    else:
+        log.append(f'unknown action: {a}')
+
+@tasks.loop(seconds=60)
+async def poll():
+    try:
+        if not GH_TOKEN:
+            return
+        data = await asyncio.to_thread(fetch_commands)
+        if not data:
+            return
+        seq = data.get('seq', 0)
+        state = await asyncio.to_thread(get_state)
+        if not state:
+            return
+        if seq <= state.get('executed_seq', 0):
+            return
+        guild = client.guilds[0] if client.guilds else None
+        if not guild:
+            return
+        done_cmd = state.get('executed_cmd_seq', 0)
+        log = [f'seq {seq} executed {time.strftime("%Y-%m-%d %H:%M UTC")}']
+        ran = 0
+        for cmd in data.get('commands', []):
+            if cmd.get('seq', 0) <= done_cmd:
+                continue
+            try:
+                await run_command(cmd, guild, log)
+                ran += 1
+                done_cmd = max(done_cmd, cmd.get('seq', 0))
+            except Exception as e:
+                log.append(f'ERROR {cmd.get("action")}: {e}')
+        state['executed_cmd_seq'] = done_cmd
+        if ran == 0:
+            log.append('no new commands')
+        state['executed_seq'] = seq
+        state['last_log'] = log
+        try:
+            await asyncio.to_thread(gh_put, 'bot_state.json', state, f'bot executed seq {seq}')
+        except Exception as e:
+            print('state push failed:', e)
+    except Exception as e:
+        print('poll error:', e)
+
+SCAN_HOURS_ET = [0, 4, 8, 12, 16, 20]
+EVENT_HOURS_UTC = [0, 4, 8, 12, 16, 20]
+
+@tasks.loop(seconds=60)
+async def countdown():
+    try:
+        if not client.guilds:
+            return
+        guild = client.guilds[0]
+        now = time.gmtime()
+        et_h = (now.tm_hour - 4) % 24
+        et_m = now.tm_min
+        marker = None
+        for h in SCAN_HOURS_ET:
+            if et_h == (h - 1) % 24 and et_m == 0:
+                marker = ('60', h)
+            elif et_h == (h - 1) % 24 and et_m == 50:
+                marker = ('10', h)
+        if not marker:
+            return
+        daykey = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}-{et_h:02d}{et_m:02d}'
+        if daykey in countdown.fired:
+            return
+        countdown.fired.add(daykey)
+        ch = find_channel(guild, 'general-chat')
+        if not ch:
+            return
+        hh = marker[1] % 12 if marker[1] % 12 else 12
+        label = f'{hh} {"AM" if marker[1] < 12 else "PM"} ET'
+        state = await asyncio.to_thread(get_state)
+        # PERSISTED dedupe (survives restarts + blocks duplicate replicas):
+        fired = state.get('count_fired', [])
+        if daykey in fired:
+            return
+        today = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}'
+        yest = (datetime.date(now.tm_year, now.tm_mon, now.tm_mday) - datetime.timedelta(days=1)).strftime('%Y%m%d')
+        state['count_fired'] = [k for k in fired + [daykey] if k.startswith(today) or k.startswith(yest)]
+        rid = state.get('scan_role_id')
+        # SPAM LAW: exactly ONE notification per scan — T-10 pings the role, T-60 is text-only hype
+        mention = f'<@&{rid}> ' if (rid and marker[0] == '10') else ''
+        if marker[0] == '60':
+            pool = COUNT_60
+            idx = state.get('count60_idx', 0)
+            state['count60_idx'] = idx + 1
+        else:
+            pool = COUNT_10
+            idx = state.get('count10_idx', 0)
+            state['count10_idx'] = idx + 1
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'countdown rotation')
+        await ch.send(mention + pool[idx % len(pool)].format(label=label))
+    except Exception as e:
+        print('countdown error:', e)
+countdown.fired = set()
+
+PICK_ODDS = re.compile(r'[-+]\d{3}')
+UNITS_PAT = re.compile(r'\b\d+(\.\d+)?u\b')
+TIMEDATE_PAT = re.compile(r'(\b\d{1,2}(:\d{2})?\s?(AM|PM|am|pm)\b)|(\bET\b|EST|EDT)|tonight|today|tomorrow|(\b\d{1,2}/\d{1,2}\b)', re.I)
+PICK_CHANNELS = ('free-pick', 'daily-locks', 'all-picks', 'every-play', '100-to-1000')
+
+@tasks.loop(seconds=60)
+async def stripe_sync():
+    try:
+        key = os.environ.get('STRIPE_KEY', '')
+        if not key or not client.guilds:
+            return
+        guild = client.guilds[0]
+        def sget(path):
+            req = urllib.request.Request('https://api.stripe.com/v1/' + path,
+                                         headers={'Authorization': f'Bearer {key}'})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                return json.load(r)
+        sessions = await asyncio.to_thread(sget, 'checkout/sessions?limit=100')
+        subs = await asyncio.to_thread(sget, 'subscriptions?limit=100&status=all')
+        known = await asyncio.to_thread(gh_get_json, 'stripe_members.json') or {'members': {}}
+        members = known.setdefault('members', {})
+        for s in sessions.get('data', []):
+            if s.get('mode') != 'subscription' or not s.get('customer'):
+                continue
+            uname = next((f.get('text', {}).get('value') for f in (s.get('custom_fields') or [])
+                          if f.get('key') == 'discord_username'), None)
+            tier = (s.get('metadata') or {}).get('tier')
+            cid = s['customer']
+            if cid not in members and uname and tier:
+                members[cid] = {'username': uname.strip().lstrip('@'), 'tier': tier,
+                                'discord_id': None, 'status': None, 'welcomed': False}
+        sub_status = {s['customer']: s for s in subs.get('data', [])}
+        lab = find_channel(guild, 'shift-lab')
+        changed = False
+        for cid, info in members.items():
+            sub = sub_status.get(cid)
+            status = sub['status'] if sub else 'canceled'
+            prev = info.get('status')
+            if prev == status:
+                continue
+            info['status'] = status
+            changed = True
+            member = None
+            if info.get('discord_id'):
+                member = guild.get_member(int(info['discord_id']))
+            if not member:
+                member = await resolve_member(guild, info.get('username', ''))
+                if member:
+                    info['discord_id'] = str(member.id)
+            if not member:
+                if status in ('active', 'trialing') and not info.get('alerted'):
+                    info['alerted'] = True
+                    if lab:
+                        await lab.send(f"⚠️ STRIPE: paid {info.get('tier')} sub but Discord user `{info.get('username')}` not found (customer {cid}) — needs manual role.")
+                continue
+            active = status in ('active', 'trialing')
+            expanded = []
+            if active:
+                expanded = {'lock': ['lock'], 'sharp': ['sharp', 'lock'], 'whale': ['whale', 'sharp', 'lock']}.get(info.get('tier'), [])
+            for word in ('lock', 'sharp', 'whale'):
+                role = next((r for r in guild.roles if word in r.name.lower()), None)
+                if not role:
+                    continue
+                has = role in member.roles
+                should = word in expanded
+                if should and not has:
+                    await member.add_roles(role, reason='stripe subscription active')
+                elif has and not should and not active:
+                    await member.remove_roles(role, reason='stripe subscription ' + status)
+            if active and not info.get('welcomed'):
+                info['welcomed'] = True
+                gen = find_channel(guild, 'general-chat')
+                if gen:
+                    await gen.send(f"🎉 Welcome {member.mention} to **{info.get('tier', '').upper()}** — your room access is live! Check your new channels. 🤖")
+                await asyncio.to_thread(log_event, 'new_sub', f"{info.get('username')} subscribed {info.get('tier')}")
+            if status == 'past_due' and not info.get('pd_alert'):
+                info['pd_alert'] = True
+                if lab:
+                    await lab.send(f"⚠️ STRIPE: {info.get('username')} ({info.get('tier')}) payment PAST DUE — roles kept during grace.")
+            if status == 'canceled' and prev in ('active', 'trialing', 'past_due'):
+                await asyncio.to_thread(log_event, 'sub_canceled', f"{info.get('username')} canceled {info.get('tier')} — roles removed")
+                if lab:
+                    await lab.send(f"📉 STRIPE: {info.get('username')} canceled ({info.get('tier')}) — roles removed.")
+        if changed:
+            await asyncio.to_thread(gh_put, 'stripe_members.json', known, 'stripe sync')
+    except Exception as e:
+        print('stripe_sync error:', e)
+
+@tasks.loop(seconds=300)
+async def crypto_sync():
+    try:
+        key = os.environ.get('NOWPAYMENTS_KEY', '')
+        if not key or not client.guilds:
+            return
+        guild = client.guilds[0]
+        known = await asyncio.to_thread(gh_get_json, 'crypto_members.json') or {'members': []}
+        members = known.setdefault('members', [])
+        changed = False
+        lab = find_channel(guild, 'shift-lab')
+        for m in members:
+            if m.get('expires') or m.get('expired'):
+                continue
+            pid = m.get('payment_id')
+            if not pid:
+                continue
+            try:
+                p = await asyncio.to_thread(_http_json, f'https://api.nowpayments.io/v1/payment/{pid}', None, {'x-api-key': key})
+            except Exception:
+                continue
+            status = p.get('payment_status', '')
+            if status == m.get('status'):
+                continue
+            m['status'] = status
+            changed = True
+            member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None
+            if status in ('finished', 'confirmed'):
+                m['expires'] = time.time() + 30 * 86400
+                if member:
+                    for word in {'lock': ['lock'], 'sharp': ['sharp', 'lock'], 'whale': ['whale', 'sharp', 'lock']}.get(m['tier'], []):
+                        role = next((r for r in guild.roles if word in r.name.lower()), None)
+                        if role and role not in member.roles:
+                            await member.add_roles(role, reason='crypto payment confirmed')
+                    gen = find_channel(guild, 'general-chat')
+                    if gen:
+                        await gen.send(f'🎉 Welcome {member.mention} to **{m["tier"].upper()}** (crypto) — 30 days of access is live!')
+                    await asyncio.to_thread(log_event, 'crypto_sub', f'{member} paid {m.get("coin")} for {m["tier"]}')
+            elif status in ('failed', 'expired', 'refunded'):
+                m['expired'] = True
+                if member:
+                    try:
+                        await member.send(f"❌ Your crypto payment {pid} ended with status **{status}** — no charge completed. Try again anytime with `!crypto {m['tier']} <coin>` in #💎upgrade.")
+                    except Exception:
+                        pass
+                await asyncio.to_thread(log_event, 'crypto_failed', f'{pid} {status}')
+        now = time.time()
+        for m in members:
+            if not m.get('expires') or m.get('expired'):
+                continue
+            if now > m['expires'] + 3 * 86400 and not m.get('expired'):
+                m['expired'] = True
+                changed = True
+                member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None
+                if member:
+                    for word in ('lock', 'sharp', 'whale'):
+                        role = next((r for r in guild.roles if word in r.name.lower()), None)
+                        if role and role in member.roles:
+                            await member.remove_roles(role, reason='crypto 30-day access expired')
+                    await asyncio.to_thread(log_event, 'crypto_expired', f"{m['discord_id']} {m['tier']} expired - roles removed")
+                    if lab:
+                        await lab.send(f"⏰ Crypto access expired for <@{m['discord_id']}> ({m['tier']}) — roles removed.")
+            elif now > m['expires'] - 2 * 86400 and not m.get('reminded'):
+                m['reminded'] = True
+                changed = True
+                member = guild.get_member(int(m['discord_id'])) if str(m['discord_id']).isdigit() else None
+                if member:
+                    try:
+                        await member.send(f"⏰ Your **{m['tier'].upper()}** crypto access expires in ~2 days. Renew anytime with `!crypto {m['tier']} <coin>` in #💎upgrade!")
+                    except Exception:
+                        pass
+        if changed:
+            await asyncio.to_thread(gh_put, 'crypto_members.json', known, 'crypto sync')
+    except Exception as e:
+        print('crypto_sync error:', e)
+
+@tasks.loop(seconds=1800)
+async def audit():
+    try:
+        if not client.guilds:
+            return
+        guild = client.guilds[0]
+        flags = []
+        for ch in guild.text_channels:
+            if not any(k in ch.name for k in PICK_CHANNELS):
+                continue
+            try:
+                async for m in ch.history(limit=15):
+                    if client.user and m.author.id == client.user.id:
+                        continue
+                    txt = m.content or ''
+                    if PICK_ODDS.search(txt) and UNITS_PAT.search(txt) and not TIMEDATE_PAT.search(txt):
+                        flags.append(f'#{ch.name} | msg {m.id} | {txt[:90]}')
+            except Exception:
+                pass
+        pulse = {}
+        for ch in guild.text_channels:
+            if not any(k in ch.name for k in PICK_CHANNELS + ('receipts', 'giveaway', 'general-chat', 'promotions')):
+                continue
+            try:
+                msgs = [m async for m in ch.history(limit=1)]
+                if msgs:
+                    pulse[ch.name] = msgs[0].created_at.strftime('%Y-%m-%d %H:%M UTC')
+            except Exception:
+                pass
+        # --- resolution watch: every pick registered in picks.json must settle into receipts
+        now_ts = time.time()
+        res_flags = []
+        picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        for p in (picks_doc.get('picks') or []):
+            try:
+                if str(p.get('result', '')).upper() not in ('', 'PENDING', 'NONE', 'NULL'):
+                    continue
+                gt = pick_game_utc(p.get('date', ''), p.get('time_et'))
+                if gt and now_ts - gt > 4 * 3600:
+                    res_flags.append(f"{p.get('id')} | {p.get('desc')} {p.get('odds')} | tier={p.get('tier')}")
+            except Exception:
+                pass
+        # --- challenge watch: a bet must be registered daily by 6 PM ET
+        chal_flags = []
+        chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')
+        try:
+            now_et = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)
+            today_et = now_et.strftime('%Y-%m-%d')
+            plays = chal.get('plays') or []
+            if now_et.hour >= 18 and not any(pl.get('date') == today_et for pl in plays):
+                chal_flags.append(f'no challenge bet registered for {today_et} (due 6 PM ET)')
+            for pl in plays:
+                if pl.get('result') in (None, ''):
+                    gt = pick_game_utc(pl.get('date', ''), pl.get('time_et'))
+                    if gt and now_ts - gt > 4 * 3600:
+                        chal_flags.append(f"challenge bet #{pl.get('n')} unsettled: {pl.get('pick')}")
+        except Exception:
+            pass
+        # --- giveaway watch: Sunday 6 PM ET draw must be posted
+        gw_flags = []
+        try:
+            now_et2 = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)
+            if now_et2.strftime('%a') == 'Sun' and now_et2.hour >= 19:
+                gwp = pulse.get('\U0001F381giveaway', '')
+                if not gwp.startswith(now_et2.strftime('%Y-%m-%d')):
+                    gw_flags.append('giveaway: no winner post today (Sunday draw overdue)')
+        except Exception:
+            pass
+        state = await asyncio.to_thread(get_state)
+        if state is not None:
+            state['time_audit'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': flags[:10]}
+            state['room_pulse'] = pulse
+            state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
+            state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
+            state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
+            state['bot_version'] = '8.9.44'
+            try:
+                await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
+            except Exception:
+                pass
+        print(f'audit: time={len(flags)} res={len(res_flags)} chal={len(chal_flags)} gw={len(gw_flags)}')
+    except Exception as e:
+        print('audit error:', e)
+
+# ---------- AUTO-GRADER (v8.3): event-driven results, not clock-driven ----------
+ESPN = {'MLB': 'baseball/mlb', 'NBA': 'basketball/nba', 'WNBA': 'basketball/wnba',
+        'NHL': 'hockey/nhl', 'NFL': 'football/nfl'}
+TIER_BADGE = {'lock': '🔒 LOCK ROOM', 'sharp': '📊 SHARP ROOM', 'whale': '🐋 WHALE ROOM',
+              'free': '🆓 FREE PICK', 'challenge': '💵 CHALLENGE'}
+
+def norm_txt(s):
+    return re.sub(r'[^a-z]', '', (s or '').lower())
+
+def team_tokens(s):
+    return re.findall(r'[a-z]+', (s or '').lower())
+
+def side_in_desc(team_field, desc):
+    # match by full name OR nickname (last token) as a WHOLE token in desc
+    if not team_field:
+        return False
+    if norm_txt(team_field) in norm_txt(desc):
+        return True
+    toks = team_tokens(team_field)
+    nick = toks[-1] if toks else ''
+    return bool(nick) and nick in set(team_tokens(desc))
+
+def espn_fetch(sport, ymd):
+    url = f'https://site.api.espn.com/apis/site/v2/sports/{ESPN[sport]}/scoreboard?dates={ymd}'
+    req = urllib.request.Request(url, headers={'User-Agent': 'lineshift-bot'})
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.load(r)
+
+def find_event(sb, away, home, prefer_ts=None):
+    na, nh = norm_txt(away), norm_txt(home)
+    best = None
+    for ev in sb.get('events', []):
+        try:
+            comp = ev['competitions'][0]
+            teams = {c['homeAway']: c for c in comp['competitors']}
+            if na and na in norm_txt(teams['away']['team'].get('displayName', '')) \
+               and nh and nh in norm_txt(teams['home']['team'].get('displayName', '')):
+                completed = bool(comp.get('status', {}).get('type', {}).get('completed'))
+                if prefer_ts is None:
+                    return teams, completed
+                try:
+                    start = time.mktime(time.strptime(ev['date'][:19], '%Y-%m-%dT%H:%M:%S'))
+                except Exception:
+                    start = prefer_ts
+                d = abs(start - prefer_ts)
+                if best is None or d < best[0]:
+                    best = (d, teams, completed)
+        except Exception:
+            continue
+    if best is not None:
+        return best[1], best[2]
+    return None, False
+
+def pick_start_ts(p):
+    try:
+        d = p.get('date', '')
+        t = (p.get('time_et') or '').strip().upper()
+        m = re.match(r'^(\d{1,2}):(\d{2})\s*(AM|PM)$', t)
+        if not d or not m:
+            return None
+        hh = int(m.group(1)) % 12 + (12 if m.group(3) == 'PM' else 0)
+        y, mo, dd = int(d[:4]), int(d[5:7]), int(d[8:10])
+        import calendar
+        return calendar.timegm((y, mo, dd, hh, int(m.group(2)), 0)) + 4 * 3600
+    except Exception:
+        return None
+
+def profit_units(odds, units):
+    o = float(odds)
+    return units * (o / 100.0 if o > 0 else 100.0 / abs(o))
+
+def grade_pick(p, away_s, home_s):
+    desc = (p.get('desc') or '').lower()
+    if (p.get('market') or '').lower() == 'total' or 'over' in desc or 'under' in desc:
+        m = re.search(r'(over|under)\s*(\d+(\.\d+)?)', desc)
+        if not m:
+            return None
+        line, tot = float(m.group(2)), away_s + home_s
+        if tot == line:
+            return 'PUSH', 0.0
+        won = (m.group(1) == 'over') == (tot > line)
+        u = float(p['units']) if p.get('units') is not None else 1.0
+        return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
+    side = None
+    if side_in_desc(p.get('homeTeam'), desc):
+        side = 'home'
+    elif side_in_desc(p.get('awayTeam'), desc):
+        side = 'away'
+    if not side:
+        return None
+    won = (home_s > away_s) if side == 'home' else (away_s > home_s)
+    u = float(p['units']) if p.get('units') is not None else 1.0
+    return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
+
+XKEY = os.environ.get('X_SCHEDULER_KEY', '')
+
+def x_key_load():
+    if XKEY:
+        return XKEY
+    try:
+        d = gh_get('x_key.txt', ref=QUEUE_BRANCH)
+        return base64.b64decode(d['content']).decode().strip()
+    except Exception:
+        return ''
+
+def x_creds_load():
+    try:
+        d = gh_get('x_creds.json', ref=QUEUE_BRANCH)
+        return json.loads(base64.b64decode(d['content']).decode())
+    except Exception:
+        return {}
+
+X_REDIRECT = 'https://thelineshift.com'
+
+def x_oauth2_refresh(c):
+    import urllib.parse
+    data = {'grant_type': 'refresh_token', 'refresh_token': c['oauth2_refresh'], 'client_id': c['client_id']}
+    basic = base64.b64encode(f"{c['client_id']}:{c['client_secret']}".encode()).decode()
+    req = urllib.request.Request('https://api.x.com/2/oauth2/token',
+                                 data=urllib.parse.urlencode(data).encode(), method='POST',
+                                 headers={'Content-Type': 'application/x-www-form-urlencoded',
+                                          'Authorization': f'Basic {basic}'})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        t = json.load(r)
+    c['oauth2_access'] = t['access_token']
+    c['oauth2_refresh'] = t.get('refresh_token', c['oauth2_refresh'])
+    c['oauth2_expires_at'] = time.time() + t.get('expires_in', 7200) - 120
+    gh_put('x_creds.json', c, 'oauth2 user token refresh')
+    return c
+
+def x_post_native(text):
+    c = x_creds_load()
+    if c.get('oauth2_access'):
+        if time.time() > c.get('oauth2_expires_at', 0):
+            c = x_oauth2_refresh(c)
+        req = urllib.request.Request('https://api.x.com/2/tweets',
+                                     data=json.dumps({'text': text}).encode(), method='POST',
+                                     headers={'Authorization': f"Bearer {c['oauth2_access']}",
+                                              'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
+        try:
+            with urllib.request.urlopen(req, timeout=25) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            raise Exception(f'HTTP {e.code}: {e.read()[:300]}')
+    return x_post_oauth1(text)
+
+def x_post_oauth1(text):
+    import hmac, hashlib, secrets, urllib.parse
+    c = x_creds_load()
+    if not all(c.get(k) for k in ('api_key', 'api_secret', 'access_token', 'access_token_secret')):
+        return None
+    url = 'https://api.x.com/2/tweets'
+    op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': secrets.token_hex(16),
+          'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+          'oauth_token': c['access_token'], 'oauth_version': '1.0'}
+    q = lambda s: urllib.parse.quote(str(s), safe='')
+    base = '&'.join(['POST', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+    key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
+    op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
+    hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+    req = urllib.request.Request(url, data=json.dumps({'text': text}).encode(), method='POST',
+                                 headers={'Authorization': hdr, 'Content-Type': 'application/json',
+                                          'User-Agent': 'TheLineShift/1.0'})
+    try:
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        raise Exception(f'HTTP {e.code}: {e.read()[:300]}')
+
+
+def x_oauth1_sign(method, url, ck, cs, at, ats):
+    import hmac, hashlib, secrets, urllib.parse
+    op = {'oauth_consumer_key': ck, 'oauth_nonce': secrets.token_hex(16),
+          'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+          'oauth_version': '1.0'}
+    if at:
+        op['oauth_token'] = at
+    q = lambda s: urllib.parse.quote(str(s), safe='')
+    base = '&'.join([method.upper(), q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+    key = f"{q(cs)}&{q(ats or '')}"
+    op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
+    return 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+
+def x_oauth1_sets(c):
+    sets = []
+    o1 = c.get('oauth1') or {}
+    if all(o1.get(k) for k in ('consumer_key', 'consumer_secret', 'access_token', 'access_token_secret')):
+        sets.append(('app2', o1['consumer_key'], o1['consumer_secret'], o1['access_token'], o1['access_token_secret']))
+    if all(c.get(k) for k in ('api_key', 'api_secret', 'access_token', 'access_token_secret')):
+        sets.append(('legacy', c['api_key'], c['api_secret'], c['access_token'], c['access_token_secret']))
+    return sets
+
+def x_upload_media_oauth1(img, filename='image.png'):
+    import secrets
+    c = x_creds_load()
+    url = 'https://api.x.com/2/media/upload'
+    # path 1: OAuth2 user-context (works when token carries media.write scope)
+    if c.get('oauth2_access'):
+        try:
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = x_oauth2_refresh(c)
+            boundary = '----shift' + secrets.token_hex(8)
+            body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media_category"\r\n\r\ntweet_image\r\n'
+                    f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="{filename}"\r\n'
+                    f'Content-Type: image/png\r\n\r\n').encode() + img + f'\r\n--{boundary}--\r\n'.encode()
+            req = urllib.request.Request(url, data=body, method='POST',
+                headers={'Authorization': f"Bearer {c['oauth2_access']}",
+                         'Content-Type': f'multipart/form-data; boundary={boundary}',
+                         'User-Agent': 'TheLineShift/1.0'})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                d = json.load(r)
+            mid = d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id')
+            if mid:
+                return 'oauth2', str(mid)
+        except urllib.error.HTTPError as e:
+            try:
+                eb = e.read()[:250]
+            except Exception:
+                eb = b''
+            print(f'oauth2 upload path failed: HTTP {e.code}: {eb}')
+        except Exception as e:
+            print('oauth2 upload path failed:', e)
+    sets = x_oauth1_sets(c)
+    if not sets:
+        raise Exception('no working media credential (oauth2 rejected, no complete oauth1 set)')
+    errs = []
+    last = None
+    for name, ck, cs, at, ats in sets:
+        try:
+            boundary = '----shift' + secrets.token_hex(8)
+            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)
+            body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media_category"\r\n\r\ntweet_image\r\n'
+                    f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="{filename}"\r\n'
+                    f'Content-Type: image/png\r\n\r\n').encode() + img + f'\r\n--{boundary}--\r\n'.encode()
+            req = urllib.request.Request(url, data=body, method='POST',
+                headers={'Authorization': hdr,
+                         'Content-Type': f'multipart/form-data; boundary={boundary}',
+                         'User-Agent': 'TheLineShift/1.0'})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                d = json.load(r)
+            mid = d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id')
+            if not mid:
+                raise Exception(f'no media id in {str(d)[:200]}')
+            return name, str(mid)
+        except urllib.error.HTTPError as e:
+            try:
+                eb = e.read()[:250]
+            except Exception:
+                eb = b''
+            last = f'{name} HTTP {e.code}: {eb}'
+        except Exception as e:
+            last = f'{name}: {e}'
+        errs.append(str(last))
+    raise Exception(' || '.join(errs) if errs else 'upload failed')
+
+def x_post_media_oauth2(text, media_id):
+    c = x_creds_load()
+    if time.time() > c.get('oauth2_expires_at', 0):
+        c = x_oauth2_refresh(c)
+    payload = json.dumps({'text': text, 'media': {'media_ids': [str(media_id)]}}).encode()
+    req = urllib.request.Request('https://api.x.com/2/tweets', data=payload, method='POST',
+        headers={'Authorization': f"Bearer {c['oauth2_access']}", 'Content-Type': 'application/json',
+                 'User-Agent': 'TheLineShift/1.0'})
+    try:
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        raise Exception(f'HTTP {e.code}: {e.read()[:300]}')
+
+def x_post_media_oauth1(text, media_id, cred_name=None):
+    c = x_creds_load()
+    sets = x_oauth1_sets(c)
+    if cred_name:
+        sets = [s for s in sets if s[0] == cred_name] or sets
+    url = 'https://api.x.com/2/tweets'
+    payload = json.dumps({'text': text, 'media': {'media_ids': [str(media_id)]}}).encode()
+    last = None
+    for name, ck, cs, at, ats in sets:
+        try:
+            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)
+            req = urllib.request.Request(url, data=payload, method='POST',
+                headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
+            with urllib.request.urlopen(req, timeout=25) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            try:
+                eb = e.read()[:250]
+            except Exception:
+                eb = b''
+            last = f'{name} HTTP {e.code}: {eb}'
+        except Exception as e:
+            last = f'{name}: {e}'
+    raise Exception(last or 'media tweet failed')
+
+def x_post(text):
+    try:
+        res = x_post_native(text)
+        if res:
+            return res
+    except Exception as e:
+        print('native X post failed:', e)
+    key = x_key_load()
+    if not key:
+        return None
+    body = {"platforms": {"x": {"enabled": True, "posts": [{"text": text}]}}, "publish_at": "now"}
+    req = urllib.request.Request("https://api.typefully.com/v2/social-sets/321722/drafts",
+                                 data=json.dumps(body).encode(), method="POST",
+                                 headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.load(r)
+
+def tier_season_line(all_picks, key):
+    season = [p for p in all_picks if p.get('result') in ('WIN', 'LOSS', 'PUSH')
+              and str(p.get('date', '')).startswith('2026') and p.get('tier') == key]
+    w = sum(1 for p in season if p['result'] == 'WIN')
+    l = sum(1 for p in season if p['result'] == 'LOSS')
+    u = sum(units_of(p) for p in season)
+    return w, l, u
+
+CLOSERS_WIN = [
+    "Posted before first pitch, graded in public. 👆",
+    "Green before first pitch, green on the timeline.",
+    "Another one stamped. Receipts stay up forever.",
+    "Called it, posted it, cashed it.",
+    "The model saw it early. The timeline proves it.",
+    "Winners hit different when you post them in advance.",
+    "Clockwork. On to the next edge.",
+]
+CLOSERS_LOSS = [
+    "We show every single one — that's why the wins mean something. 👆",
+    "Losses stay up too. Always have.",
+    "Red on the board, posted anyway. Full ledger, always.",
+    "No deletes here. Next edge already loading.",
+    "That one hurt. It's staying up anyway.",
+    "Public picks, public losses. That's the deal.",
+]
+CLOSERS_PUSH = [
+    "Every result posted, always. Link in bio 👆",
+    "Stake back, board moves on.",
+    "Push. Nothing lost, nothing hidden.",
+]
+
+def _pick_closer(pool, seed):
+    import hashlib as _hh
+    return pool[int(_hh.md5(str(seed).encode()).hexdigest(), 16) % len(pool)]
+
+def x_receipt_text(r, all_picks=None, chal=None):
+    odds = r.get('odds'); odds_s = f"({odds:+d})" if isinstance(odds, int) else f"({odds})"
+    badge = TIER_BADGE.get(r.get('tier'), '')
+    rec_lines = []
+    if all_picks is not None and r.get('tier') != 'challenge':
+        tw, tl, tu = tier_season_line(all_picks, r.get('tier'))
+        sw, sl, sp, su, _, _ = season_block(all_picks)
+        rec_lines.append(f"{badge.split()[0]} season {tw}-{tl} ({'+' if tu >= 0 else ''}{tu:.1f}u) · 📅 overall {sw}-{sl} ({'+' if su >= 0 else ''}{su:.1f}u)")
+    if r.get('tier') == 'challenge' and chal:
+        rec = chal.get('record', {})
+        rec_lines.append(f"💵 bankroll ${chal.get('balance', 0):.2f} ({rec.get('wins', 0)}-{rec.get('losses', 0)}) · goal $1,000")
+    rec_block = ('\n' + '\n'.join(rec_lines) + '\n') if rec_lines else ''
+    seed = f"{r.get('id')}{r.get('date')}{r.get('result')}"
+    if r['result'] == 'WIN':
+        return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+                + _pick_closer(CLOSERS_WIN, seed))
+    if r['result'] == 'PUSH':
+        return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
+                + _pick_closer(CLOSERS_PUSH, seed))
+    return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+            + _pick_closer(CLOSERS_LOSS, seed))
+
+async def settle_challenge(guild, p):
+    try:
+        chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')
+        hit = None
+        for pl in chal.get('plays', []):
+            if pl.get('result') in (None, '') and pl.get('date') == p.get('date') \
+               and norm_txt(pl.get('pick')) and norm_txt(pl['pick']) in norm_txt(p.get('desc')):
+                hit = pl
+                break
+        if not hit:
+            return
+        hit['result'] = p['result']
+        if p['result'] == 'WIN':
+            chal['balance'] = round(chal.get('balance', 100) + float(hit.get('toWin', 0)), 2)
+            chal['record']['wins'] += 1
+        elif p['result'] == 'LOSS':
+            chal['balance'] = round(chal.get('balance', 100) - float(hit.get('stake', 0)), 2)
+            chal['record']['losses'] += 1
+        chal['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        await asyncio.to_thread(gh_put, 'challenge.json', chal, f"settle bet #{hit.get('n')}: {p['result']}", 'main')
+        ch = find_channel(guild, '100-to-1000')
+        if ch:
+            e = '✅' if p['result'] == 'WIN' else ('🟰' if p['result'] == 'PUSH' else '❌')
+            nxt = min(chal['balance'] * 0.2, chal['balance'])
+            await ch.send(f"💵 **CHALLENGE BET #{hit.get('n')} — {p['result']}** {e}\n"
+                          f"{p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
+                          f"**BALANCE: ${chal['balance']:.2f}** (goal: ${chal.get('goal', 1000):.0f}) · record {chal['record']['wins']}-{chal['record']['losses']}\n"
+                          f"BET #{hit.get('n') + 1} drops with tomorrow's card. — SHiFT 🤖")
+    except Exception as e:
+        print('settle_challenge error:', e)
+
+@tasks.loop(seconds=1200)
+async def grader():
+    try:
+        if not client.guilds:
+            return
+        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        new_results = []
+        for p in (doc.get('picks') or []):
+            try:
+                if str(p.get('result', '')).upper() not in ('', 'PENDING', 'NONE', 'NULL'):
+                    continue
+                sport = (p.get('sport') or '').upper()
+                if sport not in ESPN:
+                    continue  # tennis/esports/etc -> scan-engine research path
+                gt = pick_game_utc(p.get('date', ''), p.get('time_et'))
+                if not gt or time.time() < gt + 5400:
+                    continue  # earliest a final is possible
+                sb = await asyncio.to_thread(espn_fetch, sport, p['date'].replace('-', ''))
+                teams, ev_completed = find_event(sb, p.get('awayTeam'), p.get('homeTeam'), pick_start_ts(p))
+                if not teams or not ev_completed:
+                    continue
+                away_s = int(float(teams['away'].get('score') or 0))
+                home_s = int(float(teams['home'].get('score') or 0))
+                g = grade_pick(p, away_s, home_s)
+                if not g:
+                    continue
+                p['result'], u = g
+                p['score'] = f"{p.get('awayTeam')} {away_s}, {p.get('homeTeam')} {home_s}"
+                p['units_result'] = round(u, 2)
+                new_results.append(p)
+            except Exception:
+                continue
+        if not new_results:
+            return
+        doc['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        await asyncio.to_thread(gh_put, 'picks.json', doc,
+                                'auto-grade: ' + ', '.join(p['id'] for p in new_results), 'main')
+        guild = client.guilds[0]
+        ch = find_channel(guild, 'receipts')
+        state = await asyncio.to_thread(get_state)
+        for p in new_results:
+            e = '✅' if p['result'] == 'WIN' else ('🟰' if p['result'] == 'PUSH' else '❌')
+            u = p.get('units_result', 0)
+            us = f'+{u}u' if u > 0 else f'{u}u'
+            overnight = ''
+            gt = pick_game_utc(p.get('date', ''), p.get('time_et'))
+            if gt and (time.gmtime(gt).tm_hour - 4) % 24 < 6:
+                overnight = '\n📅 counts for tomorrow\'s card'
+            badge = TIER_BADGE.get(p.get('tier'), '')
+            if ch:
+                await ch.send(f"🧾 **RESULT {badge}:** {p.get('desc')} ({p.get('odds')}) {e} **{p['result']}** {us}\n"
+                              f"Final: {p.get('score')}{overnight}")
+            if p.get('tier') == 'challenge':
+                await settle_challenge(guild, p)
+            if state is not None:
+                state.setdefault('unannounced_results', []).append(
+                    {'id': p['id'], 'desc': p.get('desc'), 'odds': p.get('odds'), 'result': p['result'],
+                     'units': p.get('units_result'), 'score': p.get('score'), 'tier': p.get('tier')})
+        if state is not None:
+            try:
+                await asyncio.to_thread(gh_put, 'bot_state.json', state, 'grader results')
+            except Exception:
+                pass
+        print(f'grader: {len(new_results)} result(s) posted')
+        # X drain happens in its own paced block below
+    except Exception as e:
+        print('grader error:', e)
+
+@tasks.loop(seconds=1200)
+async def x_drainer():
+    # posts queued results to X — max 1 per cycle, >=40 min between X receipts (pacing rule)
+    try:
+        state = await asyncio.to_thread(get_state)
+        if state is None:
+            return
+        queue = state.get('unannounced_results') or []
+        if not queue:
+            return
+        last = state.get('last_x_receipt_ts', 0)
+        if time.time() - float(last) < 40 * 60:
+            return
+        r = queue[0]
+        picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        chal_doc = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main') if r.get('tier') == 'challenge' else None
+        resp = await asyncio.to_thread(x_post, x_receipt_text(r, picks_doc.get('picks'), chal_doc))
+        if resp is None:
+            print('x_drainer: no X key available')
+            return
+        state['unannounced_results'] = queue[1:]
+        state['last_x_receipt_ts'] = time.time()
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, f"x receipt posted: {r.get('id')}")
+        print(f"x_drainer: posted {r.get('id')}, {len(queue) - 1} left")
+    except Exception as e:
+        print('x_drainer error:', e)
+
+def units_of(p):
+    if p.get('units_result') is not None:
+        return float(p['units_result'])
+    u = float(p['units']) if p.get('units') is not None else 1.0
+    if p.get('result') == 'WIN':
+        return profit_units(p.get('odds', -110), u)
+    if p.get('result') == 'LOSS':
+        return -u
+    return 0.0
+
+def season_block(all_picks):
+    # per-tier season records for the 4 rooms; overall = SUM of the rooms by construction.
+    # challenge is reported separately (it often mirrors a room pick - never double-counted).
+    tiers = [('lock', '🔒'), ('sharp', '📊'), ('whale', '🐋'), ('free', '🆓')]
+    season = [p for p in all_picks if p.get('result') in ('WIN', 'LOSS', 'PUSH')
+              and str(p.get('date', '')).startswith('2026')]
+    parts, tot_w, tot_l, tot_p, tot_u = [], 0, 0, 0, 0.0
+    for key, badge in tiers:
+        tp = [p for p in season if p.get('tier') == key]
+        if not tp:
+            continue
+        w = sum(1 for p in tp if p['result'] == 'WIN')
+        l = sum(1 for p in tp if p['result'] == 'LOSS')
+        pu = sum(1 for p in tp if p['result'] == 'PUSH')
+        u = sum(units_of(p) for p in tp)
+        tot_w += w; tot_l += l; tot_p += pu; tot_u += u
+        rec = f"{w}-{l}" + (f"-{pu}" if pu else "")
+        parts.append(f"{badge} {rec} ({'+' if u >= 0 else ''}{u:.2f}u)")
+    chal = [p for p in season if p.get('tier') == 'challenge']
+    cw = sum(1 for p in chal if p['result'] == 'WIN')
+    cl = sum(1 for p in chal if p['result'] == 'LOSS')
+    return tot_w, tot_l, tot_p, tot_u, ' · '.join(parts), (cw, cl)
+
+@tasks.loop(seconds=900)
+async def recap_watch():
+    # server-side nightly recap: posts when every today-starting (ET) game is settled. Never missed.
+    try:
+        if not client.guilds:
+            return
+        state = await asyncio.to_thread(get_state)
+        if state is None:
+            return
+        now_et = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)
+        if 6 <= now_et.hour < 21:
+            return  # recap window is 9 PM - 6 AM ET
+        recap_date = now_et.strftime('%Y-%m-%d') if now_et.hour >= 21 else (now_et - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
+        if state.get('last_recap_date') == recap_date:
+            return
+        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        all_picks = doc.get('picks') or []
+        day = [p for p in all_picks if p.get('date') == recap_date]
+        if not day:
+            return
+        if any(str(p.get('result', '')).upper() in ('', 'PENDING', 'NONE', 'NULL') for p in day):
+            return  # games still live
+        settled = [p for p in day if p.get('result') in ('WIN', 'LOSS', 'PUSH')]
+        if not settled:
+            return
+        tiers = [('lock', '🔒 LOCK ROOM'), ('sharp', '📊 SHARP'), ('whale', '🐋 WHALE'), ('free', '🆓 FREE PICK')]
+        mmdd = recap_date[5:].replace('-', '/')
+        lines = [f"🌙 **THELINESHIFT NIGHTLY RECAP — {mmdd}**", "(every tier, every result — graded in public)", ""]
+        tot_w = tot_l = tot_p = 0
+        tot_u = 0.0
+        for key, label in tiers:
+            tp = [p for p in settled if p.get('tier') == key]
+            if not tp:
+                continue
+            w = sum(1 for p in tp if p['result'] == 'WIN')
+            l = sum(1 for p in tp if p['result'] == 'LOSS')
+            pu = sum(1 for p in tp if p['result'] == 'PUSH')
+            u = sum(units_of(p) for p in tp)
+            tot_w += w; tot_l += l; tot_p += pu; tot_u += u
+            suffix = f"-{pu}" if pu else ""
+            lines.append(f"{label} — {w}-{l}{suffix}, {'+' if u >= 0 else ''}{u:.2f}u " + ('✅' if u > 0 else '❌' if u < 0 else ''))
+            for p in tp:
+                e = '✅' if p['result'] == 'WIN' else ('🟰' if p['result'] == 'PUSH' else '❌')
+                uu = units_of(p)
+                lines.append(f"{e} {p.get('desc')} ({p.get('odds')}) → {p.get('score', 'final')} → {'+' if uu >= 0 else ''}{uu:.2f}u")
+            lines.append("")
+        sw, sl, sp, su, tier_split, chal_rec = season_block(all_picks)
+        lines.append(f"**FULL BOARD: {tot_w}-{tot_l}" + (f"-{tot_p}" if tot_p else "") + f" ({'+' if tot_u >= 0 else ''}{tot_u:.2f}u).**")
+        lines.append(f"📅 **2026 SEASON: {sw}-{sl}" + (f"-{sp}" if sp else "") + f" ({'+' if su >= 0 else ''}{su:.2f}u)**")
+        lines.append(tier_split + f"  |  💵 challenge {chal_rec[0]}-{chal_rec[1]} (tracked in dollars)")
+        try:
+            chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')
+            rec = chal.get('record', {})
+            lines.append(f"💵 Challenge: balance ${chal.get('balance', 0):.2f} ({rec.get('wins', 0)}-{rec.get('losses', 0)}) — goal $1,000")
+        except Exception:
+            pass
+        ch = find_channel(client.guilds[0], 'receipts')
+        if ch:
+            await ch.send('\n'.join(lines))
+        state['last_recap_date'] = recap_date
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, f'recap posted {recap_date}')
+        try:
+            xt = (f"🌙 FULL BOARD {mmdd}: {tot_w}-{tot_l} ({'+' if tot_u >= 0 else ''}{tot_u:.1f}u)\n"
+                  f"📅 2026 season: {sw}-{sl} ({'+' if su >= 0 else ''}{su:.1f}u)\n"
+                  f"{tier_split}\n\n"
+                  f"Every pick posted early, every result graded in public. First month FREE 👆")
+            await asyncio.to_thread(x_post, xt)
+        except Exception as e:
+            print('recap X error:', e)
+        print('recap posted for', recap_date)
+    except Exception as e:
+        print('recap_watch error:', e)
+
+def side_ml(p, ho, ao):
+    d = (p.get('desc') or '').lower()
+    if 'over' in d or 'under' in d:
+        return None
+    if side_in_desc(p.get('awayTeam', ''), p.get('desc', '')):
+        return ao
+    if side_in_desc(p.get('homeTeam', ''), p.get('desc', '')):
+        return ho
+    return None
+
+def fmt_odds_num(n):
+    try:
+        n = int(n)
+        return f'+{n}' if n > 0 else str(n)
+    except Exception:
+        return str(n)
+
+def clv_note(p, ho, ao):
+    cur = side_ml(p, ho, ao)
+    if cur is None or p.get('odds') is None:
+        return ''
+    diff = int(p['odds']) - int(cur)
+    if diff >= 5:
+        return f'📈 CLV +{diff}c — we beat the close. That\'s the whole game.'
+    if diff <= -5:
+        return f'📉 CLV {diff}c — market moved against us.'
+    return '➡️ closed right at our number.'
+
+@tasks.loop(seconds=1800)
+async def odds_watch():
+    try:
+        if not client.guilds:
+            return
+        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        plist = doc.get('picks') or []
+        today = time.strftime('%Y-%m-%d', time.gmtime(time.time() - 4 * 3600))
+        pend = [p for p in plist if str(p.get('result', '')).upper() in ('', 'PENDING', 'NONE', 'NULL')
+                and (p.get('sport') or '').upper() in ESPN and p.get('date') == today]
+        if not pend:
+            return
+        guild = client.guilds[0]
+        ch = find_channel(guild, 'whale-talk')
+        changed = False
+        for p in pend:
+            try:
+                sport = (p.get('sport') or '').upper()
+                sb = await asyncio.to_thread(espn_fetch, sport, p['date'].replace('-', ''))
+                prefer = pick_start_ts(p)
+                na, nh = norm_txt(p.get('awayTeam', '')), norm_txt(p.get('homeTeam', ''))
+                best = None
+                for ev in sb.get('events', []):
+                    try:
+                        comp = ev['competitions'][0]
+                        teams = {c2['homeAway']: c2 for c2 in comp['competitors']}
+                        if na in norm_txt(teams['away']['team'].get('displayName', '')) and nh in norm_txt(teams['home']['team'].get('displayName', '')):
+                            try:
+                                start = time.mktime(time.strptime(ev['date'][:19], '%Y-%m-%dT%H:%M:%S'))
+                            except Exception:
+                                start = prefer or 0
+                            d = abs(start - (prefer or start))
+                            if best is None or d < best[0]:
+                                best = (d, comp)
+                    except Exception:
+                        continue
+                if not best:
+                    continue
+                comp = best[1]
+                odds = (comp.get('odds') or [{}])[0]
+                ho = (odds.get('homeTeamOdds') or {}).get('moneyLine')
+                ao = (odds.get('awayTeamOdds') or {}).get('moneyLine')
+                ou = odds.get('overUnder')
+                if ho is None and ao is None and ou is None:
+                    continue
+                p['live_odds'] = {'home_ml': ho, 'away_ml': ao, 'total': ou, 'ts': int(time.time())}
+                changed = True
+                stype = comp.get('status', {}).get('type', {})
+                started = stype.get('state') == 'in' or bool(stype.get('completed'))
+                if started and not p.get('closing_odds'):
+                    p['closing_odds'] = dict(p['live_odds'])
+                    if ch:
+                        await ch.send(f"🔒 **CLOSING LINE LOCKED** — {p.get('desc')}: we took {fmt_odds_num(p.get('odds'))}, closing {fmt_odds_num(side_ml(p, ho, ao)) if side_ml(p, ho, ao) is not None else 'total ' + str(ou)}. {clv_note(p, ho, ao)}")
+                elif not started:
+                    cur = side_ml(p, ho, ao)
+                    posted = p.get('odds')
+                    if cur is not None and posted is not None:
+                        anchor_o = p.get('last_alert_odds', posted)
+                        if abs(int(cur) - int(anchor_o)) >= 12 and ch:
+                            p['last_alert_odds'] = int(cur)
+                            verdict = 'we got the best of it ✅' if int(cur) < int(posted) else 'market moving against us 👀'
+                            await ch.send(f"⚠️ **LINE MOVE** — {p.get('desc')}: {fmt_odds_num(anchor_o)} → {fmt_odds_num(cur)}. Steam on this one — {verdict}")
+                    elif ou is not None and p.get('market') == 'total':
+                        try:
+                            posted_t = float(re.search(r'(\d+(\.\d+)?)', p.get('desc', '')).group(1))
+                            anchor_t = p.get('last_alert_total', posted_t)
+                            if abs(float(ou) - anchor_t) >= 0.5 and ch:
+                                p['last_alert_total'] = float(ou)
+                                await ch.send(f"⚠️ **TOTAL MOVE** — {p.get('desc')}: {anchor_t} → {ou}. {'Money pounding the over.' if float(ou) > anchor_t else 'Steam on the under.'}")
+                        except Exception:
+                            pass
+            except Exception as e:
+                print('odds_watch pick error:', e)
+        if changed:
+            await asyncio.to_thread(gh_put, 'picks.json', doc, 'odds watch update', 'main')
+    except Exception as e:
+        print('odds_watch error:', e)
+
+@tasks.loop(seconds=3600)
+async def teaser_watch():
+    try:
+        if not client.guilds:
+            return
+        guild = client.guilds[0]
+        now = time.gmtime()
+        if now.tm_hour != 12:
+            return
+        state = await asyncio.to_thread(get_state)
+        tz = state.setdefault('teasers', {})
+        import datetime as _dt
+        today = _dt.date(now.tm_year, now.tm_mon, now.tm_mday)
+        next_sun = today + _dt.timedelta(days=(6 - today.weekday()) % 7)
+        ws = next_sun.isoformat()
+        if tz.get('weekly') != ws:
+            ch = find_channel(guild, 'weekly-analytics')
+            if ch:
+                await ch.send(f"📊 **WEEKLY ANALYTICS — next report: Sunday {next_sun.strftime('%b %d')}, 10:00 AM ET**\nFull-board review: tier-by-tier records, units chart, best/worst reads of the week, and what changes next week. 🎯")
+                tz['weekly'] = ws
+        nm = _dt.date(today.year + (1 if today.month == 12 else 0), 1 if today.month == 12 else today.month + 1, 1)
+        ms = nm.isoformat()
+        if tz.get('monthly') != ms:
+            ch = find_channel(guild, 'monthly-deepdive')
+            if ch:
+                await ch.send(f"🐋 **MONTHLY DEEP-DIVE — next report: {nm.strftime('%b %d')}, 6:00 PM ET**\nWhale-tier masterclass: full-month model autopsy, where the edge came from, bankroll math, and next month's attack plan.")
+                tz['monthly'] = ms
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, 'teaser check')
+    except Exception as e:
+        print('teaser_watch error:', e)
+
+COUNT_60 = [
+ "\u23F3 **SCAN IN 60 MINUTES** — the machine goes to work at {label}. Odds across the market, injury reports, confirmed lineups — everything gets pulled. \U0001F6F0\uFE0F",
+ "\u23F3 **T-60 TO SCAN** — next sweep at {label}. The board gets stripped down to the edges worth firing on. \U0001F4E1",
+ "\U0001F6F0\uFE0F **ONE HOUR OUT** — the {label} scan is loading. Six windows a day, zero guesswork.",
+ "\u23F3 **60-MINUTE WARNING** — the {label} sweep is next. Data first, picks after. \U0001F916",
+ "\U0001F6F0\uFE0F **SCAN APPROACHING** — {label}. The machine reads the whole board so you don't have to.",
+ "\u23F3 **NEXT SCAN: {label}** — one hour. Markets, lineups, weather, money flow. Watch it work. \U0001F4CA",
+]
+COUNT_10 = [
+ "\U0001F6F0\uFE0F **SCAN IN 10 MINUTES** — {label}. Sharpen up. \U0001F525",
+ "\u26A1 **T-10** — the {label} sweep is imminent. The free pick lands with the finale. \U0001F3AF",
+ "\U0001F6F0\uFE0F **10 MINUTES OUT** — {label}. The machine is warming up.",
+ "\U0001F3AF **T-10 TO SCAN** — {label}. Parameters loading...",
+ "\u23F1\uFE0F **FINAL 10** — the {label} sweep opens the board in minutes.",
+ "\U0001F52D **SCAN IMMINENT** — {label}. Watch the machine work. \U0001F6F0\uFE0F",
+]
+
+@tasks.loop(seconds=300)
+async def scan_event_watch():
+    # if no scan theater in general-chat within ~25 min of an event slot, the event MISSED -> fallback post + flag
+    try:
+        if not client.guilds:
+            return
+        now = time.gmtime()
+        if now.tm_hour not in EVENT_HOURS_UTC or now.tm_min < 20:
+            return
+        slot = f'{now.tm_year}{now.tm_mon:02d}{now.tm_mday:02d}-{now.tm_hour:02d}'
+        state = await asyncio.to_thread(get_state)
+        if state is None:
+            return
+        events = state.setdefault('scan_events', {})
+        if events.get(slot):
+            return
+        guild = client.guilds[0]
+        ch = find_channel(guild, 'general-chat')
+        if not ch:
+            return
+        import datetime as _dt
+        slot_dt = _dt.datetime(now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, 0, 0, tzinfo=_dt.timezone.utc)
+        slot_ts = slot_dt.timestamp()
+        fired = False
+        finished = False
+        passed = False
+        resolved = False
+        # TIME-SCOPED: only messages posted AFTER this slot started count — an old SCAN COMPLETE can never satisfy a new slot
+        async for m in ch.history(limit=40, after=slot_dt):
+            txt = (m.content or '')
+            if any(k in txt for k in ('SCAN COMPLETE', 'SCAN INITIATED', 'ANALYZING', 'COLLECTING')):
+                fired = True
+            if 'SCAN COMPLETE' in txt:
+                finished = True
+            if 'PASSED' in txt or 'no viable' in txt.lower():
+                passed = True
+            if 'SCAN — RESOLUTION' in txt or 'SCAN RESOLUTION' in txt or 'discipline pass' in txt.lower() or 'slate covered' in txt.lower():
+                resolved = True
+        if resolved:
+            # a public resolution (card / discipline pass / slate-covered) already closed this slot — never cry delay
+            events[slot] = 'ok'
+        elif fired and finished:
+            # 'ok' REQUIRES fresh picks registered after slot start (or a deliberate discipline pass)
+            fresh = False
+            if not passed:
+                try:
+                    pj = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+                    upd = pj.get('updated', '') if isinstance(pj, dict) else ''
+                    upd_ts = time.mktime(time.strptime(upd[:19], '%Y-%m-%dT%H:%M:%S')) if upd else 0
+                    fresh = upd_ts >= slot_ts - 300
+                except Exception as e:
+                    print('pick_guard fresh-check error:', e)
+            if passed or fresh:
+                events[slot] = 'ok'
+            else:
+                events[slot] = 'makeup_needed'
+                await ch.send("⚠️ **PICK GUARD** — theater ran but no card registered this window. SHiFT is re-running the drop now; picks land within the hour. 🤖")
+                state.setdefault('pick_guard_alerts', []).append(slot)
+                print(f'pick_guard: slot {slot} theater w/o picks')
+        elif fired:
+            events[slot] = 'partial'
+            await ch.send("⚠️ **SCAN STALLED** — collection started but never completed. SHiFT is re-running this event; card drops within the hour. 🤖")
+            state.setdefault('scan_event_misses', []).append(slot)
+        else:
+            await ch.send("🛰️ **SCAN DELAYED** — the machine hit a snag on this run. SHiFT is catching up; the card drops shortly. 🤖")
+            events[slot] = 'missed'
+            state.setdefault('scan_event_misses', []).append(slot)
+            print(f'scan_event_watch: slot {slot} MISSED, fallback posted')
+        await asyncio.to_thread(gh_put, 'bot_state.json', state, f'scan event {slot}: {events[slot]}')
+    except Exception as e:
+        print('scan_event_watch error:', e)
+
+def boot_marker():
+    try:
+        st = get_state()
+        boots = st.setdefault('boot_log', [])
+        boots.append(time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()))
+        st['boot_log'] = boots[-60:]
+        gh_put('bot_state.json', st, 'boot marker')
+        return len(boots)
+    except Exception as e:
+        print('boot marker failed:', e)
+        return -1
+
+def run_guarded():
+    global client
+    # CONNECTION-STORM GUARD: Discord resets tokens after ~1000 gateway connects in a short
+    # window. One process = one connection, so storms only come from crash/restart loops.
+    # Throttle every exit path so a looping host can never hammer Discord again.
+    n = boot_marker()
+    print(f'boot #{n}')
+    try:
+        client = make_client()
+        try:
+            client.run(DISCORD_TOKEN)
+        except discord.PrivilegedIntentsRequired:
+            print('PRIVILEGED INTENTS NOT ENABLED IN PORTAL - running degraded')
+            client = make_client(privileged=False)
+            client.run(DISCORD_TOKEN)
+    except discord.LoginFailure as e:
+        print('LOGIN FAILURE (token dead/reset):', e)
+        print('sleeping 1h so the host cannot restart-loop against Discord...')
+        time.sleep(3600)
+    except Exception as e:
+        print('fatal run error:', e)
+        print('sleeping 5min before exit (restart throttle)')
+        time.sleep(300)
+    else:
+        print('clean disconnect - sleeping 2min before exit (restart throttle)')
+        time.sleep(120)
+
+run_guarded()
