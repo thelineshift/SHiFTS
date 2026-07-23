@@ -3,8 +3,7 @@
   "last_log": [
     "seq 265 executed 2026-07-23 20:47 UTC",
     "old pinned message deleted",
-    "old pinned message deleted",
-    "replaced pin in #\ud83c\udf81giveaway (unpinned 2)",
+    "replaced pin in #\ud83c\udf81giveaway (unpinned 1)",
     "old pinned message deleted",
     "replaced pin in #\ud83d\udc4bwelcome (unpinned 1)",
     "posted+pinned in #\ud83d\udce3promotions"
@@ -91,7 +90,6 @@
     "20260723-1500"
   ],
   "boot_log": [
-    "2026-07-23T20:19:10Z",
     "2026-07-23T20:19:39Z",
     "2026-07-23T20:20:00Z",
     "2026-07-23T20:20:29Z",
@@ -150,6 +148,7 @@
     "2026-07-23T20:46:27Z",
     "2026-07-23T20:46:49Z",
     "2026-07-23T20:47:12Z",
-    "2026-07-23T20:47:30Z"
+    "2026-07-23T20:47:30Z",
+    "2026-07-23T20:47:33Z"
   ]
 }
