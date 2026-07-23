@@ -1386,6 +1386,58 @@ async def run_command(cmd, guild, log):
                 log.append(f'x_oauth1_me [{name}] HTTP {e.code}: {eb}')
             except Exception as e:
                 log.append(f'x_oauth1_me [{name}] FAIL: {e}')
+    elif a == 'x_read':
+        try:
+            c = x_creds_load()
+            ids = cmd.get('ids') or []
+            if not ids:
+                log.append('x_read: no ids given')
+            else:
+                d = await asyncio.to_thread(x_get_json, 'https://api.x.com/2/tweets?ids=' + ','.join(str(i) for i in ids), c['bearer_token'])
+                for t in d.get('data', []):
+                    txt = (t.get('text') or '').replace('\n', ' | ')
+                    flag = 'GITHACK!' if 'githack' in txt.lower() else ('WHOP!' if 'whop' in txt.lower() else 'ok')
+                    log.append(f"{t['id']} [{flag}] {txt[:230]}")
+        except Exception as e:
+            log.append(f'x_read FAIL: {e}')
+    elif a == 'x_profile_update':
+        try:
+            fields = {k: cmd[k] for k in ('name', 'description', 'url', 'location') if cmd.get(k)}
+            if not fields:
+                log.append('x_profile_update: nothing to set')
+            else:
+                updated = False
+                for name, ck, cs, at, ats in x_oauth1_sets(x_creds_load()):
+                    try:
+                        import hmac, hashlib, secrets, urllib.parse
+                        purl = 'https://api.x.com/1.1/account/update_profile.json'
+                        op = {'oauth_consumer_key': ck, 'oauth_nonce': secrets.token_hex(16),
+                              'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+                              'oauth_token': at, 'oauth_version': '1.0'}
+                        allp = {**op, **fields}
+                        q = lambda s: urllib.parse.quote(str(s), safe='')
+                        base = '&'.join(['POST', q(purl), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(allp.items())))])
+                        key = f'{q(cs)}&{q(ats)}'
+                        op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
+                        hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+                        body = urllib.parse.urlencode(fields).encode()
+                        req = urllib.request.Request(purl, data=body, method='POST',
+                            headers={'Authorization': hdr, 'Content-Type': 'application/x-www-form-urlencoded'})
+                        with urllib.request.urlopen(req, timeout=20) as r:
+                            d = json.load(r)
+                        log.append(f"profile updated [{name}]: @{d.get('screen_name')} | name: {d.get('name')} | bio: {str(d.get('description'))[:80]} | url: {d.get('url')}")
+                        updated = True
+                        break
+                    except urllib.error.HTTPError as e:
+                        try: eb = e.read()[:200]
+                        except Exception: eb = b''
+                        log.append(f'x_profile_update [{name}] HTTP {e.code}: {eb}')
+                    except Exception as e:
+                        log.append(f'x_profile_update [{name}] FAIL: {e}')
+                if not updated:
+                    log.append('x_profile_update: all cred sets failed')
+        except Exception as e:
+            log.append(f'x_profile_update error: {e}')
     elif a == 'x_media_test':
         try:
             img = await asyncio.to_thread(gh_raw_bytes, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
@@ -2134,7 +2186,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.44'
+            state['bot_version'] = '8.9.45'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
