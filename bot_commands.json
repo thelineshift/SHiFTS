@@ -1,5 +1,5 @@
 {
- "seq": 171,
+ "seq": 172,
  "commands": [
   {
    "seq": 50,
@@ -823,6 +823,10 @@
    "action": "read_recent",
    "channel": "general-chat",
    "limit": 6
+  },
+  {
+   "seq": 172,
+   "action": "x_refresh"
   }
  ]
 }
