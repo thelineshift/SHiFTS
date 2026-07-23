@@ -1,90 +1,90 @@
 {
-  "executed_seq": 144,
-  "last_log": [
-    "seq 144 executed 2026-07-23 00:22 UTC",
-    "purged 1 messages in #\ud83d\udcacgeneral-chat"
-  ],
-  "time_audit": {
-    "at": "2026-07-23 00:10 UTC",
-    "flags": []
+ "executed_seq": 144,
+ "last_log": [
+  "seq 144 executed 2026-07-23 00:22 UTC",
+  "purged 1 messages in #\ud83d\udcacgeneral-chat"
+ ],
+ "time_audit": {
+  "at": "2026-07-23 00:10 UTC",
+  "flags": []
+ },
+ "room_pulse": {
+  "\ud83c\udfaffree-pick": "2026-07-22 22:17 UTC",
+  "\ud83e\uddfereceipts": "2026-07-22 22:42 UTC",
+  "\ud83d\udcacgeneral-chat": "2026-07-22 23:50 UTC",
+  "\ud83d\udd12daily-locks": "2026-07-22 22:17 UTC",
+  "\ud83d\udccaall-picks": "2026-07-22 22:17 UTC",
+  "\ud83d\udc0bevery-play": "2026-07-22 22:17 UTC",
+  "\ud83c\udfc6100-to-1000": "2026-07-22 22:17 UTC",
+  "\ud83d\udce3promotions": "2026-07-21 17:30 UTC",
+  "\ud83c\udf81giveaway": "2026-07-23 00:05 UTC"
+ },
+ "resolution_watch": {
+  "at": "2026-07-23 00:10 UTC",
+  "flags": []
+ },
+ "challenge_watch": {
+  "at": "2026-07-23 00:10 UTC",
+  "flags": []
+ },
+ "giveaway_watch": {
+  "at": "2026-07-23 00:10 UTC",
+  "flags": []
+ },
+ "bot_version": "8.9.23",
+ "unannounced_results": [
+  {
+   "id": "sea-ml-0722",
+   "desc": "Mariners ML",
+   "odds": -118,
+   "result": "LOSS",
+   "units": -2.0,
+   "score": "Cincinnati Reds 5, Seattle Mariners 3",
+   "tier": "whale"
   },
-  "room_pulse": {
-    "\ud83c\udfaffree-pick": "2026-07-22 22:17 UTC",
-    "\ud83e\uddfereceipts": "2026-07-22 22:42 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-22 23:50 UTC",
-    "\ud83d\udd12daily-locks": "2026-07-22 22:17 UTC",
-    "\ud83d\udccaall-picks": "2026-07-22 22:17 UTC",
-    "\ud83d\udc0bevery-play": "2026-07-22 22:17 UTC",
-    "\ud83c\udfc6100-to-1000": "2026-07-22 22:17 UTC",
-    "\ud83d\udce3promotions": "2026-07-21 17:30 UTC",
-    "\ud83c\udf81giveaway": "2026-07-23 00:05 UTC"
+  {
+   "id": "wsn-ml-0722",
+   "desc": "Nationals ML",
+   "odds": -132,
+   "result": "WIN",
+   "units": 1.14,
+   "score": "Washington Nationals 8, Colorado Rockies 0",
+   "tier": "lock"
   },
-  "resolution_watch": {
-    "at": "2026-07-23 00:10 UTC",
-    "flags": []
-  },
-  "challenge_watch": {
-    "at": "2026-07-23 00:10 UTC",
-    "flags": []
-  },
-  "giveaway_watch": {
-    "at": "2026-07-23 00:10 UTC",
-    "flags": []
-  },
-  "bot_version": "8.9.23",
-  "unannounced_results": [
-    {
-      "id": "sea-ml-0722",
-      "desc": "Mariners ML",
-      "odds": -118,
-      "result": "LOSS",
-      "units": -2.0,
-      "score": "Cincinnati Reds 5, Seattle Mariners 3",
-      "tier": "whale"
-    },
-    {
-      "id": "wsn-ml-0722",
-      "desc": "Nationals ML",
-      "odds": -132,
-      "result": "WIN",
-      "units": 1.14,
-      "score": "Washington Nationals 8, Colorado Rockies 0",
-      "tier": "lock"
-    },
-    {
-      "id": "stl-laa-under9",
-      "desc": "Cardinals/Angels Under 9.0",
-      "odds": -119,
-      "result": "WIN",
-      "units": 0.84,
-      "score": "St. Louis Cardinals 1, Los Angeles Angels 0",
-      "tier": "free"
-    }
-  ],
-  "last_x_receipt_ts": 1784763551.1604974,
-  "last_recap_date": "2026-07-21",
-  "scan_events": {
-    "20260722-12": "ok",
-    "20260722-16": "ok",
-    "20260722-20": "ok",
-    "20260723-00": "missed"
-  },
-  "executed_cmd_seq": 144,
-  "scan_role_id": 1529569745517674599,
-  "scan_role_msg": 1529569746620645406,
-  "count10_idx": 5,
-  "giveaway_x_post": "2080045584183136495",
-  "count60_idx": 3,
-  "giveaway_confirmed": {
-    "em_jeiz26": {
-      "handle": "Em_jeiz26",
-      "discord": "emjeiz04017",
-      "discord_id": "1378025540937715772",
-      "mult": 1,
-      "ts": "2026-07-22T23:24:48Z"
-    }
-  },
-  "scan_event_misses": [
-    "20260723-00"
-  ]
+  {
+   "id": "stl-laa-under9",
+   "desc": "Cardinals/Angels Under 9.0",
+   "odds": -119,
+   "result": "WIN",
+   "units": 0.84,
+   "score": "St. Louis Cardinals 1, Los Angeles Angels 0",
+   "tier": "free"
+  }
+ ],
+ "last_x_receipt_ts": 1784763551.1604974,
+ "last_recap_date": "2026-07-21",
+ "scan_events": {
+  "20260722-12": "ok",
+  "20260722-16": "ok",
+  "20260722-20": "ok",
+  "20260723-00": "ok"
+ },
+ "executed_cmd_seq": 144,
+ "scan_role_id": 1529569745517674599,
+ "scan_role_msg": 1529569746620645406,
+ "count10_idx": 5,
+ "giveaway_x_post": "2080045584183136495",
+ "count60_idx": 3,
+ "giveaway_confirmed": {
+  "em_jeiz26": {
+   "handle": "Em_jeiz26",
+   "discord": "emjeiz04017",
+   "discord_id": "1378025540937715772",
+   "mult": 1,
+   "ts": "2026-07-22T23:24:48Z"
+  }
+ },
+ "scan_event_misses": [
+  "20260723-00"
+ ]
 }
