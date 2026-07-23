@@ -1411,18 +1411,19 @@ async def run_command(cmd, guild, log):
                 updated = False
                 for name, ck, cs, at, ats in x_oauth1_sets(x_creds_load()):
                     try:
-                        import hmac, hashlib, secrets, urllib.parse
+                        import hmac, hashlib, secrets
+                        import urllib.parse as _up
                         purl = 'https://api.x.com/1.1/account/update_profile.json'
                         op = {'oauth_consumer_key': ck, 'oauth_nonce': secrets.token_hex(16),
                               'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
                               'oauth_token': at, 'oauth_version': '1.0'}
                         allp = {**op, **fields}
-                        q = lambda s: urllib.parse.quote(str(s), safe='')
+                        q = lambda s: _up.quote(str(s), safe='')
                         base = '&'.join(['POST', q(purl), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(allp.items())))])
                         key = f'{q(cs)}&{q(ats)}'
                         op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
                         hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
-                        body = urllib.parse.urlencode(fields).encode()
+                        body = _up.urlencode(fields).encode()
                         req = urllib.request.Request(purl, data=body, method='POST',
                             headers={'Authorization': hdr, 'Content-Type': 'application/x-www-form-urlencoded'})
                         with urllib.request.urlopen(req, timeout=20) as r:
@@ -2190,7 +2191,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.46'
+            state['bot_version'] = '8.9.47'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
