@@ -1,5 +1,13 @@
 {
-  "ts": "2026-07-23T15:31:12Z",
-  "wallets": [],
-  "error": "HTTP Error 429: Too Many Requests"
+  "ts": "2026-07-23T15:31:18Z",
+  "wallets": [
+    {
+      "chain": "solana",
+      "symbol": "SOL",
+      "address": "CXMSPuotirZU1shtrVL21SiobsDyXf7m7CYoS2W2kTWj",
+      "balance": 0.0,
+      "usd": 0.0
+    }
+  ],
+  "error": "HTTP Error 403: Forbidden"
 }
