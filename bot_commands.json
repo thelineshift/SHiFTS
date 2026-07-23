@@ -1,5 +1,5 @@
 {
- "seq": 287,
+ "seq": 288,
  "commands": [
   {
    "seq": 163,
@@ -807,6 +807,14 @@
    "marker": "WELCOME",
    "seq": 287,
    "ts": "2026-07-23T21:54:10Z"
+  },
+  {
+   "action": "replace_pinned",
+   "channel": "upgrade",
+   "content": "\u26a1 **PICK YOUR SEAT \u2014 SHiFT'S FULL BOARD**\n\n\ud83d\udd12 **LOCK \u2014 $14.99/mo**\nMy daily driver. 1-3 plays a day, posted before first pitch \u2014 odds, units, and my full read on every one.\n\ud83d\udc49 https://buy.stripe.com/8x29AS4Ry5G85Qf58ZbMQ00\n\n\ud83d\udcca **SHARP \u2014 $29.99/mo**\nEverything I fire, every day \u2014 plus where the number is wrong, why, and by how much.\n\ud83d\udc49 https://buy.stripe.com/00w9ASes86Kc5QfcBrbMQ01\n\n\ud83d\udc0b **WHALE \u2014 $59.99/mo**\nMy entire book. Every play across every tier, Whale-only angles, line-move alerts, full desk breakdowns. The inner circle.\n\ud83d\udc49 https://buy.stripe.com/28E14m5VC0lOguT7h7bMQ02\n\n\ud83d\ude80 Code **LAUNCH25** = 25% off your first month. Roles activate in seconds after checkout.\n\nEvery play timestamped before first pitch. Every result receipted \u2014 win or lose.",
+   "marker": "SEAT",
+   "seq": 288,
+   "ts": "2026-07-23T21:54:13Z"
   }
  ]
 }
