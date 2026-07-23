@@ -1,5 +1,5 @@
 {
- "seq": 186,
+ "seq": 187,
  "commands": [
   {
    "seq": 50,
@@ -903,6 +903,15 @@
    "action": "read_recent",
    "channel": "general-chat",
    "limit": 5
+  },
+  {
+   "seq": 187,
+   "action": "delete_where",
+   "channel": "general-chat",
+   "contains": "Cardinals ML (-123) \u00b7 McGreevy",
+   "author": "SHiFT",
+   "limit": 15,
+   "max": 1
   }
  ]
 }
