@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23T02:12:52Z",
+  "updated": "2026-07-23T02:44:36Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -552,7 +552,7 @@
       "odds": -125,
       "units": 1.5,
       "tier": "lock",
-      "result": "PENDING",
+      "result": "LOSS",
       "time_et": "8:00 PM",
       "analysis": "CHC 5.1 rpg home vs DET 3.9 road; Boyd 3.38 FIP at Wrigley vs Morton 4.60 road; DET pen 24th. Model -141 vs -125. Wrigley outdoor 70F, wind 7 in from LF, 0% rain.",
       "live_odds": {
@@ -560,7 +560,9 @@
         "away_ml": null,
         "total": 8.0,
         "ts": 1784765392
-      }
+      },
+      "score": "Detroit Tigers 5, Chicago Cubs 1",
+      "units_result": -1.5
     },
     {
       "id": "atl-ml-0722",
