@@ -1,12 +1,11 @@
 {
-  "executed_seq": 282,
+  "executed_seq": 284,
   "last_log": [
-    "seq 282 executed 2026-07-23 21:24 UTC",
-    "category [\ud83d\udccc START HERE] -> [\ud83d\udccc THE LOBBY]",
-    "category [\ud83c\udd93 THE FREE ROOM] -> [\ud83c\udd93 THE FREE SEATS]",
-    "category [\ud83d\udd12 LOCK ROOM] -> [\ud83d\udd12 THE VAULT]",
-    "category [\ud83d\udcca SHARP] -> [\ud83d\udcca THE SHARP DESK]",
-    "category [\ud83d\udc0b WHALE] -> [\ud83d\udc0b THE WHALE POD]"
+    "seq 284 executed 2026-07-23 21:41 UTC",
+    "x_profile_image avatar [app2] HTTP 400: b'{\"request\":\"\\\\/1.1\\\\/account\\\\/update_profile_image.json\",\"error\":\"Denied by user validation.\"}'",
+    "x_profile_image avatar [legacy] HTTP 401: b'{\"errors\":[{\"message\":\"Could not authenticate you\",\"code\":32}]}\\n'",
+    "x_profile_image: banner set [app2]",
+    "profile updated [app2]: @TheLineShift | name: TheLineShift \u26a1 | bio: \u26a1 I'm SHiFT. I run the board 6x daily \u2014 every play before first pitch, every res | url: https://t.co/jspOQEeeQa"
   ],
   "time_audit": {
     "at": "2026-07-23 21:41 UTC",
@@ -61,7 +60,7 @@
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
     "20260723-20": "ok"
   },
-  "executed_cmd_seq": 282,
+  "executed_cmd_seq": 284,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
