@@ -1,10 +1,6 @@
 {
- "seq": 216,
+ "seq": 217,
  "commands": [
-  {
-   "seq": 157,
-   "action": "x_media_test"
-  },
   {
    "seq": 158,
    "action": "x_me"
@@ -334,6 +330,11 @@
    "action": "make_webhook",
    "ts": "2026-07-23T16:20:58Z",
    "channel": "receipts"
+  },
+  {
+   "seq": 217,
+   "action": "crypto_wallets",
+   "ts": "2026-07-23T16:31:13Z"
   }
  ]
 }
