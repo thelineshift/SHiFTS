@@ -803,6 +803,22 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:250]
                 except Exception: pass
             log.append(f'x_me FAIL: {e} {body}')
+    elif a == 'delete_where':
+        try:
+            ch = find_channel(guild, cmd['channel'])
+            n = 0
+            if ch:
+                async for m in ch.history(limit=cmd.get('limit', 15)):
+                    if cmd['contains'] in (m.content or '') and (not cmd.get('author') or cmd['author'] in (m.author.name or '')):
+                        await m.delete()
+                        n += 1
+                        log.append(f'delete_where: removed message {m.id} in #{ch.name}')
+                        if n >= cmd.get('max', 1):
+                            break
+            if n == 0:
+                log.append('delete_where: no matching message found')
+        except Exception as e:
+            log.append(f'delete_where FAIL: {e}')
     elif a == 'x_oauth1_me':
         for name, ck, cs, at, ats in x_oauth1_sets(x_creds_load()):
             try:
@@ -1411,7 +1427,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.34'
+            state['bot_version'] = '8.9.35'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
