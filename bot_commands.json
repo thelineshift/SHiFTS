@@ -1,10 +1,6 @@
 {
- "seq": 213,
+ "seq": 214,
  "commands": [
-  {
-   "seq": 154,
-   "action": "x_refresh"
-  },
   {
    "seq": 155,
    "action": "x_media_test"
@@ -326,6 +322,13 @@
    "action": "read_recent",
    "ts": "2026-07-23T16:14:04Z",
    "channel": "free-pick",
+   "limit": 4
+  },
+  {
+   "seq": 214,
+   "action": "read_recent",
+   "ts": "2026-07-23T16:14:07Z",
+   "channel": "daily-locks",
    "limit": 4
   }
  ]
