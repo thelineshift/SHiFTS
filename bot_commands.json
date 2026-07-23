@@ -1,5 +1,5 @@
 {
- "seq": 285,
+ "seq": 286,
  "commands": [
   {
    "seq": 163,
@@ -793,6 +793,12 @@
    "avatar_url": "https://raw.githubusercontent.com/TheLineShift/AISportsBot/main/assets/shift_avatar.jpg",
    "seq": 285,
    "ts": "2026-07-23T21:49:14Z"
+  },
+  {
+   "action": "set_avatar",
+   "path": "assets/shift_avatar.png",
+   "seq": 286,
+   "ts": "2026-07-23T21:54:07Z"
   }
  ]
 }
