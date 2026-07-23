@@ -1,5 +1,5 @@
 {
- "seq": 143,
+ "seq": 144,
  "commands": [
   {
    "seq": 50,
@@ -678,6 +678,14 @@
    "handle": "sauki",
    "channel": "giveaway",
    "seq": 143
+  },
+  {
+   "action": "purge_channel",
+   "channel": "general-chat",
+   "limit": 30,
+   "marker": "SCAN DELAYED",
+   "bots_only": true,
+   "seq": 144
   }
  ]
 }
