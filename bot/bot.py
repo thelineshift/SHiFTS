@@ -1124,6 +1124,45 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:250]
                 except Exception: pass
             log.append(f'x_me FAIL: {e} {body}')
+    elif a == 'x_pinned':
+        try:
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            d = await asyncio.to_thread(x_get_json,
+                'https://api.x.com/2/users/me?user.fields=pinned_tweet_id', c['oauth2_access'])
+            pid = d.get('data', {}).get('pinned_tweet_id')
+            log.append(f"x_pinned: {pid or 'none'}")
+            if pid:
+                t = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/tweets/{pid}', c['oauth2_access'])
+                log.append(f"pinned text: {t.get('data', {}).get('text', '')[:200]}")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:250]
+                except Exception: pass
+            log.append(f'x_pinned FAIL: {e} {body}')
+    elif a == 'x_pin':
+        try:
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            me = await asyncio.to_thread(x_get_json, 'https://api.x.com/2/users/me', c['oauth2_access'])
+            uid = me.get('data', {}).get('id')
+            tid = str(cmd['tweet_id'])
+            payload = json.dumps({'tweet_id': tid}).encode()
+            req = urllib.request.Request(f'https://api.x.com/2/users/{uid}/pinned_tweets',
+                data=payload, headers={'Authorization': f"Bearer {c['oauth2_access']}",
+                                       'Content-Type': 'application/json'}, method='PUT')
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            log.append(f"x_pin: pinned {tid} -> {d.get('data')}")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:250]
+                except Exception: pass
+            log.append(f'x_pin FAIL: {e} {body}')
     elif a == 'crypto_wallets':
         try:
             bal = await asyncio.to_thread(wallet_balances)
@@ -2292,7 +2331,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.51'
+            state['bot_version'] = '8.9.52'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
