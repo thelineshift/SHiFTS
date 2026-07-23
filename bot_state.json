@@ -1,9 +1,15 @@
 {
-  "executed_seq": 290,
+  "executed_seq": 293,
   "last_log": [
-    "seq 290 executed 2026-07-23 22:12 UTC",
-    "old pinned message deleted",
-    "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
+    "seq 293 executed 2026-07-23 22:23 UTC",
+    "x_profile_update [app2] HTTP 403: b'{\"errors\":[{\"code\":120,\"message\":\"Account update failed: Description can\\'t include \\\\\"\\\\uD83D\\\\uDD12\\\\\".\"}]}'",
+    "x_profile_update [legacy] HTTP 401: b'{\"errors\":[{\"code\":32,\"message\":\"Could not authenticate you.\"}]}'",
+    "x_profile_update: all cred sets failed",
+    "x_pinned: 2080226769555312803",
+    "pinned text: ",
+    "x_profile_image avatar [app2] HTTP 400: b'{\"request\":\"\\\\/1.1\\\\/account\\\\/update_profile_image.json\",\"error\":\"Denied by user validation.\"}'",
+    "x_profile_image avatar [legacy] HTTP 401: b'{\"errors\":[{\"message\":\"Could not authenticate you\",\"code\":32}]}\\n'",
+    "x_profile_image: nothing set"
   ],
   "time_audit": {
     "at": "2026-07-23 22:23 UTC",
@@ -58,7 +64,7 @@
     "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
     "20260723-20": "ok"
   },
-  "executed_cmd_seq": 290,
+  "executed_cmd_seq": 293,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 8,
