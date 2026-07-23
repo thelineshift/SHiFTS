@@ -510,12 +510,18 @@ def pick_game_utc(date_s, time_s):
     except Exception:
         return None
 
+CH_ALIASES = {
+    'daily-locks': ['lock-room'], 'all-picks': ['sharp-room'], 'every-play': ['whale-room'],
+    'lock-lounge': ['lock-lounge'], 'sharp-talk': ['sharp-talk'], 'whale-talk': ['whale-talk'],
+    'weekly-analytics': ['sharp-analytics'], 'monthly-deepdive': ['whale-deepdive'],
+}
 def find_channel(guild, name):
-    n = name.lower().strip('#').replace(' ', '')
+    keys = [name] + CH_ALIASES.get(name, [])
     for ch in guild.text_channels:
         cn = ch.name.lower().replace('-', '').replace('_', '')
-        if n.replace('-', '').replace('_', '') in cn:
-            return ch
+        for k in keys:
+            if k.lower().strip('#').replace(' ', '').replace('-', '').replace('_', '') in cn:
+                return ch
     return None
 
 def find_role(guild, name):
@@ -1468,6 +1474,74 @@ async def run_command(cmd, guild, log):
                     log.append('x_profile_update: all cred sets failed')
         except Exception as e:
             log.append(f'x_profile_update error: {e}')
+    elif a == 'guild_map':
+        try:
+            for cat in guild.categories:
+                log.append(f"CAT [{cat.name}] :: " + ', '.join(c.name for c in cat.text_channels))
+            log.append(f'guild_map: {len(guild.categories)} categories, {len(guild.text_channels)} channels')
+        except Exception as e:
+            log.append(f'guild_map FAIL: {e}')
+    elif a == 'rename_channel':
+        try:
+            ch = find_channel(guild, cmd.get('channel', ''))
+            if ch:
+                old = ch.name
+                await ch.edit(name=cmd.get('name', ''), reason='captain rename')
+                log.append(f'renamed #{old} -> #{cmd.get("name")}')
+            else:
+                log.append(f'rename_channel: {cmd.get("channel")} not found')
+        except Exception as e:
+            log.append(f'rename_channel FAIL: {e}')
+    elif a == 'rename_category':
+        try:
+            tgt = (cmd.get('category', '') or '').lower()
+            cat = next((c for c in guild.categories if tgt in c.name.lower()), None)
+            if cat:
+                old = cat.name
+                await cat.edit(name=cmd.get('name', ''), reason='captain rename')
+                log.append(f'category [{old}] -> [{cmd.get("name")}]')
+            else:
+                log.append(f'rename_category: {cmd.get("category")} not found')
+        except Exception as e:
+            log.append(f'rename_category FAIL: {e}')
+    elif a == 'x_profile_image':
+        try:
+            import hmac, hashlib, secrets
+            import urllib.parse as _up
+            done = []
+            for kind, endpoint, field in [('avatar', 'https://api.x.com/1.1/account/update_profile_image.json', 'image'),
+                                          ('banner', 'https://api.x.com/1.1/account/update_profile_banner.json', 'banner')]:
+                iurl = cmd.get(f'{kind}_url')
+                if not iurl:
+                    continue
+                img = await asyncio.to_thread(lambda u=iurl: urllib.request.urlopen(
+                    urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'}), timeout=30).read())
+                for name, ck, cs, at, ats in x_oauth1_sets(x_creds_load()):
+                    try:
+                        boundary = secrets.token_hex(12)
+                        body = (f'--{boundary}\r\nContent-Disposition: form-data; name="{field}"; filename="{kind}.png"\r\n'
+                                f'Content-Type: image/png\r\n\r\n').encode() + img + f'\r\n--{boundary}--\r\n'.encode()
+                        op = {'oauth_consumer_key': ck, 'oauth_nonce': secrets.token_hex(16),
+                              'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+                              'oauth_token': at, 'oauth_version': '1.0'}
+                        q = lambda s: _up.quote(str(s), safe='')
+                        base = '&'.join(['POST', q(endpoint), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
+                        key = f'{q(cs)}&{q(ats)}'
+                        op['oauth_signature'] = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
+                        hdr = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+                        req = urllib.request.Request(endpoint, data=body, method='POST',
+                            headers={'Authorization': hdr, 'Content-Type': f'multipart/form-data; boundary={boundary}'})
+                        with urllib.request.urlopen(req, timeout=30) as r:
+                            r.read()
+                        done.append(f'{kind} set [{name}]')
+                        break
+                    except urllib.error.HTTPError as e:
+                        try: eb = e.read()[:150]
+                        except Exception: eb = b''
+                        log.append(f'x_profile_image {kind} [{name}] HTTP {e.code}: {eb}')
+            log.append('x_profile_image: ' + (' | '.join(done) if done else 'nothing set'))
+        except Exception as e:
+            log.append(f'x_profile_image FAIL: {e}')
     elif a == 'x_media_test':
         try:
             img = await asyncio.to_thread(gh_raw_bytes, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
@@ -2218,7 +2292,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.49'
+            state['bot_version'] = '8.9.50'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -2686,6 +2760,21 @@ async def grader():
                               f"Final: {p.get('score')}{overnight}")
             if p.get('tier') == 'challenge':
                 await settle_challenge(guild, p)
+            # live record in tier channel names (2 per 10min per channel is plenty)
+            try:
+                REC_CH = {'lock': ('\U0001F512', 'lock-room'), 'sharp': ('\U0001F4CA', 'sharp-room'),
+                          'whale': ('\U0001F40B', 'whale-room'), 'free': ('\U0001F3AF', 'free-pick')}
+                t = p.get('tier')
+                if t in REC_CH:
+                    emo, base = REC_CH[t]
+                    tw = sum(1 for q in doc['picks'] if q.get('tier') == t and q.get('result') == 'WIN')
+                    tl = sum(1 for q in doc['picks'] if q.get('tier') == t and q.get('result') == 'LOSS')
+                    ch2 = find_channel(guild, base)
+                    new_name = f'{emo}{base}-{tw}-{tl}'
+                    if ch2 and ch2.name != new_name:
+                        await ch2.edit(name=new_name, reason='live record update')
+            except Exception as e:
+                print('record rename:', e)
             if state is not None:
                 state.setdefault('unannounced_results', []).append(
                     {'id': p['id'], 'desc': p.get('desc'), 'odds': p.get('odds'), 'result': p['result'],
