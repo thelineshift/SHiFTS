@@ -993,15 +993,19 @@ async def run_command(cmd, guild, log):
                 n = sum(1 for mem in guild.members if any(word.lower() in r.name.lower() for r in mem.roles))
                 counts[key] = n
             snap = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), **counts}
-            xc = x_creds()
-            bt = (xc.get('bearer') or '').strip()
-            if bt:
-                xr = xrequests.get('https://api.x.com/2/users/1831457082828021760?user.fields=public_metrics',
-                                   headers={'Authorization': f'Bearer {bt}'}, timeout=15)
-                if xr.status_code == 200:
-                    d = xr.json()['data']['public_metrics']
-                    snap['x_followers'] = d['followers_count']
-                    snap['x_tweets'] = d['tweet_count']
+            try:
+                c = x_creds_load()
+                if time.time() > c.get('oauth2_expires_at', 0):
+                    c = await asyncio.to_thread(x_oauth2_refresh, c)
+                uid = c.get('user_id') or '1831457082828021760'
+                req = urllib.request.Request(f'https://api.x.com/2/users/{uid}?user.fields=public_metrics',
+                                             headers={'Authorization': f"Bearer {c['oauth2_access']}"})
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    d = json.load(r)['data']['public_metrics']
+                snap['x_followers'] = d['followers_count']
+                snap['x_tweets'] = d['tweet_count']
+            except Exception as e:
+                log.append(f'metrics X fetch failed: {e}')
             m = await asyncio.to_thread(gh_get_json, 'metrics.json')
             m = m or {'snapshots': []}
             m.setdefault('snapshots', []).append(snap)
@@ -1709,7 +1713,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.37'
+            state['bot_version'] = '8.9.37b'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
