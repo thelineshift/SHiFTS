@@ -1,10 +1,6 @@
 {
- "seq": 212,
+ "seq": 213,
  "commands": [
-  {
-   "seq": 153,
-   "action": "x_media_test"
-  },
   {
    "seq": 154,
    "action": "x_refresh"
@@ -324,6 +320,13 @@
    "action": "make_webhook",
    "ts": "2026-07-23T15:59:36Z",
    "channel": "scan-feed"
+  },
+  {
+   "seq": 213,
+   "action": "read_recent",
+   "ts": "2026-07-23T16:14:04Z",
+   "channel": "free-pick",
+   "limit": 4
   }
  ]
 }
