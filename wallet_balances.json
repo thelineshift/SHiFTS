@@ -1,13 +1,42 @@
 {
-  "ts": "2026-07-23T15:31:18Z",
+  "ts": "2026-07-23T16:32:30Z",
   "wallets": [
     {
       "chain": "solana",
       "symbol": "SOL",
+      "label": "\ud83c\udf81 GIVEAWAY WALLET",
+      "address": "5rw9dnpwi9ER6MQf3yL9obKyM3PSjxd4w9AvzqwW6nG3",
+      "note": "weekly SOL giveaway prizes pay out from here",
+      "balance": 0.40559,
+      "usd": 30.84
+    },
+    {
+      "chain": "solana",
+      "symbol": "SOL",
+      "label": "\ud83d\udcbc OPS WALLET",
       "address": "CXMSPuotirZU1shtrVL21SiobsDyXf7m7CYoS2W2kTWj",
+      "note": "crypto subscription revenue (SOL/USDC)",
+      "balance": 0.0,
+      "usd": 0.0
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "ETH/EVM",
+      "label": "\ud83d\udcbc OPS WALLET",
+      "address": "0x54D66ffE2492a015A826bDE45c2F321Cec5751d5",
+      "note": "same address on ETH, Base, Polygon, BSC, Arbitrum",
+      "balance": null,
+      "usd": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "chain": "bitcoin",
+      "symbol": "BTC",
+      "label": "\ud83d\udcbc OPS WALLET",
+      "address": "14C6FDubcA5baeAkCtSzbjENvBVuQGdHrz",
+      "note": "BTC revenue",
       "balance": 0.0,
       "usd": 0.0
     }
-  ],
-  "error": "HTTP Error 403: Forbidden"
+  ]
 }
