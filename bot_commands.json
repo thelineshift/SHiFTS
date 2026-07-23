@@ -1,5 +1,5 @@
 {
- "seq": 204,
+ "seq": 205,
  "commands": [
   {
    "action": "verify_entry",
@@ -324,6 +324,11 @@
    "seq": 204,
    "action": "export_entries",
    "ts": "2026-07-23T15:14:05Z"
+  },
+  {
+   "seq": 205,
+   "action": "crypto_wallets",
+   "ts": "2026-07-23T15:27:54Z"
   }
  ]
 }
