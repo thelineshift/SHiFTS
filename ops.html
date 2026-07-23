@@ -105,7 +105,7 @@
 <div id="gate" style="position:fixed;inset:0;z-index:9999;background:#0a1420;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px">
   <div style="font-size:26px;font-weight:900">⚡ SHiFT <span style="color:#2dd4bf">OPS</span></div>
   <div style="color:#8ba7c4;font-size:13px;letter-spacing:1px">ADMIN ACCESS ONLY</div>
-  <input id="pin" type="password" inputmode="numeric" maxlength="6" placeholder="••••" autocomplete="off"
+  <input id="pin" type="password" onkeydown="if(event.key==='Enter'){event.preventDefault();tryPin();}" inputmode="numeric" maxlength="6" placeholder="••••" autocomplete="off"
     style="background:#12233a;border:1px solid #1e3a5c;color:#e8f1fa;font-size:24px;letter-spacing:12px;text-align:center;
            padding:12px 18px;border-radius:12px;width:190px;outline:none">
   <button onclick="tryPin()" style="background:#2dd4bf;color:#0a1420;font-weight:900;border:none;padding:12px 34px;border-radius:12px;font-size:15px;cursor:pointer">UNLOCK</button>
@@ -157,52 +157,123 @@
 </div>
 
 <script>
-/* ── PIN GATE ── */
+/* ── PIN GATE (hardened v2 — works in iframes, in-app browsers, blocked storage) ── */
 const PIN_HASH = 'c47e82e01e20ad22f816159eb3c3c048308ffca5b116cfc0c9aaaf012ee5b729';
-let fails = +(localStorage.getItem('ops_fails')||0);
-let lockUntil = +(localStorage.getItem('ops_lock_until')||0);
+function _mem(){ return window.__opsmem = window.__opsmem || {}; }
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return (k in _mem()) ? _mem()[k] : null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){ _mem()[k]=v; } },
+  del(k){ try{ localStorage.removeItem(k); }catch(e){ delete _mem()[k]; } }
+};
+const sess = {
+  get(k){ try{ return sessionStorage.getItem(k); }catch(e){ return (k in _mem()) ? _mem()[k] : null; } },
+  set(k,v){ try{ sessionStorage.setItem(k,v); }catch(e){ _mem()[k]=v; } },
+  del(k){ try{ sessionStorage.removeItem(k); }catch(e){ delete _mem()[k]; } }
+};
+let fails = +(store.get('ops_fails')||0);
+let lockUntil = +(store.get('ops_lock_until')||0);
+function gateSay(m){ const el=document.getElementById('gateMsg'); if(el) el.textContent=m; }
+/* pure-JS SHA-256 fallback for contexts without WebCrypto (http, old/in-app browsers) */
+function sha256js(ascii){
+  function rr(v,a){return (v>>>a)|(v<<(32-a));}
+  var mathPow=Math.pow, maxWord=mathPow(2,32), result='';
+  var words=[], asciiBitLength=ascii.length*8;
+  var hash=sha256js.h=sha256js.h||[], k=sha256js.k=sha256js.k||[];
+  var primeCounter=k.length, isComposite={};
+  for(var candidate=2;primeCounter<64;candidate++){
+    if(!isComposite[candidate]){
+      for(var i=0;i<313;i+=candidate) isComposite[i]=candidate;
+      hash[primeCounter]=(mathPow(candidate,.5)*maxWord)|0;
+      k[primeCounter++]=(mathPow(candidate,1/3)*maxWord)|0;
+    }
+  }
+  ascii+='\x80';
+  while(ascii.length%64-56) ascii+='\x00';
+  for(var i=0;i<ascii.length;i++){
+    var j=ascii.charCodeAt(i);
+    if(j>>8) return '';
+    words[i>>2]|=j<<((3-i)%4)*8;
+  }
+  words[words.length]=((asciiBitLength/maxWord)|0);
+  words[words.length]=(asciiBitLength);
+  for(var j=0;j<words.length;){
+    var w=words.slice(j,j+=16), oldHash=hash;
+    hash=hash.slice(0,8);
+    for(var i=0;i<64;i++){
+      var w15=w[i-15], w2=w[i-2];
+      var a=hash[0], e=hash[4];
+      var temp1=hash[7]
+        +(rr(e,6)^rr(e,11)^rr(e,25))
+        +((e&hash[5])^((~e)&hash[6]))
+        +k[i]
+        +(w[i]=(i<16)?w[i]:(w[i-16]+(rr(w15,7)^rr(w15,18)^(w15>>>3))+w[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10)))|0);
+      var temp2=(rr(a,2)^rr(a,13)^rr(a,22))+((a&hash[1])^(a&hash[2])^(hash[1]&hash[2]));
+      hash=[(temp1+temp2)|0].concat(hash);
+      hash[4]=(hash[4]+temp1)|0;
+    }
+    for(var i=0;i<8;i++) hash[i]=(hash[i]+oldHash[i])|0;
+  }
+  for(var i=0;i<8;i++){
+    for(var j=3;j+1;j--){
+      var b=(hash[i]>>(j*8))&255;
+      result+=((b<16)?'0':'')+b.toString(16);
+    }
+  }
+  return result;
+}
 async function sha(s){
-  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
-  return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');
+  try{
+    if(window.isSecureContext !== false && window.crypto && crypto.subtle && crypto.subtle.digest){
+      const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+      return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');
+    }
+  }catch(e){ /* fall through to JS implementation */ }
+  return sha256js(s);
 }
 async function tryPin(){
-  const now = Date.now();
-  if(now < lockUntil){
-    document.getElementById('gateMsg').textContent = `locked — try again in ${Math.ceil((lockUntil-now)/60000)} min`;
-    return;
-  }
-  const v = document.getElementById('pin').value;
-  if(await sha(v) === PIN_HASH){
-    sessionStorage.setItem('ops_ok','1');
-    localStorage.removeItem('ops_fails'); localStorage.removeItem('ops_lock_until');
-    unlock();
-  } else {
-    fails++;
-    localStorage.setItem('ops_fails', fails);
-    document.getElementById('pin').value = '';
-    if(fails >= 5){
-      lockUntil = Date.now() + 5*60000;
-      localStorage.setItem('ops_lock_until', lockUntil);
-      fails = 0; localStorage.setItem('ops_fails', 0);
-      document.getElementById('gateMsg').textContent = 'too many attempts — locked 5 minutes';
-    } else {
-      document.getElementById('gateMsg').textContent = `wrong PIN (${5-fails} attempts left)`;
+  try{
+    const now = Date.now();
+    if(now < lockUntil){
+      gateSay(`locked — try again in ${Math.ceil((lockUntil-now)/60000)} min`);
+      return;
     }
+    const v = (document.getElementById('pin').value||'').trim();
+    if(!v){ gateSay('enter your PIN'); return; }
+    if(await sha(v) === PIN_HASH){
+      sess.set('ops_ok','1');
+      store.del('ops_fails'); store.del('ops_lock_until');
+      fails = 0; lockUntil = 0;
+      unlock();
+    } else {
+      fails++;
+      store.set('ops_fails', fails);
+      document.getElementById('pin').value = '';
+      if(fails >= 5){
+        lockUntil = Date.now() + 5*60000;
+        store.set('ops_lock_until', lockUntil);
+        fails = 0; store.set('ops_fails', 0);
+        gateSay('too many attempts — locked 5 minutes');
+      } else {
+        gateSay(`wrong PIN (${5-fails} attempts left)`);
+      }
+    }
+  }catch(err){
+    gateSay('gate error: ' + ((err && err.message) || err));
   }
 }
 function unlock(){
   document.getElementById('gate').style.display = 'none';
-  loadAll();
-  setInterval(loadAll, 60000);
+  try{ loadAll(); }catch(e){}
+  setInterval(()=>{ try{ loadAll(); }catch(e){} }, 60000);
 }
 let idleT;
 function resetIdle(){
   clearTimeout(idleT);
-  idleT = setTimeout(()=>{ sessionStorage.removeItem('ops_ok'); location.reload(); }, 15*60000);
+  idleT = setTimeout(()=>{ sess.del('ops_ok'); location.reload(); }, 15*60000);
 }
-['click','keydown','mousemove','touchstart'].forEach(e=>addEventListener(e, resetIdle, {passive:true}));
-document.getElementById('pin').addEventListener('keydown', e=>{ if(e.key==='Enter') tryPin(); });
-if(sessionStorage.getItem('ops_ok')==='1') unlock();
+try{ ['click','keydown','mousemove','touchstart'].forEach(e=>addEventListener(e, resetIdle, {passive:true})); }catch(e){}
+try{ document.getElementById('pin').addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); tryPin(); } }); }catch(e){}
+try{ if(sess.get('ops_ok')==='1') unlock(); }catch(e){}
 
 const RAW = 'https://raw.githubusercontent.com/thelineshift/AISportsBot';
 const FEEDS = {
@@ -399,4 +470,50 @@ function renderTickets(iss){
   document.getElementById('tickets').innerHTML = list.map(t=>
     `<div class="ticket"><div class="hd"><b>#${t.id}</b>
       <span class="badge ${stBadge[t.status]||'st-VOID'}">${esc(t.status)}</span>
-      <span style="color:var(--d
+      <span style="color:var(--dim);font-size:11px">${esc((t.ts||'').slice(5,16).replace('T',' '))}</span></div>
+      <div class="sum">${esc(t.issue||t.detail||t.text||t.msg||'')}</div></div>`
+  ).join('');
+}
+
+function renderWallets(w){
+  const el = document.getElementById('wallets');
+  const list = (w && w.wallets) || [];
+  if(!list.length){ el.innerHTML = '<div class="empty">wallet feed offline — bot refreshes every 5 min</div>'; return; }
+  const tot = list.reduce((a,x)=>a+(x.usd||0),0);
+  document.getElementById('walTag').textContent = `total ≈ $${tot.toFixed(2)} · updated ${(w.ts||'').slice(11,16)} UTC`;
+  el.innerHTML = list.map(x=>`
+    <div class="game">
+      <div class="mu" style="flex:1;min-width:0">
+        <div class="teams">${esc(x.label||'WALLET')} <span class="badge b-sharp">${esc(x.symbol||x.chain||'')}</span></div>
+        <div class="pick" style="word-break:break-all">${esc(x.address||'')}</div>
+        ${x.note? `<div style="color:var(--dim);font-size:11px;margin-top:2px">${esc(x.note)}</div>`:''}
+      </div>
+      <div style="text-align:right;white-space:nowrap;margin-left:12px">
+        ${x.error? '<span class="badge st-VOID">rpc hiccup — retrying</span>'
+          : `<div style="font-weight:800">${x.balance==null?'—':(+x.balance).toFixed(5)} ${esc(x.symbol||'')}</div>
+             <div style="color:var(--teal);font-size:12px">≈ $${x.usd==null?'0.00':(+x.usd).toFixed(2)}</div>`}
+      </div>
+    </div>`).join('');
+}
+
+async function loadAll(manual){
+  const names = Object.keys(FEEDS);
+  const out = {};
+  await Promise.all(names.map(async n=>{ try{ out[n]=await jget(FEEDS[n]); }catch(e){ out[n]=null; } }));
+  const picks = (out.picks && out.picks.picks) || [];
+  try{ renderKPIs(picks, out.metrics, out.entries, out.confirmed, out.issues); }catch(e){ console.warn('kpi', e); }
+  try{ renderUnitsChart(picks); }catch(e){ console.warn('units', e); }
+  try{ renderBizChart(out.metrics); }catch(e){ console.warn('biz', e); }
+  try{ renderTierTable(picks); }catch(e){ console.warn('tiers', e); }
+  try{ renderChallenge(out.challenge); }catch(e){ console.warn('chal', e); }
+  try{ renderBoard(picks); }catch(e){ console.warn('board', e); }
+  try{ renderWallets(out.wallets); }catch(e){ console.warn('wallets', e); }
+  try{ renderGiveaway(out.entries, out.confirmed); }catch(e){ console.warn('giveaway', e); }
+  try{ renderEvents(out.events); }catch(e){ console.warn('events', e); }
+  try{ renderTickets(out.issues); }catch(e){ console.warn('tickets', e); }
+  const lf = document.getElementById('lastFetch');
+  if(lf) lf.textContent = 'updated ' + new Date().toLocaleTimeString();
+}
+</script>
+</body>
+</html>
