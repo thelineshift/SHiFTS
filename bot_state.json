@@ -1,8 +1,8 @@
 {
-  "executed_seq": 183,
+  "executed_seq": 184,
   "last_log": [
-    "seq 183 executed 2026-07-23 09:32 UTC",
-    "x_media_test OK: media_id 2080224519801978881 via oauth2 (1673679 bytes) \u2014 native image posts LIVE"
+    "seq 184 executed 2026-07-23 09:41 UTC",
+    "x_post_media_native OK: tweet 2080226769555312803 with media 2080226766296371200 via oauth2"
   ],
   "time_audit": {
     "at": "2026-07-23 09:40 UTC",
@@ -49,11 +49,11 @@
     "20260723-08": "ok",
     "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)"
   },
-  "executed_cmd_seq": 183,
+  "executed_cmd_seq": 184,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 7,
-  "giveaway_x_post": "2080226769555312803",
+  "giveaway_x_post": "2080226717143310713",
   "count60_idx": 5,
   "giveaway_confirmed": {
     "em_jeiz26": {
