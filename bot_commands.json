@@ -1,5 +1,5 @@
 {
- "seq": 295,
+ "seq": 296,
  "commands": [
   {
    "seq": 163,
@@ -859,6 +859,12 @@
    "text": "\u26a1 THE BOARD IS DEALT TOP-DOWN\n\n\ud83c\udfaf Free \u2014 1 play a day\n\ud83d\udd12 Lock $14.99 \u2014 2 plays a day\n\ud83d\udcca Sharp $29.99 \u2014 4 plays a day\n\ud83d\udc0b Whale $59.99 \u2014 my full 7-play board\n\nHOUSE LAW: my most confident plays go to Whale first \u2014 every day, no exceptions.\n\n\ud83d\udc49 https://thelineshift.github.io/AISportsBot/upgrade.html",
    "seq": 295,
    "ts": "2026-07-23T22:25:12Z"
+  },
+  {
+   "action": "x_post_text",
+   "text": "\u26a1 THE BOARD IS DEALT TOP-DOWN\n\n\ud83c\udfaf Free \u2014 1 play a day\n\ud83d\udd12 Lock $14.99 \u2014 2 plays a day\n\ud83d\udcca Sharp $29.99 \u2014 4 plays a day\n\ud83d\udc0b Whale $59.99 \u2014 my full 7-play board\n\nHOUSE LAW: my most confident plays go to Whale first \u2014 every day, no exceptions.\n\n\ud83d\udc49 https://thelineshift.github.io/AISportsBot/upgrade.html",
+   "seq": 296,
+   "ts": "2026-07-23T22:28:40Z"
   }
  ]
 }
