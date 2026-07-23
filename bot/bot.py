@@ -787,6 +787,22 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:250]
                 except Exception: pass
             log.append(f'x_refresh FAIL: {e} {body}')
+    elif a == 'x_me':
+        try:
+            c = x_creds_load()
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            req = urllib.request.Request('https://api.x.com/2/users/me',
+                                         headers={'Authorization': f"Bearer {c['oauth2_access']}"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                d = json.load(r)
+            log.append(f"x_me OK: @{d.get('data', {}).get('username')} id {d.get('data', {}).get('id')} — oauth2 user token LIVE")
+        except Exception as e:
+            body = ''
+            if hasattr(e, 'read'):
+                try: body = e.read()[:250]
+                except Exception: pass
+            log.append(f'x_me FAIL: {e} {body}')
     elif a == 'x_media_test':
         try:
             img = await asyncio.to_thread(gh_raw_bytes, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
@@ -1370,7 +1386,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.30'
+            state['bot_version'] = '8.9.31'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -1574,10 +1590,35 @@ def x_oauth1_sets(c):
 def x_upload_media_oauth1(img, filename='image.png'):
     import secrets
     c = x_creds_load()
+    url = 'https://api.x.com/2/media/upload'
+    # path 1: OAuth2 user-context (works when token carries media.write scope)
+    if c.get('oauth2_access'):
+        try:
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = x_oauth2_refresh(c)
+            boundary = '----shift' + secrets.token_hex(8)
+            body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="{filename}"\r\n'
+                    f'Content-Type: image/png\r\n\r\n').encode() + img + f'\r\n--{boundary}--\r\n'.encode()
+            req = urllib.request.Request(url, data=body, method='POST',
+                headers={'Authorization': f"Bearer {c['oauth2_access']}",
+                         'Content-Type': f'multipart/form-data; boundary={boundary}',
+                         'User-Agent': 'TheLineShift/1.0'})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                d = json.load(r)
+            mid = d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id')
+            if mid:
+                return 'oauth2', str(mid)
+        except urllib.error.HTTPError as e:
+            try:
+                eb = e.read()[:250]
+            except Exception:
+                eb = b''
+            print(f'oauth2 upload path failed: HTTP {e.code}: {eb}')
+        except Exception as e:
+            print('oauth2 upload path failed:', e)
     sets = x_oauth1_sets(c)
     if not sets:
-        raise Exception('no complete oauth1 credential set')
-    url = 'https://api.x.com/2/media/upload'
+        raise Exception('no working media credential (oauth2 rejected, no complete oauth1 set)')
     last = None
     for name, ck, cs, at, ats in sets:
         try:
