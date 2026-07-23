@@ -1,12 +1,6 @@
 {
- "seq": 210,
+ "seq": 211,
  "commands": [
-  {
-   "seq": 151,
-   "action": "read_recent",
-   "channel": "shift-lab",
-   "limit": 6
-  },
   {
    "seq": 152,
    "action": "x_refresh"
@@ -323,6 +317,11 @@
    "seq": 210,
    "action": "lockdown_channels",
    "ts": "2026-07-23T15:56:33Z"
+  },
+  {
+   "seq": 211,
+   "action": "audit_permissions",
+   "ts": "2026-07-23T15:56:36Z"
   }
  ]
 }
