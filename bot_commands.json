@@ -1,5 +1,5 @@
 {
- "seq": 144,
+ "seq": 145,
  "commands": [
   {
    "seq": 50,
@@ -686,6 +686,12 @@
    "marker": "SCAN DELAYED",
    "bots_only": true,
    "seq": 144
+  },
+  {
+   "action": "verify_entry",
+   "handle": "0x_StellaGG",
+   "channel": "giveaway",
+   "seq": 145
   }
  ]
 }
