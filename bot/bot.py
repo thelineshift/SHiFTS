@@ -228,6 +228,8 @@ def make_client(privileged=True):
             teaser_watch.start()
         if not odds_watch.is_running():
             odds_watch.start()
+        if not stripe_sync.is_running():
+            stripe_sync.start()
 
     @c.event
     async def on_message(message):
@@ -986,6 +988,27 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:250]
                 except Exception: pass
             log.append(f'x_me FAIL: {e} {body}')
+    elif a == 'purge_whop':
+        try:
+            n = 0
+            for m in list(guild.members):
+                if m.bot and 'whop' in m.name.lower():
+                    try:
+                        await guild.kick(m, reason='whop purge - platform retired')
+                        n += 1
+                    except Exception as e:
+                        log.append(f'whop kick failed: {e}')
+            for r in list(guild.roles):
+                if 'whop' in r.name.lower():
+                    try:
+                        await r.delete(reason='whop purge - platform retired')
+                        n += 1
+                    except Exception as e:
+                        log.append(f'whop role delete failed: {e}')
+            await asyncio.to_thread(log_event, 'whop_purge', f'{n} whop entities removed (bot kicked, roles deleted)')
+            log.append(f'whop purge complete: {n} removed')
+        except Exception as e:
+            log.append(f'purge_whop FAIL: {e}')
     elif a == 'audit_permissions':
         try:
             ev_role = guild.default_role
@@ -1568,9 +1591,6 @@ async def run_command(cmd, guild, log):
     elif a == 'fix_role_hierarchy':
         top = guild.me.top_role.position
         updates = {}
-        whop = find_role(guild, 'whop')
-        if whop and whop.id != guild.me.top_role.id and whop.position != top - 1:
-            updates[whop] = top - 1
         pos = 1
         for key in ('lock', 'sharp', 'whale'):
             r = find_role(guild, key)
@@ -1685,6 +1705,89 @@ UNITS_PAT = re.compile(r'\b\d+(\.\d+)?u\b')
 TIMEDATE_PAT = re.compile(r'(\b\d{1,2}(:\d{2})?\s?(AM|PM|am|pm)\b)|(\bET\b|EST|EDT)|tonight|today|tomorrow|(\b\d{1,2}/\d{1,2}\b)', re.I)
 PICK_CHANNELS = ('free-pick', 'daily-locks', 'all-picks', 'every-play', '100-to-1000')
 
+@tasks.loop(seconds=60)
+async def stripe_sync():
+    try:
+        key = os.environ.get('STRIPE_KEY', '')
+        if not key or not client.guilds:
+            return
+        guild = client.guilds[0]
+        def sget(path):
+            req = urllib.request.Request('https://api.stripe.com/v1/' + path,
+                                         headers={'Authorization': f'Bearer {key}'})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                return json.load(r)
+        sessions = await asyncio.to_thread(sget, 'checkout/sessions?limit=100')
+        subs = await asyncio.to_thread(sget, 'subscriptions?limit=100&status=all')
+        known = await asyncio.to_thread(gh_get_json, 'stripe_members.json') or {'members': {}}
+        members = known.setdefault('members', {})
+        for s in sessions.get('data', []):
+            if s.get('mode') != 'subscription' or not s.get('customer'):
+                continue
+            uname = next((f.get('text', {}).get('value') for f in (s.get('custom_fields') or [])
+                          if f.get('key') == 'discord_username'), None)
+            tier = (s.get('metadata') or {}).get('tier')
+            cid = s['customer']
+            if cid not in members and uname and tier:
+                members[cid] = {'username': uname.strip().lstrip('@'), 'tier': tier,
+                                'discord_id': None, 'status': None, 'welcomed': False}
+        sub_status = {s['customer']: s for s in subs.get('data', [])}
+        lab = find_channel(guild, 'shift-lab')
+        changed = False
+        for cid, info in members.items():
+            sub = sub_status.get(cid)
+            status = sub['status'] if sub else 'canceled'
+            prev = info.get('status')
+            if prev == status:
+                continue
+            info['status'] = status
+            changed = True
+            member = None
+            if info.get('discord_id'):
+                member = guild.get_member(int(info['discord_id']))
+            if not member:
+                member = await resolve_member(guild, info.get('username', ''))
+                if member:
+                    info['discord_id'] = str(member.id)
+            if not member:
+                if status in ('active', 'trialing') and not info.get('alerted'):
+                    info['alerted'] = True
+                    if lab:
+                        await lab.send(f"⚠️ STRIPE: paid {info.get('tier')} sub but Discord user `{info.get('username')}` not found (customer {cid}) — needs manual role.")
+                continue
+            active = status in ('active', 'trialing')
+            expanded = []
+            if active:
+                expanded = {'lock': ['lock'], 'sharp': ['sharp', 'lock'], 'whale': ['whale', 'sharp', 'lock']}.get(info.get('tier'), [])
+            for word in ('lock', 'sharp', 'whale'):
+                role = next((r for r in guild.roles if word in r.name.lower()), None)
+                if not role:
+                    continue
+                has = role in member.roles
+                should = word in expanded
+                if should and not has:
+                    await member.add_roles(role, reason='stripe subscription active')
+                elif has and not should and not active:
+                    await member.remove_roles(role, reason='stripe subscription ' + status)
+            if active and not info.get('welcomed'):
+                info['welcomed'] = True
+                gen = find_channel(guild, 'general-chat')
+                if gen:
+                    await gen.send(f"🎉 Welcome {member.mention} to **{info.get('tier', '').upper()}** — your room access is live! Check your new channels. 🤖")
+                await asyncio.to_thread(log_event, 'new_sub', f"{info.get('username')} subscribed {info.get('tier')}")
+            if status == 'past_due' and not info.get('pd_alert'):
+                info['pd_alert'] = True
+                if lab:
+                    await lab.send(f"⚠️ STRIPE: {info.get('username')} ({info.get('tier')}) payment PAST DUE — roles kept during grace.")
+            if status == 'canceled' and prev in ('active', 'trialing', 'past_due'):
+                await asyncio.to_thread(log_event, 'sub_canceled', f"{info.get('username')} canceled {info.get('tier')} — roles removed")
+                if lab:
+                    await lab.send(f"📉 STRIPE: {info.get('username')} canceled ({info.get('tier')}) — roles removed.")
+        if changed:
+            await asyncio.to_thread(gh_put, 'stripe_members.json', known, 'stripe sync')
+    except Exception as e:
+        print('stripe_sync error:', e)
+
 @tasks.loop(seconds=1800)
 async def audit():
     try:
@@ -1760,7 +1863,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.38'
+            state['bot_version'] = '8.9.39'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
