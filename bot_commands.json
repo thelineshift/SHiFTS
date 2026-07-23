@@ -1,5 +1,5 @@
 {
- "seq": 239,
+ "seq": 243,
  "commands": [
   {
    "seq": 163,
@@ -461,6 +461,30 @@
    "content": "\ud83e\udd16 **SHiFT STATUS \u2014 ENTRY CHECK CAUGHT UP**\n\nQuick one: SHiFT had a ~25 min nap earlier while I pushed a new build \u2014 a couple of handles dropped in that window didn't get scanned. All caught up now. \u2705\n\n**If you dropped your X handle and never got a reply \u2014 drop it again below and I'll scan you in seconds.**\n\nReminder on how entry works: follow @TheLineShift + like + repost the giveaway post, then drop your @handle here. Sunday 6 PM ET draw, paid on-chain. \ud83c\udf81",
    "seq": 239,
    "ts": "2026-07-23T18:23:39Z"
+  },
+  {
+   "action": "read_recent",
+   "channel": "giveaway",
+   "limit": 50,
+   "seq": 240,
+   "ts": "2026-07-23T18:32:14Z"
+  },
+  {
+   "action": "read_recent",
+   "channel": "promotions",
+   "limit": 10,
+   "seq": 241,
+   "ts": "2026-07-23T18:32:14Z"
+  },
+  {
+   "action": "x_timeline",
+   "seq": 242,
+   "ts": "2026-07-23T18:32:14Z"
+  },
+  {
+   "action": "x_me",
+   "seq": 243,
+   "ts": "2026-07-23T18:32:14Z"
   }
  ]
 }
