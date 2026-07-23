@@ -917,7 +917,7 @@ async def run_command(cmd, guild, log):
         await asyncio.to_thread(gh_put, 'x_pkce.json', pk, 'pkce link')
         c = x_creds_load()
         q = _ue({'response_type': 'code', 'client_id': c.get('client_id', ''), 'redirect_uri': X_REDIRECT,
-                 'scope': 'tweet.read tweet.write users.read follows.read follows.write like.read like.write offline.access', 'state': pk['state'],
+                 'scope': 'tweet.read tweet.write users.read follows.read follows.write like.read like.write media.write offline.access', 'state': pk['state'],
                  'code_challenge': ch, 'code_challenge_method': 'S256'})
         log.append('AUTH URL: https://twitter.com/i/oauth2/authorize?' + q)
     elif a == 'x_link_finish':
