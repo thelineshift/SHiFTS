@@ -1,5 +1,5 @@
 {
- "seq": 268,
+ "seq": 277,
  "commands": [
   {
    "seq": 163,
@@ -678,6 +678,67 @@
    "action": "collect_metrics",
    "seq": 268,
    "ts": "2026-07-23T21:08:39Z"
+  },
+  {
+   "action": "guild_map",
+   "seq": 269,
+   "ts": "2026-07-23T21:19:43Z"
+  },
+  {
+   "action": "rename_channel",
+   "channel": "daily-locks",
+   "name": "\ud83d\udd12lock-room-4-7",
+   "seq": 270,
+   "ts": "2026-07-23T21:19:43Z"
+  },
+  {
+   "action": "rename_channel",
+   "channel": "all-picks",
+   "name": "\ud83d\udccasharp-room-4-2",
+   "seq": 271,
+   "ts": "2026-07-23T21:19:43Z"
+  },
+  {
+   "action": "rename_channel",
+   "channel": "every-play",
+   "name": "\ud83d\udc0bwhale-room-5-3",
+   "seq": 272,
+   "ts": "2026-07-23T21:19:43Z"
+  },
+  {
+   "action": "rename_channel",
+   "channel": "free-pick",
+   "name": "\ud83c\udfaffree-pick-7-1",
+   "seq": 273,
+   "ts": "2026-07-23T21:19:43Z"
+  },
+  {
+   "action": "rename_channel",
+   "channel": "weekly-analytics",
+   "name": "\ud83d\udccasharp-analytics",
+   "seq": 274,
+   "ts": "2026-07-23T21:19:43Z"
+  },
+  {
+   "action": "rename_channel",
+   "channel": "monthly-deepdive",
+   "name": "\ud83d\udc0bwhale-deepdive",
+   "seq": 275,
+   "ts": "2026-07-23T21:19:43Z"
+  },
+  {
+   "action": "rename_channel",
+   "channel": "100-to-1000",
+   "name": "\ud83c\udfc6100-to-1000-40",
+   "seq": 276,
+   "ts": "2026-07-23T21:19:43Z"
+  },
+  {
+   "action": "x_profile_image",
+   "avatar_url": "https://raw.githubusercontent.com/TheLineShift/AISportsBot/main/assets/x_avatar.png",
+   "banner_url": "https://raw.githubusercontent.com/TheLineShift/AISportsBot/main/assets/x_banner.png",
+   "seq": 277,
+   "ts": "2026-07-23T21:19:43Z"
   }
  ]
 }
