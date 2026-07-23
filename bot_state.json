@@ -1,8 +1,21 @@
 {
-  "executed_seq": 169,
+  "executed_seq": 171,
   "last_log": [
-    "seq 169 executed 2026-07-23 07:58 UTC",
-    "webhook for #\ud83c\udf81giveaway: https://discord.com/api/webhooks/1529759605389791242/D-aYcPIL8fkd7M7OVZ9TOB1LOHj3lO4micnrk-n2FuVnbScG3r6ADy8oLhyG9t5lSlCX"
+    "seq 171 executed 2026-07-23 08:22 UTC",
+    "#\ud83e\uddeashift-lab | LineShift Bot#8676: \u274c Exchange failed: x_link_finish FAIL: HTTP 403: b'{\"detail\":\"You are not allowed to create a Tweet with duplicate content.\",\"status\":403,\"title\":\"Forbidden\",\"type\":\"abou",
+    "#\ud83e\uddeashift-lab | \ud83e\udd16 SHiFT#0000: \ud83d\udd17 **X RE-LINK \u2014 use THIS link (the newest one, ignore my earlier one)**\n\nThe portal token got rejected by X, so we do it the reliable way \u2014 same flow that worked yesterda",
+    "#\ud83e\uddeashift-lab | LineShift Bot#8676: \u274c Exchange failed: x_link_finish FAIL: HTTP 403: b'{\"detail\":\"You are not allowed to create a Tweet with duplicate content.\",\"status\":403,\"title\":\"Forbidden\",\"type\":\"abou",
+    "#\ud83e\uddeashift-lab | \ud83e\udd16 SHiFT#0000: \ud83d\udd17 **X RE-LINK NEEDED (2 minutes, both on your phone)**\n\nThe portal regeneration invalidated our X connection \u2014 it fully dies at 02:59 UTC if not re-linked. Two steps:\n\n**",
+    "#\ud83e\uddeashift-lab | odin1h: Consumer key - xTFxPIrqHPmang99X2H5g3j5A\nConsumer secret key mm8BagRroDWj3r64i5kjZ4n6QHZPd4PdDTXe0WcY8wxoneVId3",
+    "#\ud83e\uddeashift-lab | \ud83e\udd16 SHiFT#0000: \ud83d\udcf5 **X POST CAP \u2014 incident + fix**\n\nThe giveaway repost failed because we hit X's free-tier limit: **17 posts per rolling 24h**. Yesterday's per-pick receipts ate 12 of th",
+    "#\ud83e\uddeashift-lab | odin1h: C0Zj6t5px87wvWeygSo83cpqV2bs30BABn6Hidxb3FNOlrU3yV",
+    "#\ud83e\uddeashift-lab | odin1h: EQ9PitWVlkKUAdQAvP6B6Nfwf",
+    "#\ud83d\udcacgeneral-chat | LineShift Bot#8676: <@&1529569745517674599> \ud83d\udef0\ufe0f **SCAN IN 10 MINUTES** \u2014 4 AM ET. Sharpen up. \ud83d\udd25",
+    "#\ud83d\udcacgeneral-chat | LineShift Bot#8676: \ud83d\udef0\ufe0f **SCAN APPROACHING** \u2014 4 AM ET. The machine reads the whole board so you don't have to.",
+    "#\ud83d\udcacgeneral-chat | \ud83e\udd16 SHiFT#0000: \u2705 **12 AM SCAN \u2014 RESOLUTION (MAKEUP).**\n\nSHiFT owns this one: the midnight run graded every result (3-1, +1.55u \u2705 receipts are in your rooms now) but stalled before posti",
+    "#\ud83d\udcacgeneral-chat | \ud83e\udd16 SHiFT#0000: \ud83c\udf19 **FULL BOARD \u2014 7/22 EVENING: 3-1 (+1.55u)** \u2705\n\n\ud83d\udd12 Cubs ML (-125) \u274c -1.50u \u2014 Tigers 5, Cubs 1\n\ud83d\udc0b Braves ML (-114) \u2705 +1.32u \u2014 Braves 7, Padres 6\n\ud83d\udcca White Sox ML (-122) \u2705 +0.",
+    "#\ud83d\udcacgeneral-chat | LineShift Bot#8676: \ud83d\udef0\ufe0f **SCAN DELAYED** \u2014 the machine hit a snag on this run. SHiFT is catching up; the card drops shortly. \ud83e\udd16",
+    "#\ud83d\udcacgeneral-chat | LineShift Bot#8676: <@&1529569745517674599> \ud83d\udd2d **SCAN IMMINENT** \u2014 12 AM ET. Watch the machine work. \ud83d\udef0\ufe0f"
   ],
   "time_audit": {
     "at": "2026-07-23 08:13 UTC",
@@ -47,7 +60,7 @@
     "20260723-04": "ok",
     "20260723-04-note": "makeup posted 06:45 UTC \u2014 engine stalled on dead X token; receipts+resolution delivered"
   },
-  "executed_cmd_seq": 169,
+  "executed_cmd_seq": 171,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 7,
