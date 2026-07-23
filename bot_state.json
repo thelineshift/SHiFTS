@@ -1,8 +1,9 @@
 {
-  "executed_seq": 206,
+  "executed_seq": 207,
   "last_log": [
-    "seq 206 executed 2026-07-23 15:41 UTC",
-    "x_post_text OK: id 2080317411077841142"
+    "seq 207 executed 2026-07-23 15:46 UTC",
+    "ERROR make_webhook: 'NoneType' object has no attribute 'create_webhook'",
+    "no new commands"
   ],
   "time_audit": {
     "at": "2026-07-23 15:45 UTC",
