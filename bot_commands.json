@@ -1,5 +1,5 @@
 {
- "seq": 256,
+ "seq": 257,
  "commands": [
   {
    "seq": 163,
@@ -602,6 +602,12 @@
    "text": "\ud83c\udd93 FREE PICK (5:15 PM ET)\n\u26be Diamondbacks/Cardinals OVER 7.5 (-110)\nPfaadt's 4.58 ERA is the most hittable arm on the board and 7.5 is a low bar on a warm Busch night.\n\ud83e\uddfe We post every result \u2014 wins AND losses.\nLink in bio for the rooms. #MLB #SportsBetting",
    "seq": 256,
    "ts": "2026-07-23T20:19:22Z"
+  },
+  {
+   "action": "x_profile_update",
+   "url": "https://thelineshift.github.io/AISportsBot/upgrade.html",
+   "seq": 257,
+   "ts": "2026-07-23T20:31:22Z"
   }
  ]
 }
