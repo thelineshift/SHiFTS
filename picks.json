@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T20:00:53Z",
+  "updated": "2026-07-24T20:01:01Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1159,6 +1159,30 @@
       "analysis": "57-45 overall, 31-22 on the road \u2014 our 51% vs book 45% (no-vig) | The book is off on this number \u2014 57-45 overall, 31-22 on the road \u2014 our 51% vs book 45% (no-vig). That's a 7-point edge in our favor.",
       "awayTeam": "New York Yankees",
       "homeTeam": "Philadelphia Phillies"
+    },
+    {
+      "id": "challenge-los-angeles-dodgers-ml-0724",
+      "date": "2026-07-24",
+      "sport": "mlb",
+      "desc": "Los Angeles Dodgers ML",
+      "market": "ML",
+      "odds": -136,
+      "units": 1.0,
+      "tier": "challenge",
+      "time_et": "07:10 PM ET",
+      "analysis": "65-38 overall, 34-19 on the road \u2014 our 67% vs book 55% (no-vig)"
+    },
+    {
+      "id": "challenge-chicago-white-sox-ml-0724",
+      "date": "2026-07-24",
+      "sport": "mlb",
+      "desc": "Chicago White Sox ML",
+      "market": "ML",
+      "odds": -131,
+      "units": 1.0,
+      "tier": "challenge",
+      "time_et": "07:40 PM ET",
+      "analysis": "54-47 overall, 31-17 at home \u2014 our 64% vs book 54% (no-vig)"
     }
   ]
 }
