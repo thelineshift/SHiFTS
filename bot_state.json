@@ -36,7 +36,53 @@
     "flags": []
   },
   "bot_version": "9.7.0",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "heroic-astralis-ml-0724",
+      "desc": "Heroic ML",
+      "odds": null,
+      "result": "WIN",
+      "units": 1.36,
+      "score": "Heroic vs opponent \u2014 win",
+      "tier": "whale"
+    },
+    {
+      "id": "g2-koi-ml-0724",
+      "desc": "G2 Esports ML",
+      "odds": null,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "G2 Esports vs opponent \u2014 win",
+      "tier": "free"
+    },
+    {
+      "id": "oddik-bh-ml-0724",
+      "desc": "ODDIK ML",
+      "odds": null,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "ODDIK vs opponent \u2014 win",
+      "tier": "lock"
+    },
+    {
+      "id": "newvision-entropy-ml-0724",
+      "desc": "NEW VISION ML",
+      "odds": null,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "NEW VISION vs opponent \u2014 loss",
+      "tier": "sharp"
+    },
+    {
+      "id": "privateer-gaming-ml-0724",
+      "desc": "Privateer Gaming ML",
+      "odds": null,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Privateer Gaming vs opponent \u2014 loss",
+      "tier": "sharp"
+    }
+  ],
   "last_x_receipt_ts": 1784867411.9636893,
   "last_recap_date": "2026-07-23",
   "scan_events": {
