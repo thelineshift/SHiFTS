@@ -56,7 +56,8 @@
     "20260724-08-note": "4AM ET: discipline resolution by ops \u2014 card live since 06:50 UTC, thin window absorbed. Bot in 429 storm-backoff since 07:38.",
     "20260724-12": "ok",
     "20260724-12-note": "8AM ET makeup by ops 12:20 UTC \u2014 esports-led window card (4 plays). Engine cron turn died pre-post again; checklist slim-fix shipping next.",
-    "20260724-16": "missed"
+    "20260724-16": "missed",
+    "20260724-16-manual": "ok-bot"
   },
   "executed_cmd_seq": 350,
   "scan_role_id": 1529569745517674599,
