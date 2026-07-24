@@ -6,7 +6,7 @@
     "scan_now executed (dry=True)"
   ],
   "time_audit": {
-    "at": "2026-07-24 19:22 UTC",
+    "at": "2026-07-24 19:24 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -18,22 +18,22 @@
     "\ud83c\udf81giveaway": "2026-07-24 17:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 19:22 UTC",
+    "at": "2026-07-24 19:24 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-24 19:22 UTC",
+    "at": "2026-07-24 19:24 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 19:22 UTC",
+    "at": "2026-07-24 19:24 UTC",
     "flags": []
   },
-  "bot_version": "9.7.4",
+  "bot_version": "9.7.5",
   "unannounced_results": [
     {
       "id": "g2-koi-ml-0724",
