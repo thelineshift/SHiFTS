@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T19:03:38Z",
+  "updated": "2026-07-24T19:53:43Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1005,7 +1005,10 @@
       "units": 1.5,
       "tier": "whale",
       "time_et": "01:00 PM ET",
-      "analysis": "4-1 last 5 (beat T1, AG.AL, Sentinels) (lost to Dplus KIA) vs 2-3"
+      "analysis": "4-1 last 5 (beat T1, AG.AL, Sentinels) (lost to Dplus KIA) vs 2-3",
+      "result": "WIN",
+      "units_result": 1.36,
+      "score": "Karmine Corp vs opponent \u2014 win"
     },
     {
       "id": "fnatic-ml-0724",
@@ -1017,7 +1020,10 @@
       "units": 1.0,
       "tier": "sharp",
       "time_et": "02:00 PM ET",
-      "analysis": "3-2 last 5 (beat Karmine Corp, GIANTX, BBL Esports) (lost to Natus Vincere) vs 1-4"
+      "analysis": "3-2 last 5 (beat Karmine Corp, GIANTX, BBL Esports) (lost to Natus Vincere) vs 1-4",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Fnatic vs opponent \u2014 loss"
     },
     {
       "id": "privateer-gaming-ml-0724",
