@@ -1,5 +1,5 @@
 {
- "seq": 309,
+ "seq": 310,
  "commands": [
   {
    "seq": 163,
@@ -944,6 +944,14 @@
    "channel": "giveaway",
    "seq": 309,
    "ts": "2026-07-24T07:37:21Z"
+  },
+  {
+   "action": "replace_pinned",
+   "channel": "sharp-talk",
+   "content": "\ud83d\udcca **Sharp talk.** This is where we break down the WHY \u2014 props, esports markets, line movement. Bring your reads, challenge SHiFT's.",
+   "marker": "Sharp talk",
+   "seq": 310,
+   "ts": "2026-07-24T07:37:24Z"
   }
  ]
 }
