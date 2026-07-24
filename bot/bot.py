@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.4'
+BOT_VERSION = '9.9.5'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -196,7 +196,8 @@ async def handle_issue(message, guild):
 CRYPTO_TIERS = {'lock': 14.99, 'sharp': 29.99, 'whale': 59.99}
 
 def _http_json(url, payload=None, headers=None, timeout=20):
-    h = {'Content-Type': 'application/json'}
+    h = {'Content-Type': 'application/json',
+         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) shift-ops/1.0'}  # public RPCs 403 without UA
     if headers:
         h.update(headers)
     data = json.dumps(payload).encode() if payload is not None else None
@@ -205,11 +206,11 @@ def _http_json(url, payload=None, headers=None, timeout=20):
         return json.load(r)
 
 EVM_RPCS = {
-    'ethereum': ('ETH', 'ethereum', ['https://ethereum-rpc.publicnode.com', 'https://eth.drpc.org', 'https://rpc.mevblocker.io']),
-    'base': ('ETH', 'ethereum', ['https://base-rpc.publicnode.com', 'https://mainnet.base.org']),
-    'polygon': ('POL', 'polygon-ecosystem-token', ['https://polygon-bor-rpc.publicnode.com', 'https://polygon-rpc.com']),
-    'bsc': ('BNB', 'binancecoin', ['https://bsc-rpc.publicnode.com', 'https://bsc-dataseed.binance.org']),
-    'arbitrum': ('ETH', 'ethereum', ['https://arbitrum-one-rpc.publicnode.com', 'https://arb1.arbitrum.io/rpc']),
+    'ethereum': ('ETH', 'ethereum', ['https://ethereum-rpc.publicnode.com', 'https://ethereum.public.blockpi.network/v1/rpc/public', 'https://eth.merkle.io']),
+    'base': ('ETH', 'ethereum', ['https://mainnet.base.org', 'https://base-rpc.publicnode.com', 'https://base.public.blockpi.network/v1/rpc/public']),
+    'polygon': ('POL', 'polygon-ecosystem-token', ['https://polygon-bor-rpc.publicnode.com', 'https://polygon.drpc.org']),
+    'bsc': ('BNB', 'binancecoin', ['https://bsc-dataseed.binance.org', 'https://bsc-rpc.publicnode.com', 'https://1rpc.io/bnb']),
+    'arbitrum': ('ETH', 'ethereum', ['https://arb1.arbitrum.io/rpc', 'https://arbitrum-one-rpc.publicnode.com', 'https://1rpc.io/arb']),
 }
 USDC_E_POLYGON = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'  # bridged USDC.e — the Polymarket rail
 USDC_POLYGON = '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359'    # native USDC
