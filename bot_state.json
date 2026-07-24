@@ -1,8 +1,9 @@
 {
-  "executed_seq": 350,
+  "executed_seq": 352,
   "last_log": [
-    "seq 350 executed 2026-07-24 16:14 UTC",
-    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+media.write+offline.access&state=02e1c6a8888eb059&code_challenge=bKB2biyhLp_DaqnVSdACT3VpaGdf-ShHYq3bNCfHCQU&code_challenge_method=S256"
+    "seq 352 executed 2026-07-24 16:25 UTC",
+    "scan_now executed (dry=False)",
+    "username set to: shift"
   ],
   "time_audit": {
     "at": "2026-07-24 16:24 UTC",
@@ -59,7 +60,7 @@
     "20260724-16": "missed",
     "20260724-16-manual": "ok-bot"
   },
-  "executed_cmd_seq": 350,
+  "executed_cmd_seq": 352,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 11,
