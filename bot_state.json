@@ -1,13 +1,8 @@
 {
-  "executed_seq": 355,
+  "executed_seq": 356,
   "last_log": [
-    "seq 355 executed 2026-07-24 16:52 UTC",
-    "FULL #\ud83e\uddeashift-lab id=1530254700534825210 | shift#8676: [DRY RUN] would post thin-window resolution (checked: MLB 15 \u00b7 on radar: 3M Open (GOLF), Generali Open (ATP), Millennium Estoril Open (ATP), Livesport Prague Open (WTA), Palermo Ladies Open (WTA))",
-    "FULL #\ud83e\uddeashift-lab id=1530254656901480601 | shift#8676: \ud83d\udef0\ufe0f [DRY RUN] scan would initiate for slot 20260724-16-manual",
-    "FULL #\ud83e\uddeashift-lab id=1530253960932229284 | shift#8676: \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled) \u00b7 missed-scan note posted for slot 20260724-16 \u00b7 giveaway catch-up: 1",
-    "FULL #\ud83e\uddeashift-lab id=1530243322097045679 | shift#8676: \u2705 [DRY RUN] **SCAN COMPLETE \u2014 12 PM ET** \\n \ud83c\udfaf FREE: **Walczaki ML vs Gentle Mates \u2014 1.0u** (12:00 PM ET) \\n \ud83d\udd12 +1 \u00b7 \ud83d\udcca +2 \u00b7 \ud83d\udc0b +2 \u2014 live in their rooms \\n Every play before start. Every result receipted. \u26a1",
-    "FULL #\ud83e\uddeashift-lab id=1530243316787183616 | shift#8676: \ud83c\udfaf [DRY RUN] **FREE PICK \u2014 12:00 PM ET** \\n \ud83c\udfaf **Walczaki ML vs Gentle Mates \u2014 1.0u** (StarLadder StarSeries Bo3, 12:00 PM ET) \\n    _2-3 last 5 (beat 3DMAX, SPARTA) (lost to magic) vs 1-4_ \\n  \\n \ud83c\udf81 Sunday 6 PM ET \u2014 $50 SOL draw. Want the whole board? \ud83d\udd12 2 plays/day \u00b7 \ud83d\udcca 4 \u00b7 \ud83d\udc0b full 7 \u2014 Whale eats first. thelineshift.github.io/AISportsBot/upgrade.html",
-    "FULL #\ud83e\uddeashift-lab id=1530243311409823774 | shift#8676: \ud83d\udd12 [DRY RUN] **LOCK \u2014 1 play(s) this window** \\n \u25ab\ufe0f **Privateer Gaming ML vs Misa Esports \u2014 1.0u** (CCT Europe Bo3, 01:00 PM ET) \\n    _4-1 last 5 (beat Bushido Wildcats, megoshort, mellren) (lost to Pitstop crew) vs 3-2_"
+    "seq 356 executed 2026-07-24 17:23 UTC",
+    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+media.write+offline.access&state=2fc981a26bf26e02&code_challenge=HnTNOA_q7M3855JyhmOg4VLCCqfL9fxJpku550KTtUs&code_challenge_method=S256"
   ],
   "time_audit": {
     "at": "2026-07-24 17:11 UTC",
@@ -67,7 +62,7 @@
     "20260724-16-manual": "ok-bot",
     "20260724-16-note": "12PM ET: cron died silently again; bot engine flipped LIVE and posted the real card 16:25 UTC (5 plays, first fully-autonomous live card)."
   },
-  "executed_cmd_seq": 355,
+  "executed_cmd_seq": 356,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 11,
