@@ -1,5 +1,5 @@
 {
- "seq": 313,
+ "seq": 314,
  "commands": [
   {
    "seq": 163,
@@ -1007,6 +1007,16 @@
    "max": 1,
    "seq": 313,
    "ts": "2026-07-24T12:20:59Z"
+  },
+  {
+   "action": "delete_where",
+   "channel": "general-chat",
+   "contains": "Ankalaev ML 2u (UFC Sat)",
+   "author": "\u26a1 SHiFT",
+   "limit": 30,
+   "max": 1,
+   "seq": 314,
+   "ts": "2026-07-24T12:21:02Z"
   }
  ]
 }
