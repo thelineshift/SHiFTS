@@ -38,15 +38,6 @@
   "bot_version": "9.9.4",
   "unannounced_results": [
     {
-      "id": "privateer-gaming-ml-0724",
-      "desc": "Privateer Gaming ML",
-      "odds": null,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Privateer Gaming vs opponent \u2014 loss",
-      "tier": "sharp"
-    },
-    {
       "id": "karmine-corp-ml-0724",
       "desc": "Karmine Corp ML",
       "odds": null,
@@ -92,7 +83,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1784928058.6949136,
+  "last_x_receipt_ts": 1784935911.8050847,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -166,7 +157,7 @@
     "20260724-1900"
   ],
   "boot_log": [
-    "2026-07-24T23:31:49Z"
+    "2026-07-24T23:31:47Z"
   ],
   "teasers": {
     "weekly": "2026-07-26",
@@ -197,7 +188,7 @@
   },
   "x_purge_total": 622,
   "x_purge_last": "2026-07-24 23:15 UTC",
-  "last_deploy_id": "08cf8d00-bc2d-406b-9eef-3a36c3c9c6f7",
+  "last_deploy_id": "33f936c3-8c74-4839-8c30-7f5182875907",
   "op_month": "2026-07",
   "op_calls": 5,
   "op_meta": {
