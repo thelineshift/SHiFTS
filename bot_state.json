@@ -5,7 +5,7 @@
     "PERMS:\n#\ud83d\udc4bwelcome: everyone(view=True,send=False,threads=None,files=None)\n#\ud83d\udcdcrules: everyone(view=True,send=False,threads=None,files=None)\n#\ud83d\udc8eupgrade: everyone(view=True,send=True,threads=None,files=None)\n#\ud83c\udfaffree-pick-8-1: everyone(view=True,send=False,threads=None,files=None)\n#\ud83e\uddfereceipts: everyone(view=True,send=False,threads=None,files=None)\n#\ud83d\udcacgeneral-chat: everyone(view=True,send=True,threads=None,files=None)\n#\ud83d\udd12lock-room-4-8: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udd12lock-lounge: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udccasharp-room-5-3: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udccasharp-analytics: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udccasharp-talk: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udc0bwhale-room-6-3: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udc0bwhale-deepdive: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udc0bwhale-talk: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83c\udfc6100-to-1000-20: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udce3promotions: everyone(view=True,send=False,threads=None,files=None)\n#\ud83c\udf81giveaway: everyone(view=True,send=True,threads=None,files=None)\n#\u2699\ufe0fupdates: everyone(view=True,send=False,threads=None,files=None)\n#\ud83e\uddeashift-lab: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udee0\ufe0fissues: everyone(view=True,send=True,threads=None,files=None)\nTHREADS: thread 'Dmasud' in #\u2699\ufe0fupdates (id=1530231040646451280)"
   ],
   "time_audit": {
-    "at": "2026-07-24 15:25 UTC",
+    "at": "2026-07-24 15:33 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -14,23 +14,23 @@
     "\ud83d\udcacgeneral-chat": "2026-07-24 15:00 UTC",
     "\ud83c\udfc6100-to-1000-20": "2026-07-24 07:34 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-24 15:23 UTC"
+    "\ud83c\udf81giveaway": "2026-07-24 15:28 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 15:25 UTC",
+    "at": "2026-07-24 15:33 UTC",
     "flags": []
   },
   "challenge_watch": {
-    "at": "2026-07-24 15:25 UTC",
+    "at": "2026-07-24 15:33 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 15:25 UTC",
+    "at": "2026-07-24 15:33 UTC",
     "flags": []
   },
-  "bot_version": "9.3.0",
+  "bot_version": "9.3.1",
   "unannounced_results": [],
   "last_x_receipt_ts": 1784867411.9636893,
   "last_recap_date": "2026-07-23",
