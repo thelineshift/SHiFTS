@@ -1,5 +1,5 @@
 {
-  "seq": 323,
+  "seq": 327,
   "commands": [
     {
       "seq": 163,
@@ -1075,6 +1075,35 @@
       "action": "read_full",
       "channel": "giveaway",
       "limit": 50
+    },
+    {
+      "seq": 324,
+      "action": "enter_giveaway",
+      "handle": "mdhasnain31",
+      "discord": "mdhasnain3",
+      "discord_id": "1358272101655646358"
+    },
+    {
+      "seq": 325,
+      "action": "enter_giveaway",
+      "handle": "joyfy01",
+      "discord": "joyfy01",
+      "discord_id": "1498914693966725200"
+    },
+    {
+      "seq": 326,
+      "action": "enter_giveaway",
+      "handle": "Memegirl154776",
+      "discord": "cryptogirl109",
+      "discord_id": ""
+    },
+    {
+      "seq": 327,
+      "action": "enter_giveaway",
+      "handle": "payareal",
+      "discord": "payarew",
+      "discord_id": "",
+      "reverify": true
     }
   ]
 }
