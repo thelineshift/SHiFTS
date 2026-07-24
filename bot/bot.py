@@ -291,7 +291,7 @@ def make_client(privileged=True):
 
     @c.event
     async def on_ready():
-        print(f'LineShift Bot v8.8 online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
+        print(f'LineShift Bot v{BOT_VERSION} online as {c.user} in {len(c.guilds)} guild(s) | privileged={privileged}')
         try:
             await c.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=BOT_STATUS))
             g0 = c.guilds[0] if c.guilds else None
