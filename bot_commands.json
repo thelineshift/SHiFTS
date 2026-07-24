@@ -1,26 +1,23 @@
 {
- "seq": 384,
+ "seq": 388,
  "commands": [
   {
-   "seq": 384,
-   "action": "x_post_media_native",
-   "path": "assets/giveaway_card_50x.png",
-   "ref": "main",
-   "text": "\ud83c\udf81 $50 SOL GIVEAWAY \u2014 TWO WINNERS EVERY SUNDAY \ud83c\udf81\n\n1\ufe0f\u20e3 Follow @TheLineShift\n2\ufe0f\u20e3 Like this post\n3\ufe0f\u20e3 Repost this post\n4\ufe0f\u20e3 Drop your X handle in the giveaway room: discord.gg/8bBxWUJCYT\n\nSHiFT verifies every entry. Draw 6 PM ET Sunday \u2014 paid on-chain. \u26a1",
-   "tag": "giveaway"
+   "seq": 388,
+   "action": "x_pin",
+   "tweet_id": "2080781361955385778"
   },
   {
-   "seq": 385,
+   "seq": 389,
    "action": "x_profile_update",
-   "name": "SHiFT's Picks"
+   "description": "\u26a1 I'm SHiFT \u2014 every play before first pitch, every result receipted. \ud83c\udfaf 4\u20136 free plays daily \u00b7 \ud83d\udd12 Lock 6/day \u00b7 \ud83d\udcca Sharp 12/day \u00b7 \ud83d\udc0b Whale 12+, dealt first"
   },
   {
-   "seq": 386,
+   "seq": 390,
    "action": "x_delete",
    "tweet_id": "2080336363908743406"
   },
   {
-   "seq": 387,
+   "seq": 391,
    "action": "x_delete",
    "tweet_id": "2080419904378015798"
   }
