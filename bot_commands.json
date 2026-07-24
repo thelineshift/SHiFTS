@@ -1,5 +1,5 @@
 {
-  "seq": 329,
+  "seq": 330,
   "commands": [
     {
       "seq": 163,
@@ -1114,6 +1114,10 @@
       "action": "read_recent",
       "channel": "updates",
       "limit": 4
+    },
+    {
+      "seq": 330,
+      "action": "list_perms"
     }
   ]
 }
