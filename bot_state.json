@@ -1,8 +1,15 @@
 {
-  "executed_seq": 321,
+  "executed_seq": 322,
   "last_log": [
-    "seq 321 executed 2026-07-24 14:41 UTC",
-    "scan_now executed (dry=True)"
+    "seq 322 executed 2026-07-24 14:45 UTC",
+    "FULL #\ud83e\uddeashift-lab id=1530223553729921116 | LineShift Bot#8676: \u2705 [DRY RUN] **SCAN COMPLETE** \\n \ud83c\udfaf **FREE: Walczaki ML vs Gentle Mates \u2014 1.0u** (12:00 PM ET) \u2014 live in the free-pick room \\n \ud83d\udd12 #lock-room \u00b7 \ud83d\udcca #sharp-room \u00b7 \ud83d\udc0b #whale-room \u2014 paid plays are live in their rooms \\n Every play before start time. Every result receipted, win or lose. \u26a1",
+    "FULL #\ud83e\uddeashift-lab id=1530223548550086818 | LineShift Bot#8676: \ud83c\udfaf [DRY RUN] **FREE PICK \u2014 12:00 PM ET** \\n \ud83c\udfaf **Walczaki ML vs Gentle Mates \u2014 1.0u** (ML (Bo3), 12:00 PM ET) \\n    _form 1-4 vs 2-3 (last 5)_ \\n  \\n \ud83c\udf81 Sunday 6 PM ET \u2014 $50 SOL draw. Want the whole board? \ud83d\udd12 2 plays/day \u00b7 \ud83d\udcca 4 \u00b7 \ud83d\udc0b full 7 \u2014 Whale eats first. thelineshift.github.io/AISportsBot/upgrade.html",
+    "FULL #\ud83e\uddeashift-lab id=1530223543495950457 | LineShift Bot#8676: \ud83d\udd12 [DRY RUN] **LOCK \u2014 1 play(s) this window** \\n \u25ab\ufe0f **Privateer Gaming ML vs Misa Esports \u2014 1.0u** (ML (Bo3), 01:00 PM ET) \\n    _form 4-1 vs 3-2 (last 5)_",
+    "FULL #\ud83e\uddeashift-lab id=1530223538433425551 | LineShift Bot#8676: \ud83d\udcca [DRY RUN] **SHARP \u2014 2 play(s) this window** \\n \u25ab\ufe0f **Karmine Corp ML vs Team Vitality \u2014 1.5u** (ML (Bo3), 01:00 PM ET) \\n    _form 2-3 vs 4-1 (last 5)_ \\n \u25ab\ufe0f **Fnatic ML vs Team Liquid \u2014 1.0u** (ML (Bo3), 02:00 PM ET) \\n    _form 1-4 vs 3-2 (last 5)_",
+    "FULL #\ud83e\uddeashift-lab id=1530223533114916957 | LineShift Bot#8676: \ud83d\udc0b [DRY RUN] **WHALE \u2014 2 play(s) this window** \\n \u25ab\ufe0f **Heroic ML vs Astralis \u2014 1.5u** (ML (Bo3), 12:00 PM ET) \\n    _form 2-3 vs 4-1 (last 5)_ \\n \u25ab\ufe0f **ODDIK ML vs Bounty Hunters Esports \u2014 1.5u** (ML (Bo3), 12:00 PM ET) \\n    _form 2-3 vs 4-1 (last 5)_",
+    "FULL #\ud83e\uddeashift-lab id=1530223472989700229 | LineShift Bot#8676: \ud83d\udef0\ufe0f [DRY RUN] scan would initiate for slot 20260724-14-manual",
+    "FULL #\ud83e\uddeashift-lab id=1530222293953941574 | LineShift Bot#8676: \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled) \u00b7 giveaway catch-up: 4",
+    "FULL #\ud83e\uddeashift-lab id=1530221244106936452 | LineShift Bot#8676: \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled) \u00b7 giveaway catch-up: 3"
   ],
   "time_audit": {
     "at": "2026-07-24 14:36 UTC",
@@ -57,7 +64,7 @@
     "20260724-12": "ok",
     "20260724-12-note": "8AM ET makeup by ops 12:20 UTC \u2014 esports-led window card (4 plays). Engine cron turn died pre-post again; checklist slim-fix shipping next."
   },
-  "executed_cmd_seq": 321,
+  "executed_cmd_seq": 322,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 10,
