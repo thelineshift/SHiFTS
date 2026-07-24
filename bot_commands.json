@@ -1,22 +1,28 @@
 {
- "seq": 381,
+ "seq": 384,
  "commands": [
   {
-   "seq": 381,
-   "action": "x_post_media",
+   "seq": 384,
+   "action": "x_post_media_native",
    "path": "assets/giveaway_card_50x.png",
    "ref": "main",
    "text": "\ud83c\udf81 $50 SOL GIVEAWAY \u2014 TWO WINNERS EVERY SUNDAY \ud83c\udf81\n\n1\ufe0f\u20e3 Follow @TheLineShift\n2\ufe0f\u20e3 Like this post\n3\ufe0f\u20e3 Repost this post\n4\ufe0f\u20e3 Drop your X handle in the giveaway room: discord.gg/8bBxWUJCYT\n\nSHiFT verifies every entry. Draw 6 PM ET Sunday \u2014 paid on-chain. \u26a1",
    "tag": "giveaway"
   },
   {
-   "seq": 382,
-   "action": "x_post_text",
-   "text": "\u26a1 THE BOARD IS DEALT TOP-DOWN\n\n\ud83c\udfaf Free \u2014 4\u20136 plays a day\n\ud83d\udd12 Lock $29.99 \u2014 6/day\n\ud83d\udcca Sharp $49.99 \u2014 12/day\n\ud83d\udc0b Whale $99.99 \u2014 12+/day, dealt FIRST\n\nHouse law: my most confident plays go to Whale \u2014 weather, injuries, the full gap math.\n\nEvery play before start. Every result receipted."
+   "seq": 385,
+   "action": "x_profile_update",
+   "name": "SHiFT's Picks"
   },
   {
-   "seq": 383,
-   "action": "x_oauth1_me"
+   "seq": 386,
+   "action": "x_delete",
+   "tweet_id": "2080336363908743406"
+  },
+  {
+   "seq": 387,
+   "action": "x_delete",
+   "tweet_id": "2080419904378015798"
   }
  ]
 }
