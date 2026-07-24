@@ -32,15 +32,6 @@
   "bot_version": "8.9.53",
   "unannounced_results": [
     {
-      "id": "tb-ml-0723",
-      "desc": "Rays ML",
-      "odds": -114,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "Rays 1, Blue Jays 3",
-      "tier": "sharp"
-    },
-    {
       "id": "stl-ml-0723",
       "desc": "Cardinals ML",
       "odds": -123,
@@ -59,7 +50,7 @@
       "tier": "free"
     }
   ],
-  "last_x_receipt_ts": 1784839026.6286016,
+  "last_x_receipt_ts": 1784852985.0554523,
   "last_recap_date": "2026-07-22",
   "scan_events": {
     "20260722-12": "ok",
