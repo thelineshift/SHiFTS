@@ -2009,6 +2009,12 @@ async def run_command(cmd, guild, log):
         m = await ch.send(cmd['content'])
         await m.pin()
         log.append(f'replaced pin in #{ch.name} (unpinned {removed})')
+    elif a == 'scan_now':
+        dry_run = bool(cmd.get('dry', True))
+        slot_key = time.strftime('%Y%m%d-%H', time.gmtime()) + '-manual'
+        _SCAN_DONE.add(slot_key)
+        await scan_engine_run(guild, slot_key, dry_run)
+        log.append(f'scan_now executed (dry={dry_run})')
     elif a == 'read_recent':
         n = int(cmd.get('limit', 4))
         if cmd.get('channel') == 'all':
@@ -2494,7 +2500,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '9.0.1'
+            state['bot_version'] = '9.1.0'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -3434,42 +3440,111 @@ def se_get(url, timeout=12):
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     return json.loads(urllib.request.urlopen(req, timeout=timeout).read())
 
-def se_espn_mlb(dates):
+# All leagues the engine checks every scan. Offseason leagues return empty -> the pool
+# naturally fills with whatever is live (esports carries slow days per CROSS-SPORT LAW).
+SE_SPORTS = {'mlb': 'baseball/mlb', 'wnba': 'basketball/wnba', 'mls': 'soccer/usa.1',
+             'nfl': 'football/nfl', 'ncaaf': 'football/college-football',
+             'nba': 'basketball/nba', 'ncaab': 'basketball/mens-college-basketball',
+             'nhl': 'hockey/nhl', 'ufc': 'mma/ufc'}
+SE_HOME_ADV = {'mlb': 0.030, 'wnba': 0.045, 'mls': 0.045, 'nfl': 0.020, 'ncaaf': 0.030,
+               'nba': 0.030, 'ncaab': 0.035, 'nhl': 0.025, 'ufc': 0.0}
+
+def se_rec(summary):
+    """'64-38' -> (winpct, games)."""
     try:
-        d = se_get('https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates=' + dates)
-    except Exception as e:
-        print('se espn fail:', e)
-        return []
+        w, l = str(summary).split('-')[:2]
+        w, l = int(w), int(l)
+        return w / max(1, w + l), w + l
+    except Exception:
+        return None, 0
+
+def se_log5(pa, pb):
+    """Classic log5: P(A beats B) from win percentages."""
+    den = pa + pb - 2 * pa * pb
+    return (pa - pa * pb) / den if den else 0.5
+
+def se_implied(ml):
+    return (-ml) / (-ml + 100.0) if ml < 0 else 100.0 / (ml + 100.0)
+
+def se_espn_all(dates):
+    """Pull every league's slate with records + splits + moneyline/total/spread."""
     out = []
-    for e in d.get('events', []):
+    for sport, path in SE_SPORTS.items():
         try:
-            comp = e['competitions'][0]
-            away = next(c for c in comp['competitors'] if c['homeAway'] == 'away')
-            home = next(c for c in comp['competitors'] if c['homeAway'] == 'home')
-            odds = (comp.get('odds') or e.get('odds') or [{}])[0]
-            ml_o = odds.get('moneyline') or {}
-            def _ml(side):
-                try:
-                    return int(str((ml_o.get(side) or {}).get('close', {}).get('odds', '')).replace('+', ''))
-                except Exception:
-                    return None
-            mh, ma = _ml('home'), _ml('away')
-            if mh is None and ma is None and odds.get('details'):
-                try:  # "MIL -258" -> favorite abbrev + price
-                    fa, fp = odds['details'].split()
-                    fav_home = home['team'].get('abbreviation') == fa
-                    if fav_home:
-                        mh = int(fp)
-                    else:
-                        ma = int(fp)
-                except Exception:
-                    pass
-            out.append({'sport': 'mlb', 'start': e['date'],
-                        'home': home['team']['displayName'], 'away': away['team']['displayName'],
-                        'ml_home': mh, 'ml_away': ma,
-                        'total': odds.get('overUnder')})
-        except Exception:
+            d = se_get('https://site.api.espn.com/apis/site/v2/sports/%s/scoreboard?dates=%s' % (path, dates))
+        except Exception as e:
+            print('se espn fail', sport, e)
             continue
+        for e in d.get('events', []):
+            try:
+                comp = e['competitions'][0]
+                away = next(c for c in comp['competitors'] if c['homeAway'] == 'away')
+                home = next(c for c in comp['competitors'] if c['homeAway'] == 'home')
+                recs = {}
+                for side, cc in (('home', home), ('away', away)):
+                    recs[side] = {x.get('type') or x.get('name'): x.get('summary') for x in cc.get('records', [])}
+                odds = (comp.get('odds') or e.get('odds') or [{}])[0]
+                ml_o = odds.get('moneyline') or {}
+                def _ml(side):
+                    try:
+                        return int(str((ml_o.get(side) or {}).get('close', {}).get('odds', '')).replace('+', ''))
+                    except Exception:
+                        return None
+                mh, ma = _ml('home'), _ml('away')
+                if mh is None and ma is None and odds.get('details'):
+                    try:  # "MIL -258" -> favorite abbrev + price
+                        fa, fp = odds['details'].split()
+                        if home['team'].get('abbreviation') == fa:
+                            mh = int(fp)
+                        else:
+                            ma = int(fp)
+                    except Exception:
+                        pass
+                out.append({'sport': sport, 'start': e['date'],
+                            'home': home['team']['displayName'], 'away': away['team']['displayName'],
+                            'recs': recs, 'ml_home': mh, 'ml_away': ma,
+                            'total': odds.get('overUnder'), 'spread': odds.get('spread')})
+            except Exception:
+                continue
+    return out
+
+def se_edges(g, now_ts):
+    """Turn one game into edge candidates. Edge = OUR probability (records + home/away
+    splits via log5 + home advantage) minus the book's no-vig implied probability.
+    We only fire where our number beats theirs by >= 6 points."""
+    ok, t = _in_window(g['start'], now_ts)
+    if not ok:
+        return []
+    ph_o, nh = se_rec((g['recs'].get('home') or {}).get('total', ''))
+    pa_o, na = se_rec((g['recs'].get('away') or {}).get('total', ''))
+    if ph_o is None or pa_o is None or nh < 10 or na < 10:
+        return []
+    ph_s, _ = se_rec((g['recs'].get('home') or {}).get('home', ''))
+    pa_s, _ = se_rec((g['recs'].get('away') or {}).get('road', ''))
+    ph = 0.5 * ph_o + 0.5 * (ph_s if ph_s is not None else ph_o)
+    pa = 0.5 * pa_o + 0.5 * (pa_s if pa_s is not None else pa_o)
+    p_home = se_log5(ph, pa) + SE_HOME_ADV.get(g['sport'], 0.03)
+    p_home = min(0.93, max(0.07, p_home))
+    # no-vig: if both sides priced, strip the overround
+    imp_h = se_implied(g['ml_home']) if g['ml_home'] is not None else None
+    imp_a = se_implied(g['ml_away']) if g['ml_away'] is not None else None
+    if imp_h and imp_a:
+        ov = imp_h + imp_a
+        imp_h, imp_a = imp_h / ov, imp_a / ov
+    out = []
+    for side, ml, team, opp, p_ours, p_imp in (
+            ('home', g['ml_home'], g['home'], g['away'], p_home, imp_h),
+            ('away', g['ml_away'], g['away'], g['home'], 1 - p_home, imp_a)):
+        if ml is None or p_imp is None or ml < -300 or ml > 200:
+            continue
+        edge = p_ours - p_imp
+        if edge < 0.06:
+            continue
+        out.append({'sport': g['sport'], 'pick': f"{team} ML", 'vs': opp, 'odds': ml,
+                    'units': 1.5 if edge >= 0.12 else 1.0, 'edge': edge, 'start': t,
+                    'market': 'ML',
+                    'analysis': f"our {p_ours:.0%} vs book {p_imp:.0%} (no-vig) — {team} "
+                                f"{(g['recs'].get(side) or {}).get('total','?')} overall"})
     return out
 
 def se_ps(path, **params):
@@ -3529,17 +3604,13 @@ async def scan_engine_run(g0, slot_key, dry):
     now_ts = time.time()
     await gen.send(f"🛰️ {tag}**SCAN INITIATED — {(datetime.datetime.utcfromtimestamp(now_ts) - datetime.timedelta(hours=4)).strftime('%I %p ET')}**" if not dry else
                    f"🛰️ {tag}scan would initiate for slot {slot_key}")
-    # ---- pull candidates in the 4h window
-    mlb = await asyncio.to_thread(se_espn_mlb, time.strftime('%Y%m%d', time.gmtime()))
+    # ---- pull candidates in the 4h window: ALL leagues + esports, edge-priced
+    games = await asyncio.to_thread(se_espn_all, time.strftime('%Y%m%d', time.gmtime()))
     cands = []
-    for g in mlb:
-        ok, t = _in_window(g['start'], now_ts)
-        if not ok:
-            continue
-        for side, ml, team in (('home', g['ml_home'], g['home']), ('away', g['ml_away'], g['away'])):
-            if ml is not None and -350 <= ml <= -140:
-                cands.append({'sport': 'mlb', 'pick': f"{team} ML", 'vs': g['away'] if side == 'home' else g['home'],
-                              'odds': ml, 'units': 1.0, 'edge': abs(ml) / 350.0, 'start': t, 'market': 'ML'})
+    pulled = {}
+    for g in games:
+        pulled[g['sport']] = pulled.get(g['sport'], 0) + 1
+        cands += se_edges(g, now_ts)
     esp = []
     for gg in ('cs2', 'lol', 'valorant'):
         esp += await asyncio.to_thread(se_ps_upcoming, gg)
@@ -3562,13 +3633,15 @@ async def scan_engine_run(g0, slot_key, dry):
         fav, dog = (m['t1'], m['t2']) if edge > 0 else (m['t2'], m['t1'])
         cands.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': None,
                       'units': 1.5 if abs(edge) >= 0.4 else 1.0, 'edge': abs(edge), 'start': t,
-                      'market': f"ML (Bo{m['bo'] or '?'})"})
+                      'market': f"ML (Bo{m['bo'] or '?'})",
+                      'analysis': f"form {f1['w']}-{f1['l']} vs {f2['w']}-{f2['l']} (last 5)"})
     cands.sort(key=lambda c: -c['edge'])
     # ---- deal tiers (whale-first), per-scan caps: whale 2 / sharp 2 / lock 1 / free 1
     deal = {'whale': cands[0:2], 'sharp': cands[2:4], 'lock': cands[4:5], 'free': cands[5:6]}
+    slate_s = ' · '.join(f"{k.upper()} {v}" for k, v in sorted(pulled.items()) if v)
     if not cands:
-        await gen.send(f"⚠️ {tag}Thin window — no qualifying plays in the next 4 hours. Card stays light; next sweep in 4h. ⚡" if not dry else
-                       f"{tag}would post thin-window resolution")
+        await gen.send(f"⚠️ {tag}Thin window — checked {slate_s or 'all leagues'} plus esports: no edge plays in the next 4 hours. We don't force bets. Next sweep in 4h. ⚡" if not dry else
+                       f"{tag}would post thin-window resolution (checked: {slate_s})")
         return
     picks_out = []
     for tier in ('whale', 'sharp', 'lock', 'free'):
@@ -3582,10 +3655,11 @@ async def scan_engine_run(g0, slot_key, dry):
         lines = []
         for p in plays:
             odds_s = f" ({p['odds']})" if p['odds'] else ''
-            lines.append(f"{emo if tier == 'free' else '▫️'} **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u** ({p['market']}, {_et(p['start'])})")
+            lines.append(f"{emo if tier == 'free' else '▫️'} **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u** ({p['market']}, {_et(p['start'])})\n   _{p.get('analysis','')}_")
             picks_out.append({'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}", 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
                               'sport': p['sport'], 'desc': p['pick'], 'market': p['market'], 'odds': p['odds'],
-                              'units': p['units'], 'tier': tier, 'time_et': _et(p['start']), 'analysis': 'bot engine v9.0'})
+                              'units': p['units'], 'tier': tier, 'time_et': _et(p['start']),
+                              'analysis': p.get('analysis', 'bot engine v9.1')})
         if tier == 'free':
             body = f"🎯 {tag}**FREE PICK — {_et(plays[0]['start'])}**\n" + '\n'.join(lines) + \
                    "\n\n🎁 Sunday 6 PM ET — $50 SOL draw. Want the whole board? 🔒 2 plays/day · 📊 4 · 🐋 full 7 — Whale eats first. thelineshift.github.io/AISportsBot/upgrade.html"
