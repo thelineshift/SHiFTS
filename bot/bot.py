@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.3.3'
+BOT_VERSION = '9.3.4'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3986,6 +3986,14 @@ async def scan_engine_run(g0, slot_key, dry):
                       'market': f"{league_s} Bo{m['bo'] or '?'}",
                       'analysis': se_form_text(fav_f, dog_f, fav['name'])})
     cands.sort(key=lambda c: -c['edge'])
+    # never re-pick a game already on today's board (cross-slot dedupe)
+    try:
+        today_d = slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8]
+        pj_have = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main') or {}
+        have_descs = {p.get('desc') for p in (pj_have.get('picks') or []) if p.get('date') == today_d}
+        cands = [c for c in cands if c['pick'] not in have_descs]
+    except Exception as e:
+        print('cross-slot dedupe:', e)
     # ---- deal tiers (whale-first), per-scan caps: whale 2 / sharp 2 / lock 1 / free 1
     deal = {'whale': cands[0:2], 'sharp': cands[2:4], 'lock': cands[4:5], 'free': cands[5:6]}
     slate_s = ' · '.join(f"{k.upper()} {v}" for k, v in sorted(pulled.items()) if v)
