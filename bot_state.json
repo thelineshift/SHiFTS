@@ -10,7 +10,7 @@
     "#\ud83d\udcacgeneral-chat | shift#8676: \u23f3 **NEXT SCAN: 12 PM ET** \u2014 one hour. Markets, lineups, weather, money flow. Watch it work. \ud83d\udcca"
   ],
   "time_audit": {
-    "at": "2026-07-24 16:28 UTC",
+    "at": "2026-07-24 16:42 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -19,23 +19,23 @@
     "\ud83d\udcacgeneral-chat": "2026-07-24 16:25 UTC",
     "\ud83c\udfc6100-to-1000-20": "2026-07-24 07:34 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-24 16:20 UTC"
+    "\ud83c\udf81giveaway": "2026-07-24 16:33 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 16:28 UTC",
+    "at": "2026-07-24 16:42 UTC",
     "flags": []
   },
   "challenge_watch": {
-    "at": "2026-07-24 16:28 UTC",
+    "at": "2026-07-24 16:42 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 16:28 UTC",
+    "at": "2026-07-24 16:42 UTC",
     "flags": []
   },
-  "bot_version": "9.3.4",
+  "bot_version": "9.4.0",
   "unannounced_results": [],
   "last_x_receipt_ts": 1784867411.9636893,
   "last_recap_date": "2026-07-23",
