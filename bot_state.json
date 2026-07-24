@@ -5,7 +5,7 @@
     "unknown action: scan_now"
   ],
   "time_audit": {
-    "at": "2026-07-24 14:32 UTC",
+    "at": "2026-07-24 14:36 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -14,23 +14,23 @@
     "\ud83d\udcacgeneral-chat": "2026-07-24 14:07 UTC",
     "\ud83c\udfc6100-to-1000-20": "2026-07-24 07:34 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-24 14:29 UTC"
+    "\ud83c\udf81giveaway": "2026-07-24 14:32 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 14:32 UTC",
+    "at": "2026-07-24 14:36 UTC",
     "flags": []
   },
   "challenge_watch": {
-    "at": "2026-07-24 14:32 UTC",
+    "at": "2026-07-24 14:36 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 14:32 UTC",
+    "at": "2026-07-24 14:36 UTC",
     "flags": []
   },
-  "bot_version": "9.0.0",
+  "bot_version": "9.1.0",
   "unannounced_results": [],
   "last_x_receipt_ts": 1784867411.9636893,
   "last_recap_date": "2026-07-23",
