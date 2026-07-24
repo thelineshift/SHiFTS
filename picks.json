@@ -1073,7 +1073,13 @@
       "opp": "New York Mets",
       "analysis": "65-38 overall, 34-19 on the road \u2014 our 67% vs book 55% (no-vig) | Biggest pricing edge of the window \u2014 65-38 overall, 34-19 on the road \u2014 our 67% vs book 55% (no-vig). That's a 12-point edge in our favor.",
       "awayTeam": "Los Angeles Dodgers",
-      "homeTeam": "New York Mets"
+      "homeTeam": "New York Mets",
+      "live_odds": {
+        "home_ml": 113,
+        "away_ml": -136,
+        "total": 9.0,
+        "ts": 1784923419
+      }
     },
     {
       "id": "chicago-white-sox-ml-0724",
@@ -1090,7 +1096,13 @@
       "opp": "Houston Astros",
       "analysis": "54-47 overall, 31-17 at home \u2014 our 64% vs book 54% (no-vig) | The book is off on this number \u2014 54-47 overall, 31-17 at home \u2014 our 64% vs book 54% (no-vig). That's a 10-point edge in our favor.",
       "homeTeam": "Chicago White Sox",
-      "awayTeam": "Houston Astros"
+      "awayTeam": "Houston Astros",
+      "live_odds": {
+        "home_ml": -131,
+        "away_ml": 109,
+        "total": 9.0,
+        "ts": 1784923419
+      }
     },
     {
       "id": "tampa-bay-rays-ml-0724",
@@ -1107,7 +1119,13 @@
       "opp": "Cleveland Guardians",
       "analysis": "59-43 overall, 35-15 at home \u2014 our 65% vs book 56% (no-vig) | The book is off on this number \u2014 59-43 overall, 35-15 at home \u2014 our 65% vs book 56% (no-vig). That's a 9-point edge in our favor.",
       "homeTeam": "Tampa Bay Rays",
-      "awayTeam": "Cleveland Guardians"
+      "awayTeam": "Cleveland Guardians",
+      "live_odds": {
+        "home_ml": -141,
+        "away_ml": 117,
+        "total": 7.0,
+        "ts": 1784923419
+      }
     },
     {
       "id": "atlanta-braves-ml-0724",
@@ -1124,7 +1142,13 @@
       "opp": "Baltimore Orioles",
       "analysis": "60-42 overall, 28-22 on the road \u2014 our 54% vs book 47% (no-vig) | The book is off on this number \u2014 60-42 overall, 28-22 on the road \u2014 our 54% vs book 47% (no-vig). That's a 7-point edge in our favor.",
       "awayTeam": "Atlanta Braves",
-      "homeTeam": "Baltimore Orioles"
+      "homeTeam": "Baltimore Orioles",
+      "live_odds": {
+        "home_ml": -126,
+        "away_ml": 105,
+        "total": 8.5,
+        "ts": 1784923419
+      }
     },
     {
       "id": "miami-marlins-ml-0724",
@@ -1141,7 +1165,13 @@
       "opp": "San Diego Padres",
       "analysis": "52-51 overall, 31-20 at home \u2014 our 62% vs book 55% (no-vig) | The book is off on this number \u2014 52-51 overall, 31-20 at home \u2014 our 62% vs book 55% (no-vig). That's a 7-point edge in our favor.",
       "homeTeam": "Miami Marlins",
-      "awayTeam": "San Diego Padres"
+      "awayTeam": "San Diego Padres",
+      "live_odds": {
+        "home_ml": -136,
+        "away_ml": 113,
+        "total": 9.0,
+        "ts": 1784923419
+      }
     },
     {
       "id": "new-york-yankees-ml-0724",
@@ -1158,7 +1188,13 @@
       "opp": "Philadelphia Phillies",
       "analysis": "57-45 overall, 31-22 on the road \u2014 our 51% vs book 45% (no-vig) | The book is off on this number \u2014 57-45 overall, 31-22 on the road \u2014 our 51% vs book 45% (no-vig). That's a 7-point edge in our favor.",
       "awayTeam": "New York Yankees",
-      "homeTeam": "Philadelphia Phillies"
+      "homeTeam": "Philadelphia Phillies",
+      "live_odds": {
+        "home_ml": -138,
+        "away_ml": 115,
+        "total": 7.5,
+        "ts": 1784923419
+      }
     },
     {
       "id": "challenge-los-angeles-dodgers-ml-0724",
@@ -1170,7 +1206,13 @@
       "units": 1.0,
       "tier": "challenge",
       "time_et": "07:10 PM ET",
-      "analysis": "65-38 overall, 34-19 on the road \u2014 our 67% vs book 55% (no-vig)"
+      "analysis": "65-38 overall, 34-19 on the road \u2014 our 67% vs book 55% (no-vig)",
+      "live_odds": {
+        "home_ml": -294,
+        "away_ml": 234,
+        "total": 8.5,
+        "ts": 1784923419
+      }
     },
     {
       "id": "challenge-chicago-white-sox-ml-0724",
@@ -1182,7 +1224,13 @@
       "units": 1.0,
       "tier": "challenge",
       "time_et": "07:40 PM ET",
-      "analysis": "54-47 overall, 31-17 at home \u2014 our 64% vs book 54% (no-vig)"
+      "analysis": "54-47 overall, 31-17 at home \u2014 our 64% vs book 54% (no-vig)",
+      "live_odds": {
+        "home_ml": -294,
+        "away_ml": 234,
+        "total": 8.5,
+        "ts": 1784923419
+      }
     }
   ]
 }
