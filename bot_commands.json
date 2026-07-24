@@ -1,5 +1,5 @@
 {
- "seq": 312,
+ "seq": 313,
  "commands": [
   {
    "seq": 163,
@@ -997,6 +997,16 @@
    "limit": 50,
    "seq": 312,
    "ts": "2026-07-24T11:24:38Z"
+  },
+  {
+   "action": "delete_where",
+   "channel": "general-chat",
+   "contains": "SCAN COMPLETE \u2014 8AM WINDOW CARD",
+   "author": "\u26a1 SHiFT",
+   "limit": 10,
+   "max": 1,
+   "seq": 313,
+   "ts": "2026-07-24T12:20:59Z"
   }
  ]
 }
