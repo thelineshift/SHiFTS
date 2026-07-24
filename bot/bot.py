@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.1'
+BOT_VERSION = '9.9.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3234,15 +3234,15 @@ def x_receipt_text(r, all_picks=None, chal=None):
     rec_block = ('\n' + '\n'.join(rec_lines) + '\n') if rec_lines else ''
     seed = f"{r.get('id')}{r.get('date')}{r.get('result')}"
     if r['result'] == 'WIN':
-        base = f"🧾 RESULT {badge}: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+        base = f"🧾 RESULT {badge}: 🟢 {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
         # paid-room winners funnel to the store (link renders our branded preview card on X)
         if r.get('tier') in ('whale', 'sharp', 'lock'):
             return base + "💎 Every play like this, every 4 hours → " + store_link
         return base + _pick_closer(CLOSERS_WIN, seed)
     if r['result'] == 'PUSH':
-        return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
+        return (f"🧾 RESULT {badge}: 🟢 {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
                 + _pick_closer(CLOSERS_PUSH, seed))
-    return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+    return (f"🧾 RESULT {badge}: 🟢 {r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
             + _pick_closer(CLOSERS_LOSS, seed))
 
 async def settle_challenge(guild, p):
@@ -3270,9 +3270,13 @@ async def settle_challenge(guild, p):
             e = '✅' if p['result'] == 'WIN' else ('🟰' if p['result'] == 'PUSH' else '❌')
             nxt = min(chal['balance'] * 0.2, chal['balance'])
             await ch.send(f"💵 **CHALLENGE BET #{hit.get('n')} — {p['result']}** {e}\n"
-                          f"{p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
+                          f"🟢 {p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
                           f"**BALANCE: {_money_e(chal['balance'])} ${chal['balance']:.2f}** (goal: 💰 ${chal.get('goal', 1000):.0f}) · record {chal['record']['wins']}-{chal['record']['losses']}\n"
                           f"Next challenge action lands with the 4 PM ET scan. — SHiFT ⚡")
+            try:
+                await ch.edit(name=f"💵100-to-💰1000-{chal['record']['wins']}-{chal['record']['losses']}")
+            except Exception as _ne:
+                print('challenge rename:', _ne)
     except Exception as e:
         print('settle_challenge error:', e)
 
@@ -4199,7 +4203,7 @@ async def scan_engine_run(g0, slot_key, dry):
         for n, p in enumerate(plays, 1):
             odds_s = f" ({fmt_odds_num(p['odds'])})" if p['odds'] is not None else ''
             if p.get('parlay'):
-                leg_lines = '\n'.join(f"   • {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in p['legs'])
+                leg_lines = '\n'.join(f"   • 🟢 {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in p['legs'])
                 lines.append(f"{n}\u20e3 🎰 **{p['pick']}{odds_s} — {p['units']}u**\n{leg_lines}\n"
                              f"{p['market']} · first leg {_et(p['start'])}\n"
                              f"🧠 **Why it's the play:** every leg cleared our edge bar — combined model probability {p.get('prob', 0):.0%} vs the price's implied {(1 / (ml_to_dec(p['odds']) or 2)):.0%}. That's value stacked on value.")
@@ -4209,12 +4213,12 @@ async def scan_engine_run(g0, slot_key, dry):
                                 f"Our price is **{p.get('prob', 0):.0%}** against the book's **{p.get('prob', 0) - p['edge']:.0%}** — a **{p['edge']:.0%} pricing gap**. "
                                 f"That gap is the whole bet: we're not just picking the team, we're buying the number cheaper than it's worth.")
                     extras = se_whale_extras(p)
-                    lines.append(f"{n}\u20e3 **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u**\n"
+                    lines.append(f"{n}\u20e3 🟢 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
                                  f"{p['market']} · {_et(p['start'])}\n"
                                  f"📊 {p.get('analysis','')}\n"
                                  f"{why_deep}" + (f"\n{extras}" if extras else ''))
                 else:
-                    lines.append(f"{n}\u20e3 **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u**\n"
+                    lines.append(f"{n}\u20e3 🟢 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
                                  f"{p['market']} · {_et(p['start'])}\n"
                                  f"📊 {p.get('analysis','')}\n"
                                  f"{_why(p, rank_of.get(id(p), n))}")
