@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.7.5'
+BOT_VERSION = '9.7.6'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -2191,10 +2191,12 @@ async def run_command(cmd, guild, log):
             log.append(f'set_username {name} FAIL: {e}')
     elif a == 'scan_now':
         dry_run = bool(cmd.get('dry', True))
-        slot_key = time.strftime('%Y%m%d-%H', time.gmtime()) + '-manual'
+        # optional slot override (e.g. '20260724-20') — '-manual' suffix keeps the REAL
+        # slot's done-marker and registration space untouched
+        slot_key = (cmd.get('slot') or time.strftime('%Y%m%d-%H', time.gmtime())) + '-manual'
         _SCAN_DONE.add(slot_key)
         await scan_engine_run(guild, slot_key, dry_run)
-        log.append(f'scan_now executed (dry={dry_run})')
+        log.append(f'scan_now executed (dry={dry_run}, slot={slot_key})')
     elif a == 'list_perms':
         # dump channel + thread overwrites for @everyone and role-gates
         lines = []
@@ -4091,14 +4093,15 @@ async def scan_engine_run(g0, slot_key, dry):
     deal = {'whale': cands[0:2], 'sharp': cands[2:4], 'lock': cands[4:5], 'free': cands[5:6]}
     # ---- PARLAY: deep slates deal one 2-3 leg parlay, rotated across the paid rooms
     parlay_built = None
-    if len(cands) + len(reserves) >= 6 and not dry:
+    if len(cands) + len(reserves) >= 6:
         try:
             st_rot = await asyncio.to_thread(get_state) or {}
             parlay_built, p_room = se_build_parlay(cands[6:] + reserves, st_rot.get('parlay_rot', 0))
             if parlay_built:
                 deal[p_room].append(parlay_built)
-                st_rot['parlay_rot'] = st_rot.get('parlay_rot', 0) + 1
-                await asyncio.to_thread(gh_put, 'bot_state.json', st_rot, 'parlay rotation')
+                if not dry:  # dry sims never touch rotation state
+                    st_rot['parlay_rot'] = st_rot.get('parlay_rot', 0) + 1
+                    await asyncio.to_thread(gh_put, 'bot_state.json', st_rot, 'parlay rotation')
         except Exception as e:
             print('parlay build:', e)
     slate_s = ' · '.join(f"{k.upper()} {v}" for k, v in sorted(pulled.items()) if v)
@@ -4479,7 +4482,8 @@ async def challenge_daily(g0, cands, dry):
         bal = float(chal.get('balance', 100))
         stake = max(1.0, round(bal * 0.20, 2))
         espn_c = [c for c in cands if (c.get('sport') or '').upper() in ESPN and c.get('odds') is not None]
-        ch = find_channel(g0, '100-to-1000')
+        # dry sims rehearse the full challenge feed into shift-lab — silent to members
+        ch = find_channel(g0, 'shift-lab') if dry else find_channel(g0, '100-to-1000')
         if not ch:
             return
         n0 = max([pl.get('n', 0) for pl in plays] or [0])
@@ -4499,11 +4503,10 @@ async def challenge_daily(g0, cands, dry):
                               'odds': o, 'units': 1.0, 'tier': 'challenge', 'time_et': t_et,
                               'analysis': c.get('analysis', '')[:300]})
             posted += 1
-            if not dry:
-                await ch.send(f"💵 **CHALLENGE BET #{n0}** — 💲**${stake:.2f}** on **{c['pick']}** ({fmt_odds_num(o)}) vs {c['vs']}\n"
-                              f"📊 {c.get('analysis','')}\n"
-                              f"To win **${to_win:.2f}** · balance {_money_e(bal)} **${bal:.2f}** → 💰 **$1,000** goal · {_et(c['start'])} ET ⚡")
-                await asyncio.sleep(1)
+            await ch.send(f"💵 {'[DRY] ' if dry else ''}**CHALLENGE BET #{n0}** — 💲**${stake:.2f}** on **{c['pick']}** ({fmt_odds_num(o)}) vs {c['vs']}\n"
+                          f"📊 {c.get('analysis','')}\n"
+                          f"To win **${to_win:.2f}** · balance {_money_e(bal)} **${bal:.2f}** → 💰 **$1,000** goal · {_et(c['start'])} ET ⚡")
+            await asyncio.sleep(1)
         # parlay kicker: when a built parlay exists, challenge takes a 10%-of-balance shot
         parlays = [c for c in cands if c.get('parlay')]
         if parlays:
@@ -4524,13 +4527,11 @@ async def challenge_daily(g0, cands, dry):
                               'legs': [{'team': lg['pick'][:-3] if lg['pick'].endswith(' ML') else lg['pick'],
                                         'vs': lg['vs'], 'sport': lg['sport'], 'date': today_et,
                                         'time_et': _et(lg['start'])} for lg in c['legs']]})
-            if not dry:
-                await ch.send(f"💵 **CHALLENGE PARLAY #{n0}** — ${p_stake:.2f} lotto ticket 🎰\n"
+            await ch.send(f"💵 {'[DRY] ' if dry else ''}**CHALLENGE PARLAY #{n0}** — ${p_stake:.2f} lotto ticket 🎰\n"
                               + '\n'.join(f"• {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in c['legs']) +
                               f"\nCombined **{fmt_odds_num(c['odds'])}** — to win **${p_win:.2f}** · balance {_money_e(bal)} **${bal:.2f}** → 💰 $1,000 ⚡")
         if not posted and not parlays:
-            if not dry:
-                await ch.send(f"💵 **CHALLENGE — {today_et}**: slate too thin for a qualified edge today. "
+            await ch.send(f"💵 {'[DRY] ' if dry else ''}**CHALLENGE — {today_et}**: slate too thin for a qualified edge today. "
                               f"Bankroll stays {_money_e(bal)} **${bal:.2f}** — discipline is how 💵 $100 becomes 💰 $1,000. Next scan 8 PM ET. ⚡")
             return
         chal['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
