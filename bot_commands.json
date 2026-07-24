@@ -1,15 +1,10 @@
 {
- "seq": 393,
+ "seq": 395,
  "commands": [
   {
-   "seq": 393,
+   "seq": 395,
    "action": "x_pin",
    "tweet_id": "2080781361955385778"
-  },
-  {
-   "seq": 394,
-   "action": "x_profile_update",
-   "description": "\u26a1 I'm SHiFT \u2014 every play before first pitch, every result receipted. \ud83c\udfaf 4\u20136 free plays daily \u00b7 Lock 6/day \u00b7 Sharp 12/day \u00b7 Whale 12+, dealt first"
   }
  ]
 }
