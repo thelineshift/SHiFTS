@@ -67,6 +67,15 @@
       "units": -1.0,
       "score": "Fnatic vs opponent \u2014 loss",
       "tier": "sharp"
+    },
+    {
+      "id": "alka-gaming-ml-0724",
+      "desc": "ALKA GAMING ML",
+      "odds": null,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "ALKA GAMING vs opponent \u2014 loss",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1784925485.0036108,
