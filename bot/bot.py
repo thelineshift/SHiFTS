@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.7.2'
+BOT_VERSION = '9.7.3'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3933,7 +3933,10 @@ def se_edges(g, now_ts):
     for side, ml, team, opp, p_ours, p_imp in (
             ('home', g['ml_home'], g['home'], g['away'], p_home, imp_h),
             ('away', g['ml_away'], g['away'], g['home'], 1 - p_home, imp_a)):
-        if ml is None or p_imp is None or ml < -300 or ml > 200:
+        # ODDS DISCIPLINE LAW (ALL sports, owner decree): straights are near-even or
+        # better (>= -150). -150..-400 with a real edge = PARLAY MATERIAL, never a
+        # straight. Worse than -400 = dead to us entirely.
+        if ml is None or p_imp is None or ml < -400 or ml > 200:
             continue
         edge = p_ours - p_imp
         if edge < 0.06:
@@ -3943,6 +3946,7 @@ def se_edges(g, now_ts):
         out.append({'sport': g['sport'], 'pick': f"{team} ML", 'vs': opp, 'odds': ml,
                     'units': 1.5 if edge >= 0.12 else 1.0, 'edge': edge, 'start': t,
                     'market': 'ML', 'prob': p_ours, 'team': team, 'opp': opp, 'side': side,
+                    'reserve': ml < -150,
                     'analysis': f"{(g['recs'].get(side) or {}).get('total','?')} overall{split_s} — "
                                 f"our {p_ours:.0%} vs book {p_imp:.0%} (no-vig)"})
     return out
@@ -4056,8 +4060,8 @@ async def scan_engine_run(g0, slot_key, dry):
         league_s = (m['league'] or '').split(' 20')[0][:22]
         # MODEL LINE: no book prices esports on our feeds, so we publish our own —
         # log5 fair odds from recent-form win rates, rounded like a board number.
-        # ODDS DISCIPLINE LAW: straight esports picks stay near-even or better (p<=.575 ≈ -135).
-        # Heavier favorites are never straight picks — they're PARLAY MATERIAL (owner decree).
+        # ODDS DISCIPLINE LAW (ALL sports, owner decree): straights stay near-even or
+        # better (p<=.60 ≈ -150). Heavier favorites are never straight picks — PARLAY MATERIAL.
         fw = w1 if edge > 0 else w2
         dw = w2 if edge > 0 else w1
         p_f = fw * (1 - dw) / (fw * (1 - dw) + dw * (1 - fw)) if (fw or dw) else 0.5
@@ -4069,7 +4073,7 @@ async def scan_engine_run(g0, slot_key, dry):
                       'units': 1.5 if abs(edge) >= 0.4 else 1.0, 'edge': abs(edge), 'start': t,
                       'market': f"{league_s} Bo{m['bo'] or '?'}", 'prob': p_f,
                       'team': fav['name'], 'opp': dog['name'], 'side': None,
-                      'reserve': p_f > 0.575,
+                      'reserve': p_f > 0.60,
                       'analysis': se_form_text(fav_f, dog_f, fav['name']) + f" — model line {ml_f:+d} (our {p_f:.0%})"})
     cands.sort(key=lambda c: -c['edge'])
     # never re-pick a game already on today's board (cross-slot dedupe)
