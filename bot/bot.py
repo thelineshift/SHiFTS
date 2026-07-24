@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.6.0'
+BOT_VERSION = '9.6.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4158,7 +4158,7 @@ async def scan_engine_run(g0, slot_key, dry):
         except Exception as e:
             print('se state fail:', e)
     # ---- CARD LAW (challenge): 4 PM ET scan feeds the 100-to-1000 channel, every day
-    if int(slot_key[-2:]) == 20:
+    if int(slot_key.split('-')[1]) == 20:
         try:
             await challenge_daily(g0, cands + ([parlay_built] if parlay_built else []), dry)
         except Exception as e:
