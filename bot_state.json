@@ -1,9 +1,9 @@
 {
-  "executed_seq": 364,
+  "executed_seq": 365,
   "last_log": [
-    "seq 364 executed 2026-07-24 18:39 UTC",
-    "ERROR scan_now: invalid literal for int() with base 10: 'al'",
-    "no new commands"
+    "seq 365 executed 2026-07-24 18:48 UTC",
+    "scan_now executed (dry=True)",
+    "scan_now executed (dry=True)"
   ],
   "time_audit": {
     "at": "2026-07-24 18:43 UTC",
@@ -65,7 +65,7 @@
     "20260724-16-manual": "ok-bot",
     "20260724-16-note": "12PM ET: cron died silently again; bot engine flipped LIVE and posted the real card 16:25 UTC (5 plays, first fully-autonomous live card)."
   },
-  "executed_cmd_seq": 363,
+  "executed_cmd_seq": 365,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 11,
