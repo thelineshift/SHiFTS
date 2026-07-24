@@ -831,11 +831,12 @@
       "time_et": "8:15 PM",
       "analysis": "Home favorite -168 with the better starter going; Cincy bats cold on the road.",
       "live_odds": {
-        "home_ml": null,
-        "away_ml": null,
+        "home_ml": -148,
+        "away_ml": 123,
         "total": 8.0,
-        "ts": 1784903557
-      }
+        "ts": 1784903805
+      },
+      "last_alert_odds": -148
     },
     {
       "id": "nrg-furia-ml-0724",
@@ -865,11 +866,12 @@
       "time_et": "7:10 PM",
       "analysis": "LAD lineup depth vs leaking Mets bullpen; -156 road tax acceptable.",
       "live_odds": {
-        "home_ml": null,
-        "away_ml": null,
+        "home_ml": 113,
+        "away_ml": -136,
         "total": 9.0,
-        "ts": 1784903557
-      }
+        "ts": 1784903806
+      },
+      "last_alert_odds": -136
     },
     {
       "id": "ankalaev-ml-0725",
