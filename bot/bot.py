@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.5.0'
+BOT_VERSION = '9.5.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -334,6 +334,8 @@ def make_client(privileged=True):
             stripe_sync.start()
         if not scan_engine.is_running():
             scan_engine.start()
+        if not x_purge_old.is_running():
+            x_purge_old.start()
         if not crypto_sync.is_running():
             crypto_sync.start()
 
@@ -4095,6 +4097,62 @@ async def scan_engine_run(g0, slot_key, dry):
 
 _SCAN_DONE = set()
 _SCAN_TRIES = {}
+
+@tasks.loop(minutes=17)
+async def x_purge_old():
+    """Standing owner order: KEEP deleting very old non-brand replies/reposts/quotes.
+    The account's pre-brand history is deep and the timeline window refills as we delete,
+    so this ticks every 17 min (past X's 15-min write windows) and removes up to 8 per tick.
+    Brand era = 2026-07-01 onward — never touched. Original posts are never touched."""
+    if os.environ.get('X_PURGE_OLD', '') != '1':
+        return
+    try:
+        c = x_creds_load()
+        if time.time() > c.get('oauth2_expires_at', 0):
+            try:
+                c = await asyncio.to_thread(x_oauth2_refresh, c)
+            except Exception as e:
+                print('x_purge_old: token refresh failed:', e)
+                return
+        def _fetch():
+            req = urllib.request.Request(
+                'https://api.x.com/2/users/1831457082828021760/tweets?max_results=100&tweet.fields=created_at,referenced_tweets',
+                headers={'Authorization': f"Bearer {c['bearer_token']}"})
+            return json.loads(urllib.request.urlopen(req, timeout=20).read())
+        d = await asyncio.to_thread(_fetch)
+        victims = []
+        for t in d.get('data', []):
+            refs = t.get('referenced_tweets', [])
+            kind = refs[0].get('type', 'post') if refs else 'post'
+            if kind == 'post' or (t.get('created_at') or '') >= '2026-07-01':
+                continue
+            victims.append(t['id'])
+            if len(victims) >= 8:
+                break
+        if not victims:
+            return
+        ok_ct = 0
+        for tid in victims:
+            def _del():
+                req = urllib.request.Request(f'https://api.x.com/2/tweets/{tid}', method='DELETE',
+                                             headers={'Authorization': f"Bearer {c['oauth2_access']}"})
+                return json.loads(urllib.request.urlopen(req, timeout=20).read())
+            try:
+                await asyncio.to_thread(_del)
+                ok_ct += 1
+            except Exception as e:
+                if '429' in str(e):
+                    break  # write cap reached — next tick resumes
+                print('x_purge_old delete fail:', tid, e)
+            await asyncio.sleep(1)
+        if ok_ct:
+            st = await asyncio.to_thread(get_state)
+            st['x_purge_total'] = st.get('x_purge_total', 0) + ok_ct
+            st['x_purge_last'] = time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime())
+            await asyncio.to_thread(gh_put, 'bot_state.json', st, 'x purge tick')
+        print(f'x_purge_old: deleted {ok_ct} this tick')
+    except Exception as e:
+        print('x_purge_old error:', e)
 
 async def do_sol_transfer(sol, to):
     """Send SOL from the ops wallet. Returns (sig, None) or (None, error)."""
