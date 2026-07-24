@@ -3634,10 +3634,11 @@ async def scan_engine():
         key = time.strftime('%Y%m%d-%H', now)
         if key in _SCAN_DONE:
             return
-        st = await asyncio.to_thread(get_state)
-        if (st or {}).get('scan_events', {}).get(key) in ('ok', 'ok-bot'):
-            _SCAN_DONE.add(key)
-            return
+        if not dry:
+            st = await asyncio.to_thread(get_state)
+            if (st or {}).get('scan_events', {}).get(key) in ('ok', 'ok-bot'):
+                _SCAN_DONE.add(key)
+                return
         g0 = client.guilds[0] if client.guilds else None
         if not g0:
             return
