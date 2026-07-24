@@ -236,7 +236,7 @@
     "2060724935018868919 | 2026-05-30T14:08 | replied_to | @Perhaps7Yousef Why don\u2019t they just add reserve pricing like ebay"
   ],
   "time_audit": {
-    "at": "2026-07-24 18:04 UTC",
+    "at": "2026-07-24 18:12 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -248,7 +248,7 @@
     "\ud83c\udf81giveaway": "2026-07-24 17:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 18:04 UTC",
+    "at": "2026-07-24 18:12 UTC",
     "flags": [
       "g2-koi-ml-0724 | G2 Esports ML None | tier=free",
       "newvision-entropy-ml-0724 | NEW VISION ML None | tier=sharp",
@@ -256,16 +256,16 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-24 18:04 UTC",
+    "at": "2026-07-24 18:12 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 18:04 UTC",
+    "at": "2026-07-24 18:12 UTC",
     "flags": []
   },
-  "bot_version": "9.5.1",
+  "bot_version": "9.5.2",
   "unannounced_results": [],
   "last_x_receipt_ts": 1784867411.9636893,
   "last_recap_date": "2026-07-23",
