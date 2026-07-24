@@ -1,10 +1,11 @@
 {
- "seq": 395,
+ "seq": 396,
  "commands": [
   {
-   "seq": 395,
-   "action": "x_pin",
-   "tweet_id": "2080781361955385778"
+   "seq": 396,
+   "action": "set_server_icon",
+   "path": "assets/avatar.png",
+   "ref": "main"
   }
  ]
 }
