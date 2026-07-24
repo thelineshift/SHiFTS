@@ -322,6 +322,8 @@ def make_client(privileged=True):
             odds_watch.start()
         if not stripe_sync.is_running():
             stripe_sync.start()
+        if not scan_engine.is_running():
+            scan_engine.start()
         if not crypto_sync.is_running():
             crypto_sync.start()
 
@@ -2492,7 +2494,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.58'
+            state['bot_version'] = '9.0.0'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -3404,6 +3406,232 @@ def boots_last_hour():
                     if time.mktime(time.strptime(b, '%Y-%m-%dT%H:%M:%SZ')) > cutoff])
     except Exception:
         return 0
+
+# ===================== SCAN ENGINE (v9.0) =====================
+# Deterministic, in-bot scan runner: no agent turns, no prompt budget. Fires at slot
+# start when SCAN_LIVE=1; posts everything to shift-lab instead when SCAN_DRY_RUN=1.
+SCAN_SLOTS_UTC = (0, 4, 8, 12, 16, 20)
+SCAN_NOTABLE = ('BLAST', 'StarLadder', 'CCT', 'IEM', 'LCK', 'LPL', 'LEC', 'LCS', 'LCP', 'KeSPA', 'VCT')
+PS_GAMES = {'cs2': 'csgo', 'lol': 'lol', 'dota2': 'dota2', 'valorant': 'valorant'}
+SCAN_ROOMS = {'free': 'free-pick', 'lock': 'lock-room', 'sharp': 'sharp-room', 'whale': 'whale-room'}
+
+def se_get(url, timeout=12):
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    return json.loads(urllib.request.urlopen(req, timeout=timeout).read())
+
+def se_espn_mlb(dates):
+    try:
+        d = se_get('https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates=' + dates)
+    except Exception as e:
+        print('se espn fail:', e)
+        return []
+    out = []
+    for e in d.get('events', []):
+        try:
+            comp = e['competitions'][0]
+            away = next(c for c in comp['competitors'] if c['homeAway'] == 'away')
+            home = next(c for c in comp['competitors'] if c['homeAway'] == 'home')
+            odds = (comp.get('odds') or e.get('odds') or [{}])[0]
+            ml_o = odds.get('moneyline') or {}
+            def _ml(side):
+                try:
+                    return int(str((ml_o.get(side) or {}).get('close', {}).get('odds', '')).replace('+', ''))
+                except Exception:
+                    return None
+            mh, ma = _ml('home'), _ml('away')
+            if mh is None and ma is None and odds.get('details'):
+                try:  # "MIL -258" -> favorite abbrev + price
+                    fa, fp = odds['details'].split()
+                    fav_home = home['team'].get('abbreviation') == fa
+                    if fav_home:
+                        mh = int(fp)
+                    else:
+                        ma = int(fp)
+                except Exception:
+                    pass
+            out.append({'sport': 'mlb', 'start': e['date'],
+                        'home': home['team']['displayName'], 'away': away['team']['displayName'],
+                        'ml_home': mh, 'ml_away': ma,
+                        'total': odds.get('overUnder')})
+        except Exception:
+            continue
+    return out
+
+def se_ps(path, **params):
+    import urllib.parse as _up
+    params['token'] = os.environ.get('PANDASCORE_TOKEN', '')
+    return se_get('https://api.pandascore.co%s?%s' % (path, _up.urlencode(params)))
+
+def se_ps_upcoming(game):
+    try:
+        ms = se_ps('/%s/matches/upcoming' % PS_GAMES[game], per_page=20)
+    except Exception as e:
+        print('se ps fail', game, e)
+        return []
+    out = []
+    for m in ms or []:
+        opps = m.get('opponents') or []
+        if len(opps) < 2:
+            continue
+        a, b = opps[0].get('opponent') or {}, opps[1].get('opponent') or {}
+        out.append({'sport': game, 'start': m.get('begin_at') or m.get('scheduled_at'),
+                    't1': {'id': a.get('id'), 'name': a.get('name', '?')},
+                    't2': {'id': b.get('id'), 'name': b.get('name', '?')},
+                    'league': (m.get('league') or {}).get('name', ''), 'bo': m.get('number_of_games')})
+    return out
+
+def se_ps_form(tid, game, n=5):
+    try:
+        ms = se_ps('/%s/matches/past' % PS_GAMES[game], **{'filter[opponent_id]': tid, 'per_page': n})
+        w = l = 0
+        for m in ms or []:
+            wi = (m.get('winner') or {}).get('id')
+            if wi is None:
+                continue
+            if wi == tid:
+                w += 1
+            else:
+                l += 1
+        return {'w': w, 'l': l}
+    except Exception:
+        return None
+
+def _in_window(start_iso, now_ts, hours=4):
+    try:
+        t = datetime.datetime.fromisoformat(start_iso.replace('Z', '+00:00')).timestamp()
+        return now_ts - 600 <= t <= now_ts + hours * 3600, t
+    except Exception:
+        return False, 0
+
+def _et(t_ts):
+    return (datetime.datetime.utcfromtimestamp(t_ts) - datetime.timedelta(hours=4)).strftime('%I:%M %p ET')
+
+async def scan_engine_run(g0, slot_key, dry):
+    """Build + post the slot card. dry=True -> shift-lab only, no state writes."""
+    lab = find_channel(g0, 'shift-lab')
+    gen = lab if dry else find_channel(g0, 'general-chat')
+    tag = '[DRY RUN] ' if dry else ''
+    now_ts = time.time()
+    await gen.send(f"🛰️ {tag}**SCAN INITIATED — {(datetime.datetime.utcfromtimestamp(now_ts) - datetime.timedelta(hours=4)).strftime('%I %p ET')}**" if not dry else
+                   f"🛰️ {tag}scan would initiate for slot {slot_key}")
+    # ---- pull candidates in the 4h window
+    mlb = await asyncio.to_thread(se_espn_mlb, time.strftime('%Y%m%d', time.gmtime()))
+    cands = []
+    for g in mlb:
+        ok, t = _in_window(g['start'], now_ts)
+        if not ok:
+            continue
+        for side, ml, team in (('home', g['ml_home'], g['home']), ('away', g['ml_away'], g['away'])):
+            if ml is not None and -350 <= ml <= -140:
+                cands.append({'sport': 'mlb', 'pick': f"{team} ML", 'vs': g['away'] if side == 'home' else g['home'],
+                              'odds': ml, 'units': 1.0, 'edge': abs(ml) / 350.0, 'start': t, 'market': 'ML'})
+    esp = []
+    for gg in ('cs2', 'lol', 'valorant'):
+        esp += await asyncio.to_thread(se_ps_upcoming, gg)
+    esp_ct = 0
+    for m in esp:
+        ok, t = _in_window(m['start'] or '', now_ts)
+        if not ok or esp_ct >= 10:
+            continue
+        if not any(k in (m['league'] or '') for k in SCAN_NOTABLE):
+            continue
+        f1 = await asyncio.to_thread(se_ps_form, m['t1']['id'], m['sport'])
+        f2 = await asyncio.to_thread(se_ps_form, m['t2']['id'], m['sport'])
+        esp_ct += 1
+        if not f1 or not f2 or f1['w'] + f1['l'] < 3 or f2['w'] + f2['l'] < 3:
+            continue
+        w1 = f1['w'] / (f1['w'] + f1['l']); w2 = f2['w'] / (f2['w'] + f2['l'])
+        edge = w1 - w2
+        if abs(edge) < 0.2:
+            continue
+        fav, dog = (m['t1'], m['t2']) if edge > 0 else (m['t2'], m['t1'])
+        cands.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': None,
+                      'units': 1.5 if abs(edge) >= 0.4 else 1.0, 'edge': abs(edge), 'start': t,
+                      'market': f"ML (Bo{m['bo'] or '?'})"})
+    cands.sort(key=lambda c: -c['edge'])
+    # ---- deal tiers (whale-first), per-scan caps: whale 2 / sharp 2 / lock 1 / free 1
+    deal = {'whale': cands[0:2], 'sharp': cands[2:4], 'lock': cands[4:5], 'free': cands[5:6]}
+    if not cands:
+        await gen.send(f"⚠️ {tag}Thin window — no qualifying plays in the next 4 hours. Card stays light; next sweep in 4h. ⚡" if not dry else
+                       f"{tag}would post thin-window resolution")
+        return
+    picks_out = []
+    for tier in ('whale', 'sharp', 'lock', 'free'):
+        plays = deal[tier]
+        if not plays:
+            continue
+        room = lab if dry else find_channel(g0, SCAN_ROOMS[tier])
+        if not room:
+            continue
+        emo = {'whale': '🐋', 'sharp': '📊', 'lock': '🔒', 'free': '🎯'}[tier]
+        lines = []
+        for p in plays:
+            odds_s = f" ({p['odds']})" if p['odds'] else ''
+            lines.append(f"{emo if tier == 'free' else '▫️'} **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u** ({p['market']}, {_et(p['start'])})")
+            picks_out.append({'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}", 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
+                              'sport': p['sport'], 'desc': p['pick'], 'market': p['market'], 'odds': p['odds'],
+                              'units': p['units'], 'tier': tier, 'time_et': _et(p['start']), 'analysis': 'bot engine v9.0'})
+        if tier == 'free':
+            body = f"🎯 {tag}**FREE PICK — {_et(plays[0]['start'])}**\n" + '\n'.join(lines) + \
+                   "\n\n🎁 Sunday 6 PM ET — $50 SOL draw. Want the whole board? 🔒 2 plays/day · 📊 4 · 🐋 full 7 — Whale eats first. thelineshift.github.io/AISportsBot/upgrade.html"
+        else:
+            body = f"{emo} {tag}**{tier.upper()} — {len(plays)} play(s) this window**\n" + '\n'.join(lines)
+        await room.send(body)
+        await asyncio.sleep(1)
+    # ---- sanitized complete in general chat (NO-LEAK LAW)
+    free_p = deal['free'][0] if deal['free'] else None
+    comp = f"✅ {tag}**SCAN COMPLETE**\n"
+    if free_p:
+        comp += f"🎯 **FREE: {free_p['pick']} vs {free_p['vs']} — {free_p['units']}u** ({_et(free_p['start'])}) — live in the free-pick room\n"
+    comp += "🔒 #lock-room · 📊 #sharp-room · 🐋 #whale-room — paid plays are live in their rooms\nEvery play before start time. Every result receipted, win or lose. ⚡"
+    await gen.send(comp)
+    # ---- register + mark
+    if not dry:
+        try:
+            pj = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+            pj = pj or {'picks': []}
+            have = {p['id'] for p in pj.get('picks', [])}
+            pj['picks'] = pj.get('picks', []) + [p for p in picks_out if p['id'] not in have]
+            pj['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            await asyncio.to_thread(gh_put, 'picks.json', pj, f'bot scan {slot_key}', 'main')
+        except Exception as e:
+            print('se picks fail:', e)
+        try:
+            st = await asyncio.to_thread(get_state)
+            st.setdefault('scan_events', {})[slot_key] = 'ok-bot'
+            await asyncio.to_thread(gh_put, 'bot_state.json', st, 'bot scan ok')
+        except Exception as e:
+            print('se state fail:', e)
+    print(f'scan engine {"dry" if dry else "LIVE"} slot {slot_key}: {len(picks_out)} plays posted')
+
+_SCAN_DONE = set()
+
+@tasks.loop(minutes=1)
+async def scan_engine():
+    try:
+        now = time.gmtime()
+        if now.tm_hour not in SCAN_SLOTS_UTC or now.tm_min > 3:
+            return
+        dry = os.environ.get('SCAN_DRY_RUN', '') == '1'
+        live = os.environ.get('SCAN_LIVE', '') == '1'
+        if not dry and not live:
+            return
+        key = time.strftime('%Y%m%d-%H', now)
+        if key in _SCAN_DONE:
+            return
+        st = await asyncio.to_thread(get_state)
+        if (st or {}).get('scan_events', {}).get(key) in ('ok', 'ok-bot'):
+            _SCAN_DONE.add(key)
+            return
+        g0 = client.guilds[0] if client.guilds else None
+        if not g0:
+            return
+        if len(_SCAN_DONE) > 12:
+            _SCAN_DONE.clear()
+        _SCAN_DONE.add(key)  # once-per-slot per boot; watchdog cron is the fallback layer
+        await scan_engine_run(g0, key, dry)
+    except Exception as e:
+        print('scan_engine error:', e)
 
 def storm_sleep():
     # exponential backoff during crash/429 loops: 5m -> 10m -> 20m -> cap 30m.
