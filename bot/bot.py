@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.6.1'
+BOT_VERSION = '9.7.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -361,6 +361,15 @@ def make_client(privileged=True):
             if message.guild and await shift_guard(message, message.guild):
                 return
             chname = (getattr(message.channel, 'name', '') or '').lower()
+            # @picks display: any member can pull their OWN room's current card + last results.
+            # Read-only, tier-scoped — paid rooms never leak to each other or to general.
+            try:
+                low_c = (message.content or '').lower()
+                if '@picks' in low_c or (c.user and c.user in message.mentions and 'pick' in low_c):
+                    await show_room_picks(message)
+                    return
+            except Exception as e:
+                print('picks display:', e)
             # @mention responder FIRST — a tag is a question to SHiFT, never an entry attempt.
             # (This used to sit below the giveaway branch, which swallowed tags in #giveaway.)
             try:
@@ -2854,7 +2863,9 @@ async def audit():
 
 # ---------- AUTO-GRADER (v8.3): event-driven results, not clock-driven ----------
 ESPN = {'MLB': 'baseball/mlb', 'NBA': 'basketball/nba', 'WNBA': 'basketball/wnba',
-        'NHL': 'hockey/nhl', 'NFL': 'football/nfl'}
+        'NHL': 'hockey/nhl', 'NFL': 'football/nfl', 'MLS': 'soccer/usa.1', 'CFL': 'football/cfl',
+        'NCAAF': 'football/college-football', 'NCAAB': 'basketball/mens-college-basketball',
+        'UFC': 'mma/ufc', 'EPL': 'soccer/eng.1', 'LALIGA': 'soccer/esp.1', 'UCL': 'soccer/uefa.champions'}
 TIER_BADGE = {'lock': '🔒 LOCK ROOM', 'sharp': '📊 SHARP ROOM', 'whale': '🐋 WHALE ROOM',
               'free': '🆓 FREE PICK', 'challenge': '💵 CHALLENGE'}
 
@@ -3255,7 +3266,7 @@ async def settle_challenge(guild, p):
             nxt = min(chal['balance'] * 0.2, chal['balance'])
             await ch.send(f"💵 **CHALLENGE BET #{hit.get('n')} — {p['result']}** {e}\n"
                           f"{p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
-                          f"**BALANCE: ${chal['balance']:.2f}** (goal: ${chal.get('goal', 1000):.0f}) · record {chal['record']['wins']}-{chal['record']['losses']}\n"
+                          f"**BALANCE: {_money_e(chal['balance'])} ${chal['balance']:.2f}** (goal: 💰 ${chal.get('goal', 1000):.0f}) · record {chal['record']['wins']}-{chal['record']['losses']}\n"
                           f"Next challenge action lands with the 4 PM ET scan. — SHiFT ⚡")
     except Exception as e:
         print('settle_challenge error:', e)
@@ -3276,12 +3287,30 @@ async def grader():
                 if str(p.get('result', '')).upper() not in ('', 'PENDING', 'NONE', 'NULL'):
                     continue
                 sport = (p.get('sport') or '').upper()
+                # ESPORTS: settle via PandaScore past matches (receipts for cs2/lol/valorant/dota2)
+                if sport.lower() in PS_GAMES:
+                    team = p.get('team') or (p.get('desc', '').rsplit(' ML', 1)[0] if ' ML' in (p.get('desc') or '') else '')
+                    leg = await ps_settle_leg(team, sport, p.get('date', ''))
+                    if leg in (None, 'pending'):
+                        continue
+                    u = float(p.get('units') or 1.0)
+                    o = p.get('odds') if isinstance(p.get('odds'), int) else -110
+                    p['result'] = leg.upper()
+                    p['units_result'] = round(profit_units(o, u), 2) if leg == 'win' else (-u if leg == 'loss' else 0.0)
+                    p['score'] = f"{team} vs {p.get('vs') or p.get('opp') or 'opponent'} — {leg}"
+                    new_results.append(p)
+                    continue
                 if sport not in ESPN:
-                    continue  # tennis/esports/etc -> scan-engine research path
+                    continue  # tennis/golf -> odds-API path
                 gt = pick_game_utc(p.get('date', ''), p.get('time_et'))
                 if not gt or time.time() < gt + 5400:
                     continue  # earliest a final is possible
                 sb = await asyncio.to_thread(espn_fetch, sport, p['date'].replace('-', ''))
+                # HEAL: picks registered without team names used to be ungradable forever
+                if not p.get('awayTeam') or not p.get('homeTeam'):
+                    ha, hh = heal_pick_teams(p, sb)
+                    if ha and hh:
+                        p['awayTeam'], p['homeTeam'] = ha, hh
                 teams, ev_completed = find_event(sb, p.get('awayTeam'), p.get('homeTeam'), pick_start_ts(p))
                 if not teams or not ev_completed:
                     continue
@@ -3913,7 +3942,7 @@ def se_edges(g, now_ts):
         split_s = f", {split} {'at home' if side == 'home' else 'on the road'}" if split else ''
         out.append({'sport': g['sport'], 'pick': f"{team} ML", 'vs': opp, 'odds': ml,
                     'units': 1.5 if edge >= 0.12 else 1.0, 'edge': edge, 'start': t,
-                    'market': 'ML', 'prob': p_ours,
+                    'market': 'ML', 'prob': p_ours, 'team': team, 'opp': opp, 'side': side,
                     'analysis': f"{(g['recs'].get(side) or {}).get('total','?')} overall{split_s} — "
                                 f"our {p_ours:.0%} vs book {p_imp:.0%} (no-vig)"})
     return out
@@ -4027,14 +4056,20 @@ async def scan_engine_run(g0, slot_key, dry):
         league_s = (m['league'] or '').split(' 20')[0][:22]
         # MODEL LINE: no book prices esports on our feeds, so we publish our own —
         # log5 fair odds from recent-form win rates, rounded like a board number.
+        # ODDS DISCIPLINE LAW: straight esports picks stay near-even or better (p<=.575 ≈ -135).
+        # Heavier favorites are never straight picks — they're PARLAY MATERIAL (owner decree).
         fw = w1 if edge > 0 else w2
         dw = w2 if edge > 0 else w1
         p_f = fw * (1 - dw) / (fw * (1 - dw) + dw * (1 - fw)) if (fw or dw) else 0.5
         p_f = min(0.90, max(0.15, p_f))
+        if p_f > 0.80:
+            continue  # too juiced even for a parlay leg — skip entirely
         ml_f = -round((100 * p_f / (1 - p_f)) / 5) * 5 if p_f >= 0.5 else round((100 * (1 - p_f) / p_f) / 5) * 5
         cands.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': ml_f,
                       'units': 1.5 if abs(edge) >= 0.4 else 1.0, 'edge': abs(edge), 'start': t,
                       'market': f"{league_s} Bo{m['bo'] or '?'}", 'prob': p_f,
+                      'team': fav['name'], 'opp': dog['name'], 'side': None,
+                      'reserve': p_f > 0.575,
                       'analysis': se_form_text(fav_f, dog_f, fav['name']) + f" — model line {ml_f:+d} (our {p_f:.0%})"})
     cands.sort(key=lambda c: -c['edge'])
     # never re-pick a game already on today's board (cross-slot dedupe)
@@ -4045,14 +4080,17 @@ async def scan_engine_run(g0, slot_key, dry):
         cands = [c for c in cands if c['pick'] not in have_descs]
     except Exception as e:
         print('cross-slot dedupe:', e)
+    # ---- ODDS DISCIPLINE: juiced esports faves leave the straight pool, feed parlays
+    reserves = [c for c in cands if c.get('reserve')]
+    cands = [c for c in cands if not c.get('reserve')]
     # ---- deal tiers (whale-first), per-scan caps: whale 2 / sharp 2 / lock 1 / free 1
     deal = {'whale': cands[0:2], 'sharp': cands[2:4], 'lock': cands[4:5], 'free': cands[5:6]}
     # ---- PARLAY: deep slates deal one 2-3 leg parlay, rotated across the paid rooms
     parlay_built = None
-    if len(cands) >= 7 and not dry:
+    if len(cands) + len(reserves) >= 6 and not dry:
         try:
             st_rot = await asyncio.to_thread(get_state) or {}
-            parlay_built, p_room = se_build_parlay(cands[6:], st_rot.get('parlay_rot', 0))
+            parlay_built, p_room = se_build_parlay(cands[6:] + reserves, st_rot.get('parlay_rot', 0))
             if parlay_built:
                 deal[p_room].append(parlay_built)
                 st_rot['parlay_rot'] = st_rot.get('parlay_rot', 0) + 1
@@ -4113,7 +4151,14 @@ async def scan_engine_run(g0, slot_key, dry):
             reg = {'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}", 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
                    'sport': p['sport'], 'desc': p.get('picks_desc') or p['pick'], 'market': p['market'], 'odds': p['odds'],
                    'units': p['units'], 'tier': tier, 'time_et': _et(p['start']),
+                   'vs': p.get('vs'), 'team': p.get('team'), 'opp': p.get('opp'),
                    'analysis': (p.get('analysis', '') + ' | ' + ('parlay — every leg cleared the edge bar' if p.get('parlay') else _why(p, rank_of.get(id(p), n)).replace('🧠 **Why it\'s the play:** ', '')))[:300]}
+            if not p.get('parlay') and p.get('team') and p.get('opp'):
+                # grading needs both sides named — never register a nameless pick again
+                if p.get('side') == 'home':
+                    reg['homeTeam'], reg['awayTeam'] = p['team'], p['opp']
+                else:
+                    reg['awayTeam'], reg['homeTeam'] = p['team'], p['opp']
             if p.get('parlay'):
                 reg['legs'] = [{'team': lg['pick'][:-3] if lg['pick'].endswith(' ML') else lg['pick'],
                                 'vs': lg['vs'], 'sport': lg['sport'],
@@ -4209,6 +4254,127 @@ def se_build_parlay(pool, rot):
               'picks_desc': names}
     return parlay, room
 
+async def show_room_picks(message):
+    """Post the current card + last settled results for the room the member is standing in.
+    Free/general channels get the free pick only; shift-lab gets the whole board."""
+    try:
+        cn = (getattr(message.channel, 'name', '') or '').lower().replace('-', '').replace('_', '')
+        tier = None
+        for t, rn in SCAN_ROOMS.items():
+            if rn.replace('-', '') in cn:
+                tier = t
+                break
+        all_tiers = 'shiftlab' in cn
+        if tier is None and not all_tiers:
+            tier = 'free'
+        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        picks = (doc or {}).get('picks', [])
+        today = time.strftime('%Y-%m-%d', time.gmtime(time.time() - 4 * 3600))
+
+        def _line(p):
+            e = {'WIN': '✅', 'LOSS': '❌', 'PUSH': '🟰'}.get(p.get('result'), '⏳')
+            o = fmt_odds_num(p['odds']) if isinstance(p.get('odds'), int) else (p.get('odds') or '')
+            tail = ''
+            if p.get('result'):
+                u = p.get('units_result') or 0
+                tail = f" · {p['result']} {'+' if u > 0 else ''}{u:.2f}u"
+            return f"{e} **{p.get('desc')}** ({o}) — {p.get('time_et', '')}{tail}"
+
+        chunks = []
+        for t in (['whale', 'sharp', 'lock', 'free'] if all_tiers else [tier]):
+            tp = [p for p in picks if p.get('tier') == t]
+            live = [p for p in tp if not p.get('result') and (p.get('date') or '') >= today]
+            done = [p for p in tp if p.get('result')][-3:]
+            if not live and not done:
+                continue
+            body = ''
+            if live:
+                body += '**Current card:**\n' + '\n'.join(_line(p) for p in live[-4:])
+            if done:
+                body += ('\n' if body else '') + '**Last results:**\n' + '\n'.join(_line(p) for p in done)
+            chunks.append(f"{TIER_BADGE.get(t, t)}\n{body}")
+        if not chunks:
+            await message.channel.send(f"{message.author.mention} Nothing on this room's board yet today — the next scan deals at **12a · 4a · 8a · 12p · 4p · 8p ET**. ⚡")
+            return
+        await message.channel.send(f"{message.author.mention}\n\n" + '\n\n'.join(chunks)[:1900])
+    except Exception as e:
+        print('show_room_picks:', e)
+
+def heal_pick_teams(p, sb):
+    """Backfill awayTeam/homeTeam for picks registered without them (the receipts-killer
+    of 7/23-24): match the pick's team text against that day's scoreboard events."""
+    try:
+        desc_n = norm_txt(p.get('desc', ''))
+        best = None
+        for ev in sb.get('events', []):
+            comp = ev['competitions'][0]
+            teams = {c['homeAway']: c for c in comp['competitors']}
+            an = norm_txt(teams['away']['team'].get('displayName', ''))
+            hn = norm_txt(teams['home']['team'].get('displayName', ''))
+            score = 0
+            for tok in (an, hn):
+                if tok and (tok in desc_n or any(t in desc_n for t in tok.split() if len(t) > 3)):
+                    score += 1
+            # word-level fallback for names like "Milwaukee Brewers"
+            for w in re.findall(r'[a-z]{4,}', (p.get('desc') or '').lower()):
+                if w in an or w in hn:
+                    score += 1
+            if score and (best is None or score > best[0]):
+                best = (score, teams['away']['team'].get('displayName'), teams['home']['team'].get('displayName'))
+        if best and best[0] >= 1:
+            return best[1], best[2]
+    except Exception:
+        pass
+    return None, None
+
+_PS_PAST_CACHE = {}
+
+async def ps_settle_leg(team, sport, date_et):
+    """Settle one esports side via PandaScore past matches: 'win'/'loss'/'push'/None."""
+    game = PS_GAMES.get((sport or '').lower())
+    if not game or not team:
+        return None
+    try:
+        ts, ms = _PS_PAST_CACHE.get(game, (0, None))
+        if ms is None or time.time() - ts > 600:
+            ms = await asyncio.to_thread(se_ps, f'/{game}/matches/past', per_page=100)
+            _PS_PAST_CACHE[game] = (time.time(), ms)
+    except Exception as e:
+        print('ps settle fetch:', e)
+        return None
+    tn = norm_txt(team)
+    for m in ms or []:
+        try:
+            if m.get('status') != 'finished':
+                continue
+            opps = m.get('opponents') or []
+            if len(opps) < 2:
+                continue
+            names = [norm_txt((o.get('opponent') or {}).get('name', '')) for o in opps]
+            hit = None
+            for i, nn in enumerate(names):
+                if tn and len(tn) >= 3 and (tn in nn or (len(nn) >= 3 and nn in tn)):
+                    hit = i
+                    break
+            if hit is None:
+                continue
+            ba = m.get('begin_at') or m.get('scheduled_at') or ''
+            try:
+                mts = time.mktime(time.strptime(ba[:19], '%Y-%m-%dT%H:%M:%S'))
+                m_date = time.strftime('%Y-%m-%d', time.gmtime(mts - 4 * 3600))
+            except Exception:
+                continue
+            if date_et and m_date != date_et:
+                continue
+            win_id = m.get('winner_id')
+            t_id = (opps[hit].get('opponent') or {}).get('id')
+            if win_id is None:
+                return 'push'
+            return 'win' if t_id == win_id else 'loss'
+        except Exception:
+            continue
+    return None
+
 async def grade_parlays(guild):
     """Settle registered parlays: every leg final -> WIN all / LOSS any / PUSH mix."""
     try:
@@ -4226,6 +4392,9 @@ async def grade_parlays(guild):
             leg_results = []
             for lg in legs:
                 try:
+                    if (lg.get('sport') or '').lower() in PS_GAMES:
+                        leg_results.append(await ps_settle_leg(lg.get('team'), lg.get('sport'), lg.get('date')))
+                        continue
                     sb = await asyncio.to_thread(espn_fetch, (lg.get('sport') or '').upper(), (lg.get('date') or '').replace('-', ''))
                     team_n, opp_n = norm_txt(lg.get('team', '')), norm_txt(lg.get('vs', ''))
                     found = None
@@ -4288,6 +4457,9 @@ async def grade_parlays(guild):
     except Exception as e:
         print('grade_parlays error:', e)
 
+def _money_e(bal):
+    return '💰' if bal >= 500 else ('💵' if bal >= 100 else ('💸' if bal >= 40 else '🪙'))
+
 async def challenge_daily(g0, cands, dry):
     """CARD LAW (challenge): the 100-to-1000 channel gets action every single day —
     up to 2 straight bets + 1 parlay from the 4 PM ET scan; never silent."""
@@ -4324,9 +4496,9 @@ async def challenge_daily(g0, cands, dry):
                               'analysis': c.get('analysis', '')[:300]})
             posted += 1
             if not dry:
-                await ch.send(f"💵 **CHALLENGE BET #{n0}** — ${stake:.2f} on **{c['pick']}** ({fmt_odds_num(o)}) vs {c['vs']}\n"
+                await ch.send(f"💵 **CHALLENGE BET #{n0}** — 💲**${stake:.2f}** on **{c['pick']}** ({fmt_odds_num(o)}) vs {c['vs']}\n"
                               f"📊 {c.get('analysis','')}\n"
-                              f"To win **${to_win:.2f}** · balance **${bal:.2f}** → goal $1,000 · {_et(c['start'])} ET ⚡")
+                              f"To win **${to_win:.2f}** · balance {_money_e(bal)} **${bal:.2f}** → 💰 **$1,000** goal · {_et(c['start'])} ET ⚡")
                 await asyncio.sleep(1)
         # parlay kicker: when a built parlay exists, challenge takes a 10%-of-balance shot
         parlays = [c for c in cands if c.get('parlay')]
@@ -4351,11 +4523,11 @@ async def challenge_daily(g0, cands, dry):
             if not dry:
                 await ch.send(f"💵 **CHALLENGE PARLAY #{n0}** — ${p_stake:.2f} lotto ticket 🎰\n"
                               + '\n'.join(f"• {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in c['legs']) +
-                              f"\nCombined **{fmt_odds_num(c['odds'])}** — to win **${p_win:.2f}** · balance **${bal:.2f}** ⚡")
+                              f"\nCombined **{fmt_odds_num(c['odds'])}** — to win **${p_win:.2f}** · balance {_money_e(bal)} **${bal:.2f}** → 💰 $1,000 ⚡")
         if not posted and not parlays:
             if not dry:
                 await ch.send(f"💵 **CHALLENGE — {today_et}**: slate too thin for a qualified edge today. "
-                              f"Bankroll stays **${bal:.2f}** — discipline is how $100 becomes $1,000. Next scan 8 PM ET. ⚡")
+                              f"Bankroll stays {_money_e(bal)} **${bal:.2f}** — discipline is how 💵 $100 becomes 💰 $1,000. Next scan 8 PM ET. ⚡")
             return
         chal['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
         if not dry:
