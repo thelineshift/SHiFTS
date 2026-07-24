@@ -3631,10 +3631,11 @@ async def scan_engine_run(g0, slot_key, dry):
         if abs(edge) < 0.2:
             continue
         fav, dog = (m['t1'], m['t2']) if edge > 0 else (m['t2'], m['t1'])
+        fav_f, dog_f = (f1, f2) if edge > 0 else (f2, f1)
         cands.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': None,
                       'units': 1.5 if abs(edge) >= 0.4 else 1.0, 'edge': abs(edge), 'start': t,
                       'market': f"ML (Bo{m['bo'] or '?'})",
-                      'analysis': f"form {f1['w']}-{f1['l']} vs {f2['w']}-{f2['l']} (last 5)"})
+                      'analysis': f"form {fav_f['w']}-{fav_f['l']} vs {dog_f['w']}-{dog_f['l']} (last 5)"})
     cands.sort(key=lambda c: -c['edge'])
     # ---- deal tiers (whale-first), per-scan caps: whale 2 / sharp 2 / lock 1 / free 1
     deal = {'whale': cands[0:2], 'sharp': cands[2:4], 'lock': cands[4:5], 'free': cands[5:6]}
