@@ -429,7 +429,8 @@ function renderTierTable(picks){
 
 function renderChallenge(ch){
   if(!ch){ document.getElementById('challenge').innerHTML = '<div class="empty">no challenge data</div>'; return; }
-  const pct = Math.max(0, Math.min(100, 100*(ch.balance-ch.bankrollStart)/(ch.goal-ch.bankrollStart)));
+  const start = ch.bankrollStart ?? ch.start ?? 100;
+  const pct = Math.max(0, Math.min(100, 100*(ch.balance-start)/(ch.goal-start)));
   const cur = (ch.plays||[]).filter(p=>!p.result).pop();
   document.getElementById('challenge').innerHTML = `
     <div style="font-size:32px;font-weight:800">$${(+ch.balance).toFixed(2)}
