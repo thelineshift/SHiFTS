@@ -34,15 +34,6 @@
   "bot_version": "8.9.53",
   "unannounced_results": [
     {
-      "id": "kc-det-u85-0723",
-      "desc": "Royals/Tigers Under 8.5",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "Royals 3, Tigers 4",
-      "tier": "whale"
-    },
-    {
       "id": "det-ml-0723",
       "desc": "Tigers ML",
       "odds": -237,
@@ -52,7 +43,7 @@
       "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1784860212.4086378,
+  "last_x_receipt_ts": 1784863811.3208983,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
