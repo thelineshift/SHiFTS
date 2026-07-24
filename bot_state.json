@@ -34,15 +34,6 @@
   "bot_version": "8.9.53",
   "unannounced_results": [
     {
-      "id": "ari-stl-o75-0723",
-      "desc": "Diamondbacks/Cardinals Over 7.5",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "Arizona Diamondbacks 10, St. Louis Cardinals 6",
-      "tier": "free"
-    },
-    {
       "id": "kc-det-u85-0723",
       "desc": "Royals/Tigers Under 8.5",
       "odds": -110,
@@ -61,7 +52,7 @@
       "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1784856611.5330281,
+  "last_x_receipt_ts": 1784860212.4086378,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
