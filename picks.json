@@ -866,10 +866,10 @@
       "time_et": "7:10 PM",
       "analysis": "LAD lineup depth vs leaking Mets bullpen; -156 road tax acceptable.",
       "live_odds": {
-        "home_ml": 113,
-        "away_ml": -136,
+        "home_ml": 104,
+        "away_ml": -125,
         "total": 9.0,
-        "ts": 1784903806
+        "ts": 1784925484
       },
       "last_alert_odds": -136
     },
@@ -1075,10 +1075,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 113,
-        "away_ml": -136,
+        "home_ml": 104,
+        "away_ml": -125,
         "total": 9.0,
-        "ts": 1784923419
+        "ts": 1784925484
       }
     },
     {
@@ -1167,10 +1167,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -130,
-        "away_ml": 108,
+        "home_ml": -125,
+        "away_ml": 103,
         "total": 9.0,
-        "ts": 1784925038
+        "ts": 1784925484
       }
     },
     {
