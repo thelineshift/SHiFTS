@@ -1,5 +1,5 @@
 {
-  "seq": 347,
+  "seq": 348,
   "commands": [
     {
       "seq": 163,
@@ -1212,6 +1212,12 @@
     {
       "action": "list_perms",
       "seq": 347
+    },
+    {
+      "seq": 348,
+      "action": "read_recent",
+      "channel": "giveaway",
+      "limit": 8
     }
   ]
 }
