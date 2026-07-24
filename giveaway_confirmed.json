@@ -170,10 +170,10 @@
   "payareal": {
     "handle": "payareal",
     "discord": "payarew",
-    "discord_id": null,
+    "discord_id": "",
     "mult": 1,
-    "ts": "2026-07-24T09:57:17Z",
-    "note": "provisional \u2014 X verification pending credit reload; verify before Sun draw"
+    "ts": "2026-07-24T15:14:02Z",
+    "note": "swept from history; X lookup incomplete"
   },
   "mdhasnain31": {
     "handle": "mdhasnain31",
