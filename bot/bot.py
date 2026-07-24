@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.11.1'
+BOT_VERSION = '9.11.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -1035,21 +1035,21 @@ TIER_ROOM = {'lock': '🔒 Lock Room', 'sharp': '📊 Sharp Room', 'whale': '�
 def entry_checklist(handle, followed, liked, reposted):
     def line(ok, label):
         return f"{'✅' if ok else '❌'} {label}"
-    lines = [line(followed, 'Follow @TheLineShift'),
+    lines = [line(followed, 'Follow @SHiFTSPicks'),
              line(liked, 'Like the giveaway post'),
              line(reposted, 'Repost the giveaway post')]
     missing = [l for ok, l in zip((followed, liked, reposted),
-                                  ('follow @TheLineShift', 'like the giveaway post', 'repost the giveaway post')) if not ok]
+                                  ('follow @SHiFTSPicks', 'like the giveaway post', 'repost the giveaway post')) if not ok]
     return lines, missing
 
-GW_BAD = ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i', 'yourhandle')
+GW_BAD = ('thelineshift', 'shiftspicks', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i', 'yourhandle')
 GW_POST_DEFAULT = '2080027230839931367'
 
 def gw_post_link(st):
     pid = (st or {}).get('giveaway_x_post', GW_POST_DEFAULT)
-    return f'https://x.com/TheLineShift/status/{pid}'
+    return f'https://x.com/SHiFTSPicks/status/{pid}'
 
-GW_STEPS = "Entry needs 3 steps on X: ✅ Follow @TheLineShift · ❤️ Like the giveaway post · 🔁 Repost it — this exact one: {link}"
+GW_STEPS = "Entry needs 3 steps on X: ✅ Follow @SHiFTSPicks · ❤️ Like the giveaway post · 🔁 Repost it — this exact one: {link}"
 
 def gw_handle_parse(raw):
     """Extract an X handle from free text: @name (space ok), x.com/name, 'x handle: name'."""
@@ -1108,9 +1108,9 @@ async def verify_giveaway_entry(message, handle):
             reposted = None
         def ic(ok, label):
             return f"{'✅' if ok else ('❌' if ok is False else '❓')} {label}"
-        checklist = "\n".join([ic(followed, 'Follow @TheLineShift'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
+        checklist = "\n".join([ic(followed, 'Follow @SHiFTSPicks'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
         missing = []
-        if followed is False: missing.append('follow @TheLineShift')
+        if followed is False: missing.append('follow @SHiFTSPicks')
         if liked is False: missing.append('like the giveaway post')
         if reposted is False: missing.append('repost the giveaway post')
         if not missing and followed and liked and reposted:
@@ -1545,9 +1545,9 @@ async def run_command(cmd, guild, log):
                         reposted = None
                     def ic(ok, label):
                         return f"{'✅' if ok else ('❌' if ok is False else '❓')} {label}"
-                    checklist = "\n".join([ic(followed, 'Follow @TheLineShift'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
+                    checklist = "\n".join([ic(followed, 'Follow @SHiFTSPicks'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
                     missing = []
-                    if followed is False: missing.append('follow @TheLineShift')
+                    if followed is False: missing.append('follow @SHiFTSPicks')
                     if liked is False: missing.append('like the giveaway post')
                     if reposted is False: missing.append('repost the giveaway post')
                     if not missing and followed and liked and reposted:
@@ -1632,7 +1632,7 @@ async def run_command(cmd, guild, log):
             log.append(f'x_like FAIL: {e} {body}')
     elif a == 'x_post_text':
         try:
-            res = await asyncio.to_thread(x_post, cmd['text'])
+            res = await asyncio.to_thread(x_post, cmd['text'], cmd.get('quote_id'))
             tid = res.get('data', {}).get('id') if res else None
             log.append(f'x_post_text OK: id {tid}')
             if cmd.get('tag') == 'giveaway' and tid:
@@ -2324,7 +2324,7 @@ async def run_command(cmd, guild, log):
         c = x_creds_load()
         # (a) bearer app-only read
         try:
-            req = urllib.request.Request('https://api.x.com/2/users/by/username/TheLineShift',
+            req = urllib.request.Request('https://api.x.com/2/users/by/username/SHiFTSPicks',
                                          headers={'Authorization': f"Bearer {c.get('bearer_token', '')}"})
             with urllib.request.urlopen(req, timeout=20) as r:
                 d = json.load(r)
@@ -2618,7 +2618,7 @@ async def run_command(cmd, guild, log):
                 reposted = None
         def ic(ok, label):
             return f"{'✅' if ok else ('❌' if ok is False else '❓')} {label}"
-        checklist = "\n".join([ic(followed, 'Follow @TheLineShift'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
+        checklist = "\n".join([ic(followed, 'Follow @SHiFTSPicks'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
         if uid and followed and liked and reposted:
             conf[hk] = {'handle': handle, 'discord': cmd.get('discord', ''), 'discord_id': did,
                         'mult': 1, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
@@ -2629,7 +2629,7 @@ async def run_command(cmd, guild, log):
             log.append(f'{hk}: CONFIRMED')
         else:
             missing = []
-            if followed is False: missing.append('follow @TheLineShift')
+            if followed is False: missing.append('follow @SHiFTSPicks')
             if liked is False: missing.append('like the giveaway post')
             if reposted is False: missing.append('repost the giveaway post')
             note = 'swept from history; ' + ('steps missing: ' + ', '.join(missing) if missing else 'X lookup incomplete')
