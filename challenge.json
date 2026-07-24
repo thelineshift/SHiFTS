@@ -1,67 +1,91 @@
 {
- "updated": "2026-07-23T08:30:00Z",
- "bankrollStart": 100.0,
- "goal": 1000.0,
- "balance": 40.0,
- "record": {
-  "wins": 0,
-  "losses": 3
- },
- "plays": [
-  {
-   "n": 1,
-   "date": "2026-07-21",
-   "pick": "Brewers ML",
-   "odds": -142,
-   "stake": 20.0,
-   "toWin": 14.08,
-   "time_et": "7:40 PM",
-   "result": "LOSS",
-   "posted": "2026-07-21T22:35:00Z",
-   "note": "Also Lock Room play - model #1 confidence"
+  "updated": "2026-07-24T20:00:59Z",
+  "bankrollStart": 100.0,
+  "goal": 1000.0,
+  "balance": 40.0,
+  "record": {
+    "wins": 0,
+    "losses": 3
   },
-  {
-   "n": 2,
-   "date": "2026-07-22",
-   "pick": "Yankees ML",
-   "odds": -165,
-   "stake": 20.0,
-   "toWin": 12.12,
-   "time_et": "1:05 PM",
-   "result": "LOSS",
-   "posted": "2026-07-22T12:15:44Z",
-   "note": "Mirrors Lock Room - model #1 confidence (61.6%)"
-  },
-  {
-   "n": 3,
-   "date": "2026-07-22",
-   "pick": "Cubs ML",
-   "odds": -125,
-   "stake": 20.0,
-   "toWin": 16.0,
-   "time_et": "8:00 PM",
-   "result": "LOSS",
-   "posted": "2026-07-22T22:18:06Z",
-   "note": "Mirrors Lock Room - model #1 confidence | settled: Tigers 5, Cubs 1"
-  },
-  {
-   "n": 4,
-   "date": "2026-07-23",
-   "pick": "Cardinals ML",
-   "odds": -123,
-   "stake": 20.0,
-   "toWin": 16.26,
-   "time_et": "5:15 PM",
-   "posted": "2026-07-23T08:30:00Z",
-   "note": "Also Lock Room play - McGreevy 2.92 vs Pfaadt 4.58"
+  "plays": [
+    {
+      "n": 1,
+      "date": "2026-07-21",
+      "pick": "Brewers ML",
+      "odds": -142,
+      "stake": 20.0,
+      "toWin": 14.08,
+      "time_et": "7:40 PM",
+      "result": "LOSS",
+      "posted": "2026-07-21T22:35:00Z",
+      "note": "Also Lock Room play - model #1 confidence"
+    },
+    {
+      "n": 2,
+      "date": "2026-07-22",
+      "pick": "Yankees ML",
+      "odds": -165,
+      "stake": 20.0,
+      "toWin": 12.12,
+      "time_et": "1:05 PM",
+      "result": "LOSS",
+      "posted": "2026-07-22T12:15:44Z",
+      "note": "Mirrors Lock Room - model #1 confidence (61.6%)"
+    },
+    {
+      "n": 3,
+      "date": "2026-07-22",
+      "pick": "Cubs ML",
+      "odds": -125,
+      "stake": 20.0,
+      "toWin": 16.0,
+      "time_et": "8:00 PM",
+      "result": "LOSS",
+      "posted": "2026-07-22T22:18:06Z",
+      "note": "Mirrors Lock Room - model #1 confidence | settled: Tigers 5, Cubs 1"
+    },
+    {
+      "n": 4,
+      "date": "2026-07-23",
+      "pick": "Cardinals ML",
+      "odds": -123,
+      "stake": 20.0,
+      "toWin": 16.26,
+      "time_et": "5:15 PM",
+      "posted": "2026-07-23T08:30:00Z",
+      "note": "Also Lock Room play - McGreevy 2.92 vs Pfaadt 4.58"
+    },
+    {
+      "n": 5,
+      "date": "2026-07-24",
+      "pick": "Los Angeles Dodgers ML",
+      "odds": -136,
+      "stake": 8.0,
+      "toWin": 5.88,
+      "time_et": "07:10 PM ET",
+      "result": null,
+      "posted": "2026-07-24T20:00:56Z",
+      "note": "auto challenge \u2014 edge 12%; 65-38 overall, 34-19 on the road \u2014 our 67% vs book 55% (no-vig)"
+    },
+    {
+      "n": 6,
+      "date": "2026-07-24",
+      "pick": "Chicago White Sox ML",
+      "odds": -131,
+      "stake": 8.0,
+      "toWin": 6.11,
+      "time_et": "07:40 PM ET",
+      "result": null,
+      "posted": "2026-07-24T20:00:58Z",
+      "note": "auto challenge \u2014 edge 10%; 54-47 overall, 31-17 at home \u2014 our 64% vs book 54% (no-vig)"
+    }
+  ],
+  "current_bet": {
+    "id": "challenge-stl-ml",
+    "desc": "Cardinals ML",
+    "odds": -123,
+    "wager": 20.0,
+    "to_win": 16.26,
+    "date": "2026-07-23"
   }
- ],
- "current_bet": {
-  "id": "challenge-stl-ml",
-  "desc": "Cardinals ML",
-  "odds": -123,
-  "wager": 20.0,
-  "to_win": 16.26,
-  "date": "2026-07-23"
- }
 }
