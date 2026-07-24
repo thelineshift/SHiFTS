@@ -10,32 +10,34 @@
     "FULL #\ud83e\uddeashift-lab id=1530243311409823774 | shift#8676: \ud83d\udd12 [DRY RUN] **LOCK \u2014 1 play(s) this window** \\n \u25ab\ufe0f **Privateer Gaming ML vs Misa Esports \u2014 1.0u** (CCT Europe Bo3, 01:00 PM ET) \\n    _4-1 last 5 (beat Bushido Wildcats, megoshort, mellren) (lost to Pitstop crew) vs 3-2_"
   ],
   "time_audit": {
-    "at": "2026-07-24 16:42 UTC",
+    "at": "2026-07-24 17:11 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-8-1": "2026-07-24 12:15 UTC",
     "\ud83e\uddfereceipts": "2026-07-24 01:45 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-24 16:25 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-24 16:42 UTC",
     "\ud83c\udfc6100-to-1000-20": "2026-07-24 07:34 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-24 16:33 UTC"
+    "\ud83c\udf81giveaway": "2026-07-24 16:42 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 16:42 UTC",
-    "flags": []
+    "at": "2026-07-24 17:11 UTC",
+    "flags": [
+      "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
+    ]
   },
   "challenge_watch": {
-    "at": "2026-07-24 16:42 UTC",
+    "at": "2026-07-24 17:11 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 16:42 UTC",
+    "at": "2026-07-24 17:11 UTC",
     "flags": []
   },
-  "bot_version": "9.4.0",
+  "bot_version": "9.4.1",
   "unannounced_results": [],
   "last_x_receipt_ts": 1784867411.9636893,
   "last_recap_date": "2026-07-23",
