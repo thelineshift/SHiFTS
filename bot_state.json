@@ -39,6 +39,24 @@
       "units": -1.5,
       "score": "Rays 1, Blue Jays 3",
       "tier": "sharp"
+    },
+    {
+      "id": "stl-ml-0723",
+      "desc": "Cardinals ML",
+      "odds": -123,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "Arizona Diamondbacks 10, St. Louis Cardinals 6",
+      "tier": "lock"
+    },
+    {
+      "id": "ari-stl-o75-0723",
+      "desc": "Diamondbacks/Cardinals Over 7.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Arizona Diamondbacks 10, St. Louis Cardinals 6",
+      "tier": "free"
     }
   ],
   "last_x_receipt_ts": 1784839026.6286016,
