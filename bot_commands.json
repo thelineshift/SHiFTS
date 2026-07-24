@@ -1,5 +1,5 @@
 {
-  "seq": 316,
+  "seq": 317,
   "commands": [
     {
       "seq": 163,
@@ -1033,6 +1033,12 @@
       "contains": "Ankalaev ML 2u (UFC Sat)",
       "limit": 60,
       "max": 2
+    },
+    {
+      "seq": 317,
+      "action": "read_recent",
+      "channel": "general-chat",
+      "limit": 40
     }
   ]
 }
