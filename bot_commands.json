@@ -1,5 +1,5 @@
 {
-  "seq": 350,
+  "seq": 352,
   "commands": [
     {
       "seq": 163,
@@ -1227,6 +1227,16 @@
     {
       "seq": 350,
       "action": "x_link_start"
+    },
+    {
+      "action": "scan_now",
+      "dry": false,
+      "seq": 351
+    },
+    {
+      "action": "set_username",
+      "name": "shift",
+      "seq": 352
     }
   ]
 }
