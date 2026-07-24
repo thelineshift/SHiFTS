@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.5'
+BOT_VERSION = '9.9.6'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -232,6 +232,47 @@ def _erc20_balance(chain, token, addr):
     data = '0x70a08231' + '0' * 24 + addr[2:].lower()
     return int(_evm_call(chain, 'eth_call', [{'to': token, 'data': data}, 'latest']), 16) / 1e6
 
+BLOCKSCOUT = {
+    'ethereum': 'https://eth.blockscout.com',
+    'base': 'https://base.blockscout.com',
+    'polygon': 'https://polygon.blockscout.com',
+}
+
+def _bs_get(url):
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) shift-ops/1.0'})
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.load(r)
+
+def _evm_native(chain, addr):
+    """Native balance + usd via Ankr (if keyed) -> Blockscout -> public RPCs. Returns (balance, price_or_None)."""
+    ankr = os.environ.get('ANKR_KEY', '')
+    if ankr:
+        try:
+            b = _http_json(f'https://rpc.ankr.com/multichain/{ankr}',
+                           {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addr, 'latest']}, timeout=12)
+            if b.get('result') is not None:
+                return int(b['result'], 16) / 1e18, None
+        except Exception:
+            pass
+    bs = BLOCKSCOUT.get(chain)
+    if bs:
+        r = _bs_get(f'{bs}/api/v2/addresses/{addr}')
+        rate = float(r.get('exchange_rate') or 0) or None
+        return int(r.get('coin_balance') or 0) / 1e18, rate
+    return int(_evm_call(chain, 'eth_getBalance', [addr, 'latest']), 16) / 1e18, None
+
+def _evm_usdc_polygon(addr):
+    """USDC.e + native USDC on Polygon: Blockscout token balances, else eth_call."""
+    syms = {'0x2791bca1f2de4661ed88a30c99a7a9449aa84174', '0x3c499c542cef5e3811e1192ce70d8cc03d5c3359'}
+    try:
+        toks = _bs_get(f'{BLOCKSCOUT["polygon"]}/api/v2/addresses/{addr}/token-balances') or []
+        tot = sum(int(t.get('value') or 0) / 1e6 for t in toks
+                  if ((t.get('token') or {}).get('address') or '').lower() in syms)
+        return round(tot, 2)
+    except Exception:
+        return round(_erc20_balance('polygon', USDC_E_POLYGON, addr)
+                     + _erc20_balance('polygon', USDC_POLYGON, addr), 2)
+
 def polymarket_status():
     """Polymarket US account snapshot for the ops dashboard. Never raises."""
     out = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'configured': False}
@@ -282,16 +323,15 @@ def wallet_balances():
                     for cname, (sym, px_id, _r) in EVM_RPCS.items():
                         c = {'chain': cname, 'symbol': sym}
                         try:
-                            bal = int(_evm_call(cname, 'eth_getBalance', [addr, 'latest']), 16) / 1e18
-                            usd_v = bal * (px.get(px_id) or {}).get('usd', 0)
+                            bal, rate = _evm_native(cname, addr)
+                            usd_v = bal * (rate if rate else (px.get(px_id) or {}).get('usd', 0))
                             c.update(balance=round(bal, 6), usd=round(usd_v, 2))
                             tot += usd_v
                         except Exception as e:
                             c.update(balance=None, usd=None, error=str(e)[:80])
                         if cname == 'polygon':
                             try:
-                                c['usdc'] = round(_erc20_balance('polygon', USDC_E_POLYGON, addr)
-                                                  + _erc20_balance('polygon', USDC_POLYGON, addr), 2)
+                                c['usdc'] = _evm_usdc_polygon(addr)
                                 tot += c['usdc']
                             except Exception as e:
                                 c['usdc_error'] = str(e)[:60]
@@ -299,7 +339,7 @@ def wallet_balances():
                     entry['evm'] = chains
                     entry.update(balance=None, usd=round(tot, 2))
                     if all(c.get('error') for c in chains):
-                        entry['error'] = 'all evm rpcs unreachable'
+                        entry['error'] = 'all evm sources unreachable'
                 elif ch == 'bitcoin':
                     b = _http_json(f'https://blockstream.info/api/address/{addr}')
                     bal = (b['chain_stats']['funded_txo_sum'] - b['chain_stats']['spent_txo_sum']) / 1e8
