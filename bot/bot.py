@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.2.0'
+BOT_VERSION = '9.3.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -377,7 +377,7 @@ def make_client(privileged=True):
                     if str(message.id) not in st_g.get('gw_handled', []):
                         await gw_mark_handled(st_g, message.id)
                         await asyncio.to_thread(gh_put, 'bot_state.json', st_g, 'gw handled')
-                        await gw_reply_once(message, 'guide', "⚡ Drop your **X (Twitter) handle** like `@yourhandle` — not your Discord name — and I'll scan you in. Entry needs: follow @TheLineShift + like + repost the giveaway post. 🎫")
+                        await gw_reply_once(message, 'guide', "⚡ Drop your **X (Twitter) handle** like `@yourhandle` — not your Discord name — and I'll scan you in. " + GW_STEPS.format(link=gw_post_link(st_g)) + " 🎫")
                 return
             # @mention responder: anyone who tags SHiFT gets a reply; commands stay admin/queue-only
             try:
@@ -715,6 +715,13 @@ def entry_checklist(handle, followed, liked, reposted):
     return lines, missing
 
 GW_BAD = ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i', 'yourhandle')
+GW_POST_DEFAULT = '2080027230839931367'
+
+def gw_post_link(st):
+    pid = (st or {}).get('giveaway_x_post', GW_POST_DEFAULT)
+    return f'https://x.com/TheLineShift/status/{pid}'
+
+GW_STEPS = "Entry needs 3 steps on X: ✅ Follow @TheLineShift · ❤️ Like the giveaway post · 🔁 Repost it — this exact one: {link}"
 
 def gw_handle_parse(raw):
     """Extract an X handle from free text: @name (space ok), x.com/name, 'x handle: name'."""
@@ -801,7 +808,7 @@ async def verify_giveaway_entry(message, handle):
         else:
             steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else 'X is still registering your activity —'
             await gw_reply_once(message, 'steps',
-                f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. ⚡")
+                f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} — do them on **this exact post**: {gw_post_link(state)}\nThen drop your handle here again and I'll re-scan you in seconds. ⚡")
     except Exception as e:
         print('giveaway verify error:', e)
 
@@ -859,7 +866,9 @@ async def catchup_sweep(g0):
                 if hs[0].lower() in conf:
                     await gw_mark_handled(st_g, m.id)
                     dirty = True
-                    continue  # already entered — silent
+                    await gw_reply_once(m, 'already', f"🎫 **@{hs[0]}** — you're already entered in Sunday's $50 draw (6 PM ET). Nothing else to do — good luck! ⚡")
+                    done += 1
+                    continue  # already entered — confirm once, then move on
                 await gw_mark_handled(st_g, m.id)
                 dirty = True
                 try:
@@ -2095,6 +2104,107 @@ async def run_command(cmd, guild, log):
         _SCAN_DONE.add(slot_key)
         await scan_engine_run(guild, slot_key, dry_run)
         log.append(f'scan_now executed (dry={dry_run})')
+    elif a == 'list_perms':
+        # dump channel + thread overwrites for @everyone and role-gates
+        lines = []
+        for chx in guild.text_channels:
+            ow = chx.overwrites_for(guild.default_role)
+            gates = [r.name for r in chx.overwrites if hasattr(r, 'name') and r != guild.default_role and not r.is_bot_managed()]
+            lines.append(f"#{chx.name}: everyone(view={ow.view_channel},send={ow.send_messages},threads={ow.create_public_threads},files={ow.attach_files})" + (f" gates={gates[:4]}" if gates else ''))
+        thr = []
+        for t in guild.threads:
+            thr.append(f"thread '{t.name}' in #{getattr(t.parent, 'name', '?')} (id={t.id})")
+        log.append('PERMS:\n' + '\n'.join(lines) + ('\nTHREADS: ' + ' | '.join(thr) if thr else '\nTHREADS: none'))
+    elif a == 'lock_channel':
+        ch = find_channel(guild, cmd['channel'])
+        preset = cmd.get('preset', 'community')
+        if not ch:
+            log.append('lock_channel: channel not found')
+            return
+        everyone = guild.default_role
+        if preset == 'readonly':
+            await ch.set_permissions(everyone, view_channel=True, send_messages=False,
+                                     create_public_threads=False, create_private_threads=False,
+                                     attach_files=False, add_reactions=True, mention_everyone=False)
+        elif preset == 'community':
+            await ch.set_permissions(everyone, view_channel=True, send_messages=True,
+                                     create_public_threads=False, create_private_threads=False,
+                                     attach_files=False, add_reactions=True, use_external_emojis=True,
+                                     embed_links=True, mention_everyone=False, manage_messages=False,
+                                     read_message_history=True)
+        elif preset == 'paid':
+            role = discord.utils.find(lambda r: cmd.get('role', '').lower() in r.name.lower(), guild.roles)
+            if not role:
+                log.append(f'lock_channel: role {cmd.get("role")} not found')
+                return
+            await ch.set_permissions(everyone, view_channel=False)
+            await ch.set_permissions(role, view_channel=True, send_messages=True,
+                                     create_public_threads=False, create_private_threads=False,
+                                     attach_files=False, add_reactions=True, use_external_emojis=True,
+                                     mention_everyone=False, manage_messages=False, read_message_history=True)
+        # bot keeps full control
+        await ch.set_permissions(guild.me, view_channel=True, send_messages=True, manage_messages=True,
+                                 manage_channels=True, read_message_history=True, manage_threads=True)
+        log.append(f'lock_channel: #{ch.name} -> {preset}' + (f' ({cmd.get("role")})' if preset == 'paid' else ''))
+    elif a == 'delete_channel':
+        tgt = None
+        cid = str(cmd.get('id', ''))
+        if cid:
+            tgt = guild.get_channel(int(cid)) or discord.utils.find(lambda t: str(t.id) == cid, guild.threads)
+        else:
+            name = (cmd.get('channel') or '').lower().lstrip('#')
+            tgt = discord.utils.find(lambda t: name in t.name.lower(), guild.threads) or find_channel(guild, cmd.get('channel', ''))
+        if tgt:
+            nm = tgt.name
+            await tgt.delete()
+            log.append(f'deleted channel/thread: {nm}')
+        else:
+            log.append('delete_channel: not found')
+    elif a == 'withdraw_sol':
+        # ops-wallet SOL withdrawal. Queue-only (ops-gated). Requires confirm=YES.
+        if cmd.get('confirm') != 'YES':
+            log.append('withdraw_sol: missing confirm=YES — aborted')
+            return
+        to = (cmd.get('to') or '').strip()
+        try:
+            sol = float(cmd.get('sol'))
+        except Exception:
+            log.append('withdraw_sol: bad amount')
+            return
+        if sol <= 0 or sol > 50:
+            log.append('withdraw_sol: amount out of bounds (0<x<=50)')
+            return
+        try:
+            from solders.keypair import Keypair
+            from solders.pubkey import Pubkey
+            from solders.system_program import transfer, TransferParams
+            from solders.transaction import Transaction
+            from solders.hash import Hash as SHash
+            sec = await asyncio.to_thread(gh_get_json_ref, 'wallets_secret.json', QUEUE_BRANCH)
+            kp = Keypair.from_bytes(bytes.fromhex(sec['solana']['secret_hex']))
+            dest = Pubkey.from_string(to)
+            lamports = int(sol * 1_000_000_000)
+            def _rpc(method, params):
+                body = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': method, 'params': params}).encode()
+                req = urllib.request.Request('https://solana-rpc.publicnode.com', data=body,
+                                             headers={'Content-Type': 'application/json', 'User-Agent': 'shift-ops'})
+                return json.loads(urllib.request.urlopen(req, timeout=20).read())
+            bal = (await asyncio.to_thread(_rpc, 'getBalance', [str(kp.pubkey())])).get('result', {}).get('value', 0)
+            if bal < lamports + 5000:
+                log.append(f'withdraw_sol: insufficient balance ({bal/1e9:.4f} SOL)')
+                return
+            bh = (await asyncio.to_thread(_rpc, 'getLatestBlockhash', [{'commitment': 'finalized'}]))['result']['value']['blockhash']
+            ix = transfer(TransferParams(from_pubkey=kp.pubkey(), to_pubkey=dest, lamports=lamports))
+            tx = Transaction.new_signed_with_payer([ix], kp.pubkey(), [kp], SHash.from_string(bh))
+            sig = (await asyncio.to_thread(_rpc, 'sendTransaction',
+                   [base64.b64encode(bytes(tx)).decode(), {'encoding': 'base64', 'skipPreflight': False}])).get('result')
+            msg = f'💸 WITHDRAW SOL — {sol} SOL -> {to} | sig: {sig} | solscan.io/tx/{sig}'
+            lab = find_channel(guild, 'shift-lab')
+            if lab:
+                await lab.send(msg)
+            log.append(msg)
+        except Exception as e:
+            log.append(f'withdraw_sol FAIL: {e}')
     elif a == 'enter_giveaway':
         # ops-driven entry: verify handle via bearer, write conf, post tagged result
         ch = find_channel(guild, 'giveaway')
@@ -2154,7 +2264,7 @@ async def run_command(cmd, guild, log):
                 if not uid:
                     await ch.send(f"{ping} ⚡ entry check: I can't find an X account **@{handle}** — double-check the spelling and drop it again.")
                 else:
-                    await ch.send(f"{ping} 🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\nFinish the ❌ steps and drop your handle again — I'll re-scan you in seconds. (Provisional ticket logged meanwhile.) ⚡")
+                    await ch.send(f"{ping} 🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\nFinish the ❌ steps on **this exact post**: {gw_post_link(st_g)} — then drop your handle again and I'll re-scan you in seconds. (Provisional ticket logged meanwhile.) ⚡")
             log.append(f'{hk}: {note}')
     elif a == 'read_recent':
         n = int(cmd.get('limit', 4))
@@ -3584,11 +3694,28 @@ def se_get(url, timeout=12):
 # All leagues the engine checks every scan. Offseason leagues return empty -> the pool
 # naturally fills with whatever is live (esports carries slow days per CROSS-SPORT LAW).
 SE_SPORTS = {'mlb': 'baseball/mlb', 'wnba': 'basketball/wnba', 'mls': 'soccer/usa.1',
-             'nfl': 'football/nfl', 'ncaaf': 'football/college-football',
+             'nfl': 'football/nfl', 'ncaaf': 'football/college-football', 'cfl': 'football/cfl',
              'nba': 'basketball/nba', 'ncaab': 'basketball/mens-college-basketball',
-             'nhl': 'hockey/nhl', 'ufc': 'mma/ufc'}
-SE_HOME_ADV = {'mlb': 0.030, 'wnba': 0.045, 'mls': 0.045, 'nfl': 0.020, 'ncaaf': 0.030,
-               'nba': 0.030, 'ncaab': 0.035, 'nhl': 0.025, 'ufc': 0.0}
+             'nhl': 'hockey/nhl', 'ufc': 'mma/ufc',
+             'epl': 'soccer/eng.1', 'laliga': 'soccer/esp.1', 'ucl': 'soccer/uefa.champions'}
+# Schedule-aware sports: ESPN carries the tournament shell only (no matchups/odds).
+# Edge pricing for these activates when an odds API key is present (se_oddsapi_*).
+SE_AWARE = {'golf': 'golf/pga/scoreboard', 'atp': 'tennis/atp/scoreboard', 'wta': 'tennis/wta/scoreboard'}
+SE_HOME_ADV = {'mlb': 0.030, 'wnba': 0.045, 'mls': 0.045, 'nfl': 0.020, 'ncaaf': 0.030, 'cfl': 0.025,
+               'nba': 0.030, 'ncaab': 0.035, 'nhl': 0.025, 'ufc': 0.0,
+               'epl': 0.040, 'laliga': 0.040, 'ucl': 0.030}
+
+def se_aware_live(dates):
+    """Names of schedule-aware tournaments live right now (golf/tennis shells)."""
+    live = []
+    for name, path in SE_AWARE.items():
+        try:
+            d = se_get('https://site.api.espn.com/apis/site/v2/sports/%s?dates=%s' % (path, dates))
+            for e in d.get('events', [])[:2]:
+                live.append(f"{e.get('name', name.upper())} ({name.upper()})")
+        except Exception:
+            continue
+    return live
 
 def se_rec(summary):
     """'64-38' -> (winpct, games)."""
@@ -3805,6 +3932,9 @@ async def scan_engine_run(g0, slot_key, dry):
     # ---- deal tiers (whale-first), per-scan caps: whale 2 / sharp 2 / lock 1 / free 1
     deal = {'whale': cands[0:2], 'sharp': cands[2:4], 'lock': cands[4:5], 'free': cands[5:6]}
     slate_s = ' · '.join(f"{k.upper()} {v}" for k, v in sorted(pulled.items()) if v)
+    aware = await asyncio.to_thread(se_aware_live, time.strftime('%Y%m%d', time.gmtime()))
+    if aware:
+        slate_s += (' · ' if slate_s else '') + 'on radar: ' + ', '.join(aware)
     if not cands:
         await gen.send(f"⚠️ {tag}Thin window — checked {slate_s or 'all leagues'} plus esports: no edge plays in the next 4 hours. We don't force bets. Next sweep in 4h. ⚡" if not dry else
                        f"{tag}would post thin-window resolution (checked: {slate_s})")
