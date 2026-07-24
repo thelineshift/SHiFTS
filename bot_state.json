@@ -32,18 +32,8 @@
     "flags": []
   },
   "bot_version": "8.9.53",
-  "unannounced_results": [
-    {
-      "id": "det-ml-0723",
-      "desc": "Tigers ML",
-      "odds": -237,
-      "result": "WIN",
-      "units": 0.42,
-      "score": "Kansas City Royals 3, Detroit Tigers 4",
-      "tier": "sharp"
-    }
-  ],
-  "last_x_receipt_ts": 1784863811.3208983,
+  "unannounced_results": [],
+  "last_x_receipt_ts": 1784867411.9636893,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
