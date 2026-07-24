@@ -1,5 +1,5 @@
 {
- "seq": 302,
+ "seq": 303,
  "commands": [
   {
    "seq": 163,
@@ -899,6 +899,13 @@
    "action": "guild_map",
    "seq": 302,
    "ts": "2026-07-24T07:07:46Z"
+  },
+  {
+   "action": "read_recent",
+   "channel": "all",
+   "limit": 3,
+   "seq": 303,
+   "ts": "2026-07-24T07:07:48Z"
   }
  ]
 }
