@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.3.4'
+BOT_VERSION = '9.4.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4005,39 +4005,65 @@ async def scan_engine_run(g0, slot_key, dry):
                        f"{tag}would post thin-window resolution (checked: {slate_s})")
         return
     picks_out = []
+    slot_et = (datetime.datetime.utcfromtimestamp(now_ts) - datetime.timedelta(hours=4)).strftime('%I %p ET').lstrip('0')
+    def _nxt_et():
+        h = int(time.strftime('%H', time.gmtime(now_ts)))
+        nxt = next((s for s in SCAN_SLOTS_UTC if s > h), 0)
+        et = (nxt - 4) % 24
+        return f"{et % 12 or 12} {'AM' if et < 12 else 'PM'} ET"
+    def _why(p, rank):
+        team = p['pick'][:-3] if p['pick'].endswith(' ML') else p['pick']
+        edge_pct = round(p['edge'] * 100)
+        if p['sport'] in ('cs2', 'lol', 'dota2', 'valorant'):
+            lead = 'Widest form gap on this slate' if rank == 0 else 'One of the widest form gaps this window'
+            return f"🧠 **Why it's the play:** {lead} — {team} is rolling ({p.get('analysis','')}). A {edge_pct}-point form edge over {p['vs']}."
+        lead = 'Biggest pricing edge of the window' if rank == 0 else 'The book is off on this number'
+        return f"🧠 **Why it's the play:** {lead} — {p.get('analysis','')}. That's a {edge_pct}-point edge in our favor."
+    rank_of = {id(p): i for i, p in enumerate(cands)}
+    upg_ch = find_channel(g0, 'upgrade')
+    upg_ment = f'<#{upg_ch.id}>' if upg_ch else '#upgrade'
     for tier in ('whale', 'sharp', 'lock', 'free'):
         plays = deal[tier]
-        if not plays:
-            continue
         room = lab if dry else find_channel(g0, SCAN_ROOMS[tier])
         if not room:
             continue
         emo = {'whale': '🐋', 'sharp': '📊', 'lock': '🔒', 'free': '🎯'}[tier]
+        if not plays:
+            if tier == 'free':
+                paid = sum(len(deal[t]) for t in ('lock', 'sharp', 'whale'))
+                extra = f" The paid rooms took {paid} plays — the best free-qualified edge just didn't clear our bar." if paid else ''
+                await room.send(f"🎯 {tag}**FREE PICK — {slot_et}**\n\nNo free play this window — nothing met our edge bar, and we don't force bets.{extra} Next scan **{_nxt_et()}**.\n💎 Want every edge, every window? → {upg_ment} ⚡")
+            continue
         lines = []
-        for p in plays:
+        for n, p in enumerate(plays, 1):
             odds_s = f" ({p['odds']})" if p['odds'] else ''
-            lines.append(f"{emo if tier == 'free' else '▫️'} **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u** ({p['market']}, {_et(p['start'])})\n   _{p.get('analysis','')}_")
+            lines.append(f"{n}\u20e3 **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u**\n"
+                         f"{p['market']} · {_et(p['start'])}\n"
+                         f"📊 {p.get('analysis','')}\n"
+                         f"{_why(p, rank_of.get(id(p), n))}")
             picks_out.append({'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}", 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
                               'sport': p['sport'], 'desc': p['pick'], 'market': p['market'], 'odds': p['odds'],
                               'units': p['units'], 'tier': tier, 'time_et': _et(p['start']),
-                              'analysis': p.get('analysis', 'bot engine v9.1')})
+                              'analysis': (p.get('analysis', '') + ' | ' + _why(p, rank_of.get(id(p), n)).replace('🧠 **Why it\'s the play:** ', ''))[:300]})
+        body = f"{emo} {tag}**{tier.upper()} ROOM — {slot_et} CARD** ({len(plays)} play{'s' if len(plays) > 1 else ''})\n\n" + '\n\n'.join(lines)
         if tier == 'free':
-            body = f"🎯 {tag}**FREE PICK — {_et(plays[0]['start'])}**\n" + '\n'.join(lines) + \
-                   "\n\n🎁 Sunday 6 PM ET — $50 SOL draw. Want the whole board? 🔒 2 plays/day · 📊 4 · 🐋 full 7 — Whale eats first. thelineshift.github.io/AISportsBot/upgrade.html"
-        else:
-            body = f"{emo} {tag}**{tier.upper()} — {len(plays)} play(s) this window**\n" + '\n'.join(lines)
+            cnts = ' · '.join(f"{e} +{len(deal[t])}" for t, e in (('lock', '🔒'), ('sharp', '📊'), ('whale', '🐋')) if deal[t])
+            body += f"\n\n💎 Full board live now ({cnts}) → {upg_ment}\n🎁 Sunday 6 PM ET — $50 SOL draw, entry in the giveaway room. ⚡"
         await room.send(body)
         await asyncio.sleep(1)
-    # ---- sanitized complete in general chat (NO-LEAK LAW) — compact format (7/24)
+    # ---- sanitized complete in general chat (NO-LEAK LAW) — clickable tags + upgrade funnel
     free_p = deal['free'][0] if deal['free'] else None
-    slot_et = (datetime.datetime.utcfromtimestamp(now_ts) - datetime.timedelta(hours=4)).strftime('%I %p ET').lstrip('0')
-    comp = f"✅ {tag}**SCAN COMPLETE — {slot_et}**\n"
+    free_ch = find_channel(g0, SCAN_ROOMS['free'])
+    fp_ment = f'<#{free_ch.id}>' if free_ch else '#free-pick'
+    comp = f"✅ {tag}**SCAN COMPLETE — {slot_et}**\n\n"
     if free_p:
-        comp += f"🎯 FREE: **{free_p['pick']} vs {free_p['vs']} — {free_p['units']}u** ({_et(free_p['start'])})\n"
+        comp += f"🎯 **FREE: {free_p['pick']} vs {free_p['vs']} — {free_p['units']}u** ({_et(free_p['start'])}) → live in {fp_ment}\n"
+    else:
+        comp += f"🎯 No free play this window — nothing met our edge bar, and we don't force bets. Next scan **{_nxt_et()}**.\n"
     cnts = ' · '.join(f"{e} +{len(deal[t])}" for t, e in (('lock', '🔒'), ('sharp', '📊'), ('whale', '🐋')) if deal[t])
     if cnts:
-        comp += f"{cnts} — live in their rooms\n"
-    comp += "Every play before start. Every result receipted. ⚡"
+        comp += f"\n{cnts} — the full board is live in the paid rooms.\n💎 Want every play? → {upg_ment}\n"
+    comp += "\nEvery play before start. Every result receipted. ⚡"
     await gen.send(comp)
     # ---- register + mark
     if not dry:
