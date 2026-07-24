@@ -1,5 +1,5 @@
 {
-  "seq": 352,
+  "seq": 353,
   "commands": [
     {
       "seq": 163,
@@ -1237,6 +1237,12 @@
       "action": "set_username",
       "name": "shift",
       "seq": 352
+    },
+    {
+      "seq": 353,
+      "action": "read_recent",
+      "channel": "general-chat",
+      "limit": 6
     }
   ]
 }
