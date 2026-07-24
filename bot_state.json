@@ -35,15 +35,6 @@
   "bot_version": "9.7.7",
   "unannounced_results": [
     {
-      "id": "g2-koi-ml-0724",
-      "desc": "G2 Esports ML",
-      "odds": null,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "G2 Esports vs opponent \u2014 win",
-      "tier": "free"
-    },
-    {
       "id": "oddik-bh-ml-0724",
       "desc": "ODDIK ML",
       "odds": null,
@@ -71,7 +62,7 @@
       "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1784920263.8846037,
+  "last_x_receipt_ts": 1784922820.6683996,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
