@@ -98,10 +98,31 @@
   .refresh{cursor:pointer;background:var(--card);border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:5px 12px;font-size:11px}
   .refresh:hover{color:var(--teal);border-color:var(--teal)}
   .chart-box{position:relative;height:230px}
-</style>
-</head>
-<body>
 
+  /* ── tabs ── */
+  .tabbar{position:sticky;top:57px;z-index:40;background:#0a1420ee;backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+    display:flex;gap:4px;padding:8px 20px;overflow-x:auto}
+  .tabbtn{background:none;border:1px solid transparent;color:var(--dim);font-size:12px;font-weight:700;letter-spacing:.8px;
+    padding:8px 16px;border-radius:10px;cursor:pointer;white-space:nowrap;text-transform:uppercase}
+  .tabbtn:hover{color:var(--txt)}
+  .tabbtn.active{background:var(--teal-dim);color:var(--teal);border-color:#2dd4bf44}
+  .tabpage{display:none}
+  .tabpage.active{display:block;animation:fadein .25s}
+  @keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+  /* ── freshness ── */
+  .age{font-size:10px;padding:2px 8px;border-radius:10px;letter-spacing:.5px}
+  .age.ok{background:#34d39922;color:var(--green)} .age.warn{background:#f5c51822;color:var(--gold)} .age.bad{background:#ff5c7a22;color:var(--red)}
+  .chain-row{display:flex;align-items:center;gap:10px;padding:7px 8px;border-bottom:1px solid #16304e;font-size:12px}
+  .chain-row:last-child{border-bottom:none}
+  .chain-row .cn{min-width:74px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+  .chain-row .cv{margin-left:auto;text-align:right}
+  .errtxt{color:var(--red);font-size:10px}
+  .pm-kpis{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .pm-kpi{flex:1;min-width:130px;background:#0b1826;border:1px solid var(--line);border-radius:10px;padding:12px}
+  .pm-kpi .l{font-size:10px;letter-spacing:1px;color:var(--dim);text-transform:uppercase}
+  .pm-kpi .v{font-size:22px;font-weight:800;margin-top:3px}
+</style>
+</head><body>
 <div id="gate" style="position:fixed;inset:0;z-index:9999;background:#0a1420;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px">
   <div style="font-size:26px;font-weight:900">⚡ SHiFT <span style="color:#2dd4bf">OPS</span></div>
   <div style="color:#8ba7c4;font-size:13px;letter-spacing:1px">ADMIN ACCESS ONLY</div>
@@ -116,46 +137,66 @@
   <div class="brand"><span class="pulse"></span>⚡ SHiFT OPS <small>THELINESHIFT COMMAND CENTER</small></div>
   <div class="links">
     <a class="qlink" href="https://x.com/TheLineShift" target="_blank">𝕏 @TheLineShift</a>
-    <a class="qlink" href="https://console.x.com" target="_blank">🛠 X Dev Console</a>
     <a class="qlink" href="https://discord.gg/8bBxWUJCYT" target="_blank">💬 Discord</a>
+    <a class="qlink" href="https://app.polymarket.us" target="_blank">🎲 Polymarket</a>
     <a class="qlink" href="https://dashboard.stripe.com" target="_blank">💳 Stripe</a>
     <a class="qlink" href="https://thelineshift.github.io/AISportsBot/upgrade.html" target="_blank">🛒 Store</a>
     <a class="qlink" href="https://railway.app/dashboard" target="_blank">🚂 Railway</a>
     <a class="qlink" href="https://github.com/thelineshift/AISportsBot" target="_blank">🐙 GitHub</a>
-    <a class="qlink" href="https://www.hltv.org/matches" target="_blank">🎮 HLTV</a>
-    <a class="qlink" href="https://gol.gg" target="_blank">⚔️ gol.gg</a>
+    <a class="qlink" href="https://console.x.com" target="_blank">🛠 X Dev</a>
   </div>
 </div>
-
+<div class="tabbar">
+  <button class="tabbtn active" data-tab="overview" onclick="showTab('overview')">📊 Overview</button>
+  <button class="tabbtn" data-tab="board" onclick="showTab('board')">🎯 Board</button>
+  <button class="tabbtn" data-tab="challenge" onclick="showTab('challenge')">🏆 Challenge</button>
+  <button class="tabbtn" data-tab="wallets" onclick="showTab('wallets')">👛 Wallets</button>
+  <button class="tabbtn" data-tab="community" onclick="showTab('community')">🎁 Community</button>
+  <button class="tabbtn" data-tab="system" onclick="showTab('system')">⚙️ System</button>
+</div>
 <div class="wrap">
-  <div class="kpis" id="kpis"></div>
 
-  <div class="grid g-charts">
-    <div class="panel"><h2>📈 Cumulative Units <span class="tag" id="unitsTag">—</span></h2><div class="chart-box"><canvas id="chUnits"></canvas></div></div>
-    <div class="panel"><h2>📊 Business Trends <span class="tag">followers · members · subs</span></h2><div class="chart-box"><canvas id="chBiz"></canvas></div></div>
-  </div>
-
-  <div class="grid g-mid">
+  <section class="tabpage active" id="tab-overview">
+    <div class="kpis" id="kpis"></div>
+    <div class="grid g-charts">
+      <div class="panel"><h2>📈 Cumulative Units <span class="tag" id="unitsTag">—</span></h2><div class="chart-box"><canvas id="chUnits"></canvas></div></div>
+      <div class="panel"><h2>📊 Business Trends <span class="tag">followers · members · subs</span></h2><div class="chart-box"><canvas id="chBiz"></canvas></div></div>
+    </div>
     <div class="panel"><h2>🏆 Record by Tier <span class="tag" id="recTag">all time</span></h2><div id="tierTable"></div></div>
-    <div class="panel"><h2>💰 $100 → $1000 Challenge</h2><div id="challenge"></div></div>
-  </div>
+  </section>
 
-  <div class="panel" style="margin-bottom:16px"><h2>🎯 Today's Board <span class="tag" id="boardTag">—</span></h2><div id="board"></div></div>
+  <section class="tabpage" id="tab-board">
+    <div class="panel"><h2>🎯 Today's Board <span class="tag" id="boardTag">—</span></h2><div id="board"></div></div>
+  </section>
 
-  <div class="panel" style="margin-bottom:16px"><h2>👛 Hot Wallets <span class="tag" id="walTag">live on-chain balances</span></h2><div id="wallets"></div></div>
+  <section class="tabpage" id="tab-challenge">
+    <div class="grid g-mid">
+      <div class="panel"><h2>💰 $100 → $1000 Challenge <span class="tag">public ladder</span></h2><div id="challenge"></div></div>
+      <div class="panel"><h2>🎲 Polymarket US <span class="tag" id="pmTag">real-money rail</span></h2><div id="polymarket"></div></div>
+    </div>
+  </section>
 
-  <div class="grid g-bot">
-    <div class="panel"><h2>🎁 Giveaway <span class="tag" id="gwTag">draw Sun 6 PM ET</span></h2><div class="feed" id="giveaway"></div></div>
+  <section class="tabpage" id="tab-wallets">
+    <div class="panel"><h2>👛 Hot Wallets <span class="tag" id="walTag">live on-chain</span></h2><div id="wallets"></div></div>
+  </section>
+
+  <section class="tabpage" id="tab-community">
+    <div class="grid g-mid">
+      <div class="panel"><h2>🎁 Giveaway <span class="tag" id="gwTag">draw Sun 6 PM ET</span></h2><div class="feed" id="giveaway"></div></div>
+      <div class="panel"><h2>🛠️ Issues & Tickets <span class="tag" id="tkTag">—</span></h2><div class="feed" id="tickets"></div></div>
+    </div>
+  </section>
+
+  <section class="tabpage" id="tab-system">
+    <div class="panel" style="margin-bottom:16px"><h2>🩺 Feed Health <span class="tag">every data pipe this page reads</span></h2><div id="health"></div></div>
     <div class="panel"><h2>📡 Event Log <span class="tag">ops feed</span></h2><div class="feed" id="events"></div></div>
-    <div class="panel"><h2>🛠️ Issues & Tickets <span class="tag" id="tkTag">—</span></h2><div class="feed" id="tickets"></div></div>
-  </div>
+  </section>
 
   <div class="foot">
     <button class="refresh" onclick="loadAll(true)">↻ REFRESH</button>
     &nbsp;·&nbsp; auto-refresh 60s &nbsp;·&nbsp; <span id="lastFetch">never fetched</span>
   </div>
 </div>
-
 <script>
 /* ── PIN GATE (hardened v2 — works in iframes, in-app browsers, blocked storage) ── */
 const PIN_HASH = 'c47e82e01e20ad22f816159eb3c3c048308ffca5b116cfc0c9aaaf012ee5b729';
@@ -273,7 +314,7 @@ function resetIdle(){
 }
 try{ ['click','keydown','mousemove','touchstart'].forEach(e=>addEventListener(e, resetIdle, {passive:true})); }catch(e){}
 try{ document.getElementById('pin').addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); tryPin(); } }); }catch(e){}
-try{ if(sess.get('ops_ok')==='1') unlock(); }catch(e){}
+
 
 const RAW = 'https://raw.githubusercontent.com/thelineshift/AISportsBot';
 const FEEDS = {
@@ -285,6 +326,7 @@ const FEEDS = {
   issues:    RAW + '/commands/issues.json',
   confirmed: RAW + '/commands/giveaway_confirmed.json',
   wallets:   RAW + '/commands/wallet_balances.json',
+  polymarket: RAW + '/commands/polymarket.json',
 };
 const TIER_ORDER = ['free','lock','sharp','whale'];
 const TIER_LABEL = {free:'🆓 Free', lock:'🔒 Lock', sharp:'📊 Sharp', whale:'🐋 Whale', challenge:'🏆 Challenge'};
@@ -297,24 +339,14 @@ async function jget(url){
 }
 const fmtU = u => (u>0?'+':'') + (+u).toFixed(2) + 'u';
 const esc = s => String(s??'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-
-function graded(p){ return p.result==='WIN'||p.result==='LOSS'; }
-
-function tierStats(picks){
-  const out = {};
-  for(const t of [...TIER_ORDER,'challenge','overall']) out[t] = {w:0,l:0,u:0,stake:0};
-  for(const p of picks){
-    if(!graded(p)) continue;
-    const t = TIER_ORDER.includes(p.tier)||p.tier==='challenge' ? p.tier : 'free';
-    const pr = typeof p.profit==='number' ? p.profit : 0;
-    for(const k of [t,'overall']){
-      if(p.result==='WIN') out[k].w++; else out[k].l++;
-      out[k].u += pr; out[k].stake += (p.units||1);
-    }
-  }
-  return out;
+function ago(ts){
+  if(!ts) return '<span class="age bad">no data</span>';
+  const t = ts.length===10 ? ts+'T00:00:00Z' : (ts.endsWith('Z')||ts.includes('+')? ts : ts+'Z');
+  const s = (Date.now()-new Date(t).getTime())/1000;
+  if(isNaN(s)) return '<span class="age warn">?</span>';
+  const txt = s<90? 'just now' : s<3600? Math.floor(s/60)+'m ago' : s<86400? (s/3600).toFixed(1)+'h ago' : Math.floor(s/86400)+'d ago';
+  return `<span class="age ${s<1800?'ok':s<7200?'warn':'bad'}">${txt}</span>`;
 }
-
 function renderKPIs(picks, metrics, entries, confirmed, issues){
   const s = tierStats(picks).overall;
   const tot = s.w+s.l, wp = tot? (100*s.w/tot).toFixed(1) : '0.0';
@@ -342,6 +374,7 @@ function renderKPIs(picks, metrics, entries, confirmed, issues){
       <div class="val">${nConf}/${nEnt}</div><div class="sub">confirmed entries · ${openTk} open ticket${openTk===1?'':'s'}</div></div>`;
 }
 
+
 function renderUnitsChart(picks){
   const g = picks.filter(graded);
   let cum = 0;
@@ -358,6 +391,7 @@ function renderUnitsChart(picks){
   document.getElementById('unitsTag').textContent = fmtU(cum) + ' cumulative';
 }
 
+
 function renderBizChart(metrics){
   const snaps = ((metrics&&metrics.snapshots)||[]).slice(-60);
   const labels = snaps.map(s=> (s.ts||'').slice(5,16).replace('T',' '));
@@ -372,6 +406,7 @@ function renderBizChart(metrics){
       scales:{x:{ticks:{color:'#8ba7c4',maxTicksLimit:6}, grid:{color:'#16304e'}},
               y:{ticks:{color:'#8ba7c4'}, grid:{color:'#16304e'}}}}});
 }
+
 
 function renderTierTable(picks){
   const S = tierStats(picks);
@@ -391,6 +426,7 @@ function renderTierTable(picks){
     `<table><tr><th>Tier</th><th>Record</th><th>Win%</th><th>Units</th><th>ROI</th></tr>${rows}</table>`;
 }
 
+
 function renderChallenge(ch){
   if(!ch){ document.getElementById('challenge').innerHTML = '<div class="empty">no challenge data</div>'; return; }
   const pct = Math.max(0, Math.min(100, 100*(ch.balance-ch.bankrollStart)/(ch.goal-ch.bankrollStart)));
@@ -405,6 +441,7 @@ function renderChallenge(ch){
       <div style="color:var(--dim);font-size:11px;margin-top:4px">${esc(cur.time_et||'')} ET · ${esc(cur.date||'')}</div></div>`
     : '<div style="margin-top:14px;color:var(--dim);font-size:12px">no active bet</div>'}`;
 }
+
 
 function renderBoard(picks){
   const today = new Date().toISOString().slice(0,10);
@@ -424,20 +461,6 @@ function renderBoard(picks){
   }).join('');
 }
 
-function mergedEntries(entries, confirmed){
-  const map = {};
-  for(const e of ((entries&&entries.entries)||[])) map[String(e.handle).toLowerCase()] = {...e};
-  for(const [k,c] of Object.entries(confirmed||{})){
-    const key = String(c.handle||k).toLowerCase();
-    map[key] = {...(map[key]||{}), handle: c.handle||k, discord: c.discord||(map[key]||{}).discord||'—',
-                tier: (map[key]||{}).tier||'free', confirmed: true, ts: c.ts};
-  }
-  for(const [k,c] of Object.entries(confirmed||{})){
-    const key = String(c.handle||k).toLowerCase();
-    if(map[key]) map[key].confirmed = true;
-  }
-  return Object.values(map).sort((a,b)=>String(a.ts||'').localeCompare(String(b.ts||'')));
-}
 
 function renderGiveaway(entries, confirmed){
   const list = mergedEntries(entries, confirmed);
@@ -451,6 +474,7 @@ function renderGiveaway(entries, confirmed){
     ).join('') + '</table>';
 }
 
+
 function renderEvents(ev){
   const list = ((ev&&ev.events)||[]).slice().reverse();
   if(!list.length){ document.getElementById('events').innerHTML = '<div class="empty">no events logged yet</div>'; return; }
@@ -460,6 +484,7 @@ function renderEvents(ev){
       <span class="tp tp-${tp}">${esc(e.type)}</span><span>${esc(e.detail)}</span></div>`;
   }).join('');
 }
+
 
 function renderTickets(iss){
   const list = ((iss&&iss.tickets)||[]).slice().reverse();
@@ -475,25 +500,142 @@ function renderTickets(iss){
   ).join('');
 }
 
+
+function mergedEntries(entries, confirmed){
+  const map = {};
+  for(const e of ((entries&&entries.entries)||[])) map[String(e.handle).toLowerCase()] = {...e};
+  for(const [k,c] of Object.entries(confirmed||{})){
+    const key = String(c.handle||k).toLowerCase();
+    map[key] = {...(map[key]||{}), handle: c.handle||k, discord: c.discord||(map[key]||{}).discord||'—',
+                tier: (map[key]||{}).tier||'free', confirmed: true, ts: c.ts};
+  }
+  for(const [k,c] of Object.entries(confirmed||{})){
+    const key = String(c.handle||k).toLowerCase();
+    if(map[key]) map[key].confirmed = true;
+  }
+  return Object.values(map).sort((a,b)=>String(a.ts||'').localeCompare(String(b.ts||'')));
+}
+
+
+function tierStats(picks){
+  const out = {};
+  for(const t of [...TIER_ORDER,'challenge','overall']) out[t] = {w:0,l:0,u:0,stake:0};
+  for(const p of picks){
+    if(!graded(p)) continue;
+    const t = TIER_ORDER.includes(p.tier)||p.tier==='challenge' ? p.tier : 'free';
+    const pr = typeof p.profit==='number' ? p.profit : 0;
+    for(const k of [t,'overall']){
+      if(p.result==='WIN') out[k].w++; else out[k].l++;
+      out[k].u += pr; out[k].stake += (p.units||1);
+    }
+  }
+  return out;
+}
+
+
+function graded(p){ return p.result==='WIN'||p.result==='LOSS'; }
+
+
+/* ── tabs ── */
+function showTab(name){
+  document.querySelectorAll('.tabpage').forEach(s=>s.classList.toggle('active', s.id==='tab-'+name));
+  document.querySelectorAll('.tabbtn').forEach(b=>b.classList.toggle('active', b.dataset.tab===name));
+  try{ history.replaceState(null,'','#'+name); }catch(e){}
+  if(name==='overview'){ try{ charts.u&&charts.u.resize(); charts.b&&charts.b.resize(); }catch(e){} }
+}
+try{ const h=(location.hash||'').slice(1); if(h && document.getElementById('tab-'+h)) showTab(h); }catch(e){}
+
+/* ── wallets: SOL/BTC rows + per-chain EVM breakdown ── */
 function renderWallets(w){
   const el = document.getElementById('wallets');
   const list = (w && w.wallets) || [];
-  if(!list.length){ el.innerHTML = '<div class="empty">wallet feed offline — bot refreshes every 5 min</div>'; return; }
+  if(!list.length){ el.innerHTML = '<div class="empty">wallet feed offline — bot refreshes every 15 min</div>'; return; }
   const tot = list.reduce((a,x)=>a+(x.usd||0),0);
-  document.getElementById('walTag').textContent = `total ≈ $${tot.toFixed(2)} · updated ${(w.ts||'').slice(11,16)} UTC`;
-  el.innerHTML = list.map(x=>`
-    <div class="game">
+  document.getElementById('walTag').innerHTML = `total ≈ $${tot.toFixed(2)} · ${ago(w.ts)}`;
+  el.innerHTML = list.map(x=>{
+    let chains = '';
+    if(Array.isArray(x.evm)){
+      chains = `<div style="margin-top:8px;background:#0b1826;border:1px solid var(--line);border-radius:10px;padding:4px 8px">` +
+        x.evm.map(c=>`<div class="chain-row">
+          <span class="cn">${esc(c.chain)}</span>
+          ${c.error? `<span class="errtxt">⚠ ${esc(c.error)}</span>`
+            : `<span>${c.balance==null?'—':(+c.balance).toFixed(6)} ${esc(c.symbol)}</span>`}
+          ${c.usdc!=null? `<span style="color:var(--teal)">+ ${(+c.usdc).toFixed(2)} USDC</span>`:''}
+          ${c.usdc_error? `<span class="errtxt">usdc: ${esc(c.usdc_error)}</span>`:''}
+          <span class="cv">${c.usd!=null? '≈ $'+(+c.usd).toFixed(2) : ''}${c.usdc? (c.usd? ' +':'≈ ')+'$'+(+c.usdc).toFixed(2):''}</span>
+        </div>`).join('') + `</div>`;
+    }
+    return `<div class="game" style="align-items:flex-start">
       <div class="mu" style="flex:1;min-width:0">
         <div class="teams">${esc(x.label||'WALLET')} <span class="badge b-sharp">${esc(x.symbol||x.chain||'')}</span></div>
         <div class="pick" style="word-break:break-all">${esc(x.address||'')}</div>
         ${x.note? `<div style="color:var(--dim);font-size:11px;margin-top:2px">${esc(x.note)}</div>`:''}
+        ${chains}
       </div>
       <div style="text-align:right;white-space:nowrap;margin-left:12px">
-        ${x.error? '<span class="badge st-VOID">rpc hiccup — retrying</span>'
-          : `<div style="font-weight:800">${x.balance==null?'—':(+x.balance).toFixed(5)} ${esc(x.symbol||'')}</div>
+        ${x.error? `<span class="badge st-VOID" title="${esc(x.error)}">⚠ ${esc(x.error)}</span>`
+          : `${x.balance!=null? `<div style="font-weight:800">${(+x.balance).toFixed(5)} ${esc(x.symbol||'')}</div>`:''}
              <div style="color:var(--teal);font-size:12px">≈ $${x.usd==null?'0.00':(+x.usd).toFixed(2)}</div>`}
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
+}
+
+/* ── polymarket panel ── */
+function renderPolymarket(pm){
+  const el = document.getElementById('polymarket');
+  if(!pm){ el.innerHTML = '<div class="empty">polymarket feed offline — bot refreshes every 15 min</div>'; return; }
+  document.getElementById('pmTag').innerHTML = ago(pm.ts);
+  if(!pm.configured){ el.innerHTML = '<div class="empty">API key not configured on the bot</div>'; return; }
+  if(pm.error){ el.innerHTML = `<div class="empty">⚠ API error: ${esc(pm.error)}</div>`; return; }
+  const bal = pm.balance_usd ?? 0, bp = pm.buying_power ?? 0;
+  const pos = pm.positions||[], oo = pm.open_orders||[];
+  let inner = `<div class="pm-kpis">
+    <div class="pm-kpi"><div class="l">Account Balance</div><div class="v">$${(+bal).toFixed(2)}</div></div>
+    <div class="pm-kpi"><div class="l">Buying Power</div><div class="v">$${(+bp).toFixed(2)}</div></div>
+    <div class="pm-kpi"><div class="l">Open Positions</div><div class="v">${pos.length}</div></div>
+    <div class="pm-kpi"><div class="l">Open Orders</div><div class="v">${oo.length}</div></div></div>`;
+  if(bal < 1 && !pos.length){
+    inner += `<div style="color:var(--dim);font-size:12px;padding:10px;background:#0b1826;border:1px solid var(--line);border-radius:10px">
+      🔌 Pipe verified — account live, awaiting the $100 challenge deposit. Once funded, the 💵100→💰1000 ladder bets here for real.</div>`;
+  }
+  if(pos.length){
+    inner += `<table><tr><th>Market</th><th>Side</th><th>Qty</th><th>Avg</th><th>Mark</th><th>P&L</th></tr>` +
+      pos.map(p=>`<tr><td>${esc(p.title||p.market)}</td><td>${esc(p.side)}</td><td>${p.qty??'—'}</td>
+        <td>${p.avg??'—'}</td><td>${p.mark??'—'}</td>
+        <td class="${(p.pnl??0)>=0?'up':'dn'}">${p.pnl!=null? fmtU(p.pnl).replace('u',''):'—'}</td></tr>`).join('') + '</table>';
+  }
+  if(oo.length){
+    inner += `<div style="margin-top:10px;font-size:11px;color:var(--dim)">OPEN ORDERS</div><table><tr><th>Market</th><th>Intent</th><th>Price</th><th>Qty</th></tr>` +
+      oo.map(o=>`<tr><td>${esc(o.market)}</td><td>${esc(o.intent)}</td><td>${esc(o.price??'—')}</td><td>${o.qty??'—'}</td></tr>`).join('') + '</table>';
+  }
+  el.innerHTML = inner;
+}
+
+/* ── feed health ── */
+function renderHealth(out){
+  const rows = [];
+  const pickTs = ((out.picks&&out.picks.picks)||[]).slice(-1)[0];
+  const snaps = ((out.metrics&&out.metrics.snapshots)||[]);
+  const evs = ((out.events&&out.events.events)||[]);
+  const tks = ((out.issues&&out.issues.tickets)||[]);
+  const ents = ((out.entries&&out.entries.entries)||[]);
+  const feeds = [
+    ['picks', 'main', pickTs && (pickTs.date||'') , pickTs? 'last pick '+esc(pickTs.date||'') : '—', out.picks],
+    ['challenge', 'main', null, 'balance $'+(((out.challenge||{}).balance)??'—'), out.challenge],
+    ['giveaway_entries', 'main', null, ents.length+' entries', out.entries],
+    ['metrics', 'commands', snaps.length? snaps[snaps.length-1].ts : null, snaps.length+' snapshots', out.metrics],
+    ['events', 'commands', evs.length? evs[evs.length-1].ts : null, evs.length+' events', out.events],
+    ['issues', 'commands', tks.length? tks[tks.length-1].ts : null, tks.length+' tickets', out.issues],
+    ['wallet_balances', 'commands', out.wallets && out.wallets.ts, ((out.wallets||{}).wallets||[]).length+' wallets', out.wallets],
+    ['polymarket', 'commands', out.polymarket && out.polymarket.ts, (out.polymarket&&out.polymarket.configured)?'configured':'no key', out.polymarket],
+  ];
+  for(const [name, branch, ts, note, data] of feeds){
+    rows.push(`<tr><td><b>${name}</b></td><td style="color:var(--dim2)">${branch}</td>
+      <td>${data? ago(ts) : '<span class="age bad">OFFLINE</span>'}</td><td style="color:var(--dim)">${note}</td></tr>`);
+  }
+  document.getElementById('health').innerHTML =
+    `<table><tr><th>Feed</th><th>Branch</th><th>Freshness</th><th>Notes</th></tr>${rows.join('')}</table>`;
 }
 
 async function loadAll(manual){
@@ -508,12 +650,18 @@ async function loadAll(manual){
   try{ renderChallenge(out.challenge); }catch(e){ console.warn('chal', e); }
   try{ renderBoard(picks); }catch(e){ console.warn('board', e); }
   try{ renderWallets(out.wallets); }catch(e){ console.warn('wallets', e); }
+  try{ renderPolymarket(out.polymarket); }catch(e){ console.warn('pm', e); }
   try{ renderGiveaway(out.entries, out.confirmed); }catch(e){ console.warn('giveaway', e); }
   try{ renderEvents(out.events); }catch(e){ console.warn('events', e); }
   try{ renderTickets(out.issues); }catch(e){ console.warn('tickets', e); }
+  try{ renderHealth(out); }catch(e){ console.warn('health', e); }
   const lf = document.getElementById('lastFetch');
   if(lf) lf.textContent = 'updated ' + new Date().toLocaleTimeString();
 }
+
+/* auto-unlock AFTER all consts are initialized (TDZ fix) */
+try{ if(sess.get('ops_ok')==='1') unlock(); }catch(e){}
+
 </script>
 </body>
 </html>
