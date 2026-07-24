@@ -1,21 +1,10 @@
 {
-  "executed_seq": 344,
+  "executed_seq": 347,
   "last_log": [
-    "seq 344 executed 2026-07-24 15:37 UTC",
-    "ERROR delete_channel: 'channel'",
-    "lock_channel: #\u2699\ufe0fupdates -> readonly",
-    "lock_channel: #\ud83d\udc8eupgrade -> readonly",
-    "lock_channel: #\ud83d\udc4bwelcome -> readonly",
-    "lock_channel: #\ud83d\udcdcrules -> readonly",
-    "lock_channel: #\ud83c\udfaffree-pick-8-1 -> readonly",
-    "lock_channel: #\ud83e\uddfereceipts -> readonly",
-    "lock_channel: #\ud83d\udce3promotions -> readonly",
-    "lock_channel: #\ud83d\udcacgeneral-chat -> community",
-    "lock_channel: #\ud83c\udf81giveaway -> community",
-    "lock_channel: #\ud83d\udee0\ufe0fissues -> community",
-    "#\ud83d\udc0bwhale-room-6-3 overwrites:\n@everyone: view=False,send=None,threads=None,files=None\n\ud83d\udc0b Whale: view=True,send=True,threads=None,files=None\n\ud83d\udd12 Lock Room: view=False,send=None,threads=None,files=None\n\ud83d\udcca Sharp: view=False,send=None,threads=None,files=None",
-    "#\ud83d\udccasharp-room-5-3 overwrites:\n@everyone: view=False,send=None,threads=None,files=None\n\ud83d\udc0b Whale: view=True,send=True,threads=None,files=None\n\ud83d\udd12 Lock Room: view=False,send=None,threads=None,files=None\n\ud83d\udcca Sharp: view=True,send=True,threads=None,files=None",
-    "#\ud83d\udd12lock-room-4-8 overwrites:\n@everyone: view=False,send=None,threads=None,files=None\n\ud83d\udc0b Whale: view=True,send=True,threads=None,files=None\n\ud83d\udd12 Lock Room: view=True,send=True,threads=None,files=None\n\ud83d\udcca Sharp: view=True,send=True,threads=None,files=None"
+    "seq 347 executed 2026-07-24 15:44 UTC",
+    "deleted channel/thread: Dmasud",
+    "sweep_giveaway: 9 processed",
+    "ERROR list_perms: 'Member' object has no attribute 'is_bot_managed'"
   ],
   "time_audit": {
     "at": "2026-07-24 15:41 UTC",
@@ -70,7 +59,7 @@
     "20260724-12": "ok",
     "20260724-12-note": "8AM ET makeup by ops 12:20 UTC \u2014 esports-led window card (4 plays). Engine cron turn died pre-post again; checklist slim-fix shipping next."
   },
-  "executed_cmd_seq": 344,
+  "executed_cmd_seq": 346,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 10,
@@ -151,16 +140,7 @@
   },
   "gw_handled": [
     "1530230873780129892",
-    "1530233782978875503",
-    "1530010708283097148",
-    "1530042472623771788",
-    "1530137626911182949",
-    "1530153003854729288",
-    "1530175597085458483",
-    "1530176222749790392",
-    "1530182999860314132",
-    "1530194823305363637",
-    "1530223003877642351"
+    "1530233782978875503"
   ],
   "gw_replies": {
     "1510318944097927388:guide": 1784905873.0244887,
