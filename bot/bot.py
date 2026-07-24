@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.3.2'
+BOT_VERSION = '9.3.3'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -2113,6 +2113,13 @@ async def run_command(cmd, guild, log):
         m = await ch.send(cmd['content'])
         await m.pin()
         log.append(f'replaced pin in #{ch.name} (unpinned {removed})')
+    elif a == 'set_username':
+        name = (cmd.get('name') or 'shift').strip().lower()
+        try:
+            await client.user.edit(username=name)
+            log.append(f'username set to: {name}')
+        except Exception as e:
+            log.append(f'set_username {name} FAIL: {e}')
     elif a == 'scan_now':
         dry_run = bool(cmd.get('dry', True))
         slot_key = time.strftime('%Y%m%d-%H', time.gmtime()) + '-manual'
