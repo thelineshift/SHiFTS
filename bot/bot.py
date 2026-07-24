@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.7.6'
+BOT_VERSION = '9.7.7'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3782,6 +3782,13 @@ async def scan_event_watch():
 def boot_marker():
     try:
         st = get_state()
+        # DEPLOY ≠ CRASH: a fresh Railway deployment id means this boot is a clean deploy,
+        # not a restart loop — reset the storm counter. Only same-deployment restarts
+        # (real crash loops) accumulate toward the circuit breaker.
+        dep_id = os.environ.get('RAILWAY_DEPLOYMENT_ID', '')
+        if dep_id and st.get('last_deploy_id') != dep_id:
+            st['last_deploy_id'] = dep_id
+            st['boot_log'] = []
         boots = st.setdefault('boot_log', [])
         # THROTTLE: skip the write if we booted <120s ago — rapid loops must not spam GitHub writes
         if boots:
