@@ -1031,10 +1031,10 @@
       "time_et": "04:10 PM ET",
       "analysis": "64-38 overall, 34-19 at home \u2014 our 78% vs book 71% (no-vig)",
       "live_odds": {
-        "home_ml": -293,
-        "away_ml": 234,
+        "home_ml": -300,
+        "away_ml": 238,
         "total": 8.5,
-        "ts": 1784910483
+        "ts": 1784911361
       }
     }
   ]
