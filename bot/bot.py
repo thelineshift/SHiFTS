@@ -2494,7 +2494,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '9.0.0'
+            state['bot_version'] = '9.0.1'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -3219,17 +3219,30 @@ async def odds_watch():
                     continue
                 comp = best[1]
                 odds = (comp.get('odds') or [{}])[0]
-                ho = (odds.get('homeTeamOdds') or {}).get('moneyLine')
-                ao = (odds.get('awayTeamOdds') or {}).get('moneyLine')
+                ml_o = odds.get('moneyline') or {}
+                def _ml_close(side):
+                    try:
+                        return int(str((ml_o.get(side) or {}).get('close', {}).get('odds', '')).replace('+', ''))
+                    except Exception:
+                        return None
+                ho = _ml_close('home')
+                ao = _ml_close('away')
+                if ho is None:
+                    ho = (odds.get('homeTeamOdds') or {}).get('moneyLine')
+                if ao is None:
+                    ao = (odds.get('awayTeamOdds') or {}).get('moneyLine')
                 ou = odds.get('overUnder')
                 if ho is None and ao is None and ou is None:
                     continue
-                p['live_odds'] = {'home_ml': ho, 'away_ml': ao, 'total': ou, 'ts': int(time.time())}
-                changed = True
+                old_lo = p.get('live_odds') or {}
+                if (old_lo.get('home_ml'), old_lo.get('away_ml'), old_lo.get('total')) != (ho, ao, ou):
+                    p['live_odds'] = {'home_ml': ho, 'away_ml': ao, 'total': ou, 'ts': int(time.time())}
+                    changed = True
                 stype = comp.get('status', {}).get('type', {})
                 started = stype.get('state') == 'in' or bool(stype.get('completed'))
                 if started and not p.get('closing_odds'):
-                    p['closing_odds'] = dict(p['live_odds'])
+                    p['closing_odds'] = dict(p.get('live_odds') or {'home_ml': ho, 'away_ml': ao, 'total': ou, 'ts': int(time.time())})
+                    changed = True
                     if ch:
                         await ch.send(f"🔒 **CLOSING LINE LOCKED** — {p.get('desc')}: we took {fmt_odds_num(p.get('odds'))}, closing {fmt_odds_num(side_ml(p, ho, ao)) if side_ml(p, ho, ao) is not None else 'total ' + str(ou)}. {clv_note(p, ho, ao)}")
                 elif not started:
@@ -3239,6 +3252,7 @@ async def odds_watch():
                         anchor_o = p.get('last_alert_odds', posted)
                         if abs(int(cur) - int(anchor_o)) >= 12 and ch:
                             p['last_alert_odds'] = int(cur)
+                            changed = True
                             verdict = 'we got the best of it ✅' if int(cur) < int(posted) else 'market moving against us 👀'
                             await ch.send(f"⚠️ **LINE MOVE** — {p.get('desc')}: {fmt_odds_num(anchor_o)} → {fmt_odds_num(cur)}. Steam on this one — {verdict}")
                     elif ou is not None and p.get('market') == 'total':
@@ -3247,6 +3261,7 @@ async def odds_watch():
                             anchor_t = p.get('last_alert_total', posted_t)
                             if abs(float(ou) - anchor_t) >= 0.5 and ch:
                                 p['last_alert_total'] = float(ou)
+                                changed = True
                                 await ch.send(f"⚠️ **TOTAL MOVE** — {p.get('desc')}: {anchor_t} → {ou}. {'Money pounding the over.' if float(ou) > anchor_t else 'Steam on the under.'}")
                         except Exception:
                             pass
