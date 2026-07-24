@@ -1,218 +1,168 @@
 {
-  "executed_seq": 365,
-  "last_log": [
-    "seq 365 executed 2026-07-24 18:48 UTC",
-    "scan_now executed (dry=True)",
-    "scan_now executed (dry=True)"
-  ],
-  "time_audit": {
-    "at": "2026-07-24 19:24 UTC",
-    "flags": []
+ "executed_seq": 365,
+ "last_log": [
+  "seq 365 executed 2026-07-24 18:48 UTC",
+  "scan_now executed (dry=True)",
+  "scan_now executed (dry=True)"
+ ],
+ "time_audit": {
+  "at": "2026-07-24 19:24 UTC",
+  "flags": []
+ },
+ "room_pulse": {
+  "\ud83c\udfaffree-pick-9-1": "2026-07-24 12:15 UTC",
+  "\ud83e\uddfereceipts": "2026-07-24 19:03 UTC",
+  "\ud83d\udcacgeneral-chat": "2026-07-24 19:14 UTC",
+  "\ud83c\udfc6100-to-1000-20": "2026-07-24 07:34 UTC",
+  "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
+  "\ud83c\udf81giveaway": "2026-07-24 17:37 UTC"
+ },
+ "resolution_watch": {
+  "at": "2026-07-24 19:24 UTC",
+  "flags": [
+   "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
+  ]
+ },
+ "challenge_watch": {
+  "at": "2026-07-24 19:24 UTC",
+  "flags": [
+   "challenge bet #4 unsettled: Cardinals ML"
+  ]
+ },
+ "giveaway_watch": {
+  "at": "2026-07-24 19:24 UTC",
+  "flags": []
+ },
+ "bot_version": "9.7.5",
+ "unannounced_results": [
+  {
+   "id": "g2-koi-ml-0724",
+   "desc": "G2 Esports ML",
+   "odds": null,
+   "result": "WIN",
+   "units": 0.91,
+   "score": "G2 Esports vs opponent \u2014 win",
+   "tier": "free"
   },
-  "room_pulse": {
-    "\ud83c\udfaffree-pick-9-1": "2026-07-24 12:15 UTC",
-    "\ud83e\uddfereceipts": "2026-07-24 19:03 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-24 19:14 UTC",
-    "\ud83c\udfc6100-to-1000-20": "2026-07-24 07:34 UTC",
-    "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-24 17:37 UTC"
+  {
+   "id": "oddik-bh-ml-0724",
+   "desc": "ODDIK ML",
+   "odds": null,
+   "result": "WIN",
+   "units": 0.91,
+   "score": "ODDIK vs opponent \u2014 win",
+   "tier": "lock"
   },
-  "resolution_watch": {
-    "at": "2026-07-24 19:24 UTC",
-    "flags": [
-      "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
-    ]
+  {
+   "id": "newvision-entropy-ml-0724",
+   "desc": "NEW VISION ML",
+   "odds": null,
+   "result": "LOSS",
+   "units": -1.0,
+   "score": "NEW VISION vs opponent \u2014 loss",
+   "tier": "sharp"
   },
-  "challenge_watch": {
-    "at": "2026-07-24 19:24 UTC",
-    "flags": [
-      "challenge bet #4 unsettled: Cardinals ML"
-    ]
-  },
-  "giveaway_watch": {
-    "at": "2026-07-24 19:24 UTC",
-    "flags": []
-  },
-  "bot_version": "9.7.5",
-  "unannounced_results": [
-    {
-      "id": "g2-koi-ml-0724",
-      "desc": "G2 Esports ML",
-      "odds": null,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "G2 Esports vs opponent \u2014 win",
-      "tier": "free"
-    },
-    {
-      "id": "oddik-bh-ml-0724",
-      "desc": "ODDIK ML",
-      "odds": null,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "ODDIK vs opponent \u2014 win",
-      "tier": "lock"
-    },
-    {
-      "id": "newvision-entropy-ml-0724",
-      "desc": "NEW VISION ML",
-      "odds": null,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "NEW VISION vs opponent \u2014 loss",
-      "tier": "sharp"
-    },
-    {
-      "id": "privateer-gaming-ml-0724",
-      "desc": "Privateer Gaming ML",
-      "odds": null,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Privateer Gaming vs opponent \u2014 loss",
-      "tier": "sharp"
-    }
-  ],
-  "last_x_receipt_ts": 1784920263.8846037,
-  "last_recap_date": "2026-07-23",
-  "scan_events": {
-    "20260722-12": "ok",
-    "20260722-16": "ok",
-    "20260722-20": "ok",
-    "20260723-00": "ok",
-    "20260723-04": "ok",
-    "20260723-04-note": "makeup posted 06:45 UTC \u2014 engine stalled on dead X token; receipts+resolution delivered",
-    "20260723-08": "ok",
-    "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)",
-    "20260723-12": "ok",
-    "20260723-12-note": "noon slot: card already live since 08:30 UTC; status absorbed into 16:00 UTC full sweep (engine recovering from outage)",
-    "20260723-16": "ok",
-    "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
-    "20260723-20": "ok",
-    "20260724-00": "missed",
-    "20260724-04": "ok",
-    "20260724-04-note": "12AM ET makeup posted 06:50 UTC by ops \u2014 unified board: 7 plays (UFC/CS2/Valorant/MLB). Root cause of 00/04 misses: engine cron turns dying on sandbox X-call hangs.",
-    "20260724-00-note": "8PM ET slot missed by engine cron (same X-hang fault); overnight board absorbed into 06:50 UTC makeup.",
-    "20260724-08": "ok",
-    "20260724-08-note": "4AM ET: discipline resolution by ops \u2014 card live since 06:50 UTC, thin window absorbed. Bot in 429 storm-backoff since 07:38.",
-    "20260724-12": "ok",
-    "20260724-12-note": "8AM ET makeup by ops 12:20 UTC \u2014 esports-led window card (4 plays). Engine cron turn died pre-post again; checklist slim-fix shipping next.",
-    "20260724-16": "ok-bot",
-    "20260724-16-manual": "ok-bot",
-    "20260724-16-note": "12PM ET: cron died silently again; bot engine flipped LIVE and posted the real card 16:25 UTC (5 plays, first fully-autonomous live card)."
-  },
-  "executed_cmd_seq": 365,
-  "scan_role_id": 1529569745517674599,
-  "scan_role_msg": 1529569746620645406,
-  "count10_idx": 11,
-  "giveaway_x_post": "2080336363908743406",
-  "count60_idx": 13,
-  "giveaway_confirmed": {
-    "em_jeiz26": {
-      "handle": "Em_jeiz26",
-      "discord": "emjeiz04017",
-      "discord_id": "1378025540937715772",
-      "mult": 1,
-      "ts": "2026-07-22T23:24:48Z"
-    }
-  },
-  "scan_event_misses": [
-    "20260723-00",
-    "20260723-04",
-    "20260723-08",
-    "20260723-16",
-    "20260724-00",
-    "20260724-04",
-    "20260724-16"
-  ],
-  "count_fired": [
-    "20260723-2300",
-    "20260723-2350",
-    "20260723-0300",
-    "20260723-0350",
-    "20260723-0700",
-    "20260723-1100",
-    "20260723-1150",
-    "20260723-1500",
-    "20260723-1900",
-    "20260723-1950",
-    "20260724-2300",
-    "20260724-2350",
-    "20260724-0700",
-    "20260724-1100",
-    "20260724-1150",
-    "20260724-1500"
-  ],
-  "boot_log": [
-    "2026-07-24T08:31:13Z",
-    "2026-07-24T09:31:17Z",
-    "2026-07-24T09:37:17Z",
-    "2026-07-24T09:46:23Z",
-    "2026-07-24T09:50:28Z",
-    "2026-07-24T09:52:37Z",
-    "2026-07-24T09:54:53Z",
-    "2026-07-24T09:57:12Z",
-    "2026-07-24T09:59:34Z",
-    "2026-07-24T10:35:34Z",
-    "2026-07-24T10:57:45Z",
-    "2026-07-24T11:29:17Z",
-    "2026-07-24T11:31:40Z",
-    "2026-07-24T11:33:52Z",
-    "2026-07-24T11:36:09Z",
-    "2026-07-24T11:38:15Z",
-    "2026-07-24T11:40:29Z",
-    "2026-07-24T12:12:41Z",
-    "2026-07-24T12:17:09Z",
-    "2026-07-24T12:53:59Z",
-    "2026-07-24T12:56:03Z",
-    "2026-07-24T12:58:08Z",
-    "2026-07-24T13:00:33Z",
-    "2026-07-24T13:02:45Z",
-    "2026-07-24T13:04:49Z",
-    "2026-07-24T13:32:21Z",
-    "2026-07-24T14:26:27Z",
-    "2026-07-24T14:32:32Z",
-    "2026-07-24T14:36:41Z",
-    "2026-07-24T14:47:12Z",
-    "2026-07-24T15:08:48Z",
-    "2026-07-24T15:25:51Z",
-    "2026-07-24T15:33:42Z",
-    "2026-07-24T15:41:14Z",
-    "2026-07-24T16:24:13Z",
-    "2026-07-24T16:27:58Z",
-    "2026-07-24T16:42:35Z",
-    "2026-07-24T17:11:47Z",
-    "2026-07-24T17:45:35Z",
-    "2026-07-24T18:04:10Z",
-    "2026-07-24T18:12:39Z",
-    "2026-07-24T18:33:10Z",
-    "2026-07-24T18:42:59Z",
-    "2026-07-24T19:03:29Z",
-    "2026-07-24T19:10:58Z",
-    "2026-07-24T19:13:06Z",
-    "2026-07-24T19:17:51Z",
-    "2026-07-24T19:22:43Z",
-    "2026-07-24T19:24:49Z"
-  ],
-  "teasers": {
-    "weekly": "2026-07-26",
-    "monthly": "2026-08-01"
-  },
-  "gw_handled": [
-    "1530230873780129892",
-    "1530233782978875503",
-    "1530246591099961456",
-    "1530246741130088458",
-    "1530247060891111615",
-    "1530223003877642351",
-    "1530264839572820078",
-    "1530267684967546992"
-  ],
-  "gw_replies": {
-    "1510318944097927388:guide": 1784905873.0244887,
-    "1402974951446675537:steps": 1784906566.8302608,
-    "1072032485241802833:guide": 1784909732.1577997,
-    "551582227188809738:guide": 1784910807.5218592
-  },
-  "x_purge_total": 190,
-  "x_purge_last": "2026-07-24 19:22 UTC"
+  {
+   "id": "privateer-gaming-ml-0724",
+   "desc": "Privateer Gaming ML",
+   "odds": null,
+   "result": "LOSS",
+   "units": -1.0,
+   "score": "Privateer Gaming vs opponent \u2014 loss",
+   "tier": "sharp"
+  }
+ ],
+ "last_x_receipt_ts": 1784920263.8846037,
+ "last_recap_date": "2026-07-23",
+ "scan_events": {
+  "20260722-12": "ok",
+  "20260722-16": "ok",
+  "20260722-20": "ok",
+  "20260723-00": "ok",
+  "20260723-04": "ok",
+  "20260723-04-note": "makeup posted 06:45 UTC \u2014 engine stalled on dead X token; receipts+resolution delivered",
+  "20260723-08": "ok",
+  "20260723-08-note": "card posted 08:30 UTC by ops (engine turn did not land in time)",
+  "20260723-12": "ok",
+  "20260723-12-note": "noon slot: card already live since 08:30 UTC; status absorbed into 16:00 UTC full sweep (engine recovering from outage)",
+  "20260723-16": "ok",
+  "20260723-16-note": "12PM ET card pushed by ops: CLE lock + TB sharp + KC/DET U8.5 whale; all rooms + receipts + X",
+  "20260723-20": "ok",
+  "20260724-00": "missed",
+  "20260724-04": "ok",
+  "20260724-04-note": "12AM ET makeup posted 06:50 UTC by ops \u2014 unified board: 7 plays (UFC/CS2/Valorant/MLB). Root cause of 00/04 misses: engine cron turns dying on sandbox X-call hangs.",
+  "20260724-00-note": "8PM ET slot missed by engine cron (same X-hang fault); overnight board absorbed into 06:50 UTC makeup.",
+  "20260724-08": "ok",
+  "20260724-08-note": "4AM ET: discipline resolution by ops \u2014 card live since 06:50 UTC, thin window absorbed. Bot in 429 storm-backoff since 07:38.",
+  "20260724-12": "ok",
+  "20260724-12-note": "8AM ET makeup by ops 12:20 UTC \u2014 esports-led window card (4 plays). Engine cron turn died pre-post again; checklist slim-fix shipping next.",
+  "20260724-16": "ok-bot",
+  "20260724-16-manual": "ok-bot",
+  "20260724-16-note": "12PM ET: cron died silently again; bot engine flipped LIVE and posted the real card 16:25 UTC (5 plays, first fully-autonomous live card)."
+ },
+ "executed_cmd_seq": 365,
+ "scan_role_id": 1529569745517674599,
+ "scan_role_msg": 1529569746620645406,
+ "count10_idx": 11,
+ "giveaway_x_post": "2080336363908743406",
+ "count60_idx": 13,
+ "giveaway_confirmed": {
+  "em_jeiz26": {
+   "handle": "Em_jeiz26",
+   "discord": "emjeiz04017",
+   "discord_id": "1378025540937715772",
+   "mult": 1,
+   "ts": "2026-07-22T23:24:48Z"
+  }
+ },
+ "scan_event_misses": [
+  "20260723-00",
+  "20260723-04",
+  "20260723-08",
+  "20260723-16",
+  "20260724-00",
+  "20260724-04",
+  "20260724-16"
+ ],
+ "count_fired": [
+  "20260723-2300",
+  "20260723-2350",
+  "20260723-0300",
+  "20260723-0350",
+  "20260723-0700",
+  "20260723-1100",
+  "20260723-1150",
+  "20260723-1500",
+  "20260723-1900",
+  "20260723-1950",
+  "20260724-2300",
+  "20260724-2350",
+  "20260724-0700",
+  "20260724-1100",
+  "20260724-1150",
+  "20260724-1500"
+ ],
+ "boot_log": [],
+ "teasers": {
+  "weekly": "2026-07-26",
+  "monthly": "2026-08-01"
+ },
+ "gw_handled": [
+  "1530230873780129892",
+  "1530233782978875503",
+  "1530246591099961456",
+  "1530246741130088458",
+  "1530247060891111615",
+  "1530223003877642351",
+  "1530264839572820078",
+  "1530267684967546992"
+ ],
+ "gw_replies": {
+  "1510318944097927388:guide": 1784905873.0244887,
+  "1402974951446675537:steps": 1784906566.8302608,
+  "1072032485241802833:guide": 1784909732.1577997,
+  "551582227188809738:guide": 1784910807.5218592
+ },
+ "x_purge_total": 190,
+ "x_purge_last": "2026-07-24 19:22 UTC"
 }
