@@ -1,8 +1,8 @@
 {
-  "executed_seq": 406,
+  "executed_seq": 407,
   "last_log": [
-    "seq 406 executed 2026-07-24 23:51 UTC",
-    "profile updated [app2]: @SHiFTSPicks | name: SHiFT's Picks | bio: \u26a1 I'm SHiFT \u2014 every play before first pitch, every result receipted. \ud83c\udfaf 6 free pl | url: https://t.co/jspOQEeeQa"
+    "seq 407 executed 2026-07-24 23:52 UTC",
+    "x_post_text FAIL: HTTP Error 402: Payment Required"
   ],
   "time_audit": {
     "at": "2026-07-24 23:39 UTC",
@@ -106,7 +106,7 @@
     "20260724-16-note": "12PM ET: cron died silently again; bot engine flipped LIVE and posted the real card 16:25 UTC (5 plays, first fully-autonomous live card).",
     "20260724-20": "ok-bot"
   },
-  "executed_cmd_seq": 406,
+  "executed_cmd_seq": 407,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 13,
