@@ -72,6 +72,24 @@
       "units": -1.5,
       "score": "ALKA GAMING vs opponent \u2014 loss",
       "tier": "whale"
+    },
+    {
+      "id": "nrg-furia-ml-0724",
+      "desc": "NRG ML",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "NRG vs opponent \u2014 win",
+      "tier": "sharp"
+    },
+    {
+      "id": "milwaukee-brewers-ml-0724",
+      "desc": "Milwaukee Brewers ML",
+      "odds": -293,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Colorado Rockies 5, Milwaukee Brewers 2",
+      "tier": "lock"
     }
   ],
   "last_x_receipt_ts": 1784928058.6949136,
