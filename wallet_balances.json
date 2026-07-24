@@ -1,5 +1,5 @@
 {
-  "ts": "2026-07-24T23:27:59Z",
+  "ts": "2026-07-24T23:31:52Z",
   "wallets": [
     {
       "chain": "solana",
@@ -8,7 +8,7 @@
       "address": "5rw9dnpwi9ER6MQf3yL9obKyM3PSjxd4w9AvzqwW6nG3",
       "note": "weekly SOL giveaway prizes pay out from here",
       "balance": 0.73984,
-      "usd": 54.62
+      "usd": 54.65
     },
     {
       "chain": "solana",
@@ -29,24 +29,21 @@
         {
           "chain": "ethereum",
           "symbol": "ETH",
-          "balance": null,
-          "usd": null,
-          "error": "HTTP Error 403: Forbidden"
+          "balance": 0.0,
+          "usd": 0.0
         },
         {
           "chain": "base",
           "symbol": "ETH",
-          "balance": null,
-          "usd": null,
-          "error": "HTTP Error 403: Forbidden"
+          "balance": 0.0,
+          "usd": 0.0
         },
         {
           "chain": "polygon",
           "symbol": "POL",
-          "balance": null,
-          "usd": null,
-          "error": "HTTP Error 401: Unauthorized",
-          "usdc_error": "HTTP Error 401: Unauthorized"
+          "balance": 0.0,
+          "usd": 0.0,
+          "usdc": 0
         },
         {
           "chain": "bsc",
@@ -57,9 +54,8 @@
         {
           "chain": "arbitrum",
           "symbol": "ETH",
-          "balance": null,
-          "usd": null,
-          "error": "HTTP Error 403: Forbidden"
+          "balance": 0.0,
+          "usd": 0.0
         }
       ],
       "balance": null,
