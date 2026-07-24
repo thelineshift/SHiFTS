@@ -32,15 +32,6 @@
   "bot_version": "8.9.53",
   "unannounced_results": [
     {
-      "id": "stl-ml-0723",
-      "desc": "Cardinals ML",
-      "odds": -123,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "Arizona Diamondbacks 10, St. Louis Cardinals 6",
-      "tier": "lock"
-    },
-    {
       "id": "ari-stl-o75-0723",
       "desc": "Diamondbacks/Cardinals Over 7.5",
       "odds": -110,
@@ -50,7 +41,7 @@
       "tier": "free"
     }
   ],
-  "last_x_receipt_ts": 1784852985.0554523,
+  "last_x_receipt_ts": 1784856585.119786,
   "last_recap_date": "2026-07-22",
   "scan_events": {
     "20260722-12": "ok",
