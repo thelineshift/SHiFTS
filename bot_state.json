@@ -38,15 +38,6 @@
   "bot_version": "9.7.0",
   "unannounced_results": [
     {
-      "id": "heroic-astralis-ml-0724",
-      "desc": "Heroic ML",
-      "odds": null,
-      "result": "WIN",
-      "units": 1.36,
-      "score": "Heroic vs opponent \u2014 win",
-      "tier": "whale"
-    },
-    {
       "id": "g2-koi-ml-0724",
       "desc": "G2 Esports ML",
       "odds": null,
@@ -83,7 +74,7 @@
       "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1784867411.9636893,
+  "last_x_receipt_ts": 1784920263.8846037,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
