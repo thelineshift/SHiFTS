@@ -1,11 +1,11 @@
 {
- "seq": 375,
+ "seq": 377,
  "commands": [
   {
-   "seq": 376,
-   "action": "read_recent",
-   "channel": "giveaway",
-   "limit": 25
+   "seq": 377,
+   "action": "set_server_icon",
+   "path": "assets/avatar.png",
+   "ref": "main"
   }
  ]
 }
