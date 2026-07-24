@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.7.4'
+BOT_VERSION = '9.7.5'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3933,10 +3933,10 @@ def se_edges(g, now_ts):
     for side, ml, team, opp, p_ours, p_imp in (
             ('home', g['ml_home'], g['home'], g['away'], p_home, imp_h),
             ('away', g['ml_away'], g['away'], g['home'], 1 - p_home, imp_a)):
-        # ODDS DISCIPLINE LAW (ALL sports, owner decree): NOTHING juicier than -150 is
-        # ever a single pick. Anything juicier with a real edge = PARLAY MATERIAL — no
-        # juice floor, any favorite can be a leg.
-        if ml is None or p_imp is None or ml > 200:
+        # ODDS DISCIPLINE LAW (ALL sports, owner decree — 9.7.3 form confirmed final):
+        # straights are near-even or better (>= -150). -150..-400 with a real edge =
+        # PARLAY MATERIAL, never a straight. Worse than -400 = dead to us entirely.
+        if ml is None or p_imp is None or ml < -400 or ml > 200:
             continue
         edge = p_ours - p_imp
         if edge < 0.06:
@@ -4065,7 +4065,9 @@ async def scan_engine_run(g0, slot_key, dry):
         fw = w1 if edge > 0 else w2
         dw = w2 if edge > 0 else w1
         p_f = fw * (1 - dw) / (fw * (1 - dw) + dw * (1 - fw)) if (fw or dw) else 0.5
-        p_f = min(0.95, max(0.15, p_f))
+        p_f = min(0.90, max(0.15, p_f))
+        if p_f > 0.80:
+            continue  # juicier than -400 — dead to us entirely (9.7.3 law)
         ml_f = -round((100 * p_f / (1 - p_f)) / 5) * 5 if p_f >= 0.5 else round((100 * (1 - p_f) / p_f) / 5) * 5
         cands.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': ml_f,
                       'units': 1.5 if abs(edge) >= 0.4 else 1.0, 'edge': abs(edge), 'start': t,
