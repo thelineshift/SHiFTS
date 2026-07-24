@@ -1170,11 +1170,12 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -125,
-        "away_ml": 104,
+        "home_ml": -123,
+        "away_ml": 102,
         "total": 9.0,
-        "ts": 1784929388
-      }
+        "ts": 1784933773
+      },
+      "last_alert_odds": -123
     },
     {
       "id": "new-york-yankees-ml-0724",
