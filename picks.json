@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T20:45:02Z",
+  "updated": "2026-07-24T23:18:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -846,11 +846,14 @@
       "homeTeam": "NRG",
       "desc": "NRG ML",
       "market": "ML (Bo3)",
-      "odds": null,
+      "odds": -110,
       "units": 1.0,
       "tier": "sharp",
       "time_et": "5:00 PM",
-      "analysis": "NRG clean recent series form vs FURIA slump \u2014 VCT Bo3 form gap, ML value side. Odds-free ML per esports doctrine."
+      "analysis": "NRG clean recent series form vs FURIA slump \u2014 VCT Bo3 form gap, ML value side. Odds-free ML per esports doctrine.",
+      "result": "WIN",
+      "units_result": 0.91,
+      "score": "NRG vs opponent \u2014 win"
     },
     {
       "id": "lad-ml-0724",
@@ -1059,7 +1062,12 @@
         "away_ml": 234,
         "total": 8.5,
         "ts": 1784914912
-      }
+      },
+      "awayTeam": "Colorado Rockies",
+      "homeTeam": "Milwaukee Brewers",
+      "result": "LOSS",
+      "score": "Colorado Rockies 5, Milwaukee Brewers 2",
+      "units_result": -1.0
     },
     {
       "id": "los-angeles-dodgers-ml-0724",
