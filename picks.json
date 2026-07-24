@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T00:29:18Z",
+  "updated": "2026-07-24T01:29:44Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -743,7 +743,7 @@
       "odds": -110,
       "units": 1.0,
       "tier": "whale",
-      "result": null,
+      "result": "WIN",
       "time_et": "6:40 PM",
       "analysis": "Melton 1.80 ERA 0.87 WHIP + Dobnak 1.93 ERA; two top-10 pens; 79F 0% rain, wind 6mph in",
       "live_odds": {
@@ -751,7 +751,9 @@
         "away_ml": null,
         "total": 8.5,
         "ts": 1784846363
-      }
+      },
+      "score": "Royals 3, Tigers 4",
+      "units_result": 0.91
     },
     {
       "id": "ari-stl-o75-0723",
@@ -796,7 +798,10 @@
         "away_ml": null,
         "total": 8.5,
         "ts": 1784846363
-      }
+      },
+      "result": "WIN",
+      "score": "Kansas City Royals 3, Detroit Tigers 4",
+      "units_result": 0.42
     }
   ]
 }
