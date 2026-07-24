@@ -1,5 +1,5 @@
 {
- "seq": 359,
+ "seq": 360,
  "commands": [
   {
    "seq": 163,
@@ -1315,6 +1315,11 @@
     "2080465424152695011",
     "2080402710382403810"
    ]
+  },
+  {
+   "seq": 360,
+   "action": "x_post_text",
+   "text": "\ud83d\udcb0 SUNDAY 6 PM ET \u2014 $50 in $SOL, TWO winners \ud83e\udd47 $35 \u00b7 \ud83e\udd48 $15\nEntry: follow @TheLineShift, like + repost the pinned giveaway post, drop your X handle in the Discord giveaway room.\nFree to enter. Wallet is funded and public. \u26a1"
   }
  ]
 }
