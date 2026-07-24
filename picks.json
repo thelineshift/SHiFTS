@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T20:01:01Z",
+  "updated": "2026-07-24T20:45:02Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -993,7 +993,10 @@
       "units": 1.5,
       "tier": "whale",
       "time_et": "03:00 PM ET",
-      "analysis": "4-1 last 5 (beat Procyon Gaming, Red Feet, Gr\u00eamio Esports) (lost to Game Hunters) vs 2-3"
+      "analysis": "4-1 last 5 (beat Procyon Gaming, Red Feet, Gr\u00eamio Esports) (lost to Game Hunters) vs 2-3",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "ALKA GAMING vs opponent \u2014 loss"
     },
     {
       "id": "karmine-corp-ml-0724",
