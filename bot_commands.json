@@ -1,5 +1,5 @@
 {
-  "seq": 355,
+  "seq": 356,
   "commands": [
     {
       "seq": 163,
@@ -1254,6 +1254,10 @@
       "action": "read_full",
       "channel": "shift-lab",
       "limit": 6
+    },
+    {
+      "seq": 356,
+      "action": "x_link_start"
     }
   ]
 }
