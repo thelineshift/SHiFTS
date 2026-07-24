@@ -1,5 +1,5 @@
 {
-  "ts": "2026-07-23T21:10:45Z",
+  "ts": "2026-07-24T21:27:22Z",
   "wallets": [
     {
       "chain": "solana",
@@ -8,7 +8,7 @@
       "address": "5rw9dnpwi9ER6MQf3yL9obKyM3PSjxd4w9AvzqwW6nG3",
       "note": "weekly SOL giveaway prizes pay out from here",
       "balance": 0.73984,
-      "usd": 56.29
+      "usd": 54.43
     },
     {
       "chain": "solana",
@@ -25,9 +25,45 @@
       "label": "\ud83d\udcbc OPS WALLET",
       "address": "0x54D66ffE2492a015A826bDE45c2F321Cec5751d5",
       "note": "same address on ETH, Base, Polygon, BSC, Arbitrum",
+      "evm": [
+        {
+          "chain": "ethereum",
+          "symbol": "ETH",
+          "balance": null,
+          "usd": null,
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "chain": "base",
+          "symbol": "ETH",
+          "balance": null,
+          "usd": null,
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "chain": "polygon",
+          "symbol": "POL",
+          "balance": null,
+          "usd": null,
+          "error": "HTTP Error 401: Unauthorized",
+          "usdc_error": "HTTP Error 401: Unauthorized"
+        },
+        {
+          "chain": "bsc",
+          "symbol": "BNB",
+          "balance": 0.0,
+          "usd": 0.0
+        },
+        {
+          "chain": "arbitrum",
+          "symbol": "ETH",
+          "balance": null,
+          "usd": null,
+          "error": "HTTP Error 403: Forbidden"
+        }
+      ],
       "balance": null,
-      "usd": null,
-      "error": "'result'"
+      "usd": 0.0
     },
     {
       "chain": "bitcoin",
