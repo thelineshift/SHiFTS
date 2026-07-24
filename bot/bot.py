@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.7.0'
+BOT_VERSION = '9.7.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4567,11 +4567,12 @@ async def issues_sweep():
 
 @tasks.loop(minutes=17)
 async def x_purge_old():
-    """Standing owner order: wipe ALL pre-brand history back to account creation.
-    The account's history is deep and the timeline window refills as we delete,
-    so this ticks every 17 min (past X's 15-min write windows) and removes up to 40
-    per tick (~50/window is the cap; card posts + receipts need the headroom).
-    Brand era = 2026-07-01 onward — never touched. Marks x_purge_complete when clean."""
+    """Standing owner order: wipe pre-brand content FROM THE MAIN PROFILE TAB, back to
+    account creation — reposts, quotes, and original posts (the only things that render
+    on the main page). Replies are skipped: X files them under the Replies tab natively,
+    they never touch the main page, so deleting them would burn credits for zero gain.
+    Ticks every 17 min, up to 40 deletes per tick (~50/window cap; card posts + receipts
+    need the headroom). Brand era = 2026-07-01 onward — never touched."""
     if os.environ.get('X_PURGE_OLD', '') != '1':
         return
     try:
@@ -4596,6 +4597,13 @@ async def x_purge_old():
         for t in d.get('data', []):
             if (t.get('created_at') or '') >= '2026-07-01':
                 continue  # brand era — never touched
+            # CREDIT LAW: only purge what actually shows on the MAIN profile tab —
+            # reposts, quotes, original posts. Replies live in the Replies tab natively
+            # (never on the main page) so deleting them just burns credits for nothing.
+            refs = t.get('referenced_tweets', [])
+            kind = refs[0].get('type', 'post') if refs else 'post'
+            if kind == 'replied_to':
+                continue
             victims.append(t['id'])
             if len(victims) >= 40:
                 break
