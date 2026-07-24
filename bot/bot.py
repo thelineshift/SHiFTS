@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.3.1'
+BOT_VERSION = '9.3.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -2042,9 +2042,24 @@ async def run_command(cmd, guild, log):
         else:
             log.append(f'delete_channel_id: {cmd["id"]} not found')
     elif a == 'delete_channel':
-        ch = find_channel(guild, cmd['channel'])
-        await ch.delete()
-        log.append(f'deleted #{ch.name}')
+        tgt = None
+        cid = str(cmd.get('id', ''))
+        if cid:
+            tgt = guild.get_channel(int(cid)) or discord.utils.find(lambda t: str(t.id) == cid, guild.threads)
+            if not tgt:
+                try:
+                    tgt = await guild.fetch_channel(int(cid))
+                except Exception:
+                    tgt = None
+        else:
+            name = (cmd.get('channel') or '').lower().lstrip('#')
+            tgt = discord.utils.find(lambda t: name and name in t.name.lower(), guild.threads) or find_channel(guild, cmd.get('channel', ''))
+        if tgt:
+            nm = tgt.name
+            await tgt.delete()
+            log.append(f'deleted channel/thread: {nm}')
+        else:
+            log.append('delete_channel: not found')
     elif a == 'create_channel':
         kwargs = {}
         if cmd.get('private_for'):
@@ -2195,20 +2210,6 @@ async def run_command(cmd, guild, log):
         await ch.set_permissions(guild.me, view_channel=True, send_messages=True, manage_messages=True,
                                  manage_channels=True, read_message_history=True, manage_threads=True)
         log.append(f'lock_channel: #{ch.name} -> {preset}' + (f' ({cmd.get("role")})' if preset == 'paid' else ''))
-    elif a == 'delete_channel':
-        tgt = None
-        cid = str(cmd.get('id', ''))
-        if cid:
-            tgt = guild.get_channel(int(cid)) or discord.utils.find(lambda t: str(t.id) == cid, guild.threads)
-        else:
-            name = (cmd.get('channel') or '').lower().lstrip('#')
-            tgt = discord.utils.find(lambda t: name in t.name.lower(), guild.threads) or find_channel(guild, cmd.get('channel', ''))
-        if tgt:
-            nm = tgt.name
-            await tgt.delete()
-            log.append(f'deleted channel/thread: {nm}')
-        else:
-            log.append('delete_channel: not found')
     elif a == 'withdraw_sol':
         # ops-wallet SOL withdrawal. Queue-only (ops-gated). Requires confirm=YES.
         if cmd.get('confirm') != 'YES':
