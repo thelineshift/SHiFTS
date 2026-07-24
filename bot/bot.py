@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.4.1'
+BOT_VERSION = '9.5.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -870,11 +870,15 @@ async def catchup_sweep(g0):
                     continue
                 key = time.strftime('%Y%m%d-%H', t)
                 mins_past = ((time.time() - delta_h * 3600) % 3600) / 60 if delta_h == 0 else 0
-                if sev.get(key) != 'ok' and (delta_h > 0 or mins_past > 40):
-                    gch2 = find_channel(g0, 'general-chat')
-                    if gch2:
-                        await gch2.send("⚡ SHiFT is back online after a brief outage. A scan window was missed while I was down — the backstop scheduler is running the makeup now. Cards never stop. ⚡")
-                        report.append(f'missed-scan note posted for slot {key}')
+                if sev.get(key) not in ('ok', 'ok-bot') and (delta_h > 0 or mins_past > 40):
+                    # CARD LAW: a missed slot is never excused with a note — the card must
+                    # still drop. Run the most recent missed slot LIVE right now; the full
+                    # card posts to every room and the slot gets marked, all inside the run.
+                    try:
+                        await scan_engine_run(g0, key, False)
+                        report.append(f'🛰️ recovery scan {key} fired — card posted to all rooms')
+                    except Exception as _re:
+                        report.append(f'⚠️ recovery scan {key} failed: {_re}')
                     break
         except Exception as e:
             print('scan sweep:', e)
@@ -4090,6 +4094,7 @@ async def scan_engine_run(g0, slot_key, dry):
     print(f'scan engine {"dry" if dry else "LIVE"} slot {slot_key}: {len(picks_out)} plays posted')
 
 _SCAN_DONE = set()
+_SCAN_TRIES = {}
 
 async def do_sol_transfer(sol, to):
     """Send SOL from the ops wallet. Returns (sig, None) or (None, error)."""
@@ -4130,7 +4135,11 @@ async def do_sol_transfer(sol, to):
 async def scan_engine():
     try:
         now = time.gmtime()
-        if now.tm_hour not in SCAN_SLOTS_UTC or now.tm_min > 3:
+        if now.tm_hour not in SCAN_SLOTS_UTC:
+            return
+        # CARD LAW: the card must drop, period. On-time fire at :00-:03; if the slot is
+        # still unmarked (crash/restart/delays), fire late anywhere inside the slot hour.
+        if now.tm_min > 55:
             return
         dry = os.environ.get('SCAN_DRY_RUN', '') == '1'
         live = os.environ.get('SCAN_LIVE', '') == '1'
@@ -4150,7 +4159,16 @@ async def scan_engine():
         if len(_SCAN_DONE) > 12:
             _SCAN_DONE.clear()
         _SCAN_DONE.add(key)  # once-per-slot per boot; watchdog cron is the fallback layer
-        await scan_engine_run(g0, key, dry)
+        try:
+            await scan_engine_run(g0, key, dry)
+            _SCAN_TRIES.pop(key, None)
+        except Exception:
+            # CARD LAW: a failed run must not silently kill the slot — retry next minute,
+            # capped at 3 attempts per slot per boot so a hard failure can't spam rooms.
+            _SCAN_TRIES[key] = _SCAN_TRIES.get(key, 0) + 1
+            if _SCAN_TRIES[key] < 3:
+                _SCAN_DONE.discard(key)
+            raise
     except Exception as e:
         print('scan_engine error:', e)
 
