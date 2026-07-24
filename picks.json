@@ -831,10 +831,10 @@
       "time_et": "8:15 PM",
       "analysis": "Home favorite -168 with the better starter going; Cincy bats cold on the road.",
       "live_odds": {
-        "home_ml": -148,
-        "away_ml": 129,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 8.0,
-        "ts": 1784905733
+        "ts": 1784924076
       },
       "last_alert_odds": -148
     },
