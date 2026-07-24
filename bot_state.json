@@ -6,7 +6,7 @@
     "pinned text: \u26a1 THE BOARD IS DEALT TOP-DOWN\n\n\ud83c\udfaf Free \u2014 1 play a day\n\ud83d\udd12 Lock $14.99 \u2014 2 plays a day\n\ud83d\udcca Sharp $29.99 \u2014 4 plays a day\n\ud83d\udc0b Whale $59.99 \u2014 my full 7-play board\n\nHOUSE LAW: my most confident plays go to Whale "
   ],
   "time_audit": {
-    "at": "2026-07-24 06:00 UTC",
+    "at": "2026-07-24 06:30 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -18,17 +18,17 @@
     "\ud83c\udf81giveaway": "2026-07-24 05:44 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 06:00 UTC",
+    "at": "2026-07-24 06:30 UTC",
     "flags": []
   },
   "challenge_watch": {
-    "at": "2026-07-24 06:00 UTC",
+    "at": "2026-07-24 06:30 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 06:00 UTC",
+    "at": "2026-07-24 06:30 UTC",
     "flags": []
   },
   "bot_version": "8.9.53",
