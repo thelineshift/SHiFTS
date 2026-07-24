@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.7'
+BOT_VERSION = '9.9.8'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -193,7 +193,7 @@ async def handle_issue(message, guild):
 
 
 
-CRYPTO_TIERS = {'lock': 14.99, 'sharp': 29.99, 'whale': 59.99}
+CRYPTO_TIERS = {'lock': 29.99, 'sharp': 49.99, 'whale': 99.99}
 
 def _http_json(url, payload=None, headers=None, timeout=20):
     h = {'Content-Type': 'application/json',
@@ -522,6 +522,10 @@ def make_client(privileged=True):
                     return  # already processed (edit re-fire or sweep overlap)
                 hs = gw_handle_parse(raw)
                 if hs:
+                    try:
+                        await message.add_reaction('🎫')  # instant visible ack even if the text reply is throttled
+                    except Exception:
+                        pass
                     await gw_mark_handled(st_g, message.id)
                     await asyncio.to_thread(gh_put, 'bot_state.json', st_g, 'gw handled')
                     try:
@@ -944,7 +948,7 @@ async def verify_giveaway_entry(message, handle):
         except Exception:
             uid = ''
         if not uid:
-            await gw_reply_once(message, 'nohandle', f"⚡ entry check: I can't find an X account **@{handle}** — double-check the spelling and drop it again.")
+            await gw_reply_once(message, 'nohandle', f"⚡ entry check: I can't find an X account **@{handle}** — double-check the spelling and drop it again.", hours=4)
             return
         # bearer (app-only) covers all public reads — no user token needed (7/24 fix)
         followed = await asyncio.to_thread(gw_followed, uid, bt)
@@ -966,7 +970,7 @@ async def verify_giveaway_entry(message, handle):
         if not missing and followed and liked and reposted:
             conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
             if handle.lower() in (conf or {}):
-                await gw_reply_once(message, 'already', f"🎫 **@{handle}** — you're already locked in the pool. Sit tight for Sunday 6 PM ET. ⚡")
+                await gw_reply_once(message, 'already', f"🎫 **@{handle}** — you're already locked in the pool. Sit tight for Sunday 6 PM ET. ⚡", hours=4)
                 return
             names = [r.name for r in getattr(message.author, 'roles', [])]
             tkey = 'whale' if any('Whale' in n or '🐋' in n for n in names) else 'sharp' if any('Sharp' in n or '📊' in n for n in names) else 'lock' if any('Lock' in n or '🔒' in n for n in names) else 'free'
@@ -986,7 +990,7 @@ async def verify_giveaway_entry(message, handle):
         else:
             steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else 'X is still registering your activity —'
             await gw_reply_once(message, 'steps',
-                f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} — do them on **this exact post**: {gw_post_link(state)}\nThen drop your handle here again and I'll re-scan you in seconds. ⚡")
+                f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} — do them on **this exact post**: {gw_post_link(state)}\nThen drop your handle here again and I'll re-scan you in seconds. ⚡", hours=4)
     except Exception as e:
         print('giveaway verify error:', e)
 
@@ -3003,6 +3007,14 @@ ESPN = {'MLB': 'baseball/mlb', 'NBA': 'basketball/nba', 'WNBA': 'basketball/wnba
 TIER_BADGE = {'lock': '🔒 LOCK ROOM', 'sharp': '📊 SHARP ROOM', 'whale': '🐋 WHALE ROOM',
               'free': '🆓 FREE PICK', 'challenge': '💵 CHALLENGE'}
 
+ESPORT_LABEL = {'cs2': 'CS2', 'lol': 'LoL', 'valorant': 'VALORANT', 'dota2': 'Dota 2'}
+def league_tag(sport):
+    """League/game label for every pick + result line: NBA · MLB · UFC · CS2 · LoL ..."""
+    s = (sport or '').lower()
+    if s in ESPORT_LABEL:
+        return ESPORT_LABEL[s]
+    return (sport or 'PICK').upper()
+
 def norm_txt(s):
     return re.sub(r'[^a-z]', '', (s or '').lower())
 
@@ -3365,16 +3377,17 @@ def x_receipt_text(r, all_picks=None, chal=None):
         rec_lines.append(f"💵 bankroll ${chal.get('balance', 0):.2f} ({rec.get('wins', 0)}-{rec.get('losses', 0)}) · goal $1,000")
     rec_block = ('\n' + '\n'.join(rec_lines) + '\n') if rec_lines else ''
     seed = f"{r.get('id')}{r.get('date')}{r.get('result')}"
+    rtag = f"[{league_tag(r.get('sport'))}] "
     if r['result'] == 'WIN':
-        base = f"🧾 RESULT {badge}: 🟢 {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+        base = f"🧾 RESULT {badge}: 🟢 {rtag}{r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
         # paid-room winners funnel to the store (link renders our branded preview card on X)
         if r.get('tier') in ('whale', 'sharp', 'lock'):
             return base + "💎 Every play like this, every 4 hours → " + store_link
         return base + _pick_closer(CLOSERS_WIN, seed)
     if r['result'] == 'PUSH':
-        return (f"🧾 RESULT {badge}: 🟢 {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
+        return (f"🧾 RESULT {badge}: 🟢 {rtag}{r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
                 + _pick_closer(CLOSERS_PUSH, seed))
-    return (f"🧾 RESULT {badge}: 🟢 {r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+    return (f"🧾 RESULT {badge}: 🟢 {rtag}{r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
             + _pick_closer(CLOSERS_LOSS, seed))
 
 async def settle_challenge(guild, p):
@@ -3402,7 +3415,7 @@ async def settle_challenge(guild, p):
             e = '✅' if p['result'] == 'WIN' else ('🟰' if p['result'] == 'PUSH' else '❌')
             nxt = min(chal['balance'] * 0.2, chal['balance'])
             await ch.send(f"💵 **CHALLENGE BET #{hit.get('n')} — {p['result']}** {e}\n"
-                          f"🟢 {p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
+                          f"🟢 [{league_tag(p.get('sport'))}] {p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
                           f"**BALANCE: {_money_e(chal['balance'])} ${chal['balance']:.2f}** (goal: 💰 ${chal.get('goal', 1000):.0f}) · record {chal['record']['wins']}-{chal['record']['losses']}\n"
                           f"Next challenge action lands with the 4 PM ET scan. — SHiFT ⚡")
             try:
@@ -3431,15 +3444,24 @@ async def grader():
                 # ESPORTS: settle via PandaScore past matches (receipts for cs2/lol/valorant/dota2)
                 if sport.lower() in PS_GAMES:
                     team = p.get('team') or (p.get('desc', '').rsplit(' ML', 1)[0] if ' ML' in (p.get('desc') or '') else '')
-                    leg = await ps_settle_leg(team, sport, p.get('date', ''))
-                    if leg in (None, 'pending'):
+                    d = await ps_settle_leg_detail(team, sport, p.get('date', ''))
+                    if not d:
                         continue
+                    leg = d['result']
                     u = float(p.get('units') or 1.0)
                     o = p.get('odds') if isinstance(p.get('odds'), int) else -110
                     p['odds'] = o  # legacy None-odds picks settle at standard -110 — receipts always show a number
                     p['result'] = leg.upper()
                     p['units_result'] = round(profit_units(o, u), 2) if leg == 'win' else (-u if leg == 'loss' else 0.0)
-                    p['score'] = f"{team} vs {p.get('vs') or p.get('opp') or 'opponent'} — {leg}"
+                    opp = d.get('opp') or p.get('vs') or p.get('opp') or ''
+                    if opp and not p.get('vs'):
+                        p['vs'] = opp  # heal the record so receipts never say "opponent" again
+                    if d.get('score'):
+                        p['score'] = f"{team} {d['score']} {opp} · final".strip()
+                    elif opp:
+                        p['score'] = f"{team} def. {opp}" if leg == 'win' else (f"{opp} def. {team}" if leg == 'loss' else f"{team} vs {opp} — draw")
+                    else:
+                        p['score'] = f"{team} — {leg}"
                     new_results.append(p)
                     continue
                 if sport not in ESPN:
@@ -3485,7 +3507,7 @@ async def grader():
                 overnight = '\n📅 counts for tomorrow\'s card'
             badge = TIER_BADGE.get(p.get('tier'), '')
             if ch:
-                await ch.send(f"🧾 **RESULT {badge}:** 🟢 {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\n"
+                await ch.send(f"🧾 **RESULT {badge}:** 🟢 [{league_tag(p.get('sport'))}] {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\n"
                               f"Final: {p.get('score')}{overnight}")
             if p.get('tier') == 'challenge':
                 await settle_challenge(guild, p)
@@ -4336,7 +4358,7 @@ async def scan_engine_run(g0, slot_key, dry):
         for n, p in enumerate(plays, 1):
             odds_s = f" ({fmt_odds_num(p['odds'])})" if p['odds'] is not None else ''
             if p.get('parlay'):
-                leg_lines = '\n'.join(f"   • 🟢 {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in p['legs'])
+                leg_lines = '\n'.join(f"   • 🟢 [{league_tag(lg.get('sport'))}] {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in p['legs'])
                 lines.append(f"{n}\u20e3 🎰 **{p['pick']}{odds_s} — {p['units']}u**\n{leg_lines}\n"
                              f"{p['market']} · first leg {_et(p['start'])}\n"
                              f"🧠 **Why it's the play:** every leg cleared our edge bar — combined model probability {p.get('prob', 0):.0%} vs the price's implied {(1 / (ml_to_dec(p['odds']) or 2)):.0%}. That's value stacked on value.")
@@ -4347,12 +4369,12 @@ async def scan_engine_run(g0, slot_key, dry):
                                 f"That gap is the whole bet: we're not just picking the team, we're buying the number cheaper than it's worth.")
                     extras = se_whale_extras(p)
                     lines.append(f"{n}\u20e3 🟢 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
-                                 f"{p['market']} · {_et(p['start'])}\n"
+                                 f"{league_tag(p.get('sport'))} · {p['market']} · {_et(p['start'])}\n"
                                  f"📊 {p.get('analysis','')}\n"
                                  f"{why_deep}" + (f"\n{extras}" if extras else ''))
                 else:
                     lines.append(f"{n}\u20e3 🟢 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
-                                 f"{p['market']} · {_et(p['start'])}\n"
+                                 f"{league_tag(p.get('sport'))} · {p['market']} · {_et(p['start'])}\n"
                                  f"📊 {p.get('analysis','')}\n"
                                  f"{_why(p, rank_of.get(id(p), n))}")
             reg = {'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}", 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
@@ -4388,13 +4410,13 @@ async def scan_engine_run(g0, slot_key, dry):
     fp_ment = f'<#{free_ch.id}>' if free_ch else '#free-pick'
     comp = f"✅ {tag}**SCAN COMPLETE — {slot_et}**\n\n"
     if free_p:
-        comp += f"🎯 **FREE: {free_p['pick']} vs {free_p['vs']} — {free_p['units']}u** ({_et(free_p['start'])}) → live in {fp_ment}\n"
+        comp += f"🎯 **FREE: [{league_tag(free_p.get('sport'))}] {free_p['pick']} vs {free_p['vs']} — {free_p['units']}u** ({_et(free_p['start'])}) → live in {fp_ment}\n"
     else:
         comp += f"🎯 No free play this window — nothing met our edge bar, and we don't force bets. Next scan **{_nxt_et()}**.\n"
     cnts = ' · '.join(f"{e} +{len(deal[t])}" for t, e in (('lock', '🔒'), ('sharp', '📊'), ('whale', '🐋')) if deal[t])
     if cnts:
         comp += f"\n{cnts} — the full board is live in the paid rooms.\n💎 **12+ plays a day** in Whale · **12** in Sharp · **6** in Lock → {upg_ment}\n"
-    comp += "\nEvery play before start. Every result receipted. ⚡"
+    comp += f"\n⏭️ **Next card drops {_nxt_et()}** — lock in early, lines move.\nEvery play before start. Every result receipted. ⚡"
     await gen.send(comp)
     # ---- register + mark
     if not dry:
@@ -4691,8 +4713,9 @@ def heal_pick_teams(p, sb):
 
 _PS_PAST_CACHE = {}
 
-async def ps_settle_leg(team, sport, date_et):
-    """Settle one esports side via PandaScore past matches: 'win'/'loss'/'push'/None."""
+async def ps_settle_leg_detail(team, sport, date_et):
+    """Settle one esports side via PandaScore past matches.
+    Returns {'result': 'win'/'loss'/'push', 'opp': name, 'score': 's1-s2', 'bo': n} or None."""
     game = PS_GAMES.get((sport or '').lower())
     if not game or not team:
         return None
@@ -4728,14 +4751,24 @@ async def ps_settle_leg(team, sport, date_et):
                 continue
             if date_et and m_date != date_et:
                 continue
-            win_id = m.get('winner_id')
+            other = (opps[1 - hit].get('opponent') or {})
             t_id = (opps[hit].get('opponent') or {}).get('id')
-            if win_id is None:
-                return 'push'
-            return 'win' if t_id == win_id else 'loss'
+            o_id = other.get('id')
+            sc = ''
+            s_map = {r.get('team_id'): r.get('score') for r in (m.get('results') or [])}
+            if t_id in s_map and o_id in s_map:
+                sc = f"{s_map[t_id]}-{s_map[o_id]}"
+            win_id = m.get('winner_id')
+            result = 'push' if win_id is None else ('win' if t_id == win_id else 'loss')
+            return {'result': result, 'opp': other.get('name', ''), 'score': sc, 'bo': m.get('number_of_games')}
         except Exception:
             continue
     return None
+
+async def ps_settle_leg(team, sport, date_et):
+    """Settle one esports side: 'win'/'loss'/'push'/None (thin wrapper over the detail call)."""
+    d = await ps_settle_leg_detail(team, sport, date_et)
+    return d['result'] if d else None
 
 async def grade_parlays(guild):
     """Settle registered parlays: every leg final -> WIN all / LOSS any / PUSH mix."""
@@ -4862,7 +4895,7 @@ async def challenge_daily(g0, cands, dry):
                               'odds': o, 'units': 1.0, 'tier': 'challenge', 'time_et': t_et,
                               'analysis': c.get('analysis', '')[:300]})
             posted += 1
-            await ch.send(f"💵 {'[DRY] ' if dry else ''}**CHALLENGE BET #{n0}** — 💲**${stake:.2f}** on **{c['pick']}** ({fmt_odds_num(o)}) vs {c['vs']}\n"
+            await ch.send(f"💵 {'[DRY] ' if dry else ''}**CHALLENGE BET #{n0}** — 💲**${stake:.2f}** on [{league_tag(c.get('sport'))}] **{c['pick']}** ({fmt_odds_num(o)}) vs {c['vs']}\n"
                           f"📊 {c.get('analysis','')}\n"
                           f"To win **${to_win:.2f}** · balance {_money_e(bal)} **${bal:.2f}** → 💰 **$1,000** goal · {_et(c['start'])} ET ⚡")
             await asyncio.sleep(1)
@@ -4887,7 +4920,7 @@ async def challenge_daily(g0, cands, dry):
                                         'vs': lg['vs'], 'sport': lg['sport'], 'date': today_et,
                                         'time_et': _et(lg['start'])} for lg in c['legs']]})
             await ch.send(f"💵 {'[DRY] ' if dry else ''}**CHALLENGE PARLAY #{n0}** — ${p_stake:.2f} lotto ticket 🎰\n"
-                              + '\n'.join(f"• {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in c['legs']) +
+                              + '\n'.join(f"• [{league_tag(lg.get('sport'))}] {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in c['legs']) +
                               f"\nCombined **{fmt_odds_num(c['odds'])}** — to win **${p_win:.2f}** · balance {_money_e(bal)} **${bal:.2f}** → 💰 $1,000 ⚡")
         if not posted and not parlays:
             await ch.send(f"💵 {'[DRY] ' if dry else ''}**CHALLENGE — {today_et}**: slate too thin for a qualified edge today. "
