@@ -1,5 +1,5 @@
 {
-  "seq": 354,
+  "seq": 355,
   "commands": [
     {
       "seq": 163,
@@ -1248,6 +1248,12 @@
       "seq": 354,
       "action": "scan_now",
       "dry": true
+    },
+    {
+      "seq": 355,
+      "action": "read_full",
+      "channel": "shift-lab",
+      "limit": 6
     }
   ]
 }
