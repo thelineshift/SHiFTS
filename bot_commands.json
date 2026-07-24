@@ -1,5 +1,5 @@
 {
-  "seq": 317,
+  "seq": 319,
   "commands": [
     {
       "seq": 163,
@@ -1039,6 +1039,20 @@
       "action": "read_recent",
       "channel": "general-chat",
       "limit": 40
+    },
+    {
+      "seq": 318,
+      "action": "read_full",
+      "channel": "general-chat",
+      "limit": 8
+    },
+    {
+      "seq": 319,
+      "action": "delete_where",
+      "channel": "general-chat",
+      "contains": "Unified board dealt top-down",
+      "limit": 60,
+      "max": 1
     }
   ]
 }
