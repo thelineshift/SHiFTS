@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.3.0'
+BOT_VERSION = '9.3.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -2115,6 +2115,51 @@ async def run_command(cmd, guild, log):
         for t in guild.threads:
             thr.append(f"thread '{t.name}' in #{getattr(t.parent, 'name', '?')} (id={t.id})")
         log.append('PERMS:\n' + '\n'.join(lines) + ('\nTHREADS: ' + ' | '.join(thr) if thr else '\nTHREADS: none'))
+    elif a == 'perm_detail':
+        ch = find_channel(guild, cmd['channel'])
+        if not ch:
+            log.append('perm_detail: channel not found')
+            return
+        lines = []
+        for tgt, ow in ch.overwrites.items():
+            nm = getattr(tgt, 'name', str(tgt))
+            lines.append(f"{nm}: view={ow.view_channel},send={ow.send_messages},threads={ow.create_public_threads},files={ow.attach_files}")
+        log.append(f"#{ch.name} overwrites:\n" + '\n'.join(lines[:12]))
+    elif a == 'sweep_giveaway':
+        gch = find_channel(guild, 'giveaway')
+        if not gch:
+            log.append('sweep_giveaway: channel not found')
+            return
+        st_g = await asyncio.to_thread(get_state) or {}
+        handled = set(st_g.get('gw_handled', []))
+        conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH) or {}
+        limit = int(cmd.get('limit', 60))
+        msgs = [m async for m in gch.history(limit=limit)]
+        done = 0
+        dirty = False
+        for m in reversed(msgs):
+            if m.author.bot or str(m.id) in handled:
+                continue
+            hs = gw_handle_parse(m.content or '')
+            if not hs:
+                continue
+            await gw_mark_handled(st_g, m.id)
+            dirty = True
+            if hs[0].lower() in conf:
+                await gw_reply_once(m, 'already', f"🎫 **@{hs[0]}** — you're already entered in Sunday's $50 draw (6 PM ET). Nothing else to do — good luck! ⚡")
+                done += 1
+                continue
+            try:
+                await verify_giveaway_entry(m, hs[0])
+                done += 1
+            except Exception:
+                pass
+            await asyncio.sleep(2)
+            if done >= 10:
+                break
+        if dirty:
+            await asyncio.to_thread(gh_put, 'bot_state.json', st_g, 'gw manual sweep')
+        log.append(f'sweep_giveaway: {done} processed')
     elif a == 'lock_channel':
         ch = find_channel(guild, cmd['channel'])
         preset = cmd.get('preset', 'community')
@@ -2133,15 +2178,19 @@ async def run_command(cmd, guild, log):
                                      embed_links=True, mention_everyone=False, manage_messages=False,
                                      read_message_history=True)
         elif preset == 'paid':
-            role = discord.utils.find(lambda r: cmd.get('role', '').lower() in r.name.lower(), guild.roles)
-            if not role:
-                log.append(f'lock_channel: role {cmd.get("role")} not found')
-                return
             await ch.set_permissions(everyone, view_channel=False)
-            await ch.set_permissions(role, view_channel=True, send_messages=True,
-                                     create_public_threads=False, create_private_threads=False,
-                                     attach_files=False, add_reactions=True, use_external_emojis=True,
-                                     mention_everyone=False, manage_messages=False, read_message_history=True)
+            for rname in str(cmd.get('role', '')).split(','):
+                rname = rname.strip()
+                if not rname:
+                    continue
+                role = discord.utils.find(lambda r: rname.lower() in r.name.lower(), guild.roles)
+                if not role:
+                    log.append(f'lock_channel: role {rname} not found')
+                    continue
+                await ch.set_permissions(role, view_channel=True, send_messages=True,
+                                         create_public_threads=False, create_private_threads=False,
+                                         attach_files=False, add_reactions=True, use_external_emojis=True,
+                                         mention_everyone=False, manage_messages=False, read_message_history=True)
         # bot keeps full control
         await ch.set_permissions(guild.me, view_channel=True, send_messages=True, manage_messages=True,
                                  manage_channels=True, read_message_history=True, manage_threads=True)
