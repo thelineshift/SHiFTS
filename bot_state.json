@@ -1,11 +1,11 @@
 {
-  "executed_seq": 371,
+  "executed_seq": 373,
   "last_log": [
-    "seq 371 executed 2026-07-24 20:45 UTC",
-    "lock_channel: #\ud83c\udfc6100-to-1000-20 -> readonly",
-    "renamed #\ud83c\udfc6100-to-1000-20 -> \ud83d\udcb5100-to-\ud83d\udcb01000-0-0",
+    "seq 373 executed 2026-07-24 20:48 UTC",
     "ERROR set_topic: 'NoneType' object has no attribute 'edit'",
-    "ERROR post_and_pin: 'NoneType' object has no attribute 'send'"
+    "ERROR post_and_pin: 'NoneType' object has no attribute 'send'",
+    "topic set on #\ud83d\udcb5100-to-\ud83d\udcb01000-0-0",
+    "posted+pinned in #\ud83d\udcb5100-to-\ud83d\udcb01000-0-0"
   ],
   "time_audit": {
     "at": "2026-07-24 20:45 UTC",
@@ -110,7 +110,7 @@
     "20260724-16-note": "12PM ET: cron died silently again; bot engine flipped LIVE and posted the real card 16:25 UTC (5 plays, first fully-autonomous live card).",
     "20260724-20": "ok-bot"
   },
-  "executed_cmd_seq": 369,
+  "executed_cmd_seq": 373,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 12,
