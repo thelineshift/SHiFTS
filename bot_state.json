@@ -1,12 +1,8 @@
 {
-  "executed_seq": 329,
+  "executed_seq": 330,
   "last_log": [
-    "seq 329 executed 2026-07-24 15:15 UTC",
-    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+media.write+offline.access&state=79d942c75fe19f43&code_challenge=bFz4Gx_nrYZNAT_vW_otgyI3mTjma4rcNPkR-cqScOc&code_challenge_method=S256",
-    "#\u2699\ufe0fupdates | dmasudowzp: Dmasud",
-    "#\u2699\ufe0fupdates | LineShift Bot#8676: \u2705 **SHiFT back online \u2014 v9.2.0** \u26a1",
-    "#\u2699\ufe0fupdates | \u26a1 SHiFT#0000: \u26a0\ufe0f **SHiFT going offline for a build push** \u2014 v9.2.0 (giveaway fixes, X verify repair, cleaner cards). Back in a few minutes. \u26a1",
-    "#\u2699\ufe0fupdates | SHiFT#0000: \ud83d\udea8 **SYSTEM UPGRADE \u2014 THE MACHINE NOW SCANS 6X A DAY**\n\nTheLineShift runs live scan events **every 4 hours**: **12a \u00b7 4a \u00b7 8a \u00b7 12p \u00b7 4p \u00b7 8p ET** \u2014 countdown, collection,"
+    "seq 330 executed 2026-07-24 15:30 UTC",
+    "PERMS:\n#\ud83d\udc4bwelcome: everyone(view=True,send=False,threads=None,files=None)\n#\ud83d\udcdcrules: everyone(view=True,send=False,threads=None,files=None)\n#\ud83d\udc8eupgrade: everyone(view=True,send=True,threads=None,files=None)\n#\ud83c\udfaffree-pick-8-1: everyone(view=True,send=False,threads=None,files=None)\n#\ud83e\uddfereceipts: everyone(view=True,send=False,threads=None,files=None)\n#\ud83d\udcacgeneral-chat: everyone(view=True,send=True,threads=None,files=None)\n#\ud83d\udd12lock-room-4-8: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udd12lock-lounge: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udccasharp-room-5-3: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udccasharp-analytics: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udccasharp-talk: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udc0bwhale-room-6-3: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udc0bwhale-deepdive: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udc0bwhale-talk: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83c\udfc6100-to-1000-20: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udce3promotions: everyone(view=True,send=False,threads=None,files=None)\n#\ud83c\udf81giveaway: everyone(view=True,send=True,threads=None,files=None)\n#\u2699\ufe0fupdates: everyone(view=True,send=False,threads=None,files=None)\n#\ud83e\uddeashift-lab: everyone(view=False,send=None,threads=None,files=None) gates=['\ud83d\udc0b Whale', '\ud83d\udd12 Lock Room', '\ud83d\udcca Sharp']\n#\ud83d\udee0\ufe0fissues: everyone(view=True,send=True,threads=None,files=None)\nTHREADS: thread 'Dmasud' in #\u2699\ufe0fupdates (id=1530231040646451280)"
   ],
   "time_audit": {
     "at": "2026-07-24 15:25 UTC",
@@ -61,7 +57,7 @@
     "20260724-12": "ok",
     "20260724-12-note": "8AM ET makeup by ops 12:20 UTC \u2014 esports-led window card (4 plays). Engine cron turn died pre-post again; checklist slim-fix shipping next."
   },
-  "executed_cmd_seq": 329,
+  "executed_cmd_seq": 330,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 10,
