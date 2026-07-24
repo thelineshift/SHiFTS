@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T16:25:33Z",
+  "updated": "2026-07-24T19:03:38Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -899,7 +899,10 @@
       "units": 1.5,
       "tier": "whale",
       "time_et": "12:00 PM",
-      "analysis": "Heroic 4-1 last five series vs Astralis 2-3 with role shuffle \u2014 StarLadder tier-1 form gap. Odds-free ML per esports doctrine."
+      "analysis": "Heroic 4-1 last five series vs Astralis 2-3 with role shuffle \u2014 StarLadder tier-1 form gap. Odds-free ML per esports doctrine.",
+      "result": "WIN",
+      "units_result": 1.36,
+      "score": "Heroic vs opponent \u2014 win"
     },
     {
       "id": "hussein-ml-0725",
@@ -927,7 +930,10 @@
       "units": 1.0,
       "tier": "free",
       "time_et": "10:00 AM",
-      "analysis": "G2 form trending up vs KOI 1-4 slide \u2014 LEC Bo3 brand square. Window card 8AM."
+      "analysis": "G2 form trending up vs KOI 1-4 slide \u2014 LEC Bo3 brand square. Window card 8AM.",
+      "result": "WIN",
+      "units_result": 0.91,
+      "score": "G2 Esports vs opponent \u2014 win"
     },
     {
       "id": "oddik-bh-ml-0724",
@@ -941,7 +947,10 @@
       "units": 1.0,
       "tier": "lock",
       "time_et": "12:00 PM",
-      "analysis": "ODDIK 4-1 vs BH 2-3 recent series \u2014 cleanest midday form gap. Window card 8AM."
+      "analysis": "ODDIK 4-1 vs BH 2-3 recent series \u2014 cleanest midday form gap. Window card 8AM.",
+      "result": "WIN",
+      "units_result": 0.91,
+      "score": "ODDIK vs opponent \u2014 win"
     },
     {
       "id": "newvision-entropy-ml-0724",
@@ -955,7 +964,10 @@
       "units": 1.0,
       "tier": "sharp",
       "time_et": "10:00 AM",
-      "analysis": "Entropy 1-4 with shuffled roster; NEW VISION 3-2 form edge. Window card 8AM."
+      "analysis": "Entropy 1-4 with shuffled roster; NEW VISION 3-2 form edge. Window card 8AM.",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "NEW VISION vs opponent \u2014 loss"
     },
     {
       "id": "borracheiros-fdb-ml-0724",
@@ -1017,7 +1029,10 @@
       "units": 1.0,
       "tier": "sharp",
       "time_et": "01:00 PM ET",
-      "analysis": "4-1 last 5 (beat Bushido Wildcats, megoshort, mellren) (lost to Pitstop crew) vs 3-2"
+      "analysis": "4-1 last 5 (beat Bushido Wildcats, megoshort, mellren) (lost to Pitstop crew) vs 3-2",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Privateer Gaming vs opponent \u2014 loss"
     },
     {
       "id": "milwaukee-brewers-ml-0724",
