@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.3'
+BOT_VERSION = '9.9.4'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -204,12 +204,68 @@ def _http_json(url, payload=None, headers=None, timeout=20):
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.load(r)
 
+EVM_RPCS = {
+    'ethereum': ('ETH', 'ethereum', ['https://ethereum-rpc.publicnode.com', 'https://eth.drpc.org', 'https://rpc.mevblocker.io']),
+    'base': ('ETH', 'ethereum', ['https://base-rpc.publicnode.com', 'https://mainnet.base.org']),
+    'polygon': ('POL', 'polygon-ecosystem-token', ['https://polygon-bor-rpc.publicnode.com', 'https://polygon-rpc.com']),
+    'bsc': ('BNB', 'binancecoin', ['https://bsc-rpc.publicnode.com', 'https://bsc-dataseed.binance.org']),
+    'arbitrum': ('ETH', 'ethereum', ['https://arbitrum-one-rpc.publicnode.com', 'https://arb1.arbitrum.io/rpc']),
+}
+USDC_E_POLYGON = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'  # bridged USDC.e — the Polymarket rail
+USDC_POLYGON = '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359'    # native USDC
+
+def _evm_call(chain, method, params):
+    """Call a JSON-RPC method on `chain`, trying each endpoint. Requires a real 'result'."""
+    last = 'no rpc configured'
+    for rpc in EVM_RPCS[chain][2]:
+        try:
+            b = _http_json(rpc, {'jsonrpc': '2.0', 'id': 1, 'method': method, 'params': params})
+            if isinstance(b, dict) and b.get('result') is not None:
+                return b['result']
+            last = str((b or {}).get('error') or b)[:80]
+        except Exception as e:
+            last = str(e)[:80]
+    raise RuntimeError(last)
+
+def _erc20_balance(chain, token, addr):
+    data = '0x70a08231' + '0' * 24 + addr[2:].lower()
+    return int(_evm_call(chain, 'eth_call', [{'to': token, 'data': data}, 'latest']), 16) / 1e6
+
+def polymarket_status():
+    """Polymarket US account snapshot for the ops dashboard. Never raises."""
+    out = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'configured': False}
+    kid, sec = os.environ.get('POLYMARKET_KEY_ID', ''), os.environ.get('POLYMARKET_SECRET', '')
+    if not (kid and sec):
+        return out
+    out['configured'] = True
+    try:
+        from polymarket_us import PolymarketUS
+        c = PolymarketUS(key_id=kid, secret_key=sec)
+        bals = ((c.account.balances() or {}).get('balances')) or []
+        usd = next((b for b in bals if b.get('currency') == 'USD'), bals[0] if bals else {})
+        out['balance_usd'] = round(float(usd.get('currentBalance') or 0), 2)
+        out['buying_power'] = round(float(usd.get('buyingPower') or 0), 2)
+        pos = ((c.portfolio.positions() or {}).get('availablePositions')) or []
+        out['positions'] = [
+            {'market': p.get('marketSlug') or p.get('market') or '', 'title': p.get('title') or '',
+             'side': str(p.get('side') or p.get('intent') or ''), 'qty': p.get('quantity') or p.get('qty'),
+             'avg': p.get('averagePrice') or p.get('avgPrice'), 'mark': p.get('markPrice') or p.get('currentPrice'),
+             'pnl': p.get('unrealizedPnl') or p.get('pnl')} for p in pos][:20]
+        oo = ((c.orders.list() or {}).get('orders')) or []
+        out['open_orders'] = [
+            {'market': o.get('marketSlug') or '', 'intent': str(o.get('intent') or ''),
+             'price': (o.get('price') or {}).get('value') if isinstance(o.get('price'), dict) else o.get('price'),
+             'qty': o.get('quantity') or o.get('qty')} for o in oo][:20]
+    except Exception as e:
+        out['error'] = str(e)[:200]
+    return out
+
 def wallet_balances():
     """On-chain balances for all hot wallets + USD values. Never raises."""
     out = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'wallets': []}
     try:
         w = gh_get_json('wallets.json') or {}
-        px = _http_json('https://api.coingecko.com/api/v3/simple/price?ids=solana,ethereum,bitcoin&vs_currencies=usd')
+        px = _http_json('https://api.coingecko.com/api/v3/simple/price?ids=solana,ethereum,bitcoin,binancecoin,polygon-ecosystem-token&vs_currencies=usd')
         for x in w.get('wallets', []):
             ch, addr = x['chain'], x['address']
             entry = {'chain': ch, 'symbol': x.get('symbol', ch.upper()), 'label': x.get('label', '💼 OPS WALLET'),
@@ -221,16 +277,28 @@ def wallet_balances():
                     bal = b['result']['value'] / 1e9
                     entry.update(balance=round(bal, 5), usd=round(bal * px['solana']['usd'], 2))
                 elif ch == 'ethereum':
-                    b = None
-                    for rpc in ('https://eth.llamarpc.com', 'https://cloudflare-eth.com', 'https://rpc.ankr.com/eth'):
+                    chains, tot = [], 0.0
+                    for cname, (sym, px_id, _r) in EVM_RPCS.items():
+                        c = {'chain': cname, 'symbol': sym}
                         try:
-                            b = _http_json(rpc, {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addr, 'latest']})
-                            if b.get('result'):
-                                break
-                        except Exception:
-                            continue
-                    bal = int(b['result'], 16) / 1e18
-                    entry.update(balance=round(bal, 6), usd=round(bal * px['ethereum']['usd'], 2))
+                            bal = int(_evm_call(cname, 'eth_getBalance', [addr, 'latest']), 16) / 1e18
+                            usd_v = bal * (px.get(px_id) or {}).get('usd', 0)
+                            c.update(balance=round(bal, 6), usd=round(usd_v, 2))
+                            tot += usd_v
+                        except Exception as e:
+                            c.update(balance=None, usd=None, error=str(e)[:80])
+                        if cname == 'polygon':
+                            try:
+                                c['usdc'] = round(_erc20_balance('polygon', USDC_E_POLYGON, addr)
+                                                  + _erc20_balance('polygon', USDC_POLYGON, addr), 2)
+                                tot += c['usdc']
+                            except Exception as e:
+                                c['usdc_error'] = str(e)[:60]
+                        chains.append(c)
+                    entry['evm'] = chains
+                    entry.update(balance=None, usd=round(tot, 2))
+                    if all(c.get('error') for c in chains):
+                        entry['error'] = 'all evm rpcs unreachable'
                 elif ch == 'bitcoin':
                     b = _http_json(f'https://blockstream.info/api/address/{addr}')
                     bal = (b['chain_stats']['funded_txo_sum'] - b['chain_stats']['spent_txo_sum']) / 1e8
@@ -340,6 +408,8 @@ def make_client(privileged=True):
             issues_sweep.start()
         if not crypto_sync.is_running():
             crypto_sync.start()
+        if not wallet_watch.is_running():
+            wallet_watch.start()
 
     @c.event
     async def on_message(message):
@@ -2700,6 +2770,17 @@ async def _stripe_sync_once():
 @tasks.loop(seconds=60)
 async def stripe_sync():
     await _stripe_sync_once()
+
+@tasks.loop(seconds=900)
+async def wallet_watch():
+    """Refresh on-chain wallet balances + Polymarket snapshot for the ops dashboard."""
+    try:
+        bal = await asyncio.to_thread(wallet_balances)
+        await asyncio.to_thread(gh_put, 'wallet_balances.json', bal, 'wallet balances')
+        pmst = await asyncio.to_thread(polymarket_status)
+        await asyncio.to_thread(gh_put, 'polymarket.json', pmst, 'polymarket status')
+    except Exception as e:
+        print('wallet_watch error:', e)
 
 @tasks.loop(seconds=300)
 async def crypto_sync():
