@@ -299,6 +299,9 @@ def make_client(privileged=True):
                 print('nick applied:', BOT_NICK)
         except Exception as e:
             print('presence/nick error:', e)
+        if g0 and not getattr(c, '_swept', False):
+            c._swept = True
+            c.loop.create_task(catchup_sweep(g0))
         if not poll.is_running():
             poll.start()
         if not countdown.is_running():
@@ -336,7 +339,25 @@ def make_client(privileged=True):
                 hs += re.findall(r'(?:https?://)?(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{4,15})', raw, flags=re.I)
                 hs = [h for h in hs if h.lower() not in ('thelineshift', 'everyone', 'here', 'status', 'home', 'search', 'explore', 'i')]
                 if hs:
-                    await verify_giveaway_entry(message, hs[0])
+                    try:
+                        await verify_giveaway_entry(message, hs[0])
+                    except Exception as e:
+                        # NEVER SILENT LAW: X down/rate-limited -> provisional entry + tell the user
+                        print('verify wrapper:', e)
+                        try:
+                            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+                            conf = conf or {}
+                            hk = hs[0].lower()
+                            if hk not in conf:
+                                conf[hk] = {'handle': hs[0], 'discord': str(message.author), 'discord_id': str(message.author.id),
+                                            'mult': 1, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                                            'note': 'provisional - X verification unavailable; verify before draw'}
+                                await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'provisional entry ' + hk, QUEUE_BRANCH)
+                            await message.channel.send(f"🎫 **ENTRY LOGGED — @{hs[0]}** — X is rate-limiting our checks right now, so you're in the pool provisional (1 ticket) and I'll re-verify before Sunday's draw. Nothing else to do. ⚡")
+                        except Exception as e2:
+                            print('provisional fail:', e2)
+                elif re.search(r'@|x\.com|twitter|handle', raw, re.I):
+                    await message.channel.send("⚡ Drop your **X (Twitter) handle** like `@yourhandle` — not your Discord name — and I'll scan you in. Entry needs: follow @TheLineShift + like + repost the giveaway post. 🎫")
                 return
             if (message.content or '').strip().lower().startswith('!crypto'):
                 parts = (message.content or '').strip().split()
@@ -699,6 +720,75 @@ async def verify_giveaway_entry(message, handle):
                 f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} finish up, then drop your handle here again and I'll re-scan you in seconds. ⚡")
     except Exception as e:
         print('giveaway verify error:', e)
+
+async def catchup_sweep(g0):
+    # NEVER SILENT LAW: on boot, process giveaway/issues messages that got no response
+    # (covers offline windows). Rate-aware: <=8 replies, 2s apart, skipped during boot loops.
+    try:
+        if boots_last_hour() >= 4:
+            print('catchup sweep skipped (boot-loop guard)')
+            return
+        await asyncio.sleep(8)  # let the bot settle after connect
+        gch = find_channel(g0, 'giveaway')
+        if gch:
+            msgs = [m async for m in gch.history(limit=40)]
+            answered = set()
+            for m in msgs:
+                if m.author.bot:
+                    for h in re.findall(r'@([A-Za-z0-9_]{4,15})\b', m.content or ''):
+                        answered.add(h.lower())
+            done = 0
+            for m in reversed(msgs):
+                if m.author.bot:
+                    continue
+                raw = m.content or ''
+                hs = [h for h in re.findall(r'@([A-Za-z0-9_]{4,15})\b', raw)
+                      if h.lower() not in ('thelineshift', 'everyone', 'here', 'status', 'home')]
+                hs += [h for h in re.findall(r'(?:https?://)?(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{4,15})', raw, flags=re.I)]
+                if hs and hs[0].lower() in answered:
+                    continue
+                if hs:
+                    try:
+                        await verify_giveaway_entry(m, hs[0])
+                        done += 1
+                    except Exception:
+                        try:
+                            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+                            conf = conf or {}
+                            hk = hs[0].lower()
+                            if hk not in conf:
+                                conf[hk] = {'handle': hs[0], 'discord': str(m.author), 'discord_id': str(m.author.id),
+                                            'mult': 1, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                                            'note': 'provisional (catchup) - verify before draw'}
+                                await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'catchup provisional ' + hk, QUEUE_BRANCH)
+                            await gch.send(f"🎫 **ENTRY LOGGED — @{hs[0]}** — caught up after a restart; provisional ticket logged, re-verified before Sunday's draw. ⚡")
+                            done += 1
+                        except Exception:
+                            pass
+                    await asyncio.sleep(2)
+                elif re.search(r'x\.com|twitter|handle', raw, re.I):
+                    await gch.send("⚡ Drop your **X (Twitter) handle** like `@yourhandle` — not your Discord name — and I'll scan you in. 🎫")
+                    done += 1
+                    await asyncio.sleep(2)
+                if done >= 8:
+                    break
+            if done:
+                print(f'giveaway catchup: {done} processed')
+        ich = find_channel(g0, 'issues')
+        if ich:
+            msgs = [m async for m in ich.history(limit=15)]
+            bot_ts = max((m.created_at for m in msgs if m.author.bot), default=None)
+            unans = [m for m in msgs if not m.author.bot and (bot_ts is None or m.created_at > bot_ts)]
+            for m in reversed(unans[-3:]):
+                try:
+                    await handle_issue(m, g0)
+                    await asyncio.sleep(2)
+                except Exception as e:
+                    print('issues catchup:', e)
+            if unans:
+                print(f'issues catchup: {len(unans[-3:])} triaged')
+    except Exception as e:
+        print('catchup sweep error:', e)
 
 async def run_command(cmd, guild, log):
     a = cmd.get('action')
@@ -2367,7 +2457,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.56'
+            state['bot_version'] = '8.9.57'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
