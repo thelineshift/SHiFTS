@@ -1,5 +1,5 @@
 {
-  "seq": 327,
+  "seq": 329,
   "commands": [
     {
       "seq": 163,
@@ -1104,6 +1104,16 @@
       "discord": "payarew",
       "discord_id": "",
       "reverify": true
+    },
+    {
+      "seq": 328,
+      "action": "x_link_start"
+    },
+    {
+      "seq": 329,
+      "action": "read_recent",
+      "channel": "updates",
+      "limit": 4
     }
   ]
 }
