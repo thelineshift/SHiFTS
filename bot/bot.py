@@ -2367,7 +2367,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.53'
+            state['bot_version'] = '8.9.54'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -3262,6 +3262,20 @@ def boot_marker():
         print('boot marker failed:', e)
         return -1
 
+def storm_sleep():
+    # exponential backoff during crash/429 loops: 5m -> 10m -> 20m -> cap 30m.
+    # a flat 5min retry = 12 identifies/hour = keeps a Discord 429 hot forever.
+    try:
+        st = get_state()
+        boots = (st or {}).get('boot_log', [])
+        cutoff = time.time() - 3600
+        recent = [b for b in boots
+                  if time.mktime(time.strptime(b, '%Y-%m-%dT%H:%M:%SZ')) > cutoff]
+        extra = max(0, len(recent) - 2)
+        return min(300 * (2 ** extra), 1800)
+    except Exception:
+        return 300
+
 def run_guarded():
     global client
     # CONNECTION-STORM GUARD: Discord resets tokens after ~1000 gateway connects in a short
@@ -3283,8 +3297,9 @@ def run_guarded():
         time.sleep(3600)
     except Exception as e:
         print('fatal run error:', e)
-        print('sleeping 5min before exit (restart throttle)')
-        time.sleep(300)
+        nap = storm_sleep()
+        print(f'sleeping {nap // 60}min before exit (exponential restart throttle)')
+        time.sleep(nap)
     else:
         print('clean disconnect - sleeping 2min before exit (restart throttle)')
         time.sleep(120)
