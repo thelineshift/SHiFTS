@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.10.1'
+BOT_VERSION = '9.11.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -312,6 +312,136 @@ def polymarket_status():
         out['error'] = str(e)[:200]
     return out
 
+# ---------- POLYMARKET LIVE RAIL ----------
+PM_LIVE = os.environ.get('POLYMARKET_LIVE', '') == '1'
+PM_LIVE_CAP = float(os.environ.get('PM_LIVE_CAP', '0') or 0)  # per-bet real-$ cap (proof phase)
+PM_BANKROLL_START = 50.0
+
+def _pm_client():
+    kid, sec = os.environ.get('POLYMARKET_KEY_ID', ''), os.environ.get('POLYMARKET_SECRET', '')
+    if not (kid and sec):
+        return None
+    from polymarket_us import PolymarketUS
+    return PolymarketUS(key_id=kid, secret_key=sec)
+
+def pm_cash_balance():
+    """Real USD cash + buying power. None if unavailable."""
+    c = _pm_client()
+    if not c:
+        return None
+    try:
+        bals = ((c.account.balances() or {}).get('balances')) or []
+        usd = next((b for b in bals if b.get('currency') == 'USD'), bals[0] if bals else {})
+        return {'balance': round(float(usd.get('currentBalance') or 0), 2),
+                'buying_power': round(float(usd.get('buyingPower') or 0), 2)}
+    except Exception as e:
+        print('[pm] balance:', e); return None
+
+def pm_find_market(team, opp, start_iso):
+    """Tradable winner/moneyline market for team (vs opp) around start time. Dict or None."""
+    c = _pm_client()
+    if not c:
+        return None
+    try:
+        now = time.time()
+        t0, t1 = now - 14 * 3600, now + 48 * 3600
+        if start_iso:
+            try:
+                from datetime import datetime as _dt
+                t0 = _dt.fromisoformat(str(start_iso).replace('Z', '+00:00')).timestamp() - 14 * 3600
+                t1 = t0 + 62 * 3600
+            except Exception:
+                pass
+        fmt = lambda ts: time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(ts))
+        r = c.events.list({'closed': False, 'startTimeMin': fmt(t0), 'startTimeMax': fmt(t1), 'limit': 100})
+        evs = (r.get('events') if isinstance(r, dict) else r) or []
+        nt, no = norm_txt(team), norm_txt(opp or '')
+        for ev in evs:
+            title = ev.get('title') or ev.get('name') or ''
+            hay = norm_txt(title + ' ' + (ev.get('slug') or ''))
+            if nt not in hay or (no and no not in hay):
+                continue
+            eid = ev.get('id') or ev.get('eventId')
+            det = c.events.retrieve(eid) if eid else ev
+            evd = (det.get('event') if isinstance(det, dict) and 'event' in det else det) or {}
+            for m in evd.get('markets') or []:
+                smt = str(m.get('sportsMarketType') or m.get('marketType') or '').lower()
+                if 'winner' not in smt and 'moneyline' not in smt:
+                    continue
+                md = m.get('marketMetadata') if isinstance(m.get('marketMetadata'), dict) else {}
+                oc = (md or {}).get('outcome')
+                if oc and nt not in norm_txt(str(oc)):
+                    continue
+                sides = m.get('marketSides') or []
+                long_side = next((s for s in sides if s.get('long')), sides[0] if sides else {})
+                if long_side.get('tradable') is False:
+                    continue
+                q = long_side.get('quote') or {}
+                try:
+                    price = float(q.get('value') or long_side.get('price') or 0)
+                except Exception:
+                    price = 0
+                if not (0.02 < price < 0.98):
+                    continue
+                return {'marketSlug': m.get('marketSlug') or m.get('slug') or '',
+                        'outcome': str(oc or team), 'title': title, 'price': price,
+                        'minQty': int(m.get('minOrderSize') or long_side.get('minQuantity') or 1),
+                        'start': ev.get('startTime') or start_iso, 'smt': smt}
+        return None
+    except Exception as e:
+        print('[pm] find:', e); return None
+
+def pm_place_bet(info, stake):
+    """Place a capped GTC limit BUY_LONG. {'order_id','qty','price','stake'} or {'error'}."""
+    if not _pm_client():
+        return {'error': 'no_client'}
+    try:
+        bal = pm_cash_balance()
+        bp = bal['buying_power'] if bal else 0.0
+        stake = round(min(float(stake), bp), 2)
+        price = float(info['price'])
+        qty = int(stake / price)
+        min_q = max(1, int(info.get('minQty') or 1))
+        if qty < min_q:
+            if min_q * price <= bp:
+                qty = min_q
+            else:
+                return {'error': 'below_min'}
+        if qty < 1:
+            return {'error': 'no_liquidity'}
+        stake = round(qty * price, 2)
+        r = _pm_client().orders.create({'marketSlug': info['marketSlug'], 'intent': 'ORDER_INTENT_BUY_LONG',
+                                        'type': 'ORDER_TYPE_LIMIT',
+                                        'price': {'value': f"{price:.2f}", 'currency': 'USD'},
+                                        'quantity': qty, 'tif': 'TIME_IN_FORCE_GOOD_TILL_CANCEL'})
+        oid = (r or {}).get('orderId') or (r or {}).get('id') or ''
+        return {'order_id': oid, 'qty': qty, 'price': price, 'stake': stake}
+    except Exception as e:
+        return {'error': str(e)[:160]}
+
+def pm_check_settled(lb):
+    """Position-resolution for a live bet. {'result','payout'} or None if still open."""
+    c = _pm_client()
+    if not c:
+        return None
+    try:
+        r = c.portfolio.activities({'marketSlug': [lb['marketSlug']],
+                                    'types': ['ACTIVITY_TYPE_POSITION_RESOLUTION']})
+        acts = (r.get('activities') if isinstance(r, dict) else r) or []
+        for a in acts:
+            pr = a.get('positionResolution') or {}
+            side = str(pr.get('side') or '')
+            if not side:
+                continue
+            s = side.upper()
+            won = ('LONG' in s or 'YES' in s
+                   or (lb.get('outcome') and norm_txt(lb['outcome']) in norm_txt(side)))
+            return {'result': 'WIN' if won else 'LOSS',
+                    'payout': round(float(lb['qty']) * 1.0, 2) if won else 0.0}
+        return None
+    except Exception as e:
+        print('[pm] settle:', e); return None
+
 def wallet_balances():
     """On-chain balances for all hot wallets + USD values. Never raises."""
     out = {'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'wallets': []}
@@ -461,6 +591,8 @@ def make_client(privileged=True):
             crypto_sync.start()
         if not wallet_watch.is_running():
             wallet_watch.start()
+        if not pm_watch.is_running():
+            pm_watch.start()
 
     @c.event
     async def on_message(message):
@@ -2829,6 +2961,54 @@ async def _stripe_sync_once():
 async def stripe_sync():
     await _stripe_sync_once()
 
+@tasks.loop(seconds=600)
+async def pm_watch():
+    """Settle Polymarket live challenge bets; receipts to #receipts + X (real-money promo)."""
+    st = await asyncio.to_thread(get_state)
+    open_bets = [b for b in st.get('pm_live', []) if not b.get('result')]
+    if not open_bets:
+        return
+    guild = client.guilds[0] if client.guilds else None
+    ch = find_channel(guild, 'receipts') if guild else None
+    changed = False
+    for lb in open_bets:
+        try:
+            res = await asyncio.to_thread(pm_check_settled, lb)
+        except Exception as e:
+            print(f"[pm] settle check: {e}"); continue
+        if not res:
+            continue
+        lb['result'] = res['result']; lb['payout'] = res['payout']
+        lb['settled_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        pnl = round(float(res['payout']) - float(lb['stake']), 2)
+        bal = await asyncio.to_thread(pm_cash_balance)
+        em = '🎯' if res['result'] == 'WIN' else '❌'
+        sign = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
+        ladder = (f"Ladder: ${PM_BANKROLL_START:.0f} → **${bal['balance']:.2f}** real" if bal else
+                  f"Ladder: ${PM_BANKROLL_START:.0f} → in progress")
+        if ch:
+            try:
+                await ch.send(f"🧾 **PM RESULT 💵 CHALLENGE:** [{lb.get('league', '')}] **{lb['outcome']}** @ {lb['price']:.2f} {em} **{res['result']}** {sign}\n"
+                              f"Real money · stake ${lb['stake']:.2f} → paid ${res['payout']:.2f} · Polymarket US\n{ladder}")
+            except Exception:
+                pass
+        xt = (f"🧾 SHiFT's $50→$1000 ladder — REAL money, REAL receipts:\n"
+              f"{lb['outcome']} @ {lb['price']:.2f} {em} {res['result']} {sign}\n"
+              + (f"Bankroll: ${bal['balance']:.2f} 💵\n" if bal else '')
+              + "Every play live on Polymarket US. Receipts don't lie.\n"
+              + f"Join: https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=x_{time.strftime('%Y%m%d', time.gmtime())}")
+        if len(xt) > 270:
+            xt = xt[:267] + '...'
+        try:
+            await asyncio.to_thread(x_post, xt, None)
+        except Exception as xe:
+            print(f"[pm] x receipt: {xe}")
+        changed = True
+        await asyncio.sleep(1)
+    if changed:
+        await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm settle receipts')
+
+
 @tasks.loop(seconds=900)
 async def wallet_watch():
     """Refresh on-chain wallet balances + Polymarket snapshot for the ops dashboard."""
@@ -4902,6 +5082,27 @@ async def challenge_daily(g0, cands, dry):
                           f"📊 {c.get('analysis','')}\n"
                           f"To win **${to_win:.2f}** · balance {_money_e(bal)} **${bal:.2f}** → 💰 **$1,000** goal · {_et(c['start'])} ET ⚡")
             await asyncio.sleep(1)
+            if PM_LIVE and PM_LIVE_CAP > 0 and not dry:
+                try:
+                    team_q = c['pick'][:-3] if c['pick'].endswith(' ML') else c['pick']
+                    info = await asyncio.to_thread(pm_find_market, team_q, c['vs'], c.get('start', ''))
+                    if info:
+                        live = await asyncio.to_thread(pm_place_bet, info, min(stake, PM_LIVE_CAP))
+                        if 'order_id' in live:
+                            live.update({'league': league_tag(c.get('sport')), 'start': info.get('start', ''),
+                                         'marketSlug': info['marketSlug'], 'outcome': info['outcome'],
+                                         'title': info['title'],
+                                         'placed_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
+                            st = await asyncio.to_thread(get_state)
+                            st.setdefault('pm_live', []).append(live)
+                            st['pm_live'] = st['pm_live'][-40:]
+                            await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm live bet placed')
+                            await ch.send(f"🪙 **LIVE BET:** ${live['stake']:.2f} real on **{live['outcome']}** @ {live['price']:.2f} "
+                                          f"({live['qty']} shares) — Polymarket US")
+                        elif live.get('error') not in ('no_liquidity', 'below_min'):
+                            print(f"[challenge] pm place skipped: {live.get('error')}")
+                except Exception as e:
+                    print(f"[challenge] pm live hook: {e}")
         # parlay kicker: when a built parlay exists, challenge takes a 10%-of-balance shot
         parlays = [c for c in cands if c.get('parlay')]
         if parlays:
