@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.4.0'
+BOT_VERSION = '9.4.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -401,6 +401,36 @@ def make_client(privileged=True):
                     return
             except Exception as e:
                 print('mention responder:', e)
+            # OWNER self-serve withdrawal: shift-lab only, owner-only, two-step CONFIRM
+            if 'shift-lab' in chname:
+                mw = re.match(r'(?i)^withdraw\s+([\d.]+)\s*sol\s+(?:to\s+)?([1-9A-HJ-NP-Za-km-z]{32,44})\s*$', (message.content or '').strip())
+                if mw:
+                    try:
+                        is_owner = message.author == message.guild.owner
+                    except Exception:
+                        is_owner = False
+                    if not is_owner:
+                        await message.channel.send(f"{message.author.mention} ⛔ withdrawals are owner-only.")
+                        return
+                    amt = float(mw.group(1))
+                    dest = mw.group(2)
+                    c._pending_withdraw = {'amt': amt, 'dest': dest, 'by': message.author.id, 'ts': time.time()}
+                    await message.channel.send(f"💸 **WITHDRAW {amt} SOL → `{dest}`**\nReply **CONFIRM** within 60 seconds to execute. Any other message cancels.")
+                    return
+                if (message.content or '').strip().upper() == 'CONFIRM':
+                    pend = getattr(c, '_pending_withdraw', None)
+                    c._pending_withdraw = None
+                    if pend and pend['by'] == message.author.id and time.time() - pend['ts'] < 60:
+                        await message.channel.send(f"⏳ executing {pend['amt']} SOL → `{pend['dest']}` ...")
+                        sig, err = await do_sol_transfer(pend['amt'], pend['dest'])
+                        if sig:
+                            await message.channel.send(f"✅ **SENT {pend['amt']} SOL → `{pend['dest']}`**\nsig: `{sig}`\nhttps://solscan.io/tx/{sig}")
+                        else:
+                            await message.channel.send(f"❌ withdrawal failed: {err}")
+                    return
+                pend2 = getattr(c, '_pending_withdraw', None)
+                if isinstance(pend2, dict) and pend2.get('by') == message.author.id and not mw:
+                    c._pending_withdraw = None  # any other owner message cancels a pending withdrawal
             if (message.content or '').strip().lower().startswith('!crypto'):
                 parts = (message.content or '').strip().split()
                 tier = parts[1].lower() if len(parts) > 1 else ''
@@ -2228,40 +2258,15 @@ async def run_command(cmd, guild, log):
         except Exception:
             log.append('withdraw_sol: bad amount')
             return
-        if sol <= 0 or sol > 50:
-            log.append('withdraw_sol: amount out of bounds (0<x<=50)')
-            return
-        try:
-            from solders.keypair import Keypair
-            from solders.pubkey import Pubkey
-            from solders.system_program import transfer, TransferParams
-            from solders.transaction import Transaction
-            from solders.hash import Hash as SHash
-            sec = await asyncio.to_thread(gh_get_json_ref, 'wallets_secret.json', QUEUE_BRANCH)
-            kp = Keypair.from_bytes(bytes.fromhex(sec['solana']['secret_hex']))
-            dest = Pubkey.from_string(to)
-            lamports = int(sol * 1_000_000_000)
-            def _rpc(method, params):
-                body = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': method, 'params': params}).encode()
-                req = urllib.request.Request('https://solana-rpc.publicnode.com', data=body,
-                                             headers={'Content-Type': 'application/json', 'User-Agent': 'shift-ops'})
-                return json.loads(urllib.request.urlopen(req, timeout=20).read())
-            bal = (await asyncio.to_thread(_rpc, 'getBalance', [str(kp.pubkey())])).get('result', {}).get('value', 0)
-            if bal < lamports + 5000:
-                log.append(f'withdraw_sol: insufficient balance ({bal/1e9:.4f} SOL)')
-                return
-            bh = (await asyncio.to_thread(_rpc, 'getLatestBlockhash', [{'commitment': 'finalized'}]))['result']['value']['blockhash']
-            ix = transfer(TransferParams(from_pubkey=kp.pubkey(), to_pubkey=dest, lamports=lamports))
-            tx = Transaction.new_signed_with_payer([ix], kp.pubkey(), [kp], SHash.from_string(bh))
-            sig = (await asyncio.to_thread(_rpc, 'sendTransaction',
-                   [base64.b64encode(bytes(tx)).decode(), {'encoding': 'base64', 'skipPreflight': False}])).get('result')
+        sig, err = await do_sol_transfer(sol, to)
+        if sig:
             msg = f'💸 WITHDRAW SOL — {sol} SOL -> {to} | sig: {sig} | solscan.io/tx/{sig}'
             lab = find_channel(guild, 'shift-lab')
             if lab:
                 await lab.send(msg)
             log.append(msg)
-        except Exception as e:
-            log.append(f'withdraw_sol FAIL: {e}')
+        else:
+            log.append(f'withdraw_sol FAIL: {err}')
     elif a == 'enter_giveaway':
         # ops-driven entry: verify handle via bearer, write conf, post tagged result
         ch = find_channel(guild, 'giveaway')
@@ -4085,6 +4090,41 @@ async def scan_engine_run(g0, slot_key, dry):
     print(f'scan engine {"dry" if dry else "LIVE"} slot {slot_key}: {len(picks_out)} plays posted')
 
 _SCAN_DONE = set()
+
+async def do_sol_transfer(sol, to):
+    """Send SOL from the ops wallet. Returns (sig, None) or (None, error)."""
+    try:
+        sol = float(sol)
+    except Exception:
+        return None, 'bad amount'
+    if sol <= 0 or sol > 50:
+        return None, 'amount out of bounds (0<x<=50)'
+    try:
+        from solders.keypair import Keypair
+        from solders.pubkey import Pubkey
+        from solders.system_program import transfer, TransferParams
+        from solders.transaction import Transaction
+        from solders.hash import Hash as SHash
+        sec = await asyncio.to_thread(gh_get_json_ref, 'wallets_secret.json', QUEUE_BRANCH)
+        kp = Keypair.from_bytes(bytes.fromhex(sec['solana']['secret_hex']))
+        dest = Pubkey.from_string(to)
+        lamports = int(sol * 1_000_000_000)
+        def _rpc(method, params):
+            body = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': method, 'params': params}).encode()
+            req = urllib.request.Request('https://solana-rpc.publicnode.com', data=body,
+                                         headers={'Content-Type': 'application/json', 'User-Agent': 'shift-ops'})
+            return json.loads(urllib.request.urlopen(req, timeout=20).read())
+        bal = (await asyncio.to_thread(_rpc, 'getBalance', [str(kp.pubkey())])).get('result', {}).get('value', 0)
+        if bal < lamports + 5000:
+            return None, f'insufficient balance ({bal/1e9:.4f} SOL)'
+        bh = (await asyncio.to_thread(_rpc, 'getLatestBlockhash', [{'commitment': 'finalized'}]))['result']['value']['blockhash']
+        ix = transfer(TransferParams(from_pubkey=kp.pubkey(), to_pubkey=dest, lamports=lamports))
+        tx = Transaction.new_signed_with_payer([ix], kp.pubkey(), [kp], SHash.from_string(bh))
+        sig = (await asyncio.to_thread(_rpc, 'sendTransaction',
+               [base64.b64encode(bytes(tx)).decode(), {'encoding': 'base64', 'skipPreflight': False}])).get('result')
+        return sig, None
+    except Exception as e:
+        return None, str(e)
 
 @tasks.loop(minutes=1)
 async def scan_engine():
