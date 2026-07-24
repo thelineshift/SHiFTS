@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.8.0'
+BOT_VERSION = '9.9.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4051,6 +4051,22 @@ async def scan_engine_run(g0, slot_key, dry):
     esp = []
     for gg in ('cs2', 'lol', 'valorant'):
         esp += await asyncio.to_thread(se_ps_upcoming, gg)
+    # LIVE BOOK LINES (OddsPapi): real Pinnacle moneylines for esports, budget-guarded
+    op_state = await asyncio.to_thread(get_state) or {}
+    op_touched = False
+    op_lines = {}
+    try:
+        def _esp_notable(m):
+            ok, _t = _in_window(m['start'] or '', now_ts)
+            return ok and any(k in (m['league'] or '') for k in SCAN_NOTABLE)
+        for tt in {m['sport'] for m in esp if _esp_notable(m)}:
+            if tt in OP_SPORT:
+                ln = await op_title_lines(tt, op_state)
+                if ln:
+                    op_lines[tt] = ln
+                    op_touched = True
+    except Exception as e:
+        print('op esports fetch:', e)
     esp_ct = 0
     for m in esp:
         ok, t = _in_window(m['start'] or '', now_ts)
@@ -4078,6 +4094,26 @@ async def scan_engine_run(g0, slot_key, dry):
         dw = w2 if edge > 0 else w1
         p_f = fw * (1 - dw) / (fw * (1 - dw) + dw * (1 - fw)) if (fw or dw) else 0.5
         p_f = min(0.90, max(0.15, p_f))
+        # 1) LIVE BOOK LINE (OddsPapi/Pinnacle): fire on real pricing edge vs the book
+        book = op_match(op_lines.get(m['sport'], []), fav['name'], dog['name'])
+        if book:
+            dec_f, dec_d = book
+            vig_f, vig_d = 1 / dec_f, 1 / dec_d
+            p_book = vig_f / (vig_f + vig_d)
+            edge_b = p_f - p_book
+            if edge_b < 0.06:
+                continue
+            ml_b = dec_to_ml(dec_f)
+            if ml_b is None or ml_b > 200 or ml_b < -400:
+                continue
+            cands.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': ml_b,
+                          'units': 1.5 if edge_b >= 0.12 else 1.0, 'edge': edge_b, 'start': t,
+                          'market': f"{league_s} Bo{m['bo'] or '?'}", 'prob': p_f,
+                          'team': fav['name'], 'opp': dog['name'], 'side': None,
+                          'reserve': ml_b < -150,
+                          'analysis': se_form_text(fav_f, dog_f, fav['name']) + f" — live Pinnacle line {ml_b:+d} (our {p_f:.0%} vs book {p_book:.0%})"})
+            continue
+        # 2) MODEL LINE fallback: log5 fair odds from recent-form win rates
         if p_f > 0.80:
             continue  # juicier than -400 — dead to us entirely (9.7.3 law)
         ml_f = -round((100 * p_f / (1 - p_f)) / 5) * 5 if p_f >= 0.5 else round((100 * (1 - p_f) / p_f) / 5) * 5
@@ -4087,6 +4123,11 @@ async def scan_engine_run(g0, slot_key, dry):
                       'team': fav['name'], 'opp': dog['name'], 'side': None,
                       'reserve': p_f > 0.60,
                       'analysis': se_form_text(fav_f, dog_f, fav['name']) + f" — model line {ml_f:+d} (our {p_f:.0%})"})
+    if op_touched:
+        try:
+            await asyncio.to_thread(gh_put, 'bot_state.json', op_state, 'oddsPapi meta/budget')
+        except Exception as e:
+            print('op state save:', e)
     cands.sort(key=lambda c: -c['edge'])
     # never re-pick a game already on today's board (cross-slot dedupe)
     try:
@@ -4257,6 +4298,100 @@ def dec_to_ml(dec):
     if not dec or dec <= 1:
         return None
     return -round(100 / (dec - 1)) if dec >= 2 else round(100 * (dec - 1))
+
+OP_KEY = os.environ.get('ODDSPAPI_KEY', '')
+OP_SPORT = {'cs2': 17, 'lol': 18, 'valorant': 61, 'dota2': 16}
+OP_MONTH_CAP = 230  # free tier is 250/mo — hard-stop with headroom
+
+def op_fetch(path):
+    """OddsPapi GET (browser UA; key via query param). Returns parsed json or None."""
+    if not OP_KEY:
+        return None
+    try:
+        sep = '&' if '?' in path else '?'
+        req = urllib.request.Request(f'https://api.oddspapi.io{path}{sep}apiKey={OP_KEY}', headers={'User-Agent': 'Mozilla/5.0'})
+        return json.loads(urllib.request.urlopen(req, timeout=15).read())
+    except Exception as e:
+        print('op_fetch:', str(e)[:100])
+        return None
+
+async def op_title_lines(title, st):
+    """OddsPapi moneylines for one esports title -> [(name1, name2, dec1, dec2)].
+    Meta (active tournaments + participant names) cached 7d; fixture lines cached 6h;
+    every network call counts against the monthly free-tier budget in bot state."""
+    if not OP_KEY:
+        return []
+    month = time.strftime('%Y-%m')
+    if st.get('op_month') != month:
+        st['op_month'], st['op_calls'] = month, 0
+    meta = st.setdefault('op_meta', {}).setdefault(title, {})
+    now = time.time()
+    calls = [0]
+
+    async def _call(path):
+        if st.get('op_calls', 0) + calls[0] >= OP_MONTH_CAP:
+            return None
+        calls[0] += 1
+        return await asyncio.to_thread(op_fetch, path)
+
+    sid = OP_SPORT.get(title)
+    if not sid:
+        return []
+    try:
+        if now - meta.get('meta_ts', 0) > 7 * 86400:
+            trn = await _call(f'/v4/tournaments?sportId={sid}')
+            if trn is not None:
+                meta['active'] = [t['tournamentId'] for t in trn
+                                  if (t.get('upcomingFixtures') or 0) > 0 or (t.get('futureFixtures') or 0) > 0]
+                parts = await _call(f'/v4/participants?sportId={sid}')
+                if parts:
+                    meta['parts'] = parts
+                meta['meta_ts'] = now
+        if now - meta.get('odds_ts', 0) < 6 * 3600 and meta.get('lines') is not None:
+            st['op_calls'] = st.get('op_calls', 0) + calls[0]
+            return meta['lines']
+        lines = []
+        ids = (meta.get('active') or [])[:15]
+        for i in range(0, len(ids), 5):
+            d = await _call('/v4/odds-by-tournaments?bookmaker=pinnacle&tournamentIds=' + ','.join(map(str, ids[i:i + 5])))
+            for fx in (d or []):
+                mk = (fx.get('bookmakerOdds', {}).get('pinnacle', {}) or {}).get('markets', {})
+                ml_m = ([m for m in mk.values() if str(m.get('bookmakerMarketId', '')).endswith('/0/moneyline')]
+                        or [m for m in mk.values() if 'moneyline' in str(m.get('bookmakerMarketId', ''))])
+                if not ml_m:
+                    continue
+                hp = ap = None
+                for o in ml_m[0].get('outcomes', {}).values():
+                    pl = (o.get('players') or {}).get('0') or {}
+                    if pl.get('bookmakerOutcomeId') == 'home':
+                        hp = pl.get('price')
+                    elif pl.get('bookmakerOutcomeId') == 'away':
+                        ap = pl.get('price')
+                n1 = (meta.get('parts') or {}).get(str(fx.get('participant1Id')))
+                n2 = (meta.get('parts') or {}).get(str(fx.get('participant2Id')))
+                if hp and ap and n1 and n2:
+                    lines.append((n1, n2, float(hp), float(ap)))
+        meta['lines'] = lines
+        meta['odds_ts'] = now
+        st['op_calls'] = st.get('op_calls', 0) + calls[0]
+        return lines
+    except Exception as e:
+        print('op_title_lines:', e)
+        st['op_calls'] = st.get('op_calls', 0) + calls[0]
+        return meta.get('lines') or []
+
+def op_match(lines, name_a, name_b):
+    """Find (dec for name_a's team, dec for name_b's team) from OddsPapi lines."""
+    na, nb = norm_txt(name_a), norm_txt(name_b)
+    for n1, n2, d1, d2 in (lines or []):
+        s1, s2 = norm_txt(n1), norm_txt(n2)
+        def hit(q, s):
+            return q and len(q) > 3 and (q in s or (len(s) > 3 and s in q))
+        if hit(na, s1) and hit(nb, s2):
+            return d1, d2
+        if hit(na, s2) and hit(nb, s1):
+            return d2, d1
+    return None
 
 _WHALE_CACHE = {}
 
