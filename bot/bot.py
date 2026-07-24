@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.5.2'
+BOT_VERSION = '9.6.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -336,6 +336,8 @@ def make_client(privileged=True):
             scan_engine.start()
         if not x_purge_old.is_running():
             x_purge_old.start()
+        if not issues_sweep.is_running():
+            issues_sweep.start()
         if not crypto_sync.is_running():
             crypto_sync.start()
 
@@ -344,9 +346,45 @@ def make_client(privileged=True):
         try:
             if message.author.bot:
                 return
+            if message.guild is None:
+                # DM TICKET: private intake — relayed to the ops lab, never shown publicly.
+                # This replaces open issues-room posts for anything sensitive.
+                try:
+                    g0 = client.guilds[0] if client.guilds else None
+                    lab = find_channel(g0, 'shift-lab') if g0 else None
+                    if lab:
+                        await lab.send(f"🎫 **DM TICKET** — {message.author} (`{message.author.id}`):\n{(message.content or '')[:900]}")
+                    await message.channel.send("🎫 Got it — that's with the team as a **private ticket**. We reply right here in this DM. ⚡")
+                except Exception as e:
+                    print('dm ticket:', e)
+                return
             if message.guild and await shift_guard(message, message.guild):
                 return
             chname = (getattr(message.channel, 'name', '') or '').lower()
+            # @mention responder FIRST — a tag is a question to SHiFT, never an entry attempt.
+            # (This used to sit below the giveaway branch, which swallowed tags in #giveaway.)
+            try:
+                if c.user and c.user in message.mentions:
+                    is_admin = False
+                    try:
+                        is_admin = message.author == message.guild.owner or message.author.guild_permissions.administrator
+                    except Exception:
+                        pass
+                    now_utc = time.time()
+                    cur_h = int(time.strftime('%H', time.gmtime(now_utc)))
+                    nxt = next((h for h in SCAN_SLOTS_UTC if h > cur_h), 0)
+                    nxt_et = (nxt - 4) % 24
+                    ampm = 'AM' if nxt_et < 12 else 'PM'
+                    nxt_s = f'{nxt_et % 12 or 12} {ampm} ET'
+                    if is_admin:
+                        await message.channel.send(f"{message.author.mention} 🛰️ **v{BOT_VERSION}** online — next scan **{nxt_s}**. Commands route through the ops queue only — chat commands are disabled for everyone.")
+                    else:
+                        await message.channel.send(f"{message.author.mention} 🛰️ I'm on duty — scans drop **12a · 4a · 8a · 12p · 4p · 8p ET** (next **{nxt_s}**). Free pick in the free-pick room; paid rooms get the full board. thelineshift.github.io/AISportsBot/upgrade.html ⚡")
+                    # in #giveaway with a real X handle in the same message? still process the entry below
+                    if not ('giveaway' in chname and gw_handle_parse(message.content or '')):
+                        return
+            except Exception as e:
+                print('mention responder:', e)
             if 'giveaway' in chname:
                 raw = message.content or ''
                 st_g = await asyncio.to_thread(get_state) or {}
@@ -381,28 +419,6 @@ def make_client(privileged=True):
                         await asyncio.to_thread(gh_put, 'bot_state.json', st_g, 'gw handled')
                         await gw_reply_once(message, 'guide', "⚡ Drop your **X (Twitter) handle** like `@yourhandle` — not your Discord name — and I'll scan you in. " + GW_STEPS.format(link=gw_post_link(st_g)) + " 🎫")
                 return
-            # @mention responder: anyone who tags SHiFT gets a reply; commands stay admin/queue-only
-            try:
-                if c.user and c.user in message.mentions:
-                    is_admin = False
-                    try:
-                        is_admin = message.author == message.guild.owner or message.author.guild_permissions.administrator
-                    except Exception:
-                        pass
-                    now_utc = time.time()
-                    slots = (0, 4, 8, 12, 16, 20)
-                    cur_h = int(time.strftime('%H', time.gmtime(now_utc)))
-                    nxt = next((h for h in slots if h > cur_h), 0)
-                    nxt_et = (nxt - 4) % 24
-                    ampm = 'AM' if nxt_et < 12 else 'PM'
-                    nxt_s = f'{nxt_et % 12 or 12} {ampm} ET'
-                    if is_admin:
-                        await message.channel.send(f"{message.author.mention} 🛰️ **v{BOT_VERSION}** online — next scan **{nxt_s}**. Commands route through the ops queue only — chat commands are disabled for everyone.")
-                    else:
-                        await message.channel.send(f"{message.author.mention} 🛰️ I'm on duty — scans drop **12a · 4a · 8a · 12p · 4p · 8p ET** (next **{nxt_s}**). Free pick in the free-pick room; paid rooms get the full board. thelineshift.github.io/AISportsBot/upgrade.html ⚡")
-                    return
-            except Exception as e:
-                print('mention responder:', e)
             # OWNER self-serve withdrawal: shift-lab only, owner-only, two-step CONFIRM
             if 'shift-lab' in chname:
                 mw = re.match(r'(?i)^withdraw\s+([\d.]+)\s*sol\s+(?:to\s+)?([1-9A-HJ-NP-Za-km-z]{32,44})\s*$', (message.content or '').strip())
@@ -2011,12 +2027,13 @@ async def run_command(cmd, guild, log):
                 await asyncio.to_thread(gh_put, 'x_creds.json', c, 'oauth2 user token linked')
                 res = None
                 log.append('x_link_finish OK: tokens stored — X user link LIVE')
+                # OWNER LAW: never post "link online" system noise to X — link status goes to shift-lab only.
                 try:
-                    hello = cmd.get('text') or f'🛰️ SHiFT native X link online ({time.strftime("%H:%M UTC")}).'
-                    res = await asyncio.to_thread(x_post_native, hello)
-                    log.append(f'x_link_finish hello-post OK: tweet id {res.get("data", {}).get("id") if res else None}')
+                    lab = find_channel(guild, 'shift-lab')
+                    if lab:
+                        await lab.send(f"🔗 X user link refreshed ({time.strftime('%H:%M UTC')}) — posts/deletes live. (No X announcement, per standing order.)")
                 except Exception as he:
-                    log.append(f'x_link_finish hello-post skipped (link still LIVE): {he}')
+                    print('link lab note:', he)
             except urllib.error.HTTPError as e:
                 log.append(f'x_link_finish FAIL: HTTP {e.code}: {e.read()[:250]}')
             except Exception as e:
@@ -2061,10 +2078,17 @@ async def run_command(cmd, guild, log):
             log.append(f'x_diag oauth1 GET FAIL: {e} {body}')
     elif a == 'x_test':
         try:
-            res = await asyncio.to_thread(x_post_native, cmd.get('text', '\U0001F6F0\uFE0F SHiFT native X link online. The board never sleeps.'))
+            res = await asyncio.to_thread(x_post_native, cmd.get('text', '\u26a1 The board never sleeps. New card every 4 hours.'))
             log.append(f'x_test OK: tweet id {res.get("data", {}).get("id") if res else None}')
         except Exception as e:
             log.append(f'x_test FAIL: {e}')
+    elif a == 'dm_reply':
+        try:
+            u = await client.fetch_user(int(cmd['user_id']))
+            await u.send(cmd.get('text', '')[:1900])
+            log.append(f'dm_reply OK -> {cmd["user_id"]}')
+        except Exception as e:
+            log.append(f'dm_reply FAIL: {e}')
     elif a == 'set_icon':
         req = urllib.request.Request(cmd['url'], headers={'User-Agent': 'lineshift-bot'})
         data = urllib.request.urlopen(req, timeout=25).read()
@@ -3194,8 +3218,11 @@ def x_receipt_text(r, all_picks=None, chal=None):
     rec_block = ('\n' + '\n'.join(rec_lines) + '\n') if rec_lines else ''
     seed = f"{r.get('id')}{r.get('date')}{r.get('result')}"
     if r['result'] == 'WIN':
-        return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
-                + _pick_closer(CLOSERS_WIN, seed))
+        base = f"🧾 RESULT {badge}: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+        # paid-room winners funnel to the store (link renders our branded preview card on X)
+        if r.get('tier') in ('whale', 'sharp', 'lock'):
+            return base + "💎 Every play like this, every 4 hours → https://thelineshift.github.io/AISportsBot/upgrade.html"
+        return base + _pick_closer(CLOSERS_WIN, seed)
     if r['result'] == 'PUSH':
         return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
                 + _pick_closer(CLOSERS_PUSH, seed))
@@ -3229,7 +3256,7 @@ async def settle_challenge(guild, p):
             await ch.send(f"💵 **CHALLENGE BET #{hit.get('n')} — {p['result']}** {e}\n"
                           f"{p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
                           f"**BALANCE: ${chal['balance']:.2f}** (goal: ${chal.get('goal', 1000):.0f}) · record {chal['record']['wins']}-{chal['record']['losses']}\n"
-                          f"BET #{hit.get('n') + 1} drops with tomorrow's card. — SHiFT ⚡")
+                          f"Next challenge action lands with the 4 PM ET scan. — SHiFT ⚡")
     except Exception as e:
         print('settle_challenge error:', e)
 
@@ -3238,6 +3265,10 @@ async def grader():
     try:
         if not client.guilds:
             return
+        try:
+            await grade_parlays(client.guilds[0])
+        except Exception as e:
+            print('parlay grade call:', e)
         doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
         new_results = []
         for p in (doc.get('picks') or []):
@@ -3754,6 +3785,8 @@ SCAN_SLOTS_UTC = (0, 4, 8, 12, 16, 20)
 SCAN_NOTABLE = ('BLAST', 'StarLadder', 'CCT', 'IEM', 'LCK', 'LPL', 'LEC', 'LCS', 'LCP', 'KeSPA', 'VCT')
 PS_GAMES = {'cs2': 'csgo', 'lol': 'lol', 'dota2': 'dota2', 'valorant': 'valorant'}
 SCAN_ROOMS = {'free': 'free-pick', 'lock': 'lock-room', 'sharp': 'sharp-room', 'whale': 'whale-room'}
+# room identity colors (embed rail): instant visual tier recognition, zero confusion
+TIER_COLORS = {'whale': 0xF5C518, 'sharp': 0x3498DB, 'lock': 0x2ECC71, 'free': 0x95A5A6}
 
 def se_get(url, timeout=12):
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -3880,7 +3913,7 @@ def se_edges(g, now_ts):
         split_s = f", {split} {'at home' if side == 'home' else 'on the road'}" if split else ''
         out.append({'sport': g['sport'], 'pick': f"{team} ML", 'vs': opp, 'odds': ml,
                     'units': 1.5 if edge >= 0.12 else 1.0, 'edge': edge, 'start': t,
-                    'market': 'ML',
+                    'market': 'ML', 'prob': p_ours,
                     'analysis': f"{(g['recs'].get(side) or {}).get('total','?')} overall{split_s} — "
                                 f"our {p_ours:.0%} vs book {p_imp:.0%} (no-vig)"})
     return out
@@ -3992,10 +4025,17 @@ async def scan_engine_run(g0, slot_key, dry):
         fav, dog = (m['t1'], m['t2']) if edge > 0 else (m['t2'], m['t1'])
         fav_f, dog_f = (f1, f2) if edge > 0 else (f2, f1)
         league_s = (m['league'] or '').split(' 20')[0][:22]
-        cands.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': None,
+        # MODEL LINE: no book prices esports on our feeds, so we publish our own —
+        # log5 fair odds from recent-form win rates, rounded like a board number.
+        fw = w1 if edge > 0 else w2
+        dw = w2 if edge > 0 else w1
+        p_f = fw * (1 - dw) / (fw * (1 - dw) + dw * (1 - fw)) if (fw or dw) else 0.5
+        p_f = min(0.90, max(0.15, p_f))
+        ml_f = -round((100 * p_f / (1 - p_f)) / 5) * 5 if p_f >= 0.5 else round((100 * (1 - p_f) / p_f) / 5) * 5
+        cands.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': ml_f,
                       'units': 1.5 if abs(edge) >= 0.4 else 1.0, 'edge': abs(edge), 'start': t,
-                      'market': f"{league_s} Bo{m['bo'] or '?'}",
-                      'analysis': se_form_text(fav_f, dog_f, fav['name'])})
+                      'market': f"{league_s} Bo{m['bo'] or '?'}", 'prob': p_f,
+                      'analysis': se_form_text(fav_f, dog_f, fav['name']) + f" — model line {ml_f:+d} (our {p_f:.0%})"})
     cands.sort(key=lambda c: -c['edge'])
     # never re-pick a game already on today's board (cross-slot dedupe)
     try:
@@ -4007,6 +4047,18 @@ async def scan_engine_run(g0, slot_key, dry):
         print('cross-slot dedupe:', e)
     # ---- deal tiers (whale-first), per-scan caps: whale 2 / sharp 2 / lock 1 / free 1
     deal = {'whale': cands[0:2], 'sharp': cands[2:4], 'lock': cands[4:5], 'free': cands[5:6]}
+    # ---- PARLAY: deep slates deal one 2-3 leg parlay, rotated across the paid rooms
+    parlay_built = None
+    if len(cands) >= 7 and not dry:
+        try:
+            st_rot = await asyncio.to_thread(get_state) or {}
+            parlay_built, p_room = se_build_parlay(cands[6:], st_rot.get('parlay_rot', 0))
+            if parlay_built:
+                deal[p_room].append(parlay_built)
+                st_rot['parlay_rot'] = st_rot.get('parlay_rot', 0) + 1
+                await asyncio.to_thread(gh_put, 'bot_state.json', st_rot, 'parlay rotation')
+        except Exception as e:
+            print('parlay build:', e)
     slate_s = ' · '.join(f"{k.upper()} {v}" for k, v in sorted(pulled.items()) if v)
     aware = await asyncio.to_thread(se_aware_live, time.strftime('%Y%m%d', time.gmtime()))
     if aware:
@@ -4043,24 +4095,36 @@ async def scan_engine_run(g0, slot_key, dry):
             if tier == 'free':
                 paid = sum(len(deal[t]) for t in ('lock', 'sharp', 'whale'))
                 extra = f" The paid rooms took {paid} plays — the best free-qualified edge just didn't clear our bar." if paid else ''
-                await room.send(f"🎯 {tag}**FREE PICK — {slot_et}**\n\nNo free play this window — nothing met our edge bar, and we don't force bets.{extra} Next scan **{_nxt_et()}**.\n💎 Want every edge, every window? → {upg_ment} ⚡")
+                await room.send(embed=discord.Embed(description=f"🎯 {tag}**FREE PICK — {slot_et}**\n\nNo free play this window — nothing met our edge bar, and we don't force bets.{extra} Next scan **{_nxt_et()}**.\n💎 Want every edge, every window? → {upg_ment} ⚡", color=TIER_COLORS['free']))
             continue
         lines = []
         for n, p in enumerate(plays, 1):
-            odds_s = f" ({p['odds']})" if p['odds'] else ''
-            lines.append(f"{n}\u20e3 **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u**\n"
-                         f"{p['market']} · {_et(p['start'])}\n"
-                         f"📊 {p.get('analysis','')}\n"
-                         f"{_why(p, rank_of.get(id(p), n))}")
-            picks_out.append({'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}", 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
-                              'sport': p['sport'], 'desc': p['pick'], 'market': p['market'], 'odds': p['odds'],
-                              'units': p['units'], 'tier': tier, 'time_et': _et(p['start']),
-                              'analysis': (p.get('analysis', '') + ' | ' + _why(p, rank_of.get(id(p), n)).replace('🧠 **Why it\'s the play:** ', ''))[:300]})
+            odds_s = f" ({fmt_odds_num(p['odds'])})" if p['odds'] is not None else ''
+            if p.get('parlay'):
+                leg_lines = '\n'.join(f"   • {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in p['legs'])
+                lines.append(f"{n}\u20e3 🎰 **{p['pick']}{odds_s} — {p['units']}u**\n{leg_lines}\n"
+                             f"{p['market']} · first leg {_et(p['start'])}\n"
+                             f"🧠 **Why it's the play:** every leg cleared our edge bar — combined model probability {p.get('prob', 0):.0%} vs the price's implied {(1 / (ml_to_dec(p['odds']) or 2)):.0%}. That's value stacked on value.")
+            else:
+                lines.append(f"{n}\u20e3 **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u**\n"
+                             f"{p['market']} · {_et(p['start'])}\n"
+                             f"📊 {p.get('analysis','')}\n"
+                             f"{_why(p, rank_of.get(id(p), n))}")
+            reg = {'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}", 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
+                   'sport': p['sport'], 'desc': p.get('picks_desc') or p['pick'], 'market': p['market'], 'odds': p['odds'],
+                   'units': p['units'], 'tier': tier, 'time_et': _et(p['start']),
+                   'analysis': (p.get('analysis', '') + ' | ' + ('parlay — every leg cleared the edge bar' if p.get('parlay') else _why(p, rank_of.get(id(p), n)).replace('🧠 **Why it\'s the play:** ', '')))[:300]}
+            if p.get('parlay'):
+                reg['legs'] = [{'team': lg['pick'][:-3] if lg['pick'].endswith(' ML') else lg['pick'],
+                                'vs': lg['vs'], 'sport': lg['sport'],
+                                'date': time.strftime('%Y-%m-%d', time.gmtime(lg['start'] - 4 * 3600)),
+                                'time_et': _et(lg['start'])} for lg in p['legs']]
+            picks_out.append(reg)
         body = f"{emo} {tag}**{tier.upper()} ROOM — {slot_et} CARD** ({len(plays)} play{'s' if len(plays) > 1 else ''})\n\n" + '\n\n'.join(lines)
         if tier == 'free':
             cnts = ' · '.join(f"{e} +{len(deal[t])}" for t, e in (('lock', '🔒'), ('sharp', '📊'), ('whale', '🐋')) if deal[t])
             body += f"\n\n💎 Full board live now ({cnts}) → {upg_ment}\n🎁 Sunday 6 PM ET — $50 SOL draw, entry in the giveaway room. ⚡"
-        await room.send(body)
+        await room.send(embed=discord.Embed(description=body[:4090], color=TIER_COLORS.get(tier, 0x2B2D31)))
         await asyncio.sleep(1)
     # ---- sanitized complete in general chat (NO-LEAK LAW) — clickable tags + upgrade funnel
     free_p = deal['free'][0] if deal['free'] else None
@@ -4093,10 +4157,241 @@ async def scan_engine_run(g0, slot_key, dry):
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'bot scan ok')
         except Exception as e:
             print('se state fail:', e)
+    # ---- CARD LAW (challenge): 4 PM ET scan feeds the 100-to-1000 channel, every day
+    if int(slot_key[-2:]) == 20:
+        try:
+            await challenge_daily(g0, cands + ([parlay_built] if parlay_built else []), dry)
+        except Exception as e:
+            print('challenge feed:', e)
     print(f'scan engine {"dry" if dry else "LIVE"} slot {slot_key}: {len(picks_out)} plays posted')
 
 _SCAN_DONE = set()
 _SCAN_TRIES = {}
+
+def ml_to_dec(ml):
+    try:
+        ml = int(ml)
+        return 1 + (100 / abs(ml) if ml < 0 else ml / 100)
+    except Exception:
+        return None
+
+def dec_to_ml(dec):
+    if not dec or dec <= 1:
+        return None
+    return -round(100 / (dec - 1)) if dec >= 2 else round(100 * (dec - 1))
+
+def se_build_parlay(pool, rot):
+    """Build one 2-3 leg cross-sport parlay from edge-qualified leftovers.
+    Legs always from different games; sports mix naturally. Returns (parlay, room) or (None, None)."""
+    legs = [c for c in pool if c.get('odds') is not None and ml_to_dec(c['odds'])]
+    if len(legs) < 2:
+        return None, None
+    legs = legs[:3]  # 3 legs when the pool is deep, else 2
+    dec = 1.0
+    prob = 1.0
+    for c in legs:
+        dec *= ml_to_dec(c['odds'])
+        prob *= c.get('prob') or 0.5
+    ml = dec_to_ml(dec)
+    if ml is None:
+        return None, None
+    names = ' + '.join(c['pick'] for c in legs)
+    rooms = ['whale', 'sharp', 'lock']
+    room = rooms[rot % len(rooms)]
+    strong = all(c['edge'] >= 0.12 for c in legs)
+    parlay = {'sport': 'parlay', 'pick': f"{len(legs)}-LEG PARLAY", 'vs': ' · '.join(f"{c['pick']} vs {c['vs']}" for c in legs),
+              'odds': ml, 'units': 1.0 if strong and len(legs) == 2 else 0.5,
+              'edge': prob - (1 / dec), 'start': min(c['start'] for c in legs), 'prob': prob,
+              'market': f"{len(legs)}-leg parlay ({' + '.join(sorted({c['sport'].upper() for c in legs}))})",
+              'analysis': ' ・ '.join(f"{c['pick']} ({fmt_odds_num(c['odds'])})" for c in legs),
+              'parlay': True, 'legs': [{'pick': c['pick'], 'vs': c['vs'], 'sport': c['sport'],
+                                        'start': c['start'], 'odds': c['odds']} for c in legs],
+              'picks_desc': names}
+    return parlay, room
+
+async def grade_parlays(guild):
+    """Settle registered parlays: every leg final -> WIN all / LOSS any / PUSH mix."""
+    try:
+        doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
+        if not doc:
+            return
+        changed = False
+        settled = []
+        for p in (doc.get('picks') or []):
+            if p.get('sport') != 'parlay' or str(p.get('result', '')) not in ('', 'PENDING', 'None', 'NONE'):
+                continue
+            legs = p.get('legs') or []
+            if not legs:
+                continue
+            leg_results = []
+            for lg in legs:
+                try:
+                    sb = await asyncio.to_thread(espn_fetch, (lg.get('sport') or '').upper(), (lg.get('date') or '').replace('-', ''))
+                    team_n, opp_n = norm_txt(lg.get('team', '')), norm_txt(lg.get('vs', ''))
+                    found = None
+                    for ev in sb.get('events', []):
+                        comp = ev['competitions'][0]
+                        comps = comp.get('competitors') or []
+                        names = [norm_txt(c2.get('team', {}).get('displayName', '')) for c2 in comps]
+                        if team_n and opp_n and any(team_n in n for n in names) and any(opp_n in n for n in names):
+                            if not comp.get('status', {}).get('type', {}).get('completed'):
+                                found = 'pending'
+                                break
+                            sc = {c2.get('team', {}).get('displayName', ''): int(float(c2.get('score') or 0)) for c2 in comps}
+                            t_score = next((v for k, v in sc.items() if team_n in norm_txt(k)), None)
+                            o_score = next((v for k, v in sc.items() if opp_n in norm_txt(k)), None)
+                            if t_score is None or o_score is None:
+                                found = 'pending'
+                                break
+                            found = 'win' if t_score > o_score else ('push' if t_score == o_score else 'loss')
+                            break
+                    leg_results.append(found)
+                except Exception:
+                    leg_results.append(None)
+            if not leg_results or any(r in (None, 'pending') for r in leg_results):
+                continue
+            if 'loss' in leg_results:
+                res = 'LOSS'
+            elif all(r == 'win' for r in leg_results):
+                res = 'WIN'
+            else:
+                res = 'PUSH'
+            p['result'] = res
+            dec = ml_to_dec(p.get('odds')) or 2.0
+            u = float(p.get('units') or 0.5)
+            p['units_result'] = round(u * (dec - 1), 2) if res == 'WIN' else (-u if res == 'LOSS' else 0.0)
+            p['score'] = ' · '.join(f"{lg.get('pick')}: {r}" for lg, r in zip(legs, leg_results))
+            changed = True
+            settled.append(p)
+        if not changed:
+            return
+        doc['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        await asyncio.to_thread(gh_put, 'picks.json', doc, 'parlay settle: ' + ', '.join(p['id'] for p in settled), 'main')
+        ch = find_channel(guild, 'receipts')
+        state = await asyncio.to_thread(get_state)
+        for p in settled:
+            e = '✅' if p['result'] == 'WIN' else ('🟰' if p['result'] == 'PUSH' else '❌')
+            u = p.get('units_result', 0)
+            us = f'+{u}u' if u > 0 else f'{u}u'
+            badge = TIER_BADGE.get(p.get('tier'), '')
+            if ch:
+                await ch.send(f"🧾 **RESULT {badge} PARLAY:** {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else p.get('odds')}) {e} **{p['result']}** {us}\nLegs: {p.get('score')}")
+            if state is not None:
+                state.setdefault('unannounced_results', []).append(
+                    {'id': p['id'], 'desc': p.get('desc'), 'odds': p.get('odds'), 'result': p['result'],
+                     'units': p.get('units_result'), 'score': 'Legs: ' + p.get('score', ''), 'tier': p.get('tier')})
+        if state is not None:
+            await asyncio.to_thread(gh_put, 'bot_state.json', state, 'parlay results')
+        for p in settled:
+            if p.get('tier') == 'challenge':
+                await settle_challenge(guild, p)
+    except Exception as e:
+        print('grade_parlays error:', e)
+
+async def challenge_daily(g0, cands, dry):
+    """CARD LAW (challenge): the 100-to-1000 channel gets action every single day —
+    up to 2 straight bets + 1 parlay from the 4 PM ET scan; never silent."""
+    try:
+        chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')
+        if not chal:
+            return
+        now_et = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)
+        today_et = now_et.strftime('%Y-%m-%d')
+        plays = chal.setdefault('plays', [])
+        if any(pl.get('date') == today_et for pl in plays):
+            return  # today's action already posted
+        bal = float(chal.get('balance', 100))
+        stake = max(1.0, round(bal * 0.20, 2))
+        espn_c = [c for c in cands if (c.get('sport') or '').upper() in ESPN and c.get('odds') is not None]
+        ch = find_channel(g0, '100-to-1000')
+        if not ch:
+            return
+        n0 = max([pl.get('n', 0) for pl in plays] or [0])
+        posted = 0
+        picks_add = []
+        for c in espn_c[:2]:
+            o = int(c['odds'])
+            to_win = round(stake * (100 / abs(o) if o < 0 else o / 100), 2)
+            n0 += 1
+            t_et = _et(c['start'])
+            plays.append({'n': n0, 'date': today_et, 'pick': c['pick'], 'odds': o, 'stake': stake,
+                          'toWin': to_win, 'time_et': t_et, 'result': None,
+                          'posted': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                          'note': f"auto challenge — edge {c['edge']:.0%}; {c.get('analysis','')[:80]}"})
+            picks_add.append({'id': f"challenge-{c['pick'].lower().replace(' ', '-')[:24]}-{today_et[5:].replace('-', '')}",
+                              'date': today_et, 'sport': c['sport'], 'desc': c['pick'], 'market': c.get('market', 'ML'),
+                              'odds': o, 'units': 1.0, 'tier': 'challenge', 'time_et': t_et,
+                              'analysis': c.get('analysis', '')[:300]})
+            posted += 1
+            if not dry:
+                await ch.send(f"💵 **CHALLENGE BET #{n0}** — ${stake:.2f} on **{c['pick']}** ({fmt_odds_num(o)}) vs {c['vs']}\n"
+                              f"📊 {c.get('analysis','')}\n"
+                              f"To win **${to_win:.2f}** · balance **${bal:.2f}** → goal $1,000 · {_et(c['start'])} ET ⚡")
+                await asyncio.sleep(1)
+        # parlay kicker: when a built parlay exists, challenge takes a 10%-of-balance shot
+        parlays = [c for c in cands if c.get('parlay')]
+        if parlays:
+            c = parlays[0]
+            p_stake = max(1.0, round(bal * 0.10, 2))
+            p_dec = ml_to_dec(c['odds']) or 2.0
+            p_win = round(p_stake * (p_dec - 1), 2)
+            n0 += 1
+            t_et = _et(c['start'])
+            plays.append({'n': n0, 'date': today_et, 'pick': c['picks_desc'], 'odds': c['odds'], 'stake': p_stake,
+                          'toWin': p_win, 'time_et': t_et, 'result': None, 'parlay': True,
+                          'posted': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                          'note': f"challenge parlay — {c['market']}"})
+            picks_add.append({'id': f"challenge-parlay-{today_et[5:].replace('-', '')}", 'date': today_et,
+                              'sport': 'parlay', 'desc': f"PARLAY: {c['picks_desc']}", 'market': c['market'],
+                              'odds': c['odds'], 'units': 0.5, 'tier': 'challenge', 'time_et': t_et,
+                              'analysis': c.get('analysis', '')[:300],
+                              'legs': [{'team': lg['pick'][:-3] if lg['pick'].endswith(' ML') else lg['pick'],
+                                        'vs': lg['vs'], 'sport': lg['sport'], 'date': today_et,
+                                        'time_et': _et(lg['start'])} for lg in c['legs']]})
+            if not dry:
+                await ch.send(f"💵 **CHALLENGE PARLAY #{n0}** — ${p_stake:.2f} lotto ticket 🎰\n"
+                              + '\n'.join(f"• {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in c['legs']) +
+                              f"\nCombined **{fmt_odds_num(c['odds'])}** — to win **${p_win:.2f}** · balance **${bal:.2f}** ⚡")
+        if not posted and not parlays:
+            if not dry:
+                await ch.send(f"💵 **CHALLENGE — {today_et}**: slate too thin for a qualified edge today. "
+                              f"Bankroll stays **${bal:.2f}** — discipline is how $100 becomes $1,000. Next scan 8 PM ET. ⚡")
+            return
+        chal['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        if not dry:
+            await asyncio.to_thread(gh_put, 'challenge.json', chal, f'challenge daily {today_et}', 'main')
+            if picks_add:
+                pj = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main') or {'picks': []}
+                have = {p['id'] for p in pj.get('picks', [])}
+                pj['picks'] = pj.get('picks', []) + [p for p in picks_add if p['id'] not in have]
+                pj['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+                await asyncio.to_thread(gh_put, 'picks.json', pj, f'challenge picks {today_et}', 'main')
+    except Exception as e:
+        print('challenge_daily error:', e)
+
+@tasks.loop(hours=24)
+async def issues_sweep():
+    """ISSUES PRIVACY LAW: the issues room clears daily so no customer's private info
+    lingers in a public channel — but NEVER mid-issue: anything under 24h old stays."""
+    try:
+        g0 = client.guilds[0] if client.guilds else None
+        ch = find_channel(g0, 'issues') if g0 else None
+        if not ch:
+            return
+        cutoff = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=24)
+        deleted = 0
+        async for m in ch.history(limit=200):
+            if m.created_at < cutoff:
+                try:
+                    await m.delete()
+                    deleted += 1
+                    await asyncio.sleep(0.6)
+                except Exception:
+                    pass
+        if deleted:
+            print(f'issues_sweep: cleared {deleted} message(s) older than 24h')
+    except Exception as e:
+        print('issues_sweep error:', e)
 
 @tasks.loop(minutes=17)
 async def x_purge_old():
