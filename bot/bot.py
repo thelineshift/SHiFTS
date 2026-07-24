@@ -2367,7 +2367,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.55'
+            state['bot_version'] = '8.9.56'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
@@ -3254,6 +3254,14 @@ def boot_marker():
     try:
         st = get_state()
         boots = st.setdefault('boot_log', [])
+        # THROTTLE: skip the write if we booted <120s ago — rapid loops must not spam GitHub writes
+        if boots:
+            try:
+                last = time.mktime(time.strptime(boots[-1], '%Y-%m-%dT%H:%M:%SZ'))
+                if time.time() - last < 120:
+                    return len(boots)
+            except Exception:
+                pass
         boots.append(time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()))
         st['boot_log'] = boots[-60:]
         gh_put('bot_state.json', st, 'boot marker')
@@ -3261,6 +3269,16 @@ def boot_marker():
     except Exception as e:
         print('boot marker failed:', e)
         return -1
+
+def boots_last_hour():
+    # READ-ONLY boot count for the circuit breaker — never writes, never raises
+    try:
+        st = get_state()
+        cutoff = time.time() - 3600
+        return len([b for b in (st or {}).get('boot_log', [])
+                    if time.mktime(time.strptime(b, '%Y-%m-%dT%H:%M:%SZ')) > cutoff])
+    except Exception:
+        return 0
 
 def storm_sleep():
     # exponential backoff during crash/429 loops: 5m -> 10m -> 20m -> cap 30m.
@@ -3281,6 +3299,13 @@ def run_guarded():
     # CONNECTION-STORM GUARD: Discord resets tokens after ~1000 gateway connects in a short
     # window. One process = one connection, so storms only come from crash/restart loops.
     # Throttle every exit path so a looping host can never hammer Discord again.
+    # CIRCUIT BREAKER (Discord killed our token 07/24 for 1000+ connects):
+    # if we're in a crash loop, STOP connecting entirely and cool down 1h.
+    # max 8 connect attempts/hour — Discord can never see a storm from us again.
+    cb = boots_last_hour()
+    if cb >= 8:
+        print(f'CIRCUIT BREAKER: {cb} boots in the last hour — sleeping 1h before ANY connect attempt')
+        time.sleep(3600 + random.uniform(0, 300))
     n = boot_marker()
     print(f'boot #{n}')
     try:
@@ -3297,8 +3322,8 @@ def run_guarded():
         time.sleep(3600)
     except Exception as e:
         print('fatal run error:', e)
-        nap = storm_sleep()
-        print(f'sleeping {nap // 60}min before exit (exponential restart throttle)')
+        nap = storm_sleep() + random.uniform(0, 60)
+        print(f'sleeping {nap / 60:.0f}min before exit (exponential restart throttle + jitter)')
         time.sleep(nap)
     else:
         print('clean disconnect - sleeping 2min before exit (restart throttle)')
