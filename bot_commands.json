@@ -1,5 +1,5 @@
 {
-  "seq": 330,
+  "seq": 344,
   "commands": [
     {
       "seq": 163,
@@ -1118,6 +1118,86 @@
     {
       "seq": 330,
       "action": "list_perms"
+    },
+    {
+      "action": "delete_channel",
+      "id": "1530231040646451280",
+      "seq": 331
+    },
+    {
+      "action": "lock_channel",
+      "channel": "updates",
+      "preset": "readonly",
+      "seq": 332
+    },
+    {
+      "action": "lock_channel",
+      "channel": "upgrade",
+      "preset": "readonly",
+      "seq": 333
+    },
+    {
+      "action": "lock_channel",
+      "channel": "welcome",
+      "preset": "readonly",
+      "seq": 334
+    },
+    {
+      "action": "lock_channel",
+      "channel": "rules",
+      "preset": "readonly",
+      "seq": 335
+    },
+    {
+      "action": "lock_channel",
+      "channel": "free-pick",
+      "preset": "readonly",
+      "seq": 336
+    },
+    {
+      "action": "lock_channel",
+      "channel": "receipts",
+      "preset": "readonly",
+      "seq": 337
+    },
+    {
+      "action": "lock_channel",
+      "channel": "promotions",
+      "preset": "readonly",
+      "seq": 338
+    },
+    {
+      "action": "lock_channel",
+      "channel": "general-chat",
+      "preset": "community",
+      "seq": 339
+    },
+    {
+      "action": "lock_channel",
+      "channel": "giveaway",
+      "preset": "community",
+      "seq": 340
+    },
+    {
+      "action": "lock_channel",
+      "channel": "issues",
+      "preset": "community",
+      "seq": 341
+    },
+    {
+      "action": "perm_detail",
+      "channel": "whale-room",
+      "seq": 342
+    },
+    {
+      "action": "perm_detail",
+      "channel": "sharp-room",
+      "seq": 343
+    },
+    {
+      "action": "perm_detail",
+      "channel": "lock-room",
+      "seq": 344
     }
   ]
 }
