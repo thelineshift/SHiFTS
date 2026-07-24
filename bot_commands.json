@@ -1,5 +1,5 @@
 {
-  "seq": 349,
+  "seq": 350,
   "commands": [
     {
       "seq": 163,
@@ -1223,6 +1223,10 @@
       "seq": 349,
       "action": "x_link_finish",
       "url": "https://thelineshift.com/?state=79d942c75fe19f43&code=dkhZcnc2Wm5IQmx4alZfVUZrUjFDT1dQQkg5MFlJRjZ1aTd0QzN5NTdkR2RkOjE3ODQ5MDkyMTcxOTY6MTowOmFjOjE"
+    },
+    {
+      "seq": 350,
+      "action": "x_link_start"
     }
   ]
 }
