@@ -1,35 +1,15 @@
 {
- "seq": 392,
+ "seq": 393,
  "commands": [
   {
-   "seq": 388,
+   "seq": 393,
    "action": "x_pin",
    "tweet_id": "2080781361955385778"
   },
   {
-   "seq": 389,
+   "seq": 394,
    "action": "x_profile_update",
-   "description": "\u26a1 I'm SHiFT \u2014 every play before first pitch, every result receipted. \ud83c\udfaf 4\u20136 free plays daily \u00b7 \ud83d\udd12 Lock 6/day \u00b7 \ud83d\udcca Sharp 12/day \u00b7 \ud83d\udc0b Whale 12+, dealt first"
-  },
-  {
-   "seq": 390,
-   "action": "x_delete",
-   "ids": [
-    "2080336363908743406"
-   ]
-  },
-  {
-   "seq": 391,
-   "action": "x_delete",
-   "ids": [
-    "2080419904378015798"
-   ]
-  },
-  {
-   "seq": 392,
-   "action": "replace_pinned",
-   "channel": "upgrade",
-   "content": "\ud83d\udc8e **UPGRADE \u2014 THELINESHIFT PREMIUM ROOMS**\nSHiFT's picks. Every play before start. Every result receipted in public.\n\n\ud83d\ude80 **LAUNCH SPECIAL** \u2014 code `LAUNCH25` takes **25% off your first month**\n\ud83d\udef0\ufe0f New picks drop **every 4 hours** \u2014 12a \u00b7 4a \u00b7 8a \u00b7 12p \u00b7 4p \u00b7 8p ET \u2014 every day, no days off\n\n\ud83d\udcac **FREE COMMUNITY \u2014 $0 forever**\n\ud83c\udfaf 4\u20136 free picks every day \u2014 one per scan \u00d7 6 scans, same engine, same receipts\n\ud83c\udf81 $50 in SOL drawn every Sunday \u2014 two winners, free to enter\n\ud83e\uddfe Every result graded in public, win or lose\n\ud83d\udcb5 Follow the $100\u2192$1,000 challenge live\n\n\ud83d\udd12 **LOCK \u2014 $29.99/mo**\n6 picks every day \u2014 1 per scan \u00d7 6 scans + everything free gets\nOdds, units & SHiFT's full read on every play\n$100\u2192$1,000 challenge ladder + full receipts\n\n\ud83d\udcca **SHARP \u2014 $49.99/mo**\n12 picks every day \u2014 2 per scan \u00d7 6 scans + everything in Lock\nWhere the number is wrong, why, and by how much\nEsports cards (CS2 \u00b7 LoL) when the slate's live\nWeekly analytics report\n\n\ud83d\udc0b **WHALE \u2014 $99.99/mo**\n12+ picks every day \u2014 SHiFT's most confident plays dealt to Whale FIRST, by house law\n\ud83c\udf24\ufe0f Weather & venue intel \u2014 indoors/outdoors, wind, conditions on every pick\n\ud83e\ude79 Injury reports & lineup-change flags on every play\n\ud83e\udde0 Deep analysis \u2014 why the LINE wins: SHiFT's price vs the book's, gap math shown\n\ud83c\udfb0 Parlays land here most often \u2014 Whale-first by house law\nMonthly deep-dive + highest unit allocations\n\n**HOW TO JOIN**\n1\ufe0f\u20e3 Pick your tier \u2192 https://thelineshift.github.io/AISportsBot/upgrade.html\n2\ufe0f\u20e3 Enter your Discord username at checkout\n3\ufe0f\u20e3 Roles activate in seconds \u2014 rooms unlock\n\nMonthly, cancel anytime \u2014 access removes automatically. Cards, debit & crypto (USDC) at checkout.\n\ud83e\ude99 Prefer any crypto? Type `!crypto lock` \u00b7 `!crypto sharp` \u00b7 `!crypto whale` in this channel \u2014 300+ coins, 30-day terms.\nQuestions? Ask in #\ud83d\udee0\ufe0fissues"
+   "description": "\u26a1 I'm SHiFT \u2014 every play before first pitch, every result receipted. \ud83c\udfaf 4\u20136 free plays daily \u00b7 Lock 6/day \u00b7 Sharp 12/day \u00b7 Whale 12+, dealt first"
   }
  ]
 }
