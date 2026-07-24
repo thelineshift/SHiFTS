@@ -18,7 +18,7 @@
     "#\ud83d\udd12lock-room-4-8 overwrites:\n@everyone: view=False,send=None,threads=None,files=None\n\ud83d\udc0b Whale: view=True,send=True,threads=None,files=None\n\ud83d\udd12 Lock Room: view=True,send=True,threads=None,files=None\n\ud83d\udcca Sharp: view=True,send=True,threads=None,files=None"
   ],
   "time_audit": {
-    "at": "2026-07-24 15:33 UTC",
+    "at": "2026-07-24 15:41 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -30,20 +30,20 @@
     "\ud83c\udf81giveaway": "2026-07-24 15:28 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 15:33 UTC",
+    "at": "2026-07-24 15:41 UTC",
     "flags": []
   },
   "challenge_watch": {
-    "at": "2026-07-24 15:33 UTC",
+    "at": "2026-07-24 15:41 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 15:33 UTC",
+    "at": "2026-07-24 15:41 UTC",
     "flags": []
   },
-  "bot_version": "9.3.1",
+  "bot_version": "9.3.2",
   "unannounced_results": [],
   "last_x_receipt_ts": 1784867411.9636893,
   "last_recap_date": "2026-07-23",
