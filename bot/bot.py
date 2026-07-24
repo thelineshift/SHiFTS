@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.7.7'
+BOT_VERSION = '9.8.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3218,8 +3218,11 @@ def _pick_closer(pool, seed):
     return pool[int(_hh.md5(str(seed).encode()).hexdigest(), 16) % len(pool)]
 
 def x_receipt_text(r, all_picks=None, chal=None):
-    odds = r.get('odds'); odds_s = f"({odds:+d})" if isinstance(odds, int) else f"({odds})"
+    odds = r.get('odds'); odds_s = f"({odds:+d})" if isinstance(odds, int) else '(ML)'
     badge = TIER_BADGE.get(r.get('tier'), '')
+    # daily-rotating param busts X's card cache so the SHiFT banner preview always renders
+    store_link = f"https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=x_{time.strftime('%Y%m%d')}"
+
     rec_lines = []
     if all_picks is not None and r.get('tier') != 'challenge':
         tw, tl, tu = tier_season_line(all_picks, r.get('tier'))
@@ -3234,7 +3237,7 @@ def x_receipt_text(r, all_picks=None, chal=None):
         base = f"🧾 RESULT {badge}: {r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
         # paid-room winners funnel to the store (link renders our branded preview card on X)
         if r.get('tier') in ('whale', 'sharp', 'lock'):
-            return base + "💎 Every play like this, every 4 hours → https://thelineshift.github.io/AISportsBot/upgrade.html"
+            return base + "💎 Every play like this, every 4 hours → " + store_link
         return base + _pick_closer(CLOSERS_WIN, seed)
     if r['result'] == 'PUSH':
         return (f"🧾 RESULT {badge}: {r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
@@ -3907,7 +3910,7 @@ def se_espn_all(dates):
                             ma = int(fp)
                     except Exception:
                         pass
-                out.append({'sport': sport, 'start': e['date'],
+                out.append({'sport': sport, 'start': e['date'], 'eid': e.get('id'),
                             'home': home['team']['displayName'], 'away': away['team']['displayName'],
                             'recs': recs, 'ml_home': mh, 'ml_away': ma,
                             'total': odds.get('overUnder'), 'spread': odds.get('spread')})
@@ -3955,7 +3958,7 @@ def se_edges(g, now_ts):
         out.append({'sport': g['sport'], 'pick': f"{team} ML", 'vs': opp, 'odds': ml,
                     'units': 1.5 if edge >= 0.12 else 1.0, 'edge': edge, 'start': t,
                     'market': 'ML', 'prob': p_ours, 'team': team, 'opp': opp, 'side': side,
-                    'reserve': ml < -150,
+                    'reserve': ml < -150, 'eid': g.get('eid'),
                     'analysis': f"{(g['recs'].get(side) or {}).get('total','?')} overall{split_s} — "
                                 f"our {p_ours:.0%} vs book {p_imp:.0%} (no-vig)"})
     return out
@@ -4147,7 +4150,9 @@ async def scan_engine_run(g0, slot_key, dry):
             if tier == 'free':
                 paid = sum(len(deal[t]) for t in ('lock', 'sharp', 'whale'))
                 extra = f" The paid rooms took {paid} plays — the best free-qualified edge just didn't clear our bar." if paid else ''
-                await room.send(embed=discord.Embed(description=f"🎯 {tag}**FREE PICK — {slot_et}**\n\nNo free play this window — nothing met our edge bar, and we don't force bets.{extra} Next scan **{_nxt_et()}**.\n💎 Want every edge, every window? → {upg_ment} ⚡", color=TIER_COLORS['free']))
+                gw_ch2 = find_channel(g0, 'giveaway')
+                gw_ment2 = f"<#{gw_ch2.id}>" if gw_ch2 else 'the giveaway room'
+                await room.send(embed=discord.Embed(description=f"🎯 {tag}**FREE PICK — {slot_et}**\n\nNo free play this window — nothing met our edge bar, and we don't force bets.{extra} Next scan **{_nxt_et()}**.\n💎 [Every edge, every 4 hours — unlock the paid rooms](https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=discord_free) → {upg_ment}\n🎁 Sunday 6 PM ET — $50 SOL draw in {gw_ment2} ⚡", color=TIER_COLORS['free']))
             continue
         lines = []
         for n, p in enumerate(plays, 1):
@@ -4158,10 +4163,20 @@ async def scan_engine_run(g0, slot_key, dry):
                              f"{p['market']} · first leg {_et(p['start'])}\n"
                              f"🧠 **Why it's the play:** every leg cleared our edge bar — combined model probability {p.get('prob', 0):.0%} vs the price's implied {(1 / (ml_to_dec(p['odds']) or 2)):.0%}. That's value stacked on value.")
             else:
-                lines.append(f"{n}\u20e3 **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u**\n"
-                             f"{p['market']} · {_et(p['start'])}\n"
-                             f"📊 {p.get('analysis','')}\n"
-                             f"{_why(p, rank_of.get(id(p), n))}")
+                if tier == 'whale':
+                    why_deep = (f"🧠 **Why this line wins:** {_why(p, rank_of.get(id(p), n)).replace('🧠 **Why it\'s the play:** ', '')} "
+                                f"Our price is **{p.get('prob', 0):.0%}** against the book's **{p.get('prob', 0) - p['edge']:.0%}** — a **{p['edge']:.0%} pricing gap**. "
+                                f"That gap is the whole bet: we're not just picking the team, we're buying the number cheaper than it's worth.")
+                    extras = se_whale_extras(p)
+                    lines.append(f"{n}\u20e3 **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u**\n"
+                                 f"{p['market']} · {_et(p['start'])}\n"
+                                 f"📊 {p.get('analysis','')}\n"
+                                 f"{why_deep}" + (f"\n{extras}" if extras else ''))
+                else:
+                    lines.append(f"{n}\u20e3 **{p['pick']}{odds_s} vs {p['vs']} — {p['units']}u**\n"
+                                 f"{p['market']} · {_et(p['start'])}\n"
+                                 f"📊 {p.get('analysis','')}\n"
+                                 f"{_why(p, rank_of.get(id(p), n))}")
             reg = {'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}", 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
                    'sport': p['sport'], 'desc': p.get('picks_desc') or p['pick'], 'market': p['market'], 'odds': p['odds'],
                    'units': p['units'], 'tier': tier, 'time_et': _et(p['start']),
@@ -4182,7 +4197,11 @@ async def scan_engine_run(g0, slot_key, dry):
         body = f"{emo} {tag}**{tier.upper()} ROOM — {slot_et} CARD** ({len(plays)} play{'s' if len(plays) > 1 else ''})\n\n" + '\n\n'.join(lines)
         if tier == 'free':
             cnts = ' · '.join(f"{e} +{len(deal[t])}" for t, e in (('lock', '🔒'), ('sharp', '📊'), ('whale', '🐋')) if deal[t])
-            body += f"\n\n💎 Full board live now ({cnts}) → {upg_ment}\n🎁 Sunday 6 PM ET — $50 SOL draw, entry in the giveaway room. ⚡"
+            gw_ch = find_channel(g0, 'giveaway')
+            gw_ment = f"<#{gw_ch.id}>" if gw_ch else 'the giveaway room'
+            body += (f"\n\n💎 **{cnts}** — the rest of this card is live in the paid rooms right now → {upg_ment}\n"
+                     f"🛒 [Unlock the full board — every pick, every 4 hours](https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=discord_free)\n"
+                     f"🎁 **Sunday 6 PM ET:** $50 in SOL, two winners — free entry in {gw_ment} ⚡")
         await room.send(embed=discord.Embed(description=body[:4090], color=TIER_COLORS.get(tier, 0x2B2D31)))
         await asyncio.sleep(1)
     # ---- sanitized complete in general chat (NO-LEAK LAW) — clickable tags + upgrade funnel
@@ -4196,7 +4215,7 @@ async def scan_engine_run(g0, slot_key, dry):
         comp += f"🎯 No free play this window — nothing met our edge bar, and we don't force bets. Next scan **{_nxt_et()}**.\n"
     cnts = ' · '.join(f"{e} +{len(deal[t])}" for t, e in (('lock', '🔒'), ('sharp', '📊'), ('whale', '🐋')) if deal[t])
     if cnts:
-        comp += f"\n{cnts} — the full board is live in the paid rooms.\n💎 Want every play? → {upg_ment}\n"
+        comp += f"\n{cnts} — the full board is live in the paid rooms.\n💎 **12+ plays a day** in Whale · **12** in Sharp · **6** in Lock → {upg_ment}\n"
     comp += "\nEvery play before start. Every result receipted. ⚡"
     await gen.send(comp)
     # ---- register + mark
@@ -4238,6 +4257,57 @@ def dec_to_ml(dec):
     if not dec or dec <= 1:
         return None
     return -round(100 / (dec - 1)) if dec >= 2 else round(100 * (dec - 1))
+
+_WHALE_CACHE = {}
+
+def se_whale_extras(c):
+    """WHALE-ONLY premium intel: venue indoors/outdoors + weather + injury report.
+    Top-tier customers get the full picture behind the pick. Cached per event."""
+    eid = c.get('eid')
+    sport = (c.get('sport') or '')
+    if not eid or sport not in SE_SPORTS:
+        return ''
+    if eid in _WHALE_CACHE:
+        return _WHALE_CACHE[eid]
+    bits = []
+    try:
+        d = se_get('https://site.api.espn.com/apis/site/v2/sports/%s/summary?event=%s' % (SE_SPORTS[sport], eid))
+        gi = d.get('gameInfo') or {}
+        ven = gi.get('venue') or {}
+        w = gi.get('weather') or {}
+        vname = ven.get('fullName', '')
+        if ven.get('indoor'):
+            bits.append(f"🏟️ **Indoors** — {vname}: climate controlled, weather is a non-factor")
+        else:
+            cond = w.get('displayValue') or ''
+            temp, wind = w.get('temperature'), w.get('windSpeed')
+            loc = (ven.get('address') or {}).get('city', '')
+            if temp is not None:
+                bits.append(f"🌤️ **Outdoors** — {vname} ({loc}): {cond}, {temp}°F, wind {wind} mph")
+            else:
+                bits.append(f"🌤️ **Outdoors** — {vname} {loc} {cond}".strip())
+    except Exception as e:
+        print('whale venue:', e)
+    try:
+        ij = se_get('https://site.api.espn.com/apis/site/v2/sports/%s/injuries' % SE_SPORTS[sport])
+        teams_n = {norm_txt(c.get('team', '')), norm_txt(c.get('opp', ''))}
+        hits = []
+        for t in ij.get('injuries', []):
+            tn = norm_txt(t.get('team', {}).get('displayName', ''))
+            if tn in teams_n or any(tn in x or x in tn for x in teams_n if x and len(x) > 4):
+                for it in (t.get('injuries') or []):
+                    st = (it.get('status') or '').lower()
+                    if st in ('out', 'doubtful', 'questionable', 'day-to-day', 'suspended', 'injured reserve'):
+                        hits.append(f"{(it.get('athlete') or {}).get('shortName', '?')} ({it.get('status')})")
+        if hits:
+            bits.append('🩹 **Injury report:** ' + ', '.join(hits[:6]))
+        else:
+            bits.append('🩹 **Injury report:** no key injuries flagged on either side')
+    except Exception as e:
+        print('whale injuries:', e)
+    out = '\n'.join(bits)
+    _WHALE_CACHE[eid] = out
+    return out
 
 def se_build_parlay(pool, rot):
     """Build one 2-3 leg cross-sport parlay from edge-qualified leftovers.
