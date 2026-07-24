@@ -729,6 +729,34 @@ async def catchup_sweep(g0):
             print('catchup sweep skipped (boot-loop guard)')
             return
         await asyncio.sleep(8)  # let the bot settle after connect
+        report = []
+        lab = find_channel(g0, 'shift-lab')
+        # 1) MONEY FIRST: sync Stripe subscriptions immediately at boot — a paying
+        #    customer never waits for their role because we were down.
+        try:
+            await _stripe_sync_once()
+            report.append('stripe sync ✓ (roles reconciled)')
+        except Exception as e:
+            report.append(f'stripe sync FAIL: {e}')
+        # 2) MISSED SCANS: if we booted past a slot with no card/resolution, say so
+        try:
+            st = await asyncio.to_thread(get_state)
+            sev = (st or {}).get('scan_events', {})
+            now = time.gmtime()
+            for delta_h in (0, 4):
+                t = time.gmtime(time.time() - delta_h * 3600)
+                if t.tm_hour not in (0, 4, 8, 12, 16, 20):
+                    continue
+                key = time.strftime('%Y%m%d-%H', t)
+                mins_past = ((time.time() - delta_h * 3600) % 3600) / 60 if delta_h == 0 else 0
+                if sev.get(key) != 'ok' and (delta_h > 0 or mins_past > 40):
+                    gch2 = find_channel(g0, 'general-chat')
+                    if gch2:
+                        await gch2.send("⚡ SHiFT is back online after a brief outage. A scan window was missed while I was down — the backstop scheduler is running the makeup now. Cards never stop. ⚡")
+                        report.append(f'missed-scan note posted for slot {key}')
+                    break
+        except Exception as e:
+            print('scan sweep:', e)
         gch = find_channel(g0, 'giveaway')
         if gch:
             msgs = [m async for m in gch.history(limit=40)]
@@ -774,6 +802,7 @@ async def catchup_sweep(g0):
                     break
             if done:
                 print(f'giveaway catchup: {done} processed')
+                report.append(f'giveaway catch-up: {done}')
         ich = find_channel(g0, 'issues')
         if ich:
             msgs = [m async for m in ich.history(limit=15)]
@@ -787,6 +816,9 @@ async def catchup_sweep(g0):
                     print('issues catchup:', e)
             if unans:
                 print(f'issues catchup: {len(unans[-3:])} triaged')
+                report.append(f'issues triaged: {len(unans[-3:])}')
+        if report and lab:
+            await lab.send('🔄 **BOOT SWEEP** — ' + ' · '.join(report))
     except Exception as e:
         print('catchup sweep error:', e)
 
@@ -2221,8 +2253,7 @@ UNITS_PAT = re.compile(r'\b\d+(\.\d+)?u\b')
 TIMEDATE_PAT = re.compile(r'(\b\d{1,2}(:\d{2})?\s?(AM|PM|am|pm)\b)|(\bET\b|EST|EDT)|tonight|today|tomorrow|(\b\d{1,2}/\d{1,2}\b)', re.I)
 PICK_CHANNELS = ('free-pick', 'daily-locks', 'all-picks', 'every-play', '100-to-1000')
 
-@tasks.loop(seconds=60)
-async def stripe_sync():
+async def _stripe_sync_once():
     try:
         key = os.environ.get('STRIPE_KEY', '')
         if not key or not client.guilds:
@@ -2303,6 +2334,10 @@ async def stripe_sync():
             await asyncio.to_thread(gh_put, 'stripe_members.json', known, 'stripe sync')
     except Exception as e:
         print('stripe_sync error:', e)
+
+@tasks.loop(seconds=60)
+async def stripe_sync():
+    await _stripe_sync_once()
 
 @tasks.loop(seconds=300)
 async def crypto_sync():
@@ -2457,7 +2492,7 @@ async def audit():
             state['resolution_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': res_flags[:12]}
             state['challenge_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': chal_flags[:6]}
             state['giveaway_watch'] = {'at': time.strftime('%Y-%m-%d %H:%M UTC'), 'flags': gw_flags[:4]}
-            state['bot_version'] = '8.9.57'
+            state['bot_version'] = '8.9.58'
             try:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'audit update')
             except Exception:
