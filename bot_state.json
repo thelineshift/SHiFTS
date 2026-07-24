@@ -60,6 +60,24 @@
       "units": -1.0,
       "score": "Privateer Gaming vs opponent \u2014 loss",
       "tier": "sharp"
+    },
+    {
+      "id": "karmine-corp-ml-0724",
+      "desc": "Karmine Corp ML",
+      "odds": null,
+      "result": "WIN",
+      "units": 1.36,
+      "score": "Karmine Corp vs opponent \u2014 win",
+      "tier": "whale"
+    },
+    {
+      "id": "fnatic-ml-0724",
+      "desc": "Fnatic ML",
+      "odds": null,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Fnatic vs opponent \u2014 loss",
+      "tier": "sharp"
     }
   ],
   "last_x_receipt_ts": 1784922820.6683996,
