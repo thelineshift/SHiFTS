@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.9'
+BOT_VERSION = '9.9.10'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -1552,11 +1552,13 @@ async def run_command(cmd, guild, log):
             tid = str(cmd['tweet_id'])
             payload = json.dumps({'tweet_id': tid}).encode()
             ok = False
-            for host in ['api.x.com', 'api.twitter.com']:
+            for host, path, meth in [('api.x.com', f'/2/users/{uid}/pinned', 'POST'),
+                                     ('api.twitter.com', f'/2/users/{uid}/pinned', 'POST'),
+                                     ('api.x.com', f'/2/users/{uid}/pinned_tweets', 'PUT')]:
                 try:
-                    req = urllib.request.Request(f'https://{host}/2/users/{uid}/pinned_tweets',
+                    req = urllib.request.Request(f'https://{host}{path}',
                         data=payload, headers={'Authorization': f"Bearer {c['oauth2_access']}",
-                                               'Content-Type': 'application/json'}, method='PUT')
+                                               'Content-Type': 'application/json'}, method=meth)
                     with urllib.request.urlopen(req, timeout=20) as r:
                         d = json.load(r)
                     log.append(f"x_pin: pinned {tid} via oauth2 {host} -> {d.get('data')}")
