@@ -1,10 +1,16 @@
 {
-  "executed_seq": 347,
+  "executed_seq": 348,
   "last_log": [
-    "seq 347 executed 2026-07-24 15:44 UTC",
-    "deleted channel/thread: Dmasud",
-    "sweep_giveaway: 9 processed",
-    "ERROR list_perms: 'Member' object has no attribute 'is_bot_managed'"
+    "seq 348 executed 2026-07-24 15:49 UTC",
+    "ERROR list_perms: 'Member' object has no attribute 'is_bot_managed'",
+    "#\ud83c\udf81giveaway | LineShift Bot#8676: <@1429987100828110943> \ud83c\udfab **@Memegirl154776** \u2014 you're already entered in Sunday's $50 draw (6 PM ET). Nothing else to do \u2014 good luck! \u26a1",
+    "#\ud83c\udf81giveaway | LineShift Bot#8676: <@1498914693966725200> \ud83c\udfab **@joyfy01** \u2014 you're already entered in Sunday's $50 draw (6 PM ET). Nothing else to do \u2014 good luck! \u26a1",
+    "#\ud83c\udf81giveaway | LineShift Bot#8676: <@1358272101655646358> \ud83c\udfab **@mdhasnain31** \u2014 you're already entered in Sunday's $50 draw (6 PM ET). Nothing else to do \u2014 good luck! \u26a1",
+    "#\ud83c\udf81giveaway | LineShift Bot#8676: <@1402974951446675537> \ud83c\udfab **@payareal** \u2014 you're already entered in Sunday's $50 draw (6 PM ET). Nothing else to do \u2014 good luck! \u26a1",
+    "#\ud83c\udf81giveaway | LineShift Bot#8676: <@1323551187425034263> \ud83c\udfab **@omhelatte** \u2014 you're already entered in Sunday's $50 draw (6 PM ET). Nothing else to do \u2014 good luck! \u26a1",
+    "#\ud83c\udf81giveaway | LineShift Bot#8676: <@472230323644530690> \ud83c\udfab **@lazyyskie** \u2014 you're already entered in Sunday's $50 draw (6 PM ET). Nothing else to do \u2014 good luck! \u26a1",
+    "#\ud83c\udf81giveaway | odin1h: Ground*",
+    "#\ud83c\udf81giveaway | odin1h: I need to update the x api token haven\u2019t gotten there yet sorry building this from group up started 3 days ago"
   ],
   "time_audit": {
     "at": "2026-07-24 15:41 UTC",
@@ -59,7 +65,7 @@
     "20260724-12": "ok",
     "20260724-12-note": "8AM ET makeup by ops 12:20 UTC \u2014 esports-led window card (4 plays). Engine cron turn died pre-post again; checklist slim-fix shipping next."
   },
-  "executed_cmd_seq": 346,
+  "executed_cmd_seq": 348,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 10,
