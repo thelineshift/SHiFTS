@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.11.0'
+BOT_VERSION = '9.11.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -215,9 +215,22 @@ EVM_RPCS = {
 USDC_E_POLYGON = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'  # bridged USDC.e — the Polymarket rail
 USDC_POLYGON = '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359'    # native USDC
 
+ANKR_CHAIN = {'ethereum': 'eth', 'base': 'base', 'polygon': 'polygon', 'bsc': 'bsc', 'arbitrum': 'arbitrum'}
+
 def _evm_call(chain, method, params):
-    """Call a JSON-RPC method on `chain`, trying each endpoint. Requires a real 'result'."""
+    """Call a JSON-RPC method on `chain`: Ankr (keyed) first, then public endpoints. Requires a real 'result'."""
     last = 'no rpc configured'
+    ankr = os.environ.get('ANKR_KEY', '')
+    if ankr and chain in ANKR_CHAIN:
+        for path in (ANKR_CHAIN[chain], 'multichain'):
+            try:
+                b = _http_json(f'https://rpc.ankr.com/{path}/{ankr}',
+                               {'jsonrpc': '2.0', 'id': 1, 'method': method, 'params': params}, timeout=12)
+                if isinstance(b, dict) and b.get('result') is not None:
+                    return b['result']
+                last = str((b or {}).get('error') or b)[:80]
+            except Exception as e:
+                last = str(e)[:80]
     for rpc in EVM_RPCS[chain][2]:
         try:
             b = _http_json(rpc, {'jsonrpc': '2.0', 'id': 1, 'method': method, 'params': params})
@@ -250,7 +263,7 @@ def _evm_native(chain, addr):
     ankr = os.environ.get('ANKR_KEY', '')
     if ankr:
         try:
-            b = _http_json(f'https://rpc.ankr.com/multichain/{ankr}',
+            b = _http_json(f'https://rpc.ankr.com/{ANKR_CHAIN.get(chain, "multichain")}/{ankr}',
                            {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addr, 'latest']}, timeout=12)
             if b.get('result') is not None:
                 return int(b['result'], 16) / 1e18, None
