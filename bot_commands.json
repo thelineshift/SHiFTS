@@ -1,5 +1,5 @@
 {
-  "seq": 320,
+  "seq": 321,
   "commands": [
     {
       "seq": 163,
@@ -1056,6 +1056,11 @@
     },
     {
       "seq": 320,
+      "action": "scan_now",
+      "dry": true
+    },
+    {
+      "seq": 321,
       "action": "scan_now",
       "dry": true
     }
