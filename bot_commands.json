@@ -1,5 +1,5 @@
 {
- "seq": 365,
+ "seq": 366,
  "commands": [
   {
    "seq": 163,
@@ -1381,6 +1381,11 @@
   {
    "seq": 365,
    "action": "scan_now"
+  },
+  {
+   "seq": 366,
+   "action": "scan_now",
+   "slot": "20260724-20"
   }
  ]
 }
