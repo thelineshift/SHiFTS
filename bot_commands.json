@@ -1,5 +1,5 @@
 {
- "seq": 367,
+ "seq": 371,
  "commands": [
   {
    "seq": 163,
@@ -1390,6 +1390,30 @@
   {
    "seq": 367,
    "action": "scan_now"
+  },
+  {
+   "seq": 368,
+   "action": "lock_channel",
+   "channel": "100-to-1000",
+   "preset": "readonly"
+  },
+  {
+   "seq": 369,
+   "action": "rename_channel",
+   "channel": "100-to-1000",
+   "name": "\ud83d\udcb5100-to-\ud83d\udcb01000-0-0"
+  },
+  {
+   "seq": 370,
+   "action": "set_topic",
+   "channel": "100-to-1000",
+   "topic": "\ud83d\udcb5 $100 \u2192 \ud83d\udcb0 $1,000 \u2014 one open bankroll, ~20% stakes, every bet + result in public. Fresh run started 7/24."
+  },
+  {
+   "seq": 371,
+   "action": "post_and_pin",
+   "channel": "100-to-1000",
+   "content": "\ud83d\udcb5 **THE $100 \u2192 $1,000 CHALLENGE IS NOW PUBLIC** \ud83d\udcb0\n\nWelcome in. This channel tracks one open bankroll run in real time \u2014 every bet, every result, every dollar.\n\n\ud83d\udccf **The rules:**\n\u2022 Bankroll starts at \ud83d\udcb5 **$100**\n\u2022 We bet **~20% of the bankroll** on qualified edges \u2014 no forcing dead slates\n\u2022 Every bet AND every result posts here, receipts included\n\u2022 Goal: \ud83d\udcb0 **$1,000**\n\n\ud83d\udd04 **Fresh restart TODAY** \u2014 record resets to 0-0, bankroll back to \ud83d\udcb5 $100.\n\ud83d\udfe2 Two bets are already live tonight as the opening card \u2014 watch them settle here.\n\nFollow a bankroll getting built, free. Same engine sells the paid rooms \u2014 the full board is 12+ plays a day. \u26a1"
   }
  ]
 }
