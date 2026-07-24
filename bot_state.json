@@ -1,12 +1,11 @@
 {
-  "executed_seq": 300,
+  "executed_seq": 301,
   "last_log": [
-    "seq 300 executed 2026-07-23 23:20 UTC",
-    "x_pinned: 2080419904378015798",
-    "pinned text: \u26a1 THE BOARD IS DEALT TOP-DOWN\n\n\ud83c\udfaf Free \u2014 1 play a day\n\ud83d\udd12 Lock $14.99 \u2014 2 plays a day\n\ud83d\udcca Sharp $29.99 \u2014 4 plays a day\n\ud83d\udc0b Whale $59.99 \u2014 my full 7-play board\n\nHOUSE LAW: my most confident plays go to Whale "
+    "seq 301 executed 2026-07-24 06:59 UTC",
+    "x_post_text FAIL: HTTP Error 402: Payment Required"
   ],
   "time_audit": {
-    "at": "2026-07-24 06:59 UTC",
+    "at": "2026-07-24 06:58 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -15,20 +14,20 @@
     "\ud83d\udcacgeneral-chat": "2026-07-24 06:54 UTC",
     "\ud83c\udfc6100-to-1000-40": "2026-07-23 20:14 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-24 06:59 UTC"
+    "\ud83c\udf81giveaway": "2026-07-24 05:44 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 06:59 UTC",
+    "at": "2026-07-24 06:58 UTC",
     "flags": []
   },
   "challenge_watch": {
-    "at": "2026-07-24 06:59 UTC",
+    "at": "2026-07-24 06:58 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 06:59 UTC",
+    "at": "2026-07-24 06:58 UTC",
     "flags": []
   },
   "bot_version": "8.9.53",
@@ -54,7 +53,7 @@
     "20260724-04-note": "12AM ET makeup posted 06:50 UTC by ops \u2014 unified board: 7 plays (UFC/CS2/Valorant/MLB). Root cause of 00/04 misses: engine cron turns dying on sandbox X-call hangs.",
     "20260724-00-note": "8PM ET slot missed by engine cron (same X-hang fault); overnight board absorbed into 06:50 UTC makeup."
   },
-  "executed_cmd_seq": 300,
+  "executed_cmd_seq": 301,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 10,
