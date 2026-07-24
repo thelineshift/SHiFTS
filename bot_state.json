@@ -1,9 +1,13 @@
 {
-  "executed_seq": 352,
+  "executed_seq": 353,
   "last_log": [
-    "seq 352 executed 2026-07-24 16:25 UTC",
-    "scan_now executed (dry=False)",
-    "username set to: shift"
+    "seq 353 executed 2026-07-24 16:34 UTC",
+    "#\ud83d\udcacgeneral-chat | shift#8676: \u2705 **SCAN COMPLETE \u2014 12 PM ET**\n\ud83d\udd12 +1 \u00b7 \ud83d\udcca +2 \u00b7 \ud83d\udc0b +2 \u2014 live in their rooms\nEvery play before start. Every result receipted. \u26a1",
+    "#\ud83d\udcacgeneral-chat | shift#8676: \ud83d\udef0\ufe0f **SCAN INITIATED \u2014 12 PM ET**",
+    "#\ud83d\udcacgeneral-chat | shift#8676: \ud83d\udef0\ufe0f **SCAN INITIATED \u2014 12 PM ET**",
+    "#\ud83d\udcacgeneral-chat | shift#8676: \ud83d\udef0\ufe0f **SCAN DELAYED** \u2014 the machine hit a snag on this run. SHiFT is catching up; the card drops shortly. \u26a1",
+    "#\ud83d\udcacgeneral-chat | shift#8676: <@&1529569745517674599> \u23f1\ufe0f **FINAL 10** \u2014 the 12 PM ET sweep opens the board in minutes.",
+    "#\ud83d\udcacgeneral-chat | shift#8676: \u23f3 **NEXT SCAN: 12 PM ET** \u2014 one hour. Markets, lineups, weather, money flow. Watch it work. \ud83d\udcca"
   ],
   "time_audit": {
     "at": "2026-07-24 16:28 UTC",
@@ -61,7 +65,7 @@
     "20260724-16-manual": "ok-bot",
     "20260724-16-note": "12PM ET: cron died silently again; bot engine flipped LIVE and posted the real card 16:25 UTC (5 plays, first fully-autonomous live card)."
   },
-  "executed_cmd_seq": 352,
+  "executed_cmd_seq": 353,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 11,
