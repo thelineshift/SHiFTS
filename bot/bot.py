@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.6'
+BOT_VERSION = '9.9.7'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -244,7 +244,9 @@ def _bs_get(url):
         return json.load(r)
 
 def _evm_native(chain, addr):
-    """Native balance + usd via Ankr (if keyed) -> Blockscout -> public RPCs. Returns (balance, price_or_None)."""
+    """Native balance + usd. Tries Ankr (if ANKR_KEY set) -> Blockscout -> public RPCs.
+    Returns (balance, price_or_None). Raises the last error if every source fails."""
+    last = 'no source'
     ankr = os.environ.get('ANKR_KEY', '')
     if ankr:
         try:
@@ -252,14 +254,22 @@ def _evm_native(chain, addr):
                            {'jsonrpc': '2.0', 'id': 1, 'method': 'eth_getBalance', 'params': [addr, 'latest']}, timeout=12)
             if b.get('result') is not None:
                 return int(b['result'], 16) / 1e18, None
-        except Exception:
-            pass
+            last = str(b.get('error') or b)[:80]
+        except Exception as e:
+            last = str(e)[:80]
     bs = BLOCKSCOUT.get(chain)
     if bs:
-        r = _bs_get(f'{bs}/api/v2/addresses/{addr}')
-        rate = float(r.get('exchange_rate') or 0) or None
-        return int(r.get('coin_balance') or 0) / 1e18, rate
-    return int(_evm_call(chain, 'eth_getBalance', [addr, 'latest']), 16) / 1e18, None
+        try:
+            r = _bs_get(f'{bs}/api/v2/addresses/{addr}')
+            rate = float(r.get('exchange_rate') or 0) or None
+            return int(r.get('coin_balance') or 0) / 1e18, rate
+        except Exception as e:
+            last = str(e)[:80]
+    try:
+        return int(_evm_call(chain, 'eth_getBalance', [addr, 'latest']), 16) / 1e18, None
+    except Exception as e:
+        last = str(e)[:80]
+    raise RuntimeError(last)
 
 def _evm_usdc_polygon(addr):
     """USDC.e + native USDC on Polygon: Blockscout token balances, else eth_call."""
