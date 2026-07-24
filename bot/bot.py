@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.10'
+BOT_VERSION = '9.10.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4302,14 +4302,14 @@ async def scan_engine_run(g0, slot_key, dry):
     # ---- ODDS DISCIPLINE: juiced esports faves leave the straight pool, feed parlays
     reserves = [c for c in cands if c.get('reserve')]
     cands = [c for c in cands if not c.get('reserve')]
-    # ---- deal tiers (whale-first), per-scan caps: whale 2 / sharp 2 / lock 1 / free 1
-    deal = {'whale': cands[0:2], 'sharp': cands[2:4], 'lock': cands[4:5], 'free': cands[5:6]}
+    # ---- deal tiers (whale-first). PICKS LAW (owner, 2026-07-24): whale 6 / sharp 4 / lock 3 / free 1 per scan
+    deal = {'whale': cands[0:6], 'sharp': cands[6:10], 'lock': cands[10:13], 'free': cands[13:14]}
     # ---- PARLAY: deep slates deal one 2-3 leg parlay, rotated across the paid rooms
     parlay_built = None
     if len(cands) + len(reserves) >= 6:
         try:
             st_rot = await asyncio.to_thread(get_state) or {}
-            parlay_built, p_room = se_build_parlay(cands[6:] + reserves, st_rot.get('parlay_rot', 0))
+            parlay_built, p_room = se_build_parlay(cands[14:] + reserves, st_rot.get('parlay_rot', 0))
             if parlay_built:
                 deal[p_room].append(parlay_built)
                 if not dry:  # dry sims never touch rotation state
@@ -4418,7 +4418,7 @@ async def scan_engine_run(g0, slot_key, dry):
         comp += f"🎯 No free play this window — nothing met our edge bar, and we don't force bets. Next scan **{_nxt_et()}**.\n"
     cnts = ' · '.join(f"{e} +{len(deal[t])}" for t, e in (('lock', '🔒'), ('sharp', '📊'), ('whale', '🐋')) if deal[t])
     if cnts:
-        comp += f"\n{cnts} — the full board is live in the paid rooms.\n💎 **12+ plays a day** in Whale · **12** in Sharp · **6** in Lock → {upg_ment}\n"
+        comp += f"\n{cnts} — the full board is live in the paid rooms.\n💎 **36 plays a day** in Whale · **24** in Sharp · **18** in Lock → {upg_ment}\n"
     comp += f"\n⏭️ **Next card drops {_nxt_et()}** — lock in early, lines move.\nEvery play before start. Every result receipted. ⚡"
     await gen.send(comp)
     # ---- register + mark
