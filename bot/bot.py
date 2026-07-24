@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.8'
+BOT_VERSION = '9.9.9'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -846,7 +846,8 @@ def x_upload_media(img_bytes, mime='image/png', c=None):
         c = x_creds_load()
     url = 'https://api.x.com/2/media/upload'
     boundary = 'lineshift' + str(int(time.time()))
-    body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="card.png"\r\n'
+    body = (f'--{boundary}\r\nContent-Disposition: form-data; name="media_category"\r\n\r\ntweet_image\r\n'
+            f'--{boundary}\r\nContent-Disposition: form-data; name="media"; filename="card.png"\r\n'
             f'Content-Type: {mime}\r\n\r\n').encode() + img_bytes + f'\r\n--{boundary}--\r\n'.encode()
     req = urllib.request.Request(url, data=body, method='POST',
                                  headers={'Authorization': f"Bearer {c['oauth2_access']}",
