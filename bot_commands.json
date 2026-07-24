@@ -1,5 +1,5 @@
 {
-  "seq": 322,
+  "seq": 323,
   "commands": [
     {
       "seq": 163,
@@ -1069,6 +1069,12 @@
       "action": "read_full",
       "channel": "shift-lab",
       "limit": 8
+    },
+    {
+      "seq": 323,
+      "action": "read_full",
+      "channel": "giveaway",
+      "limit": 50
     }
   ]
 }
