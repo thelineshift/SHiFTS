@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.0'
+BOT_VERSION = '9.9.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4331,8 +4331,14 @@ async def op_title_lines(title, st):
     async def _call(path):
         if st.get('op_calls', 0) + calls[0] >= OP_MONTH_CAP:
             return None
+        if now < st.get('op_cool_until', 0):
+            return None  # recent 429 — free tier is burst-sensitive, back off 15 min
         calls[0] += 1
-        return await asyncio.to_thread(op_fetch, path)
+        r = await asyncio.to_thread(op_fetch, path)
+        if r is None:
+            st['op_cool_until'] = now + 900
+        await asyncio.sleep(1.5)  # pace calls — the free tier 429s on bursts
+        return r
 
     sid = OP_SPORT.get(title)
     if not sid:
