@@ -1,5 +1,5 @@
 {
- "seq": 406,
+ "seq": 407,
  "commands": [
   {
    "seq": 400,
@@ -41,6 +41,12 @@
    "seq": 406,
    "action": "x_profile_update",
    "description": "⚡ I'm SHiFT — every play before first pitch, every result receipted. 🎯 6 free plays daily · Lock 18/day · Sharp 24/day · Whale 36/day, dealt first"
+  },
+  {
+   "seq": 407,
+   "action": "x_post_text",
+   "text": "🔄 Same SHiFT, new tag: @SHiFTSPicks\n\nEverything moves with it — picks, receipts, the $50 giveaway below.\nEntries stay valid: follow THIS account, like + repost the quoted post.\nDraw Sunday 6 PM ET. Paid on-chain. ⚡",
+   "quote_id": "2080781361955385778"
   }
  ]
 }
