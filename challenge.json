@@ -1,7 +1,7 @@
 {
- "start": 100,
+ "start": 50,
  "goal": 1000,
- "balance": 100.0,
+ "balance": 50.0,
  "record": {
   "wins": 0,
   "losses": 0
@@ -32,6 +32,6 @@
    "note": "RESTART DAY 1 \u2014 public run opener; edge 10%"
   }
  ],
- "restarted": "2026-07-24 \u2014 public opening, fresh $100 bankroll",
- "updated": "2026-07-24T20:44:41Z"
+ "restarted": "2026-07-25 \u2014 $50 bankroll, real-money era (Polymarket US funding)",
+ "updated": "2026-07-24T22:58:16Z"
 }
