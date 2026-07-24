@@ -1,16 +1,8 @@
 {
-  "executed_seq": 319,
+  "executed_seq": 320,
   "last_log": [
-    "seq 319 executed 2026-07-24 13:48 UTC",
-    "FULL #\ud83d\udcacgeneral-chat id=1530198736700178442 | bouya.sol: ",
-    "FULL #\ud83d\udcacgeneral-chat id=1530194960006123560 | cryptogirl109: Gm",
-    "FULL #\ud83d\udcacgeneral-chat id=1530189219136405704 | \u26a1 SHiFT#0000: \u2705 **CARD LIVE \u2014 OVERNIGHT BOARD** \\n \ud83c\udfaf **FREE: 100 Thieves ML vs KR\u00dc \u2014 1u** (VCT, Fri 8:00 PM ET) \u2014 in #\ud83c\udfaffree-pick-8-1 \\n \ud83d\udd12 #\ud83d\udd12lock-room-4-8 \u00b7 \ud83d\udcca #\ud83d\udccasharp-room-5-3 \u00b7 \ud83d\udc0b #\ud83d\udc0bwhale-room-6-3 \u2014 paid plays are live in their rooms \\n Every play before start time. Every result receipted, win or lose. \u26a1",
-    "FULL #\ud83d\udcacgeneral-chat id=1530189208122032231 | \u26a1 SHiFT#0000: \u2705 **SCAN COMPLETE \u2014 8AM WINDOW (esports-led)** \\n \ud83c\udfaf **FREE: G2 Esports ML vs Movistar KOI \u2014 1u** (LEC, 10:00 AM ET) \u2014 live in #\ud83c\udfaffree-pick-8-1 now \\n \ud83d\udd12 Lock play is live in #\ud83d\udd12lock-room-4-8 \u00b7 \ud83d\udcca Sharp play in #\ud83d\udccasharp-room-5-3 \u00b7 \ud83d\udc0b Whale play in #\ud83d\udc0bwhale-room-6-3 \u2014 paid seats only \\n Thin MLB morning \u2014 afternoon board gets the full pass at the 12PM scan. Every play before start time, every result receipted. \u26a1",
-    "FULL #\ud83d\udcacgeneral-chat id=1530186668483543040 | \u26a1 SHiFT#0000: \ud83d\udef0\ufe0f **SCAN INITIATED \u2014 8AM ET** \\n Engine missed the window (turn died before posting \u2014 root cause being fixed this morning). SHiFT running the makeup NOW. \\n \u26a0\ufe0f Thin MLB window: no first pitches before 12:35 PM ET \u2014 so per house law, this card is **esports-led** and lighter than a full slate. The afternoon board gets the full pass at the 12PM scan.",
-    "FULL #\ud83d\udcacgeneral-chat id=1530176350005231616 | joyfy01: Hi",
-    "FULL #\ud83d\udcacgeneral-chat id=1530167865301274635 | LineShift Bot#8676: \ud83d\udef0\ufe0f **SCAN APPROACHING** \u2014 8 AM ET. The machine reads the whole board so you don't have to.",
-    "FULL #\ud83d\udcacgeneral-chat id=1530153133534351451 | payarew: <@551582227188809738> why logged?",
-    "delete_where: removed message 1530105996700291202 in #\ud83d\udcacgeneral-chat"
+    "seq 320 executed 2026-07-24 14:29 UTC",
+    "unknown action: scan_now"
   ],
   "time_audit": {
     "at": "2026-07-24 14:26 UTC",
@@ -65,7 +57,7 @@
     "20260724-12": "ok",
     "20260724-12-note": "8AM ET makeup by ops 12:20 UTC \u2014 esports-led window card (4 plays). Engine cron turn died pre-post again; checklist slim-fix shipping next."
   },
-  "executed_cmd_seq": 319,
+  "executed_cmd_seq": 320,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 10,
