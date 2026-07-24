@@ -6,36 +6,34 @@
     "scan_now executed (dry=True)"
   ],
   "time_audit": {
-    "at": "2026-07-24 19:03 UTC",
+    "at": "2026-07-24 19:11 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-8-1": "2026-07-24 12:15 UTC",
-    "\ud83e\uddfereceipts": "2026-07-24 01:45 UTC",
+    "\ud83c\udfaffree-pick-9-1": "2026-07-24 12:15 UTC",
+    "\ud83e\uddfereceipts": "2026-07-24 19:03 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-24 19:00 UTC",
     "\ud83c\udfc6100-to-1000-20": "2026-07-24 07:34 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-24 17:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 19:03 UTC",
+    "at": "2026-07-24 19:11 UTC",
     "flags": [
-      "g2-koi-ml-0724 | G2 Esports ML None | tier=free",
-      "newvision-entropy-ml-0724 | NEW VISION ML None | tier=sharp",
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-24 19:03 UTC",
+    "at": "2026-07-24 19:11 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 19:03 UTC",
+    "at": "2026-07-24 19:11 UTC",
     "flags": []
   },
-  "bot_version": "9.7.0",
+  "bot_version": "9.7.1",
   "unannounced_results": [
     {
       "id": "g2-koi-ml-0724",
