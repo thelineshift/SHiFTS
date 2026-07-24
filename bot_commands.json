@@ -1,5 +1,5 @@
 {
- "seq": 301,
+ "seq": 302,
  "commands": [
   {
    "seq": 163,
@@ -894,6 +894,11 @@
    "text": "\u26a1 OVERNIGHT CARD \u2014 UNIFIED BOARD\n\n\ud83d\udc0b Ankalaev ML 2u (UFC Sat) \u00b7 Heroic ML 1.5u (StarLadder) \u00b7 Hussein ML 1u (UFC Sat)\n\ud83d\udcca NRG ML 1u (VCT) \u00b7 Dodgers ML 1u\n\ud83d\udd12 Cardinals ML 1u\n\ud83c\udfaf FREE: 100 Thieves ML 1u (VCT 8PM)\n\nOne pool. Every sport. Best plays get the seats. Whale eats first \u2014 house law.",
    "seq": 301,
    "ts": "2026-07-24T06:58:44Z"
+  },
+  {
+   "action": "guild_map",
+   "seq": 302,
+   "ts": "2026-07-24T07:07:46Z"
   }
  ]
 }
