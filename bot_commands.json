@@ -1,5 +1,5 @@
 {
-  "seq": 319,
+  "seq": 320,
   "commands": [
     {
       "seq": 163,
@@ -1053,6 +1053,11 @@
       "contains": "Unified board dealt top-down",
       "limit": 60,
       "max": 1
+    },
+    {
+      "seq": 320,
+      "action": "scan_now",
+      "dry": true
     }
   ]
 }
