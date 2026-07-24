@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T12:16:40Z",
+  "updated": "2026-07-24T16:25:33Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -970,6 +970,66 @@
       "tier": "whale",
       "time_et": "9:00 AM",
       "analysis": "Widest form gap of the window: BORRACHEIROS 4-1 vs FdB 2-3. Window card 8AM."
+    },
+    {
+      "id": "alka-gaming-ml-0724",
+      "date": "2026-07-24",
+      "sport": "cs2",
+      "desc": "ALKA GAMING ML",
+      "market": "CCT South America Bo3",
+      "odds": null,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "03:00 PM ET",
+      "analysis": "4-1 last 5 (beat Procyon Gaming, Red Feet, Gr\u00eamio Esports) (lost to Game Hunters) vs 2-3"
+    },
+    {
+      "id": "karmine-corp-ml-0724",
+      "date": "2026-07-24",
+      "sport": "lol",
+      "desc": "Karmine Corp ML",
+      "market": "LEC Bo3",
+      "odds": null,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "analysis": "4-1 last 5 (beat T1, AG.AL, Sentinels) (lost to Dplus KIA) vs 2-3"
+    },
+    {
+      "id": "fnatic-ml-0724",
+      "date": "2026-07-24",
+      "sport": "valorant",
+      "desc": "Fnatic ML",
+      "market": "VCT Bo3",
+      "odds": null,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "02:00 PM ET",
+      "analysis": "3-2 last 5 (beat Karmine Corp, GIANTX, BBL Esports) (lost to Natus Vincere) vs 1-4"
+    },
+    {
+      "id": "privateer-gaming-ml-0724",
+      "date": "2026-07-24",
+      "sport": "cs2",
+      "desc": "Privateer Gaming ML",
+      "market": "CCT Europe Bo3",
+      "odds": null,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "01:00 PM ET",
+      "analysis": "4-1 last 5 (beat Bushido Wildcats, megoshort, mellren) (lost to Pitstop crew) vs 3-2"
+    },
+    {
+      "id": "milwaukee-brewers-ml-0724",
+      "date": "2026-07-24",
+      "sport": "mlb",
+      "desc": "Milwaukee Brewers ML",
+      "market": "ML",
+      "odds": -293,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "04:10 PM ET",
+      "analysis": "64-38 overall, 34-19 at home \u2014 our 78% vs book 71% (no-vig)"
     }
   ]
 }
