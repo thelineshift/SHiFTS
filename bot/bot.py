@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.5.1'
+BOT_VERSION = '9.5.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4100,13 +4100,18 @@ _SCAN_TRIES = {}
 
 @tasks.loop(minutes=17)
 async def x_purge_old():
-    """Standing owner order: KEEP deleting very old non-brand replies/reposts/quotes.
-    The account's pre-brand history is deep and the timeline window refills as we delete,
-    so this ticks every 17 min (past X's 15-min write windows) and removes up to 8 per tick.
-    Brand era = 2026-07-01 onward — never touched. Original posts are never touched."""
+    """Standing owner order: wipe ALL pre-brand history back to account creation.
+    The account's history is deep and the timeline window refills as we delete,
+    so this ticks every 17 min (past X's 15-min write windows) and removes up to 40
+    per tick (~50/window is the cap; card posts + receipts need the headroom).
+    Brand era = 2026-07-01 onward — never touched. Marks x_purge_complete when clean."""
     if os.environ.get('X_PURGE_OLD', '') != '1':
         return
     try:
+        st0 = await asyncio.to_thread(get_state)
+        done_ts = (st0 or {}).get('x_purge_complete')
+        if done_ts and time.time() - done_ts < 86400:
+            return  # verified clean within the last 24h — don't burn read calls
         c = x_creds_load()
         if time.time() > c.get('oauth2_expires_at', 0):
             try:
@@ -4122,14 +4127,16 @@ async def x_purge_old():
         d = await asyncio.to_thread(_fetch)
         victims = []
         for t in d.get('data', []):
-            refs = t.get('referenced_tweets', [])
-            kind = refs[0].get('type', 'post') if refs else 'post'
-            if kind == 'post' or (t.get('created_at') or '') >= '2026-07-01':
-                continue
+            if (t.get('created_at') or '') >= '2026-07-01':
+                continue  # brand era — never touched
             victims.append(t['id'])
-            if len(victims) >= 8:
+            if len(victims) >= 40:
                 break
         if not victims:
+            if d.get('data') is not None:
+                st0['x_purge_complete'] = time.time()
+                await asyncio.to_thread(gh_put, 'bot_state.json', st0, 'x purge complete — timeline clean back to account creation')
+                print('x_purge_old: COMPLETE — no pre-brand posts left in window')
             return
         ok_ct = 0
         for tid in victims:
