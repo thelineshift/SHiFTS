@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.9.2'
+BOT_VERSION = '9.9.3'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3304,6 +3304,7 @@ async def grader():
                         continue
                     u = float(p.get('units') or 1.0)
                     o = p.get('odds') if isinstance(p.get('odds'), int) else -110
+                    p['odds'] = o  # legacy None-odds picks settle at standard -110 — receipts always show a number
                     p['result'] = leg.upper()
                     p['units_result'] = round(profit_units(o, u), 2) if leg == 'win' else (-u if leg == 'loss' else 0.0)
                     p['score'] = f"{team} vs {p.get('vs') or p.get('opp') or 'opponent'} — {leg}"
@@ -3352,7 +3353,7 @@ async def grader():
                 overnight = '\n📅 counts for tomorrow\'s card'
             badge = TIER_BADGE.get(p.get('tier'), '')
             if ch:
-                await ch.send(f"🧾 **RESULT {badge}:** {p.get('desc')} ({p.get('odds')}) {e} **{p['result']}** {us}\n"
+                await ch.send(f"🧾 **RESULT {badge}:** 🟢 {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\n"
                               f"Final: {p.get('score')}{overnight}")
             if p.get('tier') == 'challenge':
                 await settle_challenge(guild, p)
@@ -4673,7 +4674,7 @@ async def grade_parlays(guild):
             us = f'+{u}u' if u > 0 else f'{u}u'
             badge = TIER_BADGE.get(p.get('tier'), '')
             if ch:
-                await ch.send(f"🧾 **RESULT {badge} PARLAY:** {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else p.get('odds')}) {e} **{p['result']}** {us}\nLegs: {p.get('score')}")
+                await ch.send(f"🧾 **RESULT {badge} PARLAY:** 🟢 {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\nLegs: {p.get('score')}")
             if state is not None:
                 state.setdefault('unannounced_results', []).append(
                     {'id': p['id'], 'desc': p.get('desc'), 'odds': p.get('odds'), 'result': p['result'],
@@ -4702,7 +4703,10 @@ async def challenge_daily(g0, cands, dry):
         if any(pl.get('date') == today_et for pl in plays):
             return  # today's action already posted
         bal = float(chal.get('balance', 100))
-        stake = max(1.0, round(bal * 0.20, 2))
+        # OWNER DECREE: no fixed stake rule — edge-scaled strategy. Bigger edge = bigger
+        # press (10% floor, 40% ruin-guard ceiling). Parlays stay small lottos (8%).
+        def _stake_for(edge):
+            return max(1.0, round(bal * min(0.40, max(0.10, 0.10 + edge)), 2))
         espn_c = [c for c in cands if (c.get('sport') or '').upper() in ESPN and c.get('odds') is not None]
         # dry sims rehearse the full challenge feed into shift-lab — silent to members
         ch = find_channel(g0, 'shift-lab') if dry else find_channel(g0, '100-to-1000')
@@ -4712,6 +4716,7 @@ async def challenge_daily(g0, cands, dry):
         posted = 0
         picks_add = []
         for c in espn_c[:2]:
+            stake = _stake_for(c['edge'])
             o = int(c['odds'])
             to_win = round(stake * (100 / abs(o) if o < 0 else o / 100), 2)
             n0 += 1
@@ -4719,7 +4724,7 @@ async def challenge_daily(g0, cands, dry):
             plays.append({'n': n0, 'date': today_et, 'pick': c['pick'], 'odds': o, 'stake': stake,
                           'toWin': to_win, 'time_et': t_et, 'result': None,
                           'posted': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
-                          'note': f"auto challenge — edge {c['edge']:.0%}; {c.get('analysis','')[:80]}"})
+                          'note': f"auto challenge — edge {c['edge']:.0%}, stake {min(0.40, max(0.10, 0.10 + c['edge'])):.0%} of bankroll; {c.get('analysis','')[:70]}"})
             picks_add.append({'id': f"challenge-{c['pick'].lower().replace(' ', '-')[:24]}-{today_et[5:].replace('-', '')}",
                               'date': today_et, 'sport': c['sport'], 'desc': c['pick'], 'market': c.get('market', 'ML'),
                               'odds': o, 'units': 1.0, 'tier': 'challenge', 'time_et': t_et,
@@ -4733,7 +4738,7 @@ async def challenge_daily(g0, cands, dry):
         parlays = [c for c in cands if c.get('parlay')]
         if parlays:
             c = parlays[0]
-            p_stake = max(1.0, round(bal * 0.10, 2))
+            p_stake = max(1.0, round(bal * 0.08, 2))
             p_dec = ml_to_dec(c['odds']) or 2.0
             p_win = round(p_stake * (p_dec - 1), 2)
             n0 += 1
