@@ -1,11 +1,20 @@
 {
- "seq": 377,
+ "seq": 378,
  "commands": [
   {
-   "seq": 377,
-   "action": "set_server_icon",
-   "path": "assets/avatar.png",
-   "ref": "main"
+   "seq": 378,
+   "action": "x_me"
+  },
+  {
+   "seq": 379,
+   "action": "x_pinned"
+  },
+  {
+   "seq": 380,
+   "action": "x_read",
+   "ids": [
+    "2080027230839931367"
+   ]
   }
  ]
 }
