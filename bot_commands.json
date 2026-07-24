@@ -1,5 +1,5 @@
 {
- "seq": 363,
+ "seq": 364,
  "commands": [
   {
    "seq": 163,
@@ -1373,6 +1373,10 @@
   {
    "seq": 363,
    "action": "x_timeline"
+  },
+  {
+   "seq": 364,
+   "action": "scan_now"
   }
  ]
 }
