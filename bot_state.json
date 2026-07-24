@@ -104,7 +104,7 @@
     "2066624075468800419 | 2026-06-15T20:49 | post | @Pirat_Nation Same, they replaced a base station even though it was ou"
   ],
   "time_audit": {
-    "at": "2026-07-24 17:41 UTC",
+    "at": "2026-07-24 17:45 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -116,22 +116,22 @@
     "\ud83c\udf81giveaway": "2026-07-24 17:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-24 17:41 UTC",
+    "at": "2026-07-24 17:45 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-24 17:41 UTC",
+    "at": "2026-07-24 17:45 UTC",
     "flags": [
       "challenge bet #4 unsettled: Cardinals ML"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-24 17:41 UTC",
+    "at": "2026-07-24 17:45 UTC",
     "flags": []
   },
-  "bot_version": "9.4.1",
+  "bot_version": "9.5.0",
   "unannounced_results": [],
   "last_x_receipt_ts": 1784867411.9636893,
   "last_recap_date": "2026-07-23",
