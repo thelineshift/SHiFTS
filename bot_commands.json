@@ -1,5 +1,5 @@
 {
- "seq": 304,
+ "seq": 305,
  "commands": [
   {
    "seq": 163,
@@ -912,6 +912,13 @@
    "limit": 12,
    "seq": 304,
    "ts": "2026-07-24T07:07:51Z"
+  },
+  {
+   "action": "read_recent",
+   "channel": "all",
+   "limit": 1,
+   "seq": 305,
+   "ts": "2026-07-24T07:28:14Z"
   }
  ]
 }
