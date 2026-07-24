@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23T21:20:17Z",
+  "updated": "2026-07-24T00:29:18Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -678,7 +678,10 @@
         "away_ml": null,
         "total": 7.5,
         "ts": 1784841277
-      }
+      },
+      "result": "LOSS",
+      "score": "Arizona Diamondbacks 10, St. Louis Cardinals 6",
+      "units_result": -1.5
     },
     {
       "id": "cle-ml-0723",
@@ -770,7 +773,10 @@
         "total": 7.5,
         "ts": 1784841277
       },
-      "last_alert_total": 7.5
+      "last_alert_total": 7.5,
+      "result": "WIN",
+      "score": "Arizona Diamondbacks 10, St. Louis Cardinals 6",
+      "units_result": 0.91
     },
     {
       "id": "det-ml-0723",
