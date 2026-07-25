@@ -1,16 +1,13 @@
 {
-  "executed_seq": 481,
+  "executed_seq": 486,
   "last_log": [
-    "seq 481 executed 2026-07-25 21:34 UTC",
-    "FULL #\ud83d\udc8eupgrade id=1530666162541690952 | shift#8676: ",
-    "FULL #\ud83d\udc8eupgrade id=1530666160478228590 | shift#8676: \u26a1 **SHiFT'S PICKS \u2014 PREMIUM ROOMS** _(updated July 2026)_ \\n  \\n \ud83d\udd12 **LOCK \u2014 $29.99/mo or $9.99/wk** \\n Up to 18 picks/day \u00b7 \ud83c\udfb2 **PARLAYS UNLOCKED** \u2014 every parlay off the day's cards lives here \u00b7 \u26a1 Play of the Day 4 PM ET \u00b7 \ud83c\udfaf props \\n  \\n \ud83d\udcca **SHARP \u2014 $49.99/mo or $12.99/wk** \\n Everything in Lock, up to 24/day \u00b7 \ud83c\udfb2 **Parlay of the Day** \u00b7 fair price vs book price on every play \u00b7 esports cards \u00b7 \ud83d\udcc9 **Weekly Sharp Breakdown** every Saturday \\n  \\n \ud83d\udc0b **WHALE \u2014 $99.99/mo or $24.99/wk** \u2190 BEST VALUE \\n Everything in Sharp, up to 36/day dealt **FIRST** \u00b7 \ud83d\udcc8 **THE DESK FLOOR (Whale-only)** \u2014 SHiFT's Polymarket plays in #\ud83d\udcc8shift-trades the moment they happen: entries, exits & cash-outs with running P&L \u2014 **tail every position in real time** \u00b7 board plays **live \u2192 24h out** \u00b7 \ud83e\udde0 **Weekly Whale Deep-Dive** every Saturday \u2014 the full autopsy with charts & stats \u00b7 \ud83c\udf24\ufe0f weather/venue intel \u00b7 \ud83e\ude79 injury flags \\n  \\n \ud83d\udee1\ufe0f **THE SHiFT GUARANTEE** \u2014 receipted picks finish your first month in the re",
-    "FULL #\ud83d\udc8eupgrade id=1530665907939184903 | shift#8676: ",
-    "FULL #\ud83d\udc8eupgrade id=1530654598962872320 | shift#8676: ",
-    "FULL #\ud83d\udc8eupgrade id=1530349871771684886 | shift#8676: ",
-    "FULL #\ud83d\udc8eupgrade id=1530341552566833205 | shift#8676: ",
-    "FULL #\ud83d\udc8eupgrade id=1530319666407407667 | shift#8676: ",
-    "x_oauth1_me [app2] OK: @SHiFTSPicks id 1831457082828021760",
-    "x_oauth1_me [legacy] HTTP 401: b'{\\n  \"title\": \"Unauthorized\",\\n  \"type\": \"about:blank\",\\n  \"status\": 401,\\n  \"detail\": \"Unauthorized\"\\n}'"
+    "seq 486 executed 2026-07-25 21:40 UTC",
+    "old pinned message deleted",
+    "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)",
+    "topic set on #\ud83d\udc0bwhale-room-12-7",
+    "topic set on #\ud83d\udccasharp-room-9-6",
+    "topic set on #\ud83d\udd12lock-room-5-11",
+    "x_bio OK"
   ],
   "time_audit": {
     "at": "2026-07-25 21:27 UTC",
@@ -82,7 +79,7 @@
     "20260725-20-manual": "ok-bot",
     "20260725-21-manual": "ok-bot"
   },
-  "executed_cmd_seq": 481,
+  "executed_cmd_seq": 486,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
