@@ -9471,6 +9471,21 @@
       "outcome": "Gen.G Esports",
       "status": "open",
       "ts": "2026-07-25T21:47:31Z"
+    },
+    {
+      "price": 0.55,
+      "stake": 3.85,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727273,
+      "event": "Team Liquid vs. Cloud9",
+      "ev_start": "2026-07-26T20:00:00Z",
+      "reason": "model 73% vs market 55% \u2014 18% edge, half-Kelly",
+      "order_id": "BFEFR5S569P0",
+      "qty": 7,
+      "market_slug": "aec-lol-tl-c9-2026-07-26",
+      "outcome": "Team Liquid",
+      "status": "open",
+      "ts": "2026-07-25T21:52:30Z"
     }
   ],
   "pm_stats": {
@@ -9478,7 +9493,7 @@
     "wins": 3,
     "losses": 8,
     "pnl": 6.06,
-    "trades": 38,
+    "trades": 39,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-20"
   },
