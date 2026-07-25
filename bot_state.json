@@ -11,32 +11,32 @@
     "issue_pins: 0 pins, 0 DMs delivered"
   ],
   "time_audit": {
-    "at": "2026-07-25 19:18 UTC",
+    "at": "2026-07-25 18:40 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-1": "2026-07-25 16:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-25 19:09 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-25 19:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-25 18:21 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-25 16:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 19:18 UTC",
+    "at": "2026-07-25 18:40 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 19:18 UTC",
+    "at": "2026-07-25 18:40 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 19:18 UTC",
+    "at": "2026-07-25 18:40 UTC",
     "flags": []
   },
-  "bot_version": "9.21.1",
+  "bot_version": "9.20.2",
   "unannounced_results": [
     {
       "id": "saw-youngsters-ml-0725",
@@ -8311,7 +8311,7 @@
       "qty": 30,
       "market_slug": "aec-lol-fur-los-2026-07-25",
       "outcome": "LOS",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T11:15:48Z",
       "price_path": [
         {
@@ -8334,7 +8334,13 @@
           "ts": 1785006050,
           "px": 0.96
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 13.8,
+      "pnl": 0.0,
+      "cashout": true,
+      "settled_at": "2026-07-25T19:18:02Z",
+      "autopsy": "+$0.00 \u2014 model 86% vs market 46% was real edge; thesis held. Taken 0.46, slid to 0.96 before the result \u2014 the number ran 50\u00a2 against us \u26a0\ufe0f (cashed out early at $13.80)"
     },
     {
       "price": 0.66,
@@ -8775,7 +8781,7 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 7,
+    "losses": 8,
     "pnl": 6.06,
     "trades": 32,
     "last_recap": "2026-07-25",
@@ -8862,6 +8868,14 @@
       "result": "WIN",
       "pnl": 5.89,
       "lesson": "+$5.89 \u2014 book was complete and both legs settled as priced; arb math did its job."
+    },
+    {
+      "ts": "2026-07-25T19:18:02Z",
+      "kind": "EDGE",
+      "outcome": "LOS",
+      "result": "LOSS",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 86% vs market 46% was real edge; thesis held. Taken 0.46, slid to 0.96 before the result \u2014 the number ran 50\u00a2 against us \u26a0\ufe0f (cashed out early at $13.80)"
     }
   ],
   "giveaway_x_posts": [
