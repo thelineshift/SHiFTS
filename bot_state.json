@@ -10044,6 +10044,21 @@
       "outcome": "Wildcard",
       "status": "open",
       "ts": "2026-07-25T23:11:00Z"
+    },
+    {
+      "price": 0.58,
+      "stake": 8.7,
+      "kind": "EDGE",
+      "p_model": 0.857142857142857,
+      "event": "Gen.G Esports vs. Rex Regum Qeon",
+      "ev_start": "2026-07-26T11:00:00Z",
+      "reason": "model 86% vs market 58% \u2014 28% edge, half-Kelly",
+      "order_id": "BFFKCKN109NY",
+      "qty": 15,
+      "market_slug": "astatc-valorant-geng-rrq-2026-07-26-map1",
+      "outcome": "Gen.G Esports",
+      "status": "open",
+      "ts": "2026-07-25T23:15:57Z"
     }
   ],
   "pm_stats": {
@@ -10051,7 +10066,7 @@
     "wins": 3,
     "losses": 9,
     "pnl": 6.06,
-    "trades": 60,
+    "trades": 61,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-22"
   },
