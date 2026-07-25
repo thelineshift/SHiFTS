@@ -1,5 +1,5 @@
 {
- "seq": 427,
+ "seq": 431,
  "commands": [
   {
    "seq": 400,
@@ -162,6 +162,29 @@
    "action": "post_and_pin",
    "channel": "giveaway",
    "content": "\ud83c\udf81 **$50 IN SOL \u2014 TWO WINNERS \u2014 SUNDAY 6 PM ET**\n\nThe prize pool is UP \u2014 and the new giveaway post is live:\n\ud83d\udc49 https://x.com/SHiFTSPicks/status/2080960292889198604\n\n3 steps on THAT post: \u2705 Follow @SHiFTSPicks \u00b7 \u2764\ufe0f Like \u00b7 \ud83d\udd01 Repost\n(already liked/reposted the earlier post? It still counts \u2014 your steps carry over.)\n\nThen drop your **X handle** here \u2014 \u23f3 means steps pending, \u2705 means **you're fully entered**.\nType **!entry** anytime for your live checklist. Be in this channel at draw time, or it redraws. \u26a1"
+  },
+  {
+   "seq": 428,
+   "action": "set_topic",
+   "channel": "whale-room",
+   "topic": "\ud83d\udc0b WHALE \u2014 $99.99/mo \u00b7 up to 36 picks a day, depending on the slate \u00b7 \u26a1 Play of the Day + \ud83c\udfaf props dealt here FIRST \u00b7 \ud83d\udcb0 The Number on every pick \u00b7 venue/weather/injury intel \u00b7 \ud83d\udcc8 desk intel \u00b7 monthly deep-dive"
+  },
+  {
+   "seq": 429,
+   "action": "set_topic",
+   "channel": "sharp-room",
+   "topic": "\ud83d\udcca SHARP \u2014 $49.99/mo \u00b7 up to 24 picks a day, depending on the slate \u00b7 \ud83c\udfb2 Parlay of the Day \u00b7 \ud83d\udcb0 The Number on every pick \u00b7 esports (CS2 \u00b7 LoL \u00b7 Valorant \u00b7 Dota2) \u00b7 props \u00b7 weekly analytics"
+  },
+  {
+   "seq": 430,
+   "action": "set_topic",
+   "channel": "lock-room",
+   "topic": "\ud83d\udd12 LOCK \u2014 $29.99/mo \u00b7 up to 18 picks a day, depending on the slate \u00b7 \u26a1 Play of the Day every day 4 PM ET \u00b7 player props \u00b7 every pick before start, every result receipted"
+  },
+  {
+   "seq": 431,
+   "action": "x_bio",
+   "text": "\u26a1 Autonomous betting desk \u2014 up to 36 picks/day depending on the slate. Every pick before start, every result receipted. Props \u00b7 POD \u00b7 esports \u00b7 $50 Sunday giveaway \ud83c\udf81"
   }
  ]
 }
