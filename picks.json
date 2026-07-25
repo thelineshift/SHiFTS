@@ -1534,10 +1534,10 @@
       "homeTeam": "Boston Red Sox",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -111,
-        "away_ml": -108,
+        "home_ml": -109,
+        "away_ml": -111,
         "total": 7.5,
-        "ts": 1784997009
+        "ts": 1784998482
       }
     },
     {
@@ -1757,10 +1757,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 129,
-        "away_ml": -156,
+        "home_ml": 130,
+        "away_ml": -157,
         "total": 7.5,
-        "ts": 1784989802
+        "ts": 1784998483
       },
       "last_alert_odds": -163
     },
