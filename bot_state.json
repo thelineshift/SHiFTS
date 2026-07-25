@@ -9628,6 +9628,21 @@
       "outcome": "KT Rolster",
       "status": "open",
       "ts": "2026-07-25T22:07:42Z"
+    },
+    {
+      "price": 0.19,
+      "stake": 1.14,
+      "kind": "EDGE",
+      "p_model": 0.33333333333333337,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 33% vs market 19% \u2014 14% edge, half-Kelly",
+      "order_id": "BFEPQ25VW9NC",
+      "qty": 6,
+      "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
+      "outcome": "Bar\u00e7a eSports GC",
+      "status": "open",
+      "ts": "2026-07-25T22:12:42Z"
     }
   ],
   "pm_stats": {
@@ -9635,7 +9650,7 @@
     "wins": 3,
     "losses": 9,
     "pnl": 6.06,
-    "trades": 43,
+    "trades": 44,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-22"
   },
