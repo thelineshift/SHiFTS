@@ -7459,7 +7459,7 @@
       "payout": 0.0,
       "settled_at": "2026-07-25T14:52:29Z",
       "pnl": -7.0,
-      "autopsy": "-$7.00 \u2014 ThunderTalk won outright; the live-drift read (model 50% vs market 20%) was chasing steam, not edge. Ledger grading now reads our direction \u2014 this error class is dead."
+      "autopsy": "-$7.00 \u2014 Top Esports won it outright; our short side never had the number. The live-drift read (model 50% vs market 20%) chased steam, not edge. Ledger grading now reads our direction \u2014 this error class is dead."
     },
     {
       "price": 0.57,
@@ -7636,7 +7636,7 @@
       "outcome": "ThunderTalk Gaming",
       "result": "LOSS",
       "pnl": -7.0,
-      "lesson": "-$7.00 \u2014 TT won outright; live-drift gap was steam, not edge. Ledger-true grading shipped."
+      "lesson": "-$7.00 \u2014 TES won outright; live-drift gap was steam, not edge. Ledger-true grading shipped."
     }
   ],
   "giveaway_x_posts": [
@@ -7645,6 +7645,6 @@
     "2081043081114370064"
   ],
   "pending_corrections": [
-    "\u26a0\ufe0f **GRADING CORRECTION \u2014 Top Esports vs. ThunderTalk Gaming (7/25)**\nThe desk's **SHORT ThunderTalk Gaming** ticket was receipted here as a WIN +$28.00 \u2014 **that was wrong.** ThunderTalk won the match; our short lost **-$7.00**.\n\nRoot cause: the grader read which side won the match but not which side **we** held \u2014 any short would grade backwards. Fixed for good: every settle is now graded straight off the exchange ledger (our position direction + realized P&L), all sports, all markets.\n\nCorrected desk record: **2-3** \u00b7 P&L **+$15.82**. This receipt amends the earlier one. \ud83d\udd2c"
+    "\u26a0\ufe0f **GRADING CORRECTION \u2014 Top Esports vs. ThunderTalk Gaming (7/25)**\nThe desk's **SHORT ThunderTalk Gaming** ticket was receipted here as a WIN +$28.00 \u2014 **that was wrong.** Top Esports won the match; our short side lost **-$7.00**.\n\nRoot cause: the grader read which side won the market but not which side **we** held \u2014 any short would grade backwards. Fixed for good: every settle is now graded straight off the exchange ledger (our position direction + realized P&L), all sports, all markets.\n\nCorrected desk record: **2-3** \u00b7 P&L **+$15.82**. This receipt amends the earlier one. \ud83d\udd2c"
   ]
 }
