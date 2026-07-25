@@ -1299,12 +1299,12 @@
       "awayTeam": "Chicago Fire FC",
       "homeTeam": "New York City FC",
       "live_odds": {
-        "home_ml": 160,
-        "away_ml": 135,
+        "home_ml": 135,
+        "away_ml": 165,
         "total": 2.5,
-        "ts": 1784997264
+        "ts": 1785020426
       },
-      "last_alert_odds": 145
+      "last_alert_odds": 165
     },
     {
       "id": "chicago-white-sox-ml-0725",
@@ -1372,8 +1372,8 @@
       "live_odds": {
         "home_ml": -108,
         "away_ml": -111,
-        "total": 7.5,
-        "ts": 1785013046
+        "total": 7.0,
+        "ts": 1785020426
       }
     },
     {
@@ -1602,6 +1602,12 @@
         "away_ml": 180,
         "total": 3.5,
         "ts": 1785017231
+      },
+      "closing_odds": {
+        "home_ml": 120,
+        "away_ml": 180,
+        "total": 3.5,
+        "ts": 1785017231
       }
     },
     {
@@ -1710,9 +1716,9 @@
       "awayTeam": "Colorado Rockies",
       "live_odds": {
         "home_ml": -244,
-        "away_ml": 197,
+        "away_ml": 198,
         "total": 9.0,
-        "ts": 1785017231
+        "ts": 1785020427
       },
       "last_alert_odds": -237
     },
@@ -1767,10 +1773,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 134,
-        "away_ml": -162,
+        "home_ml": 133,
+        "away_ml": -161,
         "total": 7.0,
-        "ts": 1785018589
+        "ts": 1785020427
       },
       "last_alert_odds": -163
     },
@@ -1990,10 +1996,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 134,
-        "away_ml": -162,
+        "home_ml": 133,
+        "away_ml": -161,
         "total": 7.0,
-        "ts": 1785018589
+        "ts": 1785020427
       }
     },
     {
@@ -2014,9 +2020,9 @@
       "awayTeam": "Colorado Rockies",
       "live_odds": {
         "home_ml": -244,
-        "away_ml": 197,
+        "away_ml": 198,
         "total": 9.0,
-        "ts": 1785017231
+        "ts": 1785020427
       }
     }
   ]
