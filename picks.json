@@ -1323,10 +1323,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "Houston Astros",
       "live_odds": {
-        "home_ml": -126,
-        "away_ml": 104,
+        "home_ml": -121,
+        "away_ml": 100,
         "total": 8.5,
-        "ts": 1784999657
+        "ts": 1785013046
       }
     },
     {
@@ -1370,10 +1370,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -114,
+        "home_ml": -108,
+        "away_ml": -111,
         "total": 7.5,
-        "ts": 1784988002
+        "ts": 1785013046
       }
     },
     {
