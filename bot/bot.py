@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.18.1'
+BOT_VERSION = '9.18.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4694,23 +4694,49 @@ def x_oauth2_refresh(c):
     return c
 
 def x_post_native(text, quote_id=None):
+    """Native X text post. OAuth2 (user-context) first, then every OAuth1 app we hold.
+    A dead credential must never silence receipts — each failure falls through to the next path."""
     c = x_creds_load()
+    last = None
     if c.get('oauth2_access'):
-        if time.time() > c.get('oauth2_expires_at', 0):
-            c = x_oauth2_refresh(c)
-        body = {'text': text}
-        if quote_id:
-            body['quote_tweet_id'] = str(quote_id)
-        req = urllib.request.Request('https://api.x.com/2/tweets',
-                                     data=json.dumps(body).encode(), method='POST',
-                                     headers={'Authorization': f"Bearer {c['oauth2_access']}",
-                                              'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
         try:
+            if time.time() > c.get('oauth2_expires_at', 0):
+                c = x_oauth2_refresh(c)
+            body = {'text': text}
+            if quote_id:
+                body['quote_tweet_id'] = str(quote_id)
+            req = urllib.request.Request('https://api.x.com/2/tweets',
+                                         data=json.dumps(body).encode(), method='POST',
+                                         headers={'Authorization': f"Bearer {c['oauth2_access']}",
+                                                  'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
+            with urllib.request.urlopen(req, timeout=25) as r:
+                return json.load(r)
+        except Exception as e:
+            last = f'oauth2: {e}'
+            print('x_post_native oauth2 path failed:', str(e)[:150])
+    payload = {'text': text}
+    if quote_id:
+        payload['quote_tweet_id'] = str(quote_id)
+    data = json.dumps(payload).encode()
+    url = 'https://api.x.com/2/tweets'
+    for name, ck, cs, at, ats in x_oauth1_sets(c):
+        try:
+            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)
+            req = urllib.request.Request(url, data=data, method='POST',
+                headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
             with urllib.request.urlopen(req, timeout=25) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
-            raise Exception(f'HTTP {e.code}: {e.read()[:300]}')
-    return x_post_oauth1(text)
+            try:
+                eb = e.read()[:250]
+            except Exception:
+                eb = b''
+            last = f'{name} HTTP {e.code}: {eb}'
+        except Exception as e:
+            last = f'{name}: {e}'
+    if last:
+        print('x_post_native: all native paths failed ->', str(last)[:200])
+    return None
 
 def x_post_oauth1(text, quote_id=None):
     import hmac, hashlib, secrets, urllib.parse
