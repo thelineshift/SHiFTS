@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.20.2'
+BOT_VERSION = '9.21.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -622,6 +622,7 @@ def make_client(privileged=True):
             x_drainer.start()
         if not x_engagement_watch.is_running():
             x_engagement_watch.start()
+        weekly_deepdive_watch.start()
         if not scan_event_watch.is_running():
             scan_event_watch.start()
         if not recap_watch.is_running():
@@ -984,7 +985,7 @@ def pick_game_utc(date_s, time_s):
 CH_ALIASES = {
     'daily-locks': ['lock-room'], 'all-picks': ['sharp-room'], 'every-play': ['whale-room'],
     'lock-lounge': ['lock-lounge'], 'sharp-talk': ['sharp-talk'], 'whale-talk': ['whale-talk'],
-    'weekly-analytics': ['sharp-analytics'], 'monthly-deepdive': ['whale-deepdive'],
+    'weekly-analytics': ['sharp-analytics'], 'weekly-deepdive': ['whale-deepdive', 'monthly-deepdive'], 'monthly-deepdive': ['whale-deepdive'],
 }
 def find_channel(guild, name):
     keys = [name] + CH_ALIASES.get(name, [])
@@ -1534,7 +1535,7 @@ async def run_command(cmd, guild, log):
             else:
                 everyone = guild.default_role
                 await chan.set_permissions(everyone, overwrite=discord.PermissionOverwrite(view_channel=False))
-                for rn in ('lock', 'sharp', 'whale'):
+                for rn in cmd.get('roles', ('lock', 'sharp', 'whale')):
                     role = find_role(guild, rn)
                     if role:
                         await chan.set_permissions(role, overwrite=discord.PermissionOverwrite(view_channel=True, read_message_history=True))
@@ -1909,6 +1910,30 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:150]
                 except Exception: pass
             log.append(f'x_like FAIL: {e} {body}')
+    elif a == 'issue_pins':
+        import hashlib, secrets
+        pins = {}
+        sent = 0
+        for m in guild.members:
+            if m.bot:
+                continue
+            tier = None
+            for rn, t in (('whale', 'whale'), ('sharp', 'sharp'), ('lock', 'lock')):
+                if find_role(guild, rn) and find_role(guild, rn) in m.roles:
+                    tier = t
+                    break
+            if not tier:
+                continue
+            pin = f"{secrets.randbelow(900000) + 100000}"
+            h = hashlib.sha256(pin.encode()).hexdigest()
+            pins[h] = {'tier': tier, 'since': time.strftime('%Y-%m-%d', time.gmtime())}
+            try:
+                await m.send(f"🔑 **Your SHiFT's Picks dashboard PIN:** `{pin}`\nYour member card room + dashboard: https://thelineshift.github.io/SHiFTS/dashboard.html — PIN unlocks your **{tier.title()}** view. Keep it private; it rotates when your sub renews.")
+                sent += 1
+            except Exception:
+                pass
+        await asyncio.to_thread(gh_put, 'pins.json', {'updated': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'pins': pins}, 'issue dashboard pins', 'main')
+        log.append(f'issue_pins: {len(pins)} pins, {sent} DMs delivered')
     elif a == 'x_bio':
         try:
             res = await asyncio.to_thread(x_update_bio, cmd['text'], cmd.get('url'))
@@ -2081,7 +2106,7 @@ async def run_command(cmd, guild, log):
             else:
                 pay = await asyncio.to_thread(_http_json, 'https://api.nowpayments.io/v1/payment',
                     {'price_amount': CRYPTO_TIERS[tier], 'price_currency': 'usd', 'pay_currency': coin,
-                     'order_id': f'{member.id}:{tier}', 'order_description': f'TheLineShift {tier.title()} 30 days',
+                     'order_id': f'{member.id}:{tier}', 'order_description': f"SHiFT's Picks {tier.title()} 30 days",
                      'is_fixed_rate': True}, {'x-api-key': np_key})
                 pid = pay.get('payment_id')
                 if not pid:
@@ -2490,7 +2515,7 @@ async def run_command(cmd, guild, log):
                 try:
                     hdr = x_oauth1_sign('PUT', url, ck, cs, at, ats)
                     req = urllib.request.Request(url, data=json.dumps({'tweet_id': tw}).encode(), method='PUT',
-                        headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
+                        headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'SHiFTPicks/1.0'})
                     with urllib.request.urlopen(req, timeout=25) as r:
                         resp = json.load(r)
                     ok = True
@@ -3066,7 +3091,7 @@ async def run_command(cmd, guild, log):
         log.append('status set')
     elif a == 'make_webhook':
         ch = find_channel(guild, cmd['channel'])
-        wh = await ch.create_webhook(name=cmd.get('name', 'TheLineShift Bot'))
+        wh = await ch.create_webhook(name=cmd.get('name', 'SHiFT'))
         log.append(f'webhook for #{ch.name}: {wh.url}')
     elif a == 'audit_all':
         lines = []
@@ -3156,6 +3181,208 @@ async def poll():
             print('state push failed:', e)
     except Exception as e:
         print('poll error:', e)
+
+# ============================ WEEKLY DEEP-DIVE ENGINE (v9.21.0) ============================
+# Whale: full autopsy of the week's Whale plays + desk floor — why each winner was chosen,
+# every factor in SHiFT's read, charts & stats. Sharp: lighter weekly breakdown. Saturdays 4 PM ET.
+def _dd_week_picks(tier, days=7):
+    try:
+        _d = gh_get('picks.json')
+        pk = json.loads(base64.b64decode(_d['content'])) if _d and 'content' in _d else {}
+        out = []
+        cutoff = time.time() - days * 86400
+        for p in pk.get('picks', []):
+            if p.get('tier') != tier or 'result' not in p:
+                continue
+            try:
+                ts = datetime.datetime.fromisoformat(str(p.get('date', '')).replace('Z', '+00:00')).timestamp()
+            except Exception:
+                continue
+            if ts >= cutoff:
+                out.append(p)
+        return out
+    except Exception as e:
+        print('deepdive picks fetch:', e)
+        return []
+
+def _dd_stats(ps):
+    w = sum(1 for p in ps if str(p.get('result')).lower() in ('won','win','✅'))
+    l = sum(1 for p in ps if str(p.get('result')).lower() in ('lost','loss','❌'))
+    pu = sum(1 for p in ps if str(p.get('result')).lower() in ('push','push 🔄'))
+    units = 0.0
+    for p in ps:
+        try: units += float(p.get('units_result') if p.get('units_result') is not None else p.get('profit') or 0)
+        except Exception: pass
+    staked = sum(float(p.get('units') or 1) for p in ps) or 1.0
+    by = {}
+    for p in ps:
+        s = str(p.get('sport') or '?').upper()
+        r = str(p.get('result')).lower()
+        b = by.setdefault(s, [0,0])
+        if r in ('won','win','✅'): b[0] += 1
+        elif r in ('lost','loss','❌'): b[1] += 1
+    return {'w': w, 'l': l, 'push': pu, 'units': round(units, 2), 'roi': round(100.0 * units / staked, 1), 'by_sport': by}
+
+def _dd_cum(ps):
+    pts, run = [], 0.0
+    for p in sorted(ps, key=lambda x: str(x.get('date',''))):
+        try: run += float(p.get('units_result') if p.get('units_result') is not None else p.get('profit') or 0)
+        except Exception: pass
+        pts.append(round(run, 2))
+    return pts
+
+def _dd_chart_pnl(pts, path, title):
+    from PIL import Image, ImageDraw, ImageFont
+    W, H = 920, 430
+    img = Image.new('RGB', (W, H), (10, 20, 32)); d = ImageDraw.Draw(img)
+    try: f_big, f_sm = ImageFont.truetype('DejaVuSans-Bold.ttf', 26), ImageFont.truetype('DejaVuSans.ttf', 16)
+    except Exception: f_big = f_sm = ImageFont.load_default()
+    d.text((24, 16), title, fill=(232, 241, 250), font=f_big)
+    if not pts: pts = [0.0]
+    lo, hi = min(pts + [0]), max(pts + [0])
+    rng = (hi - lo) or 1.0
+    x0, x1, y0, y1 = 60, W - 30, 70, H - 50
+    d.line((x0, y0, x0, y1), fill=(30, 58, 92), width=2); d.line((x0, y1, x1, y1), fill=(30, 58, 92), width=2)
+    zy = y1 - ((0 - lo) / rng) * (y1 - y0)
+    d.line((x0, zy, x1, zy), fill=(60, 90, 130), width=1)
+    def px(i): return x0 + (i / max(1, len(pts) - 1)) * (x1 - x0)
+    def py(v): return y1 - ((v - lo) / rng) * (y1 - y0)
+    col = (45, 212, 191) if pts[-1] >= 0 else (245, 101, 101)
+    for i in range(1, len(pts)):
+        d.line((px(i-1), py(pts[i-1]), px(i), py(pts[i])), fill=col, width=4)
+    for i, v in enumerate(pts):
+        d.ellipse((px(i)-4, py(v)-4, px(i)+4, py(v)+4), fill=col)
+    d.text((x0 + 6, py(pts[-1]) - 30), f"{'+' if pts[-1] >= 0 else ''}{pts[-1]:.2f}u", fill=col, font=f_big)
+    d.text((x0 + 4, y1 + 10), f"{len(pts)} graded plays", fill=(139, 167, 196), font=f_sm)
+    img.save(path)
+    return path
+
+def _dd_chart_sport(by, path, title):
+    from PIL import Image, ImageDraw, ImageFont
+    W, H = 920, 430
+    img = Image.new('RGB', (W, H), (10, 20, 32)); d = ImageDraw.Draw(img)
+    try: f_big, f_sm = ImageFont.truetype('DejaVuSans-Bold.ttf', 26), ImageFont.truetype('DejaVuSans.ttf', 15)
+    except Exception: f_big = f_sm = ImageFont.load_default()
+    d.text((24, 16), title, fill=(232, 241, 250), font=f_big)
+    items = sorted(by.items(), key=lambda kv: -(kv[1][0] + kv[1][1]))[:8]
+    if not items: items = [('NO DATA', [0, 0])]
+    x0, y0, y1 = 70, 80, H - 60
+    bw = min(80, (W - 140) // max(1, len(items)) - 18)
+    for i, (sp, (w, l)) in enumerate(items):
+        tot = w + l
+        pct = (w / tot) if tot else 0
+        bx = x0 + i * (bw + 18)
+        bh = pct * (y1 - y0)
+        col = (45, 212, 191) if pct >= 0.5 else (245, 197, 24)
+        d.rectangle((bx, y1 - bh, bx + bw, y1), fill=col)
+        d.text((bx, y1 - bh - 22), f"{w}-{l}", fill=(232, 241, 250), font=f_sm)
+        d.text((bx, y1 + 8), sp[:9], fill=(139, 167, 196), font=f_sm)
+    d.line((x0 - 10, y1, W - 30, y1), fill=(30, 58, 92), width=2)
+    img.save(path)
+    return path
+
+def _dd_why(p, maxlen=170):
+    a = re.sub(r'\*\*', '', str(p.get('analysis') or '')).replace('\n', ' ').strip()
+    return (a[:maxlen].rstrip() + ('…' if len(a) > maxlen else '')) or 'read on file'
+
+def _dd_fmt_pick(p):
+    o = p.get('odds'); os_ = f"{int(o):+d}" if isinstance(o, (int, float)) else str(o)
+    r = str(p.get('result')).lower()
+    em = '✅' if r in ('won','win','✅') else ('🔄' if r.startswith('push') else '❌')
+    ur = p.get('units_result') if p.get('units_result') is not None else p.get('profit') or 0
+    try: us = f"{float(ur):+.2f}u"
+    except Exception: us = ''
+    return f"{em} **{p.get('desc','?')}** ({os_}) {us}"
+
+def whale_deepdive_text(ps, desk, st):
+    s = _dd_stats(ps)
+    wk = time.strftime('%b %d', time.gmtime(time.time() - 7*86400)) + ' – ' + time.strftime('%b %d', time.gmtime())
+    L = [f"🧠 **WEEKLY WHALE DEEP-DIVE — {wk}**",
+         f"**The week:** {s['w']}-{s['l']}" + (f"-{s['push']}" if s['push'] else '') + f" · **{s['units']:+.2f}u** · ROI {s['roi']:+.1f}%",
+         ""]
+    wins = [p for p in ps if str(p.get('result')).lower() in ('won','win','✅')]
+    losses = [p for p in ps if str(p.get('result')).lower() in ('lost','loss','❌')]
+    if wins:
+        L.append("🏆 **WHY THE WINNERS WON — every factor SHiFT weighed:**")
+        for p in wins[:6]:
+            L.append(_dd_fmt_pick(p))
+            L.append(f"   _{_dd_why(p)}_")
+    if losses:
+        L.append("")
+        L.append("🔬 **THE LOSSES, DISSECTED — no hiding, ever:**")
+        for p in losses[:5]:
+            L.append(_dd_fmt_pick(p))
+            L.append(f"   _read was: {_dd_why(p, 120)}_")
+    if desk:
+        dw = sum(1 for t in desk if t.get('result') == 'WIN'); dl = sum(1 for t in desk if t.get('result') == 'LOSS')
+        dpnl = sum(float(t.get('pnl') or 0) for t in desk)
+        L += ["", f"📈 **DESK FLOOR WEEK:** {dw}-{dl} · **{'+' if dpnl >= 0 else ''}${dpnl:.2f}** on the $50 ladder"]
+        for t in desk[:4]:
+            L.append(f"   • {_trade_label(t)} — {t.get('result')} {'+' if (t.get('pnl') or 0) >= 0 else ''}${t.get('pnl', 0):.2f}")
+    by = ' · '.join(f"{k} {v[0]}-{v[1]}" for k, v in sorted(s['by_sport'].items(), key=lambda kv: -(kv[1][0]+kv[1][1]))[:6])
+    if by: L += ["", f"📊 **BY SPORT:** {by}", ""]
+    L.append("_Charts attached: weekly P&L curve + hit rate by sport. This is what the desk floor looks like from inside._ 🐋")
+    return '\n'.join(L)[:1950]
+
+def sharp_weekly_text(ps):
+    s = _dd_stats(ps)
+    wk = time.strftime('%b %d', time.gmtime(time.time() - 7*86400)) + ' – ' + time.strftime('%b %d', time.gmtime())
+    L = [f"📉 **WEEKLY SHARP BREAKDOWN — {wk}**",
+         f"**The card:** {s['w']}-{s['l']} · **{s['units']:+.2f}u** · ROI {s['roi']:+.1f}%", ""]
+    wins = [p for p in ps if str(p.get('result')).lower() in ('won','win','✅')]
+    if wins:
+        L.append("🏆 **Top reads of the week:**")
+        for p in wins[:3]:
+            L.append(_dd_fmt_pick(p) + f" — _{_dd_why(p, 90)}_")
+    losses = [p for p in ps if str(p.get('result')).lower() in ('lost','loss','❌')]
+    if losses:
+        L.append(f"🔻 {len(losses)} plays didn't get there — full autopsies live in the Whale deep-dive tier.")
+    L.append("_P&L curve attached. Whale sees the full autopsy with charts & every factor — this is your snapshot._ 📊")
+    return '\n'.join(L)[:1950]
+
+@tasks.loop(minutes=30)
+async def weekly_deepdive_watch():
+    try:
+        now = time.gmtime()
+        if now.tm_wday != 5 or now.tm_hour != 20:  # Saturday 4 PM ET
+            return
+        st = await asyncio.to_thread(get_state)
+        if st is None:
+            return
+        wk_id = time.strftime('%Y-%m-%d', now)
+        if st.get('deepdive_last') == wk_id:
+            return
+        guild = client.guilds[0] if client.guilds else None
+        if not guild:
+            return
+        whale_ps = await asyncio.to_thread(_dd_week_picks, 'whale')
+        sharp_ps = await asyncio.to_thread(_dd_week_picks, 'sharp')
+        cutoff = time.time() - 7 * 86400
+        desk = [t for t in st.get('pm_trades', []) if t.get('status') == 'settled' and t.get('settled_at') and str(t.get('settled_at'))[:10] >= time.strftime('%Y-%m-%d', time.gmtime(cutoff))]
+        chw = find_channel(guild, 'weekly-deepdive') or find_channel(guild, 'whale-room')
+        chs = find_channel(guild, 'sharp-room')
+        import io as _io
+        if chw and whale_ps:
+            pts = _dd_cum(whale_ps)
+            p1, p2 = '/tmp/dd_pnl.png', '/tmp/dd_sport.png'
+            await asyncio.to_thread(_dd_chart_pnl, pts, p1, f"WHALE WEEK — P&L CURVE")
+            await asyncio.to_thread(_dd_chart_sport, _dd_stats(whale_ps)['by_sport'], p2, "HIT RATE BY SPORT")
+            await chw.send(whale_deepdive_text(whale_ps, desk, st))
+            await chw.send(files=[discord.File(p1), discord.File(p2)])
+        if chs and sharp_ps:
+            p3 = '/tmp/dd_sharp.png'
+            await asyncio.to_thread(_dd_chart_pnl, _dd_cum(sharp_ps), p3, "SHARP WEEK — P&L CURVE")
+            await chs.send(sharp_weekly_text(sharp_ps))
+            await chs.send(file=discord.File(p3))
+        st['deepdive_last'] = wk_id
+        await asyncio.to_thread(gh_put, 'bot_state.json', st, f'weekly deep-dive {wk_id}')
+        print('[deepdive] weekly reports posted', wk_id)
+    except Exception as e:
+        print('weekly deep-dive error:', e)
+
+@weekly_deepdive_watch.before_loop
+async def _dd_wait():
+    await client.wait_until_ready()
 
 SCAN_HOURS_ET = [0, 4, 8, 12, 16, 20]
 EVENT_HOURS_UTC = [0, 4, 8, 12, 16, 20]
@@ -5056,7 +5283,7 @@ def x_post_native(text, quote_id=None):
             req = urllib.request.Request('https://api.x.com/2/tweets',
                                          data=json.dumps(body).encode(), method='POST',
                                          headers={'Authorization': f"Bearer {c['oauth2_access']}",
-                                                  'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
+                                                  'Content-Type': 'application/json', 'User-Agent': 'SHiFTPicks/1.0'})
             with urllib.request.urlopen(req, timeout=25) as r:
                 return json.load(r)
         except Exception as e:
@@ -5071,7 +5298,7 @@ def x_post_native(text, quote_id=None):
         try:
             hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)
             req = urllib.request.Request(api_url, data=data, method='POST',
-                headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
+                headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'SHiFTPicks/1.0'})
             with urllib.request.urlopen(req, timeout=25) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
@@ -5109,7 +5336,7 @@ def x_post_oauth1(text, quote_id=None):
         payload['quote_tweet_id'] = str(quote_id)
     req = urllib.request.Request(url, data=json.dumps(payload).encode(), method='POST',
                                  headers={'Authorization': hdr, 'Content-Type': 'application/json',
-                                          'User-Agent': 'TheLineShift/1.0'})
+                                          'User-Agent': 'SHiFTPicks/1.0'})
     try:
         with urllib.request.urlopen(req, timeout=25) as r:
             return json.load(r)
@@ -5157,7 +5384,7 @@ def x_upload_media_oauth1(img, filename='image.png'):
             req = urllib.request.Request(url, data=body, method='POST',
                 headers={'Authorization': f"Bearer {c['oauth2_access']}",
                          'Content-Type': f'multipart/form-data; boundary={boundary}',
-                         'User-Agent': 'TheLineShift/1.0'})
+                         'User-Agent': 'SHiFTPicks/1.0'})
             with urllib.request.urlopen(req, timeout=60) as r:
                 d = json.load(r)
             mid = d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id')
@@ -5186,7 +5413,7 @@ def x_upload_media_oauth1(img, filename='image.png'):
             req = urllib.request.Request(url, data=body, method='POST',
                 headers={'Authorization': hdr,
                          'Content-Type': f'multipart/form-data; boundary={boundary}',
-                         'User-Agent': 'TheLineShift/1.0'})
+                         'User-Agent': 'SHiFTPicks/1.0'})
             with urllib.request.urlopen(req, timeout=60) as r:
                 d = json.load(r)
             mid = d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id')
@@ -5211,7 +5438,7 @@ def x_post_media_oauth2(text, media_id):
     payload = json.dumps({'text': text, 'media': {'media_ids': [str(media_id)]}}).encode()
     req = urllib.request.Request('https://api.x.com/2/tweets', data=payload, method='POST',
         headers={'Authorization': f"Bearer {c['oauth2_access']}", 'Content-Type': 'application/json',
-                 'User-Agent': 'TheLineShift/1.0'})
+                 'User-Agent': 'SHiFTPicks/1.0'})
     try:
         with urllib.request.urlopen(req, timeout=25) as r:
             return json.load(r)
@@ -5230,7 +5457,7 @@ def x_post_media_oauth1(text, media_id, cred_name=None):
         try:
             hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)
             req = urllib.request.Request(url, data=payload, method='POST',
-                headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
+                headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'SHiFTPicks/1.0'})
             with urllib.request.urlopen(req, timeout=25) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
@@ -5264,7 +5491,7 @@ def x_update_bio(text, url=None):
             hdr = x_oauth1_sign('POST', api_url, ck, cs, at, ats, params)
             req = urllib.request.Request(api_url, data=data, method='POST',
                 headers={'Authorization': hdr, 'Content-Type': 'application/x-www-form-urlencoded',
-                         'User-Agent': 'TheLineShift/1.0'})
+                         'User-Agent': 'SHiFTPicks/1.0'})
             with urllib.request.urlopen(req, timeout=25) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
