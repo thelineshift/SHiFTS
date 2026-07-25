@@ -5,7 +5,7 @@
     "x_pin FAIL: HTTP Error 400: Bad Request b'{\"error\":\"invalid_request\",\"error_description\":\"Value passed for the token was invalid.\"}'"
   ],
   "time_audit": {
-    "at": "2026-07-25 17:51 UTC",
+    "at": "2026-07-25 17:44 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,21 +16,21 @@
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 17:51 UTC",
+    "at": "2026-07-25 17:44 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 17:51 UTC",
+    "at": "2026-07-25 17:44 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 17:51 UTC",
+    "at": "2026-07-25 17:44 UTC",
     "flags": []
   },
-  "bot_version": "9.20.0",
+  "bot_version": "9.19.3",
   "unannounced_results": [
     {
       "id": "saw-youngsters-ml-0725",
@@ -7151,7 +7151,7 @@
       "qty": 20,
       "market_slug": "atc-pdc-lac-eve-2026-07-24-lac",
       "outcome": "CD Uni\u00f3n La Calera",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T01:36:51Z",
       "price_path": [
         {
@@ -7166,7 +7166,13 @@
           "ts": 1785000895,
           "px": 0.42
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 5.8,
+      "pnl": -2.2,
+      "cashout": true,
+      "settled_at": "2026-07-25T17:51:08Z",
+      "autopsy": "the book was NOT complete \u2014 a leg the scan could not see (draw) killed both sides. Guard hardened: nameless legs now count before quote/tradability gates. Taken 0.40, rode to 0.42 before the result \u2014 beat the number by 2\u00a2 \u2705 (cashed out early at $5.80)"
     },
     {
       "price": 0.32,
@@ -7181,7 +7187,7 @@
       "qty": 20,
       "market_slug": "atc-pdc-lac-eve-2026-07-24-eve",
       "outcome": "Everton de Vi\u00f1a del Mar",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T01:36:52Z",
       "price_path": [
         {
@@ -7196,7 +7202,13 @@
           "ts": 1785000895,
           "px": 0.29
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 3.4,
+      "pnl": -3.0,
+      "cashout": true,
+      "settled_at": "2026-07-25T17:51:09Z",
+      "autopsy": "the book was NOT complete \u2014 a leg the scan could not see (draw) killed both sides. Guard hardened: nameless legs now count before quote/tradability gates. Taken 0.32, slid to 0.29 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f (cashed out early at $3.40)"
     },
     {
       "price": 0.29,
@@ -7389,7 +7401,7 @@
       "qty": 33,
       "market_slug": "aec-dota2-dan-lvlup-2026-07-25",
       "outcome": "Level UP",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-25T11:15:43Z",
       "price_path": [
         {
@@ -7404,7 +7416,10 @@
           "ts": 1785000896,
           "px": 0.72
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.19,
@@ -7439,14 +7454,17 @@
       "qty": 6,
       "market_slug": "aec-valorant-pcfic-vit-2026-07-25",
       "outcome": "Team Vitality",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-25T11:15:47Z",
       "price_path": [
         {
           "ts": 1784997013,
           "px": 0.96
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.46,
@@ -7520,7 +7538,7 @@
       "qty": 1,
       "market_slug": "aec-lol-lll-png-2026-07-25",
       "outcome": "paiN Gaming",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-25T11:15:52Z",
       "price_path": [
         {
@@ -7535,7 +7553,10 @@
           "ts": 1785000897,
           "px": 0.38
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.35,
@@ -7550,7 +7571,7 @@
       "qty": 1,
       "market_slug": "aec-valorant-ef-gx-2026-07-25",
       "outcome": "GIANTX",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-25T11:15:54Z",
       "price_path": [
         {
@@ -7565,7 +7586,10 @@
           "ts": 1785000897,
           "px": 0.54
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.37,
@@ -7600,8 +7624,8 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 2,
-    "losses": 4,
-    "pnl": 8.6,
+    "losses": 6,
+    "pnl": 3.4,
     "trades": 18,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-16"
@@ -7655,6 +7679,22 @@
       "result": "LOSS",
       "pnl": -7.22,
       "lesson": "model 50% vs market 19% missed \u2014 logged for the playbook review."
+    },
+    {
+      "ts": "2026-07-25T17:51:08Z",
+      "kind": "ARB",
+      "outcome": "CD Uni\u00f3n La Calera",
+      "result": "LOSS",
+      "pnl": -2.2,
+      "lesson": "the book was NOT complete \u2014 a leg the scan could not see (draw) killed both sides. Guard hardened: nameless legs now count before quote/tradability gates. Taken 0.40, rode to 0.42 before the result \u2014 beat the number by 2\u00a2 \u2705 (cashed out early at $5.80)"
+    },
+    {
+      "ts": "2026-07-25T17:51:09Z",
+      "kind": "ARB",
+      "outcome": "Everton de Vi\u00f1a del Mar",
+      "result": "LOSS",
+      "pnl": -3.0,
+      "lesson": "the book was NOT complete \u2014 a leg the scan could not see (draw) killed both sides. Guard hardened: nameless legs now count before quote/tradability gates. Taken 0.32, slid to 0.29 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f (cashed out early at $3.40)"
     }
   ],
   "giveaway_x_posts": [
