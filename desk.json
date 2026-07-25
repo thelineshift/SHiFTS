@@ -1,25 +1,13 @@
 {
-  "updated": "2026-07-25T16:28:41Z",
-  "record": "2-4",
-  "trades": 18,
-  "open": 13,
-  "pnl": 8.6,
+  "updated": "2026-07-25T18:02:49Z",
+  "record": "3-7",
+  "trades": 23,
+  "open": 9,
+  "pnl": 6.06,
   "bank": 50.0,
-  "balance": 34.01,
-  "playbooks": "ARB 2-2 \u00b7 LIVE-BET 1-0",
+  "balance": 78.79,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 0-1 \u00b7 LIVE-BET 0-1",
   "recent": [
-    {
-      "outcome": "Houston Dash",
-      "short": false,
-      "result": "won",
-      "pnl": 19.44
-    },
-    {
-      "outcome": "Bay FC",
-      "short": false,
-      "result": "lost",
-      "pnl": -6.76
-    },
     {
       "outcome": "Orlando Pride",
       "short": false,
@@ -31,6 +19,18 @@
       "short": false,
       "result": "lost",
       "pnl": -0.9
+    },
+    {
+      "outcome": "SU Vortuna Bad Leonfelden",
+      "short": false,
+      "result": "lost",
+      "pnl": -3.23
+    },
+    {
+      "outcome": "SC Schwarz-Wei\u00df Bregenz",
+      "short": false,
+      "result": "won",
+      "pnl": 5.89
     },
     {
       "outcome": "ThunderTalk Gaming",
