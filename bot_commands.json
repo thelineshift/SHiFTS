@@ -1,5 +1,5 @@
 {
- "seq": 499,
+ "seq": 502,
  "commands": [
   {
    "seq": 400,
@@ -584,6 +584,23 @@
    "action": "room_tail",
    "channel": "weekly-deepdive",
    "n": 3
+  },
+  {
+   "seq": 500,
+   "action": "scan_now",
+   "dry": true
+  },
+  {
+   "seq": 501,
+   "action": "room_tail",
+   "channel": "weekly-deepdive",
+   "n": 3
+  },
+  {
+   "seq": 502,
+   "action": "room_tail",
+   "channel": "shift-lab",
+   "n": 6
   }
  ]
 }
