@@ -1636,10 +1636,10 @@
       "homeTeam": "Philadelphia Phillies",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 105,
+        "home_ml": 104,
         "away_ml": -126,
         "total": 9.0,
-        "ts": 1785004517
+        "ts": 1785009588
       },
       "last_alert_odds": 101
     },
