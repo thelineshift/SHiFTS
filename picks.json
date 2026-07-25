@@ -1322,10 +1322,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "Houston Astros",
       "live_odds": {
-        "home_ml": -130,
-        "away_ml": 108,
+        "home_ml": -126,
+        "away_ml": 105,
         "total": 8.0,
-        "ts": 1784955213
+        "ts": 1784958813
       }
     },
     {
@@ -1437,10 +1437,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -137,
-        "away_ml": 114,
+        "home_ml": -142,
+        "away_ml": 118,
         "total": 9.0,
-        "ts": 1784953413
+        "ts": 1784958813
       }
     },
     {
