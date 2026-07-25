@@ -1,5 +1,5 @@
 {
- "seq": 479,
+ "seq": 481,
  "commands": [
   {
    "seq": 400,
@@ -466,6 +466,16 @@
    "seq": 479,
    "action": "read_pins",
    "channel": "upgrade"
+  },
+  {
+   "seq": 480,
+   "action": "read_full",
+   "channel": "upgrade",
+   "limit": 8
+  },
+  {
+   "seq": 481,
+   "action": "x_oauth1_me"
   }
  ]
 }
