@@ -1,5 +1,5 @@
 {
-  "seq": 434,
+  "seq": 435,
   "commands": [
     {
       "seq": 400,
@@ -216,6 +216,11 @@
       "action": "set_topic",
       "channel": "whale-room",
       "topic": "\ud83d\udc0b WHALE \u2014 up to 36 picks/day (slate-dependent), dealt FIRST by house law \u00b7 props, POD & parlays first \u00b7 \ud83d\udcc8 desk intel + autopsies \u00b7 \ud83d\udc0b live wire: injuries, delays, line moves \u00b7 weekly deep-dive Saturday. \ud83d\udc8e thelineshift.github.io/AISportsBot/upgrade.html"
+    },
+    {
+      "seq": 435,
+      "action": "x_pin",
+      "tweet_id": "2081043081114370064"
     }
   ]
 }
