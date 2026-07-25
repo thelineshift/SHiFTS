@@ -7303,7 +7303,7 @@
       "qty": 19,
       "market_slug": "atc-ofb-svbl-swb-2026-07-25-svbl",
       "outcome": "SU Vortuna Bad Leonfelden",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T04:48:51Z",
       "price_path": [
         {
@@ -7318,7 +7318,12 @@
           "ts": 1785000895,
           "px": 0.05
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-25T17:51:18Z",
+      "pnl": -3.23,
+      "autopsy": "the book was NOT complete \u2014 a leg the scan could not see (draw) killed both sides. Guard hardened: nameless legs now count before quote/tradability gates. Taken 0.17, slid to 0.05 before the result \u2014 the number ran 12\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.69,
@@ -7333,9 +7338,14 @@
       "qty": 19,
       "market_slug": "atc-ofb-svbl-swb-2026-07-25-swb",
       "outcome": "SC Schwarz-Wei\u00df Bregenz",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T04:48:53Z",
-      "price_path": []
+      "price_path": [],
+      "result": "WIN",
+      "payout": 19.0,
+      "settled_at": "2026-07-25T17:51:21Z",
+      "pnl": 5.89,
+      "autopsy": "+$5.89 \u2014 book was complete and both legs settled as priced; arb math did its job."
     },
     {
       "price": 0.44,
@@ -7623,9 +7633,9 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 2,
-    "losses": 6,
-    "pnl": 3.4,
+    "wins": 3,
+    "losses": 7,
+    "pnl": 6.06,
     "trades": 18,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-16"
@@ -7695,6 +7705,22 @@
       "result": "LOSS",
       "pnl": -3.0,
       "lesson": "the book was NOT complete \u2014 a leg the scan could not see (draw) killed both sides. Guard hardened: nameless legs now count before quote/tradability gates. Taken 0.32, slid to 0.29 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f (cashed out early at $3.40)"
+    },
+    {
+      "ts": "2026-07-25T17:51:18Z",
+      "kind": "ARB",
+      "outcome": "SU Vortuna Bad Leonfelden",
+      "result": "LOSS",
+      "pnl": -3.23,
+      "lesson": "the book was NOT complete \u2014 a leg the scan could not see (draw) killed both sides. Guard hardened: nameless legs now count before quote/tradability gates. Taken 0.17, slid to 0.05 before the result \u2014 the number ran 12\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-25T17:51:21Z",
+      "kind": "ARB",
+      "outcome": "SC Schwarz-Wei\u00df Bregenz",
+      "result": "WIN",
+      "pnl": 5.89,
+      "lesson": "+$5.89 \u2014 book was complete and both legs settled as priced; arb math did its job."
     }
   ],
   "giveaway_x_posts": [
