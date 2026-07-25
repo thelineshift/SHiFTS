@@ -6,7 +6,7 @@
 <title>TheLineShift — SHiFT Runs The Board</title>
 <meta property="og:title" content="TheLineShift — SHiFT Runs The Board">
 <meta property="og:description" content="Every pick tracked. Every receipt public. Join the Discord for free daily picks.">
-<meta property="og:image" content="https://thelineshift.github.io/AISportsBot/assets/shift_banner.png">
+<meta property="og:image" content="https://thelineshift.github.io/SHiFTS/assets/shift_banner.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root{--bg:#0a1420;--card:#12233a;--line:#1e3a5c;--teal:#2dd4bf;--gold:#f5c518;--blue:#4da3ff;--txt:#e8f1fa;--dim:#8ba7c4;--green:#34d399;--red:#ff5c7a}
@@ -49,7 +49,7 @@
 
   <div class="cta">
     <a class="btn b-disc" href="https://discord.gg/8bBxWUJCYT">💬 Join the Discord — 6 Free Picks Daily</a>
-    <a class="btn b-store" href="https://thelineshift.github.io/AISportsBot/upgrade.html">💎 Go Premium</a>
+    <a class="btn b-store" href="https://thelineshift.github.io/SHiFTS/upgrade.html">💎 Go Premium</a>
     <a class="btn b-x" href="https://x.com/SHiFTSPicks">𝕏 @SHiFTSPicks</a>
   </div>
 
@@ -75,7 +75,7 @@
   <div class="foot">⚡ SHiFT runs the board — every pick before start, every result receipted · results update live</div>
 </div>
 <script>
-fetch('https://raw.githubusercontent.com/thelineshift/AISportsBot/main/picks.json?t='+Date.now())
+fetch('https://raw.githubusercontent.com/thelineshift/SHiFTS/main/picks.json?t='+Date.now())
  .then(r=>r.json()).then(j=>{
    const ps = (j.picks||[]).filter(p=>p.result==='WIN'||p.result==='LOSS');
    const w = ps.filter(p=>p.result==='WIN').length, l = ps.length-w;
@@ -90,7 +90,7 @@ fetch('https://raw.githubusercontent.com/thelineshift/AISportsBot/main/picks.jso
       <span class="${p.result==='WIN'?'W':'L'}">${p.result} ${typeof p.profit==='number'?((p.profit>0?'+':'')+p.profit.toFixed(2)+'u'):''}</span></div>`
    ).join('');
  }).catch(()=>{document.getElementById('picks').textContent='tracker temporarily unavailable';});
-fetch('https://raw.githubusercontent.com/thelineshift/AISportsBot/main/desk.json?t='+Date.now())
+fetch('https://raw.githubusercontent.com/thelineshift/SHiFTS/main/desk.json?t='+Date.now())
  .then(r=>r.json()).then(j=>{
    document.getElementById('d-rec').textContent = j.record||'—';
    const pe = document.getElementById('d-pnl');
