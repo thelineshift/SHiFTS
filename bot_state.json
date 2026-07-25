@@ -165,6 +165,15 @@
       "units": 0.92,
       "score": "MVK Esports 2-0 Ground Zero Gaming \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "weibo-gaming-ml-0725",
+      "desc": "Weibo Gaming ML",
+      "odds": -98,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "Weibo Gaming 1-2 Invictus Gaming \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1784949814.2375321,
