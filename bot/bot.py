@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.13.0'
+BOT_VERSION = '9.13.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4483,7 +4483,7 @@ async def scan_engine_run(g0, slot_key, dry):
     def _et_date(ts):
         return time.strftime('%Y%m%d', time.gmtime(ts - 4 * 3600))
     games = []
-    for _d in sorted({_et_date(now_ts - 600), _et_date(now_ts + 4 * 3600), _et_date(now_ts + 8 * 3600)}):
+    for _d in sorted({_et_date(now_ts - 600), _et_date(now_ts + 4 * 3600), _et_date(now_ts + 8 * 3600), _et_date(now_ts + 24 * 3600)}):
         games += await asyncio.to_thread(se_espn_all, _d)
     cands = []
     pulled = {}
@@ -4613,6 +4613,15 @@ async def scan_engine_run(g0, slot_key, dry):
             cands = _pool_dedupe(cands + extra); fill_steps.append('esports relaxed')
     if len(cands) < NEED and reserves:
         cands = _pool_dedupe(cands + reserves); fill_steps.append('juiced faves straightened')
+    if len(cands) < NEED:
+        extra = [c for g in games for c in se_edges(g, now_ts, hours=24, min_edge=0.03) if not c.get('reserve')]
+        if extra:
+            cands = _pool_dedupe(cands + extra); fill_steps.append('+24h slate')
+    if len(cands) < NEED:
+        extra = [c for c in await _esp_cands(hours=24, notable=False, min_edge=0.08, need_form=False,
+                                             max_pf=0.85, use_book=False) if not c.get('reserve')]
+        if extra:
+            cands = _pool_dedupe(cands + extra); fill_steps.append('esports +24h')
     if fill_steps:
         print('FILL LAW bent:', ', '.join(fill_steps), f'-> pool {len(cands)}')
     # ---- deal tiers (whale-first). PICKS LAW: whale 6 / sharp 4 / lock 3 / free 1 per scan
