@@ -5,32 +5,32 @@
     "topic set on #\ud83d\udd12lock-room-5-11"
   ],
   "time_audit": {
-    "at": "2026-07-25 16:30 UTC",
+    "at": "2026-07-25 16:11 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-1": "2026-07-25 16:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-25 16:21 UTC",
+    "\ud83e\uddfereceipts": "2026-07-25 14:52 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-25 16:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 16:30 UTC",
+    "at": "2026-07-25 16:11 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 16:30 UTC",
+    "at": "2026-07-25 16:11 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 16:30 UTC",
+    "at": "2026-07-25 16:11 UTC",
     "flags": []
   },
-  "bot_version": "9.19.0",
+  "bot_version": "9.18.3",
   "unannounced_results": [
     {
       "id": "nrg-furia-ml-0724",
@@ -7295,7 +7295,13 @@
       "market_slug": "atc-pdc-lac-eve-2026-07-24-lac",
       "outcome": "CD Uni\u00f3n La Calera",
       "status": "open",
-      "ts": "2026-07-25T01:36:51Z"
+      "ts": "2026-07-25T01:36:51Z",
+      "price_path": [
+        {
+          "ts": 1784997012,
+          "px": 0.42
+        }
+      ]
     },
     {
       "price": 0.32,
@@ -7311,7 +7317,13 @@
       "market_slug": "atc-pdc-lac-eve-2026-07-24-eve",
       "outcome": "Everton de Vi\u00f1a del Mar",
       "status": "open",
-      "ts": "2026-07-25T01:36:52Z"
+      "ts": "2026-07-25T01:36:52Z",
+      "price_path": [
+        {
+          "ts": 1784997012,
+          "px": 0.3
+        }
+      ]
     },
     {
       "price": 0.29,
@@ -7407,7 +7419,13 @@
       "market_slug": "atc-ofb-svbl-swb-2026-07-25-svbl",
       "outcome": "SU Vortuna Bad Leonfelden",
       "status": "open",
-      "ts": "2026-07-25T04:48:51Z"
+      "ts": "2026-07-25T04:48:51Z",
+      "price_path": [
+        {
+          "ts": 1784997012,
+          "px": 0.03
+        }
+      ]
     },
     {
       "price": 0.69,
@@ -7423,7 +7441,8 @@
       "market_slug": "atc-ofb-svbl-swb-2026-07-25-swb",
       "outcome": "SC Schwarz-Wei\u00df Bregenz",
       "status": "open",
-      "ts": "2026-07-25T04:48:53Z"
+      "ts": "2026-07-25T04:48:53Z",
+      "price_path": []
     },
     {
       "price": 0.44,
@@ -7439,7 +7458,13 @@
       "market_slug": "aec-valorant-sen-loud-2026-07-26",
       "outcome": "LOUD",
       "status": "open",
-      "ts": "2026-07-25T08:47:53Z"
+      "ts": "2026-07-25T08:47:53Z",
+      "price_path": [
+        {
+          "ts": 1784997012,
+          "px": 0.44
+        }
+      ]
     },
     {
       "price": 0.2,
@@ -7476,7 +7501,13 @@
       "market_slug": "aec-dota2-dan-lvlup-2026-07-25",
       "outcome": "Level UP",
       "status": "open",
-      "ts": "2026-07-25T11:15:43Z"
+      "ts": "2026-07-25T11:15:43Z",
+      "price_path": [
+        {
+          "ts": 1784997013,
+          "px": 0.72
+        }
+      ]
     },
     {
       "price": 0.19,
@@ -7512,7 +7543,13 @@
       "market_slug": "aec-valorant-pcfic-vit-2026-07-25",
       "outcome": "Team Vitality",
       "status": "open",
-      "ts": "2026-07-25T11:15:47Z"
+      "ts": "2026-07-25T11:15:47Z",
+      "price_path": [
+        {
+          "ts": 1784997013,
+          "px": 0.96
+        }
+      ]
     },
     {
       "price": 0.46,
@@ -7528,7 +7565,13 @@
       "market_slug": "aec-lol-fur-los-2026-07-25",
       "outcome": "LOS",
       "status": "open",
-      "ts": "2026-07-25T11:15:48Z"
+      "ts": "2026-07-25T11:15:48Z",
+      "price_path": [
+        {
+          "ts": 1784997013,
+          "px": 0.46
+        }
+      ]
     },
     {
       "price": 0.66,
@@ -7543,7 +7586,13 @@
       "market_slug": "aec-lol-kc-mkoi-2026-07-25",
       "outcome": "Karmine Corp",
       "status": "open",
-      "ts": "2026-07-25T11:15:50Z"
+      "ts": "2026-07-25T11:15:50Z",
+      "price_path": [
+        {
+          "ts": 1784997014,
+          "px": 0.67
+        }
+      ]
     },
     {
       "price": 0.35,
@@ -7559,7 +7608,13 @@
       "market_slug": "aec-lol-lll-png-2026-07-25",
       "outcome": "paiN Gaming",
       "status": "open",
-      "ts": "2026-07-25T11:15:52Z"
+      "ts": "2026-07-25T11:15:52Z",
+      "price_path": [
+        {
+          "ts": 1784997014,
+          "px": 0.36
+        }
+      ]
     },
     {
       "price": 0.35,
@@ -7575,7 +7630,13 @@
       "market_slug": "aec-valorant-ef-gx-2026-07-25",
       "outcome": "GIANTX",
       "status": "open",
-      "ts": "2026-07-25T11:15:54Z"
+      "ts": "2026-07-25T11:15:54Z",
+      "price_path": [
+        {
+          "ts": 1784997014,
+          "px": 0.34
+        }
+      ]
     },
     {
       "price": 0.37,
@@ -7590,7 +7651,13 @@
       "market_slug": "aec-lol-cfo-dcg-2026-07-26",
       "outcome": "CTBC Flying Oyster",
       "status": "open",
-      "ts": "2026-07-25T11:15:56Z"
+      "ts": "2026-07-25T11:15:56Z",
+      "price_path": [
+        {
+          "ts": 1784997014,
+          "px": 0.37
+        }
+      ]
     }
   ],
   "pm_stats": {
@@ -7658,7 +7725,5 @@
     "2080781361955385778",
     "2081043081114370064"
   ],
-  "pending_corrections": [
-    "\u26a0\ufe0f **GRADING CORRECTION \u2014 Top Esports vs. ThunderTalk Gaming (7/25)**\nThe desk's **SHORT ThunderTalk Gaming** ticket was receipted here as a WIN +$28.00 \u2014 **that was wrong.** Top Esports won the match; our short side lost **-$7.00**.\n\nRoot cause: the grader read which side won the market but not which side **we** held \u2014 any short would grade backwards. Fixed for good: every settle is now graded straight off the exchange ledger (our position direction + realized P&L), all sports, all markets.\n\nThis receipt amends the earlier one \u2014 and every desk recap from here on is ledger-true. \ud83d\udd2c"
-  ]
+  "pending_corrections": []
 }
