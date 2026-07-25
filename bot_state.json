@@ -219,7 +219,8 @@
     "20260725-04": "ok-bot",
     "20260725-08": "ok-bot",
     "20260725-12": "ok-bot",
-    "20260725-16": "ok-bot"
+    "20260725-16": "ok-bot",
+    "monthly-report": "2026-07-25"
   },
   "executed_cmd_seq": 434,
   "scan_role_id": 1529569745517674599,
@@ -270,7 +271,8 @@
   ],
   "teasers": {
     "weekly": "2026-07-26",
-    "monthly": "2026-08-01"
+    "monthly": "2026-08-01",
+    "deepdive_fired": "2026-07-25"
   },
   "gw_handled": [
     "1530230873780129892",
@@ -7657,5 +7659,7 @@
     "2080781361955385778",
     "2081043081114370064"
   ],
-  "pending_corrections": []
+  "pending_corrections": [
+    "\u26a0\ufe0f **GRADING CORRECTION \u2014 Top Esports vs. ThunderTalk Gaming (7/25)**\nThe desk's **SHORT ThunderTalk Gaming** ticket was receipted here as a WIN +$28.00 \u2014 **that was wrong.** Top Esports won the match; our short side lost **-$7.00**.\n\nRoot cause: the grader read which side won the market but not which side **we** held \u2014 any short would grade backwards. Fixed for good: every settle is now graded straight off the exchange ledger (our position direction + realized P&L), all sports, all markets.\n\nThis receipt amends the earlier one \u2014 and every desk recap from here on is ledger-true. \ud83d\udd2c"
+  ]
 }
