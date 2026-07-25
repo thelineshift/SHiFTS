@@ -7459,8 +7459,13 @@
       "qty": 35,
       "market_slug": "aec-lol-tes-tt-2026-07-25",
       "outcome": "ThunderTalk Gaming",
-      "status": "open",
-      "ts": "2026-07-25T11:15:41Z"
+      "status": "settled",
+      "ts": "2026-07-25T11:15:41Z",
+      "result": "WIN",
+      "payout": 35.0,
+      "settled_at": "2026-07-25T14:52:29Z",
+      "pnl": 28.0,
+      "autopsy": "+$28.00 \u2014 model 50% vs market 20% was real edge; thesis held."
     },
     {
       "price": 0.57,
@@ -7590,9 +7595,9 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 2,
+    "wins": 3,
     "losses": 2,
-    "pnl": 22.55,
+    "pnl": 50.55,
     "trades": 18,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-14"
@@ -7630,6 +7635,14 @@
       "result": "OPEN",
       "pnl": 0,
       "lesson": "second trap variant found: a QUOTELESS/untradable draw leg slipped past the first guard \u2014 nameless legs now counted before quote/tradability gates (v9.15.3)."
+    },
+    {
+      "ts": "2026-07-25T14:52:29Z",
+      "kind": "LIVE-BET",
+      "outcome": "ThunderTalk Gaming",
+      "result": "WIN",
+      "pnl": 28.0,
+      "lesson": "+$28.00 \u2014 model 50% vs market 20% was real edge; thesis held."
     }
   ],
   "giveaway_x_posts": [
