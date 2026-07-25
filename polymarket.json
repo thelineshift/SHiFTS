@@ -1,27 +1,15 @@
 {
-  "ts": "2026-07-25T22:29:51Z",
+  "ts": "2026-07-25T22:30:29Z",
   "configured": true,
-  "balance_usd": 57.1,
-  "buying_power": 14.1,
+  "balance_usd": 56.98,
+  "buying_power": 13.98,
   "positions": [],
   "open_orders": [
     {
-      "market": "aec-lol-al-blg-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
+      "market": "astatc-cs2-isg-bsta-2026-07-25-map2",
+      "intent": "ORDER_INTENT_BUY_LONG",
       "price": "0.6",
-      "qty": 4
-    },
-    {
-      "market": "aec-lol-al-blg-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 8
-    },
-    {
-      "market": "aec-lol-al-blg-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 4
+      "qty": 2
     },
     {
       "market": "aec-lol-al-blg-2026-07-26",
@@ -34,6 +22,24 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.6",
       "qty": 3
+    },
+    {
+      "market": "aec-lol-al-blg-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.6",
+      "qty": 4
+    },
+    {
+      "market": "aec-lol-al-blg-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.6",
+      "qty": 8
+    },
+    {
+      "market": "aec-lol-al-blg-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.6",
+      "qty": 4
     },
     {
       "market": "aec-lol-cr-kcbs-2026-07-26",
