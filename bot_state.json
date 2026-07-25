@@ -33,6 +33,15 @@
   "bot_version": "9.18.3",
   "unannounced_results": [
     {
+      "id": "nrg-furia-ml-0724",
+      "desc": "NRG ML",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "NRG vs opponent \u2014 win",
+      "tier": "sharp"
+    },
+    {
       "id": "milwaukee-brewers-ml-0724",
       "desc": "Milwaukee Brewers ML",
       "odds": -293,
@@ -177,7 +186,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1784996468.1890965,
+  "last_x_receipt_ts": 1784994024.074586,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -7480,8 +7489,13 @@
       "qty": 38,
       "market_slug": "aec-lol-vit-g2-2026-07-25",
       "outcome": "Team Vitality",
-      "status": "open",
-      "ts": "2026-07-25T11:15:45Z"
+      "status": "settled",
+      "ts": "2026-07-25T11:15:45Z",
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-25T16:21:07Z",
+      "pnl": -7.22,
+      "autopsy": "model 50% vs market 19% missed \u2014 logged for the playbook review."
     },
     {
       "price": 0.9,
@@ -7581,8 +7595,8 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 2,
-    "losses": 3,
-    "pnl": 15.82,
+    "losses": 4,
+    "pnl": 8.6,
     "trades": 18,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-16"
@@ -7628,6 +7642,14 @@
       "result": "LOSS",
       "pnl": -7.0,
       "lesson": "-$7.00 \u2014 TES won outright; live-drift gap was steam, not edge. Ledger-true grading shipped."
+    },
+    {
+      "ts": "2026-07-25T16:21:07Z",
+      "kind": "EDGE",
+      "outcome": "Team Vitality",
+      "result": "LOSS",
+      "pnl": -7.22,
+      "lesson": "model 50% vs market 19% missed \u2014 logged for the playbook review."
     }
   ],
   "giveaway_x_posts": [
