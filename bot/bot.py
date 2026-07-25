@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.13.2'
+BOT_VERSION = '9.14.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -606,6 +606,8 @@ def make_client(privileged=True):
             wallet_watch.start()
         if not pm_watch.is_running():
             pm_watch.start()
+        if not pm_trader.is_running():
+            pm_trader.start()
 
     @c.event
     async def on_message(message):
@@ -2485,6 +2487,11 @@ async def run_command(cmd, guild, log):
         # optional slot override (e.g. '20260724-20') — '-manual' suffix keeps the REAL
         # slot's done-marker and registration space untouched
         slot_key = (cmd.get('slot') or time.strftime('%Y%m%d-%H', time.gmtime())) + '-manual'
+        if not cmd.get('force'):
+            st_guard = await asyncio.to_thread(get_state)
+            if (st_guard.get('scan_events') or {}).get(slot_key) == 'ok-bot':
+                log.append(f'scan {slot_key} already dealt — pass force:true to rebuild')
+                continue
         _SCAN_DONE.add(slot_key)
         await scan_engine_run(guild, slot_key, dry_run)
         log.append(f'scan_now executed (dry={dry_run}, slot={slot_key})')
@@ -2992,13 +2999,14 @@ async def _stripe_sync_once():
 async def stripe_sync():
     await _stripe_sync_once()
 
-def pm_slip_png(lb, status='LIVE', pnl=None):
+def pm_slip_png(lb, status='LIVE', pnl=None, title='SHiFT — POLYMARKET US BET SLIP'):
     """Shareable Polymarket bet-slip card (1200x630 PNG bytes). Pure PIL, no assets needed."""
     from PIL import Image, ImageDraw, ImageFont
     import io as _io
     W, H = 1200, 630
     bg, teal, txt, dim = (10, 14, 22), (45, 226, 196), (235, 240, 245), (140, 155, 170)
-    stamp_c = {'LIVE': teal, 'WON': (46, 204, 113), 'LOST': (231, 76, 60)}.get(status, teal)
+    stamp_c = {'LIVE': teal, 'WON': (46, 204, 113), 'LOST': (231, 76, 60),
+               'EDGE': (88, 166, 255), 'ARB': (255, 214, 90), 'TAIL': (190, 140, 255), 'LIVE-BET': (255, 140, 60)}.get(status, teal)
     def _font(sz, bold=True):
         paths = (('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf', '/usr/share/fonts/DejaVuSans-Bold.ttf')
                  if bold else
@@ -3017,7 +3025,7 @@ def pm_slip_png(lb, status='LIVE', pnl=None):
     d = ImageDraw.Draw(img)
     d.rectangle([0, 0, 12, H], fill=teal)
     d.rectangle([12, 0, W, 6], fill=teal)
-    d.text((48, 40), 'SHiFT — POLYMARKET US BET SLIP', font=f_md, fill=teal)
+    d.text((48, 40), title, font=f_md, fill=teal)
     import re as _re
     _plain = lambda s: _re.sub(r'[^\x00-\x7F]+', '', s or '').strip()  # no emoji glyphs in card fonts
     d.text((48, 94), (_plain(lb.get('league')) + '  ' + (lb.get('title') or ''))[:64], font=f_sm, fill=dim)
@@ -3037,16 +3045,373 @@ def pm_slip_png(lb, status='LIVE', pnl=None):
     return buf.getvalue()
 
 
+# ---------- PM TRADING DESK ----------
+# Owner decree 2026-07-25: fully autonomous Polymarket US trading. No bet-count or size
+# limits — the ONLY law is profit. Playbook from the automated-trading-bot deep dive:
+# model edge (Kelly) + sum-arbitrage + tail-end yield + live divergence. Always scanning.
+TRADER_ON = os.environ.get('POLYMARKET_TRADER', '') == '1'
+TRADER_BANK_START = 50.0
+TRADER_MIN_EDGE = 0.06
+TRADER_LIVE_EDGE = 0.10
+TRADER_ARB_SUM = 0.985
+TRADER_TAIL_MIN = 0.93
+TRADER_KELLY = 0.5          # fractional Kelly
+TRADER_MAX_EXPO = 0.85      # keep 15% of the roll liquid, always
+TRADE_CHAN = 'shift-trades'
+
+def _pm_sport_tag(evd, ev=None):
+    for src in ((ev or {}).get('sport'), evd.get('sport'), (evd.get('series') or {}).get('slug'), (ev or {}).get('slug')):
+        s = norm_txt(str(src or ''))
+        for k in ('mlb', 'nba', 'nhl', 'nfl', 'wnba', 'ufc', 'mls', 'epl', 'ucl', 'lol', 'cs2', 'dota2', 'valorant'):
+            if k in s:
+                return k
+    return ''
+
+def pm_sport_prob(games, team_a, team_b):
+    """Model win prob for team_a from a matching ESPN game (log5 + splits + home adv)."""
+    na, nb = norm_txt(team_a), norm_txt(team_b)
+    for g in games:
+        gh, ga = norm_txt(g['home']), norm_txt(g['away'])
+        if not ((na in gh and nb in ga) or (na in ga and nb in gh)):
+            continue
+        ph_o, nh = se_rec((g['recs'].get('home') or {}).get('total', ''))
+        pa_o, naw = se_rec((g['recs'].get('away') or {}).get('total', ''))
+        if ph_o is None or pa_o is None or nh < 6 or naw < 6:
+            return None
+        ph_s, _ = se_rec((g['recs'].get('home') or {}).get('home', ''))
+        pa_s, _ = se_rec((g['recs'].get('away') or {}).get('road', ''))
+        ph = 0.5 * ph_o + 0.5 * (ph_s if ph_s is not None else ph_o)
+        pa = 0.5 * pa_o + 0.5 * (pa_s if pa_s is not None else pa_o)
+        p_home = se_log5(ph, pa) + SE_HOME_ADV.get(g['sport'], 0.03)
+        p_home = min(0.93, max(0.07, p_home))
+        return p_home if na in gh else 1 - p_home
+    return None
+
+def pm_esport_prob(cache, team_a, team_b):
+    """Model win prob for team_a via PandaScore form on a name-matched match."""
+    na, nb = norm_txt(team_a), norm_txt(team_b)
+    for m in cache.get('esp') or []:
+        n1, n2 = norm_txt(m['t1']['name']), norm_txt(m['t2']['name'])
+        if not ((na == n1 and nb == n2) or (na == n2 and nb == n1)):
+            continue
+        forms = cache.setdefault('form', {})
+        out = []
+        for tid, sport in ((m['t1']['id'], m['sport']), (m['t2']['id'], m['sport'])):
+            k = f"{sport}:{tid}"
+            if time.time() - (forms.get(k) or {}).get('ts', 0) > 7200:
+                forms[k] = {'ts': time.time(), 'f': se_ps_form(tid, sport)}
+            out.append((forms.get(k) or {}).get('f'))
+        f1, f2 = out
+        if not f1 or not f2:
+            return None
+        g1, g2 = f1['w'] + f1['l'], f2['w'] + f2['l']
+        if not g1 or not g2:
+            return None
+        w1, w2 = f1['w'] / g1, f2['w'] / g2
+        p1 = w1 * (1 - w2) / (w1 * (1 - w2) + w2 * (1 - w1)) if (w1 or w2) else 0.5
+        return p1 if na == n1 else 1 - p1
+    return None
+
+def pm_kelly(p, price, B):
+    """Fractional-Kelly stake for a binary buy at `price` with model prob p."""
+    edge = p - price
+    if edge <= 0:
+        return 0.0
+    return min(B * (edge / (1 - price)) * TRADER_KELLY, B * 0.5)
+
+def pm_trader_scan(st):
+    """One desk cycle. Returns (trade_intents, notes). Each intent: market/outcome/price/stake/kind."""
+    c = _pm_client()
+    if not c:
+        return [], []
+    bal = pm_cash_balance()
+    if not bal or bal['buying_power'] < 1.05:
+        return [], []
+    B = bal['buying_power']
+    open_trades = [t for t in st.get('pm_trades', []) if t.get('status') == 'open']
+    expo = sum(float(t.get('stake', 0)) for t in open_trades)
+    have = {(t['market_slug'], t['outcome']) for t in open_trades}
+    now = time.time()
+    dates = sorted({time.strftime('%Y%m%d', time.gmtime(now - 4 * 3600)),
+                    time.strftime('%Y%m%d', time.gmtime(now + 20 * 3600))})
+    games = []
+    for d in dates:
+        try:
+            games += se_espn_all(d)
+        except Exception:
+            pass
+    cache = st.setdefault('pm_cache', {})
+    if now - (cache.get('esp_ts') or 0) > 7200:
+        esp = []
+        for gg in ('cs2', 'lol', 'valorant', 'dota2'):
+            esp += se_ps_upcoming(gg)
+        cache['esp'], cache['esp_ts'] = esp, now
+    fmt = lambda ts: time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(ts))
+    try:
+        r = c.events.list({'closed': False, 'startTimeMin': fmt(now - 4 * 3600),
+                           'startTimeMax': fmt(now + 72 * 3600), 'limit': 100})
+    except Exception as e:
+        print('[trader] events:', e); return [], []
+    evs = (r.get('events') if isinstance(r, dict) else r) or []
+    intents, notes = [], []
+    for ev in evs:
+        title = ev.get('title') or ev.get('name') or ''
+        if (' vs ' not in title.lower()) and (' vs. ' not in title.lower()):
+            continue
+        eid = ev.get('id') or ev.get('eventId')
+        try:
+            det = c.events.retrieve(eid) if eid else ev
+        except Exception:
+            continue
+        evd = (det.get('event') if isinstance(det, dict) and 'event' in det else det) or {}
+        ev_start = ev.get('startTime') or ''
+        try:
+            from datetime import datetime as _dt
+            ts_ev = _dt.fromisoformat(str(ev_start).replace('Z', '+00:00')).timestamp()
+        except Exception:
+            ts_ev = now + 3600
+        live = ts_ev <= now
+        outcomes = []
+        for m in evd.get('markets') or []:
+            smt = str(m.get('sportsMarketType') or m.get('marketType') or '').lower()
+            if 'winner' not in smt and 'moneyline' not in smt:
+                continue
+            md = m.get('marketMetadata') if isinstance(m.get('marketMetadata'), dict) else {}
+            sides = m.get('marketSides') or []
+            long_side = next((s for s in sides if s.get('long')), sides[0] if sides else {})
+            if long_side.get('tradable') is False:
+                continue
+            q = long_side.get('quote') or {}
+            try:
+                pr = float(q.get('value') or long_side.get('price') or 0)
+            except Exception:
+                pr = 0
+            if not (0.005 < pr < 0.995):
+                continue
+            team = ((long_side.get('team') or {}).get('name')) or (md or {}).get('outcome') or ''
+            slug = m.get('marketSlug') or m.get('slug') or ''
+            if team and slug:
+                outcomes.append({'slug': slug, 'team': team, 'price': pr})
+        if len(outcomes) < 2:
+            continue
+        # ---- PLAYBOOK: SUM-ARB — buy every side when the book sums under $1 (risk-free)
+        tot = sum(o['price'] for o in outcomes)
+        if 0.5 < tot <= TRADER_ARB_SUM:
+            n = max(1, int(min(B * 0.30, B - 1) / tot))
+            for o in outcomes:
+                if (o['slug'], o['team']) in have:
+                    continue
+                stake = round(n * o['price'], 2)
+                if stake < 0.5 or expo + stake > B * TRADER_MAX_EXPO:
+                    continue
+                intents.append({**o, 'qty_hint': n, 'stake': stake, 'kind': 'ARB', 'p_model': None,
+                                'event': title, 'ev_start': ev_start,
+                                'reason': f"book sums to {tot:.3f} — locking {(1 - tot) * 100:.1f}% before it closes"})
+                expo += stake
+            continue
+        # ---- PLAYBOOK: MODEL EDGE (Kelly) + TAIL-END yield + LIVE divergence
+        for o in outcomes:
+            if (o['slug'], o['team']) in have:
+                continue
+            others = [x['team'] for x in outcomes if x['team'] != o['team']]
+            pm_ = pm_sport_prob(games, o['team'], others[0]) if others else None
+            if pm_ is None and others:
+                pm_ = pm_esport_prob(cache, o['team'], others[0])
+            if pm_ is None:
+                continue
+            edge = pm_ - o['price']
+            if live:
+                if edge >= TRADER_LIVE_EDGE:
+                    stake = pm_kelly(pm_, o['price'], B)
+                    if stake >= 1.0 and expo + stake <= B * TRADER_MAX_EXPO:
+                        intents.append({**o, 'stake': round(stake, 2), 'kind': 'LIVE-BET', 'p_model': pm_,
+                                        'event': title, 'ev_start': ev_start,
+                                        'reason': f"live number drifted — model {pm_:.0%} vs {o['price']:.0%}, {edge:.0%} gap mid-game"})
+                        expo += stake
+                continue
+            if o['price'] >= TRADER_TAIL_MIN and ts_ev - now < 24 * 3600 and pm_ >= 0.80:
+                stake = min(B * 0.15, B - 1)
+                if expo + stake <= B * TRADER_MAX_EXPO:
+                    yld = (1 - o['price']) / o['price']
+                    intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': pm_,
+                                    'event': title, 'ev_start': ev_start,
+                                    'reason': f"tail-end yield — {yld * 100:.1f}% on a near-certain that settles today"})
+                    expo += stake
+                continue
+            if edge >= TRADER_MIN_EDGE:
+                stake = pm_kelly(pm_, o['price'], B)
+                if stake >= 1.0 and expo + stake <= B * TRADER_MAX_EXPO:
+                    intents.append({**o, 'stake': round(stake, 2), 'kind': 'EDGE', 'p_model': pm_,
+                                    'event': title, 'ev_start': ev_start,
+                                    'reason': f"model {pm_:.0%} vs market {o['price']:.0%} — {edge:.0%} edge, half-Kelly"})
+                    expo += stake
+    return intents, notes
+
+def _trade_slip(t):
+    return {'league': (t.get('sport') or '').upper(), 'title': t.get('event', ''), 'outcome': t['outcome'],
+            'qty': t.get('qty', 0), 'price': t.get('price', 0), 'stake': t.get('stake', 0),
+            'marketSlug': t.get('market_slug', ''), 'order_id': t.get('order_id', ''),
+            'placed_at': t.get('ts', '')}
+
+async def trader_channel(g0):
+    """The public desk floor — everyone sees, everyone talks."""
+    if not g0:
+        return None
+    ch = find_channel(g0, TRADE_CHAN)
+    if not ch:
+        try:
+            ch = await g0.create_text_channel('📈shift-trades',
+                topic='SHiFT trading desk — live Polymarket US entries, exits & results. Talk trades here. ⚡')
+            print('[trader] created #shift-trades')
+        except Exception as e:
+            print('[trader] channel:', e)
+    return ch
+
+@tasks.loop(seconds=300)
+async def pm_trader():
+    """Always scanning. Entries to the desk channel; exits + P&L via pm_watch."""
+    if not TRADER_ON:
+        return
+    try:
+        st = await asyncio.to_thread(get_state)
+        intents, _ = await asyncio.to_thread(pm_trader_scan, st)
+        g0 = client.guilds[0] if client.guilds else None
+        ch = await trader_channel(g0) if intents else None
+        placed = False
+        for t in intents:
+            res = await asyncio.to_thread(pm_place_bet,
+                                          {'marketSlug': t['slug'], 'price': t['price'], 'minQty': 1}, t['stake'])
+            if 'order_id' not in res:
+                if res.get('error') not in ('no_liquidity', 'below_min'):
+                    print('[trader] place:', t['slug'], res.get('error'))
+                continue
+            t.update({'order_id': res['order_id'], 'qty': res['qty'], 'stake': res['stake'],
+                      'market_slug': t.pop('slug'), 'outcome': t.pop('team'), 'status': 'open',
+                      'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
+            st.setdefault('pm_trades', []).append(t)
+            st['pm_trades'] = st['pm_trades'][-120:]
+            placed = True
+            stats = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
+            stats['trades'] = stats.get('trades', 0) + 1
+            if ch:
+                try:
+                    import io as _io4
+                    slip = await asyncio.to_thread(pm_slip_png, _trade_slip(t), t['kind'],
+                                                   None, 'SHiFT TRADING DESK — ENTRY')
+                    await ch.send(f"📈 **ENTRY — {t['kind']}:** **{t['outcome']}** @ {t['price']:.2f} × {t['qty']} "
+                                  f"(${t['stake']:.2f})\n_{t['reason']}_",
+                                  file=discord.File(_io4.BytesIO(slip), filename='entry.png'))
+                except Exception as se:
+                    print('[trader] entry post:', se)
+            await asyncio.sleep(1)
+        if placed:
+            await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm trader entries')
+        # ---- daily desk recap, 8 AM ET ----
+        et_now = time.gmtime(time.time() - 4 * 3600)
+        today_et = time.strftime('%Y-%m-%d', et_now)
+        stats = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
+        if et_now.tm_hour == 8 and stats.get('last_recap') != today_et:
+            stats['last_recap'] = today_et
+            bal = await asyncio.to_thread(pm_cash_balance)
+            open_n = len([t for t in st.get('pm_trades', []) if t.get('status') == 'open'])
+            pnl = stats.get('pnl', 0.0)
+            recap = (f"📈 **DESK RECAP — {today_et}**\n"
+                     f"Record **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · trades {stats.get('trades', 0)} · "
+                     f"open {open_n}\nP&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** on ${TRADER_BANK_START:.0f} "
+                     + (f"· bankroll **${bal['balance']:.2f}**\n" if bal else "\n")
+                     + "Autonomous on Polymarket US — model edge, sum-arb, tail yield, live divergence. Profit is the only law. ⚡")
+            ch2 = await trader_channel(g0)
+            if ch2:
+                try:
+                    await ch2.send(recap)
+                except Exception:
+                    pass
+            try:
+                await asyncio.to_thread(x_post, recap.replace('**', '').replace('\n', chr(10))[:270], None)
+            except Exception:
+                pass
+            await asyncio.to_thread(gh_put, 'bot_state.json', st, 'desk recap')
+    except Exception as e:
+        print('[trader]', e)
+
+
 @tasks.loop(seconds=600)
 async def pm_watch():
-    """Settle Polymarket live challenge bets; receipts to #receipts + X (real-money promo)."""
+    """Settle desk trades (and legacy challenge bets). Results to the desk floor + #receipts + X."""
     st = await asyncio.to_thread(get_state)
+    open_trades = [t for t in st.get('pm_trades', []) if t.get('status') == 'open']
     open_bets = [b for b in st.get('pm_live', []) if not b.get('result')]
-    if not open_bets:
+    if not open_trades and not open_bets:
         return
     guild = client.guilds[0] if client.guilds else None
     ch = find_channel(guild, 'receipts') if guild else None
+    desk = await trader_channel(guild) if (guild and open_trades) else None
     changed = False
+
+    # ---- desk trades ----
+    stats = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
+    for t in open_trades:
+        try:
+            res = await asyncio.to_thread(pm_check_settled, {'marketSlug': t['market_slug'], 'outcome': t['outcome'], 'qty': t['qty']})
+        except Exception as e:
+            print(f"[desk] settle check: {e}"); continue
+        if not res:
+            continue
+        t['status'] = 'settled'; t['result'] = res['result']; t['payout'] = res['payout']
+        t['settled_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        pnl = round(float(res['payout']) - float(t['stake']), 2)
+        t['pnl'] = pnl
+        stats['pnl'] = round(stats.get('pnl', 0.0) + pnl, 2)
+        stats['wins'] = stats.get('wins', 0) + (1 if res['result'] == 'WIN' else 0)
+        stats['losses'] = stats.get('losses', 0) + (0 if res['result'] == 'WIN' else 1)
+        bal = await asyncio.to_thread(pm_cash_balance)
+        em = '🎯' if res['result'] == 'WIN' else '❌'
+        sign = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
+        slip = None
+        try:
+            slip = await asyncio.to_thread(pm_slip_png, _trade_slip(t),
+                                           'WON' if res['result'] == 'WIN' else 'LOST', pnl,
+                                           'SHiFT TRADING DESK — RESULT')
+        except Exception as se:
+            print('[desk] slip:', se)
+        line = (f"📈 **DESK RESULT {em}:** **{t['outcome']}** @ {t['price']:.2f} × {t['qty']} — **{res['result']} {sign}**\n"
+                f"_{t.get('reason', '')}_\n"
+                f"Desk record **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · P&L **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}**"
+                + (f" · bankroll **${bal['balance']:.2f}**" if bal else ''))
+        if desk:
+            try:
+                import io as _io5
+                if slip:
+                    await desk.send(line, file=discord.File(_io5.BytesIO(slip), filename='result.png'))
+                else:
+                    await desk.send(line)
+            except Exception:
+                pass
+        xt = (f"📈 SHiFT desk — {t['outcome']} @ {t['price']:.2f} {em} {res['result']} {sign}\n"
+              f"{stats.get('wins', 0)}-{stats.get('losses', 0)} · P&L {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}"
+              + (f" · roll ${bal['balance']:.2f}" if bal else '')
+              + f"\nAutonomous on Polymarket US. Receipts don't lie.\n"
+              + f"Join: https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=x_{time.strftime('%Y%m%d', time.gmtime())}")
+        if len(xt) > 270:
+            xt = xt[:267] + '...'
+        try:
+            posted_x = False
+            if slip:
+                try:
+                    _up = await asyncio.to_thread(x_upload_media_oauth1, slip, 'desk.png')
+                    if _up and _up[1]:
+                        await asyncio.to_thread(x_post_media_oauth1, xt, _up[1])
+                        posted_x = True
+                except Exception as xe:
+                    print(f"[desk] x media: {xe}")
+            if not posted_x:
+                await asyncio.to_thread(x_post, xt, None)
+        except Exception as xe:
+            print(f"[desk] x result: {xe}")
+        changed = True
+        await asyncio.sleep(1)
+
+    # ---- legacy challenge bets (rail retired; settle stragglers honestly) ----
     for lb in open_bets:
         try:
             res = await asyncio.to_thread(pm_check_settled, lb)
@@ -3060,45 +3425,13 @@ async def pm_watch():
         bal = await asyncio.to_thread(pm_cash_balance)
         em = '🎯' if res['result'] == 'WIN' else '❌'
         sign = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
-        ladder = (f"Ladder: ${PM_BANKROLL_START:.0f} → **${bal['balance']:.2f}** real" if bal else
-                  f"Ladder: ${PM_BANKROLL_START:.0f} → in progress")
-        slip = None
-        try:
-            slip = await asyncio.to_thread(pm_slip_png, lb, 'WON' if res['result'] == 'WIN' else 'LOST', pnl)
-        except Exception as _se:
-            print('slip render:', _se)
         if ch:
             try:
-                _msg = (f"🧾 **PM RESULT 💵 CHALLENGE:** [{lb.get('league', '')}] **{lb['outcome']}** @ {lb['price']:.2f} {em} **{res['result']}** {sign}\n"
-                        f"Real money · stake ${lb['stake']:.2f} → paid ${res['payout']:.2f} · Polymarket US\n{ladder}")
-                if slip:
-                    import io as _io3
-                    await ch.send(_msg, file=discord.File(_io3.BytesIO(slip), filename='bet-slip.png'))
-                else:
-                    await ch.send(_msg)
+                await ch.send(f"🧾 **PM RESULT (legacy challenge):** [{lb.get('league', '')}] **{lb['outcome']}** @ {lb['price']:.2f} {em} **{res['result']}** {sign}\n"
+                              f"Real money · stake ${lb['stake']:.2f} → paid ${res['payout']:.2f} · Polymarket US"
+                              + (f" · bankroll ${bal['balance']:.2f}" if bal else ''))
             except Exception:
                 pass
-        xt = (f"🧾 SHiFT's $50→$1000 ladder — REAL money, REAL receipts:\n"
-              f"{lb['outcome']} @ {lb['price']:.2f} {em} {res['result']} {sign}\n"
-              + (f"Bankroll: ${bal['balance']:.2f} 💵\n" if bal else '')
-              + "Every play live on Polymarket US. Receipts don't lie.\n"
-              + f"Join: https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=x_{time.strftime('%Y%m%d', time.gmtime())}")
-        if len(xt) > 270:
-            xt = xt[:267] + '...'
-        try:
-            posted_x = False
-            if slip:
-                try:
-                    _up = await asyncio.to_thread(x_upload_media_oauth1, slip, 'bet-slip.png')
-                    if _up and _up[1]:
-                        await asyncio.to_thread(x_post_media_oauth1, xt, _up[1])
-                        posted_x = True
-                except Exception as _xe:
-                    print(f"[pm] x slip media: {_xe}")
-            if not posted_x:
-                await asyncio.to_thread(x_post, xt, None)
-        except Exception as xe:
-            print(f"[pm] x receipt: {xe}")
         changed = True
         await asyncio.sleep(1)
     if changed:
@@ -3371,6 +3704,22 @@ def grade_pick(p, away_s, home_s):
         won = (m.group(1) == 'over') == (tot > line)
         u = float(p['units']) if p.get('units') is not None else 1.0
         return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
+    m_sp = re.search(r'([+-]\d+(\.\d+)?)\s*$', desc)
+    if m_sp and 'ml' not in desc:
+        sp = float(m_sp.group(1))
+        side = None
+        if side_in_desc(p.get('homeTeam'), desc):
+            side = 'home'
+        elif side_in_desc(p.get('awayTeam'), desc):
+            side = 'away'
+        if not side:
+            return None
+        margin = (home_s - away_s) if side == 'home' else (away_s - home_s)
+        cover = margin + sp
+        u = float(p['units']) if p.get('units') is not None else 1.0
+        if cover == 0:
+            return 'PUSH', 0.0
+        return ('WIN' if cover > 0 else 'LOSS'), (profit_units(p['odds'], u) if cover > 0 else -u)
     side = None
     if side_in_desc(p.get('homeTeam'), desc):
         side = 'home'
@@ -4399,6 +4748,16 @@ def se_edges(g, now_ts, hours=4, min_edge=0.06):
                     'reserve': ml < -150, 'eid': g.get('eid'),
                     'analysis': f"{(g['recs'].get(side) or {}).get('total','?')} overall{split_s} — "
                                 f"our {p_ours:.0%} vs book {p_imp:.0%} (no-vig)"})
+        # MARKET VARIETY LAW: juiced MLs become run-line/spread plays at the standard number
+        if ml < -150 and g.get('spread') is not None:
+            sp = g['spread'] if side == 'home' else -g['spread']
+            if -15.0 <= sp <= -0.5:
+                out.append({'sport': g['sport'], 'pick': f"{team} {sp:+.1f}", 'vs': opp, 'odds': -110,
+                            'units': 1.0, 'edge': edge, 'start': t, 'variety': True,
+                            'market': 'run line' if g['sport'] in ('mlb', 'nhl') else 'spread',
+                            'prob': p_ours, 'team': team, 'opp': opp, 'side': side, 'eid': g.get('eid'),
+                            'analysis': f"{(g['recs'].get(side) or {}).get('total','?')} overall{split_s} — "
+                                        f"ML juiced to {ml:+d}, so the {sp:+.1f} at the standard number is the bet; model makes {team} {p_ours:.0%} straight up"})
     return out
 
 def se_ps(path, **params):
@@ -4580,6 +4939,34 @@ async def scan_engine_run(g0, slot_key, dry):
         cands = [c for c in cands if c['pick'] not in have_descs]
     except Exception as e:
         print('cross-slot dedupe:', e)
+    # ---- MARKET VARIETY LAW (owner decree 2026-07-25): never a wall of moneylines —
+    # totals outliers join the spread conversions, ≤2 variety plays per card
+    tots = [g for g in games if isinstance(g.get('total'), (int, float))]
+    if len(tots) >= 4:
+        avg = sum(g['total'] for g in tots) / len(tots)
+        TH = {'mlb': 1.5, 'nhl': 1.0, 'nba': 8.0, 'nfl': 5.0, 'wnba': 6.0, 'mls': 0.5, 'epl': 0.5, 'ucl': 0.5}
+        for g in tots:
+            th = TH.get(g['sport'], 1.5)
+            dev = g['total'] - avg
+            if abs(dev) < th:
+                continue
+            ok, t = _in_window(g['start'], now_ts, 24)
+            if not ok:
+                continue
+            side = 'Under' if dev > 0 else 'Over'
+            edge = min(0.10, abs(dev) / max(1.0, avg) / 2)
+            angle = ("slate-high number and public over money inflates these — the under is the sharp side"
+                     if dev > 0 else
+                     "slate-low number — priced like a dud, but this slate's bats and arms say it clears")
+            cands.append({'sport': g['sport'], 'pick': f"{side} {g['total']}", 'vs': f"{g['away']} @ {g['home']}",
+                          'odds': -110, 'units': 1.0, 'edge': edge, 'start': t, 'variety': True,
+                          'market': 'total', 'prob': 0.5 + edge, 'team': g['home'], 'opp': g['away'],
+                          'side': None, 'eid': g.get('eid'),
+                          'analysis': f"posted {g['total']} vs {avg:.1f} slate average — {angle}"})
+    var = sorted([c for c in cands if c.get('variety')], key=lambda x: -x['edge'])
+    if len(var) > 2:
+        drop = {id(c) for c in var[2:]}
+        cands = [c for c in cands if id(c) not in drop]
     # ---- ODDS DISCIPLINE: juiced esports faves leave the straight pool, feed parlays
     reserves = [c for c in cands if c.get('reserve')]
     cands = [c for c in cands if not c.get('reserve')]
@@ -4677,11 +5064,33 @@ async def scan_engine_run(g0, slot_key, dry):
     def _why(p, rank):
         team = p['pick'][:-3] if p['pick'].endswith(' ML') else p['pick']
         edge_pct = round(p['edge'] * 100)
+        an = p.get('analysis', '')
+        prob = p.get('prob')
+        prob_s = f"{prob:.0%}" if isinstance(prob, float) else None
+        imp_s = None
+        if isinstance(p.get('odds'), int) and p['odds']:
+            ml = p['odds']
+            imp_s = f"{(100 / (ml + 100)) if ml > 0 else (-ml / (-ml + 100)):.0%}"
+        import hashlib
+        h = int(hashlib.md5((p['pick'] + (p.get('vs') or '')).encode()).hexdigest(), 16)
         if p['sport'] in ('cs2', 'lol', 'dota2', 'valorant'):
-            lead = 'Widest form gap on this slate' if rank == 0 else 'One of the widest form gaps this window'
-            return f"🧠 **Why it's the play:** {lead} — {team} is rolling ({p.get('analysis','')}). A {edge_pct}-point form edge over {p['vs']}."
-        lead = 'Biggest pricing edge of the window' if rank == 0 else 'The book is off on this number'
-        return f"🧠 **Why it's the play:** {lead} — {p.get('analysis','')}. That's a {edge_pct}-point edge in our favor."
+            tmpls = [
+                f"🧠 **The read:** {an}. That's a **{edge_pct}-point** gap over {p['vs']} the number hasn't priced.",
+                f"📈 **Market angle:** {an}. Books hang respect on the wrong side — **{edge_pct} points** of model edge, taken.",
+                f"⚔️ **Matchup read:** {an}. When the form gap runs **{edge_pct} points** wide, the better side wins this spot more than the price says.",
+                f"🔥 **Momentum play:** {an}. Ride the **{edge_pct}-point** form edge before the market catches up.",
+            ]
+        else:
+            value = (f"Model makes {team} **{prob_s}** — books imply **{imp_s}**."
+                     if (prob_s and imp_s) else f"Model finds **{edge_pct} points** of value here.")
+            tmpls = [
+                f"🧠 **The read:** {an}. {value} SHiFT presses the gap.",
+                f"📈 **Market angle:** {an}. The number's off by **{edge_pct} points** — this is where CLV hunters eat.",
+                f"⚔️ **Matchup read:** {an}. {team} in the better spot and priced like it isn't — **{edge_pct}-point** edge.",
+                f"💰 **Value hunt:** {an}. The book shaded this line toward the public side; we collect the **{edge_pct} points** they left.",
+                f"📊 **Form + price:** {an}. {value} Small edge, real edge, pressed.",
+            ]
+        return tmpls[h % len(tmpls)]
     rank_of = {id(p): i for i, p in enumerate(cands)}
     upg_ch = find_channel(g0, 'upgrade')
     upg_ment = f'<#{upg_ch.id}>' if upg_ch else '#upgrade'
@@ -4784,7 +5193,7 @@ async def scan_engine_run(g0, slot_key, dry):
         except Exception as e:
             print('se state fail:', e)
     # ---- CARD LAW (challenge): 4 PM ET scan feeds the 100-to-1000 channel, every day
-    if int(slot_key.split('-')[1]) == 20:
+    if os.environ.get('CHALLENGE_ON', '') == '1' and int(slot_key.split('-')[1]) == 20:  # challenge rail RETIRED 2026-07-25 — superseded by the trading desk
         try:
             await challenge_daily(g0, cands + ([parlay_built] if parlay_built else []), dry)
         except Exception as e:
