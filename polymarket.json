@@ -1,5 +1,5 @@
 {
-  "ts": "2026-07-25T19:18:04Z",
+  "ts": "2026-07-25T19:33:04Z",
   "configured": true,
   "balance_usd": 72.82,
   "buying_power": 16.82,
@@ -16,6 +16,18 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.6",
       "qty": 3
+    },
+    {
+      "market": "aec-lol-al-blg-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.6",
+      "qty": 4
+    },
+    {
+      "market": "aec-lol-cr-kcbs-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.92",
+      "qty": 2
     }
   ]
 }
