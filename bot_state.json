@@ -8639,7 +8639,7 @@
       "qty": 6,
       "market_slug": "aec-lol-fly-ly-2026-07-25",
       "outcome": "FlyQuest",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-25T18:02:42Z",
       "price_path": [
         {
@@ -8666,7 +8666,10 @@
           "ts": 1785014666,
           "px": 0.21
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.44,
