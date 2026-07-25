@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.15.2'
+BOT_VERSION = '9.15.3'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3501,6 +3501,7 @@ def pm_trader_scan(st):
         print('[trader] events:', e); return [], []
     evs = (r.get('events') if isinstance(r, dict) else r) or []
     intents, notes = [], []
+    hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B}
     for ev in evs:
         title = ev.get('title') or ev.get('name') or ''
         if (' vs ' not in title.lower()) and (' vs. ' not in title.lower()):
@@ -3527,6 +3528,10 @@ def pm_trader_scan(st):
             md = m.get('marketMetadata') if isinstance(m.get('marketMetadata'), dict) else {}
             sides = m.get('marketSides') or []
             long_side = next((s for s in sides if s.get('long')), sides[0] if sides else {})
+            team = ((long_side.get('team') or {}).get('name')) or (md or {}).get('outcome') or ''
+            if not team or team.lower() == 'draw':
+                dropped_winner += 1  # the DRAW leg — count it even when untradable or quoteless (7/25 Austrian lesson)
+                continue
             if long_side.get('tradable') is False:
                 continue
             q = long_side.get('quote') or {}
@@ -3536,15 +3541,17 @@ def pm_trader_scan(st):
                 pr = 0
             if not (0.005 < pr < 0.995):
                 continue
-            team = ((long_side.get('team') or {}).get('name')) or (md or {}).get('outcome') or ''
             slug = m.get('marketSlug') or m.get('slug') or ''
-            if team and slug:
+            if slug:
                 outcomes.append({'slug': slug, 'team': team, 'price': pr})
             else:
                 dropped_winner += 1
         if len(outcomes) < 2:
             continue
+        hb['vs'] += 1
         three_way = dropped_winner > 0  # draw sport — the 2-way model and any "arb" are invalid here
+        if three_way:
+            hb['three_way'] += 1
         # ---- PLAYBOOK: SUM-ARB — buy every side when the book sums under $1 (risk-free).
         # ONLY on a complete two-way book: exactly 2 named sides and zero dropped legs.
         tot = sum(o['price'] for o in outcomes)
@@ -3599,7 +3606,33 @@ def pm_trader_scan(st):
                                     'event': title, 'ev_start': ev_start,
                                     'reason': f"model {pm_:.0%} vs market {o['price']:.0%} — {edge:.0%} edge, half-Kelly"})
                     expo += stake
+    hb['expo'], hb['B'] = expo, B
+    notes.append(hb)
     return intents, notes
+
+def _trade_autopsy(t, res):
+    "LOSS AUTOPSY LAW (owner decree 2026-07-25): settled trades get a post-mortem."
+    kind = t.get('kind')
+    pnl = float(t.get('pnl') or 0)
+    p_mod, price = t.get('p_model'), t.get('price')
+    if pnl >= 0:
+        if kind == 'ARB':
+            return f"+${pnl:.2f} — book was complete and both legs settled as priced; arb math did its job."
+        if p_mod:
+            return f"+${pnl:.2f} — model {p_mod:.0%} vs market {price:.0%} was real edge; thesis held."
+        return f"+${pnl:.2f} — thesis held."
+    if kind == 'ARB':
+        return ("the book was NOT complete — a leg the scan could not see (draw) killed both sides. "
+                "Guard hardened: nameless legs now count before quote/tradability gates.")
+    if kind == 'TAIL':
+        return ("the near-certain lost — tail yield is not free money. After 20 settled tails, "
+                "recheck the 0.93 bar against the actual hit rate.")
+    if kind == 'LIVE-BET':
+        return ("live divergence reverted — mid-game prices whipsaw. Consider a bigger live edge bar "
+                "or a smaller Kelly fraction on live plays.")
+    if p_mod:
+        return f"model {p_mod:.0%} vs market {price:.0%} missed — logged for the playbook review."
+    return "edge thesis missed — logged for the playbook review."
 
 def _trade_slip(t):
     return {'league': (t.get('sport') or '').upper(), 'title': t.get('event', ''), 'outcome': t['outcome'],
@@ -3628,7 +3661,10 @@ async def pm_trader():
         return
     try:
         st = await asyncio.to_thread(get_state)
-        intents, _ = await asyncio.to_thread(pm_trader_scan, st)
+        intents, notes = await asyncio.to_thread(pm_trader_scan, st)
+        hb = (notes or [{}])[0]
+        print(f"[trader] cycle: {hb.get('vs', '?')} vs-events · {hb.get('three_way', '?')} 3-way blocked · "
+              f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f}/${hb.get('B', 0):.2f}")
         g0 = client.guilds[0] if client.guilds else None
         ch = await trader_channel(g0) if intents else None
         placed = False
@@ -3679,6 +3715,7 @@ async def pm_trader():
                      f"Record **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · trades {stats.get('trades', 0)} · "
                      f"open {open_n}\nP&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** on ${TRADER_BANK_START:.0f} "
                      + (f"· bankroll **${bal['balance']:.2f}**\n" if bal else "\n")
+                     + (f"🔬 Latest lesson: _{st['pm_lessons'][-1]['lesson']}_\n" if st.get('pm_lessons') else '')
                      + "Autonomous on Polymarket US — model edge, sum-arb, tail yield, live divergence. Profit is the only law. ⚡")
             ch2 = await trader_channel(g0)
             if ch2:
@@ -3721,6 +3758,11 @@ async def pm_watch():
         t['settled_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
         pnl = round(float(res['payout']) - float(t['stake']), 2)
         t['pnl'] = pnl
+        lesson = _trade_autopsy(t, res)
+        t['autopsy'] = lesson
+        st.setdefault('pm_lessons', []).append({'ts': t['settled_at'], 'kind': t['kind'], 'outcome': t.get('outcome'),
+                                                'result': t['result'], 'pnl': pnl, 'lesson': lesson})
+        st['pm_lessons'] = st['pm_lessons'][-30:]
         stats['pnl'] = round(stats.get('pnl', 0.0) + pnl, 2)
         stats['wins'] = stats.get('wins', 0) + (1 if res['result'] == 'WIN' else 0)
         stats['losses'] = stats.get('losses', 0) + (0 if res['result'] == 'WIN' else 1)
@@ -3736,6 +3778,7 @@ async def pm_watch():
             print('[desk] slip:', se)
         line = (f"📈 **DESK RESULT {em}:** **{t['outcome']}** @ {t['price']:.2f} × {t['qty']} — **{res['result']} {sign}**\n"
                 f"_{t.get('reason', '')}_\n"
+                f"🔬 **Autopsy:** {lesson}\n"
                 f"Desk record **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · P&L **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}**"
                 + (f" · bankroll **${bal['balance']:.2f}**" if bal else ''))
         if desk:
@@ -4369,15 +4412,15 @@ def x_receipt_text(r, all_picks=None, chal=None):
     seed = f"{r.get('id')}{r.get('date')}{r.get('result')}"
     rtag = f"[{league_tag(r.get('sport'))}] "
     if r['result'] == 'WIN':
-        base = f"🧾 RESULT {badge}: 🟢 {rtag}{r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+        base = f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
         # paid-room winners funnel to the store (link renders our branded preview card on X)
         if r.get('tier') in ('whale', 'sharp', 'lock'):
             return base + "💎 Every play like this, every 4 hours → " + store_link
         return base + _pick_closer(CLOSERS_WIN, seed)
     if r['result'] == 'PUSH':
-        return (f"🧾 RESULT {badge}: 🟢 {rtag}{r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
+        return (f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
                 + _pick_closer(CLOSERS_PUSH, seed))
-    return (f"🧾 RESULT {badge}: 🟢 {rtag}{r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+    return (f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
             + _pick_closer(CLOSERS_LOSS, seed))
 
 async def settle_challenge(guild, p):
@@ -4405,7 +4448,7 @@ async def settle_challenge(guild, p):
             e = '✅' if p['result'] == 'WIN' else ('🟰' if p['result'] == 'PUSH' else '❌')
             nxt = min(chal['balance'] * 0.2, chal['balance'])
             await ch.send(f"💵 **CHALLENGE BET #{hit.get('n')} — {p['result']}** {e}\n"
-                          f"🟢 [{league_tag(p.get('sport'))}] {p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
+                          f"[{league_tag(p.get('sport'))}] {p.get('desc')} ({p.get('odds')}) · Final: {p.get('score')}\n"
                           f"**BALANCE: {_money_e(chal['balance'])} ${chal['balance']:.2f}** (goal: 💰 ${chal.get('goal', 1000):.0f}) · record {chal['record']['wins']}-{chal['record']['losses']}\n"
                           f"Next challenge action lands with the 4 PM ET scan. — SHiFT ⚡")
             try:
@@ -4497,7 +4540,7 @@ async def grader():
                 overnight = '\n📅 counts for tomorrow\'s card'
             badge = TIER_BADGE.get(p.get('tier'), '')
             if ch:
-                await ch.send(f"🧾 **RESULT {badge}:** 🟢 [{league_tag(p.get('sport'))}] {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\n"
+                await ch.send(f"🧾 **RESULT {badge}:** [{league_tag(p.get('sport'))}] {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\n"
                               f"Final: {p.get('score')}{overnight}")
             if p.get('tier') == 'challenge':
                 await settle_challenge(guild, p)
@@ -5494,7 +5537,7 @@ async def scan_engine_run(g0, slot_key, dry):
         for n, p in enumerate(plays, 1):
             odds_s = f" ({fmt_odds_num(p['odds'])})" if p['odds'] is not None else ''
             if p.get('parlay'):
-                leg_lines = '\n'.join(f"   • 🟢 [{league_tag(lg.get('sport'))}] {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in p['legs'])
+                leg_lines = '\n'.join(f"   • [{league_tag(lg.get('sport'))}] {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in p['legs'])
                 lines.append(f"{n}\u20e3 🎰 **{p['pick']}{odds_s} — {p['units']}u**\n{leg_lines}\n"
                              f"{p['market']} · first leg {_et(p['start'])}\n"
                              f"🧠 **Why it's the play:** every leg cleared our edge bar — combined model probability {p.get('prob', 0):.0%} vs the price's implied {(1 / (ml_to_dec(p['odds']) or 2)):.0%}. That's value stacked on value.")
@@ -5504,12 +5547,12 @@ async def scan_engine_run(g0, slot_key, dry):
                                 f"Our price is **{p.get('prob', 0):.0%}** against the book's **{p.get('prob', 0) - p['edge']:.0%}** — a **{p['edge']:.0%} pricing gap**. "
                                 f"That gap is the whole bet: we're not just picking the team, we're buying the number cheaper than it's worth.")
                     extras = se_whale_extras(p)
-                    lines.append(f"{n}\u20e3 🟢 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
+                    lines.append(f"{n}\u20e3 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
                                  f"{league_tag(p.get('sport'))} · {p['market']} · {_et(p['start'])}\n"
                                  f"📊 {p.get('analysis','')}\n"
                                  f"{why_deep}" + (f"\n{extras}" if extras else ''))
                 else:
-                    lines.append(f"{n}\u20e3 🟢 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
+                    lines.append(f"{n}\u20e3 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
                                  f"{league_tag(p.get('sport'))} · {p['market']} · {_et(p['start'])}\n"
                                  f"📊 {p.get('analysis','')}\n"
                                  f"{_why(p, rank_of.get(id(p), n))}")
@@ -5979,7 +6022,7 @@ async def grade_parlays(guild):
             us = f'+{u}u' if u > 0 else f'{u}u'
             badge = TIER_BADGE.get(p.get('tier'), '')
             if ch:
-                await ch.send(f"🧾 **RESULT {badge} PARLAY:** 🟢 {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\nLegs: {p.get('score')}")
+                await ch.send(f"🧾 **RESULT {badge} PARLAY:** {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\nLegs: {p.get('score')}")
             if state is not None:
                 state.setdefault('unannounced_results', []).append(
                     {'id': p['id'], 'desc': p.get('desc'), 'odds': p.get('odds'), 'result': p['result'],
