@@ -10,18 +10,18 @@
     "#\ud83d\udc0bwhale-room-12-7 [16:34] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**"
   ],
   "time_audit": {
-    "at": "2026-07-25 23:30 UTC",
+    "at": "2026-07-25 22:29 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-2": "2026-07-25 21:17 UTC",
-    "\ud83e\uddfereceipts": "2026-07-25 22:50 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-25 23:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-25 21:56 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-25 21:17 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 23:30 UTC",
+    "at": "2026-07-25 22:29 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -30,13 +30,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 23:30 UTC",
+    "at": "2026-07-25 22:29 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-25 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-25 23:30 UTC",
+    "at": "2026-07-25 22:29 UTC",
     "flags": []
   },
   "bot_version": "9.22.1",
@@ -9980,7 +9980,7 @@
       "qty": 18,
       "market_slug": "aec-lol-dfm-gam-2026-07-26",
       "outcome": "GAM Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:05:58Z"
     },
     {
@@ -9995,7 +9995,7 @@
       "qty": 3,
       "market_slug": "astatc-valorant-sen-loud-2026-07-26-map1",
       "outcome": "Sentinels",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:10:56Z"
     },
     {
@@ -10011,7 +10011,7 @@
       "qty": 8,
       "market_slug": "aec-lol-al-blg-2026-07-26",
       "outcome": "Bilibili Gaming",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:10:58Z"
     },
     {
@@ -10027,7 +10027,7 @@
       "qty": 5,
       "market_slug": "aec-lol-cr-kcbs-2026-07-26",
       "outcome": "Karmine Corp Blue Stars",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:10:59Z"
     },
     {
@@ -10043,7 +10043,13 @@
       "market_slug": "aec-cs2-wc-mglz-2026-07-26",
       "outcome": "Wildcard",
       "status": "open",
-      "ts": "2026-07-25T23:11:00Z"
+      "ts": "2026-07-25T23:11:00Z",
+      "price_path": [
+        {
+          "ts": 1785022230,
+          "px": 0.33
+        }
+      ]
     },
     {
       "price": 0.58,
@@ -10057,7 +10063,7 @@
       "qty": 15,
       "market_slug": "astatc-valorant-geng-rrq-2026-07-26-map1",
       "outcome": "Gen.G Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:15:57Z"
     },
     {
@@ -10074,7 +10080,13 @@
       "market_slug": "aec-lol-g2-kc-2026-07-26",
       "outcome": "Karmine Corp",
       "status": "open",
-      "ts": "2026-07-25T23:20:56Z"
+      "ts": "2026-07-25T23:20:56Z",
+      "price_path": [
+        {
+          "ts": 1785022231,
+          "px": 0.39
+        }
+      ]
     }
   ],
   "pm_stats": {
