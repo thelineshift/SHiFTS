@@ -1437,10 +1437,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 9.0,
-        "ts": 1784964714
+        "ts": 1784976249
       }
     },
     {
