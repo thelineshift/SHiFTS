@@ -1414,10 +1414,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 8.0,
-        "ts": 1784955213
+        "ts": 1784966514
       }
     },
     {
