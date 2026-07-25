@@ -1393,10 +1393,10 @@
       "homeTeam": "San Francisco Giants",
       "awayTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -130,
-        "away_ml": 108,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 9.0,
-        "ts": 1784999657
+        "ts": 1785001495
       }
     },
     {
@@ -1416,11 +1416,12 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -148,
+        "away_ml": 123,
         "total": 8.0,
-        "ts": 1784997009
-      }
+        "ts": 1785001495
+      },
+      "last_alert_odds": -148
     },
     {
       "id": "arizona-diamondbacks-ml-0725",
@@ -1439,10 +1440,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -137,
-        "away_ml": 114,
+        "home_ml": -135,
+        "away_ml": 112,
         "total": 9.5,
-        "ts": 1784999657
+        "ts": 1785001495
       },
       "last_alert_odds": 114
     },
@@ -1487,12 +1488,12 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -117,
-        "away_ml": -103,
+        "home_ml": -123,
+        "away_ml": 102,
         "total": 8.0,
-        "ts": 1784995867
+        "ts": 1785001495
       },
-      "last_alert_odds": -103
+      "last_alert_odds": 102
     },
     {
       "id": "atlanta-braves-ml-0725",
@@ -1511,10 +1512,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -114,
-        "away_ml": -105,
-        "total": 9.0,
-        "ts": 1784984401
+        "home_ml": -112,
+        "away_ml": -107,
+        "total": 9.5,
+        "ts": 1785001496
       }
     },
     {
@@ -1534,10 +1535,10 @@
       "homeTeam": "Boston Red Sox",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -111,
-        "away_ml": -108,
-        "total": 7.5,
-        "ts": 1784999657
+        "home_ml": -116,
+        "away_ml": -104,
+        "total": 7.0,
+        "ts": 1785001496
       }
     },
     {
