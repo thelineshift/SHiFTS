@@ -3669,5 +3669,39 @@
     "pnl": 22.55,
     "trades": 8
   },
-  "x_purge_complete": 1784945845.0521848
+  "x_purge_complete": 1784945845.0521848,
+  "pm_lessons": [
+    {
+      "ts": "2026-07-25T02:30:00Z",
+      "kind": "ARB",
+      "outcome": "Bay FC",
+      "result": "LOSS",
+      "pnl": -6.76,
+      "lesson": "book was NOT complete \u2014 the draw leg was invisible to the scan, both sides exposed. Guard: 3-way books banned from arbs (v9.14.2)."
+    },
+    {
+      "ts": "2026-07-25T02:30:00Z",
+      "kind": "ARB",
+      "outcome": "CA Uni\u00f3n",
+      "result": "LOSS",
+      "pnl": -0.9,
+      "lesson": "naked tail of a 3-way book bought as an arb leg \u2014 same root cause: incomplete book. Never buy legs of books you cannot fully price."
+    },
+    {
+      "ts": "2026-07-25T02:30:00Z",
+      "kind": "ARB",
+      "outcome": "Houston Dash",
+      "result": "WIN",
+      "pnl": 19.17,
+      "lesson": "+$19.17 \u2014 pair settled as priced; but this was luck-assisted variance on an incomplete book, not repeatable arb. Lesson stands."
+    },
+    {
+      "ts": "2026-07-25T07:30:00Z",
+      "kind": "ARB",
+      "outcome": "Vortuna/Bregenz pair (open)",
+      "result": "OPEN",
+      "pnl": 0,
+      "lesson": "second trap variant found: a QUOTELESS/untradable draw leg slipped past the first guard \u2014 nameless legs now counted before quote/tradability gates (v9.15.3)."
+    }
+  ]
 }
