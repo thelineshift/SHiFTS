@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.17.0'
+BOT_VERSION = '9.17.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4001,13 +4001,13 @@ def desk_by_kind(trades):
     """Settled W-L(-P) breakdown per playbook kind."""
     kk = {}
     for t in trades:
-        if t.get('status') not in ('won', 'lost', 'push'):
+        if t.get('result') not in ('WIN', 'LOSS', 'PUSH'):
             continue
         k = t.get('kind') or 'EDGE'
         w, l, p = kk.get(k, (0, 0, 0))
-        if t['status'] == 'won':
+        if t['result'] == 'WIN':
             w += 1
-        elif t['status'] == 'lost':
+        elif t['result'] == 'LOSS':
             l += 1
         else:
             p += 1
@@ -4056,8 +4056,8 @@ def desk_pnl_png(st, stats):
                 continue
         return ImageFont.load_default()
     f_sm, f_md, f_lg = _font(24, False), _font(36), _font(56)
-    settled = sorted((t for t in st.get('pm_trades', []) if t.get('settled') and t.get('pnl') is not None),
-                     key=lambda t: t['settled'])
+    settled = sorted((t for t in st.get('pm_trades', []) if t.get('result') in ('WIN', 'LOSS') and t.get('pnl') is not None),
+                     key=lambda t: t.get('settled_at') or t.get('ts') or '')
     curve = [0.0]
     for t in settled:
         curve.append(curve[-1] + float(t['pnl']))
@@ -4181,14 +4181,15 @@ async def pm_trader():
                         pass
             # public desk feed for the site dashboard
             try:
-                settled = [t for t in st.get('pm_trades', []) if t.get('status') in ('won', 'lost', 'push')]
+                settled = [t for t in st.get('pm_trades', []) if t.get('result') in ('WIN', 'LOSS', 'PUSH')]
                 desk_doc = {'updated': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
                             'record': f"{stats.get('wins', 0)}-{stats.get('losses', 0)}",
                             'trades': stats.get('trades', 0), 'open': open_n,
                             'pnl': round(stats.get('pnl', 0.0), 2), 'bank': TRADER_BANK_START,
                             'balance': round(bal['balance'], 2) if bal else None,
                             'playbooks': desk_by_kind(st.get('pm_trades', [])),
-                            'recent': [{'outcome': t.get('outcome'), 'result': t.get('status'),
+                            'recent': [{'outcome': t.get('outcome'),
+                                        'result': {'WIN': 'won', 'LOSS': 'lost', 'PUSH': 'push'}.get(t.get('result')),
                                         'pnl': round(float(t.get('pnl') or 0), 2)} for t in settled[-6:]],
                             'link': DESK_LINK, 'store': STORE_PAGE}
                 await asyncio.to_thread(gh_put, 'desk.json', desk_doc, 'desk stats update', 'main')
