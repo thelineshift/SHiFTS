@@ -1612,10 +1612,10 @@
       "homeTeam": "St. Louis Cardinals",
       "awayTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -111,
-        "away_ml": -108,
+        "home_ml": -110,
+        "away_ml": -110,
         "total": 8.0,
-        "ts": 1785011246
+        "ts": 1785016559
       },
       "last_alert_odds": -112
     },
@@ -1758,10 +1758,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 130,
-        "away_ml": -157,
+        "home_ml": 134,
+        "away_ml": -162,
         "total": 7.5,
-        "ts": 1785011247
+        "ts": 1785016559
       },
       "last_alert_odds": -163
     },
@@ -1981,10 +1981,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 130,
-        "away_ml": -157,
+        "home_ml": 134,
+        "away_ml": -162,
         "total": 7.5,
-        "ts": 1785011247
+        "ts": 1785016559
       }
     },
     {
