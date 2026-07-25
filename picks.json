@@ -1589,10 +1589,10 @@
       "awayTeam": "Charlotte FC",
       "homeTeam": "Red Bull New York",
       "live_odds": {
-        "home_ml": 120,
-        "away_ml": 180,
+        "home_ml": 115,
+        "away_ml": 185,
         "total": 3.5,
-        "ts": 1784953414
+        "ts": 1785010281
       }
     },
     {
@@ -1758,10 +1758,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 130,
-        "away_ml": -157,
+        "home_ml": 133,
+        "away_ml": -160,
         "total": 7.5,
-        "ts": 1784998483
+        "ts": 1785010281
       },
       "last_alert_odds": -163
     },
