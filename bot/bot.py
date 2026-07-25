@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.12.0'
+BOT_VERSION = '9.13.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -2992,6 +2992,51 @@ async def _stripe_sync_once():
 async def stripe_sync():
     await _stripe_sync_once()
 
+def pm_slip_png(lb, status='LIVE', pnl=None):
+    """Shareable Polymarket bet-slip card (1200x630 PNG bytes). Pure PIL, no assets needed."""
+    from PIL import Image, ImageDraw, ImageFont
+    import io as _io
+    W, H = 1200, 630
+    bg, teal, txt, dim = (10, 14, 22), (45, 226, 196), (235, 240, 245), (140, 155, 170)
+    stamp_c = {'LIVE': teal, 'WON': (46, 204, 113), 'LOST': (231, 76, 60)}.get(status, teal)
+    def _font(sz, bold=True):
+        paths = (('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf', '/usr/share/fonts/DejaVuSans-Bold.ttf')
+                 if bold else
+                 ('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', '/usr/share/fonts/DejaVuSans.ttf'))
+        for path in paths:
+            try:
+                return ImageFont.truetype(path, sz)
+            except Exception:
+                continue
+        try:
+            return ImageFont.load_default(size=sz)
+        except TypeError:
+            return ImageFont.load_default()
+    f_sm, f_md, f_lg, f_xl = _font(26, False), _font(34), _font(46), _font(64)
+    img = Image.new('RGB', (W, H), bg)
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, 12, H], fill=teal)
+    d.rectangle([12, 0, W, 6], fill=teal)
+    d.text((48, 40), 'SHiFT — POLYMARKET US BET SLIP', font=f_md, fill=teal)
+    import re as _re
+    _plain = lambda s: _re.sub(r'[^\x00-\x7F]+', '', s or '').strip()  # no emoji glyphs in card fonts
+    d.text((48, 94), (_plain(lb.get('league')) + '  ' + (lb.get('title') or ''))[:64], font=f_sm, fill=dim)
+    d.text((48, 152), (lb.get('outcome') or '')[:38], font=f_xl, fill=txt)
+    qty, price, stake = float(lb.get('qty', 0)), float(lb.get('price', 0)), float(lb.get('stake', 0))
+    d.text((48, 252), f"{qty:g} shares @ {price:.2f} · ${stake:.2f} → pays ${qty:.2f}", font=_font(40), fill=txt)
+    d.text((48, 330), f"market: {lb.get('marketSlug', '')}", font=f_sm, fill=dim)
+    d.text((48, 370), f"order: {str(lb.get('order_id', ''))[:30]}  ·  placed {str(lb.get('placed_at', ''))[:19].replace('T', ' ')} UTC", font=f_sm, fill=dim)
+    d.rounded_rectangle([W - 330, H - 180, W - 48, H - 84], radius=14, outline=stamp_c, width=5)
+    d.text((W - 300, H - 165), status, font=f_xl, fill=stamp_c)
+    if pnl is not None:
+        sign = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
+        d.text((48, H - 160), f"P&L {sign}", font=f_lg, fill=stamp_c)
+    d.text((48, H - 64), '$50 → $1,000 LADDER — real money, public receipts', font=f_sm, fill=dim)
+    buf = _io.BytesIO()
+    img.save(buf, 'PNG')
+    return buf.getvalue()
+
+
 @tasks.loop(seconds=600)
 async def pm_watch():
     """Settle Polymarket live challenge bets; receipts to #receipts + X (real-money promo)."""
@@ -3017,10 +3062,20 @@ async def pm_watch():
         sign = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
         ladder = (f"Ladder: ${PM_BANKROLL_START:.0f} → **${bal['balance']:.2f}** real" if bal else
                   f"Ladder: ${PM_BANKROLL_START:.0f} → in progress")
+        slip = None
+        try:
+            slip = await asyncio.to_thread(pm_slip_png, lb, 'WON' if res['result'] == 'WIN' else 'LOST', pnl)
+        except Exception as _se:
+            print('slip render:', _se)
         if ch:
             try:
-                await ch.send(f"🧾 **PM RESULT 💵 CHALLENGE:** [{lb.get('league', '')}] **{lb['outcome']}** @ {lb['price']:.2f} {em} **{res['result']}** {sign}\n"
-                              f"Real money · stake ${lb['stake']:.2f} → paid ${res['payout']:.2f} · Polymarket US\n{ladder}")
+                _msg = (f"🧾 **PM RESULT 💵 CHALLENGE:** [{lb.get('league', '')}] **{lb['outcome']}** @ {lb['price']:.2f} {em} **{res['result']}** {sign}\n"
+                        f"Real money · stake ${lb['stake']:.2f} → paid ${res['payout']:.2f} · Polymarket US\n{ladder}")
+                if slip:
+                    import io as _io3
+                    await ch.send(_msg, file=discord.File(_io3.BytesIO(slip), filename='bet-slip.png'))
+                else:
+                    await ch.send(_msg)
             except Exception:
                 pass
         xt = (f"🧾 SHiFT's $50→$1000 ladder — REAL money, REAL receipts:\n"
@@ -3031,7 +3086,17 @@ async def pm_watch():
         if len(xt) > 270:
             xt = xt[:267] + '...'
         try:
-            await asyncio.to_thread(x_post, xt, None)
+            posted_x = False
+            if slip:
+                try:
+                    _up = await asyncio.to_thread(x_upload_media_oauth1, slip, 'bet-slip.png')
+                    if _up and _up[1]:
+                        await asyncio.to_thread(x_post_media_oauth1, xt, _up[1])
+                        posted_x = True
+                except Exception as _xe:
+                    print(f"[pm] x slip media: {_xe}")
+            if not posted_x:
+                await asyncio.to_thread(x_post, xt, None)
         except Exception as xe:
             print(f"[pm] x receipt: {xe}")
         changed = True
@@ -5140,7 +5205,9 @@ async def challenge_daily(g0, cands, dry):
         # OWNER DECREE: no fixed stake rule — edge-scaled strategy. Bigger edge = bigger
         # press (10% floor, 40% ruin-guard ceiling). Parlays stay small lottos (8%).
         def _stake_for(edge):
-            return max(1.0, round(bal * min(0.40, max(0.10, 0.10 + edge)), 2))
+            # DEGEN YOLO PROFILE (owner decree 2026-07-25): r/wallstreetbets sizing —
+            # 25% floor, 60% ceiling, press the edge, never turtle.
+            return max(1.0, round(bal * min(0.60, max(0.25, 0.25 + edge * 1.5)), 2))
         espn_c = [c for c in cands if (c.get('sport') or '').upper() in ESPN and c.get('odds') is not None]
         # dry sims rehearse the full challenge feed into shift-lab — silent to members
         ch = find_channel(g0, 'shift-lab') if dry else find_channel(g0, '100-to-1000')
@@ -5158,7 +5225,7 @@ async def challenge_daily(g0, cands, dry):
             plays.append({'n': n0, 'date': today_et, 'pick': c['pick'], 'odds': o, 'stake': stake,
                           'toWin': to_win, 'time_et': t_et, 'result': None,
                           'posted': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
-                          'note': f"auto challenge — edge {c['edge']:.0%}, stake {min(0.40, max(0.10, 0.10 + c['edge'])):.0%} of bankroll; {c.get('analysis','')[:70]}"})
+                          'note': f"auto challenge — edge {c['edge']:.0%}, stake {min(0.60, max(0.25, 0.25 + c['edge'] * 1.5)):.0%} of bankroll (degen yolo profile); {c.get('analysis','')[:70]}"})
             picks_add.append({'id': f"challenge-{c['pick'].lower().replace(' ', '-')[:24]}-{today_et[5:].replace('-', '')}",
                               'date': today_et, 'sport': c['sport'], 'desc': c['pick'], 'market': c.get('market', 'ML'),
                               'odds': o, 'units': 1.0, 'tier': 'challenge', 'time_et': t_et,
@@ -5183,8 +5250,16 @@ async def challenge_daily(g0, cands, dry):
                             st.setdefault('pm_live', []).append(live)
                             st['pm_live'] = st['pm_live'][-40:]
                             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm live bet placed')
-                            await ch.send(f"🪙 **LIVE BET:** ${live['stake']:.2f} real on **{live['outcome']}** @ {live['price']:.2f} "
-                                          f"({live['qty']} shares) — Polymarket US")
+                            try:
+                                import io as _io2
+                                _slip = await asyncio.to_thread(pm_slip_png, live, 'LIVE')
+                                await ch.send(f"🪙 **LIVE BET:** ${live['stake']:.2f} real on **{live['outcome']}** @ {live['price']:.2f} "
+                                              f"({live['qty']} shares) — Polymarket US",
+                                              file=discord.File(_io2.BytesIO(_slip), filename='bet-slip.png'))
+                            except Exception as _se:
+                                print('slip render:', _se)
+                                await ch.send(f"🪙 **LIVE BET:** ${live['stake']:.2f} real on **{live['outcome']}** @ {live['price']:.2f} "
+                                              f"({live['qty']} shares) — Polymarket US")
                         elif live.get('error') not in ('no_liquidity', 'below_min'):
                             print(f"[challenge] pm place skipped: {live.get('error')}")
                 except Exception as e:
@@ -5193,7 +5268,7 @@ async def challenge_daily(g0, cands, dry):
         parlays = [c for c in cands if c.get('parlay')]
         if parlays:
             c = parlays[0]
-            p_stake = max(1.0, round(bal * 0.08, 2))
+            p_stake = max(1.0, round(bal * 0.12, 2))  # DEGEN YOLO: the lotto ticket always rides
             p_dec = ml_to_dec(c['odds']) or 2.0
             p_win = round(p_stake * (p_dec - 1), 2)
             n0 += 1
