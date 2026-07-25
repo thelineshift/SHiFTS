@@ -5,7 +5,7 @@
     "x_bio OK"
   ],
   "time_audit": {
-    "at": "2026-07-25 15:23 UTC",
+    "at": "2026-07-25 15:41 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,21 +16,21 @@
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 15:23 UTC",
+    "at": "2026-07-25 15:41 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 15:23 UTC",
+    "at": "2026-07-25 15:41 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 15:23 UTC",
+    "at": "2026-07-25 15:41 UTC",
     "flags": []
   },
-  "bot_version": "9.18.0",
+  "bot_version": "9.18.3",
   "unannounced_results": [
     {
       "id": "nrg-furia-ml-0724",
