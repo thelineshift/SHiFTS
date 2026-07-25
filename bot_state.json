@@ -9201,7 +9201,7 @@
       "qty": 17,
       "market_slug": "astatc-valorant-g2-c9-2026-07-25-map1",
       "outcome": "G2 Esports",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-25T18:34:43Z",
       "price_path": [
         {
@@ -9224,7 +9224,10 @@
           "ts": 1785014667,
           "px": 0.97
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.44,
@@ -9443,7 +9446,7 @@
       "qty": 6,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T21:43:28Z"
     }
   ],
