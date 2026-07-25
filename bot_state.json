@@ -1,11 +1,8 @@
 {
-  "executed_seq": 462,
+  "executed_seq": 463,
   "last_log": [
-    "seq 462 executed 2026-07-25 20:00 UTC",
-    "x_post_text OK: id None",
-    "x_post_text OK: id None",
-    "old pinned message deleted",
-    "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
+    "seq 463 executed 2026-07-25 20:21 UTC",
+    "scan_now executed (dry=False, slot=20260725-20-manual)"
   ],
   "time_audit": {
     "at": "2026-07-25 20:11 UTC",
@@ -84,7 +81,7 @@
     "pod-20260725": "ok-bot",
     "20260725-20-manual": "ok-bot"
   },
-  "executed_cmd_seq": 462,
+  "executed_cmd_seq": 463,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
