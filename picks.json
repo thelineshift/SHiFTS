@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T08:01:31Z",
+  "updated": "2026-07-25T10:54:12Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1851,7 +1851,10 @@
       "opp": "Ground Zero Gaming",
       "analysis": "2-3 last 5 (beat CTBC Flying Oyster, Fukuoka SoftBank Hawks Gaming) (lost to GAM Esports) vs 0-5 \u2014 live Pinnacle line +61 (our 90% vs book 58%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat CTBC Flying Oyster, Fukuoka SoftBank Hawks Gaming) (lost to GAM Esports) vs 0-5 \u2014 live Pinnacle line +61 (our 90% vs book",
       "awayTeam": "MVK Esports",
-      "homeTeam": "Ground Zero Gaming"
+      "homeTeam": "Ground Zero Gaming",
+      "result": "WIN",
+      "units_result": 0.92,
+      "score": "MVK Esports 2-0 Ground Zero Gaming \u00b7 final"
     },
     {
       "id": "hotu-ml-0725",
