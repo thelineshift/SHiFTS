@@ -1,5 +1,5 @@
 {
- "seq": 470,
+ "seq": 471,
  "commands": [
   {
    "seq": 400,
@@ -415,32 +415,12 @@
    "action": "room_tail",
    "channel": "shift-lab",
    "n": 5
-  }
- ],
- "queue": [
-  {
-   "seq": 468,
-   "cmd": "room_tail",
-   "args": {
-    "channel": "whale-room",
-    "n": 5
-   }
   },
   {
-   "seq": 469,
-   "cmd": "room_tail",
-   "args": {
-    "channel": "lock-room",
-    "n": 5
-   }
-  },
-  {
-   "seq": 470,
-   "cmd": "room_tail",
-   "args": {
-    "channel": "whale-room",
-    "n": 22
-   }
+   "seq": 471,
+   "action": "room_tail",
+   "channel": "whale-room",
+   "n": 22
   }
  ]
 }
