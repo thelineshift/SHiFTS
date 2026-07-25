@@ -1437,10 +1437,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -151,
+        "away_ml": 125,
         "total": 9.5,
-        "ts": 1784984401
+        "ts": 1784986201
       },
       "last_alert_odds": 129
     },
@@ -1484,10 +1484,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -132,
+        "away_ml": 109,
         "total": 8.0,
-        "ts": 1784984401
+        "ts": 1784986202
       }
     },
     {
@@ -1530,10 +1530,10 @@
       "homeTeam": "Boston Red Sox",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -122,
-        "away_ml": 101,
-        "total": 7.5,
-        "ts": 1784967987
+        "home_ml": -109,
+        "away_ml": -110,
+        "total": 8.0,
+        "ts": 1784986202
       }
     },
     {
@@ -1607,10 +1607,10 @@
       "homeTeam": "St. Louis Cardinals",
       "awayTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -117,
-        "away_ml": -103,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 8.5,
-        "ts": 1784981933
+        "ts": 1784986202
       }
     },
     {
@@ -1630,10 +1630,10 @@
       "homeTeam": "Philadelphia Phillies",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 101,
-        "away_ml": -122,
-        "total": 8.5,
-        "ts": 1784984402
+        "home_ml": 102,
+        "away_ml": -123,
+        "total": 9.0,
+        "ts": 1784986202
       },
       "last_alert_odds": 101
     },
@@ -1694,10 +1694,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -237,
-        "away_ml": 192,
-        "total": 8.5,
-        "ts": 1784984402
+        "home_ml": -238,
+        "away_ml": 193,
+        "total": 9.0,
+        "ts": 1784986202
       },
       "last_alert_odds": -237
     },
@@ -1752,10 +1752,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 139,
-        "away_ml": -168,
+        "home_ml": 141,
+        "away_ml": -170,
         "total": 7.5,
-        "ts": 1784984403
+        "ts": 1784986202
       },
       "last_alert_odds": -163
     },
