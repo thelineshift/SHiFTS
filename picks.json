@@ -1345,10 +1345,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -134,
-        "away_ml": 111,
-        "total": 7.5,
-        "ts": 1784953413
+        "home_ml": -135,
+        "away_ml": 112,
+        "total": 8.0,
+        "ts": 1784984401
       }
     },
     {
@@ -1439,8 +1439,8 @@
       "live_odds": {
         "home_ml": -156,
         "away_ml": 129,
-        "total": 9.0,
-        "ts": 1784981933
+        "total": 9.5,
+        "ts": 1784984401
       },
       "last_alert_odds": 129
     },
@@ -1486,8 +1486,8 @@
       "live_odds": {
         "home_ml": -136,
         "away_ml": 113,
-        "total": 7.5,
-        "ts": 1784978040
+        "total": 8.0,
+        "ts": 1784984401
       }
     },
     {
@@ -1507,10 +1507,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -115,
+        "home_ml": -114,
         "away_ml": -105,
         "total": 9.0,
-        "ts": 1784978721
+        "ts": 1784984401
       }
     },
     {
@@ -1630,11 +1630,12 @@
       "homeTeam": "Philadelphia Phillies",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -102,
-        "away_ml": -118,
+        "home_ml": 101,
+        "away_ml": -122,
         "total": 8.5,
-        "ts": 1784953414
-      }
+        "ts": 1784984402
+      },
+      "last_alert_odds": 101
     },
     {
       "id": "san-jose-earthquakes-ml-0725",
@@ -1693,12 +1694,12 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -231,
-        "away_ml": 188,
+        "home_ml": -237,
+        "away_ml": 192,
         "total": 8.5,
-        "ts": 1784981277
+        "ts": 1784984402
       },
-      "last_alert_odds": -224
+      "last_alert_odds": -237
     },
     {
       "id": "under-8.5-0725",
@@ -1753,8 +1754,8 @@
       "live_odds": {
         "home_ml": 139,
         "away_ml": -168,
-        "total": 8.0,
-        "ts": 1784981934
+        "total": 7.5,
+        "ts": 1784984403
       },
       "last_alert_odds": -163
     },
@@ -1813,10 +1814,10 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -182,
-        "away_ml": 150,
+        "home_ml": -186,
+        "away_ml": 153,
         "total": 8.0,
-        "ts": 1784981277
+        "ts": 1784984403
       },
       "last_alert_odds": -181
     },
