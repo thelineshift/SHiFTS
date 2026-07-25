@@ -1345,10 +1345,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -121,
-        "away_ml": 100,
+        "home_ml": -122,
+        "away_ml": 101,
         "total": 8.0,
-        "ts": 1784988001
+        "ts": 1784989801
       },
       "last_alert_odds": -121
     },
@@ -1485,11 +1485,12 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -132,
-        "away_ml": 109,
+        "home_ml": -120,
+        "away_ml": 100,
         "total": 8.0,
-        "ts": 1784986202
-      }
+        "ts": 1784989801
+      },
+      "last_alert_odds": 100
     },
     {
       "id": "atlanta-braves-ml-0725",
@@ -1632,10 +1633,10 @@
       "homeTeam": "Philadelphia Phillies",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 102,
-        "away_ml": -123,
+        "home_ml": 103,
+        "away_ml": -124,
         "total": 9.0,
-        "ts": 1784986202
+        "ts": 1784989802
       },
       "last_alert_odds": 101
     },
@@ -1754,10 +1755,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 136,
-        "away_ml": -164,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 7.5,
-        "ts": 1784988002
+        "ts": 1784989802
       },
       "last_alert_odds": -163
     },
@@ -1816,12 +1817,12 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -186,
-        "away_ml": 153,
+        "home_ml": -162,
+        "away_ml": 134,
         "total": 8.0,
-        "ts": 1784984403
+        "ts": 1784989802
       },
-      "last_alert_odds": -181
+      "last_alert_odds": -162
     },
     {
       "id": "weibo-gaming-ml-0725",
