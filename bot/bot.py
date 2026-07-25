@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.21.0'
+BOT_VERSION = '9.21.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -786,6 +786,16 @@ def make_client(privileged=True):
                 pend2 = getattr(c, '_pending_withdraw', None)
                 if isinstance(pend2, dict) and pend2.get('by') == message.author.id and not mw:
                     c._pending_withdraw = None  # any other owner message cancels a pending withdrawal
+            if (message.content or '').strip().lower() == '!pin':
+                _t = next((TIER_ROLES[r.name] for r in message.author.roles if r.name in TIER_ROLES), None)
+                if _t:
+                    try:
+                        await _issue_pin_for(message.author, _t)
+                        await message.reply('\U0001F4EC New PIN in your DMs — keep it private.')
+                    except Exception as e:
+                        await message.reply('pin machine hiccuped — try again in a minute.')
+                else:
+                    await message.reply('PINs are for paid members — grab a room in #\U0001F48Eupgrade first \u26a1')
             if (message.content or '').strip().lower().startswith('!crypto'):
                 parts = (message.content or '').strip().split()
                 tier = parts[1].lower() if len(parts) > 1 else ''
@@ -883,6 +893,11 @@ def make_client(privileged=True):
                 entry['grants'].append({'tier': h, 'at': time.strftime('%Y-%m-%d %H:%M UTC')})
             await asyncio.to_thread(gh_put, 'member_links.json', links, f'tier grant: {after.name} -> {hits[-1]}')
             print(f'TIER GRANT recorded: {after.name} -> {hits}')
+            # PIN auto-issue (v9.21.1): new paid member gets their dashboard PIN by DM
+            try:
+                await _issue_pin_for(after, hits[-1])
+            except Exception as e:
+                print('pin auto-issue error:', e)
         except Exception as e:
             print('on_member_update error:', e)
     return c
@@ -1508,6 +1523,27 @@ async def catchup_sweep(g0):
             await lab.send('🔄 **BOOT SWEEP** — ' + ' · '.join(report))
     except Exception as e:
         print('catchup sweep error:', e)
+
+def gh_get_json_main(path):
+    try:
+        d = gh_get(path, ref='main')
+        return json.loads(base64.b64decode(d['content']))
+    except Exception:
+        return {}
+
+async def _issue_pin_for(member, tier):
+    """Generate a 6-digit dashboard PIN, store only its hash (main:pins.json), DM the member."""
+    import hashlib, secrets
+    pin = f"{secrets.randbelow(900000) + 100000}"
+    h = hashlib.sha256(pin.encode()).hexdigest()
+    pins = await asyncio.to_thread(gh_get_json_main, 'pins.json')
+    pins.setdefault('pins', {})[h] = {'tier': tier, 'since': time.strftime('%Y-%m-%d', time.gmtime())}
+    pins['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+    await asyncio.to_thread(gh_put, 'pins.json', pins, f'pin issued ({tier})', 'main')
+    try:
+        await member.send(f"\U0001F511 **Your SHiFT's Picks dashboard PIN:** `{pin}`\nUnlock your **{tier.title()}** card room anytime: https://thelineshift.github.io/SHiFTS/dashboard.html\nKeep it private — it's your key to the paid rooms' cards. Type `!pin` in the server anytime to rotate it.")
+    except Exception:
+        pass
 
 async def run_command(cmd, guild, log):
     a = cmd.get('action')
