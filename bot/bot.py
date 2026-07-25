@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.21.6'
+BOT_VERSION = '9.21.7'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -7249,7 +7249,10 @@ async def scan_engine_run(g0, slot_key, dry):
     if aware:
         slate_s += (' · ' if slate_s else '') + 'on radar: ' + ', '.join(aware)
     picks_out = []
-    slot_et = (datetime.datetime.utcfromtimestamp(now_ts) - datetime.timedelta(hours=4)).strftime('%I %p ET').lstrip('0')
+    _etn = datetime.datetime.utcfromtimestamp(now_ts) - datetime.timedelta(hours=4)
+    # DATE-STAMPED SIGNATURE LAW (v9.21.7): hour-only sigs self-deduped against yesterday's
+    # same-hour card inside the 20-message room-history window — cards silently vanished.
+    slot_et = f"{_etn.strftime('%a')} {_etn.month}/{_etn.day} · {_etn.strftime('%I %p ET').lstrip('0')}"
     def _nxt_et():
         h = int(time.strftime('%H', time.gmtime(now_ts)))
         nxt = next((s for s in SCAN_SLOTS_UTC if s > h), 0)
