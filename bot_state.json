@@ -32,15 +32,6 @@
   "bot_version": "9.13.2",
   "unannounced_results": [
     {
-      "id": "fnatic-ml-0724",
-      "desc": "Fnatic ML",
-      "odds": null,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Fnatic vs opponent \u2014 loss",
-      "tier": "sharp"
-    },
-    {
       "id": "alka-gaming-ml-0724",
       "desc": "ALKA GAMING ML",
       "odds": null,
@@ -86,7 +77,7 @@
       "tier": "free"
     }
   ],
-  "last_x_receipt_ts": 1784938338.452148,
+  "last_x_receipt_ts": 1784943395.2463574,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
