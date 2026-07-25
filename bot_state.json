@@ -95,7 +95,8 @@
     "20260724-16": "ok-bot",
     "20260724-16-manual": "ok-bot",
     "20260724-16-note": "12PM ET: cron died silently again; bot engine flipped LIVE and posted the real card 16:25 UTC (5 plays, first fully-autonomous live card).",
-    "20260724-20": "ok-bot"
+    "20260724-20": "ok-bot",
+    "20260725-00": "partial"
   },
   "executed_cmd_seq": 409,
   "scan_role_id": 1529569745517674599,
@@ -119,7 +120,8 @@
     "20260723-16",
     "20260724-00",
     "20260724-04",
-    "20260724-16"
+    "20260724-16",
+    "20260725-00"
   ],
   "count_fired": [
     "20260723-2300",
