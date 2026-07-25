@@ -1299,10 +1299,10 @@
       "awayTeam": "Chicago Fire FC",
       "homeTeam": "New York City FC",
       "live_odds": {
-        "home_ml": 145,
-        "away_ml": 160,
+        "home_ml": 150,
+        "away_ml": 150,
         "total": 2.5,
-        "ts": 1784953413
+        "ts": 1784964713
       }
     },
     {
@@ -1391,10 +1391,10 @@
       "homeTeam": "San Francisco Giants",
       "awayTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -130,
-        "away_ml": 108,
+        "home_ml": -131,
+        "away_ml": 109,
         "total": 9.0,
-        "ts": 1784953413
+        "ts": 1784964714
       }
     },
     {
@@ -1437,10 +1437,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -144,
-        "away_ml": 119,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 9.0,
-        "ts": 1784962413
+        "ts": 1784964714
       }
     },
     {
