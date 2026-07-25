@@ -12,7 +12,7 @@
     "FULL #\ud83e\uddeashift-lab id=1530695189587558443 | shift#8676: \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled)"
   ],
   "time_audit": {
-    "at": "2026-07-25 22:30 UTC",
+    "at": "2026-07-25 22:29 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -23,7 +23,7 @@
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 22:30 UTC",
+    "at": "2026-07-25 22:29 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -32,13 +32,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 22:30 UTC",
+    "at": "2026-07-25 22:29 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-25 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-25 22:30 UTC",
+    "at": "2026-07-25 22:29 UTC",
     "flags": []
   },
   "bot_version": "9.22.1",
@@ -129,7 +129,7 @@
     "20260725-1550"
   ],
   "boot_log": [
-    "2026-07-25T22:29:43Z"
+    "2026-07-25T22:30:20Z"
   ],
   "teasers": {
     "weekly": "2026-07-26",
@@ -180,7 +180,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "31ee501a-7d3e-4921-afc7-3d3f36429e43",
+  "last_deploy_id": "fe9552ef-44e8-4a2e-83ab-2a7c82d1b50a",
   "op_month": "2026-07",
   "op_calls": 30,
   "op_meta": {
@@ -9727,19 +9727,19 @@
       "ts": "2026-07-25T22:17:42Z"
     },
     {
-      "price": 0.6,
-      "stake": 1.2,
-      "kind": "LIVE-BET",
-      "p_model": 0.6923076923076923,
-      "event": "Isurus vs. BESTIA Academy",
-      "ev_start": "2026-07-25T22:00:00Z",
-      "reason": "live number drifted \u2014 model 69% vs 60%, 9% gap mid-game",
-      "order_id": "BFEY463ER9SK",
-      "qty": 2,
-      "market_slug": "astatc-cs2-isg-bsta-2026-07-25-map2",
-      "outcome": "Isurus",
+      "price": 0.37,
+      "stake": 1.11,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Wildcard vs. TheMongolz",
+      "ev_start": "2026-07-26T15:00:00Z",
+      "reason": "model 50% vs market 37% \u2014 13% edge, half-Kelly",
+      "order_id": "BFEZJQV589NW",
+      "qty": 3,
+      "market_slug": "astatc-cs2-wc-mglz-2026-07-26-map1",
+      "outcome": "Wildcard",
       "status": "open",
-      "ts": "2026-07-25T22:30:20Z"
+      "ts": "2026-07-25T22:30:58Z"
     }
   ],
   "pm_stats": {
