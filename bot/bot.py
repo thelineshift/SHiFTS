@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.16.6'
+BOT_VERSION = '9.16.7'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -6137,7 +6137,7 @@ async def scan_engine_run(g0, slot_key, dry):
         comp += f"🎯 No free play this window — nothing met our edge bar, and we don't force bets. Next scan **{_nxt_et()}**.\n"
     cnts = ' · '.join(f"{e} +{len(deal[t])}" for t, e in (('lock', '🔒'), ('sharp', '📊'), ('whale', '🐋')) if deal[t])
     if cnts:
-        comp += f"\n{cnts} — the full board is live in the paid rooms.\n💎 **36 plays a day** in Whale · **24** in Sharp · **18** in Lock → {upg_ment}\n"
+        comp += f"\n{cnts} — the full board is live in the paid rooms.\n💎 **Up to 36 picks a day** in Whale · **24** in Sharp · **18** in Lock — depending on the day's slate → {upg_ment}\n"
     comp += f"\n⏭️ **Next card drops {_nxt_et()}** — lock in early, lines move.\nEvery play before start. Every result receipted. ⚡"
     await gen.send(comp)
     # ---- register + mark
