@@ -1,5 +1,5 @@
 {
- "seq": 471,
+ "seq": 472,
  "commands": [
   {
    "seq": 400,
@@ -421,6 +421,12 @@
    "action": "room_tail",
    "channel": "whale-room",
    "n": 22
+  },
+  {
+   "seq": 472,
+   "action": "scan_now",
+   "dry": false,
+   "force": true
   }
  ]
 }
