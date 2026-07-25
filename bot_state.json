@@ -1,8 +1,13 @@
 {
-  "executed_seq": 487,
+  "executed_seq": 486,
   "last_log": [
-    "seq 487 executed 2026-07-25 21:46 UTC",
-    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+media.write+offline.access&state=8e8b4238e1872c38&code_challenge=ya08MuLnDGtd225YbPTfEG0ceqHg7rTqAFCU-DyCfrQ&code_challenge_method=S256"
+    "seq 486 executed 2026-07-25 21:40 UTC",
+    "old pinned message deleted",
+    "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)",
+    "topic set on #\ud83d\udc0bwhale-room-12-7",
+    "topic set on #\ud83d\udccasharp-room-9-6",
+    "topic set on #\ud83d\udd12lock-room-5-11",
+    "x_bio OK"
   ],
   "time_audit": {
     "at": "2026-07-25 21:27 UTC",
@@ -74,7 +79,7 @@
     "20260725-20-manual": "ok-bot",
     "20260725-21-manual": "ok-bot"
   },
-  "executed_cmd_seq": 487,
+  "executed_cmd_seq": 486,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
@@ -9440,6 +9445,37 @@
       "outcome": "Bar\u00e7a eSports GC",
       "status": "open",
       "ts": "2026-07-25T21:43:28Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 4.8,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727274,
+      "event": "Anyone's Legend vs. Bilibili Gaming",
+      "ev_start": "2026-07-26T11:00:00Z",
+      "reason": "model 73% vs market 60% \u2014 13% edge, half-Kelly",
+      "order_id": "BFED4CW2P9QR",
+      "qty": 8,
+      "market_slug": "aec-lol-al-blg-2026-07-26",
+      "outcome": "Bilibili Gaming",
+      "status": "open",
+      "ts": "2026-07-25T21:47:30Z"
+    },
+    {
+      "price": 0.62,
+      "stake": 9.3,
+      "kind": "EDGE",
+      "p_model": 0.857142857142857,
+      "event": "Gen.G Esports vs. Rex Regum Qeon",
+      "ev_start": "2026-07-26T11:00:00Z",
+      "reason": "model 86% vs market 62% \u2014 24% edge, half-Kelly",
+      "order_id": "BFEB53VBW9P5",
+      "qty": 15,
+      "market_slug": "aec-valorant-geng-rrq-2026-07-26",
+      "outcome": "Gen.G Esports",
+      "status": "open",
+      "ts": "2026-07-25T21:47:31Z"
     }
   ],
   "pm_stats": {
@@ -9447,7 +9483,7 @@
     "wins": 3,
     "losses": 8,
     "pnl": 6.06,
-    "trades": 36,
+    "trades": 38,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-20"
   },
