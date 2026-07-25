@@ -1368,10 +1368,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -108,
+        "home_ml": -107,
         "away_ml": -112,
         "total": 7.5,
-        "ts": 1784960613
+        "ts": 1784981933
       }
     },
     {
@@ -1437,11 +1437,12 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 124,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 9.0,
-        "ts": 1784976249
-      }
+        "ts": 1784981933
+      },
+      "last_alert_odds": 129
     },
     {
       "id": "vancouver-whitecaps-ml-0725",
@@ -1606,10 +1607,10 @@
       "homeTeam": "St. Louis Cardinals",
       "awayTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": -101,
+        "home_ml": -117,
+        "away_ml": -103,
         "total": 8.5,
-        "ts": 1784973949
+        "ts": 1784981933
       }
     },
     {
@@ -1750,10 +1751,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 138,
-        "away_ml": -167,
+        "home_ml": 139,
+        "away_ml": -168,
         "total": 8.0,
-        "ts": 1784973950
+        "ts": 1784981934
       },
       "last_alert_odds": -163
     },
