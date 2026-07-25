@@ -1,37 +1,42 @@
 {
-  "updated": "2026-07-25T16:01:08Z",
-  "record": "3-2",
+  "updated": "2026-07-25T16:13:02Z",
+  "record": "2-3",
   "trades": 18,
   "open": 13,
-  "pnl": 50.55,
+  "pnl": 15.82,
   "bank": 50.0,
   "balance": 34.01,
   "playbooks": "ARB 2-2 \u00b7 LIVE-BET 1-0",
   "recent": [
     {
       "outcome": "Houston Dash",
+      "short": false,
       "result": "won",
-      "pnl": 19.17
+      "pnl": 19.44
     },
     {
       "outcome": "Bay FC",
+      "short": false,
       "result": "lost",
       "pnl": -6.76
     },
     {
       "outcome": "Orlando Pride",
+      "short": false,
       "result": "won",
       "pnl": 11.04
     },
     {
       "outcome": "CA Uni\u00f3n",
+      "short": false,
       "result": "lost",
       "pnl": -0.9
     },
     {
       "outcome": "ThunderTalk Gaming",
-      "result": "won",
-      "pnl": 28.0
+      "short": true,
+      "result": "lost",
+      "pnl": -7.0
     }
   ],
   "link": "https://polymarket.us",
