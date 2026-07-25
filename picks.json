@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T16:00:37Z",
+  "updated": "2026-07-25T16:54:26Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1921,7 +1921,10 @@
       "opp": "ENJOY",
       "analysis": "3-2 last 5 (beat los kogutos, Fortress, Misa Esports) (lost to QUAZAR) vs 1-4 \u2014 live Pinnacle line -107 (our 86% vs book 48%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat los kogutos, Fortress, Misa Esports) (lost to QUAZAR) vs 1-4 \u2014 live Pinnacle line -107 (our 86% vs book 48%). Books hang respect on the",
       "awayTeam": "SAW Youngsters",
-      "homeTeam": "ENJOY"
+      "homeTeam": "ENJOY",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "SAW Youngsters 1-2 ENJOY \u00b7 final"
     },
     {
       "id": "under-8.0-0725",
