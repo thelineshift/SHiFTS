@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.11.2'
+BOT_VERSION = '9.12.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -665,7 +665,7 @@ def make_client(privileged=True):
                 st_g = await asyncio.to_thread(get_state) or {}
                 if str(message.id) in st_g.get('gw_handled', []):
                     return  # already processed (edit re-fire or sweep overlap)
-                hs = gw_handle_parse(raw)
+                hs = gw_handle_parse(raw) or gw_bare_handle(raw)
                 if hs:
                     try:
                         await message.add_reaction('🎫')  # instant visible ack even if the text reply is throttled
@@ -692,11 +692,16 @@ def make_client(privileged=True):
                                 await gw_reply_once(message, 'already', f"🎫 **@{hs[0]}** — already in the pool. Sunday 6 PM ET. ⚡")
                         except Exception as e2:
                             print('provisional fail:', e2)
-                elif re.search(r'@|x\.com|twitter|handle', raw, re.I):
+                else:
+                    # NEVER-SILENT LAW: every #giveaway message gets an ack — 🎫 always, guide text hourly
+                    try:
+                        await message.add_reaction('🎫')
+                    except Exception:
+                        pass
                     if str(message.id) not in st_g.get('gw_handled', []):
                         await gw_mark_handled(st_g, message.id)
                         await asyncio.to_thread(gh_put, 'bot_state.json', st_g, 'gw handled')
-                        await gw_reply_once(message, 'guide', "⚡ Drop your **X (Twitter) handle** like `@yourhandle` — not your Discord name — and I'll scan you in. " + GW_STEPS.format(link=gw_post_link(st_g)) + " 🎫")
+                    await gw_reply_once(message, 'guide', "⚡ Drop your **X (Twitter) handle** like `@yourhandle` — not your Discord name — and I'll scan you in. " + GW_STEPS.format(link=gw_post_link(st_g)) + " 🎫", hours=1)
                 return
             # OWNER self-serve withdrawal: shift-lab only, owner-only, two-step CONFIRM
             if 'shift-lab' in chname:
@@ -1062,6 +1067,19 @@ def gw_handle_parse(raw):
             out.append(h)
     return out
 
+GW_WORDS = ('handle', 'twitter', 'giveaway', 'enter', 'entry', 'done', 'following', 'reposted', 'liked',
+            'thanks', 'thank', 'hello', 'admin', 'shift', 'please', 'when', 'draw', 'winner', 'winners',
+            'good', 'luck', 'yeah', 'nice', 'cool', 'love', 'this', 'that', 'what', 'where', 'how', 'yes')
+
+def gw_bare_handle(raw):
+    """BARE-HANDLE FALLBACK (never-silent law): a lone token in #giveaway is almost always an X handle."""
+    s = (raw or '').strip().strip('@').strip()
+    if not re.fullmatch(r'[A-Za-z0-9_]{4,15}', s):
+        return []
+    if s.lower() in GW_BAD or s.lower() in GW_WORDS:
+        return []
+    return [s]
+
 async def gw_mark_handled(st, msg_id):
     """Remember a giveaway message ID so sweeps/edits never re-process it."""
     lst = st.setdefault('gw_handled', [])
@@ -1192,7 +1210,7 @@ async def catchup_sweep(g0):
                 if m.author.bot or str(m.id) in handled:
                     continue
                 raw = m.content or ''
-                hs = gw_handle_parse(raw)
+                hs = gw_handle_parse(raw) or gw_bare_handle(raw)
                 if not hs:
                     continue  # guidance for no-handle posts is on_message's job; sweep never nags
                 if hs[0].lower() in conf:
@@ -4273,11 +4291,11 @@ def se_espn_all(dates):
                 continue
     return out
 
-def se_edges(g, now_ts):
+def se_edges(g, now_ts, hours=4, min_edge=0.06):
     """Turn one game into edge candidates. Edge = OUR probability (records + home/away
     splits via log5 + home advantage) minus the book's no-vig implied probability.
     We only fire where our number beats theirs by >= 6 points."""
-    ok, t = _in_window(g['start'], now_ts)
+    ok, t = _in_window(g['start'], now_ts, hours)
     if not ok:
         return []
     ph_o, nh = se_rec((g['recs'].get('home') or {}).get('total', ''))
@@ -4306,7 +4324,7 @@ def se_edges(g, now_ts):
         if ml is None or p_imp is None or ml < -400 or ml > 200:
             continue
         edge = p_ours - p_imp
-        if edge < 0.06:
+        if edge < min_edge:
             continue
         split = (g['recs'].get(side) or {}).get('home' if side == 'home' else 'road', '')
         split_s = f", {split} {'at home' if side == 'home' else 'on the road'}" if split else ''
@@ -4397,14 +4415,18 @@ async def scan_engine_run(g0, slot_key, dry):
     await gen.send(f"🛰️ {tag}**SCAN INITIATED — {(datetime.datetime.utcfromtimestamp(now_ts) - datetime.timedelta(hours=4)).strftime('%I %p ET')}**" if not dry else
                    f"🛰️ {tag}scan would initiate for slot {slot_key}")
     # ---- pull candidates in the 4h window: ALL leagues + esports, edge-priced
-    games = await asyncio.to_thread(se_espn_all, time.strftime('%Y%m%d', time.gmtime()))
+    def _et_date(ts):
+        return time.strftime('%Y%m%d', time.gmtime(ts - 4 * 3600))
+    games = []
+    for _d in sorted({_et_date(now_ts - 600), _et_date(now_ts + 4 * 3600), _et_date(now_ts + 8 * 3600)}):
+        games += await asyncio.to_thread(se_espn_all, _d)
     cands = []
     pulled = {}
     for g in games:
         pulled[g['sport']] = pulled.get(g['sport'], 0) + 1
         cands += se_edges(g, now_ts)
     esp = []
-    for gg in ('cs2', 'lol', 'valorant'):
+    for gg in ('cs2', 'lol', 'valorant', 'dota2'):
         esp += await asyncio.to_thread(se_ps_upcoming, gg)
     # LIVE BOOK LINES (OddsPapi): real Pinnacle moneylines for esports, budget-guarded
     op_state = await asyncio.to_thread(get_state) or {}
@@ -4422,62 +4444,63 @@ async def scan_engine_run(g0, slot_key, dry):
                     op_touched = True
     except Exception as e:
         print('op esports fetch:', e)
-    esp_ct = 0
-    for m in esp:
-        ok, t = _in_window(m['start'] or '', now_ts)
-        if not ok or esp_ct >= 10:
-            continue
-        if not any(k in (m['league'] or '') for k in SCAN_NOTABLE):
-            continue
-        f1 = await asyncio.to_thread(se_ps_form, m['t1']['id'], m['sport'])
-        f2 = await asyncio.to_thread(se_ps_form, m['t2']['id'], m['sport'])
-        esp_ct += 1
-        if not f1 or not f2 or f1['w'] + f1['l'] < 3 or f2['w'] + f2['l'] < 3:
-            continue
-        w1 = f1['w'] / (f1['w'] + f1['l']); w2 = f2['w'] / (f2['w'] + f2['l'])
-        edge = w1 - w2
-        if abs(edge) < 0.2:
-            continue
-        fav, dog = (m['t1'], m['t2']) if edge > 0 else (m['t2'], m['t1'])
-        fav_f, dog_f = (f1, f2) if edge > 0 else (f2, f1)
-        league_s = (m['league'] or '').split(' 20')[0][:22]
-        # MODEL LINE: no book prices esports on our feeds, so we publish our own —
-        # log5 fair odds from recent-form win rates, rounded like a board number.
-        # ODDS DISCIPLINE LAW (ALL sports, owner decree): straights stay near-even or
-        # better (p<=.60 ≈ -150). Heavier favorites are never straight picks — PARLAY MATERIAL.
-        fw = w1 if edge > 0 else w2
-        dw = w2 if edge > 0 else w1
-        p_f = fw * (1 - dw) / (fw * (1 - dw) + dw * (1 - fw)) if (fw or dw) else 0.5
-        p_f = min(0.90, max(0.15, p_f))
-        # 1) LIVE BOOK LINE (OddsPapi/Pinnacle): fire on real pricing edge vs the book
-        book = op_match(op_lines.get(m['sport'], []), fav['name'], dog['name'])
-        if book:
-            dec_f, dec_d = book
-            vig_f, vig_d = 1 / dec_f, 1 / dec_d
-            p_book = vig_f / (vig_f + vig_d)
-            edge_b = p_f - p_book
-            if edge_b < 0.06:
+    async def _esp_cands(hours=4, notable=True, min_edge=0.2, need_form=True, max_pf=0.80, use_book=True):
+        """Esports edge candidates. Strict pass = all bars; FILL LAW passes relax them stepwise."""
+        out, ct = [], 0
+        for m in esp:
+            ok, t = _in_window(m['start'] or '', now_ts, hours)
+            if not ok or ct >= 10:
                 continue
-            ml_b = dec_to_ml(dec_f)
-            if ml_b is None or ml_b > 200 or ml_b < -400:
+            if notable and not any(k in (m['league'] or '') for k in SCAN_NOTABLE):
                 continue
-            cands.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': ml_b,
-                          'units': 1.5 if edge_b >= 0.12 else 1.0, 'edge': edge_b, 'start': t,
-                          'market': f"{league_s} Bo{m['bo'] or '?'}", 'prob': p_f,
-                          'team': fav['name'], 'opp': dog['name'], 'side': None,
-                          'reserve': ml_b < -150,
-                          'analysis': se_form_text(fav_f, dog_f, fav['name']) + f" — live Pinnacle line {ml_b:+d} (our {p_f:.0%} vs book {p_book:.0%})"})
-            continue
-        # 2) MODEL LINE fallback: log5 fair odds from recent-form win rates
-        if p_f > 0.80:
-            continue  # juicier than -400 — dead to us entirely (9.7.3 law)
-        ml_f = -round((100 * p_f / (1 - p_f)) / 5) * 5 if p_f >= 0.5 else round((100 * (1 - p_f) / p_f) / 5) * 5
-        cands.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': ml_f,
-                      'units': 1.5 if abs(edge) >= 0.4 else 1.0, 'edge': abs(edge), 'start': t,
-                      'market': f"{league_s} Bo{m['bo'] or '?'}", 'prob': p_f,
-                      'team': fav['name'], 'opp': dog['name'], 'side': None,
-                      'reserve': p_f > 0.60,
-                      'analysis': se_form_text(fav_f, dog_f, fav['name']) + f" — model line {ml_f:+d} (our {p_f:.0%})"})
+            f1 = await asyncio.to_thread(se_ps_form, m['t1']['id'], m['sport'])
+            f2 = await asyncio.to_thread(se_ps_form, m['t2']['id'], m['sport'])
+            ct += 1
+            if not f1 or not f2 or (need_form and (f1['w'] + f1['l'] < 3 or f2['w'] + f2['l'] < 3)):
+                continue
+            n1, n2 = f1['w'] + f1['l'], f2['w'] + f2['l']
+            w1 = f1['w'] / n1 if n1 else 0.5
+            w2 = f2['w'] / n2 if n2 else 0.5
+            edge = w1 - w2
+            if abs(edge) < min_edge:
+                continue
+            fav, dog = (m['t1'], m['t2']) if edge > 0 else (m['t2'], m['t1'])
+            fav_f, dog_f = (f1, f2) if edge > 0 else (f2, f1)
+            league_s = (m['league'] or '').split(' 20')[0][:22]
+            fw = w1 if edge > 0 else w2
+            dw = w2 if edge > 0 else w1
+            p_f = fw * (1 - dw) / (fw * (1 - dw) + dw * (1 - fw)) if (fw or dw) else 0.5
+            p_f = min(0.90, max(0.15, p_f))
+            if use_book:
+                book = op_match(op_lines.get(m['sport'], []), fav['name'], dog['name'])
+                if book:
+                    dec_f, dec_d = book
+                    vig_f, vig_d = 1 / dec_f, 1 / dec_d
+                    p_book = vig_f / (vig_f + vig_d)
+                    edge_b = p_f - p_book
+                    if edge_b < 0.06:
+                        continue
+                    ml_b = dec_to_ml(dec_f)
+                    if ml_b is None or ml_b > 200 or ml_b < -400:
+                        continue
+                    out.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': ml_b,
+                                'units': 1.5 if edge_b >= 0.12 else 1.0, 'edge': edge_b, 'start': t,
+                                'market': f"{league_s} Bo{m['bo'] or '?'}", 'prob': p_f,
+                                'team': fav['name'], 'opp': dog['name'], 'side': None,
+                                'reserve': ml_b < -150,
+                                'analysis': se_form_text(fav_f, dog_f, fav['name']) + f" — live Pinnacle line {ml_b:+d} (our {p_f:.0%} vs book {p_book:.0%})"})
+                    continue
+            if p_f > max_pf:
+                continue  # past the dead zone — never a pick even in fill mode (9.7.3 law holds)
+            ml_f = -round((100 * p_f / (1 - p_f)) / 5) * 5 if p_f >= 0.5 else round((100 * (1 - p_f) / p_f) / 5) * 5
+            out.append({'sport': m['sport'], 'pick': f"{fav['name']} ML", 'vs': dog['name'], 'odds': ml_f,
+                        'units': 1.5 if abs(edge) >= 0.4 else 1.0, 'edge': abs(edge), 'start': t,
+                        'market': f"{league_s} Bo{m['bo'] or '?'}", 'prob': p_f,
+                        'team': fav['name'], 'opp': dog['name'], 'side': None,
+                        'reserve': p_f > 0.60,
+                        'analysis': se_form_text(fav_f, dog_f, fav['name']) + f" — model line {ml_f:+d} (our {p_f:.0%})"})
+        return out
+    cands += await _esp_cands()
     if op_touched:
         try:
             await asyncio.to_thread(gh_put, 'bot_state.json', op_state, 'oddsPapi meta/budget')
@@ -4495,14 +4518,48 @@ async def scan_engine_run(g0, slot_key, dry):
     # ---- ODDS DISCIPLINE: juiced esports faves leave the straight pool, feed parlays
     reserves = [c for c in cands if c.get('reserve')]
     cands = [c for c in cands if not c.get('reserve')]
-    # ---- deal tiers (whale-first). PICKS LAW (owner, 2026-07-24): whale 6 / sharp 4 / lock 3 / free 1 per scan
-    deal = {'whale': cands[0:6], 'sharp': cands[6:10], 'lock': cands[10:13], 'free': cands[13:14]}
+    # ---- FILL LAW (owner decree 2026-07-25): every tier's quota fills EVERY scan.
+    # Bend OUR bars progressively — never invent games, never past the -400 dead zone.
+    QUOTA = (('whale', 6), ('sharp', 4), ('lock', 3), ('free', 1))
+    NEED = sum(q for _, q in QUOTA)
+    _pool_keys = lambda pool: {(c['pick'], c.get('vs')) for c in pool}
+    def _pool_dedupe(pool):
+        seen, out = set(), []
+        for c in sorted(pool, key=lambda x: -x['edge']):
+            k = (c['pick'], c.get('vs'))
+            if k in seen:
+                continue
+            seen.add(k); out.append(c)
+        return out
+    cands = _pool_dedupe(cands)
+    fill_steps = []
+    if len(cands) < NEED:
+        extra = [c for g in games for c in se_edges(g, now_ts, hours=8) if not c.get('reserve')]
+        if extra:
+            cands = _pool_dedupe(cands + extra); fill_steps.append('+8h window')
+    if len(cands) < NEED:
+        extra = [c for g in games for c in se_edges(g, now_ts, hours=8, min_edge=0.03) if not c.get('reserve')]
+        if extra:
+            cands = _pool_dedupe(cands + extra); fill_steps.append('edge bar 3%')
+    if len(cands) < NEED:
+        extra = [c for c in await _esp_cands(hours=8, notable=False, min_edge=0.12, need_form=False,
+                                             max_pf=0.85, use_book=False) if not c.get('reserve')]
+        if extra:
+            cands = _pool_dedupe(cands + extra); fill_steps.append('esports relaxed')
+    if len(cands) < NEED and reserves:
+        cands = _pool_dedupe(cands + reserves); fill_steps.append('juiced faves straightened')
+    if fill_steps:
+        print('FILL LAW bent:', ', '.join(fill_steps), f'-> pool {len(cands)}')
+    # ---- deal tiers (whale-first). PICKS LAW: whale 6 / sharp 4 / lock 3 / free 1 per scan
+    deal, _i = {}, 0
+    for _t, _q in QUOTA:
+        deal[_t] = cands[_i:_i + _q]; _i += _q
     # ---- PARLAY: deep slates deal one 2-3 leg parlay, rotated across the paid rooms
     parlay_built = None
     if len(cands) + len(reserves) >= 6:
         try:
             st_rot = await asyncio.to_thread(get_state) or {}
-            parlay_built, p_room = se_build_parlay(cands[14:] + reserves, st_rot.get('parlay_rot', 0))
+            parlay_built, p_room = se_build_parlay(cands[NEED:] + [r for r in reserves if (r['pick'], r.get('vs')) not in _pool_keys(cands)], st_rot.get('parlay_rot', 0))
             if parlay_built:
                 deal[p_room].append(parlay_built)
                 if not dry:  # dry sims never touch rotation state
@@ -4514,10 +4571,6 @@ async def scan_engine_run(g0, slot_key, dry):
     aware = await asyncio.to_thread(se_aware_live, time.strftime('%Y%m%d', time.gmtime()))
     if aware:
         slate_s += (' · ' if slate_s else '') + 'on radar: ' + ', '.join(aware)
-    if not cands:
-        await gen.send(f"⚠️ {tag}Thin window — checked {slate_s or 'all leagues'} plus esports: no edge plays in the next 4 hours. We don't force bets. Next sweep in 4h. ⚡" if not dry else
-                       f"{tag}would post thin-window resolution (checked: {slate_s})")
-        return
     picks_out = []
     slot_et = (datetime.datetime.utcfromtimestamp(now_ts) - datetime.timedelta(hours=4)).strftime('%I %p ET').lstrip('0')
     def _nxt_et():
@@ -4525,6 +4578,23 @@ async def scan_engine_run(g0, slot_key, dry):
         nxt = next((s for s in SCAN_SLOTS_UTC if s > h), 0)
         et = (nxt - 4) % 24
         return f"{et % 12 or 12} {'AM' if et < 12 else 'PM'} ET"
+    if not cands:
+        # FEED CATASTROPHE: full ladder ran and nothing exists. NEVER SILENT LAW — every room hears it.
+        alert = (f"⚠️ {tag}**FEED ALERT — {slot_et}**\n\nEvery source came back empty this window "
+                 f"(checked {slate_s or 'all leagues'} + esports, full fill ladder run). No games = no card — "
+                 f"the only excuse allowed. Full card next scan **{_nxt_et()}**. ⚡")
+        if not dry:
+            await gen.send(alert)
+            for _t2, _ch2 in SCAN_ROOMS.items():
+                _r2 = find_channel(g0, _ch2)
+                if _r2:
+                    try:
+                        await _r2.send(embed=discord.Embed(description=alert, color=TIER_COLORS[_t2]))
+                    except Exception:
+                        pass
+        else:
+            await gen.send(f"{tag}would post feed-alert resolution (checked: {slate_s})")
+        return
     def _why(p, rank):
         team = p['pick'][:-3] if p['pick'].endswith(' ML') else p['pick']
         edge_pct = round(p['edge'] * 100)
@@ -4549,6 +4619,9 @@ async def scan_engine_run(g0, slot_key, dry):
                 gw_ch2 = find_channel(g0, 'giveaway')
                 gw_ment2 = f"<#{gw_ch2.id}>" if gw_ch2 else 'the giveaway room'
                 await room.send(embed=discord.Embed(description=f"🎯 {tag}**FREE PICK — {slot_et}**\n\nNo free play this window — nothing met our edge bar, and we don't force bets.{extra} Next scan **{_nxt_et()}**.\n💎 [Every edge, every 4 hours — unlock the paid rooms](https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=discord_free) → {upg_ment}\n🎁 Sunday 6 PM ET — $50 SOL draw in {gw_ment2} ⚡", color=TIER_COLORS['free']))
+            else:
+                # NEVER SILENT LAW: paid rooms always hear something — quota shortfall is said out loud
+                await room.send(embed=discord.Embed(description=f"{emo} {tag}**{tier.upper()} ROOM — {slot_et}**\n\nThe slate ran dry even after the fill ladder — only {len(cands)} playable edges existed this window, and the bigger rooms got dealt first. Full quota next scan **{_nxt_et()}** — a short room never stands. ⚡", color=TIER_COLORS[tier]))
             continue
         lines = []
         for n, p in enumerate(plays, 1):
