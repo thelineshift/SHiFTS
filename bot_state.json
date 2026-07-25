@@ -10043,7 +10043,13 @@
       "market_slug": "aec-cs2-wc-mglz-2026-07-26",
       "outcome": "Wildcard",
       "status": "open",
-      "ts": "2026-07-25T23:11:00Z"
+      "ts": "2026-07-25T23:11:00Z",
+      "price_path": [
+        {
+          "ts": 1785021630,
+          "px": 0.33
+        }
+      ]
     },
     {
       "price": 0.58,
