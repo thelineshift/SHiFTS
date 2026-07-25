@@ -8182,10 +8182,6 @@
         {
           "ts": 1785000896,
           "px": 0.44
-        },
-        {
-          "ts": 1785003070,
-          "px": 0.43
         }
       ]
     },
@@ -8315,10 +8311,6 @@
         {
           "ts": 1785000897,
           "px": 0.47
-        },
-        {
-          "ts": 1785003070,
-          "px": 0.73
         }
       ]
     },
@@ -8334,7 +8326,7 @@
       "qty": 13,
       "market_slug": "aec-lol-kc-mkoi-2026-07-25",
       "outcome": "Karmine Corp",
-      "status": "unfilled",
+      "status": "open",
       "ts": "2026-07-25T11:15:50Z",
       "price_path": [
         {
@@ -8349,10 +8341,7 @@
           "ts": 1785000897,
           "px": 0.85
         }
-      ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      ]
     },
     {
       "price": 0.35,
@@ -8446,10 +8435,6 @@
         {
           "ts": 1785000897,
           "px": 0.37
-        },
-        {
-          "ts": 1785003071,
-          "px": 0.37
         }
       ]
     },
@@ -8467,13 +8452,7 @@
       "market_slug": "aec-lol-lll-png-2026-07-25",
       "outcome": "paiN Gaming",
       "status": "open",
-      "ts": "2026-07-25T18:02:41Z",
-      "price_path": [
-        {
-          "ts": 1785003071,
-          "px": 0.38
-        }
-      ]
+      "ts": "2026-07-25T18:02:41Z"
     },
     {
       "price": 0.59,
@@ -8488,13 +8467,7 @@
       "market_slug": "aec-lol-fly-ly-2026-07-25",
       "outcome": "FlyQuest",
       "status": "open",
-      "ts": "2026-07-25T18:02:42Z",
-      "price_path": [
-        {
-          "ts": 1785003071,
-          "px": 0.59
-        }
-      ]
+      "ts": "2026-07-25T18:02:42Z"
     },
     {
       "price": 0.44,
@@ -8509,13 +8482,7 @@
       "market_slug": "aec-lol-tt-edg-2026-07-26",
       "outcome": "ThunderTalk Gaming",
       "status": "open",
-      "ts": "2026-07-25T18:02:44Z",
-      "price_path": [
-        {
-          "ts": 1785003071,
-          "px": 0.44
-        }
-      ]
+      "ts": "2026-07-25T18:02:44Z"
     },
     {
       "price": 0.6,
@@ -8530,7 +8497,7 @@
       "qty": 8,
       "market_slug": "aec-lol-al-blg-2026-07-26",
       "outcome": "Bilibili Gaming",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T18:02:45Z"
     },
     {
@@ -8547,13 +8514,7 @@
       "market_slug": "aec-valorant-bbl-navi-2026-07-26",
       "outcome": "Natus Vincere",
       "status": "open",
-      "ts": "2026-07-25T18:02:46Z",
-      "price_path": [
-        {
-          "ts": 1785003072,
-          "px": 0.39
-        }
-      ]
+      "ts": "2026-07-25T18:02:46Z"
     },
     {
       "price": 0.79,
@@ -8568,13 +8529,7 @@
       "market_slug": "aec-valorant-g2-c9-2026-07-25",
       "outcome": "G2 Esports",
       "status": "open",
-      "ts": "2026-07-25T18:06:39Z",
-      "price_path": [
-        {
-          "ts": 1785003072,
-          "px": 0.79
-        }
-      ]
+      "ts": "2026-07-25T18:06:39Z"
     },
     {
       "price": 0.44,
@@ -8590,13 +8545,22 @@
       "market_slug": "aec-valorant-fpx-wol-2026-07-26",
       "outcome": "Wolves Esports",
       "status": "open",
-      "ts": "2026-07-25T18:06:40Z",
-      "price_path": [
-        {
-          "ts": 1785003072,
-          "px": 0.44
-        }
-      ]
+      "ts": "2026-07-25T18:06:40Z"
+    },
+    {
+      "price": 0.63,
+      "stake": 1.26,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727273,
+      "event": "BNK FEARX vs. Gen.G",
+      "ev_start": "2026-07-27T06:00:00Z",
+      "reason": "model 73% vs market 63% \u2014 10% edge, half-Kelly",
+      "order_id": "BFBG119909P5",
+      "qty": 2,
+      "market_slug": "aec-lol-bfx-gen-2026-07-27",
+      "outcome": "BNK FEARX",
+      "status": "open",
+      "ts": "2026-07-25T18:11:39Z"
     }
   ],
   "pm_stats": {
@@ -8604,7 +8568,7 @@
     "wins": 3,
     "losses": 7,
     "pnl": 6.06,
-    "trades": 25,
+    "trades": 26,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-18"
   },
