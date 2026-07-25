@@ -1,5 +1,5 @@
 {
- "seq": 426,
+ "seq": 427,
  "commands": [
   {
    "seq": 400,
@@ -156,6 +156,12 @@
    "path": "assets/giveaway_card_50x.png",
    "text": "\ud83c\udf81 $50 IN SOL \u2014 TWO WINNERS EVERY SUNDAY\n\n\u2705 Follow @SHiFTSPicks\n\u2764\ufe0f Like + \ud83d\udd01 repost this post\n\ud83c\udf9f\ufe0f Paid tiers stack to 5x tickets\n\nDrop your X handle in Discord #giveaway \u2014 type !entry for live status.\nDraw: Sunday 6 PM ET \u2014 be there or it redraws. \u26a1",
    "tag": "giveaway"
+  },
+  {
+   "seq": 427,
+   "action": "post_and_pin",
+   "channel": "giveaway",
+   "content": "\ud83c\udf81 **$50 IN SOL \u2014 TWO WINNERS \u2014 SUNDAY 6 PM ET**\n\nThe prize pool is UP \u2014 and the new giveaway post is live:\n\ud83d\udc49 https://x.com/SHiFTSPicks/status/2080960292889198604\n\n3 steps on THAT post: \u2705 Follow @SHiFTSPicks \u00b7 \u2764\ufe0f Like \u00b7 \ud83d\udd01 Repost\n(already liked/reposted the earlier post? It still counts \u2014 your steps carry over.)\n\nThen drop your **X handle** here \u2014 \u23f3 means steps pending, \u2705 means **you're fully entered**.\nType **!entry** anytime for your live checklist. Be in this channel at draw time, or it redraws. \u26a1"
   }
  ]
 }
