@@ -1416,10 +1416,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -137,
-        "away_ml": 114,
+        "home_ml": -142,
+        "away_ml": 118,
         "total": 8.0,
-        "ts": 1784995867
+        "ts": 1784997009
       }
     },
     {
@@ -1534,10 +1534,10 @@
       "homeTeam": "Boston Red Sox",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -109,
-        "away_ml": -110,
+        "home_ml": -111,
+        "away_ml": -108,
         "total": 7.5,
-        "ts": 1784988002
+        "ts": 1784997009
       }
     },
     {
@@ -1819,10 +1819,10 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -167,
-        "away_ml": 138,
+        "home_ml": -171,
+        "away_ml": 141,
         "total": 8.0,
-        "ts": 1784995868
+        "ts": 1784997010
       },
       "last_alert_odds": -162
     },
