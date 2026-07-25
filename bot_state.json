@@ -1,8 +1,13 @@
 {
-  "executed_seq": 463,
+  "executed_seq": 465,
   "last_log": [
-    "seq 463 executed 2026-07-25 20:21 UTC",
-    "scan_now executed (dry=False, slot=20260725-20-manual)"
+    "seq 465 executed 2026-07-25 20:34 UTC",
+    "#\ud83d\udc0bwhale-room-12-7 [20:01] \u26a1 **PLAY OF THE DAY**\n\n**[MLS] San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5u\n\ud83d\udd53 10:30 PM ET \u00b7 edge **23%",
+    "#\ud83d\udc0bwhale-room-12-7 [16:34] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**",
+    "#\ud83d\udc0bwhale-room-12-7 [16:30] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**",
+    "#\ud83d\udd12lock-room-5-11 [20:01] \u26a1 **PLAY OF THE DAY**\n\n**[MLS] San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5u\n\ud83d\udd53 10:30 PM ET \u00b7 edge **23%",
+    "#\ud83d\udd12lock-room-5-11 [16:00] \ud83d\udd12 **LOCK ROOM \u2014 12 PM ET CARD** (4 plays)\n\n1\u20e3 **Detroit Tigers -1.5 (-110)** vs Kansas City Royals \u2014 1.0u\nMLB ",
+    "#\ud83d\udd12lock-room-5-11 [12:01] \ud83d\udd12 **LOCK ROOM \u2014 8 AM ET CARD** (3 plays)\n\n1\u20e3 **Los Angeles Dodgers -1.5 (-110)** vs New York Mets \u2014 1.0u\nMLB \u00b7"
   ],
   "time_audit": {
     "at": "2026-07-25 20:27 UTC",
@@ -81,7 +86,7 @@
     "pod-20260725": "ok-bot",
     "20260725-20-manual": "ok-bot"
   },
-  "executed_cmd_seq": 463,
+  "executed_cmd_seq": 465,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
