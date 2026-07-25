@@ -1,8 +1,15 @@
 {
-  "executed_seq": 472,
+  "executed_seq": 476,
   "last_log": [
-    "seq 472 executed 2026-07-25 21:17 UTC",
-    "scan_now executed (dry=False, slot=20260725-21-manual)"
+    "seq 476 executed 2026-07-25 21:23 UTC",
+    "#\ud83d\udc0bwhale-room-12-7 [21:17] \ud83d\udc0b **WHALE ROOM \u2014 Sat 7/25 \u00b7 5 PM ET CARD** (6 plays)\n\n1\u20e3 **San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5",
+    "#\ud83d\udc0bwhale-room-12-7 [20:01] \u26a1 **PLAY OF THE DAY**\n\n**[MLS] San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5u\n\ud83d\udd53 10:30 PM ET \u00b7 edge **23%",
+    "#\ud83d\udccasharp-room-9-6 [21:17] \ud83d\udcca **SHARP ROOM \u2014 Sat 7/25 \u00b7 5 PM ET CARD** (5 plays)\n\n1\u20e3 **Los Angeles Dodgers -1.5 (-110)** vs New York Mets ",
+    "#\ud83d\udccasharp-room-9-6 [20:11] ",
+    "#\ud83d\udd12lock-room-5-11 [21:17] \ud83d\udd12 **LOCK ROOM \u2014 Sat 7/25 \u00b7 5 PM ET CARD** (3 plays)\n\n1\u20e3 **Milwaukee Brewers -1.5 (-110)** vs Colorado Rockies ",
+    "#\ud83d\udd12lock-room-5-11 [20:01] \u26a1 **PLAY OF THE DAY**\n\n**[MLS] San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5u\n\ud83d\udd53 10:30 PM ET \u00b7 edge **23%",
+    "#\ud83c\udfaffree-pick-11-2 [21:17] \ud83c\udfaf **FREE ROOM \u2014 Sat 7/25 \u00b7 5 PM ET CARD** (1 play)\n\n1\u20e3 **Chicago Cubs ML (+107)** vs Pittsburgh Pirates \u2014 1.0u",
+    "#\ud83c\udfaffree-pick-11-2 [16:00] \ud83c\udfaf **FREE ROOM \u2014 12 PM ET CARD** (1 play)\n\n1\u20e3 **Miami Marlins ML (-137)** vs San Diego Padres \u2014 1.0u\nMLB \u00b7 ML \u00b7"
   ],
   "time_audit": {
     "at": "2026-07-25 21:14 UTC",
@@ -74,7 +81,7 @@
     "20260725-20-manual": "ok-bot",
     "20260725-21-manual": "ok-bot"
   },
-  "executed_cmd_seq": 472,
+  "executed_cmd_seq": 476,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
