@@ -1,14 +1,8 @@
 {
-  "executed_seq": 453,
+  "executed_seq": 454,
   "last_log": [
-    "seq 453 executed 2026-07-25 19:14 UTC",
-    "renamed #\ud83d\udc0bwhale-deepdive -> \ud83d\udc0bweekly-deepdive",
-    "lock_channel OK: #\ud83d\udcc8shift-trades locked to paid tiers (lock/sharp/whale)",
-    "posted+pinned in #\ud83d\udc8eupgrade",
-    "topic set on #\ud83d\udd12lock-room-5-11",
-    "topic set on #\ud83d\udccasharp-room-9-6",
-    "topic set on #\ud83d\udc0bwhale-room-12-7",
-    "issue_pins: 0 pins, 0 DMs delivered"
+    "seq 454 executed 2026-07-25 19:22 UTC",
+    "#\ud83d\udcc8shift-trades overwrites:\n@everyone: view=False,send=None,threads=None,files=None\n\ud83d\udc0b Whale: view=True,send=None,threads=None,files=None\n\ud83d\udd12 Lock Room: view=True,send=None,threads=None,files=None\nshift: view=True,send=True,threads=None,files=True\n\ud83d\udcca Sharp: view=True,send=None,threads=None,files=None"
   ],
   "time_audit": {
     "at": "2026-07-25 18:40 UTC",
@@ -84,7 +78,7 @@
     "20260725-16": "ok-bot",
     "monthly-report": "2026-07-25"
   },
-  "executed_cmd_seq": 453,
+  "executed_cmd_seq": 454,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 17,
