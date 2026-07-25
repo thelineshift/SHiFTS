@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T19:38:04Z",
+  "updated": "2026-07-25T20:01:27Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1946,6 +1946,23 @@
       "analysis": "posted 8.0 vs 5.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side | \ud83d\udcb0 **Value hunt:** posted 8.0 vs 5.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side. The book shaded this line toward the publ",
       "awayTeam": "Detroit Tigers",
       "homeTeam": "Kansas City Royals"
+    },
+    {
+      "id": "under-9.5-0725",
+      "date": "2026-07-25",
+      "sport": "mlb",
+      "desc": "Under 9.5",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "04:05 PM ET",
+      "vs": "Arizona Diamondbacks @ Washington Nationals",
+      "team": "Washington Nationals",
+      "opp": "Arizona Diamondbacks",
+      "analysis": "posted 9.5 vs 5.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side | \ud83d\udcc8 **Market angle:** posted 9.5 vs 5.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side. The number's off by **10 points** \u2014 thi",
+      "awayTeam": "Washington Nationals",
+      "homeTeam": "Arizona Diamondbacks"
     }
   ]
 }
