@@ -1589,10 +1589,10 @@
       "awayTeam": "Charlotte FC",
       "homeTeam": "Red Bull New York",
       "live_odds": {
-        "home_ml": 115,
-        "away_ml": 185,
+        "home_ml": 120,
+        "away_ml": 180,
         "total": 3.5,
-        "ts": 1785010281
+        "ts": 1785017231
       }
     },
     {
@@ -1701,9 +1701,9 @@
       "awayTeam": "Colorado Rockies",
       "live_odds": {
         "home_ml": -244,
-        "away_ml": 198,
+        "away_ml": 197,
         "total": 9.0,
-        "ts": 1785011246
+        "ts": 1785017231
       },
       "last_alert_odds": -237
     },
@@ -2005,9 +2005,9 @@
       "awayTeam": "Colorado Rockies",
       "live_odds": {
         "home_ml": -244,
-        "away_ml": 198,
+        "away_ml": 197,
         "total": 9.0,
-        "ts": 1785011247
+        "ts": 1785017231
       }
     }
   ]
