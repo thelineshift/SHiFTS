@@ -1506,10 +1506,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -112,
-        "away_ml": -107,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 9.0,
-        "ts": 1784978040
+        "ts": 1784978721
       }
     },
     {
