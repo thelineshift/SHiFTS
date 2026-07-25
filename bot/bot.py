@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.16.0'
+BOT_VERSION = '9.16.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -423,12 +423,28 @@ def pm_place_bet(info, stake):
         if qty < 1:
             return {'error': 'no_liquidity'}
         stake = round(qty * price, 2)
-        r = _pm_client().orders.create({'marketSlug': info['marketSlug'], 'intent': 'ORDER_INTENT_BUY_LONG',
+        _intent = 'ORDER_INTENT_BUY_SHORT' if info.get('short') else 'ORDER_INTENT_BUY_LONG'
+        r = _pm_client().orders.create({'marketSlug': info['marketSlug'], 'intent': _intent,
                                         'type': 'ORDER_TYPE_LIMIT',
                                         'price': {'value': f"{price:.2f}", 'currency': 'USD'},
                                         'quantity': qty, 'tif': 'TIME_IN_FORCE_GOOD_TILL_CANCEL'})
         oid = (r or {}).get('orderId') or (r or {}).get('id') or ''
         return {'order_id': oid, 'qty': qty, 'price': price, 'stake': stake}
+    except Exception as e:
+        return {'error': str(e)[:160]}
+
+
+def pm_close_position(slug):
+    """Market-exit an open position (owner decree: full control — cash out, trim, abandon)."""
+    c = _pm_client()
+    if not c:
+        return {'error': 'no_client'}
+    try:
+        r = c.orders.close_position({'marketSlug': slug,
+                                     'manualOrderIndicator': 'MANUAL_ORDER_INDICATOR_AUTOMATIC',
+                                     'synchronousExecution': True, 'maxBlockTime': '10s',
+                                     'slippageTolerance': {'toleranceBps': 300}})
+        return {'ok': True, 'res': str(r)[:200]}
     except Exception as e:
         return {'error': str(e)[:160]}
 
@@ -2583,6 +2599,19 @@ async def run_command(cmd, guild, log):
                                         role: discord.PermissionOverwrite(view_channel=True)}
         ch = await guild.create_text_channel(cmd['name'], **kwargs)
         log.append(f'created #{ch.name}')
+    elif a == 'pm_close':
+        tgt = cmd.get('slug') or ''
+        if tgt == 'all':
+            slugs = sorted({t['market_slug'] for t in st.get('pm_trades', []) if t.get('status') == 'open'})
+        else:
+            slugs = [tgt]
+        for s2 in slugs:
+            res = await asyncio.to_thread(pm_close_position, s2)
+            log.append(f"pm_close {s2}: {res.get('error') or str(res.get('res'))[:140]}")
+            for t in st.get('pm_trades', []):
+                if t.get('market_slug') == s2 and t.get('status') == 'open':
+                    t['status'] = 'closed-manual'
+                    t['closed_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
     elif a == 'list_roles':
         log.append('ROLES: ' + ' | '.join(
             f'{r.name} (pos={r.position}, members={len(r.members)})'
@@ -3500,6 +3529,16 @@ def pm_trader_scan(st):
     except Exception as e:
         print('[trader] events:', e); return [], []
     evs = (r.get('events') if isinstance(r, dict) else r) or []
+    # 7/25 lesson: the generic list buries esports under futures+soccer — pull esports tags explicitly
+    for _tag in ('esports', 'cs2', 'valorant', 'lol', 'dota2'):
+        try:
+            r2 = c.events.list({'tagSlug': _tag, 'closed': False, 'limit': 50})
+            for e2 in (r2.get('events') if isinstance(r2, dict) else r2) or []:
+                _id2 = e2.get('id') or e2.get('eventId')
+                if _id2 and all((e.get('id') or e.get('eventId')) != _id2 for e in evs):
+                    evs.append(e2)
+        except Exception as _e2:
+            print('[trader] tag', _tag, str(_e2)[:80])
     intents, notes = [], []
     hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B}
     for ev in evs:
@@ -3525,6 +3564,9 @@ def pm_trader_scan(st):
             smt = str(m.get('sportsMarketType') or m.get('marketType') or '').lower()
             if 'winner' not in smt and 'moneyline' not in smt:
                 continue
+            _mslug = m.get('marketSlug') or m.get('slug') or ''
+            if re.search(r'-game\d+', _mslug):
+                continue  # esports game-1/2/3 markets: our model is match-level — wrong granularity, skip
             md = m.get('marketMetadata') if isinstance(m.get('marketMetadata'), dict) else {}
             sides = m.get('marketSides') or []
             long_side = next((s for s in sides if s.get('long')), sides[0] if sides else {})
@@ -3544,6 +3586,18 @@ def pm_trader_scan(st):
             slug = m.get('marketSlug') or m.get('slug') or ''
             if slug:
                 outcomes.append({'slug': slug, 'team': team, 'price': pr})
+                # esports single-market shape: the SHORT side of a match-winner market is the
+                # OPPONENT's contract (different team name) — collect it as a short buy.
+                # Soccer per-team markets carry the SAME team on the short side → skipped.
+                short_side = next((s for s in sides if not s.get('long')), None)
+                team2 = ((short_side.get('team') or {}).get('name')) or '' if short_side else ''
+                if team2 and team2 != team and short_side.get('tradable') is not False:
+                    try:
+                        pr2 = float((short_side.get('quote') or {}).get('value') or 0)
+                    except Exception:
+                        pr2 = 0
+                    if 0.005 < pr2 < 0.995:
+                        outcomes.append({'slug': slug, 'team': team2, 'price': pr2, 'short': True})
             else:
                 dropped_winner += 1
         if len(outcomes) < 2:
@@ -3894,7 +3948,8 @@ async def pm_trader():
                 res = await asyncio.to_thread(poly2_place, t['token'], t['stake'])
             else:
                 res = await asyncio.to_thread(pm_place_bet,
-                                              {'marketSlug': t['slug'], 'price': t['price'], 'minQty': 1}, t['stake'])
+                                              {'marketSlug': t['slug'], 'price': t['price'], 'minQty': 1,
+                                               'short': t.get('short')}, t['stake'])
             if 'order_id' not in res:
                 if t['kind'] == 'ARB':
                     bad_arb.add(t.get('event'))
@@ -5859,6 +5914,9 @@ async def scan_engine_run(g0, slot_key, dry):
                    'units': p['units'], 'tier': tier, 'time_et': _et(p['start']),
                    'vs': p.get('vs'), 'team': p.get('team'), 'opp': p.get('opp'),
                    'analysis': (p.get('analysis', '') + ' | ' + ('parlay — every leg cleared the edge bar' if p.get('parlay') else _why(p, rank_of.get(id(p), n)).replace('🧠 **Why it\'s the play:** ', '')))[:300]}
+            if isinstance(p.get('odds'), (int, float)) and 0 < abs(p['odds']) < 100:
+                print('ODDS GUARD: skipping corrupt line', p.get('pick'), p.get('odds'))
+                continue
             if p.get('prop'):
                 reg['prop'] = p['prop']
                 if p.get('eid'):
@@ -5970,7 +6028,7 @@ def ml_to_dec(ml):
 def dec_to_ml(dec):
     if not dec or dec <= 1:
         return None
-    return -round(100 / (dec - 1)) if dec >= 2 else round(100 * (dec - 1))
+    return round((dec - 1) * 100) if dec >= 2 else -round(100 / (dec - 1))  # 7/25: the condition was inverted — favorites showed as tiny +odds
 
 OP_KEY = os.environ.get('ODDSPAPI_KEY', '')
 OP_SPORT = {'cs2': 17, 'lol': 18, 'valorant': 61, 'dota2': 16}
