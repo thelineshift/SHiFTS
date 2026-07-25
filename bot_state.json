@@ -1,8 +1,19 @@
 {
-  "executed_seq": 487,
+  "executed_seq": 498,
   "last_log": [
-    "seq 487 executed 2026-07-25 21:47 UTC",
-    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+media.write+offline.access&state=1d2b182de15b19ed&code_challenge=xaOLFN423Roy4ddDKgFEKPmyUhpus_8oATEmW82hzfA&code_challenge_method=S256"
+    "seq 498 executed 2026-07-25 22:05 UTC",
+    "purged 12 messages in #\ud83d\udc0bweekly-deepdive",
+    "purged 3 messages in #\ud83d\udccasharp-analytics",
+    "posted+pinned in #\ud83d\udc0bweekly-deepdive",
+    "posted+pinned in #\ud83d\udccasharp-analytics",
+    "posted+pinned in #\ud83d\udd12lock-room-5-11",
+    "posted+pinned in #\ud83d\udccasharp-room-9-6",
+    "old pinned message deleted",
+    "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)",
+    "topic set on #\ud83d\udd12lock-room-5-11",
+    "topic set on #\ud83d\udccasharp-room-9-6",
+    "topic set on #\ud83d\udc0bwhale-room-12-7",
+    "x_bio OK"
   ],
   "time_audit": {
     "at": "2026-07-25 21:27 UTC",
@@ -74,7 +85,7 @@
     "20260725-20-manual": "ok-bot",
     "20260725-21-manual": "ok-bot"
   },
-  "executed_cmd_seq": 487,
+  "executed_cmd_seq": 498,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
