@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.16.9'
+BOT_VERSION = '9.17.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3997,6 +3997,108 @@ def poly2_scan(st):
     notes.append(hb)
     return intents, notes
 
+def desk_by_kind(trades):
+    """Settled W-L(-P) breakdown per playbook kind."""
+    kk = {}
+    for t in trades:
+        if t.get('status') not in ('won', 'lost', 'push'):
+            continue
+        k = t.get('kind') or 'EDGE'
+        w, l, p = kk.get(k, (0, 0, 0))
+        if t['status'] == 'won':
+            w += 1
+        elif t['status'] == 'lost':
+            l += 1
+        else:
+            p += 1
+        kk[k] = (w, l, p)
+    order = ('ARB', 'EDGE', 'LIVE-BET', 'TAIL', 'LEGACY')
+    return ' · '.join(f"{k} {kk[k][0]}-{kk[k][1]}" + (f"-{kk[k][2]}" if kk[k][2] else '')
+                     for k in order if k in kk) or '—'
+
+
+def desk_recap_text(st, bal, open_n):
+    """Reformatted desk recap: record, rate, P&L, ROI, playbook split, lesson, links."""
+    stats = st.get('pm_stats', {})
+    w, l, p = stats.get('wins', 0), stats.get('losses', 0), stats.get('pushes', 0)
+    trades = stats.get('trades', 0)
+    pnl = stats.get('pnl', 0.0)
+    settled = w + l
+    wr = (w / settled * 100) if settled else 0.0
+    roi = (pnl / TRADER_BANK_START * 100) if TRADER_BANK_START else 0.0
+    rec = f"{w}-{l}" + (f"-{p}" if p else '')
+    lines = [f"📈 **SHiFT DESK — {time.strftime('%Y-%m-%d · %H:%M UTC')}**",
+             f"Record **{rec}** · win rate **{wr:.0f}%** · trades **{trades}** · open **{open_n}**",
+             f"P&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** on ${TRADER_BANK_START:.0f} · ROI **{'+' if roi >= 0 else ''}{roi:.0f}%**"
+             + (f" · roll **${bal['balance']:.2f}**" if bal else ''),
+             f"Playbooks: {desk_by_kind(st.get('pm_trades', []))}"]
+    if st.get('pm_lessons'):
+        lines.append(f"🔬 Latest lesson: _{st['pm_lessons'][-1]['lesson']}_")
+    lines.append("SHiFT desk on Polymarket US — profit is the only law. ⚡")
+    lines.append(f"🖥️ {DESK_LINK} · 💎 {STORE_PAGE}")
+    return '\n'.join(lines)
+
+
+def desk_pnl_png(st, stats):
+    """Cumulative desk P&L chart (1200x630 PNG bytes). Pure PIL, dark brand theme."""
+    from PIL import Image, ImageDraw, ImageFont
+    import io as _io
+    W, H = 1200, 630
+    bg, teal, txt, dim = (10, 14, 22), (45, 226, 196), (235, 240, 245), (140, 155, 170)
+    up, dn = (46, 204, 113), (231, 76, 60)
+    def _font(sz, bold=True):
+        paths = (('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', '/usr/share/fonts/DejaVuSans-Bold.ttf')
+                 if bold else ('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', '/usr/share/fonts/DejaVuSans.ttf'))
+        for path in paths:
+            try:
+                return ImageFont.truetype(path, sz)
+            except Exception:
+                continue
+        return ImageFont.load_default()
+    f_sm, f_md, f_lg = _font(24, False), _font(36), _font(56)
+    settled = sorted((t for t in st.get('pm_trades', []) if t.get('settled') and t.get('pnl') is not None),
+                     key=lambda t: t['settled'])
+    curve = [0.0]
+    for t in settled:
+        curve.append(curve[-1] + float(t['pnl']))
+    img = Image.new('RGB', (W, H), bg)
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, 12, H], fill=teal)
+    d.rectangle([12, 0, W, 6], fill=teal)
+    d.text((48, 36), 'SHiFT DESK — P&L', font=f_lg, fill=txt)
+    pnl = stats.get('pnl', 0.0)
+    w_, l_ = stats.get('wins', 0), stats.get('losses', 0)
+    d.text((48, 108), f"Record {w_}-{l_}   P&L {'+' if pnl >= 0 else ''}${pnl:.2f}   on ${TRADER_BANK_START:.0f} bank",
+           font=f_md, fill=(up if pnl >= 0 else dn))
+    # plot area
+    x0, x1, y0, y1 = 70, W - 60, 190, H - 90
+    lo, hi = min(curve + [0.0]), max(curve + [0.0])
+    rng = (hi - lo) or 1.0
+    hi += rng * 0.12; lo -= rng * 0.12; rng = hi - lo
+    def _y(v):
+        return y1 - (v - lo) / rng * (y1 - y0)
+    def _x(i):
+        return x0 + (i / max(1, len(curve) - 1)) * (x1 - x0)
+    # grid + zero line
+    for gy in (hi - rng * 0.25, hi - rng * 0.5, hi - rng * 0.75):
+        d.line([x0, _y(gy), x1, _y(gy)], fill=(28, 36, 48), width=1)
+    d.line([x0, _y(0), x1, _y(0)], fill=(70, 84, 100), width=2)
+    if len(curve) > 1:
+        pts = [(_x(i), _y(v)) for i, v in enumerate(curve)]
+        d.polygon(pts + [(pts[-1][0], _y(0)), (pts[0][0], _y(0))], fill=(20, 60, 54) if pnl >= 0 else (64, 26, 22))
+        d.line(pts, fill=(up if pnl >= 0 else dn), width=4, joint='curve')
+        d.ellipse([pts[-1][0] - 8, pts[-1][1] - 8, pts[-1][0] + 8, pts[-1][1] + 8], fill=(up if pnl >= 0 else dn))
+        imin, imax = curve.index(min(curve)), curve.index(max(curve))
+        d.text((_x(imin) - 20, _y(min(curve)) + 12), f"{min(curve):+.2f}", font=f_sm, fill=dn)
+        d.text((_x(imax) - 20, _y(max(curve)) - 34), f"{max(curve):+.2f}", font=f_sm, fill=up)
+    else:
+        d.text((W // 2 - 260, (y0 + y1) // 2), 'curve builds as positions settle', font=f_md, fill=dim)
+    d.text((48, H - 56), 'Polymarket US · profit is the only law ⚡', font=f_sm, fill=dim)
+    buf = _io.BytesIO()
+    img.save(buf, format='PNG')
+    return buf.getvalue()
+
+
 @tasks.loop(seconds=300)
 async def pm_trader():
     """Always scanning. Entries to the desk channel; exits + P&L via pm_watch."""
@@ -4055,36 +4157,55 @@ async def pm_trader():
         if placed:
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm trader entries')
         # entries stay ledger-only (revert: whale room untouched by desk traffic)
-        # ---- daily desk recap, 8 AM ET ----
+        # ---- desk recap: shift-trades every 2h, X once a day at 8 AM ET ----
         et_now = time.gmtime(time.time() - 4 * 3600)
         today_et = time.strftime('%Y-%m-%d', et_now)
+        hour_key = time.strftime('%Y-%m-%d-%H', time.gmtime())
         stats = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
-        if et_now.tm_hour == 8 and stats.get('last_recap') != today_et:
-            stats['last_recap'] = today_et
+        if time.gmtime().tm_hour % 2 == 0 and stats.get('last_recap_hour') != hour_key:
+            stats['last_recap_hour'] = hour_key
             bal = await asyncio.to_thread(pm_cash_balance)
             open_n = len([t for t in st.get('pm_trades', []) if t.get('status') == 'open'])
-            pnl = stats.get('pnl', 0.0)
-            recap = (f"📈 **DESK RECAP — {today_et}**\n"
-                     f"Record **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · trades {stats.get('trades', 0)} · "
-                     f"open {open_n}\nP&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** on ${TRADER_BANK_START:.0f} "
-                     + (f"· bankroll **${bal['balance']:.2f}**\n" if bal else "\n")
-                     + (f"🔬 Latest lesson: _{st['pm_lessons'][-1]['lesson']}_\n" if st.get('pm_lessons') else '')
-                     + f"SHiFT desk on Polymarket US — model edge, sum-arb, tail yield, live divergence. Profit is the only law. ⚡\n🖥️ Desk home: {DESK_LINK}")
+            recap = desk_recap_text(st, bal, open_n)
             ch2 = await trader_channel(g0)
             if ch2:
                 try:
-                    await ch2.send(recap)
+                    import io as _io5
+                    graph = await asyncio.to_thread(desk_pnl_png, st, stats)
+                    await ch2.send(recap, file=discord.File(_io5.BytesIO(graph), filename='desk_pnl.png'))
+                except Exception as _ge:
+                    print('[trader] recap graph:', _ge)
+                    try:
+                        await ch2.send(recap)
+                    except Exception:
+                        pass
+            # public desk feed for the site dashboard
+            try:
+                settled = [t for t in st.get('pm_trades', []) if t.get('status') in ('won', 'lost', 'push')]
+                desk_doc = {'updated': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                            'record': f"{stats.get('wins', 0)}-{stats.get('losses', 0)}",
+                            'trades': stats.get('trades', 0), 'open': open_n,
+                            'pnl': round(stats.get('pnl', 0.0), 2), 'bank': TRADER_BANK_START,
+                            'balance': round(bal['balance'], 2) if bal else None,
+                            'playbooks': desk_by_kind(st.get('pm_trades', [])),
+                            'recent': [{'outcome': t.get('outcome'), 'result': t.get('status'),
+                                        'pnl': round(float(t.get('pnl') or 0), 2)} for t in settled[-6:]],
+                            'link': DESK_LINK, 'store': STORE_PAGE}
+                await asyncio.to_thread(gh_put, 'desk.json', desk_doc, 'desk stats update', 'main')
+            except Exception as _de:
+                print('[trader] desk.json:', _de)
+            if et_now.tm_hour == 8 and stats.get('last_recap') != today_et:
+                stats['last_recap'] = today_et
+                pnl = stats.get('pnl', 0.0)
+                xt_recap = (f"📈 SHiFT DESK — {today_et}\n"
+                            f"{stats.get('wins', 0)}-{stats.get('losses', 0)} · trades {stats.get('trades', 0)} · open {open_n}\n"
+                            f"P&L {'+' if pnl >= 0 else ''}${pnl:.2f} on ${TRADER_BANK_START:.0f}"
+                            + (f" · roll ${bal['balance']:.2f}" if bal else '')
+                            + f"\nSHiFT desk on Polymarket US — profit is the only law. ⚡\n🖥️ {DESK_LINK}")
+                try:
+                    await asyncio.to_thread(x_post, xt_recap[:270], None)
                 except Exception:
                     pass
-            xt_recap = (f"📈 SHiFT DESK — {today_et}\n"
-                        f"{stats.get('wins', 0)}-{stats.get('losses', 0)} · trades {stats.get('trades', 0)} · open {open_n}\n"
-                        f"P&L {'+' if pnl >= 0 else ''}${pnl:.2f} on ${TRADER_BANK_START:.0f}"
-                        + (f" · roll ${bal['balance']:.2f}" if bal else '')
-                        + f"\nSHiFT desk on Polymarket US — profit is the only law. ⚡\n🖥️ {DESK_LINK}")
-            try:
-                await asyncio.to_thread(x_post, xt_recap[:270], None)
-            except Exception:
-                pass
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'desk recap')
     except Exception as e:
         print('[trader]', e)
