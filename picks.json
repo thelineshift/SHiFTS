@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T12:02:01Z",
+  "updated": "2026-07-25T12:50:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1892,7 +1892,10 @@
       "opp": "Fukuoka SoftBank Hawks Gaming",
       "analysis": "3-2 last 5 (beat Top Esports, Deep Cross Gaming, Deep Cross Gaming) (lost to LYON) vs 0-5 \u2014 live Pinnacle line +22 (our 90% vs book 75%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Top Esports, Deep Cross Gaming, Deep Cross Gaming) (lost to LYON) vs 0-5 \u2014 live Pinnacle line +22 (our 90% vs book 75%). Ri",
       "awayTeam": "Team Secret Whales",
-      "homeTeam": "Fukuoka SoftBank Hawks Gaming"
+      "homeTeam": "Fukuoka SoftBank Hawks Gaming",
+      "result": "WIN",
+      "units_result": 0.33,
+      "score": "Team Secret Whales 2-0 Fukuoka SoftBank Hawks Gaming \u00b7 final"
     },
     {
       "id": "saw-youngsters-ml-0725",
