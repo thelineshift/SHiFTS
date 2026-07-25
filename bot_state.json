@@ -1,12 +1,9 @@
 {
-  "executed_seq": 462,
+  "executed_seq": 459,
   "last_log": [
-    "seq 462 executed 2026-07-25 19:59 UTC",
-    "x_post_text OK: id 2081107168074600802",
-    "x_post_text OK: id 2081107170607894734",
-    "old pinned message deleted",
-    "old pinned message deleted",
-    "replaced pin in #\ud83d\udc8eupgrade (unpinned 2)"
+    "seq 459 executed 2026-07-25 19:49 UTC",
+    "x_post_text OK: id None",
+    "x_post_text OK: id None"
   ],
   "time_audit": {
     "at": "2026-07-25 19:52 UTC",
@@ -82,7 +79,7 @@
     "20260725-16": "ok-bot",
     "monthly-report": "2026-07-25"
   },
-  "executed_cmd_seq": 462,
+  "executed_cmd_seq": 459,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
@@ -8005,6 +8002,43 @@
             }
           ]
         }
+      },
+      "cs2:133125": {
+        "ts": 1785009614.1114075,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Project 91"
+            },
+            {
+              "won": false,
+              "opp": "Fire Flux Esports"
+            },
+            {
+              "won": false,
+              "opp": "BET-M 33"
+            },
+            {
+              "won": false,
+              "opp": "ARCRED"
+            },
+            {
+              "won": true,
+              "opp": "BET-M 33"
+            }
+          ]
+        }
+      },
+      "cs2:139005": {
+        "ts": 1785009614.7354462,
+        "f": {
+          "w": 0,
+          "l": 0,
+          "res": []
+        }
       }
     }
   },
@@ -8802,10 +8836,6 @@
         {
           "ts": 1785007089,
           "px": 0.72
-        },
-        {
-          "ts": 1785009602,
-          "px": 0.72
         }
       ]
     },
@@ -8832,10 +8862,6 @@
         {
           "ts": 1785007089,
           "px": 0.44
-        },
-        {
-          "ts": 1785009602,
-          "px": 0.44
         }
       ]
     },
@@ -8856,10 +8882,6 @@
       "price_path": [
         {
           "ts": 1785007089,
-          "px": 0.72
-        },
-        {
-          "ts": 1785009603,
           "px": 0.72
         }
       ]
@@ -8883,10 +8905,6 @@
         {
           "ts": 1785007090,
           "px": 0.43
-        },
-        {
-          "ts": 1785009603,
-          "px": 0.43
         }
       ]
     },
@@ -8908,10 +8926,6 @@
       "price_path": [
         {
           "ts": 1785007090,
-          "px": 0.2
-        },
-        {
-          "ts": 1785009603,
           "px": 0.2
         }
       ]
@@ -8978,7 +8992,7 @@
     "pnl": 6.06,
     "trades": 35,
     "last_recap": "2026-07-25",
-    "last_recap_hour": "2026-07-25-18"
+    "last_recap_hour": "2026-07-25-20"
   },
   "x_purge_complete": 1784945845.0521848,
   "pm_lessons": [
