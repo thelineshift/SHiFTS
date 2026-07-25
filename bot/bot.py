@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.21.7'
+BOT_VERSION = '9.21.8'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -6646,10 +6646,8 @@ async def teaser_watch():
                     print('[teaser] x ad queued for', _best[2])
             except Exception as _ae:
                 print('x ad build:', _ae)
-        if now.tm_wday == 5 and now.tm_hour == 16 and tz.get('deepdive_fired') != today.isoformat():
-            tz['deepdive_fired'] = today.isoformat()
-            _dirty = True
-            await monthly_deep_dive(guild, state, days=7)  # owner decree: deep-dive is WEEKLY now
+        # RETIRED v9.21.8: old 16:00 UTC deep-dive gate double-fired alongside the new
+        # weekly_deepdive_watch engine (Saturday 20:00 UTC, full autopsy + charts). One engine only.
         if now.tm_hour != 12:
             if _dirty:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'report fired')
