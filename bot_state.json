@@ -5,28 +5,28 @@
     "ROLES: LineShift Bot (pos=6, members=1) | \ud83d\udc0b Whale (pos=4, members=0) | \ud83d\udcca Sharp (pos=3, members=0) | \ud83d\udd12 Lock Room (pos=2, members=0) | \ud83d\udef0\ufe0f Scan Alerts (pos=1, members=0) | @everyone (pos=0, members=42)"
   ],
   "time_audit": {
-    "at": "2026-07-25 02:13 UTC",
+    "at": "2026-07-25 01:43 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-1": "2026-07-25 01:08 UTC",
-    "\ud83e\uddfereceipts": "2026-07-25 02:03 UTC",
+    "\ud83e\uddfereceipts": "2026-07-25 01:23 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-25 01:08 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-25 00:19 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 02:13 UTC",
+    "at": "2026-07-25 01:43 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 02:13 UTC",
+    "at": "2026-07-25 01:43 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 02:13 UTC",
+    "at": "2026-07-25 01:43 UTC",
     "flags": []
   },
   "bot_version": "9.14.2",
@@ -2186,8 +2186,12 @@
       "qty": 27,
       "market_slug": "atc-nwsl-das-bay-2026-07-24-das",
       "outcome": "Houston Dash",
-      "status": "open",
-      "ts": "2026-07-25T01:36:53Z"
+      "status": "settled",
+      "ts": "2026-07-25T01:36:53Z",
+      "result": "WIN",
+      "payout": 27.0,
+      "settled_at": "2026-07-25T02:13:24Z",
+      "pnl": 19.17
     },
     {
       "price": 0.26,
@@ -2202,8 +2206,12 @@
       "qty": 26,
       "market_slug": "atc-nwsl-das-bay-2026-07-24-bay",
       "outcome": "Bay FC",
-      "status": "open",
-      "ts": "2026-07-25T01:36:55Z"
+      "status": "settled",
+      "ts": "2026-07-25T01:36:55Z",
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-25T02:13:28Z",
+      "pnl": -6.76
     },
     {
       "price": 0.52,
@@ -2218,8 +2226,12 @@
       "qty": 23,
       "market_slug": "atc-nwsl-pri-chi-2026-07-24-pri",
       "outcome": "Orlando Pride",
-      "status": "open",
-      "ts": "2026-07-25T01:36:56Z"
+      "status": "settled",
+      "ts": "2026-07-25T01:36:56Z",
+      "result": "WIN",
+      "payout": 23.0,
+      "settled_at": "2026-07-25T02:13:31Z",
+      "pnl": 11.04
     },
     {
       "price": 0.05,
@@ -2240,9 +2252,9 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 0,
-    "losses": 0,
-    "pnl": 0.0,
+    "wins": 2,
+    "losses": 1,
+    "pnl": 23.45,
     "trades": 6
   }
 }
