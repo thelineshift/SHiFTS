@@ -50,6 +50,13 @@
   .note b{color:var(--txt)}
   .steps{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:18px}
   .step{font-size:13px;color:var(--dim)} .step b{display:block;font-size:20px;margin-bottom:4px}
+  .warroom{margin-top:40px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;grid-template-columns:1fr 1.2fr;gap:22px;align-items:center}
+  .warroom h3{font-size:20px;margin-bottom:10px;color:var(--teal)}
+  .warroom p{color:var(--dim);font-size:14px;line-height:1.65;margin-bottom:10px}
+  .warroom p b{color:var(--txt)}
+  .warroom .wr-note{font-size:13px}
+  .warroom img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+  @media(max-width:800px){.warroom{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -146,6 +153,17 @@
         <a class="buy alt" href="https://buy.stripe.com/6oU00ick06Kc4Mb6d3bMQ08">or $24.99/week — same room, same trial →</a>
       </div>
     </div>
+  </div>
+
+  
+  <div class="warroom">
+    <div class="wr-copy">
+      <h3>🐋 THE WAR ROOM — your live command center</h3>
+      <p>Every paid member gets a private <b>PIN dashboard</b>: your rooms' cards split <b>live / tonight / finals</b>, weekly · monthly · yearly <b>records</b>, and the <b>SHiFT Guarantee tracker</b> built in.</p>
+      <p><b>Whale members additionally unlock the Trading Floor</b> — SHiFT's open Polymarket positions, entries, exits &amp; running P&amp;L, updated in real time. This screenshot is the actual product, not a mockup.</p>
+      <p class="wr-note">🛡️ <b>Guarantee proof:</b> every pick is timestamped in the public ledger — receipts channel + GitHub history, so the tally can't be cooked. Red first month? The free month applies <b>automatically</b>. No forms, no asking.</p>
+    </div>
+    <a class="wr-img" href="https://thelineshift.github.io/SHiFTS/dashboard.html"><img src="https://thelineshift.github.io/SHiFTS/assets/warroom_preview.png" alt="The War Room — SHiFT's Picks member dashboard"></a>
   </div>
 
   <div class="steps">
