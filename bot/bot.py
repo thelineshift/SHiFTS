@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.16.5'
+BOT_VERSION = '9.16.6'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3299,6 +3299,7 @@ def _desk_room(B, expo, expo0=0.0):
     cash_left = B - max(0.0, expo - expo0)
     return cash_left - TRADER_MIN_LIQUID * (B + expo0)
 TRADE_CHAN = 'shift-trades'
+DESK_LINK = 'https://polymarket.us'  # the desk's public home — recap links here (no-spam decree)
 
 
 # ---------- THE ODDS API — PLAYER PROPS FEED (owner-funded free tier, 2026-07-25) ----------
@@ -3776,7 +3777,7 @@ async def trader_channel(g0):
     if not ch:
         try:
             ch = await g0.create_text_channel('📈shift-trades',
-                topic='SHiFT trading desk — live Polymarket US entries, exits & results. Talk trades here. ⚡')
+                topic='SHiFT trading desk — autonomous on Polymarket US. Daily recap + record here, full detail in the Whale room. ⚡')
             print('[trader] created #shift-trades')
         except Exception as e:
             print('[trader] channel:', e)
@@ -4012,8 +4013,8 @@ async def pm_trader():
                   f"expo ${ghb.get('expo', 0):.2f}/${ghb.get('B', 0):.2f}{' · COLD' if ghb.get('cold') else ''}")
             intents += g_intents
         g0 = client.guilds[0] if client.guilds else None
-        ch = await trader_channel(g0) if intents else None
         placed = False
+        placed_lines = []  # NO-SPAM DECREE: entries batch into one Whale digest, never per-bet public posts
         bad_arb = set()  # an arb with a failed leg is naked risk — abort its remaining legs
         for t in intents:
             if t['kind'] == 'ARB' and t.get('event') in bad_arb:
@@ -4047,19 +4048,18 @@ async def pm_trader():
             placed = True
             stats = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
             stats['trades'] = stats.get('trades', 0) + 1
-            if ch:
-                try:
-                    import io as _io4
-                    slip = await asyncio.to_thread(pm_slip_png, _trade_slip(t), t['kind'],
-                                                   None, 'SHiFT TRADING DESK — ENTRY')
-                    await ch.send(f"📈 **ENTRY — {t['kind']}:** **{t['outcome']}** @ {t['price']:.2f} × {t['qty']} "
-                                  f"(${t['stake']:.2f})\n_{t['reason']}_",
-                                  file=discord.File(_io4.BytesIO(slip), filename='entry.png'))
-                except Exception as se:
-                    print('[trader] entry post:', se)
+            placed_lines.append(f"• **{t['kind']}** — **{t['outcome']}** @ {t['price']:.2f} × {t['qty']} (${t['stake']:.2f})\n  _{t['reason']}_")
             await asyncio.sleep(1)
         if placed:
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm trader entries')
+        if placed_lines and g0:
+            try:
+                wrm = find_channel(g0, SCAN_ROOMS['whale'])
+                if wrm:
+                    await wrm.send("📈 **DESK INTEL — the fund just traded:**\n" + '\n'.join(placed_lines)[:1700]
+                                   + f"\nRecord **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · P&L **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}** · 🖥️ {DESK_LINK}")
+            except Exception as se:
+                print('[trader] whale digest:', se)
         # ---- daily desk recap, 8 AM ET ----
         et_now = time.gmtime(time.time() - 4 * 3600)
         today_et = time.strftime('%Y-%m-%d', et_now)
@@ -4074,15 +4074,20 @@ async def pm_trader():
                      f"open {open_n}\nP&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** on ${TRADER_BANK_START:.0f} "
                      + (f"· bankroll **${bal['balance']:.2f}**\n" if bal else "\n")
                      + (f"🔬 Latest lesson: _{st['pm_lessons'][-1]['lesson']}_\n" if st.get('pm_lessons') else '')
-                     + "Autonomous on Polymarket US — model edge, sum-arb, tail yield, live divergence. Profit is the only law. ⚡")
+                     + f"Autonomous on Polymarket US — model edge, sum-arb, tail yield, live divergence. Profit is the only law. ⚡\n🖥️ Desk home: {DESK_LINK}")
             ch2 = await trader_channel(g0)
             if ch2:
                 try:
                     await ch2.send(recap)
                 except Exception:
                     pass
+            xt_recap = (f"📈 SHiFT DESK — {today_et}\n"
+                        f"{stats.get('wins', 0)}-{stats.get('losses', 0)} · trades {stats.get('trades', 0)} · open {open_n}\n"
+                        f"P&L {'+' if pnl >= 0 else ''}${pnl:.2f} on ${TRADER_BANK_START:.0f}"
+                        + (f" · roll ${bal['balance']:.2f}" if bal else '')
+                        + f"\nAutonomous on Polymarket US — profit is the only law. ⚡\n🖥️ {DESK_LINK}")
             try:
-                await asyncio.to_thread(x_post, recap.replace('**', '').replace('\n', chr(10))[:270], None)
+                await asyncio.to_thread(x_post, xt_recap[:270], None)
             except Exception:
                 pass
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'desk recap')
@@ -4101,7 +4106,7 @@ async def pm_watch():
         return
     guild = client.guilds[0] if client.guilds else None
     ch = find_channel(guild, 'receipts') if guild else None
-    desk = await trader_channel(guild) if (guild and open_trades) else None
+    desk = find_channel(guild, SCAN_ROOMS['whale']) if (guild and open_trades) else None  # NO-SPAM DECREE: desk intel lives in Whale
     changed = False
 
     # ---- desk trades ----
@@ -4149,27 +4154,8 @@ async def pm_watch():
                     await desk.send(line)
             except Exception:
                 pass
-        xt = (f"📈 SHiFT desk — {t['outcome']} @ {t['price']:.2f} {em} {res['result']} {sign}\n"
-              f"{stats.get('wins', 0)}-{stats.get('losses', 0)} · P&L {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}"
-              + (f" · roll ${bal['balance']:.2f}" if bal else '')
-              + f"\nAutonomous on Polymarket US. Receipts don't lie.\n"
-              + f"Join: https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=x_{time.strftime('%Y%m%d', time.gmtime())}")
-        if len(xt) > 270:
-            xt = xt[:267] + '...'
-        try:
-            posted_x = False
-            if slip:
-                try:
-                    _up = await asyncio.to_thread(x_upload_media_oauth1, slip, 'desk.png')
-                    if _up and _up[1]:
-                        await asyncio.to_thread(x_post_media_oauth1, xt, _up[1])
-                        posted_x = True
-                except Exception as xe:
-                    print(f"[desk] x media: {xe}")
-            if not posted_x:
-                await asyncio.to_thread(x_post, xt, None)
-        except Exception as xe:
-            print(f"[desk] x result: {xe}")
+        # NO-SPAM DECREE (2026-07-25): no per-result X posts — the daily recap carries the record + desk link.
+
         changed = True
         await asyncio.sleep(1)
 
@@ -4218,26 +4204,8 @@ async def pm_watch():
                         await desk.send(line)
                 except Exception:
                     pass
-            xt = (f"🌐 SHiFT desk — {t['outcome']} @ {t['price']:.2f} {em} {res['result']} {sign}\n"
-                  f"{stats2.get('wins', 0)}-{stats2.get('losses', 0)} · P&L {'+' if stats2.get('pnl', 0) >= 0 else ''}${stats2.get('pnl', 0):.2f}\n"
-                  f"Autonomous on Polymarket. Receipts don't lie.\n"
-                  f"Join: https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=x_{time.strftime('%Y%m%d', time.gmtime())}")
-            if len(xt) > 270:
-                xt = xt[:267] + '...'
-            try:
-                posted_x = False
-                if slip:
-                    try:
-                        _up = await asyncio.to_thread(x_upload_media_oauth1, slip, 'desk.png')
-                        if _up and _up[1]:
-                            await asyncio.to_thread(x_post_media_oauth1, xt, _up[1])
-                            posted_x = True
-                    except Exception as xe:
-                        print(f"[desk] x media: {xe}")
-                if not posted_x:
-                    await asyncio.to_thread(x_post, xt, None)
-            except Exception as xe:
-                print(f"[desk] x result: {xe}")
+            # NO-SPAM DECREE: global rail follows the same law — recap carries the record.
+
             changed = True
             await asyncio.sleep(1)
 
