@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.15.3'
+BOT_VERSION = '9.15.4'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -5618,6 +5618,39 @@ async def scan_engine_run(g0, slot_key, dry):
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'bot scan ok')
         except Exception as e:
             print('se state fail:', e)
+    # ---- PLAY OF THE DAY (owner decree 2026-07-25): the single highest-edge play, 4 PM ET daily.
+    # Full play in the paid rooms (tier integrity); teaser + X beat everywhere else.
+    if not dry and int(slot_key.split('-')[1]) == 20:
+        try:
+            _pod_key = 'pod-' + slot_key[:8]
+            st = await asyncio.to_thread(get_state)
+            if (st.get('scan_events') or {}).get(_pod_key) != 'ok-bot':
+                _pool = [c for c in cands if not c.get('parlay') and c.get('edge', 0) >= 0.06]
+                _pod = max(_pool, key=lambda x: x.get('edge', 0)) if _pool else None
+                if _pod:
+                    _odds = _pod.get('odds')
+                    _os = f" ({'+' if _odds and _odds > 0 else ''}{_odds:g})" if isinstance(_odds, (int, float)) else ''
+                    _em = (f"⚡ **PLAY OF THE DAY**\n\n**[{league_tag(_pod.get('sport'))}] {_pod['pick']}{_os}** vs {_pod['vs']} — {_pod.get('units', 1)}u\n"
+                           f"🕓 {_et(_pod['start'])} · edge **{_pod['edge']:.0%}** vs the number\n\n{_pod.get('analysis', '')}")
+                    for _t in ('lock', 'sharp', 'whale'):
+                        _rm = find_channel(g0, SCAN_ROOMS[_t])
+                        if _rm:
+                            await _rm.send(embed=discord.Embed(description=_em[:4090], color=TIER_COLORS.get(_t, 0xF5C518)))
+                            await asyncio.sleep(1)
+                    if gen:
+                        await gen.send(f"⚡ **PLAY OF THE DAY** just dropped in the paid rooms — SHiFT's single highest-edge play, every day at 4 PM ET.\n"
+                                       f"💎 Lock · Sharp · Whale → {upg_ment}")
+                    try:
+                        await asyncio.to_thread(x_post,
+                            "⚡ PLAY OF THE DAY just dropped in the Discord — SHiFT's single highest-edge play, every day 4 PM ET.\n\n"
+                            "Free picks daily + $50 in SOL every Sunday: https://thelineshift.github.io/AISportsBot/upgrade.html")
+                    except Exception as _xe:
+                        print('pod x:', _xe)
+                    st.setdefault('scan_events', {})[_pod_key] = 'ok-bot'
+                    await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pod posted')
+                    print('POD posted:', _pod['pick'])
+        except Exception as e:
+            print('pod:', e)
     # ---- CARD LAW (challenge): 4 PM ET scan feeds the 100-to-1000 channel, every day
     if os.environ.get('CHALLENGE_ON', '') == '1' and int(slot_key.split('-')[1]) == 20:  # challenge rail RETIRED 2026-07-25 — superseded by the trading desk
         try:
