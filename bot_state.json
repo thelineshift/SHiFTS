@@ -8,31 +8,32 @@
     "x_bio OK"
   ],
   "time_audit": {
-    "at": "2026-07-25 10:05 UTC",
+    "at": "2026-07-25 12:18 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-11-1": "2026-07-25 08:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-25 03:03 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-25 08:01 UTC",
+    "\ud83c\udfaffree-pick-11-1": "2026-07-25 12:01 UTC",
+    "\ud83e\uddfereceipts": "2026-07-25 11:44 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-25 12:02 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-25 08:08 UTC"
+    "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 10:05 UTC",
+    "at": "2026-07-25 12:18 UTC",
     "flags": [
-      "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
+      "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
+      "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 10:05 UTC",
+    "at": "2026-07-25 12:18 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 10:05 UTC",
+    "at": "2026-07-25 12:18 UTC",
     "flags": []
   },
-  "bot_version": "9.16.2",
+  "bot_version": "9.16.8",
   "unannounced_results": [
     {
       "id": "alka-gaming-ml-0724",
