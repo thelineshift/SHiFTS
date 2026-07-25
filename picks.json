@@ -1529,10 +1529,10 @@
       "homeTeam": "Boston Red Sox",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": 100,
+        "home_ml": -122,
+        "away_ml": 101,
         "total": 7.5,
-        "ts": 1784953414
+        "ts": 1784967987
       }
     },
     {
