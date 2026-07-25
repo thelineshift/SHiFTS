@@ -9743,7 +9743,13 @@
       "market_slug": "astatc-cs2-wc-mglz-2026-07-26-map1",
       "outcome": "Wildcard",
       "status": "open",
-      "ts": "2026-07-25T22:30:58Z"
+      "ts": "2026-07-25T22:30:58Z",
+      "price_path": [
+        {
+          "ts": 1785019231,
+          "px": 0.37
+        }
+      ]
     },
     {
       "price": 0.91,
