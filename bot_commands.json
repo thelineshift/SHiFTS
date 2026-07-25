@@ -1,5 +1,5 @@
 {
-  "seq": 433,
+  "seq": 434,
   "commands": [
     {
       "seq": 400,
@@ -198,6 +198,24 @@
       "path": "assets/giveaway_card_50x.png",
       "text": "\ud83c\udf81 $50 IN SOL \u2014 TWO WINNERS EVERY SUNDAY\n\n\u2705 Follow @SHiFTSPicks\n\u2764\ufe0f Like + \ud83d\udd01 repost this post\n\ud83c\udf9f\ufe0f Paid tiers stack up to 5x tickets\n\nDrop your X handle in Discord #giveaway \u2014 type !entry for live status.\nDraw: Sunday 6 PM ET \u2014 winner must be entered to claim. \u26a1",
       "tag": "giveaway"
+    },
+    {
+      "seq": 434,
+      "action": "set_topic",
+      "channel": "lock-room",
+      "topic": "\ud83d\udd12 LOCK ROOM \u2014 where parlays are unlocked. Up to 18 picks/day (slate-dependent) \u00b7 every parlay play built off the day's cards \u00b7 \u26a1 Play of the Day 4 PM ET \u00b7 \ud83c\udfaf props \u00b7 every result receipted. \ud83d\udc8e thelineshift.github.io/AISportsBot/upgrade.html"
+    },
+    {
+      "seq": 434,
+      "action": "set_topic",
+      "channel": "sharp-room",
+      "topic": "\ud83d\udcca SHARP \u2014 up to 24 picks/day (slate-dependent) \u00b7 everything in Lock + the gap math (our price vs the book's) \u00b7 \ud83c\udfb2 Parlay of the Day \u00b7 esports cards \u00b7 weekly analytics. \ud83d\udc8e thelineshift.github.io/AISportsBot/upgrade.html"
+    },
+    {
+      "seq": 434,
+      "action": "set_topic",
+      "channel": "whale-room",
+      "topic": "\ud83d\udc0b WHALE \u2014 up to 36 picks/day (slate-dependent), dealt FIRST by house law \u00b7 props, POD & parlays first \u00b7 \ud83d\udcc8 desk intel + autopsies \u00b7 \ud83d\udc0b live wire: injuries, delays, line moves \u00b7 weekly deep-dive Saturday. \ud83d\udc8e thelineshift.github.io/AISportsBot/upgrade.html"
     }
   ]
 }
