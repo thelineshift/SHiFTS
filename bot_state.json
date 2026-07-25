@@ -5,32 +5,32 @@
     "channels: \ud83d\udc4bwelcome (1528794081168326827) | \ud83d\udcdcrules (1528794145110364301) | \ud83d\udc8eupgrade (1528794177549107394) | \ud83c\udfaffree-pick-11-1 (1528794232666718260) | \ud83e\uddfereceipts (1528794285166559262) | \ud83d\udcacgeneral-chat (1528794315613274212) | \ud83d\udd12lock-room-5-11 (1528794374438256691) | \ud83d\udd12lock-lounge (1528794401520746566) | \ud83d\udccasharp-room-9-6 (1528794462979887135) | \ud83d\udccasharp-analytics (1528794494282104864) | \ud83d\udccasharp-talk (1528794521163399331) | \ud83d\udc0bwhale-room-12-7 (1528794551450603580) | \ud83d\udc0bwhale-deepdive (1528794576821944420) | \ud83d\udc0bwhale-talk (1528794607771455661) | \ud83d\udce3promotions (1529113017248251945) | \ud83c\udf81giveaway (1529113020503031859) | \u2699\ufe0fupdates (1529425152503185488) | \ud83e\uddeashift-lab (1529616053808791552) | \ud83d\udee0\ufe0fissues (1529808117251051603) | \ud83d\udcc8shift-trades (1530388330020077598)"
   ],
   "time_audit": {
-    "at": "2026-07-25 19:09 UTC",
+    "at": "2026-07-25 18:40 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-1": "2026-07-25 16:00 UTC",
     "\ud83e\uddfereceipts": "2026-07-25 18:21 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-25 19:00 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-25 16:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 19:09 UTC",
+    "at": "2026-07-25 18:40 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 19:09 UTC",
+    "at": "2026-07-25 18:40 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 19:09 UTC",
+    "at": "2026-07-25 18:40 UTC",
     "flags": []
   },
-  "bot_version": "9.21.0",
+  "bot_version": "9.20.2",
   "unannounced_results": [
     {
       "id": "saw-youngsters-ml-0725",
@@ -8305,7 +8305,7 @@
       "qty": 30,
       "market_slug": "aec-lol-fur-los-2026-07-25",
       "outcome": "LOS",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T11:15:48Z",
       "price_path": [
         {
@@ -8328,7 +8328,13 @@
           "ts": 1785006050,
           "px": 0.96
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 13.8,
+      "pnl": 0.0,
+      "cashout": true,
+      "settled_at": "2026-07-25T19:09:53Z",
+      "autopsy": "+$0.00 \u2014 model 86% vs market 46% was real edge; thesis held. Taken 0.46, slid to 0.96 before the result \u2014 the number ran 50\u00a2 against us \u26a0\ufe0f (cashed out early at $13.80)"
     },
     {
       "price": 0.66,
@@ -8693,6 +8699,10 @@
         {
           "ts": 1785004523,
           "px": 0.72
+        },
+        {
+          "ts": 1785006597,
+          "px": 0.72
         }
       ]
     },
@@ -8715,6 +8725,10 @@
         {
           "ts": 1785004524,
           "px": 0.44
+        },
+        {
+          "ts": 1785006597,
+          "px": 0.44
         }
       ]
     }
@@ -8722,7 +8736,7 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 7,
+    "losses": 8,
     "pnl": 6.06,
     "trades": 29,
     "last_recap": "2026-07-25",
@@ -8809,6 +8823,14 @@
       "result": "WIN",
       "pnl": 5.89,
       "lesson": "+$5.89 \u2014 book was complete and both legs settled as priced; arb math did its job."
+    },
+    {
+      "ts": "2026-07-25T19:09:53Z",
+      "kind": "EDGE",
+      "outcome": "LOS",
+      "result": "LOSS",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 86% vs market 46% was real edge; thesis held. Taken 0.46, slid to 0.96 before the result \u2014 the number ran 50\u00a2 against us \u26a0\ufe0f (cashed out early at $13.80)"
     }
   ],
   "giveaway_x_posts": [
