@@ -1,8 +1,15 @@
 {
-  "ts": "2026-07-25T17:51:09Z",
+  "ts": "2026-07-25T18:06:10Z",
   "configured": true,
-  "balance_usd": 46.68,
-  "buying_power": 12.68,
+  "balance_usd": 91.79,
+  "buying_power": 27.79,
   "positions": [],
-  "open_orders": []
+  "open_orders": [
+    {
+      "market": "aec-lol-al-blg-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.6",
+      "qty": 8
+    }
+  ]
 }
