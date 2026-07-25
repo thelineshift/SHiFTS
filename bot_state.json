@@ -66,6 +66,24 @@
       "units": -1.0,
       "score": "Colorado Rockies 5, Milwaukee Brewers 2",
       "tier": "lock"
+    },
+    {
+      "id": "100t-kru-ml-0724",
+      "desc": "100 Thieves ML",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "100 Thieves 2-0 KR\u00dc Esports \u00b7 final",
+      "tier": "free"
+    },
+    {
+      "id": "new-york-yankees-ml-0724",
+      "desc": "New York Yankees ML",
+      "odds": 115,
+      "result": "WIN",
+      "units": 1.15,
+      "score": "New York Yankees 1, Philadelphia Phillies 0",
+      "tier": "free"
     }
   ],
   "last_x_receipt_ts": 1784938338.452148,
