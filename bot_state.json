@@ -1,8 +1,8 @@
 {
-  "executed_seq": 440,
+  "executed_seq": 436,
   "last_log": [
-    "seq 440 executed 2026-07-25 18:24 UTC",
-    "no new commands"
+    "seq 436 executed 2026-07-25 17:52 UTC",
+    "lock_channel OK: #\ud83d\udcc8shift-trades locked to paid tiers (lock/sharp/whale)"
   ],
   "time_audit": {
     "at": "2026-07-25 17:44 UTC",
@@ -8326,7 +8326,7 @@
       "qty": 13,
       "market_slug": "aec-lol-kc-mkoi-2026-07-25",
       "outcome": "Karmine Corp",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-25T11:15:50Z",
       "price_path": [
         {
@@ -8341,7 +8341,10 @@
           "ts": 1785000897,
           "px": 0.85
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.35,
@@ -8497,7 +8500,7 @@
       "qty": 8,
       "market_slug": "aec-lol-al-blg-2026-07-26",
       "outcome": "Bilibili Gaming",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T18:02:45Z"
     },
     {
