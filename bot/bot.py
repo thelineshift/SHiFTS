@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.18.2'
+BOT_VERSION = '9.18.3'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -874,34 +874,46 @@ def gh_get(path, ref='main'):
     with urllib.request.urlopen(req, timeout=15) as r:
         return json.load(r)
 
-def gh_put(path, obj, message, ref=QUEUE_BRANCH):
-    try:
-        remote = gh_get(path, ref=ref)
-        sha = remote.get('sha')
-        if path == 'bot_state.json':
-            try:
-                base = json.loads(base64.b64decode(remote['content']).decode())
-                # deep-merge append-only dicts so concurrent writers can't clobber entries (Stella wipe 7/23)
-                for dk in ('giveaway_confirmed', 'scan_events'):
-                    if isinstance(base.get(dk), dict) and isinstance(obj.get(dk), dict):
-                        m = {**base[dk], **obj[dk]}
-                        base[dk] = m
-                        obj = {**obj, dk: m}
-                base.update(obj)
-                obj = base
-            except Exception:
-                pass
-    except Exception:
-        sha = None
-    body = {'message': message, 'branch': ref,
-            'content': base64.b64encode(json.dumps(obj, indent=2).encode()).decode()}
-    if sha:
-        body['sha'] = sha
-    req = urllib.request.Request(f'{API}/{path}', data=json.dumps(body).encode(),
-                                 method='PUT', headers={**gh_headers(), 'Content-Type': 'application/json'})
-    with urllib.request.urlopen(req, timeout=15) as r:
-        return json.load(r)
-
+def gh_put(path, obj, message, ref=QUEUE_BRANCH, _tries=3):
+    """State writer with 409-retry: concurrent loops race on the same file; a sha mismatch
+    just means someone else saved first — re-read, re-merge, retry instead of dying."""
+    last = None
+    for attempt in range(_tries):
+        try:
+            remote = gh_get(path, ref=ref)
+            sha = remote.get('sha')
+            if path == 'bot_state.json':
+                try:
+                    base = json.loads(base64.b64decode(remote['content']).decode())
+                    # deep-merge append-only dicts so concurrent writers can't clobber entries (Stella wipe 7/23)
+                    for dk in ('giveaway_confirmed', 'scan_events'):
+                        if isinstance(base.get(dk), dict) and isinstance(obj.get(dk), dict):
+                            m = {**base[dk], **obj[dk]}
+                            base[dk] = m
+                            obj = {**obj, dk: m}
+                    base.update(obj)
+                    obj = base
+                except Exception:
+                    pass
+        except Exception:
+            sha = None
+        body = {'message': message, 'branch': ref,
+                'content': base64.b64encode(json.dumps(obj, indent=2).encode()).decode()}
+        if sha:
+            body['sha'] = sha
+        req = urllib.request.Request(f'{API}/{path}', data=json.dumps(body).encode(),
+                                     method='PUT', headers={**gh_headers(), 'Content-Type': 'application/json'})
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code == 409 and attempt < _tries - 1:
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            raise
+    if last:
+        raise last
 def fetch_commands():
     try:
         req = urllib.request.Request(f'{RAW}/bot_commands.json?t={int(time.time())}',
