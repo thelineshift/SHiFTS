@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T22:50:28Z",
+  "updated": "2026-07-25T23:30:28Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1424,7 +1424,10 @@
         "total": 8.0,
         "ts": 1785001495
       },
-      "last_alert_odds": -148
+      "last_alert_odds": -148,
+      "result": "LOSS",
+      "score": "San Diego Padres 7, Miami Marlins 2",
+      "units_result": -1.0
     },
     {
       "id": "arizona-diamondbacks-ml-0725",
