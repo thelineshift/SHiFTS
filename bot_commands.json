@@ -1,5 +1,5 @@
 {
- "seq": 409,
+ "seq": 411,
  "commands": [
   {
    "seq": 400,
@@ -57,6 +57,18 @@
    "seq": 409,
    "action": "scan_now",
    "dry": true
+  },
+  {
+   "seq": 410,
+   "action": "scan_now",
+   "dry": false,
+   "slot": "20260724-20"
+  },
+  {
+   "seq": 411,
+   "action": "post_and_pin",
+   "channel": "💵50-to",
+   "content": "💵 **$50 → $1,000 CHALLENGE — HOUSE RULES** 💰\n\nMirrors the card laws: plays come off the same board as the tiers (PICKS LAW), league-tagged, every result receipted, POSITIVE UNITS is the mission.\n\n**STRATEGY PROFILE: DEGEN YOLO** 🎲\nr/wallstreetbets sizing — 25–60% of the roll on every swing, the lotto-ticket parlay rides every card, press the winners, never turtle.\n\nReal money on Polymarket US — bet slips posted for every play. Capped while the rail proves out, then the gloves come off. ⚡"
   }
  ]
 }
