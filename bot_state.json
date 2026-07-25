@@ -9966,6 +9966,22 @@
           "px": 0.74
         }
       ]
+    },
+    {
+      "price": 0.87,
+      "short": true,
+      "stake": 15.66,
+      "kind": "EDGE",
+      "p_model": 1.0,
+      "event": "DetonatioN FocusMe vs. GAM Esports",
+      "ev_start": "2026-07-26T09:00:00Z",
+      "reason": "model 100% vs market 87% \u2014 13% edge, half-Kelly",
+      "order_id": "BFFEFBF609NG",
+      "qty": 18,
+      "market_slug": "aec-lol-dfm-gam-2026-07-26",
+      "outcome": "GAM Esports",
+      "status": "open",
+      "ts": "2026-07-25T23:05:58Z"
     }
   ],
   "pm_stats": {
@@ -9973,7 +9989,7 @@
     "wins": 3,
     "losses": 9,
     "pnl": 6.06,
-    "trades": 55,
+    "trades": 56,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-22"
   },
