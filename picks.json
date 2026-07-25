@@ -1297,7 +1297,13 @@
       "opp": "New York City FC",
       "analysis": "8-2-5 overall \u2014 our 68% vs book 48% (no-vig) | Biggest pricing edge of the window \u2014 8-2-5 overall \u2014 our 68% vs book 48% (no-vig). That's a 20-point edge in our favor.",
       "awayTeam": "Chicago Fire FC",
-      "homeTeam": "New York City FC"
+      "homeTeam": "New York City FC",
+      "live_odds": {
+        "home_ml": 145,
+        "away_ml": 160,
+        "total": 2.5,
+        "ts": 1784953413
+      }
     },
     {
       "id": "chicago-white-sox-ml-0725",
@@ -1314,7 +1320,13 @@
       "opp": "Houston Astros",
       "analysis": "54-47 overall, 31-17 at home \u2014 our 64% vs book 53% (no-vig) | The book is off on this number \u2014 54-47 overall, 31-17 at home \u2014 our 64% vs book 53% (no-vig). That's a 11-point edge in our favor.",
       "homeTeam": "Chicago White Sox",
-      "awayTeam": "Houston Astros"
+      "awayTeam": "Houston Astros",
+      "live_odds": {
+        "home_ml": -126,
+        "away_ml": 104,
+        "total": 8.0,
+        "ts": 1784953413
+      }
     },
     {
       "id": "tampa-bay-rays-ml-0725",
@@ -1331,7 +1343,13 @@
       "opp": "Cleveland Guardians",
       "analysis": "59-43 overall, 35-15 at home \u2014 our 65% vs book 55% (no-vig) | The book is off on this number \u2014 59-43 overall, 35-15 at home \u2014 our 65% vs book 55% (no-vig). That's a 10-point edge in our favor.",
       "homeTeam": "Tampa Bay Rays",
-      "awayTeam": "Cleveland Guardians"
+      "awayTeam": "Cleveland Guardians",
+      "live_odds": {
+        "home_ml": -134,
+        "away_ml": 111,
+        "total": 7.5,
+        "ts": 1784953413
+      }
     },
     {
       "id": "texas-rangers-ml-0725",
@@ -1348,7 +1366,13 @@
       "opp": "Seattle Mariners",
       "analysis": "51-51 overall, 25-24 at home \u2014 our 58% vs book 49% (no-vig) | The book is off on this number \u2014 51-51 overall, 25-24 at home \u2014 our 58% vs book 49% (no-vig). That's a 9-point edge in our favor.",
       "homeTeam": "Texas Rangers",
-      "awayTeam": "Seattle Mariners"
+      "awayTeam": "Seattle Mariners",
+      "live_odds": {
+        "home_ml": -108,
+        "away_ml": -111,
+        "total": 7.5,
+        "ts": 1784953413
+      }
     },
     {
       "id": "san-francisco-giants-ml-0725",
@@ -1365,7 +1389,13 @@
       "opp": "Los Angeles Angels",
       "analysis": "42-60 overall, 22-25 at home \u2014 our 61% vs book 53% (no-vig) | The book is off on this number \u2014 42-60 overall, 22-25 at home \u2014 our 61% vs book 53% (no-vig). That's a 7-point edge in our favor.",
       "homeTeam": "San Francisco Giants",
-      "awayTeam": "Los Angeles Angels"
+      "awayTeam": "Los Angeles Angels",
+      "live_odds": {
+        "home_ml": -130,
+        "away_ml": 108,
+        "total": 9.0,
+        "ts": 1784953413
+      }
     },
     {
       "id": "miami-marlins-ml-0725",
@@ -1382,7 +1412,13 @@
       "opp": "San Diego Padres",
       "analysis": "52-51 overall, 31-20 at home \u2014 our 62% vs book 55% (no-vig) | The book is off on this number \u2014 52-51 overall, 31-20 at home \u2014 our 62% vs book 55% (no-vig). That's a 7-point edge in our favor.",
       "homeTeam": "Miami Marlins",
-      "awayTeam": "San Diego Padres"
+      "awayTeam": "San Diego Padres",
+      "live_odds": {
+        "home_ml": -136,
+        "away_ml": 113,
+        "total": 8.0,
+        "ts": 1784953413
+      }
     },
     {
       "id": "arizona-diamondbacks-ml-0725",
@@ -1399,7 +1435,13 @@
       "opp": "Washington Nationals",
       "analysis": "54-49 overall, 23-27 on the road \u2014 our 51% vs book 45% (no-vig) | The book is off on this number \u2014 54-49 overall, 23-27 on the road \u2014 our 51% vs book 45% (no-vig). That's a 7-point edge in our favor.",
       "awayTeam": "Arizona Diamondbacks",
-      "homeTeam": "Washington Nationals"
+      "homeTeam": "Washington Nationals",
+      "live_odds": {
+        "home_ml": -137,
+        "away_ml": 114,
+        "total": 9.0,
+        "ts": 1784953413
+      }
     },
     {
       "id": "vancouver-whitecaps-ml-0725",
@@ -1416,7 +1458,13 @@
       "opp": "Minnesota United FC",
       "analysis": "10-2-3 overall \u2014 our 72% vs book 67% (no-vig) | The book is off on this number \u2014 10-2-3 overall \u2014 our 72% vs book 67% (no-vig). That's a 6-point edge in our favor.",
       "awayTeam": "Vancouver Whitecaps",
-      "homeTeam": "Minnesota United FC"
+      "homeTeam": "Minnesota United FC",
+      "live_odds": {
+        "home_ml": 245,
+        "away_ml": -110,
+        "total": 2.5,
+        "ts": 1784953414
+      }
     },
     {
       "id": "chicago-cubs-ml-0725",
@@ -1433,7 +1481,13 @@
       "opp": "Pittsburgh Pirates",
       "analysis": "57-45 overall, 27-23 on the road \u2014 our 50% vs book 45% (no-vig) | The book is off on this number \u2014 57-45 overall, 27-23 on the road \u2014 our 50% vs book 45% (no-vig). That's a 5-point edge in our favor.",
       "awayTeam": "Chicago Cubs",
-      "homeTeam": "Pittsburgh Pirates"
+      "homeTeam": "Pittsburgh Pirates",
+      "live_odds": {
+        "home_ml": -136,
+        "away_ml": 113,
+        "total": 8.0,
+        "ts": 1784953414
+      }
     },
     {
       "id": "atlanta-braves-ml-0725",
@@ -1450,7 +1504,13 @@
       "opp": "Baltimore Orioles",
       "analysis": "60-42 overall, 28-22 on the road \u2014 our 54% vs book 50% (no-vig) | The book is off on this number \u2014 60-42 overall, 28-22 on the road \u2014 our 54% vs book 50% (no-vig). That's a 4-point edge in our favor.",
       "awayTeam": "Atlanta Braves",
-      "homeTeam": "Baltimore Orioles"
+      "homeTeam": "Baltimore Orioles",
+      "live_odds": {
+        "home_ml": -112,
+        "away_ml": -108,
+        "total": 9.0,
+        "ts": 1784953414
+      }
     },
     {
       "id": "boston-red-sox-ml-0725",
@@ -1467,7 +1527,13 @@
       "opp": "Toronto Blue Jays",
       "analysis": "52-49 overall, 23-28 at home \u2014 our 56% vs book 52% (no-vig) | The book is off on this number \u2014 52-49 overall, 23-28 at home \u2014 our 56% vs book 52% (no-vig). That's a 4-point edge in our favor.",
       "homeTeam": "Boston Red Sox",
-      "awayTeam": "Toronto Blue Jays"
+      "awayTeam": "Toronto Blue Jays",
+      "live_odds": {
+        "home_ml": -120,
+        "away_ml": 100,
+        "total": 7.5,
+        "ts": 1784953414
+      }
     },
     {
       "id": "2-leg-parlay-0725",
@@ -1515,7 +1581,13 @@
       "opp": "Red Bull New York",
       "analysis": "6-4-6 overall \u2014 our 45% vs book 43% (no-vig) | The book is off on this number \u2014 6-4-6 overall \u2014 our 45% vs book 43% (no-vig). That's a 3-point edge in our favor.",
       "awayTeam": "Charlotte FC",
-      "homeTeam": "Red Bull New York"
+      "homeTeam": "Red Bull New York",
+      "live_odds": {
+        "home_ml": 120,
+        "away_ml": 180,
+        "total": 3.5,
+        "ts": 1784953414
+      }
     },
     {
       "id": "st.-louis-cardinals-ml-0725",
@@ -1532,7 +1604,13 @@
       "opp": "Cincinnati Reds",
       "analysis": "52-50 overall, 26-27 at home \u2014 our 55% vs book 53% (no-vig) | The book is off on this number \u2014 52-50 overall, 26-27 at home \u2014 our 55% vs book 53% (no-vig). That's a 2-point edge in our favor.",
       "homeTeam": "St. Louis Cardinals",
-      "awayTeam": "Cincinnati Reds"
+      "awayTeam": "Cincinnati Reds",
+      "live_odds": {
+        "home_ml": -123,
+        "away_ml": 102,
+        "total": 8.5,
+        "ts": 1784953414
+      }
     },
     {
       "id": "philadelphia-phillies-ml-0725",
@@ -1549,7 +1627,13 @@
       "opp": "New York Yankees",
       "analysis": "56-47 overall, 27-25 at home \u2014 our 49% vs book 48% (no-vig) | The book is off on this number \u2014 56-47 overall, 27-25 at home \u2014 our 49% vs book 48% (no-vig). That's a 1-point edge in our favor.",
       "homeTeam": "Philadelphia Phillies",
-      "awayTeam": "New York Yankees"
+      "awayTeam": "New York Yankees",
+      "live_odds": {
+        "home_ml": -102,
+        "away_ml": -118,
+        "total": 8.5,
+        "ts": 1784953414
+      }
     },
     {
       "id": "san-jose-earthquakes-ml-0725",
@@ -1566,7 +1650,13 @@
       "opp": "LA Galaxy",
       "analysis": "10-2-4 overall \u2014 our 88% vs book 66% (no-vig) | \ud83e\udde0 **The read:** 10-2-4 overall \u2014 our 88% vs book 66% (no-vig). Model makes San Jose Earthquakes **88%** \u2014 books imply **55%**. SHiFT presses the gap.",
       "homeTeam": "San Jose Earthquakes",
-      "awayTeam": "LA Galaxy"
+      "awayTeam": "LA Galaxy",
+      "live_odds": {
+        "home_ml": -120,
+        "away_ml": 250,
+        "total": 3.5,
+        "ts": 1784953414
+      }
     },
     {
       "id": "endless-journey-ml-0725",
@@ -1600,7 +1690,14 @@
       "opp": "Colorado Rockies",
       "analysis": "64-39 overall, 34-20 at home \u2014 ML juiced to -224, so the -1.5 at the standard number is the bet; model makes Milwaukee Brewers 77% straight up | \ud83d\udcb0 **Value hunt:** 64-39 overall, 34-20 at home \u2014 ML juiced to -224, so the -1.5 at the standard number is the bet; model makes Milwaukee Brewers 77% straig",
       "homeTeam": "Milwaukee Brewers",
-      "awayTeam": "Colorado Rockies"
+      "awayTeam": "Colorado Rockies",
+      "live_odds": {
+        "home_ml": -224,
+        "away_ml": 183,
+        "total": 8.5,
+        "ts": 1784953414
+      },
+      "last_alert_odds": -224
     },
     {
       "id": "under-8.5-0725",
@@ -1651,7 +1748,14 @@
       "opp": "New York Mets",
       "analysis": "66-38 overall, 35-19 on the road \u2014 ML juiced to -163, so the -1.5 at the standard number is the bet; model makes Los Angeles Dodgers 68% straight up | \ud83e\udde0 **The read:** 66-38 overall, 35-19 on the road \u2014 ML juiced to -163, so the -1.5 at the standard number is the bet; model makes Los Angeles Dodgers ",
       "awayTeam": "Los Angeles Dodgers",
-      "homeTeam": "New York Mets"
+      "homeTeam": "New York Mets",
+      "live_odds": {
+        "home_ml": 135,
+        "away_ml": -163,
+        "total": 8.0,
+        "ts": 1784953414
+      },
+      "last_alert_odds": -163
     },
     {
       "id": "3-leg-parlay-0725",
@@ -1706,7 +1810,14 @@
       "opp": "Kansas City Royals",
       "analysis": "50-54 overall, 29-23 at home \u2014 ML juiced to -181, so the -1.5 at the standard number is the bet; model makes Detroit Tigers 68% straight up | \ud83d\udcca **Form + price:** 50-54 overall, 29-23 at home \u2014 ML juiced to -181, so the -1.5 at the standard number is the bet; model makes Detroit Tigers 68% straight u",
       "homeTeam": "Detroit Tigers",
-      "awayTeam": "Kansas City Royals"
+      "awayTeam": "Kansas City Royals",
+      "live_odds": {
+        "home_ml": -181,
+        "away_ml": 149,
+        "total": 8.5,
+        "ts": 1784953415
+      },
+      "last_alert_odds": -181
     }
   ]
 }
