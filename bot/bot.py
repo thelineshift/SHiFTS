@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.16.7'
+BOT_VERSION = '9.16.8'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3300,6 +3300,7 @@ def _desk_room(B, expo, expo0=0.0):
     return cash_left - TRADER_MIN_LIQUID * (B + expo0)
 TRADE_CHAN = 'shift-trades'
 DESK_LINK = 'https://polymarket.us'  # the desk's public home — recap links here (no-spam decree)
+DISCORD_INVITE = 'https://discord.gg/8bBxWUJCYT'  # verified invite used across the site — results push here
 
 
 # ---------- THE ODDS API — PLAYER PROPS FEED (owner-funded free tier, 2026-07-25) ----------
@@ -4052,14 +4053,7 @@ async def pm_trader():
             await asyncio.sleep(1)
         if placed:
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm trader entries')
-        if placed_lines and g0:
-            try:
-                wrm = find_channel(g0, SCAN_ROOMS['whale'])
-                if wrm:
-                    await wrm.send("📈 **DESK INTEL — the fund just traded:**\n" + '\n'.join(placed_lines)[:1700]
-                                   + f"\nRecord **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · P&L **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}** · 🖥️ {DESK_LINK}")
-            except Exception as se:
-                print('[trader] whale digest:', se)
+        # entries stay ledger-only (revert: whale room untouched by desk traffic)
         # ---- daily desk recap, 8 AM ET ----
         et_now = time.gmtime(time.time() - 4 * 3600)
         today_et = time.strftime('%Y-%m-%d', et_now)
@@ -4106,7 +4100,7 @@ async def pm_watch():
         return
     guild = client.guilds[0] if client.guilds else None
     ch = find_channel(guild, 'receipts') if guild else None
-    desk = find_channel(guild, SCAN_ROOMS['whale']) if (guild and open_trades) else None  # NO-SPAM DECREE: desk intel lives in Whale
+    desk = find_channel(guild, 'receipts') if (guild and open_trades) else None  # every desk receipt lands in #receipts (owner decree 2026-07-25)
     changed = False
 
     # ---- desk trades ----
@@ -4154,7 +4148,16 @@ async def pm_watch():
                     await desk.send(line)
             except Exception:
                 pass
-        # NO-SPAM DECREE (2026-07-25): no per-result X posts — the daily recap carries the record + desk link.
+        # X exposure law (owner decree 2026-07-25): desk WINNERS post to X with the record + funnel.
+        if res['result'] == 'WIN':
+            xt = (f"📈 SHiFT desk — {t['outcome']} @ {t['price']:.2f} 🎯 WIN {sign}\n"
+                  f"Desk record {stats.get('wins', 0)}-{stats.get('losses', 0)} · P&L {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}\n"
+                  f"Every receipt drops in our Discord — join: {DISCORD_INVITE}\n"
+                  f"🖥️ {DESK_LINK}")
+            try:
+                await asyncio.to_thread(x_post, xt[:270], None)
+            except Exception as xe:
+                print('[desk] x winner:', xe)
 
         changed = True
         await asyncio.sleep(1)
@@ -4821,7 +4824,19 @@ def _pick_closer(pool, seed):
     import hashlib as _hh
     return pool[int(_hh.md5(str(seed).encode()).hexdigest(), 16) % len(pool)]
 
+def _x_weight(s):
+    """Approximate X weighted length (emoji/CJK count 2)."""
+    w = 0
+    for ch in s:
+        o = ord(ch)
+        w += 2 if (o > 0xFFFF or 0x1F000 <= o <= 0x1FAFF or 0x2600 <= o <= 0x27BF or o >= 0x2E80) else 1
+    return w
+
+
 def x_receipt_text(r, all_picks=None, chal=None):
+    def _fit(txt):
+        # over-weight receipts shed the invite line before X rejects the whole post
+        return txt if _x_weight(txt) <= 275 else txt.replace(f"\n🎁 Receipts + free picks daily: {DISCORD_INVITE}", '')
     odds = r.get('odds'); odds_s = f"({odds:+d})" if isinstance(odds, int) else '(ML)'
     badge = TIER_BADGE.get(r.get('tier'), '')
     # daily-rotating param busts X's card cache so the SHiFT banner preview always renders
@@ -4842,13 +4857,13 @@ def x_receipt_text(r, all_picks=None, chal=None):
         base = f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
         # paid-room winners funnel to the store (link renders our branded preview card on X)
         if r.get('tier') in ('whale', 'sharp', 'lock'):
-            return base + "💎 Every play like this, every 4 hours → " + store_link
-        return base + _pick_closer(CLOSERS_WIN, seed)
+            return _fit(base + "💎 Every play like this, every 4 hours → " + store_link + f"\n🎁 Receipts + free picks daily: {DISCORD_INVITE}")
+        return _fit(base + _pick_closer(CLOSERS_WIN, seed) + f"\n🎁 Receipts + free picks daily: {DISCORD_INVITE}")
     if r['result'] == 'PUSH':
-        return (f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
-                + _pick_closer(CLOSERS_PUSH, seed))
-    return (f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
-            + _pick_closer(CLOSERS_LOSS, seed))
+        return _fit(f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
+                + _pick_closer(CLOSERS_PUSH, seed) + f"\n🎁 Receipts + free picks daily: {DISCORD_INVITE}")
+    return _fit(f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
+            + _pick_closer(CLOSERS_LOSS, seed) + f"\n🎁 Receipts + free picks daily: {DISCORD_INVITE}")
 
 async def settle_challenge(guild, p):
     try:
