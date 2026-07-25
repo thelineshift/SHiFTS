@@ -1692,10 +1692,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -228,
-        "away_ml": 185,
+        "home_ml": -231,
+        "away_ml": 188,
         "total": 8.5,
-        "ts": 1784960614
+        "ts": 1784981277
       },
       "last_alert_odds": -224
     },
@@ -1812,10 +1812,10 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -181,
-        "away_ml": 149,
-        "total": 8.5,
-        "ts": 1784978040
+        "home_ml": -182,
+        "away_ml": 150,
+        "total": 8.0,
+        "ts": 1784981277
       },
       "last_alert_odds": -181
     },
