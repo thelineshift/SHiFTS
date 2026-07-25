@@ -69,10 +69,10 @@
   <div class="gate" id="gate">
     <div style="font-size:34px">🔑</div>
     <h2 style="margin-top:6px">Enter your member PIN</h2>
-    <input id="pin" maxlength="6" inputmode="numeric" placeholder="••••••" autocomplete="off">
+    <input id="pin" maxlength="14" placeholder="SHFT-XXXX-XXXX" autocomplete="off" style="letter-spacing:3px;font-size:20px">
     <button onclick="unlock()">Unlock my rooms →</button>
     <div class="err" id="err"></div>
-    <div class="hint">Your PIN was DM'd to you by <b>shift</b> in Discord when you subscribed (or type <b>!pin</b> in the server to rotate it). Whale PINs also unlock <b>The War Room</b> — SHiFT's live trading floor.</div>
+    <div class="hint">Your license key was DM'd to you by <b>shift</b> in Discord when you subscribed (type <b>!pin</b> in the server to rotate it). One key per member, tied to your Discord — shared keys are revoked, and every page you view carries your traceable member mark. Whale keys also unlock <b>The War Room</b> — SHiFT's live trading floor.</div>
   </div>
 
   <div id="app" class="hidden">
@@ -95,7 +95,8 @@
       <table id="dtable"><thead><tr><th>Position</th><th>Side</th><th>Entry</th><th>Stake</th><th>Status</th></tr></thead><tbody></tbody></table>
     </div>
 
-    <div class="links">
+    <div id="wmark" style="position:fixed;left:0;right:0;bottom:0;background:#0a1420ee;border-top:1px solid var(--line);padding:6px 12px;font-size:11px;color:var(--dim);text-align:center;letter-spacing:.5px;z-index:50"></div>
+    <div class="links" style="padding-bottom:34px">
       <a href="https://discord.gg/8bBxWUJCYT">💬 Discord</a> · <a href="https://thelineshift.github.io/SHiFTS/upgrade.html">💎 Upgrade room</a> · <a href="https://x.com/SHiFTSPicks">𝕏 @SHiFTSPicks</a><br>
       <span style="font-size:11px">PIN rotates on renewal · never share it — it's your key to the paid rooms' cards.</span>
     </div>
@@ -107,21 +108,44 @@ const RAW = 'https://raw.githubusercontent.com/thelineshift/SHiFTS/main';
 const RAWC = 'https://raw.githubusercontent.com/thelineshift/SHiFTS/commands';
 const RANK = {free:0, challenge:0, lock:1, sharp:2, whale:3};
 const ET = -4; // EDT (July)
-let TIER = null;
+let TIER = null, MEMBER_MARK = '';
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');}
+function normKey(s){
+  s = s.toUpperCase().replace(/[^A-Z0-9]/g,'');
+  if(s.startsWith('SHFT')) s = s.slice(4);
+  if(s.length===8) return 'SHFT-'+s.slice(0,4)+'-'+s.slice(4);
+  return null;
+}
+function attempts(){
+  try{ return JSON.parse(localStorage.getItem('shift_gate')||'{"n":0,"until":0}'); }catch(e){ return {n:0,until:0}; }
+}
 async function unlock(){
-  const pin = document.getElementById('pin').value.trim();
-  if(!pin){return;}
+  const g = attempts();
+  if(Date.now() < g.until){
+    document.getElementById('err').textContent = 'too many failed tries — locked for '+Math.ceil((g.until-Date.now())/60000)+' more min.';
+    return;
+  }
+  const pin = normKey(document.getElementById('pin').value);
+  if(!pin){document.getElementById('err').textContent='key format is SHFT-XXXX-XXXX — check your DM from shift.';return;}
   document.getElementById('err').textContent='';
   try{
     const pins = await (await fetch(RAW+'/pins.json?t='+Date.now())).json();
-    const hit = (pins.pins||{})[await sha256(pin)];
-    if(!hit){document.getElementById('err').textContent='PIN not recognized — check the DM from shift, or type !pin in the server.';return;}
+    const h = await sha256(pin);
+    const hit = (pins.pins||{})[h];
+    if(!hit){
+      g.n++; if(g.n>=5){g.until=Date.now()+600000; g.n=0;}
+      localStorage.setItem('shift_gate', JSON.stringify(g));
+      document.getElementById('err').textContent='key not recognized — check the DM from shift, or type !pin in the server. ('+(5-g.n)+' tries left)';
+      return;
+    }
+    localStorage.removeItem('shift_gate');
+    MEMBER_MARK = h.slice(0,8).toUpperCase();
     TIER = hit.tier;
     sessionStorage.setItem('shift_pin', pin);
     document.getElementById('gate').classList.add('hidden');
     document.getElementById('app').classList.remove('hidden');
     document.getElementById('spin').classList.remove('hidden');
+    document.getElementById('wmark').textContent = '⚡ LICENSED VIEW · MEMBER '+MEMBER_MARK+' · tied to your Discord — shared keys are revoked & leaks are traced';
     boot();
   }catch(e){document.getElementById('err').textContent='network hiccup — try again.';}
 }
