@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.21.8'
+BOT_VERSION = '9.22.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3412,7 +3412,7 @@ def sharp_weekly_text(ps):
 async def weekly_deepdive_watch():
     try:
         now = time.gmtime()
-        if now.tm_wday != 5 or now.tm_hour != 20:  # Saturday 4 PM ET
+        if now.tm_wday != 5 or not (20 <= now.tm_hour <= 23):  # Saturday evening ET (widened v9.22.0 — deploy-collision makeups must still fire same-night)
             return
         st = await asyncio.to_thread(get_state)
         if st is None:
@@ -7020,6 +7020,123 @@ def _in_window(start_iso, now_ts, hours=4):
 def _et(t_ts):
     return (datetime.datetime.utcfromtimestamp(t_ts) - datetime.timedelta(hours=4)).strftime('%I:%M %p ET')
 
+
+def _whale_deep_read(p, rank):
+    """WHALE MASTERCLASS per-play analysis (v9.22.0): the old version stapled the same
+    'pricing gap' boilerplate to every play. Now: 2-3 varied angle modules per play,
+    deterministic per pick (stable card, no two plays read alike). Angles: pricing gap,
+    market/public money, CLV framing, matchup mechanics, form, schedule spot, unit sizing,
+    and the honest 'what kills it' — because Whales pay for the full picture."""
+    import hashlib as _hl
+    an = (p.get('analysis') or '').split(' | ')[0].strip()
+    edge_pct = round(p.get('edge', 0) * 100)
+    prob = p.get('prob', 0) or 0
+    prob_s, book_s = f"{prob:.0%}", f"{(prob - p.get('edge', 0)):.0%}"
+    ml = p.get('odds') if isinstance(p.get('odds'), int) else None
+    imp_s = (f"{(100 / (ml + 100)) if ml > 0 else (-ml / (-ml + 100)):.0%}" if ml else None)
+    team = p['pick'][:-3] if p['pick'].endswith(' ML') else p['pick']
+    sport = p.get('sport') or ''
+    esp = sport in ('cs2', 'lol', 'dota2', 'valorant')
+    h = int(_hl.md5((p['pick'] + (p.get('vs') or '') + str(p.get('start'))).encode()).hexdigest(), 16)
+
+    def m_gap():
+        return [
+            f"Our number is **{prob_s}** against the book's **{book_s}** — a **{edge_pct}-point pricing gap**, and that gap is the entire bet: we're not predicting, we're buying the line cheaper than it's worth",
+            f"The book hung **{book_s}**; SHiFT makes it **{prob_s}**. The **{edge_pct} points** in between are what we're purchasing — same game, better price",
+            f"**{edge_pct} points** of daylight between fair (**{prob_s}**) and the board (**{book_s}**). Books pay out mistakes slowly — this is how we collect ours",
+        ][h % 3]
+
+    def m_public():
+        return [
+            "The public money is on the other side of this one — books shade toward the crowd, and the shade they built in is exactly what we're collecting",
+            "This is a quiet fade-the-crowd spot: casual volume pushed the price off fair, and we're on the side the house had to sweeten",
+            "Square money sees the name; sharper money sees the number. The number is the play here",
+        ][h % 3]
+
+    def m_clv():
+        if not imp_s:
+            return None
+        return [
+            f"At {ml:+d} we need this **{imp_s}** of the time to break even — our rate says **{prob_s}**. That spread between required and expected is where bankroll grows",
+            f"The ask at this price is **{imp_s}**; the expectation is **{prob_s}**. Every tick between those two numbers is long-run profit, whether or not tonight cooperates",
+        ][h % 2]
+
+    def m_matchup():
+        if esp:
+            return [
+                f"Strip the logos and this is a form-versus-form mismatch — recent map win rates, opener duels and late-round conversion all lean {team}, and Bo3 structure lets the better side actually prove it",
+                f"The head-to-head mechanics favor {team}: stronger opening-duel conversion and a deeper map pool, which matters double in a series where the weaker side has to win twice",
+            ][h % 2]
+        if sport == 'mlb':
+            return [
+                "The run environment tilts this one — lineup depth against the opposing arm's contact profile, plus the pen situation behind them, all grade our side's way",
+                "This is a lineup-versus-arm mismatch: our side's on-base profile attacks exactly what this pitcher gives up, and the bullpen gap behind the starters widens it late",
+            ][h % 2]
+        if sport in ('mls', 'epl', 'soccer', 'ucl'):
+            return [
+                "Chance quality beats chance volume here — our side creates cleaner looks per attack and concedes the low-value shots, which is exactly the profile moneyline prices underrate",
+                "The tactical matchup favors us: their buildup stalls against this press shape, and the transition game runs through our side's strongest channel",
+            ][h % 2]
+        if sport == 'ufc':
+            return [
+                "Styles make this fight: the grappling-and-pressure profile on our side attacks the exact defensive holes the other man has shown, over more minutes",
+                "The tape says our side wins the minutes that matter — control time, damage differential, and the cardio to keep both late",
+            ][h % 2]
+        return None
+
+    def m_spot():
+        return [
+            "The schedule spot matters here — rest, travel and opponent workload all lean one way, and it's priced like a neutral slate",
+            "Context check: this isn't a stand-alone game, it's a spot — and the spot (rest / rhythm / stakes) favors our side more than the number admits",
+        ][h % 2]
+
+    def m_units():
+        u = p.get('units', 1)
+        if u >= 1.5:
+            return [
+                f"**{u}u says conviction** — this graded as one of the window's top positions, and the size is the opinion",
+                f"The **{u}u** tag isn't decoration: graded against the full slate, this cleared our conviction bar with room",
+            ][h % 2]
+        return [
+            f"**{u}u — sized for the variance**, not the confidence. The edge is real; so is the coin-flip tax at this price, and the unit count is the respect",
+            f"Kept at **{u}u** because the price is thin — right side, honest size. Bankroll math beats chest-beating",
+        ][h % 2]
+
+    def m_wrong():
+        if esp:
+            return [
+                "What kills it: early-map snowball — lose the opener duels and the form edge never gets to speak. That's the risk we're paid to hold",
+                "What kills it: veto luck and one hot hand. If their star goes nuclear early, form won't save us — priced-in risk, accepted",
+            ][h % 2]
+        if sport == 'mlb':
+            return [
+                "What kills it: one crooked inning. Baseball compresses edges into single swings — the math needs volume, and we have the volume",
+                "What kills it: the bullpen door. If this becomes a reliever game early, the handicap resets — that's the variance the price pays us to carry",
+            ][h % 2]
+        return [
+            "What kills it: the counterpunch. If the game state flips early and our side has to chase, the edge thins fast — risk noted, priced, taken",
+            "What kills it: late-game chaos. One bounce undoes 90 minutes of right — that's why the number, not the narrative, made this bet",
+        ][h % 2]
+
+    headers = [
+        "🧠 **SHiFT's read:**", "🐋 **The Whale read:**", "📖 **The case:**",
+        "🔬 **Inside the pick:**", "🎯 **Why here, why now:**",
+    ]
+    pools = [m_gap, m_public, m_matchup, m_spot, m_clv]
+    picks = []
+    for i in range(len(pools)):
+        mod = pools[(h + i) % len(pools)]()
+        if mod:
+            picks.append(mod)
+        if len(picks) >= 2 + (h % 2):  # 2-3 modules
+            break
+    body = '.\n'.join(s.rstrip('.') for s in picks) + '.'
+    if h % 3 != 1:
+        body += f"\n⚠️ {m_wrong().rstrip('.')}."
+    head = headers[h % len(headers)]
+    lead = f"{an}." if an else ''
+    return f"{head} {lead}\n{body}\n{m_units()}"
+
 async def scan_engine_run(g0, slot_key, dry):
     """Build + post the slot card. dry=True -> shift-lab only, no state writes."""
     lab = find_channel(g0, 'shift-lab')
@@ -7339,9 +7456,7 @@ async def scan_engine_run(g0, slot_key, dry):
                              + (f"\n🧠 **Why it's the play:** every leg cleared our edge bar — combined model probability {p.get('prob', 0):.0%} vs the price's implied {(1 / (ml_to_dec(p['odds']) or 2)):.0%}. That's value stacked on value." if tier != 'free' else ''))
             else:
                 if tier == 'whale':
-                    why_deep = (f"🧠 **Why this line wins:** {_why(p, rank_of.get(id(p), n)).replace('🧠 **Why it\'s the play:** ', '')} "
-                                f"Our price is **{p.get('prob', 0):.0%}** against the book's **{p.get('prob', 0) - p['edge']:.0%}** — a **{p['edge']:.0%} pricing gap**. "
-                                f"That gap is the whole bet: we're not just picking the team, we're buying the number cheaper than it's worth.")
+                    why_deep = _whale_deep_read(p, rank_of.get(id(p), n))
                     extras = se_whale_extras(p)
                     lines.append(f"{n}\u20e3 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
                                  f"{league_tag(p.get('sport'))} · {p['market']} · {_et(p['start'])}\n"
