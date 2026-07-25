@@ -31,161 +31,7 @@
     "flags": []
   },
   "bot_version": "9.18.3",
-  "unannounced_results": [
-    {
-      "id": "nrg-furia-ml-0724",
-      "desc": "NRG ML",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "NRG vs opponent \u2014 win",
-      "tier": "sharp"
-    },
-    {
-      "id": "milwaukee-brewers-ml-0724",
-      "desc": "Milwaukee Brewers ML",
-      "odds": -293,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Colorado Rockies 5, Milwaukee Brewers 2",
-      "tier": "lock"
-    },
-    {
-      "id": "100t-kru-ml-0724",
-      "desc": "100 Thieves ML",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "100 Thieves 2-0 KR\u00dc Esports \u00b7 final",
-      "tier": "free"
-    },
-    {
-      "id": "new-york-yankees-ml-0724",
-      "desc": "New York Yankees ML",
-      "odds": 115,
-      "result": "WIN",
-      "units": 1.15,
-      "score": "New York Yankees 1, Philadelphia Phillies 0",
-      "tier": "free"
-    },
-    {
-      "id": "lad-ml-0724",
-      "desc": "Dodgers ML",
-      "odds": -156,
-      "result": "WIN",
-      "units": 0.64,
-      "score": "Los Angeles Dodgers 4, New York Mets 2",
-      "tier": "sharp"
-    },
-    {
-      "id": "los-angeles-dodgers-ml-0724",
-      "desc": "Los Angeles Dodgers ML",
-      "odds": -136,
-      "result": "WIN",
-      "units": 1.1,
-      "score": "Los Angeles Dodgers 4, New York Mets 2",
-      "tier": "whale"
-    },
-    {
-      "id": "tampa-bay-rays-ml-0724",
-      "desc": "Tampa Bay Rays ML",
-      "odds": -141,
-      "result": "WIN",
-      "units": 0.71,
-      "score": "Cleveland Guardians 3, Tampa Bay Rays 11",
-      "tier": "sharp"
-    },
-    {
-      "id": "challenge-los-angeles-dodgers-ml-0724",
-      "desc": "Los Angeles Dodgers ML",
-      "odds": -136,
-      "result": "WIN",
-      "units": 0.74,
-      "score": "Los Angeles Dodgers 4, New York Mets 2",
-      "tier": "challenge"
-    },
-    {
-      "id": "atlanta-braves-ml-0724",
-      "desc": "Atlanta Braves ML",
-      "odds": 105,
-      "result": "WIN",
-      "units": 1.05,
-      "score": "Atlanta Braves 7, Baltimore Orioles 6",
-      "tier": "sharp"
-    },
-    {
-      "id": "miami-marlins-ml-0724",
-      "desc": "Miami Marlins ML",
-      "odds": -136,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "San Diego Padres 4, Miami Marlins 2",
-      "tier": "lock"
-    },
-    {
-      "id": "stl-ml-0724",
-      "desc": "Cardinals ML",
-      "odds": -168,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Cincinnati Reds 4, St. Louis Cardinals 2",
-      "tier": "lock"
-    },
-    {
-      "id": "chicago-white-sox-ml-0724",
-      "desc": "Chicago White Sox ML",
-      "odds": -131,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Houston Astros 9, Chicago White Sox 5",
-      "tier": "whale"
-    },
-    {
-      "id": "challenge-chicago-white-sox-ml-0724",
-      "desc": "Chicago White Sox ML",
-      "odds": -131,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Houston Astros 9, Chicago White Sox 5",
-      "tier": "challenge"
-    },
-    {
-      "id": "mvk-esports-ml-0725",
-      "desc": "MVK Esports ML",
-      "odds": 61,
-      "result": "WIN",
-      "units": 0.92,
-      "score": "MVK Esports 2-0 Ground Zero Gaming \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "weibo-gaming-ml-0725",
-      "desc": "Weibo Gaming ML",
-      "odds": -98,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "Weibo Gaming 1-2 Invictus Gaming \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "team-secret-whales-ml-0725",
-      "desc": "Team Secret Whales ML",
-      "odds": 22,
-      "result": "WIN",
-      "units": 0.33,
-      "score": "Team Secret Whales 2-0 Fukuoka SoftBank Hawks Gaming \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "hotu-ml-0725",
-      "desc": "HOTU ML",
-      "odds": -265,
-      "result": "WIN",
-      "units": 0.38,
-      "score": "HOTU 2-0 Infinite \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1784994024.074586,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -7725,5 +7571,10 @@
     "2080781361955385778",
     "2081043081114370064"
   ],
-  "pending_corrections": []
+  "pending_corrections": [],
+  "x_backlog_flushed": {
+    "ts": "2026-07-25T16:32:22Z",
+    "count": 17,
+    "note": "stale 7/24 results \u2014 already receipted in Discord #receipts; X draining them would duplicate-post"
+  }
 }
