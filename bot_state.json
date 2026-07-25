@@ -9980,7 +9980,7 @@
       "qty": 18,
       "market_slug": "aec-lol-dfm-gam-2026-07-26",
       "outcome": "GAM Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T23:05:58Z"
     },
     {
@@ -9995,7 +9995,7 @@
       "qty": 3,
       "market_slug": "astatc-valorant-sen-loud-2026-07-26-map1",
       "outcome": "Sentinels",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T23:10:56Z"
     },
     {
@@ -10011,7 +10011,7 @@
       "qty": 8,
       "market_slug": "aec-lol-al-blg-2026-07-26",
       "outcome": "Bilibili Gaming",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T23:10:58Z"
     },
     {
@@ -10027,7 +10027,7 @@
       "qty": 5,
       "market_slug": "aec-lol-cr-kcbs-2026-07-26",
       "outcome": "Karmine Corp Blue Stars",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T23:10:59Z"
     },
     {
@@ -10043,13 +10043,7 @@
       "market_slug": "aec-cs2-wc-mglz-2026-07-26",
       "outcome": "Wildcard",
       "status": "open",
-      "ts": "2026-07-25T23:11:00Z",
-      "price_path": [
-        {
-          "ts": 1785021630,
-          "px": 0.33
-        }
-      ]
+      "ts": "2026-07-25T23:11:00Z"
     },
     {
       "price": 0.58,
@@ -10063,8 +10057,24 @@
       "qty": 15,
       "market_slug": "astatc-valorant-geng-rrq-2026-07-26-map1",
       "outcome": "Gen.G Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T23:15:57Z"
+    },
+    {
+      "price": 0.39,
+      "short": true,
+      "stake": 7.41,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727274,
+      "event": "G2 Esports vs. Karmine Corp",
+      "ev_start": "2026-07-26T17:00:00Z",
+      "reason": "model 73% vs market 39% \u2014 34% edge, half-Kelly",
+      "order_id": "BFFNBHDZ49NF",
+      "qty": 19,
+      "market_slug": "aec-lol-g2-kc-2026-07-26",
+      "outcome": "Karmine Corp",
+      "status": "open",
+      "ts": "2026-07-25T23:20:56Z"
     }
   ],
   "pm_stats": {
@@ -10072,7 +10082,7 @@
     "wins": 3,
     "losses": 9,
     "pnl": 6.06,
-    "trades": 61,
+    "trades": 62,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-22"
   },
