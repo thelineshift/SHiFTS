@@ -1485,8 +1485,8 @@
       "live_odds": {
         "home_ml": -136,
         "away_ml": 113,
-        "total": 8.0,
-        "ts": 1784953414
+        "total": 7.5,
+        "ts": 1784978040
       }
     },
     {
@@ -1507,9 +1507,9 @@
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
         "home_ml": -112,
-        "away_ml": -108,
+        "away_ml": -107,
         "total": 9.0,
-        "ts": 1784953414
+        "ts": 1784978040
       }
     },
     {
@@ -1812,10 +1812,10 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -186,
-        "away_ml": 153,
+        "home_ml": -181,
+        "away_ml": 149,
         "total": 8.5,
-        "ts": 1784955214
+        "ts": 1784978040
       },
       "last_alert_odds": -181
     },
