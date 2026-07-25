@@ -1,15 +1,18 @@
 {
-  "executed_seq": 476,
+  "executed_seq": 479,
   "last_log": [
-    "seq 476 executed 2026-07-25 21:23 UTC",
-    "#\ud83d\udc0bwhale-room-12-7 [21:17] \ud83d\udc0b **WHALE ROOM \u2014 Sat 7/25 \u00b7 5 PM ET CARD** (6 plays)\n\n1\u20e3 **San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5",
-    "#\ud83d\udc0bwhale-room-12-7 [20:01] \u26a1 **PLAY OF THE DAY**\n\n**[MLS] San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5u\n\ud83d\udd53 10:30 PM ET \u00b7 edge **23%",
-    "#\ud83d\udccasharp-room-9-6 [21:17] \ud83d\udcca **SHARP ROOM \u2014 Sat 7/25 \u00b7 5 PM ET CARD** (5 plays)\n\n1\u20e3 **Los Angeles Dodgers -1.5 (-110)** vs New York Mets ",
-    "#\ud83d\udccasharp-room-9-6 [20:11] ",
-    "#\ud83d\udd12lock-room-5-11 [21:17] \ud83d\udd12 **LOCK ROOM \u2014 Sat 7/25 \u00b7 5 PM ET CARD** (3 plays)\n\n1\u20e3 **Milwaukee Brewers -1.5 (-110)** vs Colorado Rockies ",
-    "#\ud83d\udd12lock-room-5-11 [20:01] \u26a1 **PLAY OF THE DAY**\n\n**[MLS] San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5u\n\ud83d\udd53 10:30 PM ET \u00b7 edge **23%",
-    "#\ud83c\udfaffree-pick-11-2 [21:17] \ud83c\udfaf **FREE ROOM \u2014 Sat 7/25 \u00b7 5 PM ET CARD** (1 play)\n\n1\u20e3 **Chicago Cubs ML (+107)** vs Pittsburgh Pirates \u2014 1.0u",
-    "#\ud83c\udfaffree-pick-11-2 [16:00] \ud83c\udfaf **FREE ROOM \u2014 12 PM ET CARD** (1 play)\n\n1\u20e3 **Miami Marlins ML (-137)** vs San Diego Padres \u2014 1.0u\nMLB \u00b7 ML \u00b7"
+    "seq 479 executed 2026-07-25 21:29 UTC",
+    "#\ud83d\udc8eupgrade [20:00] ",
+    "#\ud83d\udc8eupgrade [20:00] \u26a1 **SHiFT'S PICKS \u2014 PREMIUM ROOMS** _(updated July 2026)_\n\n\ud83d\udd12 **LOCK \u2014 $29.99/mo or $9.99/wk**\nUp to 18 picks/d",
+    "#\ud83d\udc8eupgrade [19:59] ",
+    "#\ud83d\udc8eupgrade [19:14] ",
+    "#\ud83d\udc8eupgrade [23:04] ",
+    "#\ud83d\udc8eupgrade [22:30] ",
+    "#\ud83d\udc8eupgrade [21:04] ",
+    "x_me FAIL: HTTP Error 400: Bad Request b'{\"error\":\"invalid_request\",\"error_description\":\"Value passed for the token was invalid.\"}'",
+    "PIN0 by shift#8676: \u26a1 **SHiFT'S PICKS \u2014 PREMIUM ROOMS** _(updated July 2026)_\n\n\ud83d\udd12 **LOCK \u2014 $29.99/mo or $9.99/wk**\nUp to 18 picks/day \u00b7 \ud83c\udfb2 **PARLAYS UNLOCKED** \u2014 every parlay off the day's cards lives here \u00b7 \u26a1 Play of the Day 4 PM ET \u00b7 \ud83c\udfaf props\n\n\ud83d\udcca **SHARP \u2014 $49.99/mo or $12.99/wk**\nEverything in Lock, up to 24/day \u00b7 \ud83c\udfb2 **Parlay of the Day** \u00b7 fair price vs book price on every play \u00b7 esports cards \u00b7 \ud83d\udcc9 **Weekly Sharp Break",
+    "  EMBED title=\"SHiFT's Picks \u2014 Lock \u00b7 Sharp \u00b7 Whale\" desc=\"Up to 36 picks a day, new cards every 4 hours, parlays, props, Play of the Day \u2014 and for Whales, SHiFT's live Polymarket floor: tail every desk play in real time. Roles activate in seconds after checkout.\"",
+    "  EMBED title=\"SHiFT's Picks \u2014 The War Room\" desc=\"Your tier's cards, records and \u2014 for Whales \u2014 SHiFT's live trading floor.\""
   ],
   "time_audit": {
     "at": "2026-07-25 21:27 UTC",
@@ -81,7 +84,7 @@
     "20260725-20-manual": "ok-bot",
     "20260725-21-manual": "ok-bot"
   },
-  "executed_cmd_seq": 476,
+  "executed_cmd_seq": 479,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
