@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T16:54:26Z",
+  "updated": "2026-07-25T19:38:04Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1825,7 +1825,10 @@
         "total": 8.0,
         "ts": 1784997010
       },
-      "last_alert_odds": -162
+      "last_alert_odds": -162,
+      "result": "LOSS",
+      "score": "Kansas City Royals 3, Detroit Tigers 2",
+      "units_result": -1.0
     },
     {
       "id": "weibo-gaming-ml-0725",
