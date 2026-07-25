@@ -9849,6 +9849,37 @@
       "outcome": "Habos Babos",
       "status": "open",
       "ts": "2026-07-25T22:50:58Z"
+    },
+    {
+      "price": 0.21,
+      "short": true,
+      "stake": 2.31,
+      "kind": "LIVE-BET",
+      "p_model": 0.3076923076923077,
+      "event": "Isurus vs. BESTIA Academy",
+      "ev_start": "2026-07-25T22:00:00Z",
+      "reason": "live number drifted \u2014 model 31% vs 21%, 10% gap mid-game",
+      "order_id": "BFF91718W9NE",
+      "qty": 11,
+      "market_slug": "aec-cs2-isg-bsta-2026-07-25",
+      "outcome": "BESTIA Academy",
+      "status": "open",
+      "ts": "2026-07-25T22:55:57Z"
+    },
+    {
+      "price": 0.6,
+      "stake": 4.2,
+      "kind": "LIVE-BET",
+      "p_model": 0.6923076923076923,
+      "event": "Isurus vs. BESTIA Academy",
+      "ev_start": "2026-07-25T22:00:00Z",
+      "reason": "live number drifted \u2014 model 69% vs 60%, 9% gap mid-game",
+      "order_id": "BFF8VWPNE9NN",
+      "qty": 7,
+      "market_slug": "astatc-cs2-isg-bsta-2026-07-25-map2",
+      "outcome": "Isurus",
+      "status": "open",
+      "ts": "2026-07-25T22:55:58Z"
     }
   ],
   "pm_stats": {
@@ -9856,7 +9887,7 @@
     "wins": 3,
     "losses": 9,
     "pnl": 6.06,
-    "trades": 53,
+    "trades": 55,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-22"
   },
