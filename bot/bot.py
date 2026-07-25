@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.20.1'
+BOT_VERSION = '9.20.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -5070,7 +5070,7 @@ def x_post_native(text, quote_id=None):
     for name, ck, cs, at, ats in x_oauth1_sets(c):
         try:
             hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)
-            req = urllib.request.Request(url, data=data, method='POST',
+            req = urllib.request.Request(api_url, data=data, method='POST',
                 headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
             with urllib.request.urlopen(req, timeout=25) as r:
                 return json.load(r)
@@ -5253,7 +5253,7 @@ def x_update_bio(text, url=None):
     sets = x_oauth1_sets(x_creds_load())
     if not sets:
         return {'error': 'no oauth1 credential set'}
-    url = 'https://api.x.com/1.1/account/update_profile.json'
+    api_url = 'https://api.x.com/1.1/account/update_profile.json'
     params = {'description': text}
     if url:
         params['url'] = url
@@ -5261,8 +5261,8 @@ def x_update_bio(text, url=None):
     last = None
     for name, ck, cs, at, ats in sets:
         try:
-            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats, params)
-            req = urllib.request.Request(url, data=data, method='POST',
+            hdr = x_oauth1_sign('POST', api_url, ck, cs, at, ats, params)
+            req = urllib.request.Request(api_url, data=data, method='POST',
                 headers={'Authorization': hdr, 'Content-Type': 'application/x-www-form-urlencoded',
                          'User-Agent': 'TheLineShift/1.0'})
             with urllib.request.urlopen(req, timeout=25) as r:
