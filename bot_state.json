@@ -3092,20 +3092,6 @@
       },
       {
         "sport": "valorant",
-        "start": "2026-07-25T03:00:00Z",
-        "t1": {
-          "id": 129281,
-          "name": "REJECT"
-        },
-        "t2": {
-          "id": 129959,
-          "name": "IGZIST"
-        },
-        "league": "VCL",
-        "bo": 3
-      },
-      {
-        "sport": "valorant",
         "start": "2026-07-25T07:30:00Z",
         "t1": {
           "id": 136807,
@@ -3357,6 +3343,20 @@
         "bo": 3
       },
       {
+        "sport": "valorant",
+        "start": "2026-07-27T15:00:00Z",
+        "t1": {
+          "id": 137995,
+          "name": "Gentle Mates GC"
+        },
+        "t2": {
+          "id": 134521,
+          "name": "GIANTX GC"
+        },
+        "league": "VCT",
+        "bo": 3
+      },
+      {
         "sport": "dota2",
         "start": "2026-07-25T07:00:00Z",
         "t1": {
@@ -3511,7 +3511,7 @@
         "bo": 3
       }
     ],
-    "esp_ts": 1784943394.3899782
+    "esp_ts": 1784954913.3235393
   },
   "pm_trades": [
     {
@@ -3625,6 +3625,38 @@
       "payout": 0.0,
       "settled_at": "2026-07-25T02:23:33Z",
       "pnl": -0.9
+    },
+    {
+      "price": 0.17,
+      "qty_hint": 19,
+      "stake": 3.23,
+      "kind": "ARB",
+      "p_model": null,
+      "event": "SU Vortuna Bad Leonfelden vs. SC Schwarz-Wei Bregenz",
+      "ev_start": "2026-07-25T16:00:00Z",
+      "reason": "book sums to 0.860 \u2014 locking 14.0% before it closes",
+      "order_id": "BEZ5FYAN69NP",
+      "qty": 19,
+      "market_slug": "atc-ofb-svbl-swb-2026-07-25-svbl",
+      "outcome": "SU Vortuna Bad Leonfelden",
+      "status": "open",
+      "ts": "2026-07-25T04:48:51Z"
+    },
+    {
+      "price": 0.69,
+      "qty_hint": 19,
+      "stake": 13.11,
+      "kind": "ARB",
+      "p_model": null,
+      "event": "SU Vortuna Bad Leonfelden vs. SC Schwarz-Wei Bregenz",
+      "ev_start": "2026-07-25T16:00:00Z",
+      "reason": "book sums to 0.860 \u2014 locking 14.0% before it closes",
+      "order_id": "BEZ5Q9APG9SK",
+      "qty": 19,
+      "market_slug": "atc-ofb-svbl-swb-2026-07-25-swb",
+      "outcome": "SC Schwarz-Wei\u00df Bregenz",
+      "status": "open",
+      "ts": "2026-07-25T04:48:53Z"
     }
   ],
   "pm_stats": {
@@ -3632,7 +3664,7 @@
     "wins": 2,
     "losses": 2,
     "pnl": 22.55,
-    "trades": 6
+    "trades": 8
   },
   "x_purge_complete": 1784945845.0521848
 }
