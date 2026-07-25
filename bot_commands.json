@@ -1,5 +1,5 @@
 {
- "seq": 414,
+ "seq": 415,
  "commands": [
   {
    "seq": 400,
@@ -87,6 +87,11 @@
    "action": "scan_now",
    "dry": false,
    "slot": "20260725-00"
+  },
+  {
+   "seq": 415,
+   "action": "delete_channel",
+   "channel": "💵50-to"
   }
  ]
 }
