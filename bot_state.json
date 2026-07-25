@@ -5,18 +5,18 @@
     "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+media.write+offline.access&state=1d2b182de15b19ed&code_challenge=xaOLFN423Roy4ddDKgFEKPmyUhpus_8oATEmW82hzfA&code_challenge_method=S256"
   ],
   "time_audit": {
-    "at": "2026-07-25 21:56 UTC",
+    "at": "2026-07-25 21:27 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-2": "2026-07-25 21:17 UTC",
-    "\ud83e\uddfereceipts": "2026-07-25 21:56 UTC",
+    "\ud83e\uddfereceipts": "2026-07-25 19:38 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-25 21:17 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 21:56 UTC",
+    "at": "2026-07-25 21:27 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -25,14 +25,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 21:56 UTC",
+    "at": "2026-07-25 21:27 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 21:56 UTC",
+    "at": "2026-07-25 21:27 UTC",
     "flags": []
   },
-  "bot_version": "9.22.0",
+  "bot_version": "9.21.8",
   "unannounced_results": [],
   "last_x_receipt_ts": 1785013121.5732002,
   "last_recap_date": "2026-07-23",
@@ -8872,7 +8872,7 @@
       "qty": 23,
       "market_slug": "aec-lol-lll-png-2026-07-25",
       "outcome": "paiN Gaming",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T18:02:41Z",
       "price_path": [
         {
@@ -8899,7 +8899,13 @@
           "ts": 1785014665,
           "px": 0.29
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 8.74,
+      "pnl": 0.0,
+      "cashout": true,
+      "settled_at": "2026-07-25T21:56:02Z",
+      "autopsy": "+$0.00 \u2014 model 73% vs market 38% was real edge; thesis held. Taken 0.38, rode to 0.29 before the result \u2014 beat the number by 9\u00a2 \u2705 (cashed out early at $8.74)"
     },
     {
       "price": 0.59,
@@ -9196,7 +9202,7 @@
       "qty": 17,
       "market_slug": "astatc-valorant-g2-c9-2026-07-25-map1",
       "outcome": "G2 Esports",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-25T18:34:43Z",
       "price_path": [
         {
@@ -9219,7 +9225,10 @@
           "ts": 1785014667,
           "px": 0.97
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.44,
@@ -9438,7 +9447,7 @@
       "qty": 6,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T21:43:28Z"
     },
     {
@@ -9454,7 +9463,7 @@
       "qty": 8,
       "market_slug": "aec-lol-al-blg-2026-07-26",
       "outcome": "Bilibili Gaming",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T21:47:30Z"
     },
     {
@@ -9491,7 +9500,7 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 8,
+    "losses": 9,
     "pnl": 6.06,
     "trades": 39,
     "last_recap": "2026-07-25",
@@ -9586,6 +9595,14 @@
       "result": "LOSS",
       "pnl": 0.0,
       "lesson": "+$0.00 \u2014 model 86% vs market 46% was real edge; thesis held. Taken 0.46, slid to 0.96 before the result \u2014 the number ran 50\u00a2 against us \u26a0\ufe0f (cashed out early at $13.80)"
+    },
+    {
+      "ts": "2026-07-25T21:56:02Z",
+      "kind": "LIVE-BET",
+      "outcome": "paiN Gaming",
+      "result": "LOSS",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 73% vs market 38% was real edge; thesis held. Taken 0.38, rode to 0.29 before the result \u2014 beat the number by 9\u00a2 \u2705 (cashed out early at $8.74)"
     }
   ],
   "giveaway_x_posts": [
