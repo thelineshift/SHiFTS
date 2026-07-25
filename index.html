@@ -58,7 +58,21 @@
     <div id="picks">loading…</div>
   </div>
 
-  <div class="foot">🤖 Powered by SHiFT — fully automated picks engine · results update live</div>
+  <div class="recent">
+    <h2>📈 SHiFT Desk — Polymarket US, Live Record</h2>
+    <div class="record" style="margin:6px 0 8px">
+      <div class="stat"><div class="v" id="d-rec">—</div><div class="l">Desk Record</div></div>
+      <div class="stat"><div class="v up" id="d-pnl">—</div><div class="l">Desk P&L</div></div>
+      <div class="stat"><div class="v" id="d-open">—</div><div class="l">Open Now</div></div>
+    </div>
+    <div id="d-recent" style="text-align:center;color:var(--dim);font-size:13px">loading…</div>
+    <div style="text-align:center;margin-top:12px">
+      <a href="https://polymarket.us" style="color:var(--teal);font-weight:800;font-size:13px;text-decoration:none">🖥️ polymarket.us</a>
+      <span id="d-upd" style="color:var(--dim);font-size:11px;margin-left:12px"></span>
+    </div>
+  </div>
+
+  <div class="foot">⚡ SHiFT runs the board — every pick before start, every result receipted · results update live</div>
 </div>
 <script>
 fetch('https://raw.githubusercontent.com/thelineshift/AISportsBot/main/picks.json?t='+Date.now())
@@ -76,6 +90,18 @@ fetch('https://raw.githubusercontent.com/thelineshift/AISportsBot/main/picks.jso
       <span class="${p.result==='WIN'?'W':'L'}">${p.result} ${typeof p.profit==='number'?((p.profit>0?'+':'')+p.profit.toFixed(2)+'u'):''}</span></div>`
    ).join('');
  }).catch(()=>{document.getElementById('picks').textContent='tracker temporarily unavailable';});
+fetch('https://raw.githubusercontent.com/thelineshift/AISportsBot/main/desk.json?t='+Date.now())
+ .then(r=>r.json()).then(j=>{
+   document.getElementById('d-rec').textContent = j.record||'—';
+   const pe = document.getElementById('d-pnl');
+   pe.textContent = ((j.pnl>=0?'+':'')+'$'+(j.pnl||0).toFixed(2));
+   pe.className = 'v '+(j.pnl>=0?'up':'')||(j.pnl<0?'':'up');
+   if(j.pnl<0) pe.style.color = 'var(--red)';
+   document.getElementById('d-open').textContent = j.open!=null?j.open:'—';
+   const rr = (j.recent||[]).map(t=>`${t.result==='won'?'✅':t.result==='lost'?'❌':'🟰'} ${t.outcome} (${(t.pnl>=0?'+':'')}$${t.pnl.toFixed(2)})`).join(' · ');
+   document.getElementById('d-recent').textContent = (j.playbooks?j.playbooks+' — ':'') + (rr||'curve builds as positions settle');
+   document.getElementById('d-upd').textContent = 'updated '+(j.updated||'').replace('T',' ').replace('Z',' UTC');
+ }).catch(()=>{document.getElementById('d-recent').textContent='desk feed starts on the next recap';});
 </script>
 </body>
 </html>
