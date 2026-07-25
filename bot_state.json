@@ -40,7 +40,35 @@
     "flags": []
   },
   "bot_version": "9.22.1",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "san-francisco-giants-ml-0725",
+      "desc": "San Francisco Giants ML",
+      "odds": -126,
+      "result": "WIN",
+      "units": 0.79,
+      "score": "Los Angeles Angels 2, San Francisco Giants 9",
+      "tier": "whale"
+    },
+    {
+      "id": "arizona-diamondbacks-ml-0725",
+      "desc": "Arizona Diamondbacks ML",
+      "odds": 114,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Arizona Diamondbacks 3, Washington Nationals 5",
+      "tier": "sharp"
+    },
+    {
+      "id": "boston-red-sox-ml-0725",
+      "desc": "Boston Red Sox ML",
+      "odds": -120,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Toronto Blue Jays 6, Boston Red Sox 0",
+      "tier": "lock"
+    }
+  ],
   "last_x_receipt_ts": 1785013121.5732002,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -9743,13 +9771,7 @@
       "market_slug": "astatc-cs2-wc-mglz-2026-07-26-map1",
       "outcome": "Wildcard",
       "status": "open",
-      "ts": "2026-07-25T22:30:58Z",
-      "price_path": [
-        {
-          "ts": 1785019830,
-          "px": 0.37
-        }
-      ]
+      "ts": "2026-07-25T22:30:58Z"
     },
     {
       "price": 0.91,
@@ -9828,13 +9850,7 @@
       "market_slug": "astatc-valorant-geng-rrq-2026-07-26-map2",
       "outcome": "Gen.G Esports",
       "status": "open",
-      "ts": "2026-07-25T22:46:00Z",
-      "price_path": [
-        {
-          "ts": 1785019830,
-          "px": 0.65
-        }
-      ]
+      "ts": "2026-07-25T22:46:00Z"
     }
   ],
   "pm_stats": {
