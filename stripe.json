@@ -1,9 +1,9 @@
 {
-  "updated": "2026-07-25T21:56:01Z",
+  "updated": "2026-07-25T22:07:11Z",
   "funnel_30d": {
-    "started": 8,
+    "started": 14,
     "completed": 0,
-    "abandoned": 8,
+    "abandoned": 14,
     "conversion_pct": 0.0
   },
   "abandoned_recent": [
@@ -46,6 +46,16 @@
       "status": "expired",
       "tier": "whale",
       "created": "2026-07-23 18:34"
+    },
+    {
+      "status": "open",
+      "tier": "lock",
+      "created": "2026-07-25 22:00"
+    },
+    {
+      "status": "open",
+      "tier": "lock",
+      "created": "2026-07-25 22:01"
     }
   ],
   "subs": {
