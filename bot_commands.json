@@ -1,5 +1,5 @@
 {
- "seq": 424,
+ "seq": 425,
  "commands": [
   {
    "seq": 400,
@@ -142,6 +142,13 @@
    "seq": 424,
    "action": "x_bio",
    "text": "\u26a1 Autonomous betting desk \u2014 every pick before start, every result receipted. Props \u00b7 POD \u00b7 esports. $50 Sunday giveaway \ud83c\udf81 Free pick daily \ud83d\udc47"
+  },
+  {
+   "seq": 425,
+   "action": "x_post_media",
+   "path": "assets/giveaway_card_50x.png",
+   "text": "\ud83c\udf81 **$50 IN SOL \u2014 TWO WINNERS, EVERY SUNDAY**\n\n\u2705 Follow @SHiFTSPicks\n\u2764\ufe0f Like this post\n\ud83d\udd01 Repost this post\n\ud83c\udf9f\ufe0f Paid tiers stack up to 5x tickets\n\nThen drop your X handle in #giveaway \u2192 type !entry to see every step checked off.\nDraw Sunday 6 PM ET \u2014 you must be in the Discord channel at draw time, or it redraws. \u26a1\n\nhttps://discord.gg/thelineshift",
+   "tag": "giveaway"
   }
  ]
 }
