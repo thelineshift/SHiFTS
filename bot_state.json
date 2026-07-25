@@ -1,19 +1,20 @@
 {
-  "executed_seq": 498,
+  "executed_seq": 502,
   "last_log": [
-    "seq 498 executed 2026-07-25 22:05 UTC",
-    "purged 12 messages in #\ud83d\udc0bweekly-deepdive",
-    "purged 3 messages in #\ud83d\udccasharp-analytics",
-    "posted+pinned in #\ud83d\udc0bweekly-deepdive",
-    "posted+pinned in #\ud83d\udccasharp-analytics",
-    "posted+pinned in #\ud83d\udd12lock-room-5-11",
-    "posted+pinned in #\ud83d\udccasharp-room-9-6",
-    "old pinned message deleted",
-    "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)",
-    "topic set on #\ud83d\udd12lock-room-5-11",
-    "topic set on #\ud83d\udccasharp-room-9-6",
-    "topic set on #\ud83d\udc0bwhale-room-12-7",
-    "x_bio OK"
+    "seq 502 executed 2026-07-25 22:22 UTC",
+    "#\ud83d\udc0bweekly-deepdive [22:07] ",
+    "#\ud83d\udc0bweekly-deepdive [22:07] \ud83e\udde0 **WEEKLY WHALE DEEP-DIVE \u2014 Jul 18 \u2013 Jul 25**\n**The week:** 12-7 \u00b7 **+1.11u** \u00b7 ROI +4.6%\n\n\ud83c\udfc6 **WHY THE WINNER",
+    "#\ud83d\udc0bweekly-deepdive [22:05] ",
+    "scan_now executed (dry=True, slot=20260725-22-manual)",
+    "#\ud83d\udc0bweekly-deepdive [22:07] ",
+    "#\ud83d\udc0bweekly-deepdive [22:07] \ud83e\udde0 **WEEKLY WHALE DEEP-DIVE \u2014 Jul 18 \u2013 Jul 25**\n**The week:** 12-7 \u00b7 **+1.11u** \u00b7 ROI +4.6%\n\n\ud83c\udfc6 **WHY THE WINNER",
+    "#\ud83d\udc0bweekly-deepdive [22:05] ",
+    "#\ud83e\uddeashift-lab [22:22] \u2705 [DRY RUN] **SCAN COMPLETE \u2014 Sat 7/25 \u00b7 6 PM ET**\n\n\ud83c\udfaf **FREE: [MLB] Chicago Cubs ML vs Pittsburgh Pirates \u2014 1.",
+    "#\ud83e\uddeashift-lab [22:22] \ud83c\udfaf [DRY RUN] **FREE ROOM \u2014 Sat 7/25 \u00b7 6 PM ET CARD** (1 play)\n\n1\u20e3 **Chicago Cubs ML (+107)** vs Pittsburgh Pira",
+    "#\ud83e\uddeashift-lab [22:22] \ud83d\udd12 [DRY RUN] **LOCK ROOM \u2014 Sat 7/25 \u00b7 6 PM ET CARD** (3 plays)\n\n1\u20e3 **Milwaukee Brewers -1.5 (-110)** vs Colorad",
+    "#\ud83e\uddeashift-lab [22:22] \ud83d\udcca [DRY RUN] **SHARP ROOM \u2014 Sat 7/25 \u00b7 6 PM ET CARD** (5 plays)\n\n1\u20e3 **Under 9.5 (-110)** vs Atlanta Braves @ Ba",
+    "#\ud83e\uddeashift-lab [22:22] \ud83d\udc0b [DRY RUN] **WHALE ROOM \u2014 Sat 7/25 \u00b7 6 PM ET CARD** (6 plays)\n\n1\u20e3 **San Jose Earthquakes ML (-120)** vs LA Ga",
+    "#\ud83e\uddeashift-lab [22:22] \ud83d\udef0\ufe0f [DRY RUN] scan would initiate for slot 20260725-22-manual"
   ],
   "time_audit": {
     "at": "2026-07-25 21:27 UTC",
@@ -85,7 +86,7 @@
     "20260725-20-manual": "ok-bot",
     "20260725-21-manual": "ok-bot"
   },
-  "executed_cmd_seq": 498,
+  "executed_cmd_seq": 502,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
