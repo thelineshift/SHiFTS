@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.19.2'
+BOT_VERSION = '9.19.3'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4421,7 +4421,7 @@ async def pm_watch():
             if not _path or (time.time() - int(_path[-1].get('ts') or 0)) > 1800:
                 _c2 = await asyncio.to_thread(_pm_client)
                 if _c2:
-                    _r2 = await asyncio.to_thread(_c2.markets.retrieve_by_slug, t['market_slug'])
+                    _r2 = await asyncio.wait_for(asyncio.to_thread(_c2.markets.retrieve_by_slug, t['market_slug']), 25)
                     _mk2 = (_r2.get('market') if isinstance(_r2, dict) and 'market' in _r2 else _r2) or {}
                     _want_long = not t.get('short')
                     for _s0 in (_mk2.get('marketSides') or []):
@@ -4434,7 +4434,7 @@ async def pm_watch():
         except Exception:
             pass
         try:
-            res = await asyncio.to_thread(pm_check_settled, {'marketSlug': t['market_slug'], 'outcome': t['outcome'], 'qty': t['qty'], 'short': t.get('short'), 'stake': t.get('stake')})
+            res = await asyncio.wait_for(asyncio.to_thread(pm_check_settled, {'marketSlug': t['market_slug'], 'outcome': t['outcome'], 'qty': t['qty'], 'short': t.get('short'), 'stake': t.get('stake')}), 45)
         except Exception as e:
             print(f"[desk] settle check: {e}"); continue
         if not res:
