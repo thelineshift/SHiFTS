@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T12:50:06Z",
+  "updated": "2026-07-25T13:10:04Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1876,7 +1876,10 @@
       "opp": "Infinite",
       "analysis": "4-1 last 5 (beat GamerLegion, Astralis, Heroic) (lost to fnatic) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat GamerLegion, Astralis, Heroic) (lost to fnatic) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Infinite the number hasn't priced.",
       "awayTeam": "HOTU",
-      "homeTeam": "Infinite"
+      "homeTeam": "Infinite",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "HOTU 2-0 Infinite \u00b7 final"
     },
     {
       "id": "team-secret-whales-ml-0725",
