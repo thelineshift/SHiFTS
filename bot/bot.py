@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.15.4'
+BOT_VERSION = '9.16.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3654,6 +3654,218 @@ async def trader_channel(g0):
             print('[trader] channel:', e)
     return ch
 
+
+# ---------- POLYMARKET GLOBAL RAIL (polymarket.com CLOB — esports + world sports) ----------
+# Armed when POLY_KEY (Polygon wallet private key) + POLYMARKET_GLOBAL=1 are set.
+# Same laws as the US desk: profit only, model edge / complete-book arb / tail yield, Kelly sizing,
+# every trade slip-posted, every settle autopsied. Self-tests reachability + geo on first use.
+POLY_KEY = os.environ.get('POLY_KEY', '')
+POLY_FUNDER = os.environ.get('POLY_FUNDER', '')
+GLOBAL_ON = os.environ.get('POLYMARKET_GLOBAL', '') == '1' and bool(POLY_KEY)
+GAMMA = 'https://gamma-api.polymarket.com'
+CLOB_HOST = 'https://clob.polymarket.com'
+_POLY2 = {'client': None, 'ok': None, 'err': ''}
+
+def poly2_client():
+    if _POLY2['client'] is not None:
+        return _POLY2['client']
+    if not GLOBAL_ON:
+        return None
+    try:
+        from py_clob_client.client import ClobClient
+        c = ClobClient(CLOB_HOST, key=POLY_KEY, chain_id=137, funder=POLY_FUNDER or None)
+        c.set_api_creds(c.create_or_derive_api_creds())
+        c.get_api_keys()  # L2 authed read — probes reachability + geo + key validity
+        _POLY2['client'] = c
+        _POLY2['ok'] = True
+        print('[global] clob armed — L2 creds ok')
+    except Exception as e:
+        _POLY2['ok'] = False
+        _POLY2['err'] = str(e)[:160]
+        print('[global] clob init failed:', _POLY2['err'])
+    return _POLY2['client']
+
+def poly2_ok():
+    if not GLOBAL_ON:
+        return False
+    if _POLY2['ok'] is None:
+        poly2_client()
+    return bool(_POLY2['ok'])
+
+def poly2_balance():
+    """USDC (collateral) balance on the global wallet."""
+    try:
+        from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
+        c = poly2_client()
+        if not c:
+            return None
+        b = c.get_balance_allowance(BalanceAllowanceParams(asset_type=AssetType.COLLATERAL))
+        return float(b.get('balance', 0)) / 1e6
+    except Exception as e:
+        print('[global] balance:', str(e)[:120])
+        return None
+
+def _gamma_json(path, params):
+    try:
+        req = urllib.request.Request(GAMMA + path + '?' + urllib.parse.urlencode(params),
+                                     headers={'User-Agent': 'lineshift-bot'})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return json.load(r)
+    except Exception as e:
+        print('[global] gamma:', path, str(e)[:120])
+        return None
+
+def poly2_events(now_ts):
+    """Open esports 'vs' events with exactly one 2-outcome market each (match winner)."""
+    out = []
+    for tag in ('esports', 'cs2', 'league-of-legends', 'dota-2', 'valorant'):
+        evs = _gamma_json('/events', {'closed': 'false', 'limit': 100, 'tag_slug': tag}) or []
+        for ev in evs:
+            title = ev.get('title') or ''
+            if ' vs ' not in title.lower():
+                continue
+            for m in ev.get('markets') or []:
+                try:
+                    outs = json.loads(m.get('outcomes') or '[]')
+                    toks = json.loads(m.get('clobTokenIds') or '[]')
+                    prices = json.loads(m.get('outcomePrices') or '[]')
+                except Exception:
+                    continue
+                if len(outs) != 2 or len(toks) != 2 or len(prices) != 2:
+                    continue
+                if m.get('closed') or not m.get('acceptingOrders', True):
+                    continue
+                try:
+                    pr = [float(x) for x in prices]
+                except Exception:
+                    continue
+                if not all(0.005 < p < 0.995 for p in pr):
+                    continue
+                start = ev.get('startDate') or ev.get('startTime') or ''
+                try:
+                    ts = calendar.timegm(time.strptime(start[:19], '%Y-%m-%dT%H:%M:%S'))
+                except Exception:
+                    ts = 0
+                out.append({'title': title, 'start': ts, 'condition': m.get('conditionId'),
+                            'slug': ev.get('slug'), 'market_id': m.get('id'),
+                            'outcomes': [{'name': outs[0], 'token': toks[0], 'price': pr[0]},
+                                         {'name': outs[1], 'token': toks[1], 'price': pr[1]}]})
+    # dedupe by condition id (tags overlap)
+    seen, ded = set(), []
+    for e in out:
+        k = e['condition'] or e['slug']
+        if k in seen:
+            continue
+        seen.add(k)
+        ded.append(e)
+    return ded
+
+def poly2_place(token_id, stake_usd):
+    """FOK market buy of `stake_usd` USDC worth of one outcome token."""
+    c = poly2_client()
+    if not c:
+        return {'error': 'cold'}
+    try:
+        from py_clob_client.clob_types import MarketOrderArgs, OrderType
+        signed = c.create_market_order(MarketOrderArgs(token_id=str(token_id), amount=round(float(stake_usd), 2)))
+        res = c.post_order(signed, OrderType.FOK)
+        if res.get('success'):
+            return {'order_id': str(res.get('orderID') or res.get('id') or 'ok')}
+        return {'error': str(res.get('errorMsg') or res)[:140]}
+    except Exception as e:
+        return {'error': str(e)[:160]}
+
+def poly2_check_settled(t):
+    """Settled? Gamma market closed -> winner is the outcome priced 1."""
+    mk = _gamma_json('/markets', {'condition_ids': t.get('condition')})
+    if not mk and t.get('market_id'):
+        mk = _gamma_json('/markets/' + str(t.get('market_id')), {})
+    try:
+        if isinstance(mk, list) and mk:
+            m = mk[0]
+        elif isinstance(mk, dict) and mk.get('id'):
+            m = mk
+        else:
+            m = None
+        if not m or not m.get('closed'):
+            return None
+        outs = json.loads(m.get('outcomes') or '[]')
+        prices = [float(x) for x in json.loads(m.get('outcomePrices') or '[]')]
+        if len(outs) != 2 or len(prices) != 2:
+            return None
+        winner = outs[0] if prices[0] >= 0.5 else outs[1]
+        won = norm_txt(winner) == norm_txt(t.get('outcome'))
+        return {'result': 'WIN' if won else 'LOSS', 'winner': winner}
+    except Exception:
+        return None
+
+def poly2_scan(st):
+    """Global playbooks on esports matches. Returns (intents, notes). Same laws as the US desk."""
+    intents, notes = [], []
+    if not GLOBAL_ON:
+        return intents, notes
+    B = poly2_balance()
+    if B is None or B < 2:
+        notes.append({'vs': 0, 'three_way': 0, 'expo': 0, 'B': B or 0, 'cold': True})
+        return intents, notes
+    now_ts = time.time()
+    cache = st.setdefault('pm_cache', {})
+    if now_ts - (cache.get('esp_ts') or 0) > 7200:
+        esp = []
+        for gg in ('cs2', 'lol', 'valorant', 'dota2'):
+            esp += se_ps_upcoming(gg)
+        cache['esp'], cache['esp_ts'] = esp, now_ts
+    open_trades = [t for t in st.get('pm2_trades', []) if t.get('status') == 'open']
+    expo = sum(float(t.get('stake') or 0) for t in open_trades)
+    have = {t.get('condition') for t in open_trades} | {t.get('condition') for t in intents}
+    evs = poly2_events(now_ts)
+    hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B}
+    for e in evs:
+        if e['condition'] in have:
+            continue
+        hb['vs'] += 1
+        o1, o2 = e['outcomes']
+        tot = o1['price'] + o2['price']
+        live = bool(e['start'] and e['start'] <= now_ts + 600)
+        # ---- SUM-ARB: both outcome tokens for under a dollar (2-outcome book = complete by construction)
+        if 0.5 < tot <= TRADER_ARB_SUM:
+            n = max(1, int(min(B * 0.30, B - 1) / tot))
+            for o in sorted(e['outcomes'], key=lambda x: x['price']):
+                stake = round(n * o['price'], 2)
+                if stake < 1:
+                    continue
+                intents.append({'kind': 'ARB', 'event': e['title'], 'condition': e['condition'], 'market_id': e['market_id'],
+                                'outcome': o['name'], 'token': o['token'], 'price': o['price'], 'qty': n, 'stake': stake,
+                                'reason': f"complete 2-way book sums {tot:.3f} — both sides for under a dollar"})
+            continue
+        # ---- MODEL EDGE (PandaScore esports form) + TAIL yield
+        for o in e['outcomes']:
+            other = o2 if o is o1 else o1
+            p = pm_esport_prob(cache, o['name'], other['name'])
+            edge = (p - o['price']) if p else 0
+            min_edge = TRADER_LIVE_EDGE if live else TRADER_MIN_EDGE
+            kind = None
+            if p and edge >= min_edge:
+                kind = 'LIVE-BET' if live else 'EDGE'
+            elif o['price'] >= TRADER_TAIL_MIN and e['start'] and e['start'] - now_ts < 86400 and (p or 0) >= 0.80:
+                kind = 'TAIL'
+            if not kind:
+                continue
+            if kind == 'TAIL':
+                stake = min(B * 0.08, B - 1)
+            else:
+                stake = pm_kelly(p, o['price'], B)
+            if stake < 1:
+                continue
+            intents.append({'kind': kind, 'event': e['title'], 'condition': e['condition'], 'market_id': e['market_id'],
+                            'outcome': o['name'], 'token': o['token'], 'price': o['price'],
+                            'qty': round(stake / o['price'], 1), 'stake': round(stake, 2), 'p_model': p,
+                            'reason': (f"{'live divergence' if kind == 'LIVE-BET' else 'model'} {p:.0%} vs market {o['price']:.0%} (edge {edge:.0%})" if kind != 'TAIL'
+                                       else f"tail yield: {o['price']:.2f} resolves <24h, model {p:.0%}" if p else f"tail yield: {o['price']:.2f} resolves <24h")})
+    hb['expo'], hb['B'] = expo, B
+    notes.append(hb)
+    return intents, notes
+
 @tasks.loop(seconds=300)
 async def pm_trader():
     """Always scanning. Entries to the desk channel; exits + P&L via pm_watch."""
@@ -3665,6 +3877,12 @@ async def pm_trader():
         hb = (notes or [{}])[0]
         print(f"[trader] cycle: {hb.get('vs', '?')} vs-events · {hb.get('three_way', '?')} 3-way blocked · "
               f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f}/${hb.get('B', 0):.2f}")
+        if GLOBAL_ON:
+            g_intents, g_notes = await asyncio.to_thread(poly2_scan, st)
+            ghb = (g_notes or [{}])[0]
+            print(f"[trader] global: {ghb.get('vs', '?')} esports matches · {len(g_intents)} intents · "
+                  f"expo ${ghb.get('expo', 0):.2f}/${ghb.get('B', 0):.2f}{' · COLD' if ghb.get('cold') else ''}")
+            intents += g_intents
         g0 = client.guilds[0] if client.guilds else None
         ch = await trader_channel(g0) if intents else None
         placed = False
@@ -3672,20 +3890,31 @@ async def pm_trader():
         for t in intents:
             if t['kind'] == 'ARB' and t.get('event') in bad_arb:
                 continue
-            res = await asyncio.to_thread(pm_place_bet,
-                                          {'marketSlug': t['slug'], 'price': t['price'], 'minQty': 1}, t['stake'])
+            if t.get('token'):
+                res = await asyncio.to_thread(poly2_place, t['token'], t['stake'])
+            else:
+                res = await asyncio.to_thread(pm_place_bet,
+                                              {'marketSlug': t['slug'], 'price': t['price'], 'minQty': 1}, t['stake'])
             if 'order_id' not in res:
                 if t['kind'] == 'ARB':
                     bad_arb.add(t.get('event'))
                     print('[trader] arb leg failed — remaining legs aborted:', t.get('event'))
                 if res.get('error') not in ('no_liquidity', 'below_min'):
-                    print('[trader] place:', t['slug'], res.get('error'))
+                    print('[trader] place:', t.get('slug') or t.get('event'), res.get('error'))
                 continue
-            t.update({'order_id': res['order_id'], 'qty': res['qty'], 'stake': res['stake'],
-                      'market_slug': t.pop('slug'), 'outcome': t.pop('team'), 'status': 'open',
-                      'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
-            st.setdefault('pm_trades', []).append(t)
-            st['pm_trades'] = st['pm_trades'][-120:]
+            if t.get('token'):
+                t.update({'order_id': res['order_id'], 'status': 'open', 'rail': 'global',
+                          'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
+                st.setdefault('pm2_trades', []).append(t)
+                st['pm2_trades'] = st['pm2_trades'][-120:]
+                if 'start' not in st.setdefault('pm2_stats', {'start': 0.0, 'wins': 0, 'losses': 0, 'pnl': 0.0, 'trades': 0}):
+                    st['pm2_stats']['start'] = 0.0
+            else:
+                t.update({'order_id': res['order_id'], 'qty': res['qty'], 'stake': res['stake'],
+                          'market_slug': t.pop('slug'), 'outcome': t.pop('team'), 'status': 'open',
+                          'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
+                st.setdefault('pm_trades', []).append(t)
+                st['pm_trades'] = st['pm_trades'][-120:]
             placed = True
             stats = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
             stats['trades'] = stats.get('trades', 0) + 1
@@ -3738,7 +3967,8 @@ async def pm_watch():
     st = await asyncio.to_thread(get_state)
     open_trades = [t for t in st.get('pm_trades', []) if t.get('status') == 'open']
     open_bets = [b for b in st.get('pm_live', []) if not b.get('result')]
-    if not open_trades and not open_bets:
+    open_global = [t for t in st.get('pm2_trades', []) if t.get('status') == 'open']
+    if not open_trades and not open_bets and not open_global:
         return
     guild = client.guilds[0] if client.guilds else None
     ch = find_channel(guild, 'receipts') if guild else None
@@ -3813,6 +4043,74 @@ async def pm_watch():
             print(f"[desk] x result: {xe}")
         changed = True
         await asyncio.sleep(1)
+
+    # ---- GLOBAL rail trades (polymarket.com) ----
+    if open_global:
+        stats2 = st.setdefault('pm2_stats', {'start': 0.0, 'wins': 0, 'losses': 0, 'pnl': 0.0, 'trades': 0})
+        desk = desk or (await trader_channel(guild) if guild else None)
+        for t in open_global:
+            try:
+                res = await asyncio.to_thread(poly2_check_settled, t)
+            except Exception as e:
+                print(f"[desk] global settle check: {e}"); continue
+            if not res:
+                continue
+            t['status'] = 'settled'; t['result'] = res['result']
+            t['settled_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            pnl = round(float(t['qty']) - float(t['stake']), 2) if res['result'] == 'WIN' else -float(t['stake'])
+            t['pnl'] = pnl
+            lesson = _trade_autopsy(t, res)
+            t['autopsy'] = lesson
+            st.setdefault('pm_lessons', []).append({'ts': t['settled_at'], 'kind': t['kind'], 'outcome': t.get('outcome'),
+                                                    'result': t['result'], 'pnl': pnl, 'lesson': lesson})
+            st['pm_lessons'] = st['pm_lessons'][-30:]
+            stats2['pnl'] = round(stats2.get('pnl', 0.0) + pnl, 2)
+            stats2['wins'] = stats2.get('wins', 0) + (1 if res['result'] == 'WIN' else 0)
+            stats2['losses'] = stats2.get('losses', 0) + (0 if res['result'] == 'WIN' else 1)
+            em = '🎯' if res['result'] == 'WIN' else '❌'
+            sign = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
+            slip = None
+            try:
+                slip = await asyncio.to_thread(pm_slip_png, _trade_slip(t),
+                                               'WON' if res['result'] == 'WIN' else 'LOST', pnl,
+                                               'SHiFT TRADING DESK — RESULT (GLOBAL)')
+            except Exception as se:
+                print('[desk] slip:', se)
+            line = (f"🌐 **DESK RESULT {em} — GLOBAL:** **{t['outcome']}** @ {t['price']:.2f} × {t['qty']} — **{res['result']} {sign}**\n"
+                    f"_{t.get('reason', '')}_\n"
+                    f"🔬 **Autopsy:** {lesson}\n"
+                    f"Global record **{stats2.get('wins', 0)}-{stats2.get('losses', 0)}** · P&L **{'+' if stats2.get('pnl', 0) >= 0 else ''}${stats2.get('pnl', 0):.2f}**")
+            if desk:
+                try:
+                    import io as _io6
+                    if slip:
+                        await desk.send(line, file=discord.File(_io6.BytesIO(slip), filename='result.png'))
+                    else:
+                        await desk.send(line)
+                except Exception:
+                    pass
+            xt = (f"🌐 SHiFT desk — {t['outcome']} @ {t['price']:.2f} {em} {res['result']} {sign}\n"
+                  f"{stats2.get('wins', 0)}-{stats2.get('losses', 0)} · P&L {'+' if stats2.get('pnl', 0) >= 0 else ''}${stats2.get('pnl', 0):.2f}\n"
+                  f"Autonomous on Polymarket. Receipts don't lie.\n"
+                  f"Join: https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=x_{time.strftime('%Y%m%d', time.gmtime())}")
+            if len(xt) > 270:
+                xt = xt[:267] + '...'
+            try:
+                posted_x = False
+                if slip:
+                    try:
+                        _up = await asyncio.to_thread(x_upload_media_oauth1, slip, 'desk.png')
+                        if _up and _up[1]:
+                            await asyncio.to_thread(x_post_media_oauth1, xt, _up[1])
+                            posted_x = True
+                    except Exception as xe:
+                        print(f"[desk] x media: {xe}")
+                if not posted_x:
+                    await asyncio.to_thread(x_post, xt, None)
+            except Exception as xe:
+                print(f"[desk] x result: {xe}")
+            changed = True
+            await asyncio.sleep(1)
 
     # ---- legacy challenge bets (rail retired; settle stragglers honestly) ----
     for lb in open_bets:
