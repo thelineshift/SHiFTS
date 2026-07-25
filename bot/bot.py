@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.19.3'
+BOT_VERSION = '9.20.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -1526,6 +1526,22 @@ async def run_command(cmd, guild, log):
         m = await ch.send(cmd['content'])
         await m.pin()
         log.append(f'posted+pinned in #{ch.name}')
+    elif a == 'lock_channel':
+        try:
+            chan = find_channel(guild, cmd.get('channel', ''))
+            if not chan:
+                log.append(f"lock_channel FAIL: no such channel {cmd.get('channel')}")
+            else:
+                everyone = guild.default_role
+                await chan.set_permissions(everyone, overwrite=discord.PermissionOverwrite(view_channel=False))
+                for rn in ('lock', 'sharp', 'whale'):
+                    role = find_role(guild, rn)
+                    if role:
+                        await chan.set_permissions(role, overwrite=discord.PermissionOverwrite(view_channel=True, read_message_history=True))
+                await chan.set_permissions(guild.me, overwrite=discord.PermissionOverwrite(view_channel=True, send_messages=True, read_message_history=True, embed_links=True, attach_files=True))
+                log.append(f'lock_channel OK: #{chan.name} locked to paid tiers (lock/sharp/whale)')
+        except Exception as e:
+            log.append(f'lock_channel FAIL: {e}')
     elif a == 'set_permissions':
         ch = find_channel(guild, cmd['channel'])
         role = find_role(guild, cmd['role'])
@@ -4327,6 +4343,36 @@ async def pm_trader():
             await asyncio.sleep(1)
         if placed:
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm trader entries')
+            # BOARD PLAY LAW (owner decree 2026-07-26): entries 6+ hours out post to
+            # #shift-trades (paid members only) so they can tail with us. One batched
+            # post per cycle max; a market is announced once, ever.
+            try:
+                g0 = client.guilds[0] if client.guilds else None
+                ch3 = await trader_channel(g0) if g0 else None
+                seen = st.setdefault('board_posted', [])
+                lines = []
+                for it in placed:
+                    if it.get('kind') == 'ARB' or not it.get('ev_start'):
+                        continue
+                    try:
+                        gap = datetime.datetime.fromisoformat(str(it['ev_start']).replace('Z', '+00:00')).timestamp() - time.time()
+                    except Exception:
+                        continue
+                    if gap >= 6 * 3600 and it['market_slug'] not in seen:
+                        when = time.strftime('%a %I:%M %p ET', time.gmtime(datetime.datetime.fromisoformat(str(it['ev_start']).replace('Z', '+00:00')).timestamp() - 4 * 3600))
+                        lines.append(f"• **{_trade_label(it)}** @ {it['price']:.2f} × {it['qty']} (${it['stake']:.2f}) — {str(it.get('event', ''))[:60]} · starts {when}")
+                        seen.append(it['market_slug'])
+                if lines and ch3:
+                    _st = st.get('pm_stats', {})
+                    _tot = _st.get('pnl', 0.0)
+                    _sgn = '+' if _tot >= 0 else ''
+                    await ch3.send("📌 **DESK BOARD PLAY — 6+ hours out, tail with us:**\n" + "\n".join(lines) +
+                                   f"\n\n_Desk to date: {_st.get('wins', 0)}-{_st.get('losses', 0)} · {_sgn}${_tot:.2f} on the $50 ladder_")
+                    st['board_posted'] = seen[-60:]
+                    await asyncio.to_thread(gh_put, 'bot_state.json', st, 'board play posted')
+                    print(f"[trader] board play posted ({len(lines)} far-out entries)")
+            except Exception as _be:
+                print('[trader] board play:', _be)
         # entries stay ledger-only (revert: whale room untouched by desk traffic)
         # ---- desk recap: shift-trades every 2h, X once a day at 8 AM ET ----
         et_now = time.gmtime(time.time() - 4 * 3600)
@@ -4402,6 +4448,85 @@ async def pm_watch():
                         print('[desk] correction post:', _ce)
         st['pending_corrections'] = []
         await asyncio.to_thread(gh_put, 'bot_state.json', st, 'grading corrections posted')
+    # RECONCILE LAW (owner decree 2026-07-26): the exchange is the truth. A ledger-open
+    # trade with no exchange position is either cashed out (settle with realized P&L and
+    # announce it) or an unfilled/cancelled order (never money — marked, out of stats).
+    _rec = [t for t in st.get('pm_trades', []) if t.get('status') in ('open', 'resting')]
+    if _rec:
+        try:
+            _c3 = await asyncio.to_thread(_pm_client)
+            if _c3:
+                _pos = await asyncio.wait_for(asyncio.to_thread(_c3.portfolio.positions), 25)
+                _pd = (_pos.get('positions') if isinstance(_pos, dict) else _pos) or {}
+                _held = {ms: float(p.get('netPosition') or 0) for ms, p in _pd.items()}
+                _od = await asyncio.wait_for(asyncio.to_thread(_c3.orders.list), 25)
+                _ol = (_od.get('orders') if isinstance(_od, dict) else _od) or []
+                _resting = set()
+                for _o in _ol:
+                    _oo = (_o.get('order') if isinstance(_o, dict) and 'order' in _o else _o) or {}
+                    if isinstance(_oo, dict) and _oo.get('marketSlug'):
+                        _resting.add(_oo.get('marketSlug'))
+                _rc = False
+                for t in _rec:
+                    slug = t.get('market_slug')
+                    if not slug:
+                        continue
+                    if abs(_held.get(slug, 0)) >= 0.01:
+                        if t.get('status') == 'resting':
+                            t['status'] = 'open'; _rc = True
+                        continue
+                    if slug in _resting:
+                        if t.get('status') != 'resting':
+                            t['status'] = 'resting'; _rc = True
+                            print(f"[desk] {slug}: order resting (unfilled) — out of expo")
+                        continue
+                    try:
+                        _r = await asyncio.wait_for(asyncio.to_thread(_c3.portfolio.activities, {'marketSlug': [slug], 'types': ['ACTIVITY_TYPE_TRADE']}), 25)
+                        _acts = (_r.get('activities') if isinstance(_r, dict) else _r) or []
+                        _sell = None
+                        for _a in _acts:
+                            _oo2 = ((_a.get('trade') or {}).get('aggressorExecution') or {}).get('order') or {}
+                            if _oo2.get('side') == 'ORDER_SIDE_SELL':
+                                _sell = _oo2
+                        if _sell:
+                            proceeds = round(float((_sell.get('price') or {}).get('value') or 0) * float(_sell.get('quantity') or 0), 2)
+                            pnl = round(proceeds - float(t.get('stake') or 0), 2)
+                            res = {'result': 'WIN' if pnl > 0 else 'LOSS', 'payout': proceeds, 'pnl': pnl}
+                            t.update({'status': 'settled', 'result': res['result'], 'payout': proceeds, 'pnl': pnl,
+                                      'cashout': True, 'settled_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
+                            lesson = _trade_autopsy(t, res) + f" (cashed out early at ${proceeds:.2f})"
+                            t['autopsy'] = lesson
+                            st.setdefault('pm_lessons', []).append({'ts': t['settled_at'], 'kind': t.get('kind'), 'outcome': t.get('outcome'),
+                                                                    'result': t['result'], 'pnl': pnl, 'lesson': lesson})
+                            st['pm_lessons'] = st['pm_lessons'][-30:]
+                            stats0 = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
+                            stats0['pnl'] = round(stats0.get('pnl', 0.0) + pnl, 2)
+                            stats0['wins'] = stats0.get('wins', 0) + (1 if pnl > 0 else 0)
+                            stats0['losses'] = stats0.get('losses', 0) + (0 if pnl > 0 else 1)
+                            em0 = '🎯' if pnl > 0 else '❌'
+                            sign0 = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
+                            _g9 = client.guilds[0] if client.guilds else None
+                            _msg0 = (f"💵 **DESK CASH-OUT {em0}:** **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']}\n"
+                                     f"Cashed out early at **${proceeds:.2f}** — profit **{sign0}**\n"
+                                     f"📈 Desk to date: **{stats0.get('wins', 0)}-{stats0.get('losses', 0)}** · **{'+' if stats0.get('pnl', 0) >= 0 else ''}${stats0.get('pnl', 0):.2f}** on the $50 ladder")
+                            for _tgt9 in (find_channel(_g9, 'receipts') if _g9 else None, await trader_channel(_g9) if _g9 else None):
+                                if _tgt9:
+                                    try:
+                                        await _tgt9.send(_msg0)
+                                    except Exception as _pe:
+                                        print('[desk] cash-out post:', _pe)
+                            print(f"[desk] cash-out reconciled: {slug} ${proceeds:.2f} ({sign0})")
+                        else:
+                            t.update({'status': 'unfilled', 'result': None, 'pnl': 0.0,
+                                      'autopsy': 'order never filled — cancelled; no money moved.'})
+                            print(f"[desk] {slug}: unfilled/cancelled — out of stats")
+                        _rc = True
+                    except Exception as _re:
+                        print('[desk] reconcile market:', str(_re)[:120])
+                if _rc:
+                    await asyncio.to_thread(gh_put, 'bot_state.json', st, 'desk reconcile')
+        except Exception as _re2:
+            print('[desk] reconcile feed:', str(_re2)[:120])
     open_trades = [t for t in st.get('pm_trades', []) if t.get('status') == 'open']
     open_bets = [b for b in st.get('pm_live', []) if not b.get('result')]
     open_global = [t for t in st.get('pm2_trades', []) if t.get('status') == 'open']
@@ -4475,6 +4600,17 @@ async def pm_watch():
                     await desk.send(line)
             except Exception:
                 pass
+        # CASH-OUT LAW (owner decree 2026-07-26): every settle also announces on the desk floor
+        # (#shift-trades, paid-only): amount cashed, profit, running total to date.
+        try:
+            _floor = await trader_channel(guild) if guild else None
+            if _floor and (not desk or _floor.id != desk.id):
+                _msg2 = (f"💵 **DESK CASH-OUT {em}:** **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']}\n"
+                         f"Cashed out **${res.get('payout', 0):.2f}** — profit **{sign}**\n"
+                         f"📈 Desk to date: **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}** on the $50 ladder")
+                await _floor.send(_msg2)
+        except Exception as _fe2:
+            print('[desk] cash-out post:', _fe2)
         # X exposure law (owner decree 2026-07-25): desk WINNERS post to X with the record + funnel.
         if res['result'] == 'WIN':
             xt = (f"📈 SHiFT desk — {_trade_label(t)} @ {t['price']:.2f} 🎯 WIN {sign}\n"
