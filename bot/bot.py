@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.20.0'
+BOT_VERSION = '9.20.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4306,6 +4306,7 @@ async def pm_trader():
         g0 = client.guilds[0] if client.guilds else None
         placed = False
         placed_lines = []  # NO-SPAM DECREE: entries batch into one Whale digest, never per-bet public posts
+        placed_trades = []  # actual placed trade dicts for the board-play check
         bad_arb = set()  # an arb with a failed leg is naked risk — abort its remaining legs
         for t in intents:
             if t['kind'] == 'ARB' and t.get('event') in bad_arb:
@@ -4337,6 +4338,7 @@ async def pm_trader():
                 st.setdefault('pm_trades', []).append(t)
                 st['pm_trades'] = st['pm_trades'][-120:]
             placed = True
+            placed_trades.append(t)
             stats = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
             stats['trades'] = stats.get('trades', 0) + 1
             placed_lines.append(f"• **{t['kind']}** — **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']} (${t['stake']:.2f})\n  _{t['reason']}_")
@@ -4349,19 +4351,24 @@ async def pm_trader():
             try:
                 g0 = client.guilds[0] if client.guilds else None
                 ch3 = await trader_channel(g0) if g0 else None
-                seen = st.setdefault('board_posted', [])
+                seen = st.get('board_posted')
+                if not isinstance(seen, list):
+                    seen = st['board_posted'] = []
                 lines = []
-                for it in placed:
+                for it in placed_trades:
                     if it.get('kind') == 'ARB' or not it.get('ev_start'):
+                        continue
+                    _slug_i = it.get('market_slug') or it.get('slug')
+                    if not _slug_i:
                         continue
                     try:
                         gap = datetime.datetime.fromisoformat(str(it['ev_start']).replace('Z', '+00:00')).timestamp() - time.time()
                     except Exception:
                         continue
-                    if gap >= 6 * 3600 and it['market_slug'] not in seen:
+                    if gap >= 6 * 3600 and _slug_i not in seen:
                         when = time.strftime('%a %I:%M %p ET', time.gmtime(datetime.datetime.fromisoformat(str(it['ev_start']).replace('Z', '+00:00')).timestamp() - 4 * 3600))
-                        lines.append(f"• **{_trade_label(it)}** @ {it['price']:.2f} × {it['qty']} (${it['stake']:.2f}) — {str(it.get('event', ''))[:60]} · starts {when}")
-                        seen.append(it['market_slug'])
+                        lines.append(f"• **{_trade_label(it)}** @ {it.get('price', 0):.2f} × {it.get('qty', 0)} (${it.get('stake', 0):.2f}) — {str(it.get('event', ''))[:60]} · starts {when}")
+                        seen.append(_slug_i)
                 if lines and ch3:
                     _st = st.get('pm_stats', {})
                     _tot = _st.get('pnl', 0.0)
