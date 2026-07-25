@@ -1,5 +1,5 @@
 {
- "seq": 503,
+ "seq": 505,
  "commands": [
   {
    "seq": 400,
@@ -607,6 +607,18 @@
    "action": "read_full",
    "channel": "shift-lab",
    "limit": 8
+  },
+  {
+   "seq": 504,
+   "action": "room_tail",
+   "channel": "sharp-room",
+   "n": 3
+  },
+  {
+   "seq": 505,
+   "action": "room_tail",
+   "channel": "whale-room",
+   "n": 3
   }
  ]
 }
