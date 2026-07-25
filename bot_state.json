@@ -7942,6 +7942,64 @@
             }
           ]
         }
+      },
+      "cs2:138561": {
+        "ts": 1785007408.1683726,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "BOJONG"
+            },
+            {
+              "won": false,
+              "opp": "Donstu Esports"
+            },
+            {
+              "won": false,
+              "opp": "Donstu Esports"
+            },
+            {
+              "won": true,
+              "opp": "ex-PeeP"
+            },
+            {
+              "won": false,
+              "opp": "eternal premium"
+            }
+          ]
+        }
+      },
+      "cs2:138358": {
+        "ts": 1785007408.7767804,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Fraternity"
+            },
+            {
+              "won": true,
+              "opp": "LPH Gaming"
+            },
+            {
+              "won": false,
+              "opp": "TheBoys"
+            },
+            {
+              "won": true,
+              "opp": "Arch"
+            },
+            {
+              "won": true,
+              "opp": "Al Ahli"
+            }
+          ]
+        }
       }
     }
   },
@@ -8796,6 +8854,22 @@
           "px": 0.2
         }
       ]
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 2.4,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727274,
+      "event": "Anyone's Legend vs. Bilibili Gaming",
+      "ev_start": "2026-07-26T11:00:00Z",
+      "reason": "model 73% vs market 60% \u2014 13% edge, half-Kelly",
+      "order_id": "BFCETMTR49P0",
+      "qty": 4,
+      "market_slug": "aec-lol-al-blg-2026-07-26",
+      "outcome": "Bilibili Gaming",
+      "status": "open",
+      "ts": "2026-07-25T19:23:34Z"
     }
   ],
   "pm_stats": {
@@ -8803,7 +8877,7 @@
     "wins": 3,
     "losses": 8,
     "pnl": 6.06,
-    "trades": 32,
+    "trades": 33,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-18"
   },
