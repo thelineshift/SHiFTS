@@ -1,5 +1,5 @@
 {
- "seq": 425,
+ "seq": 426,
  "commands": [
   {
    "seq": 400,
@@ -146,6 +146,13 @@
   {
    "seq": 425,
    "action": "x_post_media",
+   "path": "assets/giveaway_card_50x.png",
+   "text": "\ud83c\udf81 $50 IN SOL \u2014 TWO WINNERS EVERY SUNDAY\n\n\u2705 Follow @SHiFTSPicks\n\u2764\ufe0f Like + \ud83d\udd01 repost this post\n\ud83c\udf9f\ufe0f Paid tiers stack to 5x tickets\n\nDrop your X handle in Discord #giveaway \u2014 type !entry for live status.\nDraw: Sunday 6 PM ET \u2014 be there or it redraws. \u26a1",
+   "tag": "giveaway"
+  },
+  {
+   "seq": 426,
+   "action": "x_post_media_native",
    "path": "assets/giveaway_card_50x.png",
    "text": "\ud83c\udf81 $50 IN SOL \u2014 TWO WINNERS EVERY SUNDAY\n\n\u2705 Follow @SHiFTSPicks\n\u2764\ufe0f Like + \ud83d\udd01 repost this post\n\ud83c\udf9f\ufe0f Paid tiers stack to 5x tickets\n\nDrop your X handle in Discord #giveaway \u2014 type !entry for live status.\nDraw: Sunday 6 PM ET \u2014 be there or it redraws. \u26a1",
    "tag": "giveaway"
