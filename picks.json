@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T02:03:26Z",
+  "updated": "2026-07-25T02:23:26Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1172,7 +1172,10 @@
         "away_ml": 107,
         "total": 8.5,
         "ts": 1784929750
-      }
+      },
+      "result": "WIN",
+      "score": "Atlanta Braves 7, Baltimore Orioles 6",
+      "units_result": 1.05
     },
     {
       "id": "miami-marlins-ml-0724",
@@ -1196,7 +1199,10 @@
         "total": 9.0,
         "ts": 1784933773
       },
-      "last_alert_odds": -123
+      "last_alert_odds": -123,
+      "result": "LOSS",
+      "score": "San Diego Padres 4, Miami Marlins 2",
+      "units_result": -1.0
     },
     {
       "id": "new-york-yankees-ml-0724",
