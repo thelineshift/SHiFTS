@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.21.2'
+BOT_VERSION = '9.21.3'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -873,6 +873,13 @@ def make_client(privileged=True):
         try:
             added = [r for r in after.roles if r not in before.roles]
             hits = [TIER_ROLES[r.name] for r in added if r.name in TIER_ROLES]
+            removed = [r for r in before.roles if r not in after.roles and r.name in TIER_ROLES]
+            if removed:
+                try:
+                    await _revoke_pin_for(after)
+                    print(f'license revoked: {after.name} lost paid role')
+                except Exception as e:
+                    print('pin revoke error:', e)
             if not hits:
                 return
             links = await asyncio.to_thread(gh_get_json, 'member_links.json')
@@ -1532,19 +1539,41 @@ def gh_get_json_main(path):
     except Exception:
         return {}
 
+def _new_license():
+    """Unbrute-forceable member key: SHFT-XXXX-XXXX over a 32-char unambiguous alphabet (~1.1e12 space)."""
+    import secrets
+    A = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+    return 'SHFT-' + ''.join(secrets.choice(A) for _ in range(4)) + '-' + ''.join(secrets.choice(A) for _ in range(4))
+
 async def _issue_pin_for(member, tier):
-    """Generate a 6-digit dashboard PIN, store only its hash (main:pins.json), DM the member."""
-    import hashlib, secrets
-    pin = f"{secrets.randbelow(900000) + 100000}"
-    h = hashlib.sha256(pin.encode()).hexdigest()
+    """Issue a War Room license key: revoke any old key of theirs, store only the new hash, DM the key."""
+    import hashlib
+    key = _new_license()
+    h = hashlib.sha256(key.encode()).hexdigest()
     pins = await asyncio.to_thread(gh_get_json_main, 'pins.json')
-    pins.setdefault('pins', {})[h] = {'tier': tier, 'since': time.strftime('%Y-%m-%d', time.gmtime())}
+    store = pins.setdefault('pins', {})
+    did = str(member.id)
+    for old_h in [k for k, v in store.items() if str(v.get('did')) == did]:
+        store.pop(old_h, None)
+    store[h] = {'tier': tier, 'did': did, 'since': time.strftime('%Y-%m-%d', time.gmtime())}
     pins['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
-    await asyncio.to_thread(gh_put, 'pins.json', pins, f'pin issued ({tier})', 'main')
+    await asyncio.to_thread(gh_put, 'pins.json', pins, f'license issued ({tier})', 'main')
     try:
-        await member.send(f"\U0001F511 **Your SHiFT's Picks dashboard PIN:** `{pin}`\nUnlock your **{tier.title()}** card room anytime: https://thelineshift.github.io/SHiFTS/dashboard.html\nKeep it private — it's your key to the paid rooms' cards. Type `!pin` in the server anytime to rotate it.")
+        await member.send(f"\U0001F511 **Your SHiFT's Picks War Room key:** `{key}`\nUnlock your **{tier.title()}** view: https://thelineshift.github.io/SHiFTS/dashboard.html\n\u26a0\uFE0F One key per member, tied to your Discord — shared keys get revoked, and every page you view carries your traceable member mark. Type `!pin` anytime to rotate.")
     except Exception:
         pass
+
+async def _revoke_pin_for(member):
+    """Kill a member's War Room access the moment their paid role drops."""
+    pins = await asyncio.to_thread(gh_get_json_main, 'pins.json')
+    store = pins.get('pins') or {}
+    did = str(member.id)
+    doomed = [k for k, v in store.items() if str(v.get('did')) == did]
+    if doomed:
+        for k in doomed:
+            store.pop(k, None)
+        pins['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        await asyncio.to_thread(gh_put, 'pins.json', pins, 'license revoked (role loss)', 'main')
 
 async def run_command(cmd, guild, log):
     a = cmd.get('action')
@@ -1948,29 +1977,19 @@ async def run_command(cmd, guild, log):
                 except Exception: pass
             log.append(f'x_like FAIL: {e} {body}')
     elif a == 'issue_pins':
-        import hashlib, secrets
-        pins = {}
         sent = 0
         for m in guild.members:
             if m.bot:
                 continue
-            tier = None
-            for rn, t in (('whale', 'whale'), ('sharp', 'sharp'), ('lock', 'lock')):
-                if find_role(guild, rn) and find_role(guild, rn) in m.roles:
-                    tier = t
-                    break
+            tier = next((TIER_ROLES[r.name] for r in m.roles if r.name in TIER_ROLES), None)
             if not tier:
                 continue
-            pin = f"{secrets.randbelow(900000) + 100000}"
-            h = hashlib.sha256(pin.encode()).hexdigest()
-            pins[h] = {'tier': tier, 'since': time.strftime('%Y-%m-%d', time.gmtime())}
             try:
-                await m.send(f"🔑 **Your SHiFT's Picks dashboard PIN:** `{pin}`\nYour member card room + dashboard: https://thelineshift.github.io/SHiFTS/dashboard.html — PIN unlocks your **{tier.title()}** view. Keep it private; it rotates when your sub renews.")
+                await _issue_pin_for(m, tier)
                 sent += 1
             except Exception:
                 pass
-        await asyncio.to_thread(gh_put, 'pins.json', {'updated': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'pins': pins}, 'issue dashboard pins', 'main')
-        log.append(f'issue_pins: {len(pins)} pins, {sent} DMs delivered')
+        log.append(f'issue_pins: {sent} license keys issued (revoke+replace)')
     elif a == 'x_bio':
         try:
             res = await asyncio.to_thread(x_update_bio, cmd['text'], cmd.get('url'))
@@ -4702,7 +4721,7 @@ async def pm_trader():
             await asyncio.sleep(1)
         if placed:
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm trader entries')
-            # BOARD PLAY LAW (owner decree 2026-07-26): entries 6+ hours out post to
+            # BOARD PLAY LAW (owner decree 2026-07-26, widened): entries LIVE to 24h out post to
             # #shift-trades (paid members only) so they can tail with us. One batched
             # post per cycle max; a market is announced once, ever.
             try:
@@ -4722,7 +4741,7 @@ async def pm_trader():
                         gap = datetime.datetime.fromisoformat(str(it['ev_start']).replace('Z', '+00:00')).timestamp() - time.time()
                     except Exception:
                         continue
-                    if gap >= 6 * 3600 and _slug_i not in seen:
+                    if -2 * 3600 <= gap <= 24 * 3600 and _slug_i not in seen:
                         when = time.strftime('%a %I:%M %p ET', time.gmtime(datetime.datetime.fromisoformat(str(it['ev_start']).replace('Z', '+00:00')).timestamp() - 4 * 3600))
                         lines.append(f"• **{_trade_label(it)}** @ {it.get('price', 0):.2f} × {it.get('qty', 0)} (${it.get('stake', 0):.2f}) — {str(it.get('event', ''))[:60]} · starts {when}")
                         seen.append(_slug_i)
@@ -4730,7 +4749,7 @@ async def pm_trader():
                     _st = st.get('pm_stats', {})
                     _tot = _st.get('pnl', 0.0)
                     _sgn = '+' if _tot >= 0 else ''
-                    await ch3.send("📌 **DESK BOARD PLAY — 6+ hours out, tail with us:**\n" + "\n".join(lines) +
+                    await ch3.send("📌 **DESK BOARD PLAY — live to 24h out, tail with us:**\n" + "\n".join(lines) +
                                    f"\n\n_Desk to date: {_st.get('wins', 0)}-{_st.get('losses', 0)} · {_sgn}${_tot:.2f} on the $50 ladder_")
                     st['board_posted'] = seen[-60:]
                     await asyncio.to_thread(gh_put, 'bot_state.json', st, 'board play posted')
