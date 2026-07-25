@@ -5,34 +5,44 @@
     "scan_now executed (dry=False, slot=20260725-20-manual)"
   ],
   "time_audit": {
-    "at": "2026-07-25 20:11 UTC",
+    "at": "2026-07-25 20:27 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-2": "2026-07-25 16:00 UTC",
     "\ud83e\uddfereceipts": "2026-07-25 19:38 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-25 20:01 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-25 20:21 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 20:11 UTC",
+    "at": "2026-07-25 20:27 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 20:11 UTC",
+    "at": "2026-07-25 20:27 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 20:11 UTC",
+    "at": "2026-07-25 20:27 UTC",
     "flags": []
   },
-  "bot_version": "9.21.5",
-  "unannounced_results": [],
-  "last_x_receipt_ts": 1785011247.8279037,
+  "bot_version": "9.21.6",
+  "unannounced_results": [
+    {
+      "id": "saw-youngsters-ml-0725",
+      "desc": "SAW Youngsters ML",
+      "odds": -107,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "SAW Youngsters 1-2 ENJOY \u00b7 final",
+      "tier": "whale"
+    }
+  ],
+  "last_x_receipt_ts": 1784999383.532223,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
