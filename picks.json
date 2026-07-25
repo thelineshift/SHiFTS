@@ -1488,10 +1488,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -123,
-        "away_ml": 102,
-        "total": 8.0,
-        "ts": 1785001495
+        "home_ml": -128,
+        "away_ml": 107,
+        "total": 7.5,
+        "ts": 1785014065
       },
       "last_alert_odds": 102
     },
