@@ -1324,8 +1324,8 @@
       "live_odds": {
         "home_ml": -126,
         "away_ml": 105,
-        "total": 8.0,
-        "ts": 1784958813
+        "total": 8.5,
+        "ts": 1784973949
       }
     },
     {
@@ -1460,10 +1460,10 @@
       "awayTeam": "Vancouver Whitecaps",
       "homeTeam": "Minnesota United FC",
       "live_odds": {
-        "home_ml": 255,
-        "away_ml": -115,
+        "home_ml": 245,
+        "away_ml": -110,
         "total": 2.5,
-        "ts": 1784962413
+        "ts": 1784973949
       }
     },
     {
@@ -1606,10 +1606,10 @@
       "homeTeam": "St. Louis Cardinals",
       "awayTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -123,
-        "away_ml": 102,
+        "home_ml": -120,
+        "away_ml": -101,
         "total": 8.5,
-        "ts": 1784953414
+        "ts": 1784973949
       }
     },
     {
@@ -1750,10 +1750,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 137,
+        "home_ml": 138,
         "away_ml": -167,
         "total": 8.0,
-        "ts": 1784969457
+        "ts": 1784973950
       },
       "last_alert_odds": -163
     },
