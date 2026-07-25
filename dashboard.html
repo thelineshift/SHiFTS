@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Member Dashboard — SHiFT's Picks</title>
-<meta property="og:title" content="SHiFT's Picks — Member Dashboard">
-<meta property="og:description" content="Your tier's cards, live — plus the desk floor for Whale members.">
+<title>The War Room — SHiFT's Picks Member Dashboard</title>
+<meta property="og:title" content="SHiFT's Picks — The War Room">
+<meta property="og:description" content="Your tier's cards, records and — for Whales — SHiFT's live trading floor.">
 <meta name="robots" content="noindex">
 <style>
-  :root{--bg:#0a1420;--card:#12233a;--line:#1e3a5c;--teal:#2dd4bf;--gold:#f5c518;--blue:#4da3ff;--txt:#e8f1fa;--dim:#8ba7c4;--red:#f56565}
+  :root{--bg:#0a1420;--card:#12233a;--line:#1e3a5c;--teal:#2dd4bf;--gold:#f5c518;--blue:#4da3ff;--txt:#e8f1fa;--dim:#8ba7c4;--red:#f56565;--green:#48bb78}
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;padding:32px 14px}
-  .wrap{max-width:980px;margin:0 auto}
+  .wrap{max-width:1040px;margin:0 auto}
   h1{font-size:26px;font-weight:900} h1 span{color:var(--teal)}
   .sub{color:var(--dim);font-size:13px;margin-top:6px}
   .gate{margin:60px auto;max-width:420px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;text-align:center}
@@ -20,30 +20,42 @@
   .err{color:var(--red);font-size:13px;margin-top:10px;min-height:16px}
   .hint{color:var(--dim);font-size:12px;margin-top:14px;line-height:1.6}
   .hidden{display:none}
-  .tierline{display:flex;align-items:center;gap:10px;margin:18px 0 6px}
+  .tierline{display:flex;align-items:center;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
   .chip{padding:5px 14px;border-radius:20px;font-weight:900;font-size:13px}
   .chip.lock{background:#f5c51822;color:var(--gold);border:1px solid #f5c51855}
   .chip.sharp{background:#4da3ff22;color:var(--blue);border:1px solid #4da3ff55}
   .chip.whale{background:#2dd4bf22;color:var(--teal);border:1px solid #2dd4bf55}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:14px}
-  .pick{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-  .pick .h{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);margin-bottom:6px}
-  .pick .d{font-weight:800;font-size:15px;margin-bottom:4px}
+  .sect{font-size:18px;font-weight:900;margin:26px 0 4px}
+  .sect small{font-size:11px;color:var(--dim);font-weight:600;margin-left:8px;letter-spacing:.4px}
+  .recgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+  .rec{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-align:center}
+  .rec .per{font-size:11px;font-weight:900;letter-spacing:1px;color:var(--dim);text-transform:uppercase}
+  .rec .wl{font-size:22px;font-weight:900;margin-top:4px}
+  .rec .un{font-size:14px;font-weight:800;margin-top:2px}
+  .rec .roi{font-size:11px;color:var(--dim);margin-top:2px}
+  .pos{color:var(--teal)}.neg{color:var(--red)}
+  .guar{margin-top:14px;background:#2dd4bf10;border:1px solid #2dd4bf55;border-radius:14px;padding:14px 18px;font-size:13.5px;line-height:1.65}
+  .guar b{color:var(--teal)}
+  .tierhead{margin:22px 0 8px;font-size:15px;font-weight:900;padding:8px 14px;border-radius:10px;background:var(--card);border:1px solid var(--line)}
+  .tierhead.whale{color:var(--teal)}.tierhead.sharp{color:var(--blue)}.tierhead.lock{color:var(--gold)}.tierhead.free{color:#9aa7ff}
+  .bucket{font-size:11px;font-weight:900;letter-spacing:.8px;color:var(--dim);margin:12px 0 6px;text-transform:uppercase}
+  .bucket.live{color:var(--red)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+  .pick{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
+  .pick.live{border-color:#f5656566;box-shadow:0 0 12px #f5656522}
+  .pick .h{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);margin-bottom:5px}
+  .pick .d{font-weight:800;font-size:14.5px}
   .pick .a{color:var(--dim);font-size:12.5px;line-height:1.5;margin-top:6px}
-  .tag{font-size:10px;font-weight:900;padding:2px 8px;border-radius:10px;text-transform:uppercase}
-  .tag.free{background:#5865F233;color:#9aa7ff}.tag.lock{background:#f5c51822;color:var(--gold)}
-  .tag.sharp{background:#4da3ff22;color:var(--blue)}.tag.whale{background:#2dd4bf22;color:var(--teal)}
-  .res-won{color:var(--teal);font-weight:900}.res-lost{color:var(--red);font-weight:900}.res-pending{color:var(--gold);font-weight:900}
-  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0}
+  .res-won{color:var(--teal);font-weight:900;font-size:12px}.res-lost{color:var(--red);font-weight:900;font-size:12px}
+  .res-pending{color:var(--gold);font-weight:900;font-size:12px}.res-live{color:var(--red);font-weight:900;font-size:12px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:14px 0}
   .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
   .kpi b{display:block;font-size:20px}
   .kpi span{font-size:11px;color:var(--dim)}
-  .sect{font-size:18px;font-weight:900;margin:26px 0 4px}
   .desknote{color:var(--dim);font-size:12.5px;margin-bottom:8px}
   table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
   td,th{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}
   th{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
-  .pos{color:var(--teal);font-weight:800}.neg{color:var(--red);font-weight:800}
   .links{margin-top:30px;text-align:center;color:var(--dim);font-size:13px;line-height:2}
   .links a{color:var(--teal);text-decoration:none;font-weight:700}
   .spin{color:var(--dim);text-align:center;margin:30px;font-size:14px}
@@ -51,8 +63,8 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>⚡ SHiFT's Picks <span>Member Dashboard</span></h1>
-  <div class="sub">Your tier's cards, live from the engine — refreshed every few minutes.</div>
+  <h1 id="pgtitle">⚡ SHiFT's Picks <span>Member Dashboard</span></h1>
+  <div class="sub" id="pgsub">Your tier's cards, live from the engine — refreshed every few minutes.</div>
 
   <div class="gate" id="gate">
     <div style="font-size:34px">🔑</div>
@@ -60,7 +72,7 @@
     <input id="pin" maxlength="6" inputmode="numeric" placeholder="••••••" autocomplete="off">
     <button onclick="unlock()">Unlock my rooms →</button>
     <div class="err" id="err"></div>
-    <div class="hint">Your PIN was DM'd to you by <b>shift</b> in Discord when you subscribed (or type <b>!pin</b> in the server to have it re-sent). Whale PINs also unlock the Desk Floor below.</div>
+    <div class="hint">Your PIN was DM'd to you by <b>shift</b> in Discord when you subscribed (or type <b>!pin</b> in the server to rotate it). Whale PINs also unlock <b>The War Room</b> — SHiFT's live trading floor.</div>
   </div>
 
   <div id="app" class="hidden">
@@ -68,15 +80,21 @@
       <span class="chip" id="tierchip">—</span>
       <span class="sub" id="updated">loading…</span>
     </div>
-    <div class="kpis" id="kpis"></div>
-    <div class="sect">🎯 Today's card for your rooms</div>
-    <div class="grid" id="picks"></div>
+
+    <div class="sect">🧾 The Record <small>your rooms' receipted picks — every play timestamped in the public ledger</small></div>
+    <div class="recgrid" id="records"></div>
+    <div class="guar" id="guar"></div>
+
+    <div class="sect">🎯 The Card <small>split by room — live first, then tonight, then finals</small></div>
+    <div id="picks"></div>
+
     <div id="desk" class="hidden">
-      <div class="sect">📈 The Desk Floor — SHiFT's Polymarket plays <span style="font-size:11px;color:var(--teal)">WHALE ONLY</span></div>
+      <div class="sect">📈 The Trading Floor <small>SHiFT's Polymarket positions — WHALE ONLY</small></div>
       <div class="desknote">Open positions right now, recent entries &amp; exits with running P&amp;L. Tail in real time — entries also post instantly in #shift-trades.</div>
       <div class="kpis" id="dkpis"></div>
       <table id="dtable"><thead><tr><th>Position</th><th>Side</th><th>Entry</th><th>Stake</th><th>Status</th></tr></thead><tbody></tbody></table>
     </div>
+
     <div class="links">
       <a href="https://discord.gg/8bBxWUJCYT">💬 Discord</a> · <a href="https://thelineshift.github.io/SHiFTS/upgrade.html">💎 Upgrade room</a> · <a href="https://x.com/SHiFTSPicks">𝕏 @SHiFTSPicks</a><br>
       <span style="font-size:11px">PIN rotates on renewal · never share it — it's your key to the paid rooms' cards.</span>
@@ -88,6 +106,7 @@
 const RAW = 'https://raw.githubusercontent.com/thelineshift/SHiFTS/main';
 const RAWC = 'https://raw.githubusercontent.com/thelineshift/SHiFTS/commands';
 const RANK = {free:0, challenge:0, lock:1, sharp:2, whale:3};
+const ET = -4; // EDT (July)
 let TIER = null;
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');}
 async function unlock(){
@@ -96,8 +115,7 @@ async function unlock(){
   document.getElementById('err').textContent='';
   try{
     const pins = await (await fetch(RAW+'/pins.json?t='+Date.now())).json();
-    const h = await sha256(pin);
-    const hit = (pins.pins||{})[h];
+    const hit = (pins.pins||{})[await sha256(pin)];
     if(!hit){document.getElementById('err').textContent='PIN not recognized — check the DM from shift, or type !pin in the server.';return;}
     TIER = hit.tier;
     sessionStorage.setItem('shift_pin', pin);
@@ -108,32 +126,86 @@ async function unlock(){
   }catch(e){document.getElementById('err').textContent='network hiccup — try again.';}
 }
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function startUTC(p){
+  // date "2026-07-25" + time_et "01:10 PM ET" -> UTC ts (EDT = UTC-4)
+  if(!p.date || !p.time_et) return null;
+  const m = String(p.time_et).match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+  if(!m) return null;
+  let h = parseInt(m[1])%12; if(/PM/i.test(m[3])) h += 12;
+  return Date.parse(p.date+'T'+String(h).padStart(2,'0')+':'+m[2]+':00') - ET*3600000;
+}
+function units(p){const u=parseFloat(p.units_result ?? p.profit ?? 0); return isNaN(u)?0:u;}
+function won(p){return /won|win|✅/i.test(p.result||'');}
+function lost(p){return /lost|loss|❌/i.test(p.result||'');}
+function recBlock(label, ps){
+  const g = ps.filter(p=>p.result);
+  const w = g.filter(won).length, l = g.filter(lost).length;
+  const u = g.reduce((a,p)=>a+units(p),0);
+  const staked = g.reduce((a,p)=>a+(parseFloat(p.units)||1),0)||1;
+  return `<div class="rec"><div class="per">${label}</div><div class="wl">${w}-${l}</div>
+    <div class="un ${u>=0?'pos':'neg'}">${u>=0?'+':''}${u.toFixed(2)}u</div>
+    <div class="roi">ROI ${(100*u/staked).toFixed(1)}% · ${g.length} graded</div></div>`;
+}
 async function boot(){
   const chip = document.getElementById('tierchip');
   chip.textContent = {lock:'🔒 LOCK MEMBER',sharp:'📊 SHARP MEMBER',whale:'🐋 WHALE MEMBER'}[TIER]||TIER;
   chip.classList.add(TIER);
-  const pk = await (await fetch(RAW+'/picks.json?t='+Date.now())).json();
+  if(TIER==='whale'){
+    document.getElementById('pgtitle').innerHTML = "🐋 THE WAR ROOM <span>— SHiFT's live command center</span>";
+    document.getElementById('pgsub').textContent = "Every card, every record, and SHiFT's live trading floor — this is the $99 view.";
+    document.title = "The War Room — SHiFT's Picks";
+  }
+  const [pk, guar] = await Promise.all([
+    (await fetch(RAW+'/picks.json?t='+Date.now())).json(),
+    fetch(RAW+'/guarantee.json?t='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
+  ]);
   document.getElementById('updated').textContent = 'board updated '+ (pk.updated||'').replace('T',' ').slice(0,19)+' UTC';
   const myRank = RANK[TIER];
-  const today = new Date().toISOString().slice(0,10);
-  let mine = (pk.picks||[]).filter(p=> (RANK[p.tier]??99) <= myRank);
-  const todays = mine.filter(p=>p.date===today);
-  const show = (todays.length?todays:mine).slice(-24).reverse();
-  const graded = mine.filter(p=>p.result);
-  const w = graded.filter(p=>/won|win|✅/i.test(p.result)).length;
-  const l = graded.filter(p=>/lost|loss|❌/i.test(p.result)).length;
-  let units = 0; graded.forEach(p=>{const u=parseFloat(p.units_result ?? p.profit ?? 0); if(!isNaN(u)) units+=u;});
-  document.getElementById('kpis').innerHTML =
-    `<div class="kpi"><b>${w}-${l}</b><span>your rooms' record</span></div>
-     <div class="kpi"><b class="${units>=0?'pos':'neg'}">${units>=0?'+':''}${units.toFixed(2)}u</b><span>units, graded</span></div>
-     <div class="kpi"><b>${show.length}</b><span>plays on today's card</span></div>`;
-  document.getElementById('picks').innerHTML = show.map(p=>{
-    const r = p.result? (/won|win|✅/i.test(p.result)?['won','✅ WON']:/lost|loss|❌/i.test(p.result)?['lost','❌ LOST']:['push','🔄 PUSH']) : ['pending','⏳ '+esc(p.time_et||'pending')];
-    return `<div class="pick"><div class="h"><span class="tag ${p.tier}">${p.tier}</span><span>${esc(p.sport||'')} · ${p.odds>0?'+':''}${p.odds}</span></div>
-      <div class="d">${esc(p.desc)}</div>
-      <div class="res-${r[0]}">${r[1]}</div>
-      <div class="a">${esc((p.analysis||'').replace(/\*\*/g,'')).slice(0,180)}</div></div>`;
-  }).join('') || '<div class="sub">no plays on the board yet — next scan on the 4-hour cycle.</div>';
+  const mine = (pk.picks||[]).filter(p=> (RANK[p.tier]??99) <= myRank);
+  const now = Date.now();
+  const inDays = d => { try{ return Date.parse(d) >= now - d*0; }catch(e){ return false; } };
+  const within = (p,days)=>{ const t = Date.parse(p.date||''); return t && t >= now - days*86400000; };
+  document.getElementById('records').innerHTML =
+    recBlock('This week', mine.filter(p=>within(p,7))) +
+    recBlock('This month', mine.filter(p=>within(p,30))) +
+    recBlock('This year', mine.filter(p=>within(p,366)));
+  // guarantee panel
+  const g30 = mine.filter(p=>p.result && within(p,30));
+  const u30 = g30.reduce((a,p)=>a+units(p),0);
+  let gh = `🛡️ <b>SHiFT GUARANTEE TRACKER</b> — last 30 days, your rooms: <b class="${u30>=0?'pos':'neg'}">${u30>=0?'+':''}${u30.toFixed(2)}u</b>. `;
+  gh += u30>=0 ? `Receipted and in profit — every play above is timestamped in the public GitHub ledger, so the tally can't be cooked.`
+               : `Red window — if this is your first month, your next month is on us, <b>automatically</b>. No forms, no asking.`;
+  if(guar && guar.honored && guar.honored.length){
+    gh += `<br>Comps honored to date: <b>${guar.honored.length}</b> — latest: ${esc(guar.honored[guar.honored.length-1].note||'').slice(0,120)}`;
+  }
+  document.getElementById('guar').innerHTML = gh;
+  // cards grouped by tier, then live/later/final
+  const tiers = ['whale','sharp','lock','free'].filter(t=>RANK[t]<=myRank);
+  const names = {whale:'🐋 WHALE ROOM',sharp:'📊 SHARP ROOM',lock:'🔒 LOCK ROOM',free:'💬 FREE'};
+  let html = '';
+  for(const t of tiers){
+    let ps = mine.filter(p=>p.tier===t);
+    if(!ps.length) continue;
+    const live = [], later = [], finals = [];
+    for(const p of ps.slice(-40)){
+      const st = startUTC(p);
+      if(p.result){ finals.push(p); }
+      else if(st && st <= now && st >= now-6*3600000){ live.push(p); }
+      else { later.push(p); }
+    }
+    html += `<div class="tierhead ${t}">${names[t]}</div>`;
+    const card = p=>{
+      const r = p.result ? (won(p)?['won','✅ WON']:lost(p)?['lost','❌ LOST']:['push','🔄 PUSH'])
+        : (live.includes(p)?['live','🔴 LIVE NOW']:['pending','⏳ '+esc(p.time_et||'later')]);
+      return `<div class="pick ${live.includes(p)?'live':''}"><div class="h"><span>${esc(p.sport||'')} · ${p.odds>0?'+':''}${p.odds}</span><span>${esc(p.date||'')}</span></div>
+        <div class="d">${esc(p.desc)}</div><div class="res-${r[0]}">${r[1]}</div>
+        <div class="a">${esc((p.analysis||'').replace(/\*\*/g,'')).slice(0,170)}</div></div>`;
+    };
+    if(live.length) html += `<div class="bucket live">🔴 Live now</div><div class="grid">${live.reverse().map(card).join('')}</div>`;
+    if(later.length) html += `<div class="bucket">⏳ Later</div><div class="grid">${later.reverse().map(card).join('')}</div>`;
+    if(finals.length) html += `<div class="bucket">🧾 Finals</div><div class="grid">${finals.slice(-9).reverse().map(card).join('')}</div>`;
+  }
+  document.getElementById('picks').innerHTML = html || '<div class="sub">no plays on the board yet — next scan on the 4-hour cycle.</div>';
   if(TIER==='whale'){ loadDesk(); }
   document.getElementById('spin').classList.add('hidden');
 }
@@ -145,10 +217,15 @@ async function loadDesk(){
     const open = trades.filter(t=>t.status==='open');
     const settled = trades.filter(t=>t.status==='settled').slice(-8).reverse();
     const s = st.pm_stats||{};
+    const now = Date.now();
+    const pnlIn = days => trades.filter(t=>t.status==='settled' && Date.parse(t.settled_at||'') >= now-days*86400000)
+                                 .reduce((a,t)=>a+(parseFloat(t.pnl)||0),0);
     document.getElementById('dkpis').innerHTML =
       `<div class="kpi"><b>${s.wins??0}-${s.losses??0}</b><span>desk record</span></div>
-       <div class="kpi"><b class="${(s.pnl??0)>=0?'pos':'neg'}">${(s.pnl??0)>=0?'+':''}$${(s.pnl??0).toFixed(2)}</b><span>P&L on $50 ladder</span></div>
-       <div class="kpi"><b>${open.length}</b><span>open positions</span></div>`;
+       <div class="kpi"><b class="${pnlIn(7)>=0?'pos':'neg'}">${pnlIn(7)>=0?'+':''}$${pnlIn(7).toFixed(2)}</b><span>desk week</span></div>
+       <div class="kpi"><b class="${pnlIn(30)>=0?'pos':'neg'}">${pnlIn(30)>=0?'+':''}$${pnlIn(30).toFixed(2)}</b><span>desk month</span></div>
+       <div class="kpi"><b class="${(s.pnl??0)>=0?'pos':'neg'}">${(s.pnl??0)>=0?'+':''}$${(s.pnl??0).toFixed(2)}</b><span>since day one ($50)</span></div>
+       <div class="kpi"><b>${open.length}</b><span>open now</span></div>`;
     const rows = open.map(t=>`<tr><td>${esc(t.outcome||t.market_slug||'')}</td><td>${t.short?'SHORT':'LONG'}</td><td>${t.price??''}</td><td>$${(t.stake_usd??t.stake??0).toFixed(2)}</td><td>🟢 open</td></tr>`)
       .concat(settled.map(t=>`<tr><td>${esc(t.outcome||t.market_slug||'')}</td><td>${t.short?'SHORT':'LONG'}</td><td>${t.price??''}</td><td>$${(t.stake_usd??t.stake??0).toFixed(2)}</td><td class="${(t.pnl??0)>=0?'pos':'neg'}">${t.result} ${(t.pnl??0)>=0?'+':''}$${Math.abs(t.pnl??0).toFixed(2)}</td></tr>`));
     document.querySelector('#dtable tbody').innerHTML = rows.join('') || '<tr><td colspan="5">desk is flat right now — entries post the moment SHiFT bets.</td></tr>';
