@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.21.1'
+BOT_VERSION = '9.21.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -623,6 +623,7 @@ def make_client(privileged=True):
         if not x_engagement_watch.is_running():
             x_engagement_watch.start()
         weekly_deepdive_watch.start()
+        guarantee_watch.start()
         if not scan_event_watch.is_running():
             scan_event_watch.start()
         if not recap_watch.is_running():
@@ -3418,6 +3419,99 @@ async def weekly_deepdive_watch():
 
 @weekly_deepdive_watch.before_loop
 async def _dd_wait():
+    await client.wait_until_ready()
+# ============================ SHiFT GUARANTEE ENGINE (v9.21.2) ============================
+# First month red on receipted tier picks -> next month FREE, applied automatically via Stripe.
+# Public proof: guarantee.json on main (tally_30d per tier + honored comps log).
+@tasks.loop(hours=12)
+async def guarantee_watch():
+    try:
+        key = os.environ.get('STRIPE_KEY', '')
+        guild = client.guilds[0] if client.guilds else None
+        if not key or not guild:
+            return
+        def sget(path):
+            req = urllib.request.Request('https://api.stripe.com/v1/' + path, headers={'Authorization': f'Bearer {key}'})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                return json.load(r)
+        def spost(path, data):
+            body = urllib.parse.urlencode(data).encode()
+            req = urllib.request.Request('https://api.stripe.com/v1/' + path, data=body,
+                headers={'Authorization': f'Bearer {key}', 'Content-Type': 'application/x-www-form-urlencoded'}, method='POST')
+            with urllib.request.urlopen(req, timeout=20) as r:
+                return json.load(r)
+        members = await asyncio.to_thread(gh_get_json, 'stripe_members.json') or {'members': {}}
+        guar = await asyncio.to_thread(gh_get_json_main, 'guarantee.json') or {}
+        guar.setdefault('honored', [])
+        guar.setdefault('checked', {})
+        subs = await asyncio.to_thread(sget, 'subscriptions?limit=100&status=all')
+        for s in subs.get('data', []):
+            cid = s.get('customer')
+            info = (members.get('members') or {}).get(cid) or {}
+            tier = info.get('tier')
+            if not tier:
+                try:
+                    amt = s['items']['data'][0]['price']['unit_amount']
+                    tier = {999: 'lock', 2999: 'lock', 1299: 'sharp', 4999: 'sharp', 2499: 'whale', 9999: 'whale'}.get(amt)
+                except Exception:
+                    tier = None
+            if not tier:
+                continue
+            created = s.get('created', 0)
+            key30 = f'{cid}:first30'
+            if key30 in guar['checked'] or time.time() - created < 30 * 86400:
+                continue
+            ps = await asyncio.to_thread(_dd_week_picks, tier, 4000)
+            w0, w1 = created, created + 30 * 86400
+            tot, n = 0.0, 0
+            for p in ps:
+                try:
+                    ts = datetime.datetime.fromisoformat(str(p.get('date', ''))).timestamp()
+                except Exception:
+                    continue
+                if w0 <= ts <= w1 and 'result' in p:
+                    n += 1
+                    try:
+                        tot += float(p.get('units_result') if p.get('units_result') is not None else p.get('profit') or 0)
+                    except Exception:
+                        pass
+            guar['checked'][key30] = {'units': round(tot, 2), 'plays': n, 'at': time.strftime('%Y-%m-%d', time.gmtime())}
+            if tot < 0 and n >= 5:
+                try:
+                    coupon = await asyncio.to_thread(spost, 'coupons', {'percent_off': 100, 'duration': 'once', 'name': 'SHiFT Guarantee - free month'})
+                    await asyncio.to_thread(spost, f'customers/{cid}', {'coupon': coupon['id']})
+                    note = f"{info.get('username') or cid} ({tier}) first 30d {tot:.2f}u over {n} graded plays - free month applied"
+                    guar['honored'].append({'at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'tier': tier, 'units': round(tot, 2), 'note': note})
+                    did = info.get('discord_id')
+                    if did:
+                        try:
+                            u = await client.fetch_user(int(did))
+                            await u.send(f"\U0001F6E1\uFE0F **THE SHiFT GUARANTEE - honored.** Your first month's receipted picks finished at **{tot:.2f}u**. Your next month is **FREE** - a 100% credit is already sitting on your subscription. No forms, no asking. That's the deal.")
+                        except Exception:
+                            pass
+                    print('[guarantee] comped:', note)
+                except Exception as e:
+                    print('[guarantee] comp fail:', e)
+        guar['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        guar['tally_30d'] = {}
+        for t in ('lock', 'sharp', 'whale'):
+            ps = await asyncio.to_thread(_dd_week_picks, t, 30)
+            tot, n = 0.0, 0
+            for p in ps:
+                if 'result' not in p:
+                    continue
+                n += 1
+                try:
+                    tot += float(p.get('units_result') if p.get('units_result') is not None else p.get('profit') or 0)
+                except Exception:
+                    pass
+            guar['tally_30d'][t] = {'units': round(tot, 2), 'plays': n}
+        await asyncio.to_thread(gh_put, 'guarantee.json', guar, 'guarantee tracker refresh', 'main')
+    except Exception as e:
+        print('guarantee watch error:', e)
+
+@guarantee_watch.before_loop
+async def _gw_wait():
     await client.wait_until_ready()
 
 SCAN_HOURS_ET = [0, 4, 8, 12, 16, 20]
