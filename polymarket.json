@@ -1,21 +1,8 @@
 {
-  "ts": "2026-07-25T18:35:19Z",
+  "ts": "2026-07-25T18:40:51Z",
   "configured": true,
   "balance_usd": 81.73,
   "buying_power": 11.73,
   "positions": [],
-  "open_orders": [
-    {
-      "market": "aec-lol-al-blg-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 3
-    },
-    {
-      "market": "aec-lol-al-blg-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 8
-    }
-  ]
+  "error": "<!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-"
 }
