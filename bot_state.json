@@ -8305,7 +8305,7 @@
       "qty": 30,
       "market_slug": "aec-lol-fur-los-2026-07-25",
       "outcome": "LOS",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T11:15:48Z",
       "price_path": [
         {
@@ -8328,7 +8328,13 @@
           "ts": 1785006050,
           "px": 0.96
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 13.8,
+      "pnl": 0.0,
+      "cashout": true,
+      "settled_at": "2026-07-25T19:09:53Z",
+      "autopsy": "+$0.00 \u2014 model 86% vs market 46% was real edge; thesis held. Taken 0.46, slid to 0.96 before the result \u2014 the number ran 50\u00a2 against us \u26a0\ufe0f (cashed out early at $13.80)"
     },
     {
       "price": 0.66,
@@ -8722,7 +8728,7 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 7,
+    "losses": 8,
     "pnl": 6.06,
     "trades": 29,
     "last_recap": "2026-07-25",
@@ -8809,6 +8815,14 @@
       "result": "WIN",
       "pnl": 5.89,
       "lesson": "+$5.89 \u2014 book was complete and both legs settled as priced; arb math did its job."
+    },
+    {
+      "ts": "2026-07-25T19:09:53Z",
+      "kind": "EDGE",
+      "outcome": "LOS",
+      "result": "LOSS",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 86% vs market 46% was real edge; thesis held. Taken 0.46, slid to 0.96 before the result \u2014 the number ran 50\u00a2 against us \u26a0\ufe0f (cashed out early at $13.80)"
     }
   ],
   "giveaway_x_posts": [
