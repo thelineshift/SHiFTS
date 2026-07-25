@@ -8888,6 +8888,22 @@
       "outcome": "Karmine Corp Blue Stars",
       "status": "open",
       "ts": "2026-07-25T19:28:32Z"
+    },
+    {
+      "price": 0.26,
+      "short": true,
+      "stake": 2.6,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Fluxo W7M vs. Leviatan Esports",
+      "ev_start": "2026-07-26T16:00:00Z",
+      "reason": "model 50% vs market 26% \u2014 24% edge, half-Kelly",
+      "order_id": "BFCMEGCNW9NJ",
+      "qty": 10,
+      "market_slug": "aec-lol-fxw7-lev-2026-07-26",
+      "outcome": "Leviatan Esports",
+      "status": "open",
+      "ts": "2026-07-25T19:33:34Z"
     }
   ],
   "pm_stats": {
@@ -8895,7 +8911,7 @@
     "wins": 3,
     "losses": 8,
     "pnl": 6.06,
-    "trades": 34,
+    "trades": 35,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-18"
   },
