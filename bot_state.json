@@ -26,7 +26,7 @@
     "#\ud83d\udc0bwhale-room-12-7 [16:19] \ud83d\udc0b **WHALE \u2014 12PM ET FULL BOARD**\n\u26be **Royals/Tigers Under 8.5 (-110)** \u2014 1u\n\ud83d\udd50 6:40 PM ET | KC @ DET\n\ud83d\udcd6 Melton (1"
   ],
   "time_audit": {
-    "at": "2026-07-25 20:57 UTC",
+    "at": "2026-07-25 20:58 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -37,21 +37,21 @@
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 20:57 UTC",
+    "at": "2026-07-25 20:58 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 20:57 UTC",
+    "at": "2026-07-25 20:58 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 20:57 UTC",
+    "at": "2026-07-25 20:58 UTC",
     "flags": []
   },
-  "bot_version": "9.21.6",
+  "bot_version": "9.21.7",
   "unannounced_results": [
     {
       "id": "saw-youngsters-ml-0725",
