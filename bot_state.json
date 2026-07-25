@@ -8870,8 +8870,24 @@
       "qty": 4,
       "market_slug": "aec-lol-al-blg-2026-07-26",
       "outcome": "Bilibili Gaming",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T19:23:34Z"
+    },
+    {
+      "price": 0.92,
+      "short": true,
+      "stake": 1.84,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Crystal Rose vs. Karmine Corp Blue Stars",
+      "ev_start": "2026-07-26T12:00:00Z",
+      "reason": "tail-end yield \u2014 8.7% on a near-certain that settles today",
+      "order_id": "BFCJEVX5A9P8",
+      "qty": 2,
+      "market_slug": "aec-lol-cr-kcbs-2026-07-26",
+      "outcome": "Karmine Corp Blue Stars",
+      "status": "open",
+      "ts": "2026-07-25T19:28:32Z"
     }
   ],
   "pm_stats": {
@@ -8879,7 +8895,7 @@
     "wins": 3,
     "losses": 8,
     "pnl": 6.06,
-    "trades": 33,
+    "trades": 34,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-18"
   },
