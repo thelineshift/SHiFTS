@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T11:44:24Z",
+  "updated": "2026-07-25T12:02:01Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1892,6 +1892,40 @@
       "analysis": "3-2 last 5 (beat Top Esports, Deep Cross Gaming, Deep Cross Gaming) (lost to LYON) vs 0-5 \u2014 live Pinnacle line +22 (our 90% vs book 75%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Top Esports, Deep Cross Gaming, Deep Cross Gaming) (lost to LYON) vs 0-5 \u2014 live Pinnacle line +22 (our 90% vs book 75%). Ri",
       "awayTeam": "Team Secret Whales",
       "homeTeam": "Fukuoka SoftBank Hawks Gaming"
+    },
+    {
+      "id": "saw-youngsters-ml-0725",
+      "date": "2026-07-25",
+      "sport": "cs2",
+      "desc": "SAW Youngsters ML",
+      "market": "CCT Europe Bo3",
+      "odds": -107,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "ENJOY",
+      "team": "SAW Youngsters",
+      "opp": "ENJOY",
+      "analysis": "3-2 last 5 (beat los kogutos, Fortress, Misa Esports) (lost to QUAZAR) vs 1-4 \u2014 live Pinnacle line -107 (our 86% vs book 48%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat los kogutos, Fortress, Misa Esports) (lost to QUAZAR) vs 1-4 \u2014 live Pinnacle line -107 (our 86% vs book 48%). Books hang respect on the",
+      "awayTeam": "SAW Youngsters",
+      "homeTeam": "ENJOY"
+    },
+    {
+      "id": "under-8.0-0725",
+      "date": "2026-07-25",
+      "sport": "mlb",
+      "desc": "Under 8.0",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:10 PM ET",
+      "vs": "Kansas City Royals @ Detroit Tigers",
+      "team": "Detroit Tigers",
+      "opp": "Kansas City Royals",
+      "analysis": "posted 8.0 vs 5.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side | \ud83d\udcb0 **Value hunt:** posted 8.0 vs 5.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side. The book shaded this line toward the publ",
+      "awayTeam": "Detroit Tigers",
+      "homeTeam": "Kansas City Royals"
     }
   ]
 }
