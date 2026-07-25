@@ -42,7 +42,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1784994024.074586,
+  "last_x_receipt_ts": 1784999383.532223,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -7627,5 +7627,8 @@
     "ts": "2026-07-25T16:32:22Z",
     "count": 17,
     "note": "stale 7/24 results \u2014 already receipted in Discord #receipts; X draining them would duplicate-post"
+  },
+  "x_eng_log": {
+    "2026-07-25-17": "lesson"
   }
 }
