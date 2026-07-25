@@ -1,5 +1,5 @@
 {
-  "seq": 435,
+  "seq": 436,
   "commands": [
     {
       "seq": 400,
@@ -221,6 +221,17 @@
       "seq": 435,
       "action": "x_pin",
       "tweet_id": "2081043081114370064"
+    },
+    {
+      "seq": 436,
+      "action": "lock_channel",
+      "channel": "shift-trades"
+    },
+    {
+      "seq": 436,
+      "action": "set_topic",
+      "channel": "shift-trades",
+      "topic": "\ud83d\udcc8 SHiFT DESK FLOOR \u2014 members only (Lock \u00b7 Sharp \u00b7 Whale). Polymarket picks as they happen: entries, exits & cash-outs announced with running P&L \u00b7 board plays 6+ hrs out so you can tail \u00b7 recaps every 2h with the chart. \ud83d\udc8e thelineshift.github.io/AISportsBot/upgrade.html"
     }
   ]
 }
