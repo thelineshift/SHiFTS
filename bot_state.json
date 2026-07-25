@@ -7574,7 +7574,8 @@
     "wins": 2,
     "losses": 2,
     "pnl": 22.55,
-    "trades": 18
+    "trades": 18,
+    "last_recap": "2026-07-25"
   },
   "x_purge_complete": 1784945845.0521848,
   "pm_lessons": [
