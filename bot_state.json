@@ -8524,7 +8524,7 @@
     "pnl": 6.06,
     "trades": 23,
     "last_recap": "2026-07-25",
-    "last_recap_hour": "2026-07-25-16"
+    "last_recap_hour": "2026-07-25-18"
   },
   "x_purge_complete": 1784945845.0521848,
   "pm_lessons": [
@@ -8622,5 +8622,6 @@
   },
   "x_eng_log": {
     "2026-07-25-17": "lesson"
-  }
+  },
+  "board_posted": []
 }
