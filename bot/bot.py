@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.18.3'
+BOT_VERSION = '9.19.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -451,7 +451,11 @@ def pm_close_position(slug):
         return {'error': str(e)[:160]}
 
 def pm_check_settled(lb):
-    """Position-resolution for a live bet. {'result','payout'} or None if still open."""
+    """Position-resolution for a desk trade — graded from the EXCHANGE LEDGER, not team names.
+    side = which side of the MARKET won the resolution; netPosition = OUR direction.
+    A long wins iff the LONG side resolved; a short wins iff the SHORT side resolved.
+    P&L = the ledger's realized value (exact cents), never a formula guess. Sport-agnostic:
+    works for esports, soccer, NWSL, anything — because money doesn't need the box score."""
     c = _pm_client()
     if not c:
         return None
@@ -464,11 +468,25 @@ def pm_check_settled(lb):
             side = str(pr.get('side') or '')
             if not side:
                 continue
-            s = side.upper()
-            won = ('LONG' in s or 'YES' in s
-                   or (lb.get('outcome') and norm_txt(lb['outcome']) in norm_txt(side)))
-            return {'result': 'WIN' if won else 'LOSS',
-                    'payout': round(float(lb['qty']) * 1.0, 2) if won else 0.0}
+            bp = pr.get('beforePosition') or {}
+            ap = pr.get('afterPosition') or {}
+            net = float(bp.get('netPosition') or 0)
+            res_long = 'LONG' in side.upper()
+            if net > 0:
+                won = res_long
+            elif net < 0:
+                won = not res_long
+            else:  # no net in record — fall back to the trade's own short flag
+                won = (not res_long) if lb.get('short') else res_long
+            realized = (ap.get('realized') or {}).get('value')
+            if realized is not None:
+                pnl = round(float(realized), 2)
+                payout = round(max(float(lb.get('stake') or 0) + pnl, 0.0), 2)
+            else:
+                pnl = round(float(lb['qty']) - float(lb.get('stake') or 0), 2) if won else -round(float(lb.get('stake') or 0), 2)
+                payout = round(float(lb['qty']) * 1.0, 2) if won else 0.0
+            print(f"[desk] ledger grade: {lb['marketSlug']} side={side} net={net:g} realized={realized} -> {'WIN' if won else 'LOSS'} ${pnl:.2f}")
+            return {'result': 'WIN' if won else 'LOSS', 'payout': payout, 'pnl': pnl}
         return None
     except Exception as e:
         print('[pm] settle:', e); return None
@@ -602,6 +620,8 @@ def make_client(privileged=True):
             grader.start()
         if not x_drainer.is_running():
             x_drainer.start()
+        if not x_engagement_watch.is_running():
+            x_engagement_watch.start()
         if not scan_event_watch.is_running():
             scan_event_watch.start()
         if not recap_watch.is_running():
@@ -3237,6 +3257,56 @@ async def _stripe_sync_once():
                     await lab.send(f"📉 STRIPE: {info.get('username')} canceled ({info.get('tier')}) — roles removed.")
         if changed:
             await asyncio.to_thread(gh_put, 'stripe_members.json', known, 'stripe sync')
+        # ---- stripe.json funnel feed for the ops dashboard (owner decree 2026-07-26) ----
+        # Almost-checkouts = sessions left open or expired. Written at most every 30 min.
+        global _STRIPE_FEED_LAST
+        if time.time() - globals().get('_STRIPE_FEED_LAST', 0) > 1800:
+            try:
+                t30 = int(time.time() - 30 * 86400)
+                sess30 = await asyncio.to_thread(sget, f'checkout/sessions?limit=100&created[gte]={t30}')
+                started = completed = 0
+                abandoned = []
+                for s in (sess30.get('data') or []):
+                    started += 1
+                    if s.get('status') == 'complete':
+                        completed += 1
+                    elif s.get('status') in ('open', 'expired'):
+                        abandoned.append({'status': s.get('status'),
+                                          'tier': (s.get('metadata') or {}).get('tier') or 'unknown',
+                                          'created': time.strftime('%Y-%m-%d %H:%M', time.gmtime(s.get('created') or time.time()))})
+                by_tier, mrr, trialing, past_due, canceled30 = {}, 0.0, 0, 0, 0
+                for su in subs.get('data', []):
+                    st_su = su.get('status')
+                    it = ((su.get('items') or {}).get('data') or [{}])[0]
+                    price = it.get('price') or {}
+                    amt = float(price.get('unit_amount') or 0) / 100
+                    interval = (price.get('recurring') or {}).get('interval')
+                    monthly = amt * 4.33 if interval == 'week' else (amt if interval == 'month' else (amt / 12 if interval == 'year' else 0))
+                    nick = ((price.get('nickname') or '') + ' ' + str(((it.get('plan') or {}).get('nickname')) or '')).lower()
+                    pid = str(price.get('product') or '')
+                    tier = ('whale' if 'whale' in nick or pid == 'prod_UwGEaHuA0vRak2'
+                            else 'sharp' if 'sharp' in nick or pid == 'prod_UwGEJiXLNWzl1S'
+                            else 'lock' if 'lock' in nick or pid == 'prod_UwGEGi6LdFMiQ8' else 'other')
+                    if st_su in ('active', 'trialing'):
+                        by_tier[tier] = by_tier.get(tier, 0) + 1
+                        mrr += monthly
+                        trialing += 1 if st_su == 'trialing' else 0
+                    elif st_su == 'past_due':
+                        past_due += 1
+                    elif st_su == 'canceled' and (su.get('canceled_at') or 0) > t30:
+                        canceled30 += 1
+                doc = {'updated': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                       'funnel_30d': {'started': started, 'completed': completed,
+                                      'abandoned': started - completed,
+                                      'conversion_pct': round(completed / started * 100, 1) if started else None},
+                       'abandoned_recent': abandoned[-10:][::-1],
+                       'subs': {'active_or_trialing': sum(by_tier.values()), 'by_tier': by_tier,
+                                'trialing': trialing, 'past_due': past_due, 'canceled_30d': canceled30,
+                                'mrr_usd': round(mrr, 2)}}
+                await asyncio.to_thread(gh_put, 'stripe.json', doc, 'stripe funnel feed', 'main')
+                globals()['_STRIPE_FEED_LAST'] = time.time()
+            except Exception as _fe:
+                print('[stripe] feed:', _fe)
     except Exception as e:
         print('stripe_sync error:', e)
 
@@ -3272,9 +3342,9 @@ def pm_slip_png(lb, status='LIVE', pnl=None, title='SHiFT — POLYMARKET US BET 
     d.rectangle([12, 0, W, 6], fill=teal)
     d.text((48, 40), title, font=f_md, fill=teal)
     import re as _re
-    _plain = lambda s: _re.sub(r'[^\x00-\x7F]+', '', s or '').strip()  # no emoji glyphs in card fonts
+    _plain = lambda s: _re.sub(r'[^\x00-\xFF]+', '', (s or '').replace('\u2014', '-').replace('\u2013', '-').replace('\u2019', "'").replace('\u2018', "'").replace('\u201c', '"').replace('\u201d', '"')).strip()  # keep Latin-1 (KRÜ, São), drop emoji glyphs the card fonts lack
     d.text((48, 94), (_plain(lb.get('league')) + '  ' + (lb.get('title') or ''))[:64], font=f_sm, fill=dim)
-    d.text((48, 152), (lb.get('outcome') or '')[:38], font=f_xl, fill=txt)
+    d.text((48, 152), _plain(('SHORT ' if lb.get('short') else '') + (lb.get('outcome') or ''))[:38], font=f_xl, fill=txt)
     qty, price, stake = float(lb.get('qty', 0)), float(lb.get('price', 0)), float(lb.get('stake', 0))
     d.text((48, 252), f"{qty:g} shares @ {price:.2f} · ${stake:.2f} → pays ${qty:.2f}", font=_font(40), fill=txt)
     d.text((48, 330), f"market: {lb.get('marketSlug', '')}", font=f_sm, fill=dim)
@@ -3618,6 +3688,11 @@ def pm_trader_scan(st):
             print('[trader] tag', _tag, str(_e2)[:80])
     intents, notes = [], []
     hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B}
+    _tune = _desk_tuning(st)
+    _tb = lambda k: (_tune.get(k) or {}).get('edge_bonus', 0.0)
+    _tm = lambda k: (_tune.get(k) or {}).get('stake_mult', 1.0)
+    if _tune:
+        hb['tuning'] = [v['why'] for v in _tune.values()]
     for ev in evs:
         title = ev.get('title') or ev.get('name') or ''
         if (' vs ' not in title.lower()) and (' vs. ' not in title.lower()):
@@ -3720,16 +3795,16 @@ def pm_trader_scan(st):
                 print(f"[trader] edge-cap: {o['team']} claims {edge:.0%} — distrusting model read, skipping")
                 continue
             if live:
-                if edge >= TRADER_LIVE_EDGE:
-                    stake = pm_kelly(pm_, o['price'], B)
+                if edge >= TRADER_LIVE_EDGE + _tb('LIVE-BET'):
+                    stake = pm_kelly(pm_, o['price'], B) * _tm('LIVE-BET')
                     if stake >= 1.0 and stake <= _desk_room(B, expo, expo0):
                         intents.append({**o, 'stake': round(stake, 2), 'kind': 'LIVE-BET', 'p_model': pm_,
                                         'event': title, 'ev_start': ev_start,
                                         'reason': f"live number drifted — model {pm_:.0%} vs {o['price']:.0%}, {edge:.0%} gap mid-game"})
                         expo += stake
                 continue
-            if o['price'] >= TRADER_TAIL_MIN and ts_ev - now < 24 * 3600 and pm_ >= 0.78:
-                stake = min(B * 0.15, B - 1)
+            if o['price'] >= TRADER_TAIL_MIN + _tb('TAIL') and ts_ev - now < 24 * 3600 and pm_ >= 0.78:
+                stake = min(B * 0.15, B - 1) * _tm('TAIL')
                 if stake <= _desk_room(B, expo, expo0):
                     yld = (1 - o['price']) / o['price']
                     intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': pm_,
@@ -3737,8 +3812,8 @@ def pm_trader_scan(st):
                                     'reason': f"tail-end yield — {yld * 100:.1f}% on a near-certain that settles today"})
                     expo += stake
                 continue
-            if edge >= TRADER_MIN_EDGE:
-                stake = pm_kelly(pm_, o['price'], B)
+            if edge >= TRADER_MIN_EDGE + _tb('EDGE'):
+                stake = pm_kelly(pm_, o['price'], B) * _tm('EDGE')
                 if stake >= 1.0 and stake <= _desk_room(B, expo, expo0):
                     intents.append({**o, 'stake': round(stake, 2), 'kind': 'EDGE', 'p_model': pm_,
                                     'event': title, 'ev_start': ev_start,
@@ -3753,7 +3828,47 @@ def pm_trader_scan(st):
     notes.append(hb)
     return intents, notes
 
-def _trade_autopsy(t, res):
+def _clv_note(t):
+    """Closing-line diagnostic for the autopsy — did the market move OUR way after we took
+    the number? Uses the price_path snapshots pm_watch collects over the position's life."""
+    path = t.get('price_path') or []
+    if len(path) < 2 or not t.get('price'):
+        return ''
+    taken = float(t['price'])
+    last = float(path[-1].get('px') or 0)
+    if not last:
+        return ''
+    delta = (taken - last) if t.get('short') else (last - taken)  # positive = we beat the number
+    cents = delta * 100
+    if abs(cents) < 1:
+        return ' Rode the number flat to the result.'
+    if cents > 0:
+        return f" Taken {taken:.2f}, rode to {last:.2f} before the result — beat the number by {cents:.0f}¢ ✅"
+    return f" Taken {taken:.2f}, slid to {last:.2f} before the result — the number ran {abs(cents):.0f}¢ against us ⚠️"
+
+def _desk_tuning(st):
+    """LOSS-RESEARCH LOOP (owner decree 2026-07-26): settled-trade lessons tune the desk's bars.
+    Rolling per-playbook record over the last 30 settles — a playbook running cold
+    (<40% win rate AND negative P&L over 4+ settles) gets its edge bar raised +3pp and
+    stakes halved until it heals. The desk adjusts itself after every loss, in writing."""
+    by_kind = {}
+    for t in [x for x in st.get('pm_trades', []) if x.get('status') == 'settled'][-30:]:
+        k = t.get('kind') or 'EDGE'
+        rec = by_kind.setdefault(k, [0, 0, 0.0])
+        if t.get('result') == 'WIN':
+            rec[0] += 1
+        else:
+            rec[1] += 1
+        rec[2] += float(t.get('pnl') or 0)
+    tune = {}
+    for k, (w_, l_, p_) in by_kind.items():
+        n = w_ + l_
+        if n >= 4 and p_ < 0 and (w_ / n) < 0.40:
+            tune[k] = {'edge_bonus': 0.03, 'stake_mult': 0.5,
+                       'why': f'{k} cold ({w_}-{l_}, {p_:+.2f}) — bar +3pp, half size until healed'}
+    return tune
+
+def _trade_autopsy_core(t, res):
     "LOSS AUTOPSY LAW (owner decree 2026-07-25): settled trades get a post-mortem."
     kind = t.get('kind')
     pnl = float(t.get('pnl') or 0)
@@ -3777,8 +3892,20 @@ def _trade_autopsy(t, res):
         return f"model {p_mod:.0%} vs market {price:.0%} missed — logged for the playbook review."
     return "edge thesis missed — logged for the playbook review."
 
+def _trade_autopsy(t, res):
+    """Autopsy + closing-line diagnostic. Every settle gets a researched post-mortem —
+    why it won or lost, and whether the market agreed with our number along the way."""
+    return _trade_autopsy_core(t, res) + _clv_note(t)
+
+def _trade_label(t):
+    """Display name for a desk position. A SHORT must never read like the team won —
+    'SHORT ThunderTalk Gaming' says we faded them; the result then grades OUR ticket."""
+    name = (t.get('outcome') or '') if isinstance(t, dict) else str(t)
+    return f"SHORT {name}" if (isinstance(t, dict) and t.get('short')) else name
+
 def _trade_slip(t):
     return {'league': (t.get('sport') or '').upper(), 'title': t.get('event', ''), 'outcome': t['outcome'],
+            'short': bool(t.get('short')),
             'qty': t.get('qty', 0), 'price': t.get('price', 0), 'stake': t.get('stake', 0),
             'marketSlug': t.get('market_slug', ''), 'order_id': t.get('order_id', ''),
             'placed_at': t.get('ts', '')}
@@ -4044,6 +4171,9 @@ def desk_recap_text(st, bal, open_n):
              f"P&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** on ${TRADER_BANK_START:.0f} · ROI **{'+' if roi >= 0 else ''}{roi:.0f}%**"
              + (f" · roll **${bal['balance']:.2f}**" if bal else ''),
              f"Playbooks: {desk_by_kind(st.get('pm_trades', []))}"]
+    _tn = _desk_tuning(st)
+    if _tn:
+        lines.append(f"🧭 Tuning: {'; '.join(v['why'] for v in _tn.values())}")
     if st.get('pm_lessons'):
         lines.append(f"🔬 Latest lesson: _{st['pm_lessons'][-1]['lesson']}_")
     lines.append("SHiFT desk on Polymarket US — profit is the only law. ⚡")
@@ -4120,8 +4250,15 @@ async def pm_trader():
         st = await asyncio.to_thread(get_state)
         intents, notes = await asyncio.to_thread(pm_trader_scan, st)
         hb = (notes or [{}])[0]
-        print(f"[trader] cycle: {hb.get('vs', '?')} vs-events · {hb.get('three_way', '?')} 3-way blocked · "
-              f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f}")
+        if notes:
+            print(f"[trader] cycle: {hb.get('vs', '?')} vs-events · {hb.get('three_way', '?')} 3-way blocked · "
+                  f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f}")
+            for _tw in (hb.get('tuning') or []):
+                print(f"[trader] tuning: {_tw}")
+        else:
+            _bal = await asyncio.to_thread(pm_cash_balance) or {}
+            print(f"[trader] standing down — buying power ${_bal.get('buying_power', 0):.2f} < $1.05 · "
+                  f"${_bal.get('balance', 0):.2f} deployed · desk resumes when positions settle")
         if GLOBAL_ON:
             g_intents, g_notes = await asyncio.to_thread(poly2_scan, st)
             ghb = (g_notes or [{}])[0]
@@ -4164,7 +4301,7 @@ async def pm_trader():
             placed = True
             stats = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
             stats['trades'] = stats.get('trades', 0) + 1
-            placed_lines.append(f"• **{t['kind']}** — **{t['outcome']}** @ {t['price']:.2f} × {t['qty']} (${t['stake']:.2f})\n  _{t['reason']}_")
+            placed_lines.append(f"• **{t['kind']}** — **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']} (${t['stake']:.2f})\n  _{t['reason']}_")
             await asyncio.sleep(1)
         if placed:
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm trader entries')
@@ -4200,7 +4337,7 @@ async def pm_trader():
                             'pnl': round(stats.get('pnl', 0.0), 2), 'bank': TRADER_BANK_START,
                             'balance': round(bal['balance'], 2) if bal else None,
                             'playbooks': desk_by_kind(st.get('pm_trades', [])),
-                            'recent': [{'outcome': t.get('outcome'),
+                            'recent': [{'outcome': t.get('outcome'), 'short': bool(t.get('short')),
                                         'result': {'WIN': 'won', 'LOSS': 'lost', 'PUSH': 'push'}.get(t.get('result')),
                                         'pnl': round(float(t.get('pnl') or 0), 2)} for t in settled[-6:]],
                             'link': DESK_LINK, 'store': STORE_PAGE}
@@ -4228,6 +4365,21 @@ async def pm_trader():
 async def pm_watch():
     """Settle desk trades (and legacy challenge bets). Results to the desk floor + #receipts + X."""
     st = await asyncio.to_thread(get_state)
+    # GRADING CORRECTIONS drain — honesty is the brand; a correction posts before anything else.
+    pend = st.get('pending_corrections') or []
+    if pend:
+        _g0 = client.guilds[0] if client.guilds else None
+        _rch = find_channel(_g0, 'receipts') if _g0 else None
+        _dch = find_channel(_g0, TRADE_CHAN) if _g0 else None
+        for _note in pend:
+            for _tgt in (_rch, _dch):
+                if _tgt:
+                    try:
+                        await _tgt.send(_note)
+                    except Exception as _ce:
+                        print('[desk] correction post:', _ce)
+        st['pending_corrections'] = []
+        await asyncio.to_thread(gh_put, 'bot_state.json', st, 'grading corrections posted')
     open_trades = [t for t in st.get('pm_trades', []) if t.get('status') == 'open']
     open_bets = [b for b in st.get('pm_live', []) if not b.get('result')]
     open_global = [t for t in st.get('pm2_trades', []) if t.get('status') == 'open']
@@ -4241,15 +4393,33 @@ async def pm_watch():
     # ---- desk trades ----
     stats = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
     for t in open_trades:
+        # CLV price path (loss-research loop): snapshot our side's quote, ~2/hour/trade max
         try:
-            res = await asyncio.to_thread(pm_check_settled, {'marketSlug': t['market_slug'], 'outcome': t['outcome'], 'qty': t['qty']})
+            _path = t.setdefault('price_path', [])
+            if not _path or (time.time() - int(_path[-1].get('ts') or 0)) > 1800:
+                _c2 = await asyncio.to_thread(_pm_client)
+                if _c2:
+                    _r2 = await asyncio.to_thread(_c2.markets.retrieve_by_slug, t['market_slug'])
+                    _mk2 = (_r2.get('market') if isinstance(_r2, dict) and 'market' in _r2 else _r2) or {}
+                    _want_long = not t.get('short')
+                    for _s0 in (_mk2.get('marketSides') or []):
+                        if bool(_s0.get('long')) == _want_long:
+                            _px = float(((_s0.get('quote') or {}).get('value')) or 0)
+                            if _px > 0:
+                                _path.append({'ts': int(time.time()), 'px': _px})
+                                t['price_path'] = _path[-24:]
+                                changed = True
+        except Exception:
+            pass
+        try:
+            res = await asyncio.to_thread(pm_check_settled, {'marketSlug': t['market_slug'], 'outcome': t['outcome'], 'qty': t['qty'], 'short': t.get('short'), 'stake': t.get('stake')})
         except Exception as e:
             print(f"[desk] settle check: {e}"); continue
         if not res:
             continue
         t['status'] = 'settled'; t['result'] = res['result']; t['payout'] = res['payout']
         t['settled_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
-        pnl = round(float(res['payout']) - float(t['stake']), 2)
+        pnl = round(float(res['pnl']), 2) if res.get('pnl') is not None else round(float(res['payout']) - float(t['stake']), 2)
         t['pnl'] = pnl
         lesson = _trade_autopsy(t, res)
         t['autopsy'] = lesson
@@ -4269,7 +4439,7 @@ async def pm_watch():
                                            'SHiFT TRADING DESK — RESULT')
         except Exception as se:
             print('[desk] slip:', se)
-        line = (f"📈 **DESK RESULT {em}:** **{t['outcome']}** @ {t['price']:.2f} × {t['qty']} — **{res['result']} {sign}**\n"
+        line = (f"📈 **DESK RESULT {em}:** **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']} — **{res['result']} {sign}**\n"
                 f"_{t.get('reason', '')}_\n"
                 f"🔬 **Autopsy:** {lesson}\n"
                 f"Desk record **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · P&L **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}**"
@@ -4285,7 +4455,7 @@ async def pm_watch():
                 pass
         # X exposure law (owner decree 2026-07-25): desk WINNERS post to X with the record + funnel.
         if res['result'] == 'WIN':
-            xt = (f"📈 SHiFT desk — {t['outcome']} @ {t['price']:.2f} 🎯 WIN {sign}\n"
+            xt = (f"📈 SHiFT desk — {_trade_label(t)} @ {t['price']:.2f} 🎯 WIN {sign}\n"
                   f"Desk record {stats.get('wins', 0)}-{stats.get('losses', 0)} · P&L {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}\n"
                   f"Picks · receipts · $50 giveaway — all on our store: {STORE_PAGE}\n"
                   f"🖥️ {DESK_LINK}")
@@ -4329,7 +4499,7 @@ async def pm_watch():
                                                'SHiFT TRADING DESK — RESULT (GLOBAL)')
             except Exception as se:
                 print('[desk] slip:', se)
-            line = (f"🌐 **DESK RESULT {em} — GLOBAL:** **{t['outcome']}** @ {t['price']:.2f} × {t['qty']} — **{res['result']} {sign}**\n"
+            line = (f"🌐 **DESK RESULT {em} — GLOBAL:** **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']} — **{res['result']} {sign}**\n"
                     f"_{t.get('reason', '')}_\n"
                     f"🔬 **Autopsy:** {lesson}\n"
                     f"Global record **{stats2.get('wins', 0)}-{stats2.get('losses', 0)}** · P&L **{'+' if stats2.get('pnl', 0) >= 0 else ''}${stats2.get('pnl', 0):.2f}**")
@@ -4363,7 +4533,7 @@ async def pm_watch():
         sign = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
         if ch:
             try:
-                await ch.send(f"🧾 **PM RESULT (legacy challenge):** [{lb.get('league', '')}] **{lb['outcome']}** @ {lb['price']:.2f} {em} **{res['result']}** {sign}\n"
+                await ch.send(f"🧾 **PM RESULT (legacy challenge):** [{lb.get('league', '')}] **{_trade_label(lb)}** @ {lb['price']:.2f} {em} **{res['result']}** {sign}\n"
                               f"Real money · stake ${lb['stake']:.2f} → paid ${res['payout']:.2f} · Polymarket US"
                               + (f" · bankroll ${bal['balance']:.2f}" if bal else ''))
             except Exception:
@@ -5211,6 +5381,135 @@ async def grader():
     except Exception as e:
         print('grader error:', e)
 
+# ---------- X ENGAGEMENT ENGINE (owner decree 2026-07-26) ----------
+# Research base (2026 X algorithm + pick-seller playbooks): replies outweigh likes ~15x;
+# the first 30-60 min decide distribution; bettors are active 8-10a / 12-2p / 5-7p ET;
+# the mix that grows pick sellers is ~40% value / 30% conversation-starters / 30% persona+proof;
+# honest loss posts build more trust than win spam. Every post funnels to the store page
+# or the Discord — driving buys is the end goal. Ads keep drainer priority; these posts
+# only fill the quiet air between receipts.
+
+X_EDU_BANK = [
+    "Closing line value is the only report card that matters. Beat the close consistently and you're sharp. Don't, and you're donating. ⚡",
+    "A -110 coin flip needs a 52.4% hit rate to break even. Before any play, ask: does my read beat 52.4%? No answer, no bet.",
+    "Units > dollars. A $50 bettor and a $5,000 bettor compare records in units — the only honest scoreboard.",
+    "Parlays multiply the book's edge, not just the payout. Chained +EV legs beat the tax — chained guesses feed it.",
+    "Line moved toward your play after you took it? That's the market agreeing with you. Track it for a month — it says more than your W-L.",
+    "Public money inflates favorites and overs. The value lives where the timeline isn't looking.",
+    "Chasing a loss doubles your ruin rate, not your comeback odds. Same formula, every play, hot or cold — that's the whole secret.",
+    "Esports prices whipsaw on roster news. The edge isn't knowing who's better — it's knowing what the market hasn't priced yet.",
+    "Any capper who deletes losses is selling you a highlight reel. Receipts or it didn't happen.",
+    "One good day means nothing. One good month means something. One good season means everything. Play the long game.",
+]
+
+def _x_fit275(text):
+    """X weighted-length fit: drop the funnel line first, then hard-trim as last resort."""
+    if _x_weight(text) <= 275:
+        return text
+    parts = text.rsplit('\n', 1)
+    if len(parts) == 2 and _x_weight(parts[0]) <= 275:
+        return parts[0]
+    while _x_weight(text) > 275 and len(text) > 40:
+        text = text[:-2]
+    return text
+
+def x_engagement_text(st, kind, picks):
+    """One SHiFT-voiced engagement post. Every number on X must be receipt-true — pull
+    live from state, never invent. Returns text or None (caller falls back or skips)."""
+    stats = st.get('pm_stats', {})
+    w_, l_, pnl = stats.get('wins', 0), stats.get('losses', 0), stats.get('pnl', 0.0)
+    doy = int(time.strftime('%j', time.gmtime()))
+    if kind == 'question':
+        pend = [p for p in (picks or []) if not p.get('result') and (p.get('start') or 0) > time.time()]
+        if not pend:
+            return None
+        p = pend[0]
+        desc = p.get('desc') or p.get('pick') or ''
+        odds = p.get('odds')
+        odds_s = f" ({odds:+d})" if isinstance(odds, int) else ''
+        return _x_fit275(f"⚡ On the next card: {desc}{odds_s}\n\nTail or fade? 👇\nFull card drops in the Discord first — the free room never closes.")
+    if kind == 'edu':
+        return _x_fit275(f"🎓 Betting school, one minute:\n\n{X_EDU_BANK[doy % len(X_EDU_BANK)]}\n\n💎 {STORE_PAGE}")
+    if kind == 'persona':
+        variants = [
+            "The 4 AM card went up while the timeline slept. Six cards a day, every day, holidays included. The shift never ends. ⚡",
+            "Receipts don't sleep either: every result graded in public, wins AND losses. That's the difference between a record and a story.",
+            "Half the edge is showing up when nobody's watching. 12a · 4a · 8a · 12p · 4p · 8p ET — the board gets run every four hours. ⚡",
+            "We graded a LOSS in public and posted the autopsy with it, then fixed what caused it. That's how a desk gets sharper.",
+        ]
+        return _x_fit275(variants[doy % len(variants)] + f"\n\n💎 {STORE_PAGE}")
+    if kind == 'proof':
+        sign = '+' if pnl >= 0 else ''
+        return _x_fit275(
+            f"📈 SHiFT desk, live on Polymarket US: {w_}-{l_} · {sign}${pnl:.2f} P&L on the $50 ladder.\n"
+            f"Every entry, exit and autopsy posted — $50 → $1,000 in public.\n"
+            f"💎 {STORE_PAGE}")
+    if kind == 'lesson':
+        les = st.get('pm_lessons') or []
+        if not les:
+            return None
+        l0 = les[-1]
+        try:
+            age = time.time() - datetime.datetime.fromisoformat(str(l0.get('ts', '')).replace('Z', '+00:00')).timestamp()
+        except Exception:
+            age = 999999
+        if age > 72 * 3600:
+            return None
+        return _x_fit275(f"🔬 Desk autopsy ({l0.get('result')}): {l0.get('lesson')}\n\nWe post the misses too — receipts or it didn't happen.\n💎 {STORE_PAGE}")
+    if kind == 'store-ad':
+        ads = [
+            f"🔒 The Lock Room is where parlays are unlocked — every parlay built off the day's cards, posted before game time.\nUp to 18 picks/day · 7-day free trial.\n💎 {STORE_PAGE}",
+            f"📊 SHARP: we show where the number is wrong, why, and by how much. Fair price vs book price — gap math on the card.\nUp to 24 picks/day · 7-day free trial.\n💎 {STORE_PAGE}",
+            f"🐋 WHALE: SHiFT's most confident plays dealt to you first — house law, every card. Props, POD & parlays first. Live injury/delay wire. Weekly deep-dive.\n💎 {STORE_PAGE}",
+            f"🆓 The free room eats too: a daily free pick, $50 in SOL drawn every Sunday, every result receipted in public.\nCome see a real record.\n💎 {STORE_PAGE}",
+        ]
+        return _x_fit275(ads[doy % len(ads)])
+    return None
+
+@tasks.loop(seconds=900)
+async def x_engagement_watch():
+    """3 conversation-starting posts/day at ET peak windows (9a/1p/6p ET = 13/17/22 UTC).
+    Rotating kinds per weekday so the same hour never carries the same flavor twice.
+    Shares the global X pacing with receipts — one post at a time, ≥40 min apart."""
+    try:
+        now = time.gmtime()
+        windows = {13: ('question', 'persona'), 17: ('edu', 'lesson'), 22: ('store-ad', 'proof')}
+        if now.tm_hour not in windows or now.tm_min > 14:
+            return
+        st = await asyncio.to_thread(get_state)
+        if not st:
+            return
+        day = time.strftime('%Y-%m-%d', now)
+        key = f'{day}-{now.tm_hour}'
+        log = st.setdefault('x_eng_log', {})
+        if log.get(key):
+            return
+        if time.time() - float(st.get('last_x_receipt_ts') or 0) < 40 * 60:
+            return  # global X pacing — receipts and ads own the air first
+        kinds = windows[now.tm_hour]
+        kind = kinds[int(now.tm_wday) % 2]
+        picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main') or {}
+        picks = picks_doc.get('picks') or []
+        text = x_engagement_text(st, kind, picks)
+        if not text and kind != kinds[0]:
+            kind = kinds[0]
+            text = x_engagement_text(st, kind, picks)
+        if not text:
+            return
+        resp = await asyncio.to_thread(x_post, text, None)
+        if resp is None:
+            print('[engage] post failed — retries next cycle')
+            return
+        log[key] = kind
+        for k0 in list(log.keys()):
+            if k0 < day:
+                del log[k0]
+        st['last_x_receipt_ts'] = time.time()
+        await asyncio.to_thread(gh_put, 'bot_state.json', st, f'x engagement: {kind}')
+        print(f'[engage] posted {kind}')
+    except Exception as e:
+        print('x_engagement_watch error:', e)
+
 @tasks.loop(seconds=1200)
 async def x_drainer():
     # posts queued results to X — max 1 per cycle, >=40 min between X receipts (pacing rule)
@@ -5227,12 +5526,14 @@ async def x_drainer():
         # ADS FIRST — owner decree 2026-07-25: advertising always has priority over results posts
         ads = state.get('x_ads') or []
         if ads:
-            ad = ads.pop(0)
-            state['x_ads'] = ads
+            resp = await asyncio.to_thread(x_post, ads[0], None)
+            if resp is None:
+                print('x_drainer: ad post failed — keeping ad queued')
+                return
+            state['x_ads'] = ads[1:]
             state['last_x_receipt_ts'] = time.time()
             await asyncio.to_thread(gh_put, 'bot_state.json', state, 'x ad fired')
-            resp = await asyncio.to_thread(x_post, ad, None)
-            print('[drainer] ad posted' if resp is not None else 'x_drainer: ad post failed — no X key')
+            print('[drainer] ad posted')
             return
         r = queue[0]
         picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
@@ -6291,7 +6592,7 @@ async def scan_engine_run(g0, slot_key, dry):
     # Metered free tier — props pull only on the 4pm/8pm ET cards, never on dry runs.
     try:
         _slot_h = int(slot_key[9:11]) if re.match(r'\d{8}-\d{2}', slot_key) else -1
-        if not dry_run and _slot_h in ODDS_PROP_SLOTS_UTC:
+        if not dry and _slot_h in ODDS_PROP_SLOTS_UTC:
             _st_odds = await asyncio.to_thread(get_state) or {}
             _oa = _odds_budget(_st_odds)
             _props, _oa = await asyncio.to_thread(odds_mlb_props, games, now_ts, _oa, _slot_h)
@@ -7097,12 +7398,12 @@ async def challenge_daily(g0, cands, dry):
                             try:
                                 import io as _io2
                                 _slip = await asyncio.to_thread(pm_slip_png, live, 'LIVE')
-                                await ch.send(f"🪙 **LIVE BET:** ${live['stake']:.2f} real on **{live['outcome']}** @ {live['price']:.2f} "
+                                await ch.send(f"🪙 **LIVE BET:** ${live['stake']:.2f} real on **{_trade_label(live)}** @ {live['price']:.2f} "
                                               f"({live['qty']} shares) — Polymarket US",
                                               file=discord.File(_io2.BytesIO(_slip), filename='bet-slip.png'))
                             except Exception as _se:
                                 print('slip render:', _se)
-                                await ch.send(f"🪙 **LIVE BET:** ${live['stake']:.2f} real on **{live['outcome']}** @ {live['price']:.2f} "
+                                await ch.send(f"🪙 **LIVE BET:** ${live['stake']:.2f} real on **{_trade_label(live)}** @ {live['price']:.2f} "
                                               f"({live['qty']} shares) — Polymarket US")
                         elif live.get('error') not in ('no_liquidity', 'below_min'):
                             print(f"[challenge] pm place skipped: {live.get('error')}")
