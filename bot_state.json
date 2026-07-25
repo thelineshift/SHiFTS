@@ -1,8 +1,13 @@
 {
-  "executed_seq": 469,
+  "executed_seq": 467,
   "last_log": [
-    "seq 469 executed 2026-07-25 20:47 UTC",
-    "no new commands"
+    "seq 467 executed 2026-07-25 20:36 UTC",
+    "scan_now executed (dry=False, slot=20260725-20-manual)",
+    "#\ud83e\uddeashift-lab [20:27] \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled)",
+    "#\ud83e\uddeashift-lab [20:11] \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled)",
+    "#\ud83e\uddeashift-lab [19:59] \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled)",
+    "#\ud83e\uddeashift-lab [19:52] \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled)",
+    "#\ud83e\uddeashift-lab [19:41] \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled)"
   ],
   "time_audit": {
     "at": "2026-07-25 20:27 UTC",
@@ -31,18 +36,8 @@
     "flags": []
   },
   "bot_version": "9.21.6",
-  "unannounced_results": [
-    {
-      "id": "saw-youngsters-ml-0725",
-      "desc": "SAW Youngsters ML",
-      "odds": -107,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "SAW Youngsters 1-2 ENJOY \u00b7 final",
-      "tier": "whale"
-    }
-  ],
-  "last_x_receipt_ts": 1784999383.532223,
+  "unannounced_results": [],
+  "last_x_receipt_ts": 1785012448.4135838,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
