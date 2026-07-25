@@ -1,5 +1,5 @@
 {
- "seq": 412,
+ "seq": 413,
  "commands": [
   {
    "seq": 400,
@@ -72,6 +72,12 @@
   },
   {
    "seq": 412,
+   "action": "scan_now",
+   "dry": false,
+   "slot": "20260725-00"
+  },
+  {
+   "seq": 413,
    "action": "scan_now",
    "dry": false,
    "slot": "20260725-00"
