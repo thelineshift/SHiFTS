@@ -84,6 +84,42 @@
       "units": 1.15,
       "score": "New York Yankees 1, Philadelphia Phillies 0",
       "tier": "free"
+    },
+    {
+      "id": "lad-ml-0724",
+      "desc": "Dodgers ML",
+      "odds": -156,
+      "result": "WIN",
+      "units": 0.64,
+      "score": "Los Angeles Dodgers 4, New York Mets 2",
+      "tier": "sharp"
+    },
+    {
+      "id": "los-angeles-dodgers-ml-0724",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -136,
+      "result": "WIN",
+      "units": 1.1,
+      "score": "Los Angeles Dodgers 4, New York Mets 2",
+      "tier": "whale"
+    },
+    {
+      "id": "tampa-bay-rays-ml-0724",
+      "desc": "Tampa Bay Rays ML",
+      "odds": -141,
+      "result": "WIN",
+      "units": 0.71,
+      "score": "Cleveland Guardians 3, Tampa Bay Rays 11",
+      "tier": "sharp"
+    },
+    {
+      "id": "challenge-los-angeles-dodgers-ml-0724",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -136,
+      "result": "WIN",
+      "units": 0.74,
+      "score": "Los Angeles Dodgers 4, New York Mets 2",
+      "tier": "challenge"
     }
   ],
   "last_x_receipt_ts": 1784938338.452148,
