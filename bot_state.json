@@ -10323,6 +10323,36 @@
       "outcome": "Bar\u00e7a eSports GC",
       "status": "open",
       "ts": "2026-07-25T23:50:58Z"
+    },
+    {
+      "price": 0.53,
+      "stake": 6.36,
+      "kind": "EDGE",
+      "p_model": 0.75,
+      "event": "Butterfly vs. SAW Youngsters",
+      "ev_start": "2026-07-26T11:00:00Z",
+      "reason": "model 75% vs market 53% \u2014 22% edge, half-Kelly",
+      "order_id": "BFG4MCTBR9NE",
+      "qty": 12,
+      "market_slug": "aec-cs2-btf-sawy-2026-07-26",
+      "outcome": "Butterfly",
+      "status": "open",
+      "ts": "2026-07-25T23:55:57Z"
+    },
+    {
+      "price": 0.33,
+      "stake": 3.3,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Wildcard vs. TheMongolz",
+      "ev_start": "2026-07-26T15:00:00Z",
+      "reason": "model 50% vs market 33% \u2014 17% edge, half-Kelly",
+      "order_id": "BFG3G1NNE9QV",
+      "qty": 10,
+      "market_slug": "astatc-cs2-wc-mglz-2026-07-26-map2",
+      "outcome": "Wildcard",
+      "status": "open",
+      "ts": "2026-07-25T23:55:59Z"
     }
   ],
   "pm_stats": {
@@ -10330,7 +10360,7 @@
     "wins": 3,
     "losses": 9,
     "pnl": 6.06,
-    "trades": 66,
+    "trades": 68,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-22"
   },
