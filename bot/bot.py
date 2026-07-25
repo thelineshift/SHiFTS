@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.16.3'
+BOT_VERSION = '9.16.4'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3282,12 +3282,18 @@ def pm_slip_png(lb, status='LIVE', pnl=None, title='SHiFT — POLYMARKET US BET 
 # model edge (Kelly) + sum-arbitrage + tail-end yield + live divergence. Always scanning.
 TRADER_ON = os.environ.get('POLYMARKET_TRADER', '') == '1'
 TRADER_BANK_START = 50.0
-TRADER_MIN_EDGE = 0.06
-TRADER_LIVE_EDGE = 0.10
+TRADER_MIN_EDGE = 0.045     # owner decree 2026-07-25: volume up, profit still law — 4.5% bar
+TRADER_LIVE_EDGE = 0.08
 TRADER_ARB_SUM = 0.985
-TRADER_TAIL_MIN = 0.93
+TRADER_TAIL_MIN = 0.90
 TRADER_KELLY = 0.5          # fractional Kelly
-TRADER_MAX_EXPO = 0.85      # keep 15% of the roll liquid, always
+TRADER_MIN_LIQUID = 0.15    # keep 15% of the TOTAL roll (cash + deployed) liquid, always
+
+def _desk_room(B, expo):
+    """Stake room under the liquidity law. Old gate measured the cap against cash alone,
+    which strangled volume as positions opened (7/25: $0.06 of room with 58% cash).
+    Room = cash - 15% of total roll."""
+    return B - TRADER_MIN_LIQUID * (B + expo)
 TRADE_CHAN = 'shift-trades'
 
 
@@ -3665,7 +3671,7 @@ def pm_trader_scan(st):
                 if (o['slug'], o['team']) in have:
                     continue
                 stake = round(n * o['price'], 2)
-                if stake < 0.5 or expo + stake > B * TRADER_MAX_EXPO:
+                if stake < 0.5 or stake > _desk_room(B, expo):
                     continue
                 intents.append({**o, 'qty_hint': n, 'stake': stake, 'kind': 'ARB', 'p_model': None,
                                 'event': title, 'ev_start': ev_start,
@@ -3688,15 +3694,15 @@ def pm_trader_scan(st):
             if live:
                 if edge >= TRADER_LIVE_EDGE:
                     stake = pm_kelly(pm_, o['price'], B)
-                    if stake >= 1.0 and expo + stake <= B * TRADER_MAX_EXPO:
+                    if stake >= 1.0 and stake <= _desk_room(B, expo):
                         intents.append({**o, 'stake': round(stake, 2), 'kind': 'LIVE-BET', 'p_model': pm_,
                                         'event': title, 'ev_start': ev_start,
                                         'reason': f"live number drifted — model {pm_:.0%} vs {o['price']:.0%}, {edge:.0%} gap mid-game"})
                         expo += stake
                 continue
-            if o['price'] >= TRADER_TAIL_MIN and ts_ev - now < 24 * 3600 and pm_ >= 0.80:
+            if o['price'] >= TRADER_TAIL_MIN and ts_ev - now < 24 * 3600 and pm_ >= 0.78:
                 stake = min(B * 0.15, B - 1)
-                if expo + stake <= B * TRADER_MAX_EXPO:
+                if stake <= _desk_room(B, expo):
                     yld = (1 - o['price']) / o['price']
                     intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': pm_,
                                     'event': title, 'ev_start': ev_start,
@@ -3705,7 +3711,7 @@ def pm_trader_scan(st):
                 continue
             if edge >= TRADER_MIN_EDGE:
                 stake = pm_kelly(pm_, o['price'], B)
-                if stake >= 1.0 and expo + stake <= B * TRADER_MAX_EXPO:
+                if stake >= 1.0 and stake <= _desk_room(B, expo):
                     intents.append({**o, 'stake': round(stake, 2), 'kind': 'EDGE', 'p_model': pm_,
                                     'event': title, 'ev_start': ev_start,
                                     'reason': f"model {pm_:.0%} vs market {o['price']:.0%} — {edge:.0%} edge, half-Kelly"})
@@ -3980,7 +3986,7 @@ async def pm_trader():
         intents, notes = await asyncio.to_thread(pm_trader_scan, st)
         hb = (notes or [{}])[0]
         print(f"[trader] cycle: {hb.get('vs', '?')} vs-events · {hb.get('three_way', '?')} 3-way blocked · "
-              f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f}/${hb.get('B', 0):.2f}")
+              f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0)):.2f}")
         if GLOBAL_ON:
             g_intents, g_notes = await asyncio.to_thread(poly2_scan, st)
             ghb = (g_notes or [{}])[0]
