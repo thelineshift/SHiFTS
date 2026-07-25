@@ -8305,7 +8305,7 @@
       "qty": 30,
       "market_slug": "aec-lol-fur-los-2026-07-25",
       "outcome": "LOS",
-      "status": "settled",
+      "status": "open",
       "ts": "2026-07-25T11:15:48Z",
       "price_path": [
         {
@@ -8328,13 +8328,7 @@
           "ts": 1785006050,
           "px": 0.96
         }
-      ],
-      "result": "LOSS",
-      "payout": 13.8,
-      "pnl": 0.0,
-      "cashout": true,
-      "settled_at": "2026-07-25T19:09:53Z",
-      "autopsy": "+$0.00 \u2014 model 86% vs market 46% was real edge; thesis held. Taken 0.46, slid to 0.96 before the result \u2014 the number ran 50\u00a2 against us \u26a0\ufe0f (cashed out early at $13.80)"
+      ]
     },
     {
       "price": 0.66,
@@ -8699,10 +8693,6 @@
         {
           "ts": 1785004523,
           "px": 0.72
-        },
-        {
-          "ts": 1785006597,
-          "px": 0.72
         }
       ]
     },
@@ -8725,20 +8715,63 @@
         {
           "ts": 1785004524,
           "px": 0.44
-        },
-        {
-          "ts": 1785006597,
-          "px": 0.44
         }
       ]
+    },
+    {
+      "price": 0.72,
+      "stake": 20.16,
+      "kind": "EDGE",
+      "p_model": 1.0,
+      "event": "G2 Esports vs. Cloud9",
+      "ev_start": "2026-07-25T21:00:00Z",
+      "reason": "model 100% vs market 72% \u2014 28% edge, half-Kelly",
+      "order_id": "BFC9E283Y9ND",
+      "qty": 28,
+      "market_slug": "astatc-valorant-g2-c9-2026-07-25-map2",
+      "outcome": "G2 Esports",
+      "status": "open",
+      "ts": "2026-07-25T19:10:24Z"
+    },
+    {
+      "price": 0.43,
+      "short": true,
+      "stake": 2.15,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Team Heretics vs. Karmine Corp",
+      "ev_start": "2026-07-26T18:00:00Z",
+      "reason": "model 50% vs market 43% \u2014 7% edge, half-Kelly",
+      "order_id": "BFC933JTY9QY",
+      "qty": 5,
+      "market_slug": "aec-valorant-th-kc-2026-07-26",
+      "outcome": "Karmine Corp",
+      "status": "open",
+      "ts": "2026-07-25T19:10:25Z"
+    },
+    {
+      "price": 0.19,
+      "short": true,
+      "stake": 2.09,
+      "kind": "EDGE",
+      "p_model": 0.2727272727272727,
+      "event": "G2 Gozen vs. Karmine Corp GC",
+      "ev_start": "2026-07-27T18:00:00Z",
+      "reason": "model 27% vs market 19% \u2014 8% edge, half-Kelly",
+      "order_id": "BFCBE4GYT9P2",
+      "qty": 11,
+      "market_slug": "aec-valorant-ggo-kcg-2026-07-27",
+      "outcome": "Karmine Corp GC",
+      "status": "open",
+      "ts": "2026-07-25T19:10:26Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 8,
+    "losses": 7,
     "pnl": 6.06,
-    "trades": 29,
+    "trades": 32,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-18"
   },
@@ -8823,14 +8856,6 @@
       "result": "WIN",
       "pnl": 5.89,
       "lesson": "+$5.89 \u2014 book was complete and both legs settled as priced; arb math did its job."
-    },
-    {
-      "ts": "2026-07-25T19:09:53Z",
-      "kind": "EDGE",
-      "outcome": "LOS",
-      "result": "LOSS",
-      "pnl": 0.0,
-      "lesson": "+$0.00 \u2014 model 86% vs market 46% was real edge; thesis held. Taken 0.46, slid to 0.96 before the result \u2014 the number ran 50\u00a2 against us \u26a0\ufe0f (cashed out early at $13.80)"
     }
   ],
   "giveaway_x_posts": [
