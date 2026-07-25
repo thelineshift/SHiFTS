@@ -9101,7 +9101,7 @@
       "qty": 17,
       "market_slug": "aec-valorant-g2-c9-2026-07-25",
       "outcome": "G2 Esports",
-      "status": "unfilled",
+      "status": "open",
       "ts": "2026-07-25T18:06:39Z",
       "price_path": [
         {
@@ -9136,10 +9136,7 @@
           "ts": 1785018433,
           "px": 0.99
         }
-      ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      ]
     },
     {
       "price": 0.44,
@@ -9354,7 +9351,7 @@
       "qty": 28,
       "market_slug": "astatc-valorant-g2-c9-2026-07-25-map2",
       "outcome": "G2 Esports",
-      "status": "unfilled",
+      "status": "open",
       "ts": "2026-07-25T19:10:24Z",
       "price_path": [
         {
@@ -9381,10 +9378,7 @@
           "ts": 1785018434,
           "px": 0.97
         }
-      ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      ]
     },
     {
       "price": 0.43,
@@ -9743,13 +9737,7 @@
       "market_slug": "astatc-cs2-wc-mglz-2026-07-26-map1",
       "outcome": "Wildcard",
       "status": "open",
-      "ts": "2026-07-25T22:30:58Z",
-      "price_path": [
-        {
-          "ts": 1785019231,
-          "px": 0.37
-        }
-      ]
+      "ts": "2026-07-25T22:30:58Z"
     },
     {
       "price": 0.91,
@@ -9764,7 +9752,7 @@
       "qty": 9,
       "market_slug": "aec-lol-dig-sen-2026-07-25",
       "outcome": "Sentinels",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T22:35:57Z"
     },
     {
@@ -9780,8 +9768,24 @@
       "qty": 33,
       "market_slug": "aec-lol-dfm-gam-2026-07-26",
       "outcome": "GAM Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T22:35:59Z"
+    },
+    {
+      "price": 0.83,
+      "short": true,
+      "stake": 28.22,
+      "kind": "EDGE",
+      "p_model": 1.0,
+      "event": "Zephyr Esport vs. Project Conquerors",
+      "ev_start": "2026-07-26T10:00:00Z",
+      "reason": "model 100% vs market 83% \u2014 17% edge, half-Kelly",
+      "order_id": "BFF32RX0R9NM",
+      "qty": 34,
+      "market_slug": "aec-lol-zpr-pcs-2026-07-26",
+      "outcome": "Project Conquerors",
+      "status": "open",
+      "ts": "2026-07-25T22:40:57Z"
     }
   ],
   "pm_stats": {
@@ -9789,7 +9793,7 @@
     "wins": 3,
     "losses": 9,
     "pnl": 6.06,
-    "trades": 48,
+    "trades": 49,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-22"
   },
