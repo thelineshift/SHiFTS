@@ -45,7 +45,7 @@
   },
   "bot_version": "9.21.8",
   "unannounced_results": [],
-  "last_x_receipt_ts": 1785017231.6577005,
+  "last_x_receipt_ts": 1785013121.5732002,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -9735,8 +9735,7 @@
     "note": "stale 7/24 results \u2014 already receipted in Discord #receipts; X draining them would duplicate-post"
   },
   "x_eng_log": {
-    "2026-07-25-17": "lesson",
-    "2026-07-25-22": "proof"
+    "2026-07-25-17": "lesson"
   },
   "board_posted": [
     "aec-valorant-th-kc-2026-07-26",
@@ -9751,5 +9750,5 @@
     "month": "2026-07",
     "used": 0
   },
-  "deepdive_last": "2026-07-24"
+  "deepdive_last": "2026-07-25"
 }
