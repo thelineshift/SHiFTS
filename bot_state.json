@@ -9738,6 +9738,38 @@
       "outcome": "Wildcard",
       "status": "open",
       "ts": "2026-07-25T22:30:58Z"
+    },
+    {
+      "price": 0.91,
+      "short": true,
+      "stake": 8.19,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Dignitas vs. Sentinels",
+      "ev_start": "2026-07-25T23:00:00Z",
+      "reason": "tail-end yield \u2014 9.9% on a near-certain that settles today",
+      "order_id": "BFF0S9BCT9NX",
+      "qty": 9,
+      "market_slug": "aec-lol-dig-sen-2026-07-25",
+      "outcome": "Sentinels",
+      "status": "open",
+      "ts": "2026-07-25T22:35:57Z"
+    },
+    {
+      "price": 0.87,
+      "short": true,
+      "stake": 28.71,
+      "kind": "EDGE",
+      "p_model": 1.0,
+      "event": "DetonatioN FocusMe vs. GAM Esports",
+      "ev_start": "2026-07-26T09:00:00Z",
+      "reason": "model 100% vs market 87% \u2014 13% edge, half-Kelly",
+      "order_id": "BFF1TQK7A9RC",
+      "qty": 33,
+      "market_slug": "aec-lol-dfm-gam-2026-07-26",
+      "outcome": "GAM Esports",
+      "status": "open",
+      "ts": "2026-07-25T22:35:59Z"
     }
   ],
   "pm_stats": {
@@ -9745,7 +9777,7 @@
     "wins": 3,
     "losses": 9,
     "pnl": 6.06,
-    "trades": 46,
+    "trades": 48,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-22"
   },
