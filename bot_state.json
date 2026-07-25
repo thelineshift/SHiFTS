@@ -7831,7 +7831,7 @@
         }
       },
       "valorant:138961": {
-        "ts": 1785002553.546313,
+        "ts": 1785016889.2379012,
         "f": {
           "w": 2,
           "l": 0,
@@ -7848,7 +7848,7 @@
         }
       },
       "valorant:133737": {
-        "ts": 1785002553.9770832,
+        "ts": 1785016889.6965828,
         "f": {
           "w": 3,
           "l": 2,
@@ -9555,6 +9555,37 @@
           "px": 0.55
         }
       ]
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 2.4,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727274,
+      "event": "Anyone's Legend vs. Bilibili Gaming",
+      "ev_start": "2026-07-26T11:00:00Z",
+      "reason": "model 73% vs market 60% \u2014 13% edge, half-Kelly",
+      "order_id": "BFEM35FBJ9NS",
+      "qty": 4,
+      "market_slug": "aec-lol-al-blg-2026-07-26",
+      "outcome": "Bilibili Gaming",
+      "status": "open",
+      "ts": "2026-07-25T22:01:34Z"
+    },
+    {
+      "price": 0.38,
+      "stake": 1.52,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Dplus KIA vs. Hanwha Life Esports",
+      "ev_start": "2026-07-27T06:45:00Z",
+      "reason": "model 50% vs market 38% \u2014 12% edge, half-Kelly",
+      "order_id": "BFEHNHATR9P6",
+      "qty": 4,
+      "market_slug": "aec-lol-dk-hle-2026-07-27",
+      "outcome": "Dplus KIA",
+      "status": "open",
+      "ts": "2026-07-25T22:01:36Z"
     }
   ],
   "pm_stats": {
@@ -9562,7 +9593,7 @@
     "wins": 3,
     "losses": 9,
     "pnl": 6.06,
-    "trades": 39,
+    "trades": 41,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-20"
   },
