@@ -1,13 +1,39 @@
 {
-  "updated": "2026-07-25T14:39:19Z",
-  "record": "2-2",
+  "updated": "2026-07-25T16:01:08Z",
+  "record": "3-2",
   "trades": 18,
-  "open": 14,
-  "pnl": 22.55,
+  "open": 13,
+  "pnl": 50.55,
   "bank": 50.0,
-  "balance": 69.01,
-  "playbooks": "\u2014",
-  "recent": [],
+  "balance": 34.01,
+  "playbooks": "ARB 2-2 \u00b7 LIVE-BET 1-0",
+  "recent": [
+    {
+      "outcome": "Houston Dash",
+      "result": "won",
+      "pnl": 19.17
+    },
+    {
+      "outcome": "Bay FC",
+      "result": "lost",
+      "pnl": -6.76
+    },
+    {
+      "outcome": "Orlando Pride",
+      "result": "won",
+      "pnl": 11.04
+    },
+    {
+      "outcome": "CA Uni\u00f3n",
+      "result": "lost",
+      "pnl": -0.9
+    },
+    {
+      "outcome": "ThunderTalk Gaming",
+      "result": "won",
+      "pnl": 28.0
+    }
+  ],
   "link": "https://polymarket.us",
   "store": "https://thelineshift.github.io/AISportsBot/upgrade.html"
 }
