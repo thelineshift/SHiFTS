@@ -5,32 +5,41 @@
     "deleted channel/thread: \ud83d\udcb550-to-\ud83d\udcb01000-0-0"
   ],
   "time_audit": {
-    "at": "2026-07-25 01:03 UTC",
+    "at": "2026-07-25 01:36 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-9-1": "2026-07-25 00:58 UTC",
-    "\ud83e\uddfereceipts": "2026-07-24 23:18 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-25 00:58 UTC",
+    "\ud83c\udfaffree-pick-11-1": "2026-07-25 01:08 UTC",
+    "\ud83e\uddfereceipts": "2026-07-25 01:23 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-25 01:08 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-25 00:19 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 01:03 UTC",
+    "at": "2026-07-25 01:36 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 01:03 UTC",
+    "at": "2026-07-25 01:36 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 01:03 UTC",
+    "at": "2026-07-25 01:36 UTC",
     "flags": []
   },
-  "bot_version": "9.13.2",
+  "bot_version": "9.14.1",
   "unannounced_results": [
+    {
+      "id": "fnatic-ml-0724",
+      "desc": "Fnatic ML",
+      "odds": null,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Fnatic vs opponent \u2014 loss",
+      "tier": "sharp"
+    },
     {
       "id": "alka-gaming-ml-0724",
       "desc": "ALKA GAMING ML",
@@ -77,7 +86,7 @@
       "tier": "free"
     }
   ],
-  "last_x_receipt_ts": 1784943395.2463574,
+  "last_x_receipt_ts": 1784938338.452148,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
