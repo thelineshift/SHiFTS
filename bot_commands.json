@@ -1,5 +1,5 @@
 {
- "seq": 481,
+ "seq": 486,
  "commands": [
   {
    "seq": 400,
@@ -476,6 +476,37 @@
   {
    "seq": 481,
    "action": "x_oauth1_me"
+  },
+  {
+   "seq": 482,
+   "action": "replace_pinned",
+   "channel": "upgrade",
+   "marker": "PREMIUM ROOMS",
+   "content": "\u26a1 **SHiFT'S PICKS \u2014 PREMIUM ROOMS** _(updated July 2026)_\n\n\ud83d\udd12 **LOCK \u2014 $29.99/mo or $9.99/wk**\nUp to 18 picks/day \u00b7 \ud83c\udfb2 **PARLAYS UNLOCKED** \u2014 every parlay off the day's cards lives here \u00b7 \u26a1 Play of the Day 4 PM ET \u00b7 \ud83c\udfaf props\n\n\ud83d\udcca **SHARP \u2014 $49.99/mo or $12.99/wk**\nEverything in Lock, up to 24/day \u00b7 \ud83c\udfb2 **Parlay of the Day** \u00b7 fair price vs book price on every play \u00b7 esports cards \u00b7 \ud83d\udcc9 **Weekly Sharp Breakdown** every Saturday\n\n\ud83d\udc0b **WHALE \u2014 $99.99/mo or $24.99/wk**\nEverything in Sharp, up to 36/day dealt here FIRST \u00b7 \ud83d\udcc8 **DESK FLOOR in #shift-trades** \u2014 SHiFT's Polymarket entries, exits & cash-outs in real time \u2014 tail every position \u00b7 \ud83e\udde0 **Weekly Whale Deep-Dive** \u2014 the full autopsy with charts & stats every Saturday\n\n\ud83d\udda5\ufe0f **THE WAR ROOM** \u2014 every paid member gets a private license-key dashboard: your cards sorted live / tonight / finals, week \u00b7 month \u00b7 year records, and your guarantee tracker. Whale members unlock the Trading Floor with SHiFT's open positions & running P&L.\nPreview: https://thelineshift.github.io/SHiFTS/dashboard.html\nhttps://thelineshift.github.io/SHiFTS/assets/warroom_preview.png\n\n\ud83d\udee1\ufe0f **SHiFT GUARANTEE** \u2014 if our receipted picks finish your first month in the red, your next month is FREE. Automatic, no forms, no asking.\n\ud83c\udfaf Board plays posted LIVE to 24 hours out \u00b7 \u2705 7-day free trial on every tier \u00b7 roles activate in seconds after checkout\n\ud83d\uded2 **Join here:** https://thelineshift.github.io/SHiFTS/upgrade.html"
+  },
+  {
+   "seq": 483,
+   "action": "set_topic",
+   "channel": "whale-room",
+   "topic": "\ud83d\udc0b WHALE ROOM \u2014 every edge dealt here first, up to 36/day \u00b7 \ud83d\udcc8 desk floor in #shift-trades \u00b7 \ud83e\udde0 weekly deep-dive Saturday \u00b7 \ud83d\udda5\ufe0f THE WAR ROOM dashboard (license key in your DMs) \u00b7 \ud83d\udee1\ufe0f red first month = free month"
+  },
+  {
+   "seq": 484,
+   "action": "set_topic",
+   "channel": "sharp-room",
+   "topic": "\ud83d\udcca SHARP ROOM \u2014 up to 24 picks/day \u00b7 \ud83c\udfb2 parlay of the day \u00b7 \ud83d\udcc9 weekly breakdown Saturday \u00b7 \ud83d\udda5\ufe0f member dashboard (license key in your DMs) \u00b7 \ud83d\udee1\ufe0f red first month = free month"
+  },
+  {
+   "seq": 485,
+   "action": "set_topic",
+   "channel": "lock-room",
+   "topic": "\ud83d\udd12 LOCK ROOM \u2014 up to 18 picks/day \u00b7 \ud83c\udfb2 parlays unlocked \u00b7 \u26a1 POTD 4 PM ET \u00b7 \ud83d\udda5\ufe0f member dashboard (license key in your DMs) \u00b7 \ud83d\udee1\ufe0f red first month = free month"
+  },
+  {
+   "seq": 486,
+   "action": "x_bio",
+   "text": "\u26a1 SHiFT's Picks \u2014 every edge, every 4 hours \ud83d\udc0b Whale \u00b7 \ud83d\udcca Sharp \u00b7 \ud83d\udd12 Lock + \ud83d\udda5\ufe0f War Room dashboard \ud83d\udee1\ufe0f Red first month = FREE month \ud83c\udf81 $50 SOL Sundays",
+   "url": "https://thelineshift.github.io/SHiFTS/upgrade.html"
   }
  ]
 }
