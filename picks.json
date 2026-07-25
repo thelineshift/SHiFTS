@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T01:23:15Z",
+  "updated": "2026-07-25T02:03:26Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -878,7 +878,10 @@
         "total": 9.0,
         "ts": 1784925484
       },
-      "last_alert_odds": -136
+      "last_alert_odds": -136,
+      "result": "WIN",
+      "score": "Los Angeles Dodgers 4, New York Mets 2",
+      "units_result": 0.64
     },
     {
       "id": "ankalaev-ml-0725",
@@ -1094,7 +1097,10 @@
         "away_ml": -125,
         "total": 9.0,
         "ts": 1784925484
-      }
+      },
+      "result": "WIN",
+      "score": "Los Angeles Dodgers 4, New York Mets 2",
+      "units_result": 1.1
     },
     {
       "id": "chicago-white-sox-ml-0724",
@@ -1140,7 +1146,10 @@
         "away_ml": 117,
         "total": 7.0,
         "ts": 1784923419
-      }
+      },
+      "result": "WIN",
+      "score": "Cleveland Guardians 3, Tampa Bay Rays 11",
+      "units_result": 0.71
     },
     {
       "id": "atlanta-braves-ml-0724",
@@ -1233,7 +1242,10 @@
         "ts": 1784923419
       },
       "awayTeam": "Los Angeles Dodgers",
-      "homeTeam": "New York Mets"
+      "homeTeam": "New York Mets",
+      "result": "WIN",
+      "score": "Los Angeles Dodgers 4, New York Mets 2",
+      "units_result": 0.74
     },
     {
       "id": "challenge-chicago-white-sox-ml-0724",
