@@ -5,7 +5,7 @@
     "deleted channel/thread: \ud83d\udcb550-to-\ud83d\udcb01000-0-0"
   ],
   "time_audit": {
-    "at": "2026-07-25 01:39 UTC",
+    "at": "2026-07-25 01:43 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,20 +16,20 @@
     "\ud83c\udf81giveaway": "2026-07-25 00:19 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 01:39 UTC",
+    "at": "2026-07-25 01:43 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 01:39 UTC",
+    "at": "2026-07-25 01:43 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 01:39 UTC",
+    "at": "2026-07-25 01:43 UTC",
     "flags": []
   },
-  "bot_version": "9.14.1",
+  "bot_version": "9.14.2",
   "unannounced_results": [
     {
       "id": "fnatic-ml-0724",
