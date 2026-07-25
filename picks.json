@@ -1612,10 +1612,10 @@
       "homeTeam": "St. Louis Cardinals",
       "awayTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -112,
-        "away_ml": -107,
+        "home_ml": -111,
+        "away_ml": -108,
         "total": 8.0,
-        "ts": 1784988002
+        "ts": 1785011246
       },
       "last_alert_odds": -112
     },
@@ -1700,10 +1700,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -239,
-        "away_ml": 194,
+        "home_ml": -244,
+        "away_ml": 198,
         "total": 9.0,
-        "ts": 1785004517
+        "ts": 1785011246
       },
       "last_alert_odds": -237
     },
@@ -1758,10 +1758,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 133,
-        "away_ml": -160,
+        "home_ml": 130,
+        "away_ml": -157,
         "total": 7.5,
-        "ts": 1785010281
+        "ts": 1785011247
       },
       "last_alert_odds": -163
     },
@@ -1979,7 +1979,13 @@
       "opp": "New York Mets",
       "analysis": "66-38 overall, 35-19 on the road \u2014 our 68% vs book 58% (no-vig) | \ud83e\udde0 **The read:** 66-38 overall, 35-19 on the road \u2014 our 68% vs book 58% (no-vig). Model makes Los Angeles Dodgers **68%** \u2014 books imply **61%**. SHiFT presses the gap.",
       "awayTeam": "Los Angeles Dodgers",
-      "homeTeam": "New York Mets"
+      "homeTeam": "New York Mets",
+      "live_odds": {
+        "home_ml": 130,
+        "away_ml": -157,
+        "total": 7.5,
+        "ts": 1785011247
+      }
     },
     {
       "id": "milwaukee-brewers-ml-0725",
@@ -1996,7 +2002,13 @@
       "opp": "Colorado Rockies",
       "analysis": "64-39 overall, 34-20 at home \u2014 our 77% vs book 68% (no-vig) | \ud83e\udde0 **The read:** 64-39 overall, 34-20 at home \u2014 our 77% vs book 68% (no-vig). Model makes Milwaukee Brewers **77%** \u2014 books imply **71%**. SHiFT presses the gap.",
       "homeTeam": "Milwaukee Brewers",
-      "awayTeam": "Colorado Rockies"
+      "awayTeam": "Colorado Rockies",
+      "live_odds": {
+        "home_ml": -244,
+        "away_ml": 198,
+        "total": 9.0,
+        "ts": 1785011247
+      }
     }
   ]
 }
