@@ -1,11 +1,11 @@
 {
-  "executed_seq": 436,
+  "executed_seq": 435,
   "last_log": [
-    "seq 436 executed 2026-07-25 17:51 UTC",
-    "lock_channel OK: #\ud83d\udcc8shift-trades locked to paid tiers (lock/sharp/whale)"
+    "seq 435 executed 2026-07-25 16:55 UTC",
+    "x_pin FAIL: HTTP Error 400: Bad Request b'{\"error\":\"invalid_request\",\"error_description\":\"Value passed for the token was invalid.\"}'"
   ],
   "time_audit": {
-    "at": "2026-07-25 17:44 UTC",
+    "at": "2026-07-25 17:51 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,21 +16,21 @@
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 17:44 UTC",
+    "at": "2026-07-25 17:51 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 17:44 UTC",
+    "at": "2026-07-25 17:51 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 17:44 UTC",
+    "at": "2026-07-25 17:51 UTC",
     "flags": []
   },
-  "bot_version": "9.19.3",
+  "bot_version": "9.20.0",
   "unannounced_results": [
     {
       "id": "saw-youngsters-ml-0725",
@@ -78,7 +78,7 @@
     "20260725-16": "ok-bot",
     "monthly-report": "2026-07-25"
   },
-  "executed_cmd_seq": 436,
+  "executed_cmd_seq": 435,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 17,
