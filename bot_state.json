@@ -6,7 +6,7 @@
     "x_post_text OK: id 2080925499749257229"
   ],
   "time_audit": {
-    "at": "2026-07-25 08:46 UTC",
+    "at": "2026-07-25 08:10 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -17,20 +17,20 @@
     "\ud83c\udf81giveaway": "2026-07-25 08:08 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 08:46 UTC",
+    "at": "2026-07-25 08:10 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 08:46 UTC",
+    "at": "2026-07-25 08:10 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 08:46 UTC",
+    "at": "2026-07-25 08:10 UTC",
     "flags": []
   },
-  "bot_version": "9.16.1",
+  "bot_version": "9.15.4",
   "unannounced_results": [
     {
       "id": "alka-gaming-ml-0724",
@@ -2543,62 +2543,6 @@
     "esp": [
       {
         "sport": "cs2",
-        "start": "2026-07-25T08:00:00Z",
-        "t1": {
-          "id": 137861,
-          "name": "STATE"
-        },
-        "t2": {
-          "id": 137953,
-          "name": "Fortress"
-        },
-        "league": "Thunderpick World Championship",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-25T08:00:00Z",
-        "t1": {
-          "id": 135978,
-          "name": "eternal premium"
-        },
-        "t2": {
-          "id": 138848,
-          "name": "Mai Tai"
-        },
-        "league": "CCT Europe",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-25T08:00:00Z",
-        "t1": {
-          "id": 137500,
-          "name": "CYBERSHOKE Prospects"
-        },
-        "t2": {
-          "id": 137028,
-          "name": "Endless Journey"
-        },
-        "league": "CCT Europe",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-25T08:00:00Z",
-        "t1": {
-          "id": 135321,
-          "name": "G2 Ares"
-        },
-        "t2": {
-          "id": 138101,
-          "name": "Inner Circle Academy"
-        },
-        "league": "NODWIN Clutch Series",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
         "start": "2026-07-25T10:00:00Z",
         "t1": {
           "id": 138988,
@@ -2713,12 +2657,12 @@
         "sport": "cs2",
         "start": "2026-07-25T13:00:00Z",
         "t1": {
-          "id": 130605,
-          "name": "UNO MILLE"
+          "id": 138886,
+          "name": "BORRACHEIROS"
         },
         "t2": {
-          "id": 131848,
-          "name": "largadosypelados"
+          "id": 131253,
+          "name": "ODDIK"
         },
         "league": "CCT South America",
         "bo": 3
@@ -2822,17 +2766,59 @@
         "bo": 3
       },
       {
-        "sport": "lol",
-        "start": "2026-07-25T07:00:00Z",
+        "sport": "cs2",
+        "start": "2026-07-25T16:00:00Z",
         "t1": {
-          "id": 408,
-          "name": "LGD Gaming"
+          "id": 130605,
+          "name": "UNO MILLE"
         },
         "t2": {
-          "id": 2574,
-          "name": "Team WE"
+          "id": 131848,
+          "name": "largadosypelados"
         },
-        "league": "LPL",
+        "league": "CCT South America",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-25T17:00:00Z",
+        "t1": {
+          "id": 138777,
+          "name": "ex-MANA eSports"
+        },
+        "t2": {
+          "id": 128629,
+          "name": "megoshort"
+        },
+        "league": "Thunderpick World Championship",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-25T17:00:00Z",
+        "t1": {
+          "id": 132459,
+          "name": "ROUNDS"
+        },
+        "t2": {
+          "id": 138631,
+          "name": "Privateer Gaming"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-25T17:00:00Z",
+        "t1": {
+          "id": 138974,
+          "name": "ex-RUSTEC"
+        },
+        "t2": {
+          "id": 132927,
+          "name": "Rune Eaters"
+        },
+        "league": "CCT Europe",
         "bo": 3
       },
       {
@@ -3102,32 +3088,18 @@
         "bo": 1
       },
       {
-        "sport": "valorant",
-        "start": "2026-07-25T07:30:00Z",
+        "sport": "lol",
+        "start": "2026-07-26T11:00:00Z",
         "t1": {
-          "id": 136807,
-          "name": "QT DIG\u221e"
+          "id": 137900,
+          "name": "Lausanne-Sport Esports"
         },
         "t2": {
-          "id": 129277,
-          "name": "Fennel"
+          "id": 138944,
+          "name": "Ancient Ones"
         },
-        "league": "VCL",
-        "bo": 3
-      },
-      {
-        "sport": "valorant",
-        "start": "2026-07-25T08:00:00Z",
-        "t1": {
-          "id": 132692,
-          "name": "Nongshim RedForce"
-        },
-        "t2": {
-          "id": 129660,
-          "name": "Global Esports"
-        },
-        "league": "VCT",
-        "bo": 3
+        "league": "Nexus League",
+        "bo": 1
       },
       {
         "sport": "valorant",
@@ -3368,18 +3340,32 @@
         "bo": 3
       },
       {
-        "sport": "dota2",
-        "start": "2026-07-25T07:00:00Z",
+        "sport": "valorant",
+        "start": "2026-07-27T18:00:00Z",
         "t1": {
-          "id": 137657,
-          "name": "Ilbirs eSports"
+          "id": 130888,
+          "name": "G2 Gozen"
         },
         "t2": {
-          "id": 138854,
-          "name": "Team AION"
+          "id": 132777,
+          "name": "Karmine Corp GC"
         },
-        "league": "EPL Masters",
+        "league": "VCT",
         "bo": 3
+      },
+      {
+        "sport": "valorant",
+        "start": "2026-07-27T19:00:00Z",
+        "t1": {
+          "id": 138619,
+          "name": "BESTIA"
+        },
+        "t2": {
+          "id": 137065,
+          "name": "Contra"
+        },
+        "league": "VCL",
+        "bo": 5
       },
       {
         "sport": "dota2",
@@ -3520,9 +3506,3164 @@
         },
         "league": "Games of the Future",
         "bo": 3
+      },
+      {
+        "sport": "dota2",
+        "start": "2026-07-31T08:00:00Z",
+        "t1": {
+          "id": 138494,
+          "name": "Team Resilience"
+        },
+        "t2": {
+          "id": 137885,
+          "name": "PlayTime"
+        },
+        "league": "Games of the Future",
+        "bo": 3
       }
     ],
-    "esp_ts": 1784954913.3235393
+    "esp_ts": 1784969173.464405,
+    "form": {
+      "dota2:128357": {
+        "ts": 1784969191.887313,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Spirit Academy"
+            },
+            {
+              "won": false,
+              "opp": "Team Syntax"
+            },
+            {
+              "won": true,
+              "opp": "Team Lynx"
+            },
+            {
+              "won": false,
+              "opp": "RE.Arise"
+            },
+            {
+              "won": false,
+              "opp": "Spirit Academy"
+            }
+          ]
+        }
+      },
+      "dota2:138945": {
+        "ts": 1784969192.4915328,
+        "f": {
+          "w": 3,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "KW"
+            },
+            {
+              "won": false,
+              "opp": "Team Syntax"
+            },
+            {
+              "won": true,
+              "opp": "Team Lynx"
+            },
+            {
+              "won": true,
+              "opp": "Spirit Academy"
+            }
+          ]
+        }
+      },
+      "lol:132568": {
+        "ts": 1784969193.5817254,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Deep Cross Gaming"
+            },
+            {
+              "won": false,
+              "opp": "MVK Esports"
+            },
+            {
+              "won": false,
+              "opp": "CTBC Flying Oyster"
+            },
+            {
+              "won": false,
+              "opp": "CTBC Flying Oyster"
+            },
+            {
+              "won": false,
+              "opp": "MVK Esports"
+            }
+          ]
+        }
+      },
+      "lol:137803": {
+        "ts": 1784969194.1650822,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "GAM Esports"
+            },
+            {
+              "won": false,
+              "opp": "Team Secret Whales"
+            },
+            {
+              "won": true,
+              "opp": "CTBC Flying Oyster"
+            },
+            {
+              "won": true,
+              "opp": "Fukuoka SoftBank Hawks Gaming"
+            },
+            {
+              "won": false,
+              "opp": "GAM Esports"
+            }
+          ]
+        }
+      },
+      "lol:411": {
+        "ts": 1784969194.8592145,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "ThunderTalk Gaming"
+            },
+            {
+              "won": false,
+              "opp": "JD Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Ninjas in Pyjamas"
+            },
+            {
+              "won": false,
+              "opp": "Team WE"
+            }
+          ]
+        }
+      },
+      "lol:129972": {
+        "ts": 1784969195.4504595,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "LGD Gaming"
+            },
+            {
+              "won": false,
+              "opp": "JD Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": true,
+              "opp": "JD Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Ninjas in Pyjamas"
+            }
+          ]
+        }
+      },
+      "lol:126059": {
+        "ts": 1784969196.145246,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "Team WE"
+            },
+            {
+              "won": false,
+              "opp": "Team Secret Whales"
+            },
+            {
+              "won": false,
+              "opp": "G2 Esports"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Team WE"
+            }
+          ]
+        }
+      },
+      "lol:128221": {
+        "ts": 1784969196.730915,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": false,
+              "opp": "LGD Gaming"
+            },
+            {
+              "won": false,
+              "opp": "JD Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Invictus Gaming"
+            },
+            {
+              "won": true,
+              "opp": "EDward Gaming"
+            }
+          ]
+        }
+      },
+      "valorant:129537": {
+        "ts": 1784969197.411919,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "Kiwoom DRX"
+            },
+            {
+              "won": false,
+              "opp": "VARREL"
+            },
+            {
+              "won": false,
+              "opp": "Gen.G Esports"
+            },
+            {
+              "won": false,
+              "opp": "VARREL"
+            },
+            {
+              "won": true,
+              "opp": "Gen.G Esports"
+            }
+          ]
+        }
+      },
+      "valorant:128647": {
+        "ts": 1784969197.994213,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "VARREL"
+            },
+            {
+              "won": true,
+              "opp": "Paper Rex"
+            },
+            {
+              "won": false,
+              "opp": "Gen.G Esports"
+            },
+            {
+              "won": true,
+              "opp": "DetonatioN FocusMe"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim RedForce"
+            }
+          ]
+        }
+      },
+      "lol:126707": {
+        "ts": 1784969198.660044,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Deep Cross Gaming"
+            },
+            {
+              "won": false,
+              "opp": "GAM Esports"
+            },
+            {
+              "won": false,
+              "opp": "MVK Esports"
+            },
+            {
+              "won": false,
+              "opp": "Team Secret Whales"
+            },
+            {
+              "won": false,
+              "opp": "GAM Esports"
+            }
+          ]
+        }
+      },
+      "lol:136073": {
+        "ts": 1784969199.244737,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "LYON"
+            },
+            {
+              "won": true,
+              "opp": "Top Esports"
+            },
+            {
+              "won": false,
+              "opp": "Hanwha Life Esports"
+            },
+            {
+              "won": true,
+              "opp": "Deep Cross Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Deep Cross Gaming"
+            }
+          ]
+        }
+      },
+      "dota2:134592": {
+        "ts": 1784969199.9428594,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team AION"
+            },
+            {
+              "won": false,
+              "opp": "Zero Tenacity"
+            },
+            {
+              "won": false,
+              "opp": "Ilbirs eSports"
+            },
+            {
+              "won": false,
+              "opp": "Nemiga Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Flame Team"
+            }
+          ]
+        }
+      },
+      "dota2:1948": {
+        "ts": 1784969200.5254524,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "Nemiga Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Team AION"
+            },
+            {
+              "won": true,
+              "opp": "Zero Tenacity"
+            },
+            {
+              "won": true,
+              "opp": "Ilbirs eSports"
+            },
+            {
+              "won": true,
+              "opp": "L1ga Team"
+            }
+          ]
+        }
+      },
+      "lol:115": {
+        "ts": 1784969201.2289038,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": false,
+              "opp": "GIANTX"
+            },
+            {
+              "won": false,
+              "opp": "Movistar KOI"
+            },
+            {
+              "won": true,
+              "opp": "Fnatic"
+            },
+            {
+              "won": true,
+              "opp": "SK Gaming"
+            }
+          ]
+        }
+      },
+      "lol:88": {
+        "ts": 1784969201.813815,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "Movistar KOI"
+            },
+            {
+              "won": false,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": false,
+              "opp": "AG.AL"
+            },
+            {
+              "won": true,
+              "opp": "FURIA Esports"
+            },
+            {
+              "won": false,
+              "opp": "LYON"
+            }
+          ]
+        }
+      },
+      "valorant:134104": {
+        "ts": 1784969202.513918,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "FUT Esports"
+            },
+            {
+              "won": false,
+              "opp": "Gentle Mates"
+            },
+            {
+              "won": false,
+              "opp": "GIANTX"
+            },
+            {
+              "won": false,
+              "opp": "Natus Vincere"
+            },
+            {
+              "won": false,
+              "opp": "Team Vitality"
+            }
+          ]
+        }
+      },
+      "valorant:128796": {
+        "ts": 1784969203.1033037,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "BBL Esports"
+            },
+            {
+              "won": true,
+              "opp": "Natus Vincere"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim RedForce"
+            },
+            {
+              "won": true,
+              "opp": "NRG"
+            },
+            {
+              "won": true,
+              "opp": "Karmine Corp"
+            }
+          ]
+        }
+      },
+      "lol:126688": {
+        "ts": 1784969203.9025369,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": false,
+              "opp": "G2 Esports"
+            },
+            {
+              "won": false,
+              "opp": "T1"
+            },
+            {
+              "won": false,
+              "opp": "LYON"
+            },
+            {
+              "won": true,
+              "opp": "LOS"
+            }
+          ]
+        }
+      },
+      "lol:133796": {
+        "ts": 1784969204.4898615,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "DN SOOPers"
+            },
+            {
+              "won": false,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": true,
+              "opp": "Kiwoom DRX"
+            },
+            {
+              "won": true,
+              "opp": "RED Canids"
+            },
+            {
+              "won": true,
+              "opp": "Vivo Keyd Stars"
+            }
+          ]
+        }
+      },
+      "lol:134078": {
+        "ts": 1784969205.2146206,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Team Vitality"
+            },
+            {
+              "won": false,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": true,
+              "opp": "T1"
+            },
+            {
+              "won": true,
+              "opp": "AG.AL"
+            },
+            {
+              "won": true,
+              "opp": "Sentinels"
+            }
+          ]
+        }
+      },
+      "lol:126536": {
+        "ts": 1784969205.803333,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "G2 Esports"
+            },
+            {
+              "won": false,
+              "opp": "GAM Esports"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": false,
+              "opp": "G2 Esports"
+            }
+          ]
+        }
+      },
+      "cs2:132426": {
+        "ts": 1784969206.5755646,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "GenOne"
+            },
+            {
+              "won": false,
+              "opp": "KOLESIE"
+            },
+            {
+              "won": false,
+              "opp": "AM Gaming"
+            },
+            {
+              "won": false,
+              "opp": "TNC"
+            },
+            {
+              "won": false,
+              "opp": "2007"
+            }
+          ]
+        }
+      },
+      "cs2:138101": {
+        "ts": 1784969207.1608331,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "INOX Division"
+            },
+            {
+              "won": true,
+              "opp": "Hermine Esports Club"
+            },
+            {
+              "won": false,
+              "opp": "Endless Journey"
+            },
+            {
+              "won": true,
+              "opp": "ROUNDS"
+            },
+            {
+              "won": true,
+              "opp": "bankaPEPSI"
+            }
+          ]
+        }
+      },
+      "cs2:127837": {
+        "ts": 1784969207.885663,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "SAW Youngsters"
+            },
+            {
+              "won": false,
+              "opp": "Atreides"
+            },
+            {
+              "won": false,
+              "opp": "SAW Youngsters"
+            },
+            {
+              "won": false,
+              "opp": "ROUNDS"
+            },
+            {
+              "won": false,
+              "opp": "TDK"
+            }
+          ]
+        }
+      },
+      "cs2:138650": {
+        "ts": 1784969208.471206,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Entropy"
+            },
+            {
+              "won": true,
+              "opp": "ENRAGE"
+            },
+            {
+              "won": true,
+              "opp": "Benched gods"
+            },
+            {
+              "won": true,
+              "opp": "bankaPEPSI"
+            },
+            {
+              "won": false,
+              "opp": "Just Players"
+            }
+          ]
+        }
+      },
+      "cs2:138777": {
+        "ts": 1784969209.1605394,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Misa Esports"
+            },
+            {
+              "won": true,
+              "opp": "OlyBet SB"
+            },
+            {
+              "won": false,
+              "opp": "Misa Esports"
+            },
+            {
+              "won": false,
+              "opp": "Benched gods"
+            },
+            {
+              "won": true,
+              "opp": "LEO"
+            }
+          ]
+        }
+      },
+      "cs2:128629": {
+        "ts": 1784969209.7462134,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "ROUNDS"
+            },
+            {
+              "won": false,
+              "opp": "Privateer Gaming"
+            },
+            {
+              "won": false,
+              "opp": "G2 Ares"
+            },
+            {
+              "won": false,
+              "opp": "ROUNDS"
+            },
+            {
+              "won": false,
+              "opp": "SAW Youngsters"
+            }
+          ]
+        }
+      },
+      "lol:128313": {
+        "ts": 1784969210.4598672,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "LOS"
+            },
+            {
+              "won": true,
+              "opp": "Fluxo W7M"
+            },
+            {
+              "won": false,
+              "opp": "Vivo Keyd Stars"
+            },
+            {
+              "won": false,
+              "opp": "LOS"
+            },
+            {
+              "won": false,
+              "opp": "FURIA Esports"
+            }
+          ]
+        }
+      },
+      "lol:94": {
+        "ts": 1784969211.046315,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "LOS"
+            },
+            {
+              "won": true,
+              "opp": "Leviatan Esports"
+            },
+            {
+              "won": false,
+              "opp": "Fluxo W7M"
+            },
+            {
+              "won": true,
+              "opp": "Leviatan Esports"
+            },
+            {
+              "won": false,
+              "opp": "Fluxo W7M"
+            }
+          ]
+        }
+      },
+      "valorant:129662": {
+        "ts": 1784969211.7523994,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team Heretics"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": true,
+              "opp": "Team Liquid"
+            },
+            {
+              "won": false,
+              "opp": "BBL Esports"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            }
+          ]
+        }
+      },
+      "valorant:134423": {
+        "ts": 1784969212.3384693,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": false,
+              "opp": "Fnatic"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": true,
+              "opp": "Pcific Esports"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            }
+          ]
+        }
+      },
+      "lol:311": {
+        "ts": 1784969213.0381927,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Kiwoom DRX"
+            },
+            {
+              "won": true,
+              "opp": "DN SOOPers"
+            },
+            {
+              "won": false,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": false,
+              "opp": "Team Liquid"
+            },
+            {
+              "won": true,
+              "opp": "Sentinels"
+            }
+          ]
+        }
+      },
+      "lol:136066": {
+        "ts": 1784969213.6253905,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "MIBR.LOS"
+            },
+            {
+              "won": false,
+              "opp": "JD Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Hanwha Life Esports"
+            },
+            {
+              "won": true,
+              "opp": "G2 Esports"
+            },
+            {
+              "won": true,
+              "opp": "Team Secret Whales"
+            }
+          ]
+        }
+      },
+      "valorant:128538": {
+        "ts": 1784969214.3257902,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "100 Thieves"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim RedForce"
+            },
+            {
+              "won": true,
+              "opp": "XLG Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim RedForce"
+            },
+            {
+              "won": false,
+              "opp": "FUT Esports"
+            }
+          ]
+        }
+      },
+      "valorant:128819": {
+        "ts": 1784969214.9134548,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Sentinels"
+            },
+            {
+              "won": false,
+              "opp": "Sentinels"
+            },
+            {
+              "won": false,
+              "opp": "Team Envy"
+            },
+            {
+              "won": false,
+              "opp": "G2 Esports"
+            },
+            {
+              "won": false,
+              "opp": "LOUD"
+            }
+          ]
+        }
+      },
+      "cs2:135227": {
+        "ts": 1784969215.6204765,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": true,
+              "opp": "Fortress"
+            },
+            {
+              "won": false,
+              "opp": "EvolupeGG"
+            },
+            {
+              "won": false,
+              "opp": "QUAZAR"
+            },
+            {
+              "won": false,
+              "opp": "QUAZAR"
+            },
+            {
+              "won": false,
+              "opp": "PsychoFace"
+            }
+          ]
+        }
+      },
+      "cs2:129405": {
+        "ts": 1784969216.2090454,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "los kogutos"
+            },
+            {
+              "won": false,
+              "opp": "QUAZAR"
+            },
+            {
+              "won": false,
+              "opp": "SPARTA"
+            },
+            {
+              "won": true,
+              "opp": "Fortress"
+            },
+            {
+              "won": true,
+              "opp": "Misa Esports"
+            }
+          ]
+        }
+      },
+      "lol:384": {
+        "ts": 1784969216.9160058,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Sentinels"
+            },
+            {
+              "won": false,
+              "opp": "Disguised"
+            },
+            {
+              "won": false,
+              "opp": "Cloud9"
+            },
+            {
+              "won": false,
+              "opp": "FlyQuest"
+            },
+            {
+              "won": false,
+              "opp": "Team Liquid"
+            }
+          ]
+        }
+      },
+      "lol:137683": {
+        "ts": 1784969217.5175064,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": false,
+              "opp": "Gen.G"
+            },
+            {
+              "won": true,
+              "opp": "Team Secret "
+            },
+            {
+              "won": false,
+              "opp": "FlyQuest"
+            },
+            {
+              "won": true,
+              "opp": "Dignitas"
+            }
+          ]
+        }
+      },
+      "valorant:134454": {
+        "ts": 1784969218.1820674,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": true,
+              "opp": "Trace Esports"
+            },
+            {
+              "won": false,
+              "opp": "EDward Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Nova Esports"
+            },
+            {
+              "won": false,
+              "opp": "FunPlus Phoenix"
+            },
+            {
+              "won": false,
+              "opp": "TYLOO"
+            }
+          ]
+        }
+      },
+      "valorant:133279": {
+        "ts": 1784969218.765403,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "All Gamers"
+            },
+            {
+              "won": false,
+              "opp": "Wolves Esports"
+            },
+            {
+              "won": false,
+              "opp": "XLG Gaming"
+            },
+            {
+              "won": true,
+              "opp": "TEC Esports"
+            },
+            {
+              "won": true,
+              "opp": "Bilibili Gaming"
+            }
+          ]
+        }
+      },
+      "valorant:128472": {
+        "ts": 1784969219.4589083,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Cloud9"
+            },
+            {
+              "won": false,
+              "opp": "LOUD"
+            },
+            {
+              "won": true,
+              "opp": "KR\u00dc Esports"
+            },
+            {
+              "won": false,
+              "opp": "Leviat\u00e1n Esports"
+            },
+            {
+              "won": true,
+              "opp": "Evil Geniuses"
+            }
+          ]
+        }
+      },
+      "valorant:130338": {
+        "ts": 1784969220.0568693,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "KR\u00dc Esports"
+            },
+            {
+              "won": false,
+              "opp": "NRG"
+            },
+            {
+              "won": true,
+              "opp": "Sentinels"
+            },
+            {
+              "won": false,
+              "opp": "100 Thieves"
+            },
+            {
+              "won": true,
+              "opp": "NRG"
+            }
+          ]
+        }
+      },
+      "lol:126058": {
+        "ts": 1784969220.757342,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team WE"
+            },
+            {
+              "won": true,
+              "opp": "LGD Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Ultra Prime"
+            },
+            {
+              "won": true,
+              "opp": "ThunderTalk Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Oh My God"
+            }
+          ]
+        }
+      },
+      "lol:641": {
+        "ts": 1784969221.3438995,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "EDward Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Team WE"
+            },
+            {
+              "won": true,
+              "opp": "Top Esports"
+            },
+            {
+              "won": false,
+              "opp": "Weibo Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Invictus Gaming"
+            }
+          ]
+        }
+      },
+      "valorant:128917": {
+        "ts": 1784969222.0413036,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": true,
+              "opp": "DetonatioN FocusMe"
+            },
+            {
+              "won": false,
+              "opp": "T1"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": false,
+              "opp": "NRG"
+            },
+            {
+              "won": false,
+              "opp": "Leviat\u00e1n Esports"
+            }
+          ]
+        }
+      },
+      "valorant:130137": {
+        "ts": 1784969222.6229577,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team Secret"
+            },
+            {
+              "won": true,
+              "opp": "DetonatioN FocusMe"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim RedForce"
+            },
+            {
+              "won": true,
+              "opp": "FULL SENSE"
+            },
+            {
+              "won": false,
+              "opp": "Rex Regum Qeon"
+            }
+          ]
+        }
+      },
+      "lol:89": {
+        "ts": 1784969223.323907,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team Secret Whales"
+            },
+            {
+              "won": false,
+              "opp": "Deep Cross Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Deep Cross Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Team Secret Whales"
+            },
+            {
+              "won": false,
+              "opp": "Fukuoka SoftBank Hawks Gaming"
+            }
+          ]
+        }
+      },
+      "lol:124414": {
+        "ts": 1784969223.9193122,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "T1"
+            },
+            {
+              "won": true,
+              "opp": "Movistar KOI"
+            },
+            {
+              "won": false,
+              "opp": "T1"
+            },
+            {
+              "won": false,
+              "opp": "Deep Cross Gaming"
+            },
+            {
+              "won": true,
+              "opp": "MVK Esports"
+            }
+          ]
+        }
+      },
+      "lol:405": {
+        "ts": 1784969224.617955,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": false,
+              "opp": "LGD Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Anyone's Legend"
+            },
+            {
+              "won": true,
+              "opp": "Ninjas in Pyjamas"
+            }
+          ]
+        }
+      },
+      "lol:138944": {
+        "ts": 1784969225.2986507,
+        "f": {
+          "w": 2,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "Caldya Esport"
+            },
+            {
+              "won": true,
+              "opp": "Galions Sharks"
+            }
+          ]
+        }
+      },
+      "lol:130387": {
+        "ts": 1784969225.7368867,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Project Conquerors"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp Blue Stars"
+            },
+            {
+              "won": false,
+              "opp": "Project Conquerors"
+            },
+            {
+              "won": false,
+              "opp": "Solary"
+            },
+            {
+              "won": false,
+              "opp": "Joblife"
+            }
+          ]
+        }
+      },
+      "lol:132470": {
+        "ts": 1784969226.4207048,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Lille Esport"
+            },
+            {
+              "won": true,
+              "opp": "Caldya Esport"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp Blue Stars"
+            },
+            {
+              "won": true,
+              "opp": "Caldya Esport"
+            },
+            {
+              "won": true,
+              "opp": "Lille Esport"
+            }
+          ]
+        }
+      },
+      "lol:137900": {
+        "ts": 1784969227.005045,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Karmine Corp Blue Stars"
+            },
+            {
+              "won": false,
+              "opp": "Team High Ground"
+            },
+            {
+              "won": false,
+              "opp": "ZYB Esport"
+            },
+            {
+              "won": true,
+              "opp": "Galions Sharks"
+            },
+            {
+              "won": false,
+              "opp": "French Flair"
+            }
+          ]
+        }
+      },
+      "lol:137218": {
+        "ts": 1784969227.6968691,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Ancient Ones"
+            },
+            {
+              "won": false,
+              "opp": "Project Conquerors"
+            },
+            {
+              "won": false,
+              "opp": "Project Conquerors"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp Blue Stars"
+            },
+            {
+              "won": false,
+              "opp": "Lille Esport"
+            }
+          ]
+        }
+      },
+      "lol:137902": {
+        "ts": 1784969228.2876365,
+        "f": {
+          "w": 1,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "Crystal Rose"
+            },
+            {
+              "won": false,
+              "opp": "Ancient Ones"
+            },
+            {
+              "won": false,
+              "opp": "Lausanne-Sport Esports"
+            },
+            {
+              "won": false,
+              "opp": "ZYB Esport"
+            }
+          ]
+        }
+      },
+      "lol:137261": {
+        "ts": 1784969228.989266,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Zephyr Esport"
+            },
+            {
+              "won": true,
+              "opp": "Lausanne-Sport Esports"
+            },
+            {
+              "won": false,
+              "opp": "Leoes Porto Salvo Esports"
+            },
+            {
+              "won": false,
+              "opp": "Grow uP eSports"
+            },
+            {
+              "won": true,
+              "opp": "ZeroZone Gaming"
+            }
+          ]
+        }
+      },
+      "lol:138943": {
+        "ts": 1784969229.5716255,
+        "f": {
+          "w": 1,
+          "l": 1,
+          "res": [
+            {
+              "won": false,
+              "opp": "Galions Sharks"
+            },
+            {
+              "won": true,
+              "opp": "Zephyr Esport"
+            }
+          ]
+        }
+      },
+      "lol:136080": {
+        "ts": 1784969230.1188896,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Lausanne-Sport Esports"
+            },
+            {
+              "won": true,
+              "opp": "Lille Esport"
+            },
+            {
+              "won": true,
+              "opp": "Project Conquerors"
+            },
+            {
+              "won": true,
+              "opp": "Caldya Esport"
+            },
+            {
+              "won": false,
+              "opp": "Vitality.Bee"
+            }
+          ]
+        }
+      },
+      "lol:130750": {
+        "ts": 1784969230.7106616,
+        "f": {
+          "w": 0,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team High Ground"
+            },
+            {
+              "won": false,
+              "opp": "Crystal Rose"
+            },
+            {
+              "won": false,
+              "opp": "Project Conquerors"
+            },
+            {
+              "won": false,
+              "opp": "BK ROG Esports"
+            }
+          ]
+        }
+      },
+      "valorant:128473": {
+        "ts": 1784969231.725889,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Nongshim RedForce"
+            },
+            {
+              "won": true,
+              "opp": "ZETA DIVISION"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim RedForce"
+            },
+            {
+              "won": true,
+              "opp": "T1"
+            },
+            {
+              "won": false,
+              "opp": "Rex Regum Qeon"
+            }
+          ]
+        }
+      },
+      "valorant:130638": {
+        "ts": 1784969232.3091533,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "ZETA DIVISION"
+            },
+            {
+              "won": false,
+              "opp": "Global Esports"
+            },
+            {
+              "won": false,
+              "opp": "EDward Gaming"
+            },
+            {
+              "won": false,
+              "opp": "100 Thieves"
+            },
+            {
+              "won": true,
+              "opp": "Gen.G Esports"
+            }
+          ]
+        }
+      },
+      "valorant:128577": {
+        "ts": 1784969233.5653017,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "FUT Esports"
+            },
+            {
+              "won": true,
+              "opp": "Team Vitality"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim RedForce"
+            },
+            {
+              "won": false,
+              "opp": "NRG"
+            },
+            {
+              "won": true,
+              "opp": "Team Heretics"
+            }
+          ]
+        }
+      },
+      "valorant:129355": {
+        "ts": 1784969234.149396,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Gentle Mates"
+            },
+            {
+              "won": false,
+              "opp": "Team Vitality"
+            },
+            {
+              "won": true,
+              "opp": "FUT Esports"
+            },
+            {
+              "won": false,
+              "opp": "BBL Esports"
+            },
+            {
+              "won": true,
+              "opp": "Fnatic"
+            }
+          ]
+        }
+      },
+      "dota2:138987": {
+        "ts": 1784969234.8583837,
+        "f": {
+          "w": 2,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Spirit Academy"
+            },
+            {
+              "won": true,
+              "opp": "Team Syntax"
+            },
+            {
+              "won": false,
+              "opp": "Team Jenz"
+            }
+          ]
+        }
+      },
+      "dota2:136531": {
+        "ts": 1784969235.4613452,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team Jenz"
+            },
+            {
+              "won": false,
+              "opp": "Spirit Academy"
+            },
+            {
+              "won": false,
+              "opp": "PuckChamp"
+            },
+            {
+              "won": false,
+              "opp": "Team Syntax"
+            },
+            {
+              "won": false,
+              "opp": " Pipsqueak+4"
+            }
+          ]
+        }
+      },
+      "cs2:138027": {
+        "ts": 1784969237.5712864,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Subtop De France"
+            },
+            {
+              "won": true,
+              "opp": "CYBERSHOKE Prospects"
+            },
+            {
+              "won": false,
+              "opp": "NEW VISION"
+            },
+            {
+              "won": false,
+              "opp": "Butterfly"
+            },
+            {
+              "won": true,
+              "opp": "Mai Tai"
+            }
+          ]
+        }
+      },
+      "cs2:138886": {
+        "ts": 1784969238.9463527,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "Fake do Biru"
+            },
+            {
+              "won": true,
+              "opp": "BESTIA Academy"
+            },
+            {
+              "won": true,
+              "opp": "Hunters Rising"
+            },
+            {
+              "won": true,
+              "opp": "METANOIA WOLVES"
+            },
+            {
+              "won": true,
+              "opp": "ex-KR\u00dc Esports"
+            }
+          ]
+        }
+      },
+      "cs2:131253": {
+        "ts": 1784969239.5369167,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Bounty Hunters Esports"
+            },
+            {
+              "won": true,
+              "opp": "Red Feet"
+            },
+            {
+              "won": false,
+              "opp": "Patins da Ferrari"
+            },
+            {
+              "won": true,
+              "opp": "Procyon Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Rush"
+            }
+          ]
+        }
+      },
+      "cs2:132459": {
+        "ts": 1784969240.2563643,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "megoshort"
+            },
+            {
+              "won": false,
+              "opp": "Misa Esports"
+            },
+            {
+              "won": false,
+              "opp": "Inner Circle Academy"
+            },
+            {
+              "won": false,
+              "opp": "Mai Tai"
+            },
+            {
+              "won": true,
+              "opp": "Vexar"
+            }
+          ]
+        }
+      },
+      "cs2:138631": {
+        "ts": 1784969240.846554,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Misa Esports"
+            },
+            {
+              "won": true,
+              "opp": "Bushido Wildcats"
+            },
+            {
+              "won": true,
+              "opp": "megoshort"
+            },
+            {
+              "won": true,
+              "opp": "mellren"
+            },
+            {
+              "won": false,
+              "opp": "Pitstop crew"
+            }
+          ]
+        }
+      },
+      "cs2:138406": {
+        "ts": 1784969241.744516,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Butterfly"
+            },
+            {
+              "won": true,
+              "opp": "Endless Journey"
+            },
+            {
+              "won": false,
+              "opp": "CYBERSHOKE Esports"
+            },
+            {
+              "won": false,
+              "opp": "1WIN"
+            },
+            {
+              "won": false,
+              "opp": "ex-RUSTEC"
+            }
+          ]
+        }
+      },
+      "cs2:138974": {
+        "ts": 1784969242.328285,
+        "f": {
+          "w": 1,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "INOX Division"
+            },
+            {
+              "won": false,
+              "opp": "Lavked"
+            },
+            {
+              "won": true,
+              "opp": "Just Players"
+            }
+          ]
+        }
+      },
+      "cs2:128519": {
+        "ts": 1784969243.525745,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Atreides"
+            },
+            {
+              "won": false,
+              "opp": "1WIN"
+            },
+            {
+              "won": true,
+              "opp": "Honv\u00e9d"
+            },
+            {
+              "won": false,
+              "opp": "Brute"
+            },
+            {
+              "won": true,
+              "opp": "RUSTEC"
+            }
+          ]
+        }
+      },
+      "cs2:137708": {
+        "ts": 1784969244.1166244,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "SPARTA"
+            },
+            {
+              "won": false,
+              "opp": "CYBERSHOKE Esports"
+            },
+            {
+              "won": true,
+              "opp": "BASEMENT BOYS"
+            },
+            {
+              "won": false,
+              "opp": "Acend"
+            },
+            {
+              "won": false,
+              "opp": "Virtus.pro"
+            }
+          ]
+        }
+      },
+      "cs2:128258": {
+        "ts": 1784969245.4627995,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "NEW VISION"
+            },
+            {
+              "won": false,
+              "opp": "Rune Eaters"
+            },
+            {
+              "won": true,
+              "opp": "Subtop De France"
+            },
+            {
+              "won": false,
+              "opp": "Misa Esports"
+            },
+            {
+              "won": false,
+              "opp": "BOJONG"
+            }
+          ]
+        }
+      },
+      "cs2:138963": {
+        "ts": 1784969246.1801858,
+        "f": {
+          "w": 1,
+          "l": 1,
+          "res": [
+            {
+              "won": false,
+              "opp": "Esport Academy Copenhagen"
+            },
+            {
+              "won": true,
+              "opp": "Rune Eaters"
+            }
+          ]
+        }
+      },
+      "cs2:132927": {
+        "ts": 1784969246.7336552,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Entropy"
+            },
+            {
+              "won": false,
+              "opp": "Black Phoenix"
+            },
+            {
+              "won": false,
+              "opp": "PCIFIC"
+            },
+            {
+              "won": true,
+              "opp": "Team Novaq"
+            },
+            {
+              "won": true,
+              "opp": "GAMEPOINT"
+            }
+          ]
+        }
+      },
+      "cs2:138988": {
+        "ts": 1784969247.4322045,
+        "f": {
+          "w": 1,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "FURIA"
+            }
+          ]
+        }
+      },
+      "cs2:3212": {
+        "ts": 1784969247.8737054,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "EYEBALLERS"
+            },
+            {
+              "won": false,
+              "opp": "PARIVISION"
+            },
+            {
+              "won": true,
+              "opp": "BetBoom Team"
+            },
+            {
+              "won": true,
+              "opp": "EYEBALLERS"
+            },
+            {
+              "won": true,
+              "opp": "3DMAX"
+            }
+          ]
+        }
+      },
+      "cs2:3213": {
+        "ts": 1784969248.5688567,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "Vitality"
+            },
+            {
+              "won": false,
+              "opp": "FlyQuest"
+            },
+            {
+              "won": true,
+              "opp": "Heroic"
+            },
+            {
+              "won": false,
+              "opp": "MIBR"
+            },
+            {
+              "won": false,
+              "opp": "BetBoom Team"
+            }
+          ]
+        }
+      },
+      "cs2:3210": {
+        "ts": 1784969249.1615777,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Nemiga"
+            },
+            {
+              "won": false,
+              "opp": "Spirit"
+            },
+            {
+              "won": true,
+              "opp": "Natus Vincere"
+            },
+            {
+              "won": true,
+              "opp": "Legacy"
+            },
+            {
+              "won": false,
+              "opp": "Aurora Gaming"
+            }
+          ]
+        }
+      },
+      "cs2:130569": {
+        "ts": 1784969249.8612366,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "GamerLegion"
+            },
+            {
+              "won": true,
+              "opp": "Astralis"
+            },
+            {
+              "won": true,
+              "opp": "Heroic"
+            },
+            {
+              "won": false,
+              "opp": "fnatic"
+            },
+            {
+              "won": true,
+              "opp": "QUAZAR"
+            }
+          ]
+        }
+      },
+      "cs2:3209": {
+        "ts": 1784969250.4559357,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Heroic"
+            },
+            {
+              "won": false,
+              "opp": "HOTU"
+            },
+            {
+              "won": true,
+              "opp": "FOKUS"
+            },
+            {
+              "won": true,
+              "opp": "Team Nemesis"
+            },
+            {
+              "won": false,
+              "opp": "paiN"
+            }
+          ]
+        }
+      },
+      "valorant:133288": {
+        "ts": 1784969251.1350095,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": false,
+              "opp": "Nova Esports"
+            },
+            {
+              "won": true,
+              "opp": "FunPlus Phoenix"
+            },
+            {
+              "won": true,
+              "opp": "EDward Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Trace Esports"
+            },
+            {
+              "won": true,
+              "opp": "JD Gaming"
+            }
+          ]
+        }
+      },
+      "valorant:135470": {
+        "ts": 1784969251.7193525,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Wolves Esports"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": true,
+              "opp": "All Gamers"
+            },
+            {
+              "won": true,
+              "opp": "Dragon Ranger Gaming"
+            },
+            {
+              "won": false,
+              "opp": "TEC Esports"
+            }
+          ]
+        }
+      },
+      "valorant:128540": {
+        "ts": 1784969252.4230428,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "EDward Gaming"
+            },
+            {
+              "won": false,
+              "opp": "TYLOO"
+            },
+            {
+              "won": true,
+              "opp": "JD Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Nova Esports"
+            },
+            {
+              "won": true,
+              "opp": "Trace Esports"
+            }
+          ]
+        }
+      },
+      "valorant:134335": {
+        "ts": 1784969253.009527,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "XLG Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Dragon Ranger Gaming"
+            },
+            {
+              "won": false,
+              "opp": "All Gamers"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": true,
+              "opp": "TEC Esports"
+            }
+          ]
+        }
+      },
+      "valorant:133287": {
+        "ts": 1784969253.7033892,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "TYLOO"
+            },
+            {
+              "won": true,
+              "opp": "EDward Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Trace Esports"
+            },
+            {
+              "won": true,
+              "opp": "JD Gaming"
+            },
+            {
+              "won": true,
+              "opp": "FunPlus Phoenix"
+            }
+          ]
+        }
+      },
+      "valorant:133379": {
+        "ts": 1784969254.2893655,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "XLG Gaming"
+            },
+            {
+              "won": true,
+              "opp": "TEC Esports"
+            },
+            {
+              "won": true,
+              "opp": "All Gamers"
+            },
+            {
+              "won": true,
+              "opp": "Wolves Esports"
+            },
+            {
+              "won": false,
+              "opp": "Dragon Ranger Gaming"
+            }
+          ]
+        }
+      },
+      "valorant:128622": {
+        "ts": 1784969255.0727396,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Eternal Fire"
+            },
+            {
+              "won": false,
+              "opp": "Team Liquid"
+            },
+            {
+              "won": false,
+              "opp": "BBL Esports"
+            },
+            {
+              "won": true,
+              "opp": "MIBR LOS"
+            },
+            {
+              "won": true,
+              "opp": "AG.AL International"
+            }
+          ]
+        }
+      },
+      "valorant:130922": {
+        "ts": 1784969255.6558847,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Fnatic"
+            },
+            {
+              "won": true,
+              "opp": "GIANTX"
+            },
+            {
+              "won": true,
+              "opp": "Eternal Fire"
+            },
+            {
+              "won": false,
+              "opp": "NRG"
+            },
+            {
+              "won": true,
+              "opp": "Paper Rex"
+            }
+          ]
+        }
+      },
+      "valorant:128470": {
+        "ts": 1784969256.3558729,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "MIBR"
+            },
+            {
+              "won": false,
+              "opp": "Evil Geniuses"
+            },
+            {
+              "won": false,
+              "opp": "Sentinels"
+            },
+            {
+              "won": false,
+              "opp": "Evil Geniuses"
+            },
+            {
+              "won": true,
+              "opp": "Cloud9"
+            }
+          ]
+        }
+      },
+      "valorant:128990": {
+        "ts": 1784969256.939423,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "Evil Geniuses"
+            },
+            {
+              "won": true,
+              "opp": "FURIA Esports"
+            },
+            {
+              "won": true,
+              "opp": "Paper Rex"
+            },
+            {
+              "won": true,
+              "opp": "EDward Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Team Vitality"
+            }
+          ]
+        }
+      },
+      "valorant:128477": {
+        "ts": 1784969257.6421769,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "NRG"
+            },
+            {
+              "won": false,
+              "opp": "Leviat\u00e1n Esports"
+            },
+            {
+              "won": false,
+              "opp": "NRG"
+            },
+            {
+              "won": false,
+              "opp": "100 Thieves"
+            },
+            {
+              "won": false,
+              "opp": "NRG"
+            }
+          ]
+        }
+      },
+      "valorant:130190": {
+        "ts": 1784969258.2673366,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Team Envy"
+            },
+            {
+              "won": false,
+              "opp": "NRG"
+            },
+            {
+              "won": true,
+              "opp": "Leviat\u00e1n Esports"
+            },
+            {
+              "won": true,
+              "opp": "KR\u00dc Esports"
+            },
+            {
+              "won": false,
+              "opp": "100 Thieves"
+            }
+          ]
+        }
+      },
+      "valorant:137903": {
+        "ts": 1784969259.0186074,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "FOKUS Sakura"
+            },
+            {
+              "won": false,
+              "opp": "SK Nebula"
+            },
+            {
+              "won": true,
+              "opp": "GIANTX GC"
+            },
+            {
+              "won": false,
+              "opp": "G2 Gozen"
+            },
+            {
+              "won": false,
+              "opp": "Gentle Mates GC"
+            }
+          ]
+        }
+      },
+      "valorant:138941": {
+        "ts": 1784969259.6056316,
+        "f": {
+          "w": 1,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Gentle Mates GC"
+            },
+            {
+              "won": true,
+              "opp": "Karmine Corp GC"
+            },
+            {
+              "won": false,
+              "opp": "G2 Gozen"
+            }
+          ]
+        }
+      },
+      "valorant:137995": {
+        "ts": 1784969260.1556406,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Habos Babos"
+            },
+            {
+              "won": true,
+              "opp": "SK Nebula"
+            },
+            {
+              "won": true,
+              "opp": "G2 Gozen"
+            },
+            {
+              "won": false,
+              "opp": "SK Nebula"
+            },
+            {
+              "won": true,
+              "opp": "G2 Gozen"
+            }
+          ]
+        }
+      },
+      "valorant:134521": {
+        "ts": 1784969260.743101,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Twisted Minds Orchid"
+            },
+            {
+              "won": true,
+              "opp": "FOKUS Sakura"
+            },
+            {
+              "won": false,
+              "opp": "Bar\u00e7a eSports GC"
+            },
+            {
+              "won": false,
+              "opp": "SK Nebula"
+            },
+            {
+              "won": false,
+              "opp": "SK Nebula"
+            }
+          ]
+        }
+      },
+      "valorant:130888": {
+        "ts": 1784969261.4341776,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "Habos Babos"
+            },
+            {
+              "won": false,
+              "opp": "Gentle Mates GC"
+            },
+            {
+              "won": false,
+              "opp": "SK Nebula"
+            },
+            {
+              "won": false,
+              "opp": "Gentle Mates GC"
+            },
+            {
+              "won": true,
+              "opp": "SK Nebula"
+            }
+          ]
+        }
+      },
+      "valorant:132777": {
+        "ts": 1784969262.0276988,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "ALTERNATE aTTaX Ruby"
+            },
+            {
+              "won": false,
+              "opp": "Habos Babos"
+            },
+            {
+              "won": true,
+              "opp": "Twisted Minds Orchid"
+            },
+            {
+              "won": false,
+              "opp": "GIANTX GC"
+            },
+            {
+              "won": false,
+              "opp": "SK Nebula"
+            }
+          ]
+        }
+      },
+      "valorant:138619": {
+        "ts": 1784969262.726386,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "KR\u00dc Spark"
+            },
+            {
+              "won": true,
+              "opp": "KR\u00dc Spark"
+            },
+            {
+              "won": true,
+              "opp": "9z Team"
+            },
+            {
+              "won": true,
+              "opp": "9z Team"
+            },
+            {
+              "won": true,
+              "opp": "KR\u00dc Blaze"
+            }
+          ]
+        }
+      },
+      "valorant:137065": {
+        "ts": 1784969263.3153892,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Fuego"
+            },
+            {
+              "won": true,
+              "opp": "LYON"
+            },
+            {
+              "won": false,
+              "opp": "Fuego"
+            },
+            {
+              "won": true,
+              "opp": "LYON"
+            },
+            {
+              "won": true,
+              "opp": "FUSION"
+            }
+          ]
+        }
+      },
+      "dota2:138858": {
+        "ts": 1784969267.4967167,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "Nemiga Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Nemiga Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Spirit Academy"
+            },
+            {
+              "won": true,
+              "opp": "Invision"
+            },
+            {
+              "won": true,
+              "opp": "PuckChamp"
+            }
+          ]
+        }
+      },
+      "dota2:138857": {
+        "ts": 1784969268.8185005,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": false,
+              "opp": "KW"
+            },
+            {
+              "won": true,
+              "opp": "Team Jenz"
+            },
+            {
+              "won": true,
+              "opp": "Spirit Academy"
+            },
+            {
+              "won": true,
+              "opp": "PuckChamp"
+            },
+            {
+              "won": true,
+              "opp": "Team Lynx"
+            }
+          ]
+        }
+      },
+      "dota2:1931": {
+        "ts": 1784969269.9032633,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Nigma Galaxy"
+            },
+            {
+              "won": true,
+              "opp": "Power Rangers"
+            },
+            {
+              "won": true,
+              "opp": "MODUS"
+            },
+            {
+              "won": false,
+              "opp": "Virtus.pro"
+            },
+            {
+              "won": true,
+              "opp": "MOUZ"
+            }
+          ]
+        }
+      },
+      "dota2:2227": {
+        "ts": 1784969270.5970454,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Level UP"
+            },
+            {
+              "won": false,
+              "opp": "Ilbirs eSports"
+            },
+            {
+              "won": true,
+              "opp": "Team AION"
+            },
+            {
+              "won": true,
+              "opp": "Dandelions"
+            },
+            {
+              "won": false,
+              "opp": "Zero Tenacity"
+            }
+          ]
+        }
+      },
+      "dota2:137540": {
+        "ts": 1784969271.2934396,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "KW"
+            },
+            {
+              "won": true,
+              "opp": "PuckChamp"
+            },
+            {
+              "won": false,
+              "opp": "Team Syntax"
+            },
+            {
+              "won": true,
+              "opp": "Team Lynx"
+            },
+            {
+              "won": false,
+              "opp": "Team Jenz"
+            }
+          ]
+        }
+      },
+      "dota2:135854": {
+        "ts": 1784969271.984077,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Ilbirs eSports"
+            },
+            {
+              "won": true,
+              "opp": "Dandelions"
+            },
+            {
+              "won": false,
+              "opp": "Level UP"
+            },
+            {
+              "won": true,
+              "opp": "Team AION"
+            },
+            {
+              "won": true,
+              "opp": "Nemiga Gaming"
+            }
+          ]
+        }
+      },
+      "dota2:138989": {
+        "ts": 1784969272.5711517,
+        "f": {
+          "w": 0,
+          "l": 0,
+          "res": []
+        }
+      }
+    }
   },
   "pm_trades": [
     {
@@ -3668,6 +6809,22 @@
       "outcome": "SC Schwarz-Wei\u00df Bregenz",
       "status": "open",
       "ts": "2026-07-25T04:48:53Z"
+    },
+    {
+      "price": 0.44,
+      "short": true,
+      "stake": 1.76,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Sentinels vs. LOUD",
+      "ev_start": "2026-07-26T00:00:00Z",
+      "reason": "model 50% vs market 44% \u2014 6% edge, half-Kelly",
+      "order_id": "BF24EXTH69QV",
+      "qty": 4,
+      "market_slug": "aec-valorant-sen-loud-2026-07-26",
+      "outcome": "LOUD",
+      "status": "open",
+      "ts": "2026-07-25T08:47:53Z"
     }
   ],
   "pm_stats": {
@@ -3675,7 +6832,7 @@
     "wins": 2,
     "losses": 2,
     "pnl": 22.55,
-    "trades": 8
+    "trades": 9
   },
   "x_purge_complete": 1784945845.0521848,
   "pm_lessons": [
