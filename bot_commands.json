@@ -1,5 +1,5 @@
 {
- "seq": 476,
+ "seq": 479,
  "commands": [
   {
    "seq": 400,
@@ -451,6 +451,21 @@
    "action": "room_tail",
    "channel": "free-pick",
    "n": 2
+  },
+  {
+   "seq": 477,
+   "action": "room_tail",
+   "channel": "upgrade",
+   "n": 10
+  },
+  {
+   "seq": 478,
+   "action": "x_me"
+  },
+  {
+   "seq": 479,
+   "action": "read_pins",
+   "channel": "upgrade"
   }
  ]
 }
