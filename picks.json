@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T02:23:26Z",
+  "updated": "2026-07-25T03:03:35Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -840,7 +840,10 @@
         "total": 8.0,
         "ts": 1784937137
       },
-      "last_alert_odds": -148
+      "last_alert_odds": -148,
+      "result": "LOSS",
+      "score": "Cincinnati Reds 4, St. Louis Cardinals 2",
+      "units_result": -1.0
     },
     {
       "id": "nrg-furia-ml-0724",
@@ -1123,7 +1126,10 @@
         "away_ml": 114,
         "total": 9.0,
         "ts": 1784928442
-      }
+      },
+      "result": "LOSS",
+      "score": "Houston Astros 9, Chicago White Sox 5",
+      "units_result": -1.0
     },
     {
       "id": "tampa-bay-rays-ml-0724",
@@ -1271,7 +1277,10 @@
         "ts": 1784923419
       },
       "awayTeam": "Houston Astros",
-      "homeTeam": "Chicago White Sox"
+      "homeTeam": "Chicago White Sox",
+      "result": "LOSS",
+      "score": "Houston Astros 9, Chicago White Sox 5",
+      "units_result": -1.0
     },
     {
       "id": "chicago-fire-fc-ml-0725",
