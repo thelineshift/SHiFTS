@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.21.4'
+BOT_VERSION = '9.21.5'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -5651,7 +5651,8 @@ def x_update_bio(text, url=None):
             last = f'{name} HTTP {e.code}: {eb}'
         except Exception as e:
             last = f'{name}: {e}'
-    return {'error': str(last)[:200]}
+    print('x_post_native all paths failed:', str(last)[:200])
+    return None
 
 def x_post(text, quote_id=None):
     try:
@@ -5663,13 +5664,17 @@ def x_post(text, quote_id=None):
     key = x_key_load()
     if not key:
         return None
-    body = {"platforms": {"x": {"enabled": True, "posts": [{"text": text}]}}, "publish_at": "now"}
-    req = urllib.request.Request("https://api.typefully.com/v2/social-sets/321722/drafts",
-                                 data=json.dumps(body).encode(), method="POST",
-                                 headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    # X POLICY: direct publishing of URL drafts is blocked (403) — schedule ~2 min out instead.
+    body = {'platforms': {'x': {'enabled': True, 'posts': [{'text': text}]}},
+            'publish_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(time.time() + 130))}
+    req = urllib.request.Request('https://api.typefully.com/v2/social-sets/321722/drafts',
+                                 data=json.dumps(body).encode(), method='POST',
+                                 headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
-            return json.load(r)
+            res = json.load(r)
+        did = (res or {}).get('id') or (res or {}).get('draft_id')
+        return {'data': {'id': str(did), 'scheduled': True}} if did else res
     except Exception as e:
         print('x_post typefully fallback failed:', str(e)[:150])
         return None
