@@ -138,6 +138,33 @@
       "units": -1.0,
       "score": "San Diego Padres 4, Miami Marlins 2",
       "tier": "lock"
+    },
+    {
+      "id": "stl-ml-0724",
+      "desc": "Cardinals ML",
+      "odds": -168,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Cincinnati Reds 4, St. Louis Cardinals 2",
+      "tier": "lock"
+    },
+    {
+      "id": "chicago-white-sox-ml-0724",
+      "desc": "Chicago White Sox ML",
+      "odds": -131,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Houston Astros 9, Chicago White Sox 5",
+      "tier": "whale"
+    },
+    {
+      "id": "challenge-chicago-white-sox-ml-0724",
+      "desc": "Chicago White Sox ML",
+      "odds": -131,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Houston Astros 9, Chicago White Sox 5",
+      "tier": "challenge"
     }
   ],
   "last_x_receipt_ts": 1784938338.452148,
