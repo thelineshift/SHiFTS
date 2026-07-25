@@ -175,6 +175,15 @@
       "units": -1.5,
       "score": "Weibo Gaming 1-2 Invictus Gaming \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "team-secret-whales-ml-0725",
+      "desc": "Team Secret Whales ML",
+      "odds": 22,
+      "result": "WIN",
+      "units": 0.33,
+      "score": "Team Secret Whales 2-0 Fukuoka SoftBank Hawks Gaming \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1784949814.2375321,
