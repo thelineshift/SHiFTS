@@ -1,9 +1,9 @@
 {
-  "updated": "2026-07-25T16:13:02Z",
-  "record": "2-3",
+  "updated": "2026-07-25T16:28:41Z",
+  "record": "2-4",
   "trades": 18,
   "open": 13,
-  "pnl": 15.82,
+  "pnl": 8.6,
   "bank": 50.0,
   "balance": 34.01,
   "playbooks": "ARB 2-2 \u00b7 LIVE-BET 1-0",
@@ -37,6 +37,12 @@
       "short": true,
       "result": "lost",
       "pnl": -7.0
+    },
+    {
+      "outcome": "Team Vitality",
+      "short": false,
+      "result": "lost",
+      "pnl": -7.22
     }
   ],
   "link": "https://polymarket.us",
