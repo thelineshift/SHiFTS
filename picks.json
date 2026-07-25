@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T04:01:29Z",
+  "updated": "2026-07-25T08:01:31Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1818,6 +1818,74 @@
         "ts": 1784955214
       },
       "last_alert_odds": -181
+    },
+    {
+      "id": "weibo-gaming-ml-0725",
+      "date": "2026-07-25",
+      "sport": "lol",
+      "desc": "Weibo Gaming ML",
+      "market": "LPL Bo3",
+      "odds": -98,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Invictus Gaming",
+      "team": "Weibo Gaming",
+      "opp": "Invictus Gaming",
+      "analysis": "3-2 last 5 (beat Bilibili Gaming, JD Gaming, Ninjas in Pyjamas) (lost to LGD Gaming) vs 1-4 \u2014 live Pinnacle line -98 (our 86% vs book 47%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Bilibili Gaming, JD Gaming, Ninjas in Pyjamas) (lost to LGD Gaming) vs 1-4 \u2014 live Pinnacle line -98 (our 86% vs book 47%)",
+      "awayTeam": "Weibo Gaming",
+      "homeTeam": "Invictus Gaming"
+    },
+    {
+      "id": "mvk-esports-ml-0725",
+      "date": "2026-07-25",
+      "sport": "lol",
+      "desc": "MVK Esports ML",
+      "market": "LCP Bo3",
+      "odds": 61,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Ground Zero Gaming",
+      "team": "MVK Esports",
+      "opp": "Ground Zero Gaming",
+      "analysis": "2-3 last 5 (beat CTBC Flying Oyster, Fukuoka SoftBank Hawks Gaming) (lost to GAM Esports) vs 0-5 \u2014 live Pinnacle line +61 (our 90% vs book 58%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat CTBC Flying Oyster, Fukuoka SoftBank Hawks Gaming) (lost to GAM Esports) vs 0-5 \u2014 live Pinnacle line +61 (our 90% vs book",
+      "awayTeam": "MVK Esports",
+      "homeTeam": "Ground Zero Gaming"
+    },
+    {
+      "id": "hotu-ml-0725",
+      "date": "2026-07-25",
+      "sport": "cs2",
+      "desc": "HOTU ML",
+      "market": "StarLadder StarSeries Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Infinite",
+      "team": "HOTU",
+      "opp": "Infinite",
+      "analysis": "4-1 last 5 (beat GamerLegion, Astralis, Heroic) (lost to fnatic) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat GamerLegion, Astralis, Heroic) (lost to fnatic) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Infinite the number hasn't priced.",
+      "awayTeam": "HOTU",
+      "homeTeam": "Infinite"
+    },
+    {
+      "id": "team-secret-whales-ml-0725",
+      "date": "2026-07-25",
+      "sport": "lol",
+      "desc": "Team Secret Whales ML",
+      "market": "LCP Bo3",
+      "odds": 22,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "07:30 AM ET",
+      "vs": "Fukuoka SoftBank Hawks Gaming",
+      "team": "Team Secret Whales",
+      "opp": "Fukuoka SoftBank Hawks Gaming",
+      "analysis": "3-2 last 5 (beat Top Esports, Deep Cross Gaming, Deep Cross Gaming) (lost to LYON) vs 0-5 \u2014 live Pinnacle line +22 (our 90% vs book 75%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Top Esports, Deep Cross Gaming, Deep Cross Gaming) (lost to LYON) vs 0-5 \u2014 live Pinnacle line +22 (our 90% vs book 75%). Ri",
+      "awayTeam": "Team Secret Whales",
+      "homeTeam": "Fukuoka SoftBank Hawks Gaming"
     }
   ]
 }
