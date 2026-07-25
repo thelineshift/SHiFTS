@@ -1636,10 +1636,10 @@
       "homeTeam": "Philadelphia Phillies",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 108,
-        "away_ml": -130,
+        "home_ml": 105,
+        "away_ml": -126,
         "total": 9.0,
-        "ts": 1784993597
+        "ts": 1785004517
       },
       "last_alert_odds": 101
     },
@@ -1700,10 +1700,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -238,
-        "away_ml": 193,
+        "home_ml": -239,
+        "away_ml": 194,
         "total": 9.0,
-        "ts": 1784992349
+        "ts": 1785004517
       },
       "last_alert_odds": -237
     },
