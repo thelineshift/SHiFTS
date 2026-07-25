@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T20:01:27Z",
+  "updated": "2026-07-25T20:21:48Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1963,6 +1963,40 @@
       "analysis": "posted 9.5 vs 5.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side | \ud83d\udcc8 **Market angle:** posted 9.5 vs 5.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side. The number's off by **10 points** \u2014 thi",
       "awayTeam": "Washington Nationals",
       "homeTeam": "Arizona Diamondbacks"
+    },
+    {
+      "id": "los-angeles-dodgers-ml-0725",
+      "date": "2026-07-25",
+      "sport": "mlb",
+      "desc": "Los Angeles Dodgers ML",
+      "market": "ML",
+      "odds": -157,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "07:15 PM ET",
+      "vs": "New York Mets",
+      "team": "Los Angeles Dodgers",
+      "opp": "New York Mets",
+      "analysis": "66-38 overall, 35-19 on the road \u2014 our 68% vs book 58% (no-vig) | \ud83e\udde0 **The read:** 66-38 overall, 35-19 on the road \u2014 our 68% vs book 58% (no-vig). Model makes Los Angeles Dodgers **68%** \u2014 books imply **61%**. SHiFT presses the gap.",
+      "awayTeam": "Los Angeles Dodgers",
+      "homeTeam": "New York Mets"
+    },
+    {
+      "id": "milwaukee-brewers-ml-0725",
+      "date": "2026-07-25",
+      "sport": "mlb",
+      "desc": "Milwaukee Brewers ML",
+      "market": "ML",
+      "odds": -244,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "07:10 PM ET",
+      "vs": "Colorado Rockies",
+      "team": "Milwaukee Brewers",
+      "opp": "Colorado Rockies",
+      "analysis": "64-39 overall, 34-20 at home \u2014 our 77% vs book 68% (no-vig) | \ud83e\udde0 **The read:** 64-39 overall, 34-20 at home \u2014 our 77% vs book 68% (no-vig). Model makes Milwaukee Brewers **77%** \u2014 books imply **71%**. SHiFT presses the gap.",
+      "homeTeam": "Milwaukee Brewers",
+      "awayTeam": "Colorado Rockies"
     }
   ]
 }
