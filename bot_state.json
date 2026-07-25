@@ -1,13 +1,8 @@
 {
-  "executed_seq": 486,
+  "executed_seq": 487,
   "last_log": [
-    "seq 486 executed 2026-07-25 21:40 UTC",
-    "old pinned message deleted",
-    "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)",
-    "topic set on #\ud83d\udc0bwhale-room-12-7",
-    "topic set on #\ud83d\udccasharp-room-9-6",
-    "topic set on #\ud83d\udd12lock-room-5-11",
-    "x_bio OK"
+    "seq 487 executed 2026-07-25 21:46 UTC",
+    "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+media.write+offline.access&state=8e8b4238e1872c38&code_challenge=ya08MuLnDGtd225YbPTfEG0ceqHg7rTqAFCU-DyCfrQ&code_challenge_method=S256"
   ],
   "time_audit": {
     "at": "2026-07-25 21:27 UTC",
@@ -79,7 +74,7 @@
     "20260725-20-manual": "ok-bot",
     "20260725-21-manual": "ok-bot"
   },
-  "executed_cmd_seq": 486,
+  "executed_cmd_seq": 487,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
@@ -9201,7 +9196,7 @@
       "qty": 17,
       "market_slug": "astatc-valorant-g2-c9-2026-07-25-map1",
       "outcome": "G2 Esports",
-      "status": "unfilled",
+      "status": "open",
       "ts": "2026-07-25T18:34:43Z",
       "price_path": [
         {
@@ -9224,10 +9219,7 @@
           "ts": 1785014667,
           "px": 0.97
         }
-      ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      ]
     },
     {
       "price": 0.44,
@@ -9446,7 +9438,7 @@
       "qty": 6,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T21:43:28Z"
     }
   ],
