@@ -1,33 +1,8 @@
 {
-  "ts": "2026-07-25T21:42:01Z",
+  "ts": "2026-07-25T21:55:59Z",
   "configured": true,
-  "balance_usd": 80.1,
-  "buying_power": 14.1,
+  "balance_usd": 60.64,
+  "buying_power": 17.64,
   "positions": [],
-  "open_orders": [
-    {
-      "market": "aec-lol-cr-kcbs-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.92",
-      "qty": 2
-    },
-    {
-      "market": "aec-lol-al-blg-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 8
-    },
-    {
-      "market": "aec-lol-al-blg-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 3
-    },
-    {
-      "market": "aec-lol-al-blg-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 4
-    }
-  ]
+  "error": "<!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-"
 }
