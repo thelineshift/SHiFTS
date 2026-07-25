@@ -40,35 +40,7 @@
     "flags": []
   },
   "bot_version": "9.22.1",
-  "unannounced_results": [
-    {
-      "id": "san-francisco-giants-ml-0725",
-      "desc": "San Francisco Giants ML",
-      "odds": -126,
-      "result": "WIN",
-      "units": 0.79,
-      "score": "Los Angeles Angels 2, San Francisco Giants 9",
-      "tier": "whale"
-    },
-    {
-      "id": "arizona-diamondbacks-ml-0725",
-      "desc": "Arizona Diamondbacks ML",
-      "odds": 114,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Arizona Diamondbacks 3, Washington Nationals 5",
-      "tier": "sharp"
-    },
-    {
-      "id": "boston-red-sox-ml-0725",
-      "desc": "Boston Red Sox ML",
-      "odds": -120,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Toronto Blue Jays 6, Boston Red Sox 0",
-      "tier": "lock"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785013121.5732002,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -9129,7 +9101,7 @@
       "qty": 17,
       "market_slug": "aec-valorant-g2-c9-2026-07-25",
       "outcome": "G2 Esports",
-      "status": "unfilled",
+      "status": "open",
       "ts": "2026-07-25T18:06:39Z",
       "price_path": [
         {
@@ -9164,10 +9136,7 @@
           "ts": 1785018433,
           "px": 0.99
         }
-      ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      ]
     },
     {
       "price": 0.44,
@@ -9382,7 +9351,7 @@
       "qty": 28,
       "market_slug": "astatc-valorant-g2-c9-2026-07-25-map2",
       "outcome": "G2 Esports",
-      "status": "unfilled",
+      "status": "open",
       "ts": "2026-07-25T19:10:24Z",
       "price_path": [
         {
@@ -9409,10 +9378,7 @@
           "ts": 1785018434,
           "px": 0.97
         }
-      ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      ]
     },
     {
       "price": 0.43,
@@ -9786,7 +9752,7 @@
       "qty": 9,
       "market_slug": "aec-lol-dig-sen-2026-07-25",
       "outcome": "Sentinels",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T22:35:57Z"
     },
     {
@@ -9802,7 +9768,7 @@
       "qty": 33,
       "market_slug": "aec-lol-dfm-gam-2026-07-26",
       "outcome": "GAM Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T22:35:59Z"
     },
     {
@@ -9818,7 +9784,7 @@
       "qty": 34,
       "market_slug": "aec-lol-zpr-pcs-2026-07-26",
       "outcome": "Project Conquerors",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T22:40:57Z"
     },
     {
@@ -9834,7 +9800,7 @@
       "qty": 15,
       "market_slug": "aec-lol-al-blg-2026-07-26",
       "outcome": "Bilibili Gaming",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T22:45:59Z"
     },
     {
@@ -9851,6 +9817,38 @@
       "outcome": "Gen.G Esports",
       "status": "open",
       "ts": "2026-07-25T22:46:00Z"
+    },
+    {
+      "price": 0.91,
+      "short": true,
+      "stake": 5.46,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Crystal Rose vs. Karmine Corp Blue Stars",
+      "ev_start": "2026-07-26T12:00:00Z",
+      "reason": "tail-end yield \u2014 9.9% on a near-certain that settles today",
+      "order_id": "BFF5HPKCM9P7",
+      "qty": 6,
+      "market_slug": "aec-lol-cr-kcbs-2026-07-26",
+      "outcome": "Karmine Corp Blue Stars",
+      "status": "open",
+      "ts": "2026-07-25T22:50:57Z"
+    },
+    {
+      "price": 0.58,
+      "short": true,
+      "stake": 4.06,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 58% \u2014 9% edge, half-Kelly",
+      "order_id": "BFF7RBT5A9NQ",
+      "qty": 7,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-25T22:50:58Z"
     }
   ],
   "pm_stats": {
@@ -9858,7 +9856,7 @@
     "wins": 3,
     "losses": 9,
     "pnl": 6.06,
-    "trades": 51,
+    "trades": 53,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-22"
   },
