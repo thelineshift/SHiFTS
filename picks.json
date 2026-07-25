@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T00:58:53Z",
+  "updated": "2026-07-25T01:08:49Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1430,6 +1430,88 @@
       "analysis": "52-49 overall, 23-28 at home \u2014 our 56% vs book 52% (no-vig) | The book is off on this number \u2014 52-49 overall, 23-28 at home \u2014 our 56% vs book 52% (no-vig). That's a 4-point edge in our favor.",
       "homeTeam": "Boston Red Sox",
       "awayTeam": "Toronto Blue Jays"
+    },
+    {
+      "id": "2-leg-parlay-0725",
+      "date": "2026-07-25",
+      "sport": "parlay",
+      "desc": "D.C. United ML + Athletics ML",
+      "market": "2-leg parlay (MLB + MLS)",
+      "odds": -26,
+      "units": 0.5,
+      "tier": "whale",
+      "time_et": "07:10 PM ET",
+      "vs": "D.C. United ML vs Toronto FC \u00b7 Athletics ML vs Minnesota Twins",
+      "team": null,
+      "opp": null,
+      "analysis": "D.C. United ML (+105) \u30fb Athletics ML (+139) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "D.C. United",
+          "vs": "Toronto FC",
+          "sport": "mls",
+          "date": "2026-07-25",
+          "time_et": "07:30 PM ET"
+        },
+        {
+          "team": "Athletics",
+          "vs": "Minnesota Twins",
+          "sport": "mlb",
+          "date": "2026-07-25",
+          "time_et": "07:10 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "charlotte-fc-ml-0725",
+      "date": "2026-07-25",
+      "sport": "mls",
+      "desc": "Charlotte FC ML",
+      "market": "ML",
+      "odds": 190,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "06:30 PM ET",
+      "vs": "Red Bull New York",
+      "team": "Charlotte FC",
+      "opp": "Red Bull New York",
+      "analysis": "6-4-6 overall \u2014 our 45% vs book 43% (no-vig) | The book is off on this number \u2014 6-4-6 overall \u2014 our 45% vs book 43% (no-vig). That's a 3-point edge in our favor.",
+      "awayTeam": "Charlotte FC",
+      "homeTeam": "Red Bull New York"
+    },
+    {
+      "id": "st.-louis-cardinals-ml-0725",
+      "date": "2026-07-25",
+      "sport": "mlb",
+      "desc": "St. Louis Cardinals ML",
+      "market": "ML",
+      "odds": -125,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "07:15 PM ET",
+      "vs": "Cincinnati Reds",
+      "team": "St. Louis Cardinals",
+      "opp": "Cincinnati Reds",
+      "analysis": "52-50 overall, 26-27 at home \u2014 our 55% vs book 53% (no-vig) | The book is off on this number \u2014 52-50 overall, 26-27 at home \u2014 our 55% vs book 53% (no-vig). That's a 2-point edge in our favor.",
+      "homeTeam": "St. Louis Cardinals",
+      "awayTeam": "Cincinnati Reds"
+    },
+    {
+      "id": "philadelphia-phillies-ml-0725",
+      "date": "2026-07-25",
+      "sport": "mlb",
+      "desc": "Philadelphia Phillies ML",
+      "market": "ML",
+      "odds": -102,
+      "units": 1.0,
+      "tier": "free",
+      "time_et": "06:05 PM ET",
+      "vs": "New York Yankees",
+      "team": "Philadelphia Phillies",
+      "opp": "New York Yankees",
+      "analysis": "56-47 overall, 27-25 at home \u2014 our 49% vs book 48% (no-vig) | The book is off on this number \u2014 56-47 overall, 27-25 at home \u2014 our 49% vs book 48% (no-vig). That's a 1-point edge in our favor.",
+      "homeTeam": "Philadelphia Phillies",
+      "awayTeam": "New York Yankees"
     }
   ]
 }
