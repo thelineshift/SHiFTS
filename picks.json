@@ -1346,10 +1346,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -119,
-        "away_ml": -102,
+        "home_ml": -125,
+        "away_ml": 104,
         "total": 8.0,
-        "ts": 1784993596
+        "ts": 1784995867
       },
       "last_alert_odds": -121
     },
@@ -1416,10 +1416,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 8.0,
-        "ts": 1784993597
+        "ts": 1784995867
       }
     },
     {
@@ -1487,12 +1487,12 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": 100,
+        "home_ml": -117,
+        "away_ml": -103,
         "total": 8.0,
-        "ts": 1784989801
+        "ts": 1784995867
       },
-      "last_alert_odds": 100
+      "last_alert_odds": -103
     },
     {
       "id": "atlanta-braves-ml-0725",
@@ -1819,10 +1819,10 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -167,
+        "away_ml": 138,
         "total": 8.0,
-        "ts": 1784992349
+        "ts": 1784995868
       },
       "last_alert_odds": -162
     },
