@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.15.1'
+BOT_VERSION = '9.15.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -1358,20 +1358,23 @@ async def catchup_sweep(g0):
             done = 0
             dirty = False
             for m in reversed(msgs):
-                if m.author.bot or str(m.id) in handled:
+                if m.author.bot:
                     continue
                 raw = m.content or ''
                 hs = gw_handle_parse(raw) or gw_bare_handle(raw)
                 if not hs:
                     continue  # guidance for no-handle posts is on_message's job; sweep never nags
                 if hs[0].lower() in conf:
+                    if str(m.id) not in handled:
+                        await gw_mark_handled(st_g, m.id)
+                        dirty = True
+                    continue  # on the ledger — sweeps never nag
+                # BACKFILL LAW (2026-07-25): a parsed handle that's NOT on the ledger gets
+                # processed even if its message was "handled" before the provisional law —
+                # those are the people who heard nothing back.
+                if str(m.id) not in handled:
                     await gw_mark_handled(st_g, m.id)
                     dirty = True
-                    await gw_reply_once(m, 'already', f"🎫 **@{hs[0]}** — you're already entered in Sunday's $50 draw (6 PM ET). Nothing else to do — good luck! ⚡")
-                    done += 1
-                    continue  # already entered — confirm once, then move on
-                await gw_mark_handled(st_g, m.id)
-                dirty = True
                 try:
                     await verify_giveaway_entry(m, hs[0])
                     done += 1
