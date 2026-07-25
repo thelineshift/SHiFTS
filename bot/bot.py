@@ -4,7 +4,7 @@ from discord.ext import tasks
 
 DISCORD_TOKEN = os.environ['DISCORD_BOT_TOKEN']
 GH_TOKEN = os.environ.get('GITHUB_TOKEN', '')
-REPO = 'TheLineShift/AISportsBot'
+REPO = 'thelineshift/SHiFTS'
 QUEUE_BRANCH = 'commands'
 RAW = f'https://raw.githubusercontent.com/{REPO}/{QUEUE_BRANCH}'
 API = f'https://api.github.com/repos/{REPO}/contents'
@@ -696,7 +696,7 @@ def make_client(privileged=True):
                     if is_admin:
                         await message.channel.send(f"{message.author.mention} 🛰️ **v{BOT_VERSION}** online — next scan **{nxt_s}**. Commands route through the ops queue only — chat commands are disabled for everyone.")
                     else:
-                        await message.channel.send(f"{message.author.mention} 🛰️ I'm on duty — scans drop **12a · 4a · 8a · 12p · 4p · 8p ET** (next **{nxt_s}**). Free pick in the free-pick room; paid rooms get the full board. thelineshift.github.io/AISportsBot/upgrade.html ⚡")
+                        await message.channel.send(f"{message.author.mention} 🛰️ I'm on duty — scans drop **12a · 4a · 8a · 12p · 4p · 8p ET** (next **{nxt_s}**). Free pick in the free-pick room; paid rooms get the full board. thelineshift.github.io/SHiFTS/upgrade.html ⚡")
                     # in #giveaway with a real X handle in the same message? still process the entry below
                     if not ('giveaway' in chname and gw_handle_parse(message.content or '')):
                         return
@@ -3421,7 +3421,7 @@ def _desk_room(B, expo, expo0=0.0):
 TRADE_CHAN = 'shift-trades'
 DESK_LINK = 'https://polymarket.us'  # the desk's public home — recap links here (no-spam decree)
 DISCORD_INVITE = 'https://discord.gg/8bBxWUJCYT'  # verified invite used across the site — results push here
-STORE_PAGE = 'https://thelineshift.github.io/AISportsBot/upgrade.html'  # universal link — giveaway + Discord + products all live here (owner decree)
+STORE_PAGE = 'https://thelineshift.github.io/SHiFTS/upgrade.html'  # universal link — giveaway + Discord + products all live here (owner decree)
 
 
 # ---------- THE ODDS API — PLAYER PROPS FEED (owner-funded free tier, 2026-07-25) ----------
@@ -5371,7 +5371,7 @@ def x_receipt_text(r, all_picks=None, chal=None):
     odds = r.get('odds'); odds_s = f"({odds:+d})" if isinstance(odds, int) else '(ML)'
     badge = TIER_BADGE.get(r.get('tier'), '')
     # daily-rotating param busts X's card cache so the SHiFT banner preview always renders
-    store_link = f"https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=x_{time.strftime('%Y%m%d')}"
+    store_link = f"https://thelineshift.github.io/SHiFTS/upgrade.html?utm_source=x_{time.strftime('%Y%m%d')}"
 
     rec_lines = []
     if all_picks is not None and r.get('tier') != 'challenge':
@@ -6916,7 +6916,7 @@ async def scan_engine_run(g0, slot_key, dry):
                 gw_ch2 = find_channel(g0, 'giveaway')
                 gw_ment2 = f"<#{gw_ch2.id}>" if gw_ch2 else 'the giveaway room'
                 if not await _room_already_posted(room, f"**FREE PICK — {slot_et}**"):
-                    await room.send(embed=discord.Embed(description=f"🎯 {tag}**FREE PICK — {slot_et}**\n\nNo free play this window — nothing met our edge bar, and we don't force bets.{extra} Next scan **{_nxt_et()}**.\n💎 [Every edge, every 4 hours — unlock the paid rooms](https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=discord_free) → {upg_ment}\n🎁 Sunday 6 PM ET — $50 SOL draw in {gw_ment2} ⚡", color=TIER_COLORS['free']))
+                    await room.send(embed=discord.Embed(description=f"🎯 {tag}**FREE PICK — {slot_et}**\n\nNo free play this window — nothing met our edge bar, and we don't force bets.{extra} Next scan **{_nxt_et()}**.\n💎 [Every edge, every 4 hours — unlock the paid rooms](https://thelineshift.github.io/SHiFTS/upgrade.html?utm_source=discord_free) → {upg_ment}\n🎁 Sunday 6 PM ET — $50 SOL draw in {gw_ment2} ⚡", color=TIER_COLORS['free']))
                 else:
                     print(f'[scan] dedupe@room: free {slot_et} empty-note already posted')
             else:
@@ -6990,7 +6990,7 @@ async def scan_engine_run(g0, slot_key, dry):
             gw_ch = find_channel(g0, 'giveaway')
             gw_ment = f"<#{gw_ch.id}>" if gw_ch else 'the giveaway room'
             body += (f"\n\n💎 **{cnts}** — the rest of this card is live in the paid rooms right now → {upg_ment}\n"
-                     f"🛒 [Unlock the full board — every pick, every 4 hours](https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=discord_free)\n"
+                     f"🛒 [Unlock the full board — every pick, every 4 hours](https://thelineshift.github.io/SHiFTS/upgrade.html?utm_source=discord_free)\n"
                      f"🎁 **Sunday 6 PM ET:** $50 in SOL, two winners — free entry in {gw_ment} ⚡")
         if await _room_already_posted(room, f"**{tier.upper()} ROOM — {slot_et} CARD**"):
             print(f'[scan] dedupe@room: {tier} {slot_et} card already posted — skipping repost')
@@ -7056,7 +7056,7 @@ async def scan_engine_run(g0, slot_key, dry):
                     try:
                         await asyncio.to_thread(x_post,
                             "⚡ PLAY OF THE DAY just dropped in the Discord — SHiFT's single highest-edge play, every day 4 PM ET.\n\n"
-                            "Free picks daily + $50 in SOL every Sunday: https://thelineshift.github.io/AISportsBot/upgrade.html")
+                            "Free picks daily + $50 in SOL every Sunday: https://thelineshift.github.io/SHiFTS/upgrade.html")
                     except Exception as _xe:
                         print('pod x:', _xe)
                     st.setdefault('scan_events', {})[_pod_key] = 'ok-bot'
