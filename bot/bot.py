@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.18.0'
+BOT_VERSION = '9.18.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -7233,7 +7233,6 @@ async def do_sol_transfer(sol, to):
     except Exception as e:
         return None, str(e)
 
-@tasks.loop(minutes=1)
 async def _room_already_posted(room, signature, limit=20):
     """DESTINATION-SIDE IDEMPOTENCY — the underlying double-post fix.
     state-file dedupe markers can be clobbered by racing loops (last-writer-wins);
@@ -7250,6 +7249,7 @@ async def _room_already_posted(room, signature, limit=20):
     return False
 
 
+@tasks.loop(minutes=1)
 async def scan_engine():
     try:
         now = time.gmtime()
