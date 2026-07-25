@@ -1369,9 +1369,9 @@
       "awayTeam": "Seattle Mariners",
       "live_odds": {
         "home_ml": -108,
-        "away_ml": -111,
+        "away_ml": -112,
         "total": 7.5,
-        "ts": 1784953413
+        "ts": 1784960613
       }
     },
     {
@@ -1692,10 +1692,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -224,
-        "away_ml": 183,
+        "home_ml": -228,
+        "away_ml": 185,
         "total": 8.5,
-        "ts": 1784953414
+        "ts": 1784960614
       },
       "last_alert_odds": -224
     },
