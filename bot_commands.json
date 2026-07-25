@@ -1,5 +1,5 @@
 {
- "seq": 498,
+ "seq": 499,
  "commands": [
   {
    "seq": 400,
@@ -578,6 +578,12 @@
    "action": "x_bio",
    "text": "\u26a1 SHiFT's Picks \u2014 every edge, every 4 hours \ud83d\udc0b Whale: the War Room + desk floor \u00b7 \ud83d\udcca Sharp \u00b7 \ud83d\udd12 Lock \ud83d\udee1\ufe0f Red first month = FREE month, every tier \ud83c\udf81 $50 SOL Sundays",
    "url": "https://thelineshift.github.io/SHiFTS/upgrade.html"
+  },
+  {
+   "seq": 499,
+   "action": "room_tail",
+   "channel": "weekly-deepdive",
+   "n": 3
   }
  ]
 }
