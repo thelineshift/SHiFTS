@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T10:54:12Z",
+  "updated": "2026-07-25T11:44:24Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1692,10 +1692,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -231,
-        "away_ml": 188,
+        "home_ml": -228,
+        "away_ml": 185,
         "total": 8.5,
-        "ts": 1784979861
+        "ts": 1784960614
       },
       "last_alert_odds": -224
     },
@@ -1814,8 +1814,8 @@
       "live_odds": {
         "home_ml": -181,
         "away_ml": 149,
-        "total": 8.0,
-        "ts": 1784979861
+        "total": 8.5,
+        "ts": 1784978040
       },
       "last_alert_odds": -181
     },
@@ -1834,7 +1834,10 @@
       "opp": "Invictus Gaming",
       "analysis": "3-2 last 5 (beat Bilibili Gaming, JD Gaming, Ninjas in Pyjamas) (lost to LGD Gaming) vs 1-4 \u2014 live Pinnacle line -98 (our 86% vs book 47%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Bilibili Gaming, JD Gaming, Ninjas in Pyjamas) (lost to LGD Gaming) vs 1-4 \u2014 live Pinnacle line -98 (our 86% vs book 47%)",
       "awayTeam": "Weibo Gaming",
-      "homeTeam": "Invictus Gaming"
+      "homeTeam": "Invictus Gaming",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Weibo Gaming 1-2 Invictus Gaming \u00b7 final"
     },
     {
       "id": "mvk-esports-ml-0725",
