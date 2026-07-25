@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.14.1'
+BOT_VERSION = '9.14.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3172,6 +3172,7 @@ def pm_trader_scan(st):
             ts_ev = now + 3600
         live = ts_ev <= now
         outcomes = []
+        dropped_winner = 0  # winner-market sides we can't name (soccer DRAW leg) — 7/25 fake-arb lesson
         for m in evd.get('markets') or []:
             smt = str(m.get('sportsMarketType') or m.get('marketType') or '').lower()
             if 'winner' not in smt and 'moneyline' not in smt:
@@ -3192,13 +3193,17 @@ def pm_trader_scan(st):
             slug = m.get('marketSlug') or m.get('slug') or ''
             if team and slug:
                 outcomes.append({'slug': slug, 'team': team, 'price': pr})
+            else:
+                dropped_winner += 1
         if len(outcomes) < 2:
             continue
-        # ---- PLAYBOOK: SUM-ARB — buy every side when the book sums under $1 (risk-free)
+        three_way = dropped_winner > 0  # draw sport — the 2-way model and any "arb" are invalid here
+        # ---- PLAYBOOK: SUM-ARB — buy every side when the book sums under $1 (risk-free).
+        # ONLY on a complete two-way book: exactly 2 named sides and zero dropped legs.
         tot = sum(o['price'] for o in outcomes)
-        if 0.5 < tot <= TRADER_ARB_SUM:
+        if not three_way and len(outcomes) == 2 and 0.5 < tot <= TRADER_ARB_SUM:
             n = max(1, int(min(B * 0.30, B - 1) / tot))
-            for o in outcomes:
+            for o in sorted(outcomes, key=lambda x: x['price']):  # smallest leg first — a failed leg aborts before real exposure
                 if (o['slug'], o['team']) in have:
                     continue
                 stake = round(n * o['price'], 2)
@@ -3209,6 +3214,8 @@ def pm_trader_scan(st):
                                 'reason': f"book sums to {tot:.3f} — locking {(1 - tot) * 100:.1f}% before it closes"})
                 expo += stake
             continue
+        if three_way:
+            continue  # draw sport: 2-way log5 is invalid here — desk stays out until a 3-way model ships
         # ---- PLAYBOOK: MODEL EDGE (Kelly) + TAIL-END yield + LIVE divergence
         for o in outcomes:
             if (o['slug'], o['team']) in have:
@@ -3278,10 +3285,16 @@ async def pm_trader():
         g0 = client.guilds[0] if client.guilds else None
         ch = await trader_channel(g0) if intents else None
         placed = False
+        bad_arb = set()  # an arb with a failed leg is naked risk — abort its remaining legs
         for t in intents:
+            if t['kind'] == 'ARB' and t.get('event') in bad_arb:
+                continue
             res = await asyncio.to_thread(pm_place_bet,
                                           {'marketSlug': t['slug'], 'price': t['price'], 'minQty': 1}, t['stake'])
             if 'order_id' not in res:
+                if t['kind'] == 'ARB':
+                    bad_arb.add(t.get('event'))
+                    print('[trader] arb leg failed — remaining legs aborted:', t.get('event'))
                 if res.get('error') not in ('no_liquidity', 'below_min'):
                     print('[trader] place:', t['slug'], res.get('error'))
                 continue
