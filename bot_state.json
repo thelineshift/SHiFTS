@@ -1,15 +1,13 @@
 {
-  "executed_seq": 503,
+  "executed_seq": 505,
   "last_log": [
-    "seq 503 executed 2026-07-25 22:28 UTC",
-    "FULL #\ud83e\uddeashift-lab id=1530701804340383977 | shift#8676: \u2705 [DRY RUN] **SCAN COMPLETE \u2014 Sat 7/25 \u00b7 6 PM ET** \\n  \\n \ud83c\udfaf **FREE: [MLB] Chicago Cubs ML vs Pittsburgh Pirates \u2014 1.0u** (06:40 PM ET) \u2192 live in <#1528794232666718260> \\n  \\n \ud83d\udd12 +3 \u00b7 \ud83d\udcca +5 \u00b7 \ud83d\udc0b +6 \u2014 the full board is live in the paid rooms. \\n \ud83d\udc8e **Up to 36 picks a day** in Whale \u00b7 **24** in Sharp \u00b7 **18** in Lock \u2014 depending on the day's slate \u2192 <#1528794177549107394> \\n  \\n \u23ed\ufe0f **Next card drops 8 PM ET** \u2014 lock in early, lines move. \\n Every play before start. Every result receipted. \u26a1",
-    "FULL #\ud83e\uddeashift-lab id=1530701799374196867 | shift#8676: ",
-    "FULL #\ud83e\uddeashift-lab id=1530701793607286936 | shift#8676: ",
-    "FULL #\ud83e\uddeashift-lab id=1530701787701448707 | shift#8676: ",
-    "FULL #\ud83e\uddeashift-lab id=1530701781867302933 | shift#8676: ",
-    "FULL #\ud83e\uddeashift-lab id=1530701732059939036 | shift#8676: \ud83d\udef0\ufe0f [DRY RUN] scan would initiate for slot 20260725-22-manual",
-    "FULL #\ud83e\uddeashift-lab id=1530697992896516390 | shift#8676: \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled)",
-    "FULL #\ud83e\uddeashift-lab id=1530695189587558443 | shift#8676: \ud83d\udd04 **BOOT SWEEP** \u2014 stripe sync \u2713 (roles reconciled)"
+    "seq 505 executed 2026-07-25 22:33 UTC",
+    "#\ud83d\udccasharp-room-9-6 [22:07] ",
+    "#\ud83d\udccasharp-room-9-6 [22:07] \ud83d\udcc9 **WEEKLY SHARP BREAKDOWN \u2014 Jul 18 \u2013 Jul 25**\n**The card:** 9-6 \u00b7 **+0.12u** \u00b7 ROI +0.7%\n\n\ud83c\udfc6 **Top reads of th",
+    "#\ud83d\udccasharp-room-9-6 [22:05] ",
+    "#\ud83d\udc0bwhale-room-12-7 [21:17] \ud83d\udc0b **WHALE ROOM \u2014 Sat 7/25 \u00b7 5 PM ET CARD** (6 plays)\n\n1\u20e3 **San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5",
+    "#\ud83d\udc0bwhale-room-12-7 [20:01] \u26a1 **PLAY OF THE DAY**\n\n**[MLS] San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5u\n\ud83d\udd53 10:30 PM ET \u00b7 edge **23%",
+    "#\ud83d\udc0bwhale-room-12-7 [16:34] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**"
   ],
   "time_audit": {
     "at": "2026-07-25 22:29 UTC",
@@ -83,7 +81,7 @@
     "20260725-20-manual": "ok-bot",
     "20260725-21-manual": "ok-bot"
   },
-  "executed_cmd_seq": 503,
+  "executed_cmd_seq": 505,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
