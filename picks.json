@@ -1324,9 +1324,9 @@
       "awayTeam": "Houston Astros",
       "live_odds": {
         "home_ml": -126,
-        "away_ml": 105,
+        "away_ml": 104,
         "total": 8.5,
-        "ts": 1784973949
+        "ts": 1784999657
       }
     },
     {
@@ -1393,10 +1393,10 @@
       "homeTeam": "San Francisco Giants",
       "awayTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -125,
-        "away_ml": 103,
+        "home_ml": -130,
+        "away_ml": 108,
         "total": 9.0,
-        "ts": 1784992348
+        "ts": 1784999657
       }
     },
     {
@@ -1439,12 +1439,12 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -144,
-        "away_ml": 119,
-        "total": 9.0,
-        "ts": 1784992348
+        "home_ml": -137,
+        "away_ml": 114,
+        "total": 9.5,
+        "ts": 1784999657
       },
-      "last_alert_odds": 129
+      "last_alert_odds": 114
     },
     {
       "id": "vancouver-whitecaps-ml-0725",
@@ -1534,10 +1534,10 @@
       "homeTeam": "Boston Red Sox",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -109,
-        "away_ml": -111,
+        "home_ml": -111,
+        "away_ml": -108,
         "total": 7.5,
-        "ts": 1784998482
+        "ts": 1784999657
       }
     },
     {
