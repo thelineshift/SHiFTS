@@ -1,5 +1,5 @@
 {
- "seq": 487,
+ "seq": 498,
  "commands": [
   {
    "seq": 400,
@@ -511,6 +511,73 @@
   {
    "seq": 487,
    "action": "x_link_start"
+  },
+  {
+   "seq": 488,
+   "action": "purge_channel",
+   "channel": "weekly-deepdive",
+   "limit": 50
+  },
+  {
+   "seq": 489,
+   "action": "purge_channel",
+   "channel": "weekly-analytics",
+   "limit": 50
+  },
+  {
+   "seq": 490,
+   "action": "post_and_pin",
+   "channel": "weekly-deepdive",
+   "content": "\ud83d\udc0b **THE WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS** _(what this channel is)_\n\nEvery **Saturday evening**, SHiFT publishes the full autopsy of the Whale week right here:\n\n\ud83d\udcd6 **Why every winning position was chosen** \u2014 the read, the data behind it, the price we got vs the price it should have been\n\ud83d\udd2c **The losses, dissected** \u2014 what the model saw, what the game did, and what gets adjusted\n\ud83d\udcca **Charts & stats** \u2014 weekly W-L, units, ROI, cumulative P&L curve, performance by sport\n\ud83e\udde0 **The desk's week** \u2014 how SHiFT's own Polymarket positions played out and why\n\nThis is the deep end of the $99 tier \u2014 the same standard of analysis that lives in \ud83d\udda5\ufe0f **THE WAR ROOM** (Whale-exclusive command center: every card, live records, Trading Floor, guarantee tracker).\n\n\ud83d\udee1\ufe0f Covered like every tier by the **SHiFT Guarantee**: red first month, next month free \u2014 automatically."
+  },
+  {
+   "seq": 491,
+   "action": "post_and_pin",
+   "channel": "weekly-analytics",
+   "content": "\ud83d\udcca **WEEKLY ANALYTICS \u2014 THE PUBLIC LEDGER BOARD** _(what this channel is)_\n\nEvery **Sunday 10 AM ET**, the tier-by-tier numbers land here \u2014 posted publicly so nobody has to take our word for anything:\n\n\ud83d\udc0b **Whale room** \u2014 the week's W-L, units & ROI, every play receipted\n\ud83d\udcca **Sharp room** \u2014 same board, same receipts\n\ud83d\udd12 **Lock room** \u2014 same board, same receipts\n\nEvery play is timestamped in the public GitHub ledger before it starts. Wins AND losses stay up forever \u2014 that's the SHiFT Guarantee's proof layer, and it covers **every paid tier**.\n\n---\n\ud83d\udc8e **What Lock & Sharp members are missing:** Saturday's full **Whale Deep-Dive** masterclass (the why behind every position, charts & stats), the **#shift-trades desk floor** in real time, and \ud83d\udda5\ufe0f **THE WAR ROOM** \u2014 the Whale-only command center with live records and SHiFT's Trading Floor. The next tier up is one click away in #\ud83d\udc8eupgrade \u2192 https://thelineshift.github.io/SHiFTS/upgrade.html"
+  },
+  {
+   "seq": 492,
+   "action": "post_and_pin",
+   "channel": "lock-room",
+   "content": "\ud83d\udc8e **Whale watch:** Saturday's masterclass deep-dive, the live #shift-trades desk floor, and \ud83d\udda5\ufe0f THE WAR ROOM command center are Whale-tier rooms \u2014 your plays keep coming here regardless, and the \ud83d\udee1\ufe0f SHiFT Guarantee covers you exactly the same. Curious what's upstairs \u2192 https://thelineshift.github.io/SHiFTS/upgrade.html"
+  },
+  {
+   "seq": 493,
+   "action": "post_and_pin",
+   "channel": "sharp-room",
+   "content": "\ud83d\udc8e **Whale watch:** Saturday's masterclass deep-dive, the live #shift-trades desk floor, and \ud83d\udda5\ufe0f THE WAR ROOM command center are Whale-tier rooms \u2014 your plays keep coming here regardless, and the \ud83d\udee1\ufe0f SHiFT Guarantee covers you exactly the same. Curious what's upstairs \u2192 https://thelineshift.github.io/SHiFTS/upgrade.html"
+  },
+  {
+   "seq": 494,
+   "action": "replace_pinned",
+   "channel": "upgrade",
+   "marker": "PREMIUM ROOMS",
+   "content": "\u26a1 **SHiFT'S PICKS \u2014 PREMIUM ROOMS** _(updated July 2026)_\n\n\ud83d\udd12 **LOCK \u2014 $29.99/mo or $9.99/wk**\nUp to 18 picks/day \u00b7 \ud83c\udfb2 **PARLAYS UNLOCKED** \u2014 every parlay off the day's cards lives here \u00b7 \u26a1 Play of the Day 4 PM ET \u00b7 \ud83c\udfaf props\n\n\ud83d\udcca **SHARP \u2014 $49.99/mo or $12.99/wk**\nEverything in Lock, up to 24/day \u00b7 \ud83c\udfb2 **Parlay of the Day** \u00b7 fair price vs book price on every play \u00b7 esports cards \u00b7 \ud83d\udcc9 **Weekly Sharp Breakdown** every Saturday\n\n\ud83d\udc0b **WHALE \u2014 $99.99/mo or $24.99/wk**\nEverything in Sharp, up to 36/day dealt here FIRST \u00b7 \ud83d\udcc8 **DESK FLOOR in #shift-trades** \u2014 SHiFT's Polymarket entries, exits & cash-outs in real time \u2014 tail every position \u00b7 \ud83e\udde0 **Weekly Whale Deep-Dive** \u2014 the full autopsy with charts & stats every Saturday \u00b7 \ud83d\udda5\ufe0f **THE WAR ROOM (WHALE EXCLUSIVE)** \u2014 your private license-key command center: every card sorted live / tonight / finals, week \u00b7 month \u00b7 year records, guarantee tracker, and the Trading Floor with one-tap tail links\nPreview: https://thelineshift.github.io/SHiFTS/dashboard.html\nhttps://thelineshift.github.io/SHiFTS/assets/warroom_preview.png\n\n\ud83d\udee1\ufe0f **SHiFT GUARANTEE \u2014 EVERY PAID TIER** \u2014 if our receipted picks finish your first month in the red, your next month is FREE. Automatic, no forms, no asking.\n\ud83c\udfaf Board plays posted LIVE to 24 hours out \u00b7 \u2705 7-day free trial on every tier \u00b7 roles activate in seconds after checkout\n\ud83d\uded2 **Join here:** https://thelineshift.github.io/SHiFTS/upgrade.html"
+  },
+  {
+   "seq": 495,
+   "action": "set_topic",
+   "channel": "lock-room",
+   "topic": "\ud83d\udd12 LOCK ROOM \u2014 up to 18 picks/day \u00b7 \ud83c\udfb2 parlays unlocked \u00b7 \u26a1 POTD 4 PM ET \u00b7 \ud83d\udee1\ufe0f SHiFT Guarantee: red first month = free month, automatic"
+  },
+  {
+   "seq": 496,
+   "action": "set_topic",
+   "channel": "sharp-room",
+   "topic": "\ud83d\udcca SHARP ROOM \u2014 up to 24 picks/day \u00b7 \ud83c\udfb2 parlay of the day \u00b7 \ud83d\udcc9 weekly breakdown Saturday \u00b7 \ud83d\udee1\ufe0f SHiFT Guarantee: red first month = free month, automatic"
+  },
+  {
+   "seq": 497,
+   "action": "set_topic",
+   "channel": "whale-room",
+   "topic": "\ud83d\udc0b WHALE ROOM \u2014 every edge dealt here first, up to 36/day \u00b7 \ud83d\udcc8 desk floor in #shift-trades \u00b7 \ud83e\udde0 weekly deep-dive Saturday \u00b7 \ud83d\udda5\ufe0f THE WAR ROOM \u2014 Whale-exclusive command center (license key in your DMs) \u00b7 \ud83d\udee1\ufe0f red first month = free month"
+  },
+  {
+   "seq": 498,
+   "action": "x_bio",
+   "text": "\u26a1 SHiFT's Picks \u2014 every edge, every 4 hours \ud83d\udc0b Whale: the War Room + desk floor \u00b7 \ud83d\udcca Sharp \u00b7 \ud83d\udd12 Lock \ud83d\udee1\ufe0f Red first month = FREE month, every tier \ud83c\udf81 $50 SOL Sundays",
+   "url": "https://thelineshift.github.io/SHiFTS/upgrade.html"
   }
  ]
 }
