@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.14.2'
+BOT_VERSION = '9.15.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -3059,6 +3059,212 @@ TRADER_KELLY = 0.5          # fractional Kelly
 TRADER_MAX_EXPO = 0.85      # keep 15% of the roll liquid, always
 TRADE_CHAN = 'shift-trades'
 
+
+# ---------- THE ODDS API — PLAYER PROPS FEED (owner-funded free tier, 2026-07-25) ----------
+# Owner decree: cards mix in who-goes-deep / hits / strikeout props. Free tier = 500 credits/mo
+# -> metered in state['odds_api'], hard stop at cap. Props pull ONLY on the 4pm & 8pm ET cards
+# (UTC slots 20 & 00), max 2 events per scan, edge-driven (fair price vs best number).
+ODDS_API_KEY = os.environ.get('THE_ODDS_API_KEY', '')
+ODDS_API_BASE = 'https://api.the-odds-api.com/v4'
+ODDS_API_CAP = 430
+ODDS_PROP_SLOTS_UTC = {0, 20}
+ODDS_PROP_MARKETS = 'batter_home_runs,batter_hits,pitcher_strikeouts'
+ODDS_PROP_MAX_EVENTS = 2
+_ODDS_BOX_CACHE = {}
+
+def _odds_budget(st):
+    oa = dict((st or {}).get('odds_api') or {})
+    month = time.strftime('%Y-%m', time.gmtime())
+    if oa.get('month') != month:
+        oa = {'month': month, 'used': 0}
+    return oa
+
+def odds_api_get(path, params, oa):
+    """One metered call. oa is the working budget dict; returns (json|None, oa)."""
+    if not ODDS_API_KEY or oa.get('used', 0) + 3 > ODDS_API_CAP:
+        return None, oa
+    try:
+        q = urllib.parse.urlencode({**params, 'apiKey': ODDS_API_KEY})
+        req = urllib.request.Request(f'{ODDS_API_BASE}{path}?{q}', headers={'User-Agent': 'lineshift-bot'})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            oa['used'] = oa.get('used', 0) + int(r.headers.get('x-requests-last') or 1)
+            return json.load(r), oa
+    except Exception as e:
+        oa['used'] = oa.get('used', 0) + 1
+        print('odds-api:', path, str(e)[:140])
+        return None, oa
+
+def _amer_prob(o):
+    o = float(o)
+    return 100.0 / (o + 100.0) if o > 0 else (-o) / ((-o) + 100.0)
+
+def odds_mlb_props(games, now_ts, oa, slot_utc_hour):
+    """Tonight's MLB props with a real number: fair prob (vig-stripped consensus) vs best price.
+    Returns (candidates, oa). Edge law: >=6% on Ks/hits, >=8% on HR yes."""
+    if not ODDS_API_KEY or slot_utc_hour not in ODDS_PROP_SLOTS_UTC:
+        return [], oa
+    evs, oa = odds_api_get('/sports/baseball_mlb/events', {'dateFormat': 'iso'}, oa)
+    if not evs:
+        return [], oa
+    mlb_games = [g for g in games if g.get('sport') == 'mlb']
+    out = []
+    for ev in evs:
+        if len(out) >= ODDS_PROP_MAX_EVENTS * 2:
+            break
+        try:
+            ts = calendar.timegm(time.strptime(ev['commence_time'][:19], '%Y-%m-%dT%H:%M:%S'))
+        except Exception:
+            continue
+        if not (now_ts + 1800 < ts < now_ts + 12 * 3600):
+            continue
+        g = next((gg for gg in mlb_games if norm_txt(ev.get('home_team')) == norm_txt(gg.get('home'))
+                  and norm_txt(ev.get('away_team')) == norm_txt(gg.get('away'))), None)
+        if not g:
+            continue
+        d, oa = odds_api_get(f"/sports/baseball_mlb/events/{ev['id']}/odds",
+                             {'regions': 'us', 'markets': ODDS_PROP_MARKETS, 'oddsFormat': 'american'}, oa)
+        if not d:
+            continue
+        # gather: {(market, player, point): {'over':[(price,book)], 'under':[...], 'yes':[...]}}
+        bag = {}
+        for bk in d.get('bookmakers') or []:
+            bkey = bk.get('key') or '?'
+            for mk in bk.get('markets') or []:
+                mname = mk.get('key') or ''
+                for o in mk.get('outcomes') or []:
+                    player = o.get('description') or ''
+                    if not player:
+                        continue
+                    side = (o.get('name') or '').lower()
+                    pt = o.get('point')
+                    key = (mname, player, pt)
+                    bag.setdefault(key, {}).setdefault(side, []).append((o.get('price'), bkey))
+        cands = []
+        for (mname, player, pt), sides in bag.items():
+            if mname == 'batter_home_runs':
+                yes = sides.get('yes') or []
+                if len(yes) < 2:
+                    continue
+                fair = sum(_amer_prob(pr) for pr, _ in yes) / len(yes)
+                best_pr, best_bk = max(yes, key=lambda x: float(x[0]))
+                edge = fair - _amer_prob(best_pr)
+                if edge < -0.01:
+                    continue
+                cands.append({'_bar': 0.04, 'pick': f'{player} to go deep', 'odds': best_pr, 'edge': edge, 'prob': fair,
+                              'market': 'home runs', 'line': None,
+                              'prop': {'player': player, 'stat': 'hr', 'line': 0, 'side': 'yes'},
+                              'analysis': f"longball number — books imply {fair:.0%} across the board, {best_bk} pays {fmt_odds_num(best_pr)} ({edge:.0%} over fair)"})
+                continue
+            over, under = sides.get('over') or [], sides.get('under') or []
+            # vig-strip per book: need same book's over+under
+            by_book = {}
+            for pr, bk in over:
+                by_book.setdefault(bk, {})['o'] = pr
+            for pr, bk in under:
+                by_book.setdefault(bk, {})['u'] = pr
+            fs = []
+            for bk, pr in by_book.items():
+                if 'o' in pr and 'u' in pr:
+                    a, b = _amer_prob(pr['o']), _amer_prob(pr['u'])
+                    if a + b > 0:
+                        fs.append(a / (a + b))
+            if not fs or pt is None:
+                continue
+            fair_o = sum(fs) / len(fs)
+            stat = 'ks' if mname == 'pitcher_strikeouts' else 'hits'
+            unit = 'Ks' if stat == 'ks' else 'hits'
+            for side_name, side_list, fair_s in (('over', over, fair_o), ('under', under, 1 - fair_o)):
+                if not side_list:
+                    continue
+                best_pr, best_bk = max(side_list, key=lambda x: float(x[0]))
+                edge = fair_s - _amer_prob(best_pr)
+                if edge < -0.01:
+                    continue
+                cands.append({'_bar': 0.025, 'pick': f'{player} {"Over" if side_name == "over" else "Under"} {pt:g} {unit}',
+                              'odds': best_pr, 'edge': edge, 'prob': fair_s,
+                              'market': 'pitcher strikeouts' if stat == 'ks' else 'batter hits', 'line': pt,
+                              'prop': {'player': player, 'stat': stat, 'line': pt, 'side': side_name},
+                              'analysis': f"books hang {pt:g} — fair is {fair_s:.0%}, {best_bk} pays {fmt_odds_num(best_pr)} ({edge:.0%} over the number)"})
+        cands.sort(key=lambda c: -c['edge'])
+        # one side per player+market — never deal both doors of the same line
+        _seen_pm, _u = set(), []
+        for c in cands:
+            _k = (c['market'], c['prop']['player'])
+            if _k in _seen_pm:
+                continue
+            _seen_pm.add(_k); _u.append(c)
+        cands = _u
+        # fire on real disagreement (>=bar); otherwise the decree backstop deals the best near-fair numbers
+        _fire = [c for c in cands if c['edge'] >= c['_bar']]
+        take = (_fire + [c for c in cands if c['edge'] < c['_bar']])[:2]
+        for c in take:
+            c.pop('_bar', None)
+            out.append({'sport': 'mlb', 'vs': f"{g['away']} @ {g['home']}", 'units': 1.0, 'start': g['start'],
+                        'variety': True, 'team': g['away'], 'opp': g['home'], 'side': None, 'eid': g.get('eid'),
+                        **c})
+    return out, oa
+
+def _espn_box(eid):
+    hit = _ODDS_BOX_CACHE.get(eid)
+    if hit and time.time() - hit[0] < 900:
+        return hit[1]
+    try:
+        req = urllib.request.Request(f'https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/summary?event={eid}',
+                                     headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            d = json.load(r)
+        _ODDS_BOX_CACHE[eid] = (time.time(), d)
+        return d
+    except Exception as e:
+        print('boxscore:', eid, str(e)[:120])
+        return None
+
+def _box_stat(box, player, stat):
+    np_ = norm_txt(player)
+    for team in ((box.get('boxscore') or {}).get('players') or []):
+        for grp in team.get('statistics') or []:
+            keys = [str(k).lower() for k in (grp.get('keys') or grp.get('labels') or [])]
+            want = None
+            if 'atbats' in keys:  # batting group
+                if stat == 'hits' and 'hits' in keys:
+                    want = 'hits'
+                elif stat == 'hr' and 'homeruns' in keys:
+                    want = 'homeruns'
+            elif 'era' in keys or 'fullinnings.partinnings' in keys:  # pitching group
+                if stat == 'ks' and 'strikeouts' in keys:
+                    want = 'strikeouts'
+            if not want:
+                continue
+            idx = keys.index(want)
+            for ath in grp.get('athletes') or []:
+                nm = norm_txt((ath.get('athlete') or {}).get('displayName') or '')
+                if nm and (nm in np_ or np_ in nm):
+                    try:
+                        return float((ath.get('stats') or [])[idx])
+                    except Exception:
+                        return None
+    return None
+
+def grade_prop_pick(p, away_s, home_s):
+    pr = p.get('prop') or {}
+    if not p.get('eid') or not pr:
+        return None
+    box = _espn_box(p['eid'])
+    if not box:
+        return None
+    val = _box_stat(box, pr.get('player', ''), pr.get('stat', ''))
+    if val is None:
+        return None
+    u = float(p['units']) if p.get('units') is not None else 1.0
+    if pr.get('stat') == 'hr' and pr.get('side') == 'yes':
+        won = val >= 1
+        return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
+    line = float(pr.get('line') or 0)
+    if val == line:
+        return 'PUSH', 0.0
+    won = (pr.get('side') == 'over') == (val > line)
+    return ('WIN' if won else 'LOSS'), (profit_units(p['odds'], u) if won else -u)
+
 def _pm_sport_tag(evd, ev=None):
     for src in ((ev or {}).get('sport'), evd.get('sport'), (evd.get('series') or {}).get('slug'), (ev or {}).get('slug')):
         s = norm_txt(str(src or ''))
@@ -3706,6 +3912,8 @@ def profit_units(odds, units):
     return units * (o / 100.0 if o > 0 else 100.0 / abs(o))
 
 def grade_pick(p, away_s, home_s):
+    if p.get('prop'):
+        return grade_prop_pick(p, away_s, home_s)
     desc = (p.get('desc') or '').lower()
     if (p.get('market') or '').lower() == 'total' or 'over' in desc or 'under' in desc:
         m = re.search(r'(over|under)\s*(\d+(\.\d+)?)', desc)
@@ -4976,10 +5184,27 @@ async def scan_engine_run(g0, slot_key, dry):
                           'market': 'total', 'prob': 0.5 + edge, 'team': g['home'], 'opp': g['away'],
                           'side': None, 'eid': g.get('eid'),
                           'analysis': f"posted {g['total']} vs {avg:.1f} slate average — {angle}"})
+    # ---- PLAYER PROPS (owner decree 2026-07-25): 1-2 props per card when the feed has edge.
+    # Metered free tier — props pull only on the 4pm/8pm ET cards, never on dry runs.
+    try:
+        _slot_h = int(slot_key[9:11]) if re.match(r'\d{8}-\d{2}', slot_key) else -1
+        if not dry_run and _slot_h in ODDS_PROP_SLOTS_UTC:
+            _st_odds = await asyncio.to_thread(get_state) or {}
+            _oa = _odds_budget(_st_odds)
+            _props, _oa = await asyncio.to_thread(odds_mlb_props, games, now_ts, _oa, _slot_h)
+            if _props:
+                cands += _props
+                print(f"props feed: {len(_props)} prop candidates (meter {_oa.get('used')}/{ODDS_API_CAP})")
+            if _oa != (_st_odds.get('odds_api') or {}):
+                _st_odds['odds_api'] = _oa
+                await asyncio.to_thread(gh_put, 'bot_state.json', _st_odds, 'odds-api meter')
+    except Exception as e:
+        print('props feed:', e)
     var = sorted([c for c in cands if c.get('variety')], key=lambda x: -x['edge'])
-    if len(var) > 2:
-        drop = {id(c) for c in var[2:]}
-        cands = [c for c in cands if id(c) not in drop]
+    _pr = [c for c in var if c.get('prop')][:2]        # up to 2 props
+    _ot = [c for c in var if not c.get('prop')][:2]    # up to 2 spread/total variety
+    _keep = {id(c) for c in _pr + _ot}
+    cands = [c for c in cands if not c.get('variety') or id(c) in _keep]
     # ---- ODDS DISCIPLINE: juiced esports faves leave the straight pool, feed parlays
     reserves = [c for c in cands if c.get('reserve')]
     cands = [c for c in cands if not c.get('reserve')]
@@ -5152,6 +5377,10 @@ async def scan_engine_run(g0, slot_key, dry):
                    'units': p['units'], 'tier': tier, 'time_et': _et(p['start']),
                    'vs': p.get('vs'), 'team': p.get('team'), 'opp': p.get('opp'),
                    'analysis': (p.get('analysis', '') + ' | ' + ('parlay — every leg cleared the edge bar' if p.get('parlay') else _why(p, rank_of.get(id(p), n)).replace('🧠 **Why it\'s the play:** ', '')))[:300]}
+            if p.get('prop'):
+                reg['prop'] = p['prop']
+                if p.get('eid'):
+                    reg['eid'] = p['eid']
             if not p.get('parlay') and p.get('team') and p.get('opp'):
                 # grading needs both sides named — never register a nameless pick again
                 if p.get('side') == 'home':
