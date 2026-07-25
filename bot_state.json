@@ -8515,6 +8515,37 @@
       "outcome": "Natus Vincere",
       "status": "open",
       "ts": "2026-07-25T18:02:46Z"
+    },
+    {
+      "price": 0.79,
+      "stake": 13.43,
+      "kind": "EDGE",
+      "p_model": 1.0,
+      "event": "G2 Esports vs. Cloud9",
+      "ev_start": "2026-07-25T21:00:00Z",
+      "reason": "model 100% vs market 79% \u2014 21% edge, half-Kelly",
+      "order_id": "BFBCQ1V5J9P5",
+      "qty": 17,
+      "market_slug": "aec-valorant-g2-c9-2026-07-25",
+      "outcome": "G2 Esports",
+      "status": "open",
+      "ts": "2026-07-25T18:06:39Z"
+    },
+    {
+      "price": 0.44,
+      "short": true,
+      "stake": 1.32,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "FunPlus Phoenix vs. Wolves Esports",
+      "ev_start": "2026-07-26T09:00:00Z",
+      "reason": "model 50% vs market 44% \u2014 6% edge, half-Kelly",
+      "order_id": "BFBD5DJ1E9NC",
+      "qty": 3,
+      "market_slug": "aec-valorant-fpx-wol-2026-07-26",
+      "outcome": "Wolves Esports",
+      "status": "open",
+      "ts": "2026-07-25T18:06:40Z"
     }
   ],
   "pm_stats": {
@@ -8522,7 +8553,7 @@
     "wins": 3,
     "losses": 7,
     "pnl": 6.06,
-    "trades": 23,
+    "trades": 25,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-18"
   },
