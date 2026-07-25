@@ -8182,6 +8182,10 @@
         {
           "ts": 1785000896,
           "px": 0.44
+        },
+        {
+          "ts": 1785003862,
+          "px": 0.43
         }
       ]
     },
@@ -8311,6 +8315,10 @@
         {
           "ts": 1785000897,
           "px": 0.47
+        },
+        {
+          "ts": 1785003862,
+          "px": 0.73
         }
       ]
     },
@@ -8438,6 +8446,10 @@
         {
           "ts": 1785000897,
           "px": 0.37
+        },
+        {
+          "ts": 1785003863,
+          "px": 0.37
         }
       ]
     },
@@ -8455,7 +8467,13 @@
       "market_slug": "aec-lol-lll-png-2026-07-25",
       "outcome": "paiN Gaming",
       "status": "open",
-      "ts": "2026-07-25T18:02:41Z"
+      "ts": "2026-07-25T18:02:41Z",
+      "price_path": [
+        {
+          "ts": 1785003863,
+          "px": 0.38
+        }
+      ]
     },
     {
       "price": 0.59,
@@ -8470,7 +8488,13 @@
       "market_slug": "aec-lol-fly-ly-2026-07-25",
       "outcome": "FlyQuest",
       "status": "open",
-      "ts": "2026-07-25T18:02:42Z"
+      "ts": "2026-07-25T18:02:42Z",
+      "price_path": [
+        {
+          "ts": 1785003863,
+          "px": 0.59
+        }
+      ]
     },
     {
       "price": 0.44,
@@ -8485,7 +8509,13 @@
       "market_slug": "aec-lol-tt-edg-2026-07-26",
       "outcome": "ThunderTalk Gaming",
       "status": "open",
-      "ts": "2026-07-25T18:02:44Z"
+      "ts": "2026-07-25T18:02:44Z",
+      "price_path": [
+        {
+          "ts": 1785003863,
+          "px": 0.44
+        }
+      ]
     },
     {
       "price": 0.6,
@@ -8517,7 +8547,13 @@
       "market_slug": "aec-valorant-bbl-navi-2026-07-26",
       "outcome": "Natus Vincere",
       "status": "open",
-      "ts": "2026-07-25T18:02:46Z"
+      "ts": "2026-07-25T18:02:46Z",
+      "price_path": [
+        {
+          "ts": 1785003864,
+          "px": 0.39
+        }
+      ]
     },
     {
       "price": 0.79,
@@ -8532,7 +8568,13 @@
       "market_slug": "aec-valorant-g2-c9-2026-07-25",
       "outcome": "G2 Esports",
       "status": "open",
-      "ts": "2026-07-25T18:06:39Z"
+      "ts": "2026-07-25T18:06:39Z",
+      "price_path": [
+        {
+          "ts": 1785003864,
+          "px": 0.79
+        }
+      ]
     },
     {
       "price": 0.44,
@@ -8548,7 +8590,13 @@
       "market_slug": "aec-valorant-fpx-wol-2026-07-26",
       "outcome": "Wolves Esports",
       "status": "open",
-      "ts": "2026-07-25T18:06:40Z"
+      "ts": "2026-07-25T18:06:40Z",
+      "price_path": [
+        {
+          "ts": 1785003864,
+          "px": 0.44
+        }
+      ]
     },
     {
       "price": 0.63,
@@ -8563,7 +8611,13 @@
       "market_slug": "aec-lol-bfx-gen-2026-07-27",
       "outcome": "BNK FEARX",
       "status": "open",
-      "ts": "2026-07-25T18:11:39Z"
+      "ts": "2026-07-25T18:11:39Z",
+      "price_path": [
+        {
+          "ts": 1785003864,
+          "px": 0.63
+        }
+      ]
     }
   ],
   "pm_stats": {
