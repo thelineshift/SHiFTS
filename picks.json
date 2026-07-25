@@ -1392,10 +1392,10 @@
       "homeTeam": "San Francisco Giants",
       "awayTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -125,
+        "away_ml": 103,
         "total": 9.0,
-        "ts": 1784964714
+        "ts": 1784992348
       }
     },
     {
@@ -1440,8 +1440,8 @@
       "live_odds": {
         "home_ml": -144,
         "away_ml": 119,
-        "total": 9.5,
-        "ts": 1784988002
+        "total": 9.0,
+        "ts": 1784992348
       },
       "last_alert_odds": 129
     },
@@ -1462,11 +1462,12 @@
       "awayTeam": "Vancouver Whitecaps",
       "homeTeam": "Minnesota United FC",
       "live_odds": {
-        "home_ml": 240,
-        "away_ml": -110,
+        "home_ml": 225,
+        "away_ml": 100,
         "total": 2.5,
-        "ts": 1784990548
-      }
+        "ts": 1784992348
+      },
+      "last_alert_odds": 100
     },
     {
       "id": "chicago-cubs-ml-0725",
@@ -1697,10 +1698,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -232,
-        "away_ml": 188,
+        "home_ml": -238,
+        "away_ml": 193,
         "total": 9.0,
-        "ts": 1784990549
+        "ts": 1784992349
       },
       "last_alert_odds": -237
     },
@@ -1817,10 +1818,10 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
+        "home_ml": -162,
+        "away_ml": 134,
         "total": 8.0,
-        "ts": 1784990549
+        "ts": 1784992349
       },
       "last_alert_odds": -162
     },
