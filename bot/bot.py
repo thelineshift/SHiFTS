@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.16.8'
+BOT_VERSION = '9.16.9'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -1863,7 +1863,7 @@ async def run_command(cmd, guild, log):
             log.append(f'x_like FAIL: {e} {body}')
     elif a == 'x_bio':
         try:
-            res = await asyncio.to_thread(x_update_bio, cmd['text'])
+            res = await asyncio.to_thread(x_update_bio, cmd['text'], cmd.get('url'))
             if isinstance(res, dict) and res.get('error'):
                 log.append(f"x_bio FAIL: {res['error']}")
             else:
@@ -3301,6 +3301,7 @@ def _desk_room(B, expo, expo0=0.0):
 TRADE_CHAN = 'shift-trades'
 DESK_LINK = 'https://polymarket.us'  # the desk's public home — recap links here (no-spam decree)
 DISCORD_INVITE = 'https://discord.gg/8bBxWUJCYT'  # verified invite used across the site — results push here
+STORE_PAGE = 'https://thelineshift.github.io/AISportsBot/upgrade.html'  # universal link — giveaway + Discord + products all live here (owner decree)
 
 
 # ---------- THE ODDS API — PLAYER PROPS FEED (owner-funded free tier, 2026-07-25) ----------
@@ -3778,7 +3779,7 @@ async def trader_channel(g0):
     if not ch:
         try:
             ch = await g0.create_text_channel('📈shift-trades',
-                topic='SHiFT trading desk — autonomous on Polymarket US. Daily recap + record here, full detail in the Whale room. ⚡')
+                topic='SHiFT trading desk — Polymarket US plays around the clock. Daily recap + record here. ⚡')
             print('[trader] created #shift-trades')
         except Exception as e:
             print('[trader] channel:', e)
@@ -4068,7 +4069,7 @@ async def pm_trader():
                      f"open {open_n}\nP&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** on ${TRADER_BANK_START:.0f} "
                      + (f"· bankroll **${bal['balance']:.2f}**\n" if bal else "\n")
                      + (f"🔬 Latest lesson: _{st['pm_lessons'][-1]['lesson']}_\n" if st.get('pm_lessons') else '')
-                     + f"Autonomous on Polymarket US — model edge, sum-arb, tail yield, live divergence. Profit is the only law. ⚡\n🖥️ Desk home: {DESK_LINK}")
+                     + f"SHiFT desk on Polymarket US — model edge, sum-arb, tail yield, live divergence. Profit is the only law. ⚡\n🖥️ Desk home: {DESK_LINK}")
             ch2 = await trader_channel(g0)
             if ch2:
                 try:
@@ -4079,7 +4080,7 @@ async def pm_trader():
                         f"{stats.get('wins', 0)}-{stats.get('losses', 0)} · trades {stats.get('trades', 0)} · open {open_n}\n"
                         f"P&L {'+' if pnl >= 0 else ''}${pnl:.2f} on ${TRADER_BANK_START:.0f}"
                         + (f" · roll ${bal['balance']:.2f}" if bal else '')
-                        + f"\nAutonomous on Polymarket US — profit is the only law. ⚡\n🖥️ {DESK_LINK}")
+                        + f"\nSHiFT desk on Polymarket US — profit is the only law. ⚡\n🖥️ {DESK_LINK}")
             try:
                 await asyncio.to_thread(x_post, xt_recap[:270], None)
             except Exception:
@@ -4152,7 +4153,7 @@ async def pm_watch():
         if res['result'] == 'WIN':
             xt = (f"📈 SHiFT desk — {t['outcome']} @ {t['price']:.2f} 🎯 WIN {sign}\n"
                   f"Desk record {stats.get('wins', 0)}-{stats.get('losses', 0)} · P&L {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}\n"
-                  f"Every receipt drops in our Discord — join: {DISCORD_INVITE}\n"
+                  f"Picks · receipts · $50 giveaway — all on our store: {STORE_PAGE}\n"
                   f"🖥️ {DESK_LINK}")
             try:
                 await asyncio.to_thread(x_post, xt[:270], None)
@@ -4742,21 +4743,25 @@ def x_post_media_oauth1(text, media_id, cred_name=None):
             last = f'{name}: {e}'
     raise Exception(last or 'media tweet failed')
 
-def x_update_bio(text):
-    """Update the X profile bio (160 chars max). Form param joins the signature per OAuth1 spec."""
+def x_update_bio(text, url=None):
+    """Update the X profile bio (160 chars max) and optionally the profile website.
+    Form params join the signature per OAuth1 spec."""
     import urllib.parse, urllib.request
     text = (text or '')[:160]
-    if not text:
+    if not text and not url:
         return {'error': 'empty bio'}
     sets = x_oauth1_sets(x_creds_load())
     if not sets:
         return {'error': 'no oauth1 credential set'}
     url = 'https://api.x.com/1.1/account/update_profile.json'
-    data = urllib.parse.urlencode({'description': text}).encode()
+    params = {'description': text}
+    if url:
+        params['url'] = url
+    data = urllib.parse.urlencode(params).encode()
     last = None
     for name, ck, cs, at, ats in sets:
         try:
-            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats, {'description': text})
+            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats, params)
             req = urllib.request.Request(url, data=data, method='POST',
                 headers={'Authorization': hdr, 'Content-Type': 'application/x-www-form-urlencoded',
                          'User-Agent': 'TheLineShift/1.0'})
@@ -4836,7 +4841,7 @@ def _x_weight(s):
 def x_receipt_text(r, all_picks=None, chal=None):
     def _fit(txt):
         # over-weight receipts shed the invite line before X rejects the whole post
-        return txt if _x_weight(txt) <= 275 else txt.replace(f"\n🎁 Receipts + free picks daily: {DISCORD_INVITE}", '')
+        return txt if _x_weight(txt) <= 275 else txt.replace(f"\n🎁 Picks · receipts · $50 giveaway: {STORE_PAGE}", '')
     odds = r.get('odds'); odds_s = f"({odds:+d})" if isinstance(odds, int) else '(ML)'
     badge = TIER_BADGE.get(r.get('tier'), '')
     # daily-rotating param busts X's card cache so the SHiFT banner preview always renders
@@ -4857,13 +4862,13 @@ def x_receipt_text(r, all_picks=None, chal=None):
         base = f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} ✅ +{r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
         # paid-room winners funnel to the store (link renders our branded preview card on X)
         if r.get('tier') in ('whale', 'sharp', 'lock'):
-            return _fit(base + "💎 Every play like this, every 4 hours → " + store_link + f"\n🎁 Receipts + free picks daily: {DISCORD_INVITE}")
-        return _fit(base + _pick_closer(CLOSERS_WIN, seed) + f"\n🎁 Receipts + free picks daily: {DISCORD_INVITE}")
+            return _fit(base + "💎 Every play like this, every 4 hours → " + store_link + f"\n🎁 Picks · receipts · $50 giveaway: {STORE_PAGE}")
+        return _fit(base + _pick_closer(CLOSERS_WIN, seed) + f"\n🎁 Picks · receipts · $50 giveaway: {STORE_PAGE}")
     if r['result'] == 'PUSH':
         return _fit(f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} 🟰 PUSH — stake back.\n{r.get('score')}\n{rec_block}\n"
-                + _pick_closer(CLOSERS_PUSH, seed) + f"\n🎁 Receipts + free picks daily: {DISCORD_INVITE}")
+                + _pick_closer(CLOSERS_PUSH, seed) + f"\n🎁 Picks · receipts · $50 giveaway: {STORE_PAGE}")
     return _fit(f"🧾 RESULT {badge}: {rtag}{r['desc']} {odds_s} ❌ {r.get('units')}u\n{r.get('score')}\n{rec_block}\n"
-            + _pick_closer(CLOSERS_LOSS, seed) + f"\n🎁 Receipts + free picks daily: {DISCORD_INVITE}")
+            + _pick_closer(CLOSERS_LOSS, seed) + f"\n🎁 Picks · receipts · $50 giveaway: {STORE_PAGE}")
 
 async def settle_challenge(guild, p):
     try:
