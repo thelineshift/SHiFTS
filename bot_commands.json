@@ -1,5 +1,5 @@
 {
- "seq": 469,
+ "seq": 470,
  "commands": [
   {
    "seq": 400,
@@ -432,6 +432,14 @@
    "args": {
     "channel": "lock-room",
     "n": 5
+   }
+  },
+  {
+   "seq": 470,
+   "cmd": "room_tail",
+   "args": {
+    "channel": "whale-room",
+    "n": 22
    }
   }
  ]
