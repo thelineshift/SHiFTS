@@ -1,5 +1,5 @@
 {
- "seq": 431,
+ "seq": 432,
  "commands": [
   {
    "seq": 400,
@@ -185,6 +185,12 @@
    "seq": 431,
    "action": "x_bio",
    "text": "\u26a1 Autonomous betting desk \u2014 up to 36 picks/day depending on the slate. Every pick before start, every result receipted. Props \u00b7 esports \u00b7 $50 Sunday giveaway \ud83c\udf81"
+  },
+  {
+   "seq": 432,
+   "action": "x_bio",
+   "text": "\u26a1 SHiFT Picks \u2014 up to 36 picks/day depending on the slate. Every pick before start, every result receipted. Props \u00b7 esports \u00b7 $50 Sunday giveaway \ud83c\udf81",
+   "url": "https://thelineshift.github.io/AISportsBot/upgrade.html"
   }
  ]
 }
