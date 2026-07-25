@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.16.2'
+BOT_VERSION = '9.16.3'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -697,7 +697,7 @@ def make_client(privileged=True):
                 hs = gw_handle_parse(raw) or gw_bare_handle(raw)
                 if hs:
                     try:
-                        await message.add_reaction('🎫')  # instant visible ack even if the text reply is throttled
+                        await message.add_reaction('⏳')  # REACTION LAW: ⏳ = received, steps pending; ✅ is reserved for fully entered
                     except Exception:
                         pass
                     await gw_mark_handled(st_g, message.id)
@@ -714,6 +714,7 @@ def make_client(privileged=True):
                             if hk not in conf:
                                 conf[hk] = {'handle': hs[0], 'discord': str(message.author), 'discord_id': str(message.author.id),
                                             'mult': 1, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                                            'msg_id': str(message.id), 'ch_id': str(message.channel.id),
                                             'note': 'provisional - X verification unavailable; verify before draw'}
                                 await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'provisional entry ' + hk, QUEUE_BRANCH)
                                 await message.channel.send(f"{message.author.mention} 🎫 **ENTRY LOGGED — @{hs[0]}** — X is rate-limiting our checks right now, so you're in the pool provisional (1 ticket) and I'll re-verify before Sunday's draw. Nothing else to do. ⚡")
@@ -722,9 +723,9 @@ def make_client(privileged=True):
                         except Exception as e2:
                             print('provisional fail:', e2)
                 else:
-                    # NEVER-SILENT LAW: every #giveaway message gets an ack — 🎫 always, guide text hourly
+                    # NEVER-SILENT LAW: every #giveaway message gets an ack — ⚡ neutral, guide text hourly
                     try:
-                        await message.add_reaction('🎫')
+                        await message.add_reaction('⚡')
                     except Exception:
                         pass
                     if str(message.id) not in st_g.get('gw_handled', []):
@@ -1128,6 +1129,16 @@ async def gw_reply_once(message, key, body, hours=20):
     await message.channel.send(f'{message.author.mention} {body}')
     return True
 
+def _gw_post_ids(state):
+    """All giveaway posts whose engagement counts: canonical first, superseded ones kept
+    so nobody loses steps when the promo is reposted (owner decree 2026-07-25)."""
+    posts = list((state or {}).get('giveaway_x_posts') or [])
+    cur = (state or {}).get('giveaway_x_post', '')
+    if cur and cur not in posts:
+        posts.insert(0, cur)
+    return [p for p in posts if p]
+
+
 async def _gw_live_checks(handle, state):
     """Guarded X step check. Returns (followed, liked, reposted) — None where X won't say."""
     followed = liked = reposted = None
@@ -1138,16 +1149,22 @@ async def _gw_live_checks(handle, state):
         if not uid:
             return False, liked, reposted
         followed = await asyncio.to_thread(gw_followed, uid, bt)
-        post_id = (state or {}).get('giveaway_x_post', '')
-        if post_id:
-            try:
-                liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', bt)
-            except Exception:
-                liked = None
-            try:
-                reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', bt)
-            except Exception:
-                reposted = None
+        posts = _gw_post_ids(state)
+        if posts:
+            lsets, rsets = [], []
+            for pid in posts:
+                try:
+                    lsets.append(await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{pid}/liking_users?max_results=100', bt))
+                except Exception:
+                    lsets.append(None)
+                try:
+                    rsets.append(await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{pid}/retweeted_by?max_results=100', bt))
+                except Exception:
+                    rsets.append(None)
+            okl = [s for s in lsets if s is not None]
+            liked = any(uid in s for s in okl) if okl else None
+            okr = [s for s in rsets if s is not None]
+            reposted = any(uid in s for s in okr) if okr else None
     except Exception:
         pass
     return followed, liked, reposted
@@ -1187,6 +1204,7 @@ async def entry_status_reply(message, handle_arg=None):
             rec['ts_upgraded'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
             conf[hk] = rec
             await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway upgrade ' + hk, QUEUE_BRANCH)
+            await _gw_mark_entered(message.guild, rec)
             prov = False
             status = '🔒 **CONFIRMED** — upgraded you right now'
         elif prov:
@@ -1231,13 +1249,10 @@ async def verify_giveaway_entry(message, handle):
         # bearer (app-only) covers all public reads — no user token needed (7/24 fix)
         followed = await asyncio.to_thread(gw_followed, uid, bt)
         try:
-            liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', bt)
+            _f, liked, reposted = await _gw_live_checks(handle, state)
+            followed = followed if followed is not None else _f
         except Exception:
-            liked = None
-        try:
-            reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', bt)
-        except Exception:
-            reposted = None
+            liked = reposted = None
         def ic(ok, label):
             return f"{'✅' if ok else ('❌' if ok is False else '❓')} {label}"
         checklist = "\n".join([ic(followed, 'Follow @SHiFTSPicks'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
@@ -1258,10 +1273,15 @@ async def verify_giveaway_entry(message, handle):
             conf = conf or {}
             conf[handle.lower()] = {
                 'handle': handle, 'discord': str(message.author), 'discord_id': str(message.author.id),
-                'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
+                'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                'msg_id': str(message.id), 'ch_id': str(message.channel.id)}
             await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway confirm ' + handle, QUEUE_BRANCH)
             try:
                 await message.add_reaction('✅')
+                try:
+                    await message.remove_reaction('⏳', client.user)  # REACTION LAW: full entry replaces pending
+                except Exception:
+                    pass
             except Exception:
                 pass
             await message.channel.send(
@@ -1276,6 +1296,7 @@ async def verify_giveaway_entry(message, handle):
                 why = '+'.join(missing) if missing else 'x-degraded'
                 conf[hk] = {'handle': handle, 'discord': str(message.author), 'discord_id': str(message.author.id),
                             'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                            'msg_id': str(message.id), 'ch_id': str(message.channel.id),
                             'note': f'provisional — {why}'}
                 await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'provisional entry ' + hk, QUEUE_BRANCH)
                 steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} to full tickets:** " + ' + '.join(missing)) if missing else "X can't confirm your steps right now — I'll auto-upgrade you the moment it can."
@@ -1287,6 +1308,25 @@ async def verify_giveaway_entry(message, handle):
                     f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} — on **this exact post**: {gw_post_link(state)}\nType **!entry** for your live status anytime. ⚡", hours=1)
     except Exception as e:
         print('giveaway verify error:', e)
+
+
+async def _gw_mark_entered(g0, rec):
+    """REACTION LAW: when an entry goes full, swap ⏳ -> ✅ on the original entry message."""
+    try:
+        ch_id, msg_id = rec.get('ch_id'), rec.get('msg_id')
+        if not (g0 and ch_id and msg_id):
+            return
+        ch = g0.get_channel(int(ch_id))
+        if not ch:
+            return
+        msg = await ch.fetch_message(int(msg_id))
+        try:
+            await msg.remove_reaction('⏳', client.user)
+        except Exception:
+            pass
+        await msg.add_reaction('✅')
+    except Exception as e:
+        print('gw mark entered:', e)
 
 
 @tasks.loop(seconds=7200)
@@ -1318,6 +1358,7 @@ async def gw_reverify():
                         await gch.send(f"{ment} 🔒 **ENTRY CONFIRMED — @{rec.get('handle')}** — all three steps verified. 🎟️ **{rec.get('mult', 1)}x tickets** · Sunday 6 PM ET. ⚡")
                     except Exception:
                         pass
+                await _gw_mark_entered(g0, rec)
             await asyncio.sleep(2)
         if changed:
             await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway reverify upgrades', QUEUE_BRANCH)
@@ -4934,8 +4975,10 @@ async def grader():
                 overnight = '\n📅 counts for tomorrow\'s card'
             badge = TIER_BADGE.get(p.get('tier'), '')
             if ch:
+                _tw, _tl, _tu = tier_season_line(doc.get('picks', []), p.get('tier'))
                 await ch.send(f"🧾 **RESULT {badge}:** [{league_tag(p.get('sport'))}] {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\n"
-                              f"Final: {p.get('score')}{overnight}")
+                              f"Final: {p.get('score')}{overnight}\n"
+                              f"📊 {str(p.get('tier') or '').upper()} season: **{_tw}-{_tl}** ({'+' if _tu >= 0 else ''}{_tu:.1f}u) — every play receipted")
             if p.get('tier') == 'challenge':
                 await settle_challenge(guild, p)
             # live record in tier channel names (2 per 10min per channel is plenty)
@@ -6574,7 +6617,9 @@ async def grade_parlays(guild):
             us = f'+{u}u' if u > 0 else f'{u}u'
             badge = TIER_BADGE.get(p.get('tier'), '')
             if ch:
-                await ch.send(f"🧾 **RESULT {badge} PARLAY:** {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\nLegs: {p.get('score')}")
+                _tw, _tl, _tu = tier_season_line(doc.get('picks', []), p.get('tier'))
+                await ch.send(f"🧾 **RESULT {badge} PARLAY:** {p.get('desc')} ({fmt_odds_num(p.get('odds')) if isinstance(p.get('odds'), int) else 'ML'}) {e} **{p['result']}** {us}\nLegs: {p.get('score')}\n"
+                              f"📊 {str(p.get('tier') or '').upper()} season: **{_tw}-{_tl}** ({'+' if _tu >= 0 else ''}{_tu:.1f}u) — every play receipted")
             if state is not None:
                 state.setdefault('unannounced_results', []).append(
                     {'id': p['id'], 'desc': p.get('desc'), 'odds': p.get('odds'), 'result': p['result'],
