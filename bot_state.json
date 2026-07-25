@@ -8618,6 +8618,22 @@
           "px": 0.63
         }
       ]
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 1.8,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727274,
+      "event": "Anyone's Legend vs. Bilibili Gaming",
+      "ev_start": "2026-07-26T11:00:00Z",
+      "reason": "model 73% vs market 60% \u2014 13% edge, half-Kelly",
+      "order_id": "BFBT7QH3W9NX",
+      "qty": 3,
+      "market_slug": "aec-lol-al-blg-2026-07-26",
+      "outcome": "Bilibili Gaming",
+      "status": "open",
+      "ts": "2026-07-25T18:29:43Z"
     }
   ],
   "pm_stats": {
@@ -8625,7 +8641,7 @@
     "wins": 3,
     "losses": 7,
     "pnl": 6.06,
-    "trades": 26,
+    "trades": 27,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-18"
   },
