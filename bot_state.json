@@ -33,15 +33,6 @@
   "bot_version": "9.18.3",
   "unannounced_results": [
     {
-      "id": "nrg-furia-ml-0724",
-      "desc": "NRG ML",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "NRG vs opponent \u2014 win",
-      "tier": "sharp"
-    },
-    {
       "id": "milwaukee-brewers-ml-0724",
       "desc": "Milwaukee Brewers ML",
       "odds": -293,
@@ -186,7 +177,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1784994024.074586,
+  "last_x_receipt_ts": 1784996468.1890965,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
