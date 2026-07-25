@@ -8705,6 +8705,10 @@
         {
           "ts": 1785004523,
           "px": 0.72
+        },
+        {
+          "ts": 1785007089,
+          "px": 0.72
         }
       ]
     },
@@ -8727,6 +8731,10 @@
         {
           "ts": 1785004524,
           "px": 0.44
+        },
+        {
+          "ts": 1785007089,
+          "px": 0.44
         }
       ]
     },
@@ -8743,7 +8751,13 @@
       "market_slug": "astatc-valorant-g2-c9-2026-07-25-map2",
       "outcome": "G2 Esports",
       "status": "open",
-      "ts": "2026-07-25T19:10:24Z"
+      "ts": "2026-07-25T19:10:24Z",
+      "price_path": [
+        {
+          "ts": 1785007089,
+          "px": 0.72
+        }
+      ]
     },
     {
       "price": 0.43,
@@ -8759,7 +8773,13 @@
       "market_slug": "aec-valorant-th-kc-2026-07-26",
       "outcome": "Karmine Corp",
       "status": "open",
-      "ts": "2026-07-25T19:10:25Z"
+      "ts": "2026-07-25T19:10:25Z",
+      "price_path": [
+        {
+          "ts": 1785007090,
+          "px": 0.43
+        }
+      ]
     },
     {
       "price": 0.19,
@@ -8775,7 +8795,13 @@
       "market_slug": "aec-valorant-ggo-kcg-2026-07-27",
       "outcome": "Karmine Corp GC",
       "status": "open",
-      "ts": "2026-07-25T19:10:26Z"
+      "ts": "2026-07-25T19:10:26Z",
+      "price_path": [
+        {
+          "ts": 1785007090,
+          "px": 0.2
+        }
+      ]
     }
   ],
   "pm_stats": {
