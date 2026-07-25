@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.22.0'
+BOT_VERSION = '9.22.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -7051,7 +7051,7 @@ def _whale_deep_read(p, rank):
             "The public money is on the other side of this one — books shade toward the crowd, and the shade they built in is exactly what we're collecting",
             "This is a quiet fade-the-crowd spot: casual volume pushed the price off fair, and we're on the side the house had to sweeten",
             "Square money sees the name; sharper money sees the number. The number is the play here",
-        ][h % 3]
+        ][(h // 3) % 3]
 
     def m_clv():
         if not imp_s:
@@ -7059,36 +7059,36 @@ def _whale_deep_read(p, rank):
         return [
             f"At {ml:+d} we need this **{imp_s}** of the time to break even — our rate says **{prob_s}**. That spread between required and expected is where bankroll grows",
             f"The ask at this price is **{imp_s}**; the expectation is **{prob_s}**. Every tick between those two numbers is long-run profit, whether or not tonight cooperates",
-        ][h % 2]
+        ][(h // 9) % 2]
 
     def m_matchup():
         if esp:
             return [
                 f"Strip the logos and this is a form-versus-form mismatch — recent map win rates, opener duels and late-round conversion all lean {team}, and Bo3 structure lets the better side actually prove it",
                 f"The head-to-head mechanics favor {team}: stronger opening-duel conversion and a deeper map pool, which matters double in a series where the weaker side has to win twice",
-            ][h % 2]
+            ][(h // 27) % 2]
         if sport == 'mlb':
             return [
                 "The run environment tilts this one — lineup depth against the opposing arm's contact profile, plus the pen situation behind them, all grade our side's way",
                 "This is a lineup-versus-arm mismatch: our side's on-base profile attacks exactly what this pitcher gives up, and the bullpen gap behind the starters widens it late",
-            ][h % 2]
+            ][(h // 54) % 2]
         if sport in ('mls', 'epl', 'soccer', 'ucl'):
             return [
                 "Chance quality beats chance volume here — our side creates cleaner looks per attack and concedes the low-value shots, which is exactly the profile moneyline prices underrate",
                 "The tactical matchup favors us: their buildup stalls against this press shape, and the transition game runs through our side's strongest channel",
-            ][h % 2]
+            ][(h // 108) % 2]
         if sport == 'ufc':
             return [
                 "Styles make this fight: the grappling-and-pressure profile on our side attacks the exact defensive holes the other man has shown, over more minutes",
                 "The tape says our side wins the minutes that matter — control time, damage differential, and the cardio to keep both late",
-            ][h % 2]
+            ][(h // 216) % 2]
         return None
 
     def m_spot():
         return [
             "The schedule spot matters here — rest, travel and opponent workload all lean one way, and it's priced like a neutral slate",
             "Context check: this isn't a stand-alone game, it's a spot — and the spot (rest / rhythm / stakes) favors our side more than the number admits",
-        ][h % 2]
+        ][(h // 7) % 2]
 
     def m_units():
         u = p.get('units', 1)
@@ -7096,27 +7096,27 @@ def _whale_deep_read(p, rank):
             return [
                 f"**{u}u says conviction** — this graded as one of the window's top positions, and the size is the opinion",
                 f"The **{u}u** tag isn't decoration: graded against the full slate, this cleared our conviction bar with room",
-            ][h % 2]
+            ][(h // 5) % 2]
         return [
             f"**{u}u — sized for the variance**, not the confidence. The edge is real; so is the coin-flip tax at this price, and the unit count is the respect",
             f"Kept at **{u}u** because the price is thin — right side, honest size. Bankroll math beats chest-beating",
-        ][h % 2]
+        ][(h // 20) % 2]
 
     def m_wrong():
         if esp:
             return [
                 "What kills it: early-map snowball — lose the opener duels and the form edge never gets to speak. That's the risk we're paid to hold",
                 "What kills it: veto luck and one hot hand. If their star goes nuclear early, form won't save us — priced-in risk, accepted",
-            ][h % 2]
+            ][(h // 11) % 2]
         if sport == 'mlb':
             return [
                 "What kills it: one crooked inning. Baseball compresses edges into single swings — the math needs volume, and we have the volume",
                 "What kills it: the bullpen door. If this becomes a reliever game early, the handicap resets — that's the variance the price pays us to carry",
-            ][h % 2]
+            ][(h // 22) % 2]
         return [
             "What kills it: the counterpunch. If the game state flips early and our side has to chase, the edge thins fast — risk noted, priced, taken",
             "What kills it: late-game chaos. One bounce undoes 90 minutes of right — that's why the number, not the narrative, made this bet",
-        ][h % 2]
+        ][(h // 44) % 2]
 
     headers = [
         "🧠 **SHiFT's read:**", "🐋 **The Whale read:**", "📖 **The case:**",
@@ -7133,7 +7133,7 @@ def _whale_deep_read(p, rank):
     body = '.\n'.join(s.rstrip('.') for s in picks) + '.'
     if h % 3 != 1:
         body += f"\n⚠️ {m_wrong().rstrip('.')}."
-    head = headers[h % len(headers)]
+    head = headers[(h // 13) % len(headers)]
     lead = f"{an}." if an else ''
     return f"{head} {lead}\n{body}\n{m_units()}"
 
