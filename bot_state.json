@@ -9980,7 +9980,7 @@
       "qty": 18,
       "market_slug": "aec-lol-dfm-gam-2026-07-26",
       "outcome": "GAM Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:05:58Z"
     },
     {
@@ -9995,7 +9995,7 @@
       "qty": 3,
       "market_slug": "astatc-valorant-sen-loud-2026-07-26-map1",
       "outcome": "Sentinels",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:10:56Z"
     },
     {
@@ -10011,7 +10011,7 @@
       "qty": 8,
       "market_slug": "aec-lol-al-blg-2026-07-26",
       "outcome": "Bilibili Gaming",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:10:58Z"
     },
     {
@@ -10027,7 +10027,7 @@
       "qty": 5,
       "market_slug": "aec-lol-cr-kcbs-2026-07-26",
       "outcome": "Karmine Corp Blue Stars",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:10:59Z"
     },
     {
@@ -10057,7 +10057,7 @@
       "qty": 15,
       "market_slug": "astatc-valorant-geng-rrq-2026-07-26-map1",
       "outcome": "Gen.G Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:15:57Z"
     }
   ],
