@@ -1,5 +1,5 @@
 {
- "seq": 472,
+ "seq": 476,
  "commands": [
   {
    "seq": 400,
@@ -427,6 +427,30 @@
    "action": "scan_now",
    "dry": false,
    "force": true
+  },
+  {
+   "seq": 473,
+   "action": "room_tail",
+   "channel": "whale-room",
+   "n": 2
+  },
+  {
+   "seq": 474,
+   "action": "room_tail",
+   "channel": "sharp-room",
+   "n": 2
+  },
+  {
+   "seq": 475,
+   "action": "room_tail",
+   "channel": "lock-room",
+   "n": 2
+  },
+  {
+   "seq": 476,
+   "action": "room_tail",
+   "channel": "free-pick",
+   "n": 2
   }
  ]
 }
