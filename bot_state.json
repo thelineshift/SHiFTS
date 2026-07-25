@@ -12,18 +12,18 @@
     "#\ud83c\udfaffree-pick-11-2 [16:00] \ud83c\udfaf **FREE ROOM \u2014 12 PM ET CARD** (1 play)\n\n1\u20e3 **Miami Marlins ML (-137)** vs San Diego Padres \u2014 1.0u\nMLB \u00b7 ML \u00b7"
   ],
   "time_audit": {
-    "at": "2026-07-25 21:14 UTC",
+    "at": "2026-07-25 21:27 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-11-2": "2026-07-25 16:00 UTC",
+    "\ud83c\udfaffree-pick-11-2": "2026-07-25 21:17 UTC",
     "\ud83e\uddfereceipts": "2026-07-25 19:38 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-25 20:36 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-25 21:17 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 21:14 UTC",
+    "at": "2026-07-25 21:27 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -32,14 +32,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 21:14 UTC",
+    "at": "2026-07-25 21:27 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 21:14 UTC",
+    "at": "2026-07-25 21:27 UTC",
     "flags": []
   },
-  "bot_version": "9.21.7",
+  "bot_version": "9.21.8",
   "unannounced_results": [],
   "last_x_receipt_ts": 1785013121.5732002,
   "last_recap_date": "2026-07-23",
