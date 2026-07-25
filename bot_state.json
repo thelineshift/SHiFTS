@@ -5,7 +5,7 @@
     "AUTH URL: https://twitter.com/i/oauth2/authorize?response_type=code&client_id=bk9ldmhERkFMQmxnRnAyUFVrbW46MTpjaQ&redirect_uri=https%3A%2F%2Fthelineshift.com&scope=tweet.read+tweet.write+users.read+follows.read+follows.write+like.read+like.write+media.write+offline.access&state=1d2b182de15b19ed&code_challenge=xaOLFN423Roy4ddDKgFEKPmyUhpus_8oATEmW82hzfA&code_challenge_method=S256"
   ],
   "time_audit": {
-    "at": "2026-07-25 21:27 UTC",
+    "at": "2026-07-25 21:56 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 21:27 UTC",
+    "at": "2026-07-25 21:56 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -25,14 +25,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 21:27 UTC",
+    "at": "2026-07-25 21:56 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 21:27 UTC",
+    "at": "2026-07-25 21:56 UTC",
     "flags": []
   },
-  "bot_version": "9.21.8",
+  "bot_version": "9.22.0",
   "unannounced_results": [],
   "last_x_receipt_ts": 1785013121.5732002,
   "last_recap_date": "2026-07-23",
