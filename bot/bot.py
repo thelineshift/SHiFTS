@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.13.1'
+BOT_VERSION = '9.13.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4622,6 +4622,11 @@ async def scan_engine_run(g0, slot_key, dry):
                                              max_pf=0.85, use_book=False) if not c.get('reserve')]
         if extra:
             cands = _pool_dedupe(cands + extra); fill_steps.append('esports +24h')
+    if len(cands) < NEED:
+        # FLOOR LIFT (terminal backstop): any modeled favorite on the slate — quota is law
+        extra = [c for g in games for c in se_edges(g, now_ts, hours=24, min_edge=0.0) if not c.get('reserve')]
+        if extra:
+            cands = _pool_dedupe(cands + extra); fill_steps.append('floor lift')
     if fill_steps:
         print('FILL LAW bent:', ', '.join(fill_steps), f'-> pool {len(cands)}')
     # ---- deal tiers (whale-first). PICKS LAW: whale 6 / sharp 4 / lock 3 / free 1 per scan
