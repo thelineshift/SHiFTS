@@ -8648,7 +8648,13 @@
       "market_slug": "astatc-valorant-g2-c9-2026-07-25-map1",
       "outcome": "G2 Esports",
       "status": "open",
-      "ts": "2026-07-25T18:34:43Z"
+      "ts": "2026-07-25T18:34:43Z",
+      "price_path": [
+        {
+          "ts": 1785004523,
+          "px": 0.72
+        }
+      ]
     },
     {
       "price": 0.44,
@@ -8664,7 +8670,13 @@
       "market_slug": "aec-lol-sr-dsg-2026-07-26",
       "outcome": "Disguised",
       "status": "open",
-      "ts": "2026-07-25T18:34:45Z"
+      "ts": "2026-07-25T18:34:45Z",
+      "price_path": [
+        {
+          "ts": 1785004524,
+          "px": 0.44
+        }
+      ]
     }
   ],
   "pm_stats": {
