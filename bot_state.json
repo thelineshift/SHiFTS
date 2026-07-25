@@ -7328,9 +7328,9 @@
       "status": "settled",
       "ts": "2026-07-25T01:36:53Z",
       "result": "WIN",
-      "payout": 27.0,
+      "payout": 27.27,
       "settled_at": "2026-07-25T02:13:24Z",
-      "pnl": 19.17
+      "pnl": 19.44
     },
     {
       "price": 0.26,
@@ -7455,11 +7455,11 @@
       "outcome": "ThunderTalk Gaming",
       "status": "settled",
       "ts": "2026-07-25T11:15:41Z",
-      "result": "WIN",
-      "payout": 35.0,
+      "result": "LOSS",
+      "payout": 0.0,
       "settled_at": "2026-07-25T14:52:29Z",
-      "pnl": 28.0,
-      "autopsy": "+$28.00 \u2014 model 50% vs market 20% was real edge; thesis held."
+      "pnl": -7.0,
+      "autopsy": "-$7.00 \u2014 ThunderTalk won outright; the live-drift read (model 50% vs market 20%) was chasing steam, not edge. Ledger grading now reads our direction \u2014 this error class is dead."
     },
     {
       "price": 0.57,
@@ -7589,9 +7589,9 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 3,
-    "losses": 2,
-    "pnl": 50.55,
+    "wins": 2,
+    "losses": 3,
+    "pnl": 15.82,
     "trades": 18,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-25-16"
@@ -7634,14 +7634,17 @@
       "ts": "2026-07-25T14:52:29Z",
       "kind": "LIVE-BET",
       "outcome": "ThunderTalk Gaming",
-      "result": "WIN",
-      "pnl": 28.0,
-      "lesson": "+$28.00 \u2014 model 50% vs market 20% was real edge; thesis held."
+      "result": "LOSS",
+      "pnl": -7.0,
+      "lesson": "-$7.00 \u2014 TT won outright; live-drift gap was steam, not edge. Ledger-true grading shipped."
     }
   ],
   "giveaway_x_posts": [
     "2080960292889198604",
     "2080781361955385778",
     "2081043081114370064"
+  ],
+  "pending_corrections": [
+    "\u26a0\ufe0f **GRADING CORRECTION \u2014 Top Esports vs. ThunderTalk Gaming (7/25)**\nThe desk's **SHORT ThunderTalk Gaming** ticket was receipted here as a WIN +$28.00 \u2014 **that was wrong.** ThunderTalk won the match; our short lost **-$7.00**.\n\nRoot cause: the grader read which side won the match but not which side **we** held \u2014 any short would grade backwards. Fixed for good: every settle is now graded straight off the exchange ledger (our position direction + realized P&L), all sports, all markets.\n\nCorrected desk record: **2-3** \u00b7 P&L **+$15.82**. This receipt amends the earlier one. \ud83d\udd2c"
   ]
 }
