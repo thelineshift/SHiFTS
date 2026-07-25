@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.21.3'
+BOT_VERSION = '9.21.4'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -5446,7 +5446,7 @@ def x_post_native(text, quote_id=None):
     for name, ck, cs, at, ats in x_oauth1_sets(c):
         try:
             hdr = x_oauth1_sign('POST', url, ck, cs, at, ats)
-            req = urllib.request.Request(api_url, data=data, method='POST',
+            req = urllib.request.Request(url, data=data, method='POST',
                 headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'SHiFTPicks/1.0'})
             with urllib.request.urlopen(req, timeout=25) as r:
                 return json.load(r)
