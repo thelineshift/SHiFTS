@@ -1,37 +1,37 @@
 {
- "start": 50,
- "goal": 1000,
- "balance": 50.0,
- "record": {
-  "wins": 0,
-  "losses": 0
- },
- "plays": [
-  {
-   "n": 1,
-   "date": "2026-07-24",
-   "pick": "Los Angeles Dodgers ML",
-   "odds": -136,
-   "stake": 20.0,
-   "toWin": 14.71,
-   "time_et": "07:10 PM ET",
-   "result": null,
-   "posted": "2026-07-24T20:00:56Z",
-   "note": "RESTART DAY 1 \u2014 public run opener; edge 12%"
+  "start": 50,
+  "goal": 1000,
+  "balance": 64.71,
+  "record": {
+    "wins": 1,
+    "losses": 0
   },
-  {
-   "n": 2,
-   "date": "2026-07-24",
-   "pick": "Chicago White Sox ML",
-   "odds": -131,
-   "stake": 20.0,
-   "toWin": 15.27,
-   "time_et": "07:40 PM ET",
-   "result": null,
-   "posted": "2026-07-24T20:00:58Z",
-   "note": "RESTART DAY 1 \u2014 public run opener; edge 10%"
-  }
- ],
- "restarted": "2026-07-25 \u2014 $50 bankroll, real-money era (Polymarket US funding)",
- "updated": "2026-07-24T22:58:16Z"
+  "plays": [
+    {
+      "n": 1,
+      "date": "2026-07-24",
+      "pick": "Los Angeles Dodgers ML",
+      "odds": -136,
+      "stake": 20.0,
+      "toWin": 14.71,
+      "time_et": "07:10 PM ET",
+      "result": "WIN",
+      "posted": "2026-07-24T20:00:56Z",
+      "note": "RESTART DAY 1 \u2014 public run opener; edge 12%"
+    },
+    {
+      "n": 2,
+      "date": "2026-07-24",
+      "pick": "Chicago White Sox ML",
+      "odds": -131,
+      "stake": 20.0,
+      "toWin": 15.27,
+      "time_et": "07:40 PM ET",
+      "result": null,
+      "posted": "2026-07-24T20:00:58Z",
+      "note": "RESTART DAY 1 \u2014 public run opener; edge 10%"
+    }
+  ],
+  "restarted": "2026-07-25 \u2014 $50 bankroll, real-money era (Polymarket US funding)",
+  "updated": "2026-07-25T02:03:31Z"
 }
