@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.15.0'
+BOT_VERSION = '9.15.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -608,6 +608,8 @@ def make_client(privileged=True):
             pm_watch.start()
         if not pm_trader.is_running():
             pm_trader.start()
+        if not gw_reverify.is_running():
+            gw_reverify.start()
 
     @c.event
     async def on_message(message):
@@ -664,6 +666,15 @@ def make_client(privileged=True):
                 print('mention responder:', e)
             if 'giveaway' in chname:
                 raw = message.content or ''
+                # !entry [@handle] — self-serve entry ledger (owner decree 2026-07-25).
+                # A command is a question: it ALWAYS gets an answer, throttle-free.
+                if raw.strip().lower().startswith('!entry'):
+                    st_g = await asyncio.to_thread(get_state) or {}
+                    if str(message.id) not in st_g.get('gw_handled', []):
+                        await gw_mark_handled(st_g, message.id)
+                        await asyncio.to_thread(gh_put, 'bot_state.json', st_g, 'gw handled')
+                    await entry_status_reply(message, raw.strip()[6:].strip().lstrip('@') or None)
+                    return
                 st_g = await asyncio.to_thread(get_state) or {}
                 if str(message.id) in st_g.get('gw_handled', []):
                     return  # already processed (edit re-fire or sweep overlap)
@@ -1101,6 +1112,91 @@ async def gw_reply_once(message, key, body, hours=20):
     await message.channel.send(f'{message.author.mention} {body}')
     return True
 
+async def _gw_live_checks(handle, state):
+    """Guarded X step check. Returns (followed, liked, reposted) — None where X won't say."""
+    followed = liked = reposted = None
+    try:
+        bt = (await asyncio.to_thread(x_creds_load))['bearer_token']
+        u = await asyncio.to_thread(x_get_json, f'https://api.x.com/2/users/by/username/{handle}', bt)
+        uid = str(u.get('data', {}).get('id') or '')
+        if not uid:
+            return False, liked, reposted
+        followed = await asyncio.to_thread(gw_followed, uid, bt)
+        post_id = (state or {}).get('giveaway_x_post', '')
+        if post_id:
+            try:
+                liked = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/liking_users?max_results=100', bt)
+            except Exception:
+                liked = None
+            try:
+                reposted = uid in await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{post_id}/retweeted_by?max_results=100', bt)
+            except Exception:
+                reposted = None
+    except Exception:
+        pass
+    return followed, liked, reposted
+
+def _gw_mult(author):
+    names = [r.name for r in getattr(author, 'roles', [])]
+    tkey = 'whale' if any('Whale' in n or '🐋' in n for n in names) else 'sharp' if any('Sharp' in n or '📊' in n for n in names) else 'lock' if any('Lock' in n or '🔒' in n for n in names) else 'free'
+    return {'whale': 5, 'sharp': 3, 'lock': 2, 'free': 1}[tkey]
+
+async def entry_status_reply(message, handle_arg=None):
+    """!entry — the entry ledger on demand: handle on file, every step, tickets, draw time."""
+    try:
+        conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH) or {}
+        rec, hk = None, None
+        if handle_arg:
+            hk = handle_arg.lower()
+            rec = conf.get(hk)
+        else:
+            for k, v in conf.items():
+                if str(v.get('discord_id')) == str(message.author.id):
+                    rec, hk = v, k
+                    break
+        state = await asyncio.to_thread(get_state)
+        link = gw_post_link(state)
+        if not rec:
+            who = f"@{handle_arg}" if handle_arg else "you"
+            await message.channel.send(
+                f"{message.author.mention} 🔎 **ENTRY CHECK** — no entry on file for {who}.\n"
+                f"Drop your **X handle** in this room (like `@yourhandle`), then complete the steps on {link} — I'll log you in seconds. ⚡")
+            return
+        handle = rec.get('handle') or hk
+        followed, liked, reposted = await _gw_live_checks(handle, state)
+        prov = 'provisional' in str(rec.get('note', '')).lower()
+        # live check just cleared everything? upgrade on the spot
+        if prov and followed and liked and reposted:
+            rec.pop('note', None)
+            rec['ts_upgraded'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            conf[hk] = rec
+            await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway upgrade ' + hk, QUEUE_BRANCH)
+            prov = False
+            status = '🔒 **CONFIRMED** — upgraded you right now'
+        elif prov:
+            status = '⏳ **PROVISIONAL** — in the pool, verification pending'
+        else:
+            status = '🔒 **CONFIRMED** — in the pool'
+        def ic(ok, label):
+            return f"{'✅' if ok else ('❌' if ok is False else '❓')} {label}"
+        checklist = "\n".join([ic(followed, 'Follow @SHiFTSPicks'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
+        todo = []
+        if followed is False: todo.append('follow @SHiFTSPicks')
+        if liked is False: todo.append('like the post')
+        if reposted is False: todo.append('repost the post')
+        todo_s = f"\n**Still to do:** {' + '.join(todo)} — on {link}" if todo else ''
+        xdeg = "\n_X checks are degraded right now — ❓ steps get re-scanned automatically before the draw._" if (followed is None or liked is None or reposted is None) else ''
+        await message.channel.send(
+            f"{message.author.mention} 🎫 **ENTRY STATUS — @{handle}**\n{status}\n\n{checklist}\n"
+            f"🎟️ Tickets: **{rec.get('mult', 1)}x** · entered {str(rec.get('ts', ''))[:10]}{todo_s}{xdeg}\n"
+            f"Draw: **Sunday 6 PM ET** — provably fair, paid on-chain. ⚡")
+    except Exception as e:
+        print('entry status:', e)
+        try:
+            await message.channel.send(f"{message.author.mention} 🎫 entry ledger is being stubborn — try again in a minute. ⚡")
+        except Exception:
+            pass
+
 async def verify_giveaway_entry(message, handle):
     try:
         c = await asyncio.to_thread(x_creds_load)
@@ -1135,7 +1231,8 @@ async def verify_giveaway_entry(message, handle):
         if reposted is False: missing.append('repost the giveaway post')
         if not missing and followed and liked and reposted:
             conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
-            if handle.lower() in (conf or {}):
+            _ex = (conf or {}).get(handle.lower())
+            if _ex and 'provisional' not in str(_ex.get('note', '')).lower():
                 await gw_reply_once(message, 'already', f"🎫 **@{handle}** — you're already locked in the pool. Sit tight for Sunday 6 PM ET. ⚡", hours=4)
                 return
             names = [r.name for r in getattr(message.author, 'roles', [])]
@@ -1154,11 +1251,63 @@ async def verify_giveaway_entry(message, handle):
             await message.channel.send(
                 f"{message.author.mention} 🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. ⚡")
         else:
-            steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else 'X is still registering your activity —'
-            await gw_reply_once(message, 'steps',
-                f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} — do them on **this exact post**: {gw_post_link(state)}\nThen drop your handle here again and I'll re-scan you in seconds. ⚡", hours=4)
+            # PROVISIONAL-BY-DEFAULT LAW (owner decree 2026-07-25): an incomplete or
+            # unverifiable entry is STILL logged instantly — nobody waits silent on X.
+            conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH) or {}
+            hk = handle.lower()
+            if hk not in conf:
+                mult = _gw_mult(message.author)
+                why = '+'.join(missing) if missing else 'x-degraded'
+                conf[hk] = {'handle': handle, 'discord': str(message.author), 'discord_id': str(message.author.id),
+                            'mult': mult, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                            'note': f'provisional — {why}'}
+                await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'provisional entry ' + hk, QUEUE_BRANCH)
+                steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} to full tickets:** " + ' + '.join(missing)) if missing else "X can't confirm your steps right now — I'll auto-upgrade you the moment it can."
+                await message.channel.send(
+                    f"{message.author.mention} 🎫 **ENTRY LOGGED — @{handle}**\n\n{checklist}\n\n{steps}\nDo them on **this exact post**: {gw_post_link(state)} — re-scan is automatic, or type **!entry** anytime. ⚡")
+            else:
+                steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else "X still can't confirm your steps — you're in the pool, auto-upgrade pending."
+                await gw_reply_once(message, 'steps',
+                    f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} — on **this exact post**: {gw_post_link(state)}\nType **!entry** for your live status anytime. ⚡", hours=1)
     except Exception as e:
         print('giveaway verify error:', e)
+
+
+@tasks.loop(seconds=7200)
+async def gw_reverify():
+    """Every 2h: re-scan provisional entries — the moment X cooperates, they upgrade + get told."""
+    try:
+        conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH) or {}
+        provs = {k: v for k, v in conf.items() if 'provisional' in str(v.get('note', '')).lower()}
+        if not provs:
+            return
+        state = await asyncio.to_thread(get_state)
+        g0 = client.guilds[0] if client.guilds else None
+        gch = find_channel(g0, 'giveaway') if g0 else None
+        changed = False
+        for hk, rec in provs.items():
+            try:
+                followed, liked, reposted = await _gw_live_checks(rec.get('handle') or hk, state)
+            except Exception:
+                continue
+            if followed and liked and reposted:
+                rec = dict(rec)
+                rec.pop('note', None)
+                rec['ts_upgraded'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+                conf[hk] = rec
+                changed = True
+                if gch:
+                    try:
+                        ment = f"<@{rec['discord_id']}>" if rec.get('discord_id') else f"@{rec.get('handle')}"
+                        await gch.send(f"{ment} 🔒 **ENTRY CONFIRMED — @{rec.get('handle')}** — all three steps verified. 🎟️ **{rec.get('mult', 1)}x tickets** · Sunday 6 PM ET. ⚡")
+                    except Exception:
+                        pass
+            await asyncio.sleep(2)
+        if changed:
+            await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'giveaway reverify upgrades', QUEUE_BRANCH)
+    except Exception as e:
+        print('gw reverify:', e)
+
 
 async def catchup_sweep(g0):
     # NEVER SILENT LAW: on boot, process giveaway/issues messages that got no response
@@ -3186,14 +3335,6 @@ def odds_mlb_props(games, now_ts, oa, slot_utc_hour):
                               'prop': {'player': player, 'stat': stat, 'line': pt, 'side': side_name},
                               'analysis': f"books hang {pt:g} — fair is {fair_s:.0%}, {best_bk} pays {fmt_odds_num(best_pr)} ({edge:.0%} over the number)"})
         cands.sort(key=lambda c: -c['edge'])
-        # one side per player+market — never deal both doors of the same line
-        _seen_pm, _u = set(), []
-        for c in cands:
-            _k = (c['market'], c['prop']['player'])
-            if _k in _seen_pm:
-                continue
-            _seen_pm.add(_k); _u.append(c)
-        cands = _u
         # fire on real disagreement (>=bar); otherwise the decree backstop deals the best near-fair numbers
         _fire = [c for c in cands if c['edge'] >= c['_bar']]
         take = (_fire + [c for c in cands if c['edge'] < c['_bar']])[:2]
@@ -3223,17 +3364,14 @@ def _box_stat(box, player, stat):
     np_ = norm_txt(player)
     for team in ((box.get('boxscore') or {}).get('players') or []):
         for grp in team.get('statistics') or []:
+            gname = (grp.get('name') or '').lower()
             keys = [str(k).lower() for k in (grp.get('keys') or grp.get('labels') or [])]
             want = None
-            if 'atbats' in keys:  # batting group
-                if stat == 'hits' and 'hits' in keys:
-                    want = 'hits'
-                elif stat == 'hr' and 'homeruns' in keys:
-                    want = 'homeruns'
-            elif 'era' in keys or 'fullinnings.partinnings' in keys:  # pitching group
-                if stat == 'ks' and 'strikeouts' in keys:
-                    want = 'strikeouts'
-            if not want:
+            if stat in ('hits', 'hr') and gname == 'batting':
+                want = 'h' if stat == 'hits' else 'hr'
+            elif stat == 'ks' and gname == 'pitching':
+                want = 'so' if 'so' in keys else 'k'
+            if not want or want not in keys:
                 continue
             idx = keys.index(want)
             for ath in grp.get('athletes') or []:
