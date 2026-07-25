@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.16.1'
+BOT_VERSION = '9.16.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -1818,6 +1818,15 @@ async def run_command(cmd, guild, log):
                 try: body = e.read()[:150]
                 except Exception: pass
             log.append(f'x_like FAIL: {e} {body}')
+    elif a == 'x_bio':
+        try:
+            res = await asyncio.to_thread(x_update_bio, cmd['text'])
+            if isinstance(res, dict) and res.get('error'):
+                log.append(f"x_bio FAIL: {res['error']}")
+            else:
+                log.append('x_bio OK')
+        except Exception as e:
+            log.append(f'x_bio FAIL: {e}')
     elif a == 'x_post_text':
         try:
             res = await asyncio.to_thread(x_post, cmd['text'], cmd.get('quote_id'))
@@ -4571,13 +4580,15 @@ def x_post_oauth1(text, quote_id=None):
         raise Exception(f'HTTP {e.code}: {e.read()[:300]}')
 
 
-def x_oauth1_sign(method, url, ck, cs, at, ats):
+def x_oauth1_sign(method, url, ck, cs, at, ats, extra=None):
     import hmac, hashlib, secrets, urllib.parse
     op = {'oauth_consumer_key': ck, 'oauth_nonce': secrets.token_hex(16),
           'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
           'oauth_version': '1.0'}
     if at:
         op['oauth_token'] = at
+    if extra:
+        op.update(extra)  # form/query params must join the signature base (OAuth1 spec)
     q = lambda s: urllib.parse.quote(str(s), safe='')
     base = '&'.join([method.upper(), q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(op.items())))])
     key = f"{q(cs)}&{q(ats or '')}"
@@ -4694,6 +4705,36 @@ def x_post_media_oauth1(text, media_id, cred_name=None):
         except Exception as e:
             last = f'{name}: {e}'
     raise Exception(last or 'media tweet failed')
+
+def x_update_bio(text):
+    """Update the X profile bio (160 chars max). Form param joins the signature per OAuth1 spec."""
+    import urllib.parse, urllib.request
+    text = (text or '')[:160]
+    if not text:
+        return {'error': 'empty bio'}
+    sets = x_oauth1_sets(x_creds_load())
+    if not sets:
+        return {'error': 'no oauth1 credential set'}
+    url = 'https://api.x.com/1.1/account/update_profile.json'
+    data = urllib.parse.urlencode({'description': text}).encode()
+    last = None
+    for name, ck, cs, at, ats in sets:
+        try:
+            hdr = x_oauth1_sign('POST', url, ck, cs, at, ats, {'description': text})
+            req = urllib.request.Request(url, data=data, method='POST',
+                headers={'Authorization': hdr, 'Content-Type': 'application/x-www-form-urlencoded',
+                         'User-Agent': 'TheLineShift/1.0'})
+            with urllib.request.urlopen(req, timeout=25) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            try:
+                eb = e.read()[:250]
+            except Exception:
+                eb = b''
+            last = f'{name} HTTP {e.code}: {eb}'
+        except Exception as e:
+            last = f'{name}: {e}'
+    return {'error': str(last)[:200]}
 
 def x_post(text, quote_id=None):
     try:
@@ -5207,6 +5248,90 @@ async def odds_watch():
     except Exception as e:
         print('odds_watch error:', e)
 
+def perf_report(tier, days, title):
+    """W-L-P, units, ROI, by-sport split, best/worst read for one tier over the last N days."""
+    import datetime as _dt
+    pj = gh_get_json_ref('picks.json', 'main') or {'picks': []}
+    cutoff = (_dt.datetime.utcnow() - _dt.timedelta(days=days)).strftime('%Y-%m-%d')
+    rows = [p for p in pj.get('picks', [])
+            if p.get('tier') == tier and p.get('result') in ('WIN', 'LOSS', 'PUSH')
+            and str(p.get('date', '')) >= cutoff]
+    if not rows:
+        return f"**{title}**\nNo settled plays in the window — the machine only fires when the edge is real."
+    w = sum(1 for p in rows if p['result'] == 'WIN')
+    l = sum(1 for p in rows if p['result'] == 'LOSS')
+    pu = sum(1 for p in rows if p['result'] == 'PUSH')
+    u = sum(units_of(p) for p in rows)
+    risk = sum(float(p.get('units') or 1) for p in rows if p['result'] != 'PUSH')
+    roi = (u / risk * 100) if risk else 0.0
+    rec = f"{w}-{l}" + (f"-{pu}" if pu else '')
+    by_sport = {}
+    for p in rows:
+        s = by_sport.setdefault(str(p.get('sport') or '?').upper(), [0, 0, 0.0])
+        if p['result'] == 'WIN':
+            s[0] += 1
+        elif p['result'] == 'LOSS':
+            s[1] += 1
+        s[2] += units_of(p)
+    sport_line = ' · '.join(f"{k} {v[0]}-{v[1]} ({v[2]:+.1f}u)"
+                           for k, v in sorted(by_sport.items(), key=lambda kv: kv[1][2], reverse=True))
+    best = max(rows, key=lambda p: units_of(p))
+    worst = min(rows, key=lambda p: units_of(p))
+    return (f"**{title}**\n"
+            f"Record: **{rec}** · Units: **{u:+.1f}u** · ROI: **{roi:+.1f}%**\n"
+            f"By sport: {sport_line}\n"
+            f"🏆 Best read: {best.get('desc') or best.get('pick') or '?'} ({units_of(best):+.1f}u)\n"
+            f"🩸 Worst read: {worst.get('desc') or worst.get('pick') or '?'} ({units_of(worst):+.1f}u)")
+
+
+async def weekly_analytics_report(g0, st):
+    """Sunday 10 AM ET — the weekly analytics the teaser promises: per-tier breakdown in each paid
+    room + the public tier-by-tier board in #weekly-analytics. Truth-in-advertising law."""
+    try:
+        for tier in ('whale', 'sharp', 'lock'):
+            rm = find_channel(g0, SCAN_ROOMS[tier])
+            if rm:
+                _body = await asyncio.to_thread(perf_report, tier, 7, f"📊 WEEKLY ANALYTICS — {tier.upper()} ROOM (last 7 days)")
+                await rm.send(_body + "\n\nEvery play receipted on the public ledger. Next report next Sunday 10 AM ET. ⚡")
+                await asyncio.sleep(1)
+        pub = find_channel(g0, 'weekly-analytics')
+        if pub:
+            parts = [await asyncio.to_thread(perf_report, 'free', 7, '🆓 FREE BOARD (last 7 days)')]
+            for tier, emo in (('whale', '🐋'), ('sharp', '📊'), ('lock', '🔒')):
+                parts.append(await asyncio.to_thread(perf_report, tier, 7, f'{emo} {tier.upper()} (last 7 days)'))
+            await pub.send(("\n\n".join(parts))[:1950]
+                           + "\n\n🔒 Full breakdowns live in each tier room. The ledger never hides a week.")
+        st.setdefault('scan_events', {})['weekly-report'] = time.strftime('%Y-%m-%d')
+    except Exception as e:
+        print('weekly_analytics_report error:', e)
+
+
+async def monthly_deep_dive(g0, st):
+    """1st of the month 6 PM ET — whale masterclass: 30-day autopsy + the desk's own lessons,
+    plus the tier-by-tier month board in #monthly-deepdive."""
+    try:
+        body = await asyncio.to_thread(perf_report, 'whale', 30, '🐋 MONTHLY DEEP-DIVE — WHALE MASTERCLASS (last 30 days)')
+        lessons = (st.get('pm_lessons') or [])[-3:]
+        if lessons:
+            body += '\n\n🧠 **Desk autopsy — the lessons the machine wrote this month:**'
+            for ls in lessons:
+                body += f"\n• {(ls.get('lesson') if isinstance(ls, dict) else str(ls))[:220]}"
+        body += "\n\nNext month's attack plan: same law — edge or no bet. The desk keeps scanning 24/7."
+        rm = find_channel(g0, SCAN_ROOMS['whale'])
+        if rm:
+            await rm.send(body[:1950])
+        dd = find_channel(g0, 'monthly-deepdive')
+        if dd:
+            parts = []
+            for t, e in (('whale', '🐋'), ('sharp', '📊'), ('lock', '🔒'), ('free', '🆓')):
+                parts.append(await asyncio.to_thread(perf_report, t, 30, f'{e} {t.upper()} — 30 days'))
+            await dd.send(("\n\n".join(parts))[:1950]
+                          + "\n\n🐋 The full masterclass lives in the Whale room.")
+        st.setdefault('scan_events', {})['monthly-report'] = time.strftime('%Y-%m-%d')
+    except Exception as e:
+        print('monthly_deep_dive error:', e)
+
+
 @tasks.loop(seconds=3600)
 async def teaser_watch():
     try:
@@ -5214,12 +5339,24 @@ async def teaser_watch():
             return
         guild = client.guilds[0]
         now = time.gmtime()
-        if now.tm_hour != 12:
-            return
-        state = await asyncio.to_thread(get_state)
-        tz = state.setdefault('teasers', {})
         import datetime as _dt
         today = _dt.date(now.tm_year, now.tm_mon, now.tm_mday)
+        state = await asyncio.to_thread(get_state)
+        tz = state.setdefault('teasers', {})
+        # ---- REPORT FIRE GATES (truth-in-advertising: the teasers promise these exact times)
+        _dirty = False
+        if now.tm_wday == 6 and now.tm_hour == 14 and tz.get('weekly_fired') != today.isoformat():
+            tz['weekly_fired'] = today.isoformat()
+            _dirty = True
+            await weekly_analytics_report(guild, state)
+        if now.tm_mday == 1 and now.tm_hour == 22 and tz.get('monthly_fired') != today.isoformat():
+            tz['monthly_fired'] = today.isoformat()
+            _dirty = True
+            await monthly_deep_dive(guild, state)
+        if now.tm_hour != 12:
+            if _dirty:
+                await asyncio.to_thread(gh_put, 'bot_state.json', state, 'report fired')
+            return
         next_sun = today + _dt.timedelta(days=(6 - today.weekday()) % 7)
         ws = next_sun.isoformat()
         if tz.get('weekly') != ws:
@@ -5892,8 +6029,8 @@ async def scan_engine_run(g0, slot_key, dry):
             if p.get('parlay'):
                 leg_lines = '\n'.join(f"   • [{league_tag(lg.get('sport'))}] {lg['pick']} ({fmt_odds_num(lg['odds'])}) vs {lg['vs']}" for lg in p['legs'])
                 lines.append(f"{n}\u20e3 🎰 **{p['pick']}{odds_s} — {p['units']}u**\n{leg_lines}\n"
-                             f"{p['market']} · first leg {_et(p['start'])}\n"
-                             f"🧠 **Why it's the play:** every leg cleared our edge bar — combined model probability {p.get('prob', 0):.0%} vs the price's implied {(1 / (ml_to_dec(p['odds']) or 2)):.0%}. That's value stacked on value.")
+                             f"{p['market']} · first leg {_et(p['start'])}"
+                             + (f"\n🧠 **Why it's the play:** every leg cleared our edge bar — combined model probability {p.get('prob', 0):.0%} vs the price's implied {(1 / (ml_to_dec(p['odds']) or 2)):.0%}. That's value stacked on value." if tier != 'free' else ''))
             else:
                 if tier == 'whale':
                     why_deep = (f"🧠 **Why this line wins:** {_why(p, rank_of.get(id(p), n)).replace('🧠 **Why it\'s the play:** ', '')} "
@@ -5903,12 +6040,23 @@ async def scan_engine_run(g0, slot_key, dry):
                     lines.append(f"{n}\u20e3 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
                                  f"{league_tag(p.get('sport'))} · {p['market']} · {_et(p['start'])}\n"
                                  f"📊 {p.get('analysis','')}\n"
-                                 f"{why_deep}" + (f"\n{extras}" if extras else ''))
-                else:
+                                 f"{why_deep}" + (f"\n💰 **The number:** {the_number(p)}" if the_number(p) else "")
+                                 + (f"\n{extras}" if extras else ''))
+                elif tier == 'sharp':
+                    lines.append(f"{n}\u20e3 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
+                                 f"{league_tag(p.get('sport'))} · {p['market']} · {_et(p['start'])}\n"
+                                 f"📊 {p.get('analysis','')}\n"
+                                 f"{_why(p, rank_of.get(id(p), n))}"
+                                 + (f"\n💰 **The number:** {the_number(p)}" if the_number(p) else ""))
+                elif tier == 'lock':
                     lines.append(f"{n}\u20e3 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
                                  f"{league_tag(p.get('sport'))} · {p['market']} · {_et(p['start'])}\n"
                                  f"📊 {p.get('analysis','')}\n"
                                  f"{_why(p, rank_of.get(id(p), n))}")
+                else:
+                    # free is the funnel — bare pick, no sauce (owner decree 2026-07-25)
+                    lines.append(f"{n}\u20e3 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
+                                 f"{league_tag(p.get('sport'))} · {p['market']} · {_et(p['start'])}\n")
             reg = {'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}", 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
                    'sport': p['sport'], 'desc': p.get('picks_desc') or p['pick'], 'market': p['market'], 'odds': p['odds'],
                    'units': p['units'], 'tier': tier, 'time_et': _et(p['start']),
@@ -5988,7 +6136,7 @@ async def scan_engine_run(g0, slot_key, dry):
                     _os = f" ({'+' if _odds and _odds > 0 else ''}{_odds:g})" if isinstance(_odds, (int, float)) else ''
                     _em = (f"⚡ **PLAY OF THE DAY**\n\n**[{league_tag(_pod.get('sport'))}] {_pod['pick']}{_os}** vs {_pod['vs']} — {_pod.get('units', 1)}u\n"
                            f"🕓 {_et(_pod['start'])} · edge **{_pod['edge']:.0%}** vs the number\n\n{_pod.get('analysis', '')}")
-                    for _t in ('lock', 'sharp', 'whale'):
+                    for _t in ('whale', 'sharp', 'lock'):  # whale first — tier depth law
                         _rm = find_channel(g0, SCAN_ROOMS[_t])
                         if _rm:
                             await _rm.send(embed=discord.Embed(description=_em[:4090], color=TIER_COLORS.get(_t, 0xF5C518)))
@@ -6131,6 +6279,21 @@ def op_match(lines, name_a, name_b):
     return None
 
 _WHALE_CACHE = {}
+
+def the_number(p):
+    """One-line pricing read for paid cards: fair price vs book price, model vs implied, edge."""
+    try:
+        prob = p.get('prob') or 0
+        odds = p.get('odds')
+        if not prob or odds is None:
+            return ''
+        fair = dec_to_ml(1 / prob)
+        fair_s = f'{fair:+d}' if isinstance(fair, int) else '—'
+        return (f"fair **{fair_s}** vs book **{fmt_odds_num(odds)}** · model **{prob:.0%}** "
+                f"vs implied **{_amer_prob(odds):.0%}** · edge **{p.get('edge', 0):.0%}**")
+    except Exception:
+        return ''
+
 
 def se_whale_extras(c):
     """WHALE-ONLY premium intel: venue indoors/outdoors + weather + injury report.
