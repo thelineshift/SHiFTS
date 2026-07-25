@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T01:08:49Z",
+  "updated": "2026-07-25T01:23:15Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -811,11 +811,15 @@
       "homeTeam": "100 Thieves",
       "desc": "100 Thieves ML",
       "market": "ML (Bo3)",
-      "odds": null,
+      "odds": -110,
       "units": 1.0,
       "tier": "free",
       "time_et": "8:00 PM",
-      "analysis": "100T dominant recent series form vs KR\u00dc winless \u2014 wide form gap in home-region Bo3. Odds-free ML per esports doctrine."
+      "analysis": "100T dominant recent series form vs KR\u00dc winless \u2014 wide form gap in home-region Bo3. Odds-free ML per esports doctrine.",
+      "result": "WIN",
+      "units_result": 0.91,
+      "vs": "KR\u00dc Esports",
+      "score": "100 Thieves 2-0 KR\u00dc Esports \u00b7 final"
     },
     {
       "id": "stl-ml-0724",
@@ -1206,7 +1210,10 @@
         "away_ml": 115,
         "total": 7.5,
         "ts": 1784923419
-      }
+      },
+      "result": "WIN",
+      "score": "New York Yankees 1, Philadelphia Phillies 0",
+      "units_result": 1.15
     },
     {
       "id": "challenge-los-angeles-dodgers-ml-0724",
@@ -1224,7 +1231,9 @@
         "away_ml": 234,
         "total": 8.5,
         "ts": 1784923419
-      }
+      },
+      "awayTeam": "Los Angeles Dodgers",
+      "homeTeam": "New York Mets"
     },
     {
       "id": "challenge-chicago-white-sox-ml-0724",
@@ -1242,7 +1251,9 @@
         "away_ml": 234,
         "total": 8.5,
         "ts": 1784923419
-      }
+      },
+      "awayTeam": "Houston Astros",
+      "homeTeam": "Chicago White Sox"
     },
     {
       "id": "chicago-fire-fc-ml-0725",
