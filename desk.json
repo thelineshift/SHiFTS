@@ -1,19 +1,13 @@
 {
-  "updated": "2026-07-25T20:00:20Z",
-  "record": "3-8",
-  "trades": 35,
-  "open": 15,
+  "updated": "2026-07-25T22:01:39Z",
+  "record": "3-9",
+  "trades": 41,
+  "open": 16,
   "pnl": 6.06,
   "bank": 50.0,
-  "balance": 80.1,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 0-2 \u00b7 LIVE-BET 0-1",
+  "balance": 59.06,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 0-2 \u00b7 LIVE-BET 0-2",
   "recent": [
-    {
-      "outcome": "CA Uni\u00f3n",
-      "short": false,
-      "result": "lost",
-      "pnl": -0.9
-    },
     {
       "outcome": "SU Vortuna Bad Leonfelden",
       "short": false,
@@ -40,6 +34,12 @@
     },
     {
       "outcome": "LOS",
+      "short": true,
+      "result": "lost",
+      "pnl": 0.0
+    },
+    {
+      "outcome": "paiN Gaming",
       "short": true,
       "result": "lost",
       "pnl": 0.0
