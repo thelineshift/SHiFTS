@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.21.5'
+BOT_VERSION = '9.21.6'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -1990,6 +1990,18 @@ async def run_command(cmd, guild, log):
             except Exception:
                 pass
         log.append(f'issue_pins: {sent} license keys issued (revoke+replace)')
+    elif a == 'room_tail':
+        ch = find_channel(guild, cmd['channel'])
+        if not ch:
+            log.append(f"room_tail: channel '{cmd['channel']}' not found")
+        else:
+            n = int(cmd.get('n', 3))
+            msgs = [m async for m in ch.history(limit=n)]
+            if not msgs:
+                log.append(f'#{ch.name}: empty')
+            for m in msgs:
+                txt = (m.content or '') or ((m.embeds[0].description or '') if m.embeds else '')
+                log.append(f'#{ch.name} [{m.created_at.strftime("%H:%M")}] {txt[:110]}')
     elif a == 'x_bio':
         try:
             res = await asyncio.to_thread(x_update_bio, cmd['text'], cmd.get('url'))
@@ -7014,6 +7026,8 @@ async def scan_engine_run(g0, slot_key, dry):
     """Build + post the slot card. dry=True -> shift-lab only, no state writes."""
     lab = find_channel(g0, 'shift-lab')
     gen = lab if dry else find_channel(g0, 'general-chat')
+    if not g0 or (not dry and not gen) or not lab:
+        raise RuntimeError('channels not ready — client still booting; retry law will re-fire')
     tag = '[DRY RUN] ' if dry else ''
     now_ts = time.time()
     await gen.send(f"🛰️ {tag}**SCAN INITIATED — {(datetime.datetime.utcfromtimestamp(now_ts) - datetime.timedelta(hours=4)).strftime('%I %p ET')}**" if not dry else
@@ -7383,7 +7397,15 @@ async def scan_engine_run(g0, slot_key, dry):
         if await _room_already_posted(room, f"**{tier.upper()} ROOM — {slot_et} CARD**"):
             print(f'[scan] dedupe@room: {tier} {slot_et} card already posted — skipping repost')
         else:
-            await room.send(embed=discord.Embed(description=body[:4090], color=TIER_COLORS.get(tier, 0x2B2D31)))
+            try:
+                await room.send(embed=discord.Embed(description=body[:4090], color=TIER_COLORS.get(tier, 0x2B2D31)))
+            except Exception as e:
+                print(f'[scan] CARD SEND FAILED {tier}: {e}')
+                try:
+                    await lab.send(f"\u26a0\uFE0F **CARD SEND FAILED — {tier.upper()} ROOM {slot_et}:** `{e}` — retry law will re-fire the slot.")
+                except Exception:
+                    pass
+                raise
         await asyncio.sleep(1)
     # ---- sanitized complete in general chat (NO-LEAK LAW) — clickable tags + upgrade funnel
     free_p = deal['free'][0] if deal['free'] else None
