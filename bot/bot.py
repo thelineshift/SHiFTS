@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.17.1'
+BOT_VERSION = '9.18.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4951,6 +4951,35 @@ def _pick_closer(pool, seed):
     import hashlib as _hh
     return pool[int(_hh.md5(str(seed).encode()).hexdigest(), 16) % len(pool)]
 
+def tier_ad_text(tier, days=7):
+    """X ad for a positive-units tier: record, units, the $100-per-pick example, store link.
+    Returns None when the tier isn't +u over the window (advertising law: only winners advertise)."""
+    import datetime as _dt
+    pj = gh_get_json_ref('picks.json', 'main') or {'picks': []}
+    cutoff = (_dt.datetime.utcnow() - _dt.timedelta(days=days)).strftime('%Y-%m-%d')
+    rows = [p for p in pj.get('picks', [])
+            if p.get('tier') == tier and p.get('result') in ('WIN', 'LOSS', 'PUSH')
+            and str(p.get('date', '')) >= cutoff]
+    if not rows:
+        return None
+    w = sum(1 for p in rows if p['result'] == 'WIN')
+    l = sum(1 for p in rows if p['result'] == 'LOSS')
+    u = sum(units_of(p) for p in rows)
+    if u <= 0:
+        return None
+    emo, price = {'whale': ('🐋', 99.99), 'sharp': ('📊', 49.99), 'lock': ('🔒', 29.99)}.get(tier, ('⚡', 0))
+    profit = u * 100
+    mult = (profit / price) if price else 0
+    lines = [f"{emo} The {tier.upper()} room went {w}-{l} this week — +{u:.1f} units.",
+             f"",
+             f"$100 on every pick we posted = +${profit:,.0f} in 7 days."
+             + (f" The room costs ${price:.0f}/mo — it paid for itself {mult:.0f}x over." if mult >= 1 else ''),
+             f"",
+             f"Every pick posted before start. Every result receipted.",
+             f"💎 {STORE_PAGE}"]
+    return ('\n'.join(lines), u)
+
+
 def _x_weight(s):
     """Approximate X weighted length (emoji/CJK count 2)."""
     w = 0
@@ -5156,6 +5185,16 @@ async def x_drainer():
             return
         last = state.get('last_x_receipt_ts', 0)
         if time.time() - float(last) < 40 * 60:
+            return
+        # ADS FIRST — owner decree 2026-07-25: advertising always has priority over results posts
+        ads = state.get('x_ads') or []
+        if ads:
+            ad = ads.pop(0)
+            state['x_ads'] = ads
+            state['last_x_receipt_ts'] = time.time()
+            await asyncio.to_thread(gh_put, 'bot_state.json', state, 'x ad fired')
+            resp = await asyncio.to_thread(x_post, ad, None)
+            print('[drainer] ad posted' if resp is not None else 'x_drainer: ad post failed — no X key')
             return
         r = queue[0]
         picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
@@ -5483,11 +5522,11 @@ async def weekly_analytics_report(g0, st):
         print('weekly_analytics_report error:', e)
 
 
-async def monthly_deep_dive(g0, st):
-    """1st of the month 6 PM ET — whale masterclass: 30-day autopsy + the desk's own lessons,
-    plus the tier-by-tier month board in #monthly-deepdive."""
+async def monthly_deep_dive(g0, st, days=7):
+    """WHALE WEEKLY DEEP-DIVE (owner decree 2026-07-25: was monthly) — autopsy of the window
+    + the desk's own lessons, plus the tier-by-tier board in #monthly-deepdive."""
     try:
-        body = await asyncio.to_thread(perf_report, 'whale', 30, '🐋 MONTHLY DEEP-DIVE — WHALE MASTERCLASS (last 30 days)')
+        body = await asyncio.to_thread(perf_report, 'whale', days, f'🐋 WEEKLY DEEP-DIVE — WHALE MASTERCLASS (last {days} days)')
         lessons = (st.get('pm_lessons') or [])[-3:]
         if lessons:
             body += '\n\n🧠 **Desk autopsy — the lessons the machine wrote this month:**'
@@ -5501,12 +5540,169 @@ async def monthly_deep_dive(g0, st):
         if dd:
             parts = []
             for t, e in (('whale', '🐋'), ('sharp', '📊'), ('lock', '🔒'), ('free', '🆓')):
-                parts.append(await asyncio.to_thread(perf_report, t, 30, f'{e} {t.upper()} — 30 days'))
+                parts.append(await asyncio.to_thread(perf_report, t, days, f'{e} {t.upper()} — {days} days'))
             await dd.send(("\n\n".join(parts))[:1950]
                           + "\n\n🐋 The full masterclass lives in the Whale room.")
         st.setdefault('scan_events', {})['monthly-report'] = time.strftime('%Y-%m-%d')
     except Exception as e:
         print('monthly_deep_dive error:', e)
+
+
+async def run_giveaway_draw(g0):
+    """Weekly $50 draw — weighted random from the confirmed ledger, then verify ONLY the winner.
+    This is the $0 alternative to X Basic: ~4 API reads for ONE user instead of hundreds for
+    every entrant. Degraded reads -> announce + owner-eyeball link; explicit miss -> redraw."""
+    import random as _rnd
+    gch = find_channel(g0, 'giveaway') if g0 else None
+    conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
+    if not conf:
+        if gch:
+            await gch.send("🎁 Draw time — but the ledger is empty. No entries this week.")
+        return
+    st = await asyncio.to_thread(get_state)
+    pool = []
+    for hk, rec in conf.items():
+        pool += [hk] * max(1, int(rec.get('mult') or 1))
+    for attempt in range(3):
+        winner = _rnd.choice(pool)
+        rec = conf[winner]
+        handle = rec.get('handle') or winner
+        followed = liked = reposted = None
+        try:
+            followed, liked, reposted = await _gw_live_checks(handle, st)
+        except Exception:
+            pass
+        ment = f"<@{rec['discord_id']}>" if rec.get('discord_id') else f"@{handle}"
+        if followed and liked and reposted:
+            if gch:
+                await gch.send(f"🎁 **$50 SOL DRAW — WINNER: {ment} (@{handle})** 🎉\n"
+                               f"✅ All three steps verified live. **{rec.get('mult', 1)}x tickets** in a pool of {len(pool)}.\n"
+                               f"DM us your SOL address — prize ships today. ⚡")
+            return
+        if followed is None and liked is None and reposted is None:
+            # reads degraded — announce + owner eyeball (10 seconds, one tap)
+            if gch:
+                await gch.send(f"🎁 **$50 SOL DRAW — PENDING VERIFICATION: {ment} (@{handle})**\n"
+                               f"Drawn from a pool of {len(pool)} tickets. X won't let us auto-check their steps right now, "
+                               f"so we're eyeballing them before payout: https://x.com/{handle}\n"
+                               f"If the three steps check out, they're paid. If not, we redraw right here. ⚡")
+            return
+        # explicit miss -> redraw, per the law
+        if gch:
+            await gch.send(f"🎁 Drawn entry @{handle} is missing steps — **redrawing**…")
+        pool = [t for t in pool if t != winner]
+        if not pool:
+            break
+    if gch:
+        await gch.send("🎁 Every drawn entry came up short on the steps — the pot rolls to next Sunday. ⚡")
+
+
+def _whale_teams_in_play(picks):
+    """(eid, sport, [team names]) for every unsettled pick — the games we have action on."""
+    out = {}
+    for p in picks:
+        if p.get('result'):
+            continue
+        eid = p.get('eid')
+        if not eid or not p.get('sport'):
+            continue
+        e = out.setdefault(eid, {'sport': p['sport'], 'teams': set(), 'taken': p.get('odds'), 'pick': p.get('pick')})
+        for t in (p.get('home'), p.get('away')):
+            if t:
+                e['teams'].add(str(t))
+    return out
+
+
+async def _whale_injury_news(sport, teams):
+    """Fresh injury/report items for our teams from the ESPN injuries endpoint."""
+    path = SE_SPORTS.get(sport)
+    if not path or '/' not in path:
+        return []
+    base = path.split('/')[0]
+    league = path.split('/')[1]
+    items = []
+    try:
+        d = await asyncio.to_thread(se_get, f'https://site.api.espn.com/apis/site/v2/sports/{base}/{league}/injuries')
+        for blk in d.get('injuries') or []:
+            tname = ((blk.get('team') or {}).get('displayName')) or ''
+            if not any(t and (t in tname or tname in t) for t in teams):
+                continue
+            for it in (blk.get('injuries') or [])[:4]:
+                ath = (it.get('athlete') or {}).get('displayName') or 'Player'
+                st_ = it.get('status') or ''
+                det = it.get('shortComment') or it.get('longComment') or ''
+                items.append(f"🚑 **{tname}:** {ath} — **{st_}**. {det[:160]}")
+    except Exception:
+        pass
+    return items
+
+
+@tasks.loop(seconds=1800)
+async def whale_intel():
+    """WHALE LIVE WIRE (owner decree 2026-07-25): injuries, postponements/delays, and line moves
+    on games we have action on — posted to the Whale lounge as they happen, never on a schedule."""
+    try:
+        if not client.guilds:
+            return
+        g0 = client.guilds[0]
+        rm = find_channel(g0, SCAN_ROOMS['whale'])
+        if not rm:
+            return
+        st = await asyncio.to_thread(get_state)
+        seen = st.setdefault('whale_intel_seen', {})
+        now = time.time()
+        for k in [k for k, v in seen.items() if now - float(v) > 3 * 86400]:
+            seen.pop(k, None)
+        picks = (await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')).get('picks', [])
+        games = _whale_teams_in_play(picks)
+        items = []
+        all_teams = set()
+        for e in games.values():
+            all_teams |= e['teams']
+        sports = {e['sport'] for e in games.values()}
+        for sp in sports:
+            for it in await _whale_injury_news(sp, all_teams):
+                items.append((sp, it))
+        # delays / postponements + line moves per game
+        for eid, e in list(games.items())[:14]:
+            path = SE_SPORTS.get(e['sport'])
+            if not path or '/' not in path:
+                continue
+            base, league = path.split('/')[0], path.split('/')[1]
+            try:
+                d = await asyncio.to_thread(se_get, f'https://site.api.espn.com/apis/site/v2/sports/{base}/{league}/summary?event={eid}')
+            except Exception:
+                continue
+            try:
+                stt = ((d.get('header') or {}).get('competitions') or [{}])[0].get('status') or {}
+                stn = ((stt.get('type') or {}).get('name') or '')
+                if any(x in stn for x in ('POSTPONED', 'DELAYED', 'SUSPENDED', 'CANCELED')):
+                    detail = (stt.get('type') or {}).get('detail') or stn.replace('STATUS_', '').title()
+                    items.append((e['sport'], f"⏱️ **GAME STATUS — {e.get('pick', eid)}:** **{detail}**. Plan your positions accordingly."))
+                pc = (d.get('pickcenter') or [{}])[0]
+                cur = (((pc.get('odds') or {}).get('homeTeamOdds') or {}).get('moneyLine'))
+                if isinstance(cur, (int, float)) and isinstance(e.get('taken'), (int, float)) and abs(cur - e['taken']) >= 25:
+                    items.append((e['sport'], f"📉 **LINE MOVE — {e.get('pick', '')}:** we dealt **{e['taken']:+d}**, board now **{int(cur):+d}** — {'we beat the close ✅' if (cur - e['taken']) * (1 if e['taken'] < 0 else -1) < 0 else 'market moved against the number'}."))
+            except Exception:
+                continue
+        posted = 0
+        for sp, it in items:
+            key = f"{sp}:{it[:48]}"
+            if key in seen:
+                continue
+            seen[key] = now
+            try:
+                await rm.send("🐋 **LIVE WIRE** — " + it[:900])
+                posted += 1
+                await asyncio.sleep(1)
+            except Exception:
+                pass
+            if posted >= 5:
+                break
+        if posted or seen:
+            await asyncio.to_thread(gh_put, 'bot_state.json', st, 'whale intel')
+    except Exception as e:
+        print('whale_intel error:', e)
 
 
 @tasks.loop(seconds=3600)
@@ -5526,10 +5722,28 @@ async def teaser_watch():
             tz['weekly_fired'] = today.isoformat()
             _dirty = True
             await weekly_analytics_report(guild, state)
-        if now.tm_mday == 1 and now.tm_hour == 22 and tz.get('monthly_fired') != today.isoformat():
-            tz['monthly_fired'] = today.isoformat()
+        if now.tm_wday == 6 and now.tm_hour == 22 and tz.get('draw_fired') != today.isoformat():
+            tz['draw_fired'] = today.isoformat()
             _dirty = True
-            await monthly_deep_dive(guild, state)
+            await run_giveaway_draw(guild)  # Sunday 6 PM ET — winner-only verification
+        if now.tm_hour == 13 and tz.get('x_ad') != today.isoformat():
+            tz['x_ad'] = today.isoformat()
+            _dirty = True
+            try:
+                _best = None
+                for _t in ('whale', 'sharp', 'lock'):
+                    _r = await asyncio.to_thread(tier_ad_text, _t, 7)
+                    if _r and (_best is None or _r[1] > _best[1]):
+                        _best = (_r[0], _r[1], _t)
+                if _best:
+                    state.setdefault('x_ads', []).append(_best[0])
+                    print('[teaser] x ad queued for', _best[2])
+            except Exception as _ae:
+                print('x ad build:', _ae)
+        if now.tm_wday == 5 and now.tm_hour == 16 and tz.get('deepdive_fired') != today.isoformat():
+            tz['deepdive_fired'] = today.isoformat()
+            _dirty = True
+            await monthly_deep_dive(guild, state, days=7)  # owner decree: deep-dive is WEEKLY now
         if now.tm_hour != 12:
             if _dirty:
                 await asyncio.to_thread(gh_put, 'bot_state.json', state, 'report fired')
@@ -5541,13 +5755,13 @@ async def teaser_watch():
             if ch:
                 await ch.send(f"📊 **WEEKLY ANALYTICS — next report: Sunday {next_sun.strftime('%b %d')}, 10:00 AM ET**\nFull-board review: tier-by-tier records, units chart, best/worst reads of the week, and what changes next week. 🎯")
                 tz['weekly'] = ws
-        nm = _dt.date(today.year + (1 if today.month == 12 else 0), 1 if today.month == 12 else today.month + 1, 1)
-        ms = nm.isoformat()
-        if tz.get('monthly') != ms:
+        sat = today + _dt.timedelta(days=(5 - today.weekday()) % 7)
+        ws2 = sat.isoformat()
+        if tz.get('weekly-dd') != ws2:
             ch = find_channel(guild, 'monthly-deepdive')
             if ch:
-                await ch.send(f"🐋 **MONTHLY DEEP-DIVE — next report: {nm.strftime('%b %d')}, 6:00 PM ET**\nWhale-tier masterclass: full-month model autopsy, where the edge came from, bankroll math, and next month's attack plan.")
-                tz['monthly'] = ms
+                await ch.send(f"🐋 **WHALE WEEKLY DEEP-DIVE — next report: Saturday {sat.strftime('%b %d')}, 12:00 PM ET**\nWhale-tier masterclass: the week's full autopsy, where the edge came from, bankroll math, and next week's attack plan.")
+                tz['weekly-dd'] = ws2
         await asyncio.to_thread(gh_put, 'bot_state.json', state, 'teaser check')
     except Exception as e:
         print('teaser_watch error:', e)
@@ -6195,10 +6409,16 @@ async def scan_engine_run(g0, slot_key, dry):
                 extra = f" The paid rooms took {paid} plays — the best free-qualified edge just didn't clear our bar." if paid else ''
                 gw_ch2 = find_channel(g0, 'giveaway')
                 gw_ment2 = f"<#{gw_ch2.id}>" if gw_ch2 else 'the giveaway room'
-                await room.send(embed=discord.Embed(description=f"🎯 {tag}**FREE PICK — {slot_et}**\n\nNo free play this window — nothing met our edge bar, and we don't force bets.{extra} Next scan **{_nxt_et()}**.\n💎 [Every edge, every 4 hours — unlock the paid rooms](https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=discord_free) → {upg_ment}\n🎁 Sunday 6 PM ET — $50 SOL draw in {gw_ment2} ⚡", color=TIER_COLORS['free']))
+                if not await _room_already_posted(room, f"**FREE PICK — {slot_et}**"):
+                    await room.send(embed=discord.Embed(description=f"🎯 {tag}**FREE PICK — {slot_et}**\n\nNo free play this window — nothing met our edge bar, and we don't force bets.{extra} Next scan **{_nxt_et()}**.\n💎 [Every edge, every 4 hours — unlock the paid rooms](https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=discord_free) → {upg_ment}\n🎁 Sunday 6 PM ET — $50 SOL draw in {gw_ment2} ⚡", color=TIER_COLORS['free']))
+                else:
+                    print(f'[scan] dedupe@room: free {slot_et} empty-note already posted')
             else:
                 # NEVER SILENT LAW: paid rooms always hear something — quota shortfall is said out loud
-                await room.send(embed=discord.Embed(description=f"{emo} {tag}**{tier.upper()} ROOM — {slot_et}**\n\nThe slate ran dry even after the fill ladder — only {len(cands)} playable edges existed this window, and the bigger rooms got dealt first. Full quota next scan **{_nxt_et()}** — a short room never stands. ⚡", color=TIER_COLORS[tier]))
+                if not await _room_already_posted(room, f"**{tier.upper()} ROOM — {slot_et}**"):
+                    await room.send(embed=discord.Embed(description=f"{emo} {tag}**{tier.upper()} ROOM — {slot_et}**\n\nThe slate ran dry even after the fill ladder — only {len(cands)} playable edges existed this window, and the bigger rooms got dealt first. Full quota next scan **{_nxt_et()}** — a short room never stands. ⚡", color=TIER_COLORS[tier]))
+                else:
+                    print(f'[scan] dedupe@room: {tier} {slot_et} dry-note already posted')
             continue
         lines = []
         for n, p in enumerate(plays, 1):
@@ -6266,7 +6486,10 @@ async def scan_engine_run(g0, slot_key, dry):
             body += (f"\n\n💎 **{cnts}** — the rest of this card is live in the paid rooms right now → {upg_ment}\n"
                      f"🛒 [Unlock the full board — every pick, every 4 hours](https://thelineshift.github.io/AISportsBot/upgrade.html?utm_source=discord_free)\n"
                      f"🎁 **Sunday 6 PM ET:** $50 in SOL, two winners — free entry in {gw_ment} ⚡")
-        await room.send(embed=discord.Embed(description=body[:4090], color=TIER_COLORS.get(tier, 0x2B2D31)))
+        if await _room_already_posted(room, f"**{tier.upper()} ROOM — {slot_et} CARD**"):
+            print(f'[scan] dedupe@room: {tier} {slot_et} card already posted — skipping repost')
+        else:
+            await room.send(embed=discord.Embed(description=body[:4090], color=TIER_COLORS.get(tier, 0x2B2D31)))
         await asyncio.sleep(1)
     # ---- sanitized complete in general chat (NO-LEAK LAW) — clickable tags + upgrade funnel
     free_p = deal['free'][0] if deal['free'] else None
@@ -6316,7 +6539,10 @@ async def scan_engine_run(g0, slot_key, dry):
                     for _t in ('whale', 'sharp', 'lock'):  # whale first — tier depth law
                         _rm = find_channel(g0, SCAN_ROOMS[_t])
                         if _rm:
-                            await _rm.send(embed=discord.Embed(description=_em[:4090], color=TIER_COLORS.get(_t, 0xF5C518)))
+                            if await _room_already_posted(_rm, f"**PLAY OF THE DAY**\n\n**[{league_tag(_pod.get('sport'))}] {_pod['pick']}"):
+                                print(f'[scan] dedupe@room: POD already in {_t}')
+                            else:
+                                await _rm.send(embed=discord.Embed(description=_em[:4090], color=TIER_COLORS.get(_t, 0xF5C518)))
                             await asyncio.sleep(1)
                     if gen:
                         await gen.send(f"⚡ **PLAY OF THE DAY** just dropped in the paid rooms — SHiFT's single highest-edge play, every day at 4 PM ET.\n"
@@ -7008,6 +7234,22 @@ async def do_sol_transfer(sol, to):
         return None, str(e)
 
 @tasks.loop(minutes=1)
+async def _room_already_posted(room, signature, limit=20):
+    """DESTINATION-SIDE IDEMPOTENCY — the underlying double-post fix.
+    state-file dedupe markers can be clobbered by racing loops (last-writer-wins);
+    the room itself is the only ledger that can't lie. Skip if the signature is already up."""
+    try:
+        async for msg in room.history(limit=limit):
+            if signature in (msg.content or ''):
+                return True
+            for emb in msg.embeds:
+                if emb.description and signature in emb.description:
+                    return True
+    except Exception as e:
+        print('room dedupe check:', e)
+    return False
+
+
 async def scan_engine():
     try:
         now = time.gmtime()
