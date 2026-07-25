@@ -6,7 +6,7 @@
     "x_post_text OK: id None"
   ],
   "time_audit": {
-    "at": "2026-07-25 19:59 UTC",
+    "at": "2026-07-25 19:52 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -17,33 +17,23 @@
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-25 19:59 UTC",
+    "at": "2026-07-25 19:52 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-25 19:59 UTC",
+    "at": "2026-07-25 19:52 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-25 19:59 UTC",
+    "at": "2026-07-25 19:52 UTC",
     "flags": []
   },
-  "bot_version": "9.21.4",
-  "unannounced_results": [
-    {
-      "id": "saw-youngsters-ml-0725",
-      "desc": "SAW Youngsters ML",
-      "odds": -107,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "SAW Youngsters 1-2 ENJOY \u00b7 final",
-      "tier": "whale"
-    }
-  ],
-  "last_x_receipt_ts": 1784999383.532223,
+  "bot_version": "9.21.3",
+  "unannounced_results": [],
+  "last_x_receipt_ts": 1785009588.8024828,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
