@@ -1300,9 +1300,9 @@
       "homeTeam": "New York City FC",
       "live_odds": {
         "home_ml": 155,
-        "away_ml": 145,
+        "away_ml": 140,
         "total": 2.5,
-        "ts": 1784993596
+        "ts": 1784994067
       },
       "last_alert_odds": 145
     },
