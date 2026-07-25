@@ -32,15 +32,6 @@
   "bot_version": "9.11.1",
   "unannounced_results": [
     {
-      "id": "karmine-corp-ml-0724",
-      "desc": "Karmine Corp ML",
-      "odds": null,
-      "result": "WIN",
-      "units": 1.36,
-      "score": "Karmine Corp vs opponent \u2014 win",
-      "tier": "whale"
-    },
-    {
       "id": "fnatic-ml-0724",
       "desc": "Fnatic ML",
       "odds": null,
@@ -77,7 +68,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1784935911.8050847,
+  "last_x_receipt_ts": 1784938338.452148,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
