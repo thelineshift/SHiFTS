@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.19.1'
+BOT_VERSION = '9.19.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -2464,6 +2464,28 @@ async def run_command(cmd, guild, log):
                     await asyncio.to_thread(gh_put, 'bot_state.json', st2, 'giveaway x post id (native media)')
         except Exception as e:
             log.append(f'x_post_media_native FAIL: {e}')
+    elif a == 'x_pin':
+        try:
+            tw = str(cmd.get('tweet_id'))
+            uid2 = '1831457082828021760'
+            url = f'https://api.x.com/2/users/{uid2}/pinned_tweets'
+            ok, last_e = False, None
+            for name, ck, cs, at, ats in x_oauth1_sets(x_creds_load()):
+                try:
+                    hdr = x_oauth1_sign('PUT', url, ck, cs, at, ats)
+                    req = urllib.request.Request(url, data=json.dumps({'tweet_id': tw}).encode(), method='PUT',
+                        headers={'Authorization': hdr, 'Content-Type': 'application/json', 'User-Agent': 'TheLineShift/1.0'})
+                    with urllib.request.urlopen(req, timeout=25) as r:
+                        resp = json.load(r)
+                    ok = True
+                    log.append(f'x_pin OK: {tw} pinned via {name} -> {resp}')
+                    break
+                except Exception as e:
+                    last_e = f'{name}: {e}'
+            if not ok:
+                log.append(f'x_pin FAIL: {last_e}')
+        except Exception as e:
+            log.append(f'x_pin FAIL: {e}')
     elif a == 'x_post_media':
         try:
             remote = await asyncio.to_thread(gh_get, cmd.get('path', 'assets/giveaway_card.png'), cmd.get('ref', 'main'))
