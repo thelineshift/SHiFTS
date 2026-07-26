@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T04:50:31Z",
+  "updated": "2026-07-26T08:01:20Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2496,6 +2496,91 @@
           "time_et": "02:10 PM ET"
         }
       ]
+    },
+    {
+      "id": "butterfly-ml-0726",
+      "date": "2026-07-26",
+      "sport": "cs2",
+      "desc": "Butterfly ML",
+      "market": "CCT Europe Bo3",
+      "odds": -300,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "SAW Youngsters",
+      "team": "Butterfly",
+      "opp": "SAW Youngsters",
+      "analysis": "2-1 last 5 (beat Just Players, Benched gods) (lost to G2 Ares) vs 2-3 \u2014 model line -300 (our 75%) | \ud83d\udd25 **Momentum play:** 2-1 last 5 (beat Just Players, Benched gods) (lost to G2 Ares) vs 2-3 \u2014 model line -300 (our 75%). Ride the **27-point** form edge before the market catches up.",
+      "awayTeam": "Butterfly",
+      "homeTeam": "SAW Youngsters"
+    },
+    {
+      "id": "misa-esports-ml-0726",
+      "date": "2026-07-26",
+      "sport": "cs2",
+      "desc": "Misa Esports ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Mai Tai",
+      "team": "Misa Esports",
+      "opp": "Mai Tai",
+      "analysis": "4-1 last 5 (beat Privateer Gaming, ROUNDS, Entropy) (lost to Honv\u00e9d) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Privateer Gaming, ROUNDS, Entropy) (lost to Honv\u00e9d) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this",
+      "awayTeam": "Misa Esports",
+      "homeTeam": "Mai Tai"
+    },
+    {
+      "id": "bilibili-gaming-ml-0726",
+      "date": "2026-07-26",
+      "sport": "lol",
+      "desc": "Bilibili Gaming ML",
+      "market": "LPL Bo3",
+      "odds": -164,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Anyone's Legend",
+      "team": "Bilibili Gaming",
+      "opp": "Anyone's Legend",
+      "analysis": "4-1 last 5 (beat EDward Gaming, ThunderTalk Gaming, T1) (lost to Dplus KIA) vs 3-2 \u2014 live Pinnacle line -164 (our 73% vs book 59%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat EDward Gaming, ThunderTalk Gaming, T1) (lost to Dplus KIA) vs 3-2 \u2014 live Pinnacle line -164 (our 73% vs book 59%). That's a **13-point",
+      "awayTeam": "Bilibili Gaming",
+      "homeTeam": "Anyone's Legend"
+    },
+    {
+      "id": "under-10.5-0726",
+      "date": "2026-07-26",
+      "sport": "mlb",
+      "desc": "Under 10.5",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "01:35 PM ET",
+      "vs": "Arizona Diamondbacks @ Washington Nationals",
+      "team": "Washington Nationals",
+      "opp": "Arizona Diamondbacks",
+      "analysis": "posted 10.5 vs 8.5 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side | \u2694\ufe0f **Matchup read:** posted 10.5 vs 8.5 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side. Under 10.5 in the better spot and pr",
+      "awayTeam": "Washington Nationals",
+      "homeTeam": "Arizona Diamondbacks"
+    },
+    {
+      "id": "over-7.0-0726",
+      "date": "2026-07-26",
+      "sport": "mlb",
+      "desc": "Over 7.0",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "12:15 PM ET",
+      "vs": "Cleveland Guardians @ Tampa Bay Rays",
+      "team": "Tampa Bay Rays",
+      "opp": "Cleveland Guardians",
+      "analysis": "posted 7.0 vs 8.5 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \ud83d\udcb0 **Value hunt:** posted 7.0 vs 8.5 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. The book shaded this line toward the public s",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians"
     }
   ]
 }
