@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.23.2'
+BOT_VERSION = '9.23.3'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -1220,20 +1220,18 @@ async def _gw_live_checks(handle, state):
         followed = await asyncio.to_thread(gw_followed, uid, bt)
         posts = _gw_post_ids(state)
         if posts:
-            lsets, rsets = [], []
+            # QUOTA LAW (7/26): free-tier X reads are starved — spend calls only on what GATES entry.
+            # Repost is advisory under REPOST-INFERENCE (taken their word), so retweeted_by
+            # is never fetched anymore. Halves the burn per entry.
+            lsets = []
             for pid in posts:
                 try:
                     lsets.append(await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{pid}/liking_users?max_results=100', bt))
                 except Exception:
                     lsets.append(None)
-                try:
-                    rsets.append(await asyncio.to_thread(gw_user_set, f'https://api.x.com/2/tweets/{pid}/retweeted_by?max_results=100', bt))
-                except Exception:
-                    rsets.append(None)
             okl = [s for s in lsets if s is not None]
             liked = any(uid in s for s in okl) if okl else None
-            okr = [s for s in rsets if s is not None]
-            reposted = any(uid in s for s in okr) if okr else None
+            reposted = None  # advisory only — see REPOST-INFERENCE LAW
     except Exception:
         pass
     return followed, liked, reposted
