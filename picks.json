@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T12:19:25Z",
+  "updated": "2026-07-26T12:59:16Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2155,10 +2155,10 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -184,
-        "away_ml": 151,
+        "home_ml": -179,
+        "away_ml": 148,
         "total": 8.0,
-        "ts": 1785070753
+        "ts": 1785068962
       },
       "last_alert_odds": 148
     },
@@ -2278,8 +2278,8 @@
       "live_odds": {
         "home_ml": 142,
         "away_ml": -172,
-        "total": 9.0,
-        "ts": 1785070753
+        "total": 9.5,
+        "ts": 1785069786
       },
       "last_alert_odds": -163
     },
@@ -2323,10 +2323,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -110,
-        "away_ml": -110,
+        "home_ml": -111,
+        "away_ml": -108,
         "total": 8.5,
-        "ts": 1785070753
+        "ts": 1785051026
       }
     },
     {
@@ -2536,7 +2536,10 @@
       "opp": "Mai Tai",
       "analysis": "4-1 last 5 (beat Privateer Gaming, ROUNDS, Entropy) (lost to Honv\u00e9d) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Privateer Gaming, ROUNDS, Entropy) (lost to Honv\u00e9d) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this",
       "awayTeam": "Misa Esports",
-      "homeTeam": "Mai Tai"
+      "homeTeam": "Mai Tai",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Misa Esports 0-2 Mai Tai \u00b7 final"
     },
     {
       "id": "bilibili-gaming-ml-0726",
