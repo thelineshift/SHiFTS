@@ -1,0 +1,69 @@
+{
+  "updated": "2026-07-26T15:39:57Z",
+  "funnel_30d": {
+    "started": 14,
+    "completed": 0,
+    "abandoned": 14,
+    "conversion_pct": 0.0
+  },
+  "abandoned_recent": [
+    {
+      "status": "expired",
+      "tier": "whale",
+      "created": "2026-07-23 14:51"
+    },
+    {
+      "status": "expired",
+      "tier": "lock",
+      "created": "2026-07-23 14:51"
+    },
+    {
+      "status": "expired",
+      "tier": "sharp",
+      "created": "2026-07-23 14:51"
+    },
+    {
+      "status": "expired",
+      "tier": "whale",
+      "created": "2026-07-23 18:21"
+    },
+    {
+      "status": "expired",
+      "tier": "whale",
+      "created": "2026-07-23 18:21"
+    },
+    {
+      "status": "expired",
+      "tier": "whale",
+      "created": "2026-07-23 18:21"
+    },
+    {
+      "status": "expired",
+      "tier": "whale",
+      "created": "2026-07-23 18:21"
+    },
+    {
+      "status": "expired",
+      "tier": "whale",
+      "created": "2026-07-23 18:34"
+    },
+    {
+      "status": "open",
+      "tier": "lock",
+      "created": "2026-07-25 22:00"
+    },
+    {
+      "status": "open",
+      "tier": "lock",
+      "created": "2026-07-25 22:01"
+    }
+  ],
+  "subs": {
+    "active_or_trialing": 0,
+    "by_tier": {},
+    "trialing": 0,
+    "past_due": 0,
+    "canceled_30d": 0,
+    "mrr_usd": 0.0
+  }
+}
