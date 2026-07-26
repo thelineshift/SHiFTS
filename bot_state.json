@@ -10043,8 +10043,11 @@
       "qty": 9,
       "market_slug": "aec-lol-dig-sen-2026-07-25",
       "outcome": "Sentinels",
-      "status": "resting",
-      "ts": "2026-07-25T22:35:57Z"
+      "status": "unfilled",
+      "ts": "2026-07-25T22:35:57Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.87,
