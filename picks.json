@@ -1482,12 +1482,18 @@
       "awayTeam": "Vancouver Whitecaps",
       "homeTeam": "Minnesota United FC",
       "live_odds": {
-        "home_ml": 225,
+        "home_ml": 215,
         "away_ml": 100,
         "total": 2.5,
-        "ts": 1784992348
+        "ts": 1785027626
       },
-      "last_alert_odds": 100
+      "last_alert_odds": 100,
+      "closing_odds": {
+        "home_ml": 215,
+        "away_ml": 100,
+        "total": 2.5,
+        "ts": 1785027626
+      }
     },
     {
       "id": "chicago-cubs-ml-0725",
