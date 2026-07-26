@@ -11872,8 +11872,11 @@
       "qty": 5,
       "market_slug": "aec-lol-al-blg-2026-07-26",
       "outcome": "Bilibili Gaming",
-      "status": "resting",
-      "ts": "2026-07-25T23:46:49Z"
+      "status": "unfilled",
+      "ts": "2026-07-25T23:46:49Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.92,
@@ -11888,8 +11891,11 @@
       "qty": 3,
       "market_slug": "aec-lol-cr-kcbs-2026-07-26",
       "outcome": "Karmine Corp Blue Stars",
-      "status": "resting",
-      "ts": "2026-07-25T23:46:51Z"
+      "status": "unfilled",
+      "ts": "2026-07-25T23:46:51Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.59,
@@ -11984,8 +11990,11 @@
       "qty": 13,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "resting",
-      "ts": "2026-07-25T23:50:58Z"
+      "status": "unfilled",
+      "ts": "2026-07-25T23:50:58Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.53,
