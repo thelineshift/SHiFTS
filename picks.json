@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T20:44:19Z",
+  "updated": "2026-07-26T21:04:20Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -338,12 +338,11 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -217,
-        "away_ml": 177,
+        "home_ml": -198,
+        "away_ml": 163,
         "total": 8.0,
-        "ts": 1785099855
-      },
-      "last_alert_odds": 177
+        "ts": 1785098055
+      }
     },
     {
       "id": "san-francisco-giants-ml-0726",
@@ -410,7 +409,10 @@
         "away_ml": -149,
         "total": 8.5,
         "ts": 1785087255
-      }
+      },
+      "result": "LOSS",
+      "score": "Los Angeles Dodgers 3, New York Mets 8",
+      "units_result": -1.5
     },
     {
       "id": "chicago-white-sox-ml-0726",
@@ -433,7 +435,10 @@
         "away_ml": 102,
         "total": 9.0,
         "ts": 1785089055
-      }
+      },
+      "result": "WIN",
+      "score": "Houston Astros 3, Chicago White Sox 12",
+      "units_result": 0.88
     },
     {
       "id": "cybershoke-esports-ml-0726",
@@ -583,7 +588,10 @@
         "total": 9.0,
         "ts": 1785085455
       },
-      "last_alert_odds": -192
+      "last_alert_odds": -192,
+      "result": "LOSS",
+      "score": "Kansas City Royals 5, Detroit Tigers 4",
+      "units_result": -1.0
     },
     {
       "id": "mibr-ml-0726",
