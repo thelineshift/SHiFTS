@@ -6,29 +6,32 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 21:34 UTC",
+    "at": "2026-07-26 23:04 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-26 20:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 21:04 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-26 20:07 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 22:44 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-26 23:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 20:51 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 23:04 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 21:34 UTC",
+    "at": "2026-07-26 23:04 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
-      "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp"
+      "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
+      "over-7.0-0726 | Over 7.0 -110 | tier=sharp"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 21:34 UTC",
-    "flags": []
+    "at": "2026-07-26 23:04 UTC",
+    "flags": [
+      "no challenge bet registered for 2026-07-26 (due 6 PM ET)"
+    ]
   },
   "giveaway_watch": {
-    "at": "2026-07-26 21:34 UTC",
+    "at": "2026-07-26 23:04 UTC",
     "flags": []
   },
   "bot_version": "9.24.4",
@@ -13308,8 +13311,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:49:46Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:49:46Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.18,
@@ -13385,8 +13391,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:59:45Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:59:45Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -13509,8 +13518,11 @@
       "qty": 5,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T20:29:47Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T20:29:47Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.2,
@@ -13633,8 +13645,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T20:39:49Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T20:39:49Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.21,
@@ -13730,8 +13745,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T20:50:03Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T20:50:03Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.21,
@@ -13843,8 +13861,11 @@
       "qty": 2,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T20:59:57Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T20:59:57Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.21,
