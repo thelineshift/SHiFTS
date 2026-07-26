@@ -338,11 +338,12 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -198,
-        "away_ml": 163,
+        "home_ml": -217,
+        "away_ml": 177,
         "total": 8.0,
-        "ts": 1785098055
-      }
+        "ts": 1785101655
+      },
+      "last_alert_odds": 177
     },
     {
       "id": "san-francisco-giants-ml-0726",
