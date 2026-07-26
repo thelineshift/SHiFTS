@@ -12872,11 +12872,11 @@
     "pnl": 9.7,
     "trades": 142,
     "last_recap": "2026-07-26",
-    "last_recap_hour": "2026-07-26-16",
+    "last_recap_hour": "2026-07-26-18",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 116.98,
-    "net": 52.98,
+    "account": 102.98,
+    "net": 38.98,
     "last_archive": "2026-07-26",
     "kind_totals": {
       "ARB": [
@@ -13201,6 +13201,6 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785084293.1451602,
+  "dep_checked_ts": 1785089092.8276234,
   "x_bio_v": 2
 }
