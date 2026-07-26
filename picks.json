@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T20:24:20Z",
+  "updated": "2026-07-26T20:44:19Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -555,7 +555,10 @@
         "away_ml": -101,
         "total": 8.5,
         "ts": 1785087255
-      }
+      },
+      "result": "LOSS",
+      "score": "San Diego Padres 5, Miami Marlins 3",
+      "units_result": -1.0
     },
     {
       "id": "detroit-tigers--1.5-0726",
