@@ -13467,6 +13467,37 @@
       "outcome": "Butterfly",
       "status": "open",
       "ts": "2026-07-26T12:43:39Z"
+    },
+    {
+      "price": 0.69,
+      "short": true,
+      "stake": 7.59,
+      "kind": "EDGE",
+      "p_model": 1.0,
+      "event": "Gen.G Global Academy vs. BNK FearX Youth",
+      "ev_start": "2026-07-27T10:00:00Z",
+      "reason": "model 100% vs market 69% \u2014 31% edge, half-Kelly",
+      "order_id": "BFV54R7209S2",
+      "qty": 11,
+      "market_slug": "aec-lol-genga-foxy-2026-07-27",
+      "outcome": "BNK FearX Youth",
+      "status": "open",
+      "ts": "2026-07-26T12:48:36Z"
+    },
+    {
+      "price": 0.42,
+      "stake": 3.78,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727274,
+      "event": "ODDIK vs. largadosypelados",
+      "ev_start": "2026-07-26T15:00:00Z",
+      "reason": "model 73% vs market 42% \u2014 31% edge, half-Kelly",
+      "order_id": "BFV3RGART9ND",
+      "qty": 9,
+      "market_slug": "astatc-cs2-odk-ldp-2026-07-26-map1",
+      "outcome": "ODDIK",
+      "status": "open",
+      "ts": "2026-07-26T12:48:37Z"
     }
   ],
   "pm_stats": {
@@ -13474,7 +13505,7 @@
     "wins": 3,
     "losses": 16,
     "pnl": -5.17,
-    "trades": 88,
+    "trades": 90,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12"
   },
