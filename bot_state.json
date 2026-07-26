@@ -7438,7 +7438,7 @@
         }
       },
       "valorant:138953": {
-        "ts": 1785084532.1078677,
+        "ts": 1785092080.4666758,
         "f": {
           "w": 1,
           "l": 1,
@@ -7455,7 +7455,7 @@
         }
       },
       "valorant:138571": {
-        "ts": 1785084532.561705,
+        "ts": 1785092080.9137046,
         "f": {
           "w": 2,
           "l": 3,
@@ -11700,10 +11700,6 @@
         {
           "ts": 1785089660,
           "px": 0.37
-        },
-        {
-          "ts": 1785092058,
-          "px": 0.34
         }
       ]
     },
@@ -13143,6 +13139,22 @@
       "outcome": "Bar\u00e7a eSports GC",
       "status": "resting",
       "ts": "2026-07-26T18:50:25Z"
+    },
+    {
+      "price": 0.61,
+      "short": true,
+      "stake": 0.61,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727273,
+      "event": "Noir Verse vs. PURE",
+      "ev_start": "2026-07-27T13:00:00Z",
+      "reason": "model 73% vs market 61% \u2014 12% edge, half-Kelly",
+      "order_id": "BG0Y7BSWW9NR",
+      "qty": 1,
+      "market_slug": "aec-cs2-nvo-pure-2026-07-27",
+      "outcome": "PURE",
+      "status": "open",
+      "ts": "2026-07-26T18:54:47Z"
     }
   ],
   "pm_stats": {
@@ -13150,7 +13162,7 @@
     "wins": 11,
     "losses": 21,
     "pnl": 9.33,
-    "trades": 143,
+    "trades": 144,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-18",
     "deposits": 64.0,
