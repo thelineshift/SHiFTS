@@ -5641,7 +5641,7 @@
         }
       },
       "dota2:138858": {
-        "ts": 1785092987.9606295,
+        "ts": 1785102587.8241282,
         "f": {
           "w": 3,
           "l": 2,
@@ -5728,7 +5728,7 @@
         }
       },
       "dota2:135854": {
-        "ts": 1785092988.5375516,
+        "ts": 1785102588.4064434,
         "f": {
           "w": 3,
           "l": 2,
@@ -7271,7 +7271,7 @@
         }
       },
       "valorant:136798": {
-        "ts": 1785092980.95848,
+        "ts": 1785102580.878777,
         "f": {
           "w": 1,
           "l": 4,
@@ -7300,7 +7300,7 @@
         }
       },
       "valorant:138956": {
-        "ts": 1785092981.5498793,
+        "ts": 1785102581.4641078,
         "f": {
           "w": 0,
           "l": 2,
@@ -13832,6 +13832,22 @@
       "outcome": "Habos Babos",
       "status": "resting",
       "ts": "2026-07-26T21:04:51Z"
+    },
+    {
+      "price": 0.56,
+      "short": true,
+      "stake": 1.68,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 56% \u2014 11% edge, half-Kelly",
+      "order_id": "BG38DPBFJ9NG",
+      "qty": 3,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-26T21:49:50Z"
     }
   ],
   "pm_stats": {
@@ -13839,7 +13855,7 @@
     "wins": 13,
     "losses": 24,
     "pnl": 18.81,
-    "trades": 168,
+    "trades": 169,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-20",
     "deposits": 64.0,
