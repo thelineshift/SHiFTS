@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.3'
+BOT_VERSION = '9.24.4'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -1003,6 +1003,23 @@ FEED_FILES = {'pins.json', 'picks.json', 'guarantee.json', 'stripe.json', 'desk.
 # ~60 restarts/day and pushed Discord into a Cloudflare 1015 connect ban. All bot feed I/O now
 # lives on the commands branch; main carries code + site pages only. Consumers read raw either way.
 
+def _merge_trade_lists(base_l, obj_l):
+    """CLOBBER-SHIELD LAW (2026-07-26): a writer holding a minutes-stale state must NEVER resurrect
+    a trade another loop already advanced — the settle loop's results kept getting clobbered back to
+    'open' by the trader's stale copy (Sparta/ODDIK incident). Merge per order_id: highest status rank
+    wins (settled > unfilled > resting > open — status is monotonic, a trade never un-settles);
+    ties go to the writer's fresher fields."""
+    rank = {'settled': 3, 'unfilled': 2, 'resting': 1, 'open': 0}
+    def _key(t):
+        return t.get('order_id') or f"{t.get('market_slug')}|{t.get('ts')}|{t.get('stake')}"
+    by_id = {_key(t): t for t in (base_l or [])}
+    for t in (obj_l or []):
+        k = _key(t)
+        cur = by_id.get(k)
+        if cur is None or rank.get(t.get('status'), 0) >= rank.get(cur.get('status'), 0):
+            by_id[k] = t
+    return list(by_id.values())
+
 def gh_put(path, obj, message, ref=QUEUE_BRANCH, _tries=3):
     """State writer with 409-retry: concurrent loops race on the same file; a sha mismatch
     just means someone else saved first — re-read, re-merge, retry instead of dying."""
@@ -1022,6 +1039,11 @@ def gh_put(path, obj, message, ref=QUEUE_BRANCH, _tries=3):
                             m = {**base[dk], **obj[dk]}
                             base[dk] = m
                             obj = {**obj, dk: m}
+                    for lk in ('pm_trades', 'pm2_trades', 'pm_live'):
+                        if isinstance(base.get(lk), list) and isinstance(obj.get(lk), list):
+                            m = _merge_trade_lists(base[lk], obj[lk])  # CLOBBER-SHIELD LAW
+                            base[lk] = m
+                            obj = {**obj, lk: m}
                     base.update(obj)
                     obj = base
                 except Exception:
@@ -1036,7 +1058,10 @@ def gh_put(path, obj, message, ref=QUEUE_BRANCH, _tries=3):
                                      method='PUT', headers={**gh_headers(), 'Content-Type': 'application/json'})
         try:
             with urllib.request.urlopen(req, timeout=15) as r:
-                return json.load(r)
+                _resp = json.load(r)
+                if path == 'bot_state.json':
+                    _STATE_CACHE.update(data=obj, ts=time.time())  # write-through (USAGE LAW)
+                return _resp
         except urllib.error.HTTPError as e:
             last = e
             if e.code == 409 and attempt < _tries - 1:
@@ -1054,12 +1079,24 @@ def fetch_commands():
     except Exception:
         return None
 
-def get_state():
+_STATE_CACHE = {'data': None, 'ts': 0.0}
+STATE_CACHE_TTL = 30  # USAGE LAW: one in-memory state copy shared by all loops; writes update it
+# instantly (write-through). Cuts thousands of identical 214KB GitHub reads/day; loops still read
+# fresh-enough state, and the CLOBBER-SHIELD in gh_put guards every write regardless.
+
+def get_state(force=False):
+    """Shared-cache read (USAGE LAW): fresh fetch at most every STATE_CACHE_TTL s; on a GitHub blip
+    serve the last copy instead of None — loops keep working, no retry storms."""
+    now = time.time()
+    if not force and _STATE_CACHE['data'] is not None and now - _STATE_CACHE['ts'] < STATE_CACHE_TTL:
+        return _STATE_CACHE['data']
     try:
         d = gh_get('bot_state.json', ref=QUEUE_BRANCH)
-        return json.loads(base64.b64decode(d['content']))
+        st = json.loads(base64.b64decode(d['content']))
+        _STATE_CACHE.update(data=st, ts=now)
+        return st
     except Exception:
-        return None
+        return _STATE_CACHE['data']
 
 def gh_get_json(path):
     try:
@@ -3960,7 +3997,7 @@ async def _stripe_sync_once():
     except Exception as e:
         print('stripe_sync error:', e)
 
-@tasks.loop(seconds=60)
+@tasks.loop(seconds=120)  # USAGE LAW: halves Stripe+GitHub calls; member sync still ≤2 min
 async def stripe_sync():
     await _stripe_sync_once()
 
