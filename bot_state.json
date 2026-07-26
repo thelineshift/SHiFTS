@@ -14359,6 +14359,22 @@
           "px": 0.71
         }
       ]
+    },
+    {
+      "price": 0.9,
+      "short": true,
+      "stake": 2.7,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Team Envy vs. Leviatan Esports",
+      "ev_start": "2026-07-26T21:00:00Z",
+      "reason": "tail-end yield \u2014 11.1% on a near-certain that settles today",
+      "order_id": "BFX3C9HXT9NV",
+      "qty": 3,
+      "market_slug": "aec-valorant-nv-lev-2026-07-26",
+      "outcome": "Leviat\u00e1n Esports",
+      "status": "open",
+      "ts": "2026-07-26T14:55:08Z"
     }
   ],
   "pm_stats": {
@@ -14366,7 +14382,7 @@
     "wins": 8,
     "losses": 15,
     "pnl": 10.54,
-    "trades": 114,
+    "trades": 115,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-14",
     "deposits": 64.0,
