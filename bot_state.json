@@ -40,6 +40,15 @@
   "bot_version": "9.23.1",
   "unannounced_results": [
     {
+      "id": "chicago-cubs-ml-0725",
+      "desc": "Chicago Cubs ML",
+      "odds": 113,
+      "result": "WIN",
+      "units": 1.13,
+      "score": "Chicago Cubs 11, Pittsburgh Pirates 0",
+      "tier": "sharp"
+    },
+    {
       "id": "atlanta-braves-ml-0725",
       "desc": "Atlanta Braves ML",
       "odds": -108,
@@ -148,7 +157,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785069787.706516,
+  "last_x_receipt_ts": 1785067163.9700751,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -13410,6 +13419,54 @@
       "outcome": "Atreides",
       "status": "open",
       "ts": "2026-07-26T12:39:35Z"
+    },
+    {
+      "price": 0.76,
+      "short": true,
+      "stake": 7.6,
+      "kind": "EDGE",
+      "p_model": 1.0,
+      "event": "FURIA Esports vs. MIBR",
+      "ev_start": "2026-07-27T00:00:00Z",
+      "reason": "model 100% vs market 76% \u2014 24% edge, half-Kelly",
+      "order_id": "BFV0TWB2E9NK",
+      "qty": 10,
+      "market_slug": "aec-valorant-fur-mibr-2026-07-27",
+      "outcome": "MIBR",
+      "status": "open",
+      "ts": "2026-07-26T12:43:36Z"
+    },
+    {
+      "price": 0.57,
+      "short": true,
+      "stake": 1.71,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 57% \u2014 10% edge, half-Kelly",
+      "order_id": "BFV0SBZEM9QM",
+      "qty": 3,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-26T12:43:37Z"
+    },
+    {
+      "price": 0.53,
+      "short": true,
+      "stake": 3.18,
+      "kind": "EDGE",
+      "p_model": 0.75,
+      "event": "Lavked vs. Butterfly",
+      "ev_start": "2026-07-26T17:00:00Z",
+      "reason": "model 75% vs market 53% \u2014 22% edge, half-Kelly",
+      "order_id": "BFTZTMGQE9QE",
+      "qty": 6,
+      "market_slug": "aec-cs2-lav-btf-2026-07-26",
+      "outcome": "Butterfly",
+      "status": "open",
+      "ts": "2026-07-26T12:43:39Z"
     }
   ],
   "pm_stats": {
@@ -13417,7 +13474,7 @@
     "wins": 3,
     "losses": 16,
     "pnl": -5.17,
-    "trades": 85,
+    "trades": 88,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12"
   },
