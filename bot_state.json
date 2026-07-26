@@ -8652,7 +8652,7 @@
         }
       },
       "valorant:138953": {
-        "ts": 1785075343.195286,
+        "ts": 1785084532.1078677,
         "f": {
           "w": 1,
           "l": 1,
@@ -8669,7 +8669,7 @@
         }
       },
       "valorant:138571": {
-        "ts": 1785075343.6450334,
+        "ts": 1785084532.561705,
         "f": {
           "w": 2,
           "l": 3,
@@ -14098,6 +14098,38 @@
       "outcome": "UNiTY esports",
       "status": "open",
       "ts": "2026-07-26T16:44:48Z"
+    },
+    {
+      "price": 0.39,
+      "short": true,
+      "stake": 6.63,
+      "kind": "EDGE",
+      "p_model": 0.6923076923076923,
+      "event": "UNiTY esports vs. Mai Tai",
+      "ev_start": "2026-07-27T11:00:00Z",
+      "reason": "model 69% vs market 39% \u2014 30% edge, half-Kelly",
+      "order_id": "BFYSE7MG49NP",
+      "qty": 17,
+      "market_slug": "aec-cs2-unity-mta-2026-07-27",
+      "outcome": "Mai Tai",
+      "status": "open",
+      "ts": "2026-07-26T16:48:58Z"
+    },
+    {
+      "price": 0.63,
+      "short": true,
+      "stake": 1.89,
+      "kind": "EDGE",
+      "p_model": 0.6923076923076923,
+      "event": "Arctic Pandas vs. Bulldog Esports",
+      "ev_start": "2026-07-27T18:00:00Z",
+      "reason": "model 69% vs market 63% \u2014 6% edge, half-Kelly",
+      "order_id": "BFYTNK51J9QR",
+      "qty": 3,
+      "market_slug": "aec-lol-ap-bld-2026-07-27",
+      "outcome": "Bulldog Esports",
+      "status": "open",
+      "ts": "2026-07-26T16:49:00Z"
     }
   ],
   "pm_stats": {
@@ -14105,7 +14137,7 @@
     "wins": 8,
     "losses": 15,
     "pnl": 10.54,
-    "trades": 119,
+    "trades": 121,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-16",
     "deposits": 64.0,
