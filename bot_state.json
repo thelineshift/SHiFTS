@@ -4422,11 +4422,23 @@
         }
       },
       "cs2:138650": {
-        "ts": 1784978069.70366,
+        "ts": 1785071277.7697613,
         "f": {
-          "w": 3,
-          "l": 2,
+          "w": 2,
+          "l": 3,
           "res": [
+            {
+              "won": false,
+              "opp": "ex-MANA eSports"
+            },
+            {
+              "won": false,
+              "opp": "los kogutos"
+            },
+            {
+              "won": true,
+              "opp": "Benched gods"
+            },
             {
               "won": false,
               "opp": "Entropy"
@@ -4434,18 +4446,6 @@
             {
               "won": true,
               "opp": "ENRAGE"
-            },
-            {
-              "won": true,
-              "opp": "Benched gods"
-            },
-            {
-              "won": true,
-              "opp": "bankaPEPSI"
-            },
-            {
-              "won": false,
-              "opp": "Just Players"
             }
           ]
         }
@@ -8096,7 +8096,7 @@
         }
       },
       "valorant:138961": {
-        "ts": 1785052860.448272,
+        "ts": 1785071278.8766983,
         "f": {
           "w": 2,
           "l": 0,
@@ -8113,7 +8113,7 @@
         }
       },
       "valorant:133737": {
-        "ts": 1785052860.907548,
+        "ts": 1785071279.3211715,
         "f": {
           "w": 3,
           "l": 2,
@@ -9411,6 +9411,35 @@
             {
               "won": false,
               "opp": "Inner Circle Esports"
+            }
+          ]
+        }
+      },
+      "cs2:130570": {
+        "ts": 1785071277.1639023,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "SAW Youngsters"
+            },
+            {
+              "won": false,
+              "opp": "Glitchtech Esports"
+            },
+            {
+              "won": true,
+              "opp": "ENJOY"
+            },
+            {
+              "won": false,
+              "opp": "PsychoFace"
+            },
+            {
+              "won": true,
+              "opp": "Just Players"
             }
           ]
         }
@@ -13578,6 +13607,54 @@
           "px": 0.71
         }
       ]
+    },
+    {
+      "price": 0.9,
+      "short": true,
+      "stake": 2.7,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Team Envy vs. Leviatan Esports",
+      "ev_start": "2026-07-26T21:00:00Z",
+      "reason": "tail-end yield \u2014 11.1% on a near-certain that settles today",
+      "order_id": "BFVCFWFYA9NM",
+      "qty": 3,
+      "market_slug": "aec-valorant-nv-lev-2026-07-26",
+      "outcome": "Leviat\u00e1n Esports",
+      "status": "open",
+      "ts": "2026-07-26T13:08:05Z"
+    },
+    {
+      "price": 0.57,
+      "short": true,
+      "stake": 1.14,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 57% \u2014 10% edge, half-Kelly",
+      "order_id": "BFVE1JF189NK",
+      "qty": 2,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-26T13:08:06Z"
+    },
+    {
+      "price": 0.56,
+      "short": true,
+      "stake": 1.12,
+      "kind": "LIVE-BET",
+      "p_model": 0.6923076923076923,
+      "event": "3DMAX vs. FUT Esports",
+      "ev_start": "2026-07-26T12:30:00Z",
+      "reason": "live number drifted \u2014 model 69% vs 56%, 13% gap mid-game",
+      "order_id": "BFVE1B73E9P4",
+      "qty": 2,
+      "market_slug": "aec-cs2-3dmax-fut-2026-07-26",
+      "outcome": "FUT Esports",
+      "status": "open",
+      "ts": "2026-07-26T13:08:07Z"
     }
   ],
   "pm_stats": {
@@ -13585,7 +13662,7 @@
     "wins": 3,
     "losses": 16,
     "pnl": -5.17,
-    "trades": 93,
+    "trades": 96,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12"
   },
