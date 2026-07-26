@@ -10,18 +10,18 @@
     "#\ud83d\udc0bwhale-room-12-7 [16:34] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**"
   ],
   "time_audit": {
-    "at": "2026-07-26 11:17 UTC",
+    "at": "2026-07-26 10:30 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-3": "2026-07-26 08:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 11:10 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-26 11:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 09:30 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-26 08:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 10:53 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 06:17 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 11:17 UTC",
+    "at": "2026-07-26 10:30 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -32,14 +32,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 11:17 UTC",
+    "at": "2026-07-26 10:30 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 11:17 UTC",
+    "at": "2026-07-26 10:30 UTC",
     "flags": []
   },
-  "bot_version": "9.23.0",
+  "bot_version": "9.22.1",
   "unannounced_results": [
     {
       "id": "chicago-fire-fc-ml-0725",
@@ -9864,7 +9864,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-fpx-wol-2026-07-26",
       "outcome": "Wolves Esports",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T18:06:40Z",
       "price_path": [
         {
@@ -9963,7 +9963,13 @@
           "ts": 1785063031,
           "px": 0.15
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 1.32,
+      "pnl": 0.0,
+      "cashout": true,
+      "settled_at": "2026-07-26T11:17:04Z",
+      "autopsy": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.15 before the result \u2014 beat the number by 29\u00a2 \u2705 (cashed out early at $1.32)"
     },
     {
       "price": 0.63,
@@ -12421,7 +12427,7 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 14,
+    "losses": 15,
     "pnl": -2.69,
     "trades": 70,
     "last_recap": "2026-07-25",
@@ -12564,6 +12570,14 @@
       "result": "LOSS",
       "pnl": -2.95,
       "lesson": "model 86% vs market 59% missed \u2014 logged for the playbook review. Taken 0.59, rode to 0.61 before the result \u2014 beat the number by 2\u00a2 \u2705 (cashed out early at $5.90)"
+    },
+    {
+      "ts": "2026-07-26T11:17:04Z",
+      "kind": "EDGE",
+      "outcome": "Wolves Esports",
+      "result": "LOSS",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.15 before the result \u2014 beat the number by 29\u00a2 \u2705 (cashed out early at $1.32)"
     }
   ],
   "giveaway_x_posts": [
