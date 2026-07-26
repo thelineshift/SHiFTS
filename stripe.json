@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T21:52:16Z",
+  "updated": "2026-07-26T22:24:16Z",
   "funnel_30d": {
     "started": 14,
     "completed": 0,
@@ -48,12 +48,12 @@
       "created": "2026-07-23 18:34"
     },
     {
-      "status": "open",
+      "status": "expired",
       "tier": "lock",
       "created": "2026-07-25 22:00"
     },
     {
-      "status": "open",
+      "status": "expired",
       "tier": "lock",
       "created": "2026-07-25 22:01"
     }
