@@ -13155,6 +13155,21 @@
       "outcome": "PURE",
       "status": "open",
       "ts": "2026-07-26T18:54:47Z"
+    },
+    {
+      "price": 0.04,
+      "stake": 1.04,
+      "kind": "EDGE",
+      "p_model": 0.33333333333333337,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 33% vs market 4% \u2014 29% edge, half-Kelly",
+      "order_id": "BG10Q3A9W9NF",
+      "qty": 26,
+      "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
+      "outcome": "Bar\u00e7a eSports GC",
+      "status": "open",
+      "ts": "2026-07-26T18:59:46Z"
     }
   ],
   "pm_stats": {
@@ -13162,7 +13177,7 @@
     "wins": 11,
     "losses": 21,
     "pnl": 9.33,
-    "trades": 144,
+    "trades": 145,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-18",
     "deposits": 64.0,
