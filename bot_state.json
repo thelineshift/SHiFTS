@@ -6,29 +6,36 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 16:43 UTC",
+    "at": "2026-07-26 15:30 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-3": "2026-07-26 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 15:39 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-26 16:43 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 14:49 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-26 15:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-26 15:05 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 16:43 UTC",
-    "flags": []
+    "at": "2026-07-26 15:30 UTC",
+    "flags": [
+      "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
+      "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
+      "under-8.5-0725 | Under 8.5 -110 | tier=whale",
+      "under-9.0-0725 | Under 9.0 -110 | tier=sharp",
+      "under-8.0-0725 | Under 8.0 -110 | tier=whale",
+      "under-9.5-0725 | Under 9.5 -110 | tier=sharp"
+    ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 16:43 UTC",
+    "at": "2026-07-26 15:30 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 16:43 UTC",
+    "at": "2026-07-26 15:30 UTC",
     "flags": []
   },
-  "bot_version": "9.24.3",
+  "bot_version": "9.24.1",
   "unannounced_results": [
     {
       "id": "st.-louis-cardinals-ml-0725",
@@ -3728,151 +3735,6 @@
           ]
         }
       },
-      "lol:132568": {
-        "ts": 1784969193.5817254,
-        "f": {
-          "w": 0,
-          "l": 5,
-          "res": [
-            {
-              "won": false,
-              "opp": "Deep Cross Gaming"
-            },
-            {
-              "won": false,
-              "opp": "MVK Esports"
-            },
-            {
-              "won": false,
-              "opp": "CTBC Flying Oyster"
-            },
-            {
-              "won": false,
-              "opp": "CTBC Flying Oyster"
-            },
-            {
-              "won": false,
-              "opp": "MVK Esports"
-            }
-          ]
-        }
-      },
-      "lol:137803": {
-        "ts": 1784969194.1650822,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": false,
-              "opp": "GAM Esports"
-            },
-            {
-              "won": false,
-              "opp": "Team Secret Whales"
-            },
-            {
-              "won": true,
-              "opp": "CTBC Flying Oyster"
-            },
-            {
-              "won": true,
-              "opp": "Fukuoka SoftBank Hawks Gaming"
-            },
-            {
-              "won": false,
-              "opp": "GAM Esports"
-            }
-          ]
-        }
-      },
-      "lol:411": {
-        "ts": 1784969194.8592145,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": false,
-              "opp": "ThunderTalk Gaming"
-            },
-            {
-              "won": false,
-              "opp": "JD Gaming"
-            },
-            {
-              "won": false,
-              "opp": "Bilibili Gaming"
-            },
-            {
-              "won": true,
-              "opp": "Ninjas in Pyjamas"
-            },
-            {
-              "won": false,
-              "opp": "Team WE"
-            }
-          ]
-        }
-      },
-      "lol:129972": {
-        "ts": 1784969195.4504595,
-        "f": {
-          "w": 3,
-          "l": 2,
-          "res": [
-            {
-              "won": false,
-              "opp": "LGD Gaming"
-            },
-            {
-              "won": false,
-              "opp": "JD Gaming"
-            },
-            {
-              "won": true,
-              "opp": "Bilibili Gaming"
-            },
-            {
-              "won": true,
-              "opp": "JD Gaming"
-            },
-            {
-              "won": true,
-              "opp": "Ninjas in Pyjamas"
-            }
-          ]
-        }
-      },
-      "lol:126059": {
-        "ts": 1784978059.6993618,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": true,
-              "opp": "Team WE"
-            },
-            {
-              "won": false,
-              "opp": "Team Secret Whales"
-            },
-            {
-              "won": false,
-              "opp": "G2 Esports"
-            },
-            {
-              "won": false,
-              "opp": "Bilibili Gaming"
-            },
-            {
-              "won": true,
-              "opp": "Team WE"
-            }
-          ]
-        }
-      },
       "lol:128221": {
         "ts": 1785002498.9710968,
         "f": {
@@ -3898,151 +3760,6 @@
             {
               "won": true,
               "opp": "Invictus Gaming"
-            }
-          ]
-        }
-      },
-      "valorant:129537": {
-        "ts": 1784969197.411919,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": true,
-              "opp": "Kiwoom DRX"
-            },
-            {
-              "won": false,
-              "opp": "VARREL"
-            },
-            {
-              "won": false,
-              "opp": "Gen.G Esports"
-            },
-            {
-              "won": false,
-              "opp": "VARREL"
-            },
-            {
-              "won": true,
-              "opp": "Gen.G Esports"
-            }
-          ]
-        }
-      },
-      "valorant:128647": {
-        "ts": 1784969197.994213,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": false,
-              "opp": "VARREL"
-            },
-            {
-              "won": true,
-              "opp": "Paper Rex"
-            },
-            {
-              "won": false,
-              "opp": "Gen.G Esports"
-            },
-            {
-              "won": true,
-              "opp": "DetonatioN FocusMe"
-            },
-            {
-              "won": false,
-              "opp": "Nongshim RedForce"
-            }
-          ]
-        }
-      },
-      "lol:126707": {
-        "ts": 1784969198.660044,
-        "f": {
-          "w": 0,
-          "l": 5,
-          "res": [
-            {
-              "won": false,
-              "opp": "Deep Cross Gaming"
-            },
-            {
-              "won": false,
-              "opp": "GAM Esports"
-            },
-            {
-              "won": false,
-              "opp": "MVK Esports"
-            },
-            {
-              "won": false,
-              "opp": "Team Secret Whales"
-            },
-            {
-              "won": false,
-              "opp": "GAM Esports"
-            }
-          ]
-        }
-      },
-      "lol:136073": {
-        "ts": 1784969199.244737,
-        "f": {
-          "w": 3,
-          "l": 2,
-          "res": [
-            {
-              "won": false,
-              "opp": "LYON"
-            },
-            {
-              "won": true,
-              "opp": "Top Esports"
-            },
-            {
-              "won": false,
-              "opp": "Hanwha Life Esports"
-            },
-            {
-              "won": true,
-              "opp": "Deep Cross Gaming"
-            },
-            {
-              "won": true,
-              "opp": "Deep Cross Gaming"
-            }
-          ]
-        }
-      },
-      "dota2:134592": {
-        "ts": 1784978061.1472278,
-        "f": {
-          "w": 0,
-          "l": 5,
-          "res": [
-            {
-              "won": false,
-              "opp": "Team AION"
-            },
-            {
-              "won": false,
-              "opp": "Zero Tenacity"
-            },
-            {
-              "won": false,
-              "opp": "Ilbirs eSports"
-            },
-            {
-              "won": false,
-              "opp": "Nemiga Gaming"
-            },
-            {
-              "won": false,
-              "opp": "Flame Team"
             }
           ]
         }
@@ -4130,122 +3847,6 @@
             {
               "won": true,
               "opp": "FURIA Esports"
-            }
-          ]
-        }
-      },
-      "valorant:134104": {
-        "ts": 1784978063.7392802,
-        "f": {
-          "w": 0,
-          "l": 5,
-          "res": [
-            {
-              "won": false,
-              "opp": "FUT Esports"
-            },
-            {
-              "won": false,
-              "opp": "Gentle Mates"
-            },
-            {
-              "won": false,
-              "opp": "GIANTX"
-            },
-            {
-              "won": false,
-              "opp": "Natus Vincere"
-            },
-            {
-              "won": false,
-              "opp": "Team Vitality"
-            }
-          ]
-        }
-      },
-      "valorant:128796": {
-        "ts": 1784978064.321184,
-        "f": {
-          "w": 3,
-          "l": 2,
-          "res": [
-            {
-              "won": false,
-              "opp": "BBL Esports"
-            },
-            {
-              "won": true,
-              "opp": "Natus Vincere"
-            },
-            {
-              "won": false,
-              "opp": "Nongshim RedForce"
-            },
-            {
-              "won": true,
-              "opp": "NRG"
-            },
-            {
-              "won": true,
-              "opp": "Karmine Corp"
-            }
-          ]
-        }
-      },
-      "lol:126688": {
-        "ts": 1784978065.1451414,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": false,
-              "opp": "Dplus KIA"
-            },
-            {
-              "won": false,
-              "opp": "G2 Esports"
-            },
-            {
-              "won": false,
-              "opp": "T1"
-            },
-            {
-              "won": false,
-              "opp": "LYON"
-            },
-            {
-              "won": true,
-              "opp": "LOS"
-            }
-          ]
-        }
-      },
-      "lol:133796": {
-        "ts": 1784978065.7375422,
-        "f": {
-          "w": 3,
-          "l": 2,
-          "res": [
-            {
-              "won": false,
-              "opp": "DN SOOPers"
-            },
-            {
-              "won": false,
-              "opp": "Dplus KIA"
-            },
-            {
-              "won": true,
-              "opp": "Kiwoom DRX"
-            },
-            {
-              "won": true,
-              "opp": "RED Canids"
-            },
-            {
-              "won": true,
-              "opp": "Vivo Keyd Stars"
             }
           ]
         }
@@ -4424,35 +4025,6 @@
           ]
         }
       },
-      "cs2:138777": {
-        "ts": 1784978070.3959467,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": false,
-              "opp": "Misa Esports"
-            },
-            {
-              "won": true,
-              "opp": "OlyBet SB"
-            },
-            {
-              "won": false,
-              "opp": "Misa Esports"
-            },
-            {
-              "won": false,
-              "opp": "Benched gods"
-            },
-            {
-              "won": true,
-              "opp": "LEO"
-            }
-          ]
-        }
-      },
       "cs2:128629": {
         "ts": 1785075335.5532494,
         "f": {
@@ -4536,64 +4108,6 @@
             {
               "won": false,
               "opp": "Fluxo W7M"
-            }
-          ]
-        }
-      },
-      "valorant:129662": {
-        "ts": 1784978073.009348,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": false,
-              "opp": "Team Heretics"
-            },
-            {
-              "won": false,
-              "opp": "Karmine Corp"
-            },
-            {
-              "won": true,
-              "opp": "Team Liquid"
-            },
-            {
-              "won": false,
-              "opp": "BBL Esports"
-            },
-            {
-              "won": false,
-              "opp": "Karmine Corp"
-            }
-          ]
-        }
-      },
-      "valorant:134423": {
-        "ts": 1784978073.595697,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": false,
-              "opp": "Karmine Corp"
-            },
-            {
-              "won": false,
-              "opp": "Fnatic"
-            },
-            {
-              "won": false,
-              "opp": "Karmine Corp"
-            },
-            {
-              "won": true,
-              "opp": "Pcific Esports"
-            },
-            {
-              "won": false,
-              "opp": "Karmine Corp"
             }
           ]
         }
@@ -4714,35 +4228,6 @@
           ]
         }
       },
-      "cs2:135227": {
-        "ts": 1784978076.8709433,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": true,
-              "opp": "Fortress"
-            },
-            {
-              "won": false,
-              "opp": "EvolupeGG"
-            },
-            {
-              "won": false,
-              "opp": "QUAZAR"
-            },
-            {
-              "won": false,
-              "opp": "QUAZAR"
-            },
-            {
-              "won": false,
-              "opp": "PsychoFace"
-            }
-          ]
-        }
-      },
       "cs2:129405": {
         "ts": 1785045674.4320278,
         "f": {
@@ -4826,64 +4311,6 @@
             {
               "won": true,
               "opp": "Dignitas"
-            }
-          ]
-        }
-      },
-      "valorant:134454": {
-        "ts": 1784969218.1820674,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": true,
-              "opp": "Trace Esports"
-            },
-            {
-              "won": false,
-              "opp": "EDward Gaming"
-            },
-            {
-              "won": false,
-              "opp": "Nova Esports"
-            },
-            {
-              "won": false,
-              "opp": "FunPlus Phoenix"
-            },
-            {
-              "won": false,
-              "opp": "TYLOO"
-            }
-          ]
-        }
-      },
-      "valorant:133279": {
-        "ts": 1784969218.765403,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": false,
-              "opp": "All Gamers"
-            },
-            {
-              "won": false,
-              "opp": "Wolves Esports"
-            },
-            {
-              "won": false,
-              "opp": "XLG Gaming"
-            },
-            {
-              "won": true,
-              "opp": "TEC Esports"
-            },
-            {
-              "won": true,
-              "opp": "Bilibili Gaming"
             }
           ]
         }
@@ -5626,35 +5053,6 @@
           ]
         }
       },
-      "cs2:138886": {
-        "ts": 1784978106.98109,
-        "f": {
-          "w": 5,
-          "l": 0,
-          "res": [
-            {
-              "won": true,
-              "opp": "Fake do Biru"
-            },
-            {
-              "won": true,
-              "opp": "BESTIA Academy"
-            },
-            {
-              "won": true,
-              "opp": "Hunters Rising"
-            },
-            {
-              "won": true,
-              "opp": "METANOIA WOLVES"
-            },
-            {
-              "won": true,
-              "opp": "ex-KR\u00dc Esports"
-            }
-          ]
-        }
-      },
       "cs2:131253": {
         "ts": 1785075333.9804246,
         "f": {
@@ -5680,35 +5078,6 @@
             {
               "won": true,
               "opp": "Procyon Gaming"
-            }
-          ]
-        }
-      },
-      "cs2:132459": {
-        "ts": 1784978108.3106923,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": true,
-              "opp": "megoshort"
-            },
-            {
-              "won": false,
-              "opp": "Misa Esports"
-            },
-            {
-              "won": false,
-              "opp": "Inner Circle Academy"
-            },
-            {
-              "won": false,
-              "opp": "Mai Tai"
-            },
-            {
-              "won": true,
-              "opp": "Vexar"
             }
           ]
         }
@@ -5742,35 +5111,6 @@
           ]
         }
       },
-      "cs2:138406": {
-        "ts": 1784978109.8092403,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": false,
-              "opp": "Butterfly"
-            },
-            {
-              "won": true,
-              "opp": "Endless Journey"
-            },
-            {
-              "won": false,
-              "opp": "CYBERSHOKE Esports"
-            },
-            {
-              "won": false,
-              "opp": "1WIN"
-            },
-            {
-              "won": false,
-              "opp": "ex-RUSTEC"
-            }
-          ]
-        }
-      },
       "cs2:138974": {
         "ts": 1785075304.9771063,
         "f": {
@@ -5796,64 +5136,6 @@
             {
               "won": true,
               "opp": "Just Players"
-            }
-          ]
-        }
-      },
-      "cs2:128519": {
-        "ts": 1784978114.0254028,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": false,
-              "opp": "Atreides"
-            },
-            {
-              "won": false,
-              "opp": "1WIN"
-            },
-            {
-              "won": true,
-              "opp": "Honv\u00e9d"
-            },
-            {
-              "won": false,
-              "opp": "Brute"
-            },
-            {
-              "won": true,
-              "opp": "RUSTEC"
-            }
-          ]
-        }
-      },
-      "cs2:137708": {
-        "ts": 1784978114.6155336,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": false,
-              "opp": "SPARTA"
-            },
-            {
-              "won": false,
-              "opp": "CYBERSHOKE Esports"
-            },
-            {
-              "won": true,
-              "opp": "BASEMENT BOYS"
-            },
-            {
-              "won": false,
-              "opp": "Acend"
-            },
-            {
-              "won": false,
-              "opp": "Virtus.pro"
             }
           ]
         }
@@ -5887,152 +5169,6 @@
           ]
         }
       },
-      "cs2:138963": {
-        "ts": 1784978116.0894594,
-        "f": {
-          "w": 1,
-          "l": 1,
-          "res": [
-            {
-              "won": false,
-              "opp": "Esport Academy Copenhagen"
-            },
-            {
-              "won": true,
-              "opp": "Rune Eaters"
-            }
-          ]
-        }
-      },
-      "cs2:132927": {
-        "ts": 1784978116.643509,
-        "f": {
-          "w": 3,
-          "l": 2,
-          "res": [
-            {
-              "won": true,
-              "opp": "Entropy"
-            },
-            {
-              "won": false,
-              "opp": "Black Phoenix"
-            },
-            {
-              "won": false,
-              "opp": "PCIFIC"
-            },
-            {
-              "won": true,
-              "opp": "Team Novaq"
-            },
-            {
-              "won": true,
-              "opp": "GAMEPOINT"
-            }
-          ]
-        }
-      },
-      "cs2:138988": {
-        "ts": 1784969247.4322045,
-        "f": {
-          "w": 1,
-          "l": 0,
-          "res": [
-            {
-              "won": true,
-              "opp": "FURIA"
-            }
-          ]
-        }
-      },
-      "cs2:3212": {
-        "ts": 1784969247.8737054,
-        "f": {
-          "w": 4,
-          "l": 1,
-          "res": [
-            {
-              "won": true,
-              "opp": "EYEBALLERS"
-            },
-            {
-              "won": false,
-              "opp": "PARIVISION"
-            },
-            {
-              "won": true,
-              "opp": "BetBoom Team"
-            },
-            {
-              "won": true,
-              "opp": "EYEBALLERS"
-            },
-            {
-              "won": true,
-              "opp": "3DMAX"
-            }
-          ]
-        }
-      },
-      "cs2:3213": {
-        "ts": 1784978117.426541,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": true,
-              "opp": "Vitality"
-            },
-            {
-              "won": false,
-              "opp": "FlyQuest"
-            },
-            {
-              "won": true,
-              "opp": "Heroic"
-            },
-            {
-              "won": false,
-              "opp": "MIBR"
-            },
-            {
-              "won": false,
-              "opp": "BetBoom Team"
-            }
-          ]
-        }
-      },
-      "cs2:3210": {
-        "ts": 1784978118.018628,
-        "f": {
-          "w": 3,
-          "l": 2,
-          "res": [
-            {
-              "won": true,
-              "opp": "Nemiga"
-            },
-            {
-              "won": false,
-              "opp": "Spirit"
-            },
-            {
-              "won": true,
-              "opp": "Natus Vincere"
-            },
-            {
-              "won": true,
-              "opp": "Legacy"
-            },
-            {
-              "won": false,
-              "opp": "Aurora Gaming"
-            }
-          ]
-        }
-      },
       "cs2:130569": {
         "ts": 1785067519.47976,
         "f": {
@@ -6058,93 +5194,6 @@
             {
               "won": true,
               "opp": "Heroic"
-            }
-          ]
-        }
-      },
-      "cs2:3209": {
-        "ts": 1784978119.3231514,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": false,
-              "opp": "Heroic"
-            },
-            {
-              "won": false,
-              "opp": "HOTU"
-            },
-            {
-              "won": true,
-              "opp": "FOKUS"
-            },
-            {
-              "won": true,
-              "opp": "Team Nemesis"
-            },
-            {
-              "won": false,
-              "opp": "paiN"
-            }
-          ]
-        }
-      },
-      "valorant:133288": {
-        "ts": 1784978099.3529077,
-        "f": {
-          "w": 4,
-          "l": 1,
-          "res": [
-            {
-              "won": false,
-              "opp": "Nova Esports"
-            },
-            {
-              "won": true,
-              "opp": "FunPlus Phoenix"
-            },
-            {
-              "won": true,
-              "opp": "EDward Gaming"
-            },
-            {
-              "won": true,
-              "opp": "Trace Esports"
-            },
-            {
-              "won": true,
-              "opp": "JD Gaming"
-            }
-          ]
-        }
-      },
-      "valorant:135470": {
-        "ts": 1784978099.9375923,
-        "f": {
-          "w": 3,
-          "l": 2,
-          "res": [
-            {
-              "won": true,
-              "opp": "Wolves Esports"
-            },
-            {
-              "won": false,
-              "opp": "Bilibili Gaming"
-            },
-            {
-              "won": true,
-              "opp": "All Gamers"
-            },
-            {
-              "won": true,
-              "opp": "Dragon Ranger Gaming"
-            },
-            {
-              "won": false,
-              "opp": "TEC Esports"
             }
           ]
         }
@@ -6721,35 +5770,6 @@
           ]
         }
       },
-      "dota2:1931": {
-        "ts": 1784978137.958239,
-        "f": {
-          "w": 3,
-          "l": 2,
-          "res": [
-            {
-              "won": false,
-              "opp": "Nigma Galaxy"
-            },
-            {
-              "won": true,
-              "opp": "Power Rangers"
-            },
-            {
-              "won": true,
-              "opp": "MODUS"
-            },
-            {
-              "won": false,
-              "opp": "Virtus.pro"
-            },
-            {
-              "won": true,
-              "opp": "MOUZ"
-            }
-          ]
-        }
-      },
       "dota2:2227": {
         "ts": 1785075354.1917663,
         "f": {
@@ -6775,35 +5795,6 @@
             {
               "won": false,
               "opp": "Ilbirs eSports"
-            }
-          ]
-        }
-      },
-      "dota2:137540": {
-        "ts": 1784978139.2348275,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": false,
-              "opp": "KW"
-            },
-            {
-              "won": true,
-              "opp": "PuckChamp"
-            },
-            {
-              "won": false,
-              "opp": "Team Syntax"
-            },
-            {
-              "won": true,
-              "opp": "Team Lynx"
-            },
-            {
-              "won": false,
-              "opp": "Team Jenz"
             }
           ]
         }
@@ -6835,14 +5826,6 @@
               "opp": "Dandelions"
             }
           ]
-        }
-      },
-      "dota2:138989": {
-        "ts": 1784978140.506693,
-        "f": {
-          "w": 0,
-          "l": 0,
-          "res": []
         }
       },
       "lol:129971": {
@@ -6899,64 +5882,6 @@
             {
               "won": true,
               "opp": "Movistar KOI"
-            }
-          ]
-        }
-      },
-      "lol:130355": {
-        "ts": 1784978093.8091393,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": false,
-              "opp": "MVK Esports"
-            },
-            {
-              "won": false,
-              "opp": "GAM Esports"
-            },
-            {
-              "won": false,
-              "opp": "Deep Cross Gaming"
-            },
-            {
-              "won": true,
-              "opp": "Ground Zero Gaming"
-            },
-            {
-              "won": false,
-              "opp": "Fukuoka SoftBank Hawks Gaming"
-            }
-          ]
-        }
-      },
-      "lol:130356": {
-        "ts": 1784978094.4349854,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": false,
-              "opp": "Team Liquid"
-            },
-            {
-              "won": false,
-              "opp": "Karmine Corp"
-            },
-            {
-              "won": false,
-              "opp": "Team Secret Whales"
-            },
-            {
-              "won": true,
-              "opp": "GAM Esports"
-            },
-            {
-              "won": false,
-              "opp": "Team Secret Whales"
             }
           ]
         }
@@ -7048,35 +5973,6 @@
           ]
         }
       },
-      "cs2:134405": {
-        "ts": 1784978111.7120218,
-        "f": {
-          "w": 3,
-          "l": 2,
-          "res": [
-            {
-              "won": false,
-              "opp": "ex-RUBY"
-            },
-            {
-              "won": true,
-              "opp": "BIG Academy"
-            },
-            {
-              "won": true,
-              "opp": "SAW Youngsters"
-            },
-            {
-              "won": false,
-              "opp": "ROUNDS"
-            },
-            {
-              "won": true,
-              "opp": "SAW Youngsters"
-            }
-          ]
-        }
-      },
       "cs2:131570": {
         "ts": 1785002531.0691984,
         "f": {
@@ -7131,64 +6027,6 @@
             {
               "won": true,
               "opp": "Bounty Hunters Esports"
-            }
-          ]
-        }
-      },
-      "cs2:137699": {
-        "ts": 1784978120.0322795,
-        "f": {
-          "w": 1,
-          "l": 4,
-          "res": [
-            {
-              "won": false,
-              "opp": "Heroic"
-            },
-            {
-              "won": true,
-              "opp": "Aurora Gaming"
-            },
-            {
-              "won": false,
-              "opp": "Astralis"
-            },
-            {
-              "won": false,
-              "opp": "Infinite"
-            },
-            {
-              "won": false,
-              "opp": "ECHO"
-            }
-          ]
-        }
-      },
-      "cs2:3240": {
-        "ts": 1784978120.6186702,
-        "f": {
-          "w": 2,
-          "l": 3,
-          "res": [
-            {
-              "won": true,
-              "opp": "Nuclear TigeRES"
-            },
-            {
-              "won": false,
-              "opp": "FUT Esports"
-            },
-            {
-              "won": false,
-              "opp": "Vitality"
-            },
-            {
-              "won": false,
-              "opp": "FURIA"
-            },
-            {
-              "won": true,
-              "opp": "Legacy"
             }
           ]
         }
@@ -10348,10 +9186,6 @@
       "ts": "2026-07-25T18:02:46Z",
       "price_path": [
         {
-          "ts": 1785029427,
-          "px": 0.39
-        },
-        {
           "ts": 1785032427,
           "px": 0.39
         },
@@ -10442,6 +9276,10 @@
         {
           "ts": 1785079198,
           "px": 0.27
+        },
+        {
+          "ts": 1785084217,
+          "px": 0.63
         }
       ]
     },
@@ -10535,10 +9373,6 @@
       "ts": "2026-07-25T18:11:39Z",
       "price_path": [
         {
-          "ts": 1785032427,
-          "px": 0.56
-        },
-        {
           "ts": 1785034827,
           "px": 0.56
         },
@@ -10629,6 +9463,10 @@
         {
           "ts": 1785079198,
           "px": 0.51
+        },
+        {
+          "ts": 1785084217,
+          "px": 0.5
         }
       ]
     },
@@ -10707,10 +9545,6 @@
       "status": "open",
       "ts": "2026-07-25T18:34:45Z",
       "price_path": [
-        {
-          "ts": 1785029428,
-          "px": 0.44
-        },
         {
           "ts": 1785032428,
           "px": 0.44
@@ -10802,6 +9636,10 @@
         {
           "ts": 1785079198,
           "px": 0.44
+        },
+        {
+          "ts": 1785084217,
+          "px": 0.44
         }
       ]
     },
@@ -10865,10 +9703,6 @@
       "status": "open",
       "ts": "2026-07-25T19:10:25Z",
       "price_path": [
-        {
-          "ts": 1785027628,
-          "px": 0.43
-        },
         {
           "ts": 1785029428,
           "px": 0.43
@@ -10960,6 +9794,10 @@
         {
           "ts": 1785079198,
           "px": 0.45
+        },
+        {
+          "ts": 1785084218,
+          "px": 0.45
         }
       ]
     },
@@ -10979,10 +9817,6 @@
       "status": "open",
       "ts": "2026-07-25T19:10:26Z",
       "price_path": [
-        {
-          "ts": 1785027628,
-          "px": 0.2
-        },
         {
           "ts": 1785029428,
           "px": 0.2
@@ -11074,6 +9908,10 @@
         {
           "ts": 1785079199,
           "px": 0.2
+        },
+        {
+          "ts": 1785084218,
+          "px": 0.2
         }
       ]
     },
@@ -11131,10 +9969,6 @@
       "status": "open",
       "ts": "2026-07-25T19:33:34Z",
       "price_path": [
-        {
-          "ts": 1785029428,
-          "px": 0.25
-        },
         {
           "ts": 1785032428,
           "px": 0.25
@@ -11226,6 +10060,10 @@
         {
           "ts": 1785079199,
           "px": 0.25
+        },
+        {
+          "ts": 1785084218,
+          "px": 0.11
         }
       ]
     },
@@ -11398,10 +10236,6 @@
       "ts": "2026-07-25T21:52:30Z",
       "price_path": [
         {
-          "ts": 1785027629,
-          "px": 0.55
-        },
-        {
           "ts": 1785029429,
           "px": 0.55
         },
@@ -11492,6 +10326,10 @@
         {
           "ts": 1785079199,
           "px": 0.59
+        },
+        {
+          "ts": 1785084218,
+          "px": 0.59
         }
       ]
     },
@@ -11529,10 +10367,6 @@
       "status": "open",
       "ts": "2026-07-25T22:01:36Z",
       "price_path": [
-        {
-          "ts": 1785027629,
-          "px": 0.38
-        },
         {
           "ts": 1785029429,
           "px": 0.38
@@ -11624,6 +10458,10 @@
         {
           "ts": 1785079199,
           "px": 0.38
+        },
+        {
+          "ts": 1785084219,
+          "px": 0.38
         }
       ]
     },
@@ -11661,10 +10499,6 @@
       "status": "open",
       "ts": "2026-07-25T22:07:42Z",
       "price_path": [
-        {
-          "ts": 1785027629,
-          "px": 0.64
-        },
         {
           "ts": 1785029429,
           "px": 0.64
@@ -11756,6 +10590,10 @@
         {
           "ts": 1785079199,
           "px": 0.58
+        },
+        {
+          "ts": 1785084219,
+          "px": 0.56
         }
       ]
     },
@@ -11808,106 +10646,13 @@
       "qty": 3,
       "market_slug": "astatc-cs2-wc-mglz-2026-07-26-map1",
       "outcome": "Wildcard",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T22:30:58Z",
-      "price_path": [
-        {
-          "ts": 1785027629,
-          "px": 0.36
-        },
-        {
-          "ts": 1785029430,
-          "px": 0.36
-        },
-        {
-          "ts": 1785032430,
-          "px": 0.38
-        },
-        {
-          "ts": 1785034830,
-          "px": 0.37
-        },
-        {
-          "ts": 1785037230,
-          "px": 0.37
-        },
-        {
-          "ts": 1785039629,
-          "px": 0.39
-        },
-        {
-          "ts": 1785042029,
-          "px": 0.39
-        },
-        {
-          "ts": 1785044429,
-          "px": 0.41
-        },
-        {
-          "ts": 1785046829,
-          "px": 0.41
-        },
-        {
-          "ts": 1785048629,
-          "px": 0.41
-        },
-        {
-          "ts": 1785050429,
-          "px": 0.41
-        },
-        {
-          "ts": 1785053429,
-          "px": 0.41
-        },
-        {
-          "ts": 1785055229,
-          "px": 0.41
-        },
-        {
-          "ts": 1785057031,
-          "px": 0.42
-        },
-        {
-          "ts": 1785059429,
-          "px": 0.42
-        },
-        {
-          "ts": 1785061232,
-          "px": 0.42
-        },
-        {
-          "ts": 1785063033,
-          "px": 0.42
-        },
-        {
-          "ts": 1785065270,
-          "px": 0.42
-        },
-        {
-          "ts": 1785067076,
-          "px": 0.42
-        },
-        {
-          "ts": 1785069233,
-          "px": 0.43
-        },
-        {
-          "ts": 1785073126,
-          "px": 0.43
-        },
-        {
-          "ts": 1785074985,
-          "px": 0.43
-        },
-        {
-          "ts": 1785077386,
-          "px": 0.33
-        },
-        {
-          "ts": 1785079200,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-26T16:43:39Z",
+      "pnl": -1.11,
+      "autopsy": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.01 before the result \u2014 the number ran 36\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.91,
@@ -12174,106 +10919,13 @@
       "qty": 12,
       "market_slug": "aec-cs2-wc-mglz-2026-07-26",
       "outcome": "Wildcard",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T23:11:00Z",
-      "price_path": [
-        {
-          "ts": 1785027630,
-          "px": 0.33
-        },
-        {
-          "ts": 1785029430,
-          "px": 0.33
-        },
-        {
-          "ts": 1785032430,
-          "px": 0.33
-        },
-        {
-          "ts": 1785034830,
-          "px": 0.33
-        },
-        {
-          "ts": 1785037230,
-          "px": 0.33
-        },
-        {
-          "ts": 1785039629,
-          "px": 0.33
-        },
-        {
-          "ts": 1785042030,
-          "px": 0.34
-        },
-        {
-          "ts": 1785044430,
-          "px": 0.36
-        },
-        {
-          "ts": 1785046830,
-          "px": 0.37
-        },
-        {
-          "ts": 1785048630,
-          "px": 0.37
-        },
-        {
-          "ts": 1785051028,
-          "px": 0.37
-        },
-        {
-          "ts": 1785053430,
-          "px": 0.37
-        },
-        {
-          "ts": 1785055230,
-          "px": 0.37
-        },
-        {
-          "ts": 1785057032,
-          "px": 0.37
-        },
-        {
-          "ts": 1785059430,
-          "px": 0.37
-        },
-        {
-          "ts": 1785061232,
-          "px": 0.37
-        },
-        {
-          "ts": 1785063033,
-          "px": 0.37
-        },
-        {
-          "ts": 1785065270,
-          "px": 0.37
-        },
-        {
-          "ts": 1785067076,
-          "px": 0.37
-        },
-        {
-          "ts": 1785069234,
-          "px": 0.37
-        },
-        {
-          "ts": 1785073127,
-          "px": 0.37
-        },
-        {
-          "ts": 1785074985,
-          "px": 0.37
-        },
-        {
-          "ts": 1785077386,
-          "px": 0.27
-        },
-        {
-          "ts": 1785079200,
-          "px": 0.17
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-26T16:43:42Z",
+      "pnl": -3.96,
+      "autopsy": "model 50% vs market 33% missed \u2014 logged for the playbook review. Taken 0.33, slid to 0.17 before the result \u2014 the number ran 16\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.58,
@@ -12312,10 +10964,6 @@
       "status": "open",
       "ts": "2026-07-25T23:20:56Z",
       "price_path": [
-        {
-          "ts": 1785027630,
-          "px": 0.39
-        },
         {
           "ts": 1785029431,
           "px": 0.39
@@ -12406,6 +11054,10 @@
         },
         {
           "ts": 1785079200,
+          "px": 0.41
+        },
+        {
+          "ts": 1785084224,
           "px": 0.41
         }
       ]
@@ -12519,106 +11171,13 @@
       "qty": 10,
       "market_slug": "astatc-cs2-wc-mglz-2026-07-26-map2",
       "outcome": "Wildcard",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T23:55:59Z",
-      "price_path": [
-        {
-          "ts": 1785027631,
-          "px": 0.34
-        },
-        {
-          "ts": 1785029431,
-          "px": 0.34
-        },
-        {
-          "ts": 1785032431,
-          "px": 0.34
-        },
-        {
-          "ts": 1785034831,
-          "px": 0.34
-        },
-        {
-          "ts": 1785037231,
-          "px": 0.34
-        },
-        {
-          "ts": 1785039631,
-          "px": 0.34
-        },
-        {
-          "ts": 1785042031,
-          "px": 0.34
-        },
-        {
-          "ts": 1785044431,
-          "px": 0.35
-        },
-        {
-          "ts": 1785046831,
-          "px": 0.35
-        },
-        {
-          "ts": 1785048631,
-          "px": 0.35
-        },
-        {
-          "ts": 1785051029,
-          "px": 0.35
-        },
-        {
-          "ts": 1785053431,
-          "px": 0.35
-        },
-        {
-          "ts": 1785055231,
-          "px": 0.35
-        },
-        {
-          "ts": 1785057033,
-          "px": 0.35
-        },
-        {
-          "ts": 1785059431,
-          "px": 0.35
-        },
-        {
-          "ts": 1785061233,
-          "px": 0.35
-        },
-        {
-          "ts": 1785063034,
-          "px": 0.35
-        },
-        {
-          "ts": 1785065271,
-          "px": 0.35
-        },
-        {
-          "ts": 1785067077,
-          "px": 0.35
-        },
-        {
-          "ts": 1785069234,
-          "px": 0.35
-        },
-        {
-          "ts": 1785073127,
-          "px": 0.39
-        },
-        {
-          "ts": 1785074986,
-          "px": 0.39
-        },
-        {
-          "ts": 1785077390,
-          "px": 0.33
-        },
-        {
-          "ts": 1785079200,
-          "px": 0.35
-        }
-      ]
+      "result": "LOSS",
+      "payout": 1.65,
+      "settled_at": "2026-07-26T16:43:45Z",
+      "pnl": -1.65,
+      "autopsy": "model 50% vs market 33% missed \u2014 logged for the playbook review. Taken 0.33, rode to 0.35 before the result \u2014 beat the number by 2\u00a2 \u2705"
     },
     {
       "price": 0.39,
@@ -12712,10 +11271,6 @@
       "ts": "2026-07-26T00:15:56Z",
       "price_path": [
         {
-          "ts": 1785027631,
-          "px": 0.64
-        },
-        {
           "ts": 1785029432,
           "px": 0.64
         },
@@ -12805,6 +11360,10 @@
         },
         {
           "ts": 1785079201,
+          "px": 0.64
+        },
+        {
+          "ts": 1785084227,
           "px": 0.64
         }
       ]
@@ -12918,6 +11477,10 @@
         {
           "ts": 1785079201,
           "px": 0.37
+        },
+        {
+          "ts": 1785084227,
+          "px": 0.37
         }
       ]
     },
@@ -12954,6 +11517,10 @@
         },
         {
           "ts": 1785079201,
+          "px": 0.47
+        },
+        {
+          "ts": 1785084227,
           "px": 0.47
         }
       ]
@@ -12993,6 +11560,10 @@
         {
           "ts": 1785079201,
           "px": 0.34
+        },
+        {
+          "ts": 1785084227,
+          "px": 0.34
         }
       ]
     },
@@ -13031,6 +11602,10 @@
         {
           "ts": 1785079201,
           "px": 0.29
+        },
+        {
+          "ts": 1785084227,
+          "px": 0.29
         }
       ]
     },
@@ -13063,30 +11638,13 @@
       "qty": 6,
       "market_slug": "aec-cs2-sparta-atr-2026-07-26",
       "outcome": "Atreides",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T12:09:59Z",
-      "price_path": [
-        {
-          "ts": 1785069236,
-          "px": 0.47
-        },
-        {
-          "ts": 1785073129,
-          "px": 0.47
-        },
-        {
-          "ts": 1785074988,
-          "px": 0.5
-        },
-        {
-          "ts": 1785077394,
-          "px": 0.69
-        },
-        {
-          "ts": 1785079202,
-          "px": 0.71
-        }
-      ]
+      "result": "WIN",
+      "payout": 6.0,
+      "settled_at": "2026-07-26T16:43:48Z",
+      "pnl": 3.18,
+      "autopsy": "+$3.18 \u2014 model 73% vs market 47% was real edge; thesis held. Taken 0.47, slid to 0.71 before the result \u2014 the number ran 24\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.53,
@@ -13139,6 +11697,10 @@
         {
           "ts": 1785079202,
           "px": 0.3
+        },
+        {
+          "ts": 1785084230,
+          "px": 0.35
         }
       ]
     },
@@ -13266,30 +11828,13 @@
       "qty": 9,
       "market_slug": "astatc-cs2-odk-ldp-2026-07-26-map1",
       "outcome": "ODDIK",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T12:48:37Z",
-      "price_path": [
-        {
-          "ts": 1785070757,
-          "px": 0.4
-        },
-        {
-          "ts": 1785073129,
-          "px": 0.41
-        },
-        {
-          "ts": 1785074988,
-          "px": 0.42
-        },
-        {
-          "ts": 1785077394,
-          "px": 0.41
-        },
-        {
-          "ts": 1785079202,
-          "px": 0.13
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-26T16:43:51Z",
+      "pnl": -3.78,
+      "autopsy": "model 73% vs market 42% missed \u2014 logged for the playbook review. Taken 0.42, slid to 0.13 before the result \u2014 the number ran 29\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.74,
@@ -13325,6 +11870,10 @@
         {
           "ts": 1785079202,
           "px": 0.75
+        },
+        {
+          "ts": 1785084233,
+          "px": 0.75
         }
       ]
     },
@@ -13341,8 +11890,14 @@
       "qty": 5,
       "market_slug": "aec-cs2-mgc-nip-2026-07-26",
       "outcome": "NIP",
-      "status": "resting",
-      "ts": "2026-07-26T12:53:37Z"
+      "status": "open",
+      "ts": "2026-07-26T12:53:37Z",
+      "price_path": [
+        {
+          "ts": 1785084233,
+          "px": 0.46
+        }
+      ]
     },
     {
       "price": 0.71,
@@ -13377,6 +11932,10 @@
         },
         {
           "ts": 1785079203,
+          "px": 0.97
+        },
+        {
+          "ts": 1785084233,
           "px": 0.97
         }
       ]
@@ -13471,6 +12030,10 @@
         },
         {
           "ts": 1785079203,
+          "px": 0.67
+        },
+        {
+          "ts": 1785084234,
           "px": 0.67
         }
       ]
@@ -13567,22 +12130,13 @@
       "qty": 5,
       "market_slug": "astatc-cs2-odk-ldp-2026-07-26-map2",
       "outcome": "ODDIK",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T13:55:08Z",
-      "price_path": [
-        {
-          "ts": 1785074989,
-          "px": 0.46
-        },
-        {
-          "ts": 1785077397,
-          "px": 0.49
-        },
-        {
-          "ts": 1785079203,
-          "px": 0.52
-        }
-      ]
+      "result": "WIN",
+      "payout": 8.48,
+      "settled_at": "2026-07-26T16:43:54Z",
+      "pnl": 6.48,
+      "autopsy": "+$6.48 \u2014 model 73% vs market 40% was real edge; thesis held. Taken 0.40, rode to 0.52 before the result \u2014 beat the number by 12\u00a2 \u2705"
     },
     {
       "price": 0.29,
@@ -13607,6 +12161,10 @@
         {
           "ts": 1785079203,
           "px": 0.25
+        },
+        {
+          "ts": 1785084237,
+          "px": 0.5
         }
       ]
     },
@@ -13680,6 +12238,10 @@
         {
           "ts": 1785079203,
           "px": 0.67
+        },
+        {
+          "ts": 1785084237,
+          "px": 0.67
         }
       ]
     },
@@ -13705,6 +12267,10 @@
         },
         {
           "ts": 1785079203,
+          "px": 0.38
+        },
+        {
+          "ts": 1785084237,
           "px": 0.38
         }
       ]
@@ -13740,7 +12306,12 @@
       "outcome": "Lundqvist Lightside",
       "status": "open",
       "ts": "2026-07-26T14:35:16Z",
-      "price_path": []
+      "price_path": [
+        {
+          "ts": 1785084237,
+          "px": 0.66
+        }
+      ]
     },
     {
       "price": 0.7,
@@ -13763,6 +12334,10 @@
         },
         {
           "ts": 1785079204,
+          "px": 0.7
+        },
+        {
+          "ts": 1785084238,
           "px": 0.7
         }
       ]
@@ -13788,6 +12363,10 @@
         },
         {
           "ts": 1785079204,
+          "px": 0.71
+        },
+        {
+          "ts": 1785084238,
           "px": 0.71
         }
       ]
@@ -13827,16 +12406,35 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 8,
-    "losses": 15,
-    "pnl": 10.54,
+    "wins": 10,
+    "losses": 19,
+    "pnl": 9.7,
     "trades": 116,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-14",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 101.21,
-    "net": 37.21
+    "account": 108.24,
+    "net": 44.24,
+    "last_archive": "2026-07-26",
+    "kind_totals": {
+      "ARB": [
+        3,
+        5,
+        0
+      ],
+      "EDGE": [
+        6,
+        10,
+        0
+      ],
+      "LIVE-BET": [
+        1,
+        4,
+        0
+      ]
+    },
+    "archived": 0
   },
   "x_purge_complete": 1785032907.0909944,
   "pm_lessons": [
@@ -14023,6 +12621,54 @@
       "result": "LOSS",
       "pnl": -0.88,
       "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays."
+    },
+    {
+      "ts": "2026-07-26T16:43:39Z",
+      "kind": "EDGE",
+      "outcome": "Wildcard",
+      "result": "LOSS",
+      "pnl": -1.11,
+      "lesson": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.01 before the result \u2014 the number ran 36\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-26T16:43:42Z",
+      "kind": "EDGE",
+      "outcome": "Wildcard",
+      "result": "LOSS",
+      "pnl": -3.96,
+      "lesson": "model 50% vs market 33% missed \u2014 logged for the playbook review. Taken 0.33, slid to 0.17 before the result \u2014 the number ran 16\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-26T16:43:45Z",
+      "kind": "EDGE",
+      "outcome": "Wildcard",
+      "result": "LOSS",
+      "pnl": -1.65,
+      "lesson": "model 50% vs market 33% missed \u2014 logged for the playbook review. Taken 0.33, rode to 0.35 before the result \u2014 beat the number by 2\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-26T16:43:48Z",
+      "kind": "EDGE",
+      "outcome": "Atreides",
+      "result": "WIN",
+      "pnl": 3.18,
+      "lesson": "+$3.18 \u2014 model 73% vs market 47% was real edge; thesis held. Taken 0.47, slid to 0.71 before the result \u2014 the number ran 24\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-26T16:43:51Z",
+      "kind": "EDGE",
+      "outcome": "ODDIK",
+      "result": "LOSS",
+      "pnl": -3.78,
+      "lesson": "model 73% vs market 42% missed \u2014 logged for the playbook review. Taken 0.42, slid to 0.13 before the result \u2014 the number ran 29\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-26T16:43:54Z",
+      "kind": "EDGE",
+      "outcome": "ODDIK",
+      "result": "WIN",
+      "pnl": 6.48,
+      "lesson": "+$6.48 \u2014 model 73% vs market 40% was real edge; thesis held. Taken 0.40, rode to 0.52 before the result \u2014 beat the number by 12\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -14087,6 +12733,6 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785074408.7582889,
+  "dep_checked_ts": 1785084219.7627501,
   "x_bio_v": 2
 }
