@@ -13882,11 +13882,11 @@
     "pnl": 18.81,
     "trades": 174,
     "last_recap": "2026-07-26",
-    "last_recap_hour": "2026-07-26-20",
+    "last_recap_hour": "2026-07-26-22",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 77.8,
-    "net": 13.8,
+    "account": 101.31,
+    "net": 37.31,
     "last_archive": "2026-07-26",
     "kind_totals": {
       "ARB": [
