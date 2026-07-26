@@ -8,18 +8,18 @@
     "replaced pin in #\ud83c\udf81giveaway (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 13:49 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-3": "2026-07-26 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 12:59 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 13:38 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-26 12:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 12:53 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 13:43 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 13:49 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -30,14 +30,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 13:49 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 13:49 UTC",
     "flags": []
   },
-  "bot_version": "9.23.5",
+  "bot_version": "9.24.0",
   "unannounced_results": [
     {
       "id": "chicago-cubs-ml-0725",
@@ -13795,7 +13795,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T13:44:06Z"
     },
     {
@@ -13811,7 +13811,7 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T13:45:46Z"
     },
     {
@@ -13827,7 +13827,7 @@
       "qty": 3,
       "market_slug": "aec-cs2-lav-btf-2026-07-26",
       "outcome": "Butterfly",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T13:45:47Z"
     }
   ],
@@ -14012,7 +14012,9 @@
     "2080781361955385778",
     "2081043081114370064"
   ],
-  "pending_corrections": [],
+  "pending_corrections": [
+    "\u25aa\ufe0f **Ledger addendum:** one more short settled during the audit \u2014 Galions vs THG, true grade **LOSS -$3.44** (was $0.00). Desk record now **6-14 \u00b7 realized +$1.76**. Account unchanged: \ud83d\udcb0 **$98.04** \u00b7 net P&L **+$34.04** on $64.00 in. The grading bug behind all of these is fixed as of v9.24.0 \u26a1"
+  ],
   "x_backlog_flushed": {
     "ts": "2026-07-25T16:32:22Z",
     "count": 17,
