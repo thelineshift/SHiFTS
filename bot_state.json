@@ -13621,7 +13621,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T13:08:05Z"
     },
     {
@@ -13637,7 +13637,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T13:08:06Z"
     },
     {
@@ -13653,7 +13653,7 @@
       "qty": 2,
       "market_slug": "aec-cs2-3dmax-fut-2026-07-26",
       "outcome": "FUT Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T13:08:07Z"
     },
     {
@@ -13669,7 +13669,7 @@
       "qty": 6,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T13:09:01Z"
     },
     {
@@ -13684,7 +13684,7 @@
       "qty": 6,
       "market_slug": "astatc-valorant-m8gc-gxgc-2026-07-27-map1",
       "outcome": "Gentle Mates GC",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T13:14:05Z"
     }
   ],
