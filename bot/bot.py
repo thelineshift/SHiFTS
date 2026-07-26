@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.1'
+BOT_VERSION = '9.24.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4777,8 +4777,14 @@ def poly2_scan(st):
     notes.append(hb)
     return intents, notes
 
-def desk_by_kind(trades):
-    """Settled W-L(-P) breakdown per playbook kind."""
+def desk_by_kind(trades, stats=None):
+    """Settled W-L(-P) breakdown per playbook kind. ARCHIVE LAW: when stats['kind_totals'] exists
+    it carries the ALL-TIME split — the hot ledger only holds the last 30 days after archiving."""
+    _kt = (stats or {}).get('kind_totals')
+    if _kt:
+        order = ('ARB', 'EDGE', 'LIVE-BET', 'TAIL', 'LEGACY')
+        return ' · '.join(f"{k} {_kt[k][0]}-{_kt[k][1]}" + (f"-{_kt[k][2]}" if len(_kt[k]) > 2 and _kt[k][2] else '')
+                         for k in order if k in _kt) or '—'
     kk = {}
     for t in trades:
         if t.get('result') not in ('WIN', 'LOSS', 'PUSH'):
@@ -4815,7 +4821,7 @@ def desk_recap_text(st, bal, open_n):
     else:
         pnl = stats.get('pnl', 0.0)
         lines.append(f"💰 Net P&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** realized on ${dep:.2f} in (live account feed offline)")
-    lines.append(f"Playbooks: {desk_by_kind(st.get('pm_trades', []))}")
+    lines.append(f"Playbooks: {desk_by_kind(st.get('pm_trades', []), stats)}")
     _tn = _desk_tuning(st)
     if _tn:
         lines.append(f"🧭 Tuning: {'; '.join(v['why'] for v in _tn.values())}")
@@ -4845,7 +4851,10 @@ def desk_pnl_png(st, stats):
     f_sm, f_md, f_lg = _font(24, False), _font(36), _font(56)
     settled = sorted((t for t in st.get('pm_trades', []) if t.get('result') in ('WIN', 'LOSS') and t.get('pnl') is not None),
                      key=lambda t: t.get('settled_at') or t.get('ts') or '')
-    curve = [0.0]
+    # ARCHIVE LAW: hot state holds the last 30 days — seed the curve at the archived baseline
+    # (all-time stats P&L minus what the visible trades account for) so the end point stays true.
+    _vis = sum(float(t['pnl']) for t in settled)
+    curve = [round(float(stats.get('pnl') or 0.0) - _vis, 2)]
     for t in settled:
         curve.append(curve[-1] + float(t['pnl']))
     img = Image.new('RGB', (W, H), bg)
@@ -4946,7 +4955,7 @@ async def pm_trader():
                           'market_slug': t.pop('slug'), 'outcome': t.pop('team'), 'status': 'open',
                           'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
                 st.setdefault('pm_trades', []).append(t)
-                st['pm_trades'] = st['pm_trades'][-120:]
+                st['pm_trades'] = st['pm_trades'][-800:]  # ARCHIVE LAW: the daily age-based archive is the trim — this is only a crash-guard (the old 120-cap would have deleted customers' 30-day results)
             placed = True
             placed_trades.append(t)
             stats = st.setdefault('pm_stats', {'start': TRADER_BANK_START, 'wins': 0, 'losses': 0, 'pnl': 0.0})
@@ -5027,7 +5036,7 @@ async def pm_trader():
                             'account': round(bal['balance'], 2) if bal else None,
                             'deposits': _dep10,
                             'net_pnl': round(bal['balance'] - _dep10, 2) if bal else None,
-                            'playbooks': desk_by_kind(st.get('pm_trades', [])),
+                            'playbooks': desk_by_kind(st.get('pm_trades', []), stats),
                             'recent': [{'outcome': t.get('outcome'), 'short': bool(t.get('short')),
                                         'result': {'WIN': 'won', 'LOSS': 'lost', 'PUSH': 'push'}.get(t.get('result')),
                                         'pnl': round(float(t.get('pnl') or 0), 2)} for t in settled[-6:]],
@@ -5053,6 +5062,67 @@ async def pm_trader():
     except Exception as e:
         print('[trader]', e)
 
+
+PM_KEEP_SETTLED_DAYS = 30  # ARCHIVE LAW (owner decree 2026-07-26): customers need the last 30 days
+PM_KEEP_SETTLED_MIN = 10     # never strip the ledger bare — the 10 freshest results always stay visible
+PM_KEEP_UNFILLED_DAYS = 7    # unfilled/cancelled orders were never money — archive after a week
+
+def _pm_archive(st):
+    """Settled trades older than 30 days (and week-old unfilled noise) move out of bot_state into
+    pm_archive.json — every loop's state read stays lean while every surface keeps the last 30 days
+    of results. Counters are untouched: record/P&L stay all-time, the playbook split lives on in
+    stats['kind_totals'], and the P&L chart seeds its curve from the archived baseline. Once/day."""
+    today = time.strftime('%Y-%m-%d', time.gmtime())
+    stats = st.get('pm_stats') or {}
+    if stats.get('last_archive') == today:
+        return False
+    stats['last_archive'] = today
+    trades = st.get('pm_trades') or []
+    now = time.time()
+    def _age(t, key):
+        try:
+            return (now - datetime.datetime.fromisoformat(str(t.get(key) or '').replace('Z', '+00:00')).timestamp()) / 86400
+        except Exception:
+            return 0.0
+    settled = [t for t in trades if t.get('status') == 'settled']
+    # backfill the all-time playbook split BEFORE the first archive run can remove anything
+    if 'kind_totals' not in stats:
+        kt = {}
+        for t in settled:
+            if t.get('result') not in ('WIN', 'LOSS', 'PUSH'):
+                continue
+            k = t.get('kind') or 'EDGE'
+            v = kt.setdefault(k, [0, 0, 0])
+            v[{'WIN': 0, 'LOSS': 1, 'PUSH': 2}[t['result']]] += 1
+        stats['kind_totals'] = kt
+    old_settled = {t.get('order_id') for t in settled if t.get('settled_at') and _age(t, 'settled_at') > PM_KEEP_SETTLED_DAYS}
+    fresh = sorted((t for t in settled if t.get('settled_at')), key=lambda x: str(x.get('settled_at')), reverse=True)[:PM_KEEP_SETTLED_MIN]
+    old_settled -= {t.get('order_id') for t in fresh}
+    old_unfilled = {t.get('order_id') for t in trades if t.get('status') == 'unfilled' and _age(t, 'ts') > PM_KEEP_UNFILLED_DAYS}
+    doomed = old_settled | old_unfilled
+    move = [t for t in trades if t.get('order_id') in doomed]
+    # LEAN CACHE LAW: team-form snapshots refetch after 2h — anything older than a day is dead weight
+    _forms = (st.get('pm_cache') or {}).get('form') or {}
+    _stale = [k for k, v in _forms.items() if now - float((v or {}).get('ts') or 0) > 86400]
+    for k in _stale:
+        _forms.pop(k, None)
+    if _stale:
+        print(f'[desk] cache trim: {len(_stale)} stale form snapshots out ({len(_forms)} kept)')
+    if not move and not _stale:
+        return False
+    stats['archived'] = int(stats.get('archived') or 0) + len(move)
+    st['pm_trades'] = [t for t in trades if t.get('order_id') not in doomed]
+    if move:
+        try:
+            arch = gh_get_json('pm_archive.json') or {'trades': []}
+            have = {t.get('order_id') for t in arch.get('trades', [])}
+            arch['trades'] = arch.get('trades', []) + [t for t in move if t.get('order_id') not in have]
+            arch['updated'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            gh_put('pm_archive.json', arch, f"pm archive: +{len(move)} trades ({len(arch['trades'])} total)")
+        except Exception as _ae:
+            print('[desk] archive write:', str(_ae)[:120])
+        print(f"[desk] archived {len(move)} trades ({len(st['pm_trades'])} left in hot state)")
+    return True
 
 @tasks.loop(seconds=600)
 async def pm_watch():
@@ -5141,6 +5211,7 @@ async def pm_watch():
                                       'cashout': True, 'settled_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
                             lesson = _trade_autopsy(t, res) + f" (cashed out early at ${proceeds:.2f})"
                             t['autopsy'] = lesson
+                            t.pop('price_path', None)  # LEAN LEDGER: snapshots fuel open-trade CLV only — dead weight once settled
                             st.setdefault('pm_lessons', []).append({'ts': t['settled_at'], 'kind': t.get('kind'), 'outcome': t.get('outcome'),
                                                                     'result': t['result'], 'pnl': pnl, 'lesson': lesson})
                             st['pm_lessons'] = st['pm_lessons'][-30:]
@@ -5148,6 +5219,9 @@ async def pm_watch():
                             stats0['pnl'] = round(stats0.get('pnl', 0.0) + pnl, 2)
                             stats0['wins'] = stats0.get('wins', 0) + (1 if pnl > 0 else 0)
                             stats0['losses'] = stats0.get('losses', 0) + (0 if pnl > 0 else 1)
+                            if 'kind_totals' in stats0:
+                                _ktv0 = stats0['kind_totals'].setdefault(t.get('kind') or 'EDGE', [0, 0, 0])
+                                _ktv0[0 if pnl > 0 else 1] += 1
                             em0 = '🎯' if pnl > 0 else '❌'
                             sign0 = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
                             _g9 = client.guilds[0] if client.guilds else None
@@ -5218,12 +5292,16 @@ async def pm_watch():
         t['pnl'] = pnl
         lesson = _trade_autopsy(t, res)
         t['autopsy'] = lesson
+        t.pop('price_path', None)  # LEAN LEDGER (see reconcile)
         st.setdefault('pm_lessons', []).append({'ts': t['settled_at'], 'kind': t['kind'], 'outcome': t.get('outcome'),
                                                 'result': t['result'], 'pnl': pnl, 'lesson': lesson})
         st['pm_lessons'] = st['pm_lessons'][-30:]
         stats['pnl'] = round(stats.get('pnl', 0.0) + pnl, 2)
         stats['wins'] = stats.get('wins', 0) + (1 if res['result'] == 'WIN' else 0)
         stats['losses'] = stats.get('losses', 0) + (0 if res['result'] == 'WIN' else 1)
+        if 'kind_totals' in stats:  # ARCHIVE LAW: the all-time playbook split survives archiving
+            _ktv = stats['kind_totals'].setdefault(t.get('kind') or 'EDGE', [0, 0, 0])
+            _ktv[{'WIN': 0, 'LOSS': 1, 'PUSH': 2}.get(res['result'], 1)] += 1
         bal = await asyncio.to_thread(pm_cash_balance)
         _desk_sync_money(st, stats, bal)
         em = '🎯' if res['result'] == 'WIN' else '❌'
@@ -5350,6 +5428,7 @@ async def pm_watch():
                 pass
         changed = True
         await asyncio.sleep(1)
+    changed = _pm_archive(st) or changed  # ARCHIVE LAW: hot state carries the last 30 days only
     if changed:
         await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm settle receipts')
 
