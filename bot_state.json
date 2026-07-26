@@ -40,6 +40,15 @@
   "bot_version": "9.23.5",
   "unannounced_results": [
     {
+      "id": "chicago-cubs-ml-0725",
+      "desc": "Chicago Cubs ML",
+      "odds": 113,
+      "result": "WIN",
+      "units": 1.13,
+      "score": "Chicago Cubs 11, Pittsburgh Pirates 0",
+      "tier": "sharp"
+    },
+    {
       "id": "atlanta-braves-ml-0725",
       "desc": "Atlanta Braves ML",
       "odds": -108,
@@ -157,7 +166,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785073779.5318685,
+  "last_x_receipt_ts": 1785067163.9700751,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -13786,7 +13795,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T13:44:06Z"
     },
     {
@@ -13802,7 +13811,7 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T13:45:46Z"
     },
     {
@@ -13818,7 +13827,7 @@
       "qty": 3,
       "market_slug": "aec-cs2-lav-btf-2026-07-26",
       "outcome": "Butterfly",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T13:45:47Z"
     }
   ],
@@ -14003,9 +14012,7 @@
     "2080781361955385778",
     "2081043081114370064"
   ],
-  "pending_corrections": [
-    "\u25aa\ufe0f **Ledger addendum:** one more short settled during the audit \u2014 Galions vs THG, true grade **LOSS -$3.44** (was $0.00). Desk record now **6-14 \u00b7 realized +$1.76**. Account unchanged: \ud83d\udcb0 **$98.04** \u00b7 net P&L **+$34.04** on $64.00 in. The grading bug behind all of these is fixed as of v9.24.0 \u26a1"
-  ],
+  "pending_corrections": [],
   "x_backlog_flushed": {
     "ts": "2026-07-25T16:32:22Z",
     "count": 17,
