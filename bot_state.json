@@ -122,6 +122,33 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "los-angeles-dodgers-ml-0726",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -150,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "Los Angeles Dodgers 3, New York Mets 8",
+      "tier": "whale"
+    },
+    {
+      "id": "chicago-white-sox-ml-0726",
+      "desc": "Chicago White Sox ML",
+      "odds": -114,
+      "result": "WIN",
+      "units": 0.88,
+      "score": "Houston Astros 3, Chicago White Sox 12",
+      "tier": "sharp"
+    },
+    {
+      "id": "detroit-tigers--1.5-0726",
+      "desc": "Detroit Tigers -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Kansas City Royals 5, Detroit Tigers 4",
+      "tier": "free"
     }
   ],
   "last_x_receipt_ts": 1785099856.5035052,
