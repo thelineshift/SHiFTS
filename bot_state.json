@@ -38,15 +38,6 @@
   "bot_version": "9.23.5",
   "unannounced_results": [
     {
-      "id": "chicago-cubs-ml-0725",
-      "desc": "Chicago Cubs ML",
-      "odds": 113,
-      "result": "WIN",
-      "units": 1.13,
-      "score": "Chicago Cubs 11, Pittsburgh Pirates 0",
-      "tier": "sharp"
-    },
-    {
       "id": "atlanta-braves-ml-0725",
       "desc": "Atlanta Braves ML",
       "odds": -108,
@@ -164,7 +155,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785067163.9700751,
+  "last_x_receipt_ts": 1785077994.7496023,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -247,7 +238,7 @@
     "20260726-0750"
   ],
   "boot_log": [
-    "2026-07-26T14:59:49Z"
+    "2026-07-26T14:59:48Z"
   ],
   "teasers": {
     "weekly": "2026-07-26",
@@ -313,7 +304,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "9bf432f3-2342-4301-9d35-ab510c77d7cb",
+  "last_deploy_id": "06ca3fa5-e2b3-45cb-bad2-84748fbc70f4",
   "op_month": "2026-07",
   "op_calls": 37,
   "op_meta": {
