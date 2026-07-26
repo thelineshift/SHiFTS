@@ -1,5 +1,5 @@
 {
- "seq": 509,
+ "seq": 511,
  "commands": [
   {
    "seq": 400,
@@ -644,6 +644,20 @@
    "action": "room_tail",
    "channel": "giveaway",
    "n": 12
+  },
+  {
+   "seq": 510,
+   "action": "replace_pinned",
+   "channel": "giveaway",
+   "marker": "WEEKLY SOL GIVEAWAY",
+   "content": "\ud83c\udf81 **HOW TO ENTER \u2014 $50 SOL \u00b7 TWO WINNERS \u00b7 SUNDAY 6 PM ET**\n\n1\ufe0f\u20e3 Follow **@SHiFTSPicks** on X\n2\ufe0f\u20e3 \u2764\ufe0f Like the giveaway post (any giveaway post on our profile counts \u2014 latest is pinned there)\n3\ufe0f\u20e3 Drop your **X @handle** in this channel\n\n\u2705 **The \u2705 on your message means you're in the draw** \u2014 your ticket is logged the second your handle lands, no waiting on verification.\n\ud83d\udd12 Follow + like verified = **full tickets** (repost counts, and we take your word for it).\n\ud83c\udf9f\ufe0f Paid tiers stack up to **5x tickets** \u00b7 type **!entry** anytime for your live status \u00b7 you must be here at Sunday 6 PM ET to collect."
+  },
+  {
+   "seq": 511,
+   "action": "replace_pinned",
+   "channel": "giveaway",
+   "marker": "GIVEAWAY UPGRADE",
+   "content": "\u26a1 **ENTRIES ARE INSTANT \u2014 AND EASIER NOW.**\n\nDrop your **X handle** here and you're **in the pool immediately** \u2014 \u2705 means your ticket is in Sunday's draw, full stop.\nFull tickets lock when **follow + like** verify (we re-scan automatically in the background) \u2014 repost helps the giveaway travel but we take your word for it.\n\n\ud83d\udd0e Type **!entry** anytime for your live status."
   }
  ]
 }
