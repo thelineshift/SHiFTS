@@ -12773,6 +12773,22 @@
       "outcome": "UNiTY esports",
       "status": "resting",
       "ts": "2026-07-26T17:09:46Z"
+    },
+    {
+      "price": 0.56,
+      "short": true,
+      "stake": 2.24,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 56% \u2014 11% edge, half-Kelly",
+      "order_id": "BFZ4MB0N09NK",
+      "qty": 4,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-26T17:14:45Z"
     }
   ],
   "pm_stats": {
@@ -12780,7 +12796,7 @@
     "wins": 10,
     "losses": 19,
     "pnl": 9.7,
-    "trades": 125,
+    "trades": 126,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-16",
     "deposits": 64.0,
