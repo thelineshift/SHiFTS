@@ -1,24 +1,11 @@
 {
-  "executed_seq": 509,
+  "executed_seq": 511,
   "last_log": [
-    "seq 509 executed 2026-07-26 12:30 UTC",
-    "PIN0 by shift#8676: \ud83c\udf81 **$50 IN SOL \u2014 TWO WINNERS \u2014 SUNDAY 6 PM ET**\n\nThe prize pool is UP \u2014 and the new giveaway post is live:\n\ud83d\udc49 https://x.com/SHiFTSPicks/status/2080960292889198604\n\n3 steps on THAT post: \u2705 Follow @SHiFTSPicks \u00b7 \u2764\ufe0f Like \u00b7 \ud83d\udd01 Repost\n(already liked/reposted the earlier post? It still counts \u2014 your steps carry over.)\n\nThen drop your **X handle** here \u2014 \u23f3 means steps pending, \u2705 means **you're fully entere",
-    "  EMBED title=None desc='\ud83c\udf81 $50 IN SOL \u2014 TWO WINNERS EVERY SUNDAY\\n\\n\u2705 Follow @SHiFTSPicks\\n\u2764\ufe0f Like \\\\+ \ud83d\udd01 repost this post\\n\ud83c\udf9f\ufe0f Paid tiers stack to 5x tickets\\n\\nDrop your X handle in Discord \\\\#giveaway \u2014 type \\\\!entry for live status\\\\.\\nDraw: Sunday 6 PM ET \u2014 be there or it redraws\\\\. \u26a1'",
-    "PIN1 by shift#8676: \ud83d\udccc **HOUSE RULE \u2014 DRAW PRESENCE (Sunday 6 PM ET)**\n\nYou **must be in this channel when the draw runs** to collect your prize. Winner's a no-show? **Instant redraw \u2014 no exceptions, no holds.**\n\n\ud83d\udd0e Type **`!entry`** anytime for your live status \u2014 every step checked, your ticket count, where you stand.\nNot in yet? Drop your **X handle** below + follow @SHiFTSPicks, like & repost the giveaway post. Two ",
-    "PIN2 by shift#8676: \u26a1 **GIVEAWAY UPGRADE \u2014 entries are now instant.**\n\nDrop your **X handle** here and you're **logged immediately** \u2014 no more waiting on verification. Complete the 3 steps (follow @SHiFTSPicks + like + repost the giveaway post) and you **auto-upgrade to full tickets** \u2014 I re-scan every 2 hours.\n\n\ud83d\udd0e **Type `!entry` anytime** for your live status: every step checked off, your ticket count, where you sta",
-    "PIN3 by shift#8676: \ud83c\udf81 **WEEKLY SOL GIVEAWAY \u2014 $50 POOL THIS WEEK** \ud83d\udcb0\n\n\ud83e\udd47 **$35 SOL grand prize** + \ud83e\udd48 **$15 SOL runner-up** \u2014 drawn Sunday 6 PM ET, paid on-chain with public tx proof.\n\n**HOW TO ENTER (free):**\n1\ufe0f\u20e3 Follow **@TheLineShift** on X\n2\ufe0f\u20e3 Like + repost the giveaway post\n3\ufe0f\u20e3 Drop your **X @handle** below \u2014 SHiFT scans you in seconds and confirms live\n\n\ud83c\udf9f\ufe0f Members stack tickets: \ud83d\udd12 Lock 2x \u00b7 \ud83d\udcca Sharp 3x \u00b7 \ud83d\udc0b Whale 5",
-    "#\ud83c\udf81giveaway [10:53] <@551582227188809738> \u26a1 Drop your **X (Twitter) handle** like `@yourhandle` \u2014 not your Discord name \u2014 and I'll",
-    "#\ud83c\udf81giveaway [10:53] I\u2019ll see what\u2019s going on with this mfer might need a different way to get entries, X wants 200$ for basic tier",
-    "#\ud83c\udf81giveaway [06:17] <@1087095228571320432> \ud83d\udef0\ufe0f I'm on duty \u2014 scans drop **12a \u00b7 4a \u00b7 8a \u00b7 12p \u00b7 4p \u00b7 8p ET** (next **4 AM ET**). Fr",
-    "#\ud83c\udf81giveaway [06:17] Like already",
-    "#\ud83c\udf81giveaway [05:42] <@1087095228571320432> \ud83c\udfab **ENTRY STATUS \u2014 @sanmongg**\n\u23f3 **PROVISIONAL** \u2014 in the pool, verification pending\n\n\u2705",
-    "#\ud83c\udf81giveaway [05:42] !entry",
-    "#\ud83c\udf81giveaway [05:42] <@1087095228571320432> \ud83c\udfab **ENTRY LOGGED \u2014 @sanmongg**\n\n\u2705 Follow @SHiFTSPicks\n\u2753 Like the giveaway post\n\u2705 Repost",
-    "#\ud83c\udf81giveaway [05:42] @sanmongg",
-    "#\ud83c\udf81giveaway [04:18] <@1152754807166210088> \ud83c\udfab **ENTRY STATUS \u2014 @matyaning**\n\ud83d\udd12 **CONFIRMED** \u2014 in the pool\n\n\u2705 Follow @SHiFTSPicks\n\u2753 ",
-    "#\ud83c\udf81giveaway [04:18] !entry",
-    "#\ud83c\udf81giveaway [04:17] <@1152754807166210088> \ud83c\udfab **ENTRY STATUS \u2014 @matyaning**\n\ud83d\udd12 **CONFIRMED** \u2014 in the pool\n\n\u2705 Follow @SHiFTSPicks\n\u2753 ",
-    "#\ud83c\udf81giveaway [04:17] !entry"
+    "seq 511 executed 2026-07-26 12:37 UTC",
+    "old pinned message deleted",
+    "replaced pin in #\ud83c\udf81giveaway (unpinned 1)",
+    "old pinned message deleted",
+    "replaced pin in #\ud83c\udf81giveaway (unpinned 1)"
   ],
   "time_audit": {
     "at": "2026-07-26 12:29 UTC",
@@ -214,7 +201,7 @@
     "20260726-08": "ok-bot",
     "20260726-12": "ok-bot"
   },
-  "executed_cmd_seq": 509,
+  "executed_cmd_seq": 511,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 19,
