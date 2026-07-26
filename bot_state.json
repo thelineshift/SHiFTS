@@ -10,7 +10,7 @@
     "#\ud83d\udc0bwhale-room-12-7 [16:34] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**"
   ],
   "time_audit": {
-    "at": "2026-07-26 09:30 UTC",
+    "at": "2026-07-26 09:00 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -21,7 +21,7 @@
     "\ud83c\udf81giveaway": "2026-07-26 06:17 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 09:30 UTC",
+    "at": "2026-07-26 09:00 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -32,24 +32,15 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 09:30 UTC",
+    "at": "2026-07-26 09:00 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 09:30 UTC",
+    "at": "2026-07-26 09:00 UTC",
     "flags": []
   },
   "bot_version": "9.22.1",
   "unannounced_results": [
-    {
-      "id": "2-leg-parlay-0725",
-      "desc": "D.C. United ML + Athletics ML",
-      "odds": -26,
-      "result": "LOSS",
-      "units": -0.5,
-      "score": "Legs: None: win \u00b7 None: loss",
-      "tier": "whale"
-    },
     {
       "id": "3-leg-parlay-0725",
       "desc": "Chicago Cubs ML + Atlanta Braves ML + Miami Marlins ML",
@@ -177,7 +168,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785041428.712516,
+  "last_x_receipt_ts": 1785058228.6364045,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
