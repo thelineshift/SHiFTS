@@ -310,7 +310,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "fe9552ef-44e8-4a2e-83ab-2a7c82d1b50a",
   "op_month": "2026-07",
-  "op_calls": 37,
+  "op_calls": 30,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1195,75 +1195,87 @@
       "meta_ts": 1784925282.1446652,
       "lines": [
         [
-          "Aurora Gaming",
-          "Hotu",
-          1.358,
-          2.98
-        ],
-        [
+          "Heroic",
           "Ninjas In Pyjamas",
-          "Pain Gaming",
-          2.39,
-          1.588
+          1.877,
+          1.892
         ],
         [
-          "3Dmax",
-          "Fut eSports",
-          1.327,
-          3.4
+          "Astralis",
+          "Hotu",
+          1.042,
+          11.38
         ],
         [
-          "The Mongolz",
-          "Wildcard Gaming",
-          1.423,
-          2.9
+          "MOUZ",
+          "Fokus",
+          1.017,
+          18.59
         ],
         [
-          "100 Thieves",
-          "Team Spirit",
-          6.53,
-          1.124
+          "Fluxo",
+          "Keyd Stars",
+          1.173,
+          4.59
         ],
         [
           "Isurus",
           "Bestia Academy",
-          1.023,
-          14.46
+          1.34,
+          2.97
         ],
         [
-          "Isurus",
-          "Fluxo",
-          1.245,
-          3.5
+          "Saw Youngsters",
+          "Enjoy",
+          14.13,
+          1.024
         ],
         [
-          "Team Quazar",
-          "New Vision",
-          1.186,
-          4.0
+          "Just Players",
+          "Black Phoenix",
+          1.862,
+          1.909
+        ],
+        [
+          "Rounds",
+          "Privateer Gaming",
+          1.228,
+          3.9
+        ],
+        [
+          "Rune Eaters eSports",
+          "Ex-Rustec",
+          1.03,
+          13.09
         ]
       ],
-      "odds_ts": 1785038433.2457106
+      "odds_ts": 1785009654.288687
     },
     "valorant": {
       "lines": [
         [
-          "REJECT",
-          "QT DIG",
-          1.294,
-          3.2
+          "PCIFIC",
+          "Vitality",
+          20.62,
+          1.013
+        ],
+        [
+          "Eternal Fire",
+          "GIANTX",
+          18.6,
+          1.015
         ],
         [
           "BBL",
           "Natus Vincere",
-          1.555,
-          2.47
+          1.568,
+          2.44
         ],
         [
           "Heretics",
           "Karmine Corp",
-          1.699,
-          2.18
+          1.709,
+          2.16
         ],
         [
           "Paper Rex",
@@ -1272,22 +1284,28 @@
           2.82
         ],
         [
+          "G2",
+          "Cloud9",
+          1.209,
+          4.53
+        ],
+        [
           "Sentinels",
           "LOUD",
-          1.014,
-          19.8
+          1.636,
+          2.29
         ],
         [
           "ENVY",
           "Leviatan",
-          7.66,
-          1.095
+          7.24,
+          1.103
         ],
         [
           "FURIA",
           "MIBR",
-          3.82,
-          1.271
+          3.73,
+          1.282
         ],
         [
           "BESTIA",
@@ -1298,17 +1316,17 @@
         [
           "FunPlus Phoenix",
           "Wolves",
-          1.751,
-          2.0
+          1.729,
+          2.04
         ],
         [
           "Nova",
           "Bilibili",
-          1.769,
-          1.98
+          1.729,
+          2.04
         ]
       ],
-      "odds_ts": 1785038436.818951,
+      "odds_ts": 1785009658.077324,
       "active": [
         901974,
         902246,
@@ -2511,10 +2529,16 @@
       "meta_ts": 1784952040.641981,
       "lines": [
         [
+          "Flyquest",
+          "Lyon Gaming",
+          1.704,
+          2.17
+        ],
+        [
           "Dignitas",
           "Sentinels",
-          7.83,
-          1.07
+          6.11,
+          1.11
         ],
         [
           "Disguisedtoast",
@@ -2523,16 +2547,28 @@
           2.23
         ],
         [
+          "G2 Esports",
+          "Team Vitality",
+          1.02,
+          16.14
+        ],
+        [
+          "Karmine Corp",
+          "Movistar Koi",
+          1.031,
+          12.23
+        ],
+        [
           "Movistar Koi",
           "Team Vitality",
-          3.25,
-          1.334
+          3.26,
+          1.333
         ],
         [
           "Karmine Corp",
           "G2 Esports",
-          1.613,
-          2.33
+          1.606,
+          2.34
         ],
         [
           "Gen.g Esports",
@@ -2541,49 +2577,49 @@
           2.22
         ],
         [
-          "Leviatan",
-          "Fluxo W7M",
-          1.282,
-          3.58
+          "Furia Esports",
+          "Los",
+          13.88,
+          1.024
         ],
         [
-          "Keyd Stars",
-          "Red Canids",
-          1.306,
-          3.42
+          "Pain Gaming",
+          "Loud",
+          3.24,
+          1.312
         ],
         [
           "LNG Esports",
           "Shenzhen Ninjas In Pyjamas",
-          2.19,
-          1.689
+          2.29,
+          1.632
         ],
         [
           "Edward Gaming",
           "ThunderTalk Gaming",
-          1.9,
-          1.917
+          1.909,
+          1.909
         ],
         [
           "Anyones Legend",
           "Bilibili Gaming",
-          2.36,
-          1.598
+          2.24,
+          1.662
         ],
         [
           "Detonation Focusme",
           "GAM Esports",
-          6.51,
-          1.06
+          6.6,
+          1.058
         ],
         [
           "Ctbc Flying Oyster",
           "Deep Cross Gaming",
-          2.5,
-          1.478
+          2.45,
+          1.5
         ]
       ],
-      "odds_ts": 1785038440.2305183
+      "odds_ts": 1785009661.6475246
     }
   },
   "parlay_rot": 7,
@@ -11068,7 +11104,7 @@
     "pnl": 3.06,
     "trades": 70,
     "last_recap": "2026-07-25",
-    "last_recap_hour": "2026-07-26-02"
+    "last_recap_hour": "2026-07-26-04"
   },
   "x_purge_complete": 1785032907.0909944,
   "pm_lessons": [
