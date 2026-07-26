@@ -1,5 +1,5 @@
 {
-  "ts": "2026-07-26T08:00:28Z",
+  "ts": "2026-07-26T08:15:28Z",
   "configured": true,
   "balance_usd": 75.35,
   "buying_power": 17.35,
@@ -69,13 +69,7 @@
       "market": "aec-lol-al-blg-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.6",
-      "qty": 4
-    },
-    {
-      "market": "aec-lol-al-blg-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 15
+      "qty": 5
     },
     {
       "market": "aec-lol-al-blg-2026-07-26",
@@ -87,13 +81,13 @@
       "market": "aec-lol-al-blg-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.6",
-      "qty": 5
+      "qty": 4
     },
     {
-      "market": "aec-lol-cr-kcbs-2026-07-26",
+      "market": "aec-lol-al-blg-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.92",
-      "qty": 2
+      "price": "0.6",
+      "qty": 15
     },
     {
       "market": "aec-lol-cr-kcbs-2026-07-26",
@@ -118,6 +112,12 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.92",
       "qty": 3
+    },
+    {
+      "market": "aec-lol-cr-kcbs-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.92",
+      "qty": 2
     },
     {
       "market": "astatc-valorant-geng-rrq-2026-07-26-map1",
