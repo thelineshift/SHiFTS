@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T21:04:20Z",
+  "updated": "2026-07-26T21:44:19Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -513,7 +513,10 @@
         "away_ml": -103,
         "total": 7.0,
         "ts": 1785085455
-      }
+      },
+      "result": "LOSS",
+      "score": "Seattle Mariners 6, Texas Rangers 4",
+      "units_result": -1.0
     },
     {
       "id": "chicago-cubs-ml-0726",
