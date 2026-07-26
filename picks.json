@@ -2155,10 +2155,10 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -179,
-        "away_ml": 148,
+        "home_ml": -184,
+        "away_ml": 151,
         "total": 8.0,
-        "ts": 1785068962
+        "ts": 1785070753
       },
       "last_alert_odds": 148
     },
@@ -2278,8 +2278,8 @@
       "live_odds": {
         "home_ml": 142,
         "away_ml": -172,
-        "total": 9.5,
-        "ts": 1785069786
+        "total": 9.0,
+        "ts": 1785070753
       },
       "last_alert_odds": -163
     },
@@ -2323,10 +2323,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -111,
-        "away_ml": -108,
+        "home_ml": -110,
+        "away_ml": -110,
         "total": 8.5,
-        "ts": 1785051026
+        "ts": 1785070753
       }
     },
     {
