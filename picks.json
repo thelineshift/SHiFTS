@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T00:50:29Z",
+  "updated": "2026-07-26T01:50:26Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1597,7 +1597,10 @@
           "date": "2026-07-25",
           "time_et": "07:10 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: win \u00b7 None: loss"
     },
     {
       "id": "charlotte-fc-ml-0725",
@@ -1840,7 +1843,10 @@
           "date": "2026-07-25",
           "time_et": "04:10 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: win \u00b7 None: loss \u00b7 None: loss"
     },
     {
       "id": "detroit-tigers--1.5-0725",
