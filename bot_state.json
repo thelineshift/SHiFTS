@@ -6,42 +6,35 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 21:34 UTC",
+    "at": "2026-07-26 22:04 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-26 20:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 21:04 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 21:44 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-26 20:07 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 20:51 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 22:04 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 21:34 UTC",
+    "at": "2026-07-26 22:04 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 21:34 UTC",
-    "flags": []
+    "at": "2026-07-26 22:04 UTC",
+    "flags": [
+      "no challenge bet registered for 2026-07-26 (due 6 PM ET)"
+    ]
   },
   "giveaway_watch": {
-    "at": "2026-07-26 21:34 UTC",
+    "at": "2026-07-26 22:04 UTC",
     "flags": []
   },
   "bot_version": "9.24.4",
   "unannounced_results": [
-    {
-      "id": "chicago-white-sox-ml-0725",
-      "desc": "Chicago White Sox ML",
-      "odds": -126,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Houston Astros 4, Chicago White Sox 1",
-      "tier": "whale"
-    },
     {
       "id": "texas-rangers-ml-0725",
       "desc": "Texas Rangers ML",
@@ -133,7 +126,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785085455.9389694,
+  "last_x_receipt_ts": 1785103456.5737944,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -228,8 +221,7 @@
     "weekly": "2026-07-26",
     "monthly": "2026-08-01",
     "deepdive_fired": "2026-07-25",
-    "x_ad": "2026-07-26",
-    "draw_fired": "2026-07-26"
+    "x_ad": "2026-07-26"
   },
   "gw_handled": [
     "1530230873780129892",
