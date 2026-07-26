@@ -13114,7 +13114,13 @@
       "market_slug": "aec-lol-gls-thg-2026-07-26",
       "outcome": "Team High Ground",
       "status": "open",
-      "ts": "2026-07-26T12:05:48Z"
+      "ts": "2026-07-26T12:05:48Z",
+      "price_path": [
+        {
+          "ts": 1785068367,
+          "px": 0.43
+        }
+      ]
     },
     {
       "price": 0.33,
@@ -13130,7 +13136,13 @@
       "market_slug": "aec-lol-lil-cla-2026-07-26",
       "outcome": "Caldya Esport",
       "status": "open",
-      "ts": "2026-07-26T12:05:49Z"
+      "ts": "2026-07-26T12:05:49Z",
+      "price_path": [
+        {
+          "ts": 1785068367,
+          "px": 0.33
+        }
+      ]
     },
     {
       "price": 0.9,
@@ -13177,7 +13189,13 @@
       "market_slug": "aec-lol-dk-t1-2026-07-27",
       "outcome": "Dplus KIA",
       "status": "open",
-      "ts": "2026-07-26T12:09:53Z"
+      "ts": "2026-07-26T12:09:53Z",
+      "price_path": [
+        {
+          "ts": 1785068367,
+          "px": 0.37
+        }
+      ]
     },
     {
       "price": 0.43,
@@ -13192,7 +13210,13 @@
       "market_slug": "aec-lol-hle-krx-2026-07-27",
       "outcome": "Hanwha Life Esports",
       "status": "open",
-      "ts": "2026-07-26T12:09:54Z"
+      "ts": "2026-07-26T12:09:54Z",
+      "price_path": [
+        {
+          "ts": 1785068367,
+          "px": 0.43
+        }
+      ]
     },
     {
       "price": 0.39,
@@ -13208,7 +13232,13 @@
       "market_slug": "aec-lol-t1-ns-2026-07-27",
       "outcome": "Nongshim Red Force",
       "status": "open",
-      "ts": "2026-07-26T12:09:55Z"
+      "ts": "2026-07-26T12:09:55Z",
+      "price_path": [
+        {
+          "ts": 1785068367,
+          "px": 0.39
+        }
+      ]
     },
     {
       "price": 0.36,
@@ -13224,7 +13254,13 @@
       "market_slug": "aec-lol-t1-dns-2026-07-27",
       "outcome": "DN SOOPers",
       "status": "open",
-      "ts": "2026-07-26T12:09:56Z"
+      "ts": "2026-07-26T12:09:56Z",
+      "price_path": [
+        {
+          "ts": 1785068368,
+          "px": 0.36
+        }
+      ]
     },
     {
       "price": 0.57,
@@ -13256,7 +13292,13 @@
       "market_slug": "aec-cs2-sparta-atr-2026-07-26",
       "outcome": "Atreides",
       "status": "open",
-      "ts": "2026-07-26T12:09:59Z"
+      "ts": "2026-07-26T12:09:59Z",
+      "price_path": [
+        {
+          "ts": 1785068368,
+          "px": 0.47
+        }
+      ]
     },
     {
       "price": 0.53,
