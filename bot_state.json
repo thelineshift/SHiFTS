@@ -12845,7 +12845,7 @@
       "qty": 31,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T18:04:46Z"
     },
     {
@@ -12861,7 +12861,7 @@
       "qty": 1,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T18:04:48Z"
     }
   ],
