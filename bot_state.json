@@ -8,7 +8,7 @@
     "replaced pin in #\ud83c\udf81giveaway (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 12:29 UTC",
+    "at": "2026-07-26 12:43 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,10 +16,10 @@
     "\ud83e\uddfereceipts": "2026-07-26 12:19 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-26 12:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 10:53 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 12:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 12:29 UTC",
+    "at": "2026-07-26 12:43 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -30,14 +30,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 12:29 UTC",
+    "at": "2026-07-26 12:43 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 12:29 UTC",
+    "at": "2026-07-26 12:43 UTC",
     "flags": []
   },
-  "bot_version": "9.23.1",
+  "bot_version": "9.23.3",
   "unannounced_results": [
     {
       "id": "chicago-cubs-ml-0725",
@@ -11323,7 +11323,7 @@
       "qty": 15,
       "market_slug": "aec-valorant-geng-rrq-2026-07-26",
       "outcome": "Gen.G Esports",
-      "status": "unfilled",
+      "status": "open",
       "ts": "2026-07-25T21:47:31Z",
       "price_path": [
         {
@@ -11422,10 +11422,7 @@
           "ts": 1785069233,
           "px": 0.97
         }
-      ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      ]
     },
     {
       "price": 0.55,
@@ -13404,7 +13401,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:34:13Z"
     },
     {
@@ -13420,7 +13417,7 @@
       "qty": 4,
       "market_slug": "aec-cs2-eac-atr-2026-07-26",
       "outcome": "Atreides",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:39:35Z"
     }
   ],
