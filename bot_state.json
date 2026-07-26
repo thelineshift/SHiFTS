@@ -7277,7 +7277,7 @@
         }
       },
       "valorant:136798": {
-        "ts": 1785075341.6313875,
+        "ts": 1785085779.8538806,
         "f": {
           "w": 1,
           "l": 4,
@@ -7306,7 +7306,7 @@
         }
       },
       "valorant:138956": {
-        "ts": 1785075342.5247726,
+        "ts": 1785085780.4468014,
         "f": {
           "w": 0,
           "l": 2,
@@ -12750,6 +12750,21 @@
       "outcome": "UNiTY esports",
       "status": "open",
       "ts": "2026-07-26T17:04:47Z"
+    },
+    {
+      "price": 0.04,
+      "stake": 2.64,
+      "kind": "EDGE",
+      "p_model": 0.30769230769230776,
+      "event": "UNiTY esports vs. Mai Tai",
+      "ev_start": "2026-07-27T11:00:00Z",
+      "reason": "model 31% vs market 4% \u2014 27% edge, half-Kelly",
+      "order_id": "BFZ3XCS589NF",
+      "qty": 66,
+      "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
+      "outcome": "UNiTY esports",
+      "status": "open",
+      "ts": "2026-07-26T17:09:46Z"
     }
   ],
   "pm_stats": {
@@ -12757,7 +12772,7 @@
     "wins": 10,
     "losses": 19,
     "pnl": 9.7,
-    "trades": 124,
+    "trades": 125,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-16",
     "deposits": 64.0,
