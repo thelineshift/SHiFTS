@@ -10,7 +10,7 @@
     "#\ud83d\udc0bwhale-room-12-7 [16:34] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**"
   ],
   "time_audit": {
-    "at": "2026-07-26 06:30 UTC",
+    "at": "2026-07-26 07:00 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -21,7 +21,7 @@
     "\ud83c\udf81giveaway": "2026-07-26 06:17 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 06:30 UTC",
+    "at": "2026-07-26 07:00 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -32,11 +32,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 06:30 UTC",
+    "at": "2026-07-26 07:00 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 06:30 UTC",
+    "at": "2026-07-26 07:00 UTC",
     "flags": []
   },
   "bot_version": "9.22.1",
