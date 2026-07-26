@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T14:29:41Z",
+  "updated": "2026-07-26T14:49:40Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2155,12 +2155,12 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -198,
-        "away_ml": 162,
+        "home_ml": -193,
+        "away_ml": 158,
         "total": 8.0,
-        "ts": 1785077377
+        "ts": 1785073516
       },
-      "last_alert_odds": 162
+      "last_alert_odds": 148
     },
     {
       "id": "san-francisco-giants-ml-0726",
@@ -2202,10 +2202,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -125,
+        "home_ml": -126,
         "away_ml": 104,
         "total": 7.0,
-        "ts": 1785077378
+        "ts": 1785073115
       }
     },
     {
@@ -2346,10 +2346,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -350,
-        "away_ml": 274,
+        "home_ml": -356,
+        "away_ml": 278,
         "total": 7.5,
-        "ts": 1785077378
+        "ts": 1785073115
       },
       "last_alert_odds": -354
     },
@@ -2519,7 +2519,10 @@
       "opp": "SAW Youngsters",
       "analysis": "2-1 last 5 (beat Just Players, Benched gods) (lost to G2 Ares) vs 2-3 \u2014 model line -300 (our 75%) | \ud83d\udd25 **Momentum play:** 2-1 last 5 (beat Just Players, Benched gods) (lost to G2 Ares) vs 2-3 \u2014 model line -300 (our 75%). Ride the **27-point** form edge before the market catches up.",
       "awayTeam": "Butterfly",
-      "homeTeam": "SAW Youngsters"
+      "homeTeam": "SAW Youngsters",
+      "result": "WIN",
+      "units_result": 0.33,
+      "score": "Butterfly 2-1 SAW Youngsters \u00b7 final"
     },
     {
       "id": "misa-esports-ml-0726",
