@@ -11991,7 +11991,7 @@
       "qty": 4,
       "market_slug": "astatc-cs2-for-ica-2026-07-26-map1",
       "outcome": "Fortress",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-26T00:00:56Z",
       "price_path": [
         {
@@ -12050,7 +12050,10 @@
           "ts": 1785055231,
           "px": 0.14
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.64,
