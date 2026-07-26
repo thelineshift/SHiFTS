@@ -9101,6 +9101,43 @@
             }
           ]
         }
+      },
+      "cs2:138406": {
+        "ts": 1785103179.6450827,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "Black Phoenix"
+            },
+            {
+              "won": false,
+              "opp": "ex-RUSTEC"
+            },
+            {
+              "won": false,
+              "opp": "Butterfly"
+            },
+            {
+              "won": true,
+              "opp": "Endless Journey"
+            },
+            {
+              "won": false,
+              "opp": "CYBERSHOKE Esports"
+            }
+          ]
+        }
+      },
+      "cs2:138985": {
+        "ts": 1785103180.2717218,
+        "f": {
+          "w": 0,
+          "l": 0,
+          "res": []
+        }
       }
     }
   },
@@ -13851,6 +13888,52 @@
       "outcome": "Habos Babos",
       "status": "resting",
       "ts": "2026-07-26T21:49:50Z"
+    },
+    {
+      "price": 0.21,
+      "stake": 1.26,
+      "kind": "EDGE",
+      "p_model": 0.30769230769230776,
+      "event": "UNiTY esports vs. Mai Tai",
+      "ev_start": "2026-07-27T11:00:00Z",
+      "reason": "model 31% vs market 21% \u2014 10% edge, half-Kelly",
+      "order_id": "BG3EAGF0E9NJ",
+      "qty": 6,
+      "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
+      "outcome": "UNiTY esports",
+      "status": "open",
+      "ts": "2026-07-26T21:59:48Z"
+    },
+    {
+      "price": 0.91,
+      "short": true,
+      "stake": 2.73,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "PURE vs. ASTRAL",
+      "ev_start": "2026-07-27T12:00:00Z",
+      "reason": "tail-end yield \u2014 9.9% on a near-certain that settles today",
+      "order_id": "BG3E37PF69NG",
+      "qty": 3,
+      "market_slug": "aec-cs2-pure-astr-2026-07-27",
+      "outcome": "ASTRAL",
+      "status": "open",
+      "ts": "2026-07-26T21:59:49Z"
+    },
+    {
+      "price": 0.04,
+      "stake": 2.32,
+      "kind": "EDGE",
+      "p_model": 0.25,
+      "event": "Black Phoenix vs. Misa Esports",
+      "ev_start": "2026-07-27T14:00:00Z",
+      "reason": "model 25% vs market 4% \u2014 21% edge, half-Kelly",
+      "order_id": "BG3CBX04A9NF",
+      "qty": 58,
+      "market_slug": "astatc-cs2-bpl-misa-2026-07-27-map2",
+      "outcome": "Black Phoenix",
+      "status": "open",
+      "ts": "2026-07-26T21:59:50Z"
     }
   ],
   "pm_stats": {
@@ -13858,7 +13941,7 @@
     "wins": 13,
     "losses": 24,
     "pnl": 18.81,
-    "trades": 169,
+    "trades": 172,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-20",
     "deposits": 64.0,
