@@ -6,29 +6,29 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 20:34 UTC",
+    "at": "2026-07-26 19:34 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-1": "2026-07-26 20:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 20:24 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-26 20:07 UTC",
+    "\ud83c\udfaffree-pick-2-1": "2026-07-26 16:44 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 19:24 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-26 19:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 20:06 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 18:45 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 20:34 UTC",
+    "at": "2026-07-26 19:34 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 20:34 UTC",
+    "at": "2026-07-26 19:34 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 20:34 UTC",
+    "at": "2026-07-26 19:34 UTC",
     "flags": []
   },
   "bot_version": "9.24.4",
@@ -9833,6 +9833,10 @@
       "ts": "2026-07-25T18:11:39Z",
       "price_path": [
         {
+          "ts": 1785042627,
+          "px": 0.58
+        },
+        {
           "ts": 1785044427,
           "px": 0.58
         },
@@ -9923,10 +9927,6 @@
         {
           "ts": 1785095658,
           "px": 0.46
-        },
-        {
-          "ts": 1785098059,
-          "px": 0.45
         }
       ]
     },
@@ -13359,6 +13359,38 @@
       "outcome": "Habos Babos",
       "status": "resting",
       "ts": "2026-07-26T20:29:52Z"
+    },
+    {
+      "price": 0.47,
+      "short": true,
+      "stake": 7.05,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727273,
+      "event": "Noir Verse vs. Atputies",
+      "ev_start": "2026-07-27T12:00:00Z",
+      "reason": "model 73% vs market 47% \u2014 26% edge, half-Kelly",
+      "order_id": "BG29A2YF89P0",
+      "qty": 15,
+      "market_slug": "aec-cs2-nvo-atp-2026-07-27",
+      "outcome": "Atputies",
+      "status": "open",
+      "ts": "2026-07-26T20:34:49Z"
+    },
+    {
+      "price": 0.62,
+      "short": true,
+      "stake": 4.34,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727273,
+      "event": "Noir Verse vs. PURE",
+      "ev_start": "2026-07-27T13:00:00Z",
+      "reason": "model 73% vs market 62% \u2014 11% edge, half-Kelly",
+      "order_id": "BG292CR469QV",
+      "qty": 7,
+      "market_slug": "aec-cs2-nvo-pure-2026-07-27",
+      "outcome": "PURE",
+      "status": "open",
+      "ts": "2026-07-26T20:34:50Z"
     }
   ],
   "pm_stats": {
@@ -13366,7 +13398,7 @@
     "wins": 13,
     "losses": 23,
     "pnl": 21.61,
-    "trades": 151,
+    "trades": 153,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-20",
     "deposits": 64.0,
