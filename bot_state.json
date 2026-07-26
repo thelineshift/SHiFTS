@@ -34,6 +34,15 @@
   "bot_version": "9.24.4",
   "unannounced_results": [
     {
+      "id": "chicago-white-sox-ml-0725",
+      "desc": "Chicago White Sox ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Houston Astros 4, Chicago White Sox 1",
+      "tier": "whale"
+    },
+    {
       "id": "texas-rangers-ml-0725",
       "desc": "Texas Rangers ML",
       "odds": -105,
@@ -122,18 +131,9 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
-    },
-    {
-      "id": "chicago-cubs-ml-0726",
-      "desc": "Chicago Cubs ML",
-      "odds": 109,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Chicago Cubs 7, Pittsburgh Pirates 8",
-      "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785097456.7819705,
+  "last_x_receipt_ts": 1785085455.9389694,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -10185,10 +10185,6 @@
       "ts": "2026-07-25T19:10:26Z",
       "price_path": [
         {
-          "ts": 1785039628,
-          "px": 0.21
-        },
-        {
           "ts": 1785042028,
           "px": 0.21
         },
@@ -10278,6 +10274,10 @@
         },
         {
           "ts": 1785095061,
+          "px": 0.18
+        },
+        {
+          "ts": 1785097457,
           "px": 0.18
         }
       ]
@@ -10510,10 +10510,6 @@
       "ts": "2026-07-25T21:52:30Z",
       "price_path": [
         {
-          "ts": 1785039628,
-          "px": 0.55
-        },
-        {
           "ts": 1785042028,
           "px": 0.55
         },
@@ -10604,6 +10600,10 @@
         {
           "ts": 1785095061,
           "px": 0.59
+        },
+        {
+          "ts": 1785097457,
+          "px": 0.61
         }
       ]
     },
@@ -10641,10 +10641,6 @@
       "status": "open",
       "ts": "2026-07-25T22:01:36Z",
       "price_path": [
-        {
-          "ts": 1785039628,
-          "px": 0.38
-        },
         {
           "ts": 1785042029,
           "px": 0.38
@@ -10736,6 +10732,10 @@
         {
           "ts": 1785095062,
           "px": 0.38
+        },
+        {
+          "ts": 1785097457,
+          "px": 0.38
         }
       ]
     },
@@ -10773,10 +10773,6 @@
       "status": "open",
       "ts": "2026-07-25T22:07:42Z",
       "price_path": [
-        {
-          "ts": 1785039629,
-          "px": 0.64
-        },
         {
           "ts": 1785042029,
           "px": 0.64
@@ -10867,6 +10863,10 @@
         },
         {
           "ts": 1785095062,
+          "px": 0.56
+        },
+        {
+          "ts": 1785097458,
           "px": 0.56
         }
       ]
@@ -11235,106 +11235,13 @@
       "qty": 19,
       "market_slug": "aec-lol-g2-kc-2026-07-26",
       "outcome": "Karmine Corp",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T23:20:56Z",
-      "price_path": [
-        {
-          "ts": 1785039630,
-          "px": 0.39
-        },
-        {
-          "ts": 1785042030,
-          "px": 0.39
-        },
-        {
-          "ts": 1785044430,
-          "px": 0.4
-        },
-        {
-          "ts": 1785046830,
-          "px": 0.4
-        },
-        {
-          "ts": 1785048630,
-          "px": 0.4
-        },
-        {
-          "ts": 1785050430,
-          "px": 0.4
-        },
-        {
-          "ts": 1785053430,
-          "px": 0.4
-        },
-        {
-          "ts": 1785055230,
-          "px": 0.4
-        },
-        {
-          "ts": 1785057032,
-          "px": 0.4
-        },
-        {
-          "ts": 1785059430,
-          "px": 0.4
-        },
-        {
-          "ts": 1785061233,
-          "px": 0.4
-        },
-        {
-          "ts": 1785063034,
-          "px": 0.4
-        },
-        {
-          "ts": 1785065270,
-          "px": 0.4
-        },
-        {
-          "ts": 1785067077,
-          "px": 0.4
-        },
-        {
-          "ts": 1785069234,
-          "px": 0.4
-        },
-        {
-          "ts": 1785073127,
-          "px": 0.4
-        },
-        {
-          "ts": 1785074986,
-          "px": 0.4
-        },
-        {
-          "ts": 1785077386,
-          "px": 0.4
-        },
-        {
-          "ts": 1785079200,
-          "px": 0.41
-        },
-        {
-          "ts": 1785085419,
-          "px": 0.42
-        },
-        {
-          "ts": 1785089659,
-          "px": 0.67
-        },
-        {
-          "ts": 1785091459,
-          "px": 0.62
-        },
-        {
-          "ts": 1785093260,
-          "px": 0.45
-        },
-        {
-          "ts": 1785095062,
-          "px": 0.34
-        }
-      ]
+      "result": "WIN",
+      "payout": 19.0,
+      "settled_at": "2026-07-26T20:24:18Z",
+      "pnl": 11.59,
+      "autopsy": "+$11.59 \u2014 model 73% vs market 39% was real edge; thesis held. Taken 0.39, rode to 0.34 before the result \u2014 beat the number by 5\u00a2 \u2705"
     },
     {
       "price": 0.6,
@@ -11545,10 +11452,6 @@
       "ts": "2026-07-26T00:15:56Z",
       "price_path": [
         {
-          "ts": 1785039631,
-          "px": 0.64
-        },
-        {
           "ts": 1785042031,
           "px": 0.64
         },
@@ -11638,6 +11541,10 @@
         },
         {
           "ts": 1785095062,
+          "px": 0.64
+        },
+        {
+          "ts": 1785097461,
           "px": 0.64
         }
       ]
@@ -11767,6 +11674,10 @@
         {
           "ts": 1785095063,
           "px": 0.32
+        },
+        {
+          "ts": 1785097461,
+          "px": 0.32
         }
       ]
     },
@@ -11824,6 +11735,10 @@
         {
           "ts": 1785095063,
           "px": 0.48
+        },
+        {
+          "ts": 1785097461,
+          "px": 0.51
         }
       ]
     },
@@ -11882,6 +11797,10 @@
         {
           "ts": 1785095063,
           "px": 0.34
+        },
+        {
+          "ts": 1785097461,
+          "px": 0.34
         }
       ]
     },
@@ -11939,6 +11858,10 @@
         },
         {
           "ts": 1785095063,
+          "px": 0.28
+        },
+        {
+          "ts": 1785097461,
           "px": 0.28
         }
       ]
@@ -12281,6 +12204,10 @@
         {
           "ts": 1785095660,
           "px": 0.71
+        },
+        {
+          "ts": 1785097462,
+          "px": 0.71
         }
       ]
     },
@@ -12394,6 +12321,10 @@
         },
         {
           "ts": 1785095660,
+          "px": 0.66
+        },
+        {
+          "ts": 1785097462,
           "px": 0.66
         }
       ]
@@ -13354,16 +13285,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 12,
+    "wins": 13,
     "losses": 23,
-    "pnl": 10.02,
+    "pnl": 21.61,
     "trades": 146,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-20",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 94.8,
-    "net": 30.8,
+    "account": 77.8,
+    "net": 13.8,
     "last_archive": "2026-07-26",
     "kind_totals": {
       "ARB": [
@@ -13372,7 +13303,7 @@
         0
       ],
       "EDGE": [
-        8,
+        9,
         12,
         0
       ],
@@ -13386,14 +13317,6 @@
   },
   "x_purge_complete": 1785032907.0909944,
   "pm_lessons": [
-    {
-      "ts": "2026-07-25T16:21:07Z",
-      "kind": "EDGE",
-      "outcome": "Team Vitality",
-      "result": "LOSS",
-      "pnl": -7.22,
-      "lesson": "model 50% vs market 19% missed \u2014 logged for the playbook review."
-    },
     {
       "ts": "2026-07-25T17:51:08Z",
       "kind": "ARB",
@@ -13625,6 +13548,14 @@
       "result": "LOSS",
       "pnl": -0.8,
       "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.60, rode to 0.28 before the result \u2014 beat the number by 32\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-26T20:24:18Z",
+      "kind": "EDGE",
+      "outcome": "Karmine Corp",
+      "result": "WIN",
+      "pnl": 11.59,
+      "lesson": "+$11.59 \u2014 model 73% vs market 39% was real edge; thesis held. Taken 0.39, rode to 0.34 before the result \u2014 beat the number by 5\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
