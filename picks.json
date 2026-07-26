@@ -2155,11 +2155,12 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -179,
+        "away_ml": 148,
         "total": 8.0,
-        "ts": 1785047426
-      }
+        "ts": 1785068962
+      },
+      "last_alert_odds": 148
     },
     {
       "id": "san-francisco-giants-ml-0726",
@@ -2345,10 +2346,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -354,
-        "away_ml": 277,
+        "home_ml": -362,
+        "away_ml": 282,
         "total": 7.5,
-        "ts": 1785063626
+        "ts": 1785068962
       },
       "last_alert_odds": -354
     },
@@ -2392,10 +2393,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -130,
-        "away_ml": 108,
-        "total": 9.0,
-        "ts": 1785063626
+        "home_ml": -131,
+        "away_ml": 109,
+        "total": 8.5,
+        "ts": 1785068963
       }
     },
     {
@@ -2674,7 +2675,14 @@
       "opp": "Kansas City Royals",
       "analysis": "50-55 overall, 29-24 at home \u2014 ML juiced to -192, so the -1.5 at the standard number is the bet; model makes Detroit Tigers 66% straight up | \ud83d\udcca **Form + price:** 50-55 overall, 29-24 at home \u2014 ML juiced to -192, so the -1.5 at the standard number is the bet; model makes Detroit Tigers 66% straight u",
       "homeTeam": "Detroit Tigers",
-      "awayTeam": "Kansas City Royals"
+      "awayTeam": "Kansas City Royals",
+      "live_odds": {
+        "home_ml": -192,
+        "away_ml": 157,
+        "total": 9.0,
+        "ts": 1785068963
+      },
+      "last_alert_odds": -192
     }
   ]
 }
