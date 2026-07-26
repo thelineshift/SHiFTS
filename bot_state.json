@@ -9873,7 +9873,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-fpx-wol-2026-07-26",
       "outcome": "Wolves Esports",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T18:06:40Z",
       "price_path": [
         {
@@ -9972,7 +9972,13 @@
           "ts": 1785063031,
           "px": 0.15
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 1.32,
+      "pnl": 0.0,
+      "cashout": true,
+      "settled_at": "2026-07-26T11:10:26Z",
+      "autopsy": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.15 before the result \u2014 beat the number by 29\u00a2 \u2705 (cashed out early at $1.32)"
     },
     {
       "price": 0.63,
@@ -12430,7 +12436,7 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 14,
+    "losses": 15,
     "pnl": -2.69,
     "trades": 70,
     "last_recap": "2026-07-25",
@@ -12573,6 +12579,14 @@
       "result": "LOSS",
       "pnl": -2.95,
       "lesson": "model 86% vs market 59% missed \u2014 logged for the playbook review. Taken 0.59, rode to 0.61 before the result \u2014 beat the number by 2\u00a2 \u2705 (cashed out early at $5.90)"
+    },
+    {
+      "ts": "2026-07-26T11:10:26Z",
+      "kind": "EDGE",
+      "outcome": "Wolves Esports",
+      "result": "LOSS",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.15 before the result \u2014 beat the number by 29\u00a2 \u2705 (cashed out early at $1.32)"
     }
   ],
   "giveaway_x_posts": [
