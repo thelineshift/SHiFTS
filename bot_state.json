@@ -34,6 +34,15 @@
   "bot_version": "9.24.4",
   "unannounced_results": [
     {
+      "id": "chicago-white-sox-ml-0725",
+      "desc": "Chicago White Sox ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Houston Astros 4, Chicago White Sox 1",
+      "tier": "whale"
+    },
+    {
       "id": "texas-rangers-ml-0725",
       "desc": "Texas Rangers ML",
       "odds": -105,
@@ -124,7 +133,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785092656.846946,
+  "last_x_receipt_ts": 1785085455.9389694,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -13145,7 +13154,7 @@
       "qty": 1,
       "market_slug": "aec-cs2-nvo-pure-2026-07-27",
       "outcome": "PURE",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T18:54:47Z"
     },
     {
@@ -13160,7 +13169,7 @@
       "qty": 26,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T18:59:46Z"
     }
   ],
