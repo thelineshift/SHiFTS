@@ -6827,11 +6827,23 @@
         }
       },
       "dota2:135854": {
-        "ts": 1784978139.9136784,
+        "ts": 1785072244.7797823,
         "f": {
           "w": 3,
           "l": 2,
           "res": [
+            {
+              "won": false,
+              "opp": "Yellow Submarine"
+            },
+            {
+              "won": true,
+              "opp": "RE.Arise"
+            },
+            {
+              "won": true,
+              "opp": "Rottweilas"
+            },
             {
               "won": false,
               "opp": "Ilbirs eSports"
@@ -6839,18 +6851,6 @@
             {
               "won": true,
               "opp": "Dandelions"
-            },
-            {
-              "won": false,
-              "opp": "Level UP"
-            },
-            {
-              "won": true,
-              "opp": "Team AION"
-            },
-            {
-              "won": true,
-              "opp": "Nemiga Gaming"
             }
           ]
         }
@@ -13702,6 +13702,22 @@
       "outcome": "Atreides",
       "status": "open",
       "ts": "2026-07-26T13:19:05Z"
+    },
+    {
+      "price": 0.53,
+      "short": true,
+      "stake": 2.12,
+      "kind": "EDGE",
+      "p_model": 0.75,
+      "event": "Lavked vs. Butterfly",
+      "ev_start": "2026-07-26T17:00:00Z",
+      "reason": "model 75% vs market 53% \u2014 22% edge, half-Kelly",
+      "order_id": "BFVJGDBA89NV",
+      "qty": 4,
+      "market_slug": "aec-cs2-lav-btf-2026-07-26",
+      "outcome": "Butterfly",
+      "status": "open",
+      "ts": "2026-07-26T13:24:05Z"
     }
   ],
   "pm_stats": {
@@ -13709,7 +13725,7 @@
     "wins": 3,
     "losses": 16,
     "pnl": -5.17,
-    "trades": 99,
+    "trades": 100,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12"
   },
