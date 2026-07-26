@@ -12740,7 +12740,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T17:04:46Z"
     },
     {
@@ -12755,7 +12755,7 @@
       "qty": 9,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T17:04:47Z"
     },
     {
@@ -12770,7 +12770,7 @@
       "qty": 66,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T17:09:46Z"
     }
   ],
