@@ -2132,10 +2132,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "Houston Astros",
       "live_odds": {
-        "home_ml": -114,
-        "away_ml": -105,
+        "home_ml": -112,
+        "away_ml": -108,
         "total": 9.5,
-        "ts": 1785060026
+        "ts": 1785073115
       }
     },
     {
@@ -2155,10 +2155,10 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -184,
-        "away_ml": 151,
+        "home_ml": -188,
+        "away_ml": 154,
         "total": 8.0,
-        "ts": 1785070924
+        "ts": 1785073115
       },
       "last_alert_odds": 148
     },
@@ -2179,10 +2179,10 @@
       "homeTeam": "San Francisco Giants",
       "awayTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -113,
-        "away_ml": -106,
+        "home_ml": -110,
+        "away_ml": -109,
         "total": 8.5,
-        "ts": 1785069786
+        "ts": 1785073115
       }
     },
     {
@@ -2202,10 +2202,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -126,
+        "away_ml": 104,
         "total": 7.0,
-        "ts": 1785056426
+        "ts": 1785073115
       }
     },
     {
@@ -2300,10 +2300,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -112,
-        "away_ml": -108,
+        "home_ml": -110,
+        "away_ml": -109,
         "total": 7.0,
-        "ts": 1785067162
+        "ts": 1785073115
       }
     },
     {
@@ -2323,10 +2323,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -110,
-        "away_ml": -110,
+        "home_ml": -108,
+        "away_ml": -111,
         "total": 8.5,
-        "ts": 1785070924
+        "ts": 1785073115
       }
     },
     {
@@ -2346,10 +2346,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -362,
-        "away_ml": 282,
+        "home_ml": -356,
+        "away_ml": 278,
         "total": 7.5,
-        "ts": 1785068962
+        "ts": 1785073115
       },
       "last_alert_odds": -354
     },
