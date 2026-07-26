@@ -1,51 +1,21 @@
 {
-  "ts": "2026-07-26T21:04:19Z",
+  "ts": "2026-07-26T21:19:18Z",
   "configured": true,
-  "balance_usd": 89.95,
-  "buying_power": 16.95,
+  "balance_usd": 94.31,
+  "buying_power": 14.31,
   "positions": [],
   "open_orders": [
     {
-      "market": "astatc-cs2-unity-mta-2026-07-27-map2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.04",
-      "qty": 31
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 3
     },
     {
-      "market": "astatc-cs2-unity-mta-2026-07-27-map2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.23",
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
       "qty": 5
-    },
-    {
-      "market": "astatc-cs2-unity-mta-2026-07-27-map2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.23",
-      "qty": 5
-    },
-    {
-      "market": "astatc-cs2-unity-mta-2026-07-27-map2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.23",
-      "qty": 6
-    },
-    {
-      "market": "astatc-cs2-unity-mta-2026-07-27-map2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.04",
-      "qty": 66
-    },
-    {
-      "market": "astatc-cs2-unity-mta-2026-07-27-map2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.04",
-      "qty": 66
-    },
-    {
-      "market": "astatc-valorant-m8gc-gxgc-2026-07-27-map1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.65",
-      "qty": 6
     },
     {
       "market": "aec-valorant-nv-lev-2026-07-26",
@@ -58,6 +28,78 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.9",
       "qty": 3
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 3
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 3
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 3
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 3
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 3
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 2
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 2
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 2
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 3
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 2
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 3
+    },
+    {
+      "market": "aec-valorant-nv-lev-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.9",
+      "qty": 5
     },
     {
       "market": "aec-valorant-nv-lev-2026-07-26",
@@ -82,48 +124,6 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.9",
       "qty": 3
-    },
-    {
-      "market": "aec-valorant-nv-lev-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.9",
-      "qty": 3
-    },
-    {
-      "market": "aec-valorant-nv-lev-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.9",
-      "qty": 2
-    },
-    {
-      "market": "aec-valorant-nv-lev-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.9",
-      "qty": 3
-    },
-    {
-      "market": "aec-valorant-nv-lev-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.9",
-      "qty": 3
-    },
-    {
-      "market": "aec-valorant-nv-lev-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.9",
-      "qty": 5
-    },
-    {
-      "market": "aec-valorant-nv-lev-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.9",
-      "qty": 2
-    },
-    {
-      "market": "aec-valorant-nv-lev-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.9",
-      "qty": 2
     }
   ]
 }
