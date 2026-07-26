@@ -6,29 +6,29 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 19:34 UTC",
+    "at": "2026-07-26 20:34 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-1": "2026-07-26 16:44 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 19:24 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-26 19:00 UTC",
+    "\ud83c\udfaffree-pick-2-1": "2026-07-26 20:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 20:24 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-26 20:07 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 18:45 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 20:06 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 19:34 UTC",
+    "at": "2026-07-26 20:34 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 19:34 UTC",
+    "at": "2026-07-26 20:34 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 19:34 UTC",
+    "at": "2026-07-26 20:34 UTC",
     "flags": []
   },
   "bot_version": "9.24.4",
@@ -13295,7 +13295,7 @@
       "qty": 5,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T20:29:47Z"
     },
     {
@@ -13310,7 +13310,7 @@
       "qty": 10,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T20:29:49Z"
     },
     {
@@ -13325,7 +13325,7 @@
       "qty": 6,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T20:29:50Z"
     },
     {
@@ -13341,7 +13341,7 @@
       "qty": 4,
       "market_slug": "aec-cs2-pure-astr-2026-07-27",
       "outcome": "ASTRAL",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T20:29:51Z"
     },
     {
@@ -13357,7 +13357,7 @@
       "qty": 6,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T20:29:52Z"
     }
   ],
