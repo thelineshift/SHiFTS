@@ -2299,10 +2299,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -113,
-        "away_ml": -107,
+        "home_ml": -111,
+        "away_ml": -109,
         "total": 7.0,
-        "ts": 1785038426
+        "ts": 1785045626
       }
     },
     {
