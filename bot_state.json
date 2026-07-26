@@ -14146,6 +14146,22 @@
       "outcome": "Habos Babos",
       "status": "open",
       "ts": "2026-07-26T14:20:09Z"
+    },
+    {
+      "price": 0.76,
+      "short": true,
+      "stake": 4.56,
+      "kind": "EDGE",
+      "p_model": 1.0,
+      "event": "FURIA Esports vs. MIBR",
+      "ev_start": "2026-07-27T00:00:00Z",
+      "reason": "model 100% vs market 76% \u2014 24% edge, half-Kelly",
+      "order_id": "BFWHMAQN29NW",
+      "qty": 6,
+      "market_slug": "aec-valorant-fur-mibr-2026-07-27",
+      "outcome": "MIBR",
+      "status": "open",
+      "ts": "2026-07-26T14:25:09Z"
     }
   ],
   "pm_stats": {
@@ -14153,7 +14169,7 @@
     "wins": 6,
     "losses": 14,
     "pnl": 1.76,
-    "trades": 107,
+    "trades": 108,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-14",
     "deposits": 64.0,
