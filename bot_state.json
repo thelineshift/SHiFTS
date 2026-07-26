@@ -284,7 +284,7 @@
     "1510318944097927388:guide": 1784948166.204074,
     "1402974951446675537:steps": 1784906566.8302608,
     "1072032485241802833:guide": 1784909732.1577997,
-    "551582227188809738:guide": 1785070414.9387898,
+    "551582227188809738:guide": 1785063217.9746912,
     "472230323644530690:steps": 1784926733.902694,
     "894953724164849685:steps": 1784934222.1466177,
     "939167706031194182:steps": 1784938222.7964756,
@@ -9950,7 +9950,7 @@
       "qty": 1,
       "market_slug": "aec-lol-cfo-dcg-2026-07-26",
       "outcome": "CTBC Flying Oyster",
-      "status": "unfilled",
+      "status": "open",
       "ts": "2026-07-25T11:15:56Z",
       "price_path": [
         {
@@ -10049,10 +10049,7 @@
           "ts": 1785069231,
           "px": 0.8
         }
-      ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      ]
     },
     {
       "price": 0.38,
@@ -11326,7 +11323,7 @@
       "qty": 15,
       "market_slug": "aec-valorant-geng-rrq-2026-07-26",
       "outcome": "Gen.G Esports",
-      "status": "unfilled",
+      "status": "open",
       "ts": "2026-07-25T21:47:31Z",
       "price_path": [
         {
@@ -11425,10 +11422,7 @@
           "ts": 1785069233,
           "px": 0.97
         }
-      ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      ]
     },
     {
       "price": 0.55,
@@ -13407,7 +13401,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:34:13Z"
     },
     {
@@ -13423,7 +13417,7 @@
       "qty": 4,
       "market_slug": "aec-cs2-eac-atr-2026-07-26",
       "outcome": "Atreides",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:39:35Z"
     },
     {
@@ -13439,7 +13433,7 @@
       "qty": 10,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:43:36Z"
     },
     {
@@ -13455,7 +13449,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:43:37Z"
     },
     {
@@ -13471,7 +13465,7 @@
       "qty": 6,
       "market_slug": "aec-cs2-lav-btf-2026-07-26",
       "outcome": "Butterfly",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:43:39Z"
     },
     {
@@ -13487,7 +13481,7 @@
       "qty": 11,
       "market_slug": "aec-lol-genga-foxy-2026-07-27",
       "outcome": "BNK FearX Youth",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:48:36Z"
     },
     {
@@ -13503,13 +13497,38 @@
       "market_slug": "astatc-cs2-odk-ldp-2026-07-26-map1",
       "outcome": "ODDIK",
       "status": "open",
-      "ts": "2026-07-26T12:48:37Z",
-      "price_path": [
-        {
-          "ts": 1785070390,
-          "px": 0.42
-        }
-      ]
+      "ts": "2026-07-26T12:48:37Z"
+    },
+    {
+      "price": 0.74,
+      "stake": 5.18,
+      "kind": "EDGE",
+      "p_model": 0.9411764705882353,
+      "event": "Gentle Mates GC vs. GIANTX GC",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 94% vs market 74% \u2014 20% edge, half-Kelly",
+      "order_id": "BFV6XQAWG9P7",
+      "qty": 7,
+      "market_slug": "aec-valorant-m8gc-gxgc-2026-07-27",
+      "outcome": "Gentle Mates GC",
+      "status": "open",
+      "ts": "2026-07-26T12:53:36Z"
+    },
+    {
+      "price": 0.54,
+      "short": true,
+      "stake": 2.7,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727274,
+      "event": "magic vs. NIP",
+      "ev_start": "2026-07-26T16:00:00Z",
+      "reason": "model 73% vs market 54% \u2014 19% edge, half-Kelly",
+      "order_id": "BFV4W4Z2J9NQ",
+      "qty": 5,
+      "market_slug": "aec-cs2-mgc-nip-2026-07-26",
+      "outcome": "NIP",
+      "status": "open",
+      "ts": "2026-07-26T12:53:37Z"
     }
   ],
   "pm_stats": {
@@ -13517,7 +13536,7 @@
     "wins": 3,
     "losses": 16,
     "pnl": -5.17,
-    "trades": 90,
+    "trades": 92,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12"
   },
