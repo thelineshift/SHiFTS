@@ -10,18 +10,18 @@
     "#\ud83d\udc0bwhale-room-12-7 [16:34] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**"
   ],
   "time_audit": {
-    "at": "2026-07-26 02:30 UTC",
+    "at": "2026-07-26 03:30 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-3": "2026-07-26 00:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 02:10 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-26 02:20 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 02:50 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-26 03:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-25 10:37 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 02:30 UTC",
+    "at": "2026-07-26 03:30 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -32,13 +32,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 02:30 UTC",
+    "at": "2026-07-26 03:30 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-25 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-26 02:30 UTC",
+    "at": "2026-07-26 03:30 UTC",
     "flags": []
   },
   "bot_version": "9.22.1",
@@ -9156,10 +9156,6 @@
         {
           "ts": 1785034826,
           "px": 0.37
-        },
-        {
-          "ts": 1785036626,
-          "px": 0.37
         }
       ]
     },
@@ -9423,10 +9419,6 @@
         {
           "ts": 1785034827,
           "px": 0.39
-        },
-        {
-          "ts": 1785036627,
-          "px": 0.39
         }
       ]
     },
@@ -9557,10 +9549,6 @@
         {
           "ts": 1785034827,
           "px": 0.44
-        },
-        {
-          "ts": 1785036627,
-          "px": 0.44
         }
       ]
     },
@@ -9638,10 +9626,6 @@
         {
           "ts": 1785034827,
           "px": 0.56
-        },
-        {
-          "ts": 1785036627,
-          "px": 0.57
         }
       ]
     },
@@ -9956,10 +9940,6 @@
         {
           "ts": 1785034828,
           "px": 0.2
-        },
-        {
-          "ts": 1785036628,
-          "px": 0.2
         }
       ]
     },
@@ -10061,10 +10041,6 @@
         },
         {
           "ts": 1785034828,
-          "px": 0.25
-        },
-        {
-          "ts": 1785036628,
           "px": 0.25
         }
       ]
