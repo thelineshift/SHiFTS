@@ -4980,11 +4980,15 @@
         }
       },
       "cs2:131253": {
-        "ts": 1785075333.9804246,
+        "ts": 1785099587.6880093,
         "f": {
           "w": 4,
           "l": 1,
           "res": [
+            {
+              "won": true,
+              "opp": "largadosypelados"
+            },
             {
               "won": true,
               "opp": "BORRACHEIROS"
@@ -5000,10 +5004,6 @@
             {
               "won": false,
               "opp": "Patins da Ferrari"
-            },
-            {
-              "won": true,
-              "opp": "Procyon Gaming"
             }
           ]
         }
@@ -5813,11 +5813,15 @@
         }
       },
       "cs2:125863": {
-        "ts": 1785084263.584587,
+        "ts": 1785099588.2638245,
         "f": {
-          "w": 3,
-          "l": 2,
+          "w": 4,
+          "l": 1,
           "res": [
+            {
+              "won": true,
+              "opp": "Fluxo"
+            },
             {
               "won": true,
               "opp": "BESTIA Academy"
@@ -5833,10 +5837,6 @@
             {
               "won": true,
               "opp": "Fake do Biru"
-            },
-            {
-              "won": false,
-              "opp": "Imperial"
             }
           ]
         }
@@ -8253,7 +8253,7 @@
         }
       },
       "lol:137838": {
-        "ts": 1785091789.3192914,
+        "ts": 1785099579.628251,
         "f": {
           "w": 3,
           "l": 2,
@@ -8282,7 +8282,7 @@
         }
       },
       "lol:49": {
-        "ts": 1785091789.8920054,
+        "ts": 1785099580.222414,
         "f": {
           "w": 1,
           "l": 1,
@@ -8489,7 +8489,7 @@
         }
       },
       "lol:137837": {
-        "ts": 1785091791.1241488,
+        "ts": 1785099581.4767513,
         "f": {
           "w": 2,
           "l": 3,
@@ -8518,7 +8518,7 @@
         }
       },
       "lol:136078": {
-        "ts": 1785091791.6997507,
+        "ts": 1785099582.0509982,
         "f": {
           "w": 3,
           "l": 2,
@@ -8547,7 +8547,7 @@
         }
       },
       "lol:136177": {
-        "ts": 1785091792.37897,
+        "ts": 1785099582.7479377,
         "f": {
           "w": 2,
           "l": 3,
@@ -8576,7 +8576,7 @@
         }
       },
       "lol:138966": {
-        "ts": 1785091792.9576108,
+        "ts": 1785099583.3198671,
         "f": {
           "w": 1,
           "l": 0,
@@ -13683,6 +13683,37 @@
       "outcome": "MVSK Secret",
       "status": "open",
       "ts": "2026-07-26T20:55:22Z"
+    },
+    {
+      "price": 0.9,
+      "short": true,
+      "stake": 1.8,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Team Envy vs. Leviatan Esports",
+      "ev_start": "2026-07-26T21:00:00Z",
+      "reason": "tail-end yield \u2014 11.1% on a near-certain that settles today",
+      "order_id": "BG2HKQXD29QV",
+      "qty": 2,
+      "market_slug": "aec-valorant-nv-lev-2026-07-26",
+      "outcome": "Leviat\u00e1n Esports",
+      "status": "open",
+      "ts": "2026-07-26T20:59:57Z"
+    },
+    {
+      "price": 0.21,
+      "stake": 1.05,
+      "kind": "EDGE",
+      "p_model": 0.30769230769230776,
+      "event": "UNiTY esports vs. Mai Tai",
+      "ev_start": "2026-07-27T11:00:00Z",
+      "reason": "model 31% vs market 21% \u2014 10% edge, half-Kelly",
+      "order_id": "BG2KD0BWW9NW",
+      "qty": 5,
+      "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
+      "outcome": "UNiTY esports",
+      "status": "open",
+      "ts": "2026-07-26T20:59:58Z"
     }
   ],
   "pm_stats": {
@@ -13690,7 +13721,7 @@
     "wins": 13,
     "losses": 23,
     "pnl": 21.61,
-    "trades": 165,
+    "trades": 167,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-20",
     "deposits": 64.0,
