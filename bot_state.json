@@ -45,6 +45,15 @@
   "bot_version": "9.22.1",
   "unannounced_results": [
     {
+      "id": "tampa-bay-rays-ml-0725",
+      "desc": "Tampa Bay Rays ML",
+      "odds": -136,
+      "result": "WIN",
+      "units": 0.74,
+      "score": "Cleveland Guardians 0, Tampa Bay Rays 3",
+      "tier": "whale"
+    },
+    {
       "id": "charlotte-fc-ml-0725",
       "desc": "Charlotte FC ML",
       "odds": 190,
@@ -61,9 +70,27 @@
       "units": -1.0,
       "score": "New York Yankees 3, Philadelphia Phillies 1",
       "tier": "free"
+    },
+    {
+      "id": "2-leg-parlay-0725",
+      "desc": "D.C. United ML + Athletics ML",
+      "odds": -26,
+      "result": "LOSS",
+      "units": -0.5,
+      "score": "Legs: None: win \u00b7 None: loss",
+      "tier": "whale"
+    },
+    {
+      "id": "3-leg-parlay-0725",
+      "desc": "Chicago Cubs ML + Atlanta Braves ML + Miami Marlins ML",
+      "odds": -16,
+      "result": "LOSS",
+      "units": -0.5,
+      "score": "Legs: None: win \u00b7 None: loss \u00b7 None: loss",
+      "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1785030627.5912497,
+  "last_x_receipt_ts": 1785027027.9988508,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
