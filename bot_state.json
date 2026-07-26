@@ -8,18 +8,18 @@
     "replaced pin in #\ud83c\udf81giveaway (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 14:49 UTC",
+    "at": "2026-07-26 13:02 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-3": "2026-07-26 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 14:39 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 12:59 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-26 12:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 14:47 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 12:53 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 14:49 UTC",
+    "at": "2026-07-26 13:02 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -30,14 +30,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 14:49 UTC",
+    "at": "2026-07-26 13:02 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 14:49 UTC",
+    "at": "2026-07-26 13:02 UTC",
     "flags": []
   },
-  "bot_version": "9.24.0",
+  "bot_version": "9.23.5",
   "unannounced_results": [
     {
       "id": "chicago-cubs-ml-0725",
@@ -163,15 +163,6 @@
       "result": "LOSS",
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "butterfly-ml-0726",
-      "desc": "Butterfly ML",
-      "odds": -300,
-      "result": "WIN",
-      "units": 0.33,
-      "score": "Butterfly 2-1 SAW Youngsters \u00b7 final",
       "tier": "whale"
     }
   ],
@@ -10527,10 +10518,6 @@
       "ts": "2026-07-25T18:02:46Z",
       "price_path": [
         {
-          "ts": 1785024631,
-          "px": 0.39
-        },
-        {
           "ts": 1785027627,
           "px": 0.39
         },
@@ -10621,6 +10608,10 @@
         {
           "ts": 1785074983,
           "px": 0.39
+        },
+        {
+          "ts": 1785077384,
+          "px": 0.4
         }
       ]
     },
@@ -10812,10 +10803,6 @@
       "ts": "2026-07-25T18:11:39Z",
       "price_path": [
         {
-          "ts": 1785027627,
-          "px": 0.56
-        },
-        {
           "ts": 1785029427,
           "px": 0.56
         },
@@ -10906,6 +10893,10 @@
         {
           "ts": 1785074983,
           "px": 0.51
+        },
+        {
+          "ts": 1785077384,
+          "px": 0.5
         }
       ]
     },
@@ -10984,10 +10975,6 @@
       "status": "open",
       "ts": "2026-07-25T18:34:45Z",
       "price_path": [
-        {
-          "ts": 1785024631,
-          "px": 0.44
-        },
         {
           "ts": 1785027628,
           "px": 0.44
@@ -11079,6 +11066,10 @@
         {
           "ts": 1785074983,
           "px": 0.44
+        },
+        {
+          "ts": 1785077384,
+          "px": 0.44
         }
       ]
     },
@@ -11142,10 +11133,6 @@
       "status": "open",
       "ts": "2026-07-25T19:10:25Z",
       "price_path": [
-        {
-          "ts": 1785022830,
-          "px": 0.43
-        },
         {
           "ts": 1785024632,
           "px": 0.43
@@ -11237,6 +11224,10 @@
         {
           "ts": 1785074984,
           "px": 0.44
+        },
+        {
+          "ts": 1785077384,
+          "px": 0.45
         }
       ]
     },
@@ -11256,10 +11247,6 @@
       "status": "open",
       "ts": "2026-07-25T19:10:26Z",
       "price_path": [
-        {
-          "ts": 1785022830,
-          "px": 0.2
-        },
         {
           "ts": 1785024632,
           "px": 0.2
@@ -11351,6 +11338,10 @@
         {
           "ts": 1785074984,
           "px": 0.2
+        },
+        {
+          "ts": 1785077385,
+          "px": 0.2
         }
       ]
     },
@@ -11408,10 +11399,6 @@
       "status": "open",
       "ts": "2026-07-25T19:33:34Z",
       "price_path": [
-        {
-          "ts": 1785024632,
-          "px": 0.25
-        },
         {
           "ts": 1785027628,
           "px": 0.25
@@ -11502,6 +11489,10 @@
         },
         {
           "ts": 1785074984,
+          "px": 0.25
+        },
+        {
+          "ts": 1785077385,
           "px": 0.25
         }
       ]
@@ -11675,10 +11666,6 @@
       "ts": "2026-07-25T21:52:30Z",
       "price_path": [
         {
-          "ts": 1785022831,
-          "px": 0.55
-        },
-        {
           "ts": 1785024633,
           "px": 0.55
         },
@@ -11769,6 +11756,10 @@
         {
           "ts": 1785074984,
           "px": 0.59
+        },
+        {
+          "ts": 1785077385,
+          "px": 0.59
         }
       ]
     },
@@ -11806,10 +11797,6 @@
       "status": "open",
       "ts": "2026-07-25T22:01:36Z",
       "price_path": [
-        {
-          "ts": 1785022831,
-          "px": 0.38
-        },
         {
           "ts": 1785024633,
           "px": 0.38
@@ -11901,6 +11888,10 @@
         {
           "ts": 1785074985,
           "px": 0.38
+        },
+        {
+          "ts": 1785077385,
+          "px": 0.38
         }
       ]
     },
@@ -11938,10 +11929,6 @@
       "status": "open",
       "ts": "2026-07-25T22:07:42Z",
       "price_path": [
-        {
-          "ts": 1785022831,
-          "px": 0.64
-        },
         {
           "ts": 1785024633,
           "px": 0.64
@@ -12033,6 +12020,10 @@
         {
           "ts": 1785074985,
           "px": 0.58
+        },
+        {
+          "ts": 1785077386,
+          "px": 0.58
         }
       ]
     },
@@ -12088,10 +12079,6 @@
       "status": "open",
       "ts": "2026-07-25T22:30:58Z",
       "price_path": [
-        {
-          "ts": 1785022832,
-          "px": 0.37
-        },
         {
           "ts": 1785024633,
           "px": 0.36
@@ -12183,6 +12170,10 @@
         {
           "ts": 1785074985,
           "px": 0.43
+        },
+        {
+          "ts": 1785077386,
+          "px": 0.33
         }
       ]
     },
@@ -12561,10 +12552,6 @@
       "ts": "2026-07-25T23:11:00Z",
       "price_path": [
         {
-          "ts": 1785022833,
-          "px": 0.33
-        },
-        {
           "ts": 1785024634,
           "px": 0.33
         },
@@ -12655,6 +12642,10 @@
         {
           "ts": 1785074985,
           "px": 0.37
+        },
+        {
+          "ts": 1785077386,
+          "px": 0.27
         }
       ]
     },
@@ -12766,10 +12757,6 @@
       "ts": "2026-07-25T23:20:56Z",
       "price_path": [
         {
-          "ts": 1785022833,
-          "px": 0.39
-        },
-        {
           "ts": 1785024634,
           "px": 0.39
         },
@@ -12859,6 +12846,10 @@
         },
         {
           "ts": 1785074986,
+          "px": 0.4
+        },
+        {
+          "ts": 1785077386,
           "px": 0.4
         }
       ]
@@ -13022,7 +13013,7 @@
       "qty": 12,
       "market_slug": "aec-cs2-btf-sawy-2026-07-26",
       "outcome": "Butterfly",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T23:55:57Z",
       "price_path": [
         {
@@ -13117,7 +13108,12 @@
           "ts": 1785074986,
           "px": 0.9
         }
-      ]
+      ],
+      "result": "WIN",
+      "payout": 12.0,
+      "settled_at": "2026-07-26T14:49:47Z",
+      "pnl": 5.64,
+      "autopsy": "+$5.64 \u2014 model 75% vs market 53% was real edge; thesis held. Taken 0.53, rode to 0.90 before the result \u2014 beat the number by 37\u00a2 \u2705"
     },
     {
       "price": 0.33,
@@ -13225,6 +13221,10 @@
         {
           "ts": 1785074986,
           "px": 0.39
+        },
+        {
+          "ts": 1785077390,
+          "px": 0.33
         }
       ]
     },
@@ -13410,6 +13410,10 @@
         {
           "ts": 1785074986,
           "px": 0.64
+        },
+        {
+          "ts": 1785077390,
+          "px": 0.64
         }
       ]
     },
@@ -13454,7 +13458,7 @@
       "qty": 6,
       "market_slug": "aec-lol-lil-cla-2026-07-26",
       "outcome": "Caldya Esport",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T12:05:49Z",
       "price_path": [
         {
@@ -13465,7 +13469,12 @@
           "ts": 1785073128,
           "px": 0.33
         }
-      ]
+      ],
+      "result": "WIN",
+      "payout": 6.0,
+      "settled_at": "2026-07-26T14:49:50Z",
+      "pnl": 4.02,
+      "autopsy": "+$4.02 \u2014 model 50% vs market 33% was real edge; thesis held. Rode the number flat to the result."
     },
     {
       "price": 0.9,
@@ -13525,6 +13534,10 @@
         {
           "ts": 1785074987,
           "px": 0.37
+        },
+        {
+          "ts": 1785077393,
+          "px": 0.37
         }
       ]
     },
@@ -13553,6 +13566,10 @@
         },
         {
           "ts": 1785074987,
+          "px": 0.47
+        },
+        {
+          "ts": 1785077393,
           "px": 0.47
         }
       ]
@@ -13584,6 +13601,10 @@
         {
           "ts": 1785074987,
           "px": 0.36
+        },
+        {
+          "ts": 1785077393,
+          "px": 0.36
         }
       ]
     },
@@ -13614,6 +13635,10 @@
         {
           "ts": 1785074988,
           "px": 0.31
+        },
+        {
+          "ts": 1785077393,
+          "px": 0.29
         }
       ]
     },
@@ -13660,6 +13685,10 @@
         {
           "ts": 1785074988,
           "px": 0.5
+        },
+        {
+          "ts": 1785077394,
+          "px": 0.69
         }
       ]
     },
@@ -13705,6 +13734,10 @@
         },
         {
           "ts": 1785074988,
+          "px": 0.3
+        },
+        {
+          "ts": 1785077394,
           "px": 0.3
         }
       ]
@@ -13847,6 +13880,10 @@
         {
           "ts": 1785074988,
           "px": 0.42
+        },
+        {
+          "ts": 1785077394,
+          "px": 0.41
         }
       ]
     },
@@ -13875,6 +13912,10 @@
         },
         {
           "ts": 1785074988,
+          "px": 0.75
+        },
+        {
+          "ts": 1785077394,
           "px": 0.75
         }
       ]
@@ -13921,6 +13962,10 @@
         {
           "ts": 1785074988,
           "px": 0.7
+        },
+        {
+          "ts": 1785077395,
+          "px": 0.71
         }
       ]
     },
@@ -13969,14 +14014,19 @@
       "qty": 2,
       "market_slug": "aec-cs2-3dmax-fut-2026-07-26",
       "outcome": "FUT Esports",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T13:08:07Z",
       "price_path": [
         {
           "ts": 1785073130,
           "px": 0.48
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 0.24,
+      "settled_at": "2026-07-26T14:49:55Z",
+      "pnl": -0.88,
+      "autopsy": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays."
     },
     {
       "price": 0.76,
@@ -14006,8 +14056,14 @@
       "qty": 6,
       "market_slug": "astatc-valorant-m8gc-gxgc-2026-07-27-map1",
       "outcome": "Gentle Mates GC",
-      "status": "resting",
-      "ts": "2026-07-26T13:14:05Z"
+      "status": "open",
+      "ts": "2026-07-26T13:14:05Z",
+      "price_path": [
+        {
+          "ts": 1785077397,
+          "px": 0.67
+        }
+      ]
     },
     {
       "price": 0.58,
@@ -14107,6 +14163,10 @@
         {
           "ts": 1785074989,
           "px": 0.46
+        },
+        {
+          "ts": 1785077397,
+          "px": 0.49
         }
       ]
     },
@@ -14124,7 +14184,13 @@
       "market_slug": "aec-cs2-inox-g2a-2026-07-26",
       "outcome": "G2 Ares",
       "status": "open",
-      "ts": "2026-07-26T14:15:58Z"
+      "ts": "2026-07-26T14:15:58Z",
+      "price_path": [
+        {
+          "ts": 1785077397,
+          "px": 0.34
+        }
+      ]
     },
     {
       "price": 0.9,
@@ -14139,7 +14205,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T14:20:07Z"
     },
     {
@@ -14155,7 +14221,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T14:20:09Z"
     },
     {
@@ -14171,7 +14237,7 @@
       "qty": 6,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T14:25:09Z"
     },
     {
@@ -14187,7 +14253,13 @@
       "market_slug": "astatc-valorant-m8gc-gxgc-2026-07-27-map1",
       "outcome": "Gentle Mates GC",
       "status": "open",
-      "ts": "2026-07-26T14:30:08Z"
+      "ts": "2026-07-26T14:30:08Z",
+      "price_path": [
+        {
+          "ts": 1785077397,
+          "px": 0.67
+        }
+      ]
     },
     {
       "price": 0.38,
@@ -14203,7 +14275,13 @@
       "market_slug": "aec-cs2-erx-ent-2026-07-27",
       "outcome": "Entropy",
       "status": "open",
-      "ts": "2026-07-26T14:35:13Z"
+      "ts": "2026-07-26T14:35:13Z",
+      "price_path": [
+        {
+          "ts": 1785077398,
+          "px": 0.38
+        }
+      ]
     },
     {
       "price": 0.69,
@@ -14218,7 +14296,7 @@
       "qty": 11,
       "market_slug": "aec-lol-genga-foxy-2026-07-27",
       "outcome": "BNK FearX Youth",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T14:35:14Z"
     },
     {
@@ -14235,7 +14313,8 @@
       "market_slug": "aec-lol-vdn-ll-2026-07-27",
       "outcome": "Lundqvist Lightside",
       "status": "open",
-      "ts": "2026-07-26T14:35:16Z"
+      "ts": "2026-07-26T14:35:16Z",
+      "price_path": []
     },
     {
       "price": 0.7,
@@ -14250,7 +14329,13 @@
       "market_slug": "aec-dota2-tje-stx-2026-07-26",
       "outcome": "Team Jenz",
       "status": "open",
-      "ts": "2026-07-26T14:35:17Z"
+      "ts": "2026-07-26T14:35:17Z",
+      "price_path": [
+        {
+          "ts": 1785077398,
+          "px": 0.7
+        }
+      ]
     },
     {
       "price": 0.71,
@@ -14265,21 +14350,27 @@
       "market_slug": "aec-valorant-bst-bbb-2026-07-27",
       "outcome": "BESTIA",
       "status": "open",
-      "ts": "2026-07-26T14:40:07Z"
+      "ts": "2026-07-26T14:40:07Z",
+      "price_path": [
+        {
+          "ts": 1785077398,
+          "px": 0.71
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 6,
-    "losses": 14,
-    "pnl": 1.76,
+    "wins": 8,
+    "losses": 15,
+    "pnl": 10.54,
     "trades": 114,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-14",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 94.49,
-    "net": 30.49
+    "account": 101.21,
+    "net": 37.21
   },
   "x_purge_complete": 1785032907.0909944,
   "pm_lessons": [
@@ -14442,6 +14533,30 @@
       "result": "LOSS",
       "pnl": 0.0,
       "lesson": "+$0.00 \u2014 model 69% vs market 43% was real edge; thesis held. (cashed out early at $3.44)"
+    },
+    {
+      "ts": "2026-07-26T14:49:47Z",
+      "kind": "EDGE",
+      "outcome": "Butterfly",
+      "result": "WIN",
+      "pnl": 5.64,
+      "lesson": "+$5.64 \u2014 model 75% vs market 53% was real edge; thesis held. Taken 0.53, rode to 0.90 before the result \u2014 beat the number by 37\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-26T14:49:50Z",
+      "kind": "EDGE",
+      "outcome": "Caldya Esport",
+      "result": "WIN",
+      "pnl": 4.02,
+      "lesson": "+$4.02 \u2014 model 50% vs market 33% was real edge; thesis held. Rode the number flat to the result."
+    },
+    {
+      "ts": "2026-07-26T14:49:55Z",
+      "kind": "LIVE-BET",
+      "outcome": "FUT Esports",
+      "result": "LOSS",
+      "pnl": -0.88,
+      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays."
     }
   ],
   "giveaway_x_posts": [
