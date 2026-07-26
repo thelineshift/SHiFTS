@@ -34,6 +34,15 @@
   "bot_version": "9.24.4",
   "unannounced_results": [
     {
+      "id": "chicago-white-sox-ml-0725",
+      "desc": "Chicago White Sox ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Houston Astros 4, Chicago White Sox 1",
+      "tier": "whale"
+    },
+    {
       "id": "texas-rangers-ml-0725",
       "desc": "Texas Rangers ML",
       "odds": -105,
@@ -124,7 +133,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785091457.0460284,
+  "last_x_receipt_ts": 1785085455.9389694,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -279,8 +288,7 @@
     "1530989008396488845",
     "1531005516141170859",
     "1531005614715572436",
-    "1531006227620958319",
-    "1531009297947955311"
+    "1531006227620958319"
   ],
   "gw_replies": {
     "1510318944097927388:guide": 1784948166.204074,
@@ -297,7 +305,7 @@
     "1087095228571320432:steps": 1785074026.564266,
     "1323551187425034263:steps": 1785077519.8956034,
     "957351491402866708:guide": 1785085838.1076884,
-    "957351491402866708:steps": 1785091465.0956178
+    "957351491402866708:steps": 1785085888.0418873
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
@@ -9504,10 +9512,6 @@
       "ts": "2026-07-25T18:11:39Z",
       "price_path": [
         {
-          "ts": 1785037227,
-          "px": 0.57
-        },
-        {
           "ts": 1785039027,
           "px": 0.57
         },
@@ -9598,6 +9602,10 @@
         {
           "ts": 1785089657,
           "px": 0.49
+        },
+        {
+          "ts": 1785091458,
+          "px": 0.48
         }
       ]
     },
@@ -9676,10 +9684,6 @@
       "status": "open",
       "ts": "2026-07-25T18:34:45Z",
       "price_path": [
-        {
-          "ts": 1785034828,
-          "px": 0.44
-        },
         {
           "ts": 1785037228,
           "px": 0.44
@@ -9771,6 +9775,10 @@
         {
           "ts": 1785089658,
           "px": 0.44
+        },
+        {
+          "ts": 1785091458,
+          "px": 0.44
         }
       ]
     },
@@ -9834,10 +9842,6 @@
       "status": "open",
       "ts": "2026-07-25T19:10:25Z",
       "price_path": [
-        {
-          "ts": 1785032428,
-          "px": 0.43
-        },
         {
           "ts": 1785034828,
           "px": 0.43
@@ -9929,6 +9933,10 @@
         {
           "ts": 1785089658,
           "px": 0.46
+        },
+        {
+          "ts": 1785091458,
+          "px": 0.63
         }
       ]
     },
@@ -9948,10 +9956,6 @@
       "status": "open",
       "ts": "2026-07-25T19:10:26Z",
       "price_path": [
-        {
-          "ts": 1785032428,
-          "px": 0.2
-        },
         {
           "ts": 1785034828,
           "px": 0.2
@@ -10042,6 +10046,10 @@
         },
         {
           "ts": 1785089658,
+          "px": 0.18
+        },
+        {
+          "ts": 1785091458,
           "px": 0.18
         }
       ]
@@ -10274,10 +10282,6 @@
       "ts": "2026-07-25T21:52:30Z",
       "price_path": [
         {
-          "ts": 1785032429,
-          "px": 0.55
-        },
-        {
           "ts": 1785034829,
           "px": 0.55
         },
@@ -10368,6 +10372,10 @@
         {
           "ts": 1785089658,
           "px": 0.59
+        },
+        {
+          "ts": 1785091458,
+          "px": 0.59
         }
       ]
     },
@@ -10405,10 +10413,6 @@
       "status": "open",
       "ts": "2026-07-25T22:01:36Z",
       "price_path": [
-        {
-          "ts": 1785032429,
-          "px": 0.38
-        },
         {
           "ts": 1785034829,
           "px": 0.38
@@ -10500,6 +10504,10 @@
         {
           "ts": 1785089659,
           "px": 0.38
+        },
+        {
+          "ts": 1785091459,
+          "px": 0.38
         }
       ]
     },
@@ -10537,10 +10545,6 @@
       "status": "open",
       "ts": "2026-07-25T22:07:42Z",
       "price_path": [
-        {
-          "ts": 1785032429,
-          "px": 0.64
-        },
         {
           "ts": 1785034829,
           "px": 0.64
@@ -10631,6 +10635,10 @@
         },
         {
           "ts": 1785089659,
+          "px": 0.56
+        },
+        {
+          "ts": 1785091459,
           "px": 0.56
         }
       ]
@@ -11003,10 +11011,6 @@
       "ts": "2026-07-25T23:20:56Z",
       "price_path": [
         {
-          "ts": 1785032430,
-          "px": 0.39
-        },
-        {
           "ts": 1785034830,
           "px": 0.39
         },
@@ -11097,6 +11101,10 @@
         {
           "ts": 1785089659,
           "px": 0.67
+        },
+        {
+          "ts": 1785091459,
+          "px": 0.62
         }
       ]
     },
@@ -11309,10 +11317,6 @@
       "ts": "2026-07-26T00:15:56Z",
       "price_path": [
         {
-          "ts": 1785032432,
-          "px": 0.64
-        },
-        {
           "ts": 1785034831,
           "px": 0.64
         },
@@ -11402,6 +11406,10 @@
         },
         {
           "ts": 1785089659,
+          "px": 0.64
+        },
+        {
+          "ts": 1785091459,
           "px": 0.64
         }
       ]
@@ -11568,6 +11576,10 @@
         {
           "ts": 1785089660,
           "px": 0.47
+        },
+        {
+          "ts": 1785091460,
+          "px": 0.48
         }
       ]
     },
@@ -11614,6 +11626,10 @@
         {
           "ts": 1785089660,
           "px": 0.34
+        },
+        {
+          "ts": 1785091460,
+          "px": 0.34
         }
       ]
     },
@@ -11659,6 +11675,10 @@
         },
         {
           "ts": 1785089660,
+          "px": 0.28
+        },
+        {
+          "ts": 1785091460,
           "px": 0.28
         }
       ]
@@ -11729,38 +11749,13 @@
       "qty": 4,
       "market_slug": "aec-cs2-lk-mego-2026-07-26",
       "outcome": "megoshort",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T12:19:53Z",
-      "price_path": [
-        {
-          "ts": 1785069236,
-          "px": 0.3
-        },
-        {
-          "ts": 1785073129,
-          "px": 0.3
-        },
-        {
-          "ts": 1785074988,
-          "px": 0.3
-        },
-        {
-          "ts": 1785077394,
-          "px": 0.3
-        },
-        {
-          "ts": 1785079202,
-          "px": 0.3
-        },
-        {
-          "ts": 1785085425,
-          "px": 0.35
-        },
-        {
-          "ts": 1785089661,
-          "px": 0.49
-        }
-      ]
+      "result": "WIN",
+      "payout": 4.0,
+      "settled_at": "2026-07-26T18:44:21Z",
+      "pnl": 2.8,
+      "autopsy": "+$2.80 \u2014 model 50% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.49 before the result \u2014 the number ran 19\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.9,
@@ -11936,6 +11931,10 @@
         {
           "ts": 1785089661,
           "px": 0.75
+        },
+        {
+          "ts": 1785091464,
+          "px": 0.75
         }
       ]
     },
@@ -11952,18 +11951,13 @@
       "qty": 5,
       "market_slug": "aec-cs2-mgc-nip-2026-07-26",
       "outcome": "NIP",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T12:53:37Z",
-      "price_path": [
-        {
-          "ts": 1785085428,
-          "px": 0.51
-        },
-        {
-          "ts": 1785089661,
-          "px": 0.22
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.4,
+      "settled_at": "2026-07-26T18:44:24Z",
+      "pnl": -2.3,
+      "autopsy": "model 73% vs market 54% missed \u2014 logged for the playbook review. Taken 0.54, rode to 0.22 before the result \u2014 beat the number by 32\u00a2 \u2705"
     },
     {
       "price": 0.71,
@@ -12007,6 +12001,10 @@
         {
           "ts": 1785089662,
           "px": 0.95
+        },
+        {
+          "ts": 1785091467,
+          "px": 0.96
         }
       ]
     },
@@ -12109,6 +12107,10 @@
         {
           "ts": 1785089662,
           "px": 0.89
+        },
+        {
+          "ts": 1785091467,
+          "px": 0.9
         }
       ]
     },
@@ -12311,6 +12313,10 @@
         {
           "ts": 1785089664,
           "px": 0.89
+        },
+        {
+          "ts": 1785091467,
+          "px": 0.9
         }
       ]
     },
@@ -12344,6 +12350,10 @@
         },
         {
           "ts": 1785089665,
+          "px": 0.38
+        },
+        {
+          "ts": 1785091467,
           "px": 0.38
         }
       ]
@@ -12387,6 +12397,10 @@
         {
           "ts": 1785089665,
           "px": 0.54
+        },
+        {
+          "ts": 1785091468,
+          "px": 0.67
         }
       ]
     },
@@ -12420,6 +12434,10 @@
         {
           "ts": 1785089665,
           "px": 0.64
+        },
+        {
+          "ts": 1785091468,
+          "px": 0.51
         }
       ]
     },
@@ -12452,6 +12470,10 @@
         },
         {
           "ts": 1785089665,
+          "px": 0.71
+        },
+        {
+          "ts": 1785091468,
           "px": 0.71
         }
       ]
@@ -12556,6 +12578,10 @@
         },
         {
           "ts": 1785089665,
+          "px": 0.39
+        },
+        {
+          "ts": 1785091468,
           "px": 0.39
         }
       ]
@@ -12803,6 +12829,10 @@
         {
           "ts": 1785089666,
           "px": 0.19
+        },
+        {
+          "ts": 1785091469,
+          "px": 0.28
         }
       ]
     },
@@ -12855,6 +12885,10 @@
       "price_path": [
         {
           "ts": 1785089666,
+          "px": 0.58
+        },
+        {
+          "ts": 1785091469,
           "px": 0.58
         }
       ]
@@ -12925,16 +12959,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 10,
-    "losses": 20,
-    "pnl": 8.83,
+    "wins": 11,
+    "losses": 21,
+    "pnl": 9.33,
     "trades": 142,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-18",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 102.98,
-    "net": 38.98,
+    "account": 104.9,
+    "net": 40.9,
     "last_archive": "2026-07-26",
     "kind_totals": {
       "ARB": [
@@ -12943,8 +12977,8 @@
         0
       ],
       "EDGE": [
-        6,
-        10,
+        7,
+        11,
         0
       ],
       "LIVE-BET": [
@@ -12957,22 +12991,6 @@
   },
   "x_purge_complete": 1785032907.0909944,
   "pm_lessons": [
-    {
-      "ts": "2026-07-25T02:30:00Z",
-      "kind": "ARB",
-      "outcome": "Bay FC",
-      "result": "LOSS",
-      "pnl": -6.76,
-      "lesson": "book was NOT complete \u2014 the draw leg was invisible to the scan, both sides exposed. Guard: 3-way books banned from arbs (v9.14.2)."
-    },
-    {
-      "ts": "2026-07-25T02:30:00Z",
-      "kind": "ARB",
-      "outcome": "CA Uni\u00f3n",
-      "result": "LOSS",
-      "pnl": -0.9,
-      "lesson": "naked tail of a 3-way book bought as an arb leg \u2014 same root cause: incomplete book. Never buy legs of books you cannot fully price."
-    },
     {
       "ts": "2026-07-25T02:30:00Z",
       "kind": "ARB",
@@ -13196,6 +13214,22 @@
       "result": "LOSS",
       "pnl": -0.87,
       "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.29, slid to 0.58 before the result \u2014 the number ran 29\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-26T18:44:21Z",
+      "kind": "EDGE",
+      "outcome": "megoshort",
+      "result": "WIN",
+      "pnl": 2.8,
+      "lesson": "+$2.80 \u2014 model 50% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.49 before the result \u2014 the number ran 19\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-26T18:44:24Z",
+      "kind": "EDGE",
+      "outcome": "NIP",
+      "result": "LOSS",
+      "pnl": -2.3,
+      "lesson": "model 73% vs market 54% missed \u2014 logged for the playbook review. Taken 0.54, rode to 0.22 before the result \u2014 beat the number by 32\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
