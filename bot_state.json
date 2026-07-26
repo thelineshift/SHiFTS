@@ -8,18 +8,18 @@
     "replaced pin in #\ud83c\udf81giveaway (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 14:49 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-3": "2026-07-26 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 12:59 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 14:39 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-26 12:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 12:53 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 14:47 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 14:49 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -30,14 +30,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 14:49 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 14:49 UTC",
     "flags": []
   },
-  "bot_version": "9.23.5",
+  "bot_version": "9.24.0",
   "unannounced_results": [
     {
       "id": "chicago-cubs-ml-0725",
@@ -164,6 +164,15 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "butterfly-ml-0726",
+      "desc": "Butterfly ML",
+      "odds": -300,
+      "result": "WIN",
+      "units": 0.33,
+      "score": "Butterfly 2-1 SAW Youngsters \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785067163.9700751,
@@ -255,8 +264,7 @@
     "weekly": "2026-07-26",
     "monthly": "2026-08-01",
     "deepdive_fired": "2026-07-25",
-    "x_ad": "2026-07-26",
-    "weekly_fired": "2026-07-26"
+    "x_ad": "2026-07-26"
   },
   "gw_handled": [
     "1530230873780129892",
