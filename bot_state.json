@@ -293,7 +293,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "783e3e39-2f8f-47b3-9ad5-0e9dc50c9b1f",
   "op_month": "2026-07",
-  "op_calls": 30,
+  "op_calls": 37,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1178,87 +1178,81 @@
       "meta_ts": 1784925282.1446652,
       "lines": [
         [
-          "Heroic",
-          "Ninjas In Pyjamas",
-          1.877,
-          1.892
-        ],
-        [
-          "Astralis",
+          "Aurora Gaming",
           "Hotu",
-          1.042,
-          11.38
+          1.303,
+          3.26
         ],
         [
-          "MOUZ",
-          "Fokus",
-          1.017,
-          18.59
+          "Ninjas In Pyjamas",
+          "Pain Gaming",
+          1.162,
+          4.98
         ],
         [
-          "Fluxo",
-          "Keyd Stars",
-          1.173,
-          4.59
+          "3Dmax",
+          "Fut eSports",
+          1.309,
+          3.52
+        ],
+        [
+          "The Mongolz",
+          "Wildcard Gaming",
+          1.526,
+          2.54
+        ],
+        [
+          "100 Thieves",
+          "Team Spirit",
+          4.99,
+          1.115
+        ],
+        [
+          "Oddik",
+          "LP",
+          1.45,
+          2.58
         ],
         [
           "Isurus",
-          "Bestia Academy",
-          1.34,
-          2.97
+          "Fluxo",
+          1.233,
+          3.59
         ],
         [
-          "Saw Youngsters",
-          "Enjoy",
-          14.13,
-          1.024
-        ],
-        [
-          "Just Players",
-          "Black Phoenix",
-          1.862,
-          1.909
-        ],
-        [
-          "Rounds",
-          "Privateer Gaming",
-          1.228,
-          3.9
-        ],
-        [
-          "Rune Eaters eSports",
-          "Ex-Rustec",
-          1.03,
-          13.09
+          "Team Quazar",
+          "New Vision",
+          1.207,
+          3.14
         ]
       ],
-      "odds_ts": 1785009654.288687
+      "odds_ts": 1785067228.3008547
     },
     "valorant": {
       "lines": [
         [
-          "PCIFIC",
-          "Vitality",
-          20.62,
-          1.013
+          "Gentle Mates GC",
+          "GIANTX GC",
+          1.245,
+          3.5
         ],
         [
-          "Eternal Fire",
-          "GIANTX",
-          18.6,
-          1.015
+          "G2 Gozen",
+          "Karmine Corp GC",
+          1.114,
+          5.0
         ],
         [
           "BBL",
           "Natus Vincere",
-          1.568,
-          2.44
+          1.628,
+          2.31
         ],
         [
           "Heretics",
           "Karmine Corp",
-          1.709,
-          2.16
+          1.775,
+          2.07
         ],
         [
           "Paper Rex",
@@ -1267,28 +1261,22 @@
           2.82
         ],
         [
-          "G2",
-          "Cloud9",
-          1.209,
-          4.53
-        ],
-        [
-          "Sentinels",
-          "LOUD",
-          1.636,
-          2.29
+          "Gen.G",
+          "Rex Regum Qeon",
+          1.421,
+          2.73
         ],
         [
           "ENVY",
           "Leviatan",
-          7.24,
-          1.103
+          8.08,
+          1.088
         ],
         [
           "FURIA",
           "MIBR",
-          3.73,
-          1.282
+          3.7,
+          1.285
         ],
         [
           "BESTIA",
@@ -1299,17 +1287,17 @@
         [
           "FunPlus Phoenix",
           "Wolves",
-          1.729,
-          2.04
+          1.689,
+          2.09
         ],
         [
           "Nova",
           "Bilibili",
-          1.729,
-          2.04
+          1.877,
+          1.862
         ]
       ],
-      "odds_ts": 1785009658.077324,
+      "odds_ts": 1785067237.6586964,
       "active": [
         901974,
         902246,
@@ -2512,46 +2500,28 @@
       "meta_ts": 1784952040.641981,
       "lines": [
         [
-          "Flyquest",
-          "Lyon Gaming",
-          1.704,
-          2.17
-        ],
-        [
-          "Dignitas",
-          "Sentinels",
-          6.11,
-          1.11
+          "Cloud9",
+          "Team Liquid",
+          1.636,
+          2.28
         ],
         [
           "Disguisedtoast",
           "Shopify Rebellion",
-          1.666,
-          2.23
-        ],
-        [
-          "G2 Esports",
-          "Team Vitality",
-          1.02,
-          16.14
-        ],
-        [
-          "Karmine Corp",
-          "Movistar Koi",
-          1.031,
-          12.23
+          1.709,
+          2.16
         ],
         [
           "Movistar Koi",
           "Team Vitality",
-          3.26,
-          1.333
+          3.22,
+          1.34
         ],
         [
           "Karmine Corp",
           "G2 Esports",
-          1.606,
-          2.34
+          1.613,
+          2.33
         ],
         [
           "Gen.g Esports",
@@ -2560,49 +2530,49 @@
           2.22
         ],
         [
-          "Furia Esports",
-          "Los",
-          13.88,
-          1.024
+          "Leviatan",
+          "Fluxo W7M",
+          1.271,
+          3.66
         ],
         [
-          "Pain Gaming",
-          "Loud",
-          3.24,
-          1.312
+          "Keyd Stars",
+          "Red Canids",
+          1.306,
+          3.42
         ],
         [
           "LNG Esports",
           "Shenzhen Ninjas In Pyjamas",
-          2.29,
-          1.632
+          8.53,
+          1.056
         ],
         [
           "Edward Gaming",
           "ThunderTalk Gaming",
-          1.909,
-          1.909
+          1.04,
+          10.2
         ],
         [
           "Anyones Legend",
           "Bilibili Gaming",
-          2.24,
-          1.662
+          3.28,
+          1.312
         ],
         [
           "Detonation Focusme",
           "GAM Esports",
-          6.6,
-          1.058
+          9.88,
+          1.046
         ],
         [
           "Ctbc Flying Oyster",
           "Deep Cross Gaming",
-          2.45,
-          1.5
+          1.469,
+          2.57
         ]
       ],
-      "odds_ts": 1785009661.6475246
+      "odds_ts": 1785067232.1196973
     }
   },
   "parlay_rot": 8,
