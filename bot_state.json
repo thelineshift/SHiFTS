@@ -13085,13 +13085,7 @@
       "market_slug": "aec-lol-gls-thg-2026-07-26",
       "outcome": "Team High Ground",
       "status": "open",
-      "ts": "2026-07-26T12:05:48Z",
-      "price_path": [
-        {
-          "ts": 1785067766,
-          "px": 0.43
-        }
-      ]
+      "ts": "2026-07-26T12:05:48Z"
     },
     {
       "price": 0.33,
@@ -13107,13 +13101,7 @@
       "market_slug": "aec-lol-lil-cla-2026-07-26",
       "outcome": "Caldya Esport",
       "status": "open",
-      "ts": "2026-07-26T12:05:49Z",
-      "price_path": [
-        {
-          "ts": 1785067767,
-          "px": 0.33
-        }
-      ]
+      "ts": "2026-07-26T12:05:49Z"
     },
     {
       "price": 0.9,
@@ -13128,7 +13116,7 @@
       "qty": 5,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:05:50Z"
     },
     {
@@ -13144,8 +13132,102 @@
       "qty": 10,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:05:51Z"
+    },
+    {
+      "price": 0.37,
+      "stake": 1.11,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Dplus KIA vs. T1",
+      "ev_start": "2026-07-27T08:15:00Z",
+      "reason": "model 50% vs market 37% \u2014 13% edge, half-Kelly",
+      "order_id": "BFTHMYCW69SK",
+      "qty": 3,
+      "market_slug": "aec-lol-dk-t1-2026-07-27",
+      "outcome": "Dplus KIA",
+      "status": "open",
+      "ts": "2026-07-26T12:09:53Z"
+    },
+    {
+      "price": 0.43,
+      "stake": 3.01,
+      "kind": "EDGE",
+      "p_model": 0.6923076923076923,
+      "event": "Hanwha Life Esports vs. Kiwoom DRX",
+      "ev_start": "2026-07-27T09:00:00Z",
+      "reason": "model 69% vs market 43% \u2014 26% edge, half-Kelly",
+      "order_id": "BFTHSRS9T9P4",
+      "qty": 7,
+      "market_slug": "aec-lol-hle-krx-2026-07-27",
+      "outcome": "Hanwha Life Esports",
+      "status": "open",
+      "ts": "2026-07-26T12:09:54Z"
+    },
+    {
+      "price": 0.39,
+      "short": true,
+      "stake": 1.17,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "T1 vs. Nongshim Red Force",
+      "ev_start": "2026-07-27T09:45:00Z",
+      "reason": "model 50% vs market 39% \u2014 11% edge, half-Kelly",
+      "order_id": "BFTHQJED49P3",
+      "qty": 3,
+      "market_slug": "aec-lol-t1-ns-2026-07-27",
+      "outcome": "Nongshim Red Force",
+      "status": "open",
+      "ts": "2026-07-26T12:09:55Z"
+    },
+    {
+      "price": 0.36,
+      "short": true,
+      "stake": 1.44,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "T1 vs. DN SOOPers",
+      "ev_start": "2026-07-27T11:15:00Z",
+      "reason": "model 50% vs market 36% \u2014 14% edge, half-Kelly",
+      "order_id": "BFTH3NQT09NP",
+      "qty": 4,
+      "market_slug": "aec-lol-t1-dns-2026-07-27",
+      "outcome": "DN SOOPers",
+      "status": "open",
+      "ts": "2026-07-26T12:09:56Z"
+    },
+    {
+      "price": 0.57,
+      "short": true,
+      "stake": 1.14,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 57% \u2014 10% edge, half-Kelly",
+      "order_id": "BFTJ3GKJM9P8",
+      "qty": 2,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-26T12:09:58Z"
+    },
+    {
+      "price": 0.47,
+      "short": true,
+      "stake": 2.82,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727274,
+      "event": "SPARTA vs. Atreides",
+      "ev_start": "2026-07-26T14:00:00Z",
+      "reason": "model 73% vs market 47% \u2014 26% edge, half-Kelly",
+      "order_id": "BFTJAQKDY9QY",
+      "qty": 6,
+      "market_slug": "aec-cs2-sparta-atr-2026-07-26",
+      "outcome": "Atreides",
+      "status": "open",
+      "ts": "2026-07-26T12:09:59Z"
     }
   ],
   "pm_stats": {
@@ -13153,7 +13235,7 @@
     "wins": 3,
     "losses": 16,
     "pnl": -5.17,
-    "trades": 74,
+    "trades": 80,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12"
   },
