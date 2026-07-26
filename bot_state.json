@@ -42,15 +42,6 @@
   "bot_version": "9.22.1",
   "unannounced_results": [
     {
-      "id": "philadelphia-phillies-ml-0725",
-      "desc": "Philadelphia Phillies ML",
-      "odds": -102,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "New York Yankees 3, Philadelphia Phillies 1",
-      "tier": "free"
-    },
-    {
       "id": "2-leg-parlay-0725",
       "desc": "D.C. United ML + Athletics ML",
       "odds": -26,
@@ -168,7 +159,7 @@
       "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1785037827.6636336,
+  "last_x_receipt_ts": 1785041428.712516,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
