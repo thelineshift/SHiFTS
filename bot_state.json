@@ -6,33 +6,42 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 20:04 UTC",
+    "at": "2026-07-26 19:34 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-1": "2026-07-26 20:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 19:44 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-26 20:01 UTC",
+    "\ud83c\udfaffree-pick-2-1": "2026-07-26 16:44 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 19:24 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-26 19:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 19:48 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 18:45 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 20:04 UTC",
+    "at": "2026-07-26 19:34 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 20:04 UTC",
+    "at": "2026-07-26 19:34 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 20:04 UTC",
+    "at": "2026-07-26 19:34 UTC",
     "flags": []
   },
   "bot_version": "9.24.4",
   "unannounced_results": [
+    {
+      "id": "chicago-white-sox-ml-0725",
+      "desc": "Chicago White Sox ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Houston Astros 4, Chicago White Sox 1",
+      "tier": "whale"
+    },
     {
       "id": "texas-rangers-ml-0725",
       "desc": "Texas Rangers ML",
@@ -124,7 +133,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785096257.9915097,
+  "last_x_receipt_ts": 1785085455.9389694,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -12019,6 +12028,10 @@
         {
           "ts": 1785093860,
           "px": 0.75
+        },
+        {
+          "ts": 1785096263,
+          "px": 0.75
         }
       ]
     },
@@ -12421,6 +12434,10 @@
         {
           "ts": 1785093861,
           "px": 0.66
+        },
+        {
+          "ts": 1785096263,
+          "px": 0.66
         }
       ]
     },
@@ -12462,6 +12479,10 @@
         },
         {
           "ts": 1785093861,
+          "px": 0.38
+        },
+        {
+          "ts": 1785096264,
           "px": 0.38
         }
       ]
@@ -12513,6 +12534,10 @@
         {
           "ts": 1785093861,
           "px": 0.62
+        },
+        {
+          "ts": 1785096264,
+          "px": 0.68
         }
       ]
     },
@@ -12554,6 +12579,10 @@
         {
           "ts": 1785093861,
           "px": 0.35
+        },
+        {
+          "ts": 1785096264,
+          "px": 0.29
         }
       ]
     },
@@ -12594,6 +12623,10 @@
         },
         {
           "ts": 1785093862,
+          "px": 0.71
+        },
+        {
+          "ts": 1785096264,
           "px": 0.71
         }
       ]
@@ -12706,6 +12739,10 @@
         },
         {
           "ts": 1785093862,
+          "px": 0.39
+        },
+        {
+          "ts": 1785096264,
           "px": 0.39
         }
       ]
@@ -13021,6 +13058,10 @@
         },
         {
           "ts": 1785093862,
+          "px": 0.58
+        },
+        {
+          "ts": 1785096265,
           "px": 0.58
         }
       ]
