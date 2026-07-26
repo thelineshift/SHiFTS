@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T22:04:20Z",
+  "updated": "2026-07-26T22:44:18Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -370,7 +370,10 @@
         "total": 8.5,
         "ts": 1785096255
       },
-      "last_alert_odds": 100
+      "last_alert_odds": 100,
+      "result": "LOSS",
+      "score": "Los Angeles Angels 4, San Francisco Giants 3",
+      "units_result": -1.5
     },
     {
       "id": "karmine-corp-ml-0726",
