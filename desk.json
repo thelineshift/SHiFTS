@@ -1,0 +1,50 @@
+{
+  "updated": "2026-07-26T14:00:10Z",
+  "record": "6-14",
+  "trades": 104,
+  "open": 31,
+  "pnl": 1.76,
+  "account": 94.49,
+  "deposits": 64.0,
+  "net_pnl": 30.49,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 2-6 \u00b7 LIVE-BET 1-3",
+  "recent": [
+    {
+      "outcome": "Gen.G Esports",
+      "short": false,
+      "result": "won",
+      "pnl": 11.02
+    },
+    {
+      "outcome": "BESTIA Academy",
+      "short": true,
+      "result": "lost",
+      "pnl": -2.31
+    },
+    {
+      "outcome": "Isurus",
+      "short": false,
+      "result": "won",
+      "pnl": 3.6
+    },
+    {
+      "outcome": "Gen.G Esports",
+      "short": false,
+      "result": "lost",
+      "pnl": -8.7
+    },
+    {
+      "outcome": "Gen.G Esports",
+      "short": false,
+      "result": "lost",
+      "pnl": -8.85
+    },
+    {
+      "outcome": "Team High Ground",
+      "short": true,
+      "result": "lost",
+      "pnl": -3.44
+    }
+  ],
+  "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
+}
