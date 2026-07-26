@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T01:50:34Z",
+  "updated": "2026-07-26T02:10:28Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1336,7 +1336,10 @@
         "away_ml": 100,
         "total": 8.5,
         "ts": 1785013046
-      }
+      },
+      "result": "LOSS",
+      "score": "Houston Astros 4, Chicago White Sox 1",
+      "units_result": -1.0
     },
     {
       "id": "tampa-bay-rays-ml-0725",
@@ -1386,7 +1389,10 @@
         "away_ml": -111,
         "total": 7.0,
         "ts": 1785020426
-      }
+      },
+      "result": "WIN",
+      "score": "Seattle Mariners 1, Texas Rangers 7",
+      "units_result": 0.95
     },
     {
       "id": "san-francisco-giants-ml-0725",
@@ -1760,7 +1766,10 @@
         "total": 9.0,
         "ts": 1785020427
       },
-      "last_alert_odds": -237
+      "last_alert_odds": -237,
+      "result": "WIN",
+      "score": "Colorado Rockies 5, Milwaukee Brewers 8",
+      "units_result": 0.91
     },
     {
       "id": "under-8.5-0725",
@@ -1818,7 +1827,10 @@
         "total": 7.0,
         "ts": 1785020427
       },
-      "last_alert_odds": -163
+      "last_alert_odds": -163,
+      "result": "LOSS",
+      "score": "Los Angeles Dodgers 4, New York Mets 3",
+      "units_result": -1.0
     },
     {
       "id": "3-leg-parlay-0725",
@@ -2043,7 +2055,10 @@
         "away_ml": -161,
         "total": 7.0,
         "ts": 1785020427
-      }
+      },
+      "result": "WIN",
+      "score": "Los Angeles Dodgers 4, New York Mets 3",
+      "units_result": 0.64
     },
     {
       "id": "milwaukee-brewers-ml-0725",
@@ -2066,7 +2081,10 @@
         "away_ml": 198,
         "total": 9.0,
         "ts": 1785020427
-      }
+      },
+      "result": "WIN",
+      "score": "Colorado Rockies 5, Milwaukee Brewers 8",
+      "units_result": 0.41
     },
     {
       "id": "san-jose-earthquakes-ml-0726",
