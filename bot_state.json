@@ -13570,7 +13570,7 @@
       "qty": 5,
       "market_slug": "aec-cs2-mgc-nip-2026-07-26",
       "outcome": "NIP",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T12:53:37Z"
     },
     {
@@ -14066,7 +14066,7 @@
       "qty": 4,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T16:44:45Z"
     },
     {
@@ -14081,7 +14081,7 @@
       "qty": 14,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T16:44:47Z"
     },
     {
@@ -14096,7 +14096,7 @@
       "qty": 95,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T16:44:48Z"
     },
     {
@@ -14128,7 +14128,7 @@
       "qty": 3,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T16:49:00Z"
     }
   ],
