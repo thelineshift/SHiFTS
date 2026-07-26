@@ -10503,7 +10503,13 @@
       "market_slug": "aec-lol-t1a-nsea-2026-07-27",
       "outcome": "T1 Academy",
       "status": "open",
-      "ts": "2026-07-26T00:15:56Z"
+      "ts": "2026-07-26T00:15:56Z",
+      "price_path": [
+        {
+          "ts": 1785025231,
+          "px": 0.64
+        }
+      ]
     }
   ],
   "pm_stats": {
