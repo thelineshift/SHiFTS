@@ -335,10 +335,10 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -193,
-        "away_ml": 159,
+        "home_ml": -198,
+        "away_ml": 163,
         "total": 8.0,
-        "ts": 1785085455
+        "ts": 1785092655
       }
     },
     {
@@ -358,10 +358,10 @@
       "homeTeam": "San Francisco Giants",
       "awayTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -114,
+        "home_ml": -103,
+        "away_ml": -117,
         "total": 8.5,
-        "ts": 1785085455
+        "ts": 1785092655
       }
     },
     {
