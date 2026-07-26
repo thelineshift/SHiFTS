@@ -13830,7 +13830,12 @@
       "outcome": "MVSK Secret",
       "status": "open",
       "ts": "2026-07-26T20:55:22Z",
-      "price_path": []
+      "price_path": [
+        {
+          "ts": 1785106461,
+          "px": 0.55
+        }
+      ]
     },
     {
       "price": 0.9,
