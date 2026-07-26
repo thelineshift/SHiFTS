@@ -34,15 +34,6 @@
   "bot_version": "9.24.4",
   "unannounced_results": [
     {
-      "id": "chicago-white-sox-ml-0725",
-      "desc": "Chicago White Sox ML",
-      "odds": -126,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Houston Astros 4, Chicago White Sox 1",
-      "tier": "whale"
-    },
-    {
       "id": "texas-rangers-ml-0725",
       "desc": "Texas Rangers ML",
       "odds": -105,
@@ -131,9 +122,18 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "san-francisco-giants-ml-0726",
+      "desc": "San Francisco Giants ML",
+      "odds": -105,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "Los Angeles Angels 4, San Francisco Giants 3",
+      "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785085455.9389694,
+  "last_x_receipt_ts": 1785105856.9694235,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
