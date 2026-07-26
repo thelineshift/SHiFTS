@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T16:44:23Z",
+  "updated": "2026-07-26T17:03:30Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -367,7 +367,10 @@
       "opp": "G2 Esports",
       "analysis": "4-1 last 5 (beat Movistar KOI, Team Vitality, T1) (lost to Dplus KIA) vs 3-2 \u2014 live Pinnacle line -163 (our 73% vs book 59%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Movistar KOI, Team Vitality, T1) (lost to Dplus KIA) vs 3-2 \u2014 live Pinnacle line -163 (our 73% vs book 59%). When the form gap runs **1",
       "awayTeam": "Karmine Corp",
-      "homeTeam": "G2 Esports"
+      "homeTeam": "G2 Esports",
+      "result": "WIN",
+      "units_result": 0.92,
+      "score": "Karmine Corp 1-0 Crystal Rose \u00b7 final"
     },
     {
       "id": "los-angeles-dodgers-ml-0726",
