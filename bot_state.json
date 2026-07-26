@@ -21,7 +21,7 @@
     "#\ud83c\udf81giveaway [04:17] !entry"
   ],
   "time_audit": {
-    "at": "2026-07-26 12:31 UTC",
+    "at": "2026-07-26 12:29 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -32,7 +32,7 @@
     "\ud83c\udf81giveaway": "2026-07-26 10:53 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 12:31 UTC",
+    "at": "2026-07-26 12:29 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -43,14 +43,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 12:31 UTC",
+    "at": "2026-07-26 12:29 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 12:31 UTC",
+    "at": "2026-07-26 12:29 UTC",
     "flags": []
   },
-  "bot_version": "9.23.2",
+  "bot_version": "9.23.1",
   "unannounced_results": [
     {
       "id": "chicago-cubs-ml-0725",
@@ -13160,7 +13160,7 @@
       "qty": 5,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T12:05:50Z"
     },
     {
@@ -13176,7 +13176,7 @@
       "qty": 10,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T12:05:51Z"
     },
     {
@@ -13254,7 +13254,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T12:09:58Z"
     },
     {
@@ -13286,7 +13286,7 @@
       "qty": 3,
       "market_slug": "aec-cs2-lav-btf-2026-07-26",
       "outcome": "Butterfly",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T12:14:54Z"
     },
     {
