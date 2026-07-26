@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.23.5'
+BOT_VERSION = '9.23.6'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -769,20 +769,10 @@ def make_client(privileged=True):
                         except Exception as e2:
                             print('provisional fail:', e2)
                 else:
-                    # QUIET-ROOM LAW (owner decree 7/26): the bot stops replying to #giveaway
-                    # messages that aren't entries. Chatter gets a silent ⚡ ack at most;
-                    # the guide answer is reserved for messages actually ASKING about entering.
-                    try:
-                        await message.add_reaction('⚡')
-                    except Exception:
-                        pass
-                    if str(message.id) not in st_g.get('gw_handled', []):
-                        await gw_mark_handled(st_g, message.id)
-                        await asyncio.to_thread(gh_put, 'bot_state.json', st_g, 'gw handled')
-                    _asky = re.search(r'(?i)\b(enter|entry|handle|how do|verify|verified|steps|qualif|ticket|\?)\b', raw or '')
-                    if _asky:
-                        await gw_reply_once(message, 'guide', "⚡ Drop your **X (Twitter) handle** like `@yourhandle` — not your Discord name — and I'll scan you in. " + GW_STEPS.format(link=gw_post_link(st_g)) + " 🎫", hours=1)
-                return
+                    # SILENT-ROOM LAW (owner decree 7/26): the bot does NOTHING in #giveaway
+                    # unless a message is an entry (handle drop) or the !entry command —
+                    # no acks, no reactions, no nags on anything else.
+                    return
             # OWNER self-serve withdrawal: shift-lab only, owner-only, two-step CONFIRM
             if 'shift-lab' in chname:
                 mw = re.match(r'(?i)^withdraw\s+([\d.]+)\s*sol\s+(?:to\s+)?([1-9A-HJ-NP-Za-km-z]{32,44})\s*$', (message.content or '').strip())
