@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T12:01:15Z",
+  "updated": "2026-07-26T12:19:25Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2637,7 +2637,10 @@
       "opp": "magic",
       "analysis": "4-1 last 5 (beat Heroic, ECHO, 100 Thieves) (lost to K27) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Heroic, ECHO, 100 Thieves) (lost to K27) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this spot more than the pr",
       "awayTeam": "NIP",
-      "homeTeam": "magic"
+      "homeTeam": "magic",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "NIP 0-2 paiN \u00b7 final"
     },
     {
       "id": "team-vitality-ml-0726",
