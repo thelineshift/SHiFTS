@@ -10006,10 +10006,6 @@
       "ts": "2026-07-25T18:34:45Z",
       "price_path": [
         {
-          "ts": 1785042027,
-          "px": 0.44
-        },
-        {
           "ts": 1785044428,
           "px": 0.44
         },
@@ -10099,6 +10095,10 @@
         },
         {
           "ts": 1785095058,
+          "px": 0.44
+        },
+        {
+          "ts": 1785096860,
           "px": 0.44
         }
       ]
@@ -12199,6 +12199,10 @@
         {
           "ts": 1785093860,
           "px": 0.75
+        },
+        {
+          "ts": 1785096861,
+          "px": 0.75
         }
       ]
     },
@@ -12601,6 +12605,10 @@
         {
           "ts": 1785093861,
           "px": 0.66
+        },
+        {
+          "ts": 1785096862,
+          "px": 0.66
         }
       ]
     },
@@ -12642,6 +12650,10 @@
         },
         {
           "ts": 1785093861,
+          "px": 0.38
+        },
+        {
+          "ts": 1785096863,
           "px": 0.38
         }
       ]
@@ -12693,6 +12705,10 @@
         {
           "ts": 1785093861,
           "px": 0.62
+        },
+        {
+          "ts": 1785096863,
+          "px": 0.66
         }
       ]
     },
@@ -12734,6 +12750,10 @@
         {
           "ts": 1785093861,
           "px": 0.35
+        },
+        {
+          "ts": 1785096863,
+          "px": 0.5
         }
       ]
     },
@@ -12774,6 +12794,10 @@
         },
         {
           "ts": 1785093862,
+          "px": 0.71
+        },
+        {
+          "ts": 1785096863,
           "px": 0.71
         }
       ]
@@ -12887,6 +12911,10 @@
         {
           "ts": 1785093862,
           "px": 0.39
+        },
+        {
+          "ts": 1785096863,
+          "px": 0.39
         }
       ]
     },
@@ -12918,18 +12946,13 @@
       "qty": 2,
       "market_slug": "astatc-cs2-fx-isg-2026-07-26-map2",
       "outcome": "Fluxo",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T16:53:58Z",
-      "price_path": [
-        {
-          "ts": 1785085435,
-          "px": 0.68
-        },
-        {
-          "ts": 1785094464,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-26T20:14:24Z",
+      "pnl": -1.36,
+      "autopsy": "model 73% vs market 68% missed \u2014 logged for the playbook review. Taken 0.68, slid to 0.01 before the result \u2014 the number ran 67\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.9,
@@ -13131,18 +13154,13 @@
       "qty": 2,
       "market_slug": "aec-cs2-hon-pg-2026-07-26",
       "outcome": "Privateer Gaming",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T17:44:47Z",
-      "price_path": [
-        {
-          "ts": 1785089666,
-          "px": 0.19
-        },
-        {
-          "ts": 1785091469,
-          "px": 0.28
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.4,
+      "settled_at": "2026-07-26T20:14:26Z",
+      "pnl": -0.8,
+      "autopsy": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.60, rode to 0.28 before the result \u2014 beat the number by 32\u00a2 \u2705"
     },
     {
       "price": 0.9,
@@ -13201,6 +13219,10 @@
         },
         {
           "ts": 1785093862,
+          "px": 0.58
+        },
+        {
+          "ts": 1785096868,
           "px": 0.58
         }
       ]
@@ -13333,15 +13355,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 12,
-    "losses": 21,
-    "pnl": 12.18,
+    "losses": 23,
+    "pnl": 10.02,
     "trades": 146,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-20",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 112.8,
-    "net": 48.8,
+    "account": 94.8,
+    "net": 30.8,
     "last_archive": "2026-07-26",
     "kind_totals": {
       "ARB": [
@@ -13351,12 +13373,12 @@
       ],
       "EDGE": [
         8,
-        11,
+        12,
         0
       ],
       "LIVE-BET": [
         1,
-        5,
+        6,
         0
       ]
     },
@@ -13364,22 +13386,6 @@
   },
   "x_purge_complete": 1785032907.0909944,
   "pm_lessons": [
-    {
-      "ts": "2026-07-25T07:30:00Z",
-      "kind": "ARB",
-      "outcome": "Vortuna/Bregenz pair (open)",
-      "result": "OPEN",
-      "pnl": 0,
-      "lesson": "second trap variant found: a QUOTELESS/untradable draw leg slipped past the first guard \u2014 nameless legs now counted before quote/tradability gates (v9.15.3)."
-    },
-    {
-      "ts": "2026-07-25T14:52:29Z",
-      "kind": "LIVE-BET",
-      "outcome": "ThunderTalk Gaming",
-      "result": "LOSS",
-      "pnl": -7.0,
-      "lesson": "-$7.00 \u2014 TES won outright; live-drift gap was steam, not edge. Ledger-true grading shipped."
-    },
     {
       "ts": "2026-07-25T16:21:07Z",
       "kind": "EDGE",
@@ -13603,6 +13609,22 @@
       "result": "WIN",
       "pnl": 2.85,
       "lesson": "+$2.85 \u2014 model 50% vs market 43% was real edge; thesis held. Taken 0.43, slid to 0.86 before the result \u2014 the number ran 43\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-26T20:14:24Z",
+      "kind": "EDGE",
+      "outcome": "Fluxo",
+      "result": "LOSS",
+      "pnl": -1.36,
+      "lesson": "model 73% vs market 68% missed \u2014 logged for the playbook review. Taken 0.68, slid to 0.01 before the result \u2014 the number ran 67\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-26T20:14:26Z",
+      "kind": "LIVE-BET",
+      "outcome": "Privateer Gaming",
+      "result": "LOSS",
+      "pnl": -0.8,
+      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.60, rode to 0.28 before the result \u2014 beat the number by 32\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
