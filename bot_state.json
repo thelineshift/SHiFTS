@@ -40,15 +40,6 @@
   "bot_version": "9.23.1",
   "unannounced_results": [
     {
-      "id": "chicago-cubs-ml-0725",
-      "desc": "Chicago Cubs ML",
-      "odds": 113,
-      "result": "WIN",
-      "units": 1.13,
-      "score": "Chicago Cubs 11, Pittsburgh Pirates 0",
-      "tier": "sharp"
-    },
-    {
       "id": "atlanta-braves-ml-0725",
       "desc": "Atlanta Braves ML",
       "odds": -108,
@@ -166,7 +157,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785067163.9700751,
+  "last_x_receipt_ts": 1785070925.2937589,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
