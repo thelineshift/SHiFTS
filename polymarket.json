@@ -1,5 +1,8 @@
 {
-  "ts": "2026-07-26T17:04:19Z",
+  "ts": "2026-07-26T17:19:17Z",
   "configured": true,
+  "balance_usd": 116.98,
+  "buying_power": 18.98,
+  "positions": [],
   "error": "<!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-"
 }
