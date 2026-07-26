@@ -13529,6 +13529,21 @@
       "outcome": "NIP",
       "status": "open",
       "ts": "2026-07-26T12:53:37Z"
+    },
+    {
+      "price": 0.71,
+      "stake": 4.97,
+      "kind": "EDGE",
+      "p_model": 0.9411764705882353,
+      "event": "Gentle Mates GC vs. GIANTX GC",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 94% vs market 71% \u2014 23% edge, half-Kelly",
+      "order_id": "BFV899ZHY9NQ",
+      "qty": 7,
+      "market_slug": "astatc-valorant-m8gc-gxgc-2026-07-27-map2",
+      "outcome": "Gentle Mates GC",
+      "status": "open",
+      "ts": "2026-07-26T12:58:37Z"
     }
   ],
   "pm_stats": {
@@ -13536,7 +13551,7 @@
     "wins": 3,
     "losses": 16,
     "pnl": -5.17,
-    "trades": 92,
+    "trades": 93,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12"
   },
