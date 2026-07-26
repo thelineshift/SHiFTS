@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T09:30:31Z",
+  "updated": "2026-07-26T12:01:15Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2587,6 +2587,91 @@
       "analysis": "posted 7.0 vs 8.5 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \ud83d\udcb0 **Value hunt:** posted 7.0 vs 8.5 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. The book shaded this line toward the public s",
       "awayTeam": "Tampa Bay Rays",
       "homeTeam": "Cleveland Guardians"
+    },
+    {
+      "id": "g2-ares-ml-0726",
+      "date": "2026-07-26",
+      "sport": "cs2",
+      "desc": "G2 Ares ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "INOX Division",
+      "team": "G2 Ares",
+      "opp": "INOX Division",
+      "analysis": "4-1 last 5 (beat Inner Circle Academy, Butterfly, CYBERSHOKE Prospects) (lost to Phantom) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Inner Circle Academy, Butterfly, CYBERSHOKE Prospects) (lost to Phantom) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **2",
+      "awayTeam": "G2 Ares",
+      "homeTeam": "INOX Division"
+    },
+    {
+      "id": "oddik-ml-0726",
+      "date": "2026-07-26",
+      "sport": "cs2",
+      "desc": "ODDIK ML",
+      "market": "CCT South America Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "largadosypelados",
+      "team": "ODDIK",
+      "opp": "largadosypelados",
+      "analysis": "4-1 last 5 (beat BORRACHEIROS, Bounty Hunters Esports, Red Feet) (lost to Patins da Ferrari) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat BORRACHEIROS, Bounty Hunters Esports, Red Feet) (lost to Patins da Ferrari) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap",
+      "awayTeam": "ODDIK",
+      "homeTeam": "largadosypelados"
+    },
+    {
+      "id": "nip-ml-0726",
+      "date": "2026-07-26",
+      "sport": "cs2",
+      "desc": "NIP ML",
+      "market": "StarLadder StarSeries Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "12:00 PM ET",
+      "vs": "magic",
+      "team": "NIP",
+      "opp": "magic",
+      "analysis": "4-1 last 5 (beat Heroic, ECHO, 100 Thieves) (lost to K27) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Heroic, ECHO, 100 Thieves) (lost to K27) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this spot more than the pr",
+      "awayTeam": "NIP",
+      "homeTeam": "magic"
+    },
+    {
+      "id": "team-vitality-ml-0726",
+      "date": "2026-07-26",
+      "sport": "lol",
+      "desc": "Team Vitality ML",
+      "market": "LEC Bo3",
+      "odds": -294,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "10:30 AM ET",
+      "vs": "Movistar KOI",
+      "team": "Team Vitality",
+      "opp": "Movistar KOI",
+      "analysis": "1-4 last 5 (beat Fnatic) (lost to G2 Esports) vs 0-5 \u2014 live Pinnacle line -294 (our 90% vs book 71%) | \ud83d\udd25 **Momentum play:** 1-4 last 5 (beat Fnatic) (lost to G2 Esports) vs 0-5 \u2014 live Pinnacle line -294 (our 90% vs book 71%). Ride the **19-point** form edge before the market catches up.",
+      "awayTeam": "Team Vitality",
+      "homeTeam": "Movistar KOI"
+    },
+    {
+      "id": "detroit-tigers--1.5-0726",
+      "date": "2026-07-26",
+      "sport": "mlb",
+      "desc": "Detroit Tigers -1.5",
+      "market": "run line",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "free",
+      "time_et": "01:40 PM ET",
+      "vs": "Kansas City Royals",
+      "team": "Detroit Tigers",
+      "opp": "Kansas City Royals",
+      "analysis": "50-55 overall, 29-24 at home \u2014 ML juiced to -192, so the -1.5 at the standard number is the bet; model makes Detroit Tigers 66% straight up | \ud83d\udcca **Form + price:** 50-55 overall, 29-24 at home \u2014 ML juiced to -192, so the -1.5 at the standard number is the bet; model makes Detroit Tigers 66% straight u",
+      "homeTeam": "Detroit Tigers",
+      "awayTeam": "Kansas City Royals"
     }
   ]
 }
