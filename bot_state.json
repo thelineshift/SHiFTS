@@ -42,15 +42,6 @@
   "bot_version": "9.22.1",
   "unannounced_results": [
     {
-      "id": "2-leg-parlay-0725",
-      "desc": "D.C. United ML + Athletics ML",
-      "odds": -26,
-      "result": "LOSS",
-      "units": -0.5,
-      "score": "Legs: None: win \u00b7 None: loss",
-      "tier": "whale"
-    },
-    {
       "id": "3-leg-parlay-0725",
       "desc": "Chicago Cubs ML + Atlanta Braves ML + Miami Marlins ML",
       "odds": -16,
@@ -168,7 +159,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785041428.712516,
+  "last_x_receipt_ts": 1785051028.082497,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
