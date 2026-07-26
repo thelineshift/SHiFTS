@@ -13855,7 +13855,7 @@
       "qty": 4,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T22:04:50Z"
     },
     {
@@ -13871,8 +13871,11 @@
       "qty": 25,
       "market_slug": "aec-lol-deer-ea-2026-07-27",
       "outcome": "Epic Avalanche",
-      "status": "open",
-      "ts": "2026-07-26T22:04:52Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T22:04:52Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.21,
@@ -13886,7 +13889,7 @@
       "qty": 6,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T22:09:51Z"
     },
     {
