@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T21:44:19Z",
+  "updated": "2026-07-26T22:04:20Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -299,7 +299,10 @@
       "opp": "Cloud9",
       "analysis": "2-3 last 5 (beat Karmine Corp, Deep Cross Gaming) (lost to T1) vs 1-4 \u2014 live Pinnacle line +128 (our 73% vs book 42%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Karmine Corp, Deep Cross Gaming) (lost to T1) vs 1-4 \u2014 live Pinnacle line +128 (our 73% vs book 42%). When the form gap runs **31 points** wid",
       "awayTeam": "Team Liquid",
-      "homeTeam": "Cloud9"
+      "homeTeam": "Cloud9",
+      "result": "WIN",
+      "units_result": 1.92,
+      "score": "Team Liquid 2-0 Cloud9 \u00b7 final"
     },
     {
       "id": "privateer-gaming-ml-0726",
