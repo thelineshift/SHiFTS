@@ -34,6 +34,15 @@
   "bot_version": "9.24.4",
   "unannounced_results": [
     {
+      "id": "chicago-white-sox-ml-0725",
+      "desc": "Chicago White Sox ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Houston Astros 4, Chicago White Sox 1",
+      "tier": "whale"
+    },
+    {
       "id": "texas-rangers-ml-0725",
       "desc": "Texas Rangers ML",
       "odds": -105,
@@ -124,7 +133,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785105856.9694235,
+  "last_x_receipt_ts": 1785085455.9389694,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -11647,8 +11656,11 @@
       "qty": 5,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T12:05:50Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T12:05:50Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.76,
@@ -12043,8 +12055,11 @@
       "qty": 2,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T12:32:08Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T12:32:08Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.9,
@@ -12059,8 +12074,11 @@
       "qty": 2,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T12:34:13Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T12:34:13Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.58,
@@ -12338,8 +12356,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T13:08:05Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T13:08:05Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.57,
@@ -12484,8 +12505,11 @@
       "qty": 2,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T13:44:06Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T13:44:06Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -12589,8 +12613,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T14:20:07Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T14:20:07Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -12895,8 +12922,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T14:55:08Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T14:55:08Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.9,
