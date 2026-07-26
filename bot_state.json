@@ -44,15 +44,6 @@
   "bot_version": "9.22.1",
   "unannounced_results": [
     {
-      "id": "tampa-bay-rays-ml-0725",
-      "desc": "Tampa Bay Rays ML",
-      "odds": -136,
-      "result": "WIN",
-      "units": 0.74,
-      "score": "Cleveland Guardians 0, Tampa Bay Rays 3",
-      "tier": "whale"
-    },
-    {
       "id": "charlotte-fc-ml-0725",
       "desc": "Charlotte FC ML",
       "odds": 190,
@@ -177,9 +168,18 @@
       "units": 0.41,
       "score": "Colorado Rockies 5, Milwaukee Brewers 8",
       "tier": "lock"
+    },
+    {
+      "id": "vancouver-whitecaps-ml-0725",
+      "desc": "Vancouver Whitecaps ML",
+      "odds": -120,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Vancouver Whitecaps 0, Minnesota United FC 0",
+      "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1785027027.9988508,
+  "last_x_receipt_ts": 1785034228.0676858,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -9152,10 +9152,6 @@
         {
           "ts": 1785032426,
           "px": 0.37
-        },
-        {
-          "ts": 1785034226,
-          "px": 0.37
         }
       ]
     },
@@ -9321,10 +9317,6 @@
         {
           "ts": 1785032427,
           "px": 0.49
-        },
-        {
-          "ts": 1785034227,
-          "px": 0.49
         }
       ]
     },
@@ -9414,10 +9406,6 @@
         },
         {
           "ts": 1785032427,
-          "px": 0.39
-        },
-        {
-          "ts": 1785034227,
           "px": 0.39
         }
       ]
@@ -9545,10 +9533,6 @@
         {
           "ts": 1785032427,
           "px": 0.44
-        },
-        {
-          "ts": 1785034227,
-          "px": 0.44
         }
       ]
     },
@@ -9621,10 +9605,6 @@
         },
         {
           "ts": 1785032427,
-          "px": 0.56
-        },
-        {
-          "ts": 1785034227,
           "px": 0.56
         }
       ]
@@ -9862,10 +9842,6 @@
         {
           "ts": 1785032428,
           "px": 0.43
-        },
-        {
-          "ts": 1785034228,
-          "px": 0.43
         }
       ]
     },
@@ -9931,10 +9907,6 @@
         },
         {
           "ts": 1785032428,
-          "px": 0.2
-        },
-        {
-          "ts": 1785034228,
           "px": 0.2
         }
       ]
@@ -10033,10 +10005,6 @@
         },
         {
           "ts": 1785032428,
-          "px": 0.25
-        },
-        {
-          "ts": 1785034228,
           "px": 0.25
         }
       ]
@@ -10288,10 +10256,6 @@
         },
         {
           "ts": 1785032429,
-          "px": 0.64
-        },
-        {
-          "ts": 1785034229,
           "px": 0.64
         }
       ]
