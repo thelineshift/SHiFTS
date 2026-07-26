@@ -14275,7 +14275,13 @@
       "market_slug": "aec-mlb-mil-sf-2026-07-28",
       "outcome": "Milwaukee Brewers",
       "status": "open",
-      "ts": "2026-07-26T23:21:22Z"
+      "ts": "2026-07-26T23:21:22Z",
+      "price_path": [
+        {
+          "ts": 1785108622,
+          "px": 0.55
+        }
+      ]
     }
   ],
   "pm_stats": {
