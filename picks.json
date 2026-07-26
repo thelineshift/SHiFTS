@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T02:50:28Z",
+  "updated": "2026-07-26T04:01:15Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2394,6 +2394,105 @@
         "total": 9.0,
         "ts": 1785038427
       }
+    },
+    {
+      "id": "lng-esports-ml-0726",
+      "date": "2026-07-26",
+      "sport": "lol",
+      "desc": "LNG Esports ML",
+      "market": "LPL Bo3",
+      "odds": 119,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "03:00 AM ET",
+      "vs": "Ninjas in Pyjamas",
+      "team": "LNG Esports",
+      "opp": "Ninjas in Pyjamas",
+      "analysis": "4-1 last 5 (beat LGD Gaming, Ultra Prime, ThunderTalk Gaming) (lost to Team WE) vs 2-3 \u2014 live Pinnacle line +119 (our 86% vs book 44%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat LGD Gaming, Ultra Prime, ThunderTalk Gaming) (lost to Team WE) vs 2-3 \u2014 live Pinnacle line +119 (our 86% vs book 44%). Books h",
+      "awayTeam": "LNG Esports",
+      "homeTeam": "Ninjas in Pyjamas"
+    },
+    {
+      "id": "kiwoom-drx-ml-0726",
+      "date": "2026-07-26",
+      "sport": "valorant",
+      "desc": "Kiwoom DRX ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Paper Rex",
+      "team": "Kiwoom DRX",
+      "opp": "Paper Rex",
+      "analysis": "2-3 last 5 (beat DetonatioN FocusMe, FULL SENSE) (lost to Team Secret) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat DetonatioN FocusMe, FULL SENSE) (lost to Team Secret) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edg",
+      "awayTeam": "Kiwoom DRX",
+      "homeTeam": "Paper Rex"
+    },
+    {
+      "id": "under-10.0-0726",
+      "date": "2026-07-26",
+      "sport": "mlb",
+      "desc": "Under 10.0",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "01:35 PM ET",
+      "vs": "Arizona Diamondbacks @ Washington Nationals",
+      "team": "Washington Nationals",
+      "opp": "Arizona Diamondbacks",
+      "analysis": "posted 10.0 vs 7.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side | \ud83d\udcca **Form + price:** posted 10.0 vs 7.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side. Model makes Under 10.0 **60%** \u2014 book",
+      "awayTeam": "Washington Nationals",
+      "homeTeam": "Arizona Diamondbacks"
+    },
+    {
+      "id": "under-10.0-0726",
+      "date": "2026-07-26",
+      "sport": "mlb",
+      "desc": "Under 10.0",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "02:10 PM ET",
+      "vs": "Athletics @ Minnesota Twins",
+      "team": "Minnesota Twins",
+      "opp": "Athletics",
+      "analysis": "posted 10.0 vs 7.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side | \ud83d\udcc8 **Market angle:** posted 10.0 vs 7.7 slate average \u2014 slate-high number and public over money inflates these \u2014 the under is the sharp side. The number's off by **10 points** \u2014 t",
+      "awayTeam": "Minnesota Twins",
+      "homeTeam": "Athletics"
+    },
+    {
+      "id": "2-leg-parlay-0726",
+      "date": "2026-07-26",
+      "sport": "parlay",
+      "desc": "Detroit Tigers -1.5 + Minnesota Twins ML",
+      "market": "2-leg parlay (MLB)",
+      "odds": 224,
+      "units": 0.5,
+      "tier": "sharp",
+      "time_et": "01:40 PM ET",
+      "vs": "Detroit Tigers -1.5 vs Kansas City Royals \u00b7 Minnesota Twins ML vs Athletics",
+      "team": null,
+      "opp": null,
+      "analysis": "Detroit Tigers -1.5 (-110) \u30fb Minnesota Twins ML (-143) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Detroit Tigers -1.5",
+          "vs": "Kansas City Royals",
+          "sport": "mlb",
+          "date": "2026-07-26",
+          "time_et": "01:40 PM ET"
+        },
+        {
+          "team": "Minnesota Twins",
+          "vs": "Athletics",
+          "sport": "mlb",
+          "date": "2026-07-26",
+          "time_et": "02:10 PM ET"
+        }
+      ]
     }
   ]
 }
