@@ -2155,12 +2155,12 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -193,
-        "away_ml": 158,
+        "home_ml": -198,
+        "away_ml": 162,
         "total": 8.0,
-        "ts": 1785073516
+        "ts": 1785077377
       },
-      "last_alert_odds": 148
+      "last_alert_odds": 162
     },
     {
       "id": "san-francisco-giants-ml-0726",
@@ -2202,10 +2202,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -126,
+        "home_ml": -125,
         "away_ml": 104,
         "total": 7.0,
-        "ts": 1785073115
+        "ts": 1785077378
       }
     },
     {
@@ -2346,10 +2346,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -356,
-        "away_ml": 278,
+        "home_ml": -350,
+        "away_ml": 274,
         "total": 7.5,
-        "ts": 1785073115
+        "ts": 1785077378
       },
       "last_alert_odds": -354
     },
