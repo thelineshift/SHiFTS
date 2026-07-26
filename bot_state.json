@@ -5733,11 +5733,15 @@
         }
       },
       "cs2:138631": {
-        "ts": 1784978108.9076388,
+        "ts": 1785076502.8826218,
         "f": {
-          "w": 3,
-          "l": 2,
+          "w": 4,
+          "l": 1,
           "res": [
+            {
+              "won": true,
+              "opp": "ROUNDS"
+            },
             {
               "won": false,
               "opp": "Misa Esports"
@@ -5753,10 +5757,6 @@
             {
               "won": true,
               "opp": "mellren"
-            },
-            {
-              "won": false,
-              "opp": "Pitstop crew"
             }
           ]
         }
@@ -7039,11 +7039,15 @@
         }
       },
       "cs2:128887": {
-        "ts": 1784978111.0673718,
+        "ts": 1785076502.2797005,
         "f": {
           "w": 3,
           "l": 2,
           "res": [
+            {
+              "won": false,
+              "opp": "Vexar"
+            },
             {
               "won": false,
               "opp": "CYBERSHOKE Prospects"
@@ -7059,10 +7063,6 @@
             {
               "won": true,
               "opp": "Julie&cie"
-            },
-            {
-              "won": false,
-              "opp": "Entropy"
             }
           ]
         }
@@ -7213,7 +7213,7 @@
         }
       },
       "valorant:138960": {
-        "ts": 1785067526.3519278,
+        "ts": 1785076503.580612,
         "f": {
           "w": 1,
           "l": 1,
@@ -7230,7 +7230,7 @@
         }
       },
       "valorant:138527": {
-        "ts": 1785067526.7966535,
+        "ts": 1785076506.8914626,
         "f": {
           "w": 1,
           "l": 4,
@@ -14177,6 +14177,69 @@
       "outcome": "Gentle Mates GC",
       "status": "open",
       "ts": "2026-07-26T14:30:08Z"
+    },
+    {
+      "price": 0.38,
+      "short": true,
+      "stake": 1.52,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "ex-RUSTEC vs. Entropy",
+      "ev_start": "2026-07-27T08:00:00Z",
+      "reason": "model 50% vs market 38% \u2014 12% edge, half-Kelly",
+      "order_id": "BFWPPRJGJ9SK",
+      "qty": 4,
+      "market_slug": "aec-cs2-erx-ent-2026-07-27",
+      "outcome": "Entropy",
+      "status": "open",
+      "ts": "2026-07-26T14:35:13Z"
+    },
+    {
+      "price": 0.69,
+      "short": true,
+      "stake": 7.59,
+      "kind": "EDGE",
+      "p_model": 1.0,
+      "event": "Gen.G Global Academy vs. BNK FearX Youth",
+      "ev_start": "2026-07-27T10:00:00Z",
+      "reason": "model 100% vs market 69% \u2014 31% edge, half-Kelly",
+      "order_id": "BFWPXB52A9P0",
+      "qty": 11,
+      "market_slug": "aec-lol-genga-foxy-2026-07-27",
+      "outcome": "BNK FearX Youth",
+      "status": "open",
+      "ts": "2026-07-26T14:35:14Z"
+    },
+    {
+      "price": 0.4,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Verdant vs. Lundqvist Lightside",
+      "ev_start": "2026-07-27T16:00:00Z",
+      "reason": "model 50% vs market 40% \u2014 10% edge, half-Kelly",
+      "order_id": "BFWNMH5SW9QV",
+      "qty": 3,
+      "market_slug": "aec-lol-vdn-ll-2026-07-27",
+      "outcome": "Lundqvist Lightside",
+      "status": "open",
+      "ts": "2026-07-26T14:35:16Z"
+    },
+    {
+      "price": 0.7,
+      "stake": 2.8,
+      "kind": "EDGE",
+      "p_model": 0.8181818181818182,
+      "event": "Team Jenz vs. Team Syntax",
+      "ev_start": "2026-07-26T18:00:00Z",
+      "reason": "model 82% vs market 70% \u2014 12% edge, half-Kelly",
+      "order_id": "BFWR0YJ1C9NW",
+      "qty": 4,
+      "market_slug": "aec-dota2-tje-stx-2026-07-26",
+      "outcome": "Team Jenz",
+      "status": "open",
+      "ts": "2026-07-26T14:35:17Z"
     }
   ],
   "pm_stats": {
@@ -14184,7 +14247,7 @@
     "wins": 6,
     "losses": 14,
     "pnl": 1.76,
-    "trades": 109,
+    "trades": 113,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-14",
     "deposits": 64.0,
