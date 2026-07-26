@@ -13849,6 +13849,21 @@
       "outcome": "Atreides",
       "status": "open",
       "ts": "2026-07-26T13:50:08Z"
+    },
+    {
+      "price": 0.4,
+      "stake": 2.0,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727274,
+      "event": "ODDIK vs. largadosypelados",
+      "ev_start": "2026-07-26T15:00:00Z",
+      "reason": "model 73% vs market 40% \u2014 33% edge, half-Kelly",
+      "order_id": "BFW2M42SW9NY",
+      "qty": 5,
+      "market_slug": "astatc-cs2-odk-ldp-2026-07-26-map2",
+      "outcome": "ODDIK",
+      "status": "open",
+      "ts": "2026-07-26T13:55:08Z"
     }
   ],
   "pm_stats": {
@@ -13856,7 +13871,7 @@
     "wins": 6,
     "losses": 14,
     "pnl": 1.76,
-    "trades": 103,
+    "trades": 104,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12",
     "deposits": 64.0,
