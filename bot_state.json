@@ -12814,6 +12814,37 @@
       "outcome": "Leviat\u00e1n Esports",
       "status": "resting",
       "ts": "2026-07-26T17:19:45Z"
+    },
+    {
+      "price": 0.17,
+      "stake": 1.53,
+      "kind": "EDGE",
+      "p_model": 0.30769230769230776,
+      "event": "UNiTY esports vs. Mai Tai",
+      "ev_start": "2026-07-27T11:00:00Z",
+      "reason": "model 31% vs market 17% \u2014 14% edge, half-Kelly",
+      "order_id": "BFZB46BYY9P4",
+      "qty": 9,
+      "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
+      "outcome": "UNiTY esports",
+      "status": "open",
+      "ts": "2026-07-26T17:24:45Z"
+    },
+    {
+      "price": 0.69,
+      "short": true,
+      "stake": 1.38,
+      "kind": "LIVE-BET",
+      "p_model": 0.8181818181818181,
+      "event": "Lavked vs. Butterfly",
+      "ev_start": "2026-07-26T17:00:00Z",
+      "reason": "live number drifted \u2014 model 82% vs 69%, 13% gap mid-game",
+      "order_id": "BFZBNBQEM9NZ",
+      "qty": 2,
+      "market_slug": "aec-cs2-lav-btf-2026-07-26",
+      "outcome": "Butterfly",
+      "status": "open",
+      "ts": "2026-07-26T17:24:46Z"
     }
   ],
   "pm_stats": {
@@ -12821,7 +12852,7 @@
     "wins": 10,
     "losses": 19,
     "pnl": 9.7,
-    "trades": 127,
+    "trades": 129,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-16",
     "deposits": 64.0,
