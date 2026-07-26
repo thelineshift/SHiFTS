@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.23.0'
+BOT_VERSION = '9.23.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -5113,8 +5113,7 @@ async def pm_watch():
             _bal_s = f"${(bal or {}).get('balance', _tracked_bal):.2f}"
             xt = (f"📈 SHiFT desk — {_trade_label(t)} @ {t['price']:.2f} 🎯 WIN {sign}\n"
                   f"Desk record {stats.get('wins', 0)}-{stats.get('losses', 0)} · P&L {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f} · 💰 bankroll {_bal_s}\n"
-                  f"Picks · receipts · $50 giveaway — all on our store: {STORE_PAGE}\n"
-                  f"🖥️ {DESK_LINK}")
+                  f"🐋 The desk floor is Whale-only — every entry, exit & cash-out live, plus the War Room: {STORE_PAGE}")
             try:
                 await asyncio.to_thread(x_post, xt[:270], None)
             except Exception as xe:
