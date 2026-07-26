@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.23.6'
+BOT_VERSION = '9.24.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -338,15 +338,67 @@ def _pm_client():
     return PolymarketUS(key_id=kid, secret_key=sec)
 
 def _desk_bankroll_txt(stats, bal):
-    """Owner law 7/26: every desk result / cash-out / X post shows the bankroll balance, ALWAYS.
-    Live cash when the API answers; tracked total (start + realized P&L) when it doesn't."""
-    start = float((stats or {}).get('start') or 50.0)
-    pnl = float((stats or {}).get('pnl') or 0.0)
-    tracked = round(start + pnl, 2)
+    """ACCOUNT TRUTH LAW (owner decree 2026-07-26): every desk result / cash-out / X post shows
+    the ACCOUNT — total account value and net P&L against actual funds in (deposits).
+    No starting roll, no ladder framing, ever. bal['balance'] is total account value (cash+positions)."""
+    dep = float((stats or {}).get('deposits') or 64.0)
     if bal:
-        return (f"💰 bankroll **${tracked:.2f}** total on the ${start:.0f} ladder "
-                f"(${bal['balance']:.2f} cash · {'+' if pnl >= 0 else ''}${pnl:.2f} realized)")
-    return f"💰 bankroll **${tracked:.2f}** tracked (${start:.0f} start · {'+' if pnl >= 0 else ''}${pnl:.2f} realized P&L)"
+        acct = round(float(bal['balance']), 2)
+        net = round(acct - dep, 2)
+        roi = (net / dep * 100) if dep else 0.0
+        return (f"💰 account **${acct:.2f}** · net P&L **{'+' if net >= 0 else ''}${net:.2f}** "
+                f"on ${dep:.2f} in ({'+' if roi >= 0 else ''}{roi:.0f}%)")
+    pnl = float((stats or {}).get('pnl') or 0.0)
+    return f"💰 net P&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** realized on ${dep:.2f} in (live account feed offline)"
+
+def _desk_deposits_live():
+    """Funds in during the desk era, straight from the exchange ledger (completed deposits
+    on/after DESK_DEPOSITS_EPOCH). None when the API won't answer — caller keeps state's number."""
+    c = _pm_client()
+    if not c:
+        return None
+    try:
+        acts, cur = [], None
+        for _ in range(4):
+            params = {'limit': 100}
+            if cur:
+                params['cursor'] = cur
+            r = c.portfolio.activities(params)
+            batch = (r.get('activities') if isinstance(r, dict) else r) or []
+            acts.extend(batch)
+            if r.get('eof') or not r.get('nextCursor') or not batch:
+                break
+            cur = r['nextCursor']
+        tot = 0.0
+        for a in acts:
+            if 'DEPOSIT' not in str(a.get('type')):
+                continue
+            chg = a.get('accountBalanceChange') or {}
+            if chg.get('status') != 'ACCOUNT_BALANCE_CHANGE_STATUS_COMPLETED':
+                continue
+            if str(chg.get('updateTime') or '')[:10] >= DESK_DEPOSITS_EPOCH:
+                tot += float((chg.get('amount') or {}).get('value') or 0)
+        return round(tot, 2) if tot > 0 else None
+    except Exception as e:
+        print('[desk] deposits scan:', str(e)[:100])
+        return None
+
+def _desk_sync_money(st, stats, bal):
+    """Hourly: refresh deposits from the exchange; always: persist account/net so the War Room
+    and every surface show the same account truth. Returns (account, deposits, net)."""
+    now = time.time()
+    if now - float(st.get('dep_checked_ts') or 0) > 3600:
+        live = _desk_deposits_live()
+        if live:
+            stats['deposits'] = live
+        st['dep_checked_ts'] = now
+    dep = float(stats.get('deposits') or 64.0)
+    acct = round(float(bal['balance']), 2) if bal else None
+    net = round(acct - dep, 2) if acct is not None else None
+    if acct is not None:
+        stats['account'] = acct
+        stats['net'] = net
+    return acct, dep, net
 
 def pm_cash_balance():
     """Real USD cash + buying power. None if unavailable."""
@@ -769,10 +821,20 @@ def make_client(privileged=True):
                         except Exception as e2:
                             print('provisional fail:', e2)
                 else:
-                    # SILENT-ROOM LAW (owner decree 7/26): the bot does NOTHING in #giveaway
-                    # unless a message is an entry (handle drop) or the !entry command —
-                    # no acks, no reactions, no nags on anything else.
-                    return
+                    # QUIET-ROOM LAW (owner decree 7/26): the bot stops replying to #giveaway
+                    # messages that aren't entries. Chatter gets a silent ⚡ ack at most;
+                    # the guide answer is reserved for messages actually ASKING about entering.
+                    try:
+                        await message.add_reaction('⚡')
+                    except Exception:
+                        pass
+                    if str(message.id) not in st_g.get('gw_handled', []):
+                        await gw_mark_handled(st_g, message.id)
+                        await asyncio.to_thread(gh_put, 'bot_state.json', st_g, 'gw handled')
+                    _asky = re.search(r'(?i)\b(enter|entry|handle|how do|verify|verified|steps|qualif|ticket|\?)\b', raw or '')
+                    if _asky:
+                        await gw_reply_once(message, 'guide', "⚡ Drop your **X (Twitter) handle** like `@yourhandle` — not your Discord name — and I'll scan you in. " + GW_STEPS.format(link=gw_post_link(st_g)) + " 🎫", hours=1)
+                return
             # OWNER self-serve withdrawal: shift-lab only, owner-only, two-step CONFIRM
             if 'shift-lab' in chname:
                 mw = re.match(r'(?i)^withdraw\s+([\d.]+)\s*sol\s+(?:to\s+)?([1-9A-HJ-NP-Za-km-z]{32,44})\s*$', (message.content or '').strip())
@@ -3509,7 +3571,7 @@ def whale_deepdive_text(ps, desk, st):
     if desk:
         dw = sum(1 for t in desk if t.get('result') == 'WIN'); dl = sum(1 for t in desk if t.get('result') == 'LOSS')
         dpnl = sum(float(t.get('pnl') or 0) for t in desk)
-        L += ["", f"📈 **DESK FLOOR WEEK:** {dw}-{dl} · **{'+' if dpnl >= 0 else ''}${dpnl:.2f}** on the $50 ladder"]
+        L += ["", f"📈 **DESK FLOOR WEEK:** {dw}-{dl} · realized **{'+' if dpnl >= 0 else ''}${dpnl:.2f}** this week"]
         for t in desk[:4]:
             L.append(f"   • {_trade_label(t)} — {t.get('result')} {'+' if (t.get('pnl') or 0) >= 0 else ''}${t.get('pnl', 0):.2f}")
     by = ' · '.join(f"{k} {v[0]}-{v[1]}" for k, v in sorted(s['by_sport'].items(), key=lambda kv: -(kv[1][0]+kv[1][1]))[:6])
@@ -3907,7 +3969,7 @@ def pm_slip_png(lb, status='LIVE', pnl=None, title='SHiFT — POLYMARKET US BET 
     if pnl is not None:
         sign = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
         d.text((48, H - 160), f"P&L {sign}", font=f_lg, fill=stamp_c)
-    d.text((48, H - 64), '$50 → $1,000 LADDER — real money, public receipts', font=f_sm, fill=dim)
+    d.text((48, H - 64), 'SHiFT DESK — real money, public receipts', font=f_sm, fill=dim)
     buf = _io.BytesIO()
     img.save(buf, 'PNG')
     return buf.getvalue()
@@ -3934,9 +3996,11 @@ def _desk_room(B, expo, expo0=0.0):
     cash_left = B - max(0.0, expo - expo0)
     return cash_left - TRADER_MIN_LIQUID * (B + expo0)
 TRADE_CHAN = 'shift-trades'
-DESK_LINK = 'https://polymarket.us'  # the desk's public home — recap links here (no-spam decree)
+# DESK_LINK RETIRED (owner decree 2026-07-26): no public post links to the venue — all traffic goes to STORE_PAGE.
 DISCORD_INVITE = 'https://discord.gg/8bBxWUJCYT'  # verified invite used across the site — results push here
 STORE_PAGE = 'https://thelineshift.github.io/SHiFTS/upgrade.html'  # universal link — giveaway + Discord + products all live here (owner decree)
+DESK_DEPOSITS_EPOCH = '2026-07-24'  # desk era opened with the $50 deposit — funds-in (deposits) tracked from this date (owner decree 2026-07-26)
+# TRAFFIC LAW (owner decree 2026-07-26): public posts point to OUR STORE, never to polymarket — the desk's receipts sell the store, not the venue.
 
 
 # ---------- THE ODDS API — PLAYER PROPS FEED (owner-funded free tier, 2026-07-25) ----------
@@ -4710,27 +4774,31 @@ def desk_by_kind(trades):
 
 
 def desk_recap_text(st, bal, open_n):
-    """Reformatted desk recap: record, rate, P&L, ROI, playbook split, lesson, links."""
+    """Account-truth recap (owner decree 2026-07-26): record, account value, net P&L vs funds in,
+    playbook split, lesson. Links to OUR STORE only — never to the venue."""
     stats = st.get('pm_stats', {})
+    acct, dep, net = _desk_sync_money(st, stats, bal)
     w, l, p = stats.get('wins', 0), stats.get('losses', 0), stats.get('pushes', 0)
     trades = stats.get('trades', 0)
-    pnl = stats.get('pnl', 0.0)
     settled = w + l
     wr = (w / settled * 100) if settled else 0.0
-    roi = (pnl / TRADER_BANK_START * 100) if TRADER_BANK_START else 0.0
     rec = f"{w}-{l}" + (f"-{p}" if p else '')
     lines = [f"📈 **SHiFT DESK — {time.strftime('%Y-%m-%d · %H:%M UTC')}**",
-             f"Record **{rec}** · win rate **{wr:.0f}%** · trades **{trades}** · open **{open_n}**",
-             f"P&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** on ${TRADER_BANK_START:.0f} · ROI **{'+' if roi >= 0 else ''}{roi:.0f}%**"
-             + (f" · roll **${bal['balance']:.2f}**" if bal else ''),
-             f"Playbooks: {desk_by_kind(st.get('pm_trades', []))}"]
+             f"Record **{rec}** · win rate **{wr:.0f}%** · trades **{trades}** · open **{open_n}**"]
+    if acct is not None:
+        roi = (net / dep * 100) if dep else 0.0
+        lines.append(f"💰 Account **${acct:.2f}** · net P&L **{'+' if net >= 0 else ''}${net:.2f}** on ${dep:.2f} in (**{'+' if roi >= 0 else ''}{roi:.0f}%**)")
+    else:
+        pnl = stats.get('pnl', 0.0)
+        lines.append(f"💰 Net P&L **{'+' if pnl >= 0 else ''}${pnl:.2f}** realized on ${dep:.2f} in (live account feed offline)")
+    lines.append(f"Playbooks: {desk_by_kind(st.get('pm_trades', []))}")
     _tn = _desk_tuning(st)
     if _tn:
         lines.append(f"🧭 Tuning: {'; '.join(v['why'] for v in _tn.values())}")
     if st.get('pm_lessons'):
         lines.append(f"🔬 Latest lesson: _{st['pm_lessons'][-1]['lesson']}_")
-    lines.append("SHiFT desk on Polymarket US — profit is the only law. ⚡")
-    lines.append(f"🖥️ {DESK_LINK} · 💎 {STORE_PAGE}")
+    lines.append("Real money, public receipts — profit is the only law. ⚡")
+    lines.append(f"💎 Every position, result & the War Room: {STORE_PAGE}")
     return '\n'.join(lines)
 
 
@@ -4763,8 +4831,11 @@ def desk_pnl_png(st, stats):
     d.text((48, 36), 'SHiFT DESK — P&L', font=f_lg, fill=txt)
     pnl = stats.get('pnl', 0.0)
     w_, l_ = stats.get('wins', 0), stats.get('losses', 0)
-    d.text((48, 108), f"Record {w_}-{l_}   P&L {'+' if pnl >= 0 else ''}${pnl:.2f}   on ${TRADER_BANK_START:.0f} bank",
-           font=f_md, fill=(up if pnl >= 0 else dn))
+    _dep8 = float(stats.get('deposits') or 64.0)
+    _acct8 = stats.get('account')
+    _hdr8 = (f"Record {w_}-{l_}   account ${float(_acct8):.2f}   net {'+' if (float(_acct8) - _dep8) >= 0 else ''}${float(_acct8) - _dep8:.2f} on ${_dep8:.2f} in"
+             if _acct8 else f"Record {w_}-{l_}   net {'+' if pnl >= 0 else ''}${pnl:.2f} realized on ${_dep8:.2f} in")
+    d.text((48, 108), _hdr8, font=f_md, fill=(up if (stats.get('net') if _acct8 else pnl) >= 0 else dn))
     # plot area
     x0, x1, y0, y1 = 70, W - 60, 190, H - 90
     lo, hi = min(curve + [0.0]), max(curve + [0.0])
@@ -4888,8 +4959,11 @@ async def pm_trader():
                     _st = st.get('pm_stats', {})
                     _tot = _st.get('pnl', 0.0)
                     _sgn = '+' if _tot >= 0 else ''
+                    _acct9 = _st.get('account'); _dep9 = float(_st.get('deposits') or 64.0)
+                    _money9 = (f"account ${float(_acct9):.2f} · net {'+' if (float(_acct9) - _dep9) >= 0 else ''}${float(_acct9) - _dep9:.2f}"
+                               if _acct9 else f"net {_sgn}${_tot:.2f} realized")
                     await ch3.send("📌 **DESK BOARD PLAY — live to 24h out, tail with us:**\n" + "\n".join(lines) +
-                                   f"\n\n_Desk to date: {_st.get('wins', 0)}-{_st.get('losses', 0)} · {_sgn}${_tot:.2f} on the $50 ladder_")
+                                   f"\n\n_Desk to date: {_st.get('wins', 0)}-{_st.get('losses', 0)} · {_money9} on ${_dep9:.2f} in_")
                     st['board_posted'] = seen[-60:]
                     await asyncio.to_thread(gh_put, 'bot_state.json', st, 'board play posted')
                     print(f"[trader] board play posted ({len(lines)} far-out entries)")
@@ -4921,27 +4995,32 @@ async def pm_trader():
             # public desk feed for the site dashboard
             try:
                 settled = [t for t in st.get('pm_trades', []) if t.get('result') in ('WIN', 'LOSS', 'PUSH')]
+                _dep10 = float(stats.get('deposits') or 64.0)
                 desk_doc = {'updated': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
                             'record': f"{stats.get('wins', 0)}-{stats.get('losses', 0)}",
                             'trades': stats.get('trades', 0), 'open': open_n,
-                            'pnl': round(stats.get('pnl', 0.0), 2), 'bank': TRADER_BANK_START,
-                            'balance': round(bal['balance'], 2) if bal else None,
+                            'pnl': round(stats.get('pnl', 0.0), 2),
+                            'account': round(bal['balance'], 2) if bal else None,
+                            'deposits': _dep10,
+                            'net_pnl': round(bal['balance'] - _dep10, 2) if bal else None,
                             'playbooks': desk_by_kind(st.get('pm_trades', [])),
                             'recent': [{'outcome': t.get('outcome'), 'short': bool(t.get('short')),
                                         'result': {'WIN': 'won', 'LOSS': 'lost', 'PUSH': 'push'}.get(t.get('result')),
                                         'pnl': round(float(t.get('pnl') or 0), 2)} for t in settled[-6:]],
-                            'link': DESK_LINK, 'store': STORE_PAGE}
+                            'store': STORE_PAGE}
                 await asyncio.to_thread(gh_put, 'desk.json', desk_doc, 'desk stats update', 'main')
             except Exception as _de:
                 print('[trader] desk.json:', _de)
             if et_now.tm_hour == 8 and stats.get('last_recap') != today_et:
                 stats['last_recap'] = today_et
                 pnl = stats.get('pnl', 0.0)
+                _dep11 = float(stats.get('deposits') or 64.0)
+                _money11 = (f"💰 account ${bal['balance']:.2f} · net {'+' if (bal['balance'] - _dep11) >= 0 else ''}${bal['balance'] - _dep11:.2f} on ${_dep11:.2f} in"
+                            if bal else f"net {'+' if pnl >= 0 else ''}${pnl:.2f} realized on ${_dep11:.2f} in")
                 xt_recap = (f"📈 SHiFT DESK — {today_et}\n"
                             f"{stats.get('wins', 0)}-{stats.get('losses', 0)} · trades {stats.get('trades', 0)} · open {open_n}\n"
-                            f"P&L {'+' if pnl >= 0 else ''}${pnl:.2f} on ${TRADER_BANK_START:.0f}"
-                            + (f" · roll ${bal['balance']:.2f}" if bal else '')
-                            + f"\nSHiFT desk on Polymarket US — profit is the only law. ⚡\n🖥️ {DESK_LINK}")
+                            f"{_money11}\n"
+                            f"Real money, public receipts. ⚡\n💎 {STORE_PAGE}")
                 try:
                     await asyncio.to_thread(x_post, xt_recap[:270], None)
                 except Exception:
@@ -5003,15 +5082,35 @@ async def pm_watch():
                             print(f"[desk] {slug}: order resting (unfilled) — out of expo")
                         continue
                     try:
+                        # RESOLUTION-FIRST LAW (owner decree 2026-07-26): a vanished position is usually a
+                        # RESOLVED market. Grade from the exchange ledger and let the main settle loop
+                        # below post the receipt this same tick — never guess from trade fills first.
+                        _res12 = await asyncio.wait_for(asyncio.to_thread(pm_check_settled, {'marketSlug': slug, 'outcome': t.get('outcome'), 'qty': t.get('qty'), 'short': t.get('short'), 'stake': t.get('stake')}), 45)
+                        if _res12:
+                            print(f"[desk] {slug}: resolved on-exchange — settle loop grades it this tick")
+                            continue
                         _r = await asyncio.wait_for(asyncio.to_thread(_c3.portfolio.activities, {'marketSlug': [slug], 'types': ['ACTIVITY_TYPE_TRADE']}), 25)
                         _acts = (_r.get('activities') if isinstance(_r, dict) else _r) or []
-                        _sell = None
+                        # EXIT-FILL LAW: a long's exit is SELL fills, a short's exit is BUY fills — and
+                        # only fills AFTER our entry count. A short's own entry sell is NOT an exit
+                        # (the bug that buried 3 wins and zeroed 5 results on 2026-07-25/26).
+                        _exit_side = 'ORDER_SIDE_BUY' if t.get('short') else 'ORDER_SIDE_SELL'
+                        _entry_ts = str(t.get('ts') or '')
+                        _proceeds = 0.0
+                        _fills = 0
                         for _a in _acts:
-                            _oo2 = ((_a.get('trade') or {}).get('aggressorExecution') or {}).get('order') or {}
-                            if _oo2.get('side') == 'ORDER_SIDE_SELL':
-                                _sell = _oo2
+                            _agg = (_a.get('trade') or {}).get('aggressorExecution') or {}
+                            _oo2 = _agg.get('order') or {}
+                            if _oo2.get('side') != _exit_side:
+                                continue
+                            _fts = str(_agg.get('transactTime') or _oo2.get('lastTransactTime') or '')
+                            if _entry_ts and _fts and _fts <= _entry_ts:
+                                continue
+                            _proceeds += float((_oo2.get('price') or {}).get('value') or 0) * float(_oo2.get('quantity') or 0)
+                            _fills += 1
+                        _sell = _fills > 0
                         if _sell:
-                            proceeds = round(float((_sell.get('price') or {}).get('value') or 0) * float(_sell.get('quantity') or 0), 2)
+                            proceeds = round(_proceeds, 2)
                             pnl = round(proceeds - float(t.get('stake') or 0), 2)
                             res = {'result': 'WIN' if pnl > 0 else 'LOSS', 'payout': proceeds, 'pnl': pnl}
                             t.update({'status': 'settled', 'result': res['result'], 'payout': proceeds, 'pnl': pnl,
@@ -5028,9 +5127,12 @@ async def pm_watch():
                             em0 = '🎯' if pnl > 0 else '❌'
                             sign0 = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
                             _g9 = client.guilds[0] if client.guilds else None
+                            _bal0 = await asyncio.to_thread(pm_cash_balance)
+                            _desk_sync_money(st, stats0, _bal0)
                             _msg0 = (f"💵 **DESK CASH-OUT {em0}:** **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']}\n"
                                      f"Cashed out early at **${proceeds:.2f}** — profit **{sign0}**\n"
-                                     f"📈 Desk to date: **{stats0.get('wins', 0)}-{stats0.get('losses', 0)}** · **{'+' if stats0.get('pnl', 0) >= 0 else ''}${stats0.get('pnl', 0):.2f}** on the $50 ladder")
+                                     f"📈 Desk to date: **{stats0.get('wins', 0)}-{stats0.get('losses', 0)}**\n"
+                                     + _desk_bankroll_txt(stats0, _bal0))
                             for _tgt9 in (find_channel(_g9, 'receipts') if _g9 else None, await trader_channel(_g9) if _g9 else None):
                                 if _tgt9:
                                     try:
@@ -5099,6 +5201,7 @@ async def pm_watch():
         stats['wins'] = stats.get('wins', 0) + (1 if res['result'] == 'WIN' else 0)
         stats['losses'] = stats.get('losses', 0) + (0 if res['result'] == 'WIN' else 1)
         bal = await asyncio.to_thread(pm_cash_balance)
+        _desk_sync_money(st, stats, bal)
         em = '🎯' if res['result'] == 'WIN' else '❌'
         sign = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
         slip = None
@@ -5129,17 +5232,18 @@ async def pm_watch():
             if _floor and (not desk or _floor.id != desk.id):
                 _msg2 = (f"💵 **DESK CASH-OUT {em}:** **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']}\n"
                          f"Cashed out **${res.get('payout', 0):.2f}** — profit **{sign}**\n"
-                         f"📈 Desk to date: **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}** on the $50 ladder\n"
+                         f"📈 Desk to date: **{stats.get('wins', 0)}-{stats.get('losses', 0)}**\n"
                          f"{_desk_bankroll_txt(stats, bal)}")
                 await _floor.send(_msg2)
         except Exception as _fe2:
             print('[desk] cash-out post:', _fe2)
         # X exposure law (owner decree 2026-07-25): desk WINNERS post to X with the record + funnel.
         if res['result'] == 'WIN':
-            _tracked_bal = round(float(stats.get('start') or 50.0) + float(stats.get('pnl') or 0.0), 2)
-            _bal_s = f"${(bal or {}).get('balance', _tracked_bal):.2f}"
+            _dep15 = float(stats.get('deposits') or 64.0)
+            _money15 = (f"💰 account ${bal['balance']:.2f} · net {'+' if (bal['balance'] - _dep15) >= 0 else ''}${bal['balance'] - _dep15:.2f} on ${_dep15:.2f} in"
+                        if bal else f"net {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f} realized on ${_dep15:.2f} in")
             xt = (f"📈 SHiFT desk — {_trade_label(t)} @ {t['price']:.2f} 🎯 WIN {sign}\n"
-                  f"Desk record {stats.get('wins', 0)}-{stats.get('losses', 0)} · P&L {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f} · 💰 bankroll {_bal_s}\n"
+                  f"Desk record {stats.get('wins', 0)}-{stats.get('losses', 0)} · {_money15}\n"
                   f"🐋 The desk floor is Whale-only — every entry, exit & cash-out live, plus the War Room: {STORE_PAGE}")
             try:
                 await asyncio.to_thread(x_post, xt[:270], None)
@@ -6136,9 +6240,13 @@ def x_engagement_text(st, kind, picks):
         return _x_fit275(variants[doy % len(variants)] + f"\n\n💎 {STORE_PAGE}")
     if kind == 'proof':
         sign = '+' if pnl >= 0 else ''
+        _dep = float((st.get('pm_stats') or {}).get('deposits') or 64.0)
+        _acct = (st.get('pm_stats') or {}).get('account')
+        _money = (f"💰 account ${float(_acct):.2f} · net {'+' if (float(_acct) - _dep) >= 0 else ''}${float(_acct) - _dep:.2f} on ${_dep:.2f} in"
+                  if _acct else f"net {'+' if pnl >= 0 else ''}${pnl:.2f} realized on ${_dep:.2f} in")
         return _x_fit275(
-            f"📈 SHiFT desk, live on Polymarket US: {w_}-{l_} · {sign}${pnl:.2f} P&L on the $50 ladder.\n"
-            f"Every entry, exit and autopsy posted — $50 → $1,000 in public.\n"
+            f"📈 SHiFT desk, live: {w_}-{l_} · {_money}.\n"
+            f"Every entry, exit and autopsy posted in public — receipts or it didn't happen.\n"
             f"💎 {STORE_PAGE}")
     if kind == 'lesson':
         les = st.get('pm_lessons') or []
