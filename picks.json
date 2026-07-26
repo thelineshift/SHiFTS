@@ -2132,10 +2132,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "Houston Astros",
       "live_odds": {
-        "home_ml": -111,
-        "away_ml": -108,
+        "home_ml": -114,
+        "away_ml": -105,
         "total": 9.5,
-        "ts": 1785038426
+        "ts": 1785058226
       }
     },
     {
