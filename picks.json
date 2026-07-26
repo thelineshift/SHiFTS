@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T08:01:20Z",
+  "updated": "2026-07-26T08:50:31Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2413,7 +2413,10 @@
       "opp": "Ninjas in Pyjamas",
       "analysis": "4-1 last 5 (beat LGD Gaming, Ultra Prime, ThunderTalk Gaming) (lost to Team WE) vs 2-3 \u2014 live Pinnacle line +119 (our 86% vs book 44%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat LGD Gaming, Ultra Prime, ThunderTalk Gaming) (lost to Team WE) vs 2-3 \u2014 live Pinnacle line +119 (our 86% vs book 44%). Books h",
       "awayTeam": "LNG Esports",
-      "homeTeam": "Ninjas in Pyjamas"
+      "homeTeam": "Ninjas in Pyjamas",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "LNG Esports 0-2 Ninjas in Pyjamas \u00b7 final"
     },
     {
       "id": "kiwoom-drx-ml-0726",
