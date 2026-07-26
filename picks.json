@@ -2277,8 +2277,8 @@
       "live_odds": {
         "home_ml": 135,
         "away_ml": -163,
-        "total": 9.0,
-        "ts": 1785038426
+        "total": 9.5,
+        "ts": 1785042026
       },
       "last_alert_odds": -163
     },
@@ -2393,9 +2393,9 @@
       "homeTeam": "Pittsburgh Pirates",
       "live_odds": {
         "home_ml": -126,
-        "away_ml": 104,
+        "away_ml": 105,
         "total": 9.0,
-        "ts": 1785038427
+        "ts": 1785042026
       }
     },
     {
