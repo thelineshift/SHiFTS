@@ -2276,10 +2276,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 142,
-        "away_ml": -172,
+        "home_ml": 127,
+        "away_ml": -154,
         "total": 9.0,
-        "ts": 1785070924
+        "ts": 1785075578
       },
       "last_alert_odds": -163
     },
@@ -2325,8 +2325,8 @@
       "live_odds": {
         "home_ml": -108,
         "away_ml": -111,
-        "total": 8.5,
-        "ts": 1785073115
+        "total": 9.0,
+        "ts": 1785075578
       }
     },
     {
