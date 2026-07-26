@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.22.1'
+BOT_VERSION = '9.23.0'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -336,6 +336,17 @@ def _pm_client():
         return None
     from polymarket_us import PolymarketUS
     return PolymarketUS(key_id=kid, secret_key=sec)
+
+def _desk_bankroll_txt(stats, bal):
+    """Owner law 7/26: every desk result / cash-out / X post shows the bankroll balance, ALWAYS.
+    Live cash when the API answers; tracked total (start + realized P&L) when it doesn't."""
+    start = float((stats or {}).get('start') or 50.0)
+    pnl = float((stats or {}).get('pnl') or 0.0)
+    tracked = round(start + pnl, 2)
+    if bal:
+        return (f"💰 bankroll **${tracked:.2f}** total on the ${start:.0f} ladder "
+                f"(${bal['balance']:.2f} cash · {'+' if pnl >= 0 else ''}${pnl:.2f} realized)")
+    return f"💰 bankroll **${tracked:.2f}** tracked (${start:.0f} start · {'+' if pnl >= 0 else ''}${pnl:.2f} realized P&L)"
 
 def pm_cash_balance():
     """Real USD cash + buying power. None if unavailable."""
@@ -3299,53 +3310,140 @@ def _dd_cum(ps):
         pts.append(round(run, 2))
     return pts
 
+def _dd_font(sz, bold=False):
+    from PIL import ImageFont
+    try:
+        return ImageFont.truetype('DejaVuSans-Bold.ttf' if bold else 'DejaVuSans.ttf', sz)
+    except Exception:
+        return ImageFont.load_default()
+
+def _dd_chrome(d, W, H, title, sub):
+    """Brand header + footer shared by all deep-dive renders."""
+    d.rectangle((0, 0, W, 74), fill=(13, 26, 43))
+    d.rectangle((0, 74, W, 76), fill=(45, 212, 191))
+    d.text((28, 16), "⚡ SHiFT'S PICKS", fill=(45, 212, 191), font=_dd_font(26, True))
+    d.text((28, 46), title, fill=(232, 241, 250), font=_dd_font(19, True))
+    tw = d.textlength(sub, font=_dd_font(15))
+    d.text((W - tw - 28, 30), sub, fill=(139, 167, 196), font=_dd_font(15))
+    d.text((28, H - 30), "every play receipted on the public ledger · @SHiFTSPicks", fill=(70, 95, 125), font=_dd_font(13))
+
 def _dd_chart_pnl(pts, path, title):
-    from PIL import Image, ImageDraw, ImageFont
-    W, H = 920, 430
-    img = Image.new('RGB', (W, H), (10, 20, 32)); d = ImageDraw.Draw(img)
-    try: f_big, f_sm = ImageFont.truetype('DejaVuSans-Bold.ttf', 26), ImageFont.truetype('DejaVuSans.ttf', 16)
-    except Exception: f_big = f_sm = ImageFont.load_default()
-    d.text((24, 16), title, fill=(232, 241, 250), font=f_big)
+    """P&L curve — v9.23.0 premium: gridlines + axis labels + area fill + end badge."""
+    from PIL import Image, ImageDraw
+    W, H = 1000, 560
+    BG, LINE, TXT, DIM = (10, 20, 32), (30, 58, 92), (232, 241, 250), (139, 167, 196)
+    TEAL, RED, GOLD = (45, 212, 191), (245, 101, 101), (245, 197, 24)
+    img = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(img)
+    _dd_chrome(d, W, H, title, "WEEKLY WHALE DEEP-DIVE")
     if not pts: pts = [0.0]
     lo, hi = min(pts + [0]), max(pts + [0])
     rng = (hi - lo) or 1.0
-    x0, x1, y0, y1 = 60, W - 30, 70, H - 50
-    d.line((x0, y0, x0, y1), fill=(30, 58, 92), width=2); d.line((x0, y1, x1, y1), fill=(30, 58, 92), width=2)
+    pad = rng * 0.12
+    lo, hi = lo - pad, hi + pad
+    rng = hi - lo
+    x0, x1, y0, y1 = 84, W - 48, 116, H - 74
+    # gridlines + labels (5 rows)
+    for gi in range(6):
+        vv = lo + rng * gi / 5
+        yy = y1 - ((vv - lo) / rng) * (y1 - y0)
+        d.line((x0, yy, x1, yy), fill=(22, 40, 64), width=1)
+        d.text((18, yy - 9), f"{vv:+.1f}", fill=DIM, font=_dd_font(13))
     zy = y1 - ((0 - lo) / rng) * (y1 - y0)
-    d.line((x0, zy, x1, zy), fill=(60, 90, 130), width=1)
+    d.line((x0, zy, x1, zy), fill=(60, 90, 130), width=2)
+    d.text((x0 + 4, zy - 18), "breakeven", fill=(90, 120, 155), font=_dd_font(12))
     def px(i): return x0 + (i / max(1, len(pts) - 1)) * (x1 - x0)
-    def py(v): return y1 - ((v - lo) / rng) * (y1 - y0)
-    col = (45, 212, 191) if pts[-1] >= 0 else (245, 101, 101)
+    def py(val): return y1 - ((val - lo) / rng) * (y1 - y0)
+    col = TEAL if pts[-1] >= 0 else RED
+    fillc = (18, 52, 50) if pts[-1] >= 0 else (58, 26, 32)
+    # area fill
+    poly = [(px(0), zy)] + [(px(i), py(vv)) for i, vv in enumerate(pts)] + [(px(len(pts) - 1), zy)]
+    d.polygon(poly, fill=fillc)
     for i in range(1, len(pts)):
         d.line((px(i-1), py(pts[i-1]), px(i), py(pts[i])), fill=col, width=4)
-    for i, v in enumerate(pts):
-        d.ellipse((px(i)-4, py(v)-4, px(i)+4, py(v)+4), fill=col)
-    d.text((x0 + 6, py(pts[-1]) - 30), f"{'+' if pts[-1] >= 0 else ''}{pts[-1]:.2f}u", fill=col, font=f_big)
-    d.text((x0 + 4, y1 + 10), f"{len(pts)} graded plays", fill=(139, 167, 196), font=f_sm)
+    for i, vv in enumerate(pts):
+        d.ellipse((px(i)-4, py(vv)-4, px(i)+4, py(vv)+4), fill=col, outline=BG, width=2)
+    # peak / trough callouts
+    if len(pts) > 2:
+        imax, imin = pts.index(max(pts)), pts.index(min(pts))
+        d.text((px(imax) - 18, py(pts[imax]) - 26), f"+{pts[imax]:.2f}u" if pts[imax] >= 0 else f"{pts[imax]:.2f}u", fill=TEAL, font=_dd_font(13, True))
+        if imin != len(pts) - 1:
+            d.text((px(imin) - 18, py(pts[imin]) + 10), f"{pts[imin]:.2f}u", fill=RED, font=_dd_font(13, True))
+    # end badge
+    end = pts[-1]
+    badge = f"{'+' if end >= 0 else ''}{end:.2f}u this week"
+    bw = d.textlength(badge, font=_dd_font(20, True)) + 28
+    bx = min(max(px(len(pts) - 1) - bw - 12, x0), x1 - bw)
+    by_ = max(py(end) - 46, y0 - 8)
+    d.rounded_rectangle((bx, by_, bx + bw, by_ + 34), radius=9, fill=(18, 38, 60), outline=col, width=2)
+    d.text((bx + 14, by_ + 6), badge, fill=col, font=_dd_font(20, True))
+    d.text((x0 + 4, y1 + 12), f"{len(pts)} graded plays · receipted", fill=DIM, font=_dd_font(13))
     img.save(path)
     return path
 
 def _dd_chart_sport(by, path, title):
-    from PIL import Image, ImageDraw, ImageFont
-    W, H = 920, 430
-    img = Image.new('RGB', (W, H), (10, 20, 32)); d = ImageDraw.Draw(img)
-    try: f_big, f_sm = ImageFont.truetype('DejaVuSans-Bold.ttf', 26), ImageFont.truetype('DejaVuSans.ttf', 15)
-    except Exception: f_big = f_sm = ImageFont.load_default()
-    d.text((24, 16), title, fill=(232, 241, 250), font=f_big)
-    items = sorted(by.items(), key=lambda kv: -(kv[1][0] + kv[1][1]))[:8]
+    """Hit rate by sport — v9.23.0 premium: horizontal bars + win% + units."""
+    from PIL import Image, ImageDraw
+    W, H = 1000, 560
+    BG, LINE, TXT, DIM = (10, 20, 32), (30, 58, 92), (232, 241, 250), (139, 167, 196)
+    TEAL, GOLD, RED = (45, 212, 191), (245, 197, 24), (245, 101, 101)
+    img = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(img)
+    _dd_chrome(d, W, H, title, "WEEKLY WHALE DEEP-DIVE")
+    items = sorted(by.items(), key=lambda kv: -(kv[1][0] + kv[1][1]))[:7]
     if not items: items = [('NO DATA', [0, 0])]
-    x0, y0, y1 = 70, 80, H - 60
-    bw = min(80, (W - 140) // max(1, len(items)) - 18)
-    for i, (sp, (w, l)) in enumerate(items):
+    y = 120
+    row_h = min(56, (H - 200) // max(1, len(items)))
+    bar_x, bar_max = 220, W - 340
+    for sp, (w, l) in items:
         tot = w + l
         pct = (w / tot) if tot else 0
-        bx = x0 + i * (bw + 18)
-        bh = pct * (y1 - y0)
-        col = (45, 212, 191) if pct >= 0.5 else (245, 197, 24)
-        d.rectangle((bx, y1 - bh, bx + bw, y1), fill=col)
-        d.text((bx, y1 - bh - 22), f"{w}-{l}", fill=(232, 241, 250), font=f_sm)
-        d.text((bx, y1 + 8), sp[:9], fill=(139, 167, 196), font=f_sm)
-    d.line((x0 - 10, y1, W - 30, y1), fill=(30, 58, 92), width=2)
+        col = TEAL if pct >= 0.6 else (GOLD if pct >= 0.45 else RED)
+        d.text((28, y + row_h // 2 - 10), sp[:12], fill=TXT, font=_dd_font(16, True))
+        d.rounded_rectangle((bar_x, y + row_h // 2 - 12, bar_x + bar_max, y + row_h // 2 + 12), radius=8, fill=(18, 34, 54))
+        bl = max(10, int(pct * bar_max)) if tot else 10
+        d.rounded_rectangle((bar_x, y + row_h // 2 - 12, bar_x + bl, y + row_h // 2 + 12), radius=8, fill=col)
+        d.text((bar_x + bar_max + 14, y + row_h // 2 - 10), f"{w}-{l} · {pct:.0%}", fill=TXT, font=_dd_font(15, True))
+        y += row_h
+    d.text((28, H - 62), "bars = hit rate · graded plays only, pushes excluded from rate", fill=DIM, font=_dd_font(13))
+    img.save(path)
+    return path
+
+def _dd_hero_card(stats, pts, desk, path, title):
+    """Week-in-numbers cover card — v9.23.0. The deep-dive's hero image."""
+    from PIL import Image, ImageDraw
+    W, H = 1000, 560
+    BG, TXT, DIM = (10, 20, 32), (232, 241, 250), (139, 167, 196)
+    TEAL, RED, GOLD = (45, 212, 191), (245, 101, 101), (245, 197, 24)
+    img = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(img)
+    _dd_chrome(d, W, H, title, "WHALE MASTERCLASS")
+    w, l, pu = stats.get('w', 0), stats.get('l', 0), stats.get('push', 0)
+    u = stats.get('units', 0.0)
+    roi = stats.get('roi', 0.0)
+    rec = f"{w}-{l}" + (f"-{pu}" if pu else "")
+    ucol = TEAL if u >= 0 else RED
+    # giant record + units
+    d.text((40, 116), rec, fill=TXT, font=_dd_font(92, True))
+    us = f"{'+' if u >= 0 else ''}{u:.2f}u"
+    d.text((44, 232), us, fill=ucol, font=_dd_font(60, True))
+    d.text((48, 306), f"ROI {'+' if roi >= 0 else ''}{roi:.1f}% · hit rate {(w / (w + l)):.0%}" if (w + l) else "", fill=DIM, font=_dd_font(19))
+    # right column: week vitals panel
+    px0 = 560
+    d.rounded_rectangle((px0, 110, W - 40, 340), radius=14, fill=(14, 28, 46), outline=(30, 58, 92), width=2)
+    vy = 132
+    def vital(k, val, col=TXT):
+        nonlocal vy
+        d.text((px0 + 24, vy), k, fill=DIM, font=_dd_font(15))
+        d.text((px0 + 24, vy + 20), val, fill=col, font=_dd_font(21, True))
+        vy += 66
+    winp = pts and max(pts) or 0
+    losing = pts and min(pts) or 0
+    vital("BEST POINT OF THE WEEK", f"+{winp:.2f}u banked" if winp >= 0 else f"{winp:.2f}u", TEAL)
+    vital("DEEPEST DIP", f"{losing:.2f}u — recovered" if (pts and pts[-1] > losing) else f"{losing:.2f}u", GOLD if (pts and pts[-1] > losing) else RED)
+    desk_w = sum(1 for t in desk if t.get('result') == 'WIN'); desk_l = sum(1 for t in desk if t.get('result') == 'LOSS')
+    desk_pnl = sum(float(t.get('pnl') or 0) for t in desk)
+    vital("DESK WEEK (POLYMARKET)", f"{desk_w}-{desk_l} · {'+' if desk_pnl >= 0 else ''}${desk_pnl:.2f}", TEAL if desk_pnl >= 0 else RED)
+    d.text((40, 368), "THE WEEK IN NUMBERS — full autopsy below:", fill=DIM, font=_dd_font(15))
+    for i, t in enumerate(["•  why the winners won", "•  what the losses taught", "•  P&L curve + hit rates by sport"]):
+        d.text((46, 396 + i * 34), t, fill=TXT, font=_dd_font(17))
     img.save(path)
     return path
 
@@ -3432,11 +3530,13 @@ async def weekly_deepdive_watch():
         import io as _io
         if chw and whale_ps:
             pts = _dd_cum(whale_ps)
-            p1, p2 = '/tmp/dd_pnl.png', '/tmp/dd_sport.png'
-            await asyncio.to_thread(_dd_chart_pnl, pts, p1, f"WHALE WEEK — P&L CURVE")
-            await asyncio.to_thread(_dd_chart_sport, _dd_stats(whale_ps)['by_sport'], p2, "HIT RATE BY SPORT")
+            p0, p1, p2 = '/tmp/dd_hero.png', '/tmp/dd_pnl.png', '/tmp/dd_sport.png'
+            _st_w = _dd_stats(whale_ps)
+            await asyncio.to_thread(_dd_hero_card, _st_w, pts, desk, p0, f"WHALE WEEK — {time.strftime('%b %d', now)} EDITION")
+            await asyncio.to_thread(_dd_chart_pnl, pts, p1, "WHALE WEEK — P&L CURVE")
+            await asyncio.to_thread(_dd_chart_sport, _st_w['by_sport'], p2, "HIT RATE BY SPORT")
             await chw.send(whale_deepdive_text(whale_ps, desk, st))
-            await chw.send(files=[discord.File(p1), discord.File(p2)])
+            await chw.send(files=[discord.File(p0), discord.File(p1), discord.File(p2)])
         if chs and sharp_ps:
             p3 = '/tmp/dd_sharp.png'
             await asyncio.to_thread(_dd_chart_pnl, _dd_cum(sharp_ps), p3, "SHARP WEEK — P&L CURVE")
@@ -4984,8 +5084,8 @@ async def pm_watch():
         line = (f"📈 **DESK RESULT {em}:** **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']} — **{res['result']} {sign}**\n"
                 f"_{t.get('reason', '')}_\n"
                 f"🔬 **Autopsy:** {lesson}\n"
-                f"Desk record **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · P&L **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}**"
-                + (f" · bankroll **${bal['balance']:.2f}**" if bal else ''))
+                f"Desk record **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · P&L **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}**\n"
+                + _desk_bankroll_txt(stats, bal))
         if desk:
             try:
                 import io as _io5
@@ -5002,14 +5102,17 @@ async def pm_watch():
             if _floor and (not desk or _floor.id != desk.id):
                 _msg2 = (f"💵 **DESK CASH-OUT {em}:** **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']}\n"
                          f"Cashed out **${res.get('payout', 0):.2f}** — profit **{sign}**\n"
-                         f"📈 Desk to date: **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}** on the $50 ladder")
+                         f"📈 Desk to date: **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}** on the $50 ladder\n"
+                         f"{_desk_bankroll_txt(stats, bal)}")
                 await _floor.send(_msg2)
         except Exception as _fe2:
             print('[desk] cash-out post:', _fe2)
         # X exposure law (owner decree 2026-07-25): desk WINNERS post to X with the record + funnel.
         if res['result'] == 'WIN':
+            _tracked_bal = round(float(stats.get('start') or 50.0) + float(stats.get('pnl') or 0.0), 2)
+            _bal_s = f"${(bal or {}).get('balance', _tracked_bal):.2f}"
             xt = (f"📈 SHiFT desk — {_trade_label(t)} @ {t['price']:.2f} 🎯 WIN {sign}\n"
-                  f"Desk record {stats.get('wins', 0)}-{stats.get('losses', 0)} · P&L {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}\n"
+                  f"Desk record {stats.get('wins', 0)}-{stats.get('losses', 0)} · P&L {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f} · 💰 bankroll {_bal_s}\n"
                   f"Picks · receipts · $50 giveaway — all on our store: {STORE_PAGE}\n"
                   f"🖥️ {DESK_LINK}")
             try:
@@ -5087,8 +5190,8 @@ async def pm_watch():
         if ch:
             try:
                 await ch.send(f"🧾 **PM RESULT (legacy challenge):** [{lb.get('league', '')}] **{_trade_label(lb)}** @ {lb['price']:.2f} {em} **{res['result']}** {sign}\n"
-                              f"Real money · stake ${lb['stake']:.2f} → paid ${res['payout']:.2f} · Polymarket US"
-                              + (f" · bankroll ${bal['balance']:.2f}" if bal else ''))
+                              f"Real money · stake ${lb['stake']:.2f} → paid ${res['payout']:.2f} · Polymarket US\n"
+                              + _desk_bankroll_txt(st.get('pm_stats') or {}, bal))
             except Exception:
                 pass
         changed = True
@@ -5776,8 +5879,8 @@ def x_receipt_text(r, all_picks=None, chal=None):
     rec_lines = []
     if all_picks is not None and r.get('tier') != 'challenge':
         tw, tl, tu = tier_season_line(all_picks, r.get('tier'))
-        sw, sl, sp, su, _, _ = season_block(all_picks)
-        rec_lines.append(f"{badge.split()[0]} season {tw}-{tl} ({'+' if tu >= 0 else ''}{tu:.1f}u) · 📅 overall {sw}-{sl} ({'+' if su >= 0 else ''}{su:.1f}u)")
+        mname, mw, ml, mpu, mu = month_block(all_picks)
+        rec_lines.append(f"{badge.split()[0]} season {tw}-{tl} ({'+' if tu >= 0 else ''}{tu:.1f}u) · 📅 SHiFT overall — all tiers, {mname}: {mw}-{ml} ({'+' if mu >= 0 else ''}{mu:.1f}u) · resets monthly")
     if r.get('tier') == 'challenge' and chal:
         rec = chal.get('record', {})
         rec_lines.append(f"💵 bankroll ${chal.get('balance', 0):.2f} ({rec.get('wins', 0)}-{rec.get('losses', 0)}) · goal $1,000")
@@ -6223,8 +6326,11 @@ async def recap_watch():
                 lines.append(f"{e} {p.get('desc')} ({p.get('odds')}) → {p.get('score', 'final')} → {'+' if uu >= 0 else ''}{uu:.2f}u")
             lines.append("")
         sw, sl, sp, su, tier_split, chal_rec = season_block(all_picks)
+        mname, mw, ml, mpu, mu = month_block(all_picks)
         lines.append(f"**FULL BOARD: {tot_w}-{tot_l}" + (f"-{tot_p}" if tot_p else "") + f" ({'+' if tot_u >= 0 else ''}{tot_u:.2f}u).**")
-        lines.append(f"📅 **2026 SEASON: {sw}-{sl}" + (f"-{sp}" if sp else "") + f" ({'+' if su >= 0 else ''}{su:.2f}u)**")
+        lines.append(f"🗓️ **SHiFT OVERALL — ALL TIERS, {mname.upper()}: {mw}-{ml}" + (f"-{mpu}" if mpu else "")
+                     + f" ({'+' if mu >= 0 else ''}{mu:.2f}u)** — our one record across every room this month; resets the 1st")
+        lines.append(f"📅 2026 season to date: {sw}-{sl}" + (f"-{sp}" if sp else "") + f" ({'+' if su >= 0 else ''}{su:.2f}u)")
         lines.append(tier_split + f"  |  💵 challenge {chal_rec[0]}-{chal_rec[1]} (tracked in dollars)")
         try:
             chal = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main')
@@ -6248,6 +6354,20 @@ async def recap_watch():
         print('recap posted for', recap_date)
     except Exception as e:
         print('recap_watch error:', e)
+
+def month_block(all_picks):
+    """Owner decree 7/26: the advertised 'overall record' = SHiFT's record across ALL tiers
+    for the current ET month — it resets on the 1st of each month. Say so every time."""
+    _et_now = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)
+    ym, mname = _et_now.strftime('%Y-%m'), _et_now.strftime('%B')
+    ps = [p for p in all_picks if p.get('result') in ('WIN', 'LOSS', 'PUSH')
+          and p.get('tier') in ('lock', 'sharp', 'whale', 'free')
+          and str(p.get('date', '')).startswith(ym)]
+    w = sum(1 for p in ps if p['result'] == 'WIN')
+    l = sum(1 for p in ps if p['result'] == 'LOSS')
+    pu_ = sum(1 for p in ps if p['result'] == 'PUSH')
+    u = sum(units_of(p) for p in ps)
+    return mname, w, l, pu_, u
 
 def side_ml(p, ho, ao):
     d = (p.get('desc') or '').lower()
@@ -6421,8 +6541,12 @@ async def weekly_analytics_report(g0, st):
             parts = [await asyncio.to_thread(perf_report, 'free', 7, '🆓 FREE BOARD (last 7 days)')]
             for tier, emo in (('whale', '🐋'), ('sharp', '📊'), ('lock', '🔒')):
                 parts.append(await asyncio.to_thread(perf_report, tier, 7, f'{emo} {tier.upper()} (last 7 days)'))
-            await pub.send(("\n\n".join(parts))[:1950]
-                           + "\n\n🔒 Full breakdowns live in each tier room. The ledger never hides a week.")
+            _pj = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main') or {'picks': []}
+            mname, mw, ml, mpu, mu = month_block(_pj.get('picks', []))
+            await pub.send(("\n\n".join(parts))[:1700]
+                           + f"\n\n🗓️ **SHiFT OVERALL — ALL TIERS, {mname.upper()}: {mw}-{ml}" + (f"-{mpu}" if mpu else "")
+                           + f" ({'+' if mu >= 0 else ''}{mu:.2f}u)** — one record across every room this month; resets the 1st."
+                           + "\n🔒 Full breakdowns live in each tier room. The ledger never hides a week.")
         st.setdefault('scan_events', {})['weekly-report'] = time.strftime('%Y-%m-%d')
     except Exception as e:
         print('weekly_analytics_report error:', e)
@@ -7353,7 +7477,10 @@ async def scan_engine_run(g0, slot_key, dry):
             st_rot = await asyncio.to_thread(get_state) or {}
             parlay_built, p_room = se_build_parlay(cands[NEED:] + [r for r in reserves if (r['pick'], r.get('vs')) not in _pool_keys(cands)], st_rot.get('parlay_rot', 0))
             if parlay_built:
-                deal[p_room].append(parlay_built)
+                # PARLAYS UNLOCKED LAW (owner audit 7/26): every paid room gets every parlay.
+                # Rotation starved Lock (0 parlays in a week) while its page sells 'parlays unlocked'.
+                for _pt in ('whale', 'sharp', 'lock'):
+                    deal[_pt].append(dict(parlay_built))
                 if not dry:  # dry sims never touch rotation state
                     st_rot['parlay_rot'] = st_rot.get('parlay_rot', 0) + 1
                     await asyncio.to_thread(gh_put, 'bot_state.json', st_rot, 'parlay rotation')
@@ -7478,7 +7605,7 @@ async def scan_engine_run(g0, slot_key, dry):
                     # free is the funnel — bare pick, no sauce (owner decree 2026-07-25)
                     lines.append(f"{n}\u20e3 **{p['pick']}{odds_s}** vs {p['vs']} — {p['units']}u\n"
                                  f"{league_tag(p.get('sport'))} · {p['market']} · {_et(p['start'])}\n")
-            reg = {'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}", 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
+            reg = {'id': f"{p['pick'].lower().replace(' ', '-')[:28]}-{slot_key[4:8]}" + (f'-{tier}' if p['sport'] == 'parlay' else ''), 'date': slot_key[:4] + '-' + slot_key[4:6] + '-' + slot_key[6:8],
                    'sport': p['sport'], 'desc': p.get('picks_desc') or p['pick'], 'market': p['market'], 'odds': p['odds'],
                    'units': p['units'], 'tier': tier, 'time_et': _et(p['start']),
                    'vs': p.get('vs'), 'team': p.get('team'), 'opp': p.get('opp'),
