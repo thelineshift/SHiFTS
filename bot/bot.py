@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.4'
+BOT_VERSION = '9.24.5'  # ALL-SPORTS LAW: desk eats every sport the window carries
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4277,21 +4277,61 @@ def _pm_sport_tag(evd, ev=None):
                 return k
     return ''
 
-def pm_sport_prob(games, team_a, team_b):
-    """Model win prob for team_a from a matching ESPN game (log5 + splits + home adv)."""
+# Exchange tag slug -> ESPN league keys the model prices (ALL-SPORTS LAW, owner decree
+# 2026-07-27). Generic 'soccer' spans the four soccer boards; untagged/unknown events
+# keep the full slate (conservative fallback).
+PM_TAG_LEAGUE = {'nba': {'nba'}, 'wnba': {'wnba'}, 'nfl': {'nfl'}, 'ncaaf': {'ncaaf'},
+                 'ncaab': {'ncaab'}, 'cfl': {'cfl'}, 'mlb': {'mlb'}, 'nhl': {'nhl'},
+                 'ufc': {'ufc'}, 'mls': {'mls'}, 'epl': {'epl'}, 'laliga': {'laliga'},
+                 'ucl': {'ucl'}, 'soccer': {'mls', 'epl', 'laliga', 'ucl'},
+                 'premier-league': {'epl'}, 'champions-league': {'ucl'}}
+PM_SOCCER = {'mls', 'epl', 'laliga', 'ucl'}
+
+def _pm_event_leagues(ev):
+    """League set for an exchange event from its tags; None = full slate fallback."""
+    slugs = {str(t.get('slug') or '').lower() for t in (ev.get('tags') or []) if isinstance(t, dict)}
+    out = set()
+    for s in slugs:
+        out |= PM_TAG_LEAGUE.get(s, set())
+    return out or None
+
+def _pm_rec(summary, soccer=False):
+    """Record parser. Soccer summaries are W-L-D — draw-adjust to (W + 0.5D)/N so the
+    log5 inputs are real strength ratings, not inflated win shares (7/27 law)."""
+    if soccer:
+        try:
+            w, l, d = (int(x) for x in str(summary).split('-')[:3])
+            n = w + l + d
+            return (w + 0.5 * d) / max(1, n), n
+        except Exception:
+            pass
+    return se_rec(summary)
+
+def pm_sport_prob(games, team_a, team_b, leagues=None):
+    """Model win prob for team_a from a matching ESPN game (log5 + splits + home adv).
+    ALL-SPORTS LAW: `leagues` pins the search to the event's own sport (kills cross-
+    league name collisions); record gate relaxed 6 -> 3 games so early-season slates
+    price; a gate-failing match no longer poisons other candidates (return -> continue)."""
     na, nb = norm_txt(team_a), norm_txt(team_b)
     for g in games:
+        if leagues and g.get('sport') not in leagues:
+            continue
         gh, ga = norm_txt(g['home']), norm_txt(g['away'])
         if not ((na in gh and nb in ga) or (na in ga and nb in gh)):
             continue
-        ph_o, nh = se_rec((g['recs'].get('home') or {}).get('total', ''))
-        pa_o, naw = se_rec((g['recs'].get('away') or {}).get('total', ''))
-        if ph_o is None or pa_o is None or nh < 6 or naw < 6:
-            return None
-        ph_s, _ = se_rec((g['recs'].get('home') or {}).get('home', ''))
-        pa_s, _ = se_rec((g['recs'].get('away') or {}).get('road', ''))
+        soc = g.get('sport') in PM_SOCCER
+        ph_o, nh = _pm_rec((g['recs'].get('home') or {}).get('total', ''), soc)
+        pa_o, naw = _pm_rec((g['recs'].get('away') or {}).get('total', ''), soc)
+        if ph_o is None or pa_o is None or nh < 3 or naw < 3:
+            continue
+        ph_s, _ = _pm_rec((g['recs'].get('home') or {}).get('home', ''), soc)
+        pa_s, _ = _pm_rec((g['recs'].get('away') or {}).get('road', ''), soc)
         ph = 0.5 * ph_o + 0.5 * (ph_s if ph_s is not None else ph_o)
         pa = 0.5 * pa_o + 0.5 * (pa_s if pa_s is not None else pa_o)
+        # small-sample regression: the relaxed 3-game gate needs a shrink toward .500
+        # (n/(n+6): invisible at mid-season n, heavy in week 1) — 7/27 law
+        ph = 0.5 + (ph - 0.5) * (nh / (nh + 6.0))
+        pa = 0.5 + (pa - 0.5) * (naw / (naw + 6.0))
         p_home = se_log5(ph, pa) + SE_HOME_ADV.get(g['sport'], 0.03)
         p_home = min(0.93, max(0.07, p_home))
         return p_home if na in gh else 1 - p_home
@@ -4359,24 +4399,27 @@ def pm_trader_scan(st):
             esp += se_ps_upcoming(gg)
         cache['esp'], cache['esp_ts'] = esp, now
     fmt = lambda ts: time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(ts))
-    try:
-        r = c.events.list({'closed': False, 'startTimeMin': fmt(now - 4 * 3600),
-                           'startTimeMax': fmt(now + 72 * 3600), 'limit': 100})
-    except Exception as e:
-        print('[trader] events:', e); return [], []
-    evs = (r.get('events') if isinstance(r, dict) else r) or []
-    # 7/25 lesson: the generic list buries esports under futures+soccer — pull esports tags explicitly
-    for _tag in ('esports', 'cs2', 'valorant', 'lol', 'dota2'):
+    # ALL-SPORTS LAW (owner decree 2026-07-27): the desk eats EVERY sport the horizon
+    # carries, not just esports. The exchange ignores tagSlug (7/26 probe: a cs2 query
+    # returned NBA/NFL events) and caps a page at 100 — so coverage comes from slicing
+    # the -4h..+72h horizon into 3 chunks. Net cost: 3 calls/scan vs the old 6 (the
+    # five dead tag fetches are retired).
+    evs, _seen_ev = [], set()
+    for _w0, _w1 in ((-4, 20), (20, 44), (44, 72)):
         try:
-            r2 = c.events.list({'tagSlug': _tag, 'closed': False, 'limit': 50})
-            for e2 in (r2.get('events') if isinstance(r2, dict) else r2) or []:
+            r = c.events.list({'closed': False, 'startTimeMin': fmt(now + _w0 * 3600),
+                               'startTimeMax': fmt(now + _w1 * 3600), 'limit': 100})
+            for e2 in (r.get('events') if isinstance(r, dict) else r) or []:
                 _id2 = e2.get('id') or e2.get('eventId')
-                if _id2 and all((e.get('id') or e.get('eventId')) != _id2 for e in evs):
+                if _id2 and _id2 not in _seen_ev:
+                    _seen_ev.add(_id2)
                     evs.append(e2)
-        except Exception as _e2:
-            print('[trader] tag', _tag, str(_e2)[:80])
+        except Exception as e:
+            print('[trader] events chunk:', str(e)[:80])
+    if not evs:
+        return [], []
     intents, notes = [], []
-    hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B}
+    hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B, 'leagues': {}}
     _tune = _desk_tuning(st)
     _tb = lambda k: (_tune.get(k) or {}).get('edge_bonus', 0.0)
     _tm = lambda k: (_tune.get(k) or {}).get('stake_mult', 1.0)
@@ -4386,6 +4429,7 @@ def pm_trader_scan(st):
         title = ev.get('title') or ev.get('name') or ''
         if (' vs ' not in title.lower()) and (' vs. ' not in title.lower()):
             continue
+        leagues = _pm_event_leagues(ev)  # league-pinned model reads (ALL-SPORTS LAW)
         eid = ev.get('id') or ev.get('eventId')
         try:
             det = c.events.retrieve(eid) if eid else ev
@@ -4401,6 +4445,7 @@ def pm_trader_scan(st):
         live = ts_ev <= now
         outcomes = []
         dropped_winner = 0  # winner-market sides we can't name (soccer DRAW leg) — 7/25 fake-arb lesson
+        draw_px = None  # book's draw-leg price — feeds the 3-way pricing path (ALL-SPORTS LAW)
         for m in evd.get('markets') or []:
             smt = str(m.get('sportsMarketType') or m.get('marketType') or '').lower()
             if 'winner' not in smt and 'moneyline' not in smt:
@@ -4414,6 +4459,12 @@ def pm_trader_scan(st):
             team = ((long_side.get('team') or {}).get('name')) or (md or {}).get('outcome') or ''
             if not team or team.lower() == 'draw':
                 dropped_winner += 1  # the DRAW leg — count it even when untradable or quoteless (7/25 Austrian lesson)
+                if team.lower() == 'draw':
+                    try:
+                        _dp = float((long_side.get('quote') or {}).get('value') or 0)
+                        draw_px = _dp if 0 < _dp < 1 else None
+                    except Exception:
+                        draw_px = None
                 continue
             if long_side.get('tradable') is False:
                 continue
@@ -4444,6 +4495,8 @@ def pm_trader_scan(st):
         if len(outcomes) < 2:
             continue
         hb['vs'] += 1
+        _lg = (sorted(leagues)[0] if leagues else '?')
+        hb['leagues'][_lg] = hb['leagues'].get(_lg, 0) + 1
         three_way = dropped_winner > 0  # draw sport — the 2-way model and any "arb" are invalid here
         if three_way:
             hb['three_way'] += 1
@@ -4464,7 +4517,37 @@ def pm_trader_scan(st):
                 expo += stake
             continue
         if three_way:
-            continue  # draw sport: 2-way log5 is invalid here — desk stays out until a 3-way model ships
+            # ALL-SPORTS LAW (owner decree 2026-07-27): draw sports get PRICED, not
+            # skipped. Model rates decisive-result strength (draw-adjusted soccer
+            # records via _pm_rec); outright prob = (1 - book draw) x decisive prob.
+            # Guards: pre-game only, +4pp extra edge bar, half stake — the draw leg
+            # makes these thinner-edge markets than clean 2-ways.
+            if draw_px is None or not (0.08 < draw_px < 0.50) or len(outcomes) != 2 or live:
+                continue
+            for o in outcomes:
+                if (o['slug'], o['team']) in have:
+                    continue
+                if o['slug'] in have_slugs:
+                    continue
+                if sum(1 for it in intents if it.get('event') == title and it['kind'] != 'ARB') >= 2:
+                    continue
+                others = [x['team'] for x in outcomes if x['team'] != o['team']]
+                p_dec = pm_sport_prob(games, o['team'], others[0], leagues) if others else None
+                if p_dec is None:
+                    continue
+                pm3 = (1 - draw_px) * p_dec
+                edge3 = pm3 - o['price']
+                if edge3 > 0.35:
+                    print(f"[trader] edge-cap: {o['team']} 3-way claims {edge3:.0%} — distrusting model read, skipping")
+                    continue
+                if edge3 >= TRADER_MIN_EDGE + 0.04 + _tb('EDGE'):
+                    stake = pm_kelly(pm3, o['price'], B) * 0.5 * _tm('EDGE')
+                    if stake >= 1.0 and stake <= _desk_room(B, expo, expo0):
+                        intents.append({**o, 'stake': round(stake, 2), 'kind': 'EDGE', 'p_model': pm3,
+                                        'event': title, 'ev_start': ev_start,
+                                        'reason': f"3-way pricing — model {pm3:.0%} (draw-adjusted, draw leg {draw_px:.0%}) vs {o['price']:.0%}, {edge3:.0%} edge, quarter-Kelly"})
+                        expo += stake
+            continue
         # ---- PLAYBOOK: MODEL EDGE (Kelly) + TAIL-END yield + LIVE divergence
         for o in outcomes:
             if (o['slug'], o['team']) in have:
@@ -4474,7 +4557,7 @@ def pm_trader_scan(st):
             if sum(1 for it in intents if it.get('event') == title and it['kind'] != 'ARB') >= 2:
                 continue  # max 2 positions per event (covers the same-match two-slug shape)
             others = [x['team'] for x in outcomes if x['team'] != o['team']]
-            pm_ = pm_sport_prob(games, o['team'], others[0]) if others else None
+            pm_ = pm_sport_prob(games, o['team'], others[0], leagues) if others else None
             if pm_ is None and others:
                 pm_ = pm_esport_prob(cache, o['team'], others[0])
             if pm_ is None:
@@ -4956,7 +5039,8 @@ async def pm_trader():
         intents, notes = await asyncio.to_thread(pm_trader_scan, st)
         hb = (notes or [{}])[0]
         if notes:
-            print(f"[trader] cycle: {hb.get('vs', '?')} vs-events · {hb.get('three_way', '?')} 3-way blocked · "
+            _lgmix = ' '.join(f"{k}:{v}" for k, v in sorted(hb.get('leagues', {}).items())) or 'none'
+            print(f"[trader] cycle: {hb.get('vs', '?')} vs-events ({_lgmix}) · {hb.get('three_way', '?')} 3-way priced · "
                   f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f}")
             for _tw in (hb.get('tuning') or []):
                 print(f"[trader] tuning: {_tw}")
