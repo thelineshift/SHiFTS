@@ -13731,12 +13731,7 @@
       "outcome": "MVSK Secret",
       "status": "open",
       "ts": "2026-07-26T20:55:22Z",
-      "price_path": [
-        {
-          "ts": 1785104060,
-          "px": 0.54
-        }
-      ]
+      "price_path": []
     },
     {
       "price": 0.9,
@@ -13910,13 +13905,7 @@
       "market_slug": "astatc-valorant-bst-bbb-2026-07-27-map4",
       "outcome": "BESTIA",
       "status": "open",
-      "ts": "2026-07-26T22:09:52Z",
-      "price_path": [
-        {
-          "ts": 1785104060,
-          "px": 0.97
-        }
-      ]
+      "ts": "2026-07-26T22:09:52Z"
     },
     {
       "price": 0.31,
@@ -13932,13 +13921,23 @@
       "market_slug": "aec-lol-pnga-nerd-2026-07-27",
       "outcome": "Ei Nerd Esports",
       "status": "open",
-      "ts": "2026-07-26T22:09:53Z",
-      "price_path": [
-        {
-          "ts": 1785104060,
-          "px": 0.31
-        }
-      ]
+      "ts": "2026-07-26T22:09:53Z"
+    },
+    {
+      "price": 0.62,
+      "short": true,
+      "stake": 1.24,
+      "kind": "EDGE",
+      "p_model": 0.6923076923076923,
+      "event": "Arctic Pandas vs. Bulldog Esports",
+      "ev_start": "2026-07-27T18:00:00Z",
+      "reason": "model 69% vs market 62% \u2014 7% edge, half-Kelly",
+      "order_id": "BG3K501BJ9NV",
+      "qty": 2,
+      "market_slug": "aec-lol-ap-bld-2026-07-27",
+      "outcome": "Bulldog Esports",
+      "status": "open",
+      "ts": "2026-07-26T22:14:47Z"
     }
   ],
   "pm_stats": {
@@ -13946,7 +13945,7 @@
     "wins": 13,
     "losses": 24,
     "pnl": 18.81,
-    "trades": 177,
+    "trades": 178,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-22",
     "deposits": 64.0,
