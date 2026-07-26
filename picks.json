@@ -361,10 +361,10 @@
       "homeTeam": "San Francisco Giants",
       "awayTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -120,
+        "home_ml": 104,
+        "away_ml": -126,
         "total": 8.5,
-        "ts": 1785094455
+        "ts": 1785096255
       },
       "last_alert_odds": 100
     },
