@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T01:50:26Z",
+  "updated": "2026-07-26T01:50:34Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1310,7 +1310,10 @@
         "away_ml": 170,
         "total": 2.5,
         "ts": 1785024026
-      }
+      },
+      "result": "WIN",
+      "score": "Chicago Fire FC 1, New York City FC 3",
+      "units_result": 2.4
     },
     {
       "id": "chicago-white-sox-ml-0725",
@@ -1517,7 +1520,10 @@
         "total": 7.5,
         "ts": 1785014065
       },
-      "last_alert_odds": 102
+      "last_alert_odds": 102,
+      "result": "WIN",
+      "score": "Chicago Cubs 11, Pittsburgh Pirates 0",
+      "units_result": 1.13
     },
     {
       "id": "atlanta-braves-ml-0725",
@@ -1540,7 +1546,10 @@
         "away_ml": -107,
         "total": 9.5,
         "ts": 1785001496
-      }
+      },
+      "result": "LOSS",
+      "score": "Atlanta Braves 2, Baltimore Orioles 3",
+      "units_result": -1.0
     },
     {
       "id": "boston-red-sox-ml-0725",
@@ -1656,7 +1665,10 @@
         "total": 8.0,
         "ts": 1785016559
       },
-      "last_alert_odds": -112
+      "last_alert_odds": -112,
+      "result": "WIN",
+      "score": "Cincinnati Reds 0, St. Louis Cardinals 7",
+      "units_result": 0.8
     },
     {
       "id": "philadelphia-phillies-ml-0725",
