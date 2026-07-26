@@ -40,6 +40,15 @@
   "bot_version": "9.23.5",
   "unannounced_results": [
     {
+      "id": "chicago-cubs-ml-0725",
+      "desc": "Chicago Cubs ML",
+      "odds": 113,
+      "result": "WIN",
+      "units": 1.13,
+      "score": "Chicago Cubs 11, Pittsburgh Pirates 0",
+      "tier": "sharp"
+    },
+    {
       "id": "atlanta-braves-ml-0725",
       "desc": "Atlanta Braves ML",
       "odds": -108,
@@ -157,7 +166,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785073518.118668,
+  "last_x_receipt_ts": 1785067163.9700751,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -13788,6 +13797,38 @@
       "outcome": "Leviat\u00e1n Esports",
       "status": "open",
       "ts": "2026-07-26T13:44:06Z"
+    },
+    {
+      "price": 0.56,
+      "short": true,
+      "stake": 0.56,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 56% \u2014 11% edge, half-Kelly",
+      "order_id": "BFVZE64DP9QE",
+      "qty": 1,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-26T13:45:46Z"
+    },
+    {
+      "price": 0.53,
+      "short": true,
+      "stake": 1.59,
+      "kind": "EDGE",
+      "p_model": 0.75,
+      "event": "Lavked vs. Butterfly",
+      "ev_start": "2026-07-26T17:00:00Z",
+      "reason": "model 75% vs market 53% \u2014 22% edge, half-Kelly",
+      "order_id": "BFVY73ZM89P9",
+      "qty": 3,
+      "market_slug": "aec-cs2-lav-btf-2026-07-26",
+      "outcome": "Butterfly",
+      "status": "open",
+      "ts": "2026-07-26T13:45:47Z"
     }
   ],
   "pm_stats": {
@@ -13795,7 +13836,7 @@
     "wins": 6,
     "losses": 14,
     "pnl": 5.2,
-    "trades": 100,
+    "trades": 102,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12",
     "deposits": 64.0,
