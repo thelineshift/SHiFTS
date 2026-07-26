@@ -10,18 +10,18 @@
     "#\ud83d\udc0bwhale-room-12-7 [16:34] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**"
   ],
   "time_audit": {
-    "at": "2026-07-26 08:30 UTC",
+    "at": "2026-07-26 09:00 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-3": "2026-07-26 08:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 04:50 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 08:50 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-26 08:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-26 06:17 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 08:30 UTC",
+    "at": "2026-07-26 09:00 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -32,11 +32,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 08:30 UTC",
+    "at": "2026-07-26 09:00 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 08:30 UTC",
+    "at": "2026-07-26 09:00 UTC",
     "flags": []
   },
   "bot_version": "9.22.1",
@@ -11991,7 +11991,7 @@
       "qty": 4,
       "market_slug": "astatc-cs2-for-ica-2026-07-26-map1",
       "outcome": "Fortress",
-      "status": "unfilled",
+      "status": "open",
       "ts": "2026-07-26T00:00:56Z",
       "price_path": [
         {
@@ -12050,10 +12050,7 @@
           "ts": 1785055231,
           "px": 0.14
         }
-      ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      ]
     },
     {
       "price": 0.64,
