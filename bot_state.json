@@ -11732,7 +11732,7 @@
       "qty": 15,
       "market_slug": "astatc-valorant-geng-rrq-2026-07-26-map1",
       "outcome": "Gen.G Esports",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T23:15:57Z",
       "price_path": [
         {
@@ -11803,7 +11803,13 @@
           "ts": 1785061232,
           "px": 0.61
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 5.9,
+      "pnl": -2.8,
+      "cashout": true,
+      "settled_at": "2026-07-26T10:50:26Z",
+      "autopsy": "model 86% vs market 58% missed \u2014 logged for the playbook review. Taken 0.58, rode to 0.61 before the result \u2014 beat the number by 3\u00a2 \u2705 (cashed out early at $5.90)"
     },
     {
       "price": 0.39,
@@ -11945,7 +11951,7 @@
       "qty": 15,
       "market_slug": "astatc-valorant-geng-rrq-2026-07-26-map1",
       "outcome": "Gen.G Esports",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T23:50:56Z",
       "price_path": [
         {
@@ -12016,7 +12022,13 @@
           "ts": 1785061233,
           "px": 0.61
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 5.9,
+      "pnl": -2.95,
+      "cashout": true,
+      "settled_at": "2026-07-26T10:50:27Z",
+      "autopsy": "model 86% vs market 59% missed \u2014 logged for the playbook review. Taken 0.59, rode to 0.61 before the result \u2014 beat the number by 2\u00a2 \u2705 (cashed out early at $5.90)"
     },
     {
       "price": 0.19,
@@ -12371,8 +12383,8 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 12,
-    "pnl": 3.06,
+    "losses": 14,
+    "pnl": -2.69,
     "trades": 70,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-26-10"
@@ -12498,6 +12510,22 @@
       "result": "LOSS",
       "pnl": 0.0,
       "lesson": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.06 before the result \u2014 beat the number by 38\u00a2 \u2705 (cashed out early at $1.76)"
+    },
+    {
+      "ts": "2026-07-26T10:50:26Z",
+      "kind": "EDGE",
+      "outcome": "Gen.G Esports",
+      "result": "LOSS",
+      "pnl": -2.8,
+      "lesson": "model 86% vs market 58% missed \u2014 logged for the playbook review. Taken 0.58, rode to 0.61 before the result \u2014 beat the number by 3\u00a2 \u2705 (cashed out early at $5.90)"
+    },
+    {
+      "ts": "2026-07-26T10:50:27Z",
+      "kind": "EDGE",
+      "outcome": "Gen.G Esports",
+      "result": "LOSS",
+      "pnl": -2.95,
+      "lesson": "model 86% vs market 59% missed \u2014 logged for the playbook review. Taken 0.59, rode to 0.61 before the result \u2014 beat the number by 2\u00a2 \u2705 (cashed out early at $5.90)"
     }
   ],
   "giveaway_x_posts": [
