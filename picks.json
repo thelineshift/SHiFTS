@@ -2275,10 +2275,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 135,
-        "away_ml": -163,
+        "home_ml": 142,
+        "away_ml": -172,
         "total": 9.5,
-        "ts": 1785042026
+        "ts": 1785043826
       },
       "last_alert_odds": -163
     },
@@ -2345,12 +2345,12 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -325,
-        "away_ml": 256,
+        "home_ml": -340,
+        "away_ml": 267,
         "total": 7.5,
-        "ts": 1785038427
+        "ts": 1785043826
       },
-      "last_alert_odds": -325
+      "last_alert_odds": -340
     },
     {
       "id": "miami-marlins-ml-0726",
