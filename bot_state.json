@@ -133,7 +133,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785103464.9306867,
+  "last_x_receipt_ts": 1785085455.9389694,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -8876,7 +8876,7 @@
         }
       },
       "dota2:139008": {
-        "ts": 1785096288.1710026,
+        "ts": 1785103488.2178226,
         "f": {
           "w": 0,
           "l": 0,
@@ -8884,7 +8884,7 @@
         }
       },
       "dota2:136967": {
-        "ts": 1785096288.6099198,
+        "ts": 1785103488.8693867,
         "f": {
           "w": 3,
           "l": 2,
@@ -8913,7 +8913,7 @@
         }
       },
       "dota2:136968": {
-        "ts": 1785096289.32284,
+        "ts": 1785103489.6776555,
         "f": {
           "w": 4,
           "l": 1,
@@ -13841,6 +13841,38 @@
       "outcome": "Black Phoenix",
       "status": "resting",
       "ts": "2026-07-26T21:59:50Z"
+    },
+    {
+      "price": 0.56,
+      "short": true,
+      "stake": 2.24,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 56% \u2014 11% edge, half-Kelly",
+      "order_id": "BG3EFQTM69NT",
+      "qty": 4,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-26T22:04:50Z"
+    },
+    {
+      "price": 0.13,
+      "short": true,
+      "stake": 3.25,
+      "kind": "EDGE",
+      "p_model": 0.4,
+      "event": "Deer Gaming vs. Epic Avalanche",
+      "ev_start": "2026-07-27T16:00:00Z",
+      "reason": "model 40% vs market 13% \u2014 27% edge, half-Kelly",
+      "order_id": "BG3EFQTRM9NT",
+      "qty": 25,
+      "market_slug": "aec-lol-deer-ea-2026-07-27",
+      "outcome": "Epic Avalanche",
+      "status": "open",
+      "ts": "2026-07-26T22:04:52Z"
     }
   ],
   "pm_stats": {
@@ -13848,7 +13880,7 @@
     "wins": 13,
     "losses": 24,
     "pnl": 18.81,
-    "trades": 172,
+    "trades": 174,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-20",
     "deposits": 64.0,
@@ -14130,8 +14162,7 @@
     "note": "stale 7/24 results \u2014 already receipted in Discord #receipts; X draining them would duplicate-post"
   },
   "x_eng_log": {
-    "2026-07-26-17": "edu",
-    "2026-07-26-22": "store-ad"
+    "2026-07-26-17": "edu"
   },
   "board_posted": [
     "aec-valorant-th-kc-2026-07-26",
