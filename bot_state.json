@@ -1,13 +1,9 @@
 {
-  "executed_seq": 505,
+  "executed_seq": 506,
   "last_log": [
-    "seq 505 executed 2026-07-25 22:33 UTC",
-    "#\ud83d\udccasharp-room-9-6 [22:07] ",
-    "#\ud83d\udccasharp-room-9-6 [22:07] \ud83d\udcc9 **WEEKLY SHARP BREAKDOWN \u2014 Jul 18 \u2013 Jul 25**\n**The card:** 9-6 \u00b7 **+0.12u** \u00b7 ROI +0.7%\n\n\ud83c\udfc6 **Top reads of th",
-    "#\ud83d\udccasharp-room-9-6 [22:05] ",
-    "#\ud83d\udc0bwhale-room-12-7 [21:17] \ud83d\udc0b **WHALE ROOM \u2014 Sat 7/25 \u00b7 5 PM ET CARD** (6 plays)\n\n1\u20e3 **San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5",
-    "#\ud83d\udc0bwhale-room-12-7 [20:01] \u26a1 **PLAY OF THE DAY**\n\n**[MLS] San Jose Earthquakes ML (-120)** vs LA Galaxy \u2014 1.5u\n\ud83d\udd53 10:30 PM ET \u00b7 edge **23%",
-    "#\ud83d\udc0bwhale-room-12-7 [16:34] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**"
+    "seq 506 executed 2026-07-26 11:21 UTC",
+    "old pinned message deleted",
+    "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
     "at": "2026-07-26 11:17 UTC",
@@ -211,7 +207,7 @@
     "20260726-04": "ok-bot",
     "20260726-08": "ok-bot"
   },
-  "executed_cmd_seq": 505,
+  "executed_cmd_seq": 506,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 18,
