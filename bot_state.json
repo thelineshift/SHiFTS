@@ -13403,6 +13403,22 @@
       "outcome": "Leviat\u00e1n Esports",
       "status": "open",
       "ts": "2026-07-26T12:34:13Z"
+    },
+    {
+      "price": 0.58,
+      "short": true,
+      "stake": 2.32,
+      "kind": "EDGE",
+      "p_model": 0.8571428571428572,
+      "event": "Esport Academy Copenhagen vs. Atreides",
+      "ev_start": "2026-07-26T17:00:00Z",
+      "reason": "model 86% vs market 58% \u2014 28% edge, half-Kelly",
+      "order_id": "BFTYM0DMT9QR",
+      "qty": 4,
+      "market_slug": "aec-cs2-eac-atr-2026-07-26",
+      "outcome": "Atreides",
+      "status": "open",
+      "ts": "2026-07-26T12:39:35Z"
     }
   ],
   "pm_stats": {
@@ -13410,7 +13426,7 @@
     "wins": 3,
     "losses": 16,
     "pnl": -5.17,
-    "trades": 84,
+    "trades": 85,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12"
   },
