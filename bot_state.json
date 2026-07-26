@@ -6,7 +6,7 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 11:59 UTC",
+    "at": "2026-07-26 11:58 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -17,7 +17,7 @@
     "\ud83c\udf81giveaway": "2026-07-26 10:53 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 11:59 UTC",
+    "at": "2026-07-26 11:58 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -28,24 +28,15 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 11:59 UTC",
+    "at": "2026-07-26 11:58 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 11:59 UTC",
+    "at": "2026-07-26 11:58 UTC",
     "flags": []
   },
   "bot_version": "9.23.1",
   "unannounced_results": [
-    {
-      "id": "chicago-fire-fc-ml-0725",
-      "desc": "Chicago Fire FC ML",
-      "odds": 160,
-      "result": "WIN",
-      "units": 2.4,
-      "score": "Chicago Fire FC 1, New York City FC 3",
-      "tier": "whale"
-    },
     {
       "id": "chicago-cubs-ml-0725",
       "desc": "Chicago Cubs ML",
@@ -164,7 +155,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785064228.723067,
+  "last_x_receipt_ts": 1785067163.9700751,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
