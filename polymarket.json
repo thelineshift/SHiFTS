@@ -1,10 +1,52 @@
 {
-  "ts": "2026-07-26T09:00:29Z",
+  "ts": "2026-07-26T09:15:29Z",
   "configured": true,
   "balance_usd": 75.35,
   "buying_power": 17.35,
   "positions": [],
   "open_orders": [
+    {
+      "market": "aec-valorant-beg-hbs-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.61",
+      "qty": 1
+    },
+    {
+      "market": "aec-valorant-beg-hbs-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.58",
+      "qty": 7
+    },
+    {
+      "market": "aec-lol-dfm-gam-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.87",
+      "qty": 33
+    },
+    {
+      "market": "aec-lol-dfm-gam-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.87",
+      "qty": 18
+    },
+    {
+      "market": "aec-lol-zpr-pcs-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.83",
+      "qty": 34
+    },
+    {
+      "market": "astatc-valorant-geng-rrq-2026-07-26-map1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.58",
+      "qty": 15
+    },
+    {
+      "market": "astatc-valorant-geng-rrq-2026-07-26-map1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.59",
+      "qty": 15
+    },
     {
       "market": "astatc-cs2-wc-mglz-2026-07-26-map2",
       "intent": "ORDER_INTENT_BUY_LONG",
@@ -12,10 +54,10 @@
       "qty": 10
     },
     {
-      "market": "aec-lol-zpr-pcs-2026-07-26",
+      "market": "aec-lol-al-blg-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.83",
-      "qty": 34
+      "price": "0.6",
+      "qty": 5
     },
     {
       "market": "aec-lol-al-blg-2026-07-26",
@@ -42,16 +84,34 @@
       "qty": 8
     },
     {
-      "market": "aec-lol-al-blg-2026-07-26",
+      "market": "aec-lol-cr-kcbs-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 5
+      "price": "0.92",
+      "qty": 3
     },
     {
-      "market": "astatc-valorant-beg-hbs-2026-07-27-map1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.19",
+      "market": "aec-lol-cr-kcbs-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.92",
+      "qty": 2
+    },
+    {
+      "market": "aec-lol-cr-kcbs-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.91",
+      "qty": 2
+    },
+    {
+      "market": "aec-lol-cr-kcbs-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.91",
       "qty": 6
+    },
+    {
+      "market": "aec-lol-cr-kcbs-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.91",
+      "qty": 5
     },
     {
       "market": "astatc-valorant-beg-hbs-2026-07-27-map1",
@@ -64,66 +124,6 @@
       "intent": "ORDER_INTENT_BUY_LONG",
       "price": "0.19",
       "qty": 13
-    },
-    {
-      "market": "aec-valorant-beg-hbs-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.61",
-      "qty": 1
-    },
-    {
-      "market": "aec-valorant-beg-hbs-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.58",
-      "qty": 7
-    },
-    {
-      "market": "aec-lol-dfm-gam-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.87",
-      "qty": 33
-    },
-    {
-      "market": "aec-lol-dfm-gam-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.87",
-      "qty": 18
-    },
-    {
-      "market": "astatc-valorant-geng-rrq-2026-07-26-map1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.59",
-      "qty": 15
-    },
-    {
-      "market": "astatc-valorant-geng-rrq-2026-07-26-map1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.58",
-      "qty": 15
-    },
-    {
-      "market": "aec-lol-cr-kcbs-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.91",
-      "qty": 6
-    },
-    {
-      "market": "aec-lol-cr-kcbs-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.91",
-      "qty": 5
-    },
-    {
-      "market": "aec-lol-cr-kcbs-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.92",
-      "qty": 3
-    },
-    {
-      "market": "aec-lol-cr-kcbs-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.92",
-      "qty": 2
     }
   ]
 }
