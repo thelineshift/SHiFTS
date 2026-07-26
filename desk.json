@@ -1,36 +1,24 @@
 {
-  "updated": "2026-07-26T10:05:27Z",
-  "record": "3-12",
-  "trades": 70,
-  "open": 22,
-  "pnl": 3.06,
+  "updated": "2026-07-26T12:05:58Z",
+  "record": "3-16",
+  "trades": 74,
+  "open": 21,
+  "pnl": -5.17,
   "bank": 50.0,
-  "balance": 58.23,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 0-3 \u00b7 LIVE-BET 0-4",
+  "balance": 95.61,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 0-7 \u00b7 LIVE-BET 0-4",
   "recent": [
     {
-      "outcome": "ThunderTalk Gaming",
+      "outcome": "Wolves Esports",
       "short": true,
       "result": "lost",
-      "pnl": -7.0
+      "pnl": 0.0
     },
     {
-      "outcome": "Team Vitality",
+      "outcome": "Gen.G Esports",
       "short": false,
       "result": "lost",
-      "pnl": -7.22
-    },
-    {
-      "outcome": "LOS",
-      "short": true,
-      "result": "lost",
-      "pnl": 0.0
-    },
-    {
-      "outcome": "paiN Gaming",
-      "short": true,
-      "result": "lost",
-      "pnl": 0.0
+      "pnl": -2.48
     },
     {
       "outcome": "BESTIA Academy",
@@ -43,6 +31,18 @@
       "short": false,
       "result": "lost",
       "pnl": -3.0
+    },
+    {
+      "outcome": "Gen.G Esports",
+      "short": false,
+      "result": "lost",
+      "pnl": -2.8
+    },
+    {
+      "outcome": "Gen.G Esports",
+      "short": false,
+      "result": "lost",
+      "pnl": -2.95
     }
   ],
   "link": "https://polymarket.us",
