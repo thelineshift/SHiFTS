@@ -2198,10 +2198,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -143,
+        "away_ml": 119,
         "total": 7.0,
-        "ts": 1785038426
+        "ts": 1785040226
       }
     },
     {
