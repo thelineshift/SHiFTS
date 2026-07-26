@@ -40,15 +40,6 @@
   "bot_version": "9.23.5",
   "unannounced_results": [
     {
-      "id": "chicago-cubs-ml-0725",
-      "desc": "Chicago Cubs ML",
-      "odds": 113,
-      "result": "WIN",
-      "units": 1.13,
-      "score": "Chicago Cubs 11, Pittsburgh Pirates 0",
-      "tier": "sharp"
-    },
-    {
       "id": "atlanta-braves-ml-0725",
       "desc": "Atlanta Braves ML",
       "odds": -108,
@@ -166,7 +157,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785067163.9700751,
+  "last_x_receipt_ts": 1785072516.5903523,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -13192,20 +13183,14 @@
       "qty": 8,
       "market_slug": "aec-lol-gls-thg-2026-07-26",
       "outcome": "Team High Ground",
-      "status": "settled",
+      "status": "open",
       "ts": "2026-07-26T12:05:48Z",
       "price_path": [
         {
           "ts": 1785069235,
           "px": 0.41
         }
-      ],
-      "result": "LOSS",
-      "payout": 3.44,
-      "pnl": 0.0,
-      "cashout": true,
-      "settled_at": "2026-07-26T13:28:35Z",
-      "autopsy": "+$0.00 \u2014 model 69% vs market 43% was real edge; thesis held. (cashed out early at $3.44)"
+      ]
     },
     {
       "price": 0.33,
@@ -13627,7 +13612,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T13:08:05Z"
     },
     {
@@ -13643,7 +13628,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T13:08:06Z"
     },
     {
@@ -13659,7 +13644,7 @@
       "qty": 2,
       "market_slug": "aec-cs2-3dmax-fut-2026-07-26",
       "outcome": "FUT Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T13:08:07Z"
     },
     {
@@ -13675,7 +13660,7 @@
       "qty": 6,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T13:09:01Z"
     },
     {
@@ -13690,7 +13675,7 @@
       "qty": 6,
       "market_slug": "astatc-valorant-m8gc-gxgc-2026-07-27-map1",
       "outcome": "Gentle Mates GC",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T13:14:05Z"
     },
     {
@@ -13706,7 +13691,7 @@
       "qty": 5,
       "market_slug": "aec-cs2-eac-atr-2026-07-26",
       "outcome": "Atreides",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T13:19:05Z"
     },
     {
@@ -13722,14 +13707,14 @@
       "qty": 4,
       "market_slug": "aec-cs2-lav-btf-2026-07-26",
       "outcome": "Butterfly",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-26T13:24:05Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 17,
+    "losses": 16,
     "pnl": -5.17,
     "trades": 100,
     "last_recap": "2026-07-26",
@@ -13888,14 +13873,6 @@
       "result": "LOSS",
       "pnl": -2.48,
       "lesson": "model 86% vs market 62% missed \u2014 logged for the playbook review. Taken 0.62, slid to 0.58 before the result \u2014 the number ran 4\u00a2 against us \u26a0\ufe0f (cashed out early at $15.50)"
-    },
-    {
-      "ts": "2026-07-26T13:28:35Z",
-      "kind": "EDGE",
-      "outcome": "Team High Ground",
-      "result": "LOSS",
-      "pnl": 0.0,
-      "lesson": "+$0.00 \u2014 model 69% vs market 43% was real edge; thesis held. (cashed out early at $3.44)"
     }
   ],
   "giveaway_x_posts": [
