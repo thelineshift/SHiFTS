@@ -34,6 +34,15 @@
   "bot_version": "9.24.4",
   "unannounced_results": [
     {
+      "id": "chicago-white-sox-ml-0725",
+      "desc": "Chicago White Sox ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Houston Astros 4, Chicago White Sox 1",
+      "tier": "whale"
+    },
+    {
       "id": "texas-rangers-ml-0725",
       "desc": "Texas Rangers ML",
       "odds": -105,
@@ -122,18 +131,9 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
-    },
-    {
-      "id": "miami-marlins-ml-0726",
-      "desc": "Miami Marlins ML",
-      "odds": -126,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "San Diego Padres 5, Miami Marlins 3",
-      "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785098656.430985,
+  "last_x_receipt_ts": 1785085455.9389694,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -13389,7 +13389,7 @@
       "qty": 7,
       "market_slug": "aec-cs2-nvo-pure-2026-07-27",
       "outcome": "PURE",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T20:34:50Z"
     },
     {
@@ -13405,7 +13405,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T20:39:49Z"
     },
     {
@@ -13420,7 +13420,7 @@
       "qty": 6,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T20:39:51Z"
     },
     {
@@ -13435,7 +13435,7 @@
       "qty": 5,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T20:39:52Z"
     },
     {
@@ -13451,7 +13451,7 @@
       "qty": 5,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T20:39:53Z"
     }
   ],
