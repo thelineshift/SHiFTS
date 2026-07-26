@@ -6830,11 +6830,23 @@
         }
       },
       "dota2:135854": {
-        "ts": 1784978139.9136784,
+        "ts": 1785073445.2301435,
         "f": {
           "w": 3,
           "l": 2,
           "res": [
+            {
+              "won": false,
+              "opp": "Yellow Submarine"
+            },
+            {
+              "won": true,
+              "opp": "RE.Arise"
+            },
+            {
+              "won": true,
+              "opp": "Rottweilas"
+            },
             {
               "won": false,
               "opp": "Ilbirs eSports"
@@ -6842,18 +6854,6 @@
             {
               "won": true,
               "opp": "Dandelions"
-            },
-            {
-              "won": false,
-              "opp": "Level UP"
-            },
-            {
-              "won": true,
-              "opp": "Team AION"
-            },
-            {
-              "won": true,
-              "opp": "Nemiga Gaming"
             }
           ]
         }
@@ -13781,6 +13781,22 @@
       "outcome": "Atreides",
       "status": "resting",
       "ts": "2026-07-26T13:19:05Z"
+    },
+    {
+      "price": 0.9,
+      "short": true,
+      "stake": 1.8,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Team Envy vs. Leviatan Esports",
+      "ev_start": "2026-07-26T21:00:00Z",
+      "reason": "tail-end yield \u2014 11.1% on a near-certain that settles today",
+      "order_id": "BFVWGBANA9NY",
+      "qty": 2,
+      "market_slug": "aec-valorant-nv-lev-2026-07-26",
+      "outcome": "Leviat\u00e1n Esports",
+      "status": "open",
+      "ts": "2026-07-26T13:44:06Z"
     }
   ],
   "pm_stats": {
@@ -13788,7 +13804,7 @@
     "wins": 6,
     "losses": 14,
     "pnl": 5.2,
-    "trades": 99,
+    "trades": 100,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12",
     "deposits": 64.0,
