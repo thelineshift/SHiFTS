@@ -1,32 +1,14 @@
 {
-  "updated": "2026-07-26T16:44:54Z",
-  "record": "8-15",
-  "trades": 119,
-  "open": 34,
-  "pnl": 10.54,
-  "account": 108.24,
+  "updated": "2026-07-26T18:04:54Z",
+  "record": "10-19",
+  "trades": 142,
+  "open": 33,
+  "pnl": 9.7,
+  "account": 102.98,
   "deposits": 64.0,
-  "net_pnl": 44.24,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 4-6 \u00b7 LIVE-BET 1-4",
+  "net_pnl": 38.98,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 6-10 \u00b7 LIVE-BET 1-4",
   "recent": [
-    {
-      "outcome": "Gen.G Esports",
-      "short": false,
-      "result": "lost",
-      "pnl": -8.7
-    },
-    {
-      "outcome": "Gen.G Esports",
-      "short": false,
-      "result": "lost",
-      "pnl": -8.85
-    },
-    {
-      "outcome": "Butterfly",
-      "short": false,
-      "result": "won",
-      "pnl": 5.64
-    },
     {
       "outcome": "Team High Ground",
       "short": true,
@@ -40,10 +22,28 @@
       "pnl": 4.02
     },
     {
+      "outcome": "Atreides",
+      "short": true,
+      "result": "won",
+      "pnl": 3.18
+    },
+    {
+      "outcome": "ODDIK",
+      "short": false,
+      "result": "lost",
+      "pnl": -3.78
+    },
+    {
       "outcome": "FUT Esports",
       "short": true,
       "result": "lost",
       "pnl": -0.88
+    },
+    {
+      "outcome": "ODDIK",
+      "short": false,
+      "result": "won",
+      "pnl": 6.48
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
