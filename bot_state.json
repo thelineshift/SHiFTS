@@ -8942,7 +8942,7 @@
         }
       },
       "dota2:139006": {
-        "ts": 1785096289.8940165,
+        "ts": 1785103788.3551397,
         "f": {
           "w": 0,
           "l": 0,
@@ -8950,7 +8950,7 @@
         }
       },
       "dota2:136963": {
-        "ts": 1785096290.4605167,
+        "ts": 1785103788.9359922,
         "f": {
           "w": 1,
           "l": 4,
@@ -8979,7 +8979,7 @@
         }
       },
       "dota2:139007": {
-        "ts": 1785096291.1494353,
+        "ts": 1785103787.684722,
         "f": {
           "w": 0,
           "l": 0,
@@ -8987,7 +8987,7 @@
         }
       },
       "dota2:136962": {
-        "ts": 1785096291.7007568,
+        "ts": 1785103789.7544022,
         "f": {
           "w": 1,
           "l": 4,
@@ -9016,7 +9016,7 @@
         }
       },
       "dota2:136960": {
-        "ts": 1785096292.381171,
+        "ts": 1785103787.0936663,
         "f": {
           "w": 4,
           "l": 1,
@@ -13873,6 +13873,52 @@
       "outcome": "Epic Avalanche",
       "status": "open",
       "ts": "2026-07-26T22:04:52Z"
+    },
+    {
+      "price": 0.21,
+      "stake": 1.26,
+      "kind": "EDGE",
+      "p_model": 0.30769230769230776,
+      "event": "UNiTY esports vs. Mai Tai",
+      "ev_start": "2026-07-27T11:00:00Z",
+      "reason": "model 31% vs market 21% \u2014 10% edge, half-Kelly",
+      "order_id": "BG3J3TBTR9P3",
+      "qty": 6,
+      "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
+      "outcome": "UNiTY esports",
+      "status": "open",
+      "ts": "2026-07-26T22:09:51Z"
+    },
+    {
+      "price": 0.97,
+      "stake": 2.91,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "BESTIA vs. Contra",
+      "ev_start": "2026-07-27T19:00:00Z",
+      "reason": "tail-end yield \u2014 3.1% on a near-certain that settles today",
+      "order_id": "BG3HZB1YJ9NW",
+      "qty": 3,
+      "market_slug": "astatc-valorant-bst-bbb-2026-07-27-map4",
+      "outcome": "BESTIA",
+      "status": "open",
+      "ts": "2026-07-26T22:09:52Z"
+    },
+    {
+      "price": 0.31,
+      "short": true,
+      "stake": 2.79,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "paiN Gaming Academy vs. Ei Nerd Esports",
+      "ev_start": "2026-07-27T21:00:00Z",
+      "reason": "model 50% vs market 31% \u2014 19% edge, half-Kelly",
+      "order_id": "BG3J8EYF49P5",
+      "qty": 9,
+      "market_slug": "aec-lol-pnga-nerd-2026-07-27",
+      "outcome": "Ei Nerd Esports",
+      "status": "open",
+      "ts": "2026-07-26T22:09:53Z"
     }
   ],
   "pm_stats": {
@@ -13880,7 +13926,7 @@
     "wins": 13,
     "losses": 24,
     "pnl": 18.81,
-    "trades": 174,
+    "trades": 177,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-22",
     "deposits": 64.0,
