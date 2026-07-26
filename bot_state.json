@@ -12800,6 +12800,38 @@
       "outcome": "FOKUS Sakura",
       "status": "open",
       "ts": "2026-07-26T17:54:48Z"
+    },
+    {
+      "price": 0.9,
+      "short": true,
+      "stake": 2.7,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Team Envy vs. Leviatan Esports",
+      "ev_start": "2026-07-26T21:00:00Z",
+      "reason": "tail-end yield \u2014 11.1% on a near-certain that settles today",
+      "order_id": "BG0031WQ89NZ",
+      "qty": 3,
+      "market_slug": "aec-valorant-nv-lev-2026-07-26",
+      "outcome": "Leviat\u00e1n Esports",
+      "status": "open",
+      "ts": "2026-07-26T17:59:45Z"
+    },
+    {
+      "price": 0.56,
+      "short": true,
+      "stake": 0.56,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 56% \u2014 11% edge, half-Kelly",
+      "order_id": "BFZZDHPV09QY",
+      "qty": 1,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-26T17:59:46Z"
     }
   ],
   "pm_stats": {
@@ -12807,7 +12839,7 @@
     "wins": 10,
     "losses": 19,
     "pnl": 9.7,
-    "trades": 138,
+    "trades": 140,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-16",
     "deposits": 64.0,
