@@ -13901,7 +13901,7 @@
       "qty": 6,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T21:59:48Z"
     },
     {
@@ -13917,7 +13917,7 @@
       "qty": 3,
       "market_slug": "aec-cs2-pure-astr-2026-07-27",
       "outcome": "ASTRAL",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T21:59:49Z"
     },
     {
@@ -13932,7 +13932,7 @@
       "qty": 58,
       "market_slug": "astatc-cs2-bpl-misa-2026-07-27-map2",
       "outcome": "Black Phoenix",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T21:59:50Z"
     }
   ],
