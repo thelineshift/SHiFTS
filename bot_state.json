@@ -7329,7 +7329,7 @@
         }
       },
       "valorant:138955": {
-        "ts": 1785084270.0388134,
+        "ts": 1785097779.4896007,
         "f": {
           "w": 1,
           "l": 1,
@@ -7346,7 +7346,7 @@
         }
       },
       "valorant:138957": {
-        "ts": 1785084270.4810975,
+        "ts": 1785097779.9403157,
         "f": {
           "w": 1,
           "l": 1,
@@ -13281,6 +13281,84 @@
       "outcome": "Bar\u00e7a eSports GC",
       "status": "resting",
       "ts": "2026-07-26T19:09:49Z"
+    },
+    {
+      "price": 0.9,
+      "short": true,
+      "stake": 4.5,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Team Envy vs. Leviatan Esports",
+      "ev_start": "2026-07-26T21:00:00Z",
+      "reason": "tail-end yield \u2014 11.1% on a near-certain that settles today",
+      "order_id": "BG26HRSXR9P3",
+      "qty": 5,
+      "market_slug": "aec-valorant-nv-lev-2026-07-26",
+      "outcome": "Leviat\u00e1n Esports",
+      "status": "open",
+      "ts": "2026-07-26T20:29:47Z"
+    },
+    {
+      "price": 0.2,
+      "stake": 2.0,
+      "kind": "EDGE",
+      "p_model": 0.30769230769230776,
+      "event": "UNiTY esports vs. Mai Tai",
+      "ev_start": "2026-07-27T11:00:00Z",
+      "reason": "model 31% vs market 20% \u2014 11% edge, half-Kelly",
+      "order_id": "BG25XETX69SK",
+      "qty": 10,
+      "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
+      "outcome": "UNiTY esports",
+      "status": "open",
+      "ts": "2026-07-26T20:29:49Z"
+    },
+    {
+      "price": 0.23,
+      "stake": 1.38,
+      "kind": "EDGE",
+      "p_model": 0.30769230769230776,
+      "event": "UNiTY esports vs. Mai Tai",
+      "ev_start": "2026-07-27T11:00:00Z",
+      "reason": "model 31% vs market 23% \u2014 8% edge, half-Kelly",
+      "order_id": "BG25SP7PP9NX",
+      "qty": 6,
+      "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
+      "outcome": "UNiTY esports",
+      "status": "open",
+      "ts": "2026-07-26T20:29:50Z"
+    },
+    {
+      "price": 0.95,
+      "short": true,
+      "stake": 3.8,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "PURE vs. ASTRAL",
+      "ev_start": "2026-07-27T12:00:00Z",
+      "reason": "tail-end yield \u2014 5.3% on a near-certain that settles today",
+      "order_id": "BG26831NM9P1",
+      "qty": 4,
+      "market_slug": "aec-cs2-pure-astr-2026-07-27",
+      "outcome": "ASTRAL",
+      "status": "open",
+      "ts": "2026-07-26T20:29:51Z"
+    },
+    {
+      "price": 0.56,
+      "short": true,
+      "stake": 3.36,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 56% \u2014 11% edge, half-Kelly",
+      "order_id": "BG2689S2R9QM",
+      "qty": 6,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-26T20:29:52Z"
     }
   ],
   "pm_stats": {
@@ -13288,7 +13366,7 @@
     "wins": 13,
     "losses": 23,
     "pnl": 21.61,
-    "trades": 146,
+    "trades": 151,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-20",
     "deposits": 64.0,
