@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T00:00:51Z",
+  "updated": "2026-07-26T00:50:29Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1357,7 +1357,10 @@
         "total": 8.0,
         "ts": 1784995867
       },
-      "last_alert_odds": -121
+      "last_alert_odds": -121,
+      "result": "WIN",
+      "score": "Cleveland Guardians 0, Tampa Bay Rays 3",
+      "units_result": 0.74
     },
     {
       "id": "texas-rangers-ml-0725",
@@ -1617,7 +1620,10 @@
         "away_ml": 180,
         "total": 3.5,
         "ts": 1785017231
-      }
+      },
+      "result": "WIN",
+      "score": "Charlotte FC 2, Red Bull New York 0",
+      "units_result": 1.9
     },
     {
       "id": "st.-louis-cardinals-ml-0725",
@@ -1665,7 +1671,10 @@
         "total": 9.0,
         "ts": 1785009588
       },
-      "last_alert_odds": 101
+      "last_alert_odds": 101,
+      "result": "LOSS",
+      "score": "New York Yankees 3, Philadelphia Phillies 1",
+      "units_result": -1.0
     },
     {
       "id": "san-jose-earthquakes-ml-0725",
