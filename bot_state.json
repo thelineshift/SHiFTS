@@ -5644,11 +5644,15 @@
         }
       },
       "dota2:138858": {
-        "ts": 1785075350.8324032,
+        "ts": 1785085484.9135292,
         "f": {
           "w": 3,
           "l": 2,
           "res": [
+            {
+              "won": true,
+              "opp": "PuckChamp"
+            },
             {
               "won": false,
               "opp": "Team Syntax"
@@ -5660,10 +5664,6 @@
             {
               "won": true,
               "opp": "Team Syntax"
-            },
-            {
-              "won": true,
-              "opp": "Nemiga Gaming"
             },
             {
               "won": true,
@@ -5731,7 +5731,7 @@
         }
       },
       "dota2:135854": {
-        "ts": 1785073445.2301435,
+        "ts": 1785085485.4933624,
         "f": {
           "w": 3,
           "l": 2,
@@ -12716,6 +12716,37 @@
           "px": 0.68
         }
       ]
+    },
+    {
+      "price": 0.9,
+      "short": true,
+      "stake": 2.7,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Team Envy vs. Leviatan Esports",
+      "ev_start": "2026-07-26T21:00:00Z",
+      "reason": "tail-end yield \u2014 11.1% on a near-certain that settles today",
+      "order_id": "BFZ1CEYJG9RC",
+      "qty": 3,
+      "market_slug": "aec-valorant-nv-lev-2026-07-26",
+      "outcome": "Leviat\u00e1n Esports",
+      "status": "open",
+      "ts": "2026-07-26T17:04:46Z"
+    },
+    {
+      "price": 0.17,
+      "stake": 1.53,
+      "kind": "EDGE",
+      "p_model": 0.30769230769230776,
+      "event": "UNiTY esports vs. Mai Tai",
+      "ev_start": "2026-07-27T11:00:00Z",
+      "reason": "model 31% vs market 17% \u2014 14% edge, half-Kelly",
+      "order_id": "BFZ18R4DC9NX",
+      "qty": 9,
+      "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
+      "outcome": "UNiTY esports",
+      "status": "open",
+      "ts": "2026-07-26T17:04:47Z"
     }
   ],
   "pm_stats": {
@@ -12723,7 +12754,7 @@
     "wins": 10,
     "losses": 19,
     "pnl": 9.7,
-    "trades": 122,
+    "trades": 124,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-16",
     "deposits": 64.0,
