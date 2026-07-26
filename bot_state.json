@@ -8823,6 +8823,175 @@
             }
           ]
         }
+      },
+      "dota2:139008": {
+        "ts": 1785096288.1710026,
+        "f": {
+          "w": 0,
+          "l": 0,
+          "res": []
+        }
+      },
+      "dota2:136967": {
+        "ts": 1785096288.6099198,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "by Owl Team"
+            },
+            {
+              "won": true,
+              "opp": "by Owl Team"
+            },
+            {
+              "won": true,
+              "opp": "Cooman Team"
+            },
+            {
+              "won": false,
+              "opp": "YBN Team"
+            },
+            {
+              "won": true,
+              "opp": "YBN Team"
+            }
+          ]
+        }
+      },
+      "dota2:136968": {
+        "ts": 1785096289.32284,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": false,
+              "opp": "Travoman Team"
+            },
+            {
+              "won": true,
+              "opp": "Cooman Team"
+            },
+            {
+              "won": true,
+              "opp": "Recrent Team"
+            },
+            {
+              "won": true,
+              "opp": "Goodwin Team"
+            },
+            {
+              "won": true,
+              "opp": "SoloTeam"
+            }
+          ]
+        }
+      },
+      "dota2:139006": {
+        "ts": 1785096289.8940165,
+        "f": {
+          "w": 0,
+          "l": 0,
+          "res": []
+        }
+      },
+      "dota2:136963": {
+        "ts": 1785096290.4605167,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "SoloTeam"
+            },
+            {
+              "won": false,
+              "opp": "Miposhka Team"
+            },
+            {
+              "won": false,
+              "opp": "by Owl Team"
+            },
+            {
+              "won": false,
+              "opp": "by Owl Team"
+            },
+            {
+              "won": true,
+              "opp": "VooDooSh Team"
+            }
+          ]
+        }
+      },
+      "dota2:139007": {
+        "ts": 1785096291.1494353,
+        "f": {
+          "w": 0,
+          "l": 0,
+          "res": []
+        }
+      },
+      "dota2:136962": {
+        "ts": 1785096291.7007568,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "SoloTeam"
+            },
+            {
+              "won": true,
+              "opp": "Miposhka Team"
+            },
+            {
+              "won": false,
+              "opp": "SoloTeam"
+            },
+            {
+              "won": false,
+              "opp": "Nix Team"
+            },
+            {
+              "won": false,
+              "opp": "Recrent Team"
+            }
+          ]
+        }
+      },
+      "dota2:136960": {
+        "ts": 1785096292.381171,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Rostik Team"
+            },
+            {
+              "won": true,
+              "opp": "SoloTeam"
+            },
+            {
+              "won": false,
+              "opp": "Rostik Team"
+            },
+            {
+              "won": true,
+              "opp": "by Owl Team"
+            },
+            {
+              "won": true,
+              "opp": "VooDooSh Team"
+            }
+          ]
+        }
       }
     }
   },
@@ -12028,10 +12197,6 @@
         {
           "ts": 1785093860,
           "px": 0.75
-        },
-        {
-          "ts": 1785096263,
-          "px": 0.75
         }
       ]
     },
@@ -12434,10 +12599,6 @@
         {
           "ts": 1785093861,
           "px": 0.66
-        },
-        {
-          "ts": 1785096263,
-          "px": 0.66
         }
       ]
     },
@@ -12479,10 +12640,6 @@
         },
         {
           "ts": 1785093861,
-          "px": 0.38
-        },
-        {
-          "ts": 1785096264,
           "px": 0.38
         }
       ]
@@ -12534,10 +12691,6 @@
         {
           "ts": 1785093861,
           "px": 0.62
-        },
-        {
-          "ts": 1785096264,
-          "px": 0.68
         }
       ]
     },
@@ -12579,10 +12732,6 @@
         {
           "ts": 1785093861,
           "px": 0.35
-        },
-        {
-          "ts": 1785096264,
-          "px": 0.29
         }
       ]
     },
@@ -12623,10 +12772,6 @@
         },
         {
           "ts": 1785093862,
-          "px": 0.71
-        },
-        {
-          "ts": 1785096264,
           "px": 0.71
         }
       ]
@@ -12739,10 +12884,6 @@
         },
         {
           "ts": 1785093862,
-          "px": 0.39
-        },
-        {
-          "ts": 1785096264,
           "px": 0.39
         }
       ]
@@ -13059,10 +13200,6 @@
         {
           "ts": 1785093862,
           "px": 0.58
-        },
-        {
-          "ts": 1785096265,
-          "px": 0.58
         }
       ]
     },
@@ -13198,7 +13335,7 @@
     "pnl": 12.18,
     "trades": 146,
     "last_recap": "2026-07-26",
-    "last_recap_hour": "2026-07-26-18",
+    "last_recap_hour": "2026-07-26-20",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
     "account": 112.8,
