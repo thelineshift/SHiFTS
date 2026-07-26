@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.23.1'
+BOT_VERSION = '9.23.2'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -732,7 +732,7 @@ def make_client(privileged=True):
                 hs = gw_handle_parse(raw) or gw_bare_handle(raw)
                 if hs:
                     try:
-                        await message.add_reaction('⏳')  # REACTION LAW: ⏳ = received, steps pending; ✅ is reserved for fully entered
+                        await message.add_reaction('✅')  # IN-THE-POOL LAW (owner decree 7/26): ✅ = your ticket is IN the draw — verification level lives in the reply, never in doubt
                     except Exception:
                         pass
                     await gw_mark_handled(st_g, message.id)
@@ -752,7 +752,7 @@ def make_client(privileged=True):
                                             'msg_id': str(message.id), 'ch_id': str(message.channel.id),
                                             'note': 'provisional - X verification unavailable; verify before draw'}
                                 await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'provisional entry ' + hk, QUEUE_BRANCH)
-                                await message.channel.send(f"{message.author.mention} 🎫 **ENTRY LOGGED — @{hs[0]}** — X is rate-limiting our checks right now, so you're in the pool provisional (1 ticket) and I'll re-verify before Sunday's draw. Nothing else to do. ⚡")
+                                await message.channel.send(f"{message.author.mention} 🎫 **YOU'RE IN THE POOL — @{hs[0]}** — X is rate-limiting our checks right now, but your ticket is **in Sunday's draw right now** (✅ = you're in). Verification finishes automatically — nothing else to do. ⚡")
                             else:
                                 await gw_reply_once(message, 'already', f"🎫 **@{hs[0]}** — already in the pool. Sunday 6 PM ET. ⚡")
                         except Exception as e2:
@@ -1325,11 +1325,17 @@ async def verify_giveaway_entry(message, handle):
         def ic(ok, label):
             return f"{'✅' if ok else ('❌' if ok is False else '❓')} {label}"
         checklist = "\n".join([ic(followed, 'Follow @SHiFTSPicks'), ic(liked, 'Like the giveaway post'), ic(reposted, 'Repost the giveaway post')])
+        # REPOST-INFERENCE LAW (owner decree 7/26): like + follow verified = full entry —
+        # "if they liked and followed they probably reposted." Repost stays on the
+        # checklist as advisory only, never a gate.
         missing = []
         if followed is False: missing.append('follow @SHiFTSPicks')
         if liked is False: missing.append('like the giveaway post')
-        if reposted is False: missing.append('repost the giveaway post')
-        if not missing and followed and liked and reposted:
+        full_ok = bool(followed) and bool(liked)
+        if reposted is not True:
+            checklist = checklist.replace(ic(reposted, 'Repost the giveaway post'),
+                                          '✅ Repost the giveaway post — taking your word for it')
+        if full_ok:
             conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
             _ex = (conf or {}).get(handle.lower())
             if _ex and 'provisional' not in str(_ex.get('note', '')).lower():
@@ -1354,7 +1360,7 @@ async def verify_giveaway_entry(message, handle):
             except Exception:
                 pass
             await message.channel.send(
-                f"{message.author.mention} 🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. ⚡")
+                f"{message.author.mention} 🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. ⚡\n🎟️ **{len(conf)} tickets in the pool so far.**")
         else:
             # PROVISIONAL-BY-DEFAULT LAW (owner decree 2026-07-25): an incomplete or
             # unverifiable entry is STILL logged instantly — nobody waits silent on X.
@@ -1368,9 +1374,9 @@ async def verify_giveaway_entry(message, handle):
                             'msg_id': str(message.id), 'ch_id': str(message.channel.id),
                             'note': f'provisional — {why}'}
                 await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'provisional entry ' + hk, QUEUE_BRANCH)
-                steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} to full tickets:** " + ' + '.join(missing)) if missing else "X can't confirm your steps right now — I'll auto-upgrade you the moment it can."
+                steps = (f"To lock full tickets: " + ' + '.join(missing) + " — on **this exact post**: " + gw_post_link(state)) if missing else "X can't confirm your steps right now — I'll auto-upgrade you the moment it can."
                 await message.channel.send(
-                    f"{message.author.mention} 🎫 **ENTRY LOGGED — @{handle}**\n\n{checklist}\n\n{steps}\nDo them on **this exact post**: {gw_post_link(state)} — re-scan is automatic, or type **!entry** anytime. ⚡")
+                    f"{message.author.mention} 🎫 **YOU'RE IN THE POOL — @{handle}**\n\n{checklist}\n\nYour ticket is **in Sunday's $50 draw right now** — the ✅ on your post means you're in, full stop.\n{steps}\nVerification finishes in the background — or type **!entry** anytime for your live status. ⚡\n🎟️ **{len(conf)} tickets in the pool so far.**")
             else:
                 steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else "X still can't confirm your steps — you're in the pool, auto-upgrade pending."
                 await gw_reply_once(message, 'steps',
@@ -1415,7 +1421,7 @@ async def gw_reverify():
                 followed, liked, reposted = await _gw_live_checks(rec.get('handle') or hk, state)
             except Exception:
                 continue
-            if followed and liked and reposted:
+            if followed and liked:  # REPOST-INFERENCE LAW (owner decree 7/26): follow + like = full
                 rec = dict(rec)
                 rec.pop('note', None)
                 rec['ts_upgraded'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
@@ -1424,7 +1430,7 @@ async def gw_reverify():
                 if gch:
                     try:
                         ment = f"<@{rec['discord_id']}>" if rec.get('discord_id') else f"@{rec.get('handle')}"
-                        await gch.send(f"{ment} 🔒 **ENTRY CONFIRMED — @{rec.get('handle')}** — all three steps verified. 🎟️ **{rec.get('mult', 1)}x tickets** · Sunday 6 PM ET. ⚡")
+                        await gch.send(f"{ment} 🔒 **ENTRY CONFIRMED — @{rec.get('handle')}** — follow + like verified (repost taken your word for it). 🎟️ **{rec.get('mult', 1)}x tickets** · Sunday 6 PM ET. ⚡")
                     except Exception:
                         pass
                 await _gw_mark_entered(g0, rec)
@@ -1512,7 +1518,7 @@ async def catchup_sweep(g0):
                                         'mult': 1, 'ts': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
                                         'note': 'provisional (catchup) - verify before draw'}
                             await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'catchup provisional ' + hk, QUEUE_BRANCH)
-                            await gch.send(f"{m.author.mention} 🎫 **ENTRY LOGGED — @{hs[0]}** — caught up after a restart; provisional ticket logged, re-verified before Sunday's draw. ⚡")
+                            await gch.send(f"{m.author.mention} 🎫 **YOU'RE IN THE POOL — @{hs[0]}** — caught up after a restart; your ticket is in Sunday's draw, verification finishes automatically. ⚡")
                             done += 1
                     except Exception:
                         pass
