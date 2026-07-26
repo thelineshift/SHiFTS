@@ -122,6 +122,15 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "privateer-gaming-ml-0726",
+      "desc": "Privateer Gaming ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Privateer Gaming 0-2 Honv\u00e9d \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785093857.0910432,
