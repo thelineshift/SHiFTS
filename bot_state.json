@@ -13011,7 +13011,7 @@
       "qty": 12,
       "market_slug": "aec-cs2-btf-sawy-2026-07-26",
       "outcome": "Butterfly",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T23:55:57Z",
       "price_path": [
         {
@@ -13106,7 +13106,12 @@
           "ts": 1785074986,
           "px": 0.9
         }
-      ]
+      ],
+      "result": "WIN",
+      "payout": 12.0,
+      "settled_at": "2026-07-26T14:39:42Z",
+      "pnl": 5.64,
+      "autopsy": "+$5.64 \u2014 model 75% vs market 53% was real edge; thesis held. Taken 0.53, rode to 0.90 before the result \u2014 beat the number by 37\u00a2 \u2705"
     },
     {
       "price": 0.33,
@@ -13443,7 +13448,7 @@
       "qty": 6,
       "market_slug": "aec-lol-lil-cla-2026-07-26",
       "outcome": "Caldya Esport",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T12:05:49Z",
       "price_path": [
         {
@@ -13454,7 +13459,12 @@
           "ts": 1785073128,
           "px": 0.33
         }
-      ]
+      ],
+      "result": "WIN",
+      "payout": 6.0,
+      "settled_at": "2026-07-26T14:39:45Z",
+      "pnl": 4.02,
+      "autopsy": "+$4.02 \u2014 model 50% vs market 33% was real edge; thesis held. Rode the number flat to the result."
     },
     {
       "price": 0.9,
@@ -13514,6 +13524,10 @@
         {
           "ts": 1785074987,
           "px": 0.37
+        },
+        {
+          "ts": 1785076790,
+          "px": 0.37
         }
       ]
     },
@@ -13542,6 +13556,10 @@
         },
         {
           "ts": 1785074987,
+          "px": 0.47
+        },
+        {
+          "ts": 1785076791,
           "px": 0.47
         }
       ]
@@ -13573,6 +13591,10 @@
         {
           "ts": 1785074987,
           "px": 0.36
+        },
+        {
+          "ts": 1785076791,
+          "px": 0.36
         }
       ]
     },
@@ -13603,6 +13625,10 @@
         {
           "ts": 1785074988,
           "px": 0.31
+        },
+        {
+          "ts": 1785076791,
+          "px": 0.29
         }
       ]
     },
@@ -13649,6 +13675,10 @@
         {
           "ts": 1785074988,
           "px": 0.5
+        },
+        {
+          "ts": 1785076791,
+          "px": 0.6
         }
       ]
     },
@@ -13694,6 +13724,10 @@
         },
         {
           "ts": 1785074988,
+          "px": 0.3
+        },
+        {
+          "ts": 1785076791,
           "px": 0.3
         }
       ]
@@ -13836,6 +13870,10 @@
         {
           "ts": 1785074988,
           "px": 0.42
+        },
+        {
+          "ts": 1785076792,
+          "px": 0.42
         }
       ]
     },
@@ -13864,6 +13902,10 @@
         },
         {
           "ts": 1785074988,
+          "px": 0.75
+        },
+        {
+          "ts": 1785076792,
           "px": 0.75
         }
       ]
@@ -13909,6 +13951,10 @@
         },
         {
           "ts": 1785074988,
+          "px": 0.7
+        },
+        {
+          "ts": 1785076792,
           "px": 0.7
         }
       ]
@@ -13996,7 +14042,13 @@
       "market_slug": "astatc-valorant-m8gc-gxgc-2026-07-27-map1",
       "outcome": "Gentle Mates GC",
       "status": "open",
-      "ts": "2026-07-26T13:14:05Z"
+      "ts": "2026-07-26T13:14:05Z",
+      "price_path": [
+        {
+          "ts": 1785076792,
+          "px": 0.67
+        }
+      ]
     },
     {
       "price": 0.58,
@@ -14113,7 +14165,13 @@
       "market_slug": "aec-cs2-inox-g2a-2026-07-26",
       "outcome": "G2 Ares",
       "status": "open",
-      "ts": "2026-07-26T14:15:58Z"
+      "ts": "2026-07-26T14:15:58Z",
+      "price_path": [
+        {
+          "ts": 1785076793,
+          "px": 0.29
+        }
+      ]
     },
     {
       "price": 0.9,
@@ -14176,7 +14234,13 @@
       "market_slug": "astatc-valorant-m8gc-gxgc-2026-07-27-map1",
       "outcome": "Gentle Mates GC",
       "status": "open",
-      "ts": "2026-07-26T14:30:08Z"
+      "ts": "2026-07-26T14:30:08Z",
+      "price_path": [
+        {
+          "ts": 1785076793,
+          "px": 0.67
+        }
+      ]
     },
     {
       "price": 0.38,
@@ -14192,7 +14256,13 @@
       "market_slug": "aec-cs2-erx-ent-2026-07-27",
       "outcome": "Entropy",
       "status": "open",
-      "ts": "2026-07-26T14:35:13Z"
+      "ts": "2026-07-26T14:35:13Z",
+      "price_path": [
+        {
+          "ts": 1785076793,
+          "px": 0.38
+        }
+      ]
     },
     {
       "price": 0.69,
@@ -14224,7 +14294,8 @@
       "market_slug": "aec-lol-vdn-ll-2026-07-27",
       "outcome": "Lundqvist Lightside",
       "status": "open",
-      "ts": "2026-07-26T14:35:16Z"
+      "ts": "2026-07-26T14:35:16Z",
+      "price_path": []
     },
     {
       "price": 0.7,
@@ -14239,21 +14310,27 @@
       "market_slug": "aec-dota2-tje-stx-2026-07-26",
       "outcome": "Team Jenz",
       "status": "open",
-      "ts": "2026-07-26T14:35:17Z"
+      "ts": "2026-07-26T14:35:17Z",
+      "price_path": [
+        {
+          "ts": 1785076794,
+          "px": 0.7
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 6,
+    "wins": 8,
     "losses": 14,
-    "pnl": 1.76,
+    "pnl": 11.42,
     "trades": 113,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-14",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 94.49,
-    "net": 30.49
+    "account": 107.71,
+    "net": 43.71
   },
   "x_purge_complete": 1785032907.0909944,
   "pm_lessons": [
@@ -14416,6 +14493,22 @@
       "result": "LOSS",
       "pnl": 0.0,
       "lesson": "+$0.00 \u2014 model 69% vs market 43% was real edge; thesis held. (cashed out early at $3.44)"
+    },
+    {
+      "ts": "2026-07-26T14:39:42Z",
+      "kind": "EDGE",
+      "outcome": "Butterfly",
+      "result": "WIN",
+      "pnl": 5.64,
+      "lesson": "+$5.64 \u2014 model 75% vs market 53% was real edge; thesis held. Taken 0.53, rode to 0.90 before the result \u2014 beat the number by 37\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-26T14:39:45Z",
+      "kind": "EDGE",
+      "outcome": "Caldya Esport",
+      "result": "WIN",
+      "pnl": 4.02,
+      "lesson": "+$4.02 \u2014 model 50% vs market 33% was real edge; thesis held. Rode the number flat to the result."
     }
   ],
   "giveaway_x_posts": [
