@@ -8,18 +8,18 @@
     "replaced pin in #\ud83c\udf81giveaway (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 13:46 UTC",
+    "at": "2026-07-26 13:02 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-3": "2026-07-26 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 13:38 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 12:59 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-26 12:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 13:43 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 12:53 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 13:46 UTC",
+    "at": "2026-07-26 13:02 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -30,14 +30,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 13:46 UTC",
+    "at": "2026-07-26 13:02 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 13:46 UTC",
+    "at": "2026-07-26 13:02 UTC",
     "flags": []
   },
-  "bot_version": "9.24.0",
+  "bot_version": "9.23.5",
   "unannounced_results": [
     {
       "id": "chicago-cubs-ml-0725",
@@ -13829,6 +13829,22 @@
       "outcome": "Butterfly",
       "status": "open",
       "ts": "2026-07-26T13:45:47Z"
+    },
+    {
+      "price": 0.58,
+      "short": true,
+      "stake": 2.32,
+      "kind": "EDGE",
+      "p_model": 0.8571428571428572,
+      "event": "Esport Academy Copenhagen vs. Atreides",
+      "ev_start": "2026-07-26T17:00:00Z",
+      "reason": "model 86% vs market 58% \u2014 28% edge, half-Kelly",
+      "order_id": "BFVY1YBP69RC",
+      "qty": 4,
+      "market_slug": "aec-cs2-eac-atr-2026-07-26",
+      "outcome": "Atreides",
+      "status": "open",
+      "ts": "2026-07-26T13:47:06Z"
     }
   ],
   "pm_stats": {
@@ -13836,7 +13852,7 @@
     "wins": 6,
     "losses": 14,
     "pnl": 5.2,
-    "trades": 102,
+    "trades": 103,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12",
     "deposits": 64.0,
