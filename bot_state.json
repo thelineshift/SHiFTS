@@ -34,6 +34,15 @@
   "bot_version": "9.24.4",
   "unannounced_results": [
     {
+      "id": "chicago-white-sox-ml-0725",
+      "desc": "Chicago White Sox ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Houston Astros 4, Chicago White Sox 1",
+      "tier": "whale"
+    },
+    {
       "id": "texas-rangers-ml-0725",
       "desc": "Texas Rangers ML",
       "odds": -105,
@@ -124,7 +133,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785104656.4386423,
+  "last_x_receipt_ts": 1785085455.9389694,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -13927,7 +13936,7 @@
       "qty": 2,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T22:14:47Z"
     },
     {
@@ -13943,7 +13952,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T22:19:47Z"
     }
   ],
