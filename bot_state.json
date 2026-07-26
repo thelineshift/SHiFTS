@@ -7852,11 +7852,15 @@
         }
       },
       "cs2:3218": {
-        "ts": 1785045679.421958,
+        "ts": 1785068087.788209,
         "f": {
           "w": 4,
           "l": 1,
           "res": [
+            {
+              "won": false,
+              "opp": "paiN"
+            },
             {
               "won": true,
               "opp": "Heroic"
@@ -7872,10 +7876,6 @@
             {
               "won": true,
               "opp": "M80"
-            },
-            {
-              "won": false,
-              "opp": "K27"
             }
           ]
         }
@@ -9370,6 +9370,35 @@
             {
               "won": true,
               "opp": "Red Hot Chili Pibble"
+            }
+          ]
+        }
+      },
+      "cs2:137739": {
+        "ts": 1785068087.1822839,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Gentle Mates"
+            },
+            {
+              "won": false,
+              "opp": "3DMAX"
+            },
+            {
+              "won": true,
+              "opp": "Gentle Mates"
+            },
+            {
+              "won": true,
+              "opp": "Walczaki"
+            },
+            {
+              "won": false,
+              "opp": "Inner Circle Esports"
             }
           ]
         }
@@ -13228,6 +13257,22 @@
       "outcome": "Atreides",
       "status": "open",
       "ts": "2026-07-26T12:09:59Z"
+    },
+    {
+      "price": 0.53,
+      "short": true,
+      "stake": 1.59,
+      "kind": "EDGE",
+      "p_model": 0.75,
+      "event": "Lavked vs. Butterfly",
+      "ev_start": "2026-07-26T17:00:00Z",
+      "reason": "model 75% vs market 53% \u2014 22% edge, half-Kelly",
+      "order_id": "BFTK333RW9QE",
+      "qty": 3,
+      "market_slug": "aec-cs2-lav-btf-2026-07-26",
+      "outcome": "Butterfly",
+      "status": "open",
+      "ts": "2026-07-26T12:14:54Z"
     }
   ],
   "pm_stats": {
@@ -13235,7 +13280,7 @@
     "wins": 3,
     "losses": 16,
     "pnl": -5.17,
-    "trades": 80,
+    "trades": 81,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-12"
   },
