@@ -107,7 +107,7 @@
 
     <div class="panel hidden" id="panel-desk">
       <div class="sect">📈 The Trading Floor <small>SHiFT's Polymarket positions in real time</small></div>
-      <div class="desknote">Open positions right now, recent entries &amp; exits with running P&amp;L. Entries also post instantly in <b>#shift-trades</b> — and every row below is one tap from the live market if you want to tail.</div>
+      <div class="desknote">Open positions right now, recent entries &amp; exits, and the live account total — value, deposits and net P&amp;L straight from the exchange. Entries also post instantly in <b>#shift-trades</b> — and every row below is one tap from the live market if you want to tail.</div>
       <div class="kpis" id="dkpis"></div>
       <table id="dtable"><thead><tr><th>Position</th><th>Side</th><th>Entry</th><th>Stake</th><th>Status</th><th></th></tr></thead><tbody></tbody></table>
       <div class="soon">🤖 <b>AUTO-TAIL — a Whale exclusive.</b> Connect your own Polymarket account once, and SHiFT places the desk's positions for you automatically, sized your way — or keep it manual: every open position is posted right here and in #shift-trades with one-tap market links. Your account, your money, your kill switch.</div>
@@ -265,11 +265,15 @@ async function loadDesk(){
     const now = Date.now();
     const pnlIn = days => trades.filter(t=>t.status==='settled' && Date.parse(t.settled_at||'') >= now-days*86400000)
                                  .reduce((a,t)=>a+(parseFloat(t.pnl)||0),0);
+    const acct = s.account!=null ? parseFloat(s.account) : null;
+    const dep = parseFloat(s.deposits||64);
+    const net = acct!=null ? acct-dep : null;
     document.getElementById('dkpis').innerHTML =
       `<div class="kpi"><b>${s.wins??0}-${s.losses??0}</b><span>desk record</span></div>
-       <div class="kpi"><b class="${pnlIn(7)>=0?'pos':'neg'}">${pnlIn(7)>=0?'+':''}$${pnlIn(7).toFixed(2)}</b><span>desk week</span></div>
-       <div class="kpi"><b class="${pnlIn(30)>=0?'pos':'neg'}">${pnlIn(30)>=0?'+':''}$${pnlIn(30).toFixed(2)}</b><span>desk month</span></div>
-       <div class="kpi"><b class="${(s.pnl??0)>=0?'pos':'neg'}">${(s.pnl??0)>=0?'+':''}$${(s.pnl??0).toFixed(2)}</b><span>since day one ($50)</span></div>
+       <div class="kpi"><b class="${acct!=null?(acct>=dep?'pos':'neg'):''}">${acct!=null?'$'+acct.toFixed(2):'—'}</b><span>account value</span></div>
+       <div class="kpi"><b class="${(net??0)>=0?'pos':'neg'}">${net!=null?(net>=0?'+':'')+'$'+net.toFixed(2):'—'}</b><span>net on $${dep.toFixed(2)} in</span></div>
+       <div class="kpi"><b class="${pnlIn(7)>=0?'pos':'neg'}">${pnlIn(7)>=0?'+':''}$${pnlIn(7).toFixed(2)}</b><span>realized this week</span></div>
+       <div class="kpi"><b class="${pnlIn(30)>=0?'pos':'neg'}">${pnlIn(30)>=0?'+':''}$${pnlIn(30).toFixed(2)}</b><span>realized this month</span></div>
        <div class="kpi"><b>${open.length}</b><span>open now</span></div>`;
     const link = t => t.market_slug ? `<a class="tail" href="https://polymarket.us/markets/${encodeURIComponent(t.market_slug)}" target="_blank" rel="noopener">Tail →</a>` : '';
     const rows = open.map(t=>`<tr><td>${esc(t.outcome||t.market_slug||'')}<br><span style="color:var(--dim);font-size:11px">${esc(t.event||'')}</span></td><td>${t.short?'SHORT':'LONG'}</td><td>${t.price??''}</td><td>$${parseFloat(t.stake_usd??t.stake??0).toFixed(2)}</td><td>🟢 open</td><td>${link(t)}</td></tr>`)
