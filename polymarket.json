@@ -1,10 +1,16 @@
 {
-  "ts": "2026-07-26T12:29:27Z",
+  "ts": "2026-07-26T12:31:39Z",
   "configured": true,
   "balance_usd": 101.48,
   "buying_power": 15.48,
   "positions": [],
   "open_orders": [
+    {
+      "market": "aec-cs2-lav-btf-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.53",
+      "qty": 3
+    },
     {
       "market": "aec-valorant-nv-lev-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
@@ -22,12 +28,6 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.57",
       "qty": 2
-    },
-    {
-      "market": "aec-cs2-lav-btf-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.53",
-      "qty": 3
     }
   ]
 }
