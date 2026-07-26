@@ -401,10 +401,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -150,
+        "home_ml": 123,
+        "away_ml": -149,
         "total": 8.5,
-        "ts": 1785085455
+        "ts": 1785087255
       }
     },
     {
@@ -521,10 +521,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -144,
+        "away_ml": 119,
         "total": 9.0,
-        "ts": 1785085455
+        "ts": 1785087255
       }
     },
     {
@@ -544,10 +544,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -123,
-        "away_ml": 102,
+        "home_ml": -120,
+        "away_ml": -101,
         "total": 8.5,
-        "ts": 1785085455
+        "ts": 1785087255
       }
     },
     {
