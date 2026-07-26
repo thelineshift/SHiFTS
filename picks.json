@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T19:24:18Z",
+  "updated": "2026-07-26T20:00:57Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -577,6 +577,23 @@
         "ts": 1785085455
       },
       "last_alert_odds": -192
+    },
+    {
+      "id": "mibr-ml-0726",
+      "date": "2026-07-26",
+      "sport": "valorant",
+      "desc": "MIBR ML",
+      "market": "VCT Bo3",
+      "odds": -355,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "08:00 PM ET",
+      "vs": "FURIA Esports",
+      "team": "MIBR",
+      "opp": "FURIA Esports",
+      "analysis": "3-2 last 5 (beat Team Envy, Leviat\u00e1n Esports, KR\u00dc Esports) (lost to NRG) vs 0-5 \u2014 live Pinnacle line -355 (our 90% vs book 74%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat Team Envy, Leviat\u00e1n Esports, KR\u00dc Esports) (lost to NRG) vs 0-5 \u2014 live Pinnacle line -355 (our 90% vs book 74%). That's a **16-point** gap",
+      "awayTeam": "MIBR",
+      "homeTeam": "FURIA Esports"
     }
   ]
 }
