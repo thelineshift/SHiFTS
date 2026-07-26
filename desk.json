@@ -1,32 +1,14 @@
 {
-  "updated": "2026-07-26T14:00:10Z",
-  "record": "6-14",
-  "trades": 104,
-  "open": 31,
-  "pnl": 1.76,
-  "account": 94.49,
+  "updated": "2026-07-26T16:44:54Z",
+  "record": "8-15",
+  "trades": 119,
+  "open": 34,
+  "pnl": 10.54,
+  "account": 108.24,
   "deposits": 64.0,
-  "net_pnl": 30.49,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 2-6 \u00b7 LIVE-BET 1-3",
+  "net_pnl": 44.24,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 4-6 \u00b7 LIVE-BET 1-4",
   "recent": [
-    {
-      "outcome": "Gen.G Esports",
-      "short": false,
-      "result": "won",
-      "pnl": 11.02
-    },
-    {
-      "outcome": "BESTIA Academy",
-      "short": true,
-      "result": "lost",
-      "pnl": -2.31
-    },
-    {
-      "outcome": "Isurus",
-      "short": false,
-      "result": "won",
-      "pnl": 3.6
-    },
     {
       "outcome": "Gen.G Esports",
       "short": false,
@@ -40,10 +22,28 @@
       "pnl": -8.85
     },
     {
+      "outcome": "Butterfly",
+      "short": false,
+      "result": "won",
+      "pnl": 5.64
+    },
+    {
       "outcome": "Team High Ground",
       "short": true,
       "result": "lost",
       "pnl": -3.44
+    },
+    {
+      "outcome": "Caldya Esport",
+      "short": true,
+      "result": "won",
+      "pnl": 4.02
+    },
+    {
+      "outcome": "FUT Esports",
+      "short": true,
+      "result": "lost",
+      "pnl": -0.88
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
