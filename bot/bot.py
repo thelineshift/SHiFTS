@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.2'
+BOT_VERSION = '9.24.3'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -996,9 +996,18 @@ def gh_get(path, ref='main'):
     with urllib.request.urlopen(req, timeout=15) as r:
         return json.load(r)
 
+FEED_FILES = {'pins.json', 'picks.json', 'guarantee.json', 'stripe.json', 'desk.json',
+              'challenge.json', 'giveaway_entries.json'}
+# FEED-STORM LAW (2026-07-26 incident): every main-branch commit auto-deploys the service =
+# a full bot restart = a Discord reconnect. Bot feeds (stripe.json every 30 min!) were causing
+# ~60 restarts/day and pushed Discord into a Cloudflare 1015 connect ban. All bot feed I/O now
+# lives on the commands branch; main carries code + site pages only. Consumers read raw either way.
+
 def gh_put(path, obj, message, ref=QUEUE_BRANCH, _tries=3):
     """State writer with 409-retry: concurrent loops race on the same file; a sha mismatch
     just means someone else saved first — re-read, re-merge, retry instead of dying."""
+    if path in FEED_FILES:
+        ref = QUEUE_BRANCH  # FEED-STORM LAW: bot writes never touch main
     last = None
     for attempt in range(_tries):
         try:
@@ -1060,6 +1069,8 @@ def gh_get_json(path):
         return {}
 
 def gh_get_json_ref(path, ref):
+    if path in FEED_FILES:
+        ref = QUEUE_BRANCH  # FEED-STORM LAW
     try:
         d = gh_get(path, ref=ref)
         return json.loads(base64.b64decode(d['content']))
@@ -1650,7 +1661,7 @@ async def catchup_sweep(g0):
 
 def gh_get_json_main(path):
     try:
-        d = gh_get(path, ref='main')
+        d = gh_get(path, ref=(QUEUE_BRANCH if path in FEED_FILES else 'main'))  # FEED-STORM LAW
         return json.loads(base64.b64decode(d['content']))
     except Exception:
         return {}
