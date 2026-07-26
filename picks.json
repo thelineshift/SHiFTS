@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T04:01:15Z",
+  "updated": "2026-07-26T04:50:31Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1734,7 +1734,10 @@
         "away_ml": 210,
         "total": 3.5,
         "ts": 1785034826
-      }
+      },
+      "result": "LOSS",
+      "score": "LA Galaxy 1, San Jose Earthquakes 1",
+      "units_result": -1.5
     },
     {
       "id": "endless-journey-ml-0725",
