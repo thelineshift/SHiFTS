@@ -12941,8 +12941,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T15:00:08Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T15:00:08Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.9,
@@ -12957,8 +12960,11 @@
       "qty": 4,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T16:44:45Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T16:44:45Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.16,
@@ -13089,8 +13095,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:04:46Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:04:46Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.17,
@@ -13151,8 +13160,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:19:45Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:19:45Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.17,
@@ -13198,8 +13210,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:29:45Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:29:45Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.04,
@@ -13229,8 +13244,11 @@
       "qty": 3,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:39:46Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:39:46Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.17,
