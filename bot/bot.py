@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.23.3'
+BOT_VERSION = '9.23.4'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -725,6 +725,17 @@ def make_client(privileged=True):
                         await gw_mark_handled(st_g, message.id)
                         await asyncio.to_thread(gh_put, 'bot_state.json', st_g, 'gw handled')
                     await entry_status_reply(message, raw.strip()[6:].strip().lstrip('@') or None)
+                    return
+                # STAFF/TALK-THROUGH EXEMPTION (owner decree 7/26): not every handle typed in
+                # #giveaway is an entry. Staff moderating the room never triggers entry, and a
+                # message addressed TO a Discord member ("check your entry <@user>") is talk, not a ticket.
+                try:
+                    _p = message.author.guild_permissions
+                    if message.author == message.guild.owner or _p.administrator or _p.manage_messages or _p.manage_guild:
+                        return
+                except Exception:
+                    pass
+                if message.mentions:
                     return
                 st_g = await asyncio.to_thread(get_state) or {}
                 if str(message.id) in st_g.get('gw_handled', []):
@@ -1489,6 +1500,16 @@ async def catchup_sweep(g0):
             dirty = False
             for m in reversed(msgs):
                 if m.author.bot:
+                    continue
+                # STAFF/TALK-THROUGH EXEMPTION (owner decree 7/26) — same law as live intake:
+                # staff messages and messages addressed to a member are not entries.
+                try:
+                    _p = m.author.guild_permissions
+                    if m.author == g0.owner or _p.administrator or _p.manage_messages or _p.manage_guild:
+                        continue
+                except Exception:
+                    pass
+                if m.mentions:
                     continue
                 raw = m.content or ''
                 hs = gw_handle_parse(raw) or gw_bare_handle(raw)
@@ -2941,6 +2962,14 @@ async def run_command(cmd, guild, log):
         dirty = False
         for m in reversed(msgs):
             if m.author.bot or str(m.id) in handled:
+                continue
+            try:
+                _p = m.author.guild_permissions
+                if m.author == guild.owner or _p.administrator or _p.manage_messages or _p.manage_guild:
+                    continue  # STAFF/TALK-THROUGH EXEMPTION (owner decree 7/26)
+            except Exception:
+                pass
+            if m.mentions:
                 continue
             hs = gw_handle_parse(m.content or '')
             if not hs:
