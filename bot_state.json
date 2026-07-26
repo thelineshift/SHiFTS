@@ -10486,6 +10486,21 @@
           "px": 0.39
         }
       ]
+    },
+    {
+      "price": 0.64,
+      "stake": 1.28,
+      "kind": "EDGE",
+      "p_model": 0.6923076923076923,
+      "event": "T1 Academy vs. Nongshim Esports Academy",
+      "ev_start": "2026-07-27T08:00:00Z",
+      "reason": "model 69% vs market 64% \u2014 5% edge, half-Kelly",
+      "order_id": "BFGF0Q0YT9QM",
+      "qty": 2,
+      "market_slug": "aec-lol-t1a-nsea-2026-07-27",
+      "outcome": "T1 Academy",
+      "status": "open",
+      "ts": "2026-07-26T00:15:56Z"
     }
   ],
   "pm_stats": {
@@ -10493,7 +10508,7 @@
     "wins": 3,
     "losses": 11,
     "pnl": 3.06,
-    "trades": 69,
+    "trades": 70,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-26-00"
   },
