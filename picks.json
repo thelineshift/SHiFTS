@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T20:00:57Z",
+  "updated": "2026-07-26T20:24:20Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -529,7 +529,10 @@
         "away_ml": 119,
         "total": 9.0,
         "ts": 1785087255
-      }
+      },
+      "result": "LOSS",
+      "score": "Chicago Cubs 7, Pittsburgh Pirates 8",
+      "units_result": -1.0
     },
     {
       "id": "miami-marlins-ml-0726",
