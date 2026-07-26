@@ -10,18 +10,18 @@
     "#\ud83d\udc0bwhale-room-12-7 [16:34] **\ud83d\udc0b WEEKLY DEEP-DIVE \u2014 WHALE MASTERCLASS (last 7 days)**\nRecord: **12-6** \u00b7 Units: **+2.6u** \u00b7 ROI: **+11.6%**"
   ],
   "time_audit": {
-    "at": "2026-07-26 08:00 UTC",
+    "at": "2026-07-26 06:30 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-3": "2026-07-26 04:01 UTC",
     "\ud83e\uddfereceipts": "2026-07-26 04:50 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-26 07:50 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-26 04:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-26 06:17 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 08:00 UTC",
+    "at": "2026-07-26 06:30 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -32,11 +32,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 08:00 UTC",
+    "at": "2026-07-26 06:30 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 08:00 UTC",
+    "at": "2026-07-26 06:30 UTC",
     "flags": []
   },
   "bot_version": "9.22.1",
@@ -313,7 +313,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "fe9552ef-44e8-4a2e-83ab-2a7c82d1b50a",
   "op_month": "2026-07",
-  "op_calls": 30,
+  "op_calls": 37,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1198,87 +1198,87 @@
       "meta_ts": 1784925282.1446652,
       "lines": [
         [
-          "Heroic",
-          "Ninjas In Pyjamas",
-          1.877,
-          1.892
-        ],
-        [
-          "Astralis",
+          "Aurora Gaming",
           "Hotu",
-          1.042,
-          11.38
+          1.271,
+          3.45
         ],
         [
-          "MOUZ",
-          "Fokus",
-          1.017,
-          18.59
+          "Ninjas In Pyjamas",
+          "Pain Gaming",
+          2.37,
+          1.598
         ],
         [
-          "Fluxo",
-          "Keyd Stars",
-          1.173,
-          4.59
+          "3Dmax",
+          "Fut eSports",
+          1.328,
+          3.39
+        ],
+        [
+          "The Mongolz",
+          "Wildcard Gaming",
+          1.485,
+          2.67
+        ],
+        [
+          "100 Thieves",
+          "Team Spirit",
+          6.68,
+          1.12
+        ],
+        [
+          "Oddik",
+          "LP",
+          1.357,
+          2.9
         ],
         [
           "Isurus",
-          "Bestia Academy",
-          1.34,
-          2.97
+          "Fluxo",
+          1.245,
+          3.5
         ],
         [
-          "Saw Youngsters",
-          "Enjoy",
-          14.13,
-          1.024
-        ],
-        [
-          "Just Players",
-          "Black Phoenix",
-          1.862,
-          1.909
-        ],
-        [
-          "Rounds",
-          "Privateer Gaming",
-          1.228,
-          3.9
-        ],
-        [
-          "Rune Eaters eSports",
-          "Ex-Rustec",
-          1.03,
-          13.09
+          "Team Quazar",
+          "New Vision",
+          1.186,
+          4.0
         ]
       ],
-      "odds_ts": 1785009654.288687
+      "odds_ts": 1785052831.3021028
     },
     "valorant": {
       "lines": [
         [
-          "PCIFIC",
-          "Vitality",
-          20.62,
-          1.013
+          "Gentle Mates GC",
+          "GIANTX GC",
+          1.245,
+          3.5
         ],
         [
-          "Eternal Fire",
-          "GIANTX",
-          18.6,
-          1.015
+          "G2 Gozen",
+          "Karmine Corp GC",
+          1.114,
+          5.0
+        ],
+        [
+          "REJECT",
+          "QT DIG",
+          1.294,
+          3.2
         ],
         [
           "BBL",
           "Natus Vincere",
-          1.568,
-          2.44
+          1.628,
+          2.31
         ],
         [
           "Heretics",
           "Karmine Corp",
-          1.709,
-          2.16
+          1.775,
+          2.07
         ],
         [
           "Paper Rex",
@@ -1287,28 +1287,22 @@
           2.82
         ],
         [
-          "G2",
-          "Cloud9",
-          1.209,
-          4.53
-        ],
-        [
-          "Sentinels",
-          "LOUD",
-          1.636,
-          2.29
+          "Gen.G",
+          "Rex Regum Qeon",
+          1.42,
+          2.73
         ],
         [
           "ENVY",
           "Leviatan",
-          7.24,
-          1.103
+          7.81,
+          1.092
         ],
         [
           "FURIA",
           "MIBR",
-          3.73,
-          1.282
+          3.46,
+          1.317
         ],
         [
           "BESTIA",
@@ -1319,17 +1313,17 @@
         [
           "FunPlus Phoenix",
           "Wolves",
-          1.729,
-          2.04
+          1.666,
+          2.13
         ],
         [
           "Nova",
           "Bilibili",
-          1.729,
-          2.04
+          1.909,
+          1.833
         ]
       ],
-      "odds_ts": 1785009658.077324,
+      "odds_ts": 1785052834.9829085,
       "active": [
         901974,
         902246,
@@ -2532,46 +2526,28 @@
       "meta_ts": 1784952040.641981,
       "lines": [
         [
-          "Flyquest",
-          "Lyon Gaming",
-          1.704,
-          2.17
-        ],
-        [
-          "Dignitas",
-          "Sentinels",
-          6.11,
-          1.11
-        ],
-        [
-          "Disguisedtoast",
-          "Shopify Rebellion",
+          "Cloud9",
+          "Team Liquid",
           1.666,
           2.23
         ],
         [
-          "G2 Esports",
-          "Team Vitality",
-          1.02,
-          16.14
-        ],
-        [
-          "Karmine Corp",
-          "Movistar Koi",
-          1.031,
-          12.23
+          "Disguisedtoast",
+          "Shopify Rebellion",
+          1.709,
+          2.16
         ],
         [
           "Movistar Koi",
           "Team Vitality",
-          3.26,
-          1.333
+          3.19,
+          1.346
         ],
         [
           "Karmine Corp",
           "G2 Esports",
-          1.606,
-          2.34
+          1.613,
+          2.33
         ],
         [
           "Gen.g Esports",
@@ -2580,49 +2556,49 @@
           2.22
         ],
         [
-          "Furia Esports",
-          "Los",
-          13.88,
-          1.024
+          "Leviatan",
+          "Fluxo W7M",
+          1.28,
+          3.59
         ],
         [
-          "Pain Gaming",
-          "Loud",
-          3.24,
-          1.312
+          "Keyd Stars",
+          "Red Canids",
+          1.306,
+          3.42
         ],
         [
           "LNG Esports",
           "Shenzhen Ninjas In Pyjamas",
-          2.29,
-          1.632
+          4.59,
+          1.167
         ],
         [
           "Edward Gaming",
           "ThunderTalk Gaming",
-          1.909,
-          1.909
+          1.934,
+          1.884
         ],
         [
           "Anyones Legend",
           "Bilibili Gaming",
-          2.24,
-          1.662
+          2.34,
+          1.609
         ],
         [
           "Detonation Focusme",
           "GAM Esports",
-          6.6,
-          1.058
+          5.49,
+          1.092
         ],
         [
           "Ctbc Flying Oyster",
           "Deep Cross Gaming",
-          2.45,
-          1.5
+          2.55,
+          1.462
         ]
       ],
-      "odds_ts": 1785009661.6475246
+      "odds_ts": 1785052838.370919
     }
   },
   "parlay_rot": 8,
