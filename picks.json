@@ -2345,12 +2345,12 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -348,
-        "away_ml": 272,
+        "home_ml": -369,
+        "away_ml": 287,
         "total": 7.5,
-        "ts": 1785051026
+        "ts": 1785052826
       },
-      "last_alert_odds": -340
+      "last_alert_odds": -369
     },
     {
       "id": "miami-marlins-ml-0726",
