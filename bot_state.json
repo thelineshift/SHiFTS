@@ -38,15 +38,6 @@
   "bot_version": "9.23.0",
   "unannounced_results": [
     {
-      "id": "chicago-fire-fc-ml-0725",
-      "desc": "Chicago Fire FC ML",
-      "odds": 160,
-      "result": "WIN",
-      "units": 2.4,
-      "score": "Chicago Fire FC 1, New York City FC 3",
-      "tier": "whale"
-    },
-    {
       "id": "chicago-cubs-ml-0725",
       "desc": "Chicago Cubs ML",
       "odds": 113,
@@ -164,7 +155,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785064228.723067,
+  "last_x_receipt_ts": 1785067068.3834426,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
