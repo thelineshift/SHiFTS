@@ -13863,7 +13863,13 @@
       "market_slug": "astatc-cs2-odk-ldp-2026-07-26-map2",
       "outcome": "ODDIK",
       "status": "open",
-      "ts": "2026-07-26T13:55:08Z"
+      "ts": "2026-07-26T13:55:08Z",
+      "price_path": [
+        {
+          "ts": 1785074385,
+          "px": 0.41
+        }
+      ]
     }
   ],
   "pm_stats": {
