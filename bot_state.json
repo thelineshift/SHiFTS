@@ -38,15 +38,6 @@
   "bot_version": "9.24.1",
   "unannounced_results": [
     {
-      "id": "st.-louis-cardinals-ml-0725",
-      "desc": "St. Louis Cardinals ML",
-      "odds": -125,
-      "result": "WIN",
-      "units": 0.8,
-      "score": "Cincinnati Reds 0, St. Louis Cardinals 7",
-      "tier": "lock"
-    },
-    {
       "id": "chicago-white-sox-ml-0725",
       "desc": "Chicago White Sox ML",
       "odds": -126,
@@ -146,7 +137,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785080398.4187996,
+  "last_x_receipt_ts": 1785084208.4463553,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
