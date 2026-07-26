@@ -6,18 +6,18 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 15:30 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-11-3": "2026-07-26 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-26 12:59 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-26 12:01 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 14:49 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-26 15:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-26 12:53 UTC"
+    "\ud83c\udf81giveaway": "2026-07-26 15:05 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 15:30 UTC",
     "flags": [
       "borracheiros-fdb-ml-0724 | BORRACHEIROS ML None | tier=whale",
       "endless-journey-ml-0725 | Endless Journey ML -265 | tier=whale",
@@ -28,14 +28,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 15:30 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-26 13:02 UTC",
+    "at": "2026-07-26 15:30 UTC",
     "flags": []
   },
-  "bot_version": "9.23.5",
+  "bot_version": "9.24.1",
   "unannounced_results": [
     {
       "id": "atlanta-braves-ml-0725",
@@ -12070,7 +12070,7 @@
       "qty": 3,
       "market_slug": "astatc-cs2-wc-mglz-2026-07-26-map1",
       "outcome": "Wildcard",
-      "status": "settled",
+      "status": "open",
       "ts": "2026-07-25T22:30:58Z",
       "price_path": [
         {
@@ -12169,12 +12169,7 @@
           "ts": 1785079200,
           "px": 0.01
         }
-      ],
-      "result": "LOSS",
-      "payout": 0.0,
-      "settled_at": "2026-07-26T15:29:59Z",
-      "pnl": -1.11,
-      "autopsy": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.01 before the result \u2014 the number ran 36\u00a2 against us \u26a0\ufe0f"
+      ]
     },
     {
       "price": 0.91,
@@ -14369,12 +14364,7 @@
       "outcome": "Lundqvist Lightside",
       "status": "open",
       "ts": "2026-07-26T14:35:16Z",
-      "price_path": [
-        {
-          "ts": 1785079803,
-          "px": 0.67
-        }
-      ]
+      "price_path": []
     },
     {
       "price": 0.7,
@@ -14462,15 +14452,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 8,
-    "losses": 16,
-    "pnl": 9.43,
+    "losses": 15,
+    "pnl": 10.54,
     "trades": 116,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-14",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 94.52,
-    "net": 30.52
+    "account": 101.21,
+    "net": 37.21
   },
   "x_purge_complete": 1785032907.0909944,
   "pm_lessons": [
@@ -14657,14 +14647,6 @@
       "result": "LOSS",
       "pnl": -0.88,
       "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays."
-    },
-    {
-      "ts": "2026-07-26T15:29:59Z",
-      "kind": "EDGE",
-      "outcome": "Wildcard",
-      "result": "LOSS",
-      "pnl": -1.11,
-      "lesson": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.01 before the result \u2014 the number ran 36\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -14729,6 +14711,6 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785079799.2203677,
+  "dep_checked_ts": 1785074408.7582889,
   "x_bio_v": 2
 }
