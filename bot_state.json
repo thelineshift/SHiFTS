@@ -10104,7 +10104,7 @@
       "qty": 11,
       "market_slug": "aec-cs2-isg-bsta-2026-07-25",
       "outcome": "BESTIA Academy",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T22:55:57Z",
       "price_path": [
         {
@@ -10115,7 +10115,13 @@
           "ts": 1785022832,
           "px": 0.03
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 2.31,
+      "pnl": 0.0,
+      "cashout": true,
+      "settled_at": "2026-07-26T00:10:26Z",
+      "autopsy": "+$0.00 \u2014 model 31% vs market 21% was real edge; thesis held. Taken 0.21, rode to 0.03 before the result \u2014 beat the number by 18\u00a2 \u2705 (cashed out early at $2.31)"
     },
     {
       "price": 0.6,
@@ -10129,7 +10135,7 @@
       "qty": 7,
       "market_slug": "astatc-cs2-isg-bsta-2026-07-25-map2",
       "outcome": "Isurus",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T22:55:58Z",
       "price_path": [
         {
@@ -10140,7 +10146,13 @@
           "ts": 1785022832,
           "px": 0.94
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 1.2,
+      "pnl": -3.0,
+      "cashout": true,
+      "settled_at": "2026-07-26T00:10:27Z",
+      "autopsy": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.60, rode to 0.94 before the result \u2014 beat the number by 34\u00a2 \u2705 (cashed out early at $1.20)"
     },
     {
       "price": 0.87,
@@ -10170,8 +10182,11 @@
       "qty": 3,
       "market_slug": "astatc-valorant-sen-loud-2026-07-26-map1",
       "outcome": "Sentinels",
-      "status": "resting",
-      "ts": "2026-07-25T23:10:56Z"
+      "status": "unfilled",
+      "ts": "2026-07-25T23:10:56Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.6,
@@ -10238,7 +10253,7 @@
       "qty": 15,
       "market_slug": "astatc-valorant-geng-rrq-2026-07-26-map1",
       "outcome": "Gen.G Esports",
-      "status": "resting",
+      "status": "open",
       "ts": "2026-07-25T23:15:57Z"
     },
     {
@@ -10276,7 +10291,7 @@
       "qty": 5,
       "market_slug": "aec-lol-al-blg-2026-07-26",
       "outcome": "Bilibili Gaming",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:46:49Z"
     },
     {
@@ -10292,7 +10307,7 @@
       "qty": 3,
       "market_slug": "aec-lol-cr-kcbs-2026-07-26",
       "outcome": "Karmine Corp Blue Stars",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:46:51Z"
     },
     {
@@ -10322,7 +10337,7 @@
       "qty": 13,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-25T23:50:58Z"
     },
     {
@@ -10374,8 +10389,8 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 9,
-    "pnl": 6.06,
+    "losses": 11,
+    "pnl": 3.06,
     "trades": 69,
     "last_recap": "2026-07-25",
     "last_recap_hour": "2026-07-26-00"
@@ -10477,6 +10492,22 @@
       "result": "LOSS",
       "pnl": 0.0,
       "lesson": "+$0.00 \u2014 model 73% vs market 38% was real edge; thesis held. Taken 0.38, rode to 0.29 before the result \u2014 beat the number by 9\u00a2 \u2705 (cashed out early at $8.74)"
+    },
+    {
+      "ts": "2026-07-26T00:10:26Z",
+      "kind": "LIVE-BET",
+      "outcome": "BESTIA Academy",
+      "result": "LOSS",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 31% vs market 21% was real edge; thesis held. Taken 0.21, rode to 0.03 before the result \u2014 beat the number by 18\u00a2 \u2705 (cashed out early at $2.31)"
+    },
+    {
+      "ts": "2026-07-26T00:10:27Z",
+      "kind": "LIVE-BET",
+      "outcome": "Isurus",
+      "result": "LOSS",
+      "pnl": -3.0,
+      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.60, rode to 0.94 before the result \u2014 beat the number by 34\u00a2 \u2705 (cashed out early at $1.20)"
     }
   ],
   "giveaway_x_posts": [
