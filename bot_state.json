@@ -9950,7 +9950,7 @@
       "qty": 1,
       "market_slug": "aec-lol-cfo-dcg-2026-07-26",
       "outcome": "CTBC Flying Oyster",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-25T11:15:56Z",
       "price_path": [
         {
@@ -10049,7 +10049,10 @@
           "ts": 1785069231,
           "px": 0.8
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.38,
@@ -11323,7 +11326,7 @@
       "qty": 15,
       "market_slug": "aec-valorant-geng-rrq-2026-07-26",
       "outcome": "Gen.G Esports",
-      "status": "open",
+      "status": "unfilled",
       "ts": "2026-07-25T21:47:31Z",
       "price_path": [
         {
@@ -11422,7 +11425,10 @@
           "ts": 1785069233,
           "px": 0.97
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.55,
@@ -13401,7 +13407,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-nv-lev-2026-07-26",
       "outcome": "Leviat\u00e1n Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T12:34:13Z"
     },
     {
@@ -13417,7 +13423,7 @@
       "qty": 4,
       "market_slug": "aec-cs2-eac-atr-2026-07-26",
       "outcome": "Atreides",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T12:39:35Z"
     },
     {
@@ -13433,7 +13439,7 @@
       "qty": 10,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T12:43:36Z"
     },
     {
@@ -13449,7 +13455,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T12:43:37Z"
     },
     {
@@ -13465,7 +13471,7 @@
       "qty": 6,
       "market_slug": "aec-cs2-lav-btf-2026-07-26",
       "outcome": "Butterfly",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T12:43:39Z"
     },
     {
@@ -13481,7 +13487,7 @@
       "qty": 11,
       "market_slug": "aec-lol-genga-foxy-2026-07-27",
       "outcome": "BNK FearX Youth",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-26T12:48:36Z"
     },
     {
