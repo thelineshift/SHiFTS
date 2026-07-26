@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.0'
+BOT_VERSION = '9.24.1'
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -1171,6 +1171,30 @@ def x_upload_media(img_bytes, mime='image/png', c=None):
     with urllib.request.urlopen(req, timeout=40) as r:
         d = json.load(r)
     return str(d.get('data', {}).get('id') or d.get('media_id_string') or d.get('media_id'))
+
+X_BIO_V = 2  # bump to re-push the profile bio (owner decree 2026-07-26: advertise league coverage)
+X_BIO_TEXT = "⚡ SHiFT's Picks — receipted picks + a live Polymarket desk. Watching NFL NBA MLB NHL UFC NCAA soccer + CS2 LoL Dota2 Valorant esports 💎"
+
+def x_update_bio(text, url_field='https://thelineshift.github.io/SHiFTS/upgrade.html'):
+    """One-shot profile update (v1.1 form post — body params must join the OAuth1 base string)."""
+    import hmac as _h, hashlib as _hl, secrets as _sc, urllib.parse as _up
+    from urllib.parse import quote as _qq
+    c = x_creds_load()
+    url = 'https://api.x.com/1.1/account/update_profile.json'
+    params = {'description': text, 'url': url_field}
+    op = {'oauth_consumer_key': c['api_key'], 'oauth_nonce': _sc.token_hex(16),
+          'oauth_signature_method': 'HMAC-SHA1', 'oauth_timestamp': str(int(time.time())),
+          'oauth_token': c['access_token'], 'oauth_version': '1.0'}
+    q = lambda s: _qq(str(s), safe='')
+    allp = {**params, **op}
+    base = '&'.join(['POST', q(url), q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(allp.items())))])
+    key = f"{q(c['api_secret'])}&{q(c['access_token_secret'])}"
+    op['oauth_signature'] = base64.b64encode(_h.new(key.encode(), base.encode(), _hl.sha1).digest()).decode()
+    auth = 'OAuth ' + ', '.join(f'{k}="{q(v)}"' for k, v in sorted(op.items()))
+    req = urllib.request.Request(url, data=_up.urlencode(params).encode(), method='POST',
+                                 headers={'Authorization': auth, 'Content-Type': 'application/x-www-form-urlencoded'})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        return json.load(r)
 
 def x_get_json(url, bearer):
     req = urllib.request.Request(url, headers={'Authorization': f'Bearer {bearer}'})
@@ -5423,6 +5447,16 @@ async def audit():
         if not client.guilds:
             return
         guild = client.guilds[0]
+        # ONE-TIME per version: X bio advertises the league watchlist (owner decree 2026-07-26).
+        _stb = await asyncio.to_thread(get_state)
+        if _stb is not None and _stb.get('x_bio_v') != X_BIO_V:
+            try:
+                await asyncio.to_thread(x_update_bio, X_BIO_TEXT)
+                _stb['x_bio_v'] = X_BIO_V
+                await asyncio.to_thread(gh_put, 'bot_state.json', _stb, f'x bio v{X_BIO_V}: league watchlist')
+                print('[audit] x bio updated')
+            except Exception as _be:
+                print('[audit] x bio:', str(_be)[:120])
         flags = []
         for ch in guild.text_channels:
             if not any(k in ch.name for k in PICK_CHANNELS):
@@ -6266,6 +6300,7 @@ def x_engagement_text(st, kind, picks):
             f"📊 SHARP: we show where the number is wrong, why, and by how much. Fair price vs book price — gap math on the card.\nUp to 24 picks/day · 7-day free trial.\n💎 {STORE_PAGE}",
             f"🐋 WHALE: SHiFT's most confident plays dealt to you first — house law, every card. Props, POD & parlays first. Live injury/delay wire. Weekly deep-dive.\n💎 {STORE_PAGE}",
             f"🆓 The free room eats too: a daily free pick, $50 in SOL drawn every Sunday, every result receipted in public.\nCome see a real record.\n💎 {STORE_PAGE}",
+            f"🖥️ What SHiFT watches every scan: NFL · NBA · MLB · NHL · UFC · NCAAF · NCAAB · WNBA · CFL · EPL · La Liga · UCL · MLS · PGA · ATP · WTA\n+ CS2 · LoL · Dota 2 · Valorant esports.\n💎 {STORE_PAGE}",
         ]
         return _x_fit275(ads[doy % len(ads)])
     return None
