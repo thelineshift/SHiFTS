@@ -13443,7 +13443,7 @@
       "qty": 6,
       "market_slug": "aec-lol-lil-cla-2026-07-26",
       "outcome": "Caldya Esport",
-      "status": "settled",
+      "status": "open",
       "ts": "2026-07-26T12:05:49Z",
       "price_path": [
         {
@@ -13454,12 +13454,7 @@
           "ts": 1785073128,
           "px": 0.33
         }
-      ],
-      "result": "WIN",
-      "payout": 6.0,
-      "settled_at": "2026-07-26T14:19:40Z",
-      "pnl": 4.02,
-      "autopsy": "+$4.02 \u2014 model 50% vs market 33% was real edge; thesis held. Rode the number flat to the result."
+      ]
     },
     {
       "price": 0.9,
@@ -14118,27 +14113,53 @@
       "market_slug": "aec-cs2-inox-g2a-2026-07-26",
       "outcome": "G2 Ares",
       "status": "open",
-      "ts": "2026-07-26T14:15:58Z",
-      "price_path": [
-        {
-          "ts": 1785075584,
-          "px": 0.29
-        }
-      ]
+      "ts": "2026-07-26T14:15:58Z"
+    },
+    {
+      "price": 0.9,
+      "short": true,
+      "stake": 2.7,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Team Envy vs. Leviatan Esports",
+      "ev_start": "2026-07-26T21:00:00Z",
+      "reason": "tail-end yield \u2014 11.1% on a near-certain that settles today",
+      "order_id": "BFWFXS3PR9ND",
+      "qty": 3,
+      "market_slug": "aec-valorant-nv-lev-2026-07-26",
+      "outcome": "Leviat\u00e1n Esports",
+      "status": "open",
+      "ts": "2026-07-26T14:20:07Z"
+    },
+    {
+      "price": 0.56,
+      "short": true,
+      "stake": 1.12,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 56% \u2014 11% edge, half-Kelly",
+      "order_id": "BFWDGK56E9P3",
+      "qty": 2,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-26T14:20:09Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 7,
+    "wins": 6,
     "losses": 14,
-    "pnl": 5.78,
-    "trades": 105,
+    "pnl": 1.76,
+    "trades": 107,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-14",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 94.59,
-    "net": 30.59
+    "account": 94.49,
+    "net": 30.49
   },
   "x_purge_complete": 1785032907.0909944,
   "pm_lessons": [
@@ -14301,14 +14322,6 @@
       "result": "LOSS",
       "pnl": 0.0,
       "lesson": "+$0.00 \u2014 model 69% vs market 43% was real edge; thesis held. (cashed out early at $3.44)"
-    },
-    {
-      "ts": "2026-07-26T14:19:40Z",
-      "kind": "EDGE",
-      "outcome": "Caldya Esport",
-      "result": "WIN",
-      "pnl": 4.02,
-      "lesson": "+$4.02 \u2014 model 50% vs market 33% was real edge; thesis held. Rode the number flat to the result."
     }
   ],
   "giveaway_x_posts": [
