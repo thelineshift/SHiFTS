@@ -40,18 +40,8 @@
     "flags": []
   },
   "bot_version": "9.22.1",
-  "unannounced_results": [
-    {
-      "id": "miami-marlins-ml-0725",
-      "desc": "Miami Marlins ML",
-      "odds": -136,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "San Diego Padres 7, Miami Marlins 2",
-      "tier": "whale"
-    }
-  ],
-  "last_x_receipt_ts": 1785013121.5732002,
+  "unannounced_results": [],
+  "last_x_receipt_ts": 1785025828.135844,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
