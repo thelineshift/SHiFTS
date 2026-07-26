@@ -131,18 +131,9 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
-    },
-    {
-      "id": "team-liquid-ml-0726",
-      "desc": "Team Liquid ML",
-      "odds": 128,
-      "result": "WIN",
-      "units": 1.92,
-      "score": "Team Liquid 2-0 Cloud9 \u00b7 final",
-      "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785085455.9389694,
+  "last_x_receipt_ts": 1785103464.9306867,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -237,8 +228,7 @@
     "weekly": "2026-07-26",
     "monthly": "2026-08-01",
     "deepdive_fired": "2026-07-25",
-    "x_ad": "2026-07-26",
-    "draw_fired": "2026-07-26"
+    "x_ad": "2026-07-26"
   },
   "gw_handled": [
     "1530230873780129892",
@@ -14140,7 +14130,8 @@
     "note": "stale 7/24 results \u2014 already receipted in Discord #receipts; X draining them would duplicate-post"
   },
   "x_eng_log": {
-    "2026-07-26-17": "edu"
+    "2026-07-26-17": "edu",
+    "2026-07-26-22": "store-ad"
   },
   "board_posted": [
     "aec-valorant-th-kc-2026-07-26",
