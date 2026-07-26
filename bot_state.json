@@ -8637,7 +8637,7 @@
       "qty": 4,
       "market_slug": "aec-valorant-sen-loud-2026-07-26",
       "outcome": "LOUD",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T08:47:53Z",
       "price_path": [
         {
@@ -8696,7 +8696,13 @@
           "ts": 1785024630,
           "px": 0.06
         }
-      ]
+      ],
+      "result": "LOSS",
+      "payout": 1.76,
+      "pnl": 0.0,
+      "cashout": true,
+      "settled_at": "2026-07-26T00:40:26Z",
+      "autopsy": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.06 before the result \u2014 beat the number by 38\u00a2 \u2705 (cashed out early at $1.76)"
     },
     {
       "price": 0.2,
@@ -10518,7 +10524,7 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 11,
+    "losses": 12,
     "pnl": 3.06,
     "trades": 70,
     "last_recap": "2026-07-25",
@@ -10637,6 +10643,14 @@
       "result": "LOSS",
       "pnl": -3.0,
       "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.60, rode to 0.94 before the result \u2014 beat the number by 34\u00a2 \u2705 (cashed out early at $1.20)"
+    },
+    {
+      "ts": "2026-07-26T00:40:26Z",
+      "kind": "EDGE",
+      "outcome": "LOUD",
+      "result": "LOSS",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.06 before the result \u2014 beat the number by 38\u00a2 \u2705 (cashed out early at $1.76)"
     }
   ],
   "giveaway_x_posts": [
