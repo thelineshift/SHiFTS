@@ -144,6 +144,42 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "2026-07-21-phillies-ml",
+      "desc": "Phillies ML",
+      "odds": -136,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "Los Angeles Dodgers 2, Philadelphia Phillies 1",
+      "tier": "lock"
+    },
+    {
+      "id": "2026-07-21-dodgers-phillies-under85",
+      "desc": "Dodgers/Phillies Under 8.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Los Angeles Dodgers 2, Philadelphia Phillies 1",
+      "tier": "free"
+    },
+    {
+      "id": "2026-07-21-mariners-ml",
+      "desc": "Mariners ML",
+      "odds": -114,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Cincinnati Reds 4, Seattle Mariners 2",
+      "tier": "sharp"
+    },
+    {
+      "id": "2026-07-21-tigers-ml",
+      "desc": "Tigers ML",
+      "odds": 102,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Detroit Tigers 2, Chicago Cubs 11",
+      "tier": "sharp"
     }
   ],
   "last_x_receipt_ts": 1785080398.4187996,
@@ -215,8 +251,7 @@
     "20260724-00",
     "20260724-04",
     "20260724-16",
-    "20260725-00",
-    "20260726-16"
+    "20260725-00"
   ],
   "count_fired": [
     "20260725-2300",
