@@ -153,6 +153,15 @@
       "units": -1.0,
       "score": "Kiwoom DRX 0-2 Paper Rex \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "nip-ml-0726",
+      "desc": "NIP ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "NIP 0-2 paiN \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785067163.9700751,
@@ -13114,13 +13123,7 @@
       "market_slug": "aec-lol-gls-thg-2026-07-26",
       "outcome": "Team High Ground",
       "status": "open",
-      "ts": "2026-07-26T12:05:48Z",
-      "price_path": [
-        {
-          "ts": 1785068367,
-          "px": 0.43
-        }
-      ]
+      "ts": "2026-07-26T12:05:48Z"
     },
     {
       "price": 0.33,
@@ -13136,13 +13139,7 @@
       "market_slug": "aec-lol-lil-cla-2026-07-26",
       "outcome": "Caldya Esport",
       "status": "open",
-      "ts": "2026-07-26T12:05:49Z",
-      "price_path": [
-        {
-          "ts": 1785068367,
-          "px": 0.33
-        }
-      ]
+      "ts": "2026-07-26T12:05:49Z"
     },
     {
       "price": 0.9,
@@ -13189,13 +13186,7 @@
       "market_slug": "aec-lol-dk-t1-2026-07-27",
       "outcome": "Dplus KIA",
       "status": "open",
-      "ts": "2026-07-26T12:09:53Z",
-      "price_path": [
-        {
-          "ts": 1785068367,
-          "px": 0.37
-        }
-      ]
+      "ts": "2026-07-26T12:09:53Z"
     },
     {
       "price": 0.43,
@@ -13210,13 +13201,7 @@
       "market_slug": "aec-lol-hle-krx-2026-07-27",
       "outcome": "Hanwha Life Esports",
       "status": "open",
-      "ts": "2026-07-26T12:09:54Z",
-      "price_path": [
-        {
-          "ts": 1785068367,
-          "px": 0.43
-        }
-      ]
+      "ts": "2026-07-26T12:09:54Z"
     },
     {
       "price": 0.39,
@@ -13232,13 +13217,7 @@
       "market_slug": "aec-lol-t1-ns-2026-07-27",
       "outcome": "Nongshim Red Force",
       "status": "open",
-      "ts": "2026-07-26T12:09:55Z",
-      "price_path": [
-        {
-          "ts": 1785068367,
-          "px": 0.39
-        }
-      ]
+      "ts": "2026-07-26T12:09:55Z"
     },
     {
       "price": 0.36,
@@ -13254,13 +13233,7 @@
       "market_slug": "aec-lol-t1-dns-2026-07-27",
       "outcome": "DN SOOPers",
       "status": "open",
-      "ts": "2026-07-26T12:09:56Z",
-      "price_path": [
-        {
-          "ts": 1785068368,
-          "px": 0.36
-        }
-      ]
+      "ts": "2026-07-26T12:09:56Z"
     },
     {
       "price": 0.57,
@@ -13292,13 +13265,7 @@
       "market_slug": "aec-cs2-sparta-atr-2026-07-26",
       "outcome": "Atreides",
       "status": "open",
-      "ts": "2026-07-26T12:09:59Z",
-      "price_path": [
-        {
-          "ts": 1785068368,
-          "px": 0.47
-        }
-      ]
+      "ts": "2026-07-26T12:09:59Z"
     },
     {
       "price": 0.53,
