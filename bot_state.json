@@ -12783,6 +12783,37 @@
       "outcome": "UNiTY esports",
       "status": "open",
       "ts": "2026-07-26T17:34:46Z"
+    },
+    {
+      "price": 0.9,
+      "short": true,
+      "stake": 2.7,
+      "kind": "TAIL",
+      "p_model": 1.0,
+      "event": "Team Envy vs. Leviatan Esports",
+      "ev_start": "2026-07-26T21:00:00Z",
+      "reason": "tail-end yield \u2014 11.1% on a near-certain that settles today",
+      "order_id": "BFZK4P3X29ND",
+      "qty": 3,
+      "market_slug": "aec-valorant-nv-lev-2026-07-26",
+      "outcome": "Leviat\u00e1n Esports",
+      "status": "open",
+      "ts": "2026-07-26T17:39:46Z"
+    },
+    {
+      "price": 0.17,
+      "stake": 1.53,
+      "kind": "EDGE",
+      "p_model": 0.30769230769230776,
+      "event": "UNiTY esports vs. Mai Tai",
+      "ev_start": "2026-07-27T11:00:00Z",
+      "reason": "model 31% vs market 17% \u2014 14% edge, half-Kelly",
+      "order_id": "BFZJTANZM9P6",
+      "qty": 9,
+      "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
+      "outcome": "UNiTY esports",
+      "status": "open",
+      "ts": "2026-07-26T17:39:47Z"
     }
   ],
   "pm_stats": {
@@ -12790,7 +12821,7 @@
     "wins": 10,
     "losses": 19,
     "pnl": 9.7,
-    "trades": 131,
+    "trades": 133,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-26-16",
     "deposits": 64.0,
