@@ -1,10 +1,28 @@
 {
-  "ts": "2026-07-26T03:00:29Z",
+  "ts": "2026-07-26T03:15:29Z",
   "configured": true,
   "balance_usd": 75.35,
   "buying_power": 17.35,
   "positions": [],
   "open_orders": [
+    {
+      "market": "astatc-valorant-geng-rrq-2026-07-26-map1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.58",
+      "qty": 15
+    },
+    {
+      "market": "astatc-valorant-geng-rrq-2026-07-26-map1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.59",
+      "qty": 15
+    },
+    {
+      "market": "aec-lol-al-blg-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.6",
+      "qty": 5
+    },
     {
       "market": "aec-lol-al-blg-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
@@ -28,12 +46,6 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.6",
       "qty": 8
-    },
-    {
-      "market": "aec-lol-al-blg-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 5
     },
     {
       "market": "astatc-valorant-beg-hbs-2026-07-27-map1",
@@ -80,6 +92,18 @@
     {
       "market": "aec-lol-cr-kcbs-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.92",
+      "qty": 2
+    },
+    {
+      "market": "aec-lol-cr-kcbs-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.91",
+      "qty": 2
+    },
+    {
+      "market": "aec-lol-cr-kcbs-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.91",
       "qty": 6
     },
@@ -96,34 +120,10 @@
       "qty": 3
     },
     {
-      "market": "aec-lol-cr-kcbs-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.92",
-      "qty": 2
-    },
-    {
-      "market": "aec-lol-cr-kcbs-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.91",
-      "qty": 2
-    },
-    {
-      "market": "aec-valorant-beg-hbs-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.58",
-      "qty": 7
-    },
-    {
       "market": "aec-valorant-beg-hbs-2026-07-27",
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.61",
       "qty": 1
-    },
-    {
-      "market": "astatc-valorant-geng-rrq-2026-07-26-map1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.58",
-      "qty": 15
     }
   ]
 }
