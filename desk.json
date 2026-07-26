@@ -1,37 +1,31 @@
 {
-  "updated": "2026-07-26T18:04:54Z",
-  "record": "10-19",
-  "trades": 142,
-  "open": 33,
-  "pnl": 9.7,
-  "account": 102.98,
+  "updated": "2026-07-26T20:04:54Z",
+  "record": "12-21",
+  "trades": 146,
+  "open": 24,
+  "pnl": 12.18,
+  "account": 112.8,
   "deposits": 64.0,
-  "net_pnl": 38.98,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 6-10 \u00b7 LIVE-BET 1-4",
+  "net_pnl": 48.8,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 8-11 \u00b7 LIVE-BET 1-5",
   "recent": [
     {
-      "outcome": "Team High Ground",
-      "short": true,
-      "result": "lost",
-      "pnl": -3.44
-    },
-    {
-      "outcome": "Caldya Esport",
+      "outcome": "megoshort",
       "short": true,
       "result": "won",
-      "pnl": 4.02
-    },
-    {
-      "outcome": "Atreides",
-      "short": true,
-      "result": "won",
-      "pnl": 3.18
+      "pnl": 2.8
     },
     {
       "outcome": "ODDIK",
       "short": false,
       "result": "lost",
       "pnl": -3.78
+    },
+    {
+      "outcome": "NIP",
+      "short": true,
+      "result": "lost",
+      "pnl": -2.3
     },
     {
       "outcome": "FUT Esports",
@@ -44,6 +38,12 @@
       "short": false,
       "result": "won",
       "pnl": 6.48
+    },
+    {
+      "outcome": "G2 Ares",
+      "short": true,
+      "result": "lost",
+      "pnl": -0.87
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
