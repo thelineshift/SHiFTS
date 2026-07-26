@@ -1,32 +1,14 @@
 {
-  "updated": "2026-07-26T20:04:54Z",
-  "record": "12-21",
-  "trades": 146,
-  "open": 24,
-  "pnl": 12.18,
-  "account": 112.8,
+  "updated": "2026-07-26T22:04:55Z",
+  "record": "13-24",
+  "trades": 174,
+  "open": 28,
+  "pnl": 18.81,
+  "account": 101.31,
   "deposits": 64.0,
-  "net_pnl": 48.8,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 8-11 \u00b7 LIVE-BET 1-5",
+  "net_pnl": 37.31,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 9-13 \u00b7 LIVE-BET 1-6",
   "recent": [
-    {
-      "outcome": "megoshort",
-      "short": true,
-      "result": "won",
-      "pnl": 2.8
-    },
-    {
-      "outcome": "ODDIK",
-      "short": false,
-      "result": "lost",
-      "pnl": -3.78
-    },
-    {
-      "outcome": "NIP",
-      "short": true,
-      "result": "lost",
-      "pnl": -2.3
-    },
     {
       "outcome": "FUT Esports",
       "short": true,
@@ -44,6 +26,24 @@
       "short": true,
       "result": "lost",
       "pnl": -0.87
+    },
+    {
+      "outcome": "Team Jenz",
+      "short": false,
+      "result": "lost",
+      "pnl": -2.8
+    },
+    {
+      "outcome": "Fluxo",
+      "short": false,
+      "result": "lost",
+      "pnl": -1.36
+    },
+    {
+      "outcome": "Privateer Gaming",
+      "short": true,
+      "result": "lost",
+      "pnl": -0.8
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
