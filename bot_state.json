@@ -42,15 +42,6 @@
   "bot_version": "9.22.1",
   "unannounced_results": [
     {
-      "id": "3-leg-parlay-0725",
-      "desc": "Chicago Cubs ML + Atlanta Braves ML + Miami Marlins ML",
-      "odds": -16,
-      "result": "LOSS",
-      "units": -0.5,
-      "score": "Legs: None: win \u00b7 None: loss \u00b7 None: loss",
-      "tier": "sharp"
-    },
-    {
       "id": "chicago-fire-fc-ml-0725",
       "desc": "Chicago Fire FC ML",
       "odds": 160,
@@ -177,7 +168,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785060628.067489,
+  "last_x_receipt_ts": 1785064228.723067,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -9873,7 +9864,7 @@
       "qty": 3,
       "market_slug": "aec-valorant-fpx-wol-2026-07-26",
       "outcome": "Wolves Esports",
-      "status": "settled",
+      "status": "open",
       "ts": "2026-07-25T18:06:40Z",
       "price_path": [
         {
@@ -9972,13 +9963,7 @@
           "ts": 1785063031,
           "px": 0.15
         }
-      ],
-      "result": "LOSS",
-      "payout": 1.32,
-      "pnl": 0.0,
-      "cashout": true,
-      "settled_at": "2026-07-26T11:10:26Z",
-      "autopsy": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.15 before the result \u2014 beat the number by 29\u00a2 \u2705 (cashed out early at $1.32)"
+      ]
     },
     {
       "price": 0.63,
@@ -12436,7 +12421,7 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 3,
-    "losses": 15,
+    "losses": 14,
     "pnl": -2.69,
     "trades": 70,
     "last_recap": "2026-07-25",
@@ -12579,14 +12564,6 @@
       "result": "LOSS",
       "pnl": -2.95,
       "lesson": "model 86% vs market 59% missed \u2014 logged for the playbook review. Taken 0.59, rode to 0.61 before the result \u2014 beat the number by 2\u00a2 \u2705 (cashed out early at $5.90)"
-    },
-    {
-      "ts": "2026-07-26T11:10:26Z",
-      "kind": "EDGE",
-      "outcome": "Wolves Esports",
-      "result": "LOSS",
-      "pnl": 0.0,
-      "lesson": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.15 before the result \u2014 beat the number by 29\u00a2 \u2705 (cashed out early at $1.32)"
     }
   ],
   "giveaway_x_posts": [
