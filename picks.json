@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T02:10:28Z",
+  "updated": "2026-07-26T02:50:28Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1502,7 +1502,10 @@
         "away_ml": 100,
         "total": 2.5,
         "ts": 1785027626
-      }
+      },
+      "result": "LOSS",
+      "score": "Vancouver Whitecaps 0, Minnesota United FC 0",
+      "units_result": -1.0
     },
     {
       "id": "chicago-cubs-ml-0725",
