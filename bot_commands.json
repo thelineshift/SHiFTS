@@ -1,5 +1,5 @@
 {
- "seq": 511,
+ "seq": 512,
  "commands": [
   {
    "seq": 400,
@@ -658,6 +658,13 @@
    "channel": "giveaway",
    "marker": "GIVEAWAY UPGRADE",
    "content": "\u26a1 **ENTRIES ARE INSTANT \u2014 AND EASIER NOW.**\n\nDrop your **X handle** here and you're **in the pool immediately** \u2014 \u2705 means your ticket is in Sunday's draw, full stop.\nFull tickets lock when **follow + like** verify (we re-scan automatically in the background) \u2014 repost helps the giveaway travel but we take your word for it.\n\n\ud83d\udd0e Type **!entry** anytime for your live status."
+  },
+  {
+   "seq": 512,
+   "action": "replace_pinned",
+   "channel": "upgrade",
+   "marker": "PAID ROOMS",
+   "content": "\ud83c\udfc6 **SHiFT'S PICKS \u2014 PAID ROOMS, UPGRADE HERE** \u26a1\n\n**Every paid room gets:** cards first, full analysis, receipts on every result, and the \ud83d\udee1\ufe0f **SHiFT GUARANTEE** \u2014 if our receipted picks finish your first month in the red, your next month is FREE, automatically.\n\n\ud83d\udda5\ufe0f **WHAT SHiFT WATCHES \u2014 EVERY SCAN:**\nNFL \u00b7 NCAAF \u00b7 CFL \u00b7 NBA \u00b7 NCAAB \u00b7 WNBA \u00b7 MLB \u00b7 NHL \u00b7 UFC \u00b7 EPL \u00b7 La Liga \u00b7 UCL \u00b7 MLS \u00b7 PGA \u00b7 ATP \u00b7 WTA\n\ud83c\udfae **Esports:** CS2 (BLAST \u00b7 IEM \u00b7 StarLadder) \u00b7 LoL (LCK \u00b7 LPL \u00b7 LEC \u00b7 LCS) \u00b7 Dota 2 \u00b7 Valorant (VCT)\n\n\ud83d\udd12 **LOCK \u2014 $29.99/mo** \u00b7 up to 18 picks/day \u00b7 **parlays unlocked** on every card\n\ud83d\udcca **SHARP \u2014 $49.99/mo** \u00b7 up to 24 picks/day \u00b7 gap math on the card: fair price vs book price, why the number is wrong\n\ud83d\udc0b **WHALE \u2014 $99.99/mo** \u00b7 up to 36 picks/day dealt **first** \u00b7 props, POD & parlays first \u00b7 live injury/delay wire \u00b7 \ud83e\udde0 Weekly Whale Deep-Dive (the full autopsy, charts & stats) \u00b7 \ud83d\udda5\ufe0f **THE WAR ROOM** \u2014 your private command center with live records + Trading Floor \u00b7 \ud83d\udcc8 **THE DESK** \u2014 every Polymarket entry, exit & cash-out live in Whale-only #shift-trades, with running P&L \u00b7 \ud83e\udd16 AUTO-TAIL ready\n_The War Room + desk floor are **Whale exclusive** \u2014 no other tier touches the desk._\n\n\ud83d\udc8e Upgrade: https://thelineshift.github.io/SHiFTS/upgrade.html (7-day free trial, cancel anytime)"
   }
  ]
 }
