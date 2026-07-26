@@ -1,8 +1,8 @@
 {
-  "ts": "2026-07-26T13:23:36Z",
+  "ts": "2026-07-26T13:38:36Z",
   "configured": true,
-  "balance_usd": 98.04,
-  "buying_power": 20.04,
+  "balance_usd": 96.56,
+  "buying_power": 16.56,
   "positions": [],
   "open_orders": [
     {
@@ -54,6 +54,30 @@
       "qty": 6
     },
     {
+      "market": "aec-valorant-beg-hbs-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.57",
+      "qty": 2
+    },
+    {
+      "market": "aec-valorant-beg-hbs-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.57",
+      "qty": 3
+    },
+    {
+      "market": "aec-valorant-beg-hbs-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.57",
+      "qty": 2
+    },
+    {
+      "market": "aec-valorant-beg-hbs-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.57",
+      "qty": 2
+    },
+    {
       "market": "aec-cs2-eac-atr-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.58",
@@ -72,34 +96,10 @@
       "qty": 11
     },
     {
-      "market": "aec-valorant-m8gc-gxgc-2026-07-27",
+      "market": "astatc-valorant-m8gc-gxgc-2026-07-27-map1",
       "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.74",
-      "qty": 7
-    },
-    {
-      "market": "aec-valorant-beg-hbs-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.57",
-      "qty": 2
-    },
-    {
-      "market": "aec-valorant-beg-hbs-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.57",
-      "qty": 3
-    },
-    {
-      "market": "aec-valorant-beg-hbs-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.57",
-      "qty": 2
-    },
-    {
-      "market": "aec-valorant-beg-hbs-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.57",
-      "qty": 2
+      "price": "0.65",
+      "qty": 6
     },
     {
       "market": "aec-cs2-lav-btf-2026-07-26",
@@ -114,16 +114,16 @@
       "qty": 6
     },
     {
-      "market": "aec-cs2-mgc-nip-2026-07-26",
+      "market": "aec-cs2-lav-btf-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.54",
-      "qty": 5
+      "price": "0.53",
+      "qty": 4
     },
     {
-      "market": "aec-cs2-3dmax-fut-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.56",
-      "qty": 2
+      "market": "aec-valorant-m8gc-gxgc-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.74",
+      "qty": 7
     }
   ]
 }
