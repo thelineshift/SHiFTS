@@ -2201,10 +2201,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -142,
+        "away_ml": 118,
         "total": 7.0,
-        "ts": 1785051026
+        "ts": 1785056426
       }
     },
     {
@@ -2369,10 +2369,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -130,
+        "away_ml": 108,
         "total": 8.5,
-        "ts": 1785051026
+        "ts": 1785056426
       }
     },
     {
