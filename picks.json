@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T17:03:30Z",
+  "updated": "2026-07-26T19:24:18Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -316,7 +316,10 @@
       "opp": "Honv\u00e9d",
       "analysis": "4-1 last 5 (beat ROUNDS, Bushido Wildcats, megoshort) (lost to Misa Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ROUNDS, Bushido Wildcats, megoshort) (lost to Misa Esports) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** ",
       "awayTeam": "Privateer Gaming",
-      "homeTeam": "Honv\u00e9d"
+      "homeTeam": "Honv\u00e9d",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Privateer Gaming 0-2 Honv\u00e9d \u00b7 final"
     },
     {
       "id": "new-york-yankees-ml-0726",
