@@ -34,15 +34,6 @@
   "bot_version": "9.24.13",
   "unannounced_results": [
     {
-      "id": "san-jose-earthquakes-ml-0725",
-      "desc": "San Jose Earthquakes ML",
-      "odds": -120,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "LA Galaxy 1, San Jose Earthquakes 1",
-      "tier": "whale"
-    },
-    {
       "id": "lng-esports-ml-0726",
       "desc": "LNG Esports ML",
       "odds": 119,
@@ -86,9 +77,18 @@
       "units": -1.5,
       "score": "BNK FearX Youth 0-1 Gen.G \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "virtus.pro-ml-0727",
+      "desc": "Virtus.pro ML",
+      "odds": -150,
+      "result": "WIN",
+      "units": 0.67,
+      "score": "Virtus.pro 2-0 TokyoSavage \u00b7 final",
+      "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785161361.1528428,
+  "last_x_receipt_ts": 1785164223.020282,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
