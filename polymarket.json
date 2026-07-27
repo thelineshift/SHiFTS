@@ -1,7 +1,33 @@
 {
-  "ts": "2026-07-27T22:40:20Z",
+  "ts": "2026-07-27T22:44:23Z",
   "configured": true,
   "balance_usd": 89.85,
   "buying_power": 24.85,
-  "error": "<!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-"
+  "positions": [],
+  "open_orders": [
+    {
+      "market": "aec-mlb-tex-tb-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.55",
+      "qty": 3
+    },
+    {
+      "market": "aec-mlb-col-sd-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.59",
+      "qty": 2
+    },
+    {
+      "market": "aec-mlb-sea-lad-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.57",
+      "qty": 3
+    },
+    {
+      "market": "aec-wnba-conn-wsh-2026-07-28",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.69",
+      "qty": 2
+    }
+  ]
 }
