@@ -713,10 +713,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -112,
-        "away_ml": -108,
+        "home_ml": -110,
+        "away_ml": -109,
         "total": 8.5,
-        "ts": 1785166467
+        "ts": 1785171867
       }
     },
     {
@@ -867,10 +867,10 @@
       "homeTeam": "Washington Nationals",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": -101,
+        "home_ml": -123,
+        "away_ml": 102,
         "total": 9.5,
-        "ts": 1785161360
+        "ts": 1785171868
       }
     },
     {
