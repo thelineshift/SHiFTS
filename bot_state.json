@@ -5,18 +5,18 @@
     "posted+pinned in #\ud83c\udf81giveaway"
   ],
   "time_audit": {
-    "at": "2026-07-27 12:16 UTC",
+    "at": "2026-07-27 11:46 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-2": "2026-07-27 12:01 UTC",
+    "\ud83c\udfaffree-pick-2-2": "2026-07-27 08:01 UTC",
     "\ud83e\uddfereceipts": "2026-07-27 11:16 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 12:03 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 11:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-27 12:15 UTC"
+    "\ud83c\udf81giveaway": "2026-07-27 11:45 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 12:16 UTC",
+    "at": "2026-07-27 11:46 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,11 +24,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 12:16 UTC",
+    "at": "2026-07-27 11:46 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 12:16 UTC",
+    "at": "2026-07-27 11:46 UTC",
     "flags": []
   },
   "bot_version": "9.24.5",
@@ -112,15 +112,6 @@
       "result": "LOSS",
       "units": -1.5,
       "score": "BNK FearX Youth 0-1 Gen.G \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "ex-rustec-ml-0727",
-      "desc": "ex-RUSTEC ML",
-      "odds": -178,
-      "result": "WIN",
-      "units": 0.84,
-      "score": "ex-RUSTEC 2-0 Entropy \u00b7 final",
       "tier": "whale"
     }
   ],
@@ -13105,8 +13096,11 @@
       "qty": 6,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T20:50:04Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T20:50:04Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.23,
@@ -13373,8 +13367,11 @@
       "qty": 5,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T20:59:58Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T20:59:58Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -13420,8 +13417,11 @@
       "qty": 6,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T21:59:48Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T21:59:48Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.91,
@@ -13501,8 +13501,11 @@
       "qty": 6,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T22:09:51Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T22:09:51Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.97,
@@ -14659,7 +14662,7 @@
       "qty": 3,
       "market_slug": "aec-wnba-conn-wsh-2026-07-28",
       "outcome": "Washington",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T12:06:48Z"
     },
     {
@@ -14675,7 +14678,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T12:11:47Z"
     }
   ],
