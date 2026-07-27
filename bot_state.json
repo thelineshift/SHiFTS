@@ -14884,7 +14884,13 @@
       "market_slug": "aec-lol-deer-ea-2026-07-27",
       "outcome": "Epic Avalanche",
       "status": "open",
-      "ts": "2026-07-27T13:04:01Z"
+      "ts": "2026-07-27T13:04:01Z",
+      "price_path": [
+        {
+          "ts": 1785157673,
+          "px": 0.08
+        }
+      ]
     }
   ],
   "pm_stats": {
