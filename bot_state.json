@@ -5,35 +5,43 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 20:04 UTC",
+    "at": "2026-07-27 16:04 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-2": "2026-07-27 20:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 19:44 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 20:01 UTC",
+    "\ud83c\udfaffree-pick-2-2": "2026-07-27 16:01 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 15:44 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 16:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 13:13 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 20:04 UTC",
+    "at": "2026-07-27 16:04 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
-      "over-7.0-0726 | Over 7.0 -110 | tier=sharp",
-      "lavked-ml-0727 | Lavked ML -150 | tier=sharp"
+      "over-7.0-0726 | Over 7.0 -110 | tier=sharp"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 20:04 UTC",
+    "at": "2026-07-27 16:04 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 20:04 UTC",
+    "at": "2026-07-27 16:04 UTC",
     "flags": []
   },
   "bot_version": "9.24.14",
   "unannounced_results": [
+    {
+      "id": "misa-esports-ml-0726",
+      "desc": "Misa Esports ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
+      "tier": "whale"
+    },
     {
       "id": "team-flacons-ml-0727",
       "desc": "Team flacons ML",
@@ -13216,10 +13224,6 @@
       "ts": "2026-07-26T20:55:22Z",
       "price_path": [
         {
-          "ts": 1785128774,
-          "px": 0.48
-        },
-        {
           "ts": 1785130577,
           "px": 0.44
         },
@@ -13309,6 +13313,10 @@
         },
         {
           "ts": 1785180268,
+          "px": 0.28
+        },
+        {
+          "ts": 1785182668,
           "px": 0.28
         }
       ]
@@ -14341,6 +14349,10 @@
         {
           "ts": 1785180269,
           "px": 0.17
+        },
+        {
+          "ts": 1785182669,
+          "px": 0.17
         }
       ]
     },
@@ -14442,6 +14454,10 @@
         },
         {
           "ts": 1785180269,
+          "px": 0.46
+        },
+        {
+          "ts": 1785182669,
           "px": 0.46
         }
       ]
@@ -14631,6 +14647,10 @@
         },
         {
           "ts": 1785180269,
+          "px": 0.425
+        },
+        {
+          "ts": 1785182669,
           "px": 0.425
         }
       ]
@@ -15565,6 +15585,10 @@
         },
         {
           "ts": 1785180270,
+          "px": 0.31
+        },
+        {
+          "ts": 1785182670,
           "px": 0.31
         }
       ]
@@ -17113,7 +17137,13 @@
       "market_slug": "aec-lol-znt-dyn-2026-07-28",
       "outcome": "Dynasty",
       "status": "open",
-      "ts": "2026-07-27T19:55:25Z"
+      "ts": "2026-07-27T19:55:25Z",
+      "price_path": [
+        {
+          "ts": 1785182672,
+          "px": 0.58
+        }
+      ]
     }
   ],
   "pm_stats": {
