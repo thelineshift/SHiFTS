@@ -1,13 +1,13 @@
 {
-  "updated": "2026-07-26T22:04:55Z",
-  "record": "13-24",
-  "trades": 174,
-  "open": 28,
-  "pnl": 18.81,
-  "account": 101.31,
+  "updated": "2026-07-27T00:00:59Z",
+  "record": "13-25",
+  "trades": 181,
+  "open": 25,
+  "pnl": 17.49,
+  "account": 103.94,
   "deposits": 64.0,
-  "net_pnl": 37.31,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 9-13 \u00b7 LIVE-BET 1-6",
+  "net_pnl": 39.94,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 9-14 \u00b7 LIVE-BET 1-6",
   "recent": [
     {
       "outcome": "FUT Esports",
