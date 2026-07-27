@@ -28327,20 +28327,35 @@
           "px": 0.33
         }
       ]
+    },
+    {
+      "price": 0.32,
+      "stake": 2.88,
+      "kind": "EDGE",
+      "p_model": 0.5302707113591806,
+      "event": "Francesco Maestrelli vs. Lukas Neumayer",
+      "ev_start": "2026-07-28T13:30:00Z",
+      "reason": "Elo 53% vs market 32% \u2014 21% edge, half-Kelly",
+      "order_id": "BGSBZ5NC29NM",
+      "qty": 9,
+      "market_slug": "aec-atp-framae-lukneu-2026-07-27",
+      "outcome": "Francesco Maestrelli",
+      "status": "open",
+      "ts": "2026-07-27T23:25:04Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 24,
-    "losses": 53,
-    "pnl": -56.68,
-    "trades": 282,
+    "losses": 52,
+    "pnl": -53.44,
+    "trades": 283,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-22",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 92.65,
-    "net": 28.65,
+    "account": 95.89,
+    "net": 31.89,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -28350,7 +28365,7 @@
       ],
       "EDGE": [
         18,
-        39,
+        38,
         0
       ],
       "LIVE-BET": [
@@ -28370,6 +28385,14 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
+    {
+      "ts": "2026-07-27T12:58:04Z",
+      "kind": "EDGE",
+      "outcome": "Mai Tai",
+      "result": "LOSS",
+      "pnl": -6.63,
+      "lesson": "model 69% vs market 39% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.10 before the result \u2014 beat the number by 29\u00a2 \u2705"
+    },
     {
       "ts": "2026-07-27T13:49:17Z",
       "kind": "EDGE",
@@ -28601,14 +28624,6 @@
       "result": "WIN",
       "pnl": 0.09,
       "lesson": "+$0.09 \u2014 model 100% vs market 97% was real edge; thesis held. Taken 0.97, slid to 0.63 before the result \u2014 the number ran 34\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-27T23:24:20Z",
-      "kind": "EDGE",
-      "outcome": "Vivo Keyd Stars Academy",
-      "result": "LOSS",
-      "pnl": -3.24,
-      "lesson": "model 57% vs market 27% missed \u2014 logged for the playbook review. Taken 0.27, slid to 0.05 before the result \u2014 the number ran 22\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
