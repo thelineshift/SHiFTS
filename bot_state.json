@@ -5,18 +5,18 @@
     "posted+pinned in #\ud83c\udf81giveaway"
   ],
   "time_audit": {
-    "at": "2026-07-27 12:57 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 12:19 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 12:16 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-27 12:19 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-27 12:53 UTC"
+    "\ud83c\udf81giveaway": "2026-07-27 12:15 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 12:57 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,14 +24,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 12:57 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 12:57 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": []
   },
-  "bot_version": "9.24.7",
+  "bot_version": "9.24.6",
   "unannounced_results": [
     {
       "id": "milwaukee-brewers-ml-0725",
@@ -2531,157 +2531,59 @@
     "esp": [
       {
         "sport": "cs2",
-        "start": "2026-07-27T10:35:00Z",
+        "start": "2026-07-27T13:20:00Z",
         "t1": {
-          "id": 133542,
-          "name": "CYBERSHOKE Esports"
+          "id": 138812,
+          "name": "Noir Verse"
         },
         "t2": {
-          "id": 138996,
-          "name": "Team flacons"
+          "id": 138419,
+          "name": "PURE"
+        },
+        "league": "Urban Riga",
+        "bo": 1
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T13:20:00Z",
+        "t1": {
+          "id": 137440,
+          "name": "ASTRAL"
+        },
+        "t2": {
+          "id": 129370,
+          "name": "Atputies"
+        },
+        "league": "Urban Riga",
+        "bo": 1
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T13:30:00Z",
+        "t1": {
+          "id": 135497,
+          "name": "WW Team"
+        },
+        "t2": {
+          "id": 138997,
+          "name": "beznegativa"
         },
         "league": "CIS LAN Championship",
         "bo": 3
       },
       {
         "sport": "cs2",
-        "start": "2026-07-27T11:00:00Z",
+        "start": "2026-07-27T13:30:00Z",
         "t1": {
-          "id": 133063,
-          "name": "UNiTY esports"
+          "id": 138998,
+          "name": "TokyoSavage"
         },
         "t2": {
-          "id": 138848,
-          "name": "Mai Tai"
+          "id": 3288,
+          "name": "Virtus.pro"
         },
-        "league": "Thunderpick World Championship",
+        "league": "CIS LAN Championship",
         "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T11:00:00Z",
-        "t1": {
-          "id": 136659,
-          "name": "SPARTA"
-        },
-        "t2": {
-          "id": 128887,
-          "name": "Honv\u00e9d"
-        },
-        "league": "CCT Europe",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T11:00:00Z",
-        "t1": {
-          "id": 138419,
-          "name": "PURE"
-        },
-        "t2": {
-          "id": 129370,
-          "name": "Atputies"
-        },
-        "league": "Urban Riga",
-        "bo": 1
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T11:00:00Z",
-        "t1": {
-          "id": 137440,
-          "name": "ASTRAL"
-        },
-        "t2": {
-          "id": 138812,
-          "name": "Noir Verse"
-        },
-        "league": "Urban Riga",
-        "bo": 1
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T11:00:00Z",
-        "t1": {
-          "id": 138963,
-          "name": "Black Phoenix"
-        },
-        "t2": {
-          "id": 138027,
-          "name": "Benched gods"
-        },
-        "league": "CCT Europe",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T11:00:00Z",
-        "t1": {
-          "id": 137932,
-          "name": "ex-RUBY"
-        },
-        "t2": {
-          "id": 138974,
-          "name": "ex-RUSTEC"
-        },
-        "league": "NODWIN Clutch Series",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T12:00:00Z",
-        "t1": {
-          "id": 138419,
-          "name": "PURE"
-        },
-        "t2": {
-          "id": 137440,
-          "name": "ASTRAL"
-        },
-        "league": "Urban Riga",
-        "bo": 1
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T12:00:00Z",
-        "t1": {
-          "id": 138812,
-          "name": "Noir Verse"
-        },
-        "t2": {
-          "id": 129370,
-          "name": "Atputies"
-        },
-        "league": "Urban Riga",
-        "bo": 1
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T13:00:00Z",
-        "t1": {
-          "id": 138812,
-          "name": "Noir Verse"
-        },
-        "t2": {
-          "id": 138419,
-          "name": "PURE"
-        },
-        "league": "Urban Riga",
-        "bo": 1
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T13:00:00Z",
-        "t1": {
-          "id": 137440,
-          "name": "ASTRAL"
-        },
-        "t2": {
-          "id": 129370,
-          "name": "Atputies"
-        },
-        "league": "Urban Riga",
-        "bo": 1
       },
       {
         "sport": "cs2",
@@ -2741,34 +2643,6 @@
       },
       {
         "sport": "cs2",
-        "start": "2026-07-27T15:00:00Z",
-        "t1": {
-          "id": 135497,
-          "name": "WW Team"
-        },
-        "t2": {
-          "id": 138997,
-          "name": "beznegativa"
-        },
-        "league": "CIS LAN Championship",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T15:00:00Z",
-        "t1": {
-          "id": 138998,
-          "name": "TokyoSavage"
-        },
-        "t2": {
-          "id": 3288,
-          "name": "Virtus.pro"
-        },
-        "league": "CIS LAN Championship",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
         "start": "2026-07-27T15:30:00Z",
         "t1": {
           "id": 127899,
@@ -2810,45 +2684,129 @@
         "bo": 1
       },
       {
-        "sport": "lol",
-        "start": "2026-07-27T10:45:00Z",
+        "sport": "cs2",
+        "start": "2026-07-27T15:30:00Z",
         "t1": {
-          "id": 128346,
-          "name": "Gen.G Global Academy"
+          "id": 126624,
+          "name": "Brute"
         },
         "t2": {
-          "id": 134155,
-          "name": "BNK FearX Youth"
+          "id": 126491,
+          "name": "NAVI Junior"
         },
-        "league": "LCK Challengers League",
-        "bo": 3
-      },
-      {
-        "sport": "lol",
-        "start": "2026-07-27T11:00:00Z",
-        "t1": {
-          "id": 128218,
-          "name": "HANJIN BRION"
-        },
-        "t2": {
-          "id": 132531,
-          "name": "Dplus KIA"
-        },
-        "league": "KeSPA Cup",
+        "league": "Urban Riga",
         "bo": 1
       },
       {
-        "sport": "lol",
-        "start": "2026-07-27T11:45:00Z",
+        "sport": "cs2",
+        "start": "2026-07-27T16:30:00Z",
         "t1": {
-          "id": 126061,
-          "name": "T1"
+          "id": 126491,
+          "name": "NAVI Junior"
         },
         "t2": {
-          "id": 136063,
-          "name": "DN SOOPers"
+          "id": 138835,
+          "name": "LEO"
         },
-        "league": "KeSPA Cup",
+        "league": "Urban Riga",
+        "bo": 1
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T16:30:00Z",
+        "t1": {
+          "id": 126624,
+          "name": "Brute"
+        },
+        "t2": {
+          "id": 129160,
+          "name": "MOUZ NXT"
+        },
+        "league": "Urban Riga",
+        "bo": 1
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T17:00:00Z",
+        "t1": {
+          "id": 138479,
+          "name": "uust _esports"
+        },
+        "t2": {
+          "id": 138358,
+          "name": "banda chuya"
+        },
+        "league": "ESEA",
+        "bo": 1
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T17:00:00Z",
+        "t1": {
+          "id": 137701,
+          "name": "Bebop"
+        },
+        "t2": {
+          "id": 137508,
+          "name": "Falcons Force"
+        },
+        "league": "Thunderpick World Championship",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T17:00:00Z",
+        "t1": {
+          "id": 138026,
+          "name": "Atreides"
+        },
+        "t2": {
+          "id": 138848,
+          "name": "Mai Tai"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T17:00:00Z",
+        "t1": {
+          "id": 137500,
+          "name": "CYBERSHOKE Prospects"
+        },
+        "t2": {
+          "id": 128258,
+          "name": "Entropy"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T17:00:00Z",
+        "t1": {
+          "id": 138406,
+          "name": "Just Players"
+        },
+        "t2": {
+          "id": 138101,
+          "name": "Inner Circle Academy"
+        },
+        "league": "NODWIN Clutch Series",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T17:30:00Z",
+        "t1": {
+          "id": 139009,
+          "name": "LFO UKRAINE"
+        },
+        "t2": {
+          "id": 139010,
+          "name": "GoldRashers"
+        },
+        "league": "ESEA",
         "bo": 1
       },
       {
@@ -3060,6 +3018,48 @@
         },
         "league": "HLL",
         "bo": 2
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-28T15:00:00Z",
+        "t1": {
+          "id": 138071,
+          "name": "UB Alma Mater"
+        },
+        "t2": {
+          "id": 126737,
+          "name": "UCAM Esports Club"
+        },
+        "league": "LES",
+        "bo": 3
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-28T15:00:00Z",
+        "t1": {
+          "id": 137823,
+          "name": "ALMO Players"
+        },
+        "t2": {
+          "id": 138403,
+          "name": "Spartans EU"
+        },
+        "league": "HLL",
+        "bo": 2
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-28T16:00:00Z",
+        "t1": {
+          "id": 137898,
+          "name": "TLN Pirates"
+        },
+        "t2": {
+          "id": 134158,
+          "name": "Skillcamp Esport"
+        },
+        "league": "LFL",
+        "bo": 1
       },
       {
         "sport": "valorant",
@@ -3315,34 +3315,6 @@
       },
       {
         "sport": "dota2",
-        "start": "2026-07-27T12:00:00Z",
-        "t1": {
-          "id": 136960,
-          "name": "YBN Team"
-        },
-        "t2": {
-          "id": 139007,
-          "name": "Daxak Team"
-        },
-        "league": "BetBoom Streamers Battle",
-        "bo": 3
-      },
-      {
-        "sport": "dota2",
-        "start": "2026-07-27T12:00:00Z",
-        "t1": {
-          "id": 138857,
-          "name": "Team Syntax"
-        },
-        "t2": {
-          "id": 2227,
-          "name": "Nemiga Gaming"
-        },
-        "league": "EPL Masters",
-        "bo": 3
-      },
-      {
-        "sport": "dota2",
         "start": "2026-07-27T15:00:00Z",
         "t1": {
           "id": 139008,
@@ -3592,9 +3564,37 @@
         },
         "league": "EPL Masters",
         "bo": 3
+      },
+      {
+        "sport": "dota2",
+        "start": "2026-07-30T09:00:00Z",
+        "t1": {
+          "id": 129609,
+          "name": "Nigma Galaxy"
+        },
+        "t2": {
+          "id": 134536,
+          "name": "1win"
+        },
+        "league": "1win Essence",
+        "bo": 2
+      },
+      {
+        "sport": "dota2",
+        "start": "2026-07-30T09:00:00Z",
+        "t1": {
+          "id": 128357,
+          "name": "PuckChamp"
+        },
+        "t2": {
+          "id": 135854,
+          "name": "Zero Tenacity"
+        },
+        "league": "EPL Masters",
+        "bo": 3
       }
     ],
-    "esp_ts": 1785148868.8875873,
+    "esp_ts": 1785157068.1536489,
     "form": {
       "dota2:128357": {
         "ts": 1785099313.3499815,
