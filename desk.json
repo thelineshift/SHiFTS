@@ -1,49 +1,49 @@
 {
-  "updated": "2026-07-27T12:01:58Z",
-  "record": "14-29",
-  "trades": 222,
+  "updated": "2026-07-27T14:00:41Z",
+  "record": "16-42",
+  "trades": 241,
   "open": 25,
-  "pnl": 15.33,
-  "account": 98.62,
+  "pnl": -53.75,
+  "account": 87.51,
   "deposits": 64.0,
-  "net_pnl": 34.62,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 9-18 \u00b7 LIVE-BET 2-6",
+  "net_pnl": 23.51,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 11-28 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 0-2",
   "recent": [
     {
-      "outcome": "G2 Ares",
+      "outcome": "ASTRAL",
       "short": true,
       "result": "lost",
-      "pnl": -0.87
+      "pnl": -0.59
     },
     {
-      "outcome": "Entropy",
+      "outcome": "Atputies",
+      "short": true,
+      "result": "won",
+      "pnl": 7.89
+    },
+    {
+      "outcome": "ASTRAL",
       "short": true,
       "result": "lost",
-      "pnl": -1.52
-    },
-    {
-      "outcome": "Team Jenz",
-      "short": false,
-      "result": "lost",
-      "pnl": -2.8
-    },
-    {
-      "outcome": "Fluxo",
-      "short": false,
-      "result": "lost",
-      "pnl": -1.36
-    },
-    {
-      "outcome": "Privateer Gaming",
-      "short": true,
-      "result": "lost",
-      "pnl": -0.8
+      "pnl": -0.59
     },
     {
       "outcome": "Isurus",
       "short": true,
       "result": "won",
       "pnl": 3.65
+    },
+    {
+      "outcome": "Dplus KIA",
+      "short": true,
+      "result": "lost",
+      "pnl": -4.12
+    },
+    {
+      "outcome": "Atputies",
+      "short": true,
+      "result": "lost",
+      "pnl": -3.45
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
