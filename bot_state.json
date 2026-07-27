@@ -35,6 +35,15 @@
   "bot_version": "9.24.14",
   "unannounced_results": [
     {
+      "id": "misa-esports-ml-0726",
+      "desc": "Misa Esports ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
+      "tier": "whale"
+    },
+    {
       "id": "team-flacons-ml-0727",
       "desc": "Team flacons ML",
       "odds": -150,
@@ -16462,7 +16471,7 @@
       "qty": 2,
       "market_slug": "aec-mlb-sea-lad-2026-07-29",
       "outcome": "Los Angeles Dodgers",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T14:42:46Z",
       "price_path": [
         {
@@ -16505,7 +16514,8 @@
           "ts": 1785183872,
           "px": 0.57
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.4,
