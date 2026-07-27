@@ -14206,7 +14206,7 @@
       "qty": 2,
       "market_slug": "aec-mlb-col-sd-2026-07-29",
       "outcome": "San Diego Padres",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T09:56:48Z"
     },
     {
@@ -14222,7 +14222,7 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T10:01:47Z"
     }
   ],
