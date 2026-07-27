@@ -15040,7 +15040,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-valorant-th-kc-2026-07-26",
     "aec-valorant-ggo-kcg-2026-07-27",
     "aec-lol-al-blg-2026-07-26",
     "aec-lol-cr-kcbs-2026-07-26",
@@ -15099,7 +15098,8 @@
     "aec-cs2-odk-isg-2026-07-26",
     "aec-lol-bro-dk-2026-07-27",
     "aec-cs2-pure-atp-2026-07-27",
-    "aec-lol-fue-kits-2026-07-27"
+    "aec-lol-fue-kits-2026-07-27",
+    "aec-valorant-efa-lcd-2026-07-27"
   ],
   "odds_api": {
     "month": "2026-07",
