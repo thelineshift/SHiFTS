@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.7'  # INSTANT PAYOUT LAW: auto-DM winners, SOL address in -> paid on-chain now
+BOT_VERSION = '9.24.8'  # SETTLE-LEDGER + QUIET-ROOM v2 + ✅ win posts (owner decrees 2026-07-27)
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -344,6 +344,12 @@ def _desk_bankroll_txt(stats, bal):
     dep = float((stats or {}).get('deposits') or 64.0)
     if bal:
         acct = round(float(bal['balance']), 2)
+        net = round(acct - dep, 2)
+        roi = (net / dep * 100) if dep else 0.0
+        return (f"💰 account **${acct:.2f}** · net P&L **{'+' if net >= 0 else ''}${net:.2f}** "
+                f"on ${dep:.2f} in ({'+' if roi >= 0 else ''}{roi:.0f}%)")
+    if (stats or {}).get('account') is not None:  # SETTLE-LEDGER LAW: ledger beats "offline"
+        acct = round(float(stats['account']), 2)
         net = round(acct - dep, 2)
         roi = (net / dep * 100) if dep else 0.0
         return (f"💰 account **${acct:.2f}** · net P&L **{'+' if net >= 0 else ''}${net:.2f}** "
@@ -780,9 +786,11 @@ def make_client(privileged=True):
                     ampm = 'AM' if nxt_et < 12 else 'PM'
                     nxt_s = f'{nxt_et % 12 or 12} {ampm} ET'
                     if is_admin:
-                        await message.channel.send(f"{message.author.mention} 🛰️ **v{BOT_VERSION}** online — next scan **{nxt_s}**. Commands route through the ops queue only — chat commands are disabled for everyone.")
+                        if 'giveaway' not in chname:  # QUIET-ROOM LAW v2: no mention replies in #giveaway
+                            await message.channel.send(f"{message.author.mention} 🛰️ **v{BOT_VERSION}** online — next scan **{nxt_s}**. Commands route through the ops queue only — chat commands are disabled for everyone.")
                     else:
-                        await message.channel.send(f"{message.author.mention} 🛰️ I'm on duty — scans drop **12a · 4a · 8a · 12p · 4p · 8p ET** (next **{nxt_s}**). Free pick in the free-pick room; paid rooms get the full board. thelineshift.github.io/SHiFTS/upgrade.html ⚡")
+                        if 'giveaway' not in chname:
+                            await message.channel.send(f"{message.author.mention} 🛰️ I'm on duty — scans drop **12a · 4a · 8a · 12p · 4p · 8p ET** (next **{nxt_s}**). Free pick in the free-pick room; paid rooms get the full board. thelineshift.github.io/SHiFTS/upgrade.html ⚡")
                     # in #giveaway with a real X handle in the same message? still process the entry below
                     if not ('giveaway' in chname and gw_handle_parse(message.content or '')):
                         return
@@ -843,25 +851,16 @@ def make_client(privileged=True):
                                             'msg_id': str(message.id), 'ch_id': str(message.channel.id),
                                             'note': 'provisional - X verification unavailable; verify before draw'}
                                 await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'provisional entry ' + hk, QUEUE_BRANCH)
-                                await message.channel.send(f"{message.author.mention} 🎫 **YOU'RE IN THE POOL — @{hs[0]}** — X is rate-limiting our checks right now, but your ticket is **in Sunday's draw right now** (✅ = you're in). Verification finishes automatically — nothing else to do. ⚡")
-                            else:
-                                await gw_reply_once(message, 'already', f"🎫 **@{hs[0]}** — already in the pool. Sunday 6 PM ET. ⚡")
+                            # QUIET-ROOM LAW v2: provisional/repeat entries — silent ✅ only
                         except Exception as e2:
                             print('provisional fail:', e2)
                 else:
-                    # QUIET-ROOM LAW (owner decree 7/26): the bot stops replying to #giveaway
-                    # messages that aren't entries. Chatter gets a silent ⚡ ack at most;
-                    # the guide answer is reserved for messages actually ASKING about entering.
-                    try:
-                        await message.add_reaction('⚡')
-                    except Exception:
-                        pass
+                    # QUIET-ROOM LAW v2 (owner decree 2026-07-27): chatter gets NOTHING —
+                    # no ack, no guide. Text in #giveaway is reserved for !entry answers,
+                    # draws, winner payments, and tx links.
                     if str(message.id) not in st_g.get('gw_handled', []):
                         await gw_mark_handled(st_g, message.id)
                         await asyncio.to_thread(gh_put, 'bot_state.json', st_g, 'gw handled')
-                    _asky = re.search(r'(?i)\b(enter|entry|handle|how do|verify|verified|steps|qualif|ticket|\?)\b', raw or '')
-                    if _asky:
-                        await gw_reply_once(message, 'guide', "⚡ Drop your **X (Twitter) handle** like `@yourhandle` — not your Discord name — and I'll scan you in. " + GW_STEPS.format(link=gw_post_link(st_g)) + " 🎫", hours=1)
                 return
             # OWNER self-serve withdrawal: shift-lab only, owner-only, two-step CONFIRM
             if 'shift-lab' in chname:
@@ -1504,8 +1503,7 @@ async def verify_giveaway_entry(message, handle):
             conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
             _ex = (conf or {}).get(handle.lower())
             if _ex and 'provisional' not in str(_ex.get('note', '')).lower():
-                await gw_reply_once(message, 'already', f"🎫 **@{handle}** — you're already locked in the pool. Sit tight for Sunday 6 PM ET. ⚡", hours=4)
-                return
+                return  # QUIET-ROOM LAW v2: already in the pool — silence, no re-reply
             names = [r.name for r in getattr(message.author, 'roles', [])]
             tkey = 'whale' if any('Whale' in n or '🐋' in n for n in names) else 'sharp' if any('Sharp' in n or '📊' in n for n in names) else 'lock' if any('Lock' in n or '🔒' in n for n in names) else 'free'
             mult = {'whale': 5, 'sharp': 3, 'lock': 2, 'free': 1}[tkey]
@@ -1524,8 +1522,9 @@ async def verify_giveaway_entry(message, handle):
                     pass
             except Exception:
                 pass
-            await message.channel.send(
-                f"{message.author.mention} 🎫 **ENTRY CONFIRMED — @{handle}**\n\n{checklist}\n🎟️ **Tickets: {mult}x — {TIER_ROOM.get(tkey, tkey)}**\n\nDraw: Sunday 6 PM ET — provably fair, paid on-chain. ⚡\n🎟️ **{len(conf)} tickets in the pool so far.**")
+            # QUIET-ROOM LAW v2 (owner decree 2026-07-27): no text reply — the ✅ reaction
+            # IS the confirmation. Channel text is reserved for !entry answers, draws,
+            # winner payments, and tx links.
         else:
             # PROVISIONAL-BY-DEFAULT LAW (owner decree 2026-07-25): an incomplete or
             # unverifiable entry is STILL logged instantly — nobody waits silent on X.
@@ -1539,13 +1538,8 @@ async def verify_giveaway_entry(message, handle):
                             'msg_id': str(message.id), 'ch_id': str(message.channel.id),
                             'note': f'provisional — {why}'}
                 await asyncio.to_thread(gh_put, 'giveaway_confirmed.json', conf, 'provisional entry ' + hk, QUEUE_BRANCH)
-                steps = (f"To lock full tickets: " + ' + '.join(missing) + " — on **this exact post**: " + gw_post_link(state)) if missing else "X can't confirm your steps right now — I'll auto-upgrade you the moment it can."
-                await message.channel.send(
-                    f"{message.author.mention} 🎫 **YOU'RE IN THE POOL — @{handle}**\n\n{checklist}\n\nYour ticket is **in Sunday's $50 draw right now** — the ✅ on your post means you're in, full stop.\n{steps}\nVerification finishes in the background — or type **!entry** anytime for your live status. ⚡\n🎟️ **{len(conf)} tickets in the pool so far.**")
-            else:
-                steps = (f"**{len(missing)} step{'s' if len(missing) > 1 else ''} left:** " + ' + '.join(missing)) if missing else "X still can't confirm your steps — you're in the pool, auto-upgrade pending."
-                await gw_reply_once(message, 'steps',
-                    f"🎫 **ENTRY CHECK — @{handle}**\n\n{checklist}\n\n{steps} — on **this exact post**: {gw_post_link(state)}\nType **!entry** for your live status anytime. ⚡", hours=1)
+            # QUIET-ROOM LAW v2: provisional entries and step-checks are silent — ✅ = in
+            # the pool, upgrades happen in the background, details live behind !entry.
     except Exception as e:
         print('giveaway verify error:', e)
 
@@ -1592,12 +1586,8 @@ async def gw_reverify():
                 rec['ts_upgraded'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
                 conf[hk] = rec
                 changed = True
-                if gch:
-                    try:
-                        ment = f"<@{rec['discord_id']}>" if rec.get('discord_id') else f"@{rec.get('handle')}"
-                        await gch.send(f"{ment} 🔒 **ENTRY CONFIRMED — @{rec.get('handle')}** — follow + like verified (repost taken your word for it). 🎟️ **{rec.get('mult', 1)}x tickets** · Sunday 6 PM ET. ⚡")
-                    except Exception:
-                        pass
+                # QUIET-ROOM LAW v2: reverify upgrades are silent — the ⏳→✅ swap on the
+                # member's post is the whole announcement.
                 await _gw_mark_entered(g0, rec)
             await asyncio.sleep(2)
         if changed:
@@ -5463,8 +5453,26 @@ async def pm_watch():
             _ktv = stats['kind_totals'].setdefault(t.get('kind') or 'EDGE', [0, 0, 0])
             _ktv[{'WIN': 0, 'LOSS': 1, 'PUSH': 2}.get(res['result'], 1)] += 1
         bal = await asyncio.to_thread(pm_cash_balance)
+        # SETTLE-LEDGER LAW (owner decree 2026-07-27): the exchange credits settlements
+        # with a lag — a batch of settles all read the SAME pre-credit balance, so result
+        # posts repeated one number. Equity moves by EXACTLY pnl per settle, so we run
+        # the ledger ourselves and re-anchor whenever a fresh API read already reflects it.
+        _prev_acct = stats.get('account')
+        _expected = round(float(_prev_acct) + pnl, 2) if _prev_acct is not None else None
+        if bal and _expected is not None and abs(float(bal['balance']) - _expected) <= 0.75:
+            _acct = round(float(bal['balance']), 2)  # exchange already credited — fresh read wins
+        elif _expected is not None:
+            _acct = _expected  # ledger carries the truth through the credit lag
+        elif bal:
+            _acct = round(float(bal['balance']), 2)
+        else:
+            _acct = None
+        if _acct is not None:
+            stats['account'] = _acct
+            stats['net'] = round(_acct - float(stats.get('deposits') or 64.0), 2)
+            bal = {'balance': _acct, 'buying_power': (bal or {}).get('buying_power', 0.0)}
         _desk_sync_money(st, stats, bal)
-        em = '🎯' if res['result'] == 'WIN' else '❌'
+        em = '✅' if res['result'] == 'WIN' else '❌'
         sign = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
         slip = None
         try:
@@ -5504,7 +5512,7 @@ async def pm_watch():
             _dep15 = float(stats.get('deposits') or 64.0)
             _money15 = (f"💰 account ${bal['balance']:.2f} · net {'+' if (bal['balance'] - _dep15) >= 0 else ''}${bal['balance'] - _dep15:.2f} on ${_dep15:.2f} in"
                         if bal else f"net {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f} realized on ${_dep15:.2f} in")
-            xt = (f"📈 SHiFT desk — {_trade_label(t)} @ {t['price']:.2f} 🎯 WIN {sign}\n"
+            xt = (f"📈 SHiFT desk — {_trade_label(t)} @ {t['price']:.2f} ✅ WIN {sign}\n"
                   f"Desk record {stats.get('wins', 0)}-{stats.get('losses', 0)} · {_money15}\n"
                   f"🐋 The desk floor is Whale-only — every entry, exit & cash-out live, plus the War Room: {STORE_PAGE}")
             try:
