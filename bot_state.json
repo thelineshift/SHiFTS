@@ -4807,7 +4807,7 @@
         }
       },
       "valorant:137903": {
-        "ts": 1785182413.0697784,
+        "ts": 1785191389.440668,
         "f": {
           "w": 1,
           "l": 4,
@@ -5035,7 +5035,7 @@
         }
       },
       "dota2:138858": {
-        "ts": 1785161697.4127674,
+        "ts": 1785191402.0364099,
         "f": {
           "w": 3,
           "l": 2,
@@ -5122,7 +5122,7 @@
         }
       },
       "dota2:135854": {
-        "ts": 1785161698.0244873,
+        "ts": 1785191402.703852,
         "f": {
           "w": 3,
           "l": 2,
@@ -17529,6 +17529,22 @@
           "px": 0.55
         }
       ]
+    },
+    {
+      "price": 0.595,
+      "short": true,
+      "stake": 1.19,
+      "kind": "EDGE",
+      "p_model": 0.6726805820463914,
+      "event": "Colorado Rockies vs. San Diego Padres",
+      "ev_start": "2026-07-29T20:10:00Z",
+      "reason": "model 67% vs market 60% \u2014 8% edge, half-Kelly",
+      "order_id": "BGR67KD869NZ",
+      "qty": 2,
+      "market_slug": "aec-mlb-col-sd-2026-07-29",
+      "outcome": "San Diego Padres",
+      "status": "open",
+      "ts": "2026-07-27T22:30:15Z"
     }
   ],
   "pm_stats": {
@@ -17536,7 +17552,7 @@
     "wins": 22,
     "losses": 50,
     "pnl": -50.78,
-    "trades": 273,
+    "trades": 274,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-22",
     "deposits": 64.0,
