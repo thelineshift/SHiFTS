@@ -109,6 +109,15 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "bnk-fearx-ml-0727",
+      "desc": "BNK FEARX ML",
+      "odds": 160,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "BNK FEARX 0-1 Gen.G \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785125773.6899688,
