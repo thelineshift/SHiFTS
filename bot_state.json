@@ -7426,11 +7426,15 @@
         }
       },
       "cs2:129370": {
-        "ts": 1785148889.8506007,
+        "ts": 1785157087.6810932,
         "f": {
-          "w": 2,
-          "l": 3,
+          "w": 1,
+          "l": 4,
           "res": [
+            {
+              "won": false,
+              "opp": "PURE"
+            },
             {
               "won": false,
               "opp": "Noir Verse"
@@ -7446,10 +7450,6 @@
             {
               "won": false,
               "opp": " Gatorian"
-            },
-            {
-              "won": true,
-              "opp": "XCLAN"
             }
           ]
         }
@@ -7613,11 +7613,19 @@
         }
       },
       "cs2:137440": {
-        "ts": 1785148887.5906925,
+        "ts": 1785157087.086293,
         "f": {
-          "w": 5,
-          "l": 0,
+          "w": 3,
+          "l": 2,
           "res": [
+            {
+              "won": false,
+              "opp": "PURE"
+            },
+            {
+              "won": false,
+              "opp": "Noir Verse"
+            },
             {
               "won": true,
               "opp": "Leo Team"
@@ -7629,14 +7637,6 @@
             {
               "won": true,
               "opp": "SINQU Rehti"
-            },
-            {
-              "won": true,
-              "opp": "Esport BERG"
-            },
-            {
-              "won": true,
-              "opp": "6666"
             }
           ]
         }
@@ -7671,7 +7671,7 @@
         }
       },
       "cs2:138963": {
-        "ts": 1785148890.6851368,
+        "ts": 1785157088.4827592,
         "f": {
           "w": 1,
           "l": 2,
@@ -10673,106 +10673,13 @@
       "qty": 4,
       "market_slug": "aec-lol-t1-dns-2026-07-27",
       "outcome": "DN SOOPers",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T12:09:56Z",
-      "price_path": [
-        {
-          "ts": 1785102264,
-          "px": 0.28
-        },
-        {
-          "ts": 1785105260,
-          "px": 0.27
-        },
-        {
-          "ts": 1785107060,
-          "px": 0.27
-        },
-        {
-          "ts": 1785109222,
-          "px": 0.27
-        },
-        {
-          "ts": 1785111022,
-          "px": 0.27
-        },
-        {
-          "ts": 1785113173,
-          "px": 0.27
-        },
-        {
-          "ts": 1785114980,
-          "px": 0.26
-        },
-        {
-          "ts": 1785117373,
-          "px": 0.22
-        },
-        {
-          "ts": 1785119173,
-          "px": 0.22
-        },
-        {
-          "ts": 1785120977,
-          "px": 0.22
-        },
-        {
-          "ts": 1785123377,
-          "px": 0.22
-        },
-        {
-          "ts": 1785126373,
-          "px": 0.22
-        },
-        {
-          "ts": 1785128174,
-          "px": 0.22
-        },
-        {
-          "ts": 1785129974,
-          "px": 0.22
-        },
-        {
-          "ts": 1785132373,
-          "px": 0.22
-        },
-        {
-          "ts": 1785134176,
-          "px": 0.22
-        },
-        {
-          "ts": 1785136573,
-          "px": 0.22
-        },
-        {
-          "ts": 1785138377,
-          "px": 0.22
-        },
-        {
-          "ts": 1785140775,
-          "px": 0.23
-        },
-        {
-          "ts": 1785142576,
-          "px": 0.2
-        },
-        {
-          "ts": 1785144976,
-          "px": 0.15
-        },
-        {
-          "ts": 1785149780,
-          "px": 0.54
-        },
-        {
-          "ts": 1785152772,
-          "px": 0.45
-        },
-        {
-          "ts": 1785154779,
-          "px": 0.66
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T12:58:01Z",
+      "pnl": -1.44,
+      "autopsy": "model 50% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, slid to 0.66 before the result \u2014 the number ran 30\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.57,
@@ -12105,106 +12012,13 @@
       "qty": 17,
       "market_slug": "aec-cs2-unity-mta-2026-07-27",
       "outcome": "Mai Tai",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T16:48:58Z",
-      "price_path": [
-        {
-          "ts": 1785102268,
-          "px": 0.39
-        },
-        {
-          "ts": 1785105262,
-          "px": 0.39
-        },
-        {
-          "ts": 1785107660,
-          "px": 0.39
-        },
-        {
-          "ts": 1785109828,
-          "px": 0.39
-        },
-        {
-          "ts": 1785111974,
-          "px": 0.39
-        },
-        {
-          "ts": 1785113774,
-          "px": 0.39
-        },
-        {
-          "ts": 1785116177,
-          "px": 0.39
-        },
-        {
-          "ts": 1785118574,
-          "px": 0.38
-        },
-        {
-          "ts": 1785120374,
-          "px": 0.38
-        },
-        {
-          "ts": 1785122177,
-          "px": 0.38
-        },
-        {
-          "ts": 1785124574,
-          "px": 0.36
-        },
-        {
-          "ts": 1785126375,
-          "px": 0.36
-        },
-        {
-          "ts": 1785128175,
-          "px": 0.36
-        },
-        {
-          "ts": 1785129976,
-          "px": 0.36
-        },
-        {
-          "ts": 1785132375,
-          "px": 0.36
-        },
-        {
-          "ts": 1785134178,
-          "px": 0.35
-        },
-        {
-          "ts": 1785136575,
-          "px": 0.35
-        },
-        {
-          "ts": 1785138379,
-          "px": 0.35
-        },
-        {
-          "ts": 1785140777,
-          "px": 0.36
-        },
-        {
-          "ts": 1785142577,
-          "px": 0.37
-        },
-        {
-          "ts": 1785144977,
-          "px": 0.37
-        },
-        {
-          "ts": 1785149782,
-          "px": 0.36
-        },
-        {
-          "ts": 1785152773,
-          "px": 0.37
-        },
-        {
-          "ts": 1785154781,
-          "px": 0.1
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T12:58:04Z",
+      "pnl": -6.63,
+      "autopsy": "model 69% vs market 39% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.10 before the result \u2014 beat the number by 29\u00a2 \u2705"
     },
     {
       "price": 0.63,
@@ -14162,6 +13976,10 @@
         {
           "ts": 1785154788,
           "px": 0.16
+        },
+        {
+          "ts": 1785157087,
+          "px": 0.16
         }
       ]
     },
@@ -14206,6 +14024,10 @@
         },
         {
           "ts": 1785154788,
+          "px": 0.46
+        },
+        {
+          "ts": 1785157088,
           "px": 0.46
         }
       ]
@@ -14300,6 +14122,10 @@
         {
           "ts": 1785154788,
           "px": 0.43
+        },
+        {
+          "ts": 1785157088,
+          "px": 0.43
         }
       ]
     },
@@ -14328,6 +14154,10 @@
         },
         {
           "ts": 1785154788,
+          "px": 0.94
+        },
+        {
+          "ts": 1785157088,
           "px": 0.94
         }
       ]
@@ -14583,6 +14413,10 @@
         {
           "ts": 1785154788,
           "px": 0.505
+        },
+        {
+          "ts": 1785157088,
+          "px": 0.505
         }
       ]
     },
@@ -14806,15 +14640,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 14,
-    "losses": 31,
-    "pnl": 7.76,
+    "losses": 33,
+    "pnl": -0.31,
     "trades": 231,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 98.62,
-    "net": 34.62,
+    "account": 75.55,
+    "net": 11.55,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -14824,7 +14658,7 @@
       ],
       "EDGE": [
         9,
-        20,
+        22,
         0
       ],
       "LIVE-BET": [
@@ -14837,22 +14671,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-26T10:50:26Z",
-      "kind": "EDGE",
-      "outcome": "Gen.G Esports",
-      "result": "LOSS",
-      "pnl": -2.8,
-      "lesson": "model 86% vs market 58% missed \u2014 logged for the playbook review. Taken 0.58, rode to 0.61 before the result \u2014 beat the number by 3\u00a2 \u2705 (cashed out early at $5.90)"
-    },
-    {
-      "ts": "2026-07-26T10:50:27Z",
-      "kind": "EDGE",
-      "outcome": "Gen.G Esports",
-      "result": "LOSS",
-      "pnl": -2.95,
-      "lesson": "model 86% vs market 59% missed \u2014 logged for the playbook review. Taken 0.59, rode to 0.61 before the result \u2014 beat the number by 2\u00a2 \u2705 (cashed out early at $5.90)"
-    },
     {
       "ts": "2026-07-26T11:17:04Z",
       "kind": "EDGE",
@@ -15076,6 +14894,22 @@
       "result": "LOSS",
       "pnl": -3.45,
       "lesson": "model 50% vs market 23% missed \u2014 logged for the playbook review. Taken 0.23, slid to 0.46 before the result \u2014 the number ran 23\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-27T12:58:01Z",
+      "kind": "EDGE",
+      "outcome": "DN SOOPers",
+      "result": "LOSS",
+      "pnl": -1.44,
+      "lesson": "model 50% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, slid to 0.66 before the result \u2014 the number ran 30\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-27T12:58:04Z",
+      "kind": "EDGE",
+      "outcome": "Mai Tai",
+      "result": "LOSS",
+      "pnl": -6.63,
+      "lesson": "model 69% vs market 39% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.10 before the result \u2014 beat the number by 29\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
