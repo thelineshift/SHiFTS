@@ -34,6 +34,15 @@
   "bot_version": "9.24.14",
   "unannounced_results": [
     {
+      "id": "kiwoom-drx-ml-0726",
+      "desc": "Kiwoom DRX ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Kiwoom DRX 0-2 Paper Rex \u00b7 final",
+      "tier": "whale"
+    },
+    {
       "id": "misa-esports-ml-0726",
       "desc": "Misa Esports ML",
       "odds": -265,
@@ -58,24 +67,6 @@
       "result": "LOSS",
       "units": -1.5,
       "score": "BNK FearX Youth 0-1 Gen.G \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "rune-eaters-ml-0727",
-      "desc": "Rune Eaters ML",
-      "odds": -177,
-      "result": "WIN",
-      "units": 0.85,
-      "score": "Rune Eaters 2-0 SAW Youngsters \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "gentle-mates-gc-ml-0727",
-      "desc": "Gentle Mates GC ML",
-      "odds": -351,
-      "result": "WIN",
-      "units": 0.43,
-      "score": "Gentle Mates GC 2-0 GIANTX GC \u00b7 final",
       "tier": "whale"
     },
     {
@@ -11244,106 +11235,13 @@
       "qty": 7,
       "market_slug": "aec-valorant-m8gc-gxgc-2026-07-27",
       "outcome": "Gentle Mates GC",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T12:53:36Z",
-      "price_path": [
-        {
-          "ts": 1785118572,
-          "px": 0.75
-        },
-        {
-          "ts": 1785120373,
-          "px": 0.75
-        },
-        {
-          "ts": 1785122176,
-          "px": 0.75
-        },
-        {
-          "ts": 1785124572,
-          "px": 0.75
-        },
-        {
-          "ts": 1785126373,
-          "px": 0.75
-        },
-        {
-          "ts": 1785128174,
-          "px": 0.75
-        },
-        {
-          "ts": 1785129974,
-          "px": 0.75
-        },
-        {
-          "ts": 1785132373,
-          "px": 0.75
-        },
-        {
-          "ts": 1785134177,
-          "px": 0.75
-        },
-        {
-          "ts": 1785136573,
-          "px": 0.75
-        },
-        {
-          "ts": 1785138378,
-          "px": 0.75
-        },
-        {
-          "ts": 1785140775,
-          "px": 0.76
-        },
-        {
-          "ts": 1785142576,
-          "px": 0.76
-        },
-        {
-          "ts": 1785144976,
-          "px": 0.76
-        },
-        {
-          "ts": 1785149781,
-          "px": 0.76
-        },
-        {
-          "ts": 1785152772,
-          "px": 0.76
-        },
-        {
-          "ts": 1785154779,
-          "px": 0.76
-        },
-        {
-          "ts": 1785156581,
-          "px": 0.76
-        },
-        {
-          "ts": 1785158660,
-          "px": 0.76
-        },
-        {
-          "ts": 1785160506,
-          "px": 0.76
-        },
-        {
-          "ts": 1785162569,
-          "px": 0.76
-        },
-        {
-          "ts": 1785164668,
-          "px": 0.78
-        },
-        {
-          "ts": 1785166468,
-          "px": 0.94
-        },
-        {
-          "ts": 1785168282,
-          "px": 0.96
-        }
-      ]
+      "result": "WIN",
+      "payout": 7.0,
+      "settled_at": "2026-07-27T16:24:29Z",
+      "pnl": 1.82,
+      "autopsy": "+$1.82 \u2014 model 94% vs market 74% was real edge; thesis held. Taken 0.74, rode to 0.96 before the result \u2014 beat the number by 22\u00a2 \u2705"
     },
     {
       "price": 0.54,
@@ -12575,10 +12473,6 @@
       "ts": "2026-07-26T17:54:48Z",
       "price_path": [
         {
-          "ts": 1785100463,
-          "px": 0.58
-        },
-        {
           "ts": 1785102268,
           "px": 0.58
         },
@@ -12669,6 +12563,10 @@
         {
           "ts": 1785167670,
           "px": 0.52
+        },
+        {
+          "ts": 1785169473,
+          "px": 0.58
         }
       ]
     },
@@ -13225,10 +13123,6 @@
       "ts": "2026-07-26T20:55:22Z",
       "price_path": [
         {
-          "ts": 1785114982,
-          "px": 0.5
-        },
-        {
           "ts": 1785117374,
           "px": 0.44
         },
@@ -13319,6 +13213,10 @@
         {
           "ts": 1785167671,
           "px": 0.28
+        },
+        {
+          "ts": 1785169473,
+          "px": 0.31
         }
       ]
     },
@@ -13548,10 +13446,6 @@
       "ts": "2026-07-26T22:09:52Z",
       "price_path": [
         {
-          "ts": 1785114983,
-          "px": 0.96
-        },
-        {
           "ts": 1785117375,
           "px": 0.96
         },
@@ -13642,6 +13536,10 @@
         {
           "ts": 1785167671,
           "px": 0.78
+        },
+        {
+          "ts": 1785169473,
+          "px": 0.75
         }
       ]
     },
@@ -13661,10 +13559,6 @@
       "status": "open",
       "ts": "2026-07-26T22:09:53Z",
       "price_path": [
-        {
-          "ts": 1785116178,
-          "px": 0.31
-        },
         {
           "ts": 1785118575,
           "px": 0.31
@@ -13755,6 +13649,10 @@
         },
         {
           "ts": 1785167671,
+          "px": 0.35
+        },
+        {
+          "ts": 1785169473,
           "px": 0.35
         }
       ]
@@ -13847,10 +13745,6 @@
       "ts": "2026-07-26T23:21:22Z",
       "price_path": [
         {
-          "ts": 1785114983,
-          "px": 0.55
-        },
-        {
           "ts": 1785117375,
           "px": 0.55
         },
@@ -13940,6 +13834,10 @@
         },
         {
           "ts": 1785167671,
+          "px": 0.55
+        },
+        {
+          "ts": 1785169474,
           "px": 0.55
         }
       ]
@@ -15431,6 +15329,10 @@
         {
           "ts": 1785167672,
           "px": 0.29
+        },
+        {
+          "ts": 1785169474,
+          "px": 0.31
         }
       ]
     },
@@ -15538,30 +15440,13 @@
       "qty": 7,
       "market_slug": "aec-cs2-brute-navij-2026-07-27",
       "outcome": "NAVI Junior",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T13:18:34Z",
-      "price_path": [
-        {
-          "ts": 1785158663,
-          "px": 0.29
-        },
-        {
-          "ts": 1785160512,
-          "px": 0.29
-        },
-        {
-          "ts": 1785162574,
-          "px": 0.29
-        },
-        {
-          "ts": 1785164675,
-          "px": 0.29
-        },
-        {
-          "ts": 1785167672,
-          "px": 0.3
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T16:24:35Z",
+      "pnl": -2.03,
+      "autopsy": "model 50% vs market 29% missed \u2014 logged for the playbook review. Taken 0.29, slid to 0.30 before the result \u2014 the number ran 1\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.61,
@@ -15596,6 +15481,10 @@
         },
         {
           "ts": 1785167673,
+          "px": 0.61
+        },
+        {
+          "ts": 1785169477,
           "px": 0.61
         }
       ]
@@ -15634,6 +15523,10 @@
         },
         {
           "ts": 1785167673,
+          "px": 0.4
+        },
+        {
+          "ts": 1785169478,
           "px": 0.4
         }
       ]
@@ -15957,6 +15850,10 @@
         {
           "ts": 1785167673,
           "px": 0.31
+        },
+        {
+          "ts": 1785169478,
+          "px": 0.31
         }
       ]
     },
@@ -15986,6 +15883,10 @@
         },
         {
           "ts": 1785167673,
+          "px": 0.25
+        },
+        {
+          "ts": 1785169478,
           "px": 0.25
         }
       ]
@@ -16017,6 +15918,10 @@
         {
           "ts": 1785167673,
           "px": 0.19
+        },
+        {
+          "ts": 1785169478,
+          "px": 0.22
         }
       ]
     },
@@ -16045,6 +15950,10 @@
         },
         {
           "ts": 1785167674,
+          "px": 0.27
+        },
+        {
+          "ts": 1785169478,
           "px": 0.27
         }
       ]
@@ -16076,6 +15985,10 @@
         {
           "ts": 1785167674,
           "px": 0.46
+        },
+        {
+          "ts": 1785169478,
+          "px": 0.46
         }
       ]
     },
@@ -16104,6 +16017,10 @@
         },
         {
           "ts": 1785167674,
+          "px": 0.35
+        },
+        {
+          "ts": 1785169479,
           "px": 0.35
         }
       ]
@@ -16135,6 +16052,10 @@
         {
           "ts": 1785167674,
           "px": 0.57
+        },
+        {
+          "ts": 1785169479,
+          "px": 0.57
         }
       ]
     },
@@ -16160,6 +16081,10 @@
         {
           "ts": 1785167674,
           "px": 0.4
+        },
+        {
+          "ts": 1785169479,
+          "px": 0.4
         }
       ]
     },
@@ -16181,6 +16106,10 @@
       "price_path": [
         {
           "ts": 1785167674,
+          "px": 0.34
+        },
+        {
+          "ts": 1785169479,
           "px": 0.34
         }
       ]
@@ -16204,6 +16133,10 @@
         {
           "ts": 1785167674,
           "px": 0.26
+        },
+        {
+          "ts": 1785169479,
+          "px": 0.26
         }
       ]
     },
@@ -16225,6 +16158,10 @@
       "price_path": [
         {
           "ts": 1785167675,
+          "px": 0.66
+        },
+        {
+          "ts": 1785169479,
           "px": 0.66
         }
       ]
@@ -16248,15 +16185,19 @@
         {
           "ts": 1785167675,
           "px": 0.55
+        },
+        {
+          "ts": 1785169480,
+          "px": 0.55
         }
       ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 17,
-    "losses": 42,
-    "pnl": -43.8,
+    "wins": 18,
+    "losses": 43,
+    "pnl": -44.01,
     "trades": 258,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-16",
@@ -16272,8 +16213,8 @@
         0
       ],
       "EDGE": [
-        12,
-        28,
+        13,
+        29,
         0
       ],
       "LIVE-BET": [
@@ -16293,22 +16234,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-26T18:14:22Z",
-      "kind": "LIVE-BET",
-      "outcome": "G2 Ares",
-      "result": "LOSS",
-      "pnl": -0.87,
-      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.29, slid to 0.58 before the result \u2014 the number ran 29\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-26T18:44:21Z",
-      "kind": "EDGE",
-      "outcome": "megoshort",
-      "result": "WIN",
-      "pnl": 2.8,
-      "lesson": "+$2.80 \u2014 model 50% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.49 before the result \u2014 the number ran 19\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-26T18:44:24Z",
       "kind": "EDGE",
@@ -16532,6 +16457,22 @@
       "result": "WIN",
       "pnl": 9.95,
       "lesson": "+$9.95 \u2014 model 73% vs market 50% was real edge; thesis held. Taken 0.50, rode to 0.43 before the result \u2014 beat the number by 7\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T16:24:29Z",
+      "kind": "EDGE",
+      "outcome": "Gentle Mates GC",
+      "result": "WIN",
+      "pnl": 1.82,
+      "lesson": "+$1.82 \u2014 model 94% vs market 74% was real edge; thesis held. Taken 0.74, rode to 0.96 before the result \u2014 beat the number by 22\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T16:24:35Z",
+      "kind": "EDGE",
+      "outcome": "NAVI Junior",
+      "result": "LOSS",
+      "pnl": -2.03,
+      "lesson": "model 50% vs market 29% missed \u2014 logged for the playbook review. Taken 0.29, slid to 0.30 before the result \u2014 the number ran 1\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -16615,7 +16556,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785164670.110133,
+  "dep_checked_ts": 1785169469.3206449,
   "x_bio_v": 2,
   "op_cool_until": 1785096924.2504044
 }
