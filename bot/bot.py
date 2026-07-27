@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.12'  # WINNERS-ONLY LAW: X gets green results only, Discord gets everything
+BOT_VERSION = '9.24.13'  # WINNERS-ONLY LAW extended: picks board recaps win-gated too
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -6892,14 +6892,20 @@ async def recap_watch():
             await ch.send('\n'.join(lines))
         state['last_recap_date'] = recap_date
         await asyncio.to_thread(gh_put, 'bot_state.json', state, f'recap posted {recap_date}')
-        try:
-            xt = (f"🌙 FULL BOARD {mmdd}: {tot_w}-{tot_l} ({'+' if tot_u >= 0 else ''}{tot_u:.1f}u)\n"
-                  f"📅 2026 season: {sw}-{sl} ({'+' if su >= 0 else ''}{su:.1f}u)\n"
-                  f"{tier_split}\n\n"
-                  f"Every pick posted early, every result graded in public. First month FREE 👆")
-            await asyncio.to_thread(x_post, xt)
-        except Exception as e:
-            print('recap X error:', e)
+        # WINNERS-ONLY LAW (owner decree 2026-07-27): X gets winning results ONLY.
+        # The full board recap posts on GREEN days (units > 0), win-framed, no loss
+        # column. The full record — every W and L — stays on Discord receipts.
+        if tot_u > 0:
+            try:
+                _season = f"\n📅 2026 season: {'+' if su >= 0 else ''}{su:.1f}u" if su > 0 else ''
+                xt = (f"✅ FULL BOARD — green day {mmdd}\n\n"
+                      f"🏆 {tot_w} winner{'s' if tot_w != 1 else ''} · {'+'}{tot_u:.1f}u banked{_season}\n\n"
+                      f"Every pick posted early, every result graded in public. First month FREE 👆")
+                await asyncio.to_thread(x_post, xt)
+            except Exception as e:
+                print('recap X error:', e)
+        else:
+            print(f"[recap] X recap skipped (red day {tot_u:+.1f}u) — Discord receipts carry the full board, per WINNERS-ONLY LAW")
         print('recap posted for', recap_date)
     except Exception as e:
         print('recap_watch error:', e)
