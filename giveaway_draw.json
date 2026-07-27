@@ -29,8 +29,8 @@
       "discord": "sanmonmo",
       "discord_id": "852827725777600524",
       "idx": 30,
-      "status": "pending",
-      "claimed_at": null
+      "status": "claimed",
+      "claimed_at": "2026-07-27T12:36:37Z"
     }
   ],
   "voided": [
