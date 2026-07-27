@@ -666,10 +666,10 @@
       "awayTeam": "Cleveland Guardians",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -168,
+        "away_ml": 139,
         "total": 8.5,
-        "ts": 1785125768
+        "ts": 1785154776
       }
     },
     {
@@ -689,10 +689,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 149,
-        "away_ml": -181,
+        "home_ml": 144,
+        "away_ml": -175,
         "total": 7.5,
-        "ts": 1785129368
+        "ts": 1785154776
       }
     },
     {
@@ -795,10 +795,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 129,
-        "away_ml": -156,
+        "home_ml": 124,
+        "away_ml": -150,
         "total": 8.5,
-        "ts": 1785152768
+        "ts": 1785154776
       },
       "last_alert_odds": 129
     },
@@ -842,10 +842,10 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayTeam": "Arizona Diamondbacks",
       "live_odds": {
-        "home_ml": -123,
-        "away_ml": 102,
+        "home_ml": -121,
+        "away_ml": 101,
         "total": 9.0,
-        "ts": 1785131169
+        "ts": 1785154776
       }
     },
     {
@@ -865,10 +865,10 @@
       "homeTeam": "Washington Nationals",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -135,
-        "away_ml": 112,
+        "home_ml": -132,
+        "away_ml": 110,
         "total": 10.0,
-        "ts": 1785150968
+        "ts": 1785154776
       }
     },
     {
@@ -1067,11 +1067,12 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": 102,
-        "away_ml": -122,
-        "total": 9.5,
-        "ts": 1785145568
-      }
+        "home_ml": 109,
+        "away_ml": -131,
+        "total": 10.0,
+        "ts": 1785154776
+      },
+      "last_alert_odds": -131
     },
     {
       "id": "2-leg-parlay-0727-lock",
