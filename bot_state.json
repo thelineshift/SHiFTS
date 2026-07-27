@@ -35,6 +35,15 @@
   "bot_version": "9.24.5",
   "unannounced_results": [
     {
+      "id": "los-angeles-dodgers-ml-0725",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -157,
+      "result": "WIN",
+      "units": 0.64,
+      "score": "Los Angeles Dodgers 4, New York Mets 3",
+      "tier": "sharp"
+    },
+    {
       "id": "milwaukee-brewers-ml-0725",
       "desc": "Milwaukee Brewers ML",
       "odds": -244,
@@ -105,18 +114,9 @@
       "units": -1.5,
       "score": "BNK FearX Youth 0-1 Gen.G \u00b7 final",
       "tier": "whale"
-    },
-    {
-      "id": "cybershoke-esports-ml-0727",
-      "desc": "CYBERSHOKE Esports ML",
-      "odds": -150,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "CYBERSHOKE Esports 1-2 ARCRED \u00b7 final",
-      "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785147371.1374488,
+  "last_x_receipt_ts": 1785135370.0936625,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -14182,6 +14182,37 @@
       "outcome": "Portland",
       "status": "open",
       "ts": "2026-07-27T10:11:53Z"
+    },
+    {
+      "price": 0.22,
+      "stake": 1.1,
+      "kind": "EDGE",
+      "p_model": 0.33333333333333337,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 33% vs market 22% \u2014 11% edge, half-Kelly",
+      "order_id": "BGE1KP13Y9P5",
+      "qty": 5,
+      "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
+      "outcome": "Bar\u00e7a eSports GC",
+      "status": "open",
+      "ts": "2026-07-27T10:16:50Z"
+    },
+    {
+      "price": 0.46,
+      "short": true,
+      "stake": 0.92,
+      "kind": "EDGE",
+      "p_model": 0.532428227234165,
+      "event": "New York Yankees vs. Chicago White Sox",
+      "ev_start": "2026-07-29T23:40:00Z",
+      "reason": "model 53% vs market 46% \u2014 7% edge, half-Kelly",
+      "order_id": "BGE18KXFA9P1",
+      "qty": 2,
+      "market_slug": "aec-mlb-nyy-cws-2026-07-29",
+      "outcome": "Chicago White Sox",
+      "status": "open",
+      "ts": "2026-07-27T10:16:51Z"
     }
   ],
   "pm_stats": {
@@ -14189,7 +14220,7 @@
     "wins": 14,
     "losses": 29,
     "pnl": 15.33,
-    "trades": 195,
+    "trades": 197,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-10",
     "deposits": 64.0,
