@@ -5,18 +5,18 @@
     "posted+pinned in #\ud83c\udf81giveaway"
   ],
   "time_audit": {
-    "at": "2026-07-27 11:46 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-2": "2026-07-27 08:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 11:16 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 11:00 UTC",
+    "\ud83c\udfaffree-pick-2-2": "2026-07-27 12:01 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 12:16 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 12:19 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-27 11:45 UTC"
+    "\ud83c\udf81giveaway": "2026-07-27 12:15 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 11:46 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,24 +24,15 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 11:46 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 11:46 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": []
   },
-  "bot_version": "9.24.5",
+  "bot_version": "9.24.6",
   "unannounced_results": [
-    {
-      "id": "los-angeles-dodgers-ml-0725",
-      "desc": "Los Angeles Dodgers ML",
-      "odds": -157,
-      "result": "WIN",
-      "units": 0.64,
-      "score": "Los Angeles Dodgers 4, New York Mets 3",
-      "tier": "sharp"
-    },
     {
       "id": "milwaukee-brewers-ml-0725",
       "desc": "Milwaukee Brewers ML",
@@ -115,7 +106,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785135370.0936625,
+  "last_x_receipt_ts": 1785154776.586211,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -209,7 +200,7 @@
     "2026-07-27T12:19:30Z"
   ],
   "teasers": {
-    "weekly": "2026-07-26",
+    "weekly": "2026-08-02",
     "monthly": "2026-08-01",
     "deepdive_fired": "2026-07-25",
     "x_ad": "2026-07-26"
@@ -14694,7 +14685,7 @@
       "qty": 2,
       "market_slug": "aec-mlb-col-sd-2026-07-29",
       "outcome": "San Diego Padres",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T12:16:54Z"
     }
   ],
