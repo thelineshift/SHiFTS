@@ -317,7 +317,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "20ae5d85-59d1-43ed-9eea-95ceeb53a661",
   "op_month": "2026-07",
-  "op_calls": 42,
+  "op_calls": 47,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1202,55 +1202,43 @@
       "meta_ts": 1784925282.1446652,
       "lines": [
         [
-          "Aurora Gaming",
-          "Hotu",
-          1.303,
-          3.26
-        ],
-        [
-          "Ninjas In Pyjamas",
-          "Pain Gaming",
-          1.162,
-          4.98
-        ],
-        [
-          "3Dmax",
-          "Fut eSports",
+          "Mibr",
+          "Fluxo W7M",
           1.309,
-          3.52
+          3.22
         ],
         [
-          "The Mongolz",
-          "Wildcard Gaming",
-          1.526,
-          2.54
+          "Imperial eSports",
+          "Bestia",
+          1.543,
+          2.4
         ],
         [
-          "100 Thieves",
-          "Team Spirit",
-          4.99,
-          1.115
+          "Regain",
+          "Team Voca",
+          1.279,
+          3.4
         ],
         [
-          "Oddik",
-          "LP",
-          1.45,
-          2.58
+          "Genone",
+          "Sparta eSports",
+          1.671,
+          2.12
         ],
         [
-          "Isurus",
-          "Fluxo",
-          1.233,
-          3.59
+          "Rune Eaters eSports",
+          "Saw Youngsters",
+          1.709,
+          2.1
         ],
         [
-          "Team Quazar",
-          "New Vision",
-          1.207,
-          3.14
+          "Ex-Rustec",
+          "Inner Circle Academy",
+          1.555,
+          2.37
         ]
       ],
-      "odds_ts": 1785067228.3008547
+      "odds_ts": 1785124819.5325515
     },
     "valorant": {
       "lines": [
@@ -2500,30 +2488,6 @@
       "meta_ts": 1784952040.641981,
       "lines": [
         [
-          "Cloud9",
-          "Team Liquid",
-          1.632,
-          2.29
-        ],
-        [
-          "Disguisedtoast",
-          "Shopify Rebellion",
-          1.704,
-          2.16
-        ],
-        [
-          "Movistar Koi",
-          "Team Vitality",
-          1.075,
-          7.49
-        ],
-        [
-          "Karmine Corp",
-          "G2 Esports",
-          1.432,
-          2.69
-        ],
-        [
           "Gen.g Esports",
           "T1",
           1.671,
@@ -2532,41 +2496,47 @@
         [
           "FEARX",
           "Gen.g Esports",
-          2.1,
-          1.625
+          2.6,
+          1.39
         ],
         [
           "Hanwha Life Esports",
           "Dplus",
-          2.06,
-          1.649
+          2.43,
+          1.456
         ],
         [
           "kt Rolster",
           "Gen.g Esports",
-          1.666,
-          2.03
+          2.23,
+          1.543
         ],
         [
           "T1",
           "Dplus",
-          2.44,
-          1.561
+          2.94,
+          1.299
         ],
         [
-          "Leviatan",
-          "Fluxo W7M",
-          1.022,
-          14.5
+          "Nongshim Redforce Challengers",
+          "T1 Esports Academy",
+          1.483,
+          2.64
         ],
         [
-          "Keyd Stars",
-          "Red Canids",
-          1.561,
-          2.33
+          "Gen.G Global Academy",
+          "Fearx Youth",
+          3.35,
+          1.316
+        ],
+        [
+          "Maze Gaming",
+          "9Z Team",
+          1.363,
+          3.1
         ]
       ],
-      "odds_ts": 1785096024.2504044
+      "odds_ts": 1785124813.9578402
     }
   },
   "parlay_rot": 8,
