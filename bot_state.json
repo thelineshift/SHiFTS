@@ -28395,7 +28395,7 @@
       "qty": 2,
       "market_slug": "aec-wta-marsto-peyste-2026-07-26",
       "outcome": "Peyton Stearns",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T22:45:06Z"
     },
     {
@@ -28410,7 +28410,7 @@
       "qty": 172,
       "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw2",
       "outcome": "Mary Stoiana",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T22:45:07Z"
     },
     {
@@ -28425,7 +28425,7 @@
       "qty": 183,
       "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
       "outcome": "Renata Zarazua",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T22:45:08Z"
     },
     {
@@ -28456,7 +28456,7 @@
       "qty": 2,
       "market_slug": "aec-atp-carcan-andpel-2026-07-27",
       "outcome": "Andrea Pellegrino",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T22:50:03Z"
     },
     {
