@@ -37,6 +37,15 @@
   "bot_version": "9.24.5",
   "unannounced_results": [
     {
+      "id": "texas-rangers-ml-0725",
+      "desc": "Texas Rangers ML",
+      "odds": -105,
+      "result": "WIN",
+      "units": 0.95,
+      "score": "Seattle Mariners 1, Texas Rangers 7",
+      "tier": "whale"
+    },
+    {
       "id": "milwaukee-brewers--1.5-0725",
       "desc": "Milwaukee Brewers -1.5",
       "odds": -110,
@@ -118,7 +127,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785110417.3487477,
+  "last_x_receipt_ts": 1785107055.9882295,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
