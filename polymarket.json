@@ -1,22 +1,10 @@
 {
-  "ts": "2026-07-27T21:19:29Z",
+  "ts": "2026-07-27T21:34:29Z",
   "configured": true,
-  "balance_usd": 126.85,
+  "balance_usd": 112.85,
   "buying_power": 24.85,
   "positions": [],
   "open_orders": [
-    {
-      "market": "aec-mlb-tex-tb-2026-07-29",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.55",
-      "qty": 2
-    },
-    {
-      "market": "aec-mlb-col-sd-2026-07-29",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.59",
-      "qty": 2
-    },
     {
       "market": "aec-mlb-sea-lad-2026-07-29",
       "intent": "ORDER_INTENT_BUY_SHORT",
@@ -27,6 +15,18 @@
       "market": "aec-wnba-conn-wsh-2026-07-28",
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.66",
+      "qty": 2
+    },
+    {
+      "market": "aec-mlb-tex-tb-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.55",
+      "qty": 2
+    },
+    {
+      "market": "aec-mlb-col-sd-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.59",
       "qty": 2
     }
   ]
