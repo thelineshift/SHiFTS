@@ -16917,6 +16917,22 @@
           "px": 0.27
         }
       ]
+    },
+    {
+      "price": 0.34,
+      "short": true,
+      "stake": 1.02,
+      "kind": "EDGE",
+      "p_model": 0.5172413793103448,
+      "event": ":3 vs. Revenge",
+      "ev_start": "2026-07-27T23:30:00Z",
+      "reason": "model 52% vs market 34% \u2014 18% edge, half-Kelly",
+      "order_id": "BGMFYXZF89NQ",
+      "qty": 3,
+      "market_slug": "aec-valorant-meow-rvn-2026-07-27",
+      "outcome": "Revenge",
+      "status": "open",
+      "ts": "2026-07-27T18:10:12Z"
     }
   ],
   "pm_stats": {
@@ -16924,7 +16940,7 @@
     "wins": 18,
     "losses": 45,
     "pnl": -48.11,
-    "trades": 268,
+    "trades": 269,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-18",
     "deposits": 64.0,
