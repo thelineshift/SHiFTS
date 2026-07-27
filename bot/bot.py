@@ -4416,14 +4416,18 @@ def pm_trader_scan(st):
     if not bal or bal['buying_power'] < 1.05:
         return [], []
     B = bal['buying_power']
-    # resting orders lock real cash too — counting only 'open' let the desk re-enter the
-    # same contract 35 min later (Gen.G map1 double-loss) — DESK HARDENING LAW
-    open_trades = [t for t in st.get('pm_trades', []) if t.get('status') in ('open', 'resting')]
+    # DESK HARDENING: two ledgers. `open_trades` (filled) drives expo — resting bids are
+    # contingent, not deployed risk (the reconcile loop keeps them honest every tick, and
+    # buying_power already nets their reservation). `held_trades` (open+resting) drives
+    # the duplicate shield and the per-event cap — a resting bid on a contract must still
+    # block re-entry (Gen.G map1 double-loss, 35 min apart).
+    open_trades = [t for t in st.get('pm_trades', []) if t.get('status') == 'open']
+    held_trades = [t for t in st.get('pm_trades', []) if t.get('status') in ('open', 'resting')]
     pmstats = st.get('pm_stats') or {}
     expo = sum(float(t.get('stake', 0)) for t in open_trades)
     expo0 = expo  # cycle-start deployed — intents stack on top, and they spend REAL cash
-    have = {(t['market_slug'], t['outcome']) for t in open_trades}
-    have_slugs = {t['market_slug'] for t in open_trades}  # one direction per market, ever
+    have = {(t['market_slug'], t['outcome']) for t in held_trades}
+    have_slugs = {t['market_slug'] for t in held_trades}  # one direction per market, ever
     now = time.time()
     dates = sorted({time.strftime('%Y%m%d', time.gmtime(now - 4 * 3600)),
                     time.strftime('%Y%m%d', time.gmtime(now + 20 * 3600))})
@@ -4598,7 +4602,7 @@ def pm_trader_scan(st):
                 continue  # already positioned on this contract — never both directions
             # DESK HARDENING: cap TOTAL exposure per event (open+resting+intents), not
             # just this scan's intents — the Gen.G match took $35.53 across 3 slugs.
-            _ev_open = sum(float(t.get('stake', 0)) for t in open_trades if (t.get('event') or '') == title)
+            _ev_open = sum(float(t.get('stake', 0)) for t in held_trades if (t.get('event') or '') == title)
             _ev_int = sum(float(it.get('stake', 0)) for it in intents if it.get('event') == title and it['kind'] != 'ARB')
             if _ev_open + _ev_int >= _desk_event_cap(B, pmstats):
                 continue
