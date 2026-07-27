@@ -8433,7 +8433,7 @@
         }
       },
       "cs2:135497": {
-        "ts": 1785155694.751837,
+        "ts": 1785163041.645174,
         "f": {
           "w": 2,
           "l": 3,
@@ -8462,7 +8462,7 @@
         }
       },
       "cs2:138997": {
-        "ts": 1785155695.396548,
+        "ts": 1785163042.248543,
         "f": {
           "w": 0,
           "l": 0,
@@ -16013,6 +16013,21 @@
           "px": 0.46
         }
       ]
+    },
+    {
+      "price": 0.35,
+      "stake": 1.4,
+      "kind": "EDGE",
+      "p_model": 0.5675675675675675,
+      "event": "2GAME Esports vs. Shopify Rebellion Black",
+      "ev_start": "2026-07-28T19:00:00Z",
+      "reason": "model 57% vs market 35% \u2014 22% edge, half-Kelly",
+      "order_id": "BGHJ5C7J89NE",
+      "qty": 4,
+      "market_slug": "aec-valorant-2game-srb-2026-07-28",
+      "outcome": "2GAME Esports",
+      "status": "open",
+      "ts": "2026-07-27T14:37:46Z"
     }
   ],
   "pm_stats": {
@@ -16020,7 +16035,7 @@
     "wins": 16,
     "losses": 42,
     "pnl": -53.75,
-    "trades": 251,
+    "trades": 252,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-14",
     "deposits": 64.0,
