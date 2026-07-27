@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T01:16:12Z",
+  "updated": "2026-07-27T02:36:10Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -346,7 +346,10 @@
         "total": 8.0,
         "ts": 1785108016
       },
-      "last_alert_odds": 177
+      "last_alert_odds": 177,
+      "result": "LOSS",
+      "score": "New York Yankees 4, Philadelphia Phillies 11",
+      "units_result": -1.5
     },
     {
       "id": "san-francisco-giants-ml-0726",
