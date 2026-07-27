@@ -69,6 +69,15 @@
       "units": 0.85,
       "score": "Rune Eaters 2-0 SAW Youngsters \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "texas-rangers-ml-0727",
+      "desc": "Texas Rangers ML",
+      "odds": 109,
+      "result": "WIN",
+      "units": 1.64,
+      "score": "Seattle Mariners 3, Texas Rangers 7",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785161361.1528428,
