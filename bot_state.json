@@ -13261,6 +13261,22 @@
           "px": 0.55
         }
       ]
+    },
+    {
+      "price": 0.4,
+      "short": true,
+      "stake": 4.0,
+      "kind": "EDGE",
+      "p_model": 0.6923076923076923,
+      "event": "HANJIN BRION vs. Dplus KIA",
+      "ev_start": "2026-07-27T10:30:00Z",
+      "reason": "model 69% vs market 40% \u2014 29% edge, half-Kelly",
+      "order_id": "BG59NQJD89NN",
+      "qty": 10,
+      "market_slug": "aec-lol-bro-dk-2026-07-27",
+      "outcome": "Dplus KIA",
+      "status": "open",
+      "ts": "2026-07-27T00:16:46Z"
     }
   ],
   "pm_stats": {
@@ -13268,7 +13284,7 @@
     "wins": 13,
     "losses": 25,
     "pnl": 17.49,
-    "trades": 181,
+    "trades": 182,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-00",
     "deposits": 64.0,
