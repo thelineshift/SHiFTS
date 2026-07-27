@@ -295,8 +295,7 @@
     "1531272414682677309",
     "1531272717754433677",
     "1531273001029603369",
-    "1531279637357789246",
-    "1531279929558433913"
+    "1531279637357789246"
   ],
   "gw_replies": {
     "1510318944097927388:guide": 1784948166.204074,
@@ -4939,7 +4938,7 @@
         }
       },
       "valorant:138941": {
-        "ts": 1785148596.4304404,
+        "ts": 1785155991.2850614,
         "f": {
           "w": 1,
           "l": 2,
@@ -12611,10 +12610,6 @@
         {
           "ts": 1785152774,
           "px": 0.59
-        },
-        {
-          "ts": 1785155980,
-          "px": 0.59
         }
       ]
     },
@@ -14738,6 +14733,21 @@
       "outcome": "San Diego Padres",
       "status": "resting",
       "ts": "2026-07-27T12:35:19Z"
+    },
+    {
+      "price": 0.28,
+      "stake": 2.24,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Eternal Focus Amethyst vs. Los Chudeles",
+      "ev_start": "2026-07-27T23:30:00Z",
+      "reason": "model 50% vs market 28% \u2014 22% edge, half-Kelly",
+      "order_id": "BGFWPC7369QV",
+      "qty": 8,
+      "market_slug": "aec-valorant-efa-lcd-2026-07-27",
+      "outcome": "Eternal Focus Amethyst",
+      "status": "open",
+      "ts": "2026-07-27T12:40:18Z"
     }
   ],
   "pm_stats": {
@@ -14745,7 +14755,7 @@
     "wins": 14,
     "losses": 31,
     "pnl": 7.76,
-    "trades": 230,
+    "trades": 231,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
