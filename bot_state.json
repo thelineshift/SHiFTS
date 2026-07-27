@@ -4945,7 +4945,7 @@
         }
       },
       "valorant:137995": {
-        "ts": 1785152215.2066483,
+        "ts": 1785161700.2668092,
         "f": {
           "w": 4,
           "l": 1,
@@ -5119,7 +5119,7 @@
         }
       },
       "dota2:138858": {
-        "ts": 1785152212.6592257,
+        "ts": 1785161697.4127674,
         "f": {
           "w": 3,
           "l": 2,
@@ -5206,7 +5206,7 @@
         }
       },
       "dota2:135854": {
-        "ts": 1785152213.2507331,
+        "ts": 1785161698.0244873,
         "f": {
           "w": 3,
           "l": 2,
@@ -15500,6 +15500,84 @@
           "px": 0.3
         }
       ]
+    },
+    {
+      "price": 0.29,
+      "short": true,
+      "stake": 2.9,
+      "kind": "EDGE",
+      "p_model": 0.631578947368421,
+      "event": "MOUZ NXT vs. LEO",
+      "ev_start": "2026-07-27T15:30:00Z",
+      "reason": "model 63% vs market 29% \u2014 34% edge, half-Kelly",
+      "order_id": "BGH9YWH449NF",
+      "qty": 10,
+      "market_slug": "aec-cs2-mouzn-lea-2026-07-27",
+      "outcome": "LEO",
+      "status": "open",
+      "ts": "2026-07-27T14:15:04Z"
+    },
+    {
+      "price": 0.3,
+      "short": true,
+      "stake": 2.4,
+      "kind": "EDGE",
+      "p_model": 0.5663716814159292,
+      "event": "NAVI Junior vs. LEO",
+      "ev_start": "2026-07-27T16:30:00Z",
+      "reason": "model 57% vs market 30% \u2014 27% edge, half-Kelly",
+      "order_id": "BGH7F5SBA9ST",
+      "qty": 8,
+      "market_slug": "aec-cs2-navij-lea-2026-07-27",
+      "outcome": "LEO",
+      "status": "open",
+      "ts": "2026-07-27T14:15:05Z"
+    },
+    {
+      "price": 0.23,
+      "short": true,
+      "stake": 1.61,
+      "kind": "EDGE",
+      "p_model": 0.4285714285714286,
+      "event": "7REX vs. RED Academy",
+      "ev_start": "2026-07-27T20:00:00Z",
+      "reason": "model 43% vs market 23% \u2014 20% edge, half-Kelly",
+      "order_id": "BGH89S96A9NH",
+      "qty": 7,
+      "market_slug": "aec-lol-7rex-reda-2026-07-27",
+      "outcome": "RED Academy",
+      "status": "open",
+      "ts": "2026-07-27T14:15:07Z"
+    },
+    {
+      "price": 0.29,
+      "stake": 2.61,
+      "kind": "EDGE",
+      "p_model": 0.6,
+      "event": "ORA Temper vs. SaD GC",
+      "ev_start": "2026-07-27T21:00:00Z",
+      "reason": "model 60% vs market 29% \u2014 31% edge, half-Kelly",
+      "order_id": "BGH7JB02M9P9",
+      "qty": 9,
+      "market_slug": "aec-valorant-orat-sga-2026-07-27",
+      "outcome": "ORA Temper",
+      "status": "open",
+      "ts": "2026-07-27T14:15:08Z"
+    },
+    {
+      "price": 0.05,
+      "stake": 1.7,
+      "kind": "EDGE",
+      "p_model": 0.30769230769230776,
+      "event": "UB Alma Mater vs. UCAM Esports Club",
+      "ev_start": "2026-07-28T15:00:00Z",
+      "reason": "model 31% vs market 5% \u2014 26% edge, half-Kelly",
+      "order_id": "BGH75K1RM9NM",
+      "qty": 34,
+      "market_slug": "aec-lol-ub-ucam-2026-07-28",
+      "outcome": "UB Alma Mater",
+      "status": "open",
+      "ts": "2026-07-27T14:15:09Z"
     }
   ],
   "pm_stats": {
@@ -15507,7 +15585,7 @@
     "wins": 16,
     "losses": 42,
     "pnl": -53.75,
-    "trades": 241,
+    "trades": 246,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-14",
     "deposits": 64.0,
