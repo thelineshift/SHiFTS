@@ -34,6 +34,15 @@
   "bot_version": "9.24.7",
   "unannounced_results": [
     {
+      "id": "milwaukee-brewers-ml-0725",
+      "desc": "Milwaukee Brewers ML",
+      "odds": -244,
+      "result": "WIN",
+      "units": 0.41,
+      "score": "Colorado Rockies 5, Milwaukee Brewers 8",
+      "tier": "lock"
+    },
+    {
       "id": "vancouver-whitecaps-ml-0725",
       "desc": "Vancouver Whitecaps ML",
       "odds": -120,
@@ -97,7 +106,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785158269.2583337,
+  "last_x_receipt_ts": 1785154776.586211,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -14896,7 +14905,7 @@
       "qty": 2,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T13:13:31Z"
     }
   ],
