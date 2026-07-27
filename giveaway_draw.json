@@ -1,0 +1,44 @@
+{
+ "draw_id": "2026-07-26",
+ "drawn_at": "2026-07-27T12:03:11Z",
+ "claim_hours": 24,
+ "round": 1,
+ "pool_size": 32,
+ "entrants": 32,
+ "commit": "4ce8f4602c5399ade26e77cccbad2e7d07e3124af285000218cb561355c0ff5d",
+ "nonce": "b9e442089ba738d4dbeac755612f2d22",
+ "ladder": {
+  "grand": 35,
+  "runner-up": 15
+ },
+ "winners": [
+  {
+   "rank": "grand",
+   "prize": 35,
+   "handle": "hayjay_web3",
+   "discord": "oladimeji3124",
+   "discord_id": "894953724164849685",
+   "idx": 12,
+   "status": "pending",
+   "claimed_at": null
+  },
+  {
+   "rank": "runner-up",
+   "prize": 15,
+   "handle": "umhomdani",
+   "discord": "sanmonmo",
+   "discord_id": "852827725777600524",
+   "idx": 30,
+   "status": "pending",
+   "claimed_at": null
+  }
+ ],
+ "voided": [
+  {
+   "handle": "Nada_5",
+   "why": "same Discord account as @Nada_j5 \u2014 one ticket per person"
+  }
+ ],
+ "note": "Draw ran 2026-07-27 ~12:00 UTC (a day late \u2014 Sunday engine slot lost to host outage). Winners have 24h to respond in #giveaway or their prize redraws (captain's decree 2026-07-27).",
+ "history": []
+}
