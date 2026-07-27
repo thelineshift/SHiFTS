@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T12:01:08Z",
+  "updated": "2026-07-27T12:16:12Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1142,7 +1142,10 @@
       "opp": "Inner Circle Academy",
       "analysis": "3-2 last 5 (beat Entropy, Rune Eaters, Just Players) (lost to INOX Division) vs 1-4 \u2014 live Pinnacle line -178 (our 86% vs book 60%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Entropy, Rune Eaters, Just Players) (lost to INOX Division) vs 1-4 \u2014 live Pinnacle line -178 (our 86% vs book 60%). Books hang re",
       "awayTeam": "ex-RUSTEC",
-      "homeTeam": "Inner Circle Academy"
+      "homeTeam": "Inner Circle Academy",
+      "result": "WIN",
+      "units_result": 0.84,
+      "score": "ex-RUSTEC 2-0 Entropy \u00b7 final"
     },
     {
       "id": "gentle-mates-gc-ml-0727",
