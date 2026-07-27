@@ -4939,11 +4939,15 @@
         }
       },
       "valorant:137995": {
-        "ts": 1785161700.2668092,
+        "ts": 1785169507.1353643,
         "f": {
           "w": 4,
           "l": 1,
           "res": [
+            {
+              "won": true,
+              "opp": "GIANTX GC"
+            },
             {
               "won": true,
               "opp": "Habos Babos"
@@ -4959,10 +4963,6 @@
             {
               "won": false,
               "opp": "SK Nebula"
-            },
-            {
-              "won": true,
-              "opp": "G2 Gozen"
             }
           ]
         }
@@ -12473,6 +12473,10 @@
       "ts": "2026-07-26T17:54:48Z",
       "price_path": [
         {
+          "ts": 1785100463,
+          "px": 0.58
+        },
+        {
           "ts": 1785102268,
           "px": 0.58
         },
@@ -12563,10 +12567,6 @@
         {
           "ts": 1785167670,
           "px": 0.52
-        },
-        {
-          "ts": 1785169473,
-          "px": 0.58
         }
       ]
     },
@@ -13123,6 +13123,10 @@
       "ts": "2026-07-26T20:55:22Z",
       "price_path": [
         {
+          "ts": 1785114982,
+          "px": 0.5
+        },
+        {
           "ts": 1785117374,
           "px": 0.44
         },
@@ -13213,10 +13217,6 @@
         {
           "ts": 1785167671,
           "px": 0.28
-        },
-        {
-          "ts": 1785169473,
-          "px": 0.31
         }
       ]
     },
@@ -13446,6 +13446,10 @@
       "ts": "2026-07-26T22:09:52Z",
       "price_path": [
         {
+          "ts": 1785114983,
+          "px": 0.96
+        },
+        {
           "ts": 1785117375,
           "px": 0.96
         },
@@ -13536,10 +13540,6 @@
         {
           "ts": 1785167671,
           "px": 0.78
-        },
-        {
-          "ts": 1785169473,
-          "px": 0.75
         }
       ]
     },
@@ -13559,6 +13559,10 @@
       "status": "open",
       "ts": "2026-07-26T22:09:53Z",
       "price_path": [
+        {
+          "ts": 1785116178,
+          "px": 0.31
+        },
         {
           "ts": 1785118575,
           "px": 0.31
@@ -13649,10 +13653,6 @@
         },
         {
           "ts": 1785167671,
-          "px": 0.35
-        },
-        {
-          "ts": 1785169473,
           "px": 0.35
         }
       ]
@@ -13745,6 +13745,10 @@
       "ts": "2026-07-26T23:21:22Z",
       "price_path": [
         {
+          "ts": 1785114983,
+          "px": 0.55
+        },
+        {
           "ts": 1785117375,
           "px": 0.55
         },
@@ -13834,10 +13838,6 @@
         },
         {
           "ts": 1785167671,
-          "px": 0.55
-        },
-        {
-          "ts": 1785169474,
           "px": 0.55
         }
       ]
@@ -15329,10 +15329,6 @@
         {
           "ts": 1785167672,
           "px": 0.29
-        },
-        {
-          "ts": 1785169474,
-          "px": 0.31
         }
       ]
     },
@@ -15482,10 +15478,6 @@
         {
           "ts": 1785167673,
           "px": 0.61
-        },
-        {
-          "ts": 1785169477,
-          "px": 0.61
         }
       ]
     },
@@ -15523,10 +15515,6 @@
         },
         {
           "ts": 1785167673,
-          "px": 0.4
-        },
-        {
-          "ts": 1785169478,
           "px": 0.4
         }
       ]
@@ -15850,10 +15838,6 @@
         {
           "ts": 1785167673,
           "px": 0.31
-        },
-        {
-          "ts": 1785169478,
-          "px": 0.31
         }
       ]
     },
@@ -15883,10 +15867,6 @@
         },
         {
           "ts": 1785167673,
-          "px": 0.25
-        },
-        {
-          "ts": 1785169478,
           "px": 0.25
         }
       ]
@@ -15918,10 +15898,6 @@
         {
           "ts": 1785167673,
           "px": 0.19
-        },
-        {
-          "ts": 1785169478,
-          "px": 0.22
         }
       ]
     },
@@ -15950,10 +15926,6 @@
         },
         {
           "ts": 1785167674,
-          "px": 0.27
-        },
-        {
-          "ts": 1785169478,
           "px": 0.27
         }
       ]
@@ -15985,10 +15957,6 @@
         {
           "ts": 1785167674,
           "px": 0.46
-        },
-        {
-          "ts": 1785169478,
-          "px": 0.46
         }
       ]
     },
@@ -16017,10 +15985,6 @@
         },
         {
           "ts": 1785167674,
-          "px": 0.35
-        },
-        {
-          "ts": 1785169479,
           "px": 0.35
         }
       ]
@@ -16052,10 +16016,6 @@
         {
           "ts": 1785167674,
           "px": 0.57
-        },
-        {
-          "ts": 1785169479,
-          "px": 0.57
         }
       ]
     },
@@ -16081,10 +16041,6 @@
         {
           "ts": 1785167674,
           "px": 0.4
-        },
-        {
-          "ts": 1785169479,
-          "px": 0.4
         }
       ]
     },
@@ -16106,10 +16062,6 @@
       "price_path": [
         {
           "ts": 1785167674,
-          "px": 0.34
-        },
-        {
-          "ts": 1785169479,
           "px": 0.34
         }
       ]
@@ -16133,10 +16085,6 @@
         {
           "ts": 1785167674,
           "px": 0.26
-        },
-        {
-          "ts": 1785169479,
-          "px": 0.26
         }
       ]
     },
@@ -16158,10 +16106,6 @@
       "price_path": [
         {
           "ts": 1785167675,
-          "px": 0.66
-        },
-        {
-          "ts": 1785169479,
           "px": 0.66
         }
       ]
@@ -16185,20 +16129,63 @@
         {
           "ts": 1785167675,
           "px": 0.55
-        },
-        {
-          "ts": 1785169480,
-          "px": 0.55
         }
       ]
+    },
+    {
+      "price": 0.25,
+      "short": true,
+      "stake": 1.0,
+      "kind": "EDGE",
+      "p_model": 0.368421052631579,
+      "event": "SK Nebula vs. ALTERNATE aTTaX Ruby",
+      "ev_start": "2026-07-28T18:00:00Z",
+      "reason": "model 37% vs market 25% \u2014 12% edge, half-Kelly",
+      "order_id": "BGK8Q1QDT9QM",
+      "qty": 4,
+      "market_slug": "aec-valorant-skn-aar-2026-07-28",
+      "outcome": "ALTERNATE aTTaX Ruby",
+      "status": "open",
+      "ts": "2026-07-27T16:25:11Z"
+    },
+    {
+      "price": 0.595,
+      "short": true,
+      "stake": 1.19,
+      "kind": "EDGE",
+      "p_model": 0.6726805820463914,
+      "event": "Colorado Rockies vs. San Diego Padres",
+      "ev_start": "2026-07-29T20:10:00Z",
+      "reason": "model 67% vs market 60% \u2014 8% edge, half-Kelly",
+      "order_id": "BGK8Z5DWW9ST",
+      "qty": 2,
+      "market_slug": "aec-mlb-col-sd-2026-07-29",
+      "outcome": "San Diego Padres",
+      "status": "open",
+      "ts": "2026-07-27T16:25:12Z"
+    },
+    {
+      "price": 0.535,
+      "stake": 1.07,
+      "kind": "EDGE",
+      "p_model": 0.6282057846287925,
+      "event": "Milwaukee Brewers vs. San Francisco Giants",
+      "ev_start": "2026-07-29T19:45:00Z",
+      "reason": "model 63% vs market 54% \u2014 9% edge, half-Kelly",
+      "order_id": "BGK783F2M9NK",
+      "qty": 2,
+      "market_slug": "aec-mlb-mil-sf-2026-07-29",
+      "outcome": "Milwaukee Brewers",
+      "status": "open",
+      "ts": "2026-07-27T16:25:14Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 18,
-    "losses": 43,
-    "pnl": -44.01,
-    "trades": 258,
+    "wins": 17,
+    "losses": 42,
+    "pnl": -43.8,
+    "trades": 261,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-16",
     "deposits": 64.0,
@@ -16213,8 +16200,8 @@
         0
       ],
       "EDGE": [
-        13,
-        29,
+        12,
+        28,
         0
       ],
       "LIVE-BET": [
@@ -16234,6 +16221,22 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
+    {
+      "ts": "2026-07-26T18:14:22Z",
+      "kind": "LIVE-BET",
+      "outcome": "G2 Ares",
+      "result": "LOSS",
+      "pnl": -0.87,
+      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.29, slid to 0.58 before the result \u2014 the number ran 29\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-26T18:44:21Z",
+      "kind": "EDGE",
+      "outcome": "megoshort",
+      "result": "WIN",
+      "pnl": 2.8,
+      "lesson": "+$2.80 \u2014 model 50% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.49 before the result \u2014 the number ran 19\u00a2 against us \u26a0\ufe0f"
+    },
     {
       "ts": "2026-07-26T18:44:24Z",
       "kind": "EDGE",
@@ -16457,22 +16460,6 @@
       "result": "WIN",
       "pnl": 9.95,
       "lesson": "+$9.95 \u2014 model 73% vs market 50% was real edge; thesis held. Taken 0.50, rode to 0.43 before the result \u2014 beat the number by 7\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-27T16:24:29Z",
-      "kind": "EDGE",
-      "outcome": "Gentle Mates GC",
-      "result": "WIN",
-      "pnl": 1.82,
-      "lesson": "+$1.82 \u2014 model 94% vs market 74% was real edge; thesis held. Taken 0.74, rode to 0.96 before the result \u2014 beat the number by 22\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-27T16:24:35Z",
-      "kind": "EDGE",
-      "outcome": "NAVI Junior",
-      "result": "LOSS",
-      "pnl": -2.03,
-      "lesson": "model 50% vs market 29% missed \u2014 logged for the playbook review. Taken 0.29, slid to 0.30 before the result \u2014 the number ran 1\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -16556,7 +16543,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785169469.3206449,
+  "dep_checked_ts": 1785164670.110133,
   "x_bio_v": 2,
   "op_cool_until": 1785096924.2504044
 }
