@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T04:01:01Z",
+  "updated": "2026-07-27T06:56:11Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -876,7 +876,10 @@
       "opp": "Gen.G",
       "analysis": "2-3 last 5 (beat Dplus KIA, Kiwoom DRX) (lost to Nongshim Red Force) vs 1-4 \u2014 live Pinnacle line +160 (our 73% vs book 35%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat Dplus KIA, Kiwoom DRX) (lost to Nongshim Red Force) vs 1-4 \u2014 live Pinnacle line +160 (our 73% vs book 35%). Ride the **38-point** form e",
       "awayTeam": "BNK FEARX",
-      "homeTeam": "Gen.G"
+      "homeTeam": "Gen.G",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "BNK FEARX 0-1 Gen.G \u00b7 final"
     },
     {
       "id": "kt-rolster-ml-0727",
