@@ -1,10 +1,22 @@
 {
-  "ts": "2026-07-27T23:14:23Z",
+  "ts": "2026-07-27T23:29:20Z",
   "configured": true,
-  "balance_usd": 107.06,
-  "buying_power": 39.06,
+  "balance_usd": 104.06,
+  "buying_power": 36.06,
   "positions": [],
   "open_orders": [
+    {
+      "market": "aec-wta-marsto-peyste-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.6",
+      "qty": 2
+    },
+    {
+      "market": "astatc-wta-marsto-peyste-2026-07-26-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.01",
+      "qty": 172
+    },
     {
       "market": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
       "intent": "ORDER_INTENT_BUY_LONG",
@@ -40,18 +52,6 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.71",
       "qty": 2
-    },
-    {
-      "market": "aec-wta-marsto-peyste-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 2
-    },
-    {
-      "market": "astatc-wta-marsto-peyste-2026-07-26-sw2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.01",
-      "qty": 172
     }
   ]
 }
