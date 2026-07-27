@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.8'  # SETTLE-LEDGER + QUIET-ROOM v2 + ✅ win posts (owner decrees 2026-07-27)
+BOT_VERSION = '9.24.9'  # DESK HARDENING LAW: 55-trade autopsy — kill the five loss factories
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4375,8 +4375,13 @@ def pm_esport_prob(cache, team_a, team_b):
         g1, g2 = f1['w'] + f1['l'], f2['w'] + f2['l']
         if not g1 or not g2:
             return None
-        w1, w2 = f1['w'] / g1, f2['w'] / g2
+        # DESK HARDENING LAW (7/27 autopsy): raw small-sample win-rates read 86%..100%
+        # and Kelly bet the farm (Gen.G −$17.55, LOUD −$8.74). Shrink toward .500
+        # (n/(n+10)) and clamp — esports form is noise-dominated, always.
+        w1 = 0.5 + (f1['w'] / g1 - 0.5) * (g1 / (g1 + 10.0))
+        w2 = 0.5 + (f2['w'] / g2 - 0.5) * (g2 / (g2 + 10.0))
         p1 = w1 * (1 - w2) / (w1 * (1 - w2) + w2 * (1 - w1)) if (w1 or w2) else 0.5
+        p1 = min(0.80, max(0.20, p1))
         return p1 if na == n1 else 1 - p1
     return None
 
@@ -4387,6 +4392,21 @@ def pm_kelly(p, price, B):
         return 0.0
     return min(B * (edge / (1 - price)) * TRADER_KELLY, B * 0.5)
 
+# ---- DESK HARDENING LAW (owner decree 2026-07-27: "analyze the losses, win more than
+# we lose") — from the 55-trade autopsy: ARB +$20.28 (engine, keep), EDGE +$3.49 (thin,
+# tighten), LIVE-BET −$13.35 (retire). Five loss factories killed: map-level markets,
+# resting-order re-entries, uncapped same-event stacks, raw esports win-rate reads,
+# and live-divergence fades.
+def _desk_trade_cap(B, pmstats):
+    """Max stake on ONE trade: 10% of account (floor $6) — Gen.G's $17.98 becomes ~$7.50."""
+    acct = float((pmstats or {}).get('account') or B or 50.0)
+    return max(6.0, 0.10 * acct)
+
+def _desk_event_cap(B, pmstats):
+    """Max total stake on ONE event title (open+resting+intents): 15% of account (floor $8)."""
+    acct = float((pmstats or {}).get('account') or B or 50.0)
+    return max(8.0, 0.15 * acct)
+
 def pm_trader_scan(st):
     """One desk cycle. Returns (trade_intents, notes). Each intent: market/outcome/price/stake/kind."""
     c = _pm_client()
@@ -4396,7 +4416,10 @@ def pm_trader_scan(st):
     if not bal or bal['buying_power'] < 1.05:
         return [], []
     B = bal['buying_power']
-    open_trades = [t for t in st.get('pm_trades', []) if t.get('status') == 'open']
+    # resting orders lock real cash too — counting only 'open' let the desk re-enter the
+    # same contract 35 min later (Gen.G map1 double-loss) — DESK HARDENING LAW
+    open_trades = [t for t in st.get('pm_trades', []) if t.get('status') in ('open', 'resting')]
+    pmstats = st.get('pm_stats') or {}
     expo = sum(float(t.get('stake', 0)) for t in open_trades)
     expo0 = expo  # cycle-start deployed — intents stack on top, and they spend REAL cash
     have = {(t['market_slug'], t['outcome']) for t in open_trades}
@@ -4469,8 +4492,9 @@ def pm_trader_scan(st):
             if 'winner' not in smt and 'moneyline' not in smt:
                 continue
             _mslug = m.get('marketSlug') or m.get('slug') or ''
-            if re.search(r'-game\d+', _mslug):
-                continue  # esports game-1/2/3 markets: our model is match-level — wrong granularity, skip
+            if re.search(r'-(game|map)\d+', _mslug):
+                continue  # esports game-N/map-N markets: our model is match-level — wrong granularity
+                # (DESK HARDENING: the Gen.G −$17.55 double loss was on -map1 with a match-level read)
             md = m.get('marketMetadata') if isinstance(m.get('marketMetadata'), dict) else {}
             sides = m.get('marketSides') or []
             long_side = next((s for s in sides if s.get('long')), sides[0] if sides else {})
@@ -4559,7 +4583,7 @@ def pm_trader_scan(st):
                     print(f"[trader] edge-cap: {o['team']} 3-way claims {edge3:.0%} — distrusting model read, skipping")
                     continue
                 if edge3 >= TRADER_MIN_EDGE + 0.04 + _tb('EDGE'):
-                    stake = pm_kelly(pm3, o['price'], B) * 0.5 * _tm('EDGE')
+                    stake = min(pm_kelly(pm3, o['price'], B) * 0.5 * _tm('EDGE'), _desk_trade_cap(B, pmstats))
                     if stake >= 1.0 and stake <= _desk_room(B, expo, expo0):
                         intents.append({**o, 'stake': round(stake, 2), 'kind': 'EDGE', 'p_model': pm3,
                                         'event': title, 'ev_start': ev_start,
@@ -4572,12 +4596,18 @@ def pm_trader_scan(st):
                 continue
             if o['slug'] in have_slugs:
                 continue  # already positioned on this contract — never both directions
-            if sum(1 for it in intents if it.get('event') == title and it['kind'] != 'ARB') >= 2:
-                continue  # max 2 positions per event (covers the same-match two-slug shape)
+            # DESK HARDENING: cap TOTAL exposure per event (open+resting+intents), not
+            # just this scan's intents — the Gen.G match took $35.53 across 3 slugs.
+            _ev_open = sum(float(t.get('stake', 0)) for t in open_trades if (t.get('event') or '') == title)
+            _ev_int = sum(float(it.get('stake', 0)) for it in intents if it.get('event') == title and it['kind'] != 'ARB')
+            if _ev_open + _ev_int >= _desk_event_cap(B, pmstats):
+                continue
             others = [x['team'] for x in outcomes if x['team'] != o['team']]
             pm_ = pm_sport_prob(games, o['team'], others[0], leagues) if others else None
+            _esp = False
             if pm_ is None and others:
                 pm_ = pm_esport_prob(cache, o['team'], others[0])
+                _esp = pm_ is not None
             if pm_ is None:
                 continue
             edge = pm_ - o['price']
@@ -4585,16 +4615,12 @@ def pm_trader_scan(st):
                 print(f"[trader] edge-cap: {o['team']} claims {edge:.0%} — distrusting model read, skipping")
                 continue
             if live:
-                if edge >= TRADER_LIVE_EDGE + _tb('LIVE-BET'):
-                    stake = pm_kelly(pm_, o['price'], B) * _tm('LIVE-BET')
-                    if stake >= 1.0 and stake <= _desk_room(B, expo, expo0):
-                        intents.append({**o, 'stake': round(stake, 2), 'kind': 'LIVE-BET', 'p_model': pm_,
-                                        'event': title, 'ev_start': ev_start,
-                                        'reason': f"live number drifted — model {pm_:.0%} vs {o['price']:.0%}, {edge:.0%} gap mid-game"})
-                        expo += stake
+                # LIVE-BET retired (7/27 autopsy: 2-6, −$13.35) — the "divergence" was our
+                # STALE pregame model vs the market's live information; we were
+                # systematically fading the smarter side mid-game.
                 continue
             if o['price'] >= TRADER_TAIL_MIN + _tb('TAIL') and ts_ev - now < 24 * 3600 and pm_ >= 0.78:
-                stake = min(B * 0.15, B - 1) * _tm('TAIL')
+                stake = min(B * 0.15, B - 1, _desk_trade_cap(B, pmstats)) * _tm('TAIL')
                 if stake <= _desk_room(B, expo, expo0):
                     yld = (1 - o['price']) / o['price']
                     intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': pm_,
@@ -4602,8 +4628,9 @@ def pm_trader_scan(st):
                                     'reason': f"tail-end yield — {yld * 100:.1f}% on a near-certain that settles today"})
                     expo += stake
                 continue
-            if edge >= TRADER_MIN_EDGE + _tb('EDGE'):
-                stake = pm_kelly(pm_, o['price'], B) * _tm('EDGE')
+            # esports reads are noise-heavy: their edge bar sits +4pp over the sports bar
+            if edge >= TRADER_MIN_EDGE + (0.04 if _esp else 0.0) + _tb('EDGE'):
+                stake = min(pm_kelly(pm_, o['price'], B) * _tm('EDGE'), _desk_trade_cap(B, pmstats))
                 if stake >= 1.0 and stake <= _desk_room(B, expo, expo0):
                     intents.append({**o, 'stake': round(stake, 2), 'kind': 'EDGE', 'p_model': pm_,
                                     'event': title, 'ev_start': ev_start,
@@ -5399,7 +5426,10 @@ async def pm_watch():
                     await asyncio.to_thread(gh_put, 'bot_state.json', st, 'desk reconcile')
         except Exception as _re2:
             print('[desk] reconcile feed:', str(_re2)[:120])
-    open_trades = [t for t in st.get('pm_trades', []) if t.get('status') == 'open']
+    # resting orders lock real cash too — counting only 'open' let the desk re-enter the
+    # same contract 35 min later (Gen.G map1 double-loss) — DESK HARDENING LAW
+    open_trades = [t for t in st.get('pm_trades', []) if t.get('status') in ('open', 'resting')]
+    pmstats = st.get('pm_stats') or {}
     open_bets = [b for b in st.get('pm_live', []) if not b.get('result')]
     open_global = [t for t in st.get('pm2_trades', []) if t.get('status') == 'open']
     if not open_trades and not open_bets and not open_global:
