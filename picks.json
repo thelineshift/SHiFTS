@@ -795,11 +795,12 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 122,
-        "away_ml": -148,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 8.5,
-        "ts": 1785138368
-      }
+        "ts": 1785152768
+      },
+      "last_alert_odds": 129
     },
     {
       "id": "detroit-tigers-ml-0727",
@@ -818,10 +819,10 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -118,
-        "away_ml": -102,
+        "home_ml": -120,
+        "away_ml": -101,
         "total": 8.5,
-        "ts": 1785125768
+        "ts": 1785152768
       }
     },
     {
@@ -961,10 +962,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 118,
-        "away_ml": -143,
+        "home_ml": 114,
+        "away_ml": -137,
         "total": 8.5,
-        "ts": 1785143769
+        "ts": 1785152769
       }
     },
     {
