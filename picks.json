@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T10:56:10Z",
+  "updated": "2026-07-27T12:01:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1126,6 +1126,91 @@
         "total": 9.5,
         "ts": 1785149169
       }
+    },
+    {
+      "id": "ex-rustec-ml-0727",
+      "date": "2026-07-27",
+      "sport": "cs2",
+      "desc": "ex-RUSTEC ML",
+      "market": "CCT Europe Bo3",
+      "odds": -178,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "Inner Circle Academy",
+      "team": "ex-RUSTEC",
+      "opp": "Inner Circle Academy",
+      "analysis": "3-2 last 5 (beat Entropy, Rune Eaters, Just Players) (lost to INOX Division) vs 1-4 \u2014 live Pinnacle line -178 (our 86% vs book 60%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Entropy, Rune Eaters, Just Players) (lost to INOX Division) vs 1-4 \u2014 live Pinnacle line -178 (our 86% vs book 60%). Books hang re",
+      "awayTeam": "ex-RUSTEC",
+      "homeTeam": "Inner Circle Academy"
+    },
+    {
+      "id": "gentle-mates-gc-ml-0727",
+      "date": "2026-07-27",
+      "sport": "valorant",
+      "desc": "Gentle Mates GC ML",
+      "market": "VCT Bo3",
+      "odds": -351,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "GIANTX GC",
+      "team": "Gentle Mates GC",
+      "opp": "GIANTX GC",
+      "analysis": "4-1 last 5 (beat Habos Babos, SK Nebula, G2 Gozen) (lost to SK Nebula) vs 1-4 \u2014 live Pinnacle line -351 (our 90% vs book 72%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Habos Babos, SK Nebula, G2 Gozen) (lost to SK Nebula) vs 1-4 \u2014 live Pinnacle line -351 (our 90% vs book 72%). Ride the **18-point** fo",
+      "awayTeam": "Gentle Mates GC",
+      "homeTeam": "GIANTX GC"
+    },
+    {
+      "id": "rune-eaters-ml-0727",
+      "date": "2026-07-27",
+      "sport": "cs2",
+      "desc": "Rune Eaters ML",
+      "market": "CCT Europe Bo3",
+      "odds": -177,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "SAW Youngsters",
+      "team": "Rune Eaters",
+      "opp": "SAW Youngsters",
+      "analysis": "2-3 last 5 (beat Entropy, Team Novaq) (lost to ex-RUSTEC) vs 1-4 \u2014 live Pinnacle line -177 (our 73% vs book 60%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Entropy, Team Novaq) (lost to ex-RUSTEC) vs 1-4 \u2014 live Pinnacle line -177 (our 73% vs book 60%). When the form gap runs **13 points** wide, the bet",
+      "awayTeam": "Rune Eaters",
+      "homeTeam": "SAW Youngsters"
+    },
+    {
+      "id": "beznegativa-ml-0727",
+      "date": "2026-07-27",
+      "sport": "cs2",
+      "desc": "beznegativa ML",
+      "market": "CIS LAN Championship Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "11:00 AM ET",
+      "vs": "WW Team",
+      "team": "beznegativa",
+      "opp": "WW Team",
+      "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **10 points** of model edge, taken.",
+      "awayTeam": "beznegativa",
+      "homeTeam": "WW Team"
+    },
+    {
+      "id": "virtus.pro-ml-0727",
+      "date": "2026-07-27",
+      "sport": "cs2",
+      "desc": "Virtus.pro ML",
+      "market": "CIS LAN Championship Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "11:00 AM ET",
+      "vs": "TokyoSavage",
+      "team": "Virtus.pro",
+      "opp": "TokyoSavage",
+      "analysis": "3-2 last 5 (beat B8, NIP, 1WIN) (lost to Inner Circle Esports) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat B8, NIP, 1WIN) (lost to Inner Circle Esports) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over TokyoSavage the number hasn't priced.",
+      "awayTeam": "Virtus.pro",
+      "homeTeam": "TokyoSavage"
     }
   ]
 }
