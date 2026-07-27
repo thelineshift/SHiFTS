@@ -800,9 +800,9 @@
       "awayTeam": "New York Yankees",
       "live_odds": {
         "home_ml": 119,
-        "away_ml": -144,
+        "away_ml": -143,
         "total": 8.5,
-        "ts": 1785188067
+        "ts": 1785194059
       },
       "last_alert_odds": 129
     },
@@ -1287,10 +1287,10 @@
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -107,
-        "away_ml": -112,
+        "home_ml": -112,
+        "away_ml": -107,
         "total": 8.5,
-        "ts": 1785173668
+        "ts": 1785194059
       }
     },
     {
