@@ -28150,10 +28150,6 @@
         {
           "ts": 1785192866,
           "px": 0.6
-        },
-        {
-          "ts": 1785195264,
-          "px": 0.6
         }
       ]
     },
@@ -28207,10 +28203,6 @@
         {
           "ts": 1785193462,
           "px": 0.25
-        },
-        {
-          "ts": 1785195264,
-          "px": 0.25
         }
       ]
     },
@@ -28233,10 +28225,6 @@
         {
           "ts": 1785192867,
           "px": 0.71
-        },
-        {
-          "ts": 1785195264,
-          "px": 0.71
         }
       ]
     },
@@ -28257,10 +28245,6 @@
       "price_path": [
         {
           "ts": 1785193463,
-          "px": 0.54
-        },
-        {
-          "ts": 1785195265,
           "px": 0.54
         }
       ]
@@ -28284,10 +28268,6 @@
         {
           "ts": 1785193463,
           "px": 0.33
-        },
-        {
-          "ts": 1785195265,
-          "px": 0.33
         }
       ]
     },
@@ -28304,27 +28284,36 @@
       "market_slug": "aec-atp-framae-lukneu-2026-07-27",
       "outcome": "Francesco Maestrelli",
       "status": "open",
-      "ts": "2026-07-27T23:25:04Z",
-      "price_path": [
-        {
-          "ts": 1785195265,
-          "px": 0.32
-        }
-      ]
+      "ts": "2026-07-27T23:25:04Z"
+    },
+    {
+      "price": 0.59,
+      "stake": 2.36,
+      "kind": "EDGE",
+      "p_model": 0.7035771269818138,
+      "event": "Timofey Skatov vs. Thomas Faurel",
+      "ev_start": "2026-07-28T09:00:00Z",
+      "reason": "Elo 70% vs market 59% \u2014 11% edge, half-Kelly",
+      "order_id": "BGSK804GM9NP",
+      "qty": 4,
+      "market_slug": "aec-atp-timska-thofau-2026-07-27",
+      "outcome": "Timofey Skatov",
+      "status": "open",
+      "ts": "2026-07-27T23:35:05Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 24,
-    "losses": 53,
-    "pnl": -56.14,
-    "trades": 283,
+    "losses": 52,
+    "pnl": -53.44,
+    "trades": 284,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-22",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 93.19,
-    "net": 29.19,
+    "account": 95.89,
+    "net": 31.89,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -28334,7 +28323,7 @@
       ],
       "EDGE": [
         18,
-        39,
+        38,
         0
       ],
       "LIVE-BET": [
@@ -28354,6 +28343,14 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
+    {
+      "ts": "2026-07-27T12:58:04Z",
+      "kind": "EDGE",
+      "outcome": "Mai Tai",
+      "result": "LOSS",
+      "pnl": -6.63,
+      "lesson": "model 69% vs market 39% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.10 before the result \u2014 beat the number by 29\u00a2 \u2705"
+    },
     {
       "ts": "2026-07-27T13:49:17Z",
       "kind": "EDGE",
@@ -28585,14 +28582,6 @@
       "result": "WIN",
       "pnl": 0.09,
       "lesson": "+$0.09 \u2014 model 100% vs market 97% was real edge; thesis held. Taken 0.97, slid to 0.63 before the result \u2014 the number ran 34\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-27T23:34:20Z",
-      "kind": "EDGE",
-      "outcome": "Axolotl",
-      "result": "LOSS",
-      "pnl": -2.7,
-      "lesson": "model 55% vs market 30% missed \u2014 logged for the playbook review. Taken 0.30, slid to 0.10 before the result \u2014 the number ran 20\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
