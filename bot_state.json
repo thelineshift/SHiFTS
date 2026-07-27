@@ -5,18 +5,18 @@
     "posted+pinned in #\ud83c\udf81giveaway"
   ],
   "time_audit": {
-    "at": "2026-07-27 12:19 UTC",
+    "at": "2026-07-27 11:46 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-2": "2026-07-27 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 12:16 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 12:19 UTC",
+    "\ud83c\udfaffree-pick-2-2": "2026-07-27 08:01 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 11:16 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 11:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-27 12:15 UTC"
+    "\ud83c\udf81giveaway": "2026-07-27 11:45 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 12:19 UTC",
+    "at": "2026-07-27 11:46 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,14 +24,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 12:19 UTC",
+    "at": "2026-07-27 11:46 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 12:19 UTC",
+    "at": "2026-07-27 11:46 UTC",
     "flags": []
   },
-  "bot_version": "9.24.6",
+  "bot_version": "9.24.5",
   "unannounced_results": [
     {
       "id": "milwaukee-brewers-ml-0725",
@@ -9523,10 +9523,6 @@
       "ts": "2026-07-25T19:10:26Z",
       "price_path": [
         {
-          "ts": 1785100459,
-          "px": 0.17
-        },
-        {
           "ts": 1785102263,
           "px": 0.17
         },
@@ -9616,6 +9612,10 @@
         },
         {
           "ts": 1785152771,
+          "px": 0.21
+        },
+        {
+          "ts": 1785154779,
           "px": 0.21
         }
       ]
@@ -10674,10 +10674,6 @@
       "ts": "2026-07-26T12:09:56Z",
       "price_path": [
         {
-          "ts": 1785100461,
-          "px": 0.28
-        },
-        {
           "ts": 1785102264,
           "px": 0.28
         },
@@ -10768,6 +10764,10 @@
         {
           "ts": 1785152772,
           "px": 0.45
+        },
+        {
+          "ts": 1785154779,
+          "px": 0.66
         }
       ]
     },
@@ -11002,10 +11002,6 @@
       "ts": "2026-07-26T12:53:36Z",
       "price_path": [
         {
-          "ts": 1785100461,
-          "px": 0.75
-        },
-        {
           "ts": 1785102265,
           "px": 0.75
         },
@@ -11096,6 +11092,10 @@
         {
           "ts": 1785152772,
           "px": 0.76
+        },
+        {
+          "ts": 1785154779,
+          "px": 0.76
         }
       ]
     },
@@ -11135,10 +11135,6 @@
       "status": "open",
       "ts": "2026-07-26T12:58:37Z",
       "price_path": [
-        {
-          "ts": 1785100462,
-          "px": 0.71
-        },
         {
           "ts": 1785102265,
           "px": 0.97
@@ -11229,6 +11225,10 @@
         },
         {
           "ts": 1785152772,
+          "px": 0.67
+        },
+        {
+          "ts": 1785154780,
           "px": 0.67
         }
       ]
