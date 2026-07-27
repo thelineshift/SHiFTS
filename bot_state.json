@@ -35,15 +35,6 @@
   "bot_version": "9.24.5",
   "unannounced_results": [
     {
-      "id": "los-angeles-dodgers-ml-0725",
-      "desc": "Los Angeles Dodgers ML",
-      "odds": -157,
-      "result": "WIN",
-      "units": 0.64,
-      "score": "Los Angeles Dodgers 4, New York Mets 3",
-      "tier": "sharp"
-    },
-    {
       "id": "milwaukee-brewers-ml-0725",
       "desc": "Milwaukee Brewers ML",
       "odds": -244,
@@ -116,7 +107,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785135370.0936625,
+  "last_x_receipt_ts": 1785150969.6600392,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
