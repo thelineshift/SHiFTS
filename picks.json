@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T16:01:13Z",
+  "updated": "2026-07-27T16:24:32Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1165,7 +1165,10 @@
       "opp": "GIANTX GC",
       "analysis": "4-1 last 5 (beat Habos Babos, SK Nebula, G2 Gozen) (lost to SK Nebula) vs 1-4 \u2014 live Pinnacle line -351 (our 90% vs book 72%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Habos Babos, SK Nebula, G2 Gozen) (lost to SK Nebula) vs 1-4 \u2014 live Pinnacle line -351 (our 90% vs book 72%). Ride the **18-point** fo",
       "awayTeam": "Gentle Mates GC",
-      "homeTeam": "GIANTX GC"
+      "homeTeam": "GIANTX GC",
+      "result": "WIN",
+      "units_result": 0.43,
+      "score": "Gentle Mates GC 2-0 GIANTX GC \u00b7 final"
     },
     {
       "id": "rune-eaters-ml-0727",
@@ -1182,7 +1185,10 @@
       "opp": "SAW Youngsters",
       "analysis": "2-3 last 5 (beat Entropy, Team Novaq) (lost to ex-RUSTEC) vs 1-4 \u2014 live Pinnacle line -177 (our 73% vs book 60%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Entropy, Team Novaq) (lost to ex-RUSTEC) vs 1-4 \u2014 live Pinnacle line -177 (our 73% vs book 60%). When the form gap runs **13 points** wide, the bet",
       "awayTeam": "Rune Eaters",
-      "homeTeam": "SAW Youngsters"
+      "homeTeam": "SAW Youngsters",
+      "result": "WIN",
+      "units_result": 0.85,
+      "score": "Rune Eaters 2-0 SAW Youngsters \u00b7 final"
     },
     {
       "id": "beznegativa-ml-0727",
