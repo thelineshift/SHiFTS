@@ -12609,10 +12609,6 @@
         {
           "ts": 1785152774,
           "px": 0.59
-        },
-        {
-          "ts": 1785155380,
-          "px": 0.59
         }
       ]
     },
@@ -14688,6 +14684,22 @@
       "result": null,
       "pnl": 0.0,
       "autopsy": "order never filled \u2014 cancelled; no money moved."
+    },
+    {
+      "price": 0.53,
+      "short": true,
+      "stake": 2.65,
+      "kind": "EDGE",
+      "p_model": 0.6923076923076923,
+      "event": "Arctic Pandas vs. Bulldog Esports",
+      "ev_start": "2026-07-27T18:00:00Z",
+      "reason": "model 69% vs market 53% \u2014 16% edge, half-Kelly",
+      "order_id": "BGFTHSM0E9QM",
+      "qty": 5,
+      "market_slug": "aec-lol-ap-bld-2026-07-27",
+      "outcome": "Bulldog Esports",
+      "status": "open",
+      "ts": "2026-07-27T12:30:18Z"
     }
   ],
   "pm_stats": {
@@ -14695,7 +14707,7 @@
     "wins": 14,
     "losses": 31,
     "pnl": 7.76,
-    "trades": 227,
+    "trades": 228,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
