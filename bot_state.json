@@ -5024,7 +5024,7 @@
         }
       },
       "valorant:132777": {
-        "ts": 1785157394.0667417,
+        "ts": 1785167395.935043,
         "f": {
           "w": 1,
           "l": 4,
@@ -6269,7 +6269,7 @@
         }
       },
       "valorant:136798": {
-        "ts": 1785160171.4818203,
+        "ts": 1785167384.4957182,
         "f": {
           "w": 1,
           "l": 4,
@@ -6298,7 +6298,7 @@
         }
       },
       "valorant:138956": {
-        "ts": 1785160172.0892112,
+        "ts": 1785167385.106294,
         "f": {
           "w": 0,
           "l": 2,
@@ -16103,6 +16103,22 @@
       "outcome": "Washington",
       "status": "open",
       "ts": "2026-07-27T15:45:24Z"
+    },
+    {
+      "price": 0.55,
+      "short": true,
+      "stake": 1.1,
+      "kind": "EDGE",
+      "p_model": 0.677439247940544,
+      "event": "Texas Rangers vs. Tampa Bay Rays",
+      "ev_start": "2026-07-29T22:40:00Z",
+      "reason": "model 68% vs market 55% \u2014 13% edge, half-Kelly",
+      "order_id": "BGJS5WNGE9NN",
+      "qty": 2,
+      "market_slug": "aec-mlb-tex-tb-2026-07-29",
+      "outcome": "Tampa Bay Rays",
+      "status": "open",
+      "ts": "2026-07-27T15:50:11Z"
     }
   ],
   "pm_stats": {
@@ -16110,7 +16126,7 @@
     "wins": 17,
     "losses": 42,
     "pnl": -43.8,
-    "trades": 257,
+    "trades": 258,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-14",
     "deposits": 64.0,
