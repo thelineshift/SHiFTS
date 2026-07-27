@@ -9294,7 +9294,8 @@
           ]
         }
       }
-    }
+    },
+    "tennis": {}
   },
   "pm_trades": [
     {
@@ -17614,14 +17615,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T12:19:43Z",
-      "kind": "EDGE",
-      "outcome": "Dplus KIA",
-      "result": "LOSS",
-      "pnl": -4.12,
-      "lesson": "model 69% vs market 40% missed \u2014 logged for the playbook review. Taken 0.40, rode to 0.07 before the result \u2014 beat the number by 33\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-27T12:19:45Z",
       "kind": "EDGE",
