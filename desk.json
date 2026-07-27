@@ -1,25 +1,25 @@
 {
-  "updated": "2026-07-27T08:01:52Z",
-  "record": "14-27",
-  "trades": 182,
-  "open": 23,
-  "pnl": 18.36,
-  "account": 109.7,
+  "updated": "2026-07-27T10:01:51Z",
+  "record": "14-29",
+  "trades": 192,
+  "open": 22,
+  "pnl": 15.33,
+  "account": 105.7,
   "deposits": 64.0,
-  "net_pnl": 45.7,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 9-16 \u00b7 LIVE-BET 2-6",
+  "net_pnl": 41.7,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 9-18 \u00b7 LIVE-BET 2-6",
   "recent": [
-    {
-      "outcome": "ODDIK",
-      "short": false,
-      "result": "won",
-      "pnl": 6.48
-    },
     {
       "outcome": "G2 Ares",
       "short": true,
       "result": "lost",
       "pnl": -0.87
+    },
+    {
+      "outcome": "Entropy",
+      "short": true,
+      "result": "lost",
+      "pnl": -1.52
     },
     {
       "outcome": "Team Jenz",
