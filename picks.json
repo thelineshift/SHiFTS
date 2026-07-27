@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T16:04:31Z",
+  "updated": "2026-07-27T16:01:13Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -689,11 +689,12 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 153,
-        "away_ml": -186,
+        "home_ml": 157,
+        "away_ml": -191,
         "total": 7.5,
-        "ts": 1785160153
-      }
+        "ts": 1785168267
+      },
+      "last_alert_odds": 157
     },
     {
       "id": "atlanta-braves-ml-0727",
@@ -795,10 +796,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 120,
-        "away_ml": -145,
+        "home_ml": 123,
+        "away_ml": -149,
         "total": 8.5,
-        "ts": 1785164667
+        "ts": 1785168268
       },
       "last_alert_odds": 129
     },
@@ -842,11 +843,12 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayTeam": "Arizona Diamondbacks",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -105,
+        "home_ml": -109,
+        "away_ml": -110,
         "total": 9.5,
-        "ts": 1785162061
-      }
+        "ts": 1785168268
+      },
+      "last_alert_odds": -109
     },
     {
       "id": "washington-nationals-ml-0727",
@@ -1180,10 +1182,7 @@
       "opp": "SAW Youngsters",
       "analysis": "2-3 last 5 (beat Entropy, Team Novaq) (lost to ex-RUSTEC) vs 1-4 \u2014 live Pinnacle line -177 (our 73% vs book 60%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Entropy, Team Novaq) (lost to ex-RUSTEC) vs 1-4 \u2014 live Pinnacle line -177 (our 73% vs book 60%). When the form gap runs **13 points** wide, the bet",
       "awayTeam": "Rune Eaters",
-      "homeTeam": "SAW Youngsters",
-      "result": "WIN",
-      "units_result": 0.85,
-      "score": "Rune Eaters 2-0 SAW Youngsters \u00b7 final"
+      "homeTeam": "SAW Youngsters"
     },
     {
       "id": "beznegativa-ml-0727",
@@ -1274,7 +1273,13 @@
       "opp": "Los Angeles Angels",
       "analysis": "52-55 overall, 26-28 on the road \u2014 our 53% vs book 50% (no-vig) | \ud83e\udde0 **The read:** 52-55 overall, 26-28 on the road \u2014 our 53% vs book 50% (no-vig). Model makes Houston Astros **53%** \u2014 books imply **52%**. SHiFT presses the gap.",
       "awayTeam": "Houston Astros",
-      "homeTeam": "Los Angeles Angels"
+      "homeTeam": "Los Angeles Angels",
+      "live_odds": {
+        "home_ml": -109,
+        "away_ml": -110,
+        "total": 8.5,
+        "ts": 1785168268
+      }
     }
   ]
 }
