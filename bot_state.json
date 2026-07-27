@@ -34,6 +34,15 @@
   "bot_version": "9.24.14",
   "unannounced_results": [
     {
+      "id": "kiwoom-drx-ml-0726",
+      "desc": "Kiwoom DRX ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Kiwoom DRX 0-2 Paper Rex \u00b7 final",
+      "tier": "whale"
+    },
+    {
       "id": "misa-esports-ml-0726",
       "desc": "Misa Esports ML",
       "odds": -265,
@@ -16009,30 +16018,13 @@
       "qty": 8,
       "market_slug": "aec-cs2-navij-lea-2026-07-27",
       "outcome": "LEO",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T14:15:05Z",
-      "price_path": [
-        {
-          "ts": 1785161969,
-          "px": 0.3
-        },
-        {
-          "ts": 1785164230,
-          "px": 0.3
-        },
-        {
-          "ts": 1785166472,
-          "px": 0.28
-        },
-        {
-          "ts": 1785168285,
-          "px": 0.25
-        },
-        {
-          "ts": 1785170673,
-          "px": 0.25
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T17:24:30Z",
+      "pnl": -2.4,
+      "autopsy": "model 57% vs market 30% missed \u2014 logged for the playbook review. Taken 0.30, rode to 0.25 before the result \u2014 beat the number by 5\u00a2 \u2705"
     },
     {
       "price": 0.23,
@@ -16068,6 +16060,10 @@
         },
         {
           "ts": 1785170673,
+          "px": 0.23
+        },
+        {
+          "ts": 1785173073,
           "px": 0.23
         }
       ]
@@ -16106,6 +16102,10 @@
         {
           "ts": 1785170674,
           "px": 0.3
+        },
+        {
+          "ts": 1785173073,
+          "px": 0.3
         }
       ]
     },
@@ -16142,6 +16142,10 @@
         },
         {
           "ts": 1785170674,
+          "px": 0.05
+        },
+        {
+          "ts": 1785173073,
           "px": 0.05
         }
       ]
@@ -16735,6 +16739,10 @@
         {
           "ts": 1785171271,
           "px": 0.47
+        },
+        {
+          "ts": 1785173074,
+          "px": 0.48
         }
       ]
     },
@@ -16786,15 +16794,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 18,
-    "losses": 43,
-    "pnl": -44.67,
+    "losses": 44,
+    "pnl": -47.07,
     "trades": 267,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-16",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 142.56,
-    "net": 78.56,
+    "account": 140.16,
+    "net": 76.16,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -16804,7 +16812,7 @@
       ],
       "EDGE": [
         13,
-        29,
+        30,
         0
       ],
       "LIVE-BET": [
@@ -16824,14 +16832,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-26T18:44:24Z",
-      "kind": "EDGE",
-      "outcome": "NIP",
-      "result": "LOSS",
-      "pnl": -2.3,
-      "lesson": "model 73% vs market 54% missed \u2014 logged for the playbook review. Taken 0.54, rode to 0.22 before the result \u2014 beat the number by 32\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-26T19:44:18Z",
       "kind": "EDGE",
@@ -17063,6 +17063,14 @@
       "result": "LOSS",
       "pnl": -2.9,
       "lesson": "model 63% vs market 29% missed \u2014 logged for the playbook review. Taken 0.29, slid to 0.57 before the result \u2014 the number ran 28\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-27T17:24:30Z",
+      "kind": "EDGE",
+      "outcome": "LEO",
+      "result": "LOSS",
+      "pnl": -2.4,
+      "lesson": "model 57% vs market 30% missed \u2014 logged for the playbook review. Taken 0.30, rode to 0.25 before the result \u2014 beat the number by 5\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
