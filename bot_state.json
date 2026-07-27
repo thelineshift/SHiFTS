@@ -35,6 +35,15 @@
   "bot_version": "9.24.5",
   "unannounced_results": [
     {
+      "id": "los-angeles-dodgers-ml-0725",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -157,
+      "result": "WIN",
+      "units": 0.64,
+      "score": "Los Angeles Dodgers 4, New York Mets 3",
+      "tier": "sharp"
+    },
+    {
       "id": "milwaukee-brewers-ml-0725",
       "desc": "Milwaukee Brewers ML",
       "odds": -244,
@@ -105,18 +114,9 @@
       "units": -1.5,
       "score": "BNK FearX Youth 0-1 Gen.G \u00b7 final",
       "tier": "whale"
-    },
-    {
-      "id": "ex-young-ninjas-ml-0727",
-      "desc": "ex-Young Ninjas ML",
-      "odds": -150,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "ex-Young Ninjas 1-2 Just Players \u00b7 final",
-      "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1785149770.403563,
+  "last_x_receipt_ts": 1785135370.0936625,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -14281,7 +14281,7 @@
       "qty": 1,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T10:46:49Z"
     },
     {
@@ -14297,7 +14297,7 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T10:51:51Z"
     }
   ],
