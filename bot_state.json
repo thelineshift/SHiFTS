@@ -6,18 +6,18 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-27 11:16 UTC",
+    "at": "2026-07-27 10:46 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 08:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 10:56 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 11:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 10:36 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 08:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 09:08 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 11:16 UTC",
+    "at": "2026-07-27 10:46 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -25,11 +25,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 11:16 UTC",
+    "at": "2026-07-27 10:46 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 11:16 UTC",
+    "at": "2026-07-27 10:46 UTC",
     "flags": []
   },
   "bot_version": "9.24.5",
@@ -10667,106 +10667,13 @@
       "qty": 3,
       "market_slug": "aec-lol-t1-ns-2026-07-27",
       "outcome": "Nongshim Red Force",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T12:09:55Z",
-      "price_path": [
-        {
-          "ts": 1785097461,
-          "px": 0.34
-        },
-        {
-          "ts": 1785100461,
-          "px": 0.34
-        },
-        {
-          "ts": 1785102264,
-          "px": 0.34
-        },
-        {
-          "ts": 1785105260,
-          "px": 0.32
-        },
-        {
-          "ts": 1785107060,
-          "px": 0.32
-        },
-        {
-          "ts": 1785109221,
-          "px": 0.32
-        },
-        {
-          "ts": 1785111022,
-          "px": 0.32
-        },
-        {
-          "ts": 1785113173,
-          "px": 0.32
-        },
-        {
-          "ts": 1785114980,
-          "px": 0.31
-        },
-        {
-          "ts": 1785117373,
-          "px": 0.31
-        },
-        {
-          "ts": 1785119173,
-          "px": 0.31
-        },
-        {
-          "ts": 1785120976,
-          "px": 0.31
-        },
-        {
-          "ts": 1785123376,
-          "px": 0.31
-        },
-        {
-          "ts": 1785126373,
-          "px": 0.31
-        },
-        {
-          "ts": 1785128173,
-          "px": 0.31
-        },
-        {
-          "ts": 1785129974,
-          "px": 0.31
-        },
-        {
-          "ts": 1785132373,
-          "px": 0.31
-        },
-        {
-          "ts": 1785134176,
-          "px": 0.31
-        },
-        {
-          "ts": 1785136573,
-          "px": 0.3
-        },
-        {
-          "ts": 1785138377,
-          "px": 0.28
-        },
-        {
-          "ts": 1785140775,
-          "px": 0.26
-        },
-        {
-          "ts": 1785142575,
-          "px": 0.26
-        },
-        {
-          "ts": 1785144975,
-          "px": 0.26
-        },
-        {
-          "ts": 1785149780,
-          "px": 0.09
-        }
-      ]
+      "result": "WIN",
+      "payout": 3.0,
+      "settled_at": "2026-07-27T11:16:19Z",
+      "pnl": 1.83,
+      "autopsy": "+$1.83 \u2014 model 50% vs market 39% was real edge; thesis held. Taken 0.39, rode to 0.09 before the result \u2014 beat the number by 30\u00a2 \u2705"
     },
     {
       "price": 0.36,
@@ -14429,7 +14336,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T11:11:56Z"
     },
     {
@@ -14445,22 +14352,22 @@
       "qty": 3,
       "market_slug": "aec-wnba-conn-wsh-2026-07-28",
       "outcome": "Washington",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T11:11:58Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 14,
+    "wins": 15,
     "losses": 29,
-    "pnl": 15.33,
+    "pnl": 17.16,
     "trades": 209,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-10",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 105.7,
-    "net": 41.7,
+    "account": 125.18,
+    "net": 61.18,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -14469,7 +14376,7 @@
         0
       ],
       "EDGE": [
-        9,
+        10,
         18,
         0
       ],
@@ -14483,14 +14390,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-26T00:10:27Z",
-      "kind": "LIVE-BET",
-      "outcome": "Isurus",
-      "result": "LOSS",
-      "pnl": -3.0,
-      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.60, rode to 0.94 before the result \u2014 beat the number by 34\u00a2 \u2705 (cashed out early at $1.20)"
-    },
     {
       "ts": "2026-07-26T00:40:26Z",
       "kind": "EDGE",
@@ -14722,6 +14621,14 @@
       "result": "LOSS",
       "pnl": -1.11,
       "lesson": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.21 before the result \u2014 the number ran 16\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-27T11:16:19Z",
+      "kind": "EDGE",
+      "outcome": "Nongshim Red Force",
+      "result": "WIN",
+      "pnl": 1.83,
+      "lesson": "+$1.83 \u2014 model 50% vs market 39% was real edge; thesis held. Taken 0.39, rode to 0.09 before the result \u2014 beat the number by 30\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -14805,7 +14712,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785143772.2274187,
+  "dep_checked_ts": 1785150979.8021135,
   "x_bio_v": 2,
   "op_cool_until": 1785096924.2504044
 }
