@@ -2544,76 +2544,6 @@
     "esp": [
       {
         "sport": "cs2",
-        "start": "2026-07-27T06:30:00Z",
-        "t1": {
-          "id": 133542,
-          "name": "CYBERSHOKE Esports"
-        },
-        "t2": {
-          "id": 138995,
-          "name": "Team Comanche"
-        },
-        "league": "CIS LAN Championship",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T06:30:00Z",
-        "t1": {
-          "id": 130360,
-          "name": "ARCRED"
-        },
-        "t2": {
-          "id": 138996,
-          "name": "Team flacons"
-        },
-        "league": "CIS LAN Championship",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T08:00:00Z",
-        "t1": {
-          "id": 138974,
-          "name": "ex-RUSTEC"
-        },
-        "t2": {
-          "id": 128258,
-          "name": "Entropy"
-        },
-        "league": "Thunderpick World Championship",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T08:00:00Z",
-        "t1": {
-          "id": 138406,
-          "name": "Just Players"
-        },
-        "t2": {
-          "id": 138985,
-          "name": "ex-Young Ninjas"
-        },
-        "league": "CCT Europe",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-27T08:00:00Z",
-        "t1": {
-          "id": 138617,
-          "name": "INOX Division"
-        },
-        "t2": {
-          "id": 138026,
-          "name": "Atreides"
-        },
-        "league": "NODWIN Clutch Series",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
         "start": "2026-07-27T11:00:00Z",
         "t1": {
           "id": 133063,
@@ -2781,64 +2711,106 @@
         "bo": 3
       },
       {
-        "sport": "lol",
-        "start": "2026-07-27T06:45:00Z",
+        "sport": "cs2",
+        "start": "2026-07-27T14:00:00Z",
         "t1": {
-          "id": 132531,
-          "name": "Dplus KIA"
+          "id": 132927,
+          "name": "Rune Eaters"
         },
         "t2": {
-          "id": 2883,
-          "name": "Hanwha Life Esports"
+          "id": 129405,
+          "name": "SAW Youngsters"
         },
-        "league": "KeSPA Cup",
-        "bo": 1
-      },
-      {
-        "sport": "lol",
-        "start": "2026-07-27T07:30:00Z",
-        "t1": {
-          "id": 63,
-          "name": "KT Rolster"
-        },
-        "t2": {
-          "id": 2882,
-          "name": "Gen.G"
-        },
-        "league": "KeSPA Cup",
-        "bo": 1
-      },
-      {
-        "sport": "lol",
-        "start": "2026-07-27T08:00:00Z",
-        "t1": {
-          "id": 131040,
-          "name": "T1 Academy"
-        },
-        "t2": {
-          "id": 128350,
-          "name": "Nongshim Esports Academy"
-        },
-        "league": "LCK Challengers League",
+        "league": "CCT Europe",
         "bo": 3
       },
       {
-        "sport": "lol",
-        "start": "2026-07-27T08:15:00Z",
+        "sport": "cs2",
+        "start": "2026-07-27T14:00:00Z",
         "t1": {
-          "id": 132531,
-          "name": "Dplus KIA"
+          "id": 128519,
+          "name": "GenOne"
         },
         "t2": {
-          "id": 126061,
-          "name": "T1"
+          "id": 136659,
+          "name": "SPARTA"
         },
-        "league": "KeSPA Cup",
+        "league": "NODWIN Clutch Series",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T15:00:00Z",
+        "t1": {
+          "id": 135497,
+          "name": "WW Team"
+        },
+        "t2": {
+          "id": 138997,
+          "name": "beznegativa"
+        },
+        "league": "CIS LAN Championship",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T15:00:00Z",
+        "t1": {
+          "id": 138998,
+          "name": "TokyoSavage"
+        },
+        "t2": {
+          "id": 3288,
+          "name": "Virtus.pro"
+        },
+        "league": "CIS LAN Championship",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T15:30:00Z",
+        "t1": {
+          "id": 127899,
+          "name": "VP.Prodigy"
+        },
+        "t2": {
+          "id": 138561,
+          "name": "TEAM_COPH9K"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T15:30:00Z",
+        "t1": {
+          "id": 130794,
+          "name": "BakS eSports"
+        },
+        "t2": {
+          "id": 139003,
+          "name": "gribo4ki"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-27T15:30:00Z",
+        "t1": {
+          "id": 129160,
+          "name": "MOUZ NXT"
+        },
+        "t2": {
+          "id": 138835,
+          "name": "LEO"
+        },
+        "league": "Urban Riga",
         "bo": 1
       },
       {
         "sport": "lol",
-        "start": "2026-07-27T09:00:00Z",
+        "start": "2026-07-27T09:30:00Z",
         "t1": {
           "id": 2883,
           "name": "Hanwha Life Esports"
@@ -2846,20 +2818,6 @@
         "t2": {
           "id": 126370,
           "name": "Kiwoom DRX"
-        },
-        "league": "KeSPA Cup",
-        "bo": 1
-      },
-      {
-        "sport": "lol",
-        "start": "2026-07-27T09:45:00Z",
-        "t1": {
-          "id": 126061,
-          "name": "T1"
-        },
-        "t2": {
-          "id": 128217,
-          "name": "Nongshim Red Force"
         },
         "league": "KeSPA Cup",
         "bo": 1
@@ -2880,7 +2838,21 @@
       },
       {
         "sport": "lol",
-        "start": "2026-07-27T10:30:00Z",
+        "start": "2026-07-27T10:15:00Z",
+        "t1": {
+          "id": 126061,
+          "name": "T1"
+        },
+        "t2": {
+          "id": 128217,
+          "name": "Nongshim Red Force"
+        },
+        "league": "KeSPA Cup",
+        "bo": 1
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-27T11:00:00Z",
         "t1": {
           "id": 128218,
           "name": "HANJIN BRION"
@@ -2894,7 +2866,7 @@
       },
       {
         "sport": "lol",
-        "start": "2026-07-27T11:15:00Z",
+        "start": "2026-07-27T11:45:00Z",
         "t1": {
           "id": 126061,
           "name": "T1"
@@ -3059,6 +3031,48 @@
         },
         "league": "Circuito Desafiante",
         "bo": 1
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-28T00:00:00Z",
+        "t1": {
+          "id": 132323,
+          "name": "Vivo Keyd Stars Academy"
+        },
+        "t2": {
+          "id": 128363,
+          "name": "Estral Esports"
+        },
+        "league": "Circuito Desafiante",
+        "bo": 1
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-28T08:00:00Z",
+        "t1": {
+          "id": 128347,
+          "name": "Hanwha Life Esports Challengers"
+        },
+        "t2": {
+          "id": 128345,
+          "name": "HANJIN BRION Challengers"
+        },
+        "league": "LCK Challengers League",
+        "bo": 3
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-28T10:00:00Z",
+        "t1": {
+          "id": 128348,
+          "name": "KT Rolster Challengers"
+        },
+        "t2": {
+          "id": 132567,
+          "name": "Dplus KIA Challengers"
+        },
+        "league": "LCK Challengers League",
+        "bo": 3
       },
       {
         "sport": "valorant",
@@ -3593,7 +3607,7 @@
         "bo": 3
       }
     ],
-    "esp_ts": 1785132068.8713927,
+    "esp_ts": 1785141368.9574974,
     "form": {
       "dota2:128357": {
         "ts": 1785099313.3499815,
@@ -4910,7 +4924,7 @@
         }
       },
       "valorant:137903": {
-        "ts": 1785132094.2754374,
+        "ts": 1785141391.3854387,
         "f": {
           "w": 1,
           "l": 4,
@@ -4939,7 +4953,7 @@
         }
       },
       "valorant:138941": {
-        "ts": 1785132126.572705,
+        "ts": 1785141391.9932435,
         "f": {
           "w": 1,
           "l": 2,
@@ -5018,7 +5032,7 @@
         }
       },
       "valorant:130888": {
-        "ts": 1785132098.7641296,
+        "ts": 1785141397.5528111,
         "f": {
           "w": 2,
           "l": 3,
@@ -5047,7 +5061,7 @@
         }
       },
       "valorant:132777": {
-        "ts": 1785132099.3465993,
+        "ts": 1785141398.146645,
         "f": {
           "w": 1,
           "l": 4,
@@ -5076,7 +5090,7 @@
         }
       },
       "valorant:138619": {
-        "ts": 1785132100.1754506,
+        "ts": 1785141398.9607697,
         "f": {
           "w": 5,
           "l": 0,
@@ -5105,7 +5119,7 @@
         }
       },
       "valorant:137065": {
-        "ts": 1785132100.7619672,
+        "ts": 1785141399.5846572,
         "f": {
           "w": 4,
           "l": 1,
@@ -5395,7 +5409,7 @@
         }
       },
       "valorant:138960": {
-        "ts": 1785132102.961307,
+        "ts": 1785141401.8847394,
         "f": {
           "w": 1,
           "l": 1,
@@ -5412,7 +5426,7 @@
         }
       },
       "valorant:138527": {
-        "ts": 1785132103.4053605,
+        "ts": 1785141402.3320153,
         "f": {
           "w": 1,
           "l": 4,
@@ -5441,7 +5455,7 @@
         }
       },
       "valorant:138952": {
-        "ts": 1785132104.1042054,
+        "ts": 1785141403.0412962,
         "f": {
           "w": 1,
           "l": 1,
@@ -5458,7 +5472,7 @@
         }
       },
       "valorant:138954": {
-        "ts": 1785132104.5462203,
+        "ts": 1785141403.4933827,
         "f": {
           "w": 1,
           "l": 1,
@@ -6039,7 +6053,7 @@
         }
       },
       "valorant:131274": {
-        "ts": 1785132105.2616682,
+        "ts": 1785141404.2043123,
         "f": {
           "w": 4,
           "l": 1,
@@ -6068,7 +6082,7 @@
         }
       },
       "valorant:138526": {
-        "ts": 1785132105.8483863,
+        "ts": 1785141404.8003707,
         "f": {
           "w": 5,
           "l": 0,
@@ -6097,7 +6111,7 @@
         }
       },
       "valorant:138958": {
-        "ts": 1785132110.5162468,
+        "ts": 1785141409.6285827,
         "f": {
           "w": 0,
           "l": 2,
@@ -6114,7 +6128,7 @@
         }
       },
       "valorant:138959": {
-        "ts": 1785132110.9605007,
+        "ts": 1785141410.0808527,
         "f": {
           "w": 0,
           "l": 2,
@@ -6338,7 +6352,7 @@
         }
       },
       "valorant:138955": {
-        "ts": 1785132111.6436245,
+        "ts": 1785141410.754826,
         "f": {
           "w": 1,
           "l": 1,
@@ -6355,7 +6369,7 @@
         }
       },
       "valorant:138957": {
-        "ts": 1785132112.088246,
+        "ts": 1785141411.2038162,
         "f": {
           "w": 1,
           "l": 1,
@@ -6430,7 +6444,7 @@
         }
       },
       "valorant:138953": {
-        "ts": 1785132112.6449668,
+        "ts": 1785141411.7591944,
         "f": {
           "w": 1,
           "l": 1,
@@ -6447,7 +6461,7 @@
         }
       },
       "valorant:138571": {
-        "ts": 1785132113.0883102,
+        "ts": 1785141412.2111444,
         "f": {
           "w": 2,
           "l": 3,
@@ -6534,7 +6548,7 @@
         }
       },
       "lol:128346": {
-        "ts": 1785132086.9375896,
+        "ts": 1785141383.6030507,
         "f": {
           "w": 0,
           "l": 5,
@@ -6563,7 +6577,7 @@
         }
       },
       "lol:134155": {
-        "ts": 1785132087.5262852,
+        "ts": 1785141384.2026243,
         "f": {
           "w": 1,
           "l": 4,
@@ -6899,7 +6913,7 @@
         }
       },
       "valorant:134942": {
-        "ts": 1785132124.697422,
+        "ts": 1785141428.244346,
         "f": {
           "w": 4,
           "l": 1,
@@ -6928,7 +6942,7 @@
         }
       },
       "valorant:133557": {
-        "ts": 1785132125.2901967,
+        "ts": 1785141428.8465626,
         "f": {
           "w": 2,
           "l": 3,
@@ -6957,7 +6971,7 @@
         }
       },
       "valorant:136929": {
-        "ts": 1785132125.9853947,
+        "ts": 1785141429.5669484,
         "f": {
           "w": 3,
           "l": 2,
@@ -7218,7 +7232,7 @@
         }
       },
       "lol:137838": {
-        "ts": 1785132095.4228752,
+        "ts": 1785141394.2351587,
         "f": {
           "w": 3,
           "l": 2,
@@ -7247,7 +7261,7 @@
         }
       },
       "lol:49": {
-        "ts": 1785132096.0094666,
+        "ts": 1785141394.8266053,
         "f": {
           "w": 1,
           "l": 1,
@@ -7338,7 +7352,7 @@
         }
       },
       "cs2:133063": {
-        "ts": 1785132088.3591893,
+        "ts": 1785141385.0092454,
         "f": {
           "w": 2,
           "l": 3,
@@ -7367,7 +7381,7 @@
         }
       },
       "cs2:138848": {
-        "ts": 1785132088.9398875,
+        "ts": 1785141385.6193511,
         "f": {
           "w": 3,
           "l": 2,
@@ -7396,7 +7410,7 @@
         }
       },
       "cs2:138419": {
-        "ts": 1785132089.6518972,
+        "ts": 1785141386.606274,
         "f": {
           "w": 2,
           "l": 3,
@@ -7425,7 +7439,7 @@
         }
       },
       "cs2:129370": {
-        "ts": 1785132090.236635,
+        "ts": 1785141387.2108903,
         "f": {
           "w": 2,
           "l": 3,
@@ -7454,7 +7468,7 @@
         }
       },
       "lol:137837": {
-        "ts": 1785132097.342528,
+        "ts": 1785141396.156257,
         "f": {
           "w": 2,
           "l": 3,
@@ -7483,7 +7497,7 @@
         }
       },
       "lol:136078": {
-        "ts": 1785132097.931088,
+        "ts": 1785141396.749407,
         "f": {
           "w": 3,
           "l": 2,
@@ -7554,7 +7568,7 @@
         }
       },
       "valorant:134470": {
-        "ts": 1785132127.5990524,
+        "ts": 1785141430.737347,
         "f": {
           "w": 4,
           "l": 1,
@@ -7583,7 +7597,7 @@
         }
       },
       "valorant:131255": {
-        "ts": 1785132128.1825328,
+        "ts": 1785141431.3292348,
         "f": {
           "w": 3,
           "l": 2,
@@ -7612,7 +7626,7 @@
         }
       },
       "cs2:137440": {
-        "ts": 1785132090.9360368,
+        "ts": 1785141387.8948748,
         "f": {
           "w": 5,
           "l": 0,
@@ -7641,7 +7655,7 @@
         }
       },
       "cs2:138812": {
-        "ts": 1785132091.5128148,
+        "ts": 1785141388.4870207,
         "f": {
           "w": 1,
           "l": 4,
@@ -7670,7 +7684,7 @@
         }
       },
       "cs2:138963": {
-        "ts": 1785132092.9175785,
+        "ts": 1785141389.9847832,
         "f": {
           "w": 1,
           "l": 2,
@@ -7691,7 +7705,7 @@
         }
       },
       "cs2:137075": {
-        "ts": 1785132093.3608632,
+        "ts": 1785141390.4374387,
         "f": {
           "w": 3,
           "l": 2,
@@ -7720,7 +7734,7 @@
         }
       },
       "lol:138384": {
-        "ts": 1785132101.572414,
+        "ts": 1785141400.4623232,
         "f": {
           "w": 1,
           "l": 4,
@@ -7749,7 +7763,7 @@
         }
       },
       "lol:128528": {
-        "ts": 1785132102.154546,
+        "ts": 1785141401.0554488,
         "f": {
           "w": 0,
           "l": 5,
@@ -8005,7 +8019,7 @@
         }
       },
       "lol:136646": {
-        "ts": 1785132106.555468,
+        "ts": 1785141405.5088954,
         "f": {
           "w": 1,
           "l": 4,
@@ -8034,7 +8048,7 @@
         }
       },
       "lol:138387": {
-        "ts": 1785132107.1345851,
+        "ts": 1785141406.1530151,
         "f": {
           "w": 1,
           "l": 4,
@@ -8100,7 +8114,7 @@
         }
       },
       "lol:1636": {
-        "ts": 1785132107.8490705,
+        "ts": 1785141406.8856642,
         "f": {
           "w": 5,
           "l": 0,
@@ -8129,7 +8143,7 @@
         }
       },
       "lol:138891": {
-        "ts": 1785132108.4349523,
+        "ts": 1785141407.4887457,
         "f": {
           "w": 3,
           "l": 2,
@@ -8158,7 +8172,7 @@
         }
       },
       "lol:158": {
-        "ts": 1785132109.1283178,
+        "ts": 1785141408.1938188,
         "f": {
           "w": 3,
           "l": 2,
@@ -8187,7 +8201,7 @@
         }
       },
       "lol:138385": {
-        "ts": 1785132109.7153168,
+        "ts": 1785141408.823641,
         "f": {
           "w": 0,
           "l": 5,
@@ -8211,6 +8225,238 @@
             {
               "won": false,
               "opp": "Ei Nerd Esports"
+            }
+          ]
+        }
+      },
+      "cs2:129160": {
+        "ts": 1785141392.6723285,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "SPARTA"
+            },
+            {
+              "won": true,
+              "opp": "Noir Verse"
+            },
+            {
+              "won": false,
+              "opp": "Bushido Wildcats"
+            },
+            {
+              "won": false,
+              "opp": "TDK"
+            },
+            {
+              "won": false,
+              "opp": "Lavked"
+            }
+          ]
+        }
+      },
+      "cs2:138835": {
+        "ts": 1785141393.2838907,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "ex-MANA eSports"
+            },
+            {
+              "won": false,
+              "opp": "eSuba"
+            },
+            {
+              "won": true,
+              "opp": "Inner Circle Prospect"
+            },
+            {
+              "won": true,
+              "opp": "V\u00e4ster\u00e5s"
+            },
+            {
+              "won": true,
+              "opp": "Prestige Academy"
+            }
+          ]
+        }
+      },
+      "lol:132323": {
+        "ts": 1785141413.1436536,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "RMD Gaming"
+            },
+            {
+              "won": true,
+              "opp": "7REX"
+            },
+            {
+              "won": true,
+              "opp": "KaBuM! Ilha das Lendas"
+            },
+            {
+              "won": true,
+              "opp": "KaBuM! Ilha das Lendas"
+            },
+            {
+              "won": true,
+              "opp": "KaBuM! Ilha das Lendas"
+            }
+          ]
+        }
+      },
+      "lol:128363": {
+        "ts": 1785141413.7577221,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Team Solid"
+            },
+            {
+              "won": true,
+              "opp": "KaBuM! Ilha das Lendas"
+            },
+            {
+              "won": true,
+              "opp": "paiN Gaming Academy"
+            },
+            {
+              "won": false,
+              "opp": "paiN Gaming Academy"
+            },
+            {
+              "won": true,
+              "opp": "RED Academy"
+            }
+          ]
+        }
+      },
+      "lol:128347": {
+        "ts": 1785141421.4825094,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "HANJIN BRION Challengers"
+            },
+            {
+              "won": false,
+              "opp": "Dplus KIA Challengers"
+            },
+            {
+              "won": false,
+              "opp": "DN SOOPers Challengers"
+            },
+            {
+              "won": true,
+              "opp": "Gen.G Global Academy"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim Esports Academy"
+            }
+          ]
+        }
+      },
+      "lol:128345": {
+        "ts": 1785141422.0882776,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Hanwha Life Esports Challengers"
+            },
+            {
+              "won": false,
+              "opp": "Kiwoom DRX Challengers"
+            },
+            {
+              "won": false,
+              "opp": "T1 Academy"
+            },
+            {
+              "won": false,
+              "opp": "BNK FearX Youth"
+            },
+            {
+              "won": false,
+              "opp": "KT Rolster Challengers"
+            }
+          ]
+        }
+      },
+      "lol:128348": {
+        "ts": 1785141423.3574533,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "T1 Academy"
+            },
+            {
+              "won": true,
+              "opp": "Nongshim Esports Academy"
+            },
+            {
+              "won": false,
+              "opp": "Dplus KIA Challengers"
+            },
+            {
+              "won": true,
+              "opp": "Top Esports Challenger"
+            },
+            {
+              "won": true,
+              "opp": "Saigon Warriors"
+            }
+          ]
+        }
+      },
+      "lol:132567": {
+        "ts": 1785141423.959614,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "T1 Academy"
+            },
+            {
+              "won": true,
+              "opp": "T1 Academy"
+            },
+            {
+              "won": true,
+              "opp": "KT Rolster Challengers"
+            },
+            {
+              "won": true,
+              "opp": "Top Esports Challenger"
+            },
+            {
+              "won": true,
+              "opp": "EDward Gaming Youth Team"
             }
           ]
         }
@@ -13944,6 +14190,22 @@
           "px": 0.28
         }
       ]
+    },
+    {
+      "price": 0.63,
+      "short": true,
+      "stake": 0.63,
+      "kind": "EDGE",
+      "p_model": 0.6923076923076923,
+      "event": "Arctic Pandas vs. Bulldog Esports",
+      "ev_start": "2026-07-27T18:00:00Z",
+      "reason": "model 69% vs market 63% \u2014 6% edge, half-Kelly",
+      "order_id": "BGCCJWH6T9QV",
+      "qty": 1,
+      "market_slug": "aec-lol-ap-bld-2026-07-27",
+      "outcome": "Bulldog Esports",
+      "status": "open",
+      "ts": "2026-07-27T08:37:22Z"
     }
   ],
   "pm_stats": {
@@ -13951,7 +14213,7 @@
     "wins": 14,
     "losses": 28,
     "pnl": 16.44,
-    "trades": 182,
+    "trades": 183,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-08",
     "deposits": 64.0,
