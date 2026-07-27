@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.5'  # ALL-SPORTS LAW: desk eats every sport the window carries
+BOT_VERSION = '9.24.6'  # 24h CLAIM LAW + miss-proof draw gate (owner decree 2026-07-27)
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -713,6 +713,8 @@ def make_client(privileged=True):
             pm_trader.start()
         if not gw_reverify.is_running():
             gw_reverify.start()
+        if not giveaway_claim_watch.is_running():
+            giveaway_claim_watch.start()
 
     @c.event
     async def on_message(message):
@@ -768,6 +770,13 @@ def make_client(privileged=True):
             except Exception as e:
                 print('mention responder:', e)
             if 'giveaway' in chname:
+                # 24h CLAIM LAW first: a pending winner's reply claims the prize — never
+                # let it fall through into entry parsing (owner decree 2026-07-27).
+                try:
+                    if await giveaway_claim_check_message(message):
+                        return
+                except Exception as _ce:
+                    print('gw claim check:', _ce)
                 raw = message.content or ''
                 # !entry [@handle] — self-serve entry ledger (owner decree 2026-07-25).
                 # A command is a question: it ALWAYS gets an answer, throttle-free.
@@ -997,7 +1006,7 @@ def gh_get(path, ref='main'):
         return json.load(r)
 
 FEED_FILES = {'pins.json', 'picks.json', 'guarantee.json', 'stripe.json', 'desk.json',
-              'challenge.json', 'giveaway_entries.json'}
+              'challenge.json', 'giveaway_entries.json', 'giveaway_draw.json'}
 # FEED-STORM LAW (2026-07-26 incident): every main-branch commit auto-deploys the service =
 # a full bot restart = a Discord reconnect. Bot feeds (stripe.json every 30 min!) were causing
 # ~60 restarts/day and pushed Discord into a Cloudflare 1015 connect ban. All bot feed I/O now
@@ -6958,10 +6967,49 @@ async def monthly_deep_dive(g0, st, days=7):
         print('monthly_deep_dive error:', e)
 
 
+# ============================ 24h CLAIM LAW (owner decree 2026-07-27) ============================
+# Every drawn winner has 24 hours to respond in #giveaway. No response -> that prize
+# redraws from the remaining tickets, new 24h clock, old winner out for this draw.
+GW_CLAIM_FILE = 'giveaway_draw.json'
+GW_LADDER = [('runner-up', 15), ('grand', 35)]  # sunset pricing (captain's order 7/24): $50 = $35/$15
+
+def _gw_pool(conf):
+    """Weighted ticket pool from the confirmed ledger. One ticket-set per Discord account
+    (same discord_id under two X handles = one person — first confirm stands)."""
+    entries, seen_did = [], set()
+    for hk, rec in sorted((conf or {}).items(), key=lambda kv: (kv[1] or {}).get('ts', '')):
+        did = (rec or {}).get('discord_id') or ''
+        if did and did in seen_did:
+            continue
+        if did:
+            seen_did.add(did)
+        entries.append({'hk': hk, 'handle': (rec or {}).get('handle') or hk,
+                        'discord': (rec or {}).get('discord') or '',
+                        'discord_id': did, 'mult': max(1, int((rec or {}).get('mult') or 1))})
+    pool = []
+    for e in entries:
+        pool += [e['hk']] * e['mult']
+    return pool, entries
+
+def _gw_deadline(w, gd):
+    ts = w.get('drawn_at') or gd.get('drawn_at') or ''
+    try:
+        import datetime as _dt2
+        t0 = _dt2.datetime.fromisoformat(str(ts).replace('Z', '+00:00')).timestamp()
+    except Exception:
+        t0 = time.time()
+    return t0 + float(gd.get('claim_hours', 24)) * 3600
+
+def _gw_ment(rec):
+    return f"<@{rec['discord_id']}>" if rec.get('discord_id') else f"@{rec.get('handle', '?')}"
+
+async def _gw_save_draw(gd, msg):
+    await asyncio.to_thread(gh_put, GW_CLAIM_FILE, gd, msg, QUEUE_BRANCH)
+
 async def run_giveaway_draw(g0):
-    """Weekly $50 draw — weighted random from the confirmed ledger, then verify ONLY the winner.
-    This is the $0 alternative to X Basic: ~4 API reads for ONE user instead of hundreds for
-    every entrant. Degraded reads -> announce + owner-eyeball link; explicit miss -> redraw."""
+    """Weekly $50 draw ($35 grand / $15 runner-up) — weighted random from the confirmed
+    ledger, X-steps verified per winner (the $0 alternative to X Basic), then the 24h
+    CLAIM LAW clocks start. Writes giveaway_draw.json so the claim watch enforces redraws."""
     import random as _rnd
     gch = find_channel(g0, 'giveaway') if g0 else None
     conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH)
@@ -6970,41 +7018,135 @@ async def run_giveaway_draw(g0):
             await gch.send("🎁 Draw time — but the ledger is empty. No entries this week.")
         return
     st = await asyncio.to_thread(get_state)
-    pool = []
-    for hk, rec in conf.items():
-        pool += [hk] * max(1, int(rec.get('mult') or 1))
-    for attempt in range(3):
-        winner = _rnd.choice(pool)
-        rec = conf[winner]
-        handle = rec.get('handle') or winner
-        followed = liked = reposted = None
-        try:
-            followed, liked, reposted = await _gw_live_checks(handle, st)
-        except Exception:
-            pass
-        ment = f"<@{rec['discord_id']}>" if rec.get('discord_id') else f"@{handle}"
-        if followed and liked and reposted:
-            if gch:
-                await gch.send(f"🎁 **$50 SOL DRAW — WINNER: {ment} (@{handle})** 🎉\n"
-                               f"✅ All three steps verified live. **{rec.get('mult', 1)}x tickets** in a pool of {len(pool)}.\n"
-                               f"DM us your SOL address — prize ships today. ⚡")
-            return
-        if followed is None and liked is None and reposted is None:
-            # reads degraded — announce + owner eyeball (10 seconds, one tap)
-            if gch:
-                await gch.send(f"🎁 **$50 SOL DRAW — PENDING VERIFICATION: {ment} (@{handle})**\n"
-                               f"Drawn from a pool of {len(pool)} tickets. X won't let us auto-check their steps right now, "
-                               f"so we're eyeballing them before payout: https://x.com/{handle}\n"
-                               f"If the three steps check out, they're paid. If not, we redraw right here. ⚡")
-            return
-        # explicit miss -> redraw, per the law
+    pool, entries = _gw_pool(conf)
+    by_hk = {e['hk']: e for e in entries}
+    if len(entries) < 2:
         if gch:
-            await gch.send(f"🎁 Drawn entry @{handle} is missing steps — **redrawing**…")
-        pool = [t for t in pool if t != winner]
-        if not pool:
+            await gch.send("🎁 Draw time — but fewer than 2 unique entrants. Pot rolls to next Sunday.")
+        return
+    now_s = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+    gd = {'draw_id': time.strftime('%Y-%m-%d', time.gmtime()),
+          'drawn_at': now_s, 'claim_hours': 24, 'round': 1,
+          'pool_size': len(pool), 'entrants': len(entries),
+          'ladder': {'grand': 35, 'runner-up': 15}, 'winners': [], 'history': []}
+    taken = set()
+    for rank, prize in GW_LADDER:
+        rec = None
+        for _att in range(4):
+            hk = _rnd.choice([t for t in pool if by_hk[t]['handle'] not in taken] or pool)
+            cand = by_hk.get(hk) or {}
+            handle = cand.get('handle') or hk
+            followed = liked = reposted = None
+            try:
+                followed, liked, reposted = await _gw_live_checks(handle, st)
+            except Exception:
+                pass
+            if followed is False or liked is False or reposted is False:
+                if gch:
+                    await gch.send(f"🎁 Drawn entry @{handle} is missing steps — **redrawing**…")
+                pool = [t for t in pool if t != hk]
+                if not pool:
+                    break
+                continue
+            rec = {'rank': rank, 'prize': prize, 'handle': handle, 'hk': hk,
+                   'discord': cand.get('discord') or '', 'discord_id': cand.get('discord_id') or '',
+                   'status': 'pending', 'drawn_at': now_s, 'claimed_at': None,
+                   'verified': bool(followed and liked and reposted)}
             break
-    if gch:
-        await gch.send("🎁 Every drawn entry came up short on the steps — the pot rolls to next Sunday. ⚡")
+        if rec is None:
+            continue
+        taken.add(rec['handle'])
+        gd['winners'].append(rec)
+        await asyncio.sleep(2 if rank == 'runner-up' else 0)  # drumroll beat: runner-up first
+        if gch:
+            vline = "✅ Steps verified live." if rec['verified'] else "👀 X steps get eyeballed before payout (reads degraded)."
+            medal = '🥈' if rank == 'runner-up' else '🥇'
+            await gch.send(f"{medal} **{rank.upper()} — ${prize} SOL: {_gw_ment(rec)} (@{rec['handle']})** 🎉\n"
+                           f"{vline} {cand.get('mult', 1)}x ticket(s) in a pool of {gd['pool_size']}.\n"
+                           f"⏰ **Claim within 24 hours — reply right here.** No response = this prize redraws. ⚡")
+    await _gw_save_draw(gd, 'giveaway draw ' + gd['draw_id'])
+
+async def giveaway_claim_check_message(message):
+    """24h CLAIM LAW: a pending winner speaking in #giveaway claims their prize.
+    Returns True when the message WAS a claim (caller stops processing)."""
+    gd = await asyncio.to_thread(gh_get_json_ref, GW_CLAIM_FILE, QUEUE_BRANCH)
+    if not gd:
+        return False
+    aid, aname = str(message.author.id), str(message.author)
+    hit = None
+    for w in gd.get('winners') or []:
+        if w.get('status') != 'pending':
+            continue
+        if (w.get('discord_id') and w['discord_id'] == aid) or (w.get('discord') and w['discord'] == aname):
+            hit = w
+            break
+    if hit is None:
+        return False
+    hit['status'] = 'claimed'
+    hit['claimed_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+    await _gw_save_draw(gd, 'giveaway claim @' + hit.get('handle', '?'))
+    medal = '🥇' if hit.get('rank') == 'grand' else '🥈'
+    await message.channel.send(f"{message.author.mention} {medal} **CLAIMED — ${hit.get('prize')} SOL is yours.** "
+                               f"DM us your SOL address and the prize ships on-chain. ⚡")
+    return True
+
+@tasks.loop(seconds=300)
+async def giveaway_claim_watch():
+    """Enforces the 24h CLAIM LAW: expired pending winners get redrawn automatically."""
+    try:
+        if not client.guilds:
+            return
+        gd = await asyncio.to_thread(gh_get_json_ref, GW_CLAIM_FILE, QUEUE_BRANCH)
+        if not gd:
+            return
+        pending = [w for w in (gd.get('winners') or []) if w.get('status') == 'pending']
+        if not pending:
+            return
+        now = time.time()
+        expired = [w for w in pending if now > _gw_deadline(w, gd)]
+        if not expired:
+            return
+        g0 = client.guilds[0]
+        gch = find_channel(g0, 'giveaway')
+        conf = await asyncio.to_thread(gh_get_json_ref, 'giveaway_confirmed.json', QUEUE_BRANCH) or {}
+        pool, entries = _gw_pool(conf)
+        by_hk = {e['hk']: e for e in entries}
+        # anyone who has already won (any round, any status) or was voided sits out
+        out = {w.get('handle') for w in (gd.get('winners') or []) + (gd.get('history') or [])}
+        out |= {v.get('handle') for v in (gd.get('voided') or [])}
+        import random as _rnd
+        now_s = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        changed = False
+        for w in expired:
+            cands = [t for t in pool if by_hk.get(t, {}).get('handle') not in out]
+            if not cands:
+                if gch:
+                    await gch.send(f"🎁 ${w.get('prize')} prize: nobody left to redraw — the captain handles this one manually.")
+                w['status'] = 'expired'
+                gd.setdefault('history', []).append(w)
+                gd['winners'] = [x for x in gd['winners'] if x is not w]
+                changed = True
+                continue
+            hk = _rnd.choice(cands)
+            cand = by_hk[hk]
+            gd.setdefault('history', []).append({**w, 'status': 'expired'})
+            gd['winners'] = [x for x in gd['winners'] if x is not w]
+            nw = {'rank': w.get('rank'), 'prize': w.get('prize'), 'handle': cand['handle'], 'hk': hk,
+                  'discord': cand.get('discord') or '', 'discord_id': cand.get('discord_id') or '',
+                  'status': 'pending', 'drawn_at': now_s, 'claimed_at': None, 'redraw_of': w.get('handle')}
+            gd['winners'].append(nw)
+            gd['round'] = int(gd.get('round', 1)) + 1
+            out.add(cand['handle'])
+            changed = True
+            if gch:
+                medal = '🥇' if nw.get('rank') == 'grand' else '🥈'
+                await gch.send(f"⏰ 24 hours, no response from @{w.get('handle')} — the ${nw.get('prize')} prize **redraws**…\n"
+                               f"{medal} **NEW {str(nw.get('rank')).upper()} WINNER: {_gw_ment(nw)} (@{nw['handle']})** 🎉\n"
+                               f"Same house rule: **24 hours to reply right here** or it redraws again. ⚡")
+        if changed:
+            await _gw_save_draw(gd, 'giveaway redraw round ' + str(gd.get('round')))
+    except Exception as e:
+        print('giveaway_claim_watch error:', e)
 
 
 def _whale_teams_in_play(picks):
@@ -7132,10 +7274,25 @@ async def teaser_watch():
             tz['weekly_fired'] = today.isoformat()
             _dirty = True
             await weekly_analytics_report(guild, state)
-        if now.tm_wday == 6 and now.tm_hour == 22 and tz.get('draw_fired') != today.isoformat():
-            tz['draw_fired'] = today.isoformat()
-            _dirty = True
-            await run_giveaway_draw(guild)  # Sunday 6 PM ET — winner-only verification
+        # DRAW GATE, miss-proofed (7/26 lesson: an hourly tick == 22 dies silently to any
+        # outage/restart — the whole show vanished with zero trace). Fires on the FIRST
+        # tick at/after Sunday 22:00 UTC, plus a Monday catch-up if Sunday was lost.
+        # giveaway_draw.json's draw_id is the satisfaction marker — a draw that already
+        # ran (any path, manual included) never double-fires. Stamp un-sets on failure
+        # so the next tick retries: never a silent skip again.
+        last_sun = today - _dt.timedelta(days=(today.weekday() + 1) % 7)
+        sun_key = last_sun.isoformat()
+        _gd_due = (now.tm_wday == 6 and now.tm_hour >= 22) or ((today - last_sun).days == 1)
+        if _gd_due and tz.get('draw_fired') != sun_key:
+            _gdoc = await asyncio.to_thread(gh_get_json_ref, 'giveaway_draw.json', QUEUE_BRANCH) or {}
+            if _gdoc.get('draw_id') != sun_key:
+                tz['draw_fired'] = sun_key
+                _dirty = True
+                try:
+                    await run_giveaway_draw(guild)  # Sunday 6 PM ET — winner-only verification
+                except Exception as _gde:
+                    tz.pop('draw_fired', None)
+                    print('giveaway draw retry next tick:', _gde)
         if now.tm_hour == 13 and tz.get('x_ad') != today.isoformat():
             tz['x_ad'] = today.isoformat()
             _dirty = True
