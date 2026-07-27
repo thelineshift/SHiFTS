@@ -14596,6 +14596,22 @@
       "outcome": "Habos Babos",
       "status": "resting",
       "ts": "2026-07-27T11:51:50Z"
+    },
+    {
+      "price": 0.57,
+      "short": true,
+      "stake": 1.71,
+      "kind": "EDGE",
+      "p_model": 0.6923076923076923,
+      "event": "Arctic Pandas vs. Bulldog Esports",
+      "ev_start": "2026-07-27T18:00:00Z",
+      "reason": "model 69% vs market 57% \u2014 12% edge, half-Kelly",
+      "order_id": "BGFF3AMMP9NZ",
+      "qty": 3,
+      "market_slug": "aec-lol-ap-bld-2026-07-27",
+      "outcome": "Bulldog Esports",
+      "status": "open",
+      "ts": "2026-07-27T11:56:54Z"
     }
   ],
   "pm_stats": {
@@ -14603,7 +14619,7 @@
     "wins": 14,
     "losses": 29,
     "pnl": 15.33,
-    "trades": 220,
+    "trades": 221,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-10",
     "deposits": 64.0,
