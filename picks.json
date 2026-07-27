@@ -864,10 +864,10 @@
       "homeTeam": "Washington Nationals",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -124,
-        "away_ml": 103,
+        "home_ml": -135,
+        "away_ml": 112,
         "total": 10.0,
-        "ts": 1785145568
+        "ts": 1785150968
       }
     },
     {
