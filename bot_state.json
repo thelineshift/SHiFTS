@@ -3521,11 +3521,15 @@
         }
       },
       "dota2:138945": {
-        "ts": 1785099315.2937508,
+        "ts": 1785188999.7797587,
         "f": {
-          "w": 3,
-          "l": 1,
+          "w": 2,
+          "l": 2,
           "res": [
+            {
+              "won": false,
+              "opp": "Team Syntax"
+            },
             {
               "won": true,
               "opp": "PuckChamp"
@@ -3537,16 +3541,12 @@
             {
               "won": false,
               "opp": "Team Syntax"
-            },
-            {
-              "won": true,
-              "opp": "Team Lynx"
             }
           ]
         }
       },
       "dota2:1948": {
-        "ts": 1785152209.5982132,
+        "ts": 1785189000.7690217,
         "f": {
           "w": 3,
           "l": 2,
@@ -4313,9 +4313,9 @@
         }
       },
       "dota2:138987": {
-        "ts": 1785152210.1752894,
+        "ts": 1785189001.3844569,
         "f": {
-          "w": 2,
+          "w": 1,
           "l": 3,
           "res": [
             {
@@ -4333,10 +4333,6 @@
             {
               "won": true,
               "opp": "Spirit Academy"
-            },
-            {
-              "won": true,
-              "opp": "Team Syntax"
             }
           ]
         }
@@ -17353,6 +17349,22 @@
           "px": 0.57
         }
       ]
+    },
+    {
+      "price": 0.69,
+      "short": true,
+      "stake": 1.38,
+      "kind": "EDGE",
+      "p_model": 0.7663633422017689,
+      "event": "Connecticut vs. Washington",
+      "ev_start": "2026-07-28T23:30:00Z",
+      "reason": "model 77% vs market 69% \u2014 8% edge, half-Kelly",
+      "order_id": "BGQNNRR0E9ST",
+      "qty": 2,
+      "market_slug": "aec-wnba-conn-wsh-2026-07-28",
+      "outcome": "Washington",
+      "status": "open",
+      "ts": "2026-07-27T21:50:15Z"
     }
   ],
   "pm_stats": {
@@ -17360,7 +17372,7 @@
     "wins": 21,
     "losses": 48,
     "pnl": -49.24,
-    "trades": 271,
+    "trades": 272,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-20",
     "deposits": 64.0,
