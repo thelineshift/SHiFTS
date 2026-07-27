@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T16:01:13Z",
+  "updated": "2026-07-27T16:04:31Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1180,7 +1180,10 @@
       "opp": "SAW Youngsters",
       "analysis": "2-3 last 5 (beat Entropy, Team Novaq) (lost to ex-RUSTEC) vs 1-4 \u2014 live Pinnacle line -177 (our 73% vs book 60%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Entropy, Team Novaq) (lost to ex-RUSTEC) vs 1-4 \u2014 live Pinnacle line -177 (our 73% vs book 60%). When the form gap runs **13 points** wide, the bet",
       "awayTeam": "Rune Eaters",
-      "homeTeam": "SAW Youngsters"
+      "homeTeam": "SAW Youngsters",
+      "result": "WIN",
+      "units_result": 0.85,
+      "score": "Rune Eaters 2-0 SAW Youngsters \u00b7 final"
     },
     {
       "id": "beznegativa-ml-0727",
