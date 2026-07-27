@@ -14192,6 +14192,22 @@
       "outcome": "Habos Babos",
       "status": "resting",
       "ts": "2026-07-27T09:51:53Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.6726805820463914,
+      "event": "Colorado Rockies vs. San Diego Padres",
+      "ev_start": "2026-07-29T20:10:00Z",
+      "reason": "model 67% vs market 60% \u2014 7% edge, half-Kelly",
+      "order_id": "BGDQT5YDJ9NP",
+      "qty": 2,
+      "market_slug": "aec-mlb-col-sd-2026-07-29",
+      "outcome": "San Diego Padres",
+      "status": "open",
+      "ts": "2026-07-27T09:56:48Z"
     }
   ],
   "pm_stats": {
@@ -14199,7 +14215,7 @@
     "wins": 14,
     "losses": 29,
     "pnl": 15.33,
-    "trades": 190,
+    "trades": 191,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-08",
     "deposits": 64.0,
