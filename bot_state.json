@@ -28324,7 +28324,8 @@
       "market_slug": "astatc-wta-zeyson-cadbra-2026-07-26-sw1",
       "outcome": "Zeynep Sonmez",
       "status": "open",
-      "ts": "2026-07-27T22:45:04Z"
+      "ts": "2026-07-27T22:45:04Z",
+      "price_path": []
     },
     {
       "price": 0.6,
@@ -28393,7 +28394,13 @@
       "market_slug": "aec-atp-ardazk-yanere-2026-07-27",
       "outcome": "Arda Azkara",
       "status": "open",
-      "ts": "2026-07-27T22:45:09Z"
+      "ts": "2026-07-27T22:45:09Z",
+      "price_path": [
+        {
+          "ts": 1785193462,
+          "px": 0.25
+        }
+      ]
     },
     {
       "price": 0.71,
@@ -28430,7 +28437,13 @@
       "market_slug": "aec-atp-alemin-stetsi-2026-07-27",
       "outcome": "Alex de Minaur",
       "status": "open",
-      "ts": "2026-07-27T22:50:05Z"
+      "ts": "2026-07-27T22:50:05Z",
+      "price_path": [
+        {
+          "ts": 1785193463,
+          "px": 0.54
+        }
+      ]
     },
     {
       "price": 0.33,
@@ -28446,7 +28459,13 @@
       "market_slug": "aec-wta-yulsta-sloste-2026-07-26",
       "outcome": "Sloane Stephens",
       "status": "open",
-      "ts": "2026-07-27T22:55:00Z"
+      "ts": "2026-07-27T22:55:00Z",
+      "price_path": [
+        {
+          "ts": 1785193463,
+          "px": 0.33
+        }
+      ]
     }
   ],
   "pm_stats": {
