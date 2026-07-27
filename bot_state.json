@@ -34,15 +34,6 @@
   "bot_version": "9.24.14",
   "unannounced_results": [
     {
-      "id": "lng-esports-ml-0726",
-      "desc": "LNG Esports ML",
-      "odds": 119,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "LNG Esports 0-2 Ninjas in Pyjamas \u00b7 final",
-      "tier": "whale"
-    },
-    {
       "id": "kiwoom-drx-ml-0726",
       "desc": "Kiwoom DRX ML",
       "odds": -265,
