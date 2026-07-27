@@ -5208,7 +5208,7 @@
         }
       },
       "dota2:2227": {
-        "ts": 1785144107.9109728,
+        "ts": 1785151309.8524575,
         "f": {
           "w": 0,
           "l": 5,
@@ -7089,7 +7089,7 @@
         }
       },
       "dota2:137685": {
-        "ts": 1785144107.2991762,
+        "ts": 1785151309.2343595,
         "f": {
           "w": 3,
           "l": 2,
@@ -14370,6 +14370,37 @@
       "outcome": "Epic Avalanche",
       "status": "open",
       "ts": "2026-07-27T11:16:51Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 60% \u2014 7% edge, half-Kelly",
+      "order_id": "BGF00PMZY9NF",
+      "qty": 2,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-27T11:21:52Z"
+    },
+    {
+      "price": 0.24,
+      "stake": 0.96,
+      "kind": "EDGE",
+      "p_model": 0.33333333333333337,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 33% vs market 24% \u2014 9% edge, half-Kelly",
+      "order_id": "BGEZNBBBP9P5",
+      "qty": 4,
+      "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
+      "outcome": "Bar\u00e7a eSports GC",
+      "status": "open",
+      "ts": "2026-07-27T11:21:53Z"
     }
   ],
   "pm_stats": {
@@ -14377,7 +14408,7 @@
     "wins": 14,
     "losses": 29,
     "pnl": 15.33,
-    "trades": 210,
+    "trades": 212,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-10",
     "deposits": 64.0,
