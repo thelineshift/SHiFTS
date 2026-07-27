@@ -9751,10 +9751,6 @@
       "ts": "2026-07-25T19:10:26Z",
       "price_path": [
         {
-          "ts": 1785107059,
-          "px": 0.17
-        },
-        {
           "ts": 1785109220,
           "px": 0.17
         },
@@ -9844,6 +9840,10 @@
         },
         {
           "ts": 1785158660,
+          "px": 0.21
+        },
+        {
+          "ts": 1785160496,
           "px": 0.21
         }
       ]
@@ -11042,9 +11042,13 @@
       "qty": 4,
       "market_slug": "aec-cs2-eac-atr-2026-07-26",
       "outcome": "Atreides",
-      "status": "resting",
+      "status": "settled",
       "ts": "2026-07-26T12:39:35Z",
-      "price_path": []
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T13:54:57Z",
+      "pnl": -7.14,
+      "autopsy": "model 86% vs market 58% missed \u2014 logged for the playbook review."
     },
     {
       "price": 0.76,
@@ -15440,15 +15444,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 15,
-    "losses": 40,
-    "pnl": -39.33,
+    "losses": 41,
+    "pnl": -46.47,
     "trades": 241,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 36.53,
-    "net": -27.47,
+    "account": 29.39,
+    "net": -34.61,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -15458,7 +15462,7 @@
       ],
       "EDGE": [
         10,
-        26,
+        27,
         0
       ],
       "LIVE-BET": [
@@ -15715,6 +15719,14 @@
       "result": "LOSS",
       "pnl": -0.59,
       "lesson": "the near-certain lost \u2014 tail yield is not free money. After 20 settled tails, recheck the 0.93 bar against the actual hit rate."
+    },
+    {
+      "ts": "2026-07-27T13:54:57Z",
+      "kind": "EDGE",
+      "outcome": "Atreides",
+      "result": "LOSS",
+      "pnl": -7.14,
+      "lesson": "model 86% vs market 58% missed \u2014 logged for the playbook review."
     }
   ],
   "giveaway_x_posts": [
