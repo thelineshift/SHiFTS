@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T10:16:10Z",
+  "updated": "2026-07-27T10:56:10Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -773,7 +773,10 @@
       "opp": "Just Players",
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "ex-Young Ninjas",
-      "homeTeam": "Just Players"
+      "homeTeam": "Just Players",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "ex-Young Ninjas 1-2 Just Players \u00b7 final"
     },
     {
       "id": "chicago-white-sox-ml-0727",
