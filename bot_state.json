@@ -11104,9 +11104,13 @@
       "qty": 6,
       "market_slug": "aec-cs2-lav-btf-2026-07-26",
       "outcome": "Butterfly",
-      "status": "resting",
+      "status": "settled",
       "ts": "2026-07-26T12:43:39Z",
-      "price_path": []
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T13:54:59Z",
+      "pnl": -8.14,
+      "autopsy": "model 75% vs market 53% missed \u2014 logged for the playbook review."
     },
     {
       "price": 0.69,
@@ -11121,9 +11125,13 @@
       "qty": 11,
       "market_slug": "aec-lol-genga-foxy-2026-07-27",
       "outcome": "BNK FearX Youth",
-      "status": "resting",
+      "status": "settled",
       "ts": "2026-07-26T12:48:36Z",
-      "price_path": []
+      "result": "WIN",
+      "payout": 8.45,
+      "settled_at": "2026-07-27T13:55:03Z",
+      "pnl": 0.86,
+      "autopsy": "+$0.86 \u2014 model 100% vs market 69% was real edge; thesis held."
     },
     {
       "price": 0.42,
@@ -11160,10 +11168,6 @@
       "status": "open",
       "ts": "2026-07-26T12:53:36Z",
       "price_path": [
-        {
-          "ts": 1785107659,
-          "px": 0.75
-        },
         {
           "ts": 1785109827,
           "px": 0.75
@@ -11255,6 +11259,10 @@
         {
           "ts": 1785158660,
           "px": 0.76
+        },
+        {
+          "ts": 1785160506,
+          "px": 0.76
         }
       ]
     },
@@ -11294,10 +11302,6 @@
       "status": "open",
       "ts": "2026-07-26T12:58:37Z",
       "price_path": [
-        {
-          "ts": 1785107660,
-          "px": 0.7
-        },
         {
           "ts": 1785109827,
           "px": 0.89
@@ -11388,6 +11392,10 @@
         },
         {
           "ts": 1785158661,
+          "px": 0.67
+        },
+        {
+          "ts": 1785160506,
           "px": 0.67
         }
       ]
@@ -11489,10 +11497,6 @@
       "ts": "2026-07-26T13:14:05Z",
       "price_path": [
         {
-          "ts": 1785107660,
-          "px": 0.66
-        },
-        {
           "ts": 1785109827,
           "px": 0.66
         },
@@ -11583,6 +11587,10 @@
         {
           "ts": 1785158661,
           "px": 0.69
+        },
+        {
+          "ts": 1785160507,
+          "px": 0.72
         }
       ]
     },
@@ -11807,10 +11815,6 @@
       "ts": "2026-07-26T14:30:08Z",
       "price_path": [
         {
-          "ts": 1785107660,
-          "px": 0.66
-        },
-        {
           "ts": 1785109827,
           "px": 0.66
         },
@@ -11901,6 +11905,10 @@
         {
           "ts": 1785158661,
           "px": 0.69
+        },
+        {
+          "ts": 1785160507,
+          "px": 0.72
         }
       ]
     },
@@ -11962,10 +11970,6 @@
       "status": "open",
       "ts": "2026-07-26T14:35:16Z",
       "price_path": [
-        {
-          "ts": 1785107660,
-          "px": 0.66
-        },
         {
           "ts": 1785109828,
           "px": 0.63
@@ -12057,6 +12061,10 @@
         {
           "ts": 1785158661,
           "px": 0.05
+        },
+        {
+          "ts": 1785160507,
+          "px": 0.04
         }
       ]
     },
@@ -12095,10 +12103,6 @@
       "status": "open",
       "ts": "2026-07-26T14:40:07Z",
       "price_path": [
-        {
-          "ts": 1785107660,
-          "px": 0.71
-        },
         {
           "ts": 1785109828,
           "px": 0.72
@@ -12189,6 +12193,10 @@
         },
         {
           "ts": 1785158661,
+          "px": 0.78
+        },
+        {
+          "ts": 1785160507,
           "px": 0.78
         }
       ]
@@ -12655,10 +12663,6 @@
       "ts": "2026-07-26T17:54:48Z",
       "price_path": [
         {
-          "ts": 1785091469,
-          "px": 0.58
-        },
-        {
           "ts": 1785093862,
           "px": 0.58
         },
@@ -12748,6 +12752,10 @@
         },
         {
           "ts": 1785158662,
+          "px": 0.59
+        },
+        {
+          "ts": 1785160508,
           "px": 0.59
         }
       ]
@@ -13258,10 +13266,6 @@
       "ts": "2026-07-26T20:55:21Z",
       "price_path": [
         {
-          "ts": 1785102269,
-          "px": 0.29
-        },
-        {
           "ts": 1785105263,
           "px": 0.73
         },
@@ -13352,6 +13356,10 @@
         {
           "ts": 1785158662,
           "px": 0.61
+        },
+        {
+          "ts": 1785160509,
+          "px": 0.66
         }
       ]
     },
@@ -13460,6 +13468,10 @@
         },
         {
           "ts": 1785158662,
+          "px": 0.24
+        },
+        {
+          "ts": 1785160509,
           "px": 0.24
         }
       ]
@@ -13766,6 +13778,10 @@
         {
           "ts": 1785158662,
           "px": 0.79
+        },
+        {
+          "ts": 1785160510,
+          "px": 0.76
         }
       ]
     },
@@ -13785,10 +13801,6 @@
       "status": "open",
       "ts": "2026-07-26T22:09:53Z",
       "price_path": [
-        {
-          "ts": 1785107661,
-          "px": 0.31
-        },
         {
           "ts": 1785109829,
           "px": 0.31
@@ -13879,6 +13891,10 @@
         },
         {
           "ts": 1785158663,
+          "px": 0.35
+        },
+        {
+          "ts": 1785160510,
           "px": 0.35
         }
       ]
@@ -14053,6 +14069,10 @@
         },
         {
           "ts": 1785158663,
+          "px": 0.55
+        },
+        {
+          "ts": 1785160510,
           "px": 0.55
         }
       ]
@@ -15215,6 +15235,10 @@
         {
           "ts": 1785158663,
           "px": 0.28
+        },
+        {
+          "ts": 1785160512,
+          "px": 0.28
         }
       ]
     },
@@ -15284,6 +15308,10 @@
         {
           "ts": 1785158663,
           "px": 0.72
+        },
+        {
+          "ts": 1785160512,
+          "px": 0.67
         }
       ]
     },
@@ -15306,6 +15334,10 @@
         {
           "ts": 1785158663,
           "px": 0.29
+        },
+        {
+          "ts": 1785160512,
+          "px": 0.29
         }
       ]
     },
@@ -15326,6 +15358,10 @@
       "price_path": [
         {
           "ts": 1785158664,
+          "px": 0.61
+        },
+        {
+          "ts": 1785160512,
           "px": 0.61
         }
       ]
@@ -15348,6 +15384,10 @@
       "price_path": [
         {
           "ts": 1785158664,
+          "px": 0.4
+        },
+        {
+          "ts": 1785160513,
           "px": 0.4
         }
       ]
@@ -15443,16 +15483,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 15,
-    "losses": 41,
-    "pnl": -46.47,
+    "wins": 16,
+    "losses": 42,
+    "pnl": -53.75,
     "trades": 241,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 29.39,
-    "net": -34.61,
+    "account": 22.11,
+    "net": -41.89,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -15461,8 +15501,8 @@
         0
       ],
       "EDGE": [
-        10,
-        27,
+        11,
+        28,
         0
       ],
       "LIVE-BET": [
@@ -15480,30 +15520,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-26T17:03:40Z",
-      "kind": "EDGE",
-      "outcome": "Wildcard",
-      "result": "LOSS",
-      "pnl": -1.65,
-      "lesson": "model 50% vs market 33% missed \u2014 logged for the playbook review. Taken 0.33, rode to 0.35 before the result \u2014 beat the number by 2\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-26T17:03:43Z",
-      "kind": "EDGE",
-      "outcome": "Atreides",
-      "result": "WIN",
-      "pnl": 3.18,
-      "lesson": "+$3.18 \u2014 model 73% vs market 47% was real edge; thesis held. Taken 0.47, slid to 0.71 before the result \u2014 the number ran 24\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-26T17:03:46Z",
-      "kind": "EDGE",
-      "outcome": "ODDIK",
-      "result": "LOSS",
-      "pnl": -3.78,
-      "lesson": "model 73% vs market 42% missed \u2014 logged for the playbook review. Taken 0.42, slid to 0.13 before the result \u2014 the number ran 29\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-26T17:03:49Z",
       "kind": "EDGE",
@@ -15727,6 +15743,22 @@
       "result": "LOSS",
       "pnl": -7.14,
       "lesson": "model 86% vs market 58% missed \u2014 logged for the playbook review."
+    },
+    {
+      "ts": "2026-07-27T13:54:59Z",
+      "kind": "EDGE",
+      "outcome": "Butterfly",
+      "result": "LOSS",
+      "pnl": -8.14,
+      "lesson": "model 75% vs market 53% missed \u2014 logged for the playbook review."
+    },
+    {
+      "ts": "2026-07-27T13:55:03Z",
+      "kind": "EDGE",
+      "outcome": "BNK FearX Youth",
+      "result": "WIN",
+      "pnl": 0.86,
+      "lesson": "+$0.86 \u2014 model 100% vs market 69% was real edge; thesis held."
     }
   ],
   "giveaway_x_posts": [
