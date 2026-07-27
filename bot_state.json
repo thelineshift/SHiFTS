@@ -10920,7 +10920,13 @@
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
       "status": "resting",
-      "ts": "2026-07-26T12:09:58Z"
+      "ts": "2026-07-26T12:09:58Z",
+      "price_path": [
+        {
+          "ts": 1785160156,
+          "px": 0.6
+        }
+      ]
     },
     {
       "price": 0.47,
@@ -10956,8 +10962,13 @@
       "qty": 3,
       "market_slug": "aec-cs2-lav-btf-2026-07-26",
       "outcome": "Butterfly",
-      "status": "resting",
-      "ts": "2026-07-26T12:14:54Z"
+      "status": "settled",
+      "ts": "2026-07-26T12:14:54Z",
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T13:49:17Z",
+      "pnl": -8.14,
+      "autopsy": "model 75% vs market 53% missed \u2014 logged for the playbook review."
     },
     {
       "price": 0.3,
@@ -11032,7 +11043,8 @@
       "market_slug": "aec-cs2-eac-atr-2026-07-26",
       "outcome": "Atreides",
       "status": "resting",
-      "ts": "2026-07-26T12:39:35Z"
+      "ts": "2026-07-26T12:39:35Z",
+      "price_path": []
     },
     {
       "price": 0.76,
@@ -11067,7 +11079,13 @@
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
       "status": "resting",
-      "ts": "2026-07-26T12:43:37Z"
+      "ts": "2026-07-26T12:43:37Z",
+      "price_path": [
+        {
+          "ts": 1785160160,
+          "px": 0.6
+        }
+      ]
     },
     {
       "price": 0.53,
@@ -11083,7 +11101,8 @@
       "market_slug": "aec-cs2-lav-btf-2026-07-26",
       "outcome": "Butterfly",
       "status": "resting",
-      "ts": "2026-07-26T12:43:39Z"
+      "ts": "2026-07-26T12:43:39Z",
+      "price_path": []
     },
     {
       "price": 0.69,
@@ -11099,7 +11118,8 @@
       "market_slug": "aec-lol-genga-foxy-2026-07-27",
       "outcome": "BNK FearX Youth",
       "status": "resting",
-      "ts": "2026-07-26T12:48:36Z"
+      "ts": "2026-07-26T12:48:36Z",
+      "price_path": []
     },
     {
       "price": 0.42,
@@ -11401,7 +11421,13 @@
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
       "status": "resting",
-      "ts": "2026-07-26T13:08:06Z"
+      "ts": "2026-07-26T13:08:06Z",
+      "price_path": [
+        {
+          "ts": 1785160161,
+          "px": 0.6
+        }
+      ]
     },
     {
       "price": 0.56,
@@ -11569,8 +11595,13 @@
       "qty": 5,
       "market_slug": "aec-cs2-eac-atr-2026-07-26",
       "outcome": "Atreides",
-      "status": "resting",
-      "ts": "2026-07-26T13:19:05Z"
+      "status": "settled",
+      "ts": "2026-07-26T13:19:05Z",
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T13:49:21Z",
+      "pnl": -7.14,
+      "autopsy": "model 86% vs market 58% missed \u2014 logged for the playbook review."
     },
     {
       "price": 0.9,
@@ -11605,7 +11636,13 @@
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
       "status": "resting",
-      "ts": "2026-07-26T13:45:46Z"
+      "ts": "2026-07-26T13:45:46Z",
+      "price_path": [
+        {
+          "ts": 1785160163,
+          "px": 0.6
+        }
+      ]
     },
     {
       "price": 0.53,
@@ -15006,15 +15043,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 14,
-    "losses": 33,
-    "pnl": -0.31,
+    "losses": 35,
+    "pnl": -15.59,
     "trades": 241,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 75.55,
-    "net": 11.55,
+    "account": 60.27,
+    "net": -3.73,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -15024,7 +15061,7 @@
       ],
       "EDGE": [
         9,
-        22,
+        24,
         0
       ],
       "LIVE-BET": [
@@ -15276,6 +15313,14 @@
       "result": "LOSS",
       "pnl": -6.63,
       "lesson": "model 69% vs market 39% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.10 before the result \u2014 beat the number by 29\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T13:49:17Z",
+      "kind": "EDGE",
+      "outcome": "Butterfly",
+      "result": "LOSS",
+      "pnl": -8.14,
+      "lesson": "model 75% vs market 53% missed \u2014 logged for the playbook review."
     }
   ],
   "giveaway_x_posts": [
