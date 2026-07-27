@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.10'  # PORTFOLIO-CARD LAW: X/result posts show account, today P&L %, $64 deposit, opens
+BOT_VERSION = '9.24.11'  # STALE-SWEEP LAW: dead bids cancelled, cash back to work (owner decree)
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -5107,6 +5107,69 @@ def desk_pnl_png(st, stats):
     return buf.getvalue()
 
 
+STALE_ORDER_HOURS = 6
+
+async def _pm_sweep_stale(st):
+    """STALE-SWEEP LAW (owner decree 2026-07-27: 'cash sitting in order books should be
+    put to use'): cancel resting orders older than 6h — and ANY resting order whose event
+    has already started, immediately (a pregame-priced bid filling mid-game is the
+    LIVE-BET mistake in mechanical form). Freed buying power goes back to work the same
+    cycle. Verified-safe: statuses flip only for orders confirmed off the book."""
+    rs = [t for t in st.get('pm_trades', []) if t.get('status') == 'resting' and t.get('market_slug')]
+    if not rs:
+        return
+    now = time.time()
+    stale = []
+    for t in rs:
+        try:
+            age = now - time.mktime(time.strptime((t.get('ts') or '')[:19], '%Y-%m-%dT%H:%M:%S'))
+        except Exception:
+            age = STALE_ORDER_HOURS * 3600 + 1  # unparseable ts -> treat as stale
+        live_ev = False
+        try:
+            import datetime as _dtx
+            live_ev = _dtx.datetime.fromisoformat(str(t.get('ev_start') or '').replace('Z', '+00:00')).timestamp() <= now
+        except Exception:
+            pass
+        if live_ev or age > STALE_ORDER_HOURS * 3600:
+            stale.append(t)
+    if not stale:
+        return
+    c = _pm_client()
+    if not c:
+        return
+    slugs = sorted({t['market_slug'] for t in stale})
+    try:
+        await asyncio.to_thread(c.orders.cancel_all, {'slugs': slugs})
+    except Exception as e:
+        print('[desk] stale-sweep cancel:', str(e)[:120])
+        return
+    # verify off the book before touching statuses — an order we failed to cancel stays
+    # 'resting' and gets swept next cycle (never an untracked live order)
+    still = set()
+    try:
+        od = await asyncio.to_thread(c.orders.list)
+        for o in (od.get('orders') if isinstance(od, dict) else od) or []:
+            oo = (o.get('order') if isinstance(o, dict) and 'order' in o else o) or {}
+            if oo.get('marketSlug'):
+                still.add(oo['marketSlug'])
+    except Exception:
+        return  # can't verify — leave statuses, retry next cycle
+    freed, swept = 0.0, 0
+    for t in stale:
+        if t['market_slug'] in still:
+            continue
+        t['status'] = 'unfilled'
+        t['note'] = (t.get('note') or '') + ' [stale-swept]'
+        freed += float(t.get('stake') or 0)
+        swept += 1
+    if swept:
+        print(f"[desk] stale-sweep: cancelled {swept} order(s) on {len(slugs)} market(s) — ${freed:.2f} back to work")
+        try:
+            await asyncio.to_thread(gh_put, 'bot_state.json', st, 'pm stale-sweep')
+        except Exception as e:
+            print('[desk] stale-sweep save:', str(e)[:80])
+
 @tasks.loop(seconds=300)
 async def pm_trader():
     """Always scanning. Entries to the desk channel; exits + P&L via pm_watch."""
@@ -5114,6 +5177,7 @@ async def pm_trader():
         return
     try:
         st = await asyncio.to_thread(get_state)
+        await _pm_sweep_stale(st)  # STALE-SWEEP LAW: dead bids out, cash back to work
         intents, notes = await asyncio.to_thread(pm_trader_scan, st)
         hb = (notes or [{}])[0]
         if notes:
