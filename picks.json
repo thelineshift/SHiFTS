@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T08:36:12Z",
+  "updated": "2026-07-27T10:16:10Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -733,7 +733,10 @@
       "opp": "Team Comanche",
       "analysis": "3-2 last 5 (beat Just Players, BET-M 33, WBT) (lost to Eternal Fire) vs 0-0 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 3-2 last 5 (beat Just Players, BET-M 33, WBT) (lost to Eternal Fire) vs 0-0 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this",
       "awayTeam": "CYBERSHOKE Esports",
-      "homeTeam": "Team Comanche"
+      "homeTeam": "Team Comanche",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "CYBERSHOKE Esports 1-2 ARCRED \u00b7 final"
     },
     {
       "id": "team-flacons-ml-0727",
