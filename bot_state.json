@@ -39,15 +39,6 @@
   "bot_version": "9.24.5",
   "unannounced_results": [
     {
-      "id": "los-angeles-dodgers--1.5-0725",
-      "desc": "Los Angeles Dodgers -1.5",
-      "odds": -110,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Los Angeles Dodgers 4, New York Mets 3",
-      "tier": "sharp"
-    },
-    {
       "id": "los-angeles-dodgers-ml-0725",
       "desc": "Los Angeles Dodgers ML",
       "odds": -157,
@@ -111,7 +102,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785125773.6899688,
+  "last_x_receipt_ts": 1785134170.0637715,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
