@@ -34,15 +34,6 @@
   "bot_version": "9.24.14",
   "unannounced_results": [
     {
-      "id": "kiwoom-drx-ml-0726",
-      "desc": "Kiwoom DRX ML",
-      "odds": -265,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Kiwoom DRX 0-2 Paper Rex \u00b7 final",
-      "tier": "whale"
-    },
-    {
       "id": "misa-esports-ml-0726",
       "desc": "Misa Esports ML",
       "odds": -265,
@@ -79,7 +70,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785171872.7490506,
+  "last_x_receipt_ts": 1785161361.1528428,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -16581,7 +16572,7 @@
     "note": "stale 7/24 results \u2014 already receipted in Discord #receipts; X draining them would duplicate-post"
   },
   "x_eng_log": {
-    "2026-07-27-17": "edu"
+    "2026-07-26-17": "edu"
   },
   "board_posted": [
     "aec-cs2-btf-sawy-2026-07-26",
