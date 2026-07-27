@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.9'  # DESK HARDENING LAW: 55-trade autopsy — kill the five loss factories
+BOT_VERSION = '9.24.10'  # PORTFOLIO-CARD LAW: X/result posts show account, today P&L %, $64 deposit, opens
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -389,6 +389,34 @@ def _desk_deposits_live():
         print('[desk] deposits scan:', str(e)[:100])
         return None
 
+def _desk_day_roll(stats, acct_pre):
+    """PORTFOLIO-CARD LAW (owner decree 2026-07-27): anchor the account at the start of
+    each ET day so every result can show 'Today +$X (+Y%)' like the app graph. The first
+    sync of the day records the pre-update value as the anchor."""
+    import datetime as _dt
+    today = (_dt.datetime.utcnow() - _dt.timedelta(hours=4)).strftime('%Y-%m-%d')
+    if stats.get('day_date') != today:
+        stats['day_date'] = today
+        stats['day_anchor'] = round(float(acct_pre), 2)
+
+def _desk_portfolio_lines(stats, st):
+    """The portfolio card the owner screenshotted: account balance, today's P&L %,
+    deposits + net since deposit, open positions. Used on X results and desk floors."""
+    dep = float((stats or {}).get('deposits') or 64.0)
+    acct = float((stats or {}).get('account') or dep)
+    anchor = float((stats or {}).get('day_anchor') or acct)
+    day_pnl = acct - anchor
+    day_pct = (day_pnl / anchor * 100) if anchor else 0.0
+    net = acct - dep
+    roi = (net / dep * 100) if dep else 0.0
+    opens = [t for t in (st or {}).get('pm_trades', []) if t.get('status') == 'open']
+    working = sum(float(t.get('stake') or 0) for t in opens)
+    rec = f"{(stats or {}).get('wins', 0)}-{(stats or {}).get('losses', 0)}"
+    l1 = f"💼 Account ${acct:.2f} · 📊 today {'+' if day_pnl >= 0 else ''}${day_pnl:.2f} ({'+' if day_pct >= 0 else ''}{day_pct:.1f}%)"
+    l2 = f"📥 ${dep:.2f} deposited · net {'+' if net >= 0 else ''}${net:.2f} ({'+' if roi >= 0 else ''}{roi:.0f}%)"
+    l3 = f"📂 {len(opens)} open position{'s' if len(opens) != 1 else ''} (${working:.2f} at work) · desk {rec}"
+    return l1, l2, l3
+
 def _desk_sync_money(st, stats, bal):
     """Hourly: refresh deposits from the exchange; always: persist account/net so the War Room
     and every surface show the same account truth. Returns (account, deposits, net)."""
@@ -400,6 +428,7 @@ def _desk_sync_money(st, stats, bal):
         st['dep_checked_ts'] = now
     dep = float(stats.get('deposits') or 64.0)
     acct = round(float(bal['balance']), 2) if bal else None
+    _desk_day_roll(stats, float(stats.get('account') or acct or dep))
     net = round(acct - dep, 2) if acct is not None else None
     if acct is not None:
         stats['account'] = acct
@@ -5515,11 +5544,11 @@ async def pm_watch():
                                            'SHiFT TRADING DESK — RESULT')
         except Exception as se:
             print('[desk] slip:', se)
+        _pl1, _pl2, _pl3 = _desk_portfolio_lines(stats, st)
         line = (f"📈 **DESK RESULT {em}:** **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']} — **{res['result']} {sign}**\n"
                 f"_{t.get('reason', '')}_\n"
                 f"🔬 **Autopsy:** {lesson}\n"
-                f"Desk record **{stats.get('wins', 0)}-{stats.get('losses', 0)}** · P&L **{'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f}**\n"
-                + _desk_bankroll_txt(stats, bal))
+                f"**{_pl1}**\n**{_pl2}**\n{_pl3}")
         if desk:
             try:
                 import io as _io5
@@ -5536,21 +5565,20 @@ async def pm_watch():
             if _floor and (not desk or _floor.id != desk.id):
                 _msg2 = (f"💵 **DESK CASH-OUT {em}:** **{_trade_label(t)}** @ {t['price']:.2f} × {t['qty']}\n"
                          f"Cashed out **${res.get('payout', 0):.2f}** — profit **{sign}**\n"
-                         f"📈 Desk to date: **{stats.get('wins', 0)}-{stats.get('losses', 0)}**\n"
-                         f"{_desk_bankroll_txt(stats, bal)}")
+                         f"{_pl1}\n{_pl2}\n{_pl3}")
                 await _floor.send(_msg2)
         except Exception as _fe2:
             print('[desk] cash-out post:', _fe2)
         # X exposure law (owner decree 2026-07-25): desk WINNERS post to X with the record + funnel.
+        # PORTFOLIO-CARD LAW (owner decree 2026-07-27): X results show the app card —
+        # account balance, today's P&L %, the $64 deposit + net, open positions.
         if res['result'] == 'WIN':
-            _dep15 = float(stats.get('deposits') or 64.0)
-            _money15 = (f"💰 account ${bal['balance']:.2f} · net {'+' if (bal['balance'] - _dep15) >= 0 else ''}${bal['balance'] - _dep15:.2f} on ${_dep15:.2f} in"
-                        if bal else f"net {'+' if stats.get('pnl', 0) >= 0 else ''}${stats.get('pnl', 0):.2f} realized on ${_dep15:.2f} in")
-            xt = (f"📈 SHiFT desk — {_trade_label(t)} @ {t['price']:.2f} ✅ WIN {sign}\n"
-                  f"Desk record {stats.get('wins', 0)}-{stats.get('losses', 0)} · {_money15}\n"
-                  f"🐋 The desk floor is Whale-only — every entry, exit & cash-out live, plus the War Room: {STORE_PAGE}")
+            _pl1, _pl2, _pl3 = _desk_portfolio_lines(stats, st)
+            xt = (f"✅ WIN {sign} — {_trade_label(t)} @ {t['price']:.2f}\n\n"
+                  f"{_pl1}\n{_pl2}\n{_pl3}\n\n"
+                  f"🐋 Desk floor + War Room: {STORE_PAGE}")
             try:
-                await asyncio.to_thread(x_post, xt[:270], None)
+                await asyncio.to_thread(x_post, xt[:400], None)
             except Exception as xe:
                 print('[desk] x winner:', xe)
 
