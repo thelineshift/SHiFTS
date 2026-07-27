@@ -34,6 +34,15 @@
   "bot_version": "9.24.14",
   "unannounced_results": [
     {
+      "id": "kiwoom-drx-ml-0726",
+      "desc": "Kiwoom DRX ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Kiwoom DRX 0-2 Paper Rex \u00b7 final",
+      "tier": "whale"
+    },
+    {
       "id": "misa-esports-ml-0726",
       "desc": "Misa Esports ML",
       "odds": -265,
@@ -9806,10 +9815,6 @@
       "ts": "2026-07-25T19:10:26Z",
       "price_path": [
         {
-          "ts": 1785117371,
-          "px": 0.2
-        },
-        {
           "ts": 1785119171,
           "px": 0.23
         },
@@ -9899,6 +9904,10 @@
         },
         {
           "ts": 1785168281,
+          "px": 0.21
+        },
+        {
+          "ts": 1785170668,
           "px": 0.21
         }
       ]
@@ -11669,10 +11678,6 @@
       "ts": "2026-07-26T14:35:16Z",
       "price_path": [
         {
-          "ts": 1785118573,
-          "px": 0.53
-        },
-        {
           "ts": 1785120374,
           "px": 0.44
         },
@@ -11763,6 +11768,10 @@
         {
           "ts": 1785168282,
           "px": 0.07
+        },
+        {
+          "ts": 1785170668,
+          "px": 0.06
         }
       ]
     },
@@ -11801,10 +11810,6 @@
       "status": "open",
       "ts": "2026-07-26T14:40:07Z",
       "price_path": [
-        {
-          "ts": 1785118574,
-          "px": 0.72
-        },
         {
           "ts": 1785120374,
           "px": 0.72
@@ -11895,6 +11900,10 @@
         },
         {
           "ts": 1785168282,
+          "px": 0.78
+        },
+        {
+          "ts": 1785170668,
           "px": 0.78
         }
       ]
@@ -14122,6 +14131,10 @@
         {
           "ts": 1785168283,
           "px": 0.17
+        },
+        {
+          "ts": 1785170669,
+          "px": 0.17
         }
       ]
     },
@@ -14199,6 +14212,10 @@
         },
         {
           "ts": 1785168283,
+          "px": 0.46
+        },
+        {
+          "ts": 1785170669,
           "px": 0.46
         }
       ]
@@ -14365,6 +14382,10 @@
         {
           "ts": 1785168284,
           "px": 0.43
+        },
+        {
+          "ts": 1785170669,
+          "px": 0.43
         }
       ]
     },
@@ -14417,6 +14438,10 @@
         },
         {
           "ts": 1785168284,
+          "px": 0.94
+        },
+        {
+          "ts": 1785170670,
           "px": 0.94
         }
       ]
@@ -14848,6 +14873,10 @@
         {
           "ts": 1785168284,
           "px": 0.505
+        },
+        {
+          "ts": 1785170670,
+          "px": 0.505
         }
       ]
     },
@@ -15273,6 +15302,10 @@
         {
           "ts": 1785168284,
           "px": 0.15
+        },
+        {
+          "ts": 1785170670,
+          "px": 0.09
         }
       ]
     },
@@ -15551,6 +15584,10 @@
         {
           "ts": 1785168285,
           "px": 0.3
+        },
+        {
+          "ts": 1785170671,
+          "px": 0.3
         }
       ]
     },
@@ -15567,26 +15604,13 @@
       "qty": 10,
       "market_slug": "aec-cs2-mouzn-lea-2026-07-27",
       "outcome": "LEO",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T14:15:04Z",
-      "price_path": [
-        {
-          "ts": 1785161969,
-          "px": 0.29
-        },
-        {
-          "ts": 1785164230,
-          "px": 0.27
-        },
-        {
-          "ts": 1785166472,
-          "px": 0.27
-        },
-        {
-          "ts": 1785168285,
-          "px": 0.57
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T16:44:31Z",
+      "pnl": -2.9,
+      "autopsy": "model 63% vs market 29% missed \u2014 logged for the playbook review. Taken 0.29, slid to 0.57 before the result \u2014 the number ran 28\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.3,
@@ -15618,6 +15642,10 @@
         },
         {
           "ts": 1785168285,
+          "px": 0.25
+        },
+        {
+          "ts": 1785170673,
           "px": 0.25
         }
       ]
@@ -15653,6 +15681,10 @@
         {
           "ts": 1785168285,
           "px": 0.23
+        },
+        {
+          "ts": 1785170673,
+          "px": 0.23
         }
       ]
     },
@@ -15686,6 +15718,10 @@
         {
           "ts": 1785168285,
           "px": 0.3
+        },
+        {
+          "ts": 1785170674,
+          "px": 0.3
         }
       ]
     },
@@ -15718,6 +15754,10 @@
         },
         {
           "ts": 1785168285,
+          "px": 0.05
+        },
+        {
+          "ts": 1785170674,
           "px": 0.05
         }
       ]
@@ -16169,7 +16209,13 @@
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
       "status": "open",
-      "ts": "2026-07-27T16:40:10Z"
+      "ts": "2026-07-27T16:40:10Z",
+      "price_path": [
+        {
+          "ts": 1785170674,
+          "px": 0.48
+        }
+      ]
     },
     {
       "price": 0.21,
@@ -16185,7 +16231,13 @@
       "market_slug": "aec-lol-itz-rmd-2026-07-27",
       "outcome": "RMD Gaming",
       "status": "open",
-      "ts": "2026-07-27T16:40:12Z"
+      "ts": "2026-07-27T16:40:12Z",
+      "price_path": [
+        {
+          "ts": 1785170675,
+          "px": 0.21
+        }
+      ]
     },
     {
       "price": 0.11,
@@ -16200,21 +16252,27 @@
       "market_slug": "aec-wnba-tor-min-2026-07-28",
       "outcome": "Toronto",
       "status": "open",
-      "ts": "2026-07-27T16:40:13Z"
+      "ts": "2026-07-27T16:40:13Z",
+      "price_path": [
+        {
+          "ts": 1785170675,
+          "px": 0.11
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 18,
-    "losses": 42,
-    "pnl": -41.77,
+    "losses": 43,
+    "pnl": -44.67,
     "trades": 264,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-16",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 145.46,
-    "net": 81.46,
+    "account": 142.56,
+    "net": 78.56,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -16224,7 +16282,7 @@
       ],
       "EDGE": [
         13,
-        28,
+        29,
         0
       ],
       "LIVE-BET": [
@@ -16244,14 +16302,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-26T18:44:21Z",
-      "kind": "EDGE",
-      "outcome": "megoshort",
-      "result": "WIN",
-      "pnl": 2.8,
-      "lesson": "+$2.80 \u2014 model 50% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.49 before the result \u2014 the number ran 19\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-26T18:44:24Z",
       "kind": "EDGE",
@@ -16483,6 +16533,14 @@
       "result": "WIN",
       "pnl": 2.03,
       "lesson": "+$2.03 \u2014 model 94% vs market 71% was real edge; thesis held. Taken 0.71, rode to 0.94 before the result \u2014 beat the number by 23\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T16:44:31Z",
+      "kind": "EDGE",
+      "outcome": "LEO",
+      "result": "LOSS",
+      "pnl": -2.9,
+      "lesson": "model 63% vs market 29% missed \u2014 logged for the playbook review. Taken 0.29, slid to 0.57 before the result \u2014 the number ran 28\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
