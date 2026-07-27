@@ -6,18 +6,18 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-27 09:16 UTC",
+    "at": "2026-07-27 08:16 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 08:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 08:36 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 07:46 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-27 08:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-27 09:08 UTC"
+    "\ud83c\udf81giveaway": "2026-07-27 00:14 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 09:16 UTC",
+    "at": "2026-07-27 08:16 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -25,15 +25,24 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 09:16 UTC",
+    "at": "2026-07-27 08:16 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 09:16 UTC",
+    "at": "2026-07-27 08:16 UTC",
     "flags": []
   },
   "bot_version": "9.24.5",
   "unannounced_results": [
+    {
+      "id": "los-angeles-dodgers-ml-0725",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -157,
+      "result": "WIN",
+      "units": 0.64,
+      "score": "Los Angeles Dodgers 4, New York Mets 3",
+      "tier": "sharp"
+    },
     {
       "id": "milwaukee-brewers-ml-0725",
       "desc": "Milwaukee Brewers ML",
@@ -107,7 +116,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785143770.2966745,
+  "last_x_receipt_ts": 1785135370.0936625,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -10635,106 +10644,13 @@
       "qty": 3,
       "market_slug": "aec-lol-dk-t1-2026-07-27",
       "outcome": "Dplus KIA",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T12:09:53Z",
-      "price_path": [
-        {
-          "ts": 1785092662,
-          "px": 0.34
-        },
-        {
-          "ts": 1785095063,
-          "px": 0.32
-        },
-        {
-          "ts": 1785097461,
-          "px": 0.32
-        },
-        {
-          "ts": 1785100461,
-          "px": 0.32
-        },
-        {
-          "ts": 1785102264,
-          "px": 0.32
-        },
-        {
-          "ts": 1785105260,
-          "px": 0.32
-        },
-        {
-          "ts": 1785107060,
-          "px": 0.32
-        },
-        {
-          "ts": 1785109221,
-          "px": 0.32
-        },
-        {
-          "ts": 1785111021,
-          "px": 0.32
-        },
-        {
-          "ts": 1785113172,
-          "px": 0.32
-        },
-        {
-          "ts": 1785114980,
-          "px": 0.31
-        },
-        {
-          "ts": 1785117372,
-          "px": 0.31
-        },
-        {
-          "ts": 1785119172,
-          "px": 0.31
-        },
-        {
-          "ts": 1785120976,
-          "px": 0.31
-        },
-        {
-          "ts": 1785123376,
-          "px": 0.3
-        },
-        {
-          "ts": 1785126373,
-          "px": 0.3
-        },
-        {
-          "ts": 1785128173,
-          "px": 0.3
-        },
-        {
-          "ts": 1785129973,
-          "px": 0.3
-        },
-        {
-          "ts": 1785132373,
-          "px": 0.27
-        },
-        {
-          "ts": 1785134176,
-          "px": 0.25
-        },
-        {
-          "ts": 1785136572,
-          "px": 0.16
-        },
-        {
-          "ts": 1785138377,
-          "px": 0.16
-        },
-        {
-          "ts": 1785140774,
-          "px": 0.09
-        },
-        {
-          "ts": 1785142575,
-          "px": 0.21
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T09:16:12Z",
+      "pnl": -1.11,
+      "autopsy": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.21 before the result \u2014 the number ran 16\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.43,
@@ -12977,6 +12893,10 @@
         {
           "ts": 1785129976,
           "px": 0.59
+        },
+        {
+          "ts": 1785143776,
+          "px": 0.59
         }
       ]
     },
@@ -14247,8 +14167,8 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 14,
-    "losses": 28,
-    "pnl": 16.44,
+    "losses": 29,
+    "pnl": 15.33,
     "trades": 184,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-08",
@@ -14265,7 +14185,7 @@
       ],
       "EDGE": [
         9,
-        17,
+        18,
         0
       ],
       "LIVE-BET": [
@@ -14278,14 +14198,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-26T00:10:26Z",
-      "kind": "LIVE-BET",
-      "outcome": "BESTIA Academy",
-      "result": "LOSS",
-      "pnl": 0.0,
-      "lesson": "+$0.00 \u2014 model 31% vs market 21% was real edge; thesis held. Taken 0.21, rode to 0.03 before the result \u2014 beat the number by 18\u00a2 \u2705 (cashed out early at $2.31)"
-    },
     {
       "ts": "2026-07-26T00:10:27Z",
       "kind": "LIVE-BET",
@@ -14517,6 +14429,14 @@
       "result": "LOSS",
       "pnl": -1.92,
       "lesson": "model 73% vs market 64% missed \u2014 logged for the playbook review. Taken 0.64, slid to 0.11 before the result \u2014 the number ran 53\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-27T09:16:12Z",
+      "kind": "EDGE",
+      "outcome": "Dplus KIA",
+      "result": "LOSS",
+      "pnl": -1.11,
+      "lesson": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.21 before the result \u2014 the number ran 16\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -14598,7 +14518,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785138373.3984313,
+  "dep_checked_ts": 1785143772.2274187,
   "x_bio_v": 2,
   "op_cool_until": 1785096924.2504044
 }
