@@ -6,18 +6,18 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-27 01:16 UTC",
+    "at": "2026-07-27 00:16 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 00:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 00:46 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 00:40 UTC",
+    "\ud83e\uddfereceipts": "2026-07-26 23:50 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 00:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 00:14 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 01:16 UTC",
+    "at": "2026-07-27 00:16 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -25,28 +25,19 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 01:16 UTC",
+    "at": "2026-07-27 00:16 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-26 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-27 01:16 UTC",
+    "at": "2026-07-27 00:16 UTC",
     "flags": [
       "giveaway: no winner post today (Sunday draw overdue)"
     ]
   },
   "bot_version": "9.24.5",
   "unannounced_results": [
-    {
-      "id": "milwaukee-brewers--1.5-0725",
-      "desc": "Milwaukee Brewers -1.5",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "Colorado Rockies 5, Milwaukee Brewers 8",
-      "tier": "whale"
-    },
     {
       "id": "los-angeles-dodgers--1.5-0725",
       "desc": "Los Angeles Dodgers -1.5",
@@ -118,9 +109,18 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "mibr-ml-0726",
+      "desc": "MIBR ML",
+      "odds": -355,
+      "result": "WIN",
+      "units": 0.42,
+      "score": "MIBR 2-0 FURIA Esports \u00b7 final",
+      "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785111370.4770455,
+  "last_x_receipt_ts": 1785114969.7099168,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
