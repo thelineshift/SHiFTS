@@ -6,18 +6,18 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-27 01:46 UTC",
+    "at": "2026-07-27 08:16 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-2": "2026-07-27 00:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 01:16 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 00:40 UTC",
+    "\ud83c\udfaffree-pick-2-2": "2026-07-27 08:01 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 07:46 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 08:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 00:14 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 01:46 UTC",
+    "at": "2026-07-27 08:16 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -25,19 +25,24 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 01:46 UTC",
-    "flags": [
-      "no challenge bet registered for 2026-07-26 (due 6 PM ET)"
-    ]
+    "at": "2026-07-27 08:16 UTC",
+    "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 01:46 UTC",
-    "flags": [
-      "giveaway: no winner post today (Sunday draw overdue)"
-    ]
+    "at": "2026-07-27 08:16 UTC",
+    "flags": []
   },
   "bot_version": "9.24.5",
   "unannounced_results": [
+    {
+      "id": "los-angeles-dodgers-ml-0725",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -157,
+      "result": "WIN",
+      "units": 0.64,
+      "score": "Los Angeles Dodgers 4, New York Mets 3",
+      "tier": "sharp"
+    },
     {
       "id": "milwaukee-brewers-ml-0725",
       "desc": "Milwaukee Brewers ML",
@@ -100,9 +105,18 @@
       "units": -1.0,
       "score": "Team flacons 0-2 ARCRED \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "bnk-fearx-youth-ml-0727",
+      "desc": "BNK FearX Youth ML",
+      "odds": -316,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "BNK FearX Youth 0-1 Gen.G \u00b7 final",
+      "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785140178.238672,
+  "last_x_receipt_ts": 1785135370.0936625,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -9205,10 +9219,6 @@
       "ts": "2026-07-25T19:10:26Z",
       "price_path": [
         {
-          "ts": 1785089658,
-          "px": 0.18
-        },
-        {
           "ts": 1785091458,
           "px": 0.18
         },
@@ -9298,6 +9308,10 @@
         },
         {
           "ts": 1785138372,
+          "px": 0.2
+        },
+        {
+          "ts": 1785140172,
           "px": 0.2
         }
       ]
