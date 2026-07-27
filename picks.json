@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T15:44:31Z",
+  "updated": "2026-07-27T16:01:13Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1221,6 +1221,57 @@
       "result": "WIN",
       "units_result": 0.67,
       "score": "Virtus.pro 2-0 TokyoSavage \u00b7 final"
+    },
+    {
+      "id": "banda-chuya-ml-0727",
+      "date": "2026-07-27",
+      "sport": "cs2",
+      "desc": "banda chuya ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:15 PM ET",
+      "vs": "163ON",
+      "team": "banda chuya",
+      "opp": "163ON",
+      "analysis": "4-1 last 5 (beat TEAM_COPH9K, Fraternity, LPH Gaming) (lost to TheBoys) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat TEAM_COPH9K, Fraternity, LPH Gaming) (lost to TheBoys) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over 163ON the number hasn't priced.",
+      "awayTeam": "banda chuya",
+      "homeTeam": "163ON"
+    },
+    {
+      "id": "over-9.5-0727",
+      "date": "2026-07-27",
+      "sport": "mlb",
+      "desc": "Over 9.5",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "06:40 PM ET",
+      "vs": "Arizona Diamondbacks @ Pittsburgh Pirates",
+      "team": "Pittsburgh Pirates",
+      "opp": "Arizona Diamondbacks",
+      "analysis": "posted 9.5 vs 58.3 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \ud83d\udcb0 **Value hunt:** posted 9.5 vs 58.3 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. The book shaded this line toward the public",
+      "awayTeam": "Pittsburgh Pirates",
+      "homeTeam": "Arizona Diamondbacks"
+    },
+    {
+      "id": "houston-astros-ml-0727",
+      "date": "2026-07-27",
+      "sport": "mlb",
+      "desc": "Houston Astros ML",
+      "market": "ML",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "09:38 PM ET",
+      "vs": "Los Angeles Angels",
+      "team": "Houston Astros",
+      "opp": "Los Angeles Angels",
+      "analysis": "52-55 overall, 26-28 on the road \u2014 our 53% vs book 50% (no-vig) | \ud83e\udde0 **The read:** 52-55 overall, 26-28 on the road \u2014 our 53% vs book 50% (no-vig). Model makes Houston Astros **53%** \u2014 books imply **52%**. SHiFT presses the gap.",
+      "awayTeam": "Houston Astros",
+      "homeTeam": "Los Angeles Angels"
     }
   ]
 }
