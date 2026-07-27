@@ -6884,7 +6884,7 @@
         }
       },
       "valorant:133128": {
-        "ts": 1785117725.7352812,
+        "ts": 1785143195.7715673,
         "f": {
           "w": 1,
           "l": 4,
@@ -7526,7 +7526,7 @@
         }
       },
       "lol:136177": {
-        "ts": 1785117695.9632497,
+        "ts": 1785143182.8973238,
         "f": {
           "w": 2,
           "l": 3,
@@ -7555,7 +7555,7 @@
         }
       },
       "lol:138966": {
-        "ts": 1785117696.5454497,
+        "ts": 1785143183.5157871,
         "f": {
           "w": 1,
           "l": 0,
@@ -12985,10 +12985,6 @@
         {
           "ts": 1785129976,
           "px": 0.59
-        },
-        {
-          "ts": 1785143173,
-          "px": 0.59
         }
       ]
     },
@@ -14238,6 +14234,22 @@
       "outcome": "Bulldog Esports",
       "status": "resting",
       "ts": "2026-07-27T08:37:22Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 0.6,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 60% \u2014 7% edge, half-Kelly",
+      "order_id": "BGCTM13XY9P2",
+      "qty": 1,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-27T09:06:49Z"
     }
   ],
   "pm_stats": {
@@ -14245,7 +14257,7 @@
     "wins": 14,
     "losses": 28,
     "pnl": 16.44,
-    "trades": 183,
+    "trades": 184,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-08",
     "deposits": 64.0,
