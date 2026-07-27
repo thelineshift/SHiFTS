@@ -6886,7 +6886,7 @@
         }
       },
       "valorant:133128": {
-        "ts": 1785143195.7715673,
+        "ts": 1785150702.5929074,
         "f": {
           "w": 1,
           "l": 4,
@@ -7528,7 +7528,7 @@
         }
       },
       "lol:136177": {
-        "ts": 1785143182.8973238,
+        "ts": 1785150688.36069,
         "f": {
           "w": 2,
           "l": 3,
@@ -7557,7 +7557,7 @@
         }
       },
       "lol:138966": {
-        "ts": 1785143183.5157871,
+        "ts": 1785150688.9807208,
         "f": {
           "w": 1,
           "l": 0,
@@ -8498,6 +8498,43 @@
           "w": 0,
           "l": 0,
           "res": []
+        }
+      },
+      "cs2:138998": {
+        "ts": 1785150692.8457155,
+        "f": {
+          "w": 0,
+          "l": 0,
+          "res": []
+        }
+      },
+      "cs2:3288": {
+        "ts": 1785150693.2908955,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Inner Circle Esports"
+            },
+            {
+              "won": true,
+              "opp": "B8"
+            },
+            {
+              "won": true,
+              "opp": "NIP"
+            },
+            {
+              "won": false,
+              "opp": "ex-RUBY"
+            },
+            {
+              "won": true,
+              "opp": "1WIN"
+            }
+          ]
         }
       }
     }
@@ -14378,6 +14415,38 @@
       "outcome": "Habos Babos",
       "status": "resting",
       "ts": "2026-07-27T11:01:50Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 60% \u2014 7% edge, half-Kelly",
+      "order_id": "BGETX2EFE9SX",
+      "qty": 2,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-27T11:11:56Z"
+    },
+    {
+      "price": 0.68,
+      "short": true,
+      "stake": 2.04,
+      "kind": "EDGE",
+      "p_model": 0.7663633422017689,
+      "event": "Connecticut vs. Washington",
+      "ev_start": "2026-07-28T23:30:00Z",
+      "reason": "model 77% vs market 68% \u2014 9% edge, half-Kelly",
+      "order_id": "BGEW5BKZP9P4",
+      "qty": 3,
+      "market_slug": "aec-wnba-conn-wsh-2026-07-28",
+      "outcome": "Washington",
+      "status": "open",
+      "ts": "2026-07-27T11:11:58Z"
     }
   ],
   "pm_stats": {
@@ -14385,7 +14454,7 @@
     "wins": 14,
     "losses": 29,
     "pnl": 15.33,
-    "trades": 207,
+    "trades": 209,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-10",
     "deposits": 64.0,
