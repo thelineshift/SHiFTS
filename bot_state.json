@@ -16102,7 +16102,7 @@
       "qty": 2,
       "market_slug": "aec-wnba-conn-wsh-2026-07-28",
       "outcome": "Washington",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T15:45:24Z"
     },
     {
@@ -16118,7 +16118,7 @@
       "qty": 2,
       "market_slug": "aec-mlb-tex-tb-2026-07-29",
       "outcome": "Tampa Bay Rays",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T15:50:11Z"
     }
   ],
