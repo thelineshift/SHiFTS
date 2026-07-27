@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T02:36:10Z",
+  "updated": "2026-07-27T04:01:01Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -812,6 +812,91 @@
       "analysis": "54-52 overall, 22-32 at home \u2014 our 54% vs book 53% (no-vig) | \ud83d\udcb0 **Value hunt:** 54-52 overall, 22-32 at home \u2014 our 54% vs book 53% (no-vig). The book shaded this line toward the public side; we collect the **1 points** they left.",
       "homeTeam": "Washington Nationals",
       "awayTeam": "Toronto Blue Jays"
+    },
+    {
+      "id": "bnk-fearx-ml-0727",
+      "date": "2026-07-27",
+      "sport": "lol",
+      "desc": "BNK FEARX ML",
+      "market": "KeSPA Cup Bo1",
+      "odds": 160,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "02:00 AM ET",
+      "vs": "Gen.G",
+      "team": "BNK FEARX",
+      "opp": "Gen.G",
+      "analysis": "2-3 last 5 (beat Dplus KIA, Kiwoom DRX) (lost to Nongshim Red Force) vs 1-4 \u2014 live Pinnacle line +160 (our 73% vs book 35%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat Dplus KIA, Kiwoom DRX) (lost to Nongshim Red Force) vs 1-4 \u2014 live Pinnacle line +160 (our 73% vs book 35%). Ride the **38-point** form e",
+      "awayTeam": "BNK FEARX",
+      "homeTeam": "Gen.G"
+    },
+    {
+      "id": "kt-rolster-ml-0727",
+      "date": "2026-07-27",
+      "sport": "lol",
+      "desc": "KT Rolster ML",
+      "market": "KeSPA Cup Bo1",
+      "odds": 123,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "03:30 AM ET",
+      "vs": "Gen.G",
+      "team": "KT Rolster",
+      "opp": "Gen.G",
+      "analysis": "2-3 last 5 (beat Dplus KIA, DN SOOPers) (lost to Kiwoom DRX) vs 1-4 \u2014 live Pinnacle line +123 (our 73% vs book 41%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Dplus KIA, DN SOOPers) (lost to Kiwoom DRX) vs 1-4 \u2014 live Pinnacle line +123 (our 73% vs book 41%). That's a **32-point** gap over Gen.G the number h",
+      "awayTeam": "KT Rolster",
+      "homeTeam": "Gen.G"
+    },
+    {
+      "id": "over-8.0-0727",
+      "date": "2026-07-27",
+      "sport": "mlb",
+      "desc": "Over 8.0",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "02:35 PM ET",
+      "vs": "Seattle Mariners @ Texas Rangers",
+      "team": "Texas Rangers",
+      "opp": "Seattle Mariners",
+      "analysis": "posted 8.0 vs 58.2 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \ud83d\udcc8 **Market angle:** posted 8.0 vs 58.2 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. The number's off by **10 points** \u2014 this ",
+      "awayTeam": "Texas Rangers",
+      "homeTeam": "Seattle Mariners"
+    },
+    {
+      "id": "over-9.0-0727",
+      "date": "2026-07-27",
+      "sport": "mlb",
+      "desc": "Over 9.0",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "06:40 PM ET",
+      "vs": "Arizona Diamondbacks @ Pittsburgh Pirates",
+      "team": "Pittsburgh Pirates",
+      "opp": "Arizona Diamondbacks",
+      "analysis": "posted 9.0 vs 58.2 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \ud83d\udcc8 **Market angle:** posted 9.0 vs 58.2 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. The number's off by **10 points** \u2014 this ",
+      "awayTeam": "Pittsburgh Pirates",
+      "homeTeam": "Arizona Diamondbacks"
+    },
+    {
+      "id": "milwaukee-brewers-ml-0727",
+      "date": "2026-07-27",
+      "sport": "mlb",
+      "desc": "Milwaukee Brewers ML",
+      "market": "ML",
+      "odds": -137,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "09:45 PM ET",
+      "vs": "San Francisco Giants",
+      "team": "Milwaukee Brewers",
+      "opp": "San Francisco Giants",
+      "analysis": "66-39 overall, 30-19 on the road \u2014 our 64% vs book 55% (no-vig) | \u2694\ufe0f **Matchup read:** 66-39 overall, 30-19 on the road \u2014 our 64% vs book 55% (no-vig). Milwaukee Brewers in the better spot and priced like it isn't \u2014 **8-point** edge.",
+      "awayTeam": "Milwaukee Brewers",
+      "homeTeam": "San Francisco Giants"
     }
   ]
 }
