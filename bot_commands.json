@@ -1,16 +1,11 @@
 {
- "seq": 513,
+ "seq": 514,
  "commands": [
   {
-   "seq": 513,
+   "seq": 515,
    "action": "post_and_pin",
    "channel": "giveaway",
-   "content": "\ud83c\udf81 **GIVEAWAY NIGHT \u2014 THE DRAW** \u26a1\n*(running a day late \u2014 Sunday's slot got eaten by a hosting outage on our end; the engine is patched so a missed slot now auto-fires at the next opportunity)*\n\n**Provably fair** \u2014 32 verified tickets, one per person (a double entry under two X handles was voided \u2014 same Discord account).\nCommit: `4ce8f4602c5399ade26e77cccbad2e7d07e3124af285000218cb561355c0ff5d`\nNonce: `b9e442089ba738d4dbeac755612f2d22`\nVerify: winner_index = int(sha256(sorted_pool + nonce + round)) % 32 \u2014 anyone can recompute.\n\n\ud83e\udd48 **RUNNER-UP \u2014 $15 SOL:** <@852827725777600524> (@umhomdani)\n\ud83e\udd47 **GRAND WINNER \u2014 $35 SOL:** <@894953724164849685> (@hayjay_web3)\n\n\u23f0 **CLAIM WITHIN 24 HOURS** \u2014 reply right here in this channel (anything \u2014 \"here\" works) by **~8:00 AM ET Tuesday**. New house rule, starting now: **no response in 24h = your prize redraws** from the remaining tickets.\nAfter you claim: DM us your SOL address and the prize ships on-chain.\n\nNext Sunday, Aug 3 = **THE FINALE** \u2014 last giveaway ever, $50 again ($35/$15). Every entry from this week still counts \u2014 keep the steps green. \u26a1"
-  },
-  {
-   "seq": 514,
-   "action": "x_post_text",
-   "text": "\ud83c\udf81 WINNERS DRAWN \u2014 $50 SOL giveaway\n\n\ud83e\udd47 $35: @hayjay_web3\n\ud83e\udd48 $15: @umhomdani\n\nProvably fair \u2014 commit + nonce posted in the Discord. Winners have 24h to claim in the \ud83c\udf81 channel or the prize redraws (new house rule).\n\nAug 3 = THE FINALE. Last one ever. \u26a1"
+   "content": "\ud83d\udcc5 **Date check:** THE FINALE is next **Sunday, Aug 2, 6 PM ET** (the \"Aug 3\" in the draw post was a slip \u2014 the show always runs Sundays). Same $50 ($35/$15), same steps, last one ever. \u26a1"
   }
  ]
 }
