@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T00:00:50Z",
+  "updated": "2026-07-27T01:16:12Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -618,7 +618,10 @@
       "opp": "FURIA Esports",
       "analysis": "3-2 last 5 (beat Team Envy, Leviat\u00e1n Esports, KR\u00dc Esports) (lost to NRG) vs 0-5 \u2014 live Pinnacle line -355 (our 90% vs book 74%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat Team Envy, Leviat\u00e1n Esports, KR\u00dc Esports) (lost to NRG) vs 0-5 \u2014 live Pinnacle line -355 (our 90% vs book 74%). That's a **16-point** gap",
       "awayTeam": "MIBR",
-      "homeTeam": "FURIA Esports"
+      "homeTeam": "FURIA Esports",
+      "result": "WIN",
+      "units_result": 0.42,
+      "score": "MIBR 2-0 FURIA Esports \u00b7 final"
     },
     {
       "id": "texas-rangers-ml-0727",
