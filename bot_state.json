@@ -68,6 +68,24 @@
       "units": 0.85,
       "score": "Rune Eaters 2-0 SAW Youngsters \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "gentle-mates-gc-ml-0727",
+      "desc": "Gentle Mates GC ML",
+      "odds": -351,
+      "result": "WIN",
+      "units": 0.43,
+      "score": "Gentle Mates GC 2-0 GIANTX GC \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "rune-eaters-ml-0727",
+      "desc": "Rune Eaters ML",
+      "odds": -177,
+      "result": "WIN",
+      "units": 0.85,
+      "score": "Rune Eaters 2-0 SAW Youngsters \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785161361.1528428,
