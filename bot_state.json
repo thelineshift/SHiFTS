@@ -14814,20 +14814,82 @@
       "outcome": "Bulldog Esports",
       "status": "resting",
       "ts": "2026-07-27T13:13:31Z"
+    },
+    {
+      "price": 0.62,
+      "stake": 8.06,
+      "kind": "LIVE-BET",
+      "p_model": 0.857142857142857,
+      "event": "ASTRAL vs. Atputies",
+      "ev_start": "2026-07-27T13:00:00Z",
+      "reason": "live number drifted \u2014 model 86% vs 62%, 24% gap mid-game",
+      "order_id": "BGGEPYTEA9QR",
+      "qty": 13,
+      "market_slug": "aec-cs2-astr-atp-2026-07-27",
+      "outcome": "ASTRAL",
+      "status": "open",
+      "ts": "2026-07-27T13:18:33Z"
+    },
+    {
+      "price": 0.29,
+      "short": true,
+      "stake": 2.03,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Brute vs. NAVI Junior",
+      "ev_start": "2026-07-27T15:30:00Z",
+      "reason": "model 50% vs market 29% \u2014 21% edge, half-Kelly",
+      "order_id": "BGGD5CABA9NT",
+      "qty": 7,
+      "market_slug": "aec-cs2-brute-navij-2026-07-27",
+      "outcome": "NAVI Junior",
+      "status": "open",
+      "ts": "2026-07-27T13:18:34Z"
+    },
+    {
+      "price": 0.61,
+      "stake": 1.83,
+      "kind": "EDGE",
+      "p_model": 0.7272727272727273,
+      "event": "Brute vs. MOUZ NXT",
+      "ev_start": "2026-07-27T16:30:00Z",
+      "reason": "model 73% vs market 61% \u2014 12% edge, half-Kelly",
+      "order_id": "BGGEHS6AP9P5",
+      "qty": 3,
+      "market_slug": "aec-cs2-brute-mouzn-2026-07-27",
+      "outcome": "Brute",
+      "status": "open",
+      "ts": "2026-07-27T13:18:36Z"
+    },
+    {
+      "price": 0.4,
+      "short": true,
+      "stake": 0.8,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Bebop vs. Falcons Force",
+      "ev_start": "2026-07-27T17:00:00Z",
+      "reason": "model 50% vs market 40% \u2014 10% edge, half-Kelly",
+      "order_id": "BGGCTBPKE9P4",
+      "qty": 2,
+      "market_slug": "aec-cs2-bbp-falf-2026-07-27",
+      "outcome": "Falcons Force",
+      "status": "open",
+      "ts": "2026-07-27T13:18:37Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 15,
+    "wins": 14,
     "losses": 33,
-    "pnl": 7.58,
-    "trades": 233,
+    "pnl": -0.31,
+    "trades": 237,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 87.45,
-    "net": 23.45,
+    "account": 75.55,
+    "net": 11.55,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -14836,7 +14898,7 @@
         0
       ],
       "EDGE": [
-        10,
+        9,
         22,
         0
       ],
@@ -14850,6 +14912,14 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
+    {
+      "ts": "2026-07-26T11:17:04Z",
+      "kind": "EDGE",
+      "outcome": "Wolves Esports",
+      "result": "LOSS",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.15 before the result \u2014 beat the number by 29\u00a2 \u2705 (cashed out early at $1.32)"
+    },
     {
       "ts": "2026-07-26T11:57:47Z",
       "kind": "EDGE",
@@ -15081,14 +15151,6 @@
       "result": "LOSS",
       "pnl": -6.63,
       "lesson": "model 69% vs market 39% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.10 before the result \u2014 beat the number by 29\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-27T13:17:56Z",
-      "kind": "EDGE",
-      "outcome": "Atputies",
-      "result": "WIN",
-      "pnl": 7.89,
-      "lesson": "+$7.89 \u2014 model 73% vs market 47% was real edge; thesis held. Taken 0.47, rode to 0.06 before the result \u2014 beat the number by 41\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -15172,7 +15234,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785158276.2309556,
+  "dep_checked_ts": 1785153716.6655698,
   "x_bio_v": 2,
   "op_cool_until": 1785096924.2504044
 }
