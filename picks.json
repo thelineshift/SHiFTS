@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T12:16:12Z",
+  "updated": "2026-07-27T14:57:05Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1214,7 +1214,10 @@
       "opp": "TokyoSavage",
       "analysis": "3-2 last 5 (beat B8, NIP, 1WIN) (lost to Inner Circle Esports) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat B8, NIP, 1WIN) (lost to Inner Circle Esports) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over TokyoSavage the number hasn't priced.",
       "awayTeam": "Virtus.pro",
-      "homeTeam": "TokyoSavage"
+      "homeTeam": "TokyoSavage",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "Virtus.pro 2-0 TokyoSavage \u00b7 final"
     }
   ]
 }
