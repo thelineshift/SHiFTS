@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 14:09 UTC",
+    "at": "2026-07-27 14:21 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 12:01 UTC",
     "\ud83e\uddfereceipts": "2026-07-27 13:55 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 13:26 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 14:17 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 13:13 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 14:09 UTC",
+    "at": "2026-07-27 14:21 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,14 +24,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 14:09 UTC",
+    "at": "2026-07-27 14:21 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 14:09 UTC",
+    "at": "2026-07-27 14:21 UTC",
     "flags": []
   },
-  "bot_version": "9.24.10",
+  "bot_version": "9.24.11",
   "unannounced_results": [
     {
       "id": "san-jose-earthquakes-ml-0725",
@@ -12334,14 +12334,18 @@
       "qty": 3,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T16:49:00Z",
       "price_path": [
         {
           "ts": 1785160171,
           "px": 0.53
         }
-      ]
+      ],
+      "note": " [stale-swept]",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.68,
@@ -12847,14 +12851,18 @@
       "qty": 1,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T18:04:48Z",
       "price_path": [
         {
           "ts": 1785160174,
           "px": 0.53
         }
-      ]
+      ],
+      "note": " [stale-swept]",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.04,
@@ -12893,8 +12901,9 @@
       "qty": 1,
       "market_slug": "aec-cs2-nvo-pure-2026-07-27",
       "outcome": "PURE",
-      "status": "resting",
-      "ts": "2026-07-26T18:54:47Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T18:54:47Z",
+      "note": " [stale-swept]"
     },
     {
       "price": 0.04,
@@ -13079,8 +13088,9 @@
       "qty": 7,
       "market_slug": "aec-cs2-nvo-pure-2026-07-27",
       "outcome": "PURE",
-      "status": "resting",
-      "ts": "2026-07-26T20:34:50Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T20:34:50Z",
+      "note": " [stale-swept]"
     },
     {
       "price": 0.9,
@@ -13627,9 +13637,10 @@
       "qty": 3,
       "market_slug": "aec-cs2-pure-astr-2026-07-27",
       "outcome": "ASTRAL",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T21:59:49Z",
-      "price_path": []
+      "price_path": [],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.04,
@@ -13643,14 +13654,18 @@
       "qty": 58,
       "market_slug": "astatc-cs2-bpl-misa-2026-07-27-map2",
       "outcome": "Black Phoenix",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T21:59:50Z",
       "price_path": [
         {
           "ts": 1785160181,
           "px": 0.63
         }
-      ]
+      ],
+      "note": " [stale-swept]",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -13954,14 +13969,18 @@
       "qty": 2,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T22:14:47Z",
       "price_path": [
         {
           "ts": 1785160181,
           "px": 0.53
         }
-      ]
+      ],
+      "note": " [stale-swept]",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -14156,14 +14175,17 @@
       "qty": 1,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T08:37:22Z",
       "price_path": [
         {
           "ts": 1785160182,
           "px": 0.53
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.6,
@@ -14203,14 +14225,17 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T09:21:50Z",
       "price_path": [
         {
           "ts": 1785160182,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.6,
@@ -14247,14 +14272,17 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T09:31:52Z",
       "price_path": [
         {
           "ts": 1785160182,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.6,
