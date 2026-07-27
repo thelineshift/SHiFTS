@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T08:01:03Z",
+  "updated": "2026-07-27T08:16:12Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -973,7 +973,10 @@
       "opp": "Gen.G Global Academy",
       "analysis": "1-4 last 5 (beat HANJIN BRION Challengers) (lost to Kiwoom DRX Challengers) vs 0-5 \u2014 live Pinnacle line -316 (our 90% vs book 72%) | \ud83d\udcc8 **Market angle:** 1-4 last 5 (beat HANJIN BRION Challengers) (lost to Kiwoom DRX Challengers) vs 0-5 \u2014 live Pinnacle line -316 (our 90% vs book 72%). Books hang resp",
       "awayTeam": "BNK FearX Youth",
-      "homeTeam": "Gen.G Global Academy"
+      "homeTeam": "Gen.G Global Academy",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "BNK FearX Youth 0-1 Gen.G \u00b7 final"
     },
     {
       "id": "2-leg-parlay-0727-whale",
