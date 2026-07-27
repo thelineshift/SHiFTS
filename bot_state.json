@@ -15168,10 +15168,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-valorant-ggo-kcg-2026-07-27",
-    "aec-lol-al-blg-2026-07-26",
-    "aec-lol-cr-kcbs-2026-07-26",
-    "aec-lol-fxw7-lev-2026-07-26",
     "aec-valorant-geng-rrq-2026-07-26",
     "aec-lol-tl-c9-2026-07-26",
     "astatc-cs2-wc-mglz-2026-07-26-map1",
@@ -15227,7 +15223,11 @@
     "aec-lol-bro-dk-2026-07-27",
     "aec-cs2-pure-atp-2026-07-27",
     "aec-lol-fue-kits-2026-07-27",
-    "aec-valorant-efa-lcd-2026-07-27"
+    "aec-valorant-efa-lcd-2026-07-27",
+    "aec-cs2-astr-atp-2026-07-27",
+    "aec-cs2-brute-navij-2026-07-27",
+    "aec-cs2-brute-mouzn-2026-07-27",
+    "aec-cs2-bbp-falf-2026-07-27"
   ],
   "odds_api": {
     "month": "2026-07",
