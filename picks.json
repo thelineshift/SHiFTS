@@ -712,10 +712,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -115,
+        "home_ml": -103,
+        "away_ml": -117,
         "total": 8.5,
-        "ts": 1785125768
+        "ts": 1785143768
       }
     },
     {
@@ -955,10 +955,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 114,
-        "away_ml": -137,
+        "home_ml": 118,
+        "away_ml": -143,
         "total": 8.5,
-        "ts": 1785138368
+        "ts": 1785143769
       }
     },
     {
