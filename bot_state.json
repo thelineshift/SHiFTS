@@ -6,18 +6,18 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-27 00:46 UTC",
+    "at": "2026-07-27 00:16 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 00:00 UTC",
     "\ud83e\uddfereceipts": "2026-07-26 23:50 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 00:40 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 00:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 00:14 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 00:46 UTC",
+    "at": "2026-07-27 00:16 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -25,13 +25,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 00:46 UTC",
+    "at": "2026-07-27 00:16 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-26 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-27 00:46 UTC",
+    "at": "2026-07-27 00:16 UTC",
     "flags": [
       "giveaway: no winner post today (Sunday draw overdue)"
     ]
@@ -9032,10 +9032,6 @@
       "ts": "2026-07-25T18:11:39Z",
       "price_path": [
         {
-          "ts": 1785053427,
-          "px": 0.58
-        },
-        {
           "ts": 1785055227,
           "px": 0.58
         },
@@ -9125,6 +9121,10 @@
         },
         {
           "ts": 1785111020,
+          "px": 0.32
+        },
+        {
+          "ts": 1785113171,
           "px": 0.32
         }
       ]
@@ -9291,10 +9291,6 @@
       "ts": "2026-07-25T19:10:26Z",
       "price_path": [
         {
-          "ts": 1785055228,
-          "px": 0.2
-        },
-        {
           "ts": 1785057030,
           "px": 0.2
         },
@@ -9384,6 +9380,10 @@
         },
         {
           "ts": 1785111020,
+          "px": 0.17
+        },
+        {
+          "ts": 1785113171,
           "px": 0.17
         }
       ]
@@ -9655,10 +9655,6 @@
       "ts": "2026-07-25T22:01:36Z",
       "price_path": [
         {
-          "ts": 1785055229,
-          "px": 0.38
-        },
-        {
           "ts": 1785057031,
           "px": 0.38
         },
@@ -9749,6 +9745,10 @@
         {
           "ts": 1785111020,
           "px": 0.38
+        },
+        {
+          "ts": 1785113172,
+          "px": 0.38
         }
       ]
     },
@@ -9786,10 +9786,6 @@
       "status": "open",
       "ts": "2026-07-25T22:07:42Z",
       "price_path": [
-        {
-          "ts": 1785055229,
-          "px": 0.64
-        },
         {
           "ts": 1785057031,
           "px": 0.64
@@ -9881,6 +9877,10 @@
         {
           "ts": 1785111021,
           "px": 0.49
+        },
+        {
+          "ts": 1785113172,
+          "px": 0.47
         }
       ]
     },
@@ -10465,10 +10465,6 @@
       "ts": "2026-07-26T00:15:56Z",
       "price_path": [
         {
-          "ts": 1785055232,
-          "px": 0.64
-        },
-        {
           "ts": 1785057033,
           "px": 0.64
         },
@@ -10559,6 +10555,10 @@
         {
           "ts": 1785111021,
           "px": 0.64
+        },
+        {
+          "ts": 1785113172,
+          "px": 0.68
         }
       ]
     },
@@ -10718,6 +10718,10 @@
         {
           "ts": 1785111021,
           "px": 0.32
+        },
+        {
+          "ts": 1785113172,
+          "px": 0.32
         }
       ]
     },
@@ -10802,6 +10806,10 @@
         },
         {
           "ts": 1785111021,
+          "px": 0.55
+        },
+        {
+          "ts": 1785113173,
           "px": 0.55
         }
       ]
@@ -10889,6 +10897,10 @@
         {
           "ts": 1785111022,
           "px": 0.32
+        },
+        {
+          "ts": 1785113173,
+          "px": 0.32
         }
       ]
     },
@@ -10974,6 +10986,10 @@
         },
         {
           "ts": 1785111022,
+          "px": 0.27
+        },
+        {
+          "ts": 1785113173,
           "px": 0.27
         }
       ]
@@ -11832,6 +11848,10 @@
         },
         {
           "ts": 1785111023,
+          "px": 0.39
+        },
+        {
+          "ts": 1785113174,
           "px": 0.39
         }
       ]
@@ -13186,6 +13206,10 @@
         {
           "ts": 1785111024,
           "px": 0.96
+        },
+        {
+          "ts": 1785113174,
+          "px": 0.96
         }
       ]
     },
@@ -13268,22 +13292,13 @@
       "qty": 5,
       "market_slug": "aec-cs2-odk-isg-2026-07-26",
       "outcome": "Isurus",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T22:24:47Z",
-      "price_path": [
-        {
-          "ts": 1785105263,
-          "px": 0.22
-        },
-        {
-          "ts": 1785107662,
-          "px": 0.45
-        },
-        {
-          "ts": 1785109829,
-          "px": 0.78
-        }
-      ]
+      "result": "WIN",
+      "payout": 4.8,
+      "settled_at": "2026-07-27T00:46:15Z",
+      "pnl": 3.65,
+      "autopsy": "+$3.65 \u2014 model 50% vs market 23% was real edge; thesis held. Taken 0.23, slid to 0.78 before the result \u2014 the number ran 55\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.55,
@@ -13307,6 +13322,10 @@
         {
           "ts": 1785111024,
           "px": 0.55
+        },
+        {
+          "ts": 1785113177,
+          "px": 0.545
         }
       ]
     },
@@ -13335,9 +13354,9 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 13,
+    "wins": 14,
     "losses": 25,
-    "pnl": 17.49,
+    "pnl": 21.14,
     "trades": 182,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-00",
@@ -13358,7 +13377,7 @@
         0
       ],
       "LIVE-BET": [
-        1,
+        2,
         6,
         0
       ]
@@ -13367,14 +13386,6 @@
   },
   "x_purge_complete": 1785032907.0909944,
   "pm_lessons": [
-    {
-      "ts": "2026-07-25T17:51:18Z",
-      "kind": "ARB",
-      "outcome": "SU Vortuna Bad Leonfelden",
-      "result": "LOSS",
-      "pnl": -3.23,
-      "lesson": "the book was NOT complete \u2014 a leg the scan could not see (draw) killed both sides. Guard hardened: nameless legs now count before quote/tradability gates. Taken 0.17, slid to 0.05 before the result \u2014 the number ran 12\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-25T17:51:21Z",
       "kind": "ARB",
@@ -13606,6 +13617,14 @@
       "result": "LOSS",
       "pnl": -1.32,
       "lesson": "model 50% vs market 44% missed \u2014 logged for the playbook review. Taken 0.44, rode to 0.01 before the result \u2014 beat the number by 43\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T00:46:15Z",
+      "kind": "LIVE-BET",
+      "outcome": "Isurus",
+      "result": "WIN",
+      "pnl": 3.65,
+      "lesson": "+$3.65 \u2014 model 50% vs market 23% was real edge; thesis held. Taken 0.23, slid to 0.78 before the result \u2014 the number ran 55\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
