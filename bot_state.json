@@ -12906,106 +12906,13 @@
       "qty": 15,
       "market_slug": "aec-cs2-nvo-atp-2026-07-27",
       "outcome": "Atputies",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T20:34:49Z",
-      "price_path": [
-        {
-          "ts": 1785105262,
-          "px": 0.63
-        },
-        {
-          "ts": 1785107661,
-          "px": 0.63
-        },
-        {
-          "ts": 1785109829,
-          "px": 0.63
-        },
-        {
-          "ts": 1785111975,
-          "px": 0.63
-        },
-        {
-          "ts": 1785114374,
-          "px": 0.63
-        },
-        {
-          "ts": 1785116178,
-          "px": 0.57
-        },
-        {
-          "ts": 1785118574,
-          "px": 0.57
-        },
-        {
-          "ts": 1785120374,
-          "px": 0.68
-        },
-        {
-          "ts": 1785122178,
-          "px": 0.68
-        },
-        {
-          "ts": 1785124574,
-          "px": 0.68
-        },
-        {
-          "ts": 1785126376,
-          "px": 0.4
-        },
-        {
-          "ts": 1785128176,
-          "px": 0.39
-        },
-        {
-          "ts": 1785129976,
-          "px": 0.53
-        },
-        {
-          "ts": 1785132376,
-          "px": 0.42
-        },
-        {
-          "ts": 1785134179,
-          "px": 0.34
-        },
-        {
-          "ts": 1785136576,
-          "px": 0.34
-        },
-        {
-          "ts": 1785138380,
-          "px": 0.34
-        },
-        {
-          "ts": 1785140777,
-          "px": 0.28
-        },
-        {
-          "ts": 1785142578,
-          "px": 0.3
-        },
-        {
-          "ts": 1785144978,
-          "px": 0.3
-        },
-        {
-          "ts": 1785149783,
-          "px": 0.6
-        },
-        {
-          "ts": 1785152774,
-          "px": 0.67
-        },
-        {
-          "ts": 1785154781,
-          "px": 0.38
-        },
-        {
-          "ts": 1785156582,
-          "px": 0.06
-        }
-      ]
+      "result": "WIN",
+      "payout": 14.94,
+      "settled_at": "2026-07-27T13:17:56Z",
+      "pnl": 7.89,
+      "autopsy": "+$7.89 \u2014 model 73% vs market 47% was real edge; thesis held. Taken 0.47, rode to 0.06 before the result \u2014 beat the number by 41\u00a2 \u2705"
     },
     {
       "price": 0.62,
@@ -14911,16 +14818,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 14,
+    "wins": 15,
     "losses": 33,
-    "pnl": -0.31,
+    "pnl": 7.58,
     "trades": 233,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 75.55,
-    "net": 11.55,
+    "account": 87.45,
+    "net": 23.45,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -14929,7 +14836,7 @@
         0
       ],
       "EDGE": [
-        9,
+        10,
         22,
         0
       ],
@@ -14943,14 +14850,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-26T11:17:04Z",
-      "kind": "EDGE",
-      "outcome": "Wolves Esports",
-      "result": "LOSS",
-      "pnl": 0.0,
-      "lesson": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.15 before the result \u2014 beat the number by 29\u00a2 \u2705 (cashed out early at $1.32)"
-    },
     {
       "ts": "2026-07-26T11:57:47Z",
       "kind": "EDGE",
@@ -15182,6 +15081,14 @@
       "result": "LOSS",
       "pnl": -6.63,
       "lesson": "model 69% vs market 39% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.10 before the result \u2014 beat the number by 29\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T13:17:56Z",
+      "kind": "EDGE",
+      "outcome": "Atputies",
+      "result": "WIN",
+      "pnl": 7.89,
+      "lesson": "+$7.89 \u2014 model 73% vs market 47% was real edge; thesis held. Taken 0.47, rode to 0.06 before the result \u2014 beat the number by 41\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -15265,7 +15172,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785153716.6655698,
+  "dep_checked_ts": 1785158276.2309556,
   "x_bio_v": 2,
   "op_cool_until": 1785096924.2504044
 }
