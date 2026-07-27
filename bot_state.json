@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 15:04 UTC",
+    "at": "2026-07-27 14:37 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 14:57 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 15:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 13:55 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 14:17 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 13:13 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 15:04 UTC",
+    "at": "2026-07-27 14:37 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,14 +24,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 15:04 UTC",
+    "at": "2026-07-27 14:37 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 15:04 UTC",
+    "at": "2026-07-27 14:37 UTC",
     "flags": []
   },
-  "bot_version": "9.24.14",
+  "bot_version": "9.24.13",
   "unannounced_results": [
     {
       "id": "lng-esports-ml-0726",
@@ -13376,106 +13376,13 @@
       "qty": 10,
       "market_slug": "aec-cs2-nvo-pure-2026-07-27",
       "outcome": "PURE",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T20:55:21Z",
-      "price_path": [
-        {
-          "ts": 1785107661,
-          "px": 0.73
-        },
-        {
-          "ts": 1785109829,
-          "px": 0.73
-        },
-        {
-          "ts": 1785111975,
-          "px": 0.67
-        },
-        {
-          "ts": 1785114374,
-          "px": 0.66
-        },
-        {
-          "ts": 1785116178,
-          "px": 0.57
-        },
-        {
-          "ts": 1785118575,
-          "px": 0.62
-        },
-        {
-          "ts": 1785120375,
-          "px": 0.72
-        },
-        {
-          "ts": 1785122178,
-          "px": 0.7
-        },
-        {
-          "ts": 1785124575,
-          "px": 0.64
-        },
-        {
-          "ts": 1785126974,
-          "px": 0.63
-        },
-        {
-          "ts": 1785128774,
-          "px": 0.6
-        },
-        {
-          "ts": 1785130577,
-          "px": 0.58
-        },
-        {
-          "ts": 1785136576,
-          "px": 0.6
-        },
-        {
-          "ts": 1785138380,
-          "px": 0.43
-        },
-        {
-          "ts": 1785140778,
-          "px": 0.43
-        },
-        {
-          "ts": 1785142578,
-          "px": 0.43
-        },
-        {
-          "ts": 1785144978,
-          "px": 0.62
-        },
-        {
-          "ts": 1785149783,
-          "px": 0.54
-        },
-        {
-          "ts": 1785152775,
-          "px": 0.59
-        },
-        {
-          "ts": 1785154782,
-          "px": 0.43
-        },
-        {
-          "ts": 1785156583,
-          "px": 0.75
-        },
-        {
-          "ts": 1785158662,
-          "px": 0.61
-        },
-        {
-          "ts": 1785160509,
-          "px": 0.66
-        },
-        {
-          "ts": 1785162571,
-          "px": 0.43
-        }
-      ]
+      "result": "WIN",
+      "payout": 14.95,
+      "settled_at": "2026-07-27T15:04:29Z",
+      "pnl": 9.95,
+      "autopsy": "+$9.95 \u2014 model 73% vs market 50% was real edge; thesis held. Taken 0.50, rode to 0.43 before the result \u2014 beat the number by 7\u00a2 \u2705"
     },
     {
       "price": 0.54,
@@ -16245,16 +16152,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 16,
+    "wins": 17,
     "losses": 42,
-    "pnl": -53.75,
+    "pnl": -43.8,
     "trades": 254,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-14",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 87.51,
-    "net": 23.51,
+    "account": 97.46,
+    "net": 33.46,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -16263,7 +16170,7 @@
         0
       ],
       "EDGE": [
-        11,
+        12,
         28,
         0
       ],
@@ -16278,7 +16185,9 @@
         0
       ]
     },
-    "archived": 0
+    "archived": 0,
+    "day_date": "2026-07-27",
+    "day_anchor": 97.46
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
@@ -16521,6 +16430,14 @@
       "result": "WIN",
       "pnl": 0.86,
       "lesson": "+$0.86 \u2014 model 100% vs market 69% was real edge; thesis held."
+    },
+    {
+      "ts": "2026-07-27T15:04:29Z",
+      "kind": "EDGE",
+      "outcome": "PURE",
+      "result": "WIN",
+      "pnl": 9.95,
+      "lesson": "+$9.95 \u2014 model 73% vs market 50% was real edge; thesis held. Taken 0.50, rode to 0.43 before the result \u2014 beat the number by 7\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
