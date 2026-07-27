@@ -19,8 +19,13 @@
       "discord": "oladimeji3124",
       "discord_id": "894953724164849685",
       "idx": 12,
-      "status": "paying",
-      "claimed_at": "2026-07-27T12:36:25Z"
+      "status": "paid",
+      "claimed_at": "2026-07-27T12:36:25Z",
+      "paid_tx": "4G6yUNZCseWUkFudZyLi6xs6o3VxU5eBoWiAvrAvUac2Wir5xkEJmQ4zRxsbLfAXd5MDbJJU5QVrSni7faaTiCVy",
+      "sol_amount": 0.4557,
+      "sol_price": 76.81,
+      "paid_at": "2026-07-27T13:02:54Z",
+      "paid_addr": "HXcCkqHYyV5xaDZJptmQYMpcRKJ4W23HcDnRwnga8Brp"
     },
     {
       "rank": "runner-up",
