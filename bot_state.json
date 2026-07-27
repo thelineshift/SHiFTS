@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 23:44 UTC",
+    "at": "2026-07-27 22:44 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 20:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 23:34 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 23:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 22:40 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 20:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 22:40 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 23:44 UTC",
+    "at": "2026-07-27 22:44 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -26,18 +26,28 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 23:44 UTC",
+    "at": "2026-07-27 22:44 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-27 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-27 23:44 UTC",
+    "at": "2026-07-27 22:44 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
-  "unannounced_results": [],
-  "last_x_receipt_ts": 1785195860.5958264,
+  "unannounced_results": [
+    {
+      "id": "texas-rangers-ml-0727",
+      "desc": "Texas Rangers ML",
+      "odds": 109,
+      "result": "WIN",
+      "units": 1.64,
+      "score": "Seattle Mariners 3, Texas Rangers 7",
+      "tier": "whale"
+    }
+  ],
+  "last_x_receipt_ts": 1785192016.4770439,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -28140,6 +28150,10 @@
         {
           "ts": 1785192866,
           "px": 0.6
+        },
+        {
+          "ts": 1785195862,
+          "px": 0.6
         }
       ]
     },
@@ -28193,6 +28207,10 @@
         {
           "ts": 1785193462,
           "px": 0.25
+        },
+        {
+          "ts": 1785195862,
+          "px": 0.25
         }
       ]
     },
@@ -28215,6 +28233,10 @@
         {
           "ts": 1785192867,
           "px": 0.71
+        },
+        {
+          "ts": 1785195863,
+          "px": 0.71
         }
       ]
     },
@@ -28235,6 +28257,10 @@
       "price_path": [
         {
           "ts": 1785193463,
+          "px": 0.54
+        },
+        {
+          "ts": 1785195863,
           "px": 0.54
         }
       ]
@@ -28258,6 +28284,10 @@
         {
           "ts": 1785193463,
           "px": 0.33
+        },
+        {
+          "ts": 1785195863,
+          "px": 0.33
         }
       ]
     },
@@ -28274,7 +28304,13 @@
       "market_slug": "aec-atp-framae-lukneu-2026-07-27",
       "outcome": "Francesco Maestrelli",
       "status": "open",
-      "ts": "2026-07-27T23:25:04Z"
+      "ts": "2026-07-27T23:25:04Z",
+      "price_path": [
+        {
+          "ts": 1785195863,
+          "px": 0.32
+        }
+      ]
     },
     {
       "price": 0.59,
@@ -28289,7 +28325,13 @@
       "market_slug": "aec-atp-timska-thofau-2026-07-27",
       "outcome": "Timofey Skatov",
       "status": "open",
-      "ts": "2026-07-27T23:35:05Z"
+      "ts": "2026-07-27T23:35:05Z",
+      "price_path": [
+        {
+          "ts": 1785195863,
+          "px": 0.59
+        }
+      ]
     }
   ],
   "pm_stats": {
