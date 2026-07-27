@@ -293,7 +293,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "26afb8ec-d3c8-467c-b63f-b5c55607a089",
   "op_month": "2026-07",
-  "op_calls": 54,
+  "op_calls": 56,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1221,29 +1221,29 @@
         [
           "Barca GC",
           "Habos Babos",
-          2.31,
-          1.561
+          2.26,
+          1.584
         ],
         [
           "Gentle Mates GC",
           "GIANTX GC",
-          1.285,
-          3.25
+          1.241,
+          3.53
         ],
         [
           "G2 Gozen",
           "Karmine Corp GC",
-          1.156,
-          4.34
+          1.257,
+          3.41
         ],
         [
           "BESTIA",
           "Contra",
-          1.186,
-          4.0
+          1.257,
+          3.63
         ]
       ],
-      "odds_ts": 1785153612.865507,
+      "odds_ts": 1785182432.4311912,
       "active": [
         901974,
         902246,
