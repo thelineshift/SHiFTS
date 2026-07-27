@@ -1,26 +1,14 @@
 {
-  "updated": "2026-07-27T20:00:14Z",
-  "record": "20-47",
-  "trades": 270,
-  "open": 36,
-  "pnl": -49.05,
-  "account": 139.85,
+  "updated": "2026-07-27T22:00:20Z",
+  "record": "21-48",
+  "trades": 273,
+  "open": 34,
+  "pnl": -49.24,
+  "account": 99.85,
   "deposits": 64.0,
-  "net_pnl": 75.85,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 15-33 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 0-2",
+  "net_pnl": 35.85,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 16-34 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 0-2",
   "recent": [
-    {
-      "outcome": "ASTRAL",
-      "short": false,
-      "result": "won",
-      "pnl": 4.94
-    },
-    {
-      "outcome": "NAVI Junior",
-      "short": true,
-      "result": "lost",
-      "pnl": -2.03
-    },
     {
       "outcome": "Brute",
       "short": false,
@@ -44,6 +32,18 @@
       "short": true,
       "result": "lost",
       "pnl": -2.4
+    },
+    {
+      "outcome": "RED Academy",
+      "short": true,
+      "result": "lost",
+      "pnl": -1.61
+    },
+    {
+      "outcome": "Bulldog Esports",
+      "short": true,
+      "result": "won",
+      "pnl": 2.6
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
