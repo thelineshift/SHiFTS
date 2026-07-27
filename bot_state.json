@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 13:54 UTC",
+    "at": "2026-07-27 14:09 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 13:49 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 13:55 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-27 13:26 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 13:13 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 13:54 UTC",
+    "at": "2026-07-27 14:09 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,24 +24,15 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 13:54 UTC",
+    "at": "2026-07-27 14:09 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 13:54 UTC",
+    "at": "2026-07-27 14:09 UTC",
     "flags": []
   },
-  "bot_version": "9.24.9",
+  "bot_version": "9.24.10",
   "unannounced_results": [
-    {
-      "id": "vancouver-whitecaps-ml-0725",
-      "desc": "Vancouver Whitecaps ML",
-      "odds": -120,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Vancouver Whitecaps 0, Minnesota United FC 0",
-      "tier": "sharp"
-    },
     {
       "id": "san-jose-earthquakes-ml-0725",
       "desc": "San Jose Earthquakes ML",
@@ -97,7 +88,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785158658.066219,
+  "last_x_receipt_ts": 1785161361.1528428,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -10919,14 +10910,17 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T12:09:58Z",
       "price_path": [
         {
           "ts": 1785160156,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.47,
@@ -11082,14 +11076,17 @@
       "qty": 3,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T12:43:37Z",
       "price_path": [
         {
           "ts": 1785160160,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.53,
@@ -11432,14 +11429,17 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T13:08:06Z",
       "price_path": [
         {
           "ts": 1785160161,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -11647,14 +11647,17 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T13:45:46Z",
       "price_path": [
         {
           "ts": 1785160163,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.53,
@@ -11771,14 +11774,17 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T14:20:09Z",
       "price_path": [
         {
           "ts": 1785160168,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.76,
@@ -12425,14 +12431,17 @@
       "qty": 4,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T17:14:45Z",
       "price_path": [
         {
           "ts": 1785160171,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.9,
@@ -12579,14 +12588,17 @@
       "qty": 4,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T17:44:45Z",
       "price_path": [
         {
           "ts": 1785160173,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.6,
@@ -12792,14 +12804,17 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T17:59:46Z",
       "price_path": [
         {
           "ts": 1785160174,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.04,
@@ -12853,14 +12868,17 @@
       "qty": 26,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T18:50:25Z",
       "price_path": [
         {
           "ts": 1785160174,
           "px": 0.66
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.61,
@@ -12890,14 +12908,17 @@
       "qty": 26,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T18:59:46Z",
       "price_path": [
         {
           "ts": 1785160175,
           "px": 0.66
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.04,
