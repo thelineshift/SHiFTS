@@ -4918,11 +4918,15 @@
         }
       },
       "valorant:138941": {
-        "ts": 1785163353.0157847,
+        "ts": 1785170998.402101,
         "f": {
-          "w": 1,
+          "w": 2,
           "l": 2,
           "res": [
+            {
+              "won": true,
+              "opp": "Bar\u00e7a eSports GC"
+            },
             {
               "won": false,
               "opp": "Gentle Mates GC"
@@ -16259,6 +16263,22 @@
           "px": 0.11
         }
       ]
+    },
+    {
+      "price": 0.37,
+      "short": true,
+      "stake": 1.85,
+      "kind": "EDGE",
+      "p_model": 0.4666666666666667,
+      "event": "Twisted Minds Orchid vs. Habos Babos",
+      "ev_start": "2026-07-28T18:00:00Z",
+      "reason": "model 47% vs market 37% \u2014 10% edge, half-Kelly",
+      "order_id": "BGKH0EPDY9NT",
+      "qty": 5,
+      "market_slug": "aec-valorant-tmo-hbs-2026-07-28",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-27T16:50:12Z"
     }
   ],
   "pm_stats": {
@@ -16266,7 +16286,7 @@
     "wins": 18,
     "losses": 43,
     "pnl": -44.67,
-    "trades": 264,
+    "trades": 265,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-16",
     "deposits": 64.0,
