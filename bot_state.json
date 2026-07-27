@@ -4924,7 +4924,7 @@
         }
       },
       "valorant:138941": {
-        "ts": 1785155991.2850614,
+        "ts": 1785163353.0157847,
         "f": {
           "w": 1,
           "l": 2,
@@ -16028,6 +16028,22 @@
       "outcome": "2GAME Esports",
       "status": "open",
       "ts": "2026-07-27T14:37:46Z"
+    },
+    {
+      "price": 0.57,
+      "short": true,
+      "stake": 1.14,
+      "kind": "EDGE",
+      "p_model": 0.6905095541401274,
+      "event": "Seattle Mariners vs. Los Angeles Dodgers",
+      "ev_start": "2026-07-30T02:10:00Z",
+      "reason": "model 69% vs market 57% \u2014 12% edge, half-Kelly",
+      "order_id": "BGHP1XF289NV",
+      "qty": 2,
+      "market_slug": "aec-mlb-sea-lad-2026-07-29",
+      "outcome": "Los Angeles Dodgers",
+      "status": "open",
+      "ts": "2026-07-27T14:42:46Z"
     }
   ],
   "pm_stats": {
@@ -16035,7 +16051,7 @@
     "wins": 16,
     "losses": 42,
     "pnl": -53.75,
-    "trades": 252,
+    "trades": 253,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-14",
     "deposits": 64.0,
