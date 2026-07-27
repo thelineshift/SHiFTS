@@ -4942,7 +4942,7 @@
         }
       },
       "valorant:132777": {
-        "ts": 1785185095.8178678,
+        "ts": 1785192578.2721596,
         "f": {
           "w": 1,
           "l": 4,
@@ -8227,7 +8227,7 @@
         }
       },
       "lol:128347": {
-        "ts": 1785185092.2059474,
+        "ts": 1785192574.68536,
         "f": {
           "w": 2,
           "l": 3,
@@ -8256,7 +8256,7 @@
         }
       },
       "lol:128345": {
-        "ts": 1785185092.855034,
+        "ts": 1785192575.2817419,
         "f": {
           "w": 0,
           "l": 5,
@@ -28442,6 +28442,37 @@
       "outcome": "Arda Azkara",
       "status": "open",
       "ts": "2026-07-27T22:45:09Z"
+    },
+    {
+      "price": 0.71,
+      "short": true,
+      "stake": 1.42,
+      "kind": "EDGE",
+      "p_model": 0.8142007355402032,
+      "event": "Carlo Alberto Caniato vs. Andrea Pellegrino",
+      "ev_start": "2026-07-28T18:30:00Z",
+      "reason": "Elo 81% vs market 71% \u2014 10% edge, half-Kelly",
+      "order_id": "BGRJNCT389NP",
+      "qty": 2,
+      "market_slug": "aec-atp-carcan-andpel-2026-07-27",
+      "outcome": "Andrea Pellegrino",
+      "status": "open",
+      "ts": "2026-07-27T22:50:03Z"
+    },
+    {
+      "price": 0.54,
+      "stake": 1.08,
+      "kind": "EDGE",
+      "p_model": 0.6480289688072831,
+      "event": "Alex de Minaur vs. Stefanos Tsitsipas",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 65% vs market 54% \u2014 11% edge, half-Kelly",
+      "order_id": "BGRK37DPA9SK",
+      "qty": 2,
+      "market_slug": "aec-atp-alemin-stetsi-2026-07-27",
+      "outcome": "Alex de Minaur",
+      "status": "open",
+      "ts": "2026-07-27T22:50:05Z"
     }
   ],
   "pm_stats": {
@@ -28449,7 +28480,7 @@
     "wins": 22,
     "losses": 52,
     "pnl": -56.14,
-    "trades": 279,
+    "trades": 281,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-22",
     "deposits": 64.0,
