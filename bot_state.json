@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 12:57 UTC",
+    "at": "2026-07-27 13:24 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 12:19 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 12:19 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 13:17 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 13:17 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-27 12:53 UTC"
+    "\ud83c\udf81giveaway": "2026-07-27 13:13 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 12:57 UTC",
+    "at": "2026-07-27 13:24 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,24 +24,15 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 12:57 UTC",
+    "at": "2026-07-27 13:24 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 12:57 UTC",
+    "at": "2026-07-27 13:24 UTC",
     "flags": []
   },
-  "bot_version": "9.24.7",
+  "bot_version": "9.24.8",
   "unannounced_results": [
-    {
-      "id": "milwaukee-brewers-ml-0725",
-      "desc": "Milwaukee Brewers ML",
-      "odds": -244,
-      "result": "WIN",
-      "units": 0.41,
-      "score": "Colorado Rockies 5, Milwaukee Brewers 8",
-      "tier": "lock"
-    },
     {
       "id": "vancouver-whitecaps-ml-0725",
       "desc": "Vancouver Whitecaps ML",
@@ -106,7 +97,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785154776.586211,
+  "last_x_receipt_ts": 1785158658.066219,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -203,7 +194,7 @@
     "weekly": "2026-08-02",
     "monthly": "2026-08-01",
     "deepdive_fired": "2026-07-25",
-    "x_ad": "2026-07-26"
+    "x_ad": "2026-07-27"
   },
   "gw_handled": [
     "1530230873780129892",
@@ -14890,7 +14881,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T13:23:30Z"
     }
   ],
