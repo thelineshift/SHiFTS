@@ -1,11 +1,10 @@
 {
- "seq": 514,
+ "seq": 515,
  "commands": [
   {
-   "seq": 515,
-   "action": "post_and_pin",
-   "channel": "giveaway",
-   "content": "\ud83d\udcc5 **Date check:** THE FINALE is next **Sunday, Aug 2, 6 PM ET** (the \"Aug 3\" in the draw post was a slip \u2014 the show always runs Sundays). Same $50 ($35/$15), same steps, last one ever. \u26a1"
+   "seq": 516,
+   "action": "x_post_text",
+   "text": "\u2705 $50 GIVEAWAY \u2014 PAID ON-CHAIN \u2705\n\n\ud83e\udd47 $35 @hayjay_web3\nsolscan.io/tx/4G6yUNZCseWUkFudZyLi6xs6o3VxU5eBoWiAvrAvUac2Wir5xkEJmQ4zRxsbLfAXd5MDbJJU5QVrSni7faaTiCVy\n\n\ud83e\udd48 $15 @umhomdani\nsolscan.io/tx/3rwDvoohXuiVVbt9RkqDBXr5fxt39XzAs8JLm82wunoFHou7hAQSRTRabswJ1NBu8J2RWtk8AdWX76QSygBYs5Mx\n\nProvably fair \u00b7 winners auto-DM'd \u00b7 paid in minutes.\nTHE FINALE: Sun Aug 2, 6 PM ET \u2014 last one ever \u26a1"
   }
  ]
 }
