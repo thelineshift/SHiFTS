@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 22:34 UTC",
+    "at": "2026-07-27 21:04 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 20:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 22:04 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 20:54 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-27 20:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 13:13 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 22:34 UTC",
+    "at": "2026-07-27 21:04 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -25,13 +25,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 22:34 UTC",
-    "flags": [
-      "no challenge bet registered for 2026-07-27 (due 6 PM ET)"
-    ]
+    "at": "2026-07-27 21:04 UTC",
+    "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 22:34 UTC",
+    "at": "2026-07-27 21:04 UTC",
     "flags": []
   },
   "bot_version": "9.24.14",
@@ -16279,62 +16277,13 @@
       "qty": 10,
       "market_slug": "aec-lol-kbm-tse-2026-07-27",
       "outcome": "Team Solid",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T14:35:00Z",
-      "price_path": [
-        {
-          "ts": 1785163029,
-          "px": 0.25
-        },
-        {
-          "ts": 1785165270,
-          "px": 0.25
-        },
-        {
-          "ts": 1785167673,
-          "px": 0.25
-        },
-        {
-          "ts": 1785170080,
-          "px": 0.25
-        },
-        {
-          "ts": 1785172473,
-          "px": 0.25
-        },
-        {
-          "ts": 1785174875,
-          "px": 0.25
-        },
-        {
-          "ts": 1785177273,
-          "px": 0.25
-        },
-        {
-          "ts": 1785179671,
-          "px": 0.25
-        },
-        {
-          "ts": 1785181475,
-          "px": 0.27
-        },
-        {
-          "ts": 1785183871,
-          "px": 0.27
-        },
-        {
-          "ts": 1785185673,
-          "px": 0.27
-        },
-        {
-          "ts": 1785188074,
-          "px": 0.27
-        },
-        {
-          "ts": 1785189881,
-          "px": 0.34
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T22:34:35Z",
+      "pnl": -2.5,
+      "autopsy": "model 50% vs market 25% missed \u2014 logged for the playbook review. Taken 0.25, slid to 0.34 before the result \u2014 the number ran 9\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.19,
@@ -17507,6 +17456,10 @@
         {
           "ts": 1785189276,
           "px": 0.69
+        },
+        {
+          "ts": 1785191678,
+          "px": 0.69
         }
       ]
     },
@@ -17546,21 +17499,27 @@
       "market_slug": "aec-mlb-col-sd-2026-07-29",
       "outcome": "San Diego Padres",
       "status": "resting",
-      "ts": "2026-07-27T22:30:15Z"
+      "ts": "2026-07-27T22:30:15Z",
+      "price_path": [
+        {
+          "ts": 1785191678,
+          "px": 0.595
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 22,
-    "losses": 50,
-    "pnl": -50.78,
+    "losses": 51,
+    "pnl": -53.28,
     "trades": 274,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-22",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 98.55,
-    "net": 34.55,
+    "account": 96.05,
+    "net": 32.05,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -17570,7 +17529,7 @@
       ],
       "EDGE": [
         17,
-        36,
+        37,
         0
       ],
       "LIVE-BET": [
@@ -17590,14 +17549,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T09:16:12Z",
-      "kind": "EDGE",
-      "outcome": "Dplus KIA",
-      "result": "LOSS",
-      "pnl": -1.11,
-      "lesson": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.21 before the result \u2014 the number ran 16\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-27T12:19:43Z",
       "kind": "EDGE",
@@ -17829,6 +17780,14 @@
       "result": "LOSS",
       "pnl": -1.3,
       "lesson": "model 43% vs market 26% missed \u2014 logged for the playbook review. Taken 0.26, slid to 0.41 before the result \u2014 the number ran 15\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-27T22:34:35Z",
+      "kind": "EDGE",
+      "outcome": "Team Solid",
+      "result": "LOSS",
+      "pnl": -2.5,
+      "lesson": "model 50% vs market 25% missed \u2014 logged for the playbook review. Taken 0.25, slid to 0.34 before the result \u2014 the number ran 9\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
