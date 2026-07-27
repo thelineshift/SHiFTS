@@ -689,10 +689,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 158,
-        "away_ml": -193,
+        "home_ml": 151,
+        "away_ml": -184,
         "total": 7.5,
-        "ts": 1785177267
+        "ts": 1785180867
       },
       "last_alert_odds": 157
     },
@@ -843,12 +843,12 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayTeam": "Arizona Diamondbacks",
       "live_odds": {
-        "home_ml": -114,
-        "away_ml": -106,
+        "home_ml": -123,
+        "away_ml": 102,
         "total": 9.5,
-        "ts": 1785170067
+        "ts": 1785180867
       },
-      "last_alert_odds": -109
+      "last_alert_odds": -123
     },
     {
       "id": "washington-nationals-ml-0727",
@@ -1124,10 +1124,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Boston Red Sox",
       "live_odds": {
-        "home_ml": 152,
-        "away_ml": -185,
+        "home_ml": 148,
+        "away_ml": -180,
         "total": 9.5,
-        "ts": 1785170068
+        "ts": 1785180868
       }
     },
     {
