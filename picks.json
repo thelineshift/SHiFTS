@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T16:24:32Z",
+  "updated": "2026-07-27T18:04:29Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1245,7 +1245,10 @@
       "opp": "163ON",
       "analysis": "4-1 last 5 (beat TEAM_COPH9K, Fraternity, LPH Gaming) (lost to TheBoys) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat TEAM_COPH9K, Fraternity, LPH Gaming) (lost to TheBoys) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over 163ON the number hasn't priced.",
       "awayTeam": "banda chuya",
-      "homeTeam": "163ON"
+      "homeTeam": "163ON",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "banda chuya 1-0 uust _esports \u00b7 final"
     },
     {
       "id": "over-9.5-0727",
