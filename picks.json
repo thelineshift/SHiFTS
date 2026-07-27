@@ -1069,10 +1069,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -120,
+        "home_ml": 103,
+        "away_ml": -125,
         "total": 9.5,
-        "ts": 1785162061
+        "ts": 1785173668
       },
       "last_alert_odds": -131
     },
@@ -1281,10 +1281,10 @@
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -109,
-        "away_ml": -110,
+        "home_ml": -107,
+        "away_ml": -112,
         "total": 8.5,
-        "ts": 1785168268
+        "ts": 1785173668
       }
     }
   ]
