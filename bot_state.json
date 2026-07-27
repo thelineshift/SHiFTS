@@ -16054,7 +16054,13 @@
       "market_slug": "aec-valorant-2game-srb-2026-07-28",
       "outcome": "2GAME Esports",
       "status": "open",
-      "ts": "2026-07-27T14:37:46Z"
+      "ts": "2026-07-27T14:37:46Z",
+      "price_path": [
+        {
+          "ts": 1785163626,
+          "px": 0.35
+        }
+      ]
     },
     {
       "price": 0.57,
@@ -16070,7 +16076,13 @@
       "market_slug": "aec-mlb-sea-lad-2026-07-29",
       "outcome": "Los Angeles Dodgers",
       "status": "resting",
-      "ts": "2026-07-27T14:42:46Z"
+      "ts": "2026-07-27T14:42:46Z",
+      "price_path": [
+        {
+          "ts": 1785163627,
+          "px": 0.57
+        }
+      ]
     }
   ],
   "pm_stats": {
