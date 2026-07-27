@@ -17419,7 +17419,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-lol-gls-thg-2026-07-26",
     "aec-lol-lil-cla-2026-07-26",
     "aec-valorant-nv-lev-2026-07-26",
     "aec-valorant-fur-mibr-2026-07-27",
@@ -17478,7 +17477,8 @@
     "aec-lol-itz-rmd-2026-07-27",
     "aec-cs2-bsta-hr-2026-07-27",
     "aec-lol-zyb-ess-2026-07-28",
-    "aec-valorant-meow-rvn-2026-07-27"
+    "aec-valorant-meow-rvn-2026-07-27",
+    "aec-lol-znt-dyn-2026-07-28"
   ],
   "odds_api": {
     "month": "2026-07",
