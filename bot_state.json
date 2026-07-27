@@ -118,6 +118,15 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "new-york-yankees-ml-0726",
+      "desc": "New York Yankees ML",
+      "odds": 159,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "New York Yankees 4, Philadelphia Phillies 11",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785111370.4770455,
