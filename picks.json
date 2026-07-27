@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T06:56:11Z",
+  "updated": "2026-07-27T07:36:12Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -750,7 +750,10 @@
       "opp": "ARCRED",
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this spot more than the price says.",
       "awayTeam": "Team flacons",
-      "homeTeam": "ARCRED"
+      "homeTeam": "ARCRED",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Team flacons 0-2 ARCRED \u00b7 final"
     },
     {
       "id": "ex-young-ninjas-ml-0727",
