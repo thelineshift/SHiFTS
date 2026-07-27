@@ -4812,7 +4812,7 @@
         }
       },
       "valorant:137903": {
-        "ts": 1785175201.7624066,
+        "ts": 1785182413.0697784,
         "f": {
           "w": 1,
           "l": 4,
@@ -17129,11 +17129,11 @@
     "pnl": -49.05,
     "trades": 270,
     "last_recap": "2026-07-27",
-    "last_recap_hour": "2026-07-27-18",
+    "last_recap_hour": "2026-07-27-20",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 143.34,
-    "net": 79.34,
+    "account": 139.85,
+    "net": 75.85,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
