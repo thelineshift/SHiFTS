@@ -28323,8 +28323,7 @@
       "market_slug": "astatc-wta-zeyson-cadbra-2026-07-26-sw1",
       "outcome": "Zeynep Sonmez",
       "status": "open",
-      "ts": "2026-07-27T22:45:04Z",
-      "price_path": []
+      "ts": "2026-07-27T22:45:04Z"
     },
     {
       "price": 0.6,
@@ -28393,13 +28392,7 @@
       "market_slug": "aec-atp-ardazk-yanere-2026-07-27",
       "outcome": "Arda Azkara",
       "status": "open",
-      "ts": "2026-07-27T22:45:09Z",
-      "price_path": [
-        {
-          "ts": 1785192867,
-          "px": 0.24
-        }
-      ]
+      "ts": "2026-07-27T22:45:09Z"
     },
     {
       "price": 0.71,
@@ -28436,27 +28429,37 @@
       "market_slug": "aec-atp-alemin-stetsi-2026-07-27",
       "outcome": "Alex de Minaur",
       "status": "open",
-      "ts": "2026-07-27T22:50:05Z",
-      "price_path": [
-        {
-          "ts": 1785192867,
-          "px": 0.54
-        }
-      ]
+      "ts": "2026-07-27T22:50:05Z"
+    },
+    {
+      "price": 0.33,
+      "short": true,
+      "stake": 0.99,
+      "kind": "EDGE",
+      "p_model": 0.42953102042568636,
+      "event": "Yulia Starodubtseva vs. Sloane Stephens",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 43% vs market 33% \u2014 10% edge, half-Kelly",
+      "order_id": "BGRM2YBAJ9P6",
+      "qty": 3,
+      "market_slug": "aec-wta-yulsta-sloste-2026-07-26",
+      "outcome": "Sloane Stephens",
+      "status": "open",
+      "ts": "2026-07-27T22:55:00Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 23,
+    "wins": 22,
     "losses": 52,
-    "pnl": -49.75,
-    "trades": 281,
+    "pnl": -56.14,
+    "trades": 282,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-22",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 99.58,
-    "net": 35.58,
+    "account": 93.19,
+    "net": 29.19,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -28465,7 +28468,7 @@
         0
       ],
       "EDGE": [
-        18,
+        17,
         38,
         0
       ],
@@ -28486,6 +28489,14 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
+    {
+      "ts": "2026-07-27T12:19:45Z",
+      "kind": "EDGE",
+      "outcome": "Atputies",
+      "result": "LOSS",
+      "pnl": -3.45,
+      "lesson": "model 50% vs market 23% missed \u2014 logged for the playbook review. Taken 0.23, slid to 0.46 before the result \u2014 the number ran 23\u00a2 against us \u26a0\ufe0f"
+    },
     {
       "ts": "2026-07-27T12:58:01Z",
       "kind": "EDGE",
@@ -28717,14 +28728,6 @@
       "result": "LOSS",
       "pnl": -2.86,
       "lesson": "model 43% vs market 22% missed \u2014 logged for the playbook review. Taken 0.22, rode to 0.20 before the result \u2014 beat the number by 2\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-27T22:54:22Z",
-      "kind": "EDGE",
-      "outcome": "ORA Temper",
-      "result": "WIN",
-      "pnl": 6.39,
-      "lesson": "+$6.39 \u2014 model 60% vs market 29% was real edge; thesis held. Taken 0.29, rode to 0.58 before the result \u2014 beat the number by 29\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
