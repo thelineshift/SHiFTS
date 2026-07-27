@@ -39,6 +39,15 @@
   "bot_version": "9.24.5",
   "unannounced_results": [
     {
+      "id": "milwaukee-brewers--1.5-0725",
+      "desc": "Milwaukee Brewers -1.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Colorado Rockies 5, Milwaukee Brewers 8",
+      "tier": "whale"
+    },
+    {
       "id": "los-angeles-dodgers--1.5-0725",
       "desc": "Los Angeles Dodgers -1.5",
       "odds": -110,
@@ -111,7 +120,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785119769.9569137,
+  "last_x_receipt_ts": 1785111370.4770455,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -11960,6 +11969,10 @@
         {
           "ts": 1785117374,
           "px": 0.39
+        },
+        {
+          "ts": 1785119780,
+          "px": 0.39
         }
       ]
     },
@@ -13409,6 +13422,10 @@
         {
           "ts": 1785117375,
           "px": 0.96
+        },
+        {
+          "ts": 1785119782,
+          "px": 0.96
         }
       ]
     },
@@ -13545,6 +13562,10 @@
         {
           "ts": 1785117375,
           "px": 0.55
+        },
+        {
+          "ts": 1785119782,
+          "px": 0.545
         }
       ]
     },
