@@ -8446,7 +8446,7 @@
         }
       },
       "cs2:135497": {
-        "ts": 1785148288.2487535,
+        "ts": 1785155694.751837,
         "f": {
           "w": 2,
           "l": 3,
@@ -8475,7 +8475,7 @@
         }
       },
       "cs2:138997": {
-        "ts": 1785148288.8882828,
+        "ts": 1785155695.396548,
         "f": {
           "w": 0,
           "l": 0,
@@ -14700,6 +14700,38 @@
       "outcome": "Bulldog Esports",
       "status": "open",
       "ts": "2026-07-27T12:30:18Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 60% \u2014 7% edge, half-Kelly",
+      "order_id": "BGFVWN4DC9NY",
+      "qty": 2,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-27T12:35:18Z"
+    },
+    {
+      "price": 0.595,
+      "short": true,
+      "stake": 1.19,
+      "kind": "EDGE",
+      "p_model": 0.6726805820463914,
+      "event": "Colorado Rockies vs. San Diego Padres",
+      "ev_start": "2026-07-29T20:10:00Z",
+      "reason": "model 67% vs market 60% \u2014 8% edge, half-Kelly",
+      "order_id": "BGFTZ30X29NK",
+      "qty": 2,
+      "market_slug": "aec-mlb-col-sd-2026-07-29",
+      "outcome": "San Diego Padres",
+      "status": "open",
+      "ts": "2026-07-27T12:35:19Z"
     }
   ],
   "pm_stats": {
@@ -14707,7 +14739,7 @@
     "wins": 14,
     "losses": 31,
     "pnl": 7.76,
-    "trades": 228,
+    "trades": 230,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
