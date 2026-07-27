@@ -100,6 +100,15 @@
       "units": -1.0,
       "score": "Misa Esports 0-2 Mai Tai \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "team-flacons-ml-0727",
+      "desc": "Team flacons ML",
+      "odds": -150,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Team flacons 0-2 ARCRED \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785135370.0936625,
