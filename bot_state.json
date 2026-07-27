@@ -12072,8 +12072,11 @@
       "qty": 14,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T16:44:47Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T16:44:47Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.04,
@@ -12271,8 +12274,11 @@
       "qty": 9,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:04:47Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:04:47Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.04,
@@ -12336,8 +12342,11 @@
       "qty": 9,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:24:45Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:24:45Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.69,
@@ -12420,8 +12429,11 @@
       "qty": 9,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:39:47Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:39:47Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -12491,8 +12503,11 @@
       "qty": 7,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:54:47Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:54:47Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.1,
@@ -12762,8 +12777,11 @@
       "qty": 10,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T20:29:49Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T20:29:49Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.23,
@@ -12973,8 +12991,11 @@
       "qty": 6,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map1",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T20:39:51Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T20:39:51Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.23,
@@ -14595,7 +14616,7 @@
       "qty": 3,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T11:56:54Z"
     },
     {
@@ -14611,7 +14632,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T12:01:53Z"
     }
   ],
