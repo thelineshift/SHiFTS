@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.14'  # WINNERS-ONLY LAW sealed: x_drainer drains losers silently, X = wins only
+BOT_VERSION = '9.24.15'  # ALL-MARKETS LAW: tennis Elo (ATP+WTA) live, 12 new soccer leagues, OW esports
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4331,8 +4331,13 @@ PM_TAG_LEAGUE = {'nba': {'nba'}, 'wnba': {'wnba'}, 'nfl': {'nfl'}, 'ncaaf': {'nc
                  'ncaab': {'ncaab'}, 'cfl': {'cfl'}, 'mlb': {'mlb'}, 'nhl': {'nhl'},
                  'ufc': {'ufc'}, 'mls': {'mls'}, 'epl': {'epl'}, 'laliga': {'laliga'},
                  'ucl': {'ucl'}, 'soccer': {'mls', 'epl', 'laliga', 'ucl'},
-                 'premier-league': {'epl'}, 'champions-league': {'ucl'}}
-PM_SOCCER = {'mls', 'epl', 'laliga', 'ucl'}
+                 'premier-league': {'epl'}, 'champions-league': {'ucl'},
+                 'tennis': {'tennis'}, 'atp': {'tennis'}, 'wta': {'tennis'},
+                 'uecl': {'uecl'}, 'uel': {'uel'}, 'lpa': {'arg1'}, 'bra': {'bra1'},
+                 'brb': {'bra2'}, 'sud': {'sudam'}, 'nwsl': {'nwsl'}, 'ecu1': {'ecu1'}}
+PM_SOCCER = {'mls', 'epl', 'laliga', 'ucl', 'uecl', 'uel', 'arg1', 'bra1', 'bra2',
+             'swe1', 'nor1', 'nwsl', 'ecu1', 'col1', 'sudam', 'libert'}
+PM_TENNIS = {'tennis'}
 
 def _pm_event_leagues(ev):
     """League set for an exchange event from its tags; None = full slate fallback."""
@@ -4414,6 +4419,103 @@ def pm_esport_prob(cache, team_a, team_b):
         return p1 if na == n1 else 1 - p1
     return None
 
+# ---- TENNIS LAW (owner decree 2026-07-28: "tennis both men and women, hockey, and
+# literally any other available market — bet all of them"). ESPN carries tennis as a
+# tournament shell only (7/28 probe: 0 matchups, 0 odds on the ATP/WTA scoreboards) and
+# the odds-API key was never provisioned (state budget 430, used 0) — so tennis EDGE
+# runs on TennisAbstract Elo: free, both tours, 500+ rated players each, overall plus
+# hard/clay/grass surface ratings. ARB stays the universal backstop for every market.
+def _se_get_text(url, timeout=15):
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    return urllib.request.urlopen(req, timeout=timeout).read().decode('utf-8', errors='ignore')
+
+def _ten_norm(s):
+    """Tennis name key: ascii-folded, letters+spaces only, single-spaced."""
+    import unicodedata
+    s = unicodedata.normalize('NFKD', (s or '').lower())
+    s = ''.join(ch for ch in s if not unicodedata.combining(ch))
+    return re.sub(r'\s+', ' ', re.sub(r'[^a-z ]', ' ', s)).strip()
+
+def _ten_surface(title):
+    """Surface hint from event/tournament text. Default hard: most of the calendar."""
+    t = _ten_norm(title).replace(' ', '')
+    if any(k in t for k in ('wimbledon', 'grass', 'halle', 'queens', 'mallorca', 'eastbourne', 'newport', 'hertogenbosch')):
+        return 'grass'
+    if any(k in t for k in ('roland', 'frenchopen', 'clay', 'montecarlo', 'madrid', 'rome', 'italianopen',
+                            'hamburg', 'bastad', 'gstaad', 'kitzbuhel', 'umag', 'barcelona', 'munich',
+                            'estoril', 'bucharest', 'marrakech', 'houston', 'santiago', 'buenosaires', 'riodejaneiro')):
+        return 'clay'
+    return 'hard'
+
+def se_tennis_elo(cache):
+    """ATP+WTA Elo tables (TennisAbstract), cached 6h in pm_cache. Stale cache beats no
+    cache: a failed refresh keeps the old table rather than blinding the model."""
+    ten = cache.setdefault('tennis', {})
+    if time.time() - (ten.get('ts') or 0) < 21600 and ten.get('players'):
+        return ten
+    players, last_idx = {}, {}
+    for tour, url in (('atp', 'https://www.tennisabstract.com/reports/atp_elo_ratings.html'),
+                      ('wta', 'https://www.tennisabstract.com/reports/wta_elo_ratings.html')):
+        try:
+            h = _se_get_text(url)
+        except Exception as e:
+            print('se tennis elo fail', tour, str(e)[:60])
+            continue
+        for row in re.findall(r'<tr>(.*?)</tr>', h, re.S):
+            cells = [re.sub(r'<[^>]+>', '', c).replace('&nbsp;', ' ').strip()
+                     for c in re.findall(r'<td[^>]*>(.*?)</td>', row, re.S)]
+            if len(cells) < 11 or not re.match(r'^\d+(\.\d+)?$', cells[3] or ''):
+                continue
+            def _f(i):
+                try:
+                    return float(cells[i]) if cells[i] else None
+                except Exception:
+                    return None
+            nm = _ten_norm(cells[1])
+            if not nm:
+                continue
+            players[nm] = {'elo': float(cells[3]), 'hard': _f(6), 'clay': _f(8),
+                           'grass': _f(10), 'tour': tour}
+            last_idx.setdefault(nm.split()[-1], []).append(nm)
+    if players:
+        ten.clear()
+        ten.update({'players': players, 'last': last_idx, 'ts': time.time()})
+    return ten if ten.get('players') else None
+
+def _ten_lookup(ten, name):
+    """Exact normalized name, else unique-last-name + first-initial fallback."""
+    nm = _ten_norm(name)
+    p = ten['players'].get(nm)
+    if p or not nm:
+        return p
+    parts = nm.split()
+    if len(parts) >= 2:
+        cands = ten.get('last', {}).get(parts[-1]) or []
+        if len(cands) == 1 and cands[0][0] == nm[0]:
+            return ten['players'].get(cands[0])
+    return None
+
+def pm_tennis_prob(cache, player_a, player_b, title=''):
+    """Elo win prob for player_a: 65% surface + 35% overall when both players carry a
+    surface rating, else overall Elo. Clamped [0.12, 0.88] — the rating can't see
+    injuries, fatigue, or retirement risk, so extremes are distrusted by design."""
+    if '/' in (player_a or '') or '/' in (player_b or ''):
+        return None  # doubles — singles ratings don't apply
+    ten = se_tennis_elo(cache)
+    if not ten:
+        return None
+    pa, pb = _ten_lookup(ten, player_a), _ten_lookup(ten, player_b)
+    if not pa or not pb:
+        return None
+    surf = _ten_surface(title)
+    if pa.get(surf) and pb.get(surf):
+        ra = 0.65 * pa[surf] + 0.35 * pa['elo']
+        rb = 0.65 * pb[surf] + 0.35 * pb['elo']
+    else:
+        ra, rb = pa['elo'], pb['elo']
+    p = 1.0 / (1.0 + 10 ** (-(ra - rb) / 400.0))
+    return min(0.88, max(0.12, p))
+
 def pm_kelly(p, price, B):
     """Fractional-Kelly stake for a binary buy at `price` with model prob p."""
     edge = p - price
@@ -4469,7 +4571,7 @@ def pm_trader_scan(st):
     cache = st.setdefault('pm_cache', {})
     if now - (cache.get('esp_ts') or 0) > 7200:
         esp = []
-        for gg in ('cs2', 'lol', 'valorant', 'dota2'):
+        for gg in ('cs2', 'lol', 'valorant', 'dota2', 'ow'):
             esp += se_ps_upcoming(gg)
         cache['esp'], cache['esp_ts'] = esp, now
     fmt = lambda ts: time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(ts))
@@ -4638,9 +4740,13 @@ def pm_trader_scan(st):
             others = [x['team'] for x in outcomes if x['team'] != o['team']]
             pm_ = pm_sport_prob(games, o['team'], others[0], leagues) if others else None
             _esp = False
+            _ten = False
             if pm_ is None and others:
                 pm_ = pm_esport_prob(cache, o['team'], others[0])
                 _esp = pm_ is not None
+            if pm_ is None and others and (not leagues or (leagues & PM_TENNIS)):
+                pm_ = pm_tennis_prob(cache, o['team'], others[0], title)
+                _ten = pm_ is not None
             if pm_ is None:
                 continue
             edge = pm_ - o['price']
@@ -4661,13 +4767,14 @@ def pm_trader_scan(st):
                                     'reason': f"tail-end yield — {yld * 100:.1f}% on a near-certain that settles today"})
                     expo += stake
                 continue
-            # esports reads are noise-heavy: their edge bar sits +4pp over the sports bar
-            if edge >= TRADER_MIN_EDGE + (0.04 if _esp else 0.0) + _tb('EDGE'):
+            # noise bars: esports form +4pp (noise-heavy), tennis Elo +2pp (injury/retirement-blind)
+            _xbar = 0.04 if _esp else (0.02 if _ten else 0.0)
+            if edge >= TRADER_MIN_EDGE + _xbar + _tb('EDGE'):
                 stake = min(pm_kelly(pm_, o['price'], B) * _tm('EDGE'), _desk_trade_cap(B, pmstats))
                 if stake >= 1.0 and stake <= _desk_room(B, expo, expo0):
                     intents.append({**o, 'stake': round(stake, 2), 'kind': 'EDGE', 'p_model': pm_,
                                     'event': title, 'ev_start': ev_start,
-                                    'reason': f"model {pm_:.0%} vs market {o['price']:.0%} — {edge:.0%} edge, half-Kelly"})
+                                    'reason': f"{'Elo' if _ten else 'model'} {pm_:.0%} vs market {o['price']:.0%} — {edge:.0%} edge, half-Kelly"})
                     expo += stake
     non_arb = [i for i in intents if i.get('kind') != 'ARB']
     if len(non_arb) > 6:
@@ -6680,7 +6787,7 @@ def x_engagement_text(st, kind, picks):
             f"📊 SHARP: we show where the number is wrong, why, and by how much. Fair price vs book price — gap math on the card.\nUp to 24 picks/day · 7-day free trial.\n💎 {STORE_PAGE}",
             f"🐋 WHALE: SHiFT's most confident plays dealt to you first — house law, every card. Props, POD & parlays first. Live injury/delay wire. Weekly deep-dive.\n💎 {STORE_PAGE}",
             f"🆓 The free room eats too: a daily free pick, $50 in SOL drawn every Sunday, every result receipted in public.\nCome see a real record.\n💎 {STORE_PAGE}",
-            f"🖥️ What SHiFT watches every scan: NFL · NBA · MLB · NHL · UFC · NCAAF · NCAAB · WNBA · CFL · EPL · La Liga · UCL · MLS · PGA · ATP · WTA\n+ CS2 · LoL · Dota 2 · Valorant esports.\n💎 {STORE_PAGE}",
+            f"🖥️ What SHiFT watches every scan: NFL · NBA · MLB · NHL · UFC · NCAAF · NCAAB · WNBA · CFL · EPL · La Liga · UCL · UECL · UEL · MLS · NWSL · LATAM + Nordic soccer · ATP + WTA tennis (Elo model) · PGA\n+ CS2 · LoL · Dota 2 · Valorant · Overwatch esports.\n💎 {STORE_PAGE}",
         ]
         return _x_fit275(ads[doy % len(ads)])
     return None
@@ -7757,7 +7864,7 @@ def boots_last_hour():
 # start when SCAN_LIVE=1; posts everything to shift-lab instead when SCAN_DRY_RUN=1.
 SCAN_SLOTS_UTC = (0, 4, 8, 12, 16, 20)
 SCAN_NOTABLE = ('BLAST', 'StarLadder', 'CCT', 'IEM', 'LCK', 'LPL', 'LEC', 'LCS', 'LCP', 'KeSPA', 'VCT')
-PS_GAMES = {'cs2': 'csgo', 'lol': 'lol', 'dota2': 'dota2', 'valorant': 'valorant'}
+PS_GAMES = {'cs2': 'csgo', 'lol': 'lol', 'dota2': 'dota2', 'valorant': 'valorant', 'ow': 'ow'}
 SCAN_ROOMS = {'free': 'free-pick', 'lock': 'lock-room', 'sharp': 'sharp-room', 'whale': 'whale-room'}
 # room identity colors (embed rail): instant visual tier recognition, zero confusion
 TIER_COLORS = {'whale': 0xF5C518, 'sharp': 0x3498DB, 'lock': 0x2ECC71, 'free': 0x95A5A6}
@@ -7772,13 +7879,24 @@ SE_SPORTS = {'mlb': 'baseball/mlb', 'wnba': 'basketball/wnba', 'mls': 'soccer/us
              'nfl': 'football/nfl', 'ncaaf': 'football/college-football', 'cfl': 'football/cfl',
              'nba': 'basketball/nba', 'ncaab': 'basketball/mens-college-basketball',
              'nhl': 'hockey/nhl', 'ufc': 'mma/ufc',
-             'epl': 'soccer/eng.1', 'laliga': 'soccer/esp.1', 'ucl': 'soccer/uefa.champions'}
+             'epl': 'soccer/eng.1', 'laliga': 'soccer/esp.1', 'ucl': 'soccer/uefa.champions',
+             # ALL-MARKETS LAW (7/28): every ESPN-carried league the exchange lists gets a
+             # model read. All endpoints probe-verified 200 with live events (7/28).
+             'uecl': 'soccer/uefa.europa.conf', 'uel': 'soccer/uefa.europa',
+             'arg1': 'soccer/arg.1', 'bra1': 'soccer/bra.1', 'bra2': 'soccer/bra.2',
+             'swe1': 'soccer/swe.1', 'nor1': 'soccer/nor.1', 'nwsl': 'soccer/usa.nwsl',
+             'ecu1': 'soccer/ecu.1', 'col1': 'soccer/col.1',
+             'sudam': 'soccer/conmebol.sudamericana', 'libert': 'soccer/conmebol.libertadores'}
 # Schedule-aware sports: ESPN carries the tournament shell only (no matchups/odds).
-# Edge pricing for these activates when an odds API key is present (se_oddsapi_*).
+# Golf stays shell-aware (outrights need full-field odds — no free source); tennis broke
+# out of this tier on 7/28 via the TennisAbstract Elo model (se_tennis_elo/pm_tennis_prob).
 SE_AWARE = {'golf': 'golf/pga/scoreboard', 'atp': 'tennis/atp/scoreboard', 'wta': 'tennis/wta/scoreboard'}
 SE_HOME_ADV = {'mlb': 0.030, 'wnba': 0.045, 'mls': 0.045, 'nfl': 0.020, 'ncaaf': 0.030, 'cfl': 0.025,
                'nba': 0.030, 'ncaab': 0.035, 'nhl': 0.025, 'ufc': 0.0,
-               'epl': 0.040, 'laliga': 0.040, 'ucl': 0.030}
+               'epl': 0.040, 'laliga': 0.040, 'ucl': 0.030,
+               'uecl': 0.030, 'uel': 0.030, 'sudam': 0.030, 'libert': 0.030,
+               'arg1': 0.040, 'bra1': 0.040, 'bra2': 0.040, 'swe1': 0.040, 'nor1': 0.040,
+               'nwsl': 0.040, 'ecu1': 0.040, 'col1': 0.040}
 
 def se_aware_live(dates):
     """Names of schedule-aware tournaments live right now (golf/tennis shells)."""
@@ -8115,7 +8233,7 @@ async def scan_engine_run(g0, slot_key, dry):
         pulled[g['sport']] = pulled.get(g['sport'], 0) + 1
         cands += se_edges(g, now_ts)
     esp = []
-    for gg in ('cs2', 'lol', 'valorant', 'dota2'):
+    for gg in ('cs2', 'lol', 'valorant', 'dota2', 'ow'):
         esp += await asyncio.to_thread(se_ps_upcoming, gg)
     # LIVE BOOK LINES (OddsPapi): real Pinnacle moneylines for esports, budget-guarded
     op_state = await asyncio.to_thread(get_state) or {}
