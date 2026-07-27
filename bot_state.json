@@ -14634,6 +14634,22 @@
       "outcome": "Habos Babos",
       "status": "resting",
       "ts": "2026-07-27T12:01:53Z"
+    },
+    {
+      "price": 0.68,
+      "short": true,
+      "stake": 2.04,
+      "kind": "EDGE",
+      "p_model": 0.7663633422017689,
+      "event": "Connecticut vs. Washington",
+      "ev_start": "2026-07-28T23:30:00Z",
+      "reason": "model 77% vs market 68% \u2014 9% edge, half-Kelly",
+      "order_id": "BGFJ29BMG9NS",
+      "qty": 3,
+      "market_slug": "aec-wnba-conn-wsh-2026-07-28",
+      "outcome": "Washington",
+      "status": "open",
+      "ts": "2026-07-27T12:06:48Z"
     }
   ],
   "pm_stats": {
@@ -14641,7 +14657,7 @@
     "wins": 14,
     "losses": 29,
     "pnl": 15.33,
-    "trades": 222,
+    "trades": 223,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
