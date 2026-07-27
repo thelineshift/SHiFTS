@@ -6,7 +6,7 @@
     "replaced pin in #\ud83d\udc8eupgrade (unpinned 1)"
   ],
   "time_audit": {
-    "at": "2026-07-27 09:46 UTC",
+    "at": "2026-07-27 10:16 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -17,23 +17,33 @@
     "\ud83c\udf81giveaway": "2026-07-27 09:08 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 09:46 UTC",
+    "at": "2026-07-27 10:16 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
-      "over-7.0-0726 | Over 7.0 -110 | tier=sharp"
+      "over-7.0-0726 | Over 7.0 -110 | tier=sharp",
+      "cybershoke-esports-ml-0727 | CYBERSHOKE Esports ML -150 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 09:46 UTC",
+    "at": "2026-07-27 10:16 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 09:46 UTC",
+    "at": "2026-07-27 10:16 UTC",
     "flags": []
   },
   "bot_version": "9.24.5",
   "unannounced_results": [
+    {
+      "id": "los-angeles-dodgers-ml-0725",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -157,
+      "result": "WIN",
+      "units": 0.64,
+      "score": "Los Angeles Dodgers 4, New York Mets 3",
+      "tier": "sharp"
+    },
     {
       "id": "milwaukee-brewers-ml-0725",
       "desc": "Milwaukee Brewers ML",
@@ -107,7 +117,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785147371.1374488,
+  "last_x_receipt_ts": 1785135370.0936625,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
