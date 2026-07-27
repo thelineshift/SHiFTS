@@ -16201,11 +16201,11 @@
     "pnl": -43.8,
     "trades": 258,
     "last_recap": "2026-07-27",
-    "last_recap_hour": "2026-07-27-14",
+    "last_recap_hour": "2026-07-27-16",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 97.46,
-    "net": 33.46,
+    "account": 143.43,
+    "net": 79.43,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
