@@ -5149,7 +5149,7 @@
         }
       },
       "dota2:138858": {
-        "ts": 1785124907.1737044,
+        "ts": 1785144407.0505183,
         "f": {
           "w": 3,
           "l": 2,
@@ -5236,7 +5236,7 @@
         }
       },
       "dota2:135854": {
-        "ts": 1785124907.7598143,
+        "ts": 1785144407.7040093,
         "f": {
           "w": 3,
           "l": 2,
@@ -14085,20 +14085,36 @@
       "outcome": "Habos Babos",
       "status": "resting",
       "ts": "2026-07-27T09:21:50Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.6726805820463914,
+      "event": "Colorado Rockies vs. San Diego Padres",
+      "ev_start": "2026-07-29T20:10:00Z",
+      "reason": "model 67% vs market 60% \u2014 7% edge, half-Kelly",
+      "order_id": "BGD4X1BAY9S2",
+      "qty": 2,
+      "market_slug": "aec-mlb-col-sd-2026-07-29",
+      "outcome": "San Diego Padres",
+      "status": "open",
+      "ts": "2026-07-27T09:26:52Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 14,
-    "losses": 30,
-    "pnl": 13.81,
-    "trades": 185,
+    "losses": 29,
+    "pnl": 15.33,
+    "trades": 186,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-08",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 105.7,
-    "net": 41.7,
+    "account": 109.7,
+    "net": 45.7,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -14108,7 +14124,7 @@
       ],
       "EDGE": [
         9,
-        19,
+        18,
         0
       ],
       "LIVE-BET": [
@@ -14121,6 +14137,14 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
+    {
+      "ts": "2026-07-26T00:10:27Z",
+      "kind": "LIVE-BET",
+      "outcome": "Isurus",
+      "result": "LOSS",
+      "pnl": -3.0,
+      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.60, rode to 0.94 before the result \u2014 beat the number by 34\u00a2 \u2705 (cashed out early at $1.20)"
+    },
     {
       "ts": "2026-07-26T00:40:26Z",
       "kind": "EDGE",
@@ -14352,14 +14376,6 @@
       "result": "LOSS",
       "pnl": -1.11,
       "lesson": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.21 before the result \u2014 the number ran 16\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-27T09:26:12Z",
-      "kind": "EDGE",
-      "outcome": "Entropy",
-      "result": "LOSS",
-      "pnl": -1.52,
-      "lesson": "model 50% vs market 38% missed \u2014 logged for the playbook review. Taken 0.38, rode to 0.11 before the result \u2014 beat the number by 27\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
