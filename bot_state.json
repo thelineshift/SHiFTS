@@ -35,15 +35,6 @@
   "bot_version": "9.24.14",
   "unannounced_results": [
     {
-      "id": "bnk-fearx-youth-ml-0727",
-      "desc": "BNK FearX Youth ML",
-      "odds": -316,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "BNK FearX Youth 0-1 Gen.G \u00b7 final",
-      "tier": "whale"
-    },
-    {
       "id": "rune-eaters-ml-0727",
       "desc": "Rune Eaters ML",
       "odds": -177,
