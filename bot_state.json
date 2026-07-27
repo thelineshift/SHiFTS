@@ -323,7 +323,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "20ae5d85-59d1-43ed-9eea-95ceeb53a661",
   "op_month": "2026-07",
-  "op_calls": 47,
+  "op_calls": 54,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1216,38 +1216,44 @@
         [
           "Imperial eSports",
           "Bestia",
-          1.543,
-          2.4
+          1.478,
+          2.56
         ],
         [
           "Regain",
           "Team Voca",
-          1.279,
-          3.4
+          1.285,
+          3.36
         ],
         [
           "Genone",
           "Sparta eSports",
-          1.671,
-          2.12
+          1.68,
+          2.1
         ],
         [
           "Rune Eaters eSports",
           "Saw Youngsters",
-          1.709,
-          2.1
+          1.564,
+          2.35
         ],
         [
           "Ex-Rustec",
           "Inner Circle Academy",
-          1.555,
-          2.37
+          1.561,
+          2.36
         ]
       ],
-      "odds_ts": 1785124819.5325515
+      "odds_ts": 1785153622.121221
     },
     "valorant": {
       "lines": [
+        [
+          "Barca GC",
+          "Habos Babos",
+          2.31,
+          1.561
+        ],
         [
           "Gentle Mates GC",
           "GIANTX GC",
@@ -1257,41 +1263,17 @@
         [
           "G2 Gozen",
           "Karmine Corp GC",
-          1.114,
-          5.0
-        ],
-        [
-          "BBL",
-          "Natus Vincere",
-          1.012,
-          20.9
-        ],
-        [
-          "Heretics",
-          "Karmine Corp",
-          22.1,
-          1.011
-        ],
-        [
-          "ENVY",
-          "Leviatan",
-          7.95,
-          1.09
-        ],
-        [
-          "FURIA",
-          "MIBR",
-          3.73,
-          1.282
+          1.156,
+          4.34
         ],
         [
           "BESTIA",
           "Contra",
-          1.352,
-          2.92
+          1.186,
+          4.0
         ]
       ],
-      "odds_ts": 1785096020.6622343,
+      "odds_ts": 1785153612.865507,
       "active": [
         901974,
         902246,
@@ -2500,49 +2482,49 @@
           2.22
         ],
         [
-          "FEARX",
-          "Gen.g Esports",
-          2.6,
-          1.39
-        ],
-        [
           "Hanwha Life Esports",
           "Dplus",
-          2.43,
-          1.456
-        ],
-        [
-          "kt Rolster",
-          "Gen.g Esports",
-          2.23,
-          1.543
+          13.57,
+          1.026
         ],
         [
           "T1",
           "Dplus",
-          2.94,
-          1.299
+          14.75,
+          1.022
+        ],
+        [
+          "T1",
+          "Nongshim Redforce",
+          1.03,
+          12.44
+        ],
+        [
+          "Dplus",
+          "Brion",
+          1.021,
+          15.1
         ],
         [
           "Nongshim Redforce Challengers",
           "T1 Esports Academy",
-          1.483,
-          2.64
+          1.074,
+          6.01
         ],
         [
           "Gen.G Global Academy",
           "Fearx Youth",
-          3.35,
-          1.316
+          7.61,
+          1.039
         ],
         [
           "Maze Gaming",
           "9Z Team",
-          1.363,
-          3.1
+          1.369,
+          3.08
         ]
       ],
-      "odds_ts": 1785124813.9578402
+      "odds_ts": 1785153616.6563997
     }
   },
   "parlay_rot": 9,
