@@ -1,26 +1,14 @@
 {
-  "updated": "2026-07-27T18:00:24Z",
-  "record": "18-45",
-  "trades": 268,
-  "open": 38,
-  "pnl": -48.11,
-  "account": 144.28,
+  "updated": "2026-07-27T20:00:14Z",
+  "record": "20-47",
+  "trades": 270,
+  "open": 36,
+  "pnl": -49.05,
+  "account": 139.85,
   "deposits": 64.0,
-  "net_pnl": 80.28,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 13-31 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 0-2",
+  "net_pnl": 75.85,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 15-33 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 0-2",
   "recent": [
-    {
-      "outcome": "Atputies",
-      "short": true,
-      "result": "lost",
-      "pnl": -3.45
-    },
-    {
-      "outcome": "Epic Avalanche",
-      "short": true,
-      "result": "lost",
-      "pnl": -1.04
-    },
     {
       "outcome": "ASTRAL",
       "short": false,
@@ -32,6 +20,18 @@
       "short": true,
       "result": "lost",
       "pnl": -2.03
+    },
+    {
+      "outcome": "Brute",
+      "short": false,
+      "result": "won",
+      "pnl": 1.17
+    },
+    {
+      "outcome": "Falcons Force",
+      "short": true,
+      "result": "won",
+      "pnl": 1.2
     },
     {
       "outcome": "LEO",
