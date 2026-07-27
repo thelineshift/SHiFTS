@@ -1,13 +1,13 @@
 {
-  "updated": "2026-07-27T06:02:21Z",
-  "record": "14-25",
+  "updated": "2026-07-27T08:01:52Z",
+  "record": "14-27",
   "trades": 182,
-  "open": 25,
-  "pnl": 21.14,
+  "open": 23,
+  "pnl": 18.36,
   "account": 109.7,
   "deposits": 64.0,
   "net_pnl": 45.7,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 9-14 \u00b7 LIVE-BET 2-6",
+  "playbooks": "ARB 3-5 \u00b7 EDGE 9-16 \u00b7 LIVE-BET 2-6",
   "recent": [
     {
       "outcome": "ODDIK",
