@@ -14233,11 +14233,11 @@
     "pnl": 15.33,
     "trades": 192,
     "last_recap": "2026-07-26",
-    "last_recap_hour": "2026-07-27-08",
+    "last_recap_hour": "2026-07-27-10",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 109.7,
-    "net": 45.7,
+    "account": 105.7,
+    "net": 41.7,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
