@@ -5,37 +5,34 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 22:40 UTC",
+    "at": "2026-07-27 21:04 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 20:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 22:34 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 20:54 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-27 20:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 13:13 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 22:40 UTC",
+    "at": "2026-07-27 21:04 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
       "over-7.0-0726 | Over 7.0 -110 | tier=sharp",
-      "over-8.0-0727 | Over 8.0 -110 | tier=sharp",
       "lavked-ml-0727 | Lavked ML -150 | tier=sharp"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 22:40 UTC",
-    "flags": [
-      "no challenge bet registered for 2026-07-27 (due 6 PM ET)"
-    ]
-  },
-  "giveaway_watch": {
-    "at": "2026-07-27 22:40 UTC",
+    "at": "2026-07-27 21:04 UTC",
     "flags": []
   },
-  "bot_version": "9.24.15",
+  "giveaway_watch": {
+    "at": "2026-07-27 21:04 UTC",
+    "flags": []
+  },
+  "bot_version": "9.24.14",
   "unannounced_results": [
     {
       "id": "texas-rangers-ml-0727",
@@ -266,7 +263,7 @@
     "957351491402866708:steps": 1785099068.2206638,
     "1378025540937715772:guide": 1785103092.695508,
     "1358272101655646358:guide": 1785153913.4227476,
-    "894953724164849685:nohandle": 1785156336.5761533
+    "894953724164849685:nohandle": 1785192024.7383382
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
@@ -17233,6 +17230,10 @@
         {
           "ts": 1785189891,
           "px": 0.43
+        },
+        {
+          "ts": 1785192020,
+          "px": 0.45
         }
       ]
     },
@@ -17249,42 +17250,13 @@
       "qty": 13,
       "market_slug": "aec-cs2-bsta-hr-2026-07-27",
       "outcome": "Hunters Rising",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T17:05:26Z",
-      "price_path": [
-        {
-          "ts": 1785172476,
-          "px": 0.22
-        },
-        {
-          "ts": 1785174878,
-          "px": 0.22
-        },
-        {
-          "ts": 1785177275,
-          "px": 0.22
-        },
-        {
-          "ts": 1785179674,
-          "px": 0.22
-        },
-        {
-          "ts": 1785181478,
-          "px": 0.22
-        },
-        {
-          "ts": 1785183874,
-          "px": 0.22
-        },
-        {
-          "ts": 1785185679,
-          "px": 0.21
-        },
-        {
-          "ts": 1785188077,
-          "px": 0.2
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T22:40:21Z",
+      "pnl": -2.86,
+      "autopsy": "model 43% vs market 22% missed \u2014 logged for the playbook review. Taken 0.22, rode to 0.20 before the result \u2014 beat the number by 2\u00a2 \u2705"
     },
     {
       "price": 0.36,
@@ -17336,6 +17308,10 @@
         },
         {
           "ts": 1785189891,
+          "px": 0.36
+        },
+        {
+          "ts": 1785192023,
           "px": 0.36
         }
       ]
@@ -17390,6 +17366,10 @@
         {
           "ts": 1785189891,
           "px": 0.27
+        },
+        {
+          "ts": 1785192023,
+          "px": 0.27
         }
       ]
     },
@@ -17436,6 +17416,10 @@
         {
           "ts": 1785189891,
           "px": 0.42
+        },
+        {
+          "ts": 1785192023,
+          "px": 0.31
         }
       ]
     },
@@ -17470,6 +17454,10 @@
         {
           "ts": 1785189892,
           "px": 0.58
+        },
+        {
+          "ts": 1785192023,
+          "px": 0.51
         }
       ]
     },
@@ -17499,6 +17487,10 @@
         },
         {
           "ts": 1785189892,
+          "px": 0.57
+        },
+        {
+          "ts": 1785192024,
           "px": 0.57
         }
       ]
@@ -17548,6 +17540,10 @@
         {
           "ts": 1785189892,
           "px": 0.55
+        },
+        {
+          "ts": 1785192024,
+          "px": 0.55
         }
       ]
     },
@@ -17577,15 +17573,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 22,
-    "losses": 51,
-    "pnl": -53.28,
+    "losses": 52,
+    "pnl": -56.14,
     "trades": 274,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-22",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 96.05,
-    "net": 32.05,
+    "account": 93.19,
+    "net": 29.19,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -17595,7 +17591,7 @@
       ],
       "EDGE": [
         17,
-        37,
+        38,
         0
       ],
       "LIVE-BET": [
@@ -17854,6 +17850,14 @@
       "result": "LOSS",
       "pnl": -2.5,
       "lesson": "model 50% vs market 25% missed \u2014 logged for the playbook review. Taken 0.25, slid to 0.34 before the result \u2014 the number ran 9\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-27T22:40:21Z",
+      "kind": "EDGE",
+      "outcome": "Hunters Rising",
+      "result": "LOSS",
+      "pnl": -2.86,
+      "lesson": "model 43% vs market 22% missed \u2014 logged for the playbook review. Taken 0.22, rode to 0.20 before the result \u2014 beat the number by 2\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
