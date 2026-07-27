@@ -10637,8 +10637,11 @@
       "qty": 10,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "resting",
-      "ts": "2026-07-26T12:05:51Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T12:05:51Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.37,
@@ -11135,8 +11138,11 @@
       "qty": 10,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "resting",
-      "ts": "2026-07-26T12:43:36Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T12:43:36Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.57,
@@ -11466,8 +11472,11 @@
       "qty": 6,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "resting",
-      "ts": "2026-07-26T13:09:01Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T13:09:01Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.65,
@@ -11718,8 +11727,11 @@
       "qty": 6,
       "market_slug": "aec-valorant-fur-mibr-2026-07-27",
       "outcome": "MIBR",
-      "status": "resting",
-      "ts": "2026-07-26T14:25:09Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T14:25:09Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.66,
