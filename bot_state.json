@@ -16789,6 +16789,21 @@
           "px": 0.36
         }
       ]
+    },
+    {
+      "price": 0.27,
+      "stake": 1.08,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "GIANTX vs. Team Liquid",
+      "ev_start": "2026-07-29T15:00:00Z",
+      "reason": "model 50% vs market 27% \u2014 23% edge, half-Kelly",
+      "order_id": "BGM25P4PR9NG",
+      "qty": 4,
+      "market_slug": "aec-valorant-gx-tl-2026-07-29",
+      "outcome": "GIANTX",
+      "status": "open",
+      "ts": "2026-07-27T17:30:12Z"
     }
   ],
   "pm_stats": {
@@ -16796,7 +16811,7 @@
     "wins": 18,
     "losses": 44,
     "pnl": -47.07,
-    "trades": 267,
+    "trades": 268,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-16",
     "deposits": 64.0,
