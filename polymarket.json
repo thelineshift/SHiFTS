@@ -1,47 +1,11 @@
 {
-  "ts": "2026-07-27T00:16:12Z",
+  "ts": "2026-07-27T00:31:10Z",
   "configured": true,
-  "balance_usd": 103.94,
-  "buying_power": 17.94,
+  "balance_usd": 109.7,
+  "buying_power": 13.7,
   "positions": [],
   "open_orders": [
     {
-      "market": "aec-valorant-fur-mibr-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.76",
-      "qty": 10
-    },
-    {
-      "market": "aec-valorant-fur-mibr-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.76",
-      "qty": 6
-    },
-    {
-      "market": "aec-valorant-fur-mibr-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.76",
-      "qty": 6
-    },
-    {
-      "market": "aec-cs2-pure-astr-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.95",
-      "qty": 4
-    },
-    {
-      "market": "aec-cs2-pure-astr-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.96",
-      "qty": 3
-    },
-    {
-      "market": "aec-cs2-pure-astr-2026-07-27",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.91",
-      "qty": 3
-    },
-    {
       "market": "aec-lol-genga-foxy-2026-07-27",
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.69",
@@ -52,24 +16,6 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.69",
       "qty": 11
-    },
-    {
-      "market": "astatc-cs2-unity-mta-2026-07-27-map1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.18",
-      "qty": 7
-    },
-    {
-      "market": "astatc-cs2-unity-mta-2026-07-27-map1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.21",
-      "qty": 6
-    },
-    {
-      "market": "astatc-cs2-unity-mta-2026-07-27-map1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.21",
-      "qty": 6
     },
     {
       "market": "astatc-cs2-unity-mta-2026-07-27-map1",
@@ -88,6 +34,24 @@
       "intent": "ORDER_INTENT_BUY_LONG",
       "price": "0.17",
       "qty": 9
+    },
+    {
+      "market": "astatc-cs2-unity-mta-2026-07-27-map1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.18",
+      "qty": 7
+    },
+    {
+      "market": "astatc-cs2-unity-mta-2026-07-27-map1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.21",
+      "qty": 6
+    },
+    {
+      "market": "astatc-cs2-unity-mta-2026-07-27-map1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.21",
+      "qty": 6
     },
     {
       "market": "astatc-cs2-unity-mta-2026-07-27-map1",
@@ -124,6 +88,42 @@
       "intent": "ORDER_INTENT_BUY_LONG",
       "price": "0.04",
       "qty": 66
+    },
+    {
+      "market": "astatc-cs2-unity-mta-2026-07-27-map2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.04",
+      "qty": 31
+    },
+    {
+      "market": "astatc-cs2-unity-mta-2026-07-27-map2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.23",
+      "qty": 5
+    },
+    {
+      "market": "astatc-cs2-unity-mta-2026-07-27-map2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.23",
+      "qty": 5
+    },
+    {
+      "market": "aec-lol-ap-bld-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.63",
+      "qty": 3
+    },
+    {
+      "market": "aec-lol-ap-bld-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.59",
+      "qty": 1
+    },
+    {
+      "market": "aec-lol-ap-bld-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.62",
+      "qty": 2
     }
   ]
 }
