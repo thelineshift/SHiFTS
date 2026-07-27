@@ -14699,7 +14699,7 @@
       "qty": 5,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T12:30:18Z"
     },
     {
@@ -14715,7 +14715,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T12:35:18Z"
     },
     {
@@ -14731,7 +14731,7 @@
       "qty": 2,
       "market_slug": "aec-mlb-col-sd-2026-07-29",
       "outcome": "San Diego Padres",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T12:35:19Z"
     }
   ],
