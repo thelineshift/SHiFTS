@@ -12086,8 +12086,11 @@
       "qty": 95,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T16:44:48Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T16:44:48Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.39,
@@ -12288,8 +12291,11 @@
       "qty": 66,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:09:46Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:09:46Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -12391,8 +12397,11 @@
       "qty": 66,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T17:34:46Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T17:34:46Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.9,
@@ -12662,8 +12671,11 @@
       "qty": 31,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T18:04:46Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T18:04:46Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.59,
@@ -12791,8 +12803,11 @@
       "qty": 6,
       "market_slug": "astatc-cs2-unity-mta-2026-07-27-map2",
       "outcome": "UNiTY esports",
-      "status": "resting",
-      "ts": "2026-07-26T20:29:50Z"
+      "status": "unfilled",
+      "ts": "2026-07-26T20:29:50Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.95,
