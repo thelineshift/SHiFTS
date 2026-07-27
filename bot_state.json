@@ -9041,106 +9041,13 @@
       "qty": 2,
       "market_slug": "aec-lol-bfx-gen-2026-07-27",
       "outcome": "BNK FEARX",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-25T18:11:39Z",
-      "price_path": [
-        {
-          "ts": 1785077384,
-          "px": 0.5
-        },
-        {
-          "ts": 1785079198,
-          "px": 0.51
-        },
-        {
-          "ts": 1785085413,
-          "px": 0.5
-        },
-        {
-          "ts": 1785089657,
-          "px": 0.49
-        },
-        {
-          "ts": 1785091458,
-          "px": 0.48
-        },
-        {
-          "ts": 1785093258,
-          "px": 0.48
-        },
-        {
-          "ts": 1785095658,
-          "px": 0.46
-        },
-        {
-          "ts": 1785100459,
-          "px": 0.42
-        },
-        {
-          "ts": 1785102262,
-          "px": 0.42
-        },
-        {
-          "ts": 1785105258,
-          "px": 0.4
-        },
-        {
-          "ts": 1785107059,
-          "px": 0.4
-        },
-        {
-          "ts": 1785109219,
-          "px": 0.39
-        },
-        {
-          "ts": 1785111020,
-          "px": 0.32
-        },
-        {
-          "ts": 1785113171,
-          "px": 0.32
-        },
-        {
-          "ts": 1785114979,
-          "px": 0.33
-        },
-        {
-          "ts": 1785117371,
-          "px": 0.33
-        },
-        {
-          "ts": 1785119171,
-          "px": 0.33
-        },
-        {
-          "ts": 1785120975,
-          "px": 0.34
-        },
-        {
-          "ts": 1785123375,
-          "px": 0.34
-        },
-        {
-          "ts": 1785126371,
-          "px": 0.34
-        },
-        {
-          "ts": 1785128172,
-          "px": 0.34
-        },
-        {
-          "ts": 1785129972,
-          "px": 0.27
-        },
-        {
-          "ts": 1785132371,
-          "px": 0.21
-        },
-        {
-          "ts": 1785134175,
-          "px": 0.03
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T06:46:15Z",
+      "pnl": -1.26,
+      "autopsy": "model 73% vs market 63% missed \u2014 logged for the playbook review. Taken 0.63, slid to 0.03 before the result \u2014 the number ran 60\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.6,
@@ -13612,6 +13519,10 @@
         {
           "ts": 1785132974,
           "px": 0.43
+        },
+        {
+          "ts": 1785134780,
+          "px": 0.35
         }
       ]
     },
@@ -13838,6 +13749,10 @@
         },
         {
           "ts": 1785132974,
+          "px": 0.98
+        },
+        {
+          "ts": 1785134780,
           "px": 0.98
         }
       ]
@@ -14112,8 +14027,8 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 14,
-    "losses": 25,
-    "pnl": 21.14,
+    "losses": 26,
+    "pnl": 19.88,
     "trades": 182,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-06",
@@ -14130,7 +14045,7 @@
       ],
       "EDGE": [
         9,
-        14,
+        15,
         0
       ],
       "LIVE-BET": [
@@ -14143,14 +14058,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-25T17:51:21Z",
-      "kind": "ARB",
-      "outcome": "SC Schwarz-Wei\u00df Bregenz",
-      "result": "WIN",
-      "pnl": 5.89,
-      "lesson": "+$5.89 \u2014 book was complete and both legs settled as priced; arb math did its job."
-    },
     {
       "ts": "2026-07-25T19:18:02Z",
       "kind": "EDGE",
@@ -14382,6 +14289,14 @@
       "result": "WIN",
       "pnl": 3.65,
       "lesson": "+$3.65 \u2014 model 50% vs market 23% was real edge; thesis held. Taken 0.23, slid to 0.78 before the result \u2014 the number ran 55\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-27T06:46:15Z",
+      "kind": "EDGE",
+      "outcome": "BNK FEARX",
+      "result": "LOSS",
+      "pnl": -1.26,
+      "lesson": "model 73% vs market 63% missed \u2014 logged for the playbook review. Taken 0.63, slid to 0.03 before the result \u2014 the number ran 60\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
