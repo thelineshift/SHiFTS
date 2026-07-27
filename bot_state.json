@@ -113,6 +113,15 @@
       "units": -1.5,
       "score": "BNK FearX Youth 0-1 Gen.G \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "ex-rustec-ml-0727",
+      "desc": "ex-RUSTEC ML",
+      "odds": -178,
+      "result": "WIN",
+      "units": 0.84,
+      "score": "ex-RUSTEC 2-0 Entropy \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785135370.0936625,
