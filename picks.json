@@ -1058,7 +1058,13 @@
       "opp": "St. Louis Cardinals",
       "analysis": "59-46 overall, 29-24 on the road \u2014 our 53% vs book 51% (no-vig) | \ud83d\udcc8 **Market angle:** 59-46 overall, 29-24 on the road \u2014 our 53% vs book 51% (no-vig). The number's off by **2 points** \u2014 this is where CLV hunters eat.",
       "awayTeam": "Chicago Cubs",
-      "homeTeam": "St. Louis Cardinals"
+      "homeTeam": "St. Louis Cardinals",
+      "live_odds": {
+        "home_ml": -106,
+        "away_ml": -114,
+        "total": 9.5,
+        "ts": 1785141969
+      }
     },
     {
       "id": "2-leg-parlay-0727-lock",
@@ -1106,7 +1112,13 @@
       "opp": "Boston Red Sox",
       "analysis": "44-61 overall, 20-30 at home \u2014 our 39% vs book 38% (no-vig) | \ud83e\udde0 **The read:** 44-61 overall, 20-30 at home \u2014 our 39% vs book 38% (no-vig). Model makes Athletics **39%** \u2014 books imply **40%**. SHiFT presses the gap.",
       "homeTeam": "Athletics",
-      "awayTeam": "Boston Red Sox"
+      "awayTeam": "Boston Red Sox",
+      "live_odds": {
+        "home_ml": 149,
+        "away_ml": -182,
+        "total": 9.5,
+        "ts": 1785141969
+      }
     }
   ]
 }
