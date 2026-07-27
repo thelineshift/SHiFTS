@@ -14649,6 +14649,22 @@
       "outcome": "San Diego Padres",
       "status": "resting",
       "ts": "2026-07-27T12:16:54Z"
+    },
+    {
+      "price": 0.57,
+      "short": true,
+      "stake": 1.71,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 57% \u2014 10% edge, half-Kelly",
+      "order_id": "BGFP5ZB5E9ND",
+      "qty": 3,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-27T12:20:16Z"
     }
   ],
   "pm_stats": {
@@ -14656,7 +14672,7 @@
     "wins": 14,
     "losses": 31,
     "pnl": 7.76,
-    "trades": 225,
+    "trades": 226,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
