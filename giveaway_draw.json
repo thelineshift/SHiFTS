@@ -29,8 +29,13 @@
       "discord": "sanmonmo",
       "discord_id": "852827725777600524",
       "idx": 30,
-      "status": "paying",
-      "claimed_at": "2026-07-27T12:36:37Z"
+      "status": "paid",
+      "claimed_at": "2026-07-27T12:36:37Z",
+      "paid_tx": "3rwDvoohXuiVVbt9RkqDBXr5fxt39XzAs8JLm82wunoFHou7hAQSRTRabswJ1NBu8J2RWtk8AdWX76QSygBYs5Mx",
+      "sol_amount": 0.1953,
+      "sol_price": 76.82,
+      "paid_at": "2026-07-27T12:59:47Z",
+      "paid_addr": "Bgg9GBKW9S2HgXfPKKqdWDQVQPyHJuxhz5sSr1KDicq5"
     }
   ],
   "voided": [
