@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.6'  # 24h CLAIM LAW + miss-proof draw gate (owner decree 2026-07-27)
+BOT_VERSION = '9.24.7'  # INSTANT PAYOUT LAW: auto-DM winners, SOL address in -> paid on-chain now
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -722,6 +722,25 @@ def make_client(privileged=True):
             if message.author.bot:
                 return
             if message.guild is None:
+                # INSTANT PAYOUT LAW (owner decree 2026-07-27): a giveaway winner's DM is
+                # prize business first — claim it, and if it carries a SOL address, pay NOW.
+                try:
+                    gd_dm = await asyncio.to_thread(gh_get_json_ref, GW_CLAIM_FILE, QUEUE_BRANCH)
+                    w_dm = next((w for w in (gd_dm or {}).get('winners') or []
+                                 if w.get('discord_id') == str(message.author.id)
+                                 and w.get('status') in ('pending', 'claimed', 'paying')), None)
+                    if w_dm is not None:
+                        if w_dm.get('status') == 'pending':
+                            w_dm['status'] = 'claimed'  # any DM from a winner = response, claim satisfied
+                            w_dm['claimed_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+                            await _gw_save_draw(gd_dm, 'claim via DM @' + w_dm.get('handle', '?'))
+                        if await _gw_try_payout(message, w_dm, gd_dm):
+                            return
+                        if w_dm.get('status') != 'paying':
+                            await message.channel.send(f"🎁 You're a **${w_dm.get('prize')} winner** — send your **Solana address** right here and the prize ships on-chain immediately. ⚡")
+                        return
+                except Exception as _pe:
+                    print('gw payout dm:', _pe)
                 # DM TICKET: private intake — relayed to the ops lab, never shown publicly.
                 # This replaces open issues-room posts for anything sensitive.
                 try:
@@ -7064,6 +7083,7 @@ async def run_giveaway_draw(g0):
             await gch.send(f"{medal} **{rank.upper()} — ${prize} SOL: {_gw_ment(rec)} (@{rec['handle']})** 🎉\n"
                            f"{vline} {cand.get('mult', 1)}x ticket(s) in a pool of {gd['pool_size']}.\n"
                            f"⏰ **Claim within 24 hours — reply right here.** No response = this prize redraws. ⚡")
+        await _gw_dm_winner(rec)  # INSTANT PAYOUT LAW: auto-DM the moment they're drawn
     await _gw_save_draw(gd, 'giveaway draw ' + gd['draw_id'])
 
 async def giveaway_claim_check_message(message):
@@ -7085,9 +7105,12 @@ async def giveaway_claim_check_message(message):
     hit['status'] = 'claimed'
     hit['claimed_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
     await _gw_save_draw(gd, 'giveaway claim @' + hit.get('handle', '?'))
+    if await _gw_try_payout(message, hit, gd):  # pasted the address right here — pay instantly
+        return True
+    await _gw_dm_winner(hit)  # auto-DM: address goes in DMs, prize ships on receipt
     medal = '🥇' if hit.get('rank') == 'grand' else '🥈'
     await message.channel.send(f"{message.author.mention} {medal} **CLAIMED — ${hit.get('prize')} SOL is yours.** "
-                               f"DM us your SOL address and the prize ships on-chain. ⚡")
+                               f"Check your DMs — send your SOL address there and you're paid **immediately**. ⚡")
     return True
 
 @tasks.loop(seconds=300)
@@ -7100,6 +7123,15 @@ async def giveaway_claim_watch():
         if not gd:
             return
         pending = [w for w in (gd.get('winners') or []) if w.get('status') == 'pending']
+        # INSTANT PAYOUT LAW: every pending winner gets the auto-DM (covers winners drawn
+        # before this law shipped — they get DM'd on this tick) — then the 24h check.
+        dm_changed = False
+        for w in pending:
+            if not w.get('dm_sent'):
+                await _gw_dm_winner(w)
+                dm_changed = True
+        if dm_changed:
+            await _gw_save_draw(gd, 'winner DMs sent')
         if not pending:
             return
         now = time.time()
@@ -7143,10 +7175,118 @@ async def giveaway_claim_watch():
                 await gch.send(f"⏰ 24 hours, no response from @{w.get('handle')} — the ${nw.get('prize')} prize **redraws**…\n"
                                f"{medal} **NEW {str(nw.get('rank')).upper()} WINNER: {_gw_ment(nw)} (@{nw['handle']})** 🎉\n"
                                f"Same house rule: **24 hours to reply right here** or it redraws again. ⚡")
+            await _gw_dm_winner(nw)  # INSTANT PAYOUT LAW: auto-DM redrawn winners too
         if changed:
             await _gw_save_draw(gd, 'giveaway redraw round ' + str(gd.get('round')))
     except Exception as e:
         print('giveaway_claim_watch error:', e)
+
+# ============================ INSTANT PAYOUT LAW (owner decree 2026-07-27) ============================
+# Winners are auto-DMed the moment they're drawn; when they send a SOL address, the
+# prize ships on-chain IMMEDIATELY from the GIVEAWAY wallet (never the ops wallet —
+# 7/27: ops holds 0.00 SOL, the prize pot lives in the giveaway wallet).
+GW_SOL_RE = re.compile(r'\b([1-9A-HJ-NP-Za-km-z]{32,44})\b')
+
+async def _gw_dm_winner(w):
+    """Auto-DM a drawn winner: prize, reply-with-address instructions, 24h clock."""
+    did = w.get('discord_id')
+    if not did:
+        return False
+    try:
+        u = await client.fetch_user(int(did))
+        medal = '🥇' if w.get('rank') == 'grand' else '🥈'
+        await u.send(f"{medal} **YOU WON ${w.get('prize')} in SOL — SHiFT's giveaway!** 🎉\n"
+                     f"Reply **right here in this DM** with your Solana address and the prize ships on-chain **immediately**.\n"
+                     f"⏰ The 24-hour clock runs from the draw — no response anywhere means the prize redraws. ⚡")
+        w['dm_sent'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        return True
+    except Exception as e:
+        w['dm_sent'] = 'blocked'
+        print('gw dm:', str(e)[:100])
+        return False
+
+async def _gw_pay_prize(prize_usd, addr):
+    """USD-denominated prize -> SOL at spot, sent from the giveaway wallet.
+    Returns (sig, sol_amt, px, None) or (None, None, None, err)."""
+    try:
+        from solders.keypair import Keypair
+        from solders.pubkey import Pubkey
+        from solders.system_program import transfer, TransferParams
+        from solders.message import Message as SMsg
+        from solders.transaction import Transaction
+        from solders.hash import Hash as SHash
+        dest = Pubkey.from_string(str(addr).strip())  # raises on a bad address
+    except Exception:
+        return None, None, None, 'that doesn\'t look like a valid Solana address — double-check and resend'
+    def _rpc(method, params):
+        body = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': method, 'params': params}).encode()
+        req = urllib.request.Request('https://solana-rpc.publicnode.com', data=body,
+                                     headers={'Content-Type': 'application/json', 'User-Agent': 'shift-ops'})
+        return json.loads(urllib.request.urlopen(req, timeout=20).read())
+    try:
+        pxr = await asyncio.to_thread(_http_json, 'https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd')
+        px = float(pxr['solana']['usd'])
+        if px <= 0:
+            raise ValueError('bad price')
+    except Exception as e:
+        return None, None, None, 'price feed hiccup: ' + str(e)[:80]
+    sol_amt = round(float(prize_usd) / px, 4)
+    if sol_amt <= 0 or sol_amt > 50:
+        return None, None, None, 'amount out of bounds'
+    try:
+        sec = await asyncio.to_thread(gh_get_json_ref, 'wallets_secret.json', QUEUE_BRANCH)
+        kp = Keypair.from_bytes(bytes.fromhex(sec['solana_giveaway']['secret_hex']))
+        bal = await asyncio.to_thread(_rpc, 'getBalance', [str(kp.pubkey())])
+        lam = int(bal['result']['value'])
+        need = int(sol_amt * 1_000_000_000) + 10000
+        if lam < need:
+            return None, None, None, f'prize wallet is short right now ({lam / 1e9:.4f} SOL on hand) — the captain has been pinged, your prize is locked in'
+        bh = await asyncio.to_thread(_rpc, 'getLatestBlockhash', [{'commitment': 'finalized'}])
+        blockhash = SHash.from_string(bh['result']['value']['blockhash'])
+        ix = transfer(TransferParams(from_pubkey=kp.pubkey(), to_pubkey=dest, lamports=int(sol_amt * 1_000_000_000)))
+        tx = Transaction([kp], SMsg([ix], kp.pubkey()), blockhash)
+        import base64 as _b64
+        sig = await asyncio.to_thread(_rpc, 'sendTransaction', [_b64.b64encode(bytes(tx)).decode(), {'encoding': 'base64'}])
+        return sig['result'], sol_amt, px, None
+    except Exception as e:
+        return None, None, None, str(e)[:160]
+
+async def _gw_try_payout(message, w, gd):
+    """Winner sent a SOL address -> pay immediately. True = handled; False = no address found."""
+    m = GW_SOL_RE.search(message.content or '')
+    if not m:
+        return False
+    if w.get('status') == 'paid':
+        await message.channel.send("Already paid — check your wallet (tx is in your DMs). ⚡")
+        return True
+    if w.get('status') == 'paying':
+        await message.channel.send("Already processing your payout — give it a minute. ⏳")
+        return True
+    prev = w.get('status') or 'pending'
+    w['status'] = 'paying'  # payout lock: exactly one in-flight send per prize, ever
+    await _gw_save_draw(gd, 'payout lock @' + w.get('handle', '?'))
+    sig, amt, px, err = await _gw_pay_prize(w.get('prize'), m.group(1))
+    if err:
+        w['status'] = prev
+        await _gw_save_draw(gd, 'payout failed @' + w.get('handle', '?'))
+        await message.channel.send(f"❌ Payout hiccup: {err}\nYour prize stays locked in — try again in a few minutes. ⚡")
+        return True
+    now_s = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+    w.update(status='paid', paid_tx=sig, sol_amount=amt, sol_price=px,
+             paid_at=now_s, paid_addr=m.group(1), claimed_at=w.get('claimed_at') or now_s)
+    await _gw_save_draw(gd, f"PAID ${w.get('prize')} @{w.get('handle', '?')}")
+    await message.channel.send(f"✅ **PAID — {amt} SOL** (${w.get('prize')} at ${px:,.0f}/SOL)\ntx: https://solscan.io/tx/{sig} ⚡")
+    try:
+        g0 = client.guilds[0] if client.guilds else None
+        gch = find_channel(g0, 'giveaway') if g0 else None
+        lab = find_channel(g0, 'shift-lab') if g0 else None
+        if gch and getattr(message.channel, 'id', None) != gch.id:
+            await gch.send(f"💸 {_gw_ment(w)} (@{w.get('handle')}) has been **PAID** — ${w.get('prize')} prize shipped on-chain. ⚡")
+        if lab:
+            await lab.send(f"💸 giveaway payout: ${w.get('prize')} -> {amt} SOL (px {px}) to `{m.group(1)}` (@{w.get('handle')}) tx {sig}")
+    except Exception as e:
+        print('payout announce:', e)
+    return True
 
 
 def _whale_teams_in_play(picks):
