@@ -666,10 +666,10 @@
       "awayTeam": "Cleveland Guardians",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -164,
-        "away_ml": 136,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 8.5,
-        "ts": 1785177267
+        "ts": 1785182667
       }
     },
     {
