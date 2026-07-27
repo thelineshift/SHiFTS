@@ -14652,6 +14652,22 @@
       "outcome": "Washington",
       "status": "open",
       "ts": "2026-07-27T12:06:48Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 60% \u2014 7% edge, half-Kelly",
+      "order_id": "BGFM4HYGA9NJ",
+      "qty": 2,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-27T12:11:47Z"
     }
   ],
   "pm_stats": {
@@ -14659,7 +14675,7 @@
     "wins": 14,
     "losses": 29,
     "pnl": 15.33,
-    "trades": 223,
+    "trades": 224,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
