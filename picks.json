@@ -692,10 +692,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 151,
-        "away_ml": -184,
+        "home_ml": 160,
+        "away_ml": -195,
         "total": 7.5,
-        "ts": 1785180867
+        "ts": 1785188067
       },
       "last_alert_odds": 157
     },
@@ -716,10 +716,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -110,
-        "away_ml": -109,
+        "home_ml": -112,
+        "away_ml": -108,
         "total": 9.0,
-        "ts": 1785179067
+        "ts": 1785188067
       }
     },
     {
@@ -799,10 +799,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 123,
-        "away_ml": -149,
+        "home_ml": 119,
+        "away_ml": -144,
         "total": 8.5,
-        "ts": 1785168268
+        "ts": 1785188067
       },
       "last_alert_odds": 129
     },
@@ -1072,10 +1072,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": 103,
-        "away_ml": -125,
+        "home_ml": 102,
+        "away_ml": -123,
         "total": 9.5,
-        "ts": 1785173668
+        "ts": 1785188068
       },
       "last_alert_odds": -131
     },
