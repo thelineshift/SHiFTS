@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.11'  # STALE-SWEEP LAW: dead bids cancelled, cash back to work (owner decree)
+BOT_VERSION = '9.24.12'  # WINNERS-ONLY LAW: X gets green results only, Discord gets everything
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -5320,18 +5320,25 @@ async def pm_trader():
                 print('[trader] desk.json:', _de)
             if et_now.tm_hour == 8 and stats.get('last_recap') != today_et:
                 stats['last_recap'] = today_et
-                pnl = stats.get('pnl', 0.0)
+                # WINNERS-ONLY LAW (owner decree 2026-07-27): X gets winning results ONLY —
+                # the recap posts on GREEN days (today P&L > 0, net-positive overall),
+                # win-framed (no loss column). All results still post to Discord receipts.
                 _dep11 = float(stats.get('deposits') or 64.0)
-                _money11 = (f"💰 account ${bal['balance']:.2f} · net {'+' if (bal['balance'] - _dep11) >= 0 else ''}${bal['balance'] - _dep11:.2f} on ${_dep11:.2f} in"
-                            if bal else f"net {'+' if pnl >= 0 else ''}${pnl:.2f} realized on ${_dep11:.2f} in")
-                xt_recap = (f"📈 SHiFT DESK — {today_et}\n"
-                            f"{stats.get('wins', 0)}-{stats.get('losses', 0)} · trades {stats.get('trades', 0)} · open {open_n}\n"
-                            f"{_money11}\n"
-                            f"Real money, public receipts. ⚡\n💎 {STORE_PAGE}")
-                try:
-                    await asyncio.to_thread(x_post, xt_recap[:270], None)
-                except Exception:
-                    pass
+                _acct11 = float(stats.get('account') or (bal or {}).get('balance') or _dep11)
+                _anchor11 = float(stats.get('day_anchor') or _acct11)
+                _today_pnl = _acct11 - _anchor11
+                _net11 = _acct11 - _dep11
+                if _today_pnl > 0 and _net11 > 0:
+                    _pl1, _pl2, _pl3 = _desk_portfolio_lines(stats, st)
+                    xt_recap = (f"✅ SHiFT DESK — green day {today_et}\n\n"
+                                f"{_pl1}\n{_pl2}\n{_pl3}\n\n"
+                                f"Real money, public receipts. ⚡\n💎 {STORE_PAGE}")
+                    try:
+                        await asyncio.to_thread(x_post, xt_recap[:400], None)
+                    except Exception:
+                        pass
+                else:
+                    print(f"[trader] X recap skipped (red day / net negative) — Discord receipts carry it, per WINNERS-ONLY LAW")
             await asyncio.to_thread(gh_put, 'bot_state.json', st, 'desk recap')
     except Exception as e:
         print('[trader]', e)
