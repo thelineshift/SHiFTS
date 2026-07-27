@@ -16278,7 +16278,13 @@
       "market_slug": "aec-valorant-tmo-hbs-2026-07-28",
       "outcome": "Habos Babos",
       "status": "open",
-      "ts": "2026-07-27T16:50:12Z"
+      "ts": "2026-07-27T16:50:12Z",
+      "price_path": [
+        {
+          "ts": 1785171271,
+          "px": 0.47
+        }
+      ]
     }
   ],
   "pm_stats": {
