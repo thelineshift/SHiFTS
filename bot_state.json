@@ -5,30 +5,31 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 16:04 UTC",
+    "at": "2026-07-27 20:34 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-2": "2026-07-27 16:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 15:44 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 16:01 UTC",
+    "\ud83c\udfaffree-pick-2-2": "2026-07-27 20:01 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 19:44 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 20:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 13:13 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 16:04 UTC",
+    "at": "2026-07-27 20:34 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
-      "over-7.0-0726 | Over 7.0 -110 | tier=sharp"
+      "over-7.0-0726 | Over 7.0 -110 | tier=sharp",
+      "lavked-ml-0727 | Lavked ML -150 | tier=sharp"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 16:04 UTC",
+    "at": "2026-07-27 20:34 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 16:04 UTC",
+    "at": "2026-07-27 20:34 UTC",
     "flags": []
   },
   "bot_version": "9.24.14",
@@ -13224,6 +13225,10 @@
       "ts": "2026-07-26T20:55:22Z",
       "price_path": [
         {
+          "ts": 1785130577,
+          "px": 0.44
+        },
+        {
           "ts": 1785132974,
           "px": 0.43
         },
@@ -13313,10 +13318,6 @@
         },
         {
           "ts": 1785182668,
-          "px": 0.28
-        },
-        {
-          "ts": 1785184468,
           "px": 0.28
         }
       ]
@@ -14353,10 +14354,6 @@
         {
           "ts": 1785182669,
           "px": 0.17
-        },
-        {
-          "ts": 1785184469,
-          "px": 0.17
         }
       ]
     },
@@ -14462,10 +14459,6 @@
         },
         {
           "ts": 1785182669,
-          "px": 0.46
-        },
-        {
-          "ts": 1785184469,
           "px": 0.46
         }
       ]
@@ -14659,10 +14652,6 @@
         },
         {
           "ts": 1785182669,
-          "px": 0.425
-        },
-        {
-          "ts": 1785184469,
           "px": 0.425
         }
       ]
@@ -15609,10 +15598,6 @@
         },
         {
           "ts": 1785182670,
-          "px": 0.31
-        },
-        {
-          "ts": 1785184470,
           "px": 0.31
         }
       ]
