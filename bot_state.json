@@ -14354,20 +14354,36 @@
       "outcome": "Washington",
       "status": "resting",
       "ts": "2026-07-27T11:11:58Z"
+    },
+    {
+      "price": 0.09,
+      "short": true,
+      "stake": 2.88,
+      "kind": "EDGE",
+      "p_model": 0.4,
+      "event": "Deer Gaming vs. Epic Avalanche",
+      "ev_start": "2026-07-27T16:00:00Z",
+      "reason": "model 40% vs market 9% \u2014 31% edge, half-Kelly",
+      "order_id": "BGEWMQ29T9P2",
+      "qty": 32,
+      "market_slug": "aec-lol-deer-ea-2026-07-27",
+      "outcome": "Epic Avalanche",
+      "status": "open",
+      "ts": "2026-07-27T11:16:51Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 15,
+    "wins": 14,
     "losses": 29,
-    "pnl": 17.16,
-    "trades": 209,
+    "pnl": 15.33,
+    "trades": 210,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-10",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 125.18,
-    "net": 61.18,
+    "account": 105.7,
+    "net": 41.7,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -14376,7 +14392,7 @@
         0
       ],
       "EDGE": [
-        10,
+        9,
         18,
         0
       ],
@@ -14390,6 +14406,14 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
+    {
+      "ts": "2026-07-26T00:10:27Z",
+      "kind": "LIVE-BET",
+      "outcome": "Isurus",
+      "result": "LOSS",
+      "pnl": -3.0,
+      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.60, rode to 0.94 before the result \u2014 beat the number by 34\u00a2 \u2705 (cashed out early at $1.20)"
+    },
     {
       "ts": "2026-07-26T00:40:26Z",
       "kind": "EDGE",
@@ -14621,14 +14645,6 @@
       "result": "LOSS",
       "pnl": -1.11,
       "lesson": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.21 before the result \u2014 the number ran 16\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-27T11:16:19Z",
-      "kind": "EDGE",
-      "outcome": "Nongshim Red Force",
-      "result": "WIN",
-      "pnl": 1.83,
-      "lesson": "+$1.83 \u2014 model 50% vs market 39% was real edge; thesis held. Taken 0.39, rode to 0.09 before the result \u2014 beat the number by 30\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -14712,7 +14728,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785150979.8021135,
+  "dep_checked_ts": 1785143772.2274187,
   "x_bio_v": 2,
   "op_cool_until": 1785096924.2504044
 }
