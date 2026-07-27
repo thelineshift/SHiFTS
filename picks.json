@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T08:16:12Z",
+  "updated": "2026-07-27T08:36:12Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -899,7 +899,10 @@
       "opp": "Gen.G",
       "analysis": "2-3 last 5 (beat Dplus KIA, DN SOOPers) (lost to Kiwoom DRX) vs 1-4 \u2014 live Pinnacle line +123 (our 73% vs book 41%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Dplus KIA, DN SOOPers) (lost to Kiwoom DRX) vs 1-4 \u2014 live Pinnacle line +123 (our 73% vs book 41%). That's a **32-point** gap over Gen.G the number h",
       "awayTeam": "KT Rolster",
-      "homeTeam": "Gen.G"
+      "homeTeam": "Gen.G",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "KT Rolster 0-1 Gen.G \u00b7 final"
     },
     {
       "id": "over-8.0-0727",
