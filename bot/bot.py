@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.13'  # WINNERS-ONLY LAW extended: picks board recaps win-gated too
+BOT_VERSION = '9.24.14'  # WINNERS-ONLY LAW sealed: x_drainer drains losers silently, X = wins only
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -6755,6 +6755,14 @@ async def x_drainer():
             print('[drainer] ad posted')
             return
         r = queue[0]
+        # WINNERS-ONLY LAW (owner decree 2026-07-27): "all losers to not be posted to X,
+        # only discord — only winning bets should be posted on X." Non-WIN results drain
+        # silently (no X post, no pacing stamp) — Discord receipts carry every result.
+        if r.get('result') != 'WIN':
+            state['unannounced_results'] = queue[1:]
+            await asyncio.to_thread(gh_put, 'bot_state.json', state, f"x receipt skipped (non-WIN {r.get('result')}): {r.get('id')}")
+            print(f"x_drainer: skipped {r.get('id')} ({r.get('result')}) — losers stay on Discord, per WINNERS-ONLY LAW")
+            return
         picks_doc = await asyncio.to_thread(gh_get_json_ref, 'picks.json', 'main')
         chal_doc = await asyncio.to_thread(gh_get_json_ref, 'challenge.json', 'main') if r.get('tier') == 'challenge' else None
         receipt = x_receipt_text(r, picks_doc.get('picks'), chal_doc)
