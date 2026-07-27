@@ -15033,7 +15033,7 @@
       "qty": 4,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T11:26:52Z",
       "price_path": [
         {
@@ -15044,7 +15044,10 @@
           "ts": 1785162072,
           "px": 0.48
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.6,
@@ -15059,7 +15062,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T11:31:50Z",
       "price_path": [
         {
@@ -15070,7 +15073,10 @@
           "ts": 1785162072,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.68,
