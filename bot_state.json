@@ -14195,7 +14195,7 @@
       "qty": 5,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T10:16:50Z"
     },
     {
@@ -14227,7 +14227,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-27T10:21:49Z"
     }
   ],
