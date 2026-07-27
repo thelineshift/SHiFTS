@@ -5,18 +5,18 @@
     "posted+pinned in #\ud83c\udf81giveaway"
   ],
   "time_audit": {
-    "at": "2026-07-27 11:46 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-2": "2026-07-27 08:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 11:16 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 11:00 UTC",
+    "\ud83c\udfaffree-pick-2-2": "2026-07-27 12:01 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 12:16 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 12:19 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-27 11:45 UTC"
+    "\ud83c\udf81giveaway": "2026-07-27 12:15 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 11:46 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,14 +24,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 11:46 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 11:46 UTC",
+    "at": "2026-07-27 12:19 UTC",
     "flags": []
   },
-  "bot_version": "9.24.5",
+  "bot_version": "9.24.6",
   "unannounced_results": [
     {
       "id": "milwaukee-brewers-ml-0725",
@@ -14064,18 +14064,13 @@
       "qty": 15,
       "market_slug": "aec-cs2-pure-atp-2026-07-27",
       "outcome": "Atputies",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T10:11:50Z",
-      "price_path": [
-        {
-          "ts": 1785149784,
-          "px": 0.23
-        },
-        {
-          "ts": 1785152776,
-          "px": 0.46
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T12:19:45Z",
+      "pnl": -3.45,
+      "autopsy": "model 50% vs market 23% missed \u2014 logged for the playbook review. Taken 0.23, slid to 0.46 before the result \u2014 the number ran 23\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.6,
@@ -14114,6 +14109,10 @@
         },
         {
           "ts": 1785152776,
+          "px": 0.16
+        },
+        {
+          "ts": 1785154788,
           "px": 0.16
         }
       ]
@@ -14155,6 +14154,10 @@
         },
         {
           "ts": 1785152776,
+          "px": 0.46
+        },
+        {
+          "ts": 1785154788,
           "px": 0.46
         }
       ]
@@ -14245,6 +14248,10 @@
         {
           "ts": 1785152776,
           "px": 0.43
+        },
+        {
+          "ts": 1785154788,
+          "px": 0.43
         }
       ]
     },
@@ -14269,6 +14276,10 @@
         },
         {
           "ts": 1785152776,
+          "px": 0.94
+        },
+        {
+          "ts": 1785154788,
           "px": 0.94
         }
       ]
@@ -14520,6 +14531,10 @@
         {
           "ts": 1785152776,
           "px": 0.505
+        },
+        {
+          "ts": 1785154788,
+          "px": 0.505
         }
       ]
     },
@@ -14639,8 +14654,8 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 14,
-    "losses": 30,
-    "pnl": 11.21,
+    "losses": 31,
+    "pnl": 7.76,
     "trades": 225,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
@@ -14657,7 +14672,7 @@
       ],
       "EDGE": [
         9,
-        19,
+        20,
         0
       ],
       "LIVE-BET": [
@@ -14670,22 +14685,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-26T00:10:27Z",
-      "kind": "LIVE-BET",
-      "outcome": "Isurus",
-      "result": "LOSS",
-      "pnl": -3.0,
-      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays. Taken 0.60, rode to 0.94 before the result \u2014 beat the number by 34\u00a2 \u2705 (cashed out early at $1.20)"
-    },
-    {
-      "ts": "2026-07-26T00:40:26Z",
-      "kind": "EDGE",
-      "outcome": "LOUD",
-      "result": "LOSS",
-      "pnl": 0.0,
-      "lesson": "+$0.00 \u2014 model 50% vs market 44% was real edge; thesis held. Taken 0.44, rode to 0.06 before the result \u2014 beat the number by 38\u00a2 \u2705 (cashed out early at $1.76)"
-    },
     {
       "ts": "2026-07-26T10:50:26Z",
       "kind": "EDGE",
@@ -14917,6 +14916,14 @@
       "result": "LOSS",
       "pnl": -4.12,
       "lesson": "model 69% vs market 40% missed \u2014 logged for the playbook review. Taken 0.40, rode to 0.07 before the result \u2014 beat the number by 33\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T12:19:45Z",
+      "kind": "EDGE",
+      "outcome": "Atputies",
+      "result": "LOSS",
+      "pnl": -3.45,
+      "lesson": "model 50% vs market 23% missed \u2014 logged for the playbook review. Taken 0.23, slid to 0.46 before the result \u2014 the number ran 23\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
