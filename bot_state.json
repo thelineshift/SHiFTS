@@ -16163,6 +16163,53 @@
           "px": 0.535
         }
       ]
+    },
+    {
+      "price": 0.48,
+      "short": true,
+      "stake": 2.4,
+      "kind": "EDGE",
+      "p_model": 0.5663716814159292,
+      "event": "Arctic Pandas vs. Bulldog Esports",
+      "ev_start": "2026-07-27T18:00:00Z",
+      "reason": "model 57% vs market 48% \u2014 9% edge, half-Kelly",
+      "order_id": "BGKDS44G69P5",
+      "qty": 5,
+      "market_slug": "aec-lol-ap-bld-2026-07-27",
+      "outcome": "Bulldog Esports",
+      "status": "open",
+      "ts": "2026-07-27T16:40:10Z"
+    },
+    {
+      "price": 0.21,
+      "short": true,
+      "stake": 1.68,
+      "kind": "EDGE",
+      "p_model": 0.30434782608695654,
+      "event": "INTZ e-Sports vs. RMD Gaming",
+      "ev_start": "2026-07-27T23:00:00Z",
+      "reason": "model 30% vs market 21% \u2014 9% edge, half-Kelly",
+      "order_id": "BGKFVDENC9NJ",
+      "qty": 8,
+      "market_slug": "aec-lol-itz-rmd-2026-07-27",
+      "outcome": "RMD Gaming",
+      "status": "open",
+      "ts": "2026-07-27T16:40:12Z"
+    },
+    {
+      "price": 0.11,
+      "stake": 1.21,
+      "kind": "EDGE",
+      "p_model": 0.18133744855967082,
+      "event": "Toronto vs. Minnesota",
+      "ev_start": "2026-07-29T00:00:00Z",
+      "reason": "model 18% vs market 11% \u2014 7% edge, half-Kelly",
+      "order_id": "BGKDQFZTA9NZ",
+      "qty": 11,
+      "market_slug": "aec-wnba-tor-min-2026-07-28",
+      "outcome": "Toronto",
+      "status": "open",
+      "ts": "2026-07-27T16:40:13Z"
     }
   ],
   "pm_stats": {
@@ -16170,7 +16217,7 @@
     "wins": 18,
     "losses": 42,
     "pnl": -41.77,
-    "trades": 261,
+    "trades": 264,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-16",
     "deposits": 64.0,
