@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 19:34 UTC",
+    "at": "2026-07-27 16:04 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-27 16:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-27 18:34 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-27 19:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-27 15:44 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-27 16:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 13:13 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 19:34 UTC",
+    "at": "2026-07-27 16:04 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,11 +24,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 19:34 UTC",
+    "at": "2026-07-27 16:04 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 19:34 UTC",
+    "at": "2026-07-27 16:04 UTC",
     "flags": []
   },
   "bot_version": "9.24.14",
@@ -11926,106 +11926,13 @@
       "qty": 3,
       "market_slug": "aec-lol-vdn-ll-2026-07-27",
       "outcome": "Lundqvist Lightside",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T14:35:16Z",
-      "price_path": [
-        {
-          "ts": 1785129975,
-          "px": 0.43
-        },
-        {
-          "ts": 1785132375,
-          "px": 0.43
-        },
-        {
-          "ts": 1785134178,
-          "px": 0.43
-        },
-        {
-          "ts": 1785136574,
-          "px": 0.43
-        },
-        {
-          "ts": 1785138379,
-          "px": 0.43
-        },
-        {
-          "ts": 1785140776,
-          "px": 0.43
-        },
-        {
-          "ts": 1785142577,
-          "px": 0.07
-        },
-        {
-          "ts": 1785144977,
-          "px": 0.07
-        },
-        {
-          "ts": 1785149781,
-          "px": 0.07
-        },
-        {
-          "ts": 1785152773,
-          "px": 0.07
-        },
-        {
-          "ts": 1785154780,
-          "px": 0.05
-        },
-        {
-          "ts": 1785156581,
-          "px": 0.05
-        },
-        {
-          "ts": 1785158661,
-          "px": 0.05
-        },
-        {
-          "ts": 1785160507,
-          "px": 0.04
-        },
-        {
-          "ts": 1785162570,
-          "px": 0.06
-        },
-        {
-          "ts": 1785164669,
-          "px": 0.06
-        },
-        {
-          "ts": 1785166469,
-          "px": 0.06
-        },
-        {
-          "ts": 1785168282,
-          "px": 0.07
-        },
-        {
-          "ts": 1785170668,
-          "px": 0.06
-        },
-        {
-          "ts": 1785172468,
-          "px": 0.06
-        },
-        {
-          "ts": 1785174268,
-          "px": 0.07
-        },
-        {
-          "ts": 1785176068,
-          "px": 0.1
-        },
-        {
-          "ts": 1785177868,
-          "px": 0.07
-        },
-        {
-          "ts": 1785179668,
-          "px": 0.05
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T19:34:28Z",
+      "pnl": -1.22,
+      "autopsy": "model 50% vs market 40% missed \u2014 logged for the playbook review. Taken 0.40, rode to 0.05 before the result \u2014 beat the number by 35\u00a2 \u2705"
     },
     {
       "price": 0.7,
@@ -13719,10 +13626,6 @@
       "ts": "2026-07-26T22:09:53Z",
       "price_path": [
         {
-          "ts": 1785126376,
-          "px": 0.33
-        },
-        {
           "ts": 1785128177,
           "px": 0.33
         },
@@ -13813,6 +13716,10 @@
         {
           "ts": 1785178469,
           "px": 0.36
+        },
+        {
+          "ts": 1785180872,
+          "px": 0.37
         }
       ]
     },
@@ -14770,6 +14677,10 @@
         },
         {
           "ts": 1785178470,
+          "px": 0.94
+        },
+        {
+          "ts": 1785180873,
           "px": 0.94
         }
       ]
@@ -17091,6 +17002,10 @@
         {
           "ts": 1785178472,
           "px": 0.35
+        },
+        {
+          "ts": 1785180874,
+          "px": 0.34
         }
       ]
     }
@@ -17098,15 +17013,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 19,
-    "losses": 46,
-    "pnl": -49.03,
+    "losses": 47,
+    "pnl": -50.25,
     "trades": 269,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-18",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 143.36,
-    "net": 79.36,
+    "account": 142.14,
+    "net": 78.14,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -17116,7 +17031,7 @@
       ],
       "EDGE": [
         14,
-        32,
+        33,
         0
       ],
       "LIVE-BET": [
@@ -17136,14 +17051,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-26T20:24:18Z",
-      "kind": "EDGE",
-      "outcome": "Karmine Corp",
-      "result": "WIN",
-      "pnl": 11.59,
-      "lesson": "+$11.59 \u2014 model 73% vs market 39% was real edge; thesis held. Taken 0.39, rode to 0.34 before the result \u2014 beat the number by 5\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-26T21:44:26Z",
       "kind": "EDGE",
@@ -17375,6 +17282,14 @@
       "result": "LOSS",
       "pnl": -2.09,
       "lesson": "model 27% vs market 19% missed \u2014 logged for the playbook review. Taken 0.19, rode to 0.10 before the result \u2014 beat the number by 9\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T19:34:28Z",
+      "kind": "EDGE",
+      "outcome": "Lundqvist Lightside",
+      "result": "LOSS",
+      "pnl": -1.22,
+      "lesson": "model 50% vs market 40% missed \u2014 logged for the playbook review. Taken 0.40, rode to 0.05 before the result \u2014 beat the number by 35\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -17458,7 +17373,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785174870.92252,
+  "dep_checked_ts": 1785180868.6688259,
   "x_bio_v": 2,
   "op_cool_until": 1785096924.2504044
 }
