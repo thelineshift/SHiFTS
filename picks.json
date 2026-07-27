@@ -692,10 +692,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 163,
-        "away_ml": -199,
+        "home_ml": 167,
+        "away_ml": -205,
         "total": 7.5,
-        "ts": 1785189867
+        "ts": 1785191667
       },
       "last_alert_odds": 157
     },
@@ -716,10 +716,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -112,
-        "away_ml": -108,
-        "total": 9.0,
-        "ts": 1785188067
+        "home_ml": -114,
+        "away_ml": -105,
+        "total": 8.5,
+        "ts": 1785191667
       }
     },
     {
