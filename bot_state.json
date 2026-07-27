@@ -14420,6 +14420,38 @@
       "outcome": "Bulldog Esports",
       "status": "open",
       "ts": "2026-07-27T11:26:52Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 60% \u2014 7% edge, half-Kelly",
+      "order_id": "BGF3SXV9J9NM",
+      "qty": 2,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-27T11:31:50Z"
+    },
+    {
+      "price": 0.68,
+      "short": true,
+      "stake": 2.04,
+      "kind": "EDGE",
+      "p_model": 0.7663633422017689,
+      "event": "Connecticut vs. Washington",
+      "ev_start": "2026-07-28T23:30:00Z",
+      "reason": "model 77% vs market 68% \u2014 9% edge, half-Kelly",
+      "order_id": "BGF5962NG9NP",
+      "qty": 3,
+      "market_slug": "aec-wnba-conn-wsh-2026-07-28",
+      "outcome": "Washington",
+      "status": "open",
+      "ts": "2026-07-27T11:31:51Z"
     }
   ],
   "pm_stats": {
@@ -14427,7 +14459,7 @@
     "wins": 14,
     "losses": 29,
     "pnl": 15.33,
-    "trades": 213,
+    "trades": 215,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-10",
     "deposits": 64.0,
