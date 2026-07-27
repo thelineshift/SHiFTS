@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T14:57:05Z",
+  "updated": "2026-07-27T15:44:31Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1197,7 +1197,10 @@
       "opp": "WW Team",
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **10 points** of model edge, taken.",
       "awayTeam": "beznegativa",
-      "homeTeam": "WW Team"
+      "homeTeam": "WW Team",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "beznegativa 0-2 WW Team \u00b7 final"
     },
     {
       "id": "virtus.pro-ml-0727",
