@@ -16402,8 +16402,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-cs2-wc-mglz-2026-07-26",
-    "astatc-valorant-geng-rrq-2026-07-26-map1",
     "aec-lol-g2-kc-2026-07-26",
     "aec-cs2-btf-sawy-2026-07-26",
     "astatc-cs2-wc-mglz-2026-07-26-map2",
@@ -16461,7 +16459,9 @@
     "aec-valorant-him-roso-2026-07-27",
     "aec-lol-vksa-est-2026-07-28",
     "aec-lol-ktc-dkc-2026-07-28",
-    "aec-cs2-navij-mouzn-2026-07-27"
+    "aec-cs2-navij-mouzn-2026-07-27",
+    "aec-cs2-rush-hat-2026-07-27",
+    "aec-cs2-odk-paina-2026-07-27"
   ],
   "odds_api": {
     "month": "2026-07",
