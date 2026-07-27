@@ -1,5 +1,5 @@
 {
-  "ts": "2026-07-27T12:57:47Z",
+  "ts": "2026-07-27T13:12:47Z",
   "wallets": [
     {
       "chain": "solana",
@@ -7,8 +7,8 @@
       "label": "\ud83c\udf81 GIVEAWAY WALLET",
       "address": "5rw9dnpwi9ER6MQf3yL9obKyM3PSjxd4w9AvzqwW6nG3",
       "note": "weekly SOL giveaway prizes pay out from here",
-      "balance": 0.73984,
-      "usd": 56.85
+      "balance": 0.08883,
+      "usd": 6.81
     },
     {
       "chain": "solana",
