@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-27 14:21 UTC",
+    "at": "2026-07-27 14:29 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-27 13:13 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-27 14:21 UTC",
+    "at": "2026-07-27 14:29 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -24,14 +24,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-27 14:21 UTC",
+    "at": "2026-07-27 14:29 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-27 14:21 UTC",
+    "at": "2026-07-27 14:29 UTC",
     "flags": []
   },
-  "bot_version": "9.24.11",
+  "bot_version": "9.24.12",
   "unannounced_results": [
     {
       "id": "san-jose-earthquakes-ml-0725",
@@ -14250,7 +14250,7 @@
       "qty": 2,
       "market_slug": "aec-mlb-col-sd-2026-07-29",
       "outcome": "San Diego Padres",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T09:26:52Z",
       "price_path": [
         {
@@ -14261,7 +14261,10 @@
           "ts": 1785162069,
           "px": 0.595
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.6,
@@ -14375,7 +14378,7 @@
       "qty": 2,
       "market_slug": "aec-mlb-col-sd-2026-07-29",
       "outcome": "San Diego Padres",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T09:56:48Z",
       "price_path": [
         {
@@ -14386,7 +14389,10 @@
           "ts": 1785162070,
           "px": 0.595
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.6,
@@ -14401,7 +14407,7 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T10:01:47Z",
       "price_path": [
         {
@@ -14412,7 +14418,10 @@
           "ts": 1785162070,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.23,
@@ -14448,7 +14457,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T10:11:52Z",
       "price_path": [
         {
@@ -14459,7 +14468,10 @@
           "ts": 1785162070,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.16,
@@ -14514,14 +14526,17 @@
       "qty": 5,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T10:16:50Z",
       "price_path": [
         {
           "ts": 1785160183,
           "px": 0.66
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.46,
@@ -14578,7 +14593,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T10:21:49Z",
       "price_path": [
         {
@@ -14589,7 +14604,10 @@
           "ts": 1785162070,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.63,
@@ -14604,7 +14622,7 @@
       "qty": 2,
       "market_slug": "aec-lol-ap-bld-2026-07-27",
       "outcome": "Bulldog Esports",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T10:26:50Z",
       "price_path": [
         {
@@ -14615,7 +14633,10 @@
           "ts": 1785162070,
           "px": 0.48
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.6,
@@ -14630,7 +14651,7 @@
       "qty": 2,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T10:31:51Z",
       "price_path": [
         {
@@ -14641,7 +14662,10 @@
           "ts": 1785162070,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.23,
@@ -14655,14 +14679,17 @@
       "qty": 4,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T10:31:53Z",
       "price_path": [
         {
           "ts": 1785160184,
           "px": 0.66
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.43,
@@ -14760,7 +14787,7 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T10:42:22Z",
       "price_path": [
         {
@@ -14771,7 +14798,10 @@
           "ts": 1785162071,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.64,
