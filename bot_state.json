@@ -26878,70 +26878,13 @@
       "qty": 9,
       "market_slug": "aec-valorant-orat-sga-2026-07-27",
       "outcome": "ORA Temper",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T14:15:08Z",
-      "price_path": [
-        {
-          "ts": 1785161969,
-          "px": 0.3
-        },
-        {
-          "ts": 1785164231,
-          "px": 0.3
-        },
-        {
-          "ts": 1785166473,
-          "px": 0.3
-        },
-        {
-          "ts": 1785168285,
-          "px": 0.3
-        },
-        {
-          "ts": 1785170674,
-          "px": 0.3
-        },
-        {
-          "ts": 1785173073,
-          "px": 0.3
-        },
-        {
-          "ts": 1785174875,
-          "px": 0.3
-        },
-        {
-          "ts": 1785177272,
-          "px": 0.3
-        },
-        {
-          "ts": 1785179670,
-          "px": 0.3
-        },
-        {
-          "ts": 1785181474,
-          "px": 0.3
-        },
-        {
-          "ts": 1785183870,
-          "px": 0.33
-        },
-        {
-          "ts": 1785185673,
-          "px": 0.34
-        },
-        {
-          "ts": 1785188073,
-          "px": 0.32
-        },
-        {
-          "ts": 1785189881,
-          "px": 0.77
-        },
-        {
-          "ts": 1785192018,
-          "px": 0.58
-        }
-      ]
+      "result": "WIN",
+      "payout": 9.0,
+      "settled_at": "2026-07-27T22:54:22Z",
+      "pnl": 6.39,
+      "autopsy": "+$6.39 \u2014 model 60% vs market 29% was real edge; thesis held. Taken 0.29, rode to 0.58 before the result \u2014 beat the number by 29\u00a2 \u2705"
     },
     {
       "price": 0.05,
@@ -28380,7 +28323,8 @@
       "market_slug": "astatc-wta-zeyson-cadbra-2026-07-26-sw1",
       "outcome": "Zeynep Sonmez",
       "status": "open",
-      "ts": "2026-07-27T22:45:04Z"
+      "ts": "2026-07-27T22:45:04Z",
+      "price_path": []
     },
     {
       "price": 0.6,
@@ -28396,7 +28340,13 @@
       "market_slug": "aec-wta-marsto-peyste-2026-07-26",
       "outcome": "Peyton Stearns",
       "status": "resting",
-      "ts": "2026-07-27T22:45:06Z"
+      "ts": "2026-07-27T22:45:06Z",
+      "price_path": [
+        {
+          "ts": 1785192866,
+          "px": 0.6
+        }
+      ]
     },
     {
       "price": 0.01,
@@ -28411,7 +28361,8 @@
       "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw2",
       "outcome": "Mary Stoiana",
       "status": "resting",
-      "ts": "2026-07-27T22:45:07Z"
+      "ts": "2026-07-27T22:45:07Z",
+      "price_path": []
     },
     {
       "price": 0.01,
@@ -28426,7 +28377,8 @@
       "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
       "outcome": "Renata Zarazua",
       "status": "resting",
-      "ts": "2026-07-27T22:45:08Z"
+      "ts": "2026-07-27T22:45:08Z",
+      "price_path": []
     },
     {
       "price": 0.23,
@@ -28441,7 +28393,13 @@
       "market_slug": "aec-atp-ardazk-yanere-2026-07-27",
       "outcome": "Arda Azkara",
       "status": "open",
-      "ts": "2026-07-27T22:45:09Z"
+      "ts": "2026-07-27T22:45:09Z",
+      "price_path": [
+        {
+          "ts": 1785192867,
+          "px": 0.24
+        }
+      ]
     },
     {
       "price": 0.71,
@@ -28457,7 +28415,13 @@
       "market_slug": "aec-atp-carcan-andpel-2026-07-27",
       "outcome": "Andrea Pellegrino",
       "status": "resting",
-      "ts": "2026-07-27T22:50:03Z"
+      "ts": "2026-07-27T22:50:03Z",
+      "price_path": [
+        {
+          "ts": 1785192867,
+          "px": 0.71
+        }
+      ]
     },
     {
       "price": 0.54,
@@ -28472,21 +28436,27 @@
       "market_slug": "aec-atp-alemin-stetsi-2026-07-27",
       "outcome": "Alex de Minaur",
       "status": "open",
-      "ts": "2026-07-27T22:50:05Z"
+      "ts": "2026-07-27T22:50:05Z",
+      "price_path": [
+        {
+          "ts": 1785192867,
+          "px": 0.54
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 22,
+    "wins": 23,
     "losses": 52,
-    "pnl": -56.14,
+    "pnl": -49.75,
     "trades": 281,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-22",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 93.19,
-    "net": 29.19,
+    "account": 99.58,
+    "net": 35.58,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -28495,7 +28465,7 @@
         0
       ],
       "EDGE": [
-        17,
+        18,
         38,
         0
       ],
@@ -28516,14 +28486,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T12:19:45Z",
-      "kind": "EDGE",
-      "outcome": "Atputies",
-      "result": "LOSS",
-      "pnl": -3.45,
-      "lesson": "model 50% vs market 23% missed \u2014 logged for the playbook review. Taken 0.23, slid to 0.46 before the result \u2014 the number ran 23\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-27T12:58:01Z",
       "kind": "EDGE",
@@ -28755,6 +28717,14 @@
       "result": "LOSS",
       "pnl": -2.86,
       "lesson": "model 43% vs market 22% missed \u2014 logged for the playbook review. Taken 0.22, rode to 0.20 before the result \u2014 beat the number by 2\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T22:54:22Z",
+      "kind": "EDGE",
+      "outcome": "ORA Temper",
+      "result": "WIN",
+      "pnl": 6.39,
+      "lesson": "+$6.39 \u2014 model 60% vs market 29% was real edge; thesis held. Taken 0.29, rode to 0.58 before the result \u2014 beat the number by 29\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
