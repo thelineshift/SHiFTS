@@ -12932,14 +12932,17 @@
       "qty": 26,
       "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
       "outcome": "Bar\u00e7a eSports GC",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T19:09:49Z",
       "price_path": [
         {
           "ts": 1785160175,
           "px": 0.66
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.9,
@@ -13030,14 +13033,17 @@
       "qty": 6,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T20:29:52Z",
       "price_path": [
         {
           "ts": 1785160177,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.47,
@@ -13144,14 +13150,17 @@
       "qty": 5,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T20:39:53Z",
       "price_path": [
         {
           "ts": 1785160178,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.96,
@@ -13261,14 +13270,17 @@
       "qty": 5,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T20:50:06Z",
       "price_path": [
         {
           "ts": 1785160180,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.5,
@@ -13547,14 +13559,17 @@
       "qty": 3,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T21:04:51Z",
       "price_path": [
         {
           "ts": 1785160181,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -13569,14 +13584,17 @@
       "qty": 3,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T21:49:50Z",
       "price_path": [
         {
           "ts": 1785160181,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.21,
@@ -13647,14 +13665,17 @@
       "qty": 4,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T22:04:50Z",
       "price_path": [
         {
           "ts": 1785160181,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.13,
@@ -13955,14 +13976,17 @@
       "qty": 3,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-26T22:19:47Z",
       "price_path": [
         {
           "ts": 1785160182,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.23,
@@ -14154,14 +14178,17 @@
       "qty": 1,
       "market_slug": "aec-valorant-beg-hbs-2026-07-27",
       "outcome": "Habos Babos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T09:06:49Z",
       "price_path": [
         {
           "ts": 1785160182,
           "px": 0.6
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.6,
