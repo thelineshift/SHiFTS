@@ -62,7 +62,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785189872.233145,
+  "last_x_receipt_ts": 1785161361.1528428,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -12123,10 +12123,6 @@
       "ts": "2026-07-26T14:40:07Z",
       "price_path": [
         {
-          "ts": 1785138379,
-          "px": 0.74
-        },
-        {
           "ts": 1785140777,
           "px": 0.75
         },
@@ -12217,6 +12213,10 @@
         {
           "ts": 1785188068,
           "px": 0.65
+        },
+        {
+          "ts": 1785189878,
+          "px": 0.91
         }
       ]
     },
@@ -12692,10 +12692,6 @@
       "ts": "2026-07-26T17:54:48Z",
       "price_path": [
         {
-          "ts": 1785122177,
-          "px": 0.58
-        },
-        {
           "ts": 1785124574,
           "px": 0.58
         },
@@ -12786,6 +12782,10 @@
         {
           "ts": 1785188069,
           "px": 0.35
+        },
+        {
+          "ts": 1785189878,
+          "px": 0.48
         }
       ]
     },
@@ -13342,10 +13342,6 @@
       "ts": "2026-07-26T20:55:22Z",
       "price_path": [
         {
-          "ts": 1785134780,
-          "px": 0.35
-        },
-        {
           "ts": 1785137174,
           "px": 0.22
         },
@@ -13435,6 +13431,10 @@
         },
         {
           "ts": 1785188069,
+          "px": 0.28
+        },
+        {
+          "ts": 1785189878,
           "px": 0.28
         }
       ]
@@ -13665,10 +13665,6 @@
       "ts": "2026-07-26T22:09:52Z",
       "price_path": [
         {
-          "ts": 1785126376,
-          "px": 0.98
-        },
-        {
           "ts": 1785128176,
           "px": 0.96
         },
@@ -13759,6 +13755,10 @@
         {
           "ts": 1785178468,
           "px": 0.69
+        },
+        {
+          "ts": 1785189879,
+          "px": 0.7
         }
       ]
     },
@@ -13871,10 +13871,6 @@
       "ts": "2026-07-26T23:21:22Z",
       "price_path": [
         {
-          "ts": 1785136576,
-          "px": 0.55
-        },
-        {
           "ts": 1785138380,
           "px": 0.55
         },
@@ -13965,6 +13961,10 @@
         {
           "ts": 1785188072,
           "px": 0.555
+        },
+        {
+          "ts": 1785189879,
+          "px": 0.56
         }
       ]
     },
@@ -14386,6 +14386,10 @@
         {
           "ts": 1785188072,
           "px": 0.17
+        },
+        {
+          "ts": 1785189879,
+          "px": 0.17
         }
       ]
     },
@@ -14499,6 +14503,10 @@
         },
         {
           "ts": 1785188072,
+          "px": 0.47
+        },
+        {
+          "ts": 1785189879,
           "px": 0.47
         }
       ]
@@ -14701,6 +14709,10 @@
         {
           "ts": 1785188072,
           "px": 0.425
+        },
+        {
+          "ts": 1785189880,
+          "px": 0.425
         }
       ]
     },
@@ -14789,6 +14801,10 @@
         },
         {
           "ts": 1785188073,
+          "px": 0.94
+        },
+        {
+          "ts": 1785189880,
           "px": 0.94
         }
       ]
@@ -15256,6 +15272,10 @@
         {
           "ts": 1785188073,
           "px": 0.505
+        },
+        {
+          "ts": 1785189880,
+          "px": 0.51
         }
       ]
     },
@@ -15671,6 +15691,10 @@
         {
           "ts": 1785188073,
           "px": 0.31
+        },
+        {
+          "ts": 1785189880,
+          "px": 0.31
         }
       ]
     },
@@ -15964,6 +15988,10 @@
         {
           "ts": 1785188073,
           "px": 0.3
+        },
+        {
+          "ts": 1785189880,
+          "px": 0.3
         }
       ]
     },
@@ -16096,6 +16124,10 @@
         {
           "ts": 1785188073,
           "px": 0.32
+        },
+        {
+          "ts": 1785189881,
+          "px": 0.77
         }
       ]
     },
@@ -16165,6 +16197,10 @@
         {
           "ts": 1785188074,
           "px": 0.05
+        },
+        {
+          "ts": 1785189881,
+          "px": 0.05
         }
       ]
     },
@@ -16230,6 +16266,10 @@
         {
           "ts": 1785188074,
           "px": 0.3
+        },
+        {
+          "ts": 1785189881,
+          "px": 0.26
         }
       ]
     },
@@ -16296,6 +16336,10 @@
         {
           "ts": 1785188074,
           "px": 0.27
+        },
+        {
+          "ts": 1785189881,
+          "px": 0.34
         }
       ]
     },
@@ -16362,6 +16406,10 @@
         {
           "ts": 1785188074,
           "px": 0.21
+        },
+        {
+          "ts": 1785189882,
+          "px": 0.25
         }
       ]
     },
@@ -16426,6 +16474,10 @@
         },
         {
           "ts": 1785188075,
+          "px": 0.27
+        },
+        {
+          "ts": 1785189882,
           "px": 0.27
         }
       ]
@@ -16493,6 +16545,10 @@
         {
           "ts": 1785188075,
           "px": 0.46
+        },
+        {
+          "ts": 1785189882,
+          "px": 0.46
         }
       ]
     },
@@ -16557,6 +16613,10 @@
         },
         {
           "ts": 1785188075,
+          "px": 0.32
+        },
+        {
+          "ts": 1785189882,
           "px": 0.32
         }
       ]
@@ -16632,38 +16692,13 @@
       "qty": 3,
       "market_slug": "aec-cs2-navij-mouzn-2026-07-27",
       "outcome": "NAVI Junior",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T15:02:53Z",
-      "price_path": [
-        {
-          "ts": 1785164676,
-          "px": 0.4
-        },
-        {
-          "ts": 1785167674,
-          "px": 0.4
-        },
-        {
-          "ts": 1785170081,
-          "px": 0.4
-        },
-        {
-          "ts": 1785172473,
-          "px": 0.38
-        },
-        {
-          "ts": 1785174876,
-          "px": 0.35
-        },
-        {
-          "ts": 1785177274,
-          "px": 0.5
-        },
-        {
-          "ts": 1785179672,
-          "px": 0.85
-        }
-      ]
+      "result": "WIN",
+      "payout": 3.0,
+      "settled_at": "2026-07-27T22:04:43Z",
+      "pnl": 1.8,
+      "autopsy": "+$1.80 \u2014 model 57% vs market 40% was real edge; thesis held. Taken 0.40, rode to 0.85 before the result \u2014 beat the number by 45\u00a2 \u2705"
     },
     {
       "price": 0.34,
@@ -16678,46 +16713,13 @@
       "qty": 6,
       "market_slug": "aec-cs2-rush-hat-2026-07-27",
       "outcome": "HATERS",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T15:45:21Z",
-      "price_path": [
-        {
-          "ts": 1785167674,
-          "px": 0.34
-        },
-        {
-          "ts": 1785170081,
-          "px": 0.35
-        },
-        {
-          "ts": 1785172474,
-          "px": 0.35
-        },
-        {
-          "ts": 1785174876,
-          "px": 0.35
-        },
-        {
-          "ts": 1785177274,
-          "px": 0.35
-        },
-        {
-          "ts": 1785179672,
-          "px": 0.32
-        },
-        {
-          "ts": 1785181477,
-          "px": 0.12
-        },
-        {
-          "ts": 1785183872,
-          "px": 0.28
-        },
-        {
-          "ts": 1785185675,
-          "px": 0.07
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T22:04:46Z",
+      "pnl": -2.04,
+      "autopsy": "model 58% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, rode to 0.07 before the result \u2014 beat the number by 27\u00a2 \u2705"
     },
     {
       "price": 0.26,
@@ -16732,46 +16734,13 @@
       "qty": 5,
       "market_slug": "aec-cs2-odk-paina-2026-07-27",
       "outcome": "paiN Academy",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T15:45:23Z",
-      "price_path": [
-        {
-          "ts": 1785167674,
-          "px": 0.26
-        },
-        {
-          "ts": 1785170081,
-          "px": 0.26
-        },
-        {
-          "ts": 1785172474,
-          "px": 0.26
-        },
-        {
-          "ts": 1785174876,
-          "px": 0.26
-        },
-        {
-          "ts": 1785177274,
-          "px": 0.26
-        },
-        {
-          "ts": 1785179673,
-          "px": 0.22
-        },
-        {
-          "ts": 1785181477,
-          "px": 0.2
-        },
-        {
-          "ts": 1785183872,
-          "px": 0.21
-        },
-        {
-          "ts": 1785185675,
-          "px": 0.41
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-27T22:04:48Z",
+      "pnl": -1.3,
+      "autopsy": "model 43% vs market 26% missed \u2014 logged for the playbook review. Taken 0.26, slid to 0.41 before the result \u2014 the number ran 15\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.66,
@@ -16942,6 +16911,10 @@
         {
           "ts": 1785188076,
           "px": 0.25
+        },
+        {
+          "ts": 1785189890,
+          "px": 0.25
         }
       ]
     },
@@ -16996,6 +16969,10 @@
         {
           "ts": 1785188076,
           "px": 0.595
+        },
+        {
+          "ts": 1785189890,
+          "px": 0.595
         }
       ]
     },
@@ -17048,6 +17025,10 @@
         },
         {
           "ts": 1785188076,
+          "px": 0.535
+        },
+        {
+          "ts": 1785189890,
           "px": 0.535
         }
       ]
@@ -17124,6 +17105,10 @@
         {
           "ts": 1785188076,
           "px": 0.24
+        },
+        {
+          "ts": 1785189890,
+          "px": 0.24
         }
       ]
     },
@@ -17176,6 +17161,10 @@
         },
         {
           "ts": 1785188077,
+          "px": 0.11
+        },
+        {
+          "ts": 1785189891,
           "px": 0.11
         }
       ]
@@ -17231,6 +17220,10 @@
         {
           "ts": 1785188077,
           "px": 0.44
+        },
+        {
+          "ts": 1785189891,
+          "px": 0.43
         }
       ]
     },
@@ -17331,6 +17324,10 @@
         {
           "ts": 1785188077,
           "px": 0.36
+        },
+        {
+          "ts": 1785189891,
+          "px": 0.36
         }
       ]
     },
@@ -17380,6 +17377,10 @@
         {
           "ts": 1785188077,
           "px": 0.27
+        },
+        {
+          "ts": 1785189891,
+          "px": 0.27
         }
       ]
     },
@@ -17422,6 +17423,10 @@
         {
           "ts": 1785188077,
           "px": 0.49
+        },
+        {
+          "ts": 1785189891,
+          "px": 0.42
         }
       ]
     },
@@ -17452,6 +17457,10 @@
         {
           "ts": 1785188077,
           "px": 0.58
+        },
+        {
+          "ts": 1785189892,
+          "px": 0.58
         }
       ]
     },
@@ -17477,6 +17486,10 @@
         },
         {
           "ts": 1785188078,
+          "px": 0.57
+        },
+        {
+          "ts": 1785189892,
           "px": 0.57
         }
       ]
@@ -17517,21 +17530,27 @@
       "market_slug": "aec-mlb-tex-tb-2026-07-29",
       "outcome": "Tampa Bay Rays",
       "status": "resting",
-      "ts": "2026-07-27T21:55:21Z"
+      "ts": "2026-07-27T21:55:21Z",
+      "price_path": [
+        {
+          "ts": 1785189892,
+          "px": 0.55
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 21,
-    "losses": 48,
-    "pnl": -49.24,
+    "wins": 22,
+    "losses": 50,
+    "pnl": -50.78,
     "trades": 273,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-22",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 99.85,
-    "net": 35.85,
+    "account": 98.55,
+    "net": 34.55,
     "last_archive": "2026-07-27",
     "kind_totals": {
       "ARB": [
@@ -17540,8 +17559,8 @@
         0
       ],
       "EDGE": [
-        16,
-        34,
+        17,
+        36,
         0
       ],
       "LIVE-BET": [
@@ -17561,30 +17580,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T06:46:15Z",
-      "kind": "EDGE",
-      "outcome": "BNK FEARX",
-      "result": "LOSS",
-      "pnl": -1.26,
-      "lesson": "model 73% vs market 63% missed \u2014 logged for the playbook review. Taken 0.63, slid to 0.03 before the result \u2014 the number ran 60\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-27T07:46:13Z",
-      "kind": "EDGE",
-      "outcome": "Dplus KIA",
-      "result": "LOSS",
-      "pnl": -1.52,
-      "lesson": "model 50% vs market 38% missed \u2014 logged for the playbook review. Taken 0.38, slid to 0.04 before the result \u2014 the number ran 34\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-27T08:26:12Z",
-      "kind": "EDGE",
-      "outcome": "KT Rolster",
-      "result": "LOSS",
-      "pnl": -1.92,
-      "lesson": "model 73% vs market 64% missed \u2014 logged for the playbook review. Taken 0.64, slid to 0.11 before the result \u2014 the number ran 53\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-27T09:16:12Z",
       "kind": "EDGE",
@@ -17800,6 +17795,30 @@
       "result": "LOSS",
       "pnl": -2.79,
       "lesson": "model 50% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, slid to 0.38 before the result \u2014 the number ran 7\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-27T22:04:43Z",
+      "kind": "EDGE",
+      "outcome": "NAVI Junior",
+      "result": "WIN",
+      "pnl": 1.8,
+      "lesson": "+$1.80 \u2014 model 57% vs market 40% was real edge; thesis held. Taken 0.40, rode to 0.85 before the result \u2014 beat the number by 45\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T22:04:46Z",
+      "kind": "EDGE",
+      "outcome": "HATERS",
+      "result": "LOSS",
+      "pnl": -2.04,
+      "lesson": "model 58% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, rode to 0.07 before the result \u2014 beat the number by 27\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-27T22:04:48Z",
+      "kind": "EDGE",
+      "outcome": "paiN Academy",
+      "result": "LOSS",
+      "pnl": -1.3,
+      "lesson": "model 43% vs market 26% missed \u2014 logged for the playbook review. Taken 0.26, slid to 0.41 before the result \u2014 the number ran 15\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -17814,7 +17833,7 @@
     "note": "stale 7/24 results \u2014 already receipted in Discord #receipts; X draining them would duplicate-post"
   },
   "x_eng_log": {
-    "2026-07-27-22": "store-ad"
+    "2026-07-26-17": "edu"
   },
   "board_posted": [
     "aec-lol-lil-cla-2026-07-26",
