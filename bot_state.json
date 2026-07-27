@@ -15919,7 +15919,13 @@
       "market_slug": "aec-valorant-axo-flyr-2026-07-27",
       "outcome": "Axolotl",
       "status": "open",
-      "ts": "2026-07-27T14:34:58Z"
+      "ts": "2026-07-27T14:34:58Z",
+      "price_path": [
+        {
+          "ts": 1785163029,
+          "px": 0.31
+        }
+      ]
     },
     {
       "price": 0.25,
@@ -15935,7 +15941,13 @@
       "market_slug": "aec-lol-kbm-tse-2026-07-27",
       "outcome": "Team Solid",
       "status": "open",
-      "ts": "2026-07-27T14:35:00Z"
+      "ts": "2026-07-27T14:35:00Z",
+      "price_path": [
+        {
+          "ts": 1785163029,
+          "px": 0.25
+        }
+      ]
     },
     {
       "price": 0.19,
@@ -15951,7 +15963,13 @@
       "market_slug": "aec-valorant-him-roso-2026-07-27",
       "outcome": "ROSO GC",
       "status": "open",
-      "ts": "2026-07-27T14:35:01Z"
+      "ts": "2026-07-27T14:35:01Z",
+      "price_path": [
+        {
+          "ts": 1785163029,
+          "px": 0.19
+        }
+      ]
     },
     {
       "price": 0.27,
@@ -15966,7 +15984,13 @@
       "market_slug": "aec-lol-vksa-est-2026-07-28",
       "outcome": "Vivo Keyd Stars Academy",
       "status": "open",
-      "ts": "2026-07-27T14:35:02Z"
+      "ts": "2026-07-27T14:35:02Z",
+      "price_path": [
+        {
+          "ts": 1785163029,
+          "px": 0.27
+        }
+      ]
     },
     {
       "price": 0.46,
@@ -15982,7 +16006,13 @@
       "market_slug": "aec-lol-ktc-dkc-2026-07-28",
       "outcome": "Dplus KIA Challengers",
       "status": "open",
-      "ts": "2026-07-27T14:35:03Z"
+      "ts": "2026-07-27T14:35:03Z",
+      "price_path": [
+        {
+          "ts": 1785163029,
+          "px": 0.46
+        }
+      ]
     }
   ],
   "pm_stats": {
