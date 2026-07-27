@@ -8461,6 +8461,43 @@
             }
           ]
         }
+      },
+      "cs2:135497": {
+        "ts": 1785148288.2487535,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Just Players"
+            },
+            {
+              "won": false,
+              "opp": "CYBERSHOKE Esports"
+            },
+            {
+              "won": false,
+              "opp": "Gentle Mates"
+            },
+            {
+              "won": true,
+              "opp": "Johnny Speeds"
+            },
+            {
+              "won": true,
+              "opp": "Nemiga"
+            }
+          ]
+        }
+      },
+      "cs2:138997": {
+        "ts": 1785148288.8882828,
+        "f": {
+          "w": 0,
+          "l": 0,
+          "res": []
+        }
       }
     }
   },
@@ -14245,6 +14282,53 @@
       "outcome": "Bulldog Esports",
       "status": "open",
       "ts": "2026-07-27T10:26:50Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 60% \u2014 7% edge, half-Kelly",
+      "order_id": "BGEB54S3E9NT",
+      "qty": 2,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-27T10:31:51Z"
+    },
+    {
+      "price": 0.23,
+      "stake": 0.92,
+      "kind": "EDGE",
+      "p_model": 0.33333333333333337,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 33% vs market 23% \u2014 10% edge, half-Kelly",
+      "order_id": "BGE9MM1W29RC",
+      "qty": 4,
+      "market_slug": "astatc-valorant-beg-hbs-2026-07-27-map1",
+      "outcome": "Bar\u00e7a eSports GC",
+      "status": "open",
+      "ts": "2026-07-27T10:31:53Z"
+    },
+    {
+      "price": 0.43,
+      "short": true,
+      "stake": 0.86,
+      "kind": "EDGE",
+      "p_model": 0.5101336458528781,
+      "event": "Philadelphia Phillies vs. Miami Marlins",
+      "ev_start": "2026-07-29T16:10:00Z",
+      "reason": "model 51% vs market 43% \u2014 8% edge, half-Kelly",
+      "order_id": "BGEANDZA49NF",
+      "qty": 2,
+      "market_slug": "aec-mlb-phi-mia-2026-07-29",
+      "outcome": "Miami Marlins",
+      "status": "open",
+      "ts": "2026-07-27T10:31:54Z"
     }
   ],
   "pm_stats": {
@@ -14252,7 +14336,7 @@
     "wins": 14,
     "losses": 29,
     "pnl": 15.33,
-    "trades": 199,
+    "trades": 202,
     "last_recap": "2026-07-26",
     "last_recap_hour": "2026-07-27-10",
     "deposits": 64.0,
