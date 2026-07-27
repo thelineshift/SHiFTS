@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T18:04:29Z",
+  "updated": "2026-07-27T20:01:17Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1289,6 +1289,40 @@
         "total": 8.5,
         "ts": 1785173668
       }
+    },
+    {
+      "id": "over-8.5-0727",
+      "date": "2026-07-27",
+      "sport": "mlb",
+      "desc": "Over 8.5",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "06:40 PM ET",
+      "vs": "Baltimore Orioles @ Detroit Tigers",
+      "team": "Detroit Tigers",
+      "opp": "Baltimore Orioles",
+      "analysis": "posted 8.5 vs 38.8 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \ud83d\udcca **Form + price:** posted 8.5 vs 38.8 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. Model makes Over 8.5 **60%** \u2014 books impl",
+      "awayTeam": "Detroit Tigers",
+      "homeTeam": "Baltimore Orioles"
+    },
+    {
+      "id": "lavked-ml-0727",
+      "date": "2026-07-27",
+      "sport": "cs2",
+      "desc": "Lavked ML",
+      "market": "CIS LAN Championship Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "02:00 AM ET",
+      "vs": "FIN E-SPORT",
+      "team": "Lavked",
+      "opp": "FIN E-SPORT",
+      "analysis": "3-2 last 5 (beat Butterfly, ex-RUSTEC, illwill) (lost to Just Players) vs 0-0 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Butterfly, ex-RUSTEC, illwill) (lost to Just Players) vs 0-0 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **10 points** of model edg",
+      "awayTeam": "Lavked",
+      "homeTeam": "FIN E-SPORT"
     }
   ]
 }
