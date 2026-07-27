@@ -14665,6 +14665,22 @@
       "outcome": "Habos Babos",
       "status": "open",
       "ts": "2026-07-27T12:20:16Z"
+    },
+    {
+      "price": 0.08,
+      "short": true,
+      "stake": 2.72,
+      "kind": "EDGE",
+      "p_model": 0.4,
+      "event": "Deer Gaming vs. Epic Avalanche",
+      "ev_start": "2026-07-27T16:00:00Z",
+      "reason": "model 40% vs market 8% \u2014 32% edge, half-Kelly",
+      "order_id": "BGFQ294MP9P2",
+      "qty": 34,
+      "market_slug": "aec-lol-deer-ea-2026-07-27",
+      "outcome": "Epic Avalanche",
+      "status": "open",
+      "ts": "2026-07-27T12:25:17Z"
     }
   ],
   "pm_stats": {
@@ -14672,7 +14688,7 @@
     "wins": 14,
     "losses": 31,
     "pnl": 7.76,
-    "trades": 226,
+    "trades": 227,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
