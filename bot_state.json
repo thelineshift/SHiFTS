@@ -5195,7 +5195,7 @@
         }
       },
       "dota2:2227": {
-        "ts": 1785151309.8524575,
+        "ts": 1785158607.6743288,
         "f": {
           "w": 0,
           "l": 5,
@@ -7076,7 +7076,7 @@
         }
       },
       "dota2:137685": {
-        "ts": 1785151309.2343595,
+        "ts": 1785158607.0782828,
         "f": {
           "w": 3,
           "l": 2,
@@ -14876,6 +14876,22 @@
       "outcome": "Falcons Force",
       "status": "open",
       "ts": "2026-07-27T13:18:37Z"
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.6666666666666666,
+      "event": "Barca eSports GC vs. Habos Babos",
+      "ev_start": "2026-07-27T15:00:00Z",
+      "reason": "model 67% vs market 60% \u2014 7% edge, half-Kelly",
+      "order_id": "BGGEKB66T9S2",
+      "qty": 2,
+      "market_slug": "aec-valorant-beg-hbs-2026-07-27",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-27T13:23:30Z"
     }
   ],
   "pm_stats": {
@@ -14883,7 +14899,7 @@
     "wins": 14,
     "losses": 33,
     "pnl": -0.31,
-    "trades": 237,
+    "trades": 238,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-27-12",
     "deposits": 64.0,
