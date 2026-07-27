@@ -643,10 +643,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": 113,
-        "away_ml": -136,
+        "home_ml": 118,
+        "away_ml": -142,
         "total": 8.0,
-        "ts": 1785156576
+        "ts": 1785160153
       }
     },
     {
@@ -689,10 +689,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 144,
-        "away_ml": -175,
+        "home_ml": 153,
+        "away_ml": -186,
         "total": 7.5,
-        "ts": 1785154776
+        "ts": 1785160153
       }
     },
     {
@@ -712,10 +712,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -104,
-        "away_ml": -115,
+        "home_ml": -102,
+        "away_ml": -118,
         "total": 8.5,
-        "ts": 1785156576
+        "ts": 1785160153
       }
     },
     {
@@ -795,10 +795,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -150,
+        "home_ml": 123,
+        "away_ml": -149,
         "total": 8.5,
-        "ts": 1785154776
+        "ts": 1785160153
       },
       "last_alert_odds": 129
     },
@@ -819,10 +819,10 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -120,
+        "home_ml": -119,
         "away_ml": -101,
         "total": 8.5,
-        "ts": 1785152768
+        "ts": 1785160153
       }
     },
     {
@@ -844,8 +844,8 @@
       "live_odds": {
         "home_ml": -121,
         "away_ml": 101,
-        "total": 9.0,
-        "ts": 1785154776
+        "total": 9.5,
+        "ts": 1785160153
       }
     },
     {
@@ -1067,10 +1067,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": 102,
-        "away_ml": -123,
-        "total": 10.0,
-        "ts": 1785156576
+        "home_ml": 101,
+        "away_ml": -122,
+        "total": 9.5,
+        "ts": 1785160153
       },
       "last_alert_odds": -131
     },
@@ -1122,10 +1122,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Boston Red Sox",
       "live_odds": {
-        "home_ml": 144,
-        "away_ml": -175,
+        "home_ml": 149,
+        "away_ml": -181,
         "total": 9.5,
-        "ts": 1785149169
+        "ts": 1785160153
       }
     },
     {
