@@ -1774,10 +1774,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -193,
-        "away_ml": 158,
+        "home_ml": -191,
+        "away_ml": 157,
         "total": 9.5,
-        "ts": 1785258859
+        "ts": 1785260659
       },
       "last_alert_odds": -192
     },
@@ -1822,10 +1822,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -217,
-        "away_ml": 177,
+        "home_ml": -206,
+        "away_ml": 168,
         "total": 8.0,
-        "ts": 1785253459
+        "ts": 1785260659
       },
       "last_alert_odds": -217
     },
