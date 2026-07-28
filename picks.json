@@ -1485,10 +1485,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 119,
-        "away_ml": -143,
+        "home_ml": 124,
+        "away_ml": -150,
         "total": 7.5,
-        "ts": 1785219259
+        "ts": 1785230059
       }
     },
     {
@@ -1652,8 +1652,8 @@
       "live_odds": {
         "home_ml": -144,
         "away_ml": 119,
-        "total": 9.0,
-        "ts": 1785212060
+        "total": 8.5,
+        "ts": 1785230059
       }
     },
     {
