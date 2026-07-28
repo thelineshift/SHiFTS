@@ -300,7 +300,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "6b9a82a3-93da-4c64-a9d9-1ad996c30182",
   "op_month": "2026-07",
-  "op_calls": 61,
+  "op_calls": 63,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1183,68 +1183,61 @@
         "1374364": "Butterfly"
       },
       "meta_ts": 1784925282.1446652,
-      "lines": [
-        [
-          "Mibr",
-          "Fluxo W7M",
-          1.309,
-          3.22
-        ],
-        [
-          "Imperial eSports",
-          "Bestia",
-          1.657,
-          2.18
-        ],
-        [
-          "Regain",
-          "Team Voca",
-          1.285,
-          3.36
-        ],
-        [
-          "Black Phoenix",
-          "Enjoy",
-          1.757,
-          2.03
-        ],
-        [
-          "Genone",
-          "New Vision",
-          1.137,
-          4.89
-        ]
-      ],
-      "odds_ts": 1785211227.3191288
+      "lines": [],
+      "odds_ts": 1785240028.5105956
     },
     "valorant": {
       "lines": [
         [
           "Barca GC",
-          "Habos Babos",
-          2.26,
-          1.584
-        ],
-        [
-          "Gentle Mates GC",
-          "GIANTX GC",
-          1.241,
-          3.53
+          "Karmine Corp GC",
+          2.18,
+          1.632
         ],
         [
           "G2 Gozen",
-          "Karmine Corp GC",
-          1.257,
-          3.41
+          "FOKUS Sakura",
+          1.2,
+          3.87
         ],
         [
-          "BESTIA",
-          "Contra",
-          1.257,
-          3.63
+          "Twisted Minds Orchid",
+          "Habos Babos",
+          1.526,
+          2.39
+        ],
+        [
+          "GIANTX",
+          "Liquid",
+          3.73,
+          1.281
+        ],
+        [
+          "Gentle Mates",
+          "Vitality",
+          2.46,
+          1.558
+        ],
+        [
+          "Natus Vincere",
+          "PCIFIC",
+          1.166,
+          5.27
+        ],
+        [
+          "Eternal Fire",
+          "Fnatic",
+          3.18,
+          1.363
+        ],
+        [
+          "BBL",
+          "Gentle Mates",
+          1.689,
+          2.2
         ]
       ],
-      "odds_ts": 1785182432.4311912,
+      "odds_ts": 1785240024.7841196,
       "active": [
         901974,
         902246,
@@ -30096,5 +30089,5 @@
   "deepdive_last": "2026-07-25",
   "dep_checked_ts": 1785239666.1448817,
   "x_bio_v": 2,
-  "op_cool_until": 1785096924.2504044
+  "op_cool_until": 1785240924.7841196
 }
