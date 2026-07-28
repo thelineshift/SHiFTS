@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-28 13:14 UTC",
+    "at": "2026-07-28 10:14 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-3": "2026-07-28 12:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-28 12:44 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-28 12:00 UTC",
+    "\ud83c\udfaffree-pick-2-3": "2026-07-28 08:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-28 09:44 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-28 10:07 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-28 10:08 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-28 13:14 UTC",
+    "at": "2026-07-28 10:14 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -30,11 +30,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-28 13:14 UTC",
+    "at": "2026-07-28 10:14 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-28 13:14 UTC",
+    "at": "2026-07-28 10:14 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
@@ -27769,70 +27769,13 @@
       "qty": 7,
       "market_slug": "aec-atp-markru-phihen-2026-07-27",
       "outcome": "Philip Henning",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T00:35:04Z",
-      "price_path": [
-        {
-          "ts": 1785200069,
-          "px": 0.35
-        },
-        {
-          "ts": 1785202466,
-          "px": 0.35
-        },
-        {
-          "ts": 1785204268,
-          "px": 0.35
-        },
-        {
-          "ts": 1785206664,
-          "px": 0.35
-        },
-        {
-          "ts": 1785208472,
-          "px": 0.35
-        },
-        {
-          "ts": 1785212075,
-          "px": 0.35
-        },
-        {
-          "ts": 1785215067,
-          "px": 0.35
-        },
-        {
-          "ts": 1785218065,
-          "px": 0.35
-        },
-        {
-          "ts": 1785220463,
-          "px": 0.35
-        },
-        {
-          "ts": 1785222862,
-          "px": 0.35
-        },
-        {
-          "ts": 1785225263,
-          "px": 0.35
-        },
-        {
-          "ts": 1785227065,
-          "px": 0.32
-        },
-        {
-          "ts": 1785228869,
-          "px": 0.78
-        },
-        {
-          "ts": 1785231263,
-          "px": 0.46
-        },
-        {
-          "ts": 1785233065,
-          "px": 0.24
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T13:14:22Z",
+      "pnl": -2.45,
+      "autopsy": "model 64% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, rode to 0.24 before the result \u2014 beat the number by 11\u00a2 \u2705"
     },
     {
       "price": 0.29,
@@ -29996,15 +29939,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 27,
-    "losses": 55,
-    "pnl": -54.58,
+    "losses": 56,
+    "pnl": -57.03,
     "trades": 332,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-12",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 112.48,
-    "net": 48.48,
+    "account": 110.03,
+    "net": 46.03,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -30014,7 +29957,7 @@
       ],
       "EDGE": [
         20,
-        41,
+        42,
         0
       ],
       "LIVE-BET": [
@@ -30034,14 +29977,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T13:49:31Z",
-      "kind": "LIVE-BET",
-      "outcome": "Butterfly",
-      "result": "LOSS",
-      "pnl": -8.14,
-      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays."
-    },
     {
       "ts": "2026-07-27T13:49:35Z",
       "kind": "TAIL",
@@ -30273,6 +30208,14 @@
       "result": "WIN",
       "pnl": 1.64,
       "lesson": "+$1.64 \u2014 model 70% vs market 59% was real edge; thesis held. Taken 0.59, rode to 0.67 before the result \u2014 beat the number by 8\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-28T13:14:22Z",
+      "kind": "EDGE",
+      "outcome": "Philip Henning",
+      "result": "LOSS",
+      "pnl": -2.45,
+      "lesson": "model 64% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, rode to 0.24 before the result \u2014 beat the number by 11\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -30356,7 +30299,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785239666.1448817,
+  "dep_checked_ts": 1785244462.4068093,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
