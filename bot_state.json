@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "chicago-cubs-ml-0727",
+      "desc": "Chicago Cubs ML",
+      "odds": -114,
+      "result": "WIN",
+      "units": 0.88,
+      "score": "Chicago Cubs 7, St. Louis Cardinals 3",
+      "tier": "lock"
+    },
+    {
       "id": "athletics-ml-0727",
       "desc": "Athletics ML",
       "odds": 149,
@@ -58,7 +67,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785241460.7502215,
+  "last_x_receipt_ts": 1785209060.4239252,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -22754,10 +22763,6 @@
       "ts": "2026-07-26T23:21:22Z",
       "price_path": [
         {
-          "ts": 1785188072,
-          "px": 0.555
-        },
-        {
           "ts": 1785189879,
           "px": 0.56
         },
@@ -22848,6 +22853,10 @@
         {
           "ts": 1785239660,
           "px": 0.575
+        },
+        {
+          "ts": 1785241460,
+          "px": 0.58
         }
       ]
     },
@@ -23199,10 +23208,6 @@
       "ts": "2026-07-27T10:11:53Z",
       "price_path": [
         {
-          "ts": 1785185671,
-          "px": 0.17
-        },
-        {
           "ts": 1785188072,
           "px": 0.17
         },
@@ -23293,6 +23298,10 @@
         {
           "ts": 1785239660,
           "px": 0.16
+        },
+        {
+          "ts": 1785241460,
+          "px": 0.16
         }
       ]
     },
@@ -23336,10 +23345,6 @@
       "status": "open",
       "ts": "2026-07-27T10:16:51Z",
       "price_path": [
-        {
-          "ts": 1785188072,
-          "px": 0.47
-        },
         {
           "ts": 1785189879,
           "px": 0.47
@@ -23430,6 +23435,10 @@
         },
         {
           "ts": 1785239660,
+          "px": 0.46
+        },
+        {
+          "ts": 1785241460,
           "px": 0.46
         }
       ]
@@ -24767,10 +24776,6 @@
       "ts": "2026-07-27T13:35:00Z",
       "price_path": [
         {
-          "ts": 1785185673,
-          "px": 0.3
-        },
-        {
           "ts": 1785188073,
           "px": 0.3
         },
@@ -24860,6 +24865,10 @@
         },
         {
           "ts": 1785239661,
+          "px": 0.3
+        },
+        {
+          "ts": 1785241461,
           "px": 0.3
         }
       ]
@@ -24963,10 +24972,6 @@
       "ts": "2026-07-27T14:15:09Z",
       "price_path": [
         {
-          "ts": 1785185673,
-          "px": 0.05
-        },
-        {
           "ts": 1785188074,
           "px": 0.05
         },
@@ -25056,6 +25061,10 @@
         },
         {
           "ts": 1785239661,
+          "px": 0.04
+        },
+        {
+          "ts": 1785241461,
           "px": 0.04
         }
       ]
@@ -27407,82 +27416,13 @@
       "qty": 4,
       "market_slug": "aec-atp-timska-thofau-2026-07-27",
       "outcome": "Timofey Skatov",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T23:35:05Z",
-      "price_path": [
-        {
-          "ts": 1785195863,
-          "px": 0.59
-        },
-        {
-          "ts": 1785198263,
-          "px": 0.59
-        },
-        {
-          "ts": 1785200068,
-          "px": 0.59
-        },
-        {
-          "ts": 1785202465,
-          "px": 0.59
-        },
-        {
-          "ts": 1785204268,
-          "px": 0.59
-        },
-        {
-          "ts": 1785206664,
-          "px": 0.58
-        },
-        {
-          "ts": 1785208471,
-          "px": 0.58
-        },
-        {
-          "ts": 1785212074,
-          "px": 0.59
-        },
-        {
-          "ts": 1785215066,
-          "px": 0.59
-        },
-        {
-          "ts": 1785218064,
-          "px": 0.59
-        },
-        {
-          "ts": 1785220462,
-          "px": 0.59
-        },
-        {
-          "ts": 1785222862,
-          "px": 0.59
-        },
-        {
-          "ts": 1785225262,
-          "px": 0.59
-        },
-        {
-          "ts": 1785227064,
-          "px": 0.59
-        },
-        {
-          "ts": 1785228868,
-          "px": 0.59
-        },
-        {
-          "ts": 1785231262,
-          "px": 0.84
-        },
-        {
-          "ts": 1785233065,
-          "px": 0.68
-        },
-        {
-          "ts": 1785235463,
-          "px": 0.67
-        }
-      ]
+      "result": "WIN",
+      "payout": 4.0,
+      "settled_at": "2026-07-28T12:24:23Z",
+      "pnl": 1.64,
+      "autopsy": "+$1.64 \u2014 model 70% vs market 59% was real edge; thesis held. Taken 0.59, rode to 0.67 before the result \u2014 beat the number by 8\u00a2 \u2705"
     },
     {
       "price": 0.32,
@@ -27575,6 +27515,10 @@
         {
           "ts": 1785239665,
           "px": 0.51
+        },
+        {
+          "ts": 1785241465,
+          "px": 0.32
         }
       ]
     },
@@ -27669,6 +27613,10 @@
         {
           "ts": 1785239665,
           "px": 0.42
+        },
+        {
+          "ts": 1785241466,
+          "px": 0.35
         }
       ]
     },
@@ -29756,16 +29704,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 26,
+    "wins": 27,
     "losses": 55,
-    "pnl": -56.22,
+    "pnl": -54.58,
     "trades": 327,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-12",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 110.84,
-    "net": 46.84,
+    "account": 112.48,
+    "net": 48.48,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -29774,7 +29722,7 @@
         0
       ],
       "EDGE": [
-        19,
+        20,
         41,
         0
       ],
@@ -29795,14 +29743,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T13:49:28Z",
-      "kind": "EDGE",
-      "outcome": "BNK FearX Youth",
-      "result": "WIN",
-      "pnl": 0.86,
-      "lesson": "+$0.86 \u2014 model 100% vs market 69% was real edge; thesis held."
-    },
     {
       "ts": "2026-07-27T13:49:31Z",
       "kind": "LIVE-BET",
@@ -30034,6 +29974,14 @@
       "result": "WIN",
       "pnl": 3.4,
       "lesson": "+$3.40 \u2014 model 49% vs market 32% was real edge; thesis held. Taken 0.32, slid to 0.49 before the result \u2014 the number ran 17\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-28T12:24:23Z",
+      "kind": "EDGE",
+      "outcome": "Timofey Skatov",
+      "result": "WIN",
+      "pnl": 1.64,
+      "lesson": "+$1.64 \u2014 model 70% vs market 59% was real edge; thesis held. Taken 0.59, rode to 0.67 before the result \u2014 beat the number by 8\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
