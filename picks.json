@@ -1127,11 +1127,12 @@
       "homeTeam": "Athletics",
       "awayTeam": "Boston Red Sox",
       "live_odds": {
-        "home_ml": 142,
-        "away_ml": -173,
-        "total": 9.5,
-        "ts": 1785199459
-      }
+        "home_ml": 163,
+        "away_ml": -198,
+        "total": 10.0,
+        "ts": 1785201259
+      },
+      "last_alert_odds": 163
     },
     {
       "id": "ex-rustec-ml-0727",
@@ -1287,10 +1288,10 @@
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -108,
-        "away_ml": -112,
+        "home_ml": -110,
+        "away_ml": -110,
         "total": 8.5,
-        "ts": 1785199459
+        "ts": 1785201259
       }
     },
     {
