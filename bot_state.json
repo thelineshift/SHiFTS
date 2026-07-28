@@ -56,6 +56,15 @@
       "units": -1.0,
       "score": "Boston Red Sox 4, Athletics 2",
       "tier": "free"
+    },
+    {
+      "id": "lavked-ml-0728",
+      "desc": "Lavked ML",
+      "odds": -150,
+      "result": "WIN",
+      "units": 0.67,
+      "score": "Lavked 2-0 FIN E-SPORT \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785209060.4239252,
