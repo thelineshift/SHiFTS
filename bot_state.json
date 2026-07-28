@@ -27308,7 +27308,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-dota2-tje-stx-2026-07-26",
     "astatc-cs2-unity-mta-2026-07-27-map1",
     "astatc-cs2-unity-mta-2026-07-27-map2",
     "aec-cs2-unity-mta-2026-07-27",
@@ -27367,7 +27366,8 @@
     "aec-atp-guijus-sasgue-2026-07-27",
     "astatc-wta-renzar-mcckes-2026-07-26-sw1",
     "aec-atp-genoli-cartab-2026-07-27",
-    "astatc-wta-xiywan-catmcn-2026-07-26-sw1"
+    "astatc-wta-xiywan-catmcn-2026-07-26-sw1",
+    "astatc-wta-marsto-peyste-2026-07-26-sw1"
   ],
   "odds_api": {
     "month": "2026-07",
