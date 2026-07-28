@@ -1386,8 +1386,8 @@
       "live_odds": {
         "home_ml": -247,
         "away_ml": 198,
-        "total": 157.5,
-        "ts": 1785240858
+        "total": 158.5,
+        "ts": 1785244459
       },
       "last_alert_odds": -239
     },
@@ -1462,10 +1462,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 112,
-        "away_ml": -135,
+        "home_ml": 113,
+        "away_ml": -136,
         "total": 8.0,
-        "ts": 1785212059
+        "ts": 1785244459
       }
     },
     {
@@ -1605,9 +1605,9 @@
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
         "home_ml": -108,
-        "away_ml": -112,
+        "away_ml": -111,
         "total": 8.0,
-        "ts": 1785212060
+        "ts": 1785244459
       }
     },
     {
