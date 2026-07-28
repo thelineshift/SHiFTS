@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "milwaukee-brewers-ml-0727",
+      "desc": "Milwaukee Brewers ML",
+      "odds": -137,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Milwaukee Brewers 0, San Francisco Giants 3",
+      "tier": "lock"
+    },
+    {
       "id": "chicago-cubs-ml-0727",
       "desc": "Chicago Cubs ML",
       "odds": -114,
@@ -56,15 +65,6 @@
       "units": -1.0,
       "score": "Boston Red Sox 4, Athletics 2",
       "tier": "free"
-    },
-    {
-      "id": "lavked-ml-0728",
-      "desc": "Lavked ML",
-      "odds": -150,
-      "result": "WIN",
-      "units": 0.67,
-      "score": "Lavked 2-0 FIN E-SPORT \u00b7 final",
-      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785209060.4239252,
@@ -21612,10 +21612,6 @@
       "ts": "2026-07-26T17:54:48Z",
       "price_path": [
         {
-          "ts": 1785174268,
-          "px": 0.59
-        },
-        {
           "ts": 1785176068,
           "px": 0.59
         },
@@ -21705,6 +21701,10 @@
         },
         {
           "ts": 1785221659,
+          "px": 0.21
+        },
+        {
+          "ts": 1785223459,
           "px": 0.21
         }
       ]
@@ -22605,10 +22605,6 @@
       "ts": "2026-07-26T23:21:22Z",
       "price_path": [
         {
-          "ts": 1785170078,
-          "px": 0.55
-        },
-        {
           "ts": 1785172469,
           "px": 0.55
         },
@@ -22698,6 +22694,10 @@
         },
         {
           "ts": 1785221659,
+          "px": 0.565
+        },
+        {
+          "ts": 1785223459,
           "px": 0.565
         }
       ]
@@ -23927,10 +23927,6 @@
       "ts": "2026-07-27T11:42:00Z",
       "price_path": [
         {
-          "ts": 1785168284,
-          "px": 0.505
-        },
-        {
           "ts": 1785170670,
           "px": 0.505
         },
@@ -24020,6 +24016,10 @@
         },
         {
           "ts": 1785221660,
+          "px": 0.525
+        },
+        {
+          "ts": 1785223460,
           "px": 0.525
         }
       ]
@@ -27858,6 +27858,10 @@
         {
           "ts": 1785220464,
           "px": 0.48
+        },
+        {
+          "ts": 1785223462,
+          "px": 0.49
         }
       ]
     },
