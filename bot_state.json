@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-28 13:44 UTC",
+    "at": "2026-07-28 14:14 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-28 10:08 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-28 13:44 UTC",
+    "at": "2026-07-28 14:14 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -30,11 +30,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-28 13:44 UTC",
+    "at": "2026-07-28 14:14 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-28 13:44 UTC",
+    "at": "2026-07-28 14:14 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
@@ -23486,10 +23486,6 @@
       "ts": "2026-07-27T10:11:53Z",
       "price_path": [
         {
-          "ts": 1785192017,
-          "px": 0.17
-        },
-        {
           "ts": 1785194067,
           "px": 0.17
         },
@@ -23579,6 +23575,10 @@
         },
         {
           "ts": 1785245060,
+          "px": 0.16
+        },
+        {
+          "ts": 1785248059,
           "px": 0.16
         }
       ]
@@ -25250,10 +25250,6 @@
       "ts": "2026-07-27T14:15:09Z",
       "price_path": [
         {
-          "ts": 1785192019,
-          "px": 0.05
-        },
-        {
           "ts": 1785194069,
           "px": 0.05
         },
@@ -25343,6 +25339,10 @@
         },
         {
           "ts": 1785245061,
+          "px": 0.04
+        },
+        {
+          "ts": 1785248060,
           "px": 0.04
         }
       ]
@@ -30294,7 +30294,13 @@
       "market_slug": "aec-ow-dal-fal-2026-07-29",
       "outcome": "Dallas Fuel",
       "status": "open",
-      "ts": "2026-07-28T14:05:13Z"
+      "ts": "2026-07-28T14:05:13Z",
+      "price_path": [
+        {
+          "ts": 1785248062,
+          "px": 0.61
+        }
+      ]
     },
     {
       "price": 0.5,
@@ -30309,7 +30315,13 @@
       "market_slug": "aec-dota2-ns-stray-2026-07-29",
       "outcome": "NS Team",
       "status": "open",
-      "ts": "2026-07-28T14:05:14Z"
+      "ts": "2026-07-28T14:05:14Z",
+      "price_path": [
+        {
+          "ts": 1785248062,
+          "px": 0.5
+        }
+      ]
     }
   ],
   "pm_stats": {
