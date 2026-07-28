@@ -5,34 +5,41 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-28 02:14 UTC",
+    "at": "2026-07-28 03:44 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-2": "2026-07-28 00:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-28 02:04 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-28 00:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-28 03:24 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-28 03:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-27 22:40 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-28 02:14 UTC",
+    "at": "2026-07-28 03:44 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
       "over-7.0-0726 | Over 7.0 -110 | tier=sharp",
+      "cleveland-guardians-ml-0727 | Cleveland Guardians ML 144 | tier=whale",
       "over-8.0-0727 | Over 8.0 -110 | tier=sharp",
+      "over-9.0-0727 | Over 9.0 -110 | tier=sharp",
+      "2-leg-parlay-0727-whale | Houston Astros ML + Toronto Blue Jays ML 286 | tier=whale",
+      "2-leg-parlay-0727-sharp | Houston Astros ML + Toronto Blue Jays ML 286 | tier=sharp",
+      "2-leg-parlay-0727-lock | Houston Astros ML + Toronto Blue Jays ML 286 | tier=lock",
+      "over-9.5-0727 | Over 9.5 -110 | tier=sharp",
+      "over-8.5-0727 | Over 8.5 -110 | tier=whale",
       "lavked-ml-0727 | Lavked ML -150 | tier=sharp"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-28 02:14 UTC",
+    "at": "2026-07-28 03:44 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-27 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-28 02:14 UTC",
+    "at": "2026-07-28 03:44 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
