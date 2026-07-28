@@ -1532,10 +1532,10 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayTeam": "Arizona Diamondbacks",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": 100,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 9.0,
-        "ts": 1785217459
+        "ts": 1785237259
       }
     },
     {
@@ -1555,12 +1555,12 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 139,
-        "away_ml": -168,
+        "home_ml": 146,
+        "away_ml": -178,
         "total": 7.5,
-        "ts": 1785222859
+        "ts": 1785237259
       },
-      "last_alert_odds": -162
+      "last_alert_odds": -178
     },
     {
       "id": "cincinnati-reds-ml-0728",
@@ -1773,10 +1773,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -192,
-        "away_ml": 157,
+        "home_ml": -193,
+        "away_ml": 158,
         "total": 9.5,
-        "ts": 1785212060
+        "ts": 1785237259
       },
       "last_alert_odds": -192
     },
