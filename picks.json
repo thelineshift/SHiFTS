@@ -1797,10 +1797,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -178,
-        "away_ml": 147,
-        "total": 8.5,
-        "ts": 1785222859
+        "home_ml": -179,
+        "away_ml": 148,
+        "total": 8.0,
+        "ts": 1785235459
       },
       "last_alert_odds": -181
     },
