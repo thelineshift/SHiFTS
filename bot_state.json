@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "athletics-ml-0727",
+      "desc": "Athletics ML",
+      "odds": 149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 4, Athletics 2",
+      "tier": "free"
+    },
+    {
       "id": "hanwha-life-esports-challeng-0728",
       "desc": "Hanwha Life Esports Challengers ML",
       "odds": -186,
@@ -30673,7 +30682,7 @@
       "qty": 1,
       "market_slug": "aec-mlb-sea-lad-2026-07-30",
       "outcome": "Los Angeles Dodgers",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T15:15:16Z"
     }
   ],
