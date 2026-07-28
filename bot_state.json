@@ -26525,7 +26525,9 @@
           "px": 0.71
         }
       ],
-      "note": " [stale-swept]"
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.54,
@@ -27352,7 +27354,7 @@
       "qty": 1,
       "market_slug": "aec-wta-marsto-peyste-2026-07-26",
       "outcome": "Peyton Stearns",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T04:50:09Z"
     }
   ],
