@@ -25995,7 +25995,7 @@
       "qty": 2,
       "market_slug": "aec-wnba-conn-wsh-2026-07-28",
       "outcome": "Washington",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T21:50:15Z",
       "price_path": [
         {
@@ -26034,7 +26034,8 @@
           "ts": 1785208469,
           "px": 0.69
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.55,
