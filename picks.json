@@ -1675,10 +1675,10 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -144,
-        "away_ml": 119,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 9.0,
-        "ts": 1785212060
+        "ts": 1785275059
       }
     },
     {
@@ -1778,12 +1778,12 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -219,
-        "away_ml": 178,
+        "home_ml": -237,
+        "away_ml": 192,
         "total": 9.5,
-        "ts": 1785273259
+        "ts": 1785275059
       },
-      "last_alert_odds": -219
+      "last_alert_odds": -237
     },
     {
       "id": "tampa-bay-rays--1.5-0728",
@@ -1827,9 +1827,9 @@
       "awayTeam": "Colorado Rockies",
       "live_odds": {
         "home_ml": -231,
-        "away_ml": 187,
+        "away_ml": 188,
         "total": 8.0,
-        "ts": 1785262459
+        "ts": 1785275060
       },
       "last_alert_odds": -231
     },
@@ -1912,10 +1912,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -115,
+        "home_ml": -103,
+        "away_ml": -117,
         "total": 9.0,
-        "ts": 1785267859
+        "ts": 1785275060
       }
     },
     {
