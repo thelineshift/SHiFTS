@@ -26548,9 +26548,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "astatc-cs2-odk-ldp-2026-07-26-map1",
-    "aec-cs2-mgc-nip-2026-07-26",
-    "aec-cs2-3dmax-fut-2026-07-26",
     "astatc-cs2-odk-ldp-2026-07-26-map2",
     "aec-cs2-inox-g2a-2026-07-26",
     "aec-cs2-erx-ent-2026-07-27",
@@ -26607,7 +26604,10 @@
     "aec-atp-framae-lukneu-2026-07-27",
     "aec-atp-timska-thofau-2026-07-27",
     "aec-atp-makkas-fresil-2026-07-27",
-    "aec-lol-rb-g2h-2026-07-28"
+    "aec-lol-rb-g2h-2026-07-28",
+    "aec-atp-markru-phihen-2026-07-27",
+    "aec-atp-kilfel-harmay-2026-07-27",
+    "aec-atp-guijus-sasgue-2026-07-27"
   ],
   "odds_api": {
     "month": "2026-07",
