@@ -1386,8 +1386,8 @@
       "live_odds": {
         "home_ml": -266,
         "away_ml": 213,
-        "total": 158.5,
-        "ts": 1785246258
+        "total": 159.5,
+        "ts": 1785253458
       },
       "last_alert_odds": -266
     },
@@ -1462,10 +1462,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 109,
-        "away_ml": -131,
+        "home_ml": 104,
+        "away_ml": -126,
         "total": 8.0,
-        "ts": 1785249859
+        "ts": 1785253459
       }
     },
     {
@@ -1629,8 +1629,8 @@
       "live_odds": {
         "home_ml": 124,
         "away_ml": -150,
-        "total": 9.5,
-        "ts": 1785242659
+        "total": 10.0,
+        "ts": 1785253459
       },
       "last_alert_odds": 129
     },
@@ -1822,12 +1822,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -205,
-        "away_ml": 167,
-        "total": 8.5,
-        "ts": 1785246259
+        "home_ml": -217,
+        "away_ml": 177,
+        "total": 8.0,
+        "ts": 1785253459
       },
-      "last_alert_odds": -205
+      "last_alert_odds": -217
     },
     {
       "id": "2-leg-parlay-0728-whale",
@@ -1933,8 +1933,8 @@
       "live_odds": {
         "home_ml": 124,
         "away_ml": -150,
-        "total": 9.5,
-        "ts": 1785242660
+        "total": 10.0,
+        "ts": 1785253459
       },
       "last_alert_odds": -155
     },
