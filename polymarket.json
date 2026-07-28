@@ -1,10 +1,34 @@
 {
-  "ts": "2026-07-28T18:59:21Z",
+  "ts": "2026-07-28T19:14:20Z",
   "configured": true,
-  "balance_usd": 119.79,
-  "buying_power": 20.79,
+  "balance_usd": 117.42,
+  "buying_power": 18.42,
   "positions": [],
   "open_orders": [
+    {
+      "market": "astatc-wta-marsto-peyste-2026-07-26-sw1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.01",
+      "qty": 259
+    },
+    {
+      "market": "aec-ow-dal-fal-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.42",
+      "qty": 4
+    },
+    {
+      "market": "astatc-wta-darvid-marrib-2026-07-26-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.29",
+      "qty": 5
+    },
+    {
+      "market": "astatc-wta-yulsta-sloste-2026-07-26-sw1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.29",
+      "qty": 5
+    },
     {
       "market": "aec-wta-marsto-peyste-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
@@ -52,30 +76,6 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.56",
       "qty": 4
-    },
-    {
-      "market": "astatc-wta-marsto-peyste-2026-07-26-sw1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.01",
-      "qty": 259
-    },
-    {
-      "market": "aec-ow-dal-fal-2026-07-29",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.42",
-      "qty": 4
-    },
-    {
-      "market": "astatc-wta-darvid-marrib-2026-07-26-sw2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.29",
-      "qty": 5
-    },
-    {
-      "market": "astatc-wta-yulsta-sloste-2026-07-26-sw1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.29",
-      "qty": 5
     }
   ]
 }
