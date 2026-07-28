@@ -31134,6 +31134,21 @@
       "outcome": "Toby Samuel",
       "status": "open",
       "ts": "2026-07-28T19:25:06Z"
+    },
+    {
+      "price": 0.43,
+      "stake": 1.29,
+      "kind": "EDGE",
+      "p_model": 0.6422106001703037,
+      "event": "Harry Wendelken vs. Murphy Cassone",
+      "ev_start": "2026-07-28T22:30:00Z",
+      "reason": "Elo 64% vs market 43% \u2014 21% edge, half-Kelly",
+      "order_id": "BH9KCCQE49NK",
+      "qty": 3,
+      "market_slug": "aec-atp-harwen-murcas-2026-07-27",
+      "outcome": "Harry Wendelken",
+      "status": "open",
+      "ts": "2026-07-28T19:30:02Z"
     }
   ],
   "pm_stats": {
@@ -31141,7 +31156,7 @@
     "wins": 30,
     "losses": 65,
     "pnl": -60.2,
-    "trades": 361,
+    "trades": 362,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-18",
     "deposits": 64.0,
