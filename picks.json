@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T04:01:02Z",
+  "updated": "2026-07-28T04:24:23Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -989,7 +989,10 @@
         "away_ml": -142,
         "total": 8.5,
         "ts": 1785189868
-      }
+      },
+      "result": "LOSS",
+      "score": "Milwaukee Brewers 0, San Francisco Giants 3",
+      "units_result": -1.0
     },
     {
       "id": "bnk-fearx-youth-ml-0727",
@@ -1095,7 +1098,10 @@
         "total": 9.5,
         "ts": 1785188068
       },
-      "last_alert_odds": -131
+      "last_alert_odds": -131,
+      "result": "WIN",
+      "score": "Chicago Cubs 7, St. Louis Cardinals 3",
+      "units_result": 0.88
     },
     {
       "id": "2-leg-parlay-0727-lock",
@@ -1150,7 +1156,10 @@
         "total": 10.0,
         "ts": 1785201259
       },
-      "last_alert_odds": 163
+      "last_alert_odds": 163,
+      "result": "LOSS",
+      "score": "Boston Red Sox 4, Athletics 2",
+      "units_result": -1.0
     },
     {
       "id": "ex-rustec-ml-0727",
