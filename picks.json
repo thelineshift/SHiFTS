@@ -1384,10 +1384,10 @@
       "homeTeam": "Washington Mystics",
       "awayTeam": "Connecticut Sun",
       "live_odds": {
-        "home_ml": -239,
-        "away_ml": 192,
+        "home_ml": -247,
+        "away_ml": 198,
         "total": 157.5,
-        "ts": 1785221058
+        "ts": 1785240858
       },
       "last_alert_odds": -239
     },
@@ -1485,11 +1485,12 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -150,
+        "home_ml": 128,
+        "away_ml": -155,
         "total": 7.5,
-        "ts": 1785230059
-      }
+        "ts": 1785240859
+      },
+      "last_alert_odds": -155
     },
     {
       "id": "minnesota-twins--1.5-0728",
@@ -1532,10 +1533,10 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayTeam": "Arizona Diamondbacks",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -105,
+        "home_ml": -117,
+        "away_ml": -103,
         "total": 9.0,
-        "ts": 1785237259
+        "ts": 1785240859
       }
     },
     {
@@ -1555,12 +1556,12 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 146,
-        "away_ml": -178,
+        "home_ml": 135,
+        "away_ml": -163,
         "total": 7.5,
-        "ts": 1785237259
+        "ts": 1785240859
       },
-      "last_alert_odds": -178
+      "last_alert_odds": -163
     },
     {
       "id": "cincinnati-reds-ml-0728",
@@ -1650,10 +1651,10 @@
       "awayTeam": "Toronto Blue Jays",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -144,
+        "home_ml": -143,
         "away_ml": 119,
         "total": 8.5,
-        "ts": 1785230059
+        "ts": 1785240860
       }
     },
     {
@@ -1983,7 +1984,14 @@
       "opp": "San Francisco Giants",
       "analysis": "66-40 overall, 30-20 on the road \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes Milwaukee Brewers 62% straight up | \ud83d\udcc8 **Market angle:** 66-40 overall, 30-20 on the road \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes Milwaukee Brewers ",
       "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "San Francisco Giants"
+      "homeTeam": "San Francisco Giants",
+      "live_odds": {
+        "home_ml": 128,
+        "away_ml": -155,
+        "total": 7.5,
+        "ts": 1785240860
+      },
+      "last_alert_odds": -155
     }
   ]
 }
