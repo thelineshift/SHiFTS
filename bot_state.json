@@ -27509,6 +27509,21 @@
           "px": 0.71
         }
       ]
+    },
+    {
+      "price": 0.01,
+      "stake": 1.12,
+      "kind": "EDGE",
+      "p_model": 0.2845362645316913,
+      "event": "Mary Stoiana vs. Peyton Stearns",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 28% vs market 1% \u2014 27% edge, half-Kelly",
+      "order_id": "BGXN2FAH09NW",
+      "qty": 112,
+      "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw2",
+      "outcome": "Mary Stoiana",
+      "status": "open",
+      "ts": "2026-07-28T05:14:59Z"
     }
   ],
   "pm_stats": {
@@ -27516,7 +27531,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 304,
+    "trades": 305,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-04",
     "deposits": 64.0,
