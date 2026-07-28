@@ -29599,6 +29599,36 @@
           "px": 0.28
         }
       ]
+    },
+    {
+      "price": 0.01,
+      "stake": 1.36,
+      "kind": "EDGE",
+      "p_model": 0.2845362645316913,
+      "event": "Mary Stoiana vs. Peyton Stearns",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 28% vs market 1% \u2014 27% edge, half-Kelly",
+      "order_id": "BH2JTEQEY9SK",
+      "qty": 136,
+      "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw2",
+      "outcome": "Mary Stoiana",
+      "status": "open",
+      "ts": "2026-07-28T11:20:04Z"
+    },
+    {
+      "price": 0.37,
+      "stake": 0.74,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Stray Team vs. Travoman Team",
+      "ev_start": "2026-07-30T12:00:00Z",
+      "reason": "model 50% vs market 37% \u2014 13% edge, half-Kelly",
+      "order_id": "BH2HKP03M9NP",
+      "qty": 2,
+      "market_slug": "aec-dota2-stray-tt-2026-07-30",
+      "outcome": "Stray Team",
+      "status": "open",
+      "ts": "2026-07-28T11:20:06Z"
     }
   ],
   "pm_stats": {
@@ -29606,7 +29636,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 323,
+    "trades": 325,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-10",
     "deposits": 64.0,
