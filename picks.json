@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T20:00:45Z",
+  "updated": "2026-07-28T20:44:21Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1462,12 +1462,12 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -101,
+        "home_ml": 100,
         "away_ml": -120,
         "total": 8.0,
-        "ts": 1785271459
+        "ts": 1785264259
       },
-      "last_alert_odds": -101
+      "last_alert_odds": 100
     },
     {
       "id": "milwaukee-brewers-ml-0728",
@@ -1722,7 +1722,10 @@
         "away_ml": 137,
         "total": 9.0,
         "ts": 1785258859
-      }
+      },
+      "result": "WIN",
+      "score": "Cleveland Guardians 6, Cincinnati Reds 5",
+      "units_result": 1.39
     },
     {
       "id": "over-9.0-0728",
