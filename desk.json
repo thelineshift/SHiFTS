@@ -1,32 +1,14 @@
 {
-  "updated": "2026-07-28T12:00:05Z",
-  "record": "26-55",
-  "trades": 326,
+  "updated": "2026-07-28T14:00:06Z",
+  "record": "27-57",
+  "trades": 333,
   "open": 40,
-  "pnl": -56.22,
-  "account": 110.84,
+  "pnl": -57.97,
+  "account": 136.13,
   "deposits": 64.0,
-  "net_pnl": 46.84,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 19-41 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 2-2",
+  "net_pnl": 72.13,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 20-43 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 2-2",
   "recent": [
-    {
-      "outcome": "paiN Academy",
-      "short": true,
-      "result": "lost",
-      "pnl": -1.3
-    },
-    {
-      "outcome": "Bulldog Esports",
-      "short": true,
-      "result": "won",
-      "pnl": 2.6
-    },
-    {
-      "outcome": "RMD Gaming",
-      "short": true,
-      "result": "lost",
-      "pnl": -1.68
-    },
     {
       "outcome": "Hunters Rising",
       "short": true,
@@ -40,10 +22,28 @@
       "pnl": -1.02
     },
     {
+      "outcome": "Timofey Skatov",
+      "short": false,
+      "result": "won",
+      "pnl": 1.64
+    },
+    {
       "outcome": "Frederico Ferreira Silva",
       "short": true,
       "result": "won",
       "pnl": 3.4
+    },
+    {
+      "outcome": "Philip Henning",
+      "short": true,
+      "result": "lost",
+      "pnl": -2.45
+    },
+    {
+      "outcome": "Sascha Gueymard-Wayenburg",
+      "short": true,
+      "result": "lost",
+      "pnl": -0.94
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
