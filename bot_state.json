@@ -30688,7 +30688,7 @@
       "qty": 6,
       "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw2",
       "outcome": "Mary Stoiana",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T17:40:02Z"
     },
     {
@@ -30703,7 +30703,7 @@
       "qty": 274,
       "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
       "outcome": "Renata Zarazua",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T17:40:04Z"
     }
   ],
