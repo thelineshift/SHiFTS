@@ -3907,7 +3907,7 @@
         }
       },
       "valorant:137903": {
-        "ts": 1785253805.7592113,
+        "ts": 1785261005.8120437,
         "f": {
           "w": 1,
           "l": 4,
@@ -3936,7 +3936,7 @@
         }
       },
       "valorant:138941": {
-        "ts": 1785253805.0319781,
+        "ts": 1785261006.6037273,
         "f": {
           "w": 2,
           "l": 2,
@@ -30509,6 +30509,21 @@
       "status": "resting",
       "ts": "2026-07-28T17:40:04Z",
       "price_path": []
+    },
+    {
+      "price": 0.01,
+      "stake": 2.59,
+      "kind": "EDGE",
+      "p_model": 0.2845362645316913,
+      "event": "Mary Stoiana vs. Peyton Stearns",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 28% vs market 1% \u2014 27% edge, half-Kelly",
+      "order_id": "BH8ABF8ZY9P1",
+      "qty": 259,
+      "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw1",
+      "outcome": "Mary Stoiana",
+      "status": "open",
+      "ts": "2026-07-28T17:50:07Z"
     }
   ],
   "pm_stats": {
@@ -30516,7 +30531,7 @@
     "wins": 30,
     "losses": 64,
     "pnl": -58.87,
-    "trades": 349,
+    "trades": 350,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-16",
     "deposits": 64.0,
