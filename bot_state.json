@@ -26788,6 +26788,21 @@
       "outcome": "Tampa Bay Rays",
       "status": "open",
       "ts": "2026-07-28T03:05:06Z"
+    },
+    {
+      "price": 0.11,
+      "stake": 1.76,
+      "kind": "EDGE",
+      "p_model": 0.4515250202540013,
+      "event": "Xiyu Wang vs. Caty McNally",
+      "ev_start": "2026-07-28T15:00:00Z",
+      "reason": "Elo 45% vs market 11% \u2014 34% edge, half-Kelly",
+      "order_id": "BGWHP2YP29NF",
+      "qty": 16,
+      "market_slug": "astatc-wta-xiywan-catmcn-2026-07-26-sw1",
+      "outcome": "Xiyu Wang",
+      "status": "open",
+      "ts": "2026-07-28T03:10:04Z"
     }
   ],
   "pm_stats": {
@@ -26795,7 +26810,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 297,
+    "trades": 298,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-02",
     "deposits": 64.0,
