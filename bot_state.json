@@ -31486,8 +31486,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-valorant-axo-flyr-2026-07-27",
-    "aec-lol-kbm-tse-2026-07-27",
     "aec-valorant-him-roso-2026-07-27",
     "aec-lol-vksa-est-2026-07-28",
     "aec-lol-ktc-dkc-2026-07-28",
@@ -31545,7 +31543,9 @@
     "aec-atp-benbon-blabic-2026-07-27",
     "aec-atp-jacjon-tobsam-2026-07-27",
     "aec-atp-harwen-murcas-2026-07-27",
-    "aec-atp-aughol-huggre-2026-07-27"
+    "aec-atp-aughol-huggre-2026-07-27",
+    "aec-cs2-regain-voca-2026-07-29",
+    "aec-valorant-gxgc-hbs-2026-07-29"
   ],
   "odds_api": {
     "month": "2026-07",
