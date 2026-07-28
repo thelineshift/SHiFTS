@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T02:04:21Z",
+  "updated": "2026-07-28T03:24:21Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -810,7 +810,10 @@
         "total": 8.5,
         "ts": 1785194059
       },
-      "last_alert_odds": 129
+      "last_alert_odds": 129,
+      "result": "LOSS",
+      "score": "New York Yankees 9, Chicago White Sox 5",
+      "units_result": -1.0
     },
     {
       "id": "detroit-tigers-ml-0727",
