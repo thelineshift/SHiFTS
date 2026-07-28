@@ -4731,7 +4731,7 @@
         }
       },
       "valorant:133557": {
-        "ts": 1785247494.8402526,
+        "ts": 1785255891.8129387,
         "f": {
           "w": 2,
           "l": 3,
@@ -6778,7 +6778,7 @@
         }
       },
       "valorant:133115": {
-        "ts": 1785247495.5538046,
+        "ts": 1785255892.5102398,
         "f": {
           "w": 3,
           "l": 2,
@@ -6807,7 +6807,7 @@
         }
       },
       "valorant:128796": {
-        "ts": 1785247496.151423,
+        "ts": 1785255893.106553,
         "f": {
           "w": 3,
           "l": 2,
@@ -29997,10 +29997,6 @@
         {
           "ts": 1785254064,
           "px": 0.48
-        },
-        {
-          "ts": 1785255864,
-          "px": 0.49
         }
       ]
     },
@@ -30109,10 +30105,6 @@
         {
           "ts": 1785253465,
           "px": 0.555
-        },
-        {
-          "ts": 1785255865,
-          "px": 0.555
         }
       ]
     },
@@ -30215,10 +30207,6 @@
         {
           "ts": 1785254064,
           "px": 0.51
-        },
-        {
-          "ts": 1785255865,
-          "px": 0.48
         }
       ]
     },
@@ -30362,10 +30350,6 @@
         {
           "ts": 1785254064,
           "px": 0.7
-        },
-        {
-          "ts": 1785255865,
-          "px": 0.69
         }
       ]
     },
@@ -30454,10 +30438,6 @@
         {
           "ts": 1785253466,
           "px": 0.12
-        },
-        {
-          "ts": 1785255865,
-          "px": 0.08
         }
       ]
     },
@@ -30499,10 +30479,6 @@
         },
         {
           "ts": 1785253466,
-          "px": 0.52
-        },
-        {
-          "ts": 1785255865,
           "px": 0.52
         }
       ]
@@ -30546,10 +30522,6 @@
         {
           "ts": 1785253466,
           "px": 0.565
-        },
-        {
-          "ts": 1785255865,
-          "px": 0.565
         }
       ]
     },
@@ -30592,10 +30564,6 @@
         {
           "ts": 1785253466,
           "px": 0.16
-        },
-        {
-          "ts": 1785255866,
-          "px": 0.16
         }
       ]
     },
@@ -30629,10 +30597,6 @@
         },
         {
           "ts": 1785253466,
-          "px": 0.2
-        },
-        {
-          "ts": 1785255866,
           "px": 0.2
         }
       ]
@@ -30751,10 +30715,6 @@
         {
           "ts": 1785254065,
           "px": 0.36
-        },
-        {
-          "ts": 1785255866,
-          "px": 0.36
         }
       ]
     },
@@ -30852,26 +30812,53 @@
         {
           "ts": 1785254065,
           "px": 0.7
-        },
-        {
-          "ts": 1785255866,
-          "px": 0.7
         }
       ]
+    },
+    {
+      "price": 0.31,
+      "short": true,
+      "stake": 0.93,
+      "kind": "EDGE",
+      "p_model": 0.43243243243243246,
+      "event": "9z Globant vs. Maze Gaming",
+      "ev_start": "2026-07-28T20:00:00Z",
+      "reason": "model 43% vs market 31% \u2014 12% edge, half-Kelly",
+      "order_id": "BH730VMY49NS",
+      "qty": 3,
+      "market_slug": "aec-lol-9zg-maz-2026-07-28",
+      "outcome": "Maze Gaming",
+      "status": "open",
+      "ts": "2026-07-28T16:25:04Z"
+    },
+    {
+      "price": 0.44,
+      "stake": 1.32,
+      "kind": "EDGE",
+      "p_model": 0.5675675675675675,
+      "event": "Rostik Team vs. Travoman Team",
+      "ev_start": "2026-07-29T18:00:00Z",
+      "reason": "model 57% vs market 44% \u2014 13% edge, half-Kelly",
+      "order_id": "BH73S0A449RC",
+      "qty": 3,
+      "market_slug": "aec-dota2-rt-tt-2026-07-29",
+      "outcome": "Rostik Team",
+      "status": "open",
+      "ts": "2026-07-28T16:25:06Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 27,
-    "losses": 60,
-    "pnl": -62.92,
-    "trades": 341,
+    "losses": 59,
+    "pnl": -61.22,
+    "trades": 343,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-16",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 121.53,
-    "net": 57.53,
+    "account": 123.23,
+    "net": 59.23,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -30881,7 +30868,7 @@
       ],
       "EDGE": [
         20,
-        46,
+        45,
         0
       ],
       "LIVE-BET": [
@@ -30901,6 +30888,14 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
+    {
+      "ts": "2026-07-27T13:54:59Z",
+      "kind": "EDGE",
+      "outcome": "Butterfly",
+      "result": "LOSS",
+      "pnl": -8.14,
+      "lesson": "model 75% vs market 53% missed \u2014 logged for the playbook review."
+    },
     {
       "ts": "2026-07-27T13:55:03Z",
       "kind": "EDGE",
@@ -31132,14 +31127,6 @@
       "result": "LOSS",
       "pnl": -1.64,
       "lesson": "model 68% vs market 41% missed \u2014 logged for the playbook review. Taken 0.41, rode to 0.01 before the result \u2014 beat the number by 40\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-28T16:24:20Z",
-      "kind": "EDGE",
-      "outcome": "UB Alma Mater",
-      "result": "LOSS",
-      "pnl": -1.7,
-      "lesson": "model 31% vs market 5% missed \u2014 logged for the playbook review. Taken 0.05, slid to 0.03 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
