@@ -30542,7 +30542,13 @@
       "market_slug": "astatc-wta-yulsta-sloste-2026-07-26-sw1",
       "outcome": "Yulia Starodubtseva",
       "status": "resting",
-      "ts": "2026-07-28T14:50:12Z"
+      "ts": "2026-07-28T14:50:12Z",
+      "price_path": [
+        {
+          "ts": 1785250464,
+          "px": 0.68
+        }
+      ]
     }
   ],
   "pm_stats": {
