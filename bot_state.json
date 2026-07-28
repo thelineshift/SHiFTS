@@ -40,15 +40,6 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
-      "id": "chicago-cubs-ml-0727",
-      "desc": "Chicago Cubs ML",
-      "odds": -114,
-      "result": "WIN",
-      "units": 0.88,
-      "score": "Chicago Cubs 7, St. Louis Cardinals 3",
-      "tier": "lock"
-    },
-    {
       "id": "athletics-ml-0727",
       "desc": "Athletics ML",
       "odds": 149,
@@ -67,7 +58,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785209060.4239252,
+  "last_x_receipt_ts": 1785245060.339315,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
