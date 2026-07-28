@@ -3721,7 +3721,7 @@
         }
       },
       "dota2:1948": {
-        "ts": 1785253817.8192418,
+        "ts": 1785271782.0687015,
         "f": {
           "w": 3,
           "l": 1,
@@ -3746,11 +3746,15 @@
         }
       },
       "dota2:138987": {
-        "ts": 1785236994.4320936,
+        "ts": 1785271782.671356,
         "f": {
-          "w": 1,
-          "l": 3,
+          "w": 0,
+          "l": 4,
           "res": [
+            {
+              "won": false,
+              "opp": "PuckChamp"
+            },
             {
               "won": false,
               "opp": "RE.Arise"
@@ -3762,10 +3766,6 @@
             {
               "won": false,
               "opp": "PuckChamp"
-            },
-            {
-              "won": true,
-              "opp": "Spirit Academy"
             }
           ]
         }
@@ -4695,11 +4695,15 @@
         }
       },
       "valorant:133557": {
-        "ts": 1785264306.2499902,
+        "ts": 1785271792.2800605,
         "f": {
-          "w": 2,
-          "l": 3,
+          "w": 1,
+          "l": 4,
           "res": [
+            {
+              "won": false,
+              "opp": "SK Nebula"
+            },
             {
               "won": true,
               "opp": "Karmine Corp GC"
@@ -4715,10 +4719,6 @@
             {
               "won": false,
               "opp": "G2 Gozen"
-            },
-            {
-              "won": true,
-              "opp": "FOKUS Sakura"
             }
           ]
         }
@@ -6742,7 +6742,7 @@
         }
       },
       "valorant:133115": {
-        "ts": 1785264306.9860086,
+        "ts": 1785271792.9846077,
         "f": {
           "w": 3,
           "l": 2,
@@ -6771,7 +6771,7 @@
         }
       },
       "valorant:128796": {
-        "ts": 1785264307.5880382,
+        "ts": 1785271793.5809577,
         "f": {
           "w": 3,
           "l": 2,
@@ -8636,6 +8636,122 @@
             {
               "won": true,
               "opp": "HANJIN BRION"
+            }
+          ]
+        }
+      },
+      "lol:126059": {
+        "ts": 1785271780.7465575,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "ThunderTalk Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Team WE"
+            },
+            {
+              "won": false,
+              "opp": "Team Secret Whales"
+            },
+            {
+              "won": false,
+              "opp": "G2 Esports"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            }
+          ]
+        }
+      },
+      "lol:129971": {
+        "ts": 1785271781.3459158,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": true,
+              "opp": "LGD Gaming"
+            },
+            {
+              "won": true,
+              "opp": "JD Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": true,
+              "opp": "LGD Gaming"
+            }
+          ]
+        }
+      },
+      "lol:126061": {
+        "ts": 1785271783.9560812,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "DN SOOPers"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim Red Force"
+            },
+            {
+              "won": true,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": true,
+              "opp": "Kiwoom DRX"
+            },
+            {
+              "won": true,
+              "opp": "Gen.G"
+            }
+          ]
+        }
+      },
+      "lol:63": {
+        "ts": 1785271784.5531728,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Kiwoom DRX"
+            },
+            {
+              "won": false,
+              "opp": "Gen.G"
+            },
+            {
+              "won": true,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": false,
+              "opp": "Kiwoom DRX"
+            },
+            {
+              "won": true,
+              "opp": "DN SOOPers"
             }
           ]
         }
@@ -31198,6 +31314,22 @@
           "px": 0.43
         }
       ]
+    },
+    {
+      "price": 0.34,
+      "short": true,
+      "stake": 1.02,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Barca eSports GC vs. ALTERNATE aTTaX Ruby",
+      "ev_start": "2026-07-29T18:00:00Z",
+      "reason": "model 50% vs market 34% \u2014 16% edge, half-Kelly",
+      "order_id": "BHASFXT9T9NG",
+      "qty": 3,
+      "market_slug": "aec-valorant-beg-aar-2026-07-29",
+      "outcome": "ALTERNATE aTTaX Ruby",
+      "status": "open",
+      "ts": "2026-07-28T20:50:08Z"
     }
   ],
   "pm_stats": {
@@ -31205,7 +31337,7 @@
     "wins": 32,
     "losses": 69,
     "pnl": -60.88,
-    "trades": 365,
+    "trades": 366,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-20",
     "deposits": 64.0,
