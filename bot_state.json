@@ -31365,8 +31365,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-cs2-brute-navij-2026-07-27",
-    "aec-cs2-brute-mouzn-2026-07-27",
     "aec-cs2-bbp-falf-2026-07-27",
     "aec-cs2-mouzn-lea-2026-07-27",
     "aec-cs2-navij-lea-2026-07-27",
@@ -31424,7 +31422,9 @@
     "aec-lol-est-itz-2026-07-28",
     "aec-lol-7rex-kbm-2026-07-28",
     "aec-lol-rmd-reda-2026-07-29",
-    "aec-lol-one-piv-2026-07-28"
+    "aec-lol-one-piv-2026-07-28",
+    "aec-dota2-agm-nemiga-2026-07-29",
+    "aec-dota2-agm-stx-2026-07-29"
   ],
   "odds_api": {
     "month": "2026-07",
