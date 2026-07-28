@@ -27043,7 +27043,7 @@
     "pnl": -59.62,
     "trades": 300,
     "last_recap": "2026-07-27",
-    "last_recap_hour": "2026-07-28-02",
+    "last_recap_hour": "2026-07-28-04",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
     "account": 101.44,
@@ -27072,8 +27072,8 @@
       ]
     },
     "archived": 0,
-    "day_date": "2026-07-27",
-    "day_anchor": 97.46
+    "day_date": "2026-07-28",
+    "day_anchor": 101.44
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
@@ -27399,7 +27399,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785204005.010184,
+  "dep_checked_ts": 1785211201.0017042,
   "x_bio_v": 2,
   "op_cool_until": 1785096924.2504044
 }
