@@ -1912,10 +1912,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -107,
-        "away_ml": -112,
-        "total": 9.0,
-        "ts": 1785280460
+        "home_ml": -112,
+        "away_ml": -108,
+        "total": 8.5,
+        "ts": 1785282259
       }
     },
     {
@@ -2095,10 +2095,10 @@
       "homeTeam": "Los Angeles Sparks",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": 163,
-        "away_ml": -199,
+        "home_ml": 167,
+        "away_ml": -206,
         "total": 182.5,
-        "ts": 1785269659
+        "ts": 1785282260
       }
     },
     {
