@@ -1822,12 +1822,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -206,
-        "away_ml": 168,
+        "home_ml": -231,
+        "away_ml": 187,
         "total": 8.0,
-        "ts": 1785260659
+        "ts": 1785262459
       },
-      "last_alert_odds": -217
+      "last_alert_odds": -231
     },
     {
       "id": "2-leg-parlay-0728-whale",
