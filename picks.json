@@ -1652,10 +1652,10 @@
       "awayTeam": "Toronto Blue Jays",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -137,
-        "away_ml": 114,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 9.0,
-        "ts": 1785264259
+        "ts": 1785267859
       }
     },
     {
@@ -1801,8 +1801,8 @@
       "live_odds": {
         "home_ml": -181,
         "away_ml": 149,
-        "total": 8.0,
-        "ts": 1785264259
+        "total": 8.5,
+        "ts": 1785267859
       },
       "last_alert_odds": -181
     },
@@ -1910,9 +1910,9 @@
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
         "home_ml": -105,
-        "away_ml": -114,
+        "away_ml": -115,
         "total": 9.0,
-        "ts": 1785239059
+        "ts": 1785267859
       }
     },
     {
