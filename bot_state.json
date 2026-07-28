@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "washington-nationals-ml-0727",
+      "desc": "Washington Nationals ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Toronto Blue Jays 3, Washington Nationals 2",
+      "tier": "lock"
+    },
+    {
       "id": "chicago-white-sox-ml-0727",
       "desc": "Chicago White Sox ML",
       "odds": 113,
@@ -27513,7 +27522,7 @@
       "qty": 112,
       "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw2",
       "outcome": "Mary Stoiana",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T05:14:59Z"
     }
   ],
