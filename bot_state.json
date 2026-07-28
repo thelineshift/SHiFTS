@@ -30511,7 +30511,7 @@
       "qty": 1,
       "market_slug": "aec-mlb-sea-lad-2026-07-30",
       "outcome": "Los Angeles Dodgers",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T15:15:16Z",
       "price_path": [
         {
@@ -30554,7 +30554,8 @@
           "ts": 1785272069,
           "px": 0.58
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.29,
