@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T16:01:05Z",
+  "updated": "2026-07-28T17:04:21Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2008,7 +2008,10 @@
       "opp": "los kogutos",
       "analysis": "2-3 last 5 (beat Mai Tai, NAVI Junior) (lost to ex-MANA eSports) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat Mai Tai, NAVI Junior) (lost to ex-MANA eSports) vs 1-4 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
       "awayTeam": "UNiTY esports",
-      "homeTeam": "los kogutos"
+      "homeTeam": "los kogutos",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "UNiTY esports 1-2 ex-RUSTEC \u00b7 final"
     },
     {
       "id": "boston-red-sox-ml-0728",
