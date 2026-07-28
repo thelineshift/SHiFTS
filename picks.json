@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T08:00:55Z",
+  "updated": "2026-07-28T09:44:23Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1694,7 +1694,10 @@
       "opp": "HANJIN BRION Challengers",
       "analysis": "2-3 last 5 (beat HANJIN BRION Challengers, Gen.G Global Academy) (lost to Dplus KIA Challengers) vs 0-5 \u2014 live Pinnacle line -186 (our 90% vs book 62%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat HANJIN BRION Challengers, Gen.G Global Academy) (lost to Dplus KIA Challengers) vs 0-5 \u2014 live Pinnacle line -",
       "awayTeam": "Hanwha Life Esports Challengers",
-      "homeTeam": "HANJIN BRION Challengers"
+      "homeTeam": "HANJIN BRION Challengers",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Hanwha Life Esports Challengers 0-2 HANJIN BRION Challengers \u00b7 final"
     },
     {
       "id": "cleveland-guardians-ml-0728",
