@@ -1797,10 +1797,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -179,
+        "home_ml": -180,
         "away_ml": 148,
         "total": 8.0,
-        "ts": 1785235459
+        "ts": 1785239059
       },
       "last_alert_odds": -181
     },
@@ -1907,10 +1907,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -108,
-        "away_ml": -112,
+        "home_ml": -105,
+        "away_ml": -114,
         "total": 9.0,
-        "ts": 1785226459
+        "ts": 1785239059
       }
     },
     {
