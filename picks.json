@@ -1510,10 +1510,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -181,
+        "away_ml": 149,
         "total": 9.0,
-        "ts": 1785264259
+        "ts": 1785269659
       },
       "last_alert_odds": -184
     },
@@ -1628,10 +1628,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Boston Red Sox",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -150,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 10.0,
-        "ts": 1785253459
+        "ts": 1785269659
       },
       "last_alert_odds": 129
     },
@@ -1652,10 +1652,10 @@
       "awayTeam": "Toronto Blue Jays",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -144,
+        "away_ml": 119,
         "total": 9.0,
-        "ts": 1785267859
+        "ts": 1785269659
       }
     },
     {
@@ -1775,10 +1775,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -191,
-        "away_ml": 157,
+        "home_ml": -197,
+        "away_ml": 161,
         "total": 9.5,
-        "ts": 1785260659
+        "ts": 1785269659
       },
       "last_alert_odds": -192
     },
@@ -1799,10 +1799,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -181,
-        "away_ml": 149,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 8.5,
-        "ts": 1785267859
+        "ts": 1785269659
       },
       "last_alert_odds": -181
     },
@@ -1932,10 +1932,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -150,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 10.0,
-        "ts": 1785253459
+        "ts": 1785269659
       },
       "last_alert_odds": -155
     },
@@ -2031,10 +2031,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -150,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 10.0,
-        "ts": 1785255260
+        "ts": 1785269659
       }
     },
     {
@@ -2090,7 +2090,13 @@
       "opp": "New York Liberty",
       "analysis": "10-16 overall, 5-8 at home \u2014 our 40% vs book 36% (no-vig) | \ud83e\udde0 **The read:** 10-16 overall, 5-8 at home \u2014 our 40% vs book 36% (no-vig). Model makes Los Angeles Sparks **40%** \u2014 books imply **38%**. SHiFT presses the gap.",
       "homeTeam": "Los Angeles Sparks",
-      "awayTeam": "New York Liberty"
+      "awayTeam": "New York Liberty",
+      "live_odds": {
+        "home_ml": 163,
+        "away_ml": -199,
+        "total": 182.5,
+        "ts": 1785269659
+      }
     },
     {
       "id": "3-leg-parlay-0728-sharp",
