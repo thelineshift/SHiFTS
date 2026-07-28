@@ -28476,6 +28476,21 @@
           "px": 0.38
         }
       ]
+    },
+    {
+      "price": 0.29,
+      "stake": 1.45,
+      "kind": "EDGE",
+      "p_model": 0.5704689795743136,
+      "event": "Yulia Starodubtseva vs. Sloane Stephens",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 57% vs market 29% \u2014 28% edge, half-Kelly",
+      "order_id": "BH0375XN29NY",
+      "qty": 5,
+      "market_slug": "astatc-wta-yulsta-sloste-2026-07-26-sw2",
+      "outcome": "Yulia Starodubtseva",
+      "status": "open",
+      "ts": "2026-07-28T08:20:05Z"
     }
   ],
   "pm_stats": {
@@ -28483,7 +28498,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 313,
+    "trades": 314,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-08",
     "deposits": 64.0,
