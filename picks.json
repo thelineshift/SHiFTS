@@ -1505,10 +1505,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -170,
-        "away_ml": 140,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 9.0,
-        "ts": 1785213859
+        "ts": 1785217459
       },
       "last_alert_odds": -160
     },
@@ -1529,10 +1529,10 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayTeam": "Arizona Diamondbacks",
       "live_odds": {
-        "home_ml": -117,
-        "away_ml": -103,
+        "home_ml": -120,
+        "away_ml": 100,
         "total": 9.0,
-        "ts": 1785212059
+        "ts": 1785217459
       }
     },
     {
@@ -1576,10 +1576,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 9.0,
-        "ts": 1785213859
+        "ts": 1785217459
       },
       "last_alert_odds": -168
     },
@@ -1710,10 +1710,10 @@
       "awayTeam": "Cleveland Guardians",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 9.0,
-        "ts": 1785213859
+        "ts": 1785217459
       }
     },
     {
@@ -1791,10 +1791,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -181,
-        "away_ml": 149,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 8.5,
-        "ts": 1785212065
+        "ts": 1785217459
       },
       "last_alert_odds": -181
     },
@@ -1815,10 +1815,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -187,
-        "away_ml": 153,
+        "home_ml": -191,
+        "away_ml": 157,
         "total": 8.0,
-        "ts": 1785212065
+        "ts": 1785217459
       },
       "last_alert_odds": -187
     }
