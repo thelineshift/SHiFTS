@@ -1902,7 +1902,13 @@
       "opp": "St. Louis Cardinals",
       "analysis": "60-46 overall, 30-24 on the road \u2014 our 54% vs book 50% (no-vig) | \ud83d\udcc8 **Market angle:** 60-46 overall, 30-24 on the road \u2014 our 54% vs book 50% (no-vig). The number's off by **4 points** \u2014 this is where CLV hunters eat.",
       "awayTeam": "Chicago Cubs",
-      "homeTeam": "St. Louis Cardinals"
+      "homeTeam": "St. Louis Cardinals",
+      "live_odds": {
+        "home_ml": -108,
+        "away_ml": -112,
+        "total": 9.0,
+        "ts": 1785226459
+      }
     },
     {
       "id": "boston-red-sox--1.5-0728",
@@ -1919,7 +1925,14 @@
       "opp": "Athletics",
       "analysis": "55-50 overall, 30-21 on the road \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes Boston Red Sox 62% straight up | \u2694\ufe0f **Matchup read:** 55-50 overall, 30-21 on the road \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes Boston Red Sox 62% s",
       "awayTeam": "Boston Red Sox",
-      "homeTeam": "Athletics"
+      "homeTeam": "Athletics",
+      "live_odds": {
+        "home_ml": 128,
+        "away_ml": -155,
+        "total": 9.5,
+        "ts": 1785226459
+      },
+      "last_alert_odds": -155
     },
     {
       "id": "2-leg-parlay-0728-lock",
