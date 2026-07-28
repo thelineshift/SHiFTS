@@ -23516,10 +23516,6 @@
       "ts": "2026-07-27T10:11:53Z",
       "price_path": [
         {
-          "ts": 1785196460,
-          "px": 0.16
-        },
-        {
           "ts": 1785200060,
           "px": 0.16
         },
@@ -23609,6 +23605,10 @@
         },
         {
           "ts": 1785249860,
+          "px": 0.16
+        },
+        {
+          "ts": 1785252266,
           "px": 0.16
         }
       ]
@@ -25280,10 +25280,6 @@
       "ts": "2026-07-27T14:15:09Z",
       "price_path": [
         {
-          "ts": 1785196462,
-          "px": 0.05
-        },
-        {
           "ts": 1785200061,
           "px": 0.04
         },
@@ -25373,6 +25369,10 @@
         },
         {
           "ts": 1785249860,
+          "px": 0.04
+        },
+        {
+          "ts": 1785252266,
           "px": 0.04
         }
       ]
@@ -27195,106 +27195,13 @@
       "qty": 7,
       "market_slug": "aec-atp-ardazk-yanere-2026-07-27",
       "outcome": "Arda Azkara",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T22:45:09Z",
-      "price_path": [
-        {
-          "ts": 1785198263,
-          "px": 0.25
-        },
-        {
-          "ts": 1785200067,
-          "px": 0.25
-        },
-        {
-          "ts": 1785202464,
-          "px": 0.25
-        },
-        {
-          "ts": 1785204267,
-          "px": 0.25
-        },
-        {
-          "ts": 1785206663,
-          "px": 0.25
-        },
-        {
-          "ts": 1785208470,
-          "px": 0.25
-        },
-        {
-          "ts": 1785212073,
-          "px": 0.25
-        },
-        {
-          "ts": 1785215065,
-          "px": 0.25
-        },
-        {
-          "ts": 1785216865,
-          "px": 0.25
-        },
-        {
-          "ts": 1785219268,
-          "px": 0.25
-        },
-        {
-          "ts": 1785221663,
-          "px": 0.24
-        },
-        {
-          "ts": 1785224064,
-          "px": 0.24
-        },
-        {
-          "ts": 1785225872,
-          "px": 0.24
-        },
-        {
-          "ts": 1785228262,
-          "px": 0.24
-        },
-        {
-          "ts": 1785230073,
-          "px": 0.24
-        },
-        {
-          "ts": 1785232468,
-          "px": 0.24
-        },
-        {
-          "ts": 1785234862,
-          "px": 0.24
-        },
-        {
-          "ts": 1785237273,
-          "px": 0.24
-        },
-        {
-          "ts": 1785239664,
-          "px": 0.24
-        },
-        {
-          "ts": 1785242063,
-          "px": 0.24
-        },
-        {
-          "ts": 1785243863,
-          "px": 0.24
-        },
-        {
-          "ts": 1785246863,
-          "px": 0.23
-        },
-        {
-          "ts": 1785248668,
-          "px": 0.07
-        },
-        {
-          "ts": 1785251063,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T15:24:27Z",
+      "pnl": -1.61,
+      "autopsy": "model 43% vs market 23% missed \u2014 logged for the playbook review. Taken 0.23, slid to 0.01 before the result \u2014 the number ran 22\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.71,
@@ -28388,90 +28295,13 @@
       "qty": 4,
       "market_slug": "aec-atp-genoli-cartab-2026-07-27",
       "outcome": "Carlos Taberner",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T01:50:03Z",
-      "price_path": [
-        {
-          "ts": 1785203666,
-          "px": 0.41
-        },
-        {
-          "ts": 1785206064,
-          "px": 0.41
-        },
-        {
-          "ts": 1785208473,
-          "px": 0.41
-        },
-        {
-          "ts": 1785212076,
-          "px": 0.41
-        },
-        {
-          "ts": 1785215067,
-          "px": 0.41
-        },
-        {
-          "ts": 1785218066,
-          "px": 0.41
-        },
-        {
-          "ts": 1785220464,
-          "px": 0.41
-        },
-        {
-          "ts": 1785222863,
-          "px": 0.41
-        },
-        {
-          "ts": 1785225263,
-          "px": 0.41
-        },
-        {
-          "ts": 1785227065,
-          "px": 0.41
-        },
-        {
-          "ts": 1785228869,
-          "px": 0.41
-        },
-        {
-          "ts": 1785231264,
-          "px": 0.41
-        },
-        {
-          "ts": 1785233066,
-          "px": 0.41
-        },
-        {
-          "ts": 1785235464,
-          "px": 0.41
-        },
-        {
-          "ts": 1785237275,
-          "px": 0.41
-        },
-        {
-          "ts": 1785239669,
-          "px": 0.42
-        },
-        {
-          "ts": 1785242065,
-          "px": 0.42
-        },
-        {
-          "ts": 1785243865,
-          "px": 0.49
-        },
-        {
-          "ts": 1785246864,
-          "px": 0.18
-        },
-        {
-          "ts": 1785248670,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T15:24:31Z",
+      "pnl": -1.64,
+      "autopsy": "model 68% vs market 41% missed \u2014 logged for the playbook review. Taken 0.41, rode to 0.01 before the result \u2014 beat the number by 40\u00a2 \u2705"
     },
     {
       "price": 0.57,
@@ -29511,6 +29341,10 @@
         {
           "ts": 1785248671,
           "px": 0.83
+        },
+        {
+          "ts": 1785252273,
+          "px": 0.92
         }
       ]
     },
@@ -30573,6 +30407,10 @@
         {
           "ts": 1785249862,
           "px": 0.59
+        },
+        {
+          "ts": 1785252274,
+          "px": 0.58
         }
       ]
     },
@@ -30597,6 +30435,10 @@
         },
         {
           "ts": 1785249862,
+          "px": 0.5
+        },
+        {
+          "ts": 1785252274,
           "px": 0.5
         }
       ]
@@ -30666,6 +30508,10 @@
         {
           "ts": 1785250464,
           "px": 0.68
+        },
+        {
+          "ts": 1785252275,
+          "px": 0.7
         }
       ]
     },
@@ -30683,21 +30529,27 @@
       "market_slug": "aec-mlb-sea-lad-2026-07-30",
       "outcome": "Los Angeles Dodgers",
       "status": "resting",
-      "ts": "2026-07-28T15:15:16Z"
+      "ts": "2026-07-28T15:15:16Z",
+      "price_path": [
+        {
+          "ts": 1785252275,
+          "px": 0.575
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 27,
-    "losses": 57,
-    "pnl": -57.97,
+    "losses": 59,
+    "pnl": -61.22,
     "trades": 339,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-14",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 136.13,
-    "net": 72.13,
+    "account": 132.88,
+    "net": 68.88,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -30707,7 +30559,7 @@
       ],
       "EDGE": [
         20,
-        43,
+        45,
         0
       ],
       "LIVE-BET": [
@@ -30727,22 +30579,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T13:49:38Z",
-      "kind": "TAIL",
-      "outcome": "ASTRAL",
-      "result": "LOSS",
-      "pnl": -0.59,
-      "lesson": "the near-certain lost \u2014 tail yield is not free money. After 20 settled tails, recheck the 0.93 bar against the actual hit rate."
-    },
-    {
-      "ts": "2026-07-27T13:54:57Z",
-      "kind": "EDGE",
-      "outcome": "Atreides",
-      "result": "LOSS",
-      "pnl": -7.14,
-      "lesson": "model 86% vs market 58% missed \u2014 logged for the playbook review."
-    },
     {
       "ts": "2026-07-27T13:54:59Z",
       "kind": "EDGE",
@@ -30966,6 +30802,22 @@
       "result": "LOSS",
       "pnl": -0.94,
       "lesson": "model 59% vs market 47% missed \u2014 logged for the playbook review. Taken 0.47, rode to 0.01 before the result \u2014 beat the number by 46\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-28T15:24:27Z",
+      "kind": "EDGE",
+      "outcome": "Arda Azkara",
+      "result": "LOSS",
+      "pnl": -1.61,
+      "lesson": "model 43% vs market 23% missed \u2014 logged for the playbook review. Taken 0.23, slid to 0.01 before the result \u2014 the number ran 22\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-28T15:24:31Z",
+      "kind": "EDGE",
+      "outcome": "Carlos Taberner",
+      "result": "LOSS",
+      "pnl": -1.64,
+      "lesson": "model 68% vs market 41% missed \u2014 logged for the playbook review. Taken 0.41, rode to 0.01 before the result \u2014 beat the number by 40\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -31049,7 +30901,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785244462.4068093,
+  "dep_checked_ts": 1785252267.9950147,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
