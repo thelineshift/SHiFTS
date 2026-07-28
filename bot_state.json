@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-28 01:44 UTC",
+    "at": "2026-07-28 01:14 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-27 22:40 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-28 01:44 UTC",
+    "at": "2026-07-28 01:14 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -26,28 +26,46 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-28 01:44 UTC",
+    "at": "2026-07-28 01:14 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-27 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-28 01:44 UTC",
+    "at": "2026-07-28 01:14 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
-      "id": "texas-rangers-ml-0727",
-      "desc": "Texas Rangers ML",
-      "odds": 109,
+      "id": "miami-marlins-ml-0727",
+      "desc": "Miami Marlins ML",
+      "odds": 144,
       "result": "WIN",
-      "units": 1.64,
-      "score": "Seattle Mariners 3, Texas Rangers 7",
+      "units": 1.44,
+      "score": "Philadelphia Phillies 7, Miami Marlins 8",
       "tier": "whale"
+    },
+    {
+      "id": "detroit-tigers-ml-0727",
+      "desc": "Detroit Tigers ML",
+      "odds": -118,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Baltimore Orioles 8, Detroit Tigers 5",
+      "tier": "sharp"
+    },
+    {
+      "id": "washington-nationals-ml-0727",
+      "desc": "Washington Nationals ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Toronto Blue Jays 3, Washington Nationals 2",
+      "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785192016.4770439,
+  "last_x_receipt_ts": 1785203060.299536,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
