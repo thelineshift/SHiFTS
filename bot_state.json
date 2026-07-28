@@ -67,7 +67,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785209060.4239252,
+  "last_x_receipt_ts": 1785244460.0429082,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -30287,7 +30287,7 @@
     "note": "stale 7/24 results \u2014 already receipted in Discord #receipts; X draining them would duplicate-post"
   },
   "x_eng_log": {
-    "2026-07-26-17": "edu"
+    "2026-07-28-13": "persona"
   },
   "board_posted": [
     "aec-lol-pnga-nerd-2026-07-27",
