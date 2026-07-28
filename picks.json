@@ -1552,10 +1552,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 136,
-        "away_ml": -164,
+        "home_ml": 139,
+        "away_ml": -168,
         "total": 7.5,
-        "ts": 1785221059
+        "ts": 1785222859
       },
       "last_alert_odds": -162
     },
@@ -1791,10 +1791,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -178,
+        "away_ml": 147,
         "total": 8.5,
-        "ts": 1785217459
+        "ts": 1785222859
       },
       "last_alert_odds": -181
     },
