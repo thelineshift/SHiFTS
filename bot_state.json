@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "athletics-ml-0727",
+      "desc": "Athletics ML",
+      "odds": 149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 4, Athletics 2",
+      "tier": "free"
+    },
+    {
       "id": "hanwha-life-esports-challeng-0728",
       "desc": "Hanwha Life Esports Challengers ML",
       "odds": -186,
@@ -26307,106 +26316,13 @@
       "qty": 9,
       "market_slug": "aec-lol-zyb-ess-2026-07-28",
       "outcome": "Esprit Sh\u014dnen",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T17:05:27Z",
-      "price_path": [
-        {
-          "ts": 1785206062,
-          "px": 0.35
-        },
-        {
-          "ts": 1785208468,
-          "px": 0.35
-        },
-        {
-          "ts": 1785212072,
-          "px": 0.34
-        },
-        {
-          "ts": 1785215064,
-          "px": 0.34
-        },
-        {
-          "ts": 1785216864,
-          "px": 0.34
-        },
-        {
-          "ts": 1785219268,
-          "px": 0.34
-        },
-        {
-          "ts": 1785221662,
-          "px": 0.34
-        },
-        {
-          "ts": 1785224064,
-          "px": 0.34
-        },
-        {
-          "ts": 1785225871,
-          "px": 0.34
-        },
-        {
-          "ts": 1785228262,
-          "px": 0.34
-        },
-        {
-          "ts": 1785230072,
-          "px": 0.34
-        },
-        {
-          "ts": 1785232467,
-          "px": 0.34
-        },
-        {
-          "ts": 1785234862,
-          "px": 0.34
-        },
-        {
-          "ts": 1785237272,
-          "px": 0.34
-        },
-        {
-          "ts": 1785239663,
-          "px": 0.34
-        },
-        {
-          "ts": 1785242062,
-          "px": 0.34
-        },
-        {
-          "ts": 1785243862,
-          "px": 0.34
-        },
-        {
-          "ts": 1785246862,
-          "px": 0.34
-        },
-        {
-          "ts": 1785248668,
-          "px": 0.34
-        },
-        {
-          "ts": 1785251062,
-          "px": 0.34
-        },
-        {
-          "ts": 1785253461,
-          "px": 0.34
-        },
-        {
-          "ts": 1785255261,
-          "px": 0.34
-        },
-        {
-          "ts": 1785257062,
-          "px": 0.34
-        },
-        {
-          "ts": 1785259462,
-          "px": 0.74
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T17:44:26Z",
+      "pnl": -3.24,
+      "autopsy": "model 57% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, slid to 0.74 before the result \u2014 the number ran 38\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.27,
@@ -28954,74 +28870,13 @@
       "qty": 2,
       "market_slug": "astatc-wta-zeyson-cadbra-2026-07-26-sw2",
       "outcome": "Zeynep Sonmez",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T06:29:59Z",
-      "price_path": [
-        {
-          "ts": 1785220466,
-          "px": 0.84
-        },
-        {
-          "ts": 1785222865,
-          "px": 0.84
-        },
-        {
-          "ts": 1785225265,
-          "px": 0.84
-        },
-        {
-          "ts": 1785227067,
-          "px": 0.84
-        },
-        {
-          "ts": 1785228871,
-          "px": 0.83
-        },
-        {
-          "ts": 1785231265,
-          "px": 0.84
-        },
-        {
-          "ts": 1785233067,
-          "px": 0.84
-        },
-        {
-          "ts": 1785237864,
-          "px": 0.84
-        },
-        {
-          "ts": 1785239670,
-          "px": 0.84
-        },
-        {
-          "ts": 1785242065,
-          "px": 0.83
-        },
-        {
-          "ts": 1785243866,
-          "px": 0.84
-        },
-        {
-          "ts": 1785246865,
-          "px": 0.84
-        },
-        {
-          "ts": 1785248671,
-          "px": 0.83
-        },
-        {
-          "ts": 1785252273,
-          "px": 0.92
-        },
-        {
-          "ts": 1785254663,
-          "px": 0.34
-        },
-        {
-          "ts": 1785257068,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.12,
+      "settled_at": "2026-07-28T17:44:31Z",
+      "pnl": -1.68,
+      "autopsy": "the near-certain lost \u2014 tail yield is not free money. After 20 settled tails, recheck the 0.93 bar against the actual hit rate. Taken 0.90, slid to 0.01 before the result \u2014 the number ran 89\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.41,
@@ -29373,62 +29228,13 @@
       "qty": 8,
       "market_slug": "aec-lol-jsk-3bl-2026-07-28",
       "outcome": "3BL Esports",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T10:20:11Z",
-      "price_path": [
-        {
-          "ts": 1785234262,
-          "px": 0.14
-        },
-        {
-          "ts": 1785236068,
-          "px": 0.14
-        },
-        {
-          "ts": 1785238464,
-          "px": 0.14
-        },
-        {
-          "ts": 1785240865,
-          "px": 0.14
-        },
-        {
-          "ts": 1785243264,
-          "px": 0.14
-        },
-        {
-          "ts": 1785245065,
-          "px": 0.14
-        },
-        {
-          "ts": 1785246866,
-          "px": 0.14
-        },
-        {
-          "ts": 1785248671,
-          "px": 0.14
-        },
-        {
-          "ts": 1785251065,
-          "px": 0.14
-        },
-        {
-          "ts": 1785253464,
-          "px": 0.13
-        },
-        {
-          "ts": 1785255264,
-          "px": 0.13
-        },
-        {
-          "ts": 1785257069,
-          "px": 0.12
-        },
-        {
-          "ts": 1785259469,
-          "px": 0.12
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T17:44:33Z",
+      "pnl": -1.12,
+      "autopsy": "model 43% vs market 14% missed \u2014 logged for the playbook review. Taken 0.14, rode to 0.12 before the result \u2014 beat the number by 2\u00a2 \u2705"
     },
     {
       "price": 0.29,
@@ -30680,7 +30486,13 @@
       "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw2",
       "outcome": "Mary Stoiana",
       "status": "resting",
-      "ts": "2026-07-28T17:40:02Z"
+      "ts": "2026-07-28T17:40:02Z",
+      "price_path": [
+        {
+          "ts": 1785260677,
+          "px": 0.65
+        }
+      ]
     },
     {
       "price": 0.01,
@@ -30695,21 +30507,22 @@
       "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
       "outcome": "Renata Zarazua",
       "status": "resting",
-      "ts": "2026-07-28T17:40:04Z"
+      "ts": "2026-07-28T17:40:04Z",
+      "price_path": []
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 30,
-    "losses": 61,
-    "pnl": -52.83,
+    "losses": 64,
+    "pnl": -58.87,
     "trades": 349,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-16",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 131.62,
-    "net": 67.62,
+    "account": 125.58,
+    "net": 61.58,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -30719,7 +30532,7 @@
       ],
       "EDGE": [
         22,
-        47,
+        49,
         0
       ],
       "LIVE-BET": [
@@ -30729,7 +30542,7 @@
       ],
       "TAIL": [
         3,
-        2,
+        3,
         0
       ]
     },
@@ -30739,30 +30552,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T17:24:30Z",
-      "kind": "EDGE",
-      "outcome": "LEO",
-      "result": "LOSS",
-      "pnl": -2.4,
-      "lesson": "model 57% vs market 30% missed \u2014 logged for the playbook review. Taken 0.30, rode to 0.25 before the result \u2014 beat the number by 5\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-27T17:54:30Z",
-      "kind": "EDGE",
-      "outcome": "Epic Avalanche",
-      "result": "LOSS",
-      "pnl": -1.04,
-      "lesson": "model 40% vs market 8% missed \u2014 logged for the playbook review. Taken 0.08, slid to 0.12 before the result \u2014 the number ran 4\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-27T18:14:30Z",
-      "kind": "EDGE",
-      "outcome": "Brute",
-      "result": "WIN",
-      "pnl": 1.17,
-      "lesson": "+$1.17 \u2014 model 73% vs market 61% was real edge; thesis held. Taken 0.61, rode to 0.96 before the result \u2014 beat the number by 35\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-27T18:34:28Z",
       "kind": "EDGE",
@@ -30978,6 +30767,30 @@
       "result": "LOSS",
       "pnl": -2.61,
       "lesson": "model 63% vs market 29% missed \u2014 logged for the playbook review. Taken 0.29, rode to 0.08 before the result \u2014 beat the number by 21\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-28T17:44:26Z",
+      "kind": "EDGE",
+      "outcome": "Esprit Sh\u014dnen",
+      "result": "LOSS",
+      "pnl": -3.24,
+      "lesson": "model 57% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, slid to 0.74 before the result \u2014 the number ran 38\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-28T17:44:31Z",
+      "kind": "TAIL",
+      "outcome": "Zeynep Sonmez",
+      "result": "LOSS",
+      "pnl": -1.68,
+      "lesson": "the near-certain lost \u2014 tail yield is not free money. After 20 settled tails, recheck the 0.93 bar against the actual hit rate. Taken 0.90, slid to 0.01 before the result \u2014 the number ran 89\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-28T17:44:33Z",
+      "kind": "EDGE",
+      "outcome": "3BL Esports",
+      "result": "LOSS",
+      "pnl": -1.12,
+      "lesson": "model 43% vs market 14% missed \u2014 logged for the playbook review. Taken 0.14, rode to 0.12 before the result \u2014 beat the number by 2\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -31061,7 +30874,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785257063.9447784,
+  "dep_checked_ts": 1785260666.3696196,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
