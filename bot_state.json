@@ -29283,6 +29283,22 @@
           "px": 0.14
         }
       ]
+    },
+    {
+      "price": 0.29,
+      "short": true,
+      "stake": 1.45,
+      "kind": "EDGE",
+      "p_model": 0.6363636363636364,
+      "event": "Barca eSports vs. GIANTX iTero",
+      "ev_start": "2026-07-28T17:30:00Z",
+      "reason": "model 64% vs market 29% \u2014 35% edge, half-Kelly",
+      "order_id": "BH1ZN8M8C9P3",
+      "qty": 5,
+      "market_slug": "aec-lol-bar-gxi-2026-07-28",
+      "outcome": "GIANTX iTero",
+      "status": "open",
+      "ts": "2026-07-28T10:39:59Z"
     }
   ],
   "pm_stats": {
@@ -29290,7 +29306,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 317,
+    "trades": 318,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-10",
     "deposits": 64.0,
