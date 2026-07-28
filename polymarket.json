@@ -1,5 +1,57 @@
 {
-  "ts": "2026-07-28T10:44:23Z",
+  "ts": "2026-07-28T10:59:21Z",
   "configured": true,
-  "error": "<!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-"
+  "balance_usd": 108.49,
+  "buying_power": 16.49,
+  "positions": [],
+  "open_orders": [
+    {
+      "market": "astatc-wta-yulsta-sloste-2026-07-26-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.29",
+      "qty": 5
+    },
+    {
+      "market": "astatc-wta-darvid-marrib-2026-07-26-sw1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.3",
+      "qty": 5
+    },
+    {
+      "market": "astatc-wta-renzar-mcckes-2026-07-26-sw1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.01",
+      "qty": 110
+    },
+    {
+      "market": "aec-mlb-sea-lad-2026-07-30",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.57",
+      "qty": 1
+    },
+    {
+      "market": "astatc-wta-darvid-marrib-2026-07-26-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.3",
+      "qty": 5
+    },
+    {
+      "market": "astatc-wta-yulsta-sloste-2026-07-26-sw1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.3",
+      "qty": 5
+    },
+    {
+      "market": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.01",
+      "qty": 120
+    },
+    {
+      "market": "astatc-wta-marsto-peyste-2026-07-26-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.01",
+      "qty": 112
+    }
+  ]
 }
