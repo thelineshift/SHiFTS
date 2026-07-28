@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-28 18:14 UTC",
+    "at": "2026-07-28 18:44 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-28 16:43 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-28 18:14 UTC",
+    "at": "2026-07-28 18:44 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -30,15 +30,24 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-28 18:14 UTC",
+    "at": "2026-07-28 18:44 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-28 18:14 UTC",
+    "at": "2026-07-28 18:44 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
   "unannounced_results": [
+    {
+      "id": "athletics-ml-0727",
+      "desc": "Athletics ML",
+      "odds": 149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 4, Athletics 2",
+      "tier": "free"
+    },
     {
       "id": "hanwha-life-esports-challeng-0728",
       "desc": "Hanwha Life Esports Challengers ML",
