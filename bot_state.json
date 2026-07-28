@@ -29851,14 +29851,6 @@
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
     {
-      "ts": "2026-07-27T13:49:31Z",
-      "kind": "LIVE-BET",
-      "outcome": "Butterfly",
-      "result": "LOSS",
-      "pnl": -8.14,
-      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays."
-    },
-    {
       "ts": "2026-07-27T13:49:35Z",
       "kind": "TAIL",
       "outcome": "ASTRAL",
