@@ -31384,42 +31384,13 @@
       "qty": 10,
       "market_slug": "aec-lol-est-itz-2026-07-28",
       "outcome": "INTZ e-Sports",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T17:55:27Z",
-      "price_path": [
-        {
-          "ts": 1785261867,
-          "px": 0.27
-        },
-        {
-          "ts": 1785263670,
-          "px": 0.27
-        },
-        {
-          "ts": 1785265471,
-          "px": 0.27
-        },
-        {
-          "ts": 1785267868,
-          "px": 0.27
-        },
-        {
-          "ts": 1785269670,
-          "px": 0.27
-        },
-        {
-          "ts": 1785272070,
-          "px": 0.27
-        },
-        {
-          "ts": 1785274467,
-          "px": 0.27
-        },
-        {
-          "ts": 1785276864,
-          "px": 0.33
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T23:34:22Z",
+      "pnl": -2.7,
+      "autopsy": "model 50% vs market 27% missed \u2014 logged for the playbook review. Taken 0.27, slid to 0.33 before the result \u2014 the number ran 6\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.34,
@@ -31433,50 +31404,13 @@
       "qty": 9,
       "market_slug": "aec-lol-7rex-kbm-2026-07-28",
       "outcome": "7REX",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T17:55:28Z",
-      "price_path": [
-        {
-          "ts": 1785261868,
-          "px": 0.34
-        },
-        {
-          "ts": 1785263670,
-          "px": 0.34
-        },
-        {
-          "ts": 1785265471,
-          "px": 0.34
-        },
-        {
-          "ts": 1785267868,
-          "px": 0.34
-        },
-        {
-          "ts": 1785269670,
-          "px": 0.34
-        },
-        {
-          "ts": 1785272070,
-          "px": 0.34
-        },
-        {
-          "ts": 1785274467,
-          "px": 0.34
-        },
-        {
-          "ts": 1785276864,
-          "px": 0.34
-        },
-        {
-          "ts": 1785279264,
-          "px": 0.32
-        },
-        {
-          "ts": 1785281067,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T23:34:24Z",
+      "pnl": -3.06,
+      "autopsy": "model 57% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.01 before the result \u2014 the number ran 33\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.23,
@@ -32250,15 +32184,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 32,
-    "losses": 71,
-    "pnl": -63.83,
+    "losses": 73,
+    "pnl": -69.59,
     "trades": 370,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-22",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 97.32,
-    "net": 33.32,
+    "account": 91.56,
+    "net": 27.56,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -32268,7 +32202,7 @@
       ],
       "EDGE": [
         24,
-        56,
+        58,
         0
       ],
       "LIVE-BET": [
@@ -32288,30 +32222,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T22:34:35Z",
-      "kind": "EDGE",
-      "outcome": "Team Solid",
-      "result": "LOSS",
-      "pnl": -2.5,
-      "lesson": "model 50% vs market 25% missed \u2014 logged for the playbook review. Taken 0.25, slid to 0.34 before the result \u2014 the number ran 9\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-27T22:40:21Z",
-      "kind": "EDGE",
-      "outcome": "Hunters Rising",
-      "result": "LOSS",
-      "pnl": -2.86,
-      "lesson": "model 43% vs market 22% missed \u2014 logged for the playbook review. Taken 0.22, rode to 0.20 before the result \u2014 beat the number by 2\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-27T23:14:20Z",
-      "kind": "EDGE",
-      "outcome": "BESTIA",
-      "result": "WIN",
-      "pnl": 2.61,
-      "lesson": "+$2.61 \u2014 model 100% vs market 71% was real edge; thesis held. Taken 0.71, rode to 0.87 before the result \u2014 beat the number by 16\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-27T23:14:24Z",
       "kind": "TAIL",
@@ -32535,6 +32445,22 @@
       "result": "LOSS",
       "pnl": -1.55,
       "lesson": "model 46% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.01 before the result \u2014 beat the number by 30\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-28T23:34:22Z",
+      "kind": "EDGE",
+      "outcome": "INTZ e-Sports",
+      "result": "LOSS",
+      "pnl": -2.7,
+      "lesson": "model 50% vs market 27% missed \u2014 logged for the playbook review. Taken 0.27, slid to 0.33 before the result \u2014 the number ran 6\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-28T23:34:24Z",
+      "kind": "EDGE",
+      "outcome": "7REX",
+      "result": "LOSS",
+      "pnl": -3.06,
+      "lesson": "model 57% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.01 before the result \u2014 the number ran 33\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -32618,7 +32544,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785274460.842291,
+  "dep_checked_ts": 1785281662.2241652,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
