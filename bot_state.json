@@ -31036,6 +31036,36 @@
       "outcome": "Minnesota Twins",
       "status": "open",
       "ts": "2026-07-28T18:45:23Z"
+    },
+    {
+      "price": 0.36,
+      "stake": 3.6,
+      "kind": "EDGE",
+      "p_model": 0.6956521739130435,
+      "event": "Amaru Gaming vs. Nemiga Gaming",
+      "ev_start": "2026-07-29T15:00:00Z",
+      "reason": "model 70% vs market 36% \u2014 34% edge, half-Kelly",
+      "order_id": "BH90SG1K89QV",
+      "qty": 10,
+      "market_slug": "aec-dota2-agm-nemiga-2026-07-29",
+      "outcome": "Amaru Gaming",
+      "status": "open",
+      "ts": "2026-07-28T18:50:05Z"
+    },
+    {
+      "price": 0.26,
+      "stake": 1.56,
+      "kind": "EDGE",
+      "p_model": 0.4324324324324325,
+      "event": "Amaru Gaming vs. Team Syntax",
+      "ev_start": "2026-07-29T18:00:00Z",
+      "reason": "model 43% vs market 26% \u2014 17% edge, half-Kelly",
+      "order_id": "BH908TJXR9NM",
+      "qty": 6,
+      "market_slug": "aec-dota2-agm-stx-2026-07-29",
+      "outcome": "Amaru Gaming",
+      "status": "open",
+      "ts": "2026-07-28T18:50:07Z"
     }
   ],
   "pm_stats": {
@@ -31043,7 +31073,7 @@
     "wins": 30,
     "losses": 64,
     "pnl": -58.87,
-    "trades": 356,
+    "trades": 358,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-18",
     "deposits": 64.0,
