@@ -1510,10 +1510,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -181,
-        "away_ml": 149,
+        "home_ml": -186,
+        "away_ml": 153,
         "total": 9.0,
-        "ts": 1785269659
+        "ts": 1785278659
       },
       "last_alert_odds": -184
     },
@@ -1628,10 +1628,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Boston Red Sox",
       "live_odds": {
-        "home_ml": 129,
-        "away_ml": -156,
+        "home_ml": 124,
+        "away_ml": -150,
         "total": 10.0,
-        "ts": 1785269659
+        "ts": 1785278659
       },
       "last_alert_odds": 129
     },
@@ -1778,10 +1778,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -244,
-        "away_ml": 197,
+        "home_ml": -238,
+        "away_ml": 193,
         "total": 9.5,
-        "ts": 1785276859
+        "ts": 1785278659
       },
       "last_alert_odds": -237
     },
@@ -1935,10 +1935,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 129,
-        "away_ml": -156,
+        "home_ml": 124,
+        "away_ml": -150,
         "total": 10.0,
-        "ts": 1785269659
+        "ts": 1785278659
       },
       "last_alert_odds": -155
     },
@@ -2034,10 +2034,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 129,
-        "away_ml": -156,
+        "home_ml": 124,
+        "away_ml": -150,
         "total": 10.0,
-        "ts": 1785269659
+        "ts": 1785278660
       }
     },
     {
