@@ -1462,11 +1462,12 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 103,
-        "away_ml": -124,
+        "home_ml": 100,
+        "away_ml": -120,
         "total": 8.0,
-        "ts": 1785255259
-      }
+        "ts": 1785264259
+      },
+      "last_alert_odds": 100
     },
     {
       "id": "milwaukee-brewers-ml-0728",
@@ -1509,10 +1510,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -184,
-        "away_ml": 151,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 9.0,
-        "ts": 1785258859
+        "ts": 1785264259
       },
       "last_alert_odds": -184
     },
@@ -1651,10 +1652,10 @@
       "awayTeam": "Toronto Blue Jays",
       "homeTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -143,
-        "away_ml": 119,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 9.0,
-        "ts": 1785255259
+        "ts": 1785264259
       }
     },
     {
@@ -1800,8 +1801,8 @@
       "live_odds": {
         "home_ml": -181,
         "away_ml": 149,
-        "total": 8.5,
-        "ts": 1785257059
+        "total": 8.0,
+        "ts": 1785264259
       },
       "last_alert_odds": -181
     },
