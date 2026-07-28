@@ -31130,6 +31130,21 @@
       "outcome": "DN SOOPers Challengers",
       "status": "open",
       "ts": "2026-07-28T18:55:09Z"
+    },
+    {
+      "price": 0.78,
+      "stake": 2.34,
+      "kind": "EDGE",
+      "p_model": 0.88,
+      "event": "Benjamin Bonzi vs. Blaise Bicknell",
+      "ev_start": "2026-07-28T19:30:00Z",
+      "reason": "Elo 88% vs market 78% \u2014 10% edge, half-Kelly",
+      "order_id": "BH976H7XJ9NC",
+      "qty": 3,
+      "market_slug": "aec-atp-benbon-blabic-2026-07-27",
+      "outcome": "Benjamin Bonzi",
+      "status": "open",
+      "ts": "2026-07-28T19:00:08Z"
     }
   ],
   "pm_stats": {
@@ -31137,7 +31152,7 @@
     "wins": 30,
     "losses": 64,
     "pnl": -58.87,
-    "trades": 359,
+    "trades": 360,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-18",
     "deposits": 64.0,
