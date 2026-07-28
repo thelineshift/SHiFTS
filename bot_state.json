@@ -36,8 +36,18 @@
     "flags": []
   },
   "bot_version": "9.24.15",
-  "unannounced_results": [],
-  "last_x_receipt_ts": 1785200660.249778,
+  "unannounced_results": [
+    {
+      "id": "texas-rangers-ml-0727",
+      "desc": "Texas Rangers ML",
+      "odds": 109,
+      "result": "WIN",
+      "units": 1.64,
+      "score": "Seattle Mariners 3, Texas Rangers 7",
+      "tier": "whale"
+    }
+  ],
+  "last_x_receipt_ts": 1785192016.4770439,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -24624,78 +24634,13 @@
       "qty": 16,
       "market_slug": "aec-valorant-him-roso-2026-07-27",
       "outcome": "ROSO GC",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T14:35:01Z",
-      "price_path": [
-        {
-          "ts": 1785163029,
-          "px": 0.19
-        },
-        {
-          "ts": 1785165271,
-          "px": 0.19
-        },
-        {
-          "ts": 1785167673,
-          "px": 0.19
-        },
-        {
-          "ts": 1785170080,
-          "px": 0.22
-        },
-        {
-          "ts": 1785172473,
-          "px": 0.21
-        },
-        {
-          "ts": 1785174875,
-          "px": 0.21
-        },
-        {
-          "ts": 1785177273,
-          "px": 0.21
-        },
-        {
-          "ts": 1785179671,
-          "px": 0.21
-        },
-        {
-          "ts": 1785181475,
-          "px": 0.21
-        },
-        {
-          "ts": 1785183871,
-          "px": 0.21
-        },
-        {
-          "ts": 1785185674,
-          "px": 0.21
-        },
-        {
-          "ts": 1785188074,
-          "px": 0.21
-        },
-        {
-          "ts": 1785189882,
-          "px": 0.25
-        },
-        {
-          "ts": 1785192019,
-          "px": 0.26
-        },
-        {
-          "ts": 1785194069,
-          "px": 0.26
-        },
-        {
-          "ts": 1785196462,
-          "px": 0.34
-        },
-        {
-          "ts": 1785200061,
-          "px": 0.02
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T01:04:20Z",
+      "pnl": -3.04,
+      "autopsy": "model 50% vs market 19% missed \u2014 logged for the playbook review. Taken 0.19, rode to 0.02 before the result \u2014 beat the number by 17\u00a2 \u2705"
     },
     {
       "price": 0.27,
@@ -26378,15 +26323,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 24,
-    "losses": 53,
-    "pnl": -54.46,
+    "losses": 54,
+    "pnl": -57.5,
     "trades": 292,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-00",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 105.56,
-    "net": 41.56,
+    "account": 102.52,
+    "net": 38.52,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -26396,7 +26341,7 @@
       ],
       "EDGE": [
         18,
-        39,
+        40,
         0
       ],
       "LIVE-BET": [
@@ -26416,14 +26361,6 @@
   },
   "x_purge_complete": 1785119529.1652565,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T13:49:17Z",
-      "kind": "EDGE",
-      "outcome": "Butterfly",
-      "result": "LOSS",
-      "pnl": -8.14,
-      "lesson": "model 75% vs market 53% missed \u2014 logged for the playbook review."
-    },
     {
       "ts": "2026-07-27T13:49:21Z",
       "kind": "EDGE",
@@ -26655,6 +26592,14 @@
       "result": "LOSS",
       "pnl": -1.02,
       "lesson": "model 52% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.36 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-28T01:04:20Z",
+      "kind": "EDGE",
+      "outcome": "ROSO GC",
+      "result": "LOSS",
+      "pnl": -3.04,
+      "lesson": "model 50% vs market 19% missed \u2014 logged for the playbook review. Taken 0.19, rode to 0.02 before the result \u2014 beat the number by 17\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
