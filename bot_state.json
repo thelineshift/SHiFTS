@@ -28956,6 +28956,22 @@
       "outcome": "AG.AL",
       "status": "open",
       "ts": "2026-07-28T00:05:09Z"
+    },
+    {
+      "price": 0.32,
+      "short": true,
+      "stake": 1.6,
+      "kind": "EDGE",
+      "p_model": 0.4908698259830193,
+      "event": "Maks Kasnikowski vs. Frederico Ferreira Silva",
+      "ev_start": "2026-07-28T08:00:00Z",
+      "reason": "Elo 49% vs market 32% \u2014 17% edge, half-Kelly",
+      "order_id": "BGTABWRAA9NH",
+      "qty": 5,
+      "market_slug": "aec-atp-makkas-fresil-2026-07-27",
+      "outcome": "Frederico Ferreira Silva",
+      "status": "open",
+      "ts": "2026-07-28T00:10:01Z"
     }
   ],
   "pm_stats": {
@@ -28963,7 +28979,7 @@
     "wins": 24,
     "losses": 52,
     "pnl": -53.44,
-    "trades": 286,
+    "trades": 287,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-00",
     "deposits": 64.0,
