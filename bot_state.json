@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-28 20:44 UTC",
+    "at": "2026-07-28 20:14 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-3": "2026-07-28 20:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-28 20:34 UTC",
+    "\ud83e\uddfereceipts": "2026-07-28 19:44 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-28 20:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-28 16:43 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-28 20:44 UTC",
+    "at": "2026-07-28 20:14 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -30,11 +30,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-28 20:44 UTC",
+    "at": "2026-07-28 20:14 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-28 20:44 UTC",
+    "at": "2026-07-28 20:14 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
@@ -30886,22 +30886,13 @@
       "qty": 8,
       "market_slug": "aec-lol-one-piv-2026-07-28",
       "outcome": "One More Esports",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T18:20:10Z",
-      "price_path": [
-        {
-          "ts": 1785263062,
-          "px": 0.19
-        },
-        {
-          "ts": 1785265471,
-          "px": 0.29
-        },
-        {
-          "ts": 1785267868,
-          "px": 0.08
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T20:44:22Z",
+      "pnl": -1.76,
+      "autopsy": "model 44% vs market 22% missed \u2014 logged for the playbook review. Taken 0.22, slid to 0.08 before the result \u2014 the number ran 14\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.5,
@@ -31212,15 +31203,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 32,
-    "losses": 68,
-    "pnl": -59.12,
+    "losses": 69,
+    "pnl": -60.88,
     "trades": 365,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-20",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 110.82,
-    "net": 46.82,
+    "account": 109.06,
+    "net": 45.06,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -31230,7 +31221,7 @@
       ],
       "EDGE": [
         24,
-        53,
+        54,
         0
       ],
       "LIVE-BET": [
@@ -31250,14 +31241,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T22:04:46Z",
-      "kind": "EDGE",
-      "outcome": "HATERS",
-      "result": "LOSS",
-      "pnl": -2.04,
-      "lesson": "model 58% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, rode to 0.07 before the result \u2014 beat the number by 27\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-27T22:04:48Z",
       "kind": "EDGE",
@@ -31489,6 +31472,14 @@
       "result": "LOSS",
       "pnl": -1.12,
       "lesson": "model 37% vs market 16% missed \u2014 logged for the playbook review. Taken 0.16, rode to 0.04 before the result \u2014 beat the number by 12\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-28T20:44:22Z",
+      "kind": "EDGE",
+      "outcome": "One More Esports",
+      "result": "LOSS",
+      "pnl": -1.76,
+      "lesson": "model 44% vs market 22% missed \u2014 logged for the playbook review. Taken 0.22, slid to 0.08 before the result \u2014 the number ran 14\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
