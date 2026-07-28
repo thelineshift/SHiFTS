@@ -29771,58 +29771,13 @@
       "qty": 3,
       "market_slug": "aec-lol-kcb-gal-2026-07-28",
       "outcome": "Karmine Corp Blue",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T11:10:19Z",
-      "price_path": [
-        {
-          "ts": 1785237278,
-          "px": 0.28
-        },
-        {
-          "ts": 1785239672,
-          "px": 0.28
-        },
-        {
-          "ts": 1785242067,
-          "px": 0.28
-        },
-        {
-          "ts": 1785243867,
-          "px": 0.28
-        },
-        {
-          "ts": 1785246866,
-          "px": 0.28
-        },
-        {
-          "ts": 1785248672,
-          "px": 0.28
-        },
-        {
-          "ts": 1785251066,
-          "px": 0.28
-        },
-        {
-          "ts": 1785253465,
-          "px": 0.28
-        },
-        {
-          "ts": 1785255265,
-          "px": 0.28
-        },
-        {
-          "ts": 1785257070,
-          "px": 0.28
-        },
-        {
-          "ts": 1785259470,
-          "px": 0.27
-        },
-        {
-          "ts": 1785261864,
-          "px": 0.25
-        }
-      ]
+      "result": "WIN",
+      "payout": 3.0,
+      "settled_at": "2026-07-28T18:54:24Z",
+      "pnl": 2.16,
+      "autopsy": "+$2.16 \u2014 model 43% vs market 28% was real edge; thesis held. Taken 0.28, slid to 0.25 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.01,
@@ -30867,6 +30822,10 @@
         {
           "ts": 1785263062,
           "px": 0.6
+        },
+        {
+          "ts": 1785264868,
+          "px": 0.48
         }
       ]
     },
@@ -30903,6 +30862,10 @@
       "price_path": [
         {
           "ts": 1785261267,
+          "px": 0.48
+        },
+        {
+          "ts": 1785264868,
           "px": 0.48
         }
       ]
@@ -31002,6 +30965,10 @@
         {
           "ts": 1785263062,
           "px": 0.19
+        },
+        {
+          "ts": 1785264868,
+          "px": 0.29
         }
       ]
     },
@@ -31019,7 +30986,13 @@
       "market_slug": "aec-wnba-atl-dal-2026-07-29",
       "outcome": "Dallas",
       "status": "open",
-      "ts": "2026-07-28T18:45:22Z"
+      "ts": "2026-07-28T18:45:22Z",
+      "price_path": [
+        {
+          "ts": 1785264869,
+          "px": 0.5
+        }
+      ]
     },
     {
       "price": 0.565,
@@ -31035,7 +31008,13 @@
       "market_slug": "aec-mlb-kc-min-2026-07-30",
       "outcome": "Minnesota Twins",
       "status": "resting",
-      "ts": "2026-07-28T18:45:23Z"
+      "ts": "2026-07-28T18:45:23Z",
+      "price_path": [
+        {
+          "ts": 1785264869,
+          "px": 0.565
+        }
+      ]
     },
     {
       "price": 0.36,
@@ -31050,7 +31029,13 @@
       "market_slug": "aec-dota2-agm-nemiga-2026-07-29",
       "outcome": "Amaru Gaming",
       "status": "open",
-      "ts": "2026-07-28T18:50:05Z"
+      "ts": "2026-07-28T18:50:05Z",
+      "price_path": [
+        {
+          "ts": 1785264869,
+          "px": 0.34
+        }
+      ]
     },
     {
       "price": 0.26,
@@ -31065,21 +31050,27 @@
       "market_slug": "aec-dota2-agm-stx-2026-07-29",
       "outcome": "Amaru Gaming",
       "status": "open",
-      "ts": "2026-07-28T18:50:07Z"
+      "ts": "2026-07-28T18:50:07Z",
+      "price_path": [
+        {
+          "ts": 1785264869,
+          "px": 0.26
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 30,
+    "wins": 31,
     "losses": 64,
-    "pnl": -58.87,
+    "pnl": -56.71,
     "trades": 358,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-18",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 123.81,
-    "net": 59.81,
+    "account": 125.97,
+    "net": 61.97,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -31088,7 +31079,7 @@
         0
       ],
       "EDGE": [
-        22,
+        23,
         49,
         0
       ],
@@ -31109,14 +31100,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T18:34:28Z",
-      "kind": "EDGE",
-      "outcome": "Karmine Corp GC",
-      "result": "LOSS",
-      "pnl": -2.09,
-      "lesson": "model 27% vs market 19% missed \u2014 logged for the playbook review. Taken 0.19, rode to 0.10 before the result \u2014 beat the number by 9\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-27T19:34:28Z",
       "kind": "EDGE",
@@ -31348,6 +31331,14 @@
       "result": "LOSS",
       "pnl": -1.12,
       "lesson": "model 43% vs market 14% missed \u2014 logged for the playbook review. Taken 0.14, rode to 0.12 before the result \u2014 beat the number by 2\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-28T18:54:24Z",
+      "kind": "EDGE",
+      "outcome": "Karmine Corp Blue",
+      "result": "WIN",
+      "pnl": 2.16,
+      "lesson": "+$2.16 \u2014 model 43% vs market 28% was real edge; thesis held. Taken 0.28, slid to 0.25 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -31431,7 +31422,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785260666.3696196,
+  "dep_checked_ts": 1785264864.125083,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
