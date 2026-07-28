@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T12:00:59Z",
+  "updated": "2026-07-28T16:01:05Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1992,6 +1992,40 @@
         "ts": 1785246260
       },
       "last_alert_odds": -155
+    },
+    {
+      "id": "unity-esports-ml-0728",
+      "date": "2026-07-28",
+      "sport": "cs2",
+      "desc": "UNiTY esports ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "los kogutos",
+      "team": "UNiTY esports",
+      "opp": "los kogutos",
+      "analysis": "2-3 last 5 (beat Mai Tai, NAVI Junior) (lost to ex-MANA eSports) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat Mai Tai, NAVI Junior) (lost to ex-MANA eSports) vs 1-4 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
+      "awayTeam": "UNiTY esports",
+      "homeTeam": "los kogutos"
+    },
+    {
+      "id": "boston-red-sox-ml-0728",
+      "date": "2026-07-28",
+      "sport": "mlb",
+      "desc": "Boston Red Sox ML",
+      "market": "ML",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "09:40 PM ET",
+      "vs": "Athletics",
+      "team": "Boston Red Sox",
+      "opp": "Athletics",
+      "analysis": "55-50 overall, 30-21 on the road \u2014 our 62% vs book 57% (no-vig) | \ud83d\udcca **Form + price:** 55-50 overall, 30-21 on the road \u2014 our 62% vs book 57% (no-vig). Model makes Boston Red Sox **62%** \u2014 books imply **60%**. Small edge, real edge, pressed.",
+      "awayTeam": "Boston Red Sox",
+      "homeTeam": "Athletics"
     }
   ]
 }
