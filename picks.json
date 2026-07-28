@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T00:00:55Z",
+  "updated": "2026-07-28T01:44:21Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -697,7 +697,10 @@
         "total": 7.5,
         "ts": 1785191667
       },
-      "last_alert_odds": 157
+      "last_alert_odds": 157,
+      "result": "WIN",
+      "score": "Philadelphia Phillies 7, Miami Marlins 8",
+      "units_result": 1.44
     },
     {
       "id": "atlanta-braves-ml-0727",
@@ -827,7 +830,10 @@
         "away_ml": 105,
         "total": 8.5,
         "ts": 1785189867
-      }
+      },
+      "result": "LOSS",
+      "score": "Baltimore Orioles 8, Detroit Tigers 5",
+      "units_result": -1.0
     },
     {
       "id": "pittsburgh-pirates-ml-0727",
@@ -874,7 +880,10 @@
         "away_ml": 103,
         "total": 10.0,
         "ts": 1785192259
-      }
+      },
+      "result": "LOSS",
+      "score": "Toronto Blue Jays 3, Washington Nationals 2",
+      "units_result": -1.0
     },
     {
       "id": "bnk-fearx-ml-0727",
