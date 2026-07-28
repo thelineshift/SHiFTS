@@ -29646,6 +29646,21 @@
           "px": 0.38
         }
       ]
+    },
+    {
+      "price": 0.01,
+      "stake": 1.38,
+      "kind": "EDGE",
+      "p_model": 0.30104151037308957,
+      "event": "Renata Zarazua vs. McCartney Kessler",
+      "ev_start": "2026-07-28T23:30:00Z",
+      "reason": "Elo 30% vs market 1% \u2014 29% edge, half-Kelly",
+      "order_id": "BH2PDVR6P9SK",
+      "qty": 138,
+      "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
+      "outcome": "Renata Zarazua",
+      "status": "open",
+      "ts": "2026-07-28T11:30:12Z"
     }
   ],
   "pm_stats": {
@@ -29653,7 +29668,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 325,
+    "trades": 326,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-10",
     "deposits": 64.0,
