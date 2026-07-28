@@ -27873,6 +27873,21 @@
           "px": 0.34
         }
       ]
+    },
+    {
+      "price": 0.9,
+      "stake": 1.8,
+      "kind": "TAIL",
+      "p_model": 0.8632203005261315,
+      "event": "Zeynep Sonmez vs. Cadence Brace",
+      "ev_start": "2026-07-28T15:00:00Z",
+      "reason": "tail-end yield \u2014 11.1% on a near-certain that settles today",
+      "order_id": "BGYCNZ4PA9QM",
+      "qty": 2,
+      "market_slug": "astatc-wta-zeyson-cadbra-2026-07-26-sw2",
+      "outcome": "Zeynep Sonmez",
+      "status": "open",
+      "ts": "2026-07-28T06:29:59Z"
     }
   ],
   "pm_stats": {
@@ -27880,7 +27895,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 310,
+    "trades": 311,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-06",
     "deposits": 64.0,
