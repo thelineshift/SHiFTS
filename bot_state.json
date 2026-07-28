@@ -4754,7 +4754,7 @@
         }
       },
       "valorant:133557": {
-        "ts": 1785255891.8129387,
+        "ts": 1785264306.2499902,
         "f": {
           "w": 2,
           "l": 3,
@@ -6801,7 +6801,7 @@
         }
       },
       "valorant:133115": {
-        "ts": 1785255892.5102398,
+        "ts": 1785264306.9860086,
         "f": {
           "w": 3,
           "l": 2,
@@ -6830,7 +6830,7 @@
         }
       },
       "valorant:128796": {
-        "ts": 1785255893.106553,
+        "ts": 1785264307.5880382,
         "f": {
           "w": 3,
           "l": 2,
@@ -30160,9 +30160,7 @@
           "px": 0.5
         }
       ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      "note": " [stale-swept]"
     },
     {
       "price": 0.56,
@@ -30221,9 +30219,7 @@
           "px": 0.565
         }
       ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      "note": " [stale-swept]"
     },
     {
       "price": 0.16,
@@ -30908,10 +30904,6 @@
         {
           "ts": 1785261267,
           "px": 0.48
-        },
-        {
-          "ts": 1785264272,
-          "px": 0.48
         }
       ]
     },
@@ -31012,6 +31004,38 @@
           "px": 0.19
         }
       ]
+    },
+    {
+      "price": 0.5,
+      "short": true,
+      "stake": 1.5,
+      "kind": "EDGE",
+      "p_model": 0.6214705882352943,
+      "event": "Atlanta vs. Dallas",
+      "ev_start": "2026-07-30T00:00:00Z",
+      "reason": "model 62% vs market 50% \u2014 12% edge, half-Kelly",
+      "order_id": "BH91KTB9Y9P0",
+      "qty": 3,
+      "market_slug": "aec-wnba-atl-dal-2026-07-29",
+      "outcome": "Dallas",
+      "status": "open",
+      "ts": "2026-07-28T18:45:22Z"
+    },
+    {
+      "price": 0.565,
+      "short": true,
+      "stake": 1.13,
+      "kind": "EDGE",
+      "p_model": 0.6439847385633765,
+      "event": "Kansas City Royals vs. Minnesota Twins",
+      "ev_start": "2026-07-30T17:40:00Z",
+      "reason": "model 64% vs market 56% \u2014 8% edge, half-Kelly",
+      "order_id": "BH8YGWJ6W9P2",
+      "qty": 2,
+      "market_slug": "aec-mlb-kc-min-2026-07-30",
+      "outcome": "Minnesota Twins",
+      "status": "open",
+      "ts": "2026-07-28T18:45:23Z"
     }
   ],
   "pm_stats": {
@@ -31019,7 +31043,7 @@
     "wins": 30,
     "losses": 64,
     "pnl": -58.87,
-    "trades": 354,
+    "trades": 356,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-18",
     "deposits": 64.0,
