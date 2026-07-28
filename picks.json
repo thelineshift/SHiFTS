@@ -1509,12 +1509,12 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -172,
-        "away_ml": 142,
+        "home_ml": -184,
+        "away_ml": 151,
         "total": 9.0,
-        "ts": 1785255259
+        "ts": 1785258859
       },
-      "last_alert_odds": -172
+      "last_alert_odds": -184
     },
     {
       "id": "pittsburgh-pirates-ml-0728",
@@ -1533,10 +1533,10 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayTeam": "Arizona Diamondbacks",
       "live_odds": {
-        "home_ml": -117,
-        "away_ml": -103,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 9.0,
-        "ts": 1785240859
+        "ts": 1785258859
       }
     },
     {
@@ -1580,10 +1580,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -164,
-        "away_ml": 136,
+        "home_ml": -166,
+        "away_ml": 137,
         "total": 9.0,
-        "ts": 1785257059
+        "ts": 1785258859
       },
       "last_alert_odds": -168
     },
@@ -1717,10 +1717,10 @@
       "awayTeam": "Cleveland Guardians",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -164,
-        "away_ml": 136,
+        "home_ml": -166,
+        "away_ml": 137,
         "total": 9.0,
-        "ts": 1785257059
+        "ts": 1785258859
       }
     },
     {
@@ -1774,10 +1774,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -197,
-        "away_ml": 161,
+        "home_ml": -193,
+        "away_ml": 158,
         "total": 9.5,
-        "ts": 1785257059
+        "ts": 1785258859
       },
       "last_alert_odds": -192
     },
