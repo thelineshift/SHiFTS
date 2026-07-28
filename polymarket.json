@@ -1,39 +1,15 @@
 {
-  "ts": "2026-07-28T16:59:21Z",
+  "ts": "2026-07-28T17:14:20Z",
   "configured": true,
-  "balance_usd": 136.29,
-  "buying_power": 28.29,
+  "balance_usd": 127.29,
+  "buying_power": 36.29,
   "positions": [],
   "open_orders": [
     {
-      "market": "aec-wta-marsto-peyste-2026-07-26",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.6",
-      "qty": 1
-    },
-    {
-      "market": "astatc-wta-marsto-peyste-2026-07-26-sw1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.01",
-      "qty": 113
-    },
-    {
       "market": "aec-mlb-tex-tb-2026-07-30",
       "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.55",
-      "qty": 2
-    },
-    {
-      "market": "aec-mlb-kc-min-2026-07-30",
-      "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.56",
-      "qty": 2
-    },
-    {
-      "market": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.01",
-      "qty": 138
+      "qty": 4
     },
     {
       "market": "astatc-wta-darvid-marrib-2026-07-26-sw1",
@@ -42,16 +18,52 @@
       "qty": 7
     },
     {
+      "market": "aec-mlb-sea-lad-2026-07-30",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.57",
+      "qty": 1
+    },
+    {
+      "market": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.01",
+      "qty": 138
+    },
+    {
+      "market": "aec-wnba-atl-dal-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.53",
+      "qty": 2
+    },
+    {
       "market": "aec-ow-dal-fal-2026-07-29",
       "intent": "ORDER_INTENT_BUY_LONG",
       "price": "0.42",
       "qty": 4
     },
     {
-      "market": "aec-mlb-sea-lad-2026-07-30",
+      "market": "astatc-wta-yulsta-sloste-2026-07-26-sw1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.29",
+      "qty": 5
+    },
+    {
+      "market": "aec-wta-marsto-peyste-2026-07-26",
       "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.57",
-      "qty": 1
+      "price": "0.61",
+      "qty": 4
+    },
+    {
+      "market": "astatc-wta-marsto-peyste-2026-07-26-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.01",
+      "qty": 136
+    },
+    {
+      "market": "aec-mlb-kc-min-2026-07-30",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.56",
+      "qty": 2
     },
     {
       "market": "astatc-wta-yulsta-sloste-2026-07-26-sw2",
@@ -69,31 +81,13 @@
       "market": "aec-atp-carcan-andpel-2026-07-27",
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.71",
-      "qty": 2
+      "qty": 4
     },
     {
       "market": "astatc-wta-renzar-mcckes-2026-07-26-sw1",
       "intent": "ORDER_INTENT_BUY_LONG",
       "price": "0.01",
       "qty": 112
-    },
-    {
-      "market": "astatc-wta-yulsta-sloste-2026-07-26-sw1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.29",
-      "qty": 5
-    },
-    {
-      "market": "astatc-wta-marsto-peyste-2026-07-26-sw2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.01",
-      "qty": 136
-    },
-    {
-      "market": "aec-wnba-atl-dal-2026-07-29",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.53",
-      "qty": 2
     }
   ]
 }
