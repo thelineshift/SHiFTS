@@ -293,7 +293,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "6b9a82a3-93da-4c64-a9d9-1ad996c30182",
   "op_month": "2026-07",
-  "op_calls": 63,
+  "op_calls": 66,
   "op_meta": {
     "cs2": {
       "active": [
@@ -2433,28 +2433,40 @@
       "meta_ts": 1784952040.641981,
       "lines": [
         [
+          "DRX",
+          "Nongshim Redforce",
+          2.39,
+          1.584
+        ],
+        [
+          "T1",
+          "kt Rolster",
+          1.222,
+          4.11
+        ],
+        [
           "Gen.g Esports",
           "T1",
           1.671,
           2.22
         ],
         [
-          "DRX",
-          "kt Rolster",
-          3.43,
-          1.303
-        ],
-        [
           "Soopers",
           "Brion",
-          3.54,
-          1.287
+          2.85,
+          1.389
         ],
         [
-          "Hanwha Life Esports Challengers",
-          "Brion Challengers",
-          1.537,
-          2.5
+          "G2 Nord",
+          "VfB eSports",
+          10.18,
+          1.041
+        ],
+        [
+          "Unicorns of Love Sexy Edition",
+          "TeamOrangeGaming",
+          2.99,
+          1.387
         ],
         [
           "Dplus Challengers",
@@ -2463,31 +2475,67 @@
           2.07
         ],
         [
+          "Drx Challengers",
+          "Gen.G Global Academy",
+          1.25,
+          3.84
+        ],
+        [
           "Nongshim Redforce Challengers",
           "Soopers Challengers",
-          1.555,
-          2.45
+          1.653,
+          2.25
+        ],
+        [
+          "Dplus Challengers",
+          "T1 Esports Academy",
+          2.24,
+          1.662
+        ],
+        [
+          "Fearx Youth",
+          "Hanwha Life Esports Challengers",
+          1.869,
+          1.952
+        ],
+        [
+          "Blue Otter",
+          "Contingent eSports",
+          2.14,
+          1.719
+        ],
+        [
+          "Anyones Legend",
+          "TOP Esports",
+          2.0,
+          1.819
+        ],
+        [
+          "Bilibili Gaming",
+          "LGD Gaming",
+          1.125,
+          5.68
         ],
         [
           "Gamespace MCE",
           "Team Phantasma",
-          2.12,
-          1.609
+          1.9,
+          1.769
         ],
         [
           "Zennit",
           "Dynasty",
-          1.8,
-          2.03
+          1.645,
+          2.26
         ],
         [
           "Maze Gaming",
           "9Z Team",
-          1.37,
-          3.07
+          1.411,
+          2.89
         ]
       ],
-      "odds_ts": 1785211231.092112
+      "odds_ts": 1785254425.2372885
     }
   },
   "parlay_rot": 11,
