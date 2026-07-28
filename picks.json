@@ -1580,10 +1580,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -167,
-        "away_ml": 138,
+        "home_ml": -164,
+        "away_ml": 136,
         "total": 9.0,
-        "ts": 1785255259
+        "ts": 1785257059
       },
       "last_alert_odds": -168
     },
@@ -1717,10 +1717,10 @@
       "awayTeam": "Cleveland Guardians",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -167,
-        "away_ml": 138,
+        "home_ml": -164,
+        "away_ml": 136,
         "total": 9.0,
-        "ts": 1785255259
+        "ts": 1785257059
       }
     },
     {
@@ -1774,10 +1774,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -193,
-        "away_ml": 158,
+        "home_ml": -197,
+        "away_ml": 161,
         "total": 9.5,
-        "ts": 1785237259
+        "ts": 1785257059
       },
       "last_alert_odds": -192
     },
@@ -1798,10 +1798,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -185,
-        "away_ml": 152,
+        "home_ml": -181,
+        "away_ml": 149,
         "total": 8.5,
-        "ts": 1785255260
+        "ts": 1785257059
       },
       "last_alert_odds": -181
     },
