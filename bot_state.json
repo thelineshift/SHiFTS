@@ -31285,7 +31285,7 @@
       "qty": 274,
       "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
       "outcome": "Renata Zarazua",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T17:40:04Z",
       "price_path": [
         {
@@ -31304,7 +31304,10 @@
           "ts": 1785276864,
           "px": 0.43
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.01,
@@ -31580,7 +31583,7 @@
       "qty": 2,
       "market_slug": "aec-mlb-kc-min-2026-07-30",
       "outcome": "Minnesota Twins",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T18:45:23Z",
       "price_path": [
         {
@@ -31611,7 +31614,10 @@
           "ts": 1785279264,
           "px": 0.575
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.36,
