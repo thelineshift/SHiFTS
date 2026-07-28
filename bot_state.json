@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-28 12:44 UTC",
+    "at": "2026-07-28 10:14 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-3": "2026-07-28 12:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-28 12:24 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-28 12:00 UTC",
+    "\ud83c\udfaffree-pick-2-3": "2026-07-28 08:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-28 09:44 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-28 10:07 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-28 10:08 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-28 12:44 UTC",
+    "at": "2026-07-28 10:14 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -30,11 +30,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-28 12:44 UTC",
+    "at": "2026-07-28 10:14 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-28 12:44 UTC",
+    "at": "2026-07-28 10:14 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
@@ -7681,6 +7681,64 @@
             {
               "won": true,
               "opp": "VooDooSh Team"
+            }
+          ]
+        }
+      },
+      "lol:1449": {
+        "ts": 1785242679.9596236,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "ZYB Esport"
+            },
+            {
+              "won": false,
+              "opp": "Joblife"
+            },
+            {
+              "won": true,
+              "opp": "Skillcamp Esport"
+            },
+            {
+              "won": false,
+              "opp": "Galions"
+            },
+            {
+              "won": true,
+              "opp": "UCAM Esports Club"
+            }
+          ]
+        }
+      },
+      "lol:134337": {
+        "ts": 1785242680.560945,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Joblife"
+            },
+            {
+              "won": false,
+              "opp": "Galions"
+            },
+            {
+              "won": true,
+              "opp": "TLN Pirates"
+            },
+            {
+              "won": false,
+              "opp": "Esprit Sh\u014dnen"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp Blue"
             }
           ]
         }
@@ -29415,10 +29473,6 @@
         {
           "ts": 1785240865,
           "px": 0.14
-        },
-        {
-          "ts": 1785242668,
-          "px": 0.14
         }
       ]
     },
@@ -29483,10 +29537,6 @@
         {
           "ts": 1785240865,
           "px": 0.6
-        },
-        {
-          "ts": 1785242668,
-          "px": 0.6
         }
       ]
     },
@@ -29545,10 +29595,6 @@
         },
         {
           "ts": 1785240866,
-          "px": 0.71
-        },
-        {
-          "ts": 1785242668,
           "px": 0.71
         }
       ]
@@ -29713,10 +29759,6 @@
         {
           "ts": 1785240866,
           "px": 0.76
-        },
-        {
-          "ts": 1785242669,
-          "px": 0.76
         }
       ]
     },
@@ -29734,13 +29776,7 @@
       "market_slug": "aec-cs2-tdk-baks-2026-07-28",
       "outcome": "BakS eSports",
       "status": "open",
-      "ts": "2026-07-28T12:40:09Z",
-      "price_path": [
-        {
-          "ts": 1785242669,
-          "px": 0.14
-        }
-      ]
+      "ts": "2026-07-28T12:40:09Z"
     },
     {
       "price": 0.29,
@@ -29756,13 +29792,7 @@
       "market_slug": "aec-cs2-mibr-fxw7-2026-07-28",
       "outcome": "Fluxo W7M",
       "status": "open",
-      "ts": "2026-07-28T12:40:10Z",
-      "price_path": [
-        {
-          "ts": 1785242669,
-          "px": 0.29
-        }
-      ]
+      "ts": "2026-07-28T12:40:10Z"
     },
     {
       "price": 0.53,
@@ -29807,20 +29837,36 @@
           "px": 0.56
         }
       ]
+    },
+    {
+      "price": 0.16,
+      "short": true,
+      "stake": 1.12,
+      "kind": "EDGE",
+      "p_model": 0.368421052631579,
+      "event": "Solary vs. Ici Japon Corp. Esport",
+      "ev_start": "2026-07-28T20:00:00Z",
+      "reason": "model 37% vs market 16% \u2014 21% edge, half-Kelly",
+      "order_id": "BH3NHT3PW9P1",
+      "qty": 7,
+      "market_slug": "aec-lol-sly-ijc-2026-07-28",
+      "outcome": "Ici Japon Corp. Esport",
+      "status": "open",
+      "ts": "2026-07-28T12:45:03Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 28,
+    "wins": 27,
     "losses": 55,
-    "pnl": -51.88,
-    "trades": 331,
+    "pnl": -54.58,
+    "trades": 332,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-12",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 115.18,
-    "net": 51.18,
+    "account": 112.48,
+    "net": 48.48,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -29829,7 +29875,7 @@
         0
       ],
       "EDGE": [
-        21,
+        20,
         41,
         0
       ],
@@ -29850,6 +29896,14 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
+    {
+      "ts": "2026-07-27T13:49:31Z",
+      "kind": "LIVE-BET",
+      "outcome": "Butterfly",
+      "result": "LOSS",
+      "pnl": -8.14,
+      "lesson": "live divergence reverted \u2014 mid-game prices whipsaw. Consider a bigger live edge bar or a smaller Kelly fraction on live plays."
+    },
     {
       "ts": "2026-07-27T13:49:35Z",
       "kind": "TAIL",
@@ -30081,14 +30135,6 @@
       "result": "WIN",
       "pnl": 1.64,
       "lesson": "+$1.64 \u2014 model 70% vs market 59% was real edge; thesis held. Taken 0.59, rode to 0.67 before the result \u2014 beat the number by 8\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-28T12:44:23Z",
-      "kind": "EDGE",
-      "outcome": "Dplus KIA Challengers",
-      "result": "WIN",
-      "pnl": 2.7,
-      "lesson": "+$2.70 \u2014 model 64% vs market 46% was real edge; thesis held. Rode the number flat to the result."
     }
   ],
   "giveaway_x_posts": [
