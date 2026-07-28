@@ -1386,8 +1386,8 @@
       "live_odds": {
         "home_ml": -247,
         "away_ml": 198,
-        "total": 159.5,
-        "ts": 1785255259
+        "total": 160.5,
+        "ts": 1785266058
       },
       "last_alert_odds": -247
     },
@@ -1534,10 +1534,10 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayTeam": "Arizona Diamondbacks",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -105,
+        "home_ml": -117,
+        "away_ml": -103,
         "total": 9.0,
-        "ts": 1785258859
+        "ts": 1785266059
       }
     },
     {
