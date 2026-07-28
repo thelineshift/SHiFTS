@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-28 21:14 UTC",
+    "at": "2026-07-28 21:44 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-3": "2026-07-28 20:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-28 20:44 UTC",
+    "\ud83e\uddfereceipts": "2026-07-28 21:34 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-28 20:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-28 16:43 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-28 21:14 UTC",
+    "at": "2026-07-28 21:44 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -26,19 +26,29 @@
       "over-9.0-0727 | Over 9.0 -110 | tier=sharp",
       "over-9.5-0727 | Over 9.5 -110 | tier=sharp",
       "over-8.5-0727 | Over 8.5 -110 | tier=whale",
-      "lavked-ml-0727 | Lavked ML -150 | tier=sharp"
+      "lavked-ml-0727 | Lavked ML -150 | tier=sharp",
+      "over-9.0-0728 | Over 9.0 -110 | tier=whale"
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-28 21:14 UTC",
+    "at": "2026-07-28 21:44 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-28 21:14 UTC",
+    "at": "2026-07-28 21:44 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
   "unannounced_results": [
+    {
+      "id": "athletics-ml-0727",
+      "desc": "Athletics ML",
+      "odds": 149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 4, Athletics 2",
+      "tier": "free"
+    },
     {
       "id": "hanwha-life-esports-challeng-0728",
       "desc": "Hanwha Life Esports Challengers ML",
@@ -30521,6 +30531,10 @@
         {
           "ts": 1785273261,
           "px": 0.76
+        },
+        {
+          "ts": 1785275061,
+          "px": 0.7
         }
       ]
     },
@@ -30697,42 +30711,13 @@
       "qty": 5,
       "market_slug": "aec-atp-branak-tometc-2026-07-27",
       "outcome": "Tomas Etcheverry",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T16:35:02Z",
-      "price_path": [
-        {
-          "ts": 1785257073,
-          "px": 0.31
-        },
-        {
-          "ts": 1785259478,
-          "px": 0.31
-        },
-        {
-          "ts": 1785261867,
-          "px": 0.31
-        },
-        {
-          "ts": 1785263669,
-          "px": 0.31
-        },
-        {
-          "ts": 1785265470,
-          "px": 0.31
-        },
-        {
-          "ts": 1785267867,
-          "px": 0.18
-        },
-        {
-          "ts": 1785269669,
-          "px": 0.19
-        },
-        {
-          "ts": 1785272069,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T21:44:22Z",
+      "pnl": -1.55,
+      "autopsy": "model 46% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.01 before the result \u2014 beat the number by 30\u00a2 \u2705"
     },
     {
       "price": 0.61,
@@ -30926,6 +30911,10 @@
         {
           "ts": 1785273262,
           "px": 0.34
+        },
+        {
+          "ts": 1785275064,
+          "px": 0.49
         }
       ]
     },
@@ -31475,6 +31464,10 @@
         {
           "ts": 1785273262,
           "px": 0.26
+        },
+        {
+          "ts": 1785275064,
+          "px": 0.26
         }
       ]
     },
@@ -31505,6 +31498,10 @@
         {
           "ts": 1785273262,
           "px": 0.43
+        },
+        {
+          "ts": 1785275064,
+          "px": 0.46
         }
       ]
     },
@@ -31552,6 +31549,10 @@
         {
           "ts": 1785273262,
           "px": 0.1
+        },
+        {
+          "ts": 1785275065,
+          "px": 0.5
         }
       ]
     },
@@ -31573,6 +31574,10 @@
         {
           "ts": 1785273263,
           "px": 0.17
+        },
+        {
+          "ts": 1785275065,
+          "px": 0.28
         }
       ]
     },
@@ -31595,6 +31600,10 @@
         {
           "ts": 1785273263,
           "px": 0.29
+        },
+        {
+          "ts": 1785275065,
+          "px": 0.29
         }
       ]
     }
@@ -31602,15 +31611,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 32,
-    "losses": 70,
-    "pnl": -62.28,
+    "losses": 71,
+    "pnl": -63.83,
     "trades": 369,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-20",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 107.66,
-    "net": 43.66,
+    "account": 106.11,
+    "net": 42.11,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -31620,7 +31629,7 @@
       ],
       "EDGE": [
         24,
-        55,
+        56,
         0
       ],
       "LIVE-BET": [
@@ -31640,14 +31649,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T22:34:35Z",
-      "kind": "EDGE",
-      "outcome": "Team Solid",
-      "result": "LOSS",
-      "pnl": -2.5,
-      "lesson": "model 50% vs market 25% missed \u2014 logged for the playbook review. Taken 0.25, slid to 0.34 before the result \u2014 the number ran 9\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-27T22:40:21Z",
       "kind": "EDGE",
@@ -31879,6 +31880,14 @@
       "result": "LOSS",
       "pnl": -1.4,
       "lesson": "model 57% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, slid to 0.17 before the result \u2014 the number ran 18\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-28T21:44:22Z",
+      "kind": "EDGE",
+      "outcome": "Tomas Etcheverry",
+      "result": "LOSS",
+      "pnl": -1.55,
+      "lesson": "model 46% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.01 before the result \u2014 beat the number by 30\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
