@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "athletics-ml-0727",
+      "desc": "Athletics ML",
+      "odds": 149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 4, Athletics 2",
+      "tier": "free"
+    },
+    {
       "id": "hanwha-life-esports-challeng-0728",
       "desc": "Hanwha Life Esports Challengers ML",
       "odds": -186,
@@ -3936,7 +3945,7 @@
         }
       },
       "valorant:134521": {
-        "ts": 1785261311.4184613,
+        "ts": 1785272704.256531,
         "f": {
           "w": 1,
           "l": 4,
@@ -3965,11 +3974,15 @@
         }
       },
       "valorant:130888": {
-        "ts": 1785192293.2591631,
+        "ts": 1785272702.9238997,
         "f": {
           "w": 2,
           "l": 3,
           "res": [
+            {
+              "won": false,
+              "opp": "FOKUS Sakura"
+            },
             {
               "won": true,
               "opp": "Karmine Corp GC"
@@ -3985,10 +3998,6 @@
             {
               "won": false,
               "opp": "SK Nebula"
-            },
-            {
-              "won": false,
-              "opp": "Gentle Mates GC"
             }
           ]
         }
@@ -4541,7 +4550,7 @@
         }
       },
       "lol:128346": {
-        "ts": 1785264884.958654,
+        "ts": 1785272679.7787263,
         "f": {
           "w": 0,
           "l": 5,
@@ -4715,11 +4724,15 @@
         }
       },
       "valorant:136929": {
-        "ts": 1785167106.0125492,
+        "ts": 1785272703.528563,
         "f": {
           "w": 3,
           "l": 2,
           "res": [
+            {
+              "won": false,
+              "opp": "Habos Babos"
+            },
             {
               "won": true,
               "opp": "GIANTX GC"
@@ -4735,16 +4748,12 @@
             {
               "won": false,
               "opp": "Karmine Corp GC"
-            },
-            {
-              "won": false,
-              "opp": "GIANTX GC"
             }
           ]
         }
       },
       "dota2:137685": {
-        "ts": 1785258294.0088742,
+        "ts": 1785272706.3190491,
         "f": {
           "w": 3,
           "l": 2,
@@ -8371,7 +8380,7 @@
         }
       },
       "lol:128344": {
-        "ts": 1785264884.3370304,
+        "ts": 1785272679.1927276,
         "f": {
           "w": 4,
           "l": 1,
@@ -8743,6 +8752,93 @@
             {
               "won": true,
               "opp": "DN SOOPers"
+            }
+          ]
+        }
+      },
+      "valorant:129662": {
+        "ts": 1785272704.973905,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "GIANTX"
+            },
+            {
+              "won": false,
+              "opp": "Team Heretics"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": true,
+              "opp": "Team Liquid"
+            },
+            {
+              "won": false,
+              "opp": "BBL Esports"
+            }
+          ]
+        }
+      },
+      "valorant:128537": {
+        "ts": 1785272705.5707228,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team Liquid"
+            },
+            {
+              "won": true,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": true,
+              "opp": "GIANTX"
+            },
+            {
+              "won": false,
+              "opp": "Natus Vincere"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            }
+          ]
+        }
+      },
+      "dota2:137657": {
+        "ts": 1785272706.9202998,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "Nemiga Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Team AION"
+            },
+            {
+              "won": true,
+              "opp": "Zero Tenacity"
+            },
+            {
+              "won": true,
+              "opp": "Nemiga Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Dandelions"
             }
           ]
         }
@@ -31426,6 +31522,52 @@
           "px": 0.58
         }
       ]
+    },
+    {
+      "price": 0.24,
+      "stake": 0.96,
+      "kind": "EDGE",
+      "p_model": 0.4288329488198333,
+      "event": "Magdalena Frech vs. Ann Li",
+      "ev_start": "2026-07-28T21:25:00Z",
+      "reason": "Elo 43% vs market 24% \u2014 19% edge, half-Kelly",
+      "order_id": "BHAYJ2YSA9NT",
+      "qty": 4,
+      "market_slug": "astatc-wta-magfre-annli-2026-07-27-sw1",
+      "outcome": "Magdalena Frech",
+      "status": "open",
+      "ts": "2026-07-28T21:05:08Z"
+    },
+    {
+      "price": 0.23,
+      "stake": 1.15,
+      "kind": "EDGE",
+      "p_model": 0.4288329488198333,
+      "event": "Magdalena Frech vs. Ann Li",
+      "ev_start": "2026-07-28T21:25:00Z",
+      "reason": "Elo 43% vs market 23% \u2014 20% edge, half-Kelly",
+      "order_id": "BHB1071K69NN",
+      "qty": 5,
+      "market_slug": "aec-wta-magfre-annli-2026-07-27",
+      "outcome": "Magdalena Frech",
+      "status": "open",
+      "ts": "2026-07-28T21:05:10Z"
+    },
+    {
+      "price": 0.29,
+      "short": true,
+      "stake": 1.74,
+      "kind": "EDGE",
+      "p_model": 0.5663716814159292,
+      "event": "G2 Gozen vs. Twisted Minds Orchid",
+      "ev_start": "2026-07-30T18:00:00Z",
+      "reason": "model 57% vs market 29% \u2014 28% edge, half-Kelly",
+      "order_id": "BHAZ8AEVA9NW",
+      "qty": 6,
+      "market_slug": "aec-valorant-ggo-tmo-2026-07-30",
+      "outcome": "Twisted Minds Orchid",
+      "status": "open",
+      "ts": "2026-07-28T21:05:11Z"
     }
   ],
   "pm_stats": {
@@ -31433,7 +31575,7 @@
     "wins": 32,
     "losses": 69,
     "pnl": -60.88,
-    "trades": 366,
+    "trades": 369,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-20",
     "deposits": 64.0,
