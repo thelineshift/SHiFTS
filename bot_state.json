@@ -31867,8 +31867,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-lol-vksa-est-2026-07-28",
-    "aec-lol-ktc-dkc-2026-07-28",
     "aec-cs2-navij-mouzn-2026-07-27",
     "aec-cs2-rush-hat-2026-07-27",
     "aec-cs2-odk-paina-2026-07-27",
@@ -31926,7 +31924,9 @@
     "aec-atp-aughol-huggre-2026-07-27",
     "aec-cs2-regain-voca-2026-07-29",
     "aec-valorant-gxgc-hbs-2026-07-29",
-    "aec-valorant-beg-aar-2026-07-29"
+    "aec-valorant-beg-aar-2026-07-29",
+    "astatc-wta-magfre-annli-2026-07-27-sw1",
+    "aec-wta-magfre-annli-2026-07-27"
   ],
   "odds_api": {
     "month": "2026-07",
