@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T09:44:23Z",
+  "updated": "2026-07-28T12:00:59Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1967,6 +1967,23 @@
           "time_et": "10:00 PM ET"
         }
       ]
+    },
+    {
+      "id": "milwaukee-brewers--1.5-0728",
+      "date": "2026-07-28",
+      "sport": "mlb",
+      "desc": "Milwaukee Brewers -1.5",
+      "market": "run line",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "09:45 PM ET",
+      "vs": "San Francisco Giants",
+      "team": "Milwaukee Brewers",
+      "opp": "San Francisco Giants",
+      "analysis": "66-40 overall, 30-20 on the road \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes Milwaukee Brewers 62% straight up | \ud83d\udcc8 **Market angle:** 66-40 overall, 30-20 on the road \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes Milwaukee Brewers ",
+      "awayTeam": "Milwaukee Brewers",
+      "homeTeam": "San Francisco Giants"
     }
   ]
 }
