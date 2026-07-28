@@ -7390,6 +7390,64 @@
             }
           ]
         }
+      },
+      "valorant:128912": {
+        "ts": 1785218700.3402116,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Global Esports"
+            },
+            {
+              "won": true,
+              "opp": "Nongshim RedForce"
+            },
+            {
+              "won": false,
+              "opp": "Global Esports"
+            },
+            {
+              "won": false,
+              "opp": "FUT Esports"
+            },
+            {
+              "won": false,
+              "opp": "Kiwoom DRX"
+            }
+          ]
+        }
+      },
+      "valorant:129326": {
+        "ts": 1785218700.9451668,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "Rex Regum Qeon"
+            },
+            {
+              "won": false,
+              "opp": "Gen.G Esports"
+            },
+            {
+              "won": false,
+              "opp": "Gen.G Esports"
+            },
+            {
+              "won": false,
+              "opp": "VARREL"
+            },
+            {
+              "won": true,
+              "opp": "VARREL"
+            }
+          ]
+        }
       }
     },
     "tennis": {
@@ -27292,10 +27350,6 @@
         {
           "ts": 1785215067,
           "px": 0.52
-        },
-        {
-          "ts": 1785218662,
-          "px": 0.38
         }
       ]
     },
@@ -27737,6 +27791,37 @@
           "px": 0.72
         }
       ]
+    },
+    {
+      "price": 0.3,
+      "stake": 1.5,
+      "kind": "EDGE",
+      "p_model": 0.5982904975281664,
+      "event": "Darja Vidmanova vs. Marina Bassols Ribera",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 60% vs market 30% \u2014 30% edge, half-Kelly",
+      "order_id": "BGY3966E29NE",
+      "qty": 5,
+      "market_slug": "astatc-wta-darvid-marrib-2026-07-26-sw2",
+      "outcome": "Darja Vidmanova",
+      "status": "open",
+      "ts": "2026-07-28T06:05:01Z"
+    },
+    {
+      "price": 0.34,
+      "short": true,
+      "stake": 1.36,
+      "kind": "EDGE",
+      "p_model": 0.5675675675675675,
+      "event": "FULL SENSE vs. ZETA DIVISION",
+      "ev_start": "2026-07-30T11:00:00Z",
+      "reason": "model 57% vs market 34% \u2014 23% edge, half-Kelly",
+      "order_id": "BGY37WTAJ9NZ",
+      "qty": 4,
+      "market_slug": "aec-valorant-fs-zeta-2026-07-30",
+      "outcome": "ZETA DIVISION",
+      "status": "open",
+      "ts": "2026-07-28T06:05:03Z"
     }
   ],
   "pm_stats": {
@@ -27744,7 +27829,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 308,
+    "trades": 310,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-06",
     "deposits": 64.0,
