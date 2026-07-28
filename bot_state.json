@@ -29781,7 +29781,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-cs2-nvo-atp-2026-07-27",
     "aec-lol-deer-ea-2026-07-27",
     "astatc-cs2-bpl-misa-2026-07-27-map2",
     "astatc-valorant-bst-bbb-2026-07-27-map4",
@@ -29840,7 +29839,8 @@
     "astatc-wta-yulsta-sloste-2026-07-26-sw2",
     "aec-lol-jl-vitb-2026-07-28",
     "aec-lol-jsk-3bl-2026-07-28",
-    "aec-lol-bar-gxi-2026-07-28"
+    "aec-lol-bar-gxi-2026-07-28",
+    "aec-lol-kcb-gal-2026-07-28"
   ],
   "odds_api": {
     "month": "2026-07",
