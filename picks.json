@@ -1483,9 +1483,9 @@
       "homeTeam": "San Francisco Giants",
       "live_odds": {
         "home_ml": 119,
-        "away_ml": -144,
+        "away_ml": -143,
         "total": 7.5,
-        "ts": 1785212059
+        "ts": 1785219259
       }
     },
     {
