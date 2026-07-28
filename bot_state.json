@@ -28917,6 +28917,22 @@
       "outcome": "Vitality.Bee",
       "status": "open",
       "ts": "2026-07-28T09:05:25Z"
+    },
+    {
+      "price": 0.575,
+      "short": true,
+      "stake": 0.57,
+      "kind": "EDGE",
+      "p_model": 0.6957686124685433,
+      "event": "Seattle Mariners vs. Los Angeles Dodgers",
+      "ev_start": "2026-07-31T02:10:00Z",
+      "reason": "model 70% vs market 57% \u2014 12% edge, half-Kelly",
+      "order_id": "BH0WNJWPJ9NJ",
+      "qty": 1,
+      "market_slug": "aec-mlb-sea-lad-2026-07-30",
+      "outcome": "Los Angeles Dodgers",
+      "status": "open",
+      "ts": "2026-07-28T09:10:03Z"
     }
   ],
   "pm_stats": {
@@ -28924,7 +28940,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 315,
+    "trades": 316,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-08",
     "deposits": 64.0,
