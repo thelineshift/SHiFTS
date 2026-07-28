@@ -305,7 +305,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "6b9a82a3-93da-4c64-a9d9-1ad996c30182",
   "op_month": "2026-07",
-  "op_calls": 66,
+  "op_calls": 68,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1188,8 +1188,39 @@
         "1374364": "Butterfly"
       },
       "meta_ts": 1784925282.1446652,
-      "lines": [],
-      "odds_ts": 1785240028.5105956
+      "lines": [
+        [
+          "Mibr",
+          "Fluxo W7M",
+          1.309,
+          3.22
+        ],
+        [
+          "Imperial eSports",
+          "Bestia",
+          1.645,
+          2.2
+        ],
+        [
+          "Regain",
+          "Team Voca",
+          1.278,
+          3.41
+        ],
+        [
+          "Shinden",
+          "Galorys",
+          1.735,
+          2.06
+        ],
+        [
+          "Genone",
+          "New Vision",
+          13.67,
+          1.028
+        ]
+      ],
+      "odds_ts": 1785268825.4994895
     },
     "valorant": {
       "lines": [
