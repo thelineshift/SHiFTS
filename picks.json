@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T17:04:21Z",
+  "updated": "2026-07-28T20:00:45Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2036,6 +2036,137 @@
         "total": 10.0,
         "ts": 1785255260
       }
+    },
+    {
+      "id": "3-leg-parlay-0728-whale",
+      "date": "2026-07-28",
+      "sport": "parlay",
+      "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
+      "market": "3-leg parlay (CS2 + MLB + WNBA)",
+      "odds": 262,
+      "units": 0.5,
+      "tier": "whale",
+      "time_et": "06:00 PM ET",
+      "vs": "Chicago Cubs ML vs St. Louis Cardinals \u00b7 Marsborne ML vs LAG Gaming \u00b7 Washington Mystics ML vs Connecticut Sun",
+      "team": null,
+      "opp": null,
+      "analysis": "Chicago Cubs ML (-115) \u30fb Marsborne ML (-265) \u30fb Washington Mystics ML (-247) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Chicago Cubs",
+          "vs": "St. Louis Cardinals",
+          "sport": "mlb",
+          "date": "2026-07-28",
+          "time_et": "07:45 PM ET"
+        },
+        {
+          "team": "Marsborne",
+          "vs": "LAG Gaming",
+          "sport": "cs2",
+          "date": "2026-07-28",
+          "time_et": "06:00 PM ET"
+        },
+        {
+          "team": "Washington Mystics",
+          "vs": "Connecticut Sun",
+          "sport": "wnba",
+          "date": "2026-07-28",
+          "time_et": "07:30 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "los-angeles-sparks-ml-0728",
+      "date": "2026-07-28",
+      "sport": "wnba",
+      "desc": "Los Angeles Sparks ML",
+      "market": "ML",
+      "odds": 163,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "10:00 PM ET",
+      "vs": "New York Liberty",
+      "team": "Los Angeles Sparks",
+      "opp": "New York Liberty",
+      "analysis": "10-16 overall, 5-8 at home \u2014 our 40% vs book 36% (no-vig) | \ud83e\udde0 **The read:** 10-16 overall, 5-8 at home \u2014 our 40% vs book 36% (no-vig). Model makes Los Angeles Sparks **40%** \u2014 books imply **38%**. SHiFT presses the gap.",
+      "homeTeam": "Los Angeles Sparks",
+      "awayTeam": "New York Liberty"
+    },
+    {
+      "id": "3-leg-parlay-0728-sharp",
+      "date": "2026-07-28",
+      "sport": "parlay",
+      "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
+      "market": "3-leg parlay (CS2 + MLB + WNBA)",
+      "odds": 262,
+      "units": 0.5,
+      "tier": "sharp",
+      "time_et": "06:00 PM ET",
+      "vs": "Chicago Cubs ML vs St. Louis Cardinals \u00b7 Marsborne ML vs LAG Gaming \u00b7 Washington Mystics ML vs Connecticut Sun",
+      "team": null,
+      "opp": null,
+      "analysis": "Chicago Cubs ML (-115) \u30fb Marsborne ML (-265) \u30fb Washington Mystics ML (-247) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Chicago Cubs",
+          "vs": "St. Louis Cardinals",
+          "sport": "mlb",
+          "date": "2026-07-28",
+          "time_et": "07:45 PM ET"
+        },
+        {
+          "team": "Marsborne",
+          "vs": "LAG Gaming",
+          "sport": "cs2",
+          "date": "2026-07-28",
+          "time_et": "06:00 PM ET"
+        },
+        {
+          "team": "Washington Mystics",
+          "vs": "Connecticut Sun",
+          "sport": "wnba",
+          "date": "2026-07-28",
+          "time_et": "07:30 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "3-leg-parlay-0728-lock",
+      "date": "2026-07-28",
+      "sport": "parlay",
+      "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
+      "market": "3-leg parlay (CS2 + MLB + WNBA)",
+      "odds": 262,
+      "units": 0.5,
+      "tier": "lock",
+      "time_et": "06:00 PM ET",
+      "vs": "Chicago Cubs ML vs St. Louis Cardinals \u00b7 Marsborne ML vs LAG Gaming \u00b7 Washington Mystics ML vs Connecticut Sun",
+      "team": null,
+      "opp": null,
+      "analysis": "Chicago Cubs ML (-115) \u30fb Marsborne ML (-265) \u30fb Washington Mystics ML (-247) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Chicago Cubs",
+          "vs": "St. Louis Cardinals",
+          "sport": "mlb",
+          "date": "2026-07-28",
+          "time_et": "07:45 PM ET"
+        },
+        {
+          "team": "Marsborne",
+          "vs": "LAG Gaming",
+          "sport": "cs2",
+          "date": "2026-07-28",
+          "time_et": "06:00 PM ET"
+        },
+        {
+          "team": "Washington Mystics",
+          "vs": "Connecticut Sun",
+          "sport": "wnba",
+          "date": "2026-07-28",
+          "time_et": "07:30 PM ET"
+        }
+      ]
     }
   ]
 }
