@@ -45,15 +45,6 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
-      "id": "detroit-tigers-ml-0727",
-      "desc": "Detroit Tigers ML",
-      "odds": -118,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Baltimore Orioles 8, Detroit Tigers 5",
-      "tier": "sharp"
-    },
-    {
       "id": "washington-nationals-ml-0727",
       "desc": "Washington Nationals ML",
       "odds": -126,
