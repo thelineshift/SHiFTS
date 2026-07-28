@@ -1,26 +1,14 @@
 {
-  "updated": "2026-07-28T00:00:23Z",
-  "record": "24-52",
-  "trades": 285,
-  "open": 30,
-  "pnl": -53.44,
-  "account": 106.58,
+  "updated": "2026-07-28T02:00:07Z",
+  "record": "24-55",
+  "trades": 294,
+  "open": 33,
+  "pnl": -59.74,
+  "account": 101.44,
   "deposits": 64.0,
-  "net_pnl": 42.58,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 18-38 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 1-2",
+  "net_pnl": 37.44,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 18-41 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 1-2",
   "recent": [
-    {
-      "outcome": "Vivo Keyd Stars Academy",
-      "short": false,
-      "result": "lost",
-      "pnl": -3.24
-    },
-    {
-      "outcome": "NAVI Junior",
-      "short": false,
-      "result": "won",
-      "pnl": 1.8
-    },
     {
       "outcome": "HATERS",
       "short": true,
@@ -40,10 +28,22 @@
       "pnl": 2.6
     },
     {
+      "outcome": "RMD Gaming",
+      "short": true,
+      "result": "lost",
+      "pnl": -1.68
+    },
+    {
       "outcome": "Hunters Rising",
       "short": true,
       "result": "lost",
       "pnl": -2.86
+    },
+    {
+      "outcome": "Revenge",
+      "short": true,
+      "result": "lost",
+      "pnl": -1.02
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
