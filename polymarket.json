@@ -1,10 +1,28 @@
 {
-  "ts": "2026-07-28T00:44:23Z",
+  "ts": "2026-07-28T00:59:20Z",
   "configured": true,
-  "balance_usd": 117.17,
-  "buying_power": 19.17,
+  "balance_usd": 97.14,
+  "buying_power": 18.14,
   "positions": [],
   "open_orders": [
+    {
+      "market": "aec-wnba-conn-wsh-2026-07-28",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.69",
+      "qty": 2
+    },
+    {
+      "market": "aec-mlb-tex-tb-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.55",
+      "qty": 3
+    },
+    {
+      "market": "aec-mlb-col-sd-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.59",
+      "qty": 2
+    },
     {
       "market": "aec-atp-carcan-andpel-2026-07-27",
       "intent": "ORDER_INTENT_BUY_SHORT",
@@ -34,24 +52,6 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.57",
       "qty": 3
-    },
-    {
-      "market": "aec-wnba-conn-wsh-2026-07-28",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.69",
-      "qty": 2
-    },
-    {
-      "market": "aec-mlb-tex-tb-2026-07-29",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.55",
-      "qty": 3
-    },
-    {
-      "market": "aec-mlb-col-sd-2026-07-29",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.59",
-      "qty": 2
     }
   ]
 }
