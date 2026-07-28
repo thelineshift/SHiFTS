@@ -1534,10 +1534,10 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayTeam": "Arizona Diamondbacks",
       "live_odds": {
-        "home_ml": -115,
+        "home_ml": -114,
         "away_ml": -105,
         "total": 9.0,
-        "ts": 1785273259
+        "ts": 1785276859
       }
     },
     {
@@ -1675,10 +1675,10 @@
       "homeTeam": "Detroit Tigers",
       "awayTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
-        "total": 9.0,
-        "ts": 1785275059
+        "home_ml": -150,
+        "away_ml": 124,
+        "total": 9.5,
+        "ts": 1785276859
       }
     },
     {
@@ -1778,10 +1778,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -237,
-        "away_ml": 192,
+        "home_ml": -244,
+        "away_ml": 197,
         "total": 9.5,
-        "ts": 1785275059
+        "ts": 1785276859
       },
       "last_alert_odds": -237
     },
@@ -1804,8 +1804,8 @@
       "live_odds": {
         "home_ml": -175,
         "away_ml": 144,
-        "total": 8.5,
-        "ts": 1785269659
+        "total": 8.0,
+        "ts": 1785276859
       },
       "last_alert_odds": -181
     },
@@ -1826,10 +1826,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -231,
-        "away_ml": 188,
+        "home_ml": -237,
+        "away_ml": 192,
         "total": 8.0,
-        "ts": 1785275060
+        "ts": 1785276859
       },
       "last_alert_odds": -231
     },
@@ -1912,10 +1912,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -103,
-        "away_ml": -117,
+        "home_ml": -105,
+        "away_ml": -115,
         "total": 9.0,
-        "ts": 1785275060
+        "ts": 1785276859
       }
     },
     {
