@@ -31108,6 +31108,22 @@
           "px": 0.43
         }
       ]
+    },
+    {
+      "price": 0.3,
+      "short": true,
+      "stake": 1.2,
+      "kind": "EDGE",
+      "p_model": 0.4691056154301391,
+      "event": "August Holmgren vs. Hugo Grenier",
+      "ev_start": "2026-07-28T21:00:00Z",
+      "reason": "Elo 47% vs market 30% \u2014 17% edge, half-Kelly",
+      "order_id": "BH9NQ4FZM9QV",
+      "qty": 4,
+      "market_slug": "aec-atp-aughol-huggre-2026-07-27",
+      "outcome": "Hugo Grenier",
+      "status": "open",
+      "ts": "2026-07-28T19:40:10Z"
     }
   ],
   "pm_stats": {
@@ -31115,7 +31131,7 @@
     "wins": 30,
     "losses": 66,
     "pnl": -61.0,
-    "trades": 362,
+    "trades": 363,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-18",
     "deposits": 64.0,
