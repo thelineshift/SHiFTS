@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-28T18:00:05Z",
-  "record": "30-64",
-  "trades": 353,
-  "open": 34,
-  "pnl": -58.87,
-  "account": 123.81,
+  "updated": "2026-07-28T20:00:13Z",
+  "record": "31-66",
+  "trades": 365,
+  "open": 39,
+  "pnl": -58.18,
+  "account": 111.76,
   "deposits": 64.0,
-  "net_pnl": 59.81,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 22-49 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 3-3",
+  "net_pnl": 47.76,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 23-51 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 3-3",
   "recent": [
     {
-      "outcome": "Sascha Gueymard-Wayenburg",
+      "outcome": "Vitality.Bee",
       "short": true,
       "result": "lost",
-      "pnl": -0.94
-    },
-    {
-      "outcome": "Carlos Taberner",
-      "short": true,
-      "result": "lost",
-      "pnl": -1.64
-    },
-    {
-      "outcome": "Zeynep Sonmez",
-      "short": false,
-      "result": "lost",
-      "pnl": -1.68
+      "pnl": -0.8
     },
     {
       "outcome": "3BL Esports",
       "short": true,
       "result": "lost",
       "pnl": -1.12
+    },
+    {
+      "outcome": "GIANTX iTero",
+      "short": true,
+      "result": "lost",
+      "pnl": -1.45
+    },
+    {
+      "outcome": "Karmine Corp Blue",
+      "short": false,
+      "result": "won",
+      "pnl": 2.16
     },
     {
       "outcome": "BakS eSports",
