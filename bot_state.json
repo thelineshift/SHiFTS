@@ -7953,7 +7953,7 @@
         }
       },
       "dota2:139006": {
-        "ts": 1785253820.6242313,
+        "ts": 1785262808.745872,
         "f": {
           "w": 1,
           "l": 0,
@@ -7966,7 +7966,7 @@
         }
       },
       "dota2:139007": {
-        "ts": 1785253821.0730345,
+        "ts": 1785262809.2088153,
         "f": {
           "w": 1,
           "l": 0,
@@ -30874,6 +30874,21 @@
           "px": 0.24
         }
       ]
+    },
+    {
+      "price": 0.22,
+      "stake": 1.76,
+      "kind": "EDGE",
+      "p_model": 0.43750000000000006,
+      "event": "One More Esports vs. Pyramid IV Esports",
+      "ev_start": "2026-07-28T18:30:00Z",
+      "reason": "model 44% vs market 22% \u2014 22% edge, half-Kelly",
+      "order_id": "BH8M6Y0429S2",
+      "qty": 8,
+      "market_slug": "aec-lol-one-piv-2026-07-28",
+      "outcome": "One More Esports",
+      "status": "open",
+      "ts": "2026-07-28T18:20:10Z"
     }
   ],
   "pm_stats": {
@@ -30881,7 +30896,7 @@
     "wins": 30,
     "losses": 64,
     "pnl": -58.87,
-    "trades": 353,
+    "trades": 354,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-18",
     "deposits": 64.0,
