@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "chicago-cubs-ml-0727",
+      "desc": "Chicago Cubs ML",
+      "odds": -114,
+      "result": "WIN",
+      "units": 0.88,
+      "score": "Chicago Cubs 7, St. Louis Cardinals 3",
+      "tier": "lock"
+    },
+    {
       "id": "athletics-ml-0727",
       "desc": "Athletics ML",
       "odds": 149,
@@ -58,7 +67,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785245060.339315,
+  "last_x_receipt_ts": 1785209060.4239252,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -23257,10 +23266,6 @@
       "ts": "2026-07-27T10:11:53Z",
       "price_path": [
         {
-          "ts": 1785189879,
-          "px": 0.17
-        },
-        {
           "ts": 1785192017,
           "px": 0.17
         },
@@ -23351,6 +23356,10 @@
         {
           "ts": 1785243260,
           "px": 0.16
+        },
+        {
+          "ts": 1785245060,
+          "px": 0.16
         }
       ]
     },
@@ -23394,10 +23403,6 @@
       "status": "open",
       "ts": "2026-07-27T10:16:51Z",
       "price_path": [
-        {
-          "ts": 1785192017,
-          "px": 0.47
-        },
         {
           "ts": 1785194067,
           "px": 0.47
@@ -23488,6 +23493,10 @@
         },
         {
           "ts": 1785243260,
+          "px": 0.46
+        },
+        {
+          "ts": 1785245060,
           "px": 0.46
         }
       ]
@@ -25021,10 +25030,6 @@
       "ts": "2026-07-27T14:15:09Z",
       "price_path": [
         {
-          "ts": 1785189881,
-          "px": 0.05
-        },
-        {
           "ts": 1785192019,
           "px": 0.05
         },
@@ -25114,6 +25119,10 @@
         },
         {
           "ts": 1785243261,
+          "px": 0.04
+        },
+        {
+          "ts": 1785245061,
           "px": 0.04
         }
       ]
@@ -27879,86 +27888,13 @@
       "qty": 2,
       "market_slug": "aec-atp-guijus-sasgue-2026-07-27",
       "outcome": "Sascha Gueymard-Wayenburg",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T00:35:06Z",
-      "price_path": [
-        {
-          "ts": 1785200069,
-          "px": 0.47
-        },
-        {
-          "ts": 1785202466,
-          "px": 0.47
-        },
-        {
-          "ts": 1785204269,
-          "px": 0.46
-        },
-        {
-          "ts": 1785206665,
-          "px": 0.46
-        },
-        {
-          "ts": 1785208472,
-          "px": 0.46
-        },
-        {
-          "ts": 1785212075,
-          "px": 0.46
-        },
-        {
-          "ts": 1785215067,
-          "px": 0.46
-        },
-        {
-          "ts": 1785218065,
-          "px": 0.46
-        },
-        {
-          "ts": 1785220463,
-          "px": 0.47
-        },
-        {
-          "ts": 1785222863,
-          "px": 0.47
-        },
-        {
-          "ts": 1785225263,
-          "px": 0.47
-        },
-        {
-          "ts": 1785227065,
-          "px": 0.47
-        },
-        {
-          "ts": 1785228869,
-          "px": 0.47
-        },
-        {
-          "ts": 1785231263,
-          "px": 0.47
-        },
-        {
-          "ts": 1785233065,
-          "px": 0.47
-        },
-        {
-          "ts": 1785235464,
-          "px": 0.47
-        },
-        {
-          "ts": 1785237275,
-          "px": 0.2
-        },
-        {
-          "ts": 1785239669,
-          "px": 0.15
-        },
-        {
-          "ts": 1785242064,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-28T13:24:23Z",
+      "pnl": -0.94,
+      "autopsy": "model 59% vs market 47% missed \u2014 logged for the playbook review. Taken 0.47, rode to 0.01 before the result \u2014 beat the number by 46\u00a2 \u2705"
     },
     {
       "price": 0.5,
@@ -29487,6 +29423,10 @@
         {
           "ts": 1785243264,
           "px": 0.14
+        },
+        {
+          "ts": 1785245065,
+          "px": 0.14
         }
       ]
     },
@@ -29559,6 +29499,10 @@
         {
           "ts": 1785243264,
           "px": 0.6
+        },
+        {
+          "ts": 1785245066,
+          "px": 0.6
         }
       ]
     },
@@ -29592,6 +29536,10 @@
         {
           "ts": 1785243264,
           "px": 0.49
+        },
+        {
+          "ts": 1785245066,
+          "px": 0.48
         }
       ]
     },
@@ -29625,6 +29573,10 @@
         },
         {
           "ts": 1785243264,
+          "px": 0.71
+        },
+        {
+          "ts": 1785245066,
           "px": 0.71
         }
       ]
@@ -29835,6 +29787,10 @@
         {
           "ts": 1785243265,
           "px": 0.14
+        },
+        {
+          "ts": 1785245066,
+          "px": 0.14
         }
       ]
     },
@@ -29856,6 +29812,10 @@
       "price_path": [
         {
           "ts": 1785243265,
+          "px": 0.29
+        },
+        {
+          "ts": 1785245066,
           "px": 0.29
         }
       ]
@@ -29879,6 +29839,10 @@
         {
           "ts": 1785242669,
           "px": 0.53
+        },
+        {
+          "ts": 1785245067,
+          "px": 0.53
         }
       ]
     },
@@ -29900,6 +29864,10 @@
       "price_path": [
         {
           "ts": 1785242669,
+          "px": 0.56
+        },
+        {
+          "ts": 1785245067,
           "px": 0.56
         }
       ]
@@ -29923,6 +29891,10 @@
         {
           "ts": 1785243265,
           "px": 0.16
+        },
+        {
+          "ts": 1785245067,
+          "px": 0.16
         }
       ]
     }
@@ -29930,15 +29902,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 27,
-    "losses": 56,
-    "pnl": -57.03,
+    "losses": 57,
+    "pnl": -57.97,
     "trades": 332,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-12",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 110.03,
-    "net": 46.03,
+    "account": 109.09,
+    "net": 45.09,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -29948,7 +29920,7 @@
       ],
       "EDGE": [
         20,
-        42,
+        43,
         0
       ],
       "LIVE-BET": [
@@ -29968,14 +29940,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T13:49:35Z",
-      "kind": "TAIL",
-      "outcome": "ASTRAL",
-      "result": "LOSS",
-      "pnl": -0.59,
-      "lesson": "the near-certain lost \u2014 tail yield is not free money. After 20 settled tails, recheck the 0.93 bar against the actual hit rate."
-    },
     {
       "ts": "2026-07-27T13:49:38Z",
       "kind": "TAIL",
@@ -30207,6 +30171,14 @@
       "result": "LOSS",
       "pnl": -2.45,
       "lesson": "model 64% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, rode to 0.24 before the result \u2014 beat the number by 11\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-28T13:24:23Z",
+      "kind": "EDGE",
+      "outcome": "Sascha Gueymard-Wayenburg",
+      "result": "LOSS",
+      "pnl": -0.94,
+      "lesson": "model 59% vs market 47% missed \u2014 logged for the playbook review. Taken 0.47, rode to 0.01 before the result \u2014 beat the number by 46\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
