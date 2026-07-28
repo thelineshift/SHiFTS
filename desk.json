@@ -1,20 +1,14 @@
 {
-  "updated": "2026-07-28T10:00:04Z",
-  "record": "25-55",
-  "trades": 316,
-  "open": 37,
-  "pnl": -59.62,
-  "account": 105.18,
+  "updated": "2026-07-28T12:00:05Z",
+  "record": "26-55",
+  "trades": 326,
+  "open": 40,
+  "pnl": -56.22,
+  "account": 110.84,
   "deposits": 64.0,
-  "net_pnl": 41.18,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 18-41 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 2-2",
+  "net_pnl": 46.84,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 19-41 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 2-2",
   "recent": [
-    {
-      "outcome": "HATERS",
-      "short": true,
-      "result": "lost",
-      "pnl": -2.04
-    },
     {
       "outcome": "paiN Academy",
       "short": true,
@@ -44,6 +38,12 @@
       "short": true,
       "result": "lost",
       "pnl": -1.02
+    },
+    {
+      "outcome": "Frederico Ferreira Silva",
+      "short": true,
+      "result": "won",
+      "pnl": 3.4
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
