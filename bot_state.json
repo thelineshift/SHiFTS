@@ -29423,7 +29423,7 @@
       "qty": 110,
       "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw1",
       "outcome": "Renata Zarazua",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T08:00:09Z",
       "price_path": [
         {
@@ -29462,7 +29462,8 @@
           "ts": 1785246865,
           "px": 0.36
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.29,
