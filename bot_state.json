@@ -28255,7 +28255,9 @@
           "px": 0.57
         }
       ],
-      "note": " [stale-swept]"
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.01,
@@ -28932,7 +28934,7 @@
       "qty": 1,
       "market_slug": "aec-mlb-sea-lad-2026-07-30",
       "outcome": "Los Angeles Dodgers",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T09:10:03Z"
     }
   ],
