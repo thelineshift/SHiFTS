@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "athletics-ml-0727",
+      "desc": "Athletics ML",
+      "odds": 149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 4, Athletics 2",
+      "tier": "free"
+    },
+    {
       "id": "hanwha-life-esports-challeng-0728",
       "desc": "Hanwha Life Esports Challengers ML",
       "odds": -186,
@@ -30761,6 +30770,10 @@
         {
           "ts": 1785260677,
           "px": 0.65
+        },
+        {
+          "ts": 1785263062,
+          "px": 0.6
         }
       ]
     },
@@ -30879,7 +30892,13 @@
       "market_slug": "aec-lol-one-piv-2026-07-28",
       "outcome": "One More Esports",
       "status": "open",
-      "ts": "2026-07-28T18:20:10Z"
+      "ts": "2026-07-28T18:20:10Z",
+      "price_path": [
+        {
+          "ts": 1785263062,
+          "px": 0.19
+        }
+      ]
     }
   ],
   "pm_stats": {
