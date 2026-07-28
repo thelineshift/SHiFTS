@@ -18483,7 +18483,7 @@
           "sara lanca"
         ]
       },
-      "ts": 1785214178.084162
+      "ts": 1785236378.3053691
     }
   },
   "pm_trades": [
@@ -29385,6 +29385,53 @@
           "px": 0.3
         }
       ]
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 0.6,
+      "kind": "EDGE",
+      "p_model": 0.7154637354683088,
+      "event": "Mary Stoiana vs. Peyton Stearns",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 72% vs market 60% \u2014 12% edge, half-Kelly",
+      "order_id": "BH2CEEVF49NS",
+      "qty": 1,
+      "market_slug": "aec-wta-marsto-peyste-2026-07-26",
+      "outcome": "Peyton Stearns",
+      "status": "open",
+      "ts": "2026-07-28T11:00:07Z"
+    },
+    {
+      "price": 0.01,
+      "stake": 1.13,
+      "kind": "EDGE",
+      "p_model": 0.2845362645316913,
+      "event": "Mary Stoiana vs. Peyton Stearns",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 28% vs market 1% \u2014 27% edge, half-Kelly",
+      "order_id": "BH29HPXSP9S2",
+      "qty": 113,
+      "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw1",
+      "outcome": "Mary Stoiana",
+      "status": "open",
+      "ts": "2026-07-28T11:00:08Z"
+    },
+    {
+      "price": 0.71,
+      "short": true,
+      "stake": 1.42,
+      "kind": "EDGE",
+      "p_model": 0.8142007355402032,
+      "event": "Carlo Alberto Caniato vs. Andrea Pellegrino",
+      "ev_start": "2026-07-28T18:30:00Z",
+      "reason": "Elo 81% vs market 71% \u2014 10% edge, half-Kelly",
+      "order_id": "BH2C80FM29QY",
+      "qty": 2,
+      "market_slug": "aec-atp-carcan-andpel-2026-07-27",
+      "outcome": "Andrea Pellegrino",
+      "status": "open",
+      "ts": "2026-07-28T11:00:10Z"
     }
   ],
   "pm_stats": {
@@ -29392,7 +29439,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 318,
+    "trades": 321,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-10",
     "deposits": 64.0,
