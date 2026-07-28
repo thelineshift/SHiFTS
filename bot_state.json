@@ -3887,7 +3887,7 @@
         }
       },
       "valorant:137995": {
-        "ts": 1785233993.624004,
+        "ts": 1785242391.5785255,
         "f": {
           "w": 4,
           "l": 1,
@@ -4061,7 +4061,7 @@
         }
       },
       "dota2:138858": {
-        "ts": 1785233991.801309,
+        "ts": 1785242389.6884322,
         "f": {
           "w": 3,
           "l": 2,
@@ -4119,11 +4119,15 @@
         }
       },
       "dota2:2227": {
-        "ts": 1785233995.7866857,
+        "ts": 1785242393.7069523,
         "f": {
           "w": 0,
           "l": 5,
           "res": [
+            {
+              "won": false,
+              "opp": "Power Rangers"
+            },
             {
               "won": false,
               "opp": "Team Syntax"
@@ -4139,10 +4143,6 @@
             {
               "won": false,
               "opp": "Yellow Submarine"
-            },
-            {
-              "won": false,
-              "opp": "Level UP"
             }
           ]
         }
@@ -4608,7 +4608,7 @@
         }
       },
       "valorant:133128": {
-        "ts": 1785233994.2408016,
+        "ts": 1785242392.1788263,
         "f": {
           "w": 1,
           "l": 4,
@@ -4724,7 +4724,7 @@
         }
       },
       "dota2:137685": {
-        "ts": 1785233995.1835544,
+        "ts": 1785242393.099522,
         "f": {
           "w": 3,
           "l": 2,
@@ -7148,7 +7148,7 @@
         }
       },
       "ow:129810": {
-        "ts": 1785233996.5236948,
+        "ts": 1785242394.5158863,
         "f": {
           "w": 3,
           "l": 2,
@@ -7177,7 +7177,7 @@
         }
       },
       "ow:132167": {
-        "ts": 1785233997.1176517,
+        "ts": 1785242395.1234467,
         "f": {
           "w": 3,
           "l": 2,
@@ -7359,7 +7359,7 @@
         }
       },
       "dota2:128357": {
-        "ts": 1785234008.5310977,
+        "ts": 1785242406.6904376,
         "f": {
           "w": 1,
           "l": 4,
@@ -29796,6 +29796,70 @@
           "px": 0.76
         }
       ]
+    },
+    {
+      "price": 0.14,
+      "short": true,
+      "stake": 1.12,
+      "kind": "EDGE",
+      "p_model": 0.3076923076923077,
+      "event": "TDK vs. BakS eSports",
+      "ev_start": "2026-07-28T15:00:00Z",
+      "reason": "model 31% vs market 14% \u2014 17% edge, half-Kelly",
+      "order_id": "BH3KEATZ29NV",
+      "qty": 8,
+      "market_slug": "aec-cs2-tdk-baks-2026-07-28",
+      "outcome": "BakS eSports",
+      "status": "open",
+      "ts": "2026-07-28T12:40:09Z"
+    },
+    {
+      "price": 0.29,
+      "short": true,
+      "stake": 2.61,
+      "kind": "EDGE",
+      "p_model": 0.631578947368421,
+      "event": "MIBR vs. Fluxo W7M",
+      "ev_start": "2026-07-28T15:00:00Z",
+      "reason": "model 63% vs market 29% \u2014 34% edge, half-Kelly",
+      "order_id": "BH3KHRV3Y9NJ",
+      "qty": 9,
+      "market_slug": "aec-cs2-mibr-fxw7-2026-07-28",
+      "outcome": "Fluxo W7M",
+      "status": "open",
+      "ts": "2026-07-28T12:40:10Z"
+    },
+    {
+      "price": 0.53,
+      "short": true,
+      "stake": 1.06,
+      "kind": "EDGE",
+      "p_model": 0.6214705882352943,
+      "event": "Atlanta vs. Dallas",
+      "ev_start": "2026-07-30T00:00:00Z",
+      "reason": "model 62% vs market 53% \u2014 9% edge, half-Kelly",
+      "order_id": "BH3KXVB569QV",
+      "qty": 2,
+      "market_slug": "aec-wnba-atl-dal-2026-07-29",
+      "outcome": "Dallas",
+      "status": "open",
+      "ts": "2026-07-28T12:40:12Z"
+    },
+    {
+      "price": 0.56,
+      "short": true,
+      "stake": 1.12,
+      "kind": "EDGE",
+      "p_model": 0.6439847385633765,
+      "event": "Kansas City Royals vs. Minnesota Twins",
+      "ev_start": "2026-07-30T17:40:00Z",
+      "reason": "model 64% vs market 56% \u2014 8% edge, half-Kelly",
+      "order_id": "BH3N7FTR89NZ",
+      "qty": 2,
+      "market_slug": "aec-mlb-kc-min-2026-07-30",
+      "outcome": "Minnesota Twins",
+      "status": "open",
+      "ts": "2026-07-28T12:40:13Z"
     }
   ],
   "pm_stats": {
@@ -29803,7 +29867,7 @@
     "wins": 27,
     "losses": 55,
     "pnl": -54.58,
-    "trades": 327,
+    "trades": 331,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-12",
     "deposits": 64.0,
