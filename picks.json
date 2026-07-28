@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T07:24:22Z",
+  "updated": "2026-07-28T08:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1824,6 +1824,133 @@
         "ts": 1785217459
       },
       "last_alert_odds": -187
+    },
+    {
+      "id": "2-leg-parlay-0728-whale",
+      "date": "2026-07-28",
+      "sport": "parlay",
+      "desc": "Houston Astros ML + Los Angeles Sparks ML",
+      "market": "2-leg parlay (MLB + WNBA)",
+      "odds": 386,
+      "units": 0.5,
+      "tier": "whale",
+      "time_et": "09:38 PM ET",
+      "vs": "Houston Astros ML vs Los Angeles Angels \u00b7 Los Angeles Sparks ML vs New York Liberty",
+      "team": null,
+      "opp": null,
+      "analysis": "Houston Astros ML (-112) \u30fb Los Angeles Sparks ML (+157) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Houston Astros",
+          "vs": "Los Angeles Angels",
+          "sport": "mlb",
+          "date": "2026-07-28",
+          "time_et": "09:38 PM ET"
+        },
+        {
+          "team": "Los Angeles Sparks",
+          "vs": "New York Liberty",
+          "sport": "wnba",
+          "date": "2026-07-28",
+          "time_et": "10:00 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "2-leg-parlay-0728-sharp",
+      "date": "2026-07-28",
+      "sport": "parlay",
+      "desc": "Houston Astros ML + Los Angeles Sparks ML",
+      "market": "2-leg parlay (MLB + WNBA)",
+      "odds": 386,
+      "units": 0.5,
+      "tier": "sharp",
+      "time_et": "09:38 PM ET",
+      "vs": "Houston Astros ML vs Los Angeles Angels \u00b7 Los Angeles Sparks ML vs New York Liberty",
+      "team": null,
+      "opp": null,
+      "analysis": "Houston Astros ML (-112) \u30fb Los Angeles Sparks ML (+157) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Houston Astros",
+          "vs": "Los Angeles Angels",
+          "sport": "mlb",
+          "date": "2026-07-28",
+          "time_et": "09:38 PM ET"
+        },
+        {
+          "team": "Los Angeles Sparks",
+          "vs": "New York Liberty",
+          "sport": "wnba",
+          "date": "2026-07-28",
+          "time_et": "10:00 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "chicago-cubs-ml-0728",
+      "date": "2026-07-28",
+      "sport": "mlb",
+      "desc": "Chicago Cubs ML",
+      "market": "ML",
+      "odds": -112,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "07:45 PM ET",
+      "vs": "St. Louis Cardinals",
+      "team": "Chicago Cubs",
+      "opp": "St. Louis Cardinals",
+      "analysis": "60-46 overall, 30-24 on the road \u2014 our 54% vs book 50% (no-vig) | \ud83d\udcc8 **Market angle:** 60-46 overall, 30-24 on the road \u2014 our 54% vs book 50% (no-vig). The number's off by **4 points** \u2014 this is where CLV hunters eat.",
+      "awayTeam": "Chicago Cubs",
+      "homeTeam": "St. Louis Cardinals"
+    },
+    {
+      "id": "boston-red-sox--1.5-0728",
+      "date": "2026-07-28",
+      "sport": "mlb",
+      "desc": "Boston Red Sox -1.5",
+      "market": "run line",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "09:40 PM ET",
+      "vs": "Athletics",
+      "team": "Boston Red Sox",
+      "opp": "Athletics",
+      "analysis": "55-50 overall, 30-21 on the road \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes Boston Red Sox 62% straight up | \u2694\ufe0f **Matchup read:** 55-50 overall, 30-21 on the road \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes Boston Red Sox 62% s",
+      "awayTeam": "Boston Red Sox",
+      "homeTeam": "Athletics"
+    },
+    {
+      "id": "2-leg-parlay-0728-lock",
+      "date": "2026-07-28",
+      "sport": "parlay",
+      "desc": "Houston Astros ML + Los Angeles Sparks ML",
+      "market": "2-leg parlay (MLB + WNBA)",
+      "odds": 386,
+      "units": 0.5,
+      "tier": "lock",
+      "time_et": "09:38 PM ET",
+      "vs": "Houston Astros ML vs Los Angeles Angels \u00b7 Los Angeles Sparks ML vs New York Liberty",
+      "team": null,
+      "opp": null,
+      "analysis": "Houston Astros ML (-112) \u30fb Los Angeles Sparks ML (+157) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Houston Astros",
+          "vs": "Los Angeles Angels",
+          "sport": "mlb",
+          "date": "2026-07-28",
+          "time_et": "09:38 PM ET"
+        },
+        {
+          "team": "Los Angeles Sparks",
+          "vs": "New York Liberty",
+          "sport": "wnba",
+          "date": "2026-07-28",
+          "time_et": "10:00 PM ET"
+        }
+      ]
     }
   ]
 }
