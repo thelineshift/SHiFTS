@@ -56,6 +56,15 @@
       "units": -1.5,
       "score": "Hanwha Life Esports Challengers 0-2 HANJIN BRION Challengers \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "unity-esports-ml-0728",
+      "desc": "UNiTY esports ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "UNiTY esports 1-2 ex-RUSTEC \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785246260.6717944,
@@ -3952,7 +3961,7 @@
         }
       },
       "valorant:137995": {
-        "ts": 1785250191.9749732,
+        "ts": 1785258292.4332979,
         "f": {
           "w": 4,
           "l": 1,
@@ -4184,7 +4193,7 @@
         }
       },
       "dota2:2227": {
-        "ts": 1785250194.1872225,
+        "ts": 1785258294.6038566,
         "f": {
           "w": 0,
           "l": 5,
@@ -4673,11 +4682,15 @@
         }
       },
       "valorant:133128": {
-        "ts": 1785250192.5863283,
+        "ts": 1785258293.0463846,
         "f": {
-          "w": 1,
-          "l": 4,
+          "w": 2,
+          "l": 3,
           "res": [
+            {
+              "won": true,
+              "opp": "G2 Gozen"
+            },
             {
               "won": true,
               "opp": "Bar\u00e7a eSports GC"
@@ -4693,10 +4706,6 @@
             {
               "won": false,
               "opp": "Twisted Minds Orchid"
-            },
-            {
-              "won": false,
-              "opp": "Bar\u00e7a eSports GC"
             }
           ]
         }
@@ -4789,7 +4798,7 @@
         }
       },
       "dota2:137685": {
-        "ts": 1785250193.5432782,
+        "ts": 1785258294.0088742,
         "f": {
           "w": 3,
           "l": 2,
@@ -7218,7 +7227,7 @@
         }
       },
       "ow:129810": {
-        "ts": 1785250194.961247,
+        "ts": 1785258295.3496346,
         "f": {
           "w": 3,
           "l": 2,
@@ -7247,7 +7256,7 @@
         }
       },
       "ow:132167": {
-        "ts": 1785250195.560922,
+        "ts": 1785258295.9745202,
         "f": {
           "w": 3,
           "l": 2,
@@ -18952,7 +18961,7 @@
           "sara lanca"
         ]
       },
-      "ts": 1785236378.3053691
+      "ts": 1785258276.98324
     }
   },
   "pm_trades": [
@@ -29699,9 +29708,7 @@
           "px": 0.61
         }
       ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      "note": " [stale-swept]"
     },
     {
       "price": 0.01,
@@ -29759,9 +29766,7 @@
           "px": 0.48
         }
       ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      "note": " [stale-swept]"
     },
     {
       "price": 0.71,
@@ -29824,9 +29829,7 @@
           "px": 0.71
         }
       ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      "note": " [stale-swept]"
     },
     {
       "price": 0.55,
@@ -30721,20 +30724,52 @@
           "px": 0.31
         }
       ]
+    },
+    {
+      "price": 0.61,
+      "short": true,
+      "stake": 2.44,
+      "kind": "EDGE",
+      "p_model": 0.7154637354683088,
+      "event": "Mary Stoiana vs. Peyton Stearns",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 72% vs market 61% \u2014 11% edge, half-Kelly",
+      "order_id": "BH7RMRF729QE",
+      "qty": 4,
+      "market_slug": "aec-wta-marsto-peyste-2026-07-26",
+      "outcome": "Peyton Stearns",
+      "status": "open",
+      "ts": "2026-07-28T17:05:12Z"
+    },
+    {
+      "price": 0.71,
+      "short": true,
+      "stake": 2.84,
+      "kind": "EDGE",
+      "p_model": 0.8142007355402032,
+      "event": "Carlo Alberto Caniato vs. Andrea Pellegrino",
+      "ev_start": "2026-07-28T18:30:00Z",
+      "reason": "Elo 81% vs market 71% \u2014 10% edge, half-Kelly",
+      "order_id": "BH7QA2GRC9P1",
+      "qty": 4,
+      "market_slug": "aec-atp-carcan-andpel-2026-07-27",
+      "outcome": "Andrea Pellegrino",
+      "status": "open",
+      "ts": "2026-07-28T17:05:13Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 30,
+    "wins": 28,
     "losses": 59,
-    "pnl": -49.1,
-    "trades": 344,
+    "pnl": -55.1,
+    "trades": 346,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-16",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 135.35,
-    "net": 71.35,
+    "account": 129.35,
+    "net": 65.35,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -30743,7 +30778,7 @@
         0
       ],
       "EDGE": [
-        23,
+        21,
         45,
         0
       ],
@@ -30764,6 +30799,22 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
+    {
+      "ts": "2026-07-27T13:55:03Z",
+      "kind": "EDGE",
+      "outcome": "BNK FearX Youth",
+      "result": "WIN",
+      "pnl": 0.86,
+      "lesson": "+$0.86 \u2014 model 100% vs market 69% was real edge; thesis held."
+    },
+    {
+      "ts": "2026-07-27T15:04:29Z",
+      "kind": "EDGE",
+      "outcome": "PURE",
+      "result": "WIN",
+      "pnl": 9.95,
+      "lesson": "+$9.95 \u2014 model 73% vs market 50% was real edge; thesis held. Taken 0.50, rode to 0.43 before the result \u2014 beat the number by 7\u00a2 \u2705"
+    },
     {
       "ts": "2026-07-27T16:34:33Z",
       "kind": "EDGE",
@@ -30987,22 +31038,6 @@
       "result": "WIN",
       "pnl": 6.12,
       "lesson": "+$6.12 \u2014 model 53% vs market 32% was real edge; thesis held. Taken 0.32, rode to 0.86 before the result \u2014 beat the number by 54\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-28T17:04:32Z",
-      "kind": "EDGE",
-      "outcome": "FOKUS Sakura",
-      "result": "WIN",
-      "pnl": 1.8,
-      "lesson": "+$1.80 \u2014 model 27% vs market 10% was real edge; thesis held. Taken 0.10, slid to 0.58 before the result \u2014 the number ran 48\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-28T17:04:35Z",
-      "kind": "EDGE",
-      "outcome": "Skillcamp Esport",
-      "result": "WIN",
-      "pnl": 4.2,
-      "lesson": "+$4.20 \u2014 model 50% vs market 30% was real edge; thesis held. Rode the number flat to the result."
     }
   ],
   "giveaway_x_posts": [
