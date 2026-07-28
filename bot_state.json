@@ -30713,7 +30713,7 @@
       "qty": 4,
       "market_slug": "aec-atp-carcan-andpel-2026-07-27",
       "outcome": "Andrea Pellegrino",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T17:05:13Z",
       "price_path": [
         {
@@ -30724,7 +30724,10 @@
           "ts": 1785261867,
           "px": 0.71
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.555,
