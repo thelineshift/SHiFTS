@@ -30799,11 +30799,11 @@
     "pnl": -61.22,
     "trades": 341,
     "last_recap": "2026-07-28",
-    "last_recap_hour": "2026-07-28-14",
+    "last_recap_hour": "2026-07-28-16",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 132.88,
-    "net": 68.88,
+    "account": 123.23,
+    "net": 59.23,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
