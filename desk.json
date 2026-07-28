@@ -1,13 +1,13 @@
 {
-  "updated": "2026-07-28T02:00:07Z",
-  "record": "24-55",
-  "trades": 294,
+  "updated": "2026-07-28T04:00:03Z",
+  "record": "25-55",
+  "trades": 300,
   "open": 33,
-  "pnl": -59.74,
+  "pnl": -59.62,
   "account": 101.44,
   "deposits": 64.0,
   "net_pnl": 37.44,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 18-41 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 1-2",
+  "playbooks": "ARB 3-5 \u00b7 EDGE 18-41 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 2-2",
   "recent": [
     {
       "outcome": "HATERS",
