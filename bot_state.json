@@ -56,15 +56,6 @@
       "units": -1.5,
       "score": "Hanwha Life Esports Challengers 0-2 HANJIN BRION Challengers \u00b7 final",
       "tier": "whale"
-    },
-    {
-      "id": "unity-esports-ml-0728",
-      "desc": "UNiTY esports ML",
-      "odds": -265,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "UNiTY esports 1-2 ex-RUSTEC \u00b7 final",
-      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785246260.6717944,
@@ -22248,106 +22239,13 @@
       "qty": 17,
       "market_slug": "aec-valorant-ggo-fso-2026-07-28",
       "outcome": "FOKUS Sakura",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T17:54:48Z",
-      "price_path": [
-        {
-          "ts": 1785205459,
-          "px": 0.22
-        },
-        {
-          "ts": 1785207262,
-          "px": 0.22
-        },
-        {
-          "ts": 1785209659,
-          "px": 0.23
-        },
-        {
-          "ts": 1785212068,
-          "px": 0.22
-        },
-        {
-          "ts": 1785215061,
-          "px": 0.23
-        },
-        {
-          "ts": 1785216861,
-          "px": 0.23
-        },
-        {
-          "ts": 1785219265,
-          "px": 0.21
-        },
-        {
-          "ts": 1785221659,
-          "px": 0.21
-        },
-        {
-          "ts": 1785223459,
-          "px": 0.21
-        },
-        {
-          "ts": 1785225259,
-          "px": 0.21
-        },
-        {
-          "ts": 1785227061,
-          "px": 0.21
-        },
-        {
-          "ts": 1785228865,
-          "px": 0.21
-        },
-        {
-          "ts": 1785231259,
-          "px": 0.21
-        },
-        {
-          "ts": 1785233061,
-          "px": 0.21
-        },
-        {
-          "ts": 1785235460,
-          "px": 0.21
-        },
-        {
-          "ts": 1785237269,
-          "px": 0.21
-        },
-        {
-          "ts": 1785239660,
-          "px": 0.21
-        },
-        {
-          "ts": 1785242059,
-          "px": 0.21
-        },
-        {
-          "ts": 1785243859,
-          "px": 0.21
-        },
-        {
-          "ts": 1785246859,
-          "px": 0.21
-        },
-        {
-          "ts": 1785248665,
-          "px": 0.21
-        },
-        {
-          "ts": 1785251059,
-          "px": 0.17
-        },
-        {
-          "ts": 1785252859,
-          "px": 0.4
-        },
-        {
-          "ts": 1785254659,
-          "px": 0.58
-        }
-      ]
+      "result": "WIN",
+      "payout": 3.5,
+      "settled_at": "2026-07-28T17:04:32Z",
+      "pnl": 1.8,
+      "autopsy": "+$1.80 \u2014 model 27% vs market 10% was real edge; thesis held. Taken 0.10, slid to 0.58 before the result \u2014 the number ran 48\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.9,
@@ -25254,106 +25152,13 @@
       "qty": 6,
       "market_slug": "aec-lol-tlnp-sc-2026-07-28",
       "outcome": "Skillcamp Esport",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T13:35:00Z",
-      "price_path": [
-        {
-          "ts": 1785201861,
-          "px": 0.3
-        },
-        {
-          "ts": 1785203663,
-          "px": 0.3
-        },
-        {
-          "ts": 1785206060,
-          "px": 0.3
-        },
-        {
-          "ts": 1785208466,
-          "px": 0.3
-        },
-        {
-          "ts": 1785212070,
-          "px": 0.3
-        },
-        {
-          "ts": 1785215062,
-          "px": 0.3
-        },
-        {
-          "ts": 1785216862,
-          "px": 0.3
-        },
-        {
-          "ts": 1785219266,
-          "px": 0.3
-        },
-        {
-          "ts": 1785221661,
-          "px": 0.3
-        },
-        {
-          "ts": 1785224062,
-          "px": 0.3
-        },
-        {
-          "ts": 1785225870,
-          "px": 0.3
-        },
-        {
-          "ts": 1785228260,
-          "px": 0.3
-        },
-        {
-          "ts": 1785230070,
-          "px": 0.3
-        },
-        {
-          "ts": 1785232466,
-          "px": 0.3
-        },
-        {
-          "ts": 1785234860,
-          "px": 0.3
-        },
-        {
-          "ts": 1785237271,
-          "px": 0.3
-        },
-        {
-          "ts": 1785239661,
-          "px": 0.3
-        },
-        {
-          "ts": 1785241461,
-          "px": 0.3
-        },
-        {
-          "ts": 1785243261,
-          "px": 0.3
-        },
-        {
-          "ts": 1785246860,
-          "px": 0.3
-        },
-        {
-          "ts": 1785248666,
-          "px": 0.3
-        },
-        {
-          "ts": 1785251060,
-          "px": 0.3
-        },
-        {
-          "ts": 1785252860,
-          "px": 0.3
-        },
-        {
-          "ts": 1785254661,
-          "px": 0.3
-        }
-      ]
+      "result": "WIN",
+      "payout": 6.0,
+      "settled_at": "2026-07-28T17:04:35Z",
+      "pnl": 4.2,
+      "autopsy": "+$4.20 \u2014 model 50% vs market 30% was real edge; thesis held. Rode the number flat to the result."
     },
     {
       "price": 0.29,
@@ -29894,7 +29699,9 @@
           "px": 0.61
         }
       ],
-      "note": " [stale-swept]"
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.01,
@@ -29952,7 +29759,9 @@
           "px": 0.48
         }
       ],
-      "note": " [stale-swept]"
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.71,
@@ -30015,7 +29824,9 @@
           "px": 0.71
         }
       ],
-      "note": " [stale-swept]"
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.55,
@@ -30914,16 +30725,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 28,
+    "wins": 30,
     "losses": 59,
-    "pnl": -55.1,
+    "pnl": -49.1,
     "trades": 344,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-16",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 129.35,
-    "net": 65.35,
+    "account": 135.35,
+    "net": 71.35,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
@@ -30932,7 +30743,7 @@
         0
       ],
       "EDGE": [
-        21,
+        23,
         45,
         0
       ],
@@ -30953,22 +30764,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-27T13:55:03Z",
-      "kind": "EDGE",
-      "outcome": "BNK FearX Youth",
-      "result": "WIN",
-      "pnl": 0.86,
-      "lesson": "+$0.86 \u2014 model 100% vs market 69% was real edge; thesis held."
-    },
-    {
-      "ts": "2026-07-27T15:04:29Z",
-      "kind": "EDGE",
-      "outcome": "PURE",
-      "result": "WIN",
-      "pnl": 9.95,
-      "lesson": "+$9.95 \u2014 model 73% vs market 50% was real edge; thesis held. Taken 0.50, rode to 0.43 before the result \u2014 beat the number by 7\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-27T16:34:33Z",
       "kind": "EDGE",
@@ -31192,6 +30987,22 @@
       "result": "WIN",
       "pnl": 6.12,
       "lesson": "+$6.12 \u2014 model 53% vs market 32% was real edge; thesis held. Taken 0.32, rode to 0.86 before the result \u2014 beat the number by 54\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-28T17:04:32Z",
+      "kind": "EDGE",
+      "outcome": "FOKUS Sakura",
+      "result": "WIN",
+      "pnl": 1.8,
+      "lesson": "+$1.80 \u2014 model 27% vs market 10% was real edge; thesis held. Taken 0.10, slid to 0.58 before the result \u2014 the number ran 48\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-28T17:04:35Z",
+      "kind": "EDGE",
+      "outcome": "Skillcamp Esport",
+      "result": "WIN",
+      "pnl": 4.2,
+      "lesson": "+$4.20 \u2014 model 50% vs market 30% was real edge; thesis held. Rode the number flat to the result."
     }
   ],
   "giveaway_x_posts": [
