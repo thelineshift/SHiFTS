@@ -3826,7 +3826,7 @@
         }
       },
       "valorant:137995": {
-        "ts": 1785192291.3453174,
+        "ts": 1785202193.9632578,
         "f": {
           "w": 4,
           "l": 1,
@@ -3913,7 +3913,7 @@
         }
       },
       "valorant:132777": {
-        "ts": 1785192578.2721596,
+        "ts": 1785202177.9896154,
         "f": {
           "w": 1,
           "l": 4,
@@ -4058,7 +4058,7 @@
         }
       },
       "dota2:2227": {
-        "ts": 1785175217.3391542,
+        "ts": 1785202196.1987913,
         "f": {
           "w": 0,
           "l": 5,
@@ -4547,7 +4547,7 @@
         }
       },
       "valorant:133128": {
-        "ts": 1785192291.9335709,
+        "ts": 1785202194.5818555,
         "f": {
           "w": 1,
           "l": 4,
@@ -4663,7 +4663,7 @@
         }
       },
       "dota2:137685": {
-        "ts": 1785185121.202996,
+        "ts": 1785202195.5999093,
         "f": {
           "w": 3,
           "l": 2,
@@ -5637,7 +5637,7 @@
         }
       },
       "lol:128347": {
-        "ts": 1785192574.68536,
+        "ts": 1785202174.3685997,
         "f": {
           "w": 2,
           "l": 3,
@@ -5666,7 +5666,7 @@
         }
       },
       "lol:128345": {
-        "ts": 1785192575.2817419,
+        "ts": 1785202174.9836128,
         "f": {
           "w": 0,
           "l": 5,
@@ -7082,6 +7082,64 @@
             {
               "won": false,
               "opp": "Weibo Gaming"
+            }
+          ]
+        }
+      },
+      "ow:129810": {
+        "ts": 1785202196.9333582,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "ZANSIDE GAMING"
+            },
+            {
+              "won": false,
+              "opp": "ZETA DIVISION"
+            },
+            {
+              "won": true,
+              "opp": "Falcons"
+            },
+            {
+              "won": false,
+              "opp": "Crazy Raccoon"
+            },
+            {
+              "won": true,
+              "opp": "ZETA DIVISION"
+            }
+          ]
+        }
+      },
+      "ow:132167": {
+        "ts": 1785202197.5288815,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Geekay Esports"
+            },
+            {
+              "won": true,
+              "opp": "Al Qadsiah"
+            },
+            {
+              "won": false,
+              "opp": "Geekay Esports"
+            },
+            {
+              "won": true,
+              "opp": "Al Qadsiah"
+            },
+            {
+              "won": true,
+              "opp": "Geekay Esports"
             }
           ]
         }
@@ -26374,6 +26432,21 @@
           "px": 0.55
         }
       ]
+    },
+    {
+      "price": 0.01,
+      "stake": 1.33,
+      "kind": "EDGE",
+      "p_model": 0.30104151037308957,
+      "event": "Renata Zarazua vs. McCartney Kessler",
+      "ev_start": "2026-07-28T23:30:00Z",
+      "reason": "Elo 30% vs market 1% \u2014 29% edge, half-Kelly",
+      "order_id": "BGV8XK6M89P5",
+      "qty": 133,
+      "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw1",
+      "outcome": "Renata Zarazua",
+      "status": "open",
+      "ts": "2026-07-28T01:30:09Z"
     }
   ],
   "pm_stats": {
@@ -26381,7 +26454,7 @@
     "wins": 24,
     "losses": 54,
     "pnl": -57.5,
-    "trades": 292,
+    "trades": 293,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-00",
     "deposits": 64.0,
