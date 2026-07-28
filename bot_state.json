@@ -3673,7 +3673,7 @@
         "bo": 2
       }
     ],
-    "esp_ts": 1785206961.5650496,
+    "esp_ts": 1785214161.6264553,
     "form": {
       "dota2:138945": {
         "ts": 1785188999.7797587,
@@ -7363,6 +7363,35 @@
             {
               "won": false,
               "opp": "Rex Regum Qeon"
+            }
+          ]
+        }
+      },
+      "dota2:128357": {
+        "ts": 1785214207.5428176,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Level UP"
+            },
+            {
+              "won": false,
+              "opp": "RE.Arise"
+            },
+            {
+              "won": true,
+              "opp": "KW"
+            },
+            {
+              "won": false,
+              "opp": "Team Jenz"
+            },
+            {
+              "won": false,
+              "opp": "Spirit Academy"
             }
           ]
         }
@@ -18161,7 +18190,7 @@
           "sara lanca"
         ]
       },
-      "ts": 1785192274.278807
+      "ts": 1785214178.084162
     }
   },
   "pm_trades": [
@@ -27308,6 +27337,22 @@
           "px": 0.53
         }
       ]
+    },
+    {
+      "price": 0.6,
+      "short": true,
+      "stake": 0.6,
+      "kind": "EDGE",
+      "p_model": 0.7154637354683088,
+      "event": "Mary Stoiana vs. Peyton Stearns",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 72% vs market 60% \u2014 12% edge, half-Kelly",
+      "order_id": "BGXFK74H69NP",
+      "qty": 1,
+      "market_slug": "aec-wta-marsto-peyste-2026-07-26",
+      "outcome": "Peyton Stearns",
+      "status": "open",
+      "ts": "2026-07-28T04:50:09Z"
     }
   ],
   "pm_stats": {
@@ -27315,7 +27360,7 @@
     "wins": 25,
     "losses": 55,
     "pnl": -59.62,
-    "trades": 302,
+    "trades": 303,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-04",
     "deposits": 64.0,
