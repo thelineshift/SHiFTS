@@ -40,15 +40,6 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
-      "id": "milwaukee-brewers-ml-0727",
-      "desc": "Milwaukee Brewers ML",
-      "odds": -137,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Milwaukee Brewers 0, San Francisco Giants 3",
-      "tier": "lock"
-    },
-    {
       "id": "chicago-cubs-ml-0727",
       "desc": "Chicago Cubs ML",
       "odds": -114,
