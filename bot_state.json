@@ -29837,7 +29837,7 @@
       "qty": 1,
       "market_slug": "aec-wta-marsto-peyste-2026-07-26",
       "outcome": "Peyton Stearns",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T11:00:07Z",
       "price_path": [
         {
@@ -29884,7 +29884,8 @@
           "ts": 1785257069,
           "px": 0.61
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.01,
@@ -29898,7 +29899,7 @@
       "qty": 113,
       "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw1",
       "outcome": "Mary Stoiana",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T11:00:08Z",
       "price_path": [
         {
@@ -29941,7 +29942,8 @@
           "ts": 1785257069,
           "px": 0.48
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.71,
@@ -29956,7 +29958,7 @@
       "qty": 2,
       "market_slug": "aec-atp-carcan-andpel-2026-07-27",
       "outcome": "Andrea Pellegrino",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T11:00:10Z",
       "price_path": [
         {
@@ -30003,7 +30005,8 @@
           "ts": 1785257069,
           "px": 0.71
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.55,
