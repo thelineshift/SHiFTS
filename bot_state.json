@@ -31444,7 +31444,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-cs2-mouzn-lea-2026-07-27",
     "aec-cs2-navij-lea-2026-07-27",
     "aec-lol-7rex-reda-2026-07-27",
     "aec-valorant-orat-sga-2026-07-27",
@@ -31503,7 +31502,8 @@
     "aec-lol-one-piv-2026-07-28",
     "aec-dota2-agm-nemiga-2026-07-29",
     "aec-dota2-agm-stx-2026-07-29",
-    "aec-lol-nsea-dnsc-2026-07-29"
+    "aec-lol-nsea-dnsc-2026-07-29",
+    "aec-atp-benbon-blabic-2026-07-27"
   ],
   "odds_api": {
     "month": "2026-07",
