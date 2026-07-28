@@ -31650,6 +31650,14 @@
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
     {
+      "ts": "2026-07-27T22:34:35Z",
+      "kind": "EDGE",
+      "outcome": "Team Solid",
+      "result": "LOSS",
+      "pnl": -2.5,
+      "lesson": "model 50% vs market 25% missed \u2014 logged for the playbook review. Taken 0.25, slid to 0.34 before the result \u2014 the number ran 9\u00a2 against us \u26a0\ufe0f"
+    },
+    {
       "ts": "2026-07-27T22:40:21Z",
       "kind": "EDGE",
       "outcome": "Hunters Rising",
