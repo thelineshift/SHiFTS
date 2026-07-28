@@ -1627,10 +1627,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Boston Red Sox",
       "live_odds": {
-        "home_ml": 128,
-        "away_ml": -155,
+        "home_ml": 124,
+        "away_ml": -150,
         "total": 9.5,
-        "ts": 1785221059
+        "ts": 1785242659
       },
       "last_alert_odds": 129
     },
@@ -1653,8 +1653,8 @@
       "live_odds": {
         "home_ml": -143,
         "away_ml": 119,
-        "total": 8.5,
-        "ts": 1785240860
+        "total": 9.0,
+        "ts": 1785242659
       }
     },
     {
@@ -1931,10 +1931,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 128,
-        "away_ml": -155,
+        "home_ml": 124,
+        "away_ml": -150,
         "total": 9.5,
-        "ts": 1785226459
+        "ts": 1785242660
       },
       "last_alert_odds": -155
     },
