@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "athletics-ml-0727",
+      "desc": "Athletics ML",
+      "odds": 149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 4, Athletics 2",
+      "tier": "free"
+    },
+    {
       "id": "hanwha-life-esports-challeng-0728",
       "desc": "Hanwha Life Esports Challengers ML",
       "odds": -186,
@@ -30491,14 +30500,15 @@
       "qty": 8,
       "market_slug": "astatc-wta-xiywan-catmcn-2026-07-26-sw2",
       "outcome": "Xiyu Wang",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T14:20:07Z",
       "price_path": [
         {
           "ts": 1785248674,
           "px": 0.48
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.01,
