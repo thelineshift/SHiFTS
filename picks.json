@@ -1384,12 +1384,12 @@
       "homeTeam": "Washington Mystics",
       "awayTeam": "Connecticut Sun",
       "live_odds": {
-        "home_ml": -247,
-        "away_ml": 198,
+        "home_ml": -260,
+        "away_ml": 208,
         "total": 160.5,
-        "ts": 1785266058
+        "ts": 1785280458
       },
-      "last_alert_odds": -247
+      "last_alert_odds": -260
     },
     {
       "id": "over-8.5-0728",
@@ -1486,10 +1486,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 129,
-        "away_ml": -156,
+        "home_ml": 124,
+        "away_ml": -150,
         "total": 7.5,
-        "ts": 1785246259
+        "ts": 1785280459
       },
       "last_alert_odds": -155
     },
@@ -1628,10 +1628,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Boston Red Sox",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -150,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 10.0,
-        "ts": 1785278659
+        "ts": 1785280459
       },
       "last_alert_odds": 129
     },
@@ -1912,10 +1912,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -115,
+        "home_ml": -107,
+        "away_ml": -112,
         "total": 9.0,
-        "ts": 1785276859
+        "ts": 1785280460
       }
     },
     {
@@ -1935,10 +1935,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -150,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 10.0,
-        "ts": 1785278659
+        "ts": 1785280460
       },
       "last_alert_odds": -155
     },
@@ -1990,10 +1990,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 129,
-        "away_ml": -156,
+        "home_ml": 124,
+        "away_ml": -150,
         "total": 7.5,
-        "ts": 1785246260
+        "ts": 1785280460
       },
       "last_alert_odds": -155
     },
@@ -2034,10 +2034,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -150,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 10.0,
-        "ts": 1785278660
+        "ts": 1785280460
       }
     },
     {
