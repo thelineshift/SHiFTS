@@ -29584,7 +29584,9 @@
           "px": 0.7
         }
       ],
-      "note": " [stale-swept]"
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.4,
@@ -30336,7 +30338,7 @@
       "qty": 8,
       "market_slug": "astatc-wta-xiywan-catmcn-2026-07-26-sw2",
       "outcome": "Xiyu Wang",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T14:20:07Z"
     },
     {
@@ -30351,7 +30353,7 @@
       "qty": 112,
       "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw1",
       "outcome": "Renata Zarazua",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T14:20:09Z"
     }
   ],
