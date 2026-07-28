@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-28 18:44 UTC",
+    "at": "2026-07-28 18:14 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-28 16:43 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-28 18:44 UTC",
+    "at": "2026-07-28 18:14 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -30,11 +30,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-28 18:44 UTC",
+    "at": "2026-07-28 18:14 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-28 18:44 UTC",
+    "at": "2026-07-28 18:14 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
@@ -30116,7 +30116,7 @@
       "qty": 2,
       "market_slug": "aec-wnba-atl-dal-2026-07-29",
       "outcome": "Dallas",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T12:40:12Z",
       "price_path": [
         {
@@ -30159,7 +30159,10 @@
           "ts": 1785263667,
           "px": 0.5
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.56,
@@ -30174,7 +30177,7 @@
       "qty": 2,
       "market_slug": "aec-mlb-kc-min-2026-07-30",
       "outcome": "Minnesota Twins",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T12:40:13Z",
       "price_path": [
         {
@@ -30217,7 +30220,10 @@
           "ts": 1785263667,
           "px": 0.565
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.16,
@@ -30901,6 +30907,10 @@
       "price_path": [
         {
           "ts": 1785261267,
+          "px": 0.48
+        },
+        {
+          "ts": 1785264272,
           "px": 0.48
         }
       ]
