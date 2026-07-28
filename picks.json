@@ -1127,10 +1127,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Boston Red Sox",
       "live_odds": {
-        "home_ml": 158,
-        "away_ml": -192,
-        "total": 10.0,
-        "ts": 1785195859
+        "home_ml": 142,
+        "away_ml": -173,
+        "total": 9.5,
+        "ts": 1785199459
       }
     },
     {
@@ -1287,10 +1287,10 @@
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -111,
-        "away_ml": -109,
+        "home_ml": -108,
+        "away_ml": -112,
         "total": 8.5,
-        "ts": 1785197659
+        "ts": 1785199459
       }
     },
     {
