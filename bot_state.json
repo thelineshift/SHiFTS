@@ -26052,7 +26052,7 @@
       "qty": 3,
       "market_slug": "aec-mlb-tex-tb-2026-07-29",
       "outcome": "Tampa Bay Rays",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T21:55:21Z",
       "price_path": [
         {
@@ -26091,7 +26091,10 @@
           "ts": 1785208469,
           "px": 0.565
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.595,
@@ -27033,7 +27036,7 @@
       "qty": 1,
       "market_slug": "aec-wnba-conn-wsh-2026-07-28",
       "outcome": "Washington",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T03:55:06Z"
     }
   ],
