@@ -1,8 +1,8 @@
 {
-  "ts": "2026-07-28T10:59:21Z",
+  "ts": "2026-07-28T11:14:21Z",
   "configured": true,
-  "balance_usd": 108.49,
-  "buying_power": 16.49,
+  "balance_usd": 111.61,
+  "buying_power": 19.61,
   "positions": [],
   "open_orders": [
     {
@@ -12,10 +12,40 @@
       "qty": 5
     },
     {
+      "market": "aec-atp-carcan-andpel-2026-07-27",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.71",
+      "qty": 2
+    },
+    {
+      "market": "aec-mlb-tex-tb-2026-07-30",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.55",
+      "qty": 2
+    },
+    {
+      "market": "astatc-wta-yulsta-sloste-2026-07-26-sw1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.3",
+      "qty": 5
+    },
+    {
       "market": "astatc-wta-darvid-marrib-2026-07-26-sw1",
       "intent": "ORDER_INTENT_BUY_LONG",
       "price": "0.3",
       "qty": 5
+    },
+    {
+      "market": "astatc-wta-darvid-marrib-2026-07-26-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.3",
+      "qty": 5
+    },
+    {
+      "market": "astatc-wta-marsto-peyste-2026-07-26-sw1",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.01",
+      "qty": 113
     },
     {
       "market": "astatc-wta-renzar-mcckes-2026-07-26-sw1",
@@ -30,28 +60,22 @@
       "qty": 1
     },
     {
-      "market": "astatc-wta-darvid-marrib-2026-07-26-sw2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.3",
-      "qty": 5
-    },
-    {
-      "market": "astatc-wta-yulsta-sloste-2026-07-26-sw1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.3",
-      "qty": 5
-    },
-    {
-      "market": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.01",
-      "qty": 120
+      "market": "aec-wta-marsto-peyste-2026-07-26",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.6",
+      "qty": 1
     },
     {
       "market": "astatc-wta-marsto-peyste-2026-07-26-sw2",
       "intent": "ORDER_INTENT_BUY_LONG",
       "price": "0.01",
       "qty": 112
+    },
+    {
+      "market": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.01",
+      "qty": 120
     }
   ]
 }
