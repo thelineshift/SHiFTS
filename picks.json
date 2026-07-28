@@ -1384,12 +1384,12 @@
       "homeTeam": "Washington Mystics",
       "awayTeam": "Connecticut Sun",
       "live_odds": {
-        "home_ml": -247,
-        "away_ml": 198,
+        "home_ml": -266,
+        "away_ml": 213,
         "total": 158.5,
-        "ts": 1785244459
+        "ts": 1785246258
       },
-      "last_alert_odds": -239
+      "last_alert_odds": -266
     },
     {
       "id": "over-8.5-0728",
@@ -1485,10 +1485,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 128,
-        "away_ml": -155,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 7.5,
-        "ts": 1785240859
+        "ts": 1785246259
       },
       "last_alert_odds": -155
     },
@@ -1604,10 +1604,10 @@
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -108,
-        "away_ml": -111,
-        "total": 8.0,
-        "ts": 1785244459
+        "home_ml": -110,
+        "away_ml": -110,
+        "total": 8.5,
+        "ts": 1785246259
       }
     },
     {
@@ -1653,8 +1653,8 @@
       "live_odds": {
         "home_ml": -143,
         "away_ml": 119,
-        "total": 9.0,
-        "ts": 1785242659
+        "total": 8.5,
+        "ts": 1785246259
       }
     },
     {
@@ -1822,12 +1822,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -191,
-        "away_ml": 157,
-        "total": 8.0,
-        "ts": 1785217459
+        "home_ml": -205,
+        "away_ml": 167,
+        "total": 8.5,
+        "ts": 1785246259
       },
-      "last_alert_odds": -187
+      "last_alert_odds": -205
     },
     {
       "id": "2-leg-parlay-0728-whale",
@@ -1986,10 +1986,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 128,
-        "away_ml": -155,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 7.5,
-        "ts": 1785240860
+        "ts": 1785246260
       },
       "last_alert_odds": -155
     }
