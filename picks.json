@@ -1462,12 +1462,12 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 100,
+        "home_ml": -101,
         "away_ml": -120,
         "total": 8.0,
-        "ts": 1785264259
+        "ts": 1785271459
       },
-      "last_alert_odds": 100
+      "last_alert_odds": -101
     },
     {
       "id": "milwaukee-brewers-ml-0728",
