@@ -30675,6 +30675,36 @@
           "px": 0.555
         }
       ]
+    },
+    {
+      "price": 0.18,
+      "stake": 1.08,
+      "kind": "EDGE",
+      "p_model": 0.2845362645316913,
+      "event": "Mary Stoiana vs. Peyton Stearns",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 28% vs market 18% \u2014 10% edge, half-Kelly",
+      "order_id": "BH8606G109NQ",
+      "qty": 6,
+      "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw2",
+      "outcome": "Mary Stoiana",
+      "status": "open",
+      "ts": "2026-07-28T17:40:02Z"
+    },
+    {
+      "price": 0.01,
+      "stake": 2.74,
+      "kind": "EDGE",
+      "p_model": 0.30104151037308957,
+      "event": "Renata Zarazua vs. McCartney Kessler",
+      "ev_start": "2026-07-28T23:30:00Z",
+      "reason": "Elo 30% vs market 1% \u2014 29% edge, half-Kelly",
+      "order_id": "BH85W9ZNC9SX",
+      "qty": 274,
+      "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
+      "outcome": "Renata Zarazua",
+      "status": "open",
+      "ts": "2026-07-28T17:40:04Z"
     }
   ],
   "pm_stats": {
@@ -30682,7 +30712,7 @@
     "wins": 30,
     "losses": 61,
     "pnl": -52.83,
-    "trades": 347,
+    "trades": 349,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-16",
     "deposits": 64.0,
