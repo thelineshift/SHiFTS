@@ -26551,6 +26551,22 @@
           "px": 0.35
         }
       ]
+    },
+    {
+      "price": 0.41,
+      "short": true,
+      "stake": 1.64,
+      "kind": "EDGE",
+      "p_model": 0.6750970218988979,
+      "event": "Genaro Alberto Olivieri vs. Carlos Taberner",
+      "ev_start": "2026-07-28T12:00:00Z",
+      "reason": "Elo 68% vs market 41% \u2014 27% edge, half-Kelly",
+      "order_id": "BGVGAW9YR9ND",
+      "qty": 4,
+      "market_slug": "aec-atp-genoli-cartab-2026-07-27",
+      "outcome": "Carlos Taberner",
+      "status": "open",
+      "ts": "2026-07-28T01:50:03Z"
     }
   ],
   "pm_stats": {
@@ -26558,7 +26574,7 @@
     "wins": 24,
     "losses": 54,
     "pnl": -57.5,
-    "trades": 293,
+    "trades": 294,
     "last_recap": "2026-07-27",
     "last_recap_hour": "2026-07-28-00",
     "deposits": 64.0,
