@@ -30725,9 +30725,7 @@
           "px": 0.71
         }
       ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      "note": " [stale-swept]"
     },
     {
       "price": 0.555,
