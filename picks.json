@@ -1384,12 +1384,12 @@
       "homeTeam": "Washington Mystics",
       "awayTeam": "Connecticut Sun",
       "live_odds": {
-        "home_ml": -266,
-        "away_ml": 213,
+        "home_ml": -247,
+        "away_ml": 198,
         "total": 159.5,
-        "ts": 1785253458
+        "ts": 1785255259
       },
-      "last_alert_odds": -266
+      "last_alert_odds": -247
     },
     {
       "id": "over-8.5-0728",
@@ -1462,10 +1462,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 104,
-        "away_ml": -126,
+        "home_ml": 103,
+        "away_ml": -124,
         "total": 8.0,
-        "ts": 1785253459
+        "ts": 1785255259
       }
     },
     {
@@ -1509,12 +1509,12 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -172,
+        "away_ml": 142,
         "total": 9.0,
-        "ts": 1785217459
+        "ts": 1785255259
       },
-      "last_alert_odds": -160
+      "last_alert_odds": -172
     },
     {
       "id": "pittsburgh-pirates-ml-0728",
@@ -1580,10 +1580,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -167,
+        "away_ml": 138,
         "total": 9.0,
-        "ts": 1785217459
+        "ts": 1785255259
       },
       "last_alert_odds": -168
     },
@@ -1653,8 +1653,8 @@
       "live_odds": {
         "home_ml": -143,
         "away_ml": 119,
-        "total": 8.5,
-        "ts": 1785246259
+        "total": 9.0,
+        "ts": 1785255259
       }
     },
     {
@@ -1717,10 +1717,10 @@
       "awayTeam": "Cleveland Guardians",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -167,
+        "away_ml": 138,
         "total": 9.0,
-        "ts": 1785217459
+        "ts": 1785255259
       }
     },
     {
@@ -1798,10 +1798,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -180,
-        "away_ml": 148,
-        "total": 8.0,
-        "ts": 1785239059
+        "home_ml": -185,
+        "away_ml": 152,
+        "total": 8.5,
+        "ts": 1785255260
       },
       "last_alert_odds": -181
     },
@@ -2025,7 +2025,13 @@
       "opp": "Athletics",
       "analysis": "55-50 overall, 30-21 on the road \u2014 our 62% vs book 57% (no-vig) | \ud83d\udcca **Form + price:** 55-50 overall, 30-21 on the road \u2014 our 62% vs book 57% (no-vig). Model makes Boston Red Sox **62%** \u2014 books imply **60%**. Small edge, real edge, pressed.",
       "awayTeam": "Boston Red Sox",
-      "homeTeam": "Athletics"
+      "homeTeam": "Athletics",
+      "live_odds": {
+        "home_ml": 124,
+        "away_ml": -150,
+        "total": 10.0,
+        "ts": 1785255260
+      }
     }
   ]
 }
