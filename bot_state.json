@@ -30757,6 +30757,22 @@
       "outcome": "Andrea Pellegrino",
       "status": "open",
       "ts": "2026-07-28T17:05:13Z"
+    },
+    {
+      "price": 0.555,
+      "short": true,
+      "stake": 2.22,
+      "kind": "EDGE",
+      "p_model": 0.67541900390957,
+      "event": "Texas Rangers vs. Tampa Bay Rays",
+      "ev_start": "2026-07-30T16:10:00Z",
+      "reason": "model 68% vs market 56% \u2014 12% edge, half-Kelly",
+      "order_id": "BH7V1XMF29NQ",
+      "qty": 4,
+      "market_slug": "aec-mlb-tex-tb-2026-07-30",
+      "outcome": "Tampa Bay Rays",
+      "status": "open",
+      "ts": "2026-07-28T17:10:10Z"
     }
   ],
   "pm_stats": {
@@ -30764,7 +30780,7 @@
     "wins": 28,
     "losses": 59,
     "pnl": -55.1,
-    "trades": 346,
+    "trades": 347,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-16",
     "deposits": 64.0,
