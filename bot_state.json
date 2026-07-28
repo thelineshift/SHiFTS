@@ -29468,6 +29468,10 @@
         {
           "ts": 1785236068,
           "px": 0.14
+        },
+        {
+          "ts": 1785238464,
+          "px": 0.14
         }
       ]
     },
@@ -29660,7 +29664,8 @@
       "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
       "outcome": "Renata Zarazua",
       "status": "resting",
-      "ts": "2026-07-28T11:30:12Z"
+      "ts": "2026-07-28T11:30:12Z",
+      "price_path": []
     }
   ],
   "pm_stats": {
