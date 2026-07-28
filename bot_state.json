@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-28 20:14 UTC",
+    "at": "2026-07-28 20:44 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-2-3": "2026-07-28 20:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-28 19:44 UTC",
+    "\ud83e\uddfereceipts": "2026-07-28 20:34 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-28 20:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-28 16:43 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-28 20:14 UTC",
+    "at": "2026-07-28 20:44 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -30,15 +30,24 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-28 20:14 UTC",
+    "at": "2026-07-28 20:44 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-28 20:14 UTC",
+    "at": "2026-07-28 20:44 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
   "unannounced_results": [
+    {
+      "id": "athletics-ml-0727",
+      "desc": "Athletics ML",
+      "odds": 149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 4, Athletics 2",
+      "tier": "free"
+    },
     {
       "id": "hanwha-life-esports-challeng-0728",
       "desc": "Hanwha Life Esports Challengers ML",
@@ -55,15 +64,6 @@
       "result": "LOSS",
       "units": -1.0,
       "score": "UNiTY esports 1-2 ex-RUSTEC \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "cleveland-guardians-ml-0728",
-      "desc": "Cleveland Guardians ML",
-      "odds": 139,
-      "result": "WIN",
-      "units": 1.39,
-      "score": "Cleveland Guardians 6, Cincinnati Reds 5",
       "tier": "whale"
     }
   ],
