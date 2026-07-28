@@ -298,7 +298,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "6b9a82a3-93da-4c64-a9d9-1ad996c30182",
   "op_month": "2026-07",
-  "op_calls": 56,
+  "op_calls": 61,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1191,8 +1191,8 @@
         [
           "Imperial eSports",
           "Bestia",
-          1.478,
-          2.56
+          1.657,
+          2.18
         ],
         [
           "Regain",
@@ -1201,25 +1201,19 @@
           3.36
         ],
         [
+          "Black Phoenix",
+          "Enjoy",
+          1.757,
+          2.03
+        ],
+        [
           "Genone",
-          "Sparta eSports",
-          1.68,
-          2.1
-        ],
-        [
-          "Rune Eaters eSports",
-          "Saw Youngsters",
-          1.564,
-          2.35
-        ],
-        [
-          "Ex-Rustec",
-          "Inner Circle Academy",
-          1.561,
-          2.36
+          "New Vision",
+          1.137,
+          4.89
         ]
       ],
-      "odds_ts": 1785153622.121221
+      "odds_ts": 1785211227.3191288
     },
     "valorant": {
       "lines": [
@@ -2457,49 +2451,55 @@
           2.22
         ],
         [
-          "Hanwha Life Esports",
-          "Dplus",
-          13.57,
-          1.026
+          "DRX",
+          "kt Rolster",
+          3.43,
+          1.303
         ],
         [
-          "T1",
-          "Dplus",
-          14.75,
-          1.022
-        ],
-        [
-          "T1",
-          "Nongshim Redforce",
-          1.03,
-          12.44
-        ],
-        [
-          "Dplus",
+          "Soopers",
           "Brion",
-          1.021,
-          15.1
+          3.54,
+          1.287
+        ],
+        [
+          "Hanwha Life Esports Challengers",
+          "Brion Challengers",
+          1.537,
+          2.5
+        ],
+        [
+          "Dplus Challengers",
+          "KT Rolster Challengers",
+          1.769,
+          2.07
         ],
         [
           "Nongshim Redforce Challengers",
-          "T1 Esports Academy",
-          1.074,
-          6.01
+          "Soopers Challengers",
+          1.555,
+          2.45
         ],
         [
-          "Gen.G Global Academy",
-          "Fearx Youth",
-          7.61,
-          1.039
+          "Gamespace MCE",
+          "Team Phantasma",
+          2.12,
+          1.609
+        ],
+        [
+          "Zennit",
+          "Dynasty",
+          1.8,
+          2.03
         ],
         [
           "Maze Gaming",
           "9Z Team",
-          1.369,
-          3.08
+          1.37,
+          3.07
         ]
       ],
-      "odds_ts": 1785153616.6563997
+      "odds_ts": 1785211231.092112
     }
   },
   "parlay_rot": 9,
