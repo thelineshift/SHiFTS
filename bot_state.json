@@ -26770,7 +26770,7 @@
       "qty": 3,
       "market_slug": "aec-mlb-sea-lad-2026-07-30",
       "outcome": "Los Angeles Dodgers",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T03:05:04Z"
     },
     {
@@ -26786,7 +26786,7 @@
       "qty": 2,
       "market_slug": "aec-mlb-tex-tb-2026-07-30",
       "outcome": "Tampa Bay Rays",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T03:05:06Z"
     },
     {
@@ -26801,7 +26801,7 @@
       "qty": 16,
       "market_slug": "astatc-wta-xiywan-catmcn-2026-07-26-sw1",
       "outcome": "Xiyu Wang",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-28T03:10:04Z"
     }
   ],
