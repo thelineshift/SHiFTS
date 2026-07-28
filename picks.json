@@ -1462,10 +1462,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 113,
-        "away_ml": -136,
+        "home_ml": 109,
+        "away_ml": -131,
         "total": 8.0,
-        "ts": 1785244459
+        "ts": 1785249859
       }
     },
     {
