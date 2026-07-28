@@ -27412,6 +27412,10 @@
         {
           "ts": 1785213863,
           "px": 0.69
+        },
+        {
+          "ts": 1785216267,
+          "px": 0.69
         }
       ]
     },
@@ -27523,7 +27527,13 @@
       "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw2",
       "outcome": "Mary Stoiana",
       "status": "resting",
-      "ts": "2026-07-28T05:14:59Z"
+      "ts": "2026-07-28T05:14:59Z",
+      "price_path": [
+        {
+          "ts": 1785216267,
+          "px": 0.48
+        }
+      ]
     }
   ],
   "pm_stats": {
