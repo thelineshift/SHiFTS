@@ -40,12 +40,30 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "athletics-ml-0727",
+      "desc": "Athletics ML",
+      "odds": 149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 4, Athletics 2",
+      "tier": "free"
+    },
+    {
       "id": "hanwha-life-esports-challeng-0728",
       "desc": "Hanwha Life Esports Challengers ML",
       "odds": -186,
       "result": "LOSS",
       "units": -1.5,
       "score": "Hanwha Life Esports Challengers 0-2 HANJIN BRION Challengers \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "unity-esports-ml-0728",
+      "desc": "UNiTY esports ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "UNiTY esports 1-2 ex-RUSTEC \u00b7 final",
       "tier": "whale"
     }
   ],
