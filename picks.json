@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T04:24:23Z",
+  "updated": "2026-07-28T05:04:19Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1043,7 +1043,10 @@
           "date": "2026-07-27",
           "time_et": "06:45 PM ET"
         }
-      ]
+      ],
+      "result": "WIN",
+      "units_result": 1.43,
+      "score": "None: win \u00b7 None: win"
     },
     {
       "id": "2-leg-parlay-0727-sharp",
@@ -1074,7 +1077,10 @@
           "date": "2026-07-27",
           "time_et": "06:45 PM ET"
         }
-      ]
+      ],
+      "result": "WIN",
+      "units_result": 1.43,
+      "score": "None: win \u00b7 None: win"
     },
     {
       "id": "chicago-cubs-ml-0727",
@@ -1132,7 +1138,10 @@
           "date": "2026-07-27",
           "time_et": "06:45 PM ET"
         }
-      ]
+      ],
+      "result": "WIN",
+      "units_result": 1.43,
+      "score": "None: win \u00b7 None: win"
     },
     {
       "id": "athletics-ml-0727",
