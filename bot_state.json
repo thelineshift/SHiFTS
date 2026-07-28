@@ -27928,8 +27928,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "astatc-cs2-unity-mta-2026-07-27-map2",
-    "aec-cs2-unity-mta-2026-07-27",
     "astatc-cs2-fx-isg-2026-07-26-map2",
     "aec-valorant-beg-hbs-2026-07-27",
     "aec-cs2-hon-pg-2026-07-26",
@@ -27987,7 +27985,9 @@
     "aec-atp-genoli-cartab-2026-07-27",
     "astatc-wta-xiywan-catmcn-2026-07-26-sw1",
     "astatc-wta-marsto-peyste-2026-07-26-sw1",
-    "aec-wnba-conn-wsh-2026-07-28"
+    "aec-wnba-conn-wsh-2026-07-28",
+    "astatc-wta-yulsta-sloste-2026-07-26-sw1",
+    "astatc-wta-darvid-marrib-2026-07-26-sw1"
   ],
   "odds_api": {
     "month": "2026-07",
