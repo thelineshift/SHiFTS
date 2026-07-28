@@ -2589,34 +2589,6 @@
     "esp": [
       {
         "sport": "cs2",
-        "start": "2026-07-28T21:00:00Z",
-        "t1": {
-          "id": 138276,
-          "name": "ALKA GAMING"
-        },
-        "t2": {
-          "id": 138524,
-          "name": "QUINTESS\u00caNCIA"
-        },
-        "league": "Gamers Club Liga S\u00e9rie A",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-28T21:00:00Z",
-        "t1": {
-          "id": 126377,
-          "name": "Imperial"
-        },
-        "t2": {
-          "id": 132800,
-          "name": "BESTIA"
-        },
-        "league": "StarLadder StarSeries",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
         "start": "2026-07-28T22:00:00Z",
         "t1": {
           "id": 132366,
@@ -2675,6 +2647,20 @@
         "sport": "cs2",
         "start": "2026-07-29T08:00:00Z",
         "t1": {
+          "id": 127837,
+          "name": "los kogutos"
+        },
+        "t2": {
+          "id": 138777,
+          "name": "ex-MANA eSports"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T08:00:00Z",
+        "t1": {
           "id": 137708,
           "name": "BET-M 33"
         },
@@ -2717,6 +2703,34 @@
         "sport": "cs2",
         "start": "2026-07-29T11:00:00Z",
         "t1": {
+          "id": 138026,
+          "name": "Atreides"
+        },
+        "t2": {
+          "id": 135227,
+          "name": "ENJOY"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T11:00:00Z",
+        "t1": {
+          "id": 138963,
+          "name": "Black Phoenix"
+        },
+        "t2": {
+          "id": 128258,
+          "name": "Entropy"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T11:00:00Z",
+        "t1": {
           "id": 138974,
           "name": "ex-RUSTEC"
         },
@@ -2745,6 +2759,34 @@
         "sport": "cs2",
         "start": "2026-07-29T14:00:00Z",
         "t1": {
+          "id": 138974,
+          "name": "ex-RUSTEC"
+        },
+        "t2": {
+          "id": 138985,
+          "name": "ex-Young Ninjas"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T14:00:00Z",
+        "t1": {
+          "id": 138026,
+          "name": "Atreides"
+        },
+        "t2": {
+          "id": 132927,
+          "name": "Rune Eaters"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T14:00:00Z",
+        "t1": {
           "id": 137932,
           "name": "ex-RUBY"
         },
@@ -2756,78 +2798,36 @@
         "bo": 3
       },
       {
-        "sport": "lol",
-        "start": "2026-07-28T20:00:00Z",
+        "sport": "cs2",
+        "start": "2026-07-29T15:00:00Z",
         "t1": {
-          "id": 138978,
-          "name": "Dominion Goblins"
+          "id": 135468,
+          "name": "ShindeN"
         },
         "t2": {
-          "id": 138977,
-          "name": "Capybara Esports"
+          "id": 134355,
+          "name": "Galorys"
         },
-        "league": "LPLOL",
-        "bo": 1
+        "league": "StarLadder StarSeries",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T17:00:00Z",
+        "t1": {
+          "id": 137701,
+          "name": "Bebop"
+        },
+        "t2": {
+          "id": 137075,
+          "name": "Misa Esports"
+        },
+        "league": "Thunderpick World Championship",
+        "bo": 3
       },
       {
         "sport": "lol",
-        "start": "2026-07-28T20:00:00Z",
-        "t1": {
-          "id": 138170,
-          "name": "9z Globant"
-        },
-        "t2": {
-          "id": 131064,
-          "name": "Maze Gaming"
-        },
-        "league": "LRS",
-        "bo": 5
-      },
-      {
-        "sport": "lol",
-        "start": "2026-07-28T20:00:00Z",
-        "t1": {
-          "id": 128529,
-          "name": "paiN Gaming Academy"
-        },
-        "t2": {
-          "id": 138387,
-          "name": "Team Solid"
-        },
-        "league": "Circuito Desafiante",
-        "bo": 1
-      },
-      {
-        "sport": "lol",
-        "start": "2026-07-28T21:00:00Z",
-        "t1": {
-          "id": 138980,
-          "name": "Hyperion"
-        },
-        "t2": {
-          "id": 138061,
-          "name": "Francesinhas"
-        },
-        "league": "LPLOL",
-        "bo": 1
-      },
-      {
-        "sport": "lol",
-        "start": "2026-07-28T21:00:00Z",
-        "t1": {
-          "id": 138386,
-          "name": "Ei Nerd Esports"
-        },
-        "t2": {
-          "id": 132323,
-          "name": "Vivo Keyd Stars Academy"
-        },
-        "league": "Circuito Desafiante",
-        "bo": 1
-      },
-      {
-        "sport": "lol",
-        "start": "2026-07-28T22:00:00Z",
+        "start": "2026-07-28T22:30:00Z",
         "t1": {
           "id": 128363,
           "name": "Estral Esports"
@@ -2841,7 +2841,7 @@
       },
       {
         "sport": "lol",
-        "start": "2026-07-28T23:00:00Z",
+        "start": "2026-07-28T23:30:00Z",
         "t1": {
           "id": 138384,
           "name": "7REX"
@@ -2855,7 +2855,7 @@
       },
       {
         "sport": "lol",
-        "start": "2026-07-29T00:00:00Z",
+        "start": "2026-07-29T00:30:00Z",
         "t1": {
           "id": 138385,
           "name": "RMD Gaming"
@@ -3034,6 +3034,76 @@
         },
         "league": "HLL",
         "bo": 2
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-29T16:00:00Z",
+        "t1": {
+          "id": 137898,
+          "name": "TLN Pirates"
+        },
+        "t2": {
+          "id": 137901,
+          "name": "ZYB Esport"
+        },
+        "league": "LFL",
+        "bo": 1
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-29T16:00:00Z",
+        "t1": {
+          "id": 139011,
+          "name": "\u2060Hooligans"
+        },
+        "t2": {
+          "id": 133265,
+          "name": "SPIKE Syndicate"
+        },
+        "league": "EBL",
+        "bo": 3
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-29T16:00:00Z",
+        "t1": {
+          "id": 131053,
+          "name": "Anubis Gaming"
+        },
+        "t2": {
+          "id": 134461,
+          "name": "GnG Amazigh"
+        },
+        "league": "Arabian League",
+        "bo": 3
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-29T16:00:00Z",
+        "t1": {
+          "id": 137836,
+          "name": "LEO"
+        },
+        "t2": {
+          "id": 135466,
+          "name": "Rich Gang"
+        },
+        "league": "NLC",
+        "bo": 3
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-29T16:00:00Z",
+        "t1": {
+          "id": 138964,
+          "name": "B2U"
+        },
+        "t2": {
+          "id": 138970,
+          "name": "Absolved"
+        },
+        "league": "NLC",
+        "bo": 3
       },
       {
         "sport": "valorant",
@@ -3303,20 +3373,6 @@
       },
       {
         "sport": "dota2",
-        "start": "2026-07-28T19:15:00Z",
-        "t1": {
-          "id": 136960,
-          "name": "YBN Team"
-        },
-        "t2": {
-          "id": 139006,
-          "name": "avice Team"
-        },
-        "league": "BetBoom Streamers Battle",
-        "bo": 3
-      },
-      {
-        "sport": "dota2",
         "start": "2026-07-29T09:00:00Z",
         "t1": {
           "id": 1948,
@@ -3582,6 +3638,20 @@
         "bo": 3
       },
       {
+        "sport": "dota2",
+        "start": "2026-07-31T05:00:00Z",
+        "t1": {
+          "id": 1931,
+          "name": "Yellow Submarine"
+        },
+        "t2": {
+          "id": 1660,
+          "name": "Execration"
+        },
+        "league": "Games of the Future",
+        "bo": 3
+      },
+      {
         "sport": "ow",
         "start": "2026-07-29T10:00:00Z",
         "t1": {
@@ -3694,7 +3764,7 @@
         "bo": 2
       }
     ],
-    "esp_ts": 1785268459.3070605,
+    "esp_ts": 1785275959.3376474,
     "form": {
       "dota2:138945": {
         "ts": 1785188999.7797587,
@@ -8468,7 +8538,7 @@
         }
       },
       "cs2:132366": {
-        "ts": 1785268482.6404204,
+        "ts": 1785275985.9221425,
         "f": {
           "w": 3,
           "l": 2,
@@ -8497,7 +8567,7 @@
         }
       },
       "cs2:136318": {
-        "ts": 1785268483.2493997,
+        "ts": 1785275986.5173771,
         "f": {
           "w": 4,
           "l": 1,
@@ -8584,7 +8654,7 @@
         }
       },
       "lol:126370": {
-        "ts": 1785268788.1413362,
+        "ts": 1785275990.7939687,
         "f": {
           "w": 3,
           "l": 2,
@@ -8613,7 +8683,7 @@
         }
       },
       "lol:128217": {
-        "ts": 1785268788.7444,
+        "ts": 1785275991.3953114,
         "f": {
           "w": 4,
           "l": 1,
@@ -8840,6 +8910,122 @@
             {
               "won": true,
               "opp": "Dandelions"
+            }
+          ]
+        }
+      },
+      "valorant:128944": {
+        "ts": 1785276016.497067,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "100 Thieves"
+            },
+            {
+              "won": false,
+              "opp": "LOUD"
+            },
+            {
+              "won": false,
+              "opp": "Sentinels"
+            },
+            {
+              "won": false,
+              "opp": "MIBR"
+            },
+            {
+              "won": false,
+              "opp": "NRG"
+            }
+          ]
+        }
+      },
+      "valorant:128538": {
+        "ts": 1785276017.117974,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "Cloud9"
+            },
+            {
+              "won": false,
+              "opp": "100 Thieves"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim RedForce"
+            },
+            {
+              "won": true,
+              "opp": "XLG Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim RedForce"
+            }
+          ]
+        }
+      },
+      "valorant:128605": {
+        "ts": 1785276018.0931878,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "KR\u00dc Esports"
+            },
+            {
+              "won": true,
+              "opp": "G2 Esports"
+            },
+            {
+              "won": true,
+              "opp": "NRG"
+            },
+            {
+              "won": true,
+              "opp": "Nongshim RedForce"
+            },
+            {
+              "won": true,
+              "opp": "MIBR LOS"
+            }
+          ]
+        }
+      },
+      "valorant:128472": {
+        "ts": 1785276018.9545298,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "LOUD"
+            },
+            {
+              "won": true,
+              "opp": "Cloud9"
+            },
+            {
+              "won": false,
+              "opp": "LOUD"
+            },
+            {
+              "won": true,
+              "opp": "KR\u00dc Esports"
+            },
+            {
+              "won": false,
+              "opp": "Leviat\u00e1n Esports"
             }
           ]
         }
@@ -31617,11 +31803,11 @@
     "pnl": -63.83,
     "trades": 369,
     "last_recap": "2026-07-28",
-    "last_recap_hour": "2026-07-28-20",
+    "last_recap_hour": "2026-07-28-22",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 106.11,
-    "net": 42.11,
+    "account": 97.32,
+    "net": 33.32,
     "last_archive": "2026-07-28",
     "kind_totals": {
       "ARB": [
