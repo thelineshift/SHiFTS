@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "chicago-cubs-ml-0727",
+      "desc": "Chicago Cubs ML",
+      "odds": -114,
+      "result": "WIN",
+      "units": 0.88,
+      "score": "Chicago Cubs 7, St. Louis Cardinals 3",
+      "tier": "lock"
+    },
+    {
       "id": "athletics-ml-0727",
       "desc": "Athletics ML",
       "odds": 149,
@@ -58,7 +67,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785240264.113441,
+  "last_x_receipt_ts": 1785209060.4239252,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -4657,7 +4666,7 @@
         }
       },
       "valorant:133557": {
-        "ts": 1785182124.3059607,
+        "ts": 1785240291.4760492,
         "f": {
           "w": 2,
           "l": 3,
@@ -6699,7 +6708,7 @@
         }
       },
       "valorant:133115": {
-        "ts": 1785189316.5963218,
+        "ts": 1785240292.1786807,
         "f": {
           "w": 3,
           "l": 2,
@@ -6728,7 +6737,7 @@
         }
       },
       "valorant:128796": {
-        "ts": 1785189317.2195187,
+        "ts": 1785240292.789115,
         "f": {
           "w": 3,
           "l": 2,
@@ -29714,6 +29723,21 @@
           "px": 0.38
         }
       ]
+    },
+    {
+      "price": 0.29,
+      "stake": 2.03,
+      "kind": "EDGE",
+      "p_model": 0.5982904975281664,
+      "event": "Darja Vidmanova vs. Marina Bassols Ribera",
+      "ev_start": "2026-07-28T22:00:00Z",
+      "reason": "Elo 60% vs market 29% \u2014 31% edge, half-Kelly",
+      "order_id": "BH36BC78E9NC",
+      "qty": 7,
+      "market_slug": "astatc-wta-darvid-marrib-2026-07-26-sw1",
+      "outcome": "Darja Vidmanova",
+      "status": "open",
+      "ts": "2026-07-28T12:05:04Z"
     }
   ],
   "pm_stats": {
@@ -29721,7 +29745,7 @@
     "wins": 26,
     "losses": 55,
     "pnl": -56.22,
-    "trades": 326,
+    "trades": 327,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-12",
     "deposits": 64.0,
