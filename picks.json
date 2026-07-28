@@ -1287,10 +1287,10 @@
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -112,
-        "away_ml": -107,
+        "home_ml": -111,
+        "away_ml": -109,
         "total": 8.5,
-        "ts": 1785194059
+        "ts": 1785197659
       }
     },
     {
