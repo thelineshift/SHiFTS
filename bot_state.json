@@ -30322,6 +30322,36 @@
           "px": 0.5
         }
       ]
+    },
+    {
+      "price": 0.16,
+      "stake": 1.28,
+      "kind": "EDGE",
+      "p_model": 0.4515250202540013,
+      "event": "Xiyu Wang vs. Caty McNally",
+      "ev_start": "2026-07-28T15:00:00Z",
+      "reason": "Elo 45% vs market 16% \u2014 29% edge, half-Kelly",
+      "order_id": "BH4XXN2049NF",
+      "qty": 8,
+      "market_slug": "astatc-wta-xiywan-catmcn-2026-07-26-sw2",
+      "outcome": "Xiyu Wang",
+      "status": "open",
+      "ts": "2026-07-28T14:20:07Z"
+    },
+    {
+      "price": 0.01,
+      "stake": 1.12,
+      "kind": "EDGE",
+      "p_model": 0.30104151037308957,
+      "event": "Renata Zarazua vs. McCartney Kessler",
+      "ev_start": "2026-07-28T23:30:00Z",
+      "reason": "Elo 30% vs market 1% \u2014 29% edge, half-Kelly",
+      "order_id": "BH4X4V21A9QM",
+      "qty": 112,
+      "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw1",
+      "outcome": "Renata Zarazua",
+      "status": "open",
+      "ts": "2026-07-28T14:20:09Z"
     }
   ],
   "pm_stats": {
@@ -30329,7 +30359,7 @@
     "wins": 27,
     "losses": 57,
     "pnl": -57.97,
-    "trades": 335,
+    "trades": 337,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-28-14",
     "deposits": 64.0,
