@@ -63,6 +63,24 @@
       "units": -1.0,
       "score": "Toronto Blue Jays 3, Washington Nationals 2",
       "tier": "lock"
+    },
+    {
+      "id": "atlanta-braves-ml-0727",
+      "desc": "Atlanta Braves ML",
+      "odds": -115,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Atlanta Braves 3, New York Mets 14",
+      "tier": "whale"
+    },
+    {
+      "id": "pittsburgh-pirates-ml-0727",
+      "desc": "Pittsburgh Pirates ML",
+      "odds": -126,
+      "result": "WIN",
+      "units": 0.79,
+      "score": "Arizona Diamondbacks 2, Pittsburgh Pirates 3",
+      "tier": "sharp"
     }
   ],
   "last_x_receipt_ts": 1785203060.299536,
