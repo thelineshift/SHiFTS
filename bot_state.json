@@ -29093,7 +29093,7 @@
       "qty": 5,
       "market_slug": "astatc-wta-darvid-marrib-2026-07-26-sw2",
       "outcome": "Darja Vidmanova",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T06:05:01Z",
       "price_path": [
         {
@@ -29136,7 +29136,8 @@
           "ts": 1785239670,
           "px": 0.68
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.34,
