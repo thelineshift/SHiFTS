@@ -1462,10 +1462,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -120,
+        "home_ml": 104,
+        "away_ml": -125,
         "total": 8.0,
-        "ts": 1785264259
+        "ts": 1785273259
       },
       "last_alert_odds": 100
     },
@@ -1534,10 +1534,10 @@
       "homeTeam": "Pittsburgh Pirates",
       "awayTeam": "Arizona Diamondbacks",
       "live_odds": {
-        "home_ml": -117,
-        "away_ml": -103,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 9.0,
-        "ts": 1785266059
+        "ts": 1785273259
       }
     },
     {
@@ -1778,12 +1778,12 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -197,
-        "away_ml": 161,
+        "home_ml": -219,
+        "away_ml": 178,
         "total": 9.5,
-        "ts": 1785269659
+        "ts": 1785273259
       },
-      "last_alert_odds": -192
+      "last_alert_odds": -219
     },
     {
       "id": "tampa-bay-rays--1.5-0728",
