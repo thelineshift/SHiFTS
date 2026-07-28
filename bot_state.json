@@ -26309,7 +26309,7 @@
       "qty": 2,
       "market_slug": "aec-wta-marsto-peyste-2026-07-26",
       "outcome": "Peyton Stearns",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T22:45:06Z",
       "price_path": [
         {
@@ -26348,7 +26348,8 @@
           "ts": 1785212073,
           "px": 0.6
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.01,
@@ -26362,14 +26363,15 @@
       "qty": 172,
       "market_slug": "astatc-wta-marsto-peyste-2026-07-26-sw2",
       "outcome": "Mary Stoiana",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T22:45:07Z",
       "price_path": [
         {
           "ts": 1785213862,
           "px": 0.48
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.01,
@@ -26383,9 +26385,10 @@
       "qty": 183,
       "market_slug": "astatc-wta-renzar-mcckes-2026-07-26-sw2",
       "outcome": "Renata Zarazua",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-27T22:45:08Z",
-      "price_path": []
+      "price_path": [],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.23,
