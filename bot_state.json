@@ -31764,7 +31764,7 @@
       "qty": 2,
       "market_slug": "aec-atp-jacjon-tobsam-2026-07-27",
       "outcome": "Toby Samuel",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-28T19:25:06Z",
       "price_path": [
         {
@@ -31787,7 +31787,8 @@
           "ts": 1785276865,
           "px": 0.68
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.43,
