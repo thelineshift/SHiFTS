@@ -40,6 +40,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "athletics-ml-0727",
+      "desc": "Athletics ML",
+      "odds": 149,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 4, Athletics 2",
+      "tier": "free"
+    },
+    {
       "id": "hanwha-life-esports-challeng-0728",
       "desc": "Hanwha Life Esports Challengers ML",
       "odds": -186,
@@ -30547,6 +30556,10 @@
         {
           "ts": 1785265469,
           "px": 0.7
+        },
+        {
+          "ts": 1785269062,
+          "px": 0.72
         }
       ]
     },
@@ -30588,6 +30601,10 @@
         {
           "ts": 1785265469,
           "px": 0.76
+        },
+        {
+          "ts": 1785269062,
+          "px": 0.84
         }
       ]
     },
@@ -31252,7 +31269,13 @@
       "market_slug": "aec-cs2-regain-voca-2026-07-29",
       "outcome": "regain",
       "status": "open",
-      "ts": "2026-07-28T19:55:10Z"
+      "ts": "2026-07-28T19:55:10Z",
+      "price_path": [
+        {
+          "ts": 1785269063,
+          "px": 0.26
+        }
+      ]
     },
     {
       "price": 0.48,
@@ -31268,7 +31291,13 @@
       "market_slug": "aec-valorant-gxgc-hbs-2026-07-29",
       "outcome": "Habos Babos",
       "status": "open",
-      "ts": "2026-07-28T19:55:12Z"
+      "ts": "2026-07-28T19:55:12Z",
+      "price_path": [
+        {
+          "ts": 1785269063,
+          "px": 0.45
+        }
+      ]
     }
   ],
   "pm_stats": {
