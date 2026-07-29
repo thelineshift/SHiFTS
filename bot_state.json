@@ -31300,7 +31300,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-atp-ardazk-yanere-2026-07-27",
     "aec-atp-carcan-andpel-2026-07-27",
     "aec-atp-alemin-stetsi-2026-07-27",
     "aec-wta-yulsta-sloste-2026-07-26",
@@ -31359,7 +31358,8 @@
     "astatc-atp-densha-rinhij-2026-07-27-sw1",
     "aec-lol-tlnp-zyb-2026-07-29",
     "aec-lol-anb-gng-2026-07-29",
-    "aec-wta-harkaj-taypre-2026-07-27"
+    "aec-wta-harkaj-taypre-2026-07-27",
+    "aec-ow-wbg-tl-2026-07-29"
   ],
   "odds_api": {
     "month": "2026-07",
