@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 13:22 UTC",
+    "at": "2026-07-29 14:20 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-3": "2026-07-29 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 13:22 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 14:12 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-29 12:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 13:22 UTC",
+    "at": "2026-07-29 14:20 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,14 +33,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 13:22 UTC",
+    "at": "2026-07-29 14:20 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 13:22 UTC",
+    "at": "2026-07-29 14:20 UTC",
     "flags": []
   },
-  "bot_version": "9.24.19",
+  "bot_version": "9.24.20",
   "unannounced_results": [
     {
       "id": "3-leg-parlay-0728-lock",
@@ -151,7 +151,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785330615.01073,
+  "last_x_receipt_ts": 1785334849.0764508,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -261,7 +261,7 @@
     "20260729-0750"
   ],
   "boot_log": [
-    "2026-07-29T14:20:45Z"
+    "2026-07-29T14:20:42Z"
   ],
   "teasers": {
     "weekly": "2026-08-02",
@@ -389,7 +389,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "3c485692-c5c2-455f-87f9-2b2fb175c89d",
+  "last_deploy_id": "75dd0b56-195e-4b25-9d27-1598477e739d",
   "op_month": "2026-07",
   "op_calls": 75,
   "op_meta": {
@@ -34148,7 +34148,5 @@
   "dep_checked_ts": 1785334360.4046383,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
-  "x_ads": [
-    "\ud83d\udd12 The LOCK room went 9-10 this week \u2014 +0.0 units.\n\n$100 on every pick we posted = +$1 in 7 days.\n\nEvery pick posted before start. Every result receipted.\n\ud83d\udc8e https://thelineshift.github.io/SHiFTS/upgrade.html"
-  ]
+  "x_ads": []
 }
