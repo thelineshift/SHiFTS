@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 22:03 UTC",
+    "at": "2026-07-29 22:12 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-29 20:24 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 22:03 UTC",
+    "at": "2026-07-29 22:12 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,16 +33,16 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 22:03 UTC",
+    "at": "2026-07-29 22:12 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-29 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-29 22:03 UTC",
+    "at": "2026-07-29 22:12 UTC",
     "flags": []
   },
-  "bot_version": "9.24.26",
+  "bot_version": "9.24.27",
   "unannounced_results": [
     {
       "id": "boston-red-sox-ml-0728",
@@ -234,7 +234,7 @@
     "20260729-1550"
   ],
   "boot_log": [
-    "2026-07-29T22:12:45Z"
+    "2026-07-29T22:12:51Z"
   ],
   "teasers": {
     "weekly": "2026-08-02",
@@ -362,7 +362,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "9a5f22e6-c94b-4f0e-b44a-8b9d747429af",
+  "last_deploy_id": "9b3d1857-cfaf-4f69-ad70-2643170379f7",
   "op_month": "2026-07",
   "op_calls": 80,
   "op_meta": {
