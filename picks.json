@@ -2313,9 +2313,9 @@
       "awayTeam": "Colorado Rockies",
       "live_odds": {
         "home_ml": -149,
-        "away_ml": 123,
+        "away_ml": 124,
         "total": 8.0,
-        "ts": 1785324704
+        "ts": 1785333157
       }
     },
     {
@@ -2392,10 +2392,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 104,
-        "away_ml": -126,
+        "home_ml": 108,
+        "away_ml": -130,
         "total": 7.5,
-        "ts": 1785326504
+        "ts": 1785333157
       }
     },
     {
@@ -2455,12 +2455,12 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -184,
-        "away_ml": 151,
-        "total": 9.0,
-        "ts": 1785331357
+        "home_ml": -198,
+        "away_ml": 163,
+        "total": 8.5,
+        "ts": 1785333157
       },
-      "last_alert_odds": -175
+      "last_alert_odds": -198
     },
     {
       "id": "los-angeles-sparks-ml-0729",
@@ -2496,10 +2496,10 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -159,
-        "away_ml": 132,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 7.5,
-        "ts": 1785331357
+        "ts": 1785333158
       },
       "last_alert_odds": 135
     },
@@ -2610,8 +2610,8 @@
       "live_odds": {
         "home_ml": 163,
         "away_ml": -199,
-        "total": 155.5,
-        "ts": 1785330614
+        "total": 156.5,
+        "ts": 1785333158
       },
       "last_alert_odds": -190
     },
@@ -2632,10 +2632,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 124,
+        "home_ml": -167,
+        "away_ml": 138,
         "total": 9.5,
-        "ts": 1785302059
+        "ts": 1785333158
       },
       "last_alert_odds": -156
     },
@@ -2811,12 +2811,12 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 105,
-        "away_ml": -127,
+        "home_ml": -106,
+        "away_ml": -114,
         "total": 8.5,
-        "ts": 1785329690
+        "ts": 1785333159
       },
-      "last_alert_odds": -127
+      "last_alert_odds": -114
     },
     {
       "id": "los-angeles-dodgers-ml-0729",
@@ -2835,11 +2835,12 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 124,
+        "home_ml": -167,
+        "away_ml": 138,
         "total": 9.5,
-        "ts": 1785312859
-      }
+        "ts": 1785333159
+      },
+      "last_alert_odds": -167
     },
     {
       "id": "sk-nebula-ml-0729",
