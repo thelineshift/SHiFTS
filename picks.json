@@ -2266,12 +2266,12 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -121,
+        "home_ml": -105,
+        "away_ml": -115,
         "total": 181.5,
-        "ts": 1785360657
+        "ts": 1785368940
       },
-      "last_alert_odds": 100
+      "last_alert_odds": -105
     },
     {
       "id": "tampa-bay-rays-ml-0729",
