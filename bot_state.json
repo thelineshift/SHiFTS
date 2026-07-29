@@ -31585,9 +31585,10 @@
       "qty": 43,
       "market_slug": "astatc-atp-dalsvr-adawal-2026-07-27-sw2",
       "outcome": "Dalibor Svrcina",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T04:45:06Z",
-      "price_path": []
+      "price_path": [],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.62,
