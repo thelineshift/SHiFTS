@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T20:00:53Z",
+  "updated": "2026-07-29T20:17:19Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2440,7 +2440,10 @@
         "total": 9.5,
         "ts": 1785340636
       },
-      "last_alert_odds": -103
+      "last_alert_odds": -103,
+      "result": "LOSS",
+      "score": "Toronto Blue Jays 5, Washington Nationals 2",
+      "units_result": -1.0
     },
     {
       "id": "minnesota-twins--1.5-0729",
