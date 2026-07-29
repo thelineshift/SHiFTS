@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T04:44:33Z",
+  "updated": "2026-07-29T05:04:24Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1497,7 +1497,10 @@
         "total": 7.0,
         "ts": 1785289459
       },
-      "last_alert_odds": -155
+      "last_alert_odds": -155,
+      "result": "WIN",
+      "score": "Milwaukee Brewers 8, San Francisco Giants 2",
+      "units_result": 0.7
     },
     {
       "id": "minnesota-twins--1.5-0728",
@@ -1810,7 +1813,10 @@
         "total": 9.5,
         "ts": 1785278659
       },
-      "last_alert_odds": -237
+      "last_alert_odds": -237,
+      "result": "LOSS",
+      "score": "Seattle Mariners 7, Los Angeles Dodgers 6",
+      "units_result": -1.0
     },
     {
       "id": "tampa-bay-rays--1.5-0728",
@@ -2040,7 +2046,10 @@
         "total": 7.0,
         "ts": 1785289459
       },
-      "last_alert_odds": -155
+      "last_alert_odds": -155,
+      "result": "WIN",
+      "score": "Milwaukee Brewers 8, San Francisco Giants 2",
+      "units_result": 0.91
     },
     {
       "id": "unity-esports-ml-0728",
