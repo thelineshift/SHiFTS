@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 00:44 UTC",
+    "at": "2026-07-29 01:44 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-2-3": "2026-07-29 00:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 00:04 UTC",
+    "\ud83c\udfaffree-pick-3-3": "2026-07-29 00:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 01:34 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-29 00:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-28 16:43 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 00:44 UTC",
+    "at": "2026-07-29 01:44 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -31,13 +31,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 00:44 UTC",
+    "at": "2026-07-29 01:44 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-28 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-29 00:44 UTC",
+    "at": "2026-07-29 01:44 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
@@ -50,15 +50,6 @@
       "units": -1.0,
       "score": "Cleveland Guardians 6, Cincinnati Reds 5",
       "tier": "sharp"
-    },
-    {
-      "id": "washington-mystics--6.5-0728",
-      "desc": "Washington Mystics -6.5",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "Connecticut Sun 84, Washington Mystics 92",
-      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785246260.6717944,
@@ -30554,10 +30545,6 @@
         {
           "ts": 1785286477,
           "px": 0.55
-        },
-        {
-          "ts": 1785289464,
-          "px": 0.545
         }
       ]
     },
@@ -30580,10 +30567,6 @@
         {
           "ts": 1785286478,
           "px": 0.6
-        },
-        {
-          "ts": 1785289464,
-          "px": 0.595
         }
       ]
     },
@@ -30670,10 +30653,6 @@
       "price_path": [
         {
           "ts": 1785287072,
-          "px": 0.57
-        },
-        {
-          "ts": 1785289464,
           "px": 0.57
         }
       ]
@@ -30800,12 +30779,7 @@
       "outcome": "Dalibor Svrcina",
       "status": "resting",
       "ts": "2026-07-29T01:20:19Z",
-      "price_path": [
-        {
-          "ts": 1785289465,
-          "px": 0.67
-        }
-      ]
+      "price_path": []
     },
     {
       "price": 0.41,
@@ -30820,13 +30794,7 @@
       "market_slug": "astatc-atp-densha-rinhij-2026-07-27-sw1",
       "outcome": "Denis Shapovalov",
       "status": "resting",
-      "ts": "2026-07-29T01:35:02Z",
-      "price_path": [
-        {
-          "ts": 1785289465,
-          "px": 0.63
-        }
-      ]
+      "ts": "2026-07-29T01:35:02Z"
     }
   ],
   "pm_stats": {
