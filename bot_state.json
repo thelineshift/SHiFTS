@@ -43,15 +43,6 @@
   "bot_version": "9.24.21",
   "unannounced_results": [
     {
-      "id": "toronto-blue-jays-ml-0728",
-      "desc": "Toronto Blue Jays ML",
-      "odds": 118,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Toronto Blue Jays 6, Washington Nationals 8",
-      "tier": "lock"
-    },
-    {
       "id": "chicago-cubs-ml-0728",
       "desc": "Chicago Cubs ML",
       "odds": -112,
