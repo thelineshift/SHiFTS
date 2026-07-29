@@ -2266,11 +2266,12 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -106,
-        "away_ml": -114,
+        "home_ml": 100,
+        "away_ml": -121,
         "total": 181.5,
-        "ts": 1785338836
-      }
+        "ts": 1785342436
+      },
+      "last_alert_odds": 100
     },
     {
       "id": "tampa-bay-rays-ml-0729",
@@ -2289,10 +2290,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -141,
-        "away_ml": 117,
-        "total": 8.0,
-        "ts": 1785340636
+        "home_ml": -149,
+        "away_ml": 123,
+        "total": 7.5,
+        "ts": 1785342437
       }
     },
     {
@@ -2498,12 +2499,12 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -181,
-        "away_ml": 149,
+        "home_ml": -198,
+        "away_ml": 162,
         "total": 7.5,
-        "ts": 1785340636
+        "ts": 1785342437
       },
-      "last_alert_odds": 149
+      "last_alert_odds": 162
     },
     {
       "id": "boston-red-sox--1.5-0729",
@@ -2522,10 +2523,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 122,
-        "away_ml": -147,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 10.5,
-        "ts": 1785335506
+        "ts": 1785342437
       },
       "last_alert_odds": -156
     },
@@ -2610,12 +2611,12 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 148,
-        "away_ml": -180,
+        "home_ml": 141,
+        "away_ml": -172,
         "total": 156.5,
-        "ts": 1785338837
+        "ts": 1785342437
       },
-      "last_alert_odds": -187
+      "last_alert_odds": -172
     },
     {
       "id": "los-angeles-dodgers--1.5-0729",
@@ -2813,10 +2814,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -109,
-        "away_ml": -110,
+        "home_ml": -107,
+        "away_ml": -112,
         "total": 8.5,
-        "ts": 1785340637
+        "ts": 1785342438
       },
       "last_alert_odds": -114
     },
@@ -2910,7 +2911,14 @@
       "opp": "Colorado Rockies",
       "analysis": "54-53 overall, 28-24 at home \u2014 ML juiced to -163, so the -1.5 at the standard number is the bet; model makes San Diego Padres 69% straight up | \ud83d\udcb0 **Value hunt:** 54-53 overall, 28-24 at home \u2014 ML juiced to -163, so the -1.5 at the standard number is the bet; model makes San Diego Padres 69% straight",
       "homeTeam": "San Diego Padres",
-      "awayTeam": "Colorado Rockies"
+      "awayTeam": "Colorado Rockies",
+      "live_odds": {
+        "home_ml": -163,
+        "away_ml": 135,
+        "total": 8.5,
+        "ts": 1785342438
+      },
+      "last_alert_odds": -163
     },
     {
       "id": "chicago-cubs-ml-0729",
@@ -2927,7 +2935,13 @@
       "opp": "St. Louis Cardinals",
       "analysis": "61-46 overall, 31-24 on the road \u2014 our 56% vs book 50% (no-vig) | \ud83d\udcc8 **Market angle:** 61-46 overall, 31-24 on the road \u2014 our 56% vs book 50% (no-vig). The number's off by **6 points** \u2014 this is where CLV hunters eat.",
       "awayTeam": "Chicago Cubs",
-      "homeTeam": "St. Louis Cardinals"
+      "homeTeam": "St. Louis Cardinals",
+      "live_odds": {
+        "home_ml": -110,
+        "away_ml": -110,
+        "total": 8.0,
+        "ts": 1785342438
+      }
     },
     {
       "id": "cincinnati-reds-ml-0729",
@@ -2944,7 +2958,13 @@
       "opp": "Cleveland Guardians",
       "analysis": "50-56 overall, 23-29 at home \u2014 our 48% vs book 45% (no-vig) | \ud83d\udcb0 **Value hunt:** 50-56 overall, 23-29 at home \u2014 our 48% vs book 45% (no-vig). The book shaded this line toward the public side; we collect the **4 points** they left.",
       "homeTeam": "Cincinnati Reds",
-      "awayTeam": "Cleveland Guardians"
+      "awayTeam": "Cleveland Guardians",
+      "live_odds": {
+        "home_ml": 119,
+        "away_ml": -144,
+        "total": 9.0,
+        "ts": 1785342438
+      }
     },
     {
       "id": "flamengo-ml-0729",
