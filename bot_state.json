@@ -31665,7 +31665,7 @@
       "qty": 23,
       "market_slug": "astatc-atp-miczhe-marlan-2026-07-27-sw2",
       "outcome": "Michael Zheng",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T04:30:07Z",
       "price_path": [
         {
@@ -31676,7 +31676,8 @@
           "ts": 1785301473,
           "px": 0.65
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.58,
