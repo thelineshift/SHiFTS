@@ -1,10 +1,16 @@
 {
-  "ts": "2026-07-29T10:59:22Z",
+  "ts": "2026-07-29T11:01:48Z",
   "configured": true,
   "balance_usd": 115.57,
   "buying_power": 18.57,
   "positions": [],
   "open_orders": [
+    {
+      "market": "aec-lol-mgz-lps-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.53",
+      "qty": 3
+    },
     {
       "market": "aec-ow-wbg-tl-2026-07-29",
       "intent": "ORDER_INTENT_BUY_LONG",
