@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T18:57:19Z",
+  "updated": "2026-07-29T19:57:19Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2266,10 +2266,10 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": 104,
-        "away_ml": -126,
-        "total": 180.5,
-        "ts": 1785355036
+        "home_ml": 100,
+        "away_ml": -121,
+        "total": 181.5,
+        "ts": 1785342436
       },
       "last_alert_odds": 100
     },
@@ -2290,10 +2290,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -144,
-        "away_ml": 119,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 7.5,
-        "ts": 1785355036
+        "ts": 1785342437
       }
     },
     {
@@ -2823,7 +2823,10 @@
         "total": 8.5,
         "ts": 1785342438
       },
-      "last_alert_odds": -114
+      "last_alert_odds": -114,
+      "result": "LOSS",
+      "score": "Atlanta Braves 2, New York Mets 3",
+      "units_result": -1.0
     },
     {
       "id": "los-angeles-dodgers-ml-0729",
