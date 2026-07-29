@@ -2313,12 +2313,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -158,
-        "away_ml": 131,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 8.5,
-        "ts": 1785346036
+        "ts": 1785353236
       },
-      "last_alert_odds": -163
+      "last_alert_odds": -175
     },
     {
       "id": "over-8.5-0729",
@@ -2394,10 +2394,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -104,
-        "away_ml": -116,
+        "home_ml": -117,
+        "away_ml": -103,
         "total": 7.5,
-        "ts": 1785349636
+        "ts": 1785353236
       },
       "last_alert_odds": -112
     },
@@ -2612,10 +2612,10 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 141,
-        "away_ml": -172,
-        "total": 157.5,
-        "ts": 1785349636
+        "home_ml": 148,
+        "away_ml": -181,
+        "total": 156.5,
+        "ts": 1785353237
       },
       "last_alert_odds": -172
     },
@@ -2636,10 +2636,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -168,
-        "away_ml": 139,
+        "home_ml": -171,
+        "away_ml": 141,
         "total": 9.5,
-        "ts": 1785346037
+        "ts": 1785353237
       },
       "last_alert_odds": -168
     },
@@ -2842,10 +2842,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -168,
-        "away_ml": 139,
+        "home_ml": -171,
+        "away_ml": 141,
         "total": 9.5,
-        "ts": 1785346037
+        "ts": 1785353237
       },
       "last_alert_odds": -167
     },
@@ -2923,12 +2923,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -158,
-        "away_ml": 131,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 8.5,
-        "ts": 1785346037
+        "ts": 1785353237
       },
-      "last_alert_odds": -163
+      "last_alert_odds": -175
     },
     {
       "id": "chicago-cubs-ml-0729",
@@ -2947,10 +2947,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -113,
-        "away_ml": -106,
+        "home_ml": -114,
+        "away_ml": -105,
         "total": 8.0,
-        "ts": 1785349637
+        "ts": 1785353238
       }
     },
     {
@@ -2971,9 +2971,9 @@
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
         "home_ml": 119,
-        "away_ml": -144,
+        "away_ml": -143,
         "total": 9.0,
-        "ts": 1785342438
+        "ts": 1785353238
       }
     },
     {
