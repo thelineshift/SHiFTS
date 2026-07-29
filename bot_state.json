@@ -34370,9 +34370,6 @@
     "2026-07-29-22": "store-ad"
   },
   "board_posted": [
-    "aec-lol-bar-gxi-2026-07-28",
-    "aec-lol-kcb-gal-2026-07-28",
-    "aec-cs2-tdk-baks-2026-07-28",
     "aec-cs2-mibr-fxw7-2026-07-28",
     "aec-lol-sly-ijc-2026-07-28",
     "astatc-wta-xiywan-catmcn-2026-07-26-sw2",
@@ -34429,7 +34426,10 @@
     "aec-mlb-chc-stl-2026-07-29",
     "atc-mlb-tex-tb-2026-07-29-f5-tb",
     "aec-mlb-cle-cin-2026-07-29",
-    "atc-mlb-cle-cin-2026-07-29-f5-cle"
+    "atc-mlb-cle-cin-2026-07-29-f5-cle",
+    "atc-mlb-atl-nym-2026-07-28-f5-nym",
+    "atc-mlb-chc-stl-2026-07-29-f5-chc",
+    "atc-mlb-cle-cin-2026-07-29-f5-cin"
   ],
   "odds_api": {
     "month": "2026-07",
