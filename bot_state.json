@@ -122,6 +122,15 @@
       "units": 1.95,
       "score": "Philadelphia Phillies 6, Miami Marlins 8",
       "tier": "whale"
+    },
+    {
+      "id": "washington-nationals-ml-0729",
+      "desc": "Washington Nationals ML",
+      "odds": 103,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Toronto Blue Jays 5, Washington Nationals 2",
+      "tier": "sharp"
     }
   ],
   "last_x_receipt_ts": 1785356237.4237459,
