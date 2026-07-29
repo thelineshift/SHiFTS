@@ -1,16 +1,10 @@
 {
-  "ts": "2026-07-29T04:29:20Z",
+  "ts": "2026-07-29T04:44:20Z",
   "configured": true,
   "balance_usd": 110.91,
   "buying_power": 27.91,
   "positions": [],
   "open_orders": [
-    {
-      "market": "aec-mlb-tex-tb-2026-07-30",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.55",
-      "qty": 2
-    },
     {
       "market": "aec-mlb-sea-lad-2026-07-30",
       "intent": "ORDER_INTENT_BUY_SHORT",
@@ -40,6 +34,24 @@
       "intent": "ORDER_INTENT_BUY_SHORT",
       "price": "0.58",
       "qty": 4
+    },
+    {
+      "market": "aec-wnba-ny-lv-2026-07-30",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.58",
+      "qty": 3
+    },
+    {
+      "market": "astatc-atp-miczhe-marlan-2026-07-27-sw2",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.25",
+      "qty": 23
+    },
+    {
+      "market": "aec-mlb-tex-tb-2026-07-30",
+      "intent": "ORDER_INTENT_BUY_SHORT",
+      "price": "0.55",
+      "qty": 2
     }
   ]
 }
