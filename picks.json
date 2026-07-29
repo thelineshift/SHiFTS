@@ -2289,10 +2289,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 7.5,
-        "ts": 1785330614
+        "ts": 1785331357
       }
     },
     {
@@ -2369,10 +2369,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 123,
-        "away_ml": -149,
+        "home_ml": 119,
+        "away_ml": -144,
         "total": 7.5,
-        "ts": 1785302059
+        "ts": 1785331357
       }
     },
     {
@@ -2455,10 +2455,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -180,
-        "away_ml": 148,
-        "total": 8.5,
-        "ts": 1785329689
+        "home_ml": -184,
+        "away_ml": 151,
+        "total": 9.0,
+        "ts": 1785331357
       },
       "last_alert_odds": -175
     },
@@ -2496,10 +2496,10 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -161,
-        "away_ml": 133,
+        "home_ml": -159,
+        "away_ml": 132,
         "total": 7.5,
-        "ts": 1785330614
+        "ts": 1785331357
       },
       "last_alert_odds": 135
     },
