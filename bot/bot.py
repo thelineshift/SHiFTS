@@ -9545,4 +9545,4 @@ def run_guarded():
         time.sleep(120)
     sys.exit(1)  # non-zero so Railway actually restarts us after the throttle nap
 
-run
+run_guarded()
