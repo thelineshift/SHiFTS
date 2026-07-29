@@ -2291,8 +2291,8 @@
       "live_odds": {
         "home_ml": -141,
         "away_ml": 117,
-        "total": 7.5,
-        "ts": 1785336009
+        "total": 8.0,
+        "ts": 1785340636
       }
     },
     {
@@ -2433,10 +2433,10 @@
       "homeTeam": "Washington Nationals",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -103,
-        "away_ml": -117,
-        "total": 9.0,
-        "ts": 1785336010
+        "home_ml": -101,
+        "away_ml": -119,
+        "total": 9.5,
+        "ts": 1785340636
       },
       "last_alert_odds": -103
     },
@@ -2498,12 +2498,12 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -172,
-        "away_ml": 142,
+        "home_ml": -181,
+        "away_ml": 149,
         "total": 7.5,
-        "ts": 1785338837
+        "ts": 1785340636
       },
-      "last_alert_odds": 135
+      "last_alert_odds": 149
     },
     {
       "id": "boston-red-sox--1.5-0729",
@@ -2546,10 +2546,10 @@
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 112,
-        "away_ml": -135,
+        "home_ml": 109,
+        "away_ml": -131,
         "total": 9.5,
-        "ts": 1785312859
+        "ts": 1785340637
       },
       "last_alert_odds": -131
     },
@@ -2813,10 +2813,10 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -103,
-        "away_ml": -117,
+        "home_ml": -109,
+        "away_ml": -110,
         "total": 8.5,
-        "ts": 1785338837
+        "ts": 1785340637
       },
       "last_alert_odds": -114
     },
