@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.22'  # VOLUME LAW: EDGE 2.5%/240min, comeback dip 10pp/tree bar 3pp, anchorless-comeback unblocked w/ trap guard, 14 slots
+BOT_VERSION = '9.24.23'  # LIVE-STATE LAW: live MLB/WNBA/NBA entries on pre-game model + current score + time-left vs live price (8pp bar, 0.12-0.75)
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4429,6 +4429,46 @@ def pm_sport_prob(games, team_a, team_b, leagues=None):
         return p_home if na in gh else 1 - p_home
     return None
 
+# ---- LIVE-STATE LAW (owner decree 2026-07-29 PM#4: "I see live MLB we don't have bets
+# on — fix it, there must be bets we can place on these games"). The retired live-fade
+# used STALE pregame reads against live money. This is the opposite: pre-game strength
+# plus CURRENT score and time remaining — the state, recomputed every cycle. Remaining
+# scoring ~ Normal(team edge x time left, sd x sqrt(time left)); win prob = P(margin +
+# remaining diff > 0). Both sides eligible; the math, not a side, picks the entry.
+_LIVE_STATE = {'mlb': (9, 4.4, 8.5), 'wnba': (4, 13.5, 40.0), 'nba': (4, 13.0, 40.0)}
+
+def _pm_find_live(games, team_a, team_b):
+    """The name-matched ESPN game dict when it's LIVE ('in') — carries score + period."""
+    na, nb = norm_txt(team_a), norm_txt(team_b)
+    for g in games:
+        if g.get('sport') not in _LIVE_STATE or g.get('state') != 'in':
+            continue
+        gh, ga = norm_txt(g['home']), norm_txt(g['away'])
+        if (na in gh and nb in ga) or (na in ga and nb in gh):
+            return g
+    return None
+
+def _live_prob(sport, p0, g, a_home):
+    """Live win prob for the outcome team: p0 (pre-game model) + margin + time left."""
+    import math
+    cfg = _LIVE_STATE.get(sport or '')
+    if not cfg or p0 is None:
+        return None
+    nper, sd_full, edge_full = cfg
+    period = int(g.get('period') or 0)
+    if period < 1:
+        period = 1
+    rem = max(0.2, nper - (period - 0.5))
+    frac = rem / nper
+    mu = (p0 - 0.5) * edge_full * frac
+    sd = sd_full * math.sqrt(frac)
+    if sd <= 0:
+        return None
+    margin = (g.get('sh', 0) - g.get('sa', 0)) if a_home else (g.get('sa', 0) - g.get('sh', 0))
+    z = (margin + mu) / sd
+    p = 0.5 * (1 + math.erf(z / math.sqrt(2)))
+    return min(0.97, max(0.03, p))
+
 def pm_esport_prob(cache, team_a, team_b):
     """Model win prob for team_a via PandaScore form on a name-matched match.
     Returns (prob, league_name) — the league feeds the SCAN_NOTABLE gate (7/29 autopsy:
@@ -4886,9 +4926,10 @@ def pm_trader_scan(st):
                 elif _ten:
                     _bo = 5 if any(k in _ten_norm(title).replace(' ', '') for k in ('australianopen', 'roland', 'frenchopen', 'wimbledon', 'usopen')) else 3
                 cbc[_cbk] = {'p0': o['price'], 'm0': pm_, 'bo': _bo, 'ts': now, 'ten': _ten, 'esp': bool(_esp_ev)}
+            _lsg = _pm_find_live(games, o['team'], others[0] if others else '') if live else None
             _book_ok = len(outcomes) == 2 and all(0.005 < float(x.get('price') or 0) < 0.995 for x in outcomes)
             edge = (pm_ - o['price']) if pm_ is not None else None
-            if edge is not None and edge > 0.35 and not (live and _cb0):
+            if edge is not None and edge > 0.35 and not (live and (_cb0 or _lsg)):
                 # anchored live dips bypass the cap: the set-tree floor, not stale pre-match
                 # pm_, is the benchmark down a set/map (a 0.70 model vs a 0.30 dipped price
                 # reads as "edge 0.40" — that's the comeback profile, not a stale line)
@@ -4977,9 +5018,26 @@ def pm_trader_scan(st):
                                 taken_keys.add(_tk)
                                 expo += stake
                                 print(f"[trader] comeback: {o['team']} @ {o['price']:.2f} — model-only {pm_:.0%}, floor {_fl:.0%} ({title[:44]})")
+                # LIVE-STATE entries (MLB/WNBA/NBA): pre-game model + current score + time
+                # left vs the live price — 8pp bar (coarse model), 0.12-0.75 window (never a
+                # tail, never a lotto). kind='LIVEEDGE' — its own tuning/autopsy bucket.
+                if _lsg and pm_ is not None:
+                    hb['lsg'] = hb.get('lsg', 0) + 1
+                    _lp = _live_prob(_lsg.get('sport'), pm_, _lsg, norm_txt(o['team']) in norm_txt(_lsg['home']))
+                    if _lp is not None and 0.12 <= o['price'] <= 0.75 and _lp >= o['price'] + 0.08 + _tb('EDGE'):
+                        stake = min(pm_kelly(_lp, o['price'], B) * _tm('EDGE'), _desk_trade_cap(B, pmstats))
+                        if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
+                            intents.append({**o, 'stake': round(stake, 2), 'kind': 'LIVEEDGE', 'p_model': _lp,
+                                            'event': title, 'ev_start': ev_start,
+                                            'reason': f"[live-state] {_lsg.get('det', 'live')} — pre-game {pm_:.0%} + score {_lsg.get('sa', 0)}-{_lsg.get('sh', 0)} → {_lp:.0%} vs {o['price']:.0%}, {_lp - o['price']:.0%} edge, half-Kelly"})
+                            taken_keys.add(_tk)
+                            expo += stake
+                            print(f"[trader] live-state: {o['team']} @ {o['price']:.2f} — {_lp:.0%} ({title[:40]})")
+                    elif _lp is not None and 0.12 <= o['price'] <= 0.75:
+                        hb['lsf'] = hb.get('lsf', 0) + 1  # state priced, but under the 8pp bar
                 # NO-TAIL LAW (owner decree 7/29 PM#2): live near-certainty yield RETIRED
-                # across the board — "no money in 95% favorites." Live entries are now
-                # COMEBACK-only (benchmarked dips), never a chase, never a fade.
+                # across the board — "no money in 95% favorites." Live entries are
+                # COMEBACK + LIVE-STATE only (benchmarked), never a chase, never a fade.
                 continue
             # NO-TAIL LAW: pregame tails RETIRED too — band-value EDGE + comebacks + ARB only.
             if pm_ is None:
@@ -5528,7 +5586,7 @@ async def pm_trader():
             _lgmix = ' '.join(f"{k}:{v}" for k, v in sorted(hb.get('leagues', {}).items())) or 'none'
             print(f"[trader] cycle: {hb.get('vs', '?')} vs-events ({_lgmix}) · {hb.get('three_way', '?')} 3-way priced · "
                   f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f} · cb {hb.get('cb', 0)} · "
-                  f"live {hb.get('lv', 0)}(esp {hb.get('lvesp', 0)}) cb g{hb.get('cbgate', 0)}/fl{hb.get('cbfl', 0)} tw3 {hb.get('tw3', 0)}/{hb.get('tw3b', 0)} band {hb.get('band', 0)}/nf{hb.get('bandfail', 0)}")
+                  f"live {hb.get('lv', 0)}(esp {hb.get('lvesp', 0)}) cb g{hb.get('cbgate', 0)}/fl{hb.get('cbfl', 0)} tw3 {hb.get('tw3', 0)}/{hb.get('tw3b', 0)} band {hb.get('band', 0)}/nf{hb.get('bandfail', 0)} ls {hb.get('lsg', 0)}/nf{hb.get('lsf', 0)}")
             for _tw in (hb.get('tuning') or []):
                 print(f"[trader] tuning: {_tw}")
         else:
@@ -8199,10 +8257,19 @@ def se_espn_all(dates):
                             ma = int(fp)
                     except Exception:
                         pass
+                _stt = comp.get('status') or {}
+                _styp = _stt.get('type') or {}
+                try:
+                    _sc_h, _sc_a = int(float(home.get('score') or 0)), int(float(away.get('score') or 0))
+                except Exception:
+                    _sc_h = _sc_a = 0
                 out.append({'sport': sport, 'start': e['date'], 'eid': e.get('id'),
                             'home': home['team']['displayName'], 'away': away['team']['displayName'],
                             'recs': recs, 'ml_home': mh, 'ml_away': ma,
-                            'total': odds.get('overUnder'), 'spread': odds.get('spread')})
+                            'total': odds.get('overUnder'), 'spread': odds.get('spread'),
+                            'state': _styp.get('state') or '', 'period': _stt.get('period') or 0,
+                            'det': _styp.get('shortDetail') or _styp.get('detail') or '',
+                            'sh': _sc_h, 'sa': _sc_a})
             except Exception:
                 continue
     return out
