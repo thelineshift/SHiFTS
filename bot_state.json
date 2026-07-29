@@ -378,7 +378,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "d14be2ad-8cf8-492b-9485-34229b0702ee",
   "op_month": "2026-07",
-  "op_calls": 78,
+  "op_calls": 80,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1261,8 +1261,33 @@
         "1374364": "Butterfly"
       },
       "meta_ts": 1784925282.1446652,
-      "lines": [],
-      "odds_ts": 1785326454.4585397
+      "lines": [
+        [
+          "Shinden",
+          "Galorys",
+          1.045,
+          7.63
+        ],
+        [
+          "Mibr",
+          "LP",
+          1.613,
+          2.23
+        ],
+        [
+          "Fluxo W7M",
+          "Bounty Hunters",
+          1.431,
+          2.7
+        ],
+        [
+          "NRG Esports",
+          "Marsborne",
+          1.185,
+          4.21
+        ]
+      ],
+      "odds_ts": 1785355223.8909476
     },
     "valorant": {
       "lines": [
