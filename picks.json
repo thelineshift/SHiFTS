@@ -2268,8 +2268,8 @@
       "live_odds": {
         "home_ml": 109,
         "away_ml": -132,
-        "total": 180.5,
-        "ts": 1785356642
+        "total": 181.5,
+        "ts": 1785358443
       },
       "last_alert_odds": 100
     },
@@ -2953,10 +2953,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -114,
-        "away_ml": -105,
+        "home_ml": -109,
+        "away_ml": -111,
         "total": 8.0,
-        "ts": 1785353238
+        "ts": 1785358443
       }
     },
     {
@@ -2976,10 +2976,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": 114,
-        "away_ml": -137,
-        "total": 9.0,
-        "ts": 1785356643
+        "home_ml": 109,
+        "away_ml": -132,
+        "total": 8.5,
+        "ts": 1785358443
       }
     },
     {
