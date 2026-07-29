@@ -33976,7 +33976,7 @@
       "qty": 3,
       "market_slug": "aec-lol-mgz-lps-2026-07-29",
       "outcome": "Lupus Esports",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T11:00:25Z",
       "price_path": [
         {
@@ -34007,7 +34007,8 @@
           "ts": 1785335461,
           "px": 0.51
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.98,
