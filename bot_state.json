@@ -25830,10 +25830,6 @@
       "ts": "2026-07-27T16:25:14Z",
       "price_path": [
         {
-          "ts": 1785281063,
-          "px": 0.525
-        },
-        {
           "ts": 1785283460,
           "px": 0.525
         },
@@ -25923,6 +25919,10 @@
         },
         {
           "ts": 1785332558,
+          "px": 0.54
+        },
+        {
+          "ts": 1785334358,
           "px": 0.54
         }
       ]
@@ -26068,10 +26068,6 @@
       "ts": "2026-07-27T17:30:12Z",
       "price_path": [
         {
-          "ts": 1785279261,
-          "px": 0.25
-        },
-        {
           "ts": 1785281064,
           "px": 0.25
         },
@@ -26161,6 +26157,10 @@
         },
         {
           "ts": 1785332558,
+          "px": 0.25
+        },
+        {
+          "ts": 1785334358,
           "px": 0.25
         }
       ]
@@ -30897,94 +30897,13 @@
       "qty": 8,
       "market_slug": "aec-lol-blg-lgd-2026-07-29",
       "outcome": "LGD Gaming",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T00:45:33Z",
-      "price_path": [
-        {
-          "ts": 1785288272,
-          "px": 0.14
-        },
-        {
-          "ts": 1785291265,
-          "px": 0.14
-        },
-        {
-          "ts": 1785293079,
-          "px": 0.14
-        },
-        {
-          "ts": 1785295465,
-          "px": 0.14
-        },
-        {
-          "ts": 1785298470,
-          "px": 0.14
-        },
-        {
-          "ts": 1785300866,
-          "px": 0.14
-        },
-        {
-          "ts": 1785302670,
-          "px": 0.14
-        },
-        {
-          "ts": 1785305070,
-          "px": 0.14
-        },
-        {
-          "ts": 1785307466,
-          "px": 0.14
-        },
-        {
-          "ts": 1785309274,
-          "px": 0.14
-        },
-        {
-          "ts": 1785311665,
-          "px": 0.14
-        },
-        {
-          "ts": 1785313470,
-          "px": 0.14
-        },
-        {
-          "ts": 1785315871,
-          "px": 0.14
-        },
-        {
-          "ts": 1785318266,
-          "px": 0.14
-        },
-        {
-          "ts": 1785320066,
-          "px": 0.14
-        },
-        {
-          "ts": 1785321866,
-          "px": 0.14
-        },
-        {
-          "ts": 1785324109,
-          "px": 0.14
-        },
-        {
-          "ts": 1785326508,
-          "px": 0.07
-        },
-        {
-          "ts": 1785329095,
-          "px": 0.07
-        },
-        {
-          "ts": 1785331332,
-          "px": 0.29
-        },
-        {
-          "ts": 1785333161,
-          "px": 0.1
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T14:12:40Z",
+      "pnl": -1.12,
+      "autopsy": "model 37% vs market 14% missed \u2014 logged for the playbook review. Taken 0.14, rode to 0.10 before the result \u2014 beat the number by 4\u00a2 \u2705"
     },
     {
       "price": 0.55,
@@ -33866,15 +33785,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 36,
-    "losses": 86,
-    "pnl": -72.53,
+    "losses": 87,
+    "pnl": -73.65,
     "trades": 453,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-14",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 101.46,
-    "net": 37.46,
+    "account": 100.34,
+    "net": 36.34,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -33884,7 +33803,7 @@
       ],
       "EDGE": [
         27,
-        71,
+        72,
         0
       ],
       "LIVE-BET": [
@@ -33904,14 +33823,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T17:44:31Z",
-      "kind": "TAIL",
-      "outcome": "Zeynep Sonmez",
-      "result": "LOSS",
-      "pnl": -1.68,
-      "lesson": "the near-certain lost \u2014 tail yield is not free money. After 20 settled tails, recheck the 0.93 bar against the actual hit rate. Taken 0.90, slid to 0.01 before the result \u2014 the number ran 89\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-28T17:44:33Z",
       "kind": "EDGE",
@@ -34143,6 +34054,14 @@
       "result": "LOSS",
       "pnl": -1.28,
       "lesson": "model 45% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.21 before the result \u2014 beat the number by 10\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T14:12:40Z",
+      "kind": "EDGE",
+      "outcome": "LGD Gaming",
+      "result": "LOSS",
+      "pnl": -1.12,
+      "lesson": "model 37% vs market 14% missed \u2014 logged for the playbook review. Taken 0.14, rode to 0.10 before the result \u2014 beat the number by 4\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -34226,7 +34145,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785330625.27028,
+  "dep_checked_ts": 1785334360.4046383,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
   "x_ads": [
