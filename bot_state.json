@@ -43,15 +43,6 @@
   "bot_version": "9.24.18",
   "unannounced_results": [
     {
-      "id": "3-leg-parlay-0728-sharp",
-      "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
-      "odds": 262,
-      "result": "WIN",
-      "units": 1.31,
-      "score": "Legs: None: win \u00b7 None: win \u00b7 None: win",
-      "tier": "sharp"
-    },
-    {
       "id": "3-leg-parlay-0728-lock",
       "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
       "odds": 262,
@@ -160,7 +151,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785326504.6045616,
+  "last_x_receipt_ts": 1785329090.6965144,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
