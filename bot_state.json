@@ -43,6 +43,15 @@
   "bot_version": "9.24.21",
   "unannounced_results": [
     {
+      "id": "chicago-cubs-ml-0728",
+      "desc": "Chicago Cubs ML",
+      "odds": -112,
+      "result": "WIN",
+      "units": 0.89,
+      "score": "Chicago Cubs 10, St. Louis Cardinals 2",
+      "tier": "lock"
+    },
+    {
       "id": "athletics-ml-0728",
       "desc": "Athletics ML",
       "odds": 158,
@@ -122,18 +131,9 @@
       "units": 1.95,
       "score": "Philadelphia Phillies 6, Miami Marlins 8",
       "tier": "whale"
-    },
-    {
-      "id": "washington-nationals-ml-0729",
-      "desc": "Washington Nationals ML",
-      "odds": 103,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Toronto Blue Jays 5, Washington Nationals 2",
-      "tier": "sharp"
     }
   ],
-  "last_x_receipt_ts": 1785356237.4237459,
+  "last_x_receipt_ts": 1785347862.33238,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -30290,10 +30290,6 @@
       "ts": "2026-07-28T16:25:06Z",
       "price_path": [
         {
-          "ts": 1785305068,
-          "px": 0.24
-        },
-        {
           "ts": 1785307464,
           "px": 0.24
         },
@@ -30384,6 +30380,10 @@
         {
           "ts": 1785353838,
           "px": 0.28
+        },
+        {
+          "ts": 1785356237,
+          "px": 0.35
         }
       ]
     },
