@@ -34325,16 +34325,6 @@
     "2026-07-29-22": "store-ad"
   },
   "board_posted": [
-    "astatc-wta-marsto-peyste-2026-07-26-sw1",
-    "aec-wnba-conn-wsh-2026-07-28",
-    "astatc-wta-yulsta-sloste-2026-07-26-sw1",
-    "astatc-wta-darvid-marrib-2026-07-26-sw1",
-    "astatc-wta-darvid-marrib-2026-07-26-sw2",
-    "astatc-wta-zeyson-cadbra-2026-07-26-sw2",
-    "aec-lol-ban-myth-2026-07-28",
-    "astatc-wta-yulsta-sloste-2026-07-26-sw2",
-    "aec-lol-jl-vitb-2026-07-28",
-    "aec-lol-jsk-3bl-2026-07-28",
     "aec-lol-bar-gxi-2026-07-28",
     "aec-lol-kcb-gal-2026-07-28",
     "aec-cs2-tdk-baks-2026-07-28",
@@ -34384,7 +34374,17 @@
     "aec-hundredw-wfe-trr-2026-07-29",
     "aec-lol-drm-tung-2026-07-29",
     "aec-atp-jjwol-zhizha-2026-07-27",
-    "aec-lol-zzg-wge-2026-07-29"
+    "aec-lol-zzg-wge-2026-07-29",
+    "aec-mlb-atl-nym-2026-07-28",
+    "atc-mlb-kc-min-2026-07-29-f5-kc",
+    "atc-mlb-hou-laa-2026-07-29-f5-hou",
+    "atc-mlb-hou-laa-2026-07-29-f5-laa",
+    "atc-mlb-nyy-cws-2026-07-29-f5-cws",
+    "atc-mlb-bos-ath-2026-07-29-f5-bos",
+    "aec-mlb-chc-stl-2026-07-29",
+    "atc-mlb-tex-tb-2026-07-29-f5-tb",
+    "aec-mlb-cle-cin-2026-07-29",
+    "atc-mlb-cle-cin-2026-07-29-f5-cle"
   ],
   "odds_api": {
     "month": "2026-07",
