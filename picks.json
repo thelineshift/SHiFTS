@@ -2374,10 +2374,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 120,
-        "away_ml": -145,
+        "home_ml": 123,
+        "away_ml": -149,
         "total": 7.5,
-        "ts": 1785365340
+        "ts": 1785367140
       }
     },
     {
@@ -2560,10 +2560,10 @@
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 109,
-        "away_ml": -131,
+        "home_ml": 105,
+        "away_ml": -126,
         "total": 9.5,
-        "ts": 1785340637
+        "ts": 1785367140
       },
       "last_alert_odds": -131
     },
@@ -2648,12 +2648,12 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -176,
-        "away_ml": 145,
+        "home_ml": -180,
+        "away_ml": 148,
         "total": 9.5,
-        "ts": 1785363540
+        "ts": 1785367140
       },
-      "last_alert_odds": -168
+      "last_alert_odds": -180
     },
     {
       "id": "miami-marlins-ml-0729",
@@ -2857,10 +2857,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -176,
-        "away_ml": 145,
+        "home_ml": -180,
+        "away_ml": 148,
         "total": 9.5,
-        "ts": 1785363540
+        "ts": 1785367142
       },
       "last_alert_odds": -179
     },
