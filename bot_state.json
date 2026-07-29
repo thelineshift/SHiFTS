@@ -34034,11 +34034,11 @@
     "pnl": -58.37,
     "trades": 466,
     "last_recap": "2026-07-29",
-    "last_recap_hour": "2026-07-29-20",
+    "last_recap_hour": "2026-07-29-22",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 112.19,
-    "net": 48.19,
+    "account": 54.66,
+    "net": -9.34,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
