@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.17'  # TAIL-WINDOW + MARKET-TAIL LAW: same-day tails deploy idle cash, model-less markets tail-eligible
+BOT_VERSION = '9.24.18'  # 3-WAY MARKET-TAIL: UEFA/early-season favorites >=0.94 on complete books tail-eligible same-day
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4744,6 +4744,29 @@ def pm_trader_scan(st):
                 expo += stake
             continue
         if three_way:
+            # MARKET-TAIL for draw sports (7/29 deployment gap): a >= 0.94 favorite on a
+            # complete 3-leg book (both sides + draw quoted) needs no model — early-season
+            # UEFA qualifiers have no records to price anyway. Same-day window, half stake,
+            # one side per event. Tonight's Rapid Wien / Crvena zvezda profile.
+            if not live and draw_px is not None and 0.005 < draw_px < 0.995 and len(outcomes) == 2 and ts_ev - now < TAIL_FAR_SECS:
+                for o in outcomes:
+                    if o['price'] < 0.94:
+                        continue
+                    if (o['slug'], o['team']) in have or o['slug'] in have_slugs:
+                        continue
+                    _tk3t = (title, norm_txt(o['team']))
+                    if _tk3t in taken_keys:
+                        continue
+                    _ev_open3 = sum(float(t.get('stake', 0)) for t in held_trades if (t.get('event') or '') == title)
+                    if _ev_open3 >= _desk_event_cap(B, pmstats):
+                        continue
+                    stake = min(B * 0.15, B - 1, _desk_trade_cap(B, pmstats)) * 0.5 * _tm('TAIL')
+                    if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
+                        intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': None,
+                                        'event': title, 'ev_start': ev_start,
+                                        'reason': f"3-way market-tail — favorite {o['price']:.0%} on a complete book (draw {draw_px:.0%}), settling today, half size"})
+                        taken_keys.add(_tk3t)
+                        expo += stake
             # ALL-SPORTS LAW (owner decree 2026-07-27): draw sports get PRICED, not
             # skipped. Model rates decisive-result strength (draw-adjusted soccer
             # records via _pm_rec); outright prob = (1 - book draw) x decisive prob.
