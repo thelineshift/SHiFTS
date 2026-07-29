@@ -2313,10 +2313,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -158,
+        "away_ml": 131,
         "total": 8.5,
-        "ts": 1785338836
+        "ts": 1785346036
       },
       "last_alert_odds": -163
     },
@@ -2394,11 +2394,12 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 108,
-        "away_ml": -130,
+        "home_ml": -107,
+        "away_ml": -112,
         "total": 7.5,
-        "ts": 1785333157
-      }
+        "ts": 1785346036
+      },
+      "last_alert_odds": -112
     },
     {
       "id": "fortaleza-ml-0729",
@@ -2635,12 +2636,12 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -158,
-        "away_ml": 131,
+        "home_ml": -168,
+        "away_ml": 139,
         "total": 9.5,
-        "ts": 1785336010
+        "ts": 1785346037
       },
-      "last_alert_odds": -156
+      "last_alert_odds": -168
     },
     {
       "id": "miami-marlins-ml-0729",
@@ -2838,10 +2839,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -158,
-        "away_ml": 131,
+        "home_ml": -168,
+        "away_ml": 139,
         "total": 9.5,
-        "ts": 1785336010
+        "ts": 1785346037
       },
       "last_alert_odds": -167
     },
@@ -2916,10 +2917,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -158,
+        "away_ml": 131,
         "total": 8.5,
-        "ts": 1785342438
+        "ts": 1785346037
       },
       "last_alert_odds": -163
     },
