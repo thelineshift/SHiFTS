@@ -26548,106 +26548,13 @@
       "qty": 4,
       "market_slug": "aec-valorant-gx-tl-2026-07-29",
       "outcome": "GIANTX",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T17:30:12Z",
-      "price_path": [
-        {
-          "ts": 1785293075,
-          "px": 0.25
-        },
-        {
-          "ts": 1785295461,
-          "px": 0.25
-        },
-        {
-          "ts": 1785298466,
-          "px": 0.25
-        },
-        {
-          "ts": 1785300862,
-          "px": 0.25
-        },
-        {
-          "ts": 1785302665,
-          "px": 0.25
-        },
-        {
-          "ts": 1785305065,
-          "px": 0.25
-        },
-        {
-          "ts": 1785307462,
-          "px": 0.25
-        },
-        {
-          "ts": 1785309270,
-          "px": 0.25
-        },
-        {
-          "ts": 1785311070,
-          "px": 0.25
-        },
-        {
-          "ts": 1785313466,
-          "px": 0.25
-        },
-        {
-          "ts": 1785315867,
-          "px": 0.25
-        },
-        {
-          "ts": 1785318262,
-          "px": 0.25
-        },
-        {
-          "ts": 1785320062,
-          "px": 0.25
-        },
-        {
-          "ts": 1785321863,
-          "px": 0.25
-        },
-        {
-          "ts": 1785324105,
-          "px": 0.25
-        },
-        {
-          "ts": 1785325905,
-          "px": 0.25
-        },
-        {
-          "ts": 1785327759,
-          "px": 0.25
-        },
-        {
-          "ts": 1785330620,
-          "px": 0.25
-        },
-        {
-          "ts": 1785332558,
-          "px": 0.25
-        },
-        {
-          "ts": 1785334358,
-          "px": 0.25
-        },
-        {
-          "ts": 1785336615,
-          "px": 0.27
-        },
-        {
-          "ts": 1785338848,
-          "px": 0.19
-        },
-        {
-          "ts": 1785341240,
-          "px": 0.12
-        },
-        {
-          "ts": 1785343044,
-          "px": 0.08
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T17:07:17Z",
+      "pnl": -1.08,
+      "autopsy": "model 50% vs market 27% missed \u2014 logged for the playbook review. Taken 0.27, slid to 0.08 before the result \u2014 the number ran 19\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.34,
@@ -27439,106 +27346,13 @@
       "qty": 2,
       "market_slug": "aec-valorant-skn-ggo-2026-07-29",
       "outcome": "SK Nebula",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T00:45:02Z",
-      "price_path": [
-        {
-          "ts": 1785293076,
-          "px": 0.45
-        },
-        {
-          "ts": 1785295462,
-          "px": 0.44
-        },
-        {
-          "ts": 1785298466,
-          "px": 0.44
-        },
-        {
-          "ts": 1785300863,
-          "px": 0.44
-        },
-        {
-          "ts": 1785302666,
-          "px": 0.44
-        },
-        {
-          "ts": 1785305066,
-          "px": 0.44
-        },
-        {
-          "ts": 1785307463,
-          "px": 0.44
-        },
-        {
-          "ts": 1785309271,
-          "px": 0.44
-        },
-        {
-          "ts": 1785311071,
-          "px": 0.44
-        },
-        {
-          "ts": 1785313467,
-          "px": 0.46
-        },
-        {
-          "ts": 1785315867,
-          "px": 0.46
-        },
-        {
-          "ts": 1785318263,
-          "px": 0.46
-        },
-        {
-          "ts": 1785320063,
-          "px": 0.46
-        },
-        {
-          "ts": 1785321863,
-          "px": 0.46
-        },
-        {
-          "ts": 1785324106,
-          "px": 0.48
-        },
-        {
-          "ts": 1785326505,
-          "px": 0.48
-        },
-        {
-          "ts": 1785329093,
-          "px": 0.48
-        },
-        {
-          "ts": 1785331329,
-          "px": 0.51
-        },
-        {
-          "ts": 1785333159,
-          "px": 0.51
-        },
-        {
-          "ts": 1785335456,
-          "px": 0.52
-        },
-        {
-          "ts": 1785337640,
-          "px": 0.56
-        },
-        {
-          "ts": 1785339440,
-          "px": 0.44
-        },
-        {
-          "ts": 1785341240,
-          "px": 0.17
-        },
-        {
-          "ts": 1785343044,
-          "px": 0.3
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T17:07:21Z",
+      "pnl": -1.0,
+      "autopsy": "model 63% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.30 before the result \u2014 the number ran 20\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.01,
@@ -34455,15 +34269,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 36,
-    "losses": 88,
-    "pnl": -75.96,
+    "losses": 90,
+    "pnl": -78.04,
     "trades": 454,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-16",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 91.08,
-    "net": 27.08,
+    "account": 89.0,
+    "net": 25.0,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -34473,7 +34287,7 @@
       ],
       "EDGE": [
         27,
-        73,
+        75,
         0
       ],
       "LIVE-BET": [
@@ -34493,22 +34307,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T19:04:20Z",
-      "kind": "EDGE",
-      "outcome": "Dynasty",
-      "result": "LOSS",
-      "pnl": -1.33,
-      "lesson": "model 50% vs market 38% missed \u2014 logged for the playbook review. Taken 0.38, rode to 0.20 before the result \u2014 beat the number by 18\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-28T19:34:25Z",
-      "kind": "EDGE",
-      "outcome": "Vitality.Bee",
-      "result": "LOSS",
-      "pnl": -0.8,
-      "lesson": "model 57% vs market 40% missed \u2014 logged for the playbook review. Taken 0.40, rode to 0.32 before the result \u2014 beat the number by 8\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-28T19:44:20Z",
       "kind": "EDGE",
@@ -34732,6 +34530,22 @@
       "result": "LOSS",
       "pnl": -2.31,
       "lesson": "model 31% vs market 7% missed \u2014 logged for the playbook review. Taken 0.07, slid to 0.05 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T17:07:17Z",
+      "kind": "EDGE",
+      "outcome": "GIANTX",
+      "result": "LOSS",
+      "pnl": -1.08,
+      "lesson": "model 50% vs market 27% missed \u2014 logged for the playbook review. Taken 0.27, slid to 0.08 before the result \u2014 the number ran 19\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T17:07:21Z",
+      "kind": "EDGE",
+      "outcome": "SK Nebula",
+      "result": "LOSS",
+      "pnl": -1.0,
+      "lesson": "model 63% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.30 before the result \u2014 the number ran 20\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -34815,7 +34629,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785341014.69829,
+  "dep_checked_ts": 1785344837.9625356,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
   "x_ads": []
