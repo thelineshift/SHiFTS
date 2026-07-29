@@ -2455,10 +2455,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -184,
-        "away_ml": 152,
+        "home_ml": -181,
+        "away_ml": 149,
         "total": 8.5,
-        "ts": 1785302059
+        "ts": 1785305659
       },
       "last_alert_odds": -175
     },
