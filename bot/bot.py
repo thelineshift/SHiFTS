@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.19'  # COMEBACK LAW: pre-match anchors + set-tree floors buy favorites down a set/map; esports 95c tails banned; caps 15%/20%
+BOT_VERSION = '9.24.20'  # LOWERED GATES: live 3-way market-tail >=0.95, live-yield 0.88/0.93, comeback dip 12pp/bar 4pp, market-tail 0.92, EDGE bar 3.8%
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4114,7 +4114,7 @@ def pm_slip_png(lb, status='LIVE', pnl=None, title='SHiFT — POLYMARKET US BET 
 # model edge (Kelly) + sum-arbitrage + tail-end yield + live divergence. Always scanning.
 TRADER_ON = os.environ.get('POLYMARKET_TRADER', '') == '1'
 TRADER_BANK_START = 50.0
-TRADER_MIN_EDGE = 0.045     # owner decree 2026-07-25: volume up, profit still law — 4.5% bar
+TRADER_MIN_EDGE = 0.038     # owner decree 2026-07-29 PM: "lower the threshold to get into more bets" — 3.8% base bar (band law unchanged: 0.25-0.52 only)
 TRADER_LIVE_EDGE = 0.08
 TRADER_ARB_SUM = 0.985
 TRADER_TAIL_MIN = 0.90
@@ -4793,9 +4793,14 @@ def pm_trader_scan(st):
             # complete 3-leg book (both sides + draw quoted) needs no model — early-season
             # UEFA qualifiers have no records to price anyway. Same-day window, half stake,
             # one side per event. Tonight's Rapid Wien / Crvena zvezda profile.
-            if not live and draw_px is not None and 0.005 < draw_px < 0.995 and len(outcomes) == 2 and ts_ev - now < TAIL_FAR_SECS:
+            # LIVE 3-WAY MARKET-TAIL (v9.24.20, owner 7/29 PM: "especially ones that are already
+            # live"): a live draw-sport favorite >=0.95 on a complete 3-leg book is leading late —
+            # settles in hours, half stake. Pregame bar stays 0.94 in the same-day window.
+            _tw_book = draw_px is not None and 0.005 < draw_px < 0.995 and len(outcomes) == 2
+            _tw_ok = (live and ts_ev - now > -12 * 3600) or (not live and ts_ev - now < TAIL_FAR_SECS)
+            if _tw_book and _tw_ok:
                 for o in outcomes:
-                    if o['price'] < 0.94:
+                    if o['price'] < (0.95 if live else 0.94):
                         continue
                     if (o['slug'], o['team']) in have or o['slug'] in have_slugs:
                         continue
@@ -4809,7 +4814,7 @@ def pm_trader_scan(st):
                     if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
                         intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': None,
                                         'event': title, 'ev_start': ev_start,
-                                        'reason': f"3-way market-tail — favorite {o['price']:.0%} on a complete book (draw {draw_px:.0%}), settling today, half size"})
+                                        'reason': f"{'[live] ' if live else ''}3-way market-tail — favorite {o['price']:.0%} on a complete book (draw {draw_px:.0%}), {'settling in hours' if live else 'settling today'}, half size"})
                         taken_keys.add(_tk3t)
                         expo += stake
             # ALL-SPORTS LAW (owner decree 2026-07-27): draw sports get PRICED, not
@@ -4915,15 +4920,19 @@ def pm_trader_scan(st):
                 # (bo3: s², bo5: s²(3−2s)) must still beat the dipped price by 6pp + tuning —
                 # we buy the overreaction, never the collapse. No anchor = no comeback.
                 _cb = cbc.get(_cbk)
+                # v9.24.20 threshold loosening (owner 7/29 PM: "lower our threshold to get into
+                # more bets, especially live"): p0 0.58→0.55, m0 0.55→0.52, dip 15→12pp,
+                # window 0.20-0.55→0.15-0.60, floor bar 6→4pp. The set tree still does the
+                # gatekeeping — a weak favorite's down-0-1 floor simply won't clear the bar.
                 if (_cb and _cb.get('m0') is not None
-                        and _cb['p0'] >= 0.58 and _cb['m0'] >= 0.55
-                        and _cb['p0'] - o['price'] >= 0.15 and 0.20 <= o['price'] <= 0.55):
+                        and _cb['p0'] >= 0.55 and _cb['m0'] >= 0.52
+                        and _cb['p0'] - o['price'] >= 0.12 and 0.15 <= o['price'] <= 0.60):
                     _n = max(2, (int(_cb.get('bo') or 3) + 1) // 2)  # PandaScore bo2 (OW) = first-to-2 → n=2; n=1 would zero the tree
                     _s = _set_prob(_cb['m0'], _n)
                     _fl = _tree_p(_s, 0, 1, _n) if _s is not None else None
                     if _fl is not None:
-                        _fl = max(0.20, min(0.65, _fl))
-                        if _fl >= o['price'] + 0.06 + _tb('EDGE'):
+                        _fl = max(0.15, min(0.65, _fl))
+                        if _fl >= o['price'] + 0.04 + _tb('EDGE'):
                             _unit = 'set' if _cb.get('ten') else 'map'
                             stake = min(pm_kelly(_fl, o['price'], B) * _tm('EDGE'), _desk_trade_cap(B, pmstats))
                             if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
@@ -4940,8 +4949,10 @@ def pm_trader_scan(st):
                 # on a complete book. Both settle within 12h, half stake. Never a fade.
                 # ESPORTS EXCLUDED (owner 7/29: "can't just bet favorites on esports 95% —
                 # there's no value in that") — esports value comes from EDGE + COMEBACK now.
-                _ly_model = not _esp_ev and pm_ is not None and o['price'] >= TRADER_TAIL_MIN and pm_ >= 0.80
-                _ly_mkt = not _esp_ev and pm_ is None and o['price'] >= 0.95 and _book_ok
+                # v9.24.20 loosening (owner 7/29 PM): model tail 0.90→0.88 (pm_ 0.80→0.78),
+                # market-validated 0.95→0.93 — more live entries, complete-book guard stays.
+                _ly_model = not _esp_ev and pm_ is not None and o['price'] >= 0.88 and pm_ >= 0.78
+                _ly_mkt = not _esp_ev and pm_ is None and o['price'] >= 0.93 and _book_ok
                 if (_ly_model or _ly_mkt) and ts_ev - now > -12 * 3600:
                     stake = min(B * 0.10, B - 1, _desk_trade_cap(B, pmstats)) * 0.5 * _tm('TAIL')
                     if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
@@ -4955,8 +4966,9 @@ def pm_trader_scan(st):
             if o['price'] >= TRADER_TAIL_MIN + _tb('TAIL') and ts_ev - now < TAIL_FAR_SECS:
                 # TAIL-WINDOW LAW: same-day tails deploy idle cash — capital returns TONIGHT.
                 # ESPORTS EXCLUDED (owner 7/29): no 95c esports favorites, pregame or live.
+                # v9.24.20: market-validated bar 0.94→0.92 (complete-book guard unchanged).
                 _tl_model = not _esp_ev and pm_ is not None and pm_ >= 0.78
-                _tl_mkt = not _esp_ev and pm_ is None and o['price'] >= 0.94 and _book_ok
+                _tl_mkt = not _esp_ev and pm_ is None and o['price'] >= 0.92 and _book_ok
                 if _tl_model or _tl_mkt:
                     stake = min(B * 0.15, B - 1, _desk_trade_cap(B, pmstats)) * _tm('TAIL') * (1.0 if _tl_model else 0.5)
                     if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
