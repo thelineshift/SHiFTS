@@ -408,7 +408,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "0e453e70-cb0e-4bd0-bd2b-afcef9e484ee",
   "op_month": "2026-07",
-  "op_calls": 73,
+  "op_calls": 75,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1291,53 +1291,34 @@
         "1374364": "Butterfly"
       },
       "meta_ts": 1784925282.1446652,
-      "lines": [
-        [
-          "Shinden",
-          "Galorys",
-          1.653,
-          2.19
-        ],
-        [
-          "Mibr",
-          "LP",
-          1.18,
-          4.26
-        ],
-        [
-          "Fluxo W7M",
-          "Bounty Hunters",
-          1.401,
-          2.81
-        ]
-      ],
-      "odds_ts": 1785297628.5625112
+      "lines": [],
+      "odds_ts": 1785326454.4585397
     },
     "valorant": {
       "lines": [
         [
-          "Barca GC",
-          "Karmine Corp GC",
-          2.18,
-          1.632
-        ],
-        [
-          "G2 Gozen",
+          "Gentle Mates GC",
           "FOKUS Sakura",
-          1.2,
-          3.87
+          1.259,
+          3.41
         ],
         [
-          "Twisted Minds Orchid",
+          "SK Nebula",
+          "G2 Gozen",
+          1.869,
+          1.869
+        ],
+        [
+          "GIANTX GC",
           "Habos Babos",
-          1.526,
-          2.39
+          2.16,
+          1.645
         ],
         [
           "GIANTX",
           "Liquid",
-          3.73,
-          1.281
+          3.71,
+          1.284
         ],
         [
           "Gentle Mates",
@@ -1348,8 +1329,8 @@
         [
           "Natus Vincere",
           "PCIFIC",
-          1.166,
-          5.27
+          1.258,
+          3.95
         ],
         [
           "Eternal Fire",
@@ -1362,9 +1343,27 @@
           "Gentle Mates",
           1.689,
           2.2
+        ],
+        [
+          "VARREL",
+          "DetonatioN FocusMe",
+          1.869,
+          1.869
+        ],
+        [
+          "KRU",
+          "G2",
+          4.1,
+          1.243
+        ],
+        [
+          "100 Thieves",
+          "Sentinels",
+          1.357,
+          3.22
         ]
       ],
-      "odds_ts": 1785240024.7841196,
+      "odds_ts": 1785326450.8907995,
       "active": [
         901974,
         902246,
@@ -33416,5 +33415,5 @@
   "deepdive_last": "2026-07-25",
   "dep_checked_ts": 1785324705.0141618,
   "x_bio_v": 2,
-  "op_cool_until": 1785240924.7841196
+  "op_cool_until": 1785327350.8907995
 }
