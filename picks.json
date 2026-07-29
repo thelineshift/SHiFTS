@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T05:24:23Z",
+  "updated": "2026-07-29T08:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2810,6 +2810,23 @@
         "ts": 1785298460
       },
       "last_alert_odds": -115
+    },
+    {
+      "id": "los-angeles-dodgers-ml-0729",
+      "date": "2026-07-29",
+      "sport": "mlb",
+      "desc": "Los Angeles Dodgers ML",
+      "market": "ML",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:10 PM ET",
+      "vs": "Seattle Mariners",
+      "team": "Los Angeles Dodgers",
+      "opp": "Seattle Mariners",
+      "analysis": "67-40 overall, 31-20 at home \u2014 our 69% vs book 57% (no-vig) | \u2694\ufe0f **Matchup read:** 67-40 overall, 31-20 at home \u2014 our 69% vs book 57% (no-vig). Los Angeles Dodgers in the better spot and priced like it isn't \u2014 **12-point** edge.",
+      "homeTeam": "Los Angeles Dodgers",
+      "awayTeam": "Seattle Mariners"
     }
   ]
 }
