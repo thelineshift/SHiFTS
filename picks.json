@@ -2432,10 +2432,10 @@
       "homeTeam": "Washington Nationals",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -120,
-        "total": 9.5,
-        "ts": 1785329689
+        "home_ml": 102,
+        "away_ml": -123,
+        "total": 9.0,
+        "ts": 1785334848
       }
     },
     {
@@ -2455,10 +2455,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -198,
-        "away_ml": 163,
+        "home_ml": -204,
+        "away_ml": 167,
         "total": 8.5,
-        "ts": 1785333157
+        "ts": 1785334848
       },
       "last_alert_odds": -198
     },
@@ -2496,10 +2496,10 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -162,
+        "away_ml": 134,
         "total": 7.5,
-        "ts": 1785333158
+        "ts": 1785334848
       },
       "last_alert_odds": 135
     },
@@ -2608,12 +2608,12 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 163,
-        "away_ml": -199,
-        "total": 156.5,
-        "ts": 1785333158
+        "home_ml": 170,
+        "away_ml": -209,
+        "total": 155.5,
+        "ts": 1785334848
       },
-      "last_alert_odds": -190
+      "last_alert_odds": -209
     },
     {
       "id": "los-angeles-dodgers--1.5-0729",
