@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T02:44:23Z",
+  "updated": "2026-07-29T03:04:21Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2094,7 +2094,10 @@
           "date": "2026-07-28",
           "time_et": "07:30 PM ET"
         }
-      ]
+      ],
+      "result": "WIN",
+      "units_result": 1.31,
+      "score": "None: win \u00b7 None: win \u00b7 None: win"
     },
     {
       "id": "los-angeles-sparks-ml-0728",
@@ -2155,7 +2158,10 @@
           "date": "2026-07-28",
           "time_et": "07:30 PM ET"
         }
-      ]
+      ],
+      "result": "WIN",
+      "units_result": 1.31,
+      "score": "None: win \u00b7 None: win \u00b7 None: win"
     },
     {
       "id": "3-leg-parlay-0728-lock",
@@ -2193,7 +2199,10 @@
           "date": "2026-07-28",
           "time_et": "07:30 PM ET"
         }
-      ]
+      ],
+      "result": "WIN",
+      "units_result": 1.31,
+      "score": "None: win \u00b7 None: win \u00b7 None: win"
     },
     {
       "id": "dallas-wings-ml-0729",
