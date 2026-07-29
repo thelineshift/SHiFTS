@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 18:27 UTC",
+    "at": "2026-07-29 17:27 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-3": "2026-07-29 16:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 18:17 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 17:17 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-29 16:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 18:27 UTC",
+    "at": "2026-07-29 17:27 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,11 +33,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 18:27 UTC",
+    "at": "2026-07-29 17:27 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 18:27 UTC",
+    "at": "2026-07-29 17:27 UTC",
     "flags": []
   },
   "bot_version": "9.24.21",
@@ -32297,106 +32297,13 @@
       "qty": 8,
       "market_slug": "aec-ow-wbg-tl-2026-07-29",
       "outcome": "Weibo Gaming",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T02:20:05Z",
-      "price_path": [
-        {
-          "ts": 1785298501,
-          "px": 0.63
-        },
-        {
-          "ts": 1785300868,
-          "px": 0.63
-        },
-        {
-          "ts": 1785302671,
-          "px": 0.63
-        },
-        {
-          "ts": 1785305072,
-          "px": 0.71
-        },
-        {
-          "ts": 1785307467,
-          "px": 0.7
-        },
-        {
-          "ts": 1785309276,
-          "px": 0.7
-        },
-        {
-          "ts": 1785311666,
-          "px": 0.7
-        },
-        {
-          "ts": 1785313472,
-          "px": 0.7
-        },
-        {
-          "ts": 1785315872,
-          "px": 0.71
-        },
-        {
-          "ts": 1785318267,
-          "px": 0.7
-        },
-        {
-          "ts": 1785320067,
-          "px": 0.7
-        },
-        {
-          "ts": 1785321868,
-          "px": 0.71
-        },
-        {
-          "ts": 1785324110,
-          "px": 0.71
-        },
-        {
-          "ts": 1785326509,
-          "px": 0.79
-        },
-        {
-          "ts": 1785329096,
-          "px": 0.78
-        },
-        {
-          "ts": 1785331334,
-          "px": 0.78
-        },
-        {
-          "ts": 1785333162,
-          "px": 0.79
-        },
-        {
-          "ts": 1785335460,
-          "px": 0.79
-        },
-        {
-          "ts": 1785337643,
-          "px": 0.79
-        },
-        {
-          "ts": 1785339444,
-          "px": 0.78
-        },
-        {
-          "ts": 1785341849,
-          "px": 0.79
-        },
-        {
-          "ts": 1785344250,
-          "px": 0.99
-        },
-        {
-          "ts": 1785346642,
-          "px": 0.53
-        },
-        {
-          "ts": 1785349042,
-          "px": 0.66
-        }
-      ]
+      "result": "WIN",
+      "payout": 8.0,
+      "settled_at": "2026-07-29T18:27:18Z",
+      "pnl": 3.2,
+      "autopsy": "+$3.20 \u2014 model 70% vs market 60% was real edge; thesis held. Taken 0.60, rode to 0.66 before the result \u2014 beat the number by 6\u00a2 \u2705"
     },
     {
       "price": 0.09,
@@ -34397,16 +34304,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 39,
+    "wins": 40,
     "losses": 91,
-    "pnl": -65.9,
+    "pnl": -62.7,
     "trades": 456,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-18",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 128.01,
-    "net": 64.01,
+    "account": 131.21,
+    "net": 67.21,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -34415,7 +34322,7 @@
         0
       ],
       "EDGE": [
-        30,
+        31,
         76,
         0
       ],
@@ -34436,14 +34343,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T20:44:22Z",
-      "kind": "EDGE",
-      "outcome": "One More Esports",
-      "result": "LOSS",
-      "pnl": -1.76,
-      "lesson": "model 44% vs market 22% missed \u2014 logged for the playbook review. Taken 0.22, slid to 0.08 before the result \u2014 the number ran 14\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-28T21:34:20Z",
       "kind": "EDGE",
@@ -34675,6 +34574,14 @@
       "result": "LOSS",
       "pnl": -1.47,
       "lesson": "model 37% vs market 21% missed \u2014 logged for the playbook review. Taken 0.21, rode to 0.05 before the result \u2014 beat the number by 16\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T18:27:18Z",
+      "kind": "EDGE",
+      "outcome": "Weibo Gaming",
+      "result": "WIN",
+      "pnl": 3.2,
+      "lesson": "+$3.20 \u2014 model 70% vs market 60% was real edge; thesis held. Taken 0.60, rode to 0.66 before the result \u2014 beat the number by 6\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
