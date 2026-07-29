@@ -2498,8 +2498,8 @@
       "live_odds": {
         "home_ml": -180,
         "away_ml": 148,
-        "total": 8.0,
-        "ts": 1785307459
+        "total": 7.5,
+        "ts": 1785311059
       }
     },
     {
@@ -2649,10 +2649,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 144,
-        "away_ml": -175,
+        "home_ml": 148,
+        "away_ml": -179,
         "total": 7.5,
-        "ts": 1785309259
+        "ts": 1785311059
       },
       "last_alert_odds": 144
     },
