@@ -2601,10 +2601,10 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 166,
-        "away_ml": -204,
+        "home_ml": 164,
+        "away_ml": -201,
         "total": 155.5,
-        "ts": 1785312859
+        "ts": 1785316459
       },
       "last_alert_odds": -204
     },
