@@ -1,8 +1,15 @@
 {
-  "ts": "2026-07-29T22:03:29Z",
+  "ts": "2026-07-29T22:12:58Z",
   "configured": true,
-  "balance_usd": 96.45,
-  "buying_power": 81.45,
+  "balance_usd": 47.78,
+  "buying_power": 21.78,
   "positions": [],
-  "open_orders": []
+  "open_orders": [
+    {
+      "market": "aec-mlb-chc-stl-2026-07-29",
+      "intent": "ORDER_INTENT_BUY_LONG",
+      "price": "0.49",
+      "qty": 9
+    }
+  ]
 }
