@@ -32100,14 +32100,15 @@
       "qty": 4,
       "market_slug": "astatc-atp-alemin-stetsi-2026-07-27-sw1",
       "outcome": "Alex de Minaur",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T04:05:29Z",
       "price_path": [
         {
           "ts": 1785298501,
           "px": 0.64
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.555,
@@ -32122,7 +32123,7 @@
       "qty": 6,
       "market_slug": "aec-mlb-sf-sd-2026-07-30",
       "outcome": "San Diego Padres",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T04:05:30Z",
       "price_path": [
         {
@@ -32165,7 +32166,8 @@
           "ts": 1785318267,
           "px": 0.55
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.47,
@@ -32237,7 +32239,7 @@
       "qty": 4,
       "market_slug": "aec-mlb-sf-sd-2026-07-31",
       "outcome": "San Diego Padres",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T04:05:33Z",
       "price_path": [
         {
@@ -32280,7 +32282,8 @@
           "ts": 1785318268,
           "px": 0.575
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.36,
