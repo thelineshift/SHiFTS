@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T08:00:55Z",
+  "updated": "2026-07-29T09:44:23Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2266,10 +2266,10 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -115,
+        "home_ml": -116,
         "away_ml": -105,
         "total": 180.5,
-        "ts": 1785318258
+        "ts": 1785298458
       }
     },
     {
@@ -2565,7 +2565,10 @@
       "opp": "Kiwoom DRX",
       "analysis": "4-1 last 5 (beat T1, BNK FEARX, KT Rolster) (lost to Hanwha Life Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat T1, BNK FEARX, KT Rolster) (lost to Hanwha Life Esports) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of mod",
       "awayTeam": "Nongshim Red Force",
-      "homeTeam": "Kiwoom DRX"
+      "homeTeam": "Kiwoom DRX",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Nongshim Red Force 2-0 Kiwoom DRX \u00b7 final"
     },
     {
       "id": "ex-mana-esports-ml-0729",
@@ -2582,7 +2585,10 @@
       "opp": "los kogutos",
       "analysis": "2-3 last 5 (beat NEW VISION, OlyBet SB) (lost to Rune Eaters) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat NEW VISION, OlyBet SB) (lost to Rune Eaters) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over los kogutos the number hasn't priced.",
       "awayTeam": "ex-MANA eSports",
-      "homeTeam": "los kogutos"
+      "homeTeam": "los kogutos",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "ex-MANA eSports 0-2 los kogutos \u00b7 final"
     },
     {
       "id": "golden-state-valkyries--5.5-0729",
@@ -2649,10 +2655,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 148,
-        "away_ml": -179,
+        "home_ml": 144,
+        "away_ml": -175,
         "total": 7.5,
-        "ts": 1785318259
+        "ts": 1785314659
       },
       "last_alert_odds": 144
     },
