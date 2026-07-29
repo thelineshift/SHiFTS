@@ -31359,11 +31359,11 @@
     "pnl": -72.08,
     "trades": 395,
     "last_recap": "2026-07-28",
-    "last_recap_hour": "2026-07-29-02",
+    "last_recap_hour": "2026-07-29-04",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 130.14,
-    "net": 116.14,
+    "account": 113.22,
+    "net": 99.22,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -31388,8 +31388,8 @@
       ]
     },
     "archived": 0,
-    "day_date": "2026-07-28",
-    "day_anchor": 101.44
+    "day_date": "2026-07-29",
+    "day_anchor": 130.14
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
