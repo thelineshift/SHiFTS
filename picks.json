@@ -1826,10 +1826,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -237,
-        "away_ml": 192,
+        "home_ml": -239,
+        "away_ml": 194,
         "total": 8.0,
-        "ts": 1785276859
+        "ts": 1785284059
       },
       "last_alert_odds": -231
     },
