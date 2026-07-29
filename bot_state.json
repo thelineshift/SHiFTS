@@ -33406,14 +33406,18 @@
       "qty": 1,
       "market_slug": "aec-cs2-exmana-lk-2026-07-29",
       "outcome": "los kogutos",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T13:05:37Z",
       "price_path": [
         {
           "ts": 1785330627,
           "px": 0.97
         }
-      ]
+      ],
+      "note": " [stale-swept]",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.99,
@@ -33428,7 +33432,7 @@
       "qty": 1,
       "market_slug": "aec-kbo-ltg-khi-2026-07-29",
       "outcome": "Kiwoom Heroes",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T13:10:51Z"
     }
   ],
