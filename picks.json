@@ -2371,10 +2371,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 123,
-        "away_ml": -149,
+        "home_ml": 120,
+        "away_ml": -145,
         "total": 7.5,
-        "ts": 1785360284
+        "ts": 1785365340
       }
     },
     {
@@ -2532,8 +2532,8 @@
       "live_odds": {
         "home_ml": 129,
         "away_ml": -156,
-        "total": 10.5,
-        "ts": 1785342437
+        "total": 11.0,
+        "ts": 1785365340
       },
       "last_alert_odds": -156
     },
@@ -2618,10 +2618,10 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 143,
+        "home_ml": 144,
         "away_ml": -175,
         "total": 156.5,
-        "ts": 1785363177
+        "ts": 1785365340
       },
       "last_alert_odds": -172
     },
@@ -3053,10 +3053,10 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 143,
+        "home_ml": 144,
         "away_ml": -175,
         "total": 156.5,
-        "ts": 1785363178
+        "ts": 1785365340
       },
       "last_alert_odds": -175
     }
