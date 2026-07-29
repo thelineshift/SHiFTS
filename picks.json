@@ -2432,10 +2432,10 @@
       "homeTeam": "Washington Nationals",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": 101,
-        "away_ml": -122,
+        "home_ml": 102,
+        "away_ml": -123,
         "total": 9.5,
-        "ts": 1785298459
+        "ts": 1785303859
       }
     },
     {
@@ -2496,10 +2496,10 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -172,
-        "away_ml": 142,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 8.0,
-        "ts": 1785298459
+        "ts": 1785303859
       }
     },
     {
@@ -2601,10 +2601,10 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 166,
-        "away_ml": -204,
+        "home_ml": 159,
+        "away_ml": -194,
         "total": 155.5,
-        "ts": 1785298460
+        "ts": 1785303859
       },
       "last_alert_odds": -204
     },
