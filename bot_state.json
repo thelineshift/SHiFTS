@@ -7296,6 +7296,64 @@
             }
           ]
         }
+      },
+      "cs2:135468": {
+        "ts": 1785286481.4972856,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Imperial"
+            },
+            {
+              "won": true,
+              "opp": "Rush"
+            },
+            {
+              "won": false,
+              "opp": "Bounty Hunters Esports"
+            },
+            {
+              "won": false,
+              "opp": "largadosypelados"
+            },
+            {
+              "won": true,
+              "opp": "UNO MILLE"
+            }
+          ]
+        }
+      },
+      "cs2:134355": {
+        "ts": 1785286482.1130033,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Fluxo"
+            },
+            {
+              "won": false,
+              "opp": "largadosypelados"
+            },
+            {
+              "won": true,
+              "opp": "BESTIA"
+            },
+            {
+              "won": true,
+              "opp": "largadosypelados"
+            },
+            {
+              "won": false,
+              "opp": "largadosypelados"
+            }
+          ]
+        }
       }
     },
     "tennis": {
@@ -22727,6 +22785,10 @@
       "ts": "2026-07-27T10:11:53Z",
       "price_path": [
         {
+          "ts": 1785230070,
+          "px": 0.16
+        },
+        {
           "ts": 1785232465,
           "px": 0.16
         },
@@ -22817,10 +22879,6 @@
         {
           "ts": 1785283460,
           "px": 0.15
-        },
-        {
-          "ts": 1785286462,
-          "px": 0.15
         }
       ]
     },
@@ -22864,6 +22922,10 @@
       "status": "open",
       "ts": "2026-07-27T10:16:51Z",
       "price_path": [
+        {
+          "ts": 1785232465,
+          "px": 0.46
+        },
         {
           "ts": 1785234859,
           "px": 0.46
@@ -22955,10 +23017,6 @@
         {
           "ts": 1785283460,
           "px": 0.435
-        },
-        {
-          "ts": 1785286462,
-          "px": 0.43
         }
       ]
     },
@@ -23090,6 +23148,10 @@
       "ts": "2026-07-27T10:31:54Z",
       "price_path": [
         {
+          "ts": 1785230070,
+          "px": 0.435
+        },
+        {
           "ts": 1785232465,
           "px": 0.435
         },
@@ -23179,10 +23241,6 @@
         },
         {
           "ts": 1785283460,
-          "px": 0.405
-        },
-        {
-          "ts": 1785286462,
           "px": 0.405
         }
       ]
@@ -25015,6 +25073,10 @@
       "ts": "2026-07-27T16:40:13Z",
       "price_path": [
         {
+          "ts": 1785231261,
+          "px": 0.11
+        },
+        {
           "ts": 1785233063,
           "px": 0.11
         },
@@ -25105,10 +25167,6 @@
         {
           "ts": 1785283461,
           "px": 0.1
-        },
-        {
-          "ts": 1785286463,
-          "px": 0.06
         }
       ]
     },
@@ -25190,6 +25248,10 @@
       "status": "open",
       "ts": "2026-07-27T17:30:12Z",
       "price_path": [
+        {
+          "ts": 1785230072,
+          "px": 0.27
+        },
         {
           "ts": 1785232467,
           "px": 0.27
@@ -25280,10 +25342,6 @@
         },
         {
           "ts": 1785283461,
-          "px": 0.25
-        },
-        {
-          "ts": 1785286463,
           "px": 0.25
         }
       ]
@@ -25761,6 +25819,10 @@
       "ts": "2026-07-27T22:50:05Z",
       "price_path": [
         {
+          "ts": 1785232468,
+          "px": 0.55
+        },
+        {
           "ts": 1785234862,
           "px": 0.55
         },
@@ -25851,10 +25913,6 @@
         {
           "ts": 1785283461,
           "px": 0.58
-        },
-        {
-          "ts": 1785286463,
-          "px": 0.58
         }
       ]
     },
@@ -25874,6 +25932,10 @@
       "status": "open",
       "ts": "2026-07-27T22:55:00Z",
       "price_path": [
+        {
+          "ts": 1785232468,
+          "px": 0.33
+        },
         {
           "ts": 1785234863,
           "px": 0.33
@@ -25965,10 +26027,6 @@
         {
           "ts": 1785283461,
           "px": 0.68
-        },
-        {
-          "ts": 1785286463,
-          "px": 0.57
         }
       ]
     },
@@ -26028,6 +26086,10 @@
       "status": "open",
       "ts": "2026-07-28T00:00:19Z",
       "price_path": [
+        {
+          "ts": 1785233065,
+          "px": 0.47
+        },
         {
           "ts": 1785235463,
           "px": 0.22
@@ -26119,10 +26181,6 @@
         {
           "ts": 1785283462,
           "px": 0.29
-        },
-        {
-          "ts": 1785286463,
-          "px": 0.44
         }
       ]
     },
@@ -26142,6 +26200,10 @@
       "status": "open",
       "ts": "2026-07-28T00:05:09Z",
       "price_path": [
+        {
+          "ts": 1785233065,
+          "px": 0.4
+        },
         {
           "ts": 1785235463,
           "px": 0.35
@@ -26232,10 +26294,6 @@
         },
         {
           "ts": 1785283462,
-          "px": 0.23
-        },
-        {
-          "ts": 1785286464,
           "px": 0.23
         }
       ]
@@ -26361,6 +26419,10 @@
       "ts": "2026-07-28T00:45:02Z",
       "price_path": [
         {
+          "ts": 1785233066,
+          "px": 0.35
+        },
+        {
           "ts": 1785235464,
           "px": 0.35
         },
@@ -26451,10 +26513,6 @@
         {
           "ts": 1785283462,
           "px": 0.45
-        },
-        {
-          "ts": 1785286464,
-          "px": 0.44
         }
       ]
     },
@@ -26934,6 +26992,10 @@
       "ts": "2026-07-28T04:05:08Z",
       "price_path": [
         {
+          "ts": 1785233066,
+          "px": 0.54
+        },
+        {
           "ts": 1785235464,
           "px": 0.54
         },
@@ -27023,10 +27085,6 @@
         },
         {
           "ts": 1785283462,
-          "px": 0.53
-        },
-        {
-          "ts": 1785286464,
           "px": 0.53
         }
       ]
@@ -27454,6 +27512,10 @@
       "ts": "2026-07-28T06:05:03Z",
       "price_path": [
         {
+          "ts": 1785232469,
+          "px": 0.33
+        },
+        {
           "ts": 1785234864,
           "px": 0.33
         },
@@ -27543,10 +27605,6 @@
         },
         {
           "ts": 1785283462,
-          "px": 0.33
-        },
-        {
-          "ts": 1785286464,
           "px": 0.33
         }
       ]
@@ -28243,10 +28301,6 @@
         {
           "ts": 1785283463,
           "px": 0.34
-        },
-        {
-          "ts": 1785286465,
-          "px": 0.34
         }
       ]
     },
@@ -28628,10 +28682,6 @@
         {
           "ts": 1785283463,
           "px": 0.2
-        },
-        {
-          "ts": 1785286465,
-          "px": 0.2
         }
       ]
     },
@@ -28717,10 +28767,6 @@
         {
           "ts": 1785283463,
           "px": 0.5
-        },
-        {
-          "ts": 1785286465,
-          "px": 0.58
         }
       ]
     },
@@ -28806,10 +28852,6 @@
         {
           "ts": 1785283463,
           "px": 0.47
-        },
-        {
-          "ts": 1785286465,
-          "px": 0.43
         }
       ]
     },
@@ -29213,10 +29255,6 @@
         {
           "ts": 1785283466,
           "px": 0.36
-        },
-        {
-          "ts": 1785286465,
-          "px": 0.35
         }
       ]
     },
@@ -29631,10 +29669,6 @@
         {
           "ts": 1785283466,
           "px": 0.5
-        },
-        {
-          "ts": 1785286469,
-          "px": 0.5
         }
       ]
     },
@@ -29737,10 +29771,6 @@
         {
           "ts": 1785283466,
           "px": 0.4
-        },
-        {
-          "ts": 1785286469,
-          "px": 0.35
         }
       ]
     },
@@ -29793,10 +29823,6 @@
         },
         {
           "ts": 1785283466,
-          "px": 0.25
-        },
-        {
-          "ts": 1785286470,
           "px": 0.25
         }
       ]
@@ -29852,10 +29878,6 @@
         {
           "ts": 1785283467,
           "px": 0.41
-        },
-        {
-          "ts": 1785286470,
-          "px": 0.41
         }
       ]
     },
@@ -29909,10 +29931,6 @@
         {
           "ts": 1785283467,
           "px": 0.73
-        },
-        {
-          "ts": 1785286470,
-          "px": 0.67
         }
       ]
     },
@@ -30003,10 +30021,6 @@
         {
           "ts": 1785283467,
           "px": 0.42
-        },
-        {
-          "ts": 1785286470,
-          "px": 0.5
         }
       ]
     },
@@ -30106,10 +30120,6 @@
         {
           "ts": 1785283467,
           "px": 0.2
-        },
-        {
-          "ts": 1785286470,
-          "px": 0.18
         }
       ]
     },
@@ -30160,10 +30170,6 @@
         {
           "ts": 1785283467,
           "px": 0.46
-        },
-        {
-          "ts": 1785286470,
-          "px": 0.59
         }
       ]
     },
@@ -30205,10 +30211,6 @@
         },
         {
           "ts": 1785283467,
-          "px": 0.49
-        },
-        {
-          "ts": 1785286471,
           "px": 0.49
         }
       ]
@@ -30292,10 +30294,6 @@
         {
           "ts": 1785283468,
           "px": 0.29
-        },
-        {
-          "ts": 1785286476,
-          "px": 0.29
         }
       ]
     },
@@ -30328,10 +30326,6 @@
         },
         {
           "ts": 1785283468,
-          "px": 0.1
-        },
-        {
-          "ts": 1785286477,
           "px": 0.1
         }
       ]
@@ -30372,13 +30366,7 @@
       "market_slug": "aec-lol-blg-lgd-2026-07-29",
       "outcome": "LGD Gaming",
       "status": "open",
-      "ts": "2026-07-29T00:45:33Z",
-      "price_path": [
-        {
-          "ts": 1785286477,
-          "px": 0.14
-        }
-      ]
+      "ts": "2026-07-29T00:45:33Z"
     },
     {
       "price": 0.55,
@@ -30423,20 +30411,52 @@
           "px": 0.6
         }
       ]
+    },
+    {
+      "price": 0.21,
+      "short": true,
+      "stake": 1.05,
+      "kind": "EDGE",
+      "p_model": 0.368421052631579,
+      "event": "T1 vs. KT Rolster",
+      "ev_start": "2026-07-29T10:00:00Z",
+      "reason": "model 37% vs market 21% \u2014 16% edge, half-Kelly",
+      "order_id": "BHE1WBQD89NR",
+      "qty": 5,
+      "market_slug": "aec-lol-t1-kt-2026-07-29",
+      "outcome": "KT Rolster",
+      "status": "open",
+      "ts": "2026-07-29T00:55:01Z"
+    },
+    {
+      "price": 0.44,
+      "short": true,
+      "stake": 0.88,
+      "kind": "EDGE",
+      "p_model": 0.5663716814159292,
+      "event": "ShindeN vs. Galorys",
+      "ev_start": "2026-07-29T15:00:00Z",
+      "reason": "model 57% vs market 44% \u2014 13% edge, half-Kelly",
+      "order_id": "BHE4CM7Y89P7",
+      "qty": 2,
+      "market_slug": "aec-cs2-shin-gls-2026-07-29",
+      "outcome": "Galorys",
+      "status": "open",
+      "ts": "2026-07-29T00:55:02Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 35,
+    "wins": 32,
     "losses": 74,
-    "pnl": -52.96,
-    "trades": 374,
+    "pnl": -70.52,
+    "trades": 376,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-00",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 115.87,
-    "net": 51.87,
+    "account": 98.31,
+    "net": 34.31,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -30445,7 +30465,7 @@
         0
       ],
       "EDGE": [
-        27,
+        24,
         59,
         0
       ],
@@ -30466,6 +30486,30 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
+    {
+      "ts": "2026-07-28T00:54:24Z",
+      "kind": "EDGE",
+      "outcome": "Revenge",
+      "result": "LOSS",
+      "pnl": -1.02,
+      "lesson": "model 52% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.36 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-28T01:04:20Z",
+      "kind": "EDGE",
+      "outcome": "ROSO GC",
+      "result": "LOSS",
+      "pnl": -3.04,
+      "lesson": "model 50% vs market 19% missed \u2014 logged for the playbook review. Taken 0.19, rode to 0.02 before the result \u2014 beat the number by 17\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-28T01:54:21Z",
+      "kind": "EDGE",
+      "outcome": "Eternal Focus Amethyst",
+      "result": "LOSS",
+      "pnl": -2.24,
+      "lesson": "model 50% vs market 28% missed \u2014 logged for the playbook review. Taken 0.28, rode to 0.59 before the result \u2014 beat the number by 31\u00a2 \u2705"
+    },
     {
       "ts": "2026-07-28T02:04:20Z",
       "kind": "TAIL",
@@ -30681,30 +30725,6 @@
       "result": "LOSS",
       "pnl": -0.93,
       "lesson": "model 43% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.11 before the result \u2014 beat the number by 20\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-29T00:54:26Z",
-      "kind": "EDGE",
-      "outcome": "RED Academy",
-      "result": "WIN",
-      "pnl": 10.67,
-      "lesson": "+$10.67 \u2014 model 50% vs market 23% was real edge; thesis held. Taken 0.23, slid to 0.39 before the result \u2014 the number ran 16\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-29T00:54:31Z",
-      "kind": "EDGE",
-      "outcome": "Magdalena Frech",
-      "result": "WIN",
-      "pnl": 3.04,
-      "lesson": "+$3.04 \u2014 model 43% vs market 24% was real edge; thesis held. Taken 0.24, rode to 0.41 before the result \u2014 beat the number by 17\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-29T00:54:34Z",
-      "kind": "EDGE",
-      "outcome": "Magdalena Frech",
-      "result": "WIN",
-      "pnl": 3.85,
-      "lesson": "+$3.85 \u2014 model 43% vs market 23% was real edge; thesis held. Taken 0.23, rode to 0.60 before the result \u2014 beat the number by 37\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -30788,7 +30808,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785286466.2722793,
+  "dep_checked_ts": 1785281662.2241652,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
