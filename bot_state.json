@@ -41,7 +41,17 @@
     "flags": []
   },
   "bot_version": "9.24.15",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "cincinnati-reds-ml-0728",
+      "desc": "Cincinnati Reds ML",
+      "odds": 112,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Cleveland Guardians 6, Cincinnati Reds 5",
+      "tier": "sharp"
+    }
+  ],
   "last_x_receipt_ts": 1785246260.6717944,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -30085,50 +30095,13 @@
       "qty": 3,
       "market_slug": "aec-atp-benbon-blabic-2026-07-27",
       "outcome": "Benjamin Bonzi",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T19:00:08Z",
-      "price_path": [
-        {
-          "ts": 1785265472,
-          "px": 0.78
-        },
-        {
-          "ts": 1785267869,
-          "px": 0.78
-        },
-        {
-          "ts": 1785269671,
-          "px": 0.77
-        },
-        {
-          "ts": 1785272072,
-          "px": 0.77
-        },
-        {
-          "ts": 1785274469,
-          "px": 0.77
-        },
-        {
-          "ts": 1785276865,
-          "px": 0.78
-        },
-        {
-          "ts": 1785279265,
-          "px": 0.78
-        },
-        {
-          "ts": 1785281067,
-          "px": 0.78
-        },
-        {
-          "ts": 1785283467,
-          "px": 0.73
-        },
-        {
-          "ts": 1785288271,
-          "px": 0.64
-        }
-      ]
+      "result": "WIN",
+      "payout": 3.0,
+      "settled_at": "2026-07-29T02:24:22Z",
+      "pnl": 0.66,
+      "autopsy": "+$0.66 \u2014 model 88% vs market 78% was real edge; thesis held. Taken 0.78, slid to 0.64 before the result \u2014 the number ran 14\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.66,
@@ -30183,46 +30156,13 @@
       "qty": 3,
       "market_slug": "aec-atp-harwen-murcas-2026-07-27",
       "outcome": "Harry Wendelken",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T19:30:02Z",
-      "price_path": [
-        {
-          "ts": 1785267268,
-          "px": 0.43
-        },
-        {
-          "ts": 1785269672,
-          "px": 0.42
-        },
-        {
-          "ts": 1785272072,
-          "px": 0.43
-        },
-        {
-          "ts": 1785274469,
-          "px": 0.43
-        },
-        {
-          "ts": 1785276865,
-          "px": 0.42
-        },
-        {
-          "ts": 1785279265,
-          "px": 0.42
-        },
-        {
-          "ts": 1785281068,
-          "px": 0.42
-        },
-        {
-          "ts": 1785283467,
-          "px": 0.42
-        },
-        {
-          "ts": 1785288271,
-          "px": 0.71
-        }
-      ]
+      "result": "WIN",
+      "payout": 3.0,
+      "settled_at": "2026-07-29T02:24:24Z",
+      "pnl": 1.71,
+      "autopsy": "+$1.71 \u2014 model 64% vs market 43% was real edge; thesis held. Taken 0.43, rode to 0.71 before the result \u2014 beat the number by 28\u00a2 \u2705"
     },
     {
       "price": 0.3,
@@ -30613,6 +30553,10 @@
         {
           "ts": 1785290062,
           "px": 0.545
+        },
+        {
+          "ts": 1785291867,
+          "px": 0.545
         }
       ]
     },
@@ -30638,6 +30582,10 @@
         },
         {
           "ts": 1785290062,
+          "px": 0.595
+        },
+        {
+          "ts": 1785291867,
           "px": 0.595
         }
       ]
@@ -30741,6 +30689,10 @@
         },
         {
           "ts": 1785290062,
+          "px": 0.57
+        },
+        {
+          "ts": 1785291868,
           "px": 0.57
         }
       ]
@@ -30888,6 +30840,10 @@
         {
           "ts": 1785290063,
           "px": 0.67
+        },
+        {
+          "ts": 1785291868,
+          "px": 0.67
         }
       ]
     },
@@ -30909,6 +30865,10 @@
         {
           "ts": 1785290063,
           "px": 0.62
+        },
+        {
+          "ts": 1785291868,
+          "px": 0.61
         }
       ]
     },
@@ -30931,6 +30891,10 @@
         {
           "ts": 1785290063,
           "px": 0.34
+        },
+        {
+          "ts": 1785291868,
+          "px": 0.34
         }
       ]
     },
@@ -30952,6 +30916,10 @@
       "price_path": [
         {
           "ts": 1785290063,
+          "px": 0.21
+        },
+        {
+          "ts": 1785291868,
           "px": 0.21
         }
       ]
@@ -30990,21 +30958,27 @@
       "market_slug": "aec-ow-wbg-tl-2026-07-29",
       "outcome": "Weibo Gaming",
       "status": "open",
-      "ts": "2026-07-29T02:20:05Z"
+      "ts": "2026-07-29T02:20:05Z",
+      "price_path": [
+        {
+          "ts": 1785291869,
+          "px": 0.66
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 32,
+    "wins": 34,
     "losses": 74,
-    "pnl": -70.52,
+    "pnl": -68.15,
     "trades": 389,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-02",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 131.7,
-    "net": 67.7,
+    "account": 134.07,
+    "net": 70.07,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -31013,7 +30987,7 @@
         0
       ],
       "EDGE": [
-        24,
+        26,
         59,
         0
       ],
@@ -31034,22 +31008,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T00:54:24Z",
-      "kind": "EDGE",
-      "outcome": "Revenge",
-      "result": "LOSS",
-      "pnl": -1.02,
-      "lesson": "model 52% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.36 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-28T01:04:20Z",
-      "kind": "EDGE",
-      "outcome": "ROSO GC",
-      "result": "LOSS",
-      "pnl": -3.04,
-      "lesson": "model 50% vs market 19% missed \u2014 logged for the playbook review. Taken 0.19, rode to 0.02 before the result \u2014 beat the number by 17\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-28T01:54:21Z",
       "kind": "EDGE",
@@ -31273,6 +31231,22 @@
       "result": "LOSS",
       "pnl": -0.93,
       "lesson": "model 43% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.11 before the result \u2014 beat the number by 20\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T02:24:22Z",
+      "kind": "EDGE",
+      "outcome": "Benjamin Bonzi",
+      "result": "WIN",
+      "pnl": 0.66,
+      "lesson": "+$0.66 \u2014 model 88% vs market 78% was real edge; thesis held. Taken 0.78, slid to 0.64 before the result \u2014 the number ran 14\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T02:24:24Z",
+      "kind": "EDGE",
+      "outcome": "Harry Wendelken",
+      "result": "WIN",
+      "pnl": 1.71,
+      "lesson": "+$1.71 \u2014 model 64% vs market 43% was real edge; thesis held. Taken 0.43, rode to 0.71 before the result \u2014 beat the number by 28\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
