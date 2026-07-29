@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T01:24:22Z",
+  "updated": "2026-07-29T02:04:21Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1389,7 +1389,10 @@
         "total": 160.5,
         "ts": 1785280458
       },
-      "last_alert_odds": -260
+      "last_alert_odds": -260,
+      "result": "WIN",
+      "score": "Connecticut Sun 84, Washington Mystics 92",
+      "units_result": 0.91
     },
     {
       "id": "over-8.5-0728",
