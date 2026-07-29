@@ -1,37 +1,31 @@
 {
-  "updated": "2026-07-29T10:00:12Z",
-  "record": "33-79",
-  "trades": 422,
-  "open": 40,
-  "pnl": -75.92,
-  "account": 129.85,
-  "deposits": 14.0,
-  "net_pnl": 115.85,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 25-64 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 3-3",
+  "updated": "2026-07-29T12:02:26Z",
+  "record": "35-84",
+  "trades": 434,
+  "open": 35,
+  "pnl": -65.27,
+  "account": 107.41,
+  "deposits": 64.0,
+  "net_pnl": 43.41,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 27-69 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 3-3",
   "recent": [
-    {
-      "outcome": "Hugo Grenier",
-      "short": true,
-      "result": "won",
-      "pnl": 0.0
-    },
-    {
-      "outcome": "regain",
-      "short": false,
-      "result": "lost",
-      "pnl": -1.56
-    },
-    {
-      "outcome": "Magdalena Frech",
-      "short": false,
-      "result": "won",
-      "pnl": 3.04
-    },
     {
       "outcome": "Magdalena Frech",
       "short": false,
       "result": "won",
       "pnl": 3.85
+    },
+    {
+      "outcome": "Twisted Minds Orchid",
+      "short": true,
+      "result": "won",
+      "pnl": 9.06
+    },
+    {
+      "outcome": "Team Secret",
+      "short": false,
+      "result": "lost",
+      "pnl": -0.99
     },
     {
       "outcome": "Charles Broom",
@@ -44,6 +38,12 @@
       "short": false,
       "result": "lost",
       "pnl": -1.43
+    },
+    {
+      "outcome": "Pittsburgh Pirates",
+      "short": false,
+      "result": "lost",
+      "pnl": -0.33
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
