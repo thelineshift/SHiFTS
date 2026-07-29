@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T04:01:07Z",
+  "updated": "2026-07-29T04:24:24Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1648,7 +1648,10 @@
         "total": 10.0,
         "ts": 1785280459
       },
-      "last_alert_odds": 129
+      "last_alert_odds": 129,
+      "result": "WIN",
+      "score": "Boston Red Sox 3, Athletics 4",
+      "units_result": 1.58
     },
     {
       "id": "toronto-blue-jays-ml-0728",
@@ -1967,7 +1970,10 @@
         "total": 10.0,
         "ts": 1785280460
       },
-      "last_alert_odds": -155
+      "last_alert_odds": -155,
+      "result": "LOSS",
+      "score": "Boston Red Sox 3, Athletics 4",
+      "units_result": -1.0
     },
     {
       "id": "2-leg-parlay-0728-lock",
@@ -2065,7 +2071,10 @@
         "away_ml": -156,
         "total": 10.0,
         "ts": 1785280460
-      }
+      },
+      "result": "LOSS",
+      "score": "Boston Red Sox 3, Athletics 4",
+      "units_result": -1.0
     },
     {
       "id": "3-leg-parlay-0728-whale",
@@ -2129,7 +2138,10 @@
         "away_ml": -206,
         "total": 182.5,
         "ts": 1785282260
-      }
+      },
+      "result": "LOSS",
+      "score": "New York Liberty 113, Los Angeles Sparks 109",
+      "units_result": -1.0
     },
     {
       "id": "3-leg-parlay-0728-sharp",
