@@ -30883,8 +30883,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-lol-itz-rmd-2026-07-27",
-    "aec-cs2-bsta-hr-2026-07-27",
     "aec-lol-zyb-ess-2026-07-28",
     "aec-valorant-meow-rvn-2026-07-27",
     "aec-lol-znt-dyn-2026-07-28",
@@ -30942,7 +30940,9 @@
     "aec-wta-magfre-annli-2026-07-27",
     "aec-lol-blg-lgd-2026-07-29",
     "aec-lol-t1-kt-2026-07-29",
-    "aec-cs2-shin-gls-2026-07-29"
+    "aec-cs2-shin-gls-2026-07-29",
+    "aec-atp-shimoc-chabro-2026-07-27",
+    "aec-lol-vfb-g2n-2026-07-29"
   ],
   "odds_api": {
     "month": "2026-07",
