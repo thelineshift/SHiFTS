@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T09:44:23Z",
+  "updated": "2026-07-29T12:01:27Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2839,6 +2839,57 @@
         "total": 9.5,
         "ts": 1785312859
       }
+    },
+    {
+      "id": "sk-nebula-ml-0729",
+      "date": "2026-07-29",
+      "sport": "valorant",
+      "desc": "SK Nebula ML",
+      "market": "VCT Bo3",
+      "odds": -115,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "G2 Gozen",
+      "team": "SK Nebula",
+      "opp": "G2 Gozen",
+      "analysis": "4-1 last 5 (beat ALTERNATE aTTaX Ruby, Bar\u00e7a eSports GC, GIANTX GC) (lost to Gentle Mates GC) vs 2-3 \u2014 live Pinnacle line -115 (our 86% vs book 50%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ALTERNATE aTTaX Ruby, Bar\u00e7a eSports GC, GIANTX GC) (lost to Gentle Mates GC) vs 2-3 \u2014 live Pinnacle line -115 (o",
+      "awayTeam": "SK Nebula",
+      "homeTeam": "G2 Gozen"
+    },
+    {
+      "id": "gentle-mates-gc-ml-0729",
+      "date": "2026-07-29",
+      "sport": "valorant",
+      "desc": "Gentle Mates GC ML",
+      "market": "VCT Bo3",
+      "odds": -386,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "FOKUS Sakura",
+      "team": "Gentle Mates GC",
+      "opp": "FOKUS Sakura",
+      "analysis": "4-1 last 5 (beat GIANTX GC, Habos Babos, SK Nebula) (lost to SK Nebula) vs 2-3 \u2014 live Pinnacle line -386 (our 86% vs book 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat GIANTX GC, Habos Babos, SK Nebula) (lost to SK Nebula) vs 2-3 \u2014 live Pinnacle line -386 (our 86% vs book 73%). Ride the **13-point** ",
+      "awayTeam": "Gentle Mates GC",
+      "homeTeam": "FOKUS Sakura"
+    },
+    {
+      "id": "utah-royals-ml-0729",
+      "date": "2026-07-29",
+      "sport": "nwsl",
+      "desc": "Utah Royals ML",
+      "market": "ML",
+      "odds": 185,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "09:00 PM ET",
+      "vs": "Washington Spirit",
+      "team": "Utah Royals",
+      "opp": "Washington Spirit",
+      "analysis": "9-3-4 overall \u2014 our 51% vs book 44% (no-vig) | \ud83e\udde0 **The read:** 9-3-4 overall \u2014 our 51% vs book 44% (no-vig). Model makes Utah Royals **51%** \u2014 books imply **35%**. SHiFT presses the gap.",
+      "homeTeam": "Utah Royals",
+      "awayTeam": "Washington Spirit"
     }
   ]
 }
