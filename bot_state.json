@@ -31527,7 +31527,7 @@
       "qty": 43,
       "market_slug": "astatc-atp-dalsvr-adawal-2026-07-27-sw2",
       "outcome": "Dalibor Svrcina",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T04:45:06Z"
     },
     {
@@ -31543,7 +31543,7 @@
       "qty": 3,
       "market_slug": "aec-wnba-conn-chi-2026-07-30",
       "outcome": "Chicago",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T04:45:07Z"
     }
   ],
