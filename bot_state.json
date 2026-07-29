@@ -26377,106 +26377,13 @@
       "qty": 9,
       "market_slug": "aec-ow-zeta-var-2026-07-29",
       "outcome": "VARREL",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T00:00:19Z",
-      "price_path": [
-        {
-          "ts": 1785267864,
-          "px": 0.29
-        },
-        {
-          "ts": 1785269666,
-          "px": 0.29
-        },
-        {
-          "ts": 1785272067,
-          "px": 0.29
-        },
-        {
-          "ts": 1785274465,
-          "px": 0.27
-        },
-        {
-          "ts": 1785276861,
-          "px": 0.29
-        },
-        {
-          "ts": 1785279261,
-          "px": 0.29
-        },
-        {
-          "ts": 1785281064,
-          "px": 0.29
-        },
-        {
-          "ts": 1785283462,
-          "px": 0.29
-        },
-        {
-          "ts": 1785288268,
-          "px": 0.42
-        },
-        {
-          "ts": 1785291261,
-          "px": 0.3
-        },
-        {
-          "ts": 1785293075,
-          "px": 0.27
-        },
-        {
-          "ts": 1785295461,
-          "px": 0.3
-        },
-        {
-          "ts": 1785297261,
-          "px": 0.28
-        },
-        {
-          "ts": 1785299662,
-          "px": 0.3
-        },
-        {
-          "ts": 1785301471,
-          "px": 0.32
-        },
-        {
-          "ts": 1785304462,
-          "px": 0.32
-        },
-        {
-          "ts": 1785306265,
-          "px": 0.32
-        },
-        {
-          "ts": 1785308066,
-          "px": 0.21
-        },
-        {
-          "ts": 1785309866,
-          "px": 0.2
-        },
-        {
-          "ts": 1785312265,
-          "px": 0.23
-        },
-        {
-          "ts": 1785314663,
-          "px": 0.17
-        },
-        {
-          "ts": 1785317066,
-          "px": 0.17
-        },
-        {
-          "ts": 1785319466,
-          "px": 0.33
-        },
-        {
-          "ts": 1785321863,
-          "px": 0.13
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T10:54:22Z",
+      "pnl": -3.93,
+      "autopsy": "model 57% vs market 32% missed \u2014 logged for the playbook review. Taken 0.32, rode to 0.13 before the result \u2014 beat the number by 19\u00a2 \u2705"
     },
     {
       "price": 0.31,
@@ -33356,21 +33263,27 @@
       "market_slug": "aec-wnba-conn-chi-2026-07-30",
       "outcome": "Chicago",
       "status": "resting",
-      "ts": "2026-07-29T10:50:12Z"
+      "ts": "2026-07-29T10:50:12Z",
+      "price_path": [
+        {
+          "ts": 1785322466,
+          "px": 0.61
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 33,
-    "losses": 79,
-    "pnl": -75.92,
+    "losses": 80,
+    "pnl": -79.85,
     "trades": 432,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-10",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 129.85,
-    "net": 115.85,
+    "account": 125.92,
+    "net": 111.92,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -33380,7 +33293,7 @@
       ],
       "EDGE": [
         25,
-        64,
+        65,
         0
       ],
       "LIVE-BET": [
@@ -33400,14 +33313,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T13:14:22Z",
-      "kind": "EDGE",
-      "outcome": "Philip Henning",
-      "result": "LOSS",
-      "pnl": -2.45,
-      "lesson": "model 64% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, rode to 0.24 before the result \u2014 beat the number by 11\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-28T13:24:23Z",
       "kind": "EDGE",
@@ -33639,6 +33544,14 @@
       "result": "LOSS",
       "pnl": -1.23,
       "lesson": "model 57% vs market 41% missed \u2014 logged for the playbook review. Taken 0.41, rode to 0.17 before the result \u2014 beat the number by 24\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T10:54:22Z",
+      "kind": "EDGE",
+      "outcome": "VARREL",
+      "result": "LOSS",
+      "pnl": -3.93,
+      "lesson": "model 57% vs market 32% missed \u2014 logged for the playbook review. Taken 0.32, rode to 0.13 before the result \u2014 beat the number by 19\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
