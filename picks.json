@@ -2496,11 +2496,12 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -171,
-        "away_ml": 141,
+        "home_ml": -184,
+        "away_ml": 151,
         "total": 7.5,
-        "ts": 1785324704
-      }
+        "ts": 1785327889
+      },
+      "last_alert_odds": 151
     },
     {
       "id": "boston-red-sox--1.5-0729",
