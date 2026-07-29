@@ -8118,6 +8118,64 @@
             }
           ]
         }
+      },
+      "cs2:136064": {
+        "ts": 1785331047.3025188,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Marsborne"
+            },
+            {
+              "won": true,
+              "opp": "Marsborne"
+            },
+            {
+              "won": true,
+              "opp": "SportsBetExpert"
+            },
+            {
+              "won": true,
+              "opp": "F5 Esports"
+            },
+            {
+              "won": false,
+              "opp": "Voca"
+            }
+          ]
+        }
+      },
+      "cs2:137496": {
+        "ts": 1785331047.9079862,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Marsborne"
+            },
+            {
+              "won": true,
+              "opp": "Reign Above"
+            },
+            {
+              "won": true,
+              "opp": "LAG Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Chicken Coop Esports"
+            },
+            {
+              "won": true,
+              "opp": "NXG Esports"
+            }
+          ]
+        }
       }
     },
     "tennis": {
@@ -18914,6 +18972,224 @@
         ]
       },
       "ts": 1785330625.7546096
+    },
+    "cb": {
+      "aec-wta-lizcab-sofcos-2026-07-27|lizettecabrera": {
+        "p0": 0.3,
+        "m0": 0.3150956583961478,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": true,
+        "esp": false
+      },
+      "aec-wta-lizcab-sofcos-2026-07-27|sofiacostoulas": {
+        "p0": 0.71,
+        "m0": 0.6849043416038523,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": true,
+        "esp": false
+      },
+      "aec-wta-gremin-mading-2026-07-27|greetminnen": {
+        "p0": 0.73,
+        "m0": 0.6746928505373465,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": true,
+        "esp": false
+      },
+      "aec-wta-gremin-mading-2026-07-27|maddisoninglis": {
+        "p0": 0.28,
+        "m0": 0.32530714946265354,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": true,
+        "esp": false
+      },
+      "aec-ow-ssg-jdg-2026-07-29|spacestationgaming": {
+        "p0": 0.71,
+        "m0": 0.631578947368421,
+        "bo": 2,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-ow-ssg-jdg-2026-07-29|jdgaming": {
+        "p0": 0.42,
+        "m0": 0.368421052631579,
+        "bo": 2,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-lua-hrts-2026-07-29|luagaming": {
+        "p0": 0.06,
+        "m0": 0.5,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-lua-hrts-2026-07-29|teamhereticsacademy": {
+        "p0": 0.95,
+        "m0": 0.5,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-ow-t1-tm-2026-07-29|t": {
+        "p0": 0.52,
+        "m0": 0.5,
+        "bo": 2,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-ow-t1-tm-2026-07-29|twistedminds": {
+        "p0": 0.49,
+        "m0": 0.5,
+        "bo": 2,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-leo-rgi-2026-07-29|leo": {
+        "p0": 0.56,
+        "m0": 0.5,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-leo-rgi-2026-07-29|richgang": {
+        "p0": 0.45,
+        "m0": 0.5,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-ijc-vitb-2026-07-29|icijaponcorpesport": {
+        "p0": 0.47,
+        "m0": 0.4324324324324325,
+        "bo": 1,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-ijc-vitb-2026-07-29|vitalitybee": {
+        "p0": 0.54,
+        "m0": 0.5675675675675675,
+        "bo": 1,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-tog-use-2026-07-29|teamorangegaming": {
+        "p0": 0.32,
+        "m0": 0.30769230769230776,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-tog-use-2026-07-29|unicornsoflovesexyedition": {
+        "p0": 0.69,
+        "m0": 0.6923076923076923,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-mkf-flk-2026-07-29|movistarkoifnix": {
+        "p0": 0.97,
+        "m0": 0.75,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-bnf-sre-2026-07-29|brodnfriends": {
+        "p0": 0.82,
+        "m0": 0.5,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-bnf-sre-2026-07-29|srbyesport": {
+        "p0": 0.53,
+        "m0": 0.5,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-dmg-mas-2026-07-29|dmgesports": {
+        "p0": 0.69,
+        "m0": 0.4444444444444445,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-dmg-mas-2026-07-29|massive": {
+        "p0": 0.32,
+        "m0": 0.5555555555555556,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-cs2-cce-spo-2026-07-29|chickencoopesports": {
+        "p0": 0.29,
+        "m0": 0.5675675675675675,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-cs2-cce-spo-2026-07-29|sportsbetexpert": {
+        "p0": 0.72,
+        "m0": 0.43243243243243246,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-dota2-stray-tt-2026-07-30|strayteam": {
+        "p0": 0.34,
+        "m0": 0.5675675675675675,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-dota2-stray-tt-2026-07-30|travomanteam": {
+        "p0": 0.67,
+        "m0": 0.43243243243243246,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-dota2-lvlup-z10-2026-07-30|levelup": {
+        "p0": 0.68,
+        "m0": 0.5384615384615384,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      },
+      "aec-dota2-lvlup-z10-2026-07-30|zerotenacity": {
+        "p0": 0.76,
+        "m0": 0.46153846153846156,
+        "bo": 3,
+        "ts": 1785331025.2641876,
+        "ten": false,
+        "esp": true
+      }
     }
   },
   "pm_trades": [
@@ -33441,6 +33717,22 @@
         }
       ],
       "note": " [stale-swept]"
+    },
+    {
+      "price": 0.96,
+      "short": true,
+      "stake": 0.96,
+      "kind": "TAIL",
+      "p_model": null,
+      "event": "LG Twins vs. Kiwoom Heroes",
+      "ev_start": "2026-07-29T09:30:00Z",
+      "reason": "[live] near-certainty yield \u2014 live price 96%, market-validated (no model \u2014 complete live book), settles within hours, half size",
+      "order_id": "BHRNK1Q4Y9QY",
+      "qty": 1,
+      "market_slug": "aec-kbo-ltg-khi-2026-07-29",
+      "outcome": "Kiwoom Heroes",
+      "status": "open",
+      "ts": "2026-07-29T13:17:51Z"
     }
   ],
   "pm_stats": {
@@ -33448,7 +33740,7 @@
     "wins": 36,
     "losses": 85,
     "pnl": -71.25,
-    "trades": 451,
+    "trades": 452,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-12",
     "deposits": 14.0,
