@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T05:04:24Z",
+  "updated": "2026-07-29T05:24:23Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1867,7 +1867,10 @@
         "total": 8.0,
         "ts": 1785284059
       },
-      "last_alert_odds": -231
+      "last_alert_odds": -231,
+      "result": "LOSS",
+      "score": "Colorado Rockies 7, San Diego Padres 8",
+      "units_result": -1.0
     },
     {
       "id": "2-leg-parlay-0728-whale",
