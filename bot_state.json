@@ -33210,8 +33210,11 @@
       "qty": 50,
       "market_slug": "aec-lol-mkf-flk-2026-07-29",
       "outcome": "FALKE Esports",
-      "status": "open",
-      "ts": "2026-07-29T10:30:02Z"
+      "status": "unfilled",
+      "ts": "2026-07-29T10:30:02Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     }
   ],
   "pm_stats": {
