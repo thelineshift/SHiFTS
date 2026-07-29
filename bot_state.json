@@ -151,7 +151,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785334849.0764508,
+  "last_x_receipt_ts": 1785345137.3498628,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -34560,7 +34560,7 @@
     "note": "stale 7/24 results \u2014 already receipted in Discord #receipts; X draining them would duplicate-post"
   },
   "x_eng_log": {
-    "2026-07-26-17": "edu"
+    "2026-07-29-17": "edu"
   },
   "board_posted": [
     "aec-atp-genoli-cartab-2026-07-27",
