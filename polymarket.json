@@ -1,15 +1,8 @@
 {
-  "ts": "2026-07-29T16:42:18Z",
+  "ts": "2026-07-29T16:57:18Z",
   "configured": true,
-  "balance_usd": 96.32,
-  "buying_power": 26.32,
+  "balance_usd": 95.72,
+  "buying_power": 25.72,
   "positions": [],
-  "open_orders": [
-    {
-      "market": "aec-ow-wbg-tl-2026-07-29",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.6",
-      "qty": 8
-    }
-  ]
+  "open_orders": []
 }
