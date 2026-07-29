@@ -2266,10 +2266,10 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -109,
-        "away_ml": -111,
+        "home_ml": -106,
+        "away_ml": -114,
         "total": 181.5,
-        "ts": 1785330614
+        "ts": 1785338836
       }
     },
     {
@@ -2312,11 +2312,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 124,
-        "total": 8.0,
-        "ts": 1785333157
-      }
+        "home_ml": -163,
+        "away_ml": 135,
+        "total": 8.5,
+        "ts": 1785338836
+      },
+      "last_alert_odds": -163
     },
     {
       "id": "over-8.5-0729",
@@ -2497,10 +2498,10 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -169,
-        "away_ml": 140,
+        "home_ml": -172,
+        "away_ml": 142,
         "total": 7.5,
-        "ts": 1785335506
+        "ts": 1785338837
       },
       "last_alert_odds": 135
     },
@@ -2609,10 +2610,10 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 153,
-        "away_ml": -187,
+        "home_ml": 148,
+        "away_ml": -180,
         "total": 156.5,
-        "ts": 1785337036
+        "ts": 1785338837
       },
       "last_alert_odds": -187
     },
@@ -2814,8 +2815,8 @@
       "live_odds": {
         "home_ml": -103,
         "away_ml": -117,
-        "total": 8.0,
-        "ts": 1785337037
+        "total": 8.5,
+        "ts": 1785338837
       },
       "last_alert_odds": -114
     },
