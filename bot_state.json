@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 20:54 UTC",
+    "at": "2026-07-29 18:57 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-3-4": "2026-07-29 20:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 20:34 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-29 20:01 UTC",
+    "\ud83c\udfaffree-pick-3-3": "2026-07-29 16:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 18:47 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-29 16:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-29 20:24 UTC"
+    "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 20:54 UTC",
+    "at": "2026-07-29 18:57 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,14 +33,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 20:54 UTC",
+    "at": "2026-07-29 18:57 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 20:54 UTC",
+    "at": "2026-07-29 18:57 UTC",
     "flags": []
   },
-  "bot_version": "9.24.22",
+  "bot_version": "9.24.21",
   "unannounced_results": [
     {
       "id": "athletics-ml-0728",
@@ -29597,106 +29597,13 @@
       "qty": 2,
       "market_slug": "aec-dota2-ns-stray-2026-07-29",
       "outcome": "NS Team",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T14:05:14Z",
-      "price_path": [
-        {
-          "ts": 1785307464,
-          "px": 0.41
-        },
-        {
-          "ts": 1785309273,
-          "px": 0.41
-        },
-        {
-          "ts": 1785311663,
-          "px": 0.41
-        },
-        {
-          "ts": 1785313468,
-          "px": 0.41
-        },
-        {
-          "ts": 1785315869,
-          "px": 0.41
-        },
-        {
-          "ts": 1785318264,
-          "px": 0.41
-        },
-        {
-          "ts": 1785320064,
-          "px": 0.41
-        },
-        {
-          "ts": 1785321865,
-          "px": 0.41
-        },
-        {
-          "ts": 1785324107,
-          "px": 0.41
-        },
-        {
-          "ts": 1785326506,
-          "px": 0.41
-        },
-        {
-          "ts": 1785329094,
-          "px": 0.41
-        },
-        {
-          "ts": 1785331330,
-          "px": 0.41
-        },
-        {
-          "ts": 1785333159,
-          "px": 0.41
-        },
-        {
-          "ts": 1785335456,
-          "px": 0.41
-        },
-        {
-          "ts": 1785337640,
-          "px": 0.41
-        },
-        {
-          "ts": 1785339441,
-          "px": 0.41
-        },
-        {
-          "ts": 1785341848,
-          "px": 0.4
-        },
-        {
-          "ts": 1785344248,
-          "px": 0.4
-        },
-        {
-          "ts": 1785346638,
-          "px": 0.28
-        },
-        {
-          "ts": 1785348438,
-          "px": 0.34
-        },
-        {
-          "ts": 1785350841,
-          "px": 0.44
-        },
-        {
-          "ts": 1785353238,
-          "px": 0.29
-        },
-        {
-          "ts": 1785355040,
-          "px": 0.15
-        },
-        {
-          "ts": 1785357247,
-          "px": 0.09
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T20:54:03Z",
+      "pnl": -1.0,
+      "autopsy": "model 64% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.09 before the result \u2014 the number ran 41\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.16,
@@ -30048,10 +29955,6 @@
       "ts": "2026-07-28T16:25:06Z",
       "price_path": [
         {
-          "ts": 1785307464,
-          "px": 0.24
-        },
-        {
           "ts": 1785309273,
           "px": 0.24
         },
@@ -30142,6 +30045,10 @@
         {
           "ts": 1785356237,
           "px": 0.35
+        },
+        {
+          "ts": 1785358445,
+          "px": 0.46
         }
       ]
     },
@@ -33555,15 +33462,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 45,
-    "losses": 99,
-    "pnl": -54.01,
+    "losses": 100,
+    "pnl": -55.01,
     "trades": 456,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-20",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 116.55,
-    "net": 52.55,
+    "account": 115.55,
+    "net": 51.55,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -33573,7 +33480,7 @@
       ],
       "EDGE": [
         36,
-        84,
+        85,
         0
       ],
       "LIVE-BET": [
@@ -33593,14 +33500,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T11:31:47Z",
-      "kind": "EDGE",
-      "outcome": "Stray Team",
-      "result": "LOSS",
-      "pnl": -0.28,
-      "lesson": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.34 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f (cashed out early at $0.46)"
-    },
     {
       "ts": "2026-07-29T11:31:48Z",
       "kind": "EDGE",
@@ -33832,6 +33731,14 @@
       "result": "LOSS",
       "pnl": -0.84,
       "lesson": "model 69% vs market 42% missed \u2014 logged for the playbook review. Taken 0.42, rode to 0.55 before the result \u2014 beat the number by 13\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T20:54:03Z",
+      "kind": "EDGE",
+      "outcome": "NS Team",
+      "result": "LOSS",
+      "pnl": -1.0,
+      "lesson": "model 64% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.09 before the result \u2014 the number ran 41\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
