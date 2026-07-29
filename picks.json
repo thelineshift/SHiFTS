@@ -2371,10 +2371,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 119,
-        "away_ml": -144,
+        "home_ml": 123,
+        "away_ml": -149,
         "total": 7.5,
-        "ts": 1785331357
+        "ts": 1785360284
       }
     },
     {
@@ -2462,10 +2462,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -205,
-        "away_ml": 168,
+        "home_ml": -206,
+        "away_ml": 169,
         "total": 9.0,
-        "ts": 1785356643
+        "ts": 1785360284
       },
       "last_alert_odds": -198
     },
@@ -2979,10 +2979,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": 109,
-        "away_ml": -132,
+        "home_ml": 115,
+        "away_ml": -138,
         "total": 8.5,
-        "ts": 1785358443
+        "ts": 1785360284
       }
     },
     {
