@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T03:04:21Z",
+  "updated": "2026-07-29T03:04:26Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1547,7 +1547,10 @@
         "away_ml": -105,
         "total": 9.0,
         "ts": 1785276859
-      }
+      },
+      "result": "LOSS",
+      "score": "Arizona Diamondbacks 8, Pittsburgh Pirates 7",
+      "units_result": -1.0
     },
     {
       "id": "atlanta-braves--1.5-0728",
@@ -1668,7 +1671,10 @@
         "away_ml": 119,
         "total": 9.0,
         "ts": 1785269659
-      }
+      },
+      "result": "LOSS",
+      "score": "Toronto Blue Jays 6, Washington Nationals 8",
+      "units_result": -1.0
     },
     {
       "id": "detroit-tigers-ml-0728",
@@ -1934,7 +1940,10 @@
         "away_ml": -108,
         "total": 8.5,
         "ts": 1785282259
-      }
+      },
+      "result": "WIN",
+      "score": "Chicago Cubs 10, St. Louis Cardinals 2",
+      "units_result": 0.89
     },
     {
       "id": "boston-red-sox--1.5-0728",
