@@ -5111,7 +5111,7 @@
         }
       },
       "valorant:133115": {
-        "ts": 1785271792.9846077,
+        "ts": 1785320381.5645754,
         "f": {
           "w": 3,
           "l": 2,
@@ -5140,7 +5140,7 @@
         }
       },
       "valorant:128796": {
-        "ts": 1785271793.5809577,
+        "ts": 1785320382.1899867,
         "f": {
           "w": 3,
           "l": 2,
@@ -33144,6 +33144,37 @@
           "px": 0.575
         }
       ]
+    },
+    {
+      "price": 0.04,
+      "short": true,
+      "stake": 2.2,
+      "kind": "EDGE",
+      "p_model": 0.25,
+      "event": "Movistar KOI Fenix vs. FALKE Esports",
+      "ev_start": "2026-07-29T17:30:00Z",
+      "reason": "model 25% vs market 4% \u2014 21% edge, half-Kelly",
+      "order_id": "BHP2DJ5C09P8",
+      "qty": 55,
+      "market_slug": "aec-lol-mkf-flk-2026-07-29",
+      "outcome": "FALKE Esports",
+      "status": "open",
+      "ts": "2026-07-29T10:20:04Z"
+    },
+    {
+      "price": 0.39,
+      "stake": 1.56,
+      "kind": "EDGE",
+      "p_model": 0.5,
+      "event": "Gentle Mates vs. Team Vitality",
+      "ev_start": "2026-07-29T18:00:00Z",
+      "reason": "model 50% vs market 39% \u2014 11% edge, half-Kelly",
+      "order_id": "BHP4EFSX09QM",
+      "qty": 4,
+      "market_slug": "aec-valorant-gm-vit-2026-07-29",
+      "outcome": "Gentle Mates",
+      "status": "open",
+      "ts": "2026-07-29T10:20:06Z"
     }
   ],
   "pm_stats": {
@@ -33151,7 +33182,7 @@
     "wins": 33,
     "losses": 79,
     "pnl": -75.92,
-    "trades": 426,
+    "trades": 428,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-10",
     "deposits": 14.0,
