@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 21:37 UTC",
+    "at": "2026-07-29 22:03 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-4": "2026-07-29 20:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 20:54 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 21:57 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-29 20:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 20:24 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 21:37 UTC",
+    "at": "2026-07-29 22:03 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,24 +33,17 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 21:37 UTC",
-    "flags": []
+    "at": "2026-07-29 22:03 UTC",
+    "flags": [
+      "no challenge bet registered for 2026-07-29 (due 6 PM ET)"
+    ]
   },
   "giveaway_watch": {
-    "at": "2026-07-29 21:37 UTC",
+    "at": "2026-07-29 22:03 UTC",
     "flags": []
   },
-  "bot_version": "9.24.25",
+  "bot_version": "9.24.26",
   "unannounced_results": [
-    {
-      "id": "boston-red-sox--1.5-0728",
-      "desc": "Boston Red Sox -1.5",
-      "odds": -110,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Boston Red Sox 3, Athletics 4",
-      "tier": "lock"
-    },
     {
       "id": "boston-red-sox-ml-0728",
       "desc": "Boston Red Sox ML",
@@ -124,7 +117,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785359686.6134663,
+  "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -26689,10 +26682,6 @@
       "ts": "2026-07-27T16:25:14Z",
       "price_path": [
         {
-          "ts": 1785311070,
-          "px": 0.535
-        },
-        {
           "ts": 1785313466,
           "px": 0.535
         },
@@ -26783,6 +26772,10 @@
         {
           "ts": 1785360658,
           "px": 0.32
+        },
+        {
+          "ts": 1785362586,
+          "px": 0.01
         }
       ]
     },
@@ -29955,10 +29948,6 @@
       "ts": "2026-07-28T16:25:06Z",
       "price_path": [
         {
-          "ts": 1785311663,
-          "px": 0.24
-        },
-        {
           "ts": 1785313469,
           "px": 0.24
         },
@@ -30049,6 +30038,10 @@
         {
           "ts": 1785360658,
           "px": 0.58
+        },
+        {
+          "ts": 1785362587,
+          "px": 0.26
         }
       ]
     },
@@ -33732,7 +33725,8 @@
     "note": "stale 7/24 results \u2014 already receipted in Discord #receipts; X draining them would duplicate-post"
   },
   "x_eng_log": {
-    "2026-07-29-17": "edu"
+    "2026-07-29-17": "edu",
+    "2026-07-29-22": "store-ad"
   },
   "board_posted": [
     "astatc-wta-marsto-peyste-2026-07-26-sw1",
