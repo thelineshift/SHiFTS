@@ -30296,106 +30296,13 @@
       "qty": 3,
       "market_slug": "aec-dota2-rt-tt-2026-07-29",
       "outcome": "Rostik Team",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T16:25:06Z",
-      "price_path": [
-        {
-          "ts": 1785315869,
-          "px": 0.24
-        },
-        {
-          "ts": 1785318264,
-          "px": 0.24
-        },
-        {
-          "ts": 1785320065,
-          "px": 0.24
-        },
-        {
-          "ts": 1785321865,
-          "px": 0.24
-        },
-        {
-          "ts": 1785324108,
-          "px": 0.24
-        },
-        {
-          "ts": 1785326506,
-          "px": 0.24
-        },
-        {
-          "ts": 1785329094,
-          "px": 0.24
-        },
-        {
-          "ts": 1785331331,
-          "px": 0.24
-        },
-        {
-          "ts": 1785333159,
-          "px": 0.24
-        },
-        {
-          "ts": 1785335457,
-          "px": 0.24
-        },
-        {
-          "ts": 1785337641,
-          "px": 0.24
-        },
-        {
-          "ts": 1785339441,
-          "px": 0.24
-        },
-        {
-          "ts": 1785341241,
-          "px": 0.24
-        },
-        {
-          "ts": 1785343045,
-          "px": 0.24
-        },
-        {
-          "ts": 1785345439,
-          "px": 0.24
-        },
-        {
-          "ts": 1785348438,
-          "px": 0.24
-        },
-        {
-          "ts": 1785350238,
-          "px": 0.29
-        },
-        {
-          "ts": 1785352038,
-          "px": 0.29
-        },
-        {
-          "ts": 1785353838,
-          "px": 0.28
-        },
-        {
-          "ts": 1785356237,
-          "px": 0.35
-        },
-        {
-          "ts": 1785358445,
-          "px": 0.46
-        },
-        {
-          "ts": 1785360658,
-          "px": 0.58
-        },
-        {
-          "ts": 1785362587,
-          "px": 0.26
-        },
-        {
-          "ts": 1785364741,
-          "px": 0.31
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T23:09:01Z",
+      "pnl": -1.32,
+      "autopsy": "model 57% vs market 44% missed \u2014 logged for the playbook review. Taken 0.44, slid to 0.31 before the result \u2014 the number ran 13\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.31,
@@ -34113,15 +34020,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 45,
-    "losses": 102,
-    "pnl": -59.44,
+    "losses": 103,
+    "pnl": -60.76,
     "trades": 469,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-22",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 53.59,
-    "net": -10.41,
+    "account": 52.27,
+    "net": -11.73,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -34131,7 +34038,7 @@
       ],
       "EDGE": [
         36,
-        87,
+        88,
         0
       ],
       "LIVE-BET": [
@@ -34151,14 +34058,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T11:31:51Z",
-      "kind": "EDGE",
-      "outcome": "Team Secret",
-      "result": "LOSS",
-      "pnl": -0.99,
-      "lesson": "model 43% vs market 10% missed \u2014 logged for the playbook review. Rode the number flat to the result. (cashed out early at $0.11)"
-    },
     {
       "ts": "2026-07-29T11:41:44Z",
       "kind": "EDGE",
@@ -34390,6 +34289,14 @@
       "result": "LOSS",
       "pnl": -1.07,
       "lesson": "model 63% vs market 54% missed \u2014 logged for the playbook review. Taken 0.54, slid to 0.01 before the result \u2014 the number ran 53\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T23:09:01Z",
+      "kind": "EDGE",
+      "outcome": "Rostik Team",
+      "result": "LOSS",
+      "pnl": -1.32,
+      "lesson": "model 57% vs market 44% missed \u2014 logged for the playbook review. Taken 0.44, slid to 0.31 before the result \u2014 the number ran 13\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
