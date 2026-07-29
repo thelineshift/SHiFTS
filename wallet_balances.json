@@ -1,5 +1,5 @@
 {
-  "ts": "2026-07-29T14:20:50Z",
+  "ts": "2026-07-29T14:31:46Z",
   "wallets": [
     {
       "chain": "solana",
@@ -7,8 +7,9 @@
       "label": "\ud83c\udf81 GIVEAWAY WALLET",
       "address": "5rw9dnpwi9ER6MQf3yL9obKyM3PSjxd4w9AvzqwW6nG3",
       "note": "weekly SOL giveaway prizes pay out from here",
-      "balance": 0.08883,
-      "usd": 6.53
+      "balance": null,
+      "usd": null,
+      "error": "HTTP Error 429: Too Many Requests"
     },
     {
       "chain": "solana",
@@ -16,8 +17,9 @@
       "label": "\ud83d\udcbc OPS WALLET",
       "address": "CXMSPuotirZU1shtrVL21SiobsDyXf7m7CYoS2W2kTWj",
       "note": "crypto subscription revenue (SOL/USDC)",
-      "balance": 0.0,
-      "usd": 0.0
+      "balance": null,
+      "usd": null,
+      "error": "HTTP Error 429: Too Many Requests"
     },
     {
       "chain": "ethereum",
