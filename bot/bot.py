@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.25'  # cs2 EDGE un-retired (owner decree PM#6) — notable gate + noise bar + tuning seatbelt
+BOT_VERSION = '9.24.26'  # DRAW-ONLY QUARANTINE LAW — junk legs no longer flip MLB/NBA/tennis events to 3-way (3h MLB blackout root cause); ESPN feed X-ray in cycle print
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4816,7 +4816,8 @@ def pm_trader_scan(st):
                         # Frech ×2 same-minute double-entry slipped between two slugs (7/28)
     cbc = {k: v for k, v in (cache.get('cb') or {}).items() if now - float(v.get('ts') or 0) < 36 * 3600}
     cache['cb'] = cbc  # COMEBACK LAW anchors: pre-match price + model per 2-way slug (36h TTL)
-    hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B, 'leagues': {}, 'cb': len(cbc)}
+    hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B, 'leagues': {}, 'cb': len(cbc),
+          'espn': len(games), 'espnl': sum(1 for g in games if g.get('state') == 'in')}  # feed X-ray
     _tune = _desk_tuning(st)
     _tb = lambda k: (_tune.get(k) or {}).get('edge_bonus', 0.0)
     _tm = lambda k: (_tune.get(k) or {}).get('stake_mult', 1.0)
@@ -4897,7 +4898,12 @@ def pm_trader_scan(st):
         hb['vs'] += 1
         _lg = (sorted(leagues)[0] if leagues else '?')
         hb['leagues'][_lg] = hb['leagues'].get(_lg, 0) + 1
-        three_way = dropped_winner > 0  # draw sport — the 2-way model and any "arb" are invalid here
+        # DRAW-ONLY QUARANTINE LAW (v9.24.26): PM lists ~10 unnamed junk sides per MLB event
+        # (alt-line instances) — they flipped three_way=True on a sport with NO draws and
+        # quarantined the entire MLB slate for 3+ hours. Only draw-possible events may
+        # quarantine: soccer-tagged (7/25 Austrian lesson) or untagged (unknown shape).
+        _draw_possible = (not leagues) or bool(leagues & PM_SOCCER) or ('ufc' in leagues)
+        three_way = dropped_winner > 0 and _draw_possible  # draw sport — the 2-way model and any "arb" are invalid here
         if three_way:
             hb['three_way'] += 1
         # ---- PLAYBOOK: SUM-ARB — buy every side when the book sums under $1 (risk-free).
@@ -5718,7 +5724,7 @@ async def pm_trader():
             _lgmix = ' '.join(f"{k}:{v}" for k, v in sorted(hb.get('leagues', {}).items())) or 'none'
             print(f"[trader] cycle: {hb.get('vs', '?')} vs-events ({_lgmix}) · {hb.get('three_way', '?')} 3-way priced · "
                   f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f} · cb {hb.get('cb', 0)} · "
-                  f"live {hb.get('lv', 0)}(esp {hb.get('lvesp', 0)}) cb g{hb.get('cbgate', 0)}/fl{hb.get('cbfl', 0)} tw3 {hb.get('tw3', 0)}/{hb.get('tw3b', 0)} band {hb.get('band', 0)}/nf{hb.get('bandfail', 0)} ls {hb.get('lsg', 0)}/nf{hb.get('lsf', 0)}")
+                  f"live {hb.get('lv', 0)}(esp {hb.get('lvesp', 0)}) espn {hb.get('espn', 0)}(l{hb.get('espnl', 0)}) cb g{hb.get('cbgate', 0)}/fl{hb.get('cbfl', 0)} tw3 {hb.get('tw3', 0)}/{hb.get('tw3b', 0)} band {hb.get('band', 0)}/nf{hb.get('bandfail', 0)} ls {hb.get('lsg', 0)}/nf{hb.get('lsf', 0)}")
             for _tw in (hb.get('tuning') or []):
                 print(f"[trader] tuning: {_tw}")
         else:
