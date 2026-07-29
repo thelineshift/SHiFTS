@@ -142,6 +142,33 @@
       "units": -1.0,
       "score": "New York Liberty 113, Los Angeles Sparks 109",
       "tier": "sharp"
+    },
+    {
+      "id": "milwaukee-brewers-ml-0728",
+      "desc": "Milwaukee Brewers ML",
+      "odds": -142,
+      "result": "WIN",
+      "units": 0.7,
+      "score": "Milwaukee Brewers 8, San Francisco Giants 2",
+      "tier": "whale"
+    },
+    {
+      "id": "los-angeles-dodgers--1.5-0728",
+      "desc": "Los Angeles Dodgers -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Seattle Mariners 7, Los Angeles Dodgers 6",
+      "tier": "whale"
+    },
+    {
+      "id": "milwaukee-brewers--1.5-0728",
+      "desc": "Milwaukee Brewers -1.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Milwaukee Brewers 8, San Francisco Giants 2",
+      "tier": "lock"
     }
   ],
   "last_x_receipt_ts": 1785246260.6717944,
@@ -22878,106 +22905,13 @@
       "qty": 2,
       "market_slug": "aec-mlb-mil-sf-2026-07-28",
       "outcome": "Milwaukee Brewers",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-26T23:21:22Z",
-      "price_path": [
-        {
-          "ts": 1785243260,
-          "px": 0.58
-        },
-        {
-          "ts": 1785246859,
-          "px": 0.59
-        },
-        {
-          "ts": 1785248665,
-          "px": 0.59
-        },
-        {
-          "ts": 1785251059,
-          "px": 0.59
-        },
-        {
-          "ts": 1785252859,
-          "px": 0.59
-        },
-        {
-          "ts": 1785254660,
-          "px": 0.59
-        },
-        {
-          "ts": 1785257060,
-          "px": 0.59
-        },
-        {
-          "ts": 1785259460,
-          "px": 0.59
-        },
-        {
-          "ts": 1785261859,
-          "px": 0.59
-        },
-        {
-          "ts": 1785263661,
-          "px": 0.59
-        },
-        {
-          "ts": 1785267262,
-          "px": 0.585
-        },
-        {
-          "ts": 1785269660,
-          "px": 0.585
-        },
-        {
-          "ts": 1785272065,
-          "px": 0.585
-        },
-        {
-          "ts": 1785274459,
-          "px": 0.585
-        },
-        {
-          "ts": 1785276859,
-          "px": 0.585
-        },
-        {
-          "ts": 1785279259,
-          "px": 0.585
-        },
-        {
-          "ts": 1785281062,
-          "px": 0.585
-        },
-        {
-          "ts": 1785283459,
-          "px": 0.585
-        },
-        {
-          "ts": 1785285259,
-          "px": 0.585
-        },
-        {
-          "ts": 1785288265,
-          "px": 0.585
-        },
-        {
-          "ts": 1785291259,
-          "px": 0.55
-        },
-        {
-          "ts": 1785293073,
-          "px": 0.69
-        },
-        {
-          "ts": 1785295459,
-          "px": 0.965
-        },
-        {
-          "ts": 1785297259,
-          "px": 0.985
-        }
-      ]
+      "result": "WIN",
+      "payout": 2.0,
+      "settled_at": "2026-07-29T05:04:25Z",
+      "pnl": 0.9,
+      "autopsy": "+$0.90 \u2014 model 63% vs market 55% was real edge; thesis held. Taken 0.55, rode to 0.98 before the result \u2014 beat the number by 43\u00a2 \u2705"
     },
     {
       "price": 0.4,
@@ -31676,16 +31610,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 32,
+    "wins": 33,
     "losses": 78,
-    "pnl": -75.59,
+    "pnl": -74.69,
     "trades": 399,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-04",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 109.71,
-    "net": 95.71,
+    "account": 110.61,
+    "net": 96.61,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -31694,7 +31628,7 @@
         0
       ],
       "EDGE": [
-        24,
+        25,
         63,
         0
       ],
@@ -31954,6 +31888,14 @@
       "result": "LOSS",
       "pnl": -1.43,
       "lesson": "model 28% vs market 13% missed \u2014 logged for the playbook review. Taken 0.13, slid to 0.01 before the result \u2014 the number ran 12\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T05:04:25Z",
+      "kind": "EDGE",
+      "outcome": "Milwaukee Brewers",
+      "result": "WIN",
+      "pnl": 0.9,
+      "lesson": "+$0.90 \u2014 model 63% vs market 55% was real edge; thesis held. Taken 0.55, rode to 0.98 before the result \u2014 beat the number by 43\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
