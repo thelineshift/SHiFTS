@@ -33732,8 +33732,9 @@
       "qty": 1,
       "market_slug": "aec-kbo-ltg-khi-2026-07-29",
       "outcome": "Kiwoom Heroes",
-      "status": "resting",
-      "ts": "2026-07-29T13:23:29Z"
+      "status": "unfilled",
+      "ts": "2026-07-29T13:23:29Z",
+      "note": " [stale-swept]"
     }
   ],
   "pm_stats": {
