@@ -33877,7 +33877,7 @@
       "qty": 9,
       "market_slug": "aec-mlb-chc-stl-2026-07-29",
       "outcome": "Chicago Cubs",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T22:04:31Z",
       "price_path": [
         {
@@ -33892,7 +33892,8 @@
           "ts": 1785368343,
           "px": 0.5
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.47,
