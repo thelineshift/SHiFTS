@@ -3870,11 +3870,15 @@
     "esp_ts": 1785322759.2352333,
     "form": {
       "dota2:1948": {
-        "ts": 1785315278.7588782,
+        "ts": 1785327489.9279194,
         "f": {
           "w": 3,
           "l": 1,
           "res": [
+            {
+              "won": true,
+              "opp": "KW"
+            },
             {
               "won": true,
               "opp": "PuckChamp"
@@ -3886,10 +3890,6 @@
             {
               "won": true,
               "opp": "Nemiga Gaming"
-            },
-            {
-              "won": true,
-              "opp": "Dandelions"
             }
           ]
         }
@@ -33144,6 +33144,37 @@
       "outcome": "Kiwoom Heroes",
       "status": "open",
       "ts": "2026-07-29T12:13:23Z"
+    },
+    {
+      "price": 0.96,
+      "stake": 0.96,
+      "kind": "TAIL",
+      "p_model": null,
+      "event": "Hanwha Eagles vs. Lotte Giants",
+      "ev_start": "2026-07-29T09:30:00Z",
+      "reason": "[live] near-certainty yield \u2014 live price 96%, market-validated (no model \u2014 complete live book), settles within hours, half size",
+      "order_id": "BHQWPYXKR9NN",
+      "qty": 1,
+      "market_slug": "aec-kbo-hea-lgo-2026-07-29",
+      "outcome": "Hanwha Eagles",
+      "status": "open",
+      "ts": "2026-07-29T12:18:22Z"
+    },
+    {
+      "price": 0.95,
+      "short": true,
+      "stake": 0.95,
+      "kind": "TAIL",
+      "p_model": null,
+      "event": "Welsh Fire vs. Trent Rockets",
+      "ev_start": "2026-07-29T10:30:00Z",
+      "reason": "[live] near-certainty yield \u2014 live price 95%, market-validated (no model \u2014 complete live book), settles within hours, half size",
+      "order_id": "BHQS7JMT49SX",
+      "qty": 1,
+      "market_slug": "aec-hundredw-wfe-trr-2026-07-29",
+      "outcome": "Trent Rockets",
+      "status": "open",
+      "ts": "2026-07-29T12:18:24Z"
     }
   ],
   "pm_stats": {
@@ -33151,7 +33182,7 @@
     "wins": 35,
     "losses": 84,
     "pnl": -65.27,
-    "trades": 436,
+    "trades": 438,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-12",
     "deposits": 14.0,
