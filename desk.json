@@ -1,12 +1,12 @@
 {
-  "updated": "2026-07-29T04:00:29Z",
+  "updated": "2026-07-29T04:05:40Z",
   "record": "32-75",
-  "trades": 390,
-  "open": 39,
+  "trades": 395,
+  "open": 44,
   "pnl": -72.08,
-  "account": 116.54,
+  "account": 113.22,
   "deposits": 14.0,
-  "net_pnl": 102.54,
+  "net_pnl": 99.22,
   "playbooks": "ARB 3-5 \u00b7 EDGE 24-60 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 3-3",
   "recent": [
     {
