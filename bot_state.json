@@ -33304,7 +33304,9 @@
       "outcome": "Kia Tigers",
       "status": "unfilled",
       "ts": "2026-07-29T12:50:40Z",
-      "note": " [stale-swept]"
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.98,
@@ -33370,7 +33372,7 @@
       "qty": 1,
       "market_slug": "aec-kbo-ndc-kwt-2026-07-29",
       "outcome": "KT Wiz",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T13:00:54Z"
     },
     {
@@ -33386,7 +33388,7 @@
       "qty": 1,
       "market_slug": "aec-kbo-ltg-khi-2026-07-29",
       "outcome": "Kiwoom Heroes",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T13:00:55Z"
     }
   ],
