@@ -1,16 +1,10 @@
 {
-  "ts": "2026-07-29T14:55:16Z",
+  "ts": "2026-07-29T14:57:18Z",
   "configured": true,
-  "balance_usd": 93.46,
-  "buying_power": 31.46,
+  "balance_usd": 91.79,
+  "buying_power": 29.79,
   "positions": [],
   "open_orders": [
-    {
-      "market": "astatc-atp-alemin-stetsi-2026-07-27-sw1",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.56",
-      "qty": 4
-    },
     {
       "market": "aec-lol-mgz-lps-2026-07-29",
       "intent": "ORDER_INTENT_BUY_SHORT",
