@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T00:00:51Z",
+  "updated": "2026-07-29T00:44:22Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1586,7 +1586,10 @@
         "total": 9.0,
         "ts": 1785258859
       },
-      "last_alert_odds": -168
+      "last_alert_odds": -168,
+      "result": "LOSS",
+      "score": "Cleveland Guardians 6, Cincinnati Reds 5",
+      "units_result": -1.0
     },
     {
       "id": "houston-astros-ml-0728",
@@ -1605,10 +1608,10 @@
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -111,
-        "away_ml": -108,
+        "home_ml": -108,
+        "away_ml": -111,
         "total": 8.5,
-        "ts": 1785285859
+        "ts": 1785248059
       }
     },
     {
