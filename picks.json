@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T04:44:20Z",
+  "updated": "2026-07-29T04:44:33Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1624,7 +1624,10 @@
         "away_ml": -108,
         "total": 8.5,
         "ts": 1785287659
-      }
+      },
+      "result": "WIN",
+      "score": "Houston Astros 3, Los Angeles Angels 2",
+      "units_result": 0.93
     },
     {
       "id": "athletics-ml-0728",
