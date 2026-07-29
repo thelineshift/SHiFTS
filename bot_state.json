@@ -149,6 +149,15 @@
       "units": -1.0,
       "score": "Colorado Rockies 7, San Diego Padres 8",
       "tier": "lock"
+    },
+    {
+      "id": "gentle-mates-gc-ml-0729",
+      "desc": "Gentle Mates GC ML",
+      "odds": -386,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "Gentle Mates GC 1-2 FOKUS Sakura \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785345137.3498628,
