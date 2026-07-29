@@ -43,15 +43,6 @@
   "bot_version": "9.24.21",
   "unannounced_results": [
     {
-      "id": "pittsburgh-pirates-ml-0728",
-      "desc": "Pittsburgh Pirates ML",
-      "odds": -117,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Arizona Diamondbacks 8, Pittsburgh Pirates 7",
-      "tier": "sharp"
-    },
-    {
       "id": "toronto-blue-jays-ml-0728",
       "desc": "Toronto Blue Jays ML",
       "odds": 118,
