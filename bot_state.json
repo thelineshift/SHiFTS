@@ -33119,14 +33119,15 @@
       "qty": 1,
       "market_slug": "aec-kbo-ltg-khi-2026-07-29",
       "outcome": "Kiwoom Heroes",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T12:25:38Z",
       "price_path": [
         {
           "ts": 1785328500,
           "px": 0.99
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.98,
@@ -33141,14 +33142,15 @@
       "qty": 1,
       "market_slug": "aec-hundredw-wfe-trr-2026-07-29",
       "outcome": "Trent Rockets",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T12:25:39Z",
       "price_path": [
         {
           "ts": 1785328501,
           "px": 0.97
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.97,
