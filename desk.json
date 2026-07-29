@@ -1,25 +1,25 @@
 {
-  "updated": "2026-07-29T16:03:37Z",
-  "record": "36-87",
-  "trades": 453,
-  "open": 31,
-  "pnl": -73.65,
-  "account": 93.39,
+  "updated": "2026-07-29T18:03:30Z",
+  "record": "38-90",
+  "trades": 456,
+  "open": 28,
+  "pnl": -70.46,
+  "account": 123.45,
   "deposits": 64.0,
-  "net_pnl": 29.39,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 27-72 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
+  "net_pnl": 59.45,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 29-75 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
   "recent": [
     {
-      "outcome": "KT Rolster",
+      "outcome": "FOKUS Sakura",
       "short": true,
       "result": "won",
-      "pnl": 3.95
+      "pnl": 5.6
     },
     {
-      "outcome": "Charles Broom",
+      "outcome": "ZYB Esport",
       "short": true,
-      "result": "lost",
-      "pnl": -0.96
+      "result": "won",
+      "pnl": 1.98
     },
     {
       "outcome": "Haruka Kaji",
