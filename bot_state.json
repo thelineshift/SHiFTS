@@ -25505,6 +25505,10 @@
       "ts": "2026-07-27T16:25:14Z",
       "price_path": [
         {
+          "ts": 1785276860,
+          "px": 0.525
+        },
+        {
           "ts": 1785279260,
           "px": 0.525
         },
@@ -25594,10 +25598,6 @@
         },
         {
           "ts": 1785327759,
-          "px": 0.54
-        },
-        {
-          "ts": 1785330296,
           "px": 0.54
         }
       ]
@@ -25743,6 +25743,10 @@
       "ts": "2026-07-27T17:30:12Z",
       "price_path": [
         {
+          "ts": 1785274464,
+          "px": 0.25
+        },
+        {
           "ts": 1785276861,
           "px": 0.25
         },
@@ -25832,10 +25836,6 @@
         },
         {
           "ts": 1785327759,
-          "px": 0.25
-        },
-        {
-          "ts": 1785330296,
           "px": 0.25
         }
       ]
@@ -33304,9 +33304,7 @@
       "outcome": "Kia Tigers",
       "status": "unfilled",
       "ts": "2026-07-29T12:50:40Z",
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      "note": " [stale-swept]"
     },
     {
       "price": 0.98,
@@ -33402,6 +33400,22 @@
           "px": 0.99
         }
       ]
+    },
+    {
+      "price": 0.95,
+      "short": true,
+      "stake": 0.95,
+      "kind": "TAIL",
+      "p_model": null,
+      "event": "ex-MANA eSports vs. los kogutos",
+      "ev_start": "2026-07-29T11:00:00Z",
+      "reason": "[live] near-certainty yield \u2014 live price 95%, market-validated (no model \u2014 complete live book), settles within hours, half size",
+      "order_id": "BHRHKZ1TY9NS",
+      "qty": 1,
+      "market_slug": "aec-cs2-exmana-lk-2026-07-29",
+      "outcome": "los kogutos",
+      "status": "open",
+      "ts": "2026-07-29T13:05:37Z"
     }
   ],
   "pm_stats": {
@@ -33409,7 +33423,7 @@
     "wins": 35,
     "losses": 85,
     "pnl": -71.3,
-    "trades": 449,
+    "trades": 450,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-12",
     "deposits": 14.0,
