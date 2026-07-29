@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T20:54:47Z",
+  "updated": "2026-07-29T22:59:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2318,7 +2318,10 @@
         "total": 8.5,
         "ts": 1785353236
       },
-      "last_alert_odds": -175
+      "last_alert_odds": -175,
+      "result": "WIN",
+      "score": "Colorado Rockies 1, San Diego Padres 3",
+      "units_result": 0.7
     },
     {
       "id": "over-8.5-0729",
@@ -2399,7 +2402,10 @@
         "total": 7.5,
         "ts": 1785353236
       },
-      "last_alert_odds": -112
+      "last_alert_odds": -112,
+      "result": "LOSS",
+      "score": "Milwaukee Brewers 3, San Francisco Giants 16",
+      "units_result": -1.0
     },
     {
       "id": "fortaleza-ml-0729",
@@ -2937,7 +2943,10 @@
         "total": 8.5,
         "ts": 1785353237
       },
-      "last_alert_odds": -175
+      "last_alert_odds": -175,
+      "result": "WIN",
+      "score": "Colorado Rockies 1, San Diego Padres 3",
+      "units_result": 0.91
     },
     {
       "id": "chicago-cubs-ml-0729",
