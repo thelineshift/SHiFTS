@@ -43,6 +43,15 @@
   "bot_version": "9.24.16",
   "unannounced_results": [
     {
+      "id": "3-leg-parlay-0728-whale",
+      "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
+      "odds": 262,
+      "result": "WIN",
+      "units": 1.31,
+      "score": "Legs: None: win \u00b7 None: win \u00b7 None: win",
+      "tier": "whale"
+    },
+    {
       "id": "3-leg-parlay-0728-sharp",
       "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
       "odds": 262,
@@ -160,7 +169,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785325305.1693635,
+  "last_x_receipt_ts": 1785246260.6717944,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -31926,58 +31935,14 @@
       "qty": 3,
       "market_slug": "aec-mlb-pit-cin-2026-07-31",
       "outcome": "Pittsburgh Pirates",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T04:05:31Z",
-      "price_path": [
-        {
-          "ts": 1785298502,
-          "px": 0.475
-        },
-        {
-          "ts": 1785300869,
-          "px": 0.465
-        },
-        {
-          "ts": 1785302672,
-          "px": 0.465
-        },
-        {
-          "ts": 1785305072,
-          "px": 0.465
-        },
-        {
-          "ts": 1785307468,
-          "px": 0.465
-        },
-        {
-          "ts": 1785309276,
-          "px": 0.465
-        },
-        {
-          "ts": 1785311667,
-          "px": 0.465
-        },
-        {
-          "ts": 1785313472,
-          "px": 0.465
-        },
-        {
-          "ts": 1785315873,
-          "px": 0.465
-        },
-        {
-          "ts": 1785318268,
-          "px": 0.465
-        },
-        {
-          "ts": 1785320667,
-          "px": 0.465
-        },
-        {
-          "ts": 1785322917,
-          "px": 0.465
-        }
-      ]
+      "result": "LOSS",
+      "payout": 1.08,
+      "pnl": -0.33,
+      "cashout": true,
+      "settled_at": "2026-07-29T11:41:44Z",
+      "autopsy": "model 52% vs market 47% missed \u2014 logged for the playbook review. Rode the number flat to the result. (cashed out early at $1.08)"
     },
     {
       "price": 0.58,
@@ -32881,7 +32846,7 @@
       "qty": 3,
       "market_slug": "aec-mlb-sf-sd-2026-07-31",
       "outcome": "San Diego Padres",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T10:10:09Z",
       "price_path": [
         {
@@ -32896,7 +32861,10 @@
           "ts": 1785324111,
           "px": 0.575
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.04,
@@ -33012,7 +32980,7 @@
       "qty": 2,
       "market_slug": "aec-wnba-conn-chi-2026-07-30",
       "outcome": "Chicago",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T10:50:12Z",
       "price_path": [
         {
@@ -33023,7 +32991,10 @@
           "ts": 1785324715,
           "px": 0.61
         }
-      ]
+      ],
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.04,
@@ -33070,8 +33041,8 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 35,
-    "losses": 83,
-    "pnl": -64.94,
+    "losses": 84,
+    "pnl": -65.27,
     "trades": 434,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-10",
@@ -33088,7 +33059,7 @@
       ],
       "EDGE": [
         27,
-        68,
+        69,
         0
       ],
       "LIVE-BET": [
@@ -33108,14 +33079,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T17:24:27Z",
-      "kind": "EDGE",
-      "outcome": "Harold Mayot",
-      "result": "LOSS",
-      "pnl": -2.03,
-      "lesson": "model 54% vs market 29% missed \u2014 logged for the playbook review. Taken 0.29, rode to 0.01 before the result \u2014 beat the number by 28\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-28T17:24:31Z",
       "kind": "EDGE",
@@ -33347,6 +33310,14 @@
       "result": "LOSS",
       "pnl": -0.99,
       "lesson": "model 43% vs market 10% missed \u2014 logged for the playbook review. Rode the number flat to the result. (cashed out early at $0.11)"
+    },
+    {
+      "ts": "2026-07-29T11:41:44Z",
+      "kind": "EDGE",
+      "outcome": "Pittsburgh Pirates",
+      "result": "LOSS",
+      "pnl": -0.33,
+      "lesson": "model 52% vs market 47% missed \u2014 logged for the playbook review. Rode the number flat to the result. (cashed out early at $1.08)"
     }
   ],
   "giveaway_x_posts": [
