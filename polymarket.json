@@ -1,15 +1,15 @@
 {
-  "ts": "2026-07-29T11:31:47Z",
+  "ts": "2026-07-29T11:46:46Z",
   "configured": true,
   "balance_usd": 107.41,
   "buying_power": 26.41,
   "positions": [],
   "open_orders": [
     {
-      "market": "aec-ow-wbg-tl-2026-07-29",
+      "market": "astatc-atp-alemin-stetsi-2026-07-27-sw1",
       "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.6",
-      "qty": 8
+      "price": "0.56",
+      "qty": 4
     },
     {
       "market": "aec-lol-mgz-lps-2026-07-29",
@@ -18,10 +18,10 @@
       "qty": 3
     },
     {
-      "market": "astatc-atp-alemin-stetsi-2026-07-27-sw1",
+      "market": "aec-ow-wbg-tl-2026-07-29",
       "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.56",
-      "qty": 4
+      "price": "0.6",
+      "qty": 8
     }
   ]
 }
