@@ -31242,8 +31242,6 @@
     "2026-07-26-17": "edu"
   },
   "board_posted": [
-    "aec-wta-marsto-peyste-2026-07-26",
-    "astatc-wta-marsto-peyste-2026-07-26-sw2",
     "astatc-wta-renzar-mcckes-2026-07-26-sw2",
     "aec-atp-ardazk-yanere-2026-07-27",
     "aec-atp-carcan-andpel-2026-07-27",
@@ -31301,7 +31299,9 @@
     "aec-atp-yuhhsu-micmmo-2026-07-27",
     "aec-valorant-m8gc-fso-2026-07-29",
     "astatc-atp-dalsvr-adawal-2026-07-27-sw2",
-    "astatc-atp-densha-rinhij-2026-07-27-sw1"
+    "astatc-atp-densha-rinhij-2026-07-27-sw1",
+    "aec-lol-tlnp-zyb-2026-07-29",
+    "aec-lol-anb-gng-2026-07-29"
   ],
   "odds_api": {
     "month": "2026-07",
