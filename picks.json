@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T02:04:21Z",
+  "updated": "2026-07-29T02:44:23Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1470,7 +1470,10 @@
         "total": 8.0,
         "ts": 1785273259
       },
-      "last_alert_odds": 100
+      "last_alert_odds": 100,
+      "result": "LOSS",
+      "score": "New York Yankees 3, Chicago White Sox 2",
+      "units_result": -1.0
     },
     {
       "id": "milwaukee-brewers-ml-0728",
@@ -1518,7 +1521,10 @@
         "total": 9.0,
         "ts": 1785278659
       },
-      "last_alert_odds": -184
+      "last_alert_odds": -184,
+      "result": "LOSS",
+      "score": "Kansas City Royals 2, Minnesota Twins 3",
+      "units_result": -1.0
     },
     {
       "id": "pittsburgh-pirates-ml-0728",
