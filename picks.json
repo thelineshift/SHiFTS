@@ -2266,10 +2266,10 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -121,
-        "total": 181.5,
-        "ts": 1785342436
+        "home_ml": 109,
+        "away_ml": -132,
+        "total": 180.5,
+        "ts": 1785356642
       },
       "last_alert_odds": 100
     },
@@ -2290,10 +2290,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -144,
+        "away_ml": 119,
         "total": 7.5,
-        "ts": 1785342437
+        "ts": 1785356642
       }
     },
     {
@@ -2463,9 +2463,9 @@
       "awayTeam": "Kansas City Royals",
       "live_odds": {
         "home_ml": -205,
-        "away_ml": 167,
+        "away_ml": 168,
         "total": 9.0,
-        "ts": 1785337036
+        "ts": 1785356643
       },
       "last_alert_odds": -198
     },
@@ -2615,10 +2615,10 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 148,
-        "away_ml": -181,
+        "home_ml": 144,
+        "away_ml": -175,
         "total": 156.5,
-        "ts": 1785353237
+        "ts": 1785356643
       },
       "last_alert_odds": -172
     },
@@ -2639,10 +2639,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -171,
-        "away_ml": 141,
+        "home_ml": -179,
+        "away_ml": 147,
         "total": 9.5,
-        "ts": 1785353237
+        "ts": 1785356643
       },
       "last_alert_odds": -168
     },
@@ -2848,12 +2848,12 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -171,
-        "away_ml": 141,
+        "home_ml": -179,
+        "away_ml": 147,
         "total": 9.5,
-        "ts": 1785353237
+        "ts": 1785356643
       },
-      "last_alert_odds": -167
+      "last_alert_odds": -179
     },
     {
       "id": "sk-nebula-ml-0729",
@@ -2976,10 +2976,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": 119,
-        "away_ml": -143,
+        "home_ml": 114,
+        "away_ml": -137,
         "total": 9.0,
-        "ts": 1785353238
+        "ts": 1785356643
       }
     },
     {
@@ -3048,7 +3048,14 @@
       "opp": "Phoenix Mercury",
       "analysis": "19-8 overall, 8-4 on the road \u2014 ML juiced to -181, so the -3.5 at the standard number is the bet; model makes Golden State Valkyries 77% straight up | \ud83d\udcb0 **Value hunt:** 19-8 overall, 8-4 on the road \u2014 ML juiced to -181, so the -3.5 at the standard number is the bet; model makes Golden State Valkyrie",
       "awayTeam": "Golden State Valkyries",
-      "homeTeam": "Phoenix Mercury"
+      "homeTeam": "Phoenix Mercury",
+      "live_odds": {
+        "home_ml": 144,
+        "away_ml": -175,
+        "total": 156.5,
+        "ts": 1785356643
+      },
+      "last_alert_odds": -175
     }
   ]
 }
