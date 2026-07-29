@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 18:57 UTC",
+    "at": "2026-07-29 20:24 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-3-3": "2026-07-29 16:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 18:47 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-29 16:00 UTC",
+    "\ud83c\udfaffree-pick-3-4": "2026-07-29 20:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 20:17 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-29 20:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 18:57 UTC",
+    "at": "2026-07-29 20:24 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,14 +33,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 18:57 UTC",
+    "at": "2026-07-29 20:24 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 18:57 UTC",
+    "at": "2026-07-29 20:24 UTC",
     "flags": []
   },
-  "bot_version": "9.24.21",
+  "bot_version": "9.24.22",
   "unannounced_results": [
     {
       "id": "athletics-ml-0728",
@@ -33823,14 +33823,6 @@
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
     {
-      "ts": "2026-07-29T10:54:22Z",
-      "kind": "EDGE",
-      "outcome": "VARREL",
-      "result": "LOSS",
-      "pnl": -3.93,
-      "lesson": "model 57% vs market 32% missed \u2014 logged for the playbook review. Taken 0.32, rode to 0.13 before the result \u2014 beat the number by 19\u00a2 \u2705"
-    },
-    {
       "ts": "2026-07-29T11:31:44Z",
       "kind": "EDGE",
       "outcome": "VARREL",
@@ -34152,7 +34144,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785352043.9848669,
+  "dep_checked_ts": 1785356644.5101845,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
   "x_ads": []
