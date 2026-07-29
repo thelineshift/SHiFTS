@@ -2266,10 +2266,10 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -121,
-        "total": 181.5,
-        "ts": 1785342436
+        "home_ml": 104,
+        "away_ml": -126,
+        "total": 180.5,
+        "ts": 1785355036
       },
       "last_alert_odds": 100
     },
@@ -2290,10 +2290,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -144,
+        "away_ml": 119,
         "total": 7.5,
-        "ts": 1785342437
+        "ts": 1785355036
       }
     },
     {
