@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.15'  # ALL-MARKETS LAW: tennis Elo (ATP+WTA) live, 12 new soccer leagues, OW esports
+BOT_VERSION = '9.24.16'  # NEAR-TERM + DEPLOYMENT LAW: live/≤90min entries only, cash fully deployed, BAND LAW, cs2 EDGE retired
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -337,11 +337,18 @@ def _pm_client():
     from polymarket_us import PolymarketUS
     return PolymarketUS(key_id=kid, secret_key=sec)
 
+def _desk_basis(stats):
+    """BASIS LAW (owner decree 2026-07-26, reaffirmed 7/29): the branded money-in is $64
+    ($50 start + $14 added 7/24). Exchange-tracked net deposits only RAISE the basis when
+    new money arrives — nothing ever lowers the public basis. (7/29 bug: raw net-deposits
+    of $14 rendered cards as '+827% on $14 in' — fantasy math, sealed here.)"""
+    return max(64.0, float((stats or {}).get('deposits') or 0))
+
 def _desk_bankroll_txt(stats, bal):
     """ACCOUNT TRUTH LAW (owner decree 2026-07-26): every desk result / cash-out / X post shows
     the ACCOUNT — total account value and net P&L against actual funds in (deposits).
     No starting roll, no ladder framing, ever. bal['balance'] is total account value (cash+positions)."""
-    dep = float((stats or {}).get('deposits') or 64.0)
+    dep = _desk_basis(stats)
     if bal:
         acct = round(float(bal['balance']), 2)
         net = round(acct - dep, 2)
@@ -402,7 +409,7 @@ def _desk_day_roll(stats, acct_pre):
 def _desk_portfolio_lines(stats, st):
     """The portfolio card the owner screenshotted: account balance, today's P&L %,
     deposits + net since deposit, open positions. Used on X results and desk floors."""
-    dep = float((stats or {}).get('deposits') or 64.0)
+    dep = _desk_basis(stats)
     acct = float((stats or {}).get('account') or dep)
     anchor = float((stats or {}).get('day_anchor') or acct)
     day_pnl = acct - anchor
@@ -426,7 +433,7 @@ def _desk_sync_money(st, stats, bal):
         if live:
             stats['deposits'] = live
         st['dep_checked_ts'] = now
-    dep = float(stats.get('deposits') or 64.0)
+    dep = _desk_basis(stats)
     acct = round(float(bal['balance']), 2) if bal else None
     _desk_day_roll(stats, float(stats.get('account') or acct or dep))
     net = round(acct - dep, 2) if acct is not None else None
@@ -4105,15 +4112,31 @@ TRADER_LIVE_EDGE = 0.08
 TRADER_ARB_SUM = 0.985
 TRADER_TAIL_MIN = 0.90
 TRADER_KELLY = 0.5          # fractional Kelly
-TRADER_MIN_LIQUID = 0.15    # keep 15% of the TOTAL roll (cash + deployed) liquid, always
+TRADER_MIN_LIQUID = 0.03    # DEPLOYMENT LAW (owner decree 2026-07-29: "I don't want 15-20%
+                            # sitting in raw cash — all the cash to be used; when we win it goes
+                            # back out to get in another trade"). Reserve = max($2.50, 3% of roll).
+# ---- NEAR-TERM LAW (same decree): "games that are either live to be bet on or very close to
+# starting today within an hour — not two or three days away." Capital locked for days can't
+# compound. Model entries (EDGE/TAIL) require LIVE or start <= 90 min out; ARB (risk-free
+# yield) may reach 24h; anything farther is skipped at the event level.
+NEAR_TERM_SECS = 90 * 60
+ARB_FAR_SECS = 24 * 3600
+# ---- BAND LAW (7/29 autopsy, 146 settles): EDGE only prints in the 0.25-0.52 underdog window
+# (all-time 22-34, +$35.26, +26% ROI — tennis Elo longshots are the engine). 0.52-0.90 is the
+# model-overclaim band (12-13, -$31.10); <0.25 is lotto territory (7-29, -$27.43, 80% esports).
+# Sub-0.30 entries need a monster edge (>= 15pp) — the Stephens/Maestrelli profile.
+EDGE_BAND = (0.25, 0.52)
+EDGE_BAND_DEEP = 0.15
+PM_EDGE_RETIRED = ('cs2', 'csgo')  # cs2 EDGE: 9-22, -$46.75 all-time — 8-19, -$45.67 AFTER the
+                                   # 7/27 hardening. The shrink/clamp/bar didn't save it. Retired.
 
 def _desk_room(B, expo, expo0=0.0):
-    """Stake room under the liquidity law: cash must stay >= 15% of the TOTAL roll.
+    """Stake room under the DEPLOYMENT LAW (owner decree 2026-07-29): deploy the cash —
+    reserve is max($2.50, 3% of the total roll), replacing the old 15% idle floor.
     B = starting cash this cycle, expo = deployed incl. this cycle's stacked intents,
-    expo0 = deployed at cycle start. Room = cash_left - 15% of total roll.
-    (v9.16.4 bug: using stacked expo in both terms let intents balloon past the roll.)"""
+    expo0 = deployed at cycle start. (v9.16.4 bug: stacked expo in both terms = ballooning.)"""
     cash_left = B - max(0.0, expo - expo0)
-    return cash_left - TRADER_MIN_LIQUID * (B + expo0)
+    return cash_left - max(2.50, TRADER_MIN_LIQUID * (B + expo0))
 TRADE_CHAN = 'shift-trades'
 # DESK_LINK RETIRED (owner decree 2026-07-26): no public post links to the venue — all traffic goes to STORE_PAGE.
 DISCORD_INVITE = 'https://discord.gg/8bBxWUJCYT'  # verified invite used across the site — results push here
@@ -4390,7 +4413,9 @@ def pm_sport_prob(games, team_a, team_b, leagues=None):
     return None
 
 def pm_esport_prob(cache, team_a, team_b):
-    """Model win prob for team_a via PandaScore form on a name-matched match."""
+    """Model win prob for team_a via PandaScore form on a name-matched match.
+    Returns (prob, league_name) — the league feeds the SCAN_NOTABLE gate (7/29 autopsy:
+    minor-league esports reads are noise; lol went 10-23, -$12.75 in 3 days)."""
     na, nb = norm_txt(team_a), norm_txt(team_b)
     for m in cache.get('esp') or []:
         n1, n2 = norm_txt(m['t1']['name']), norm_txt(m['t2']['name'])
@@ -4405,10 +4430,10 @@ def pm_esport_prob(cache, team_a, team_b):
             out.append((forms.get(k) or {}).get('f'))
         f1, f2 = out
         if not f1 or not f2:
-            return None
+            return None, None
         g1, g2 = f1['w'] + f1['l'], f2['w'] + f2['l']
         if not g1 or not g2:
-            return None
+            return None, None
         # DESK HARDENING LAW (7/27 autopsy): raw small-sample win-rates read 86%..100%
         # and Kelly bet the farm (Gen.G −$17.55, LOUD −$8.74). Shrink toward .500
         # (n/(n+10)) and clamp — esports form is noise-dominated, always.
@@ -4416,8 +4441,8 @@ def pm_esport_prob(cache, team_a, team_b):
         w2 = 0.5 + (f2['w'] / g2 - 0.5) * (g2 / (g2 + 10.0))
         p1 = w1 * (1 - w2) / (w1 * (1 - w2) + w2 * (1 - w1)) if (w1 or w2) else 0.5
         p1 = min(0.80, max(0.20, p1))
-        return p1 if na == n1 else 1 - p1
-    return None
+        return (p1 if na == n1 else 1 - p1), (m.get('league') or '')
+    return None, None
 
 # ---- TENNIS LAW (owner decree 2026-07-28: "tennis both men and women, hockey, and
 # literally any other available market — bet all of them"). ESPN carries tennis as a
@@ -4595,6 +4620,8 @@ def pm_trader_scan(st):
     if not evs:
         return [], []
     intents, notes = [], []
+    taken_keys = set()  # intra-scan duplicate shield (event, team) across market slugs — the
+                        # Frech ×2 same-minute double-entry slipped between two slugs (7/28)
     hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B, 'leagues': {}}
     _tune = _desk_tuning(st)
     _tb = lambda k: (_tune.get(k) or {}).get('edge_bonus', 0.0)
@@ -4619,6 +4646,8 @@ def pm_trader_scan(st):
         except Exception:
             ts_ev = now + 3600
         live = ts_ev <= now
+        if not live and ts_ev - now > ARB_FAR_SECS:
+            continue  # NEAR-TERM LAW: far-out markets lock capital for days — skipped entirely
         outcomes = []
         dropped_winner = 0  # winner-market sides we can't name (soccer DRAW leg) — 7/25 fake-arb lesson
         draw_px = None  # book's draw-leg price — feeds the 3-way pricing path (ALL-SPORTS LAW)
@@ -4685,12 +4714,16 @@ def pm_trader_scan(st):
             for o in sorted(outcomes, key=lambda x: x['price']):  # smallest leg first — a failed leg aborts before real exposure
                 if (o['slug'], o['team']) in have:
                     continue
+                _tk = (title, norm_txt(o['team']))
+                if _tk in taken_keys:
+                    continue
                 stake = round(n * o['price'], 2)
                 if stake < 0.5 or stake > _desk_room(B, expo, expo0):
                     continue
                 intents.append({**o, 'qty_hint': n, 'stake': stake, 'kind': 'ARB', 'p_model': None,
                                 'event': title, 'ev_start': ev_start,
                                 'reason': f"book sums to {tot:.3f} — locking {(1 - tot) * 100:.1f}% before it closes"})
+                taken_keys.add(_tk)
                 expo += stake
             continue
         if three_way:
@@ -4701,10 +4734,15 @@ def pm_trader_scan(st):
             # makes these thinner-edge markets than clean 2-ways.
             if draw_px is None or not (0.08 < draw_px < 0.50) or len(outcomes) != 2 or live:
                 continue
+            if ts_ev - now > NEAR_TERM_SECS:
+                continue  # NEAR-TERM LAW: draw-sport entries wait for the 90-minute window
             for o in outcomes:
                 if (o['slug'], o['team']) in have:
                     continue
                 if o['slug'] in have_slugs:
+                    continue
+                _tk3 = (title, norm_txt(o['team']))
+                if _tk3 in taken_keys:
                     continue
                 if sum(1 for it in intents if it.get('event') == title and it['kind'] != 'ARB') >= 2:
                     continue
@@ -4723,14 +4761,20 @@ def pm_trader_scan(st):
                         intents.append({**o, 'stake': round(stake, 2), 'kind': 'EDGE', 'p_model': pm3,
                                         'event': title, 'ev_start': ev_start,
                                         'reason': f"3-way pricing — model {pm3:.0%} (draw-adjusted, draw leg {draw_px:.0%}) vs {o['price']:.0%}, {edge3:.0%} edge, quarter-Kelly"})
+                        taken_keys.add(_tk3)
                         expo += stake
             continue
-        # ---- PLAYBOOK: MODEL EDGE (Kelly) + TAIL-END yield + LIVE divergence
+        # ---- PLAYBOOK: MODEL EDGE (Kelly) + TAIL-END yield + LIVE-YIELD
         for o in outcomes:
             if (o['slug'], o['team']) in have:
                 continue
             if o['slug'] in have_slugs:
                 continue  # already positioned on this contract — never both directions
+            if not live and ts_ev - now > NEAR_TERM_SECS:
+                continue  # NEAR-TERM LAW: model entries wait for the 90-minute window (owner 7/29)
+            _tk = (title, norm_txt(o['team']))
+            if _tk in taken_keys:
+                continue  # same team via a second market slug — already intented this scan
             # DESK HARDENING: cap TOTAL exposure per event (open+resting+intents), not
             # just this scan's intents — the Gen.G match took $35.53 across 3 slugs.
             _ev_open = sum(float(t.get('stake', 0)) for t in held_trades if (t.get('event') or '') == title)
@@ -4742,7 +4786,7 @@ def pm_trader_scan(st):
             _esp = False
             _ten = False
             if pm_ is None and others:
-                pm_ = pm_esport_prob(cache, o['team'], others[0])
+                pm_, _esp_lg = pm_esport_prob(cache, o['team'], others[0])
                 _esp = pm_ is not None
             if pm_ is None and others and (not leagues or (leagues & PM_TENNIS)):
                 pm_ = pm_tennis_prob(cache, o['team'], others[0], title)
@@ -4754,9 +4798,19 @@ def pm_trader_scan(st):
                 print(f"[trader] edge-cap: {o['team']} claims {edge:.0%} — distrusting model read, skipping")
                 continue
             if live:
-                # LIVE-BET retired (7/27 autopsy: 2-6, −$13.35) — the "divergence" was our
-                # STALE pregame model vs the market's live information; we were
-                # systematically fading the smarter side mid-game.
+                # LIVE-BET fades stay retired (7/27 autopsy: 3-7, −$16.55 — stale pregame model
+                # vs smarter live money). LIVE-YIELD (owner decree 7/29: "games that are live to
+                # be bet on") re-opens live entries ONLY as near-certainty buys where the LIVE
+                # MARKET validates the read: price >= 0.90 AND model >= 0.80 AND settles within
+                # 12h, at half the normal tail stake. Never a fade, never mid-price.
+                if o['price'] >= TRADER_TAIL_MIN and pm_ >= 0.80 and ts_ev - now > -12 * 3600:
+                    stake = min(B * 0.10, B - 1, _desk_trade_cap(B, pmstats)) * 0.5 * _tm('TAIL')
+                    if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
+                        intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': pm_,
+                                        'event': title, 'ev_start': ev_start,
+                                        'reason': f"[live] near-certainty yield — live market {o['price']:.0%} + model {pm_:.0%} agree, settles within hours, half size"})
+                        taken_keys.add(_tk)
+                        expo += stake
                 continue
             if o['price'] >= TRADER_TAIL_MIN + _tb('TAIL') and ts_ev - now < 24 * 3600 and pm_ >= 0.78:
                 stake = min(B * 0.15, B - 1, _desk_trade_cap(B, pmstats)) * _tm('TAIL')
@@ -4765,20 +4819,34 @@ def pm_trader_scan(st):
                     intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': pm_,
                                     'event': title, 'ev_start': ev_start,
                                     'reason': f"tail-end yield — {yld * 100:.1f}% on a near-certain that settles today"})
+                    taken_keys.add(_tk)
                     expo += stake
                 continue
+            # BAND LAW (7/29 autopsy, 146 settles): EDGE prints ONLY in the 0.25-0.52 underdog
+            # window (+$35.26 all-time). 0.52-0.90 = overclaim band (-$31.10), <0.25 = lotto
+            # (-$27.43). Sub-0.30 needs a >= 15pp monster edge (the Stephens/Maestrelli profile).
+            if not (EDGE_BAND[0] <= o['price'] <= EDGE_BAND[1]):
+                continue
+            if o['price'] < 0.30 and edge < EDGE_BAND_DEEP:
+                continue
+            _sl_l = ((o.get('slug') or '') + ' ' + (title or '')).lower()
+            if any(r in _sl_l for r in PM_EDGE_RETIRED):
+                continue  # cs2 EDGE retired — 9-22, -$46.75 all-time; hardening didn't save it
+            if _esp and not any(k in (_esp_lg or '') for k in SCAN_NOTABLE):
+                continue  # minor-league esports reads are noise — notable leagues only (7/29)
             # noise bars: esports form +4pp (noise-heavy), tennis Elo +2pp (injury/retirement-blind)
             _xbar = 0.04 if _esp else (0.02 if _ten else 0.0)
             if edge >= TRADER_MIN_EDGE + _xbar + _tb('EDGE'):
                 stake = min(pm_kelly(pm_, o['price'], B) * _tm('EDGE'), _desk_trade_cap(B, pmstats))
-                if stake >= 1.0 and stake <= _desk_room(B, expo, expo0):
+                if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
                     intents.append({**o, 'stake': round(stake, 2), 'kind': 'EDGE', 'p_model': pm_,
                                     'event': title, 'ev_start': ev_start,
                                     'reason': f"{'Elo' if _ten else 'model'} {pm_:.0%} vs market {o['price']:.0%} — {edge:.0%} edge, half-Kelly"})
+                    taken_keys.add(_tk)
                     expo += stake
     non_arb = [i for i in intents if i.get('kind') != 'ARB']
-    if len(non_arb) > 6:
-        keep = {id(i) for i in sorted(non_arb, key=lambda x: -x.get('stake', 0))[:6]}
+    if len(non_arb) > 10:  # DEPLOYMENT LAW (7/29): 10 slots — velocity comes from count, not size
+        keep = {id(i) for i in sorted(non_arb, key=lambda x: -x.get('stake', 0))[:10]}
         intents = [i for i in intents if i.get('kind') == 'ARB' or id(i) in keep]
     expo = expo0 + sum(float(i.get('stake', 0)) for i in intents)
     hb['expo'], hb['B'], hb['expo0'] = expo, B, expo0
@@ -5068,7 +5136,7 @@ def poly2_scan(st):
         # ---- MODEL EDGE (PandaScore esports form) + TAIL yield
         for o in e['outcomes']:
             other = o2 if o is o1 else o1
-            p = pm_esport_prob(cache, o['name'], other['name'])
+            p, _lg2 = pm_esport_prob(cache, o['name'], other['name'])
             edge = (p - o['price']) if p else 0
             min_edge = TRADER_LIVE_EDGE if live else TRADER_MIN_EDGE
             kind = None
@@ -5180,7 +5248,7 @@ def desk_pnl_png(st, stats):
     d.text((48, 36), 'SHiFT DESK — P&L', font=f_lg, fill=txt)
     pnl = stats.get('pnl', 0.0)
     w_, l_ = stats.get('wins', 0), stats.get('losses', 0)
-    _dep8 = float(stats.get('deposits') or 64.0)
+    _dep8 = _desk_basis(stats)
     _acct8 = stats.get('account')
     _hdr8 = (f"Record {w_}-{l_}   account ${float(_acct8):.2f}   net {'+' if (float(_acct8) - _dep8) >= 0 else ''}${float(_acct8) - _dep8:.2f} on ${_dep8:.2f} in"
              if _acct8 else f"Record {w_}-{l_}   net {'+' if pnl >= 0 else ''}${pnl:.2f} realized on ${_dep8:.2f} in")
@@ -5373,7 +5441,7 @@ async def pm_trader():
                     _st = st.get('pm_stats', {})
                     _tot = _st.get('pnl', 0.0)
                     _sgn = '+' if _tot >= 0 else ''
-                    _acct9 = _st.get('account'); _dep9 = float(_st.get('deposits') or 64.0)
+                    _acct9 = _st.get('account'); _dep9 = _desk_basis(_st)
                     _money9 = (f"account ${float(_acct9):.2f} · net {'+' if (float(_acct9) - _dep9) >= 0 else ''}${float(_acct9) - _dep9:.2f}"
                                if _acct9 else f"net {_sgn}${_tot:.2f} realized")
                     await ch3.send("📌 **DESK BOARD PLAY — live to 24h out, tail with us:**\n" + "\n".join(lines) +
@@ -5409,7 +5477,7 @@ async def pm_trader():
             # public desk feed for the site dashboard
             try:
                 settled = [t for t in st.get('pm_trades', []) if t.get('result') in ('WIN', 'LOSS', 'PUSH')]
-                _dep10 = float(stats.get('deposits') or 64.0)
+                _dep10 = _desk_basis(stats)
                 desk_doc = {'updated': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
                             'record': f"{stats.get('wins', 0)}-{stats.get('losses', 0)}",
                             'trades': stats.get('trades', 0), 'open': open_n,
@@ -5430,7 +5498,7 @@ async def pm_trader():
                 # WINNERS-ONLY LAW (owner decree 2026-07-27): X gets winning results ONLY —
                 # the recap posts on GREEN days (today P&L > 0, net-positive overall),
                 # win-framed (no loss column). All results still post to Discord receipts.
-                _dep11 = float(stats.get('deposits') or 64.0)
+                _dep11 = _desk_basis(stats)
                 _acct11 = float(stats.get('account') or (bal or {}).get('balance') or _dep11)
                 _anchor11 = float(stats.get('day_anchor') or _acct11)
                 _today_pnl = _acct11 - _anchor11
@@ -5710,7 +5778,7 @@ async def pm_watch():
             _acct = None
         if _acct is not None:
             stats['account'] = _acct
-            stats['net'] = round(_acct - float(stats.get('deposits') or 64.0), 2)
+            stats['net'] = round(_acct - _desk_basis(stats), 2)
             bal = {'balance': _acct, 'buying_power': (bal or {}).get('buying_power', 0.0)}
         _desk_sync_money(st, stats, bal)
         em = '✅' if res['result'] == 'WIN' else '❌'
@@ -6761,7 +6829,7 @@ def x_engagement_text(st, kind, picks):
         return _x_fit275(variants[doy % len(variants)] + f"\n\n💎 {STORE_PAGE}")
     if kind == 'proof':
         sign = '+' if pnl >= 0 else ''
-        _dep = float((st.get('pm_stats') or {}).get('deposits') or 64.0)
+        _dep = _desk_basis(st.get('pm_stats'))
         _acct = (st.get('pm_stats') or {}).get('account')
         _money = (f"💰 account ${float(_acct):.2f} · net {'+' if (float(_acct) - _dep) >= 0 else ''}${float(_acct) - _dep:.2f} on ${_dep:.2f} in"
                   if _acct else f"net {'+' if pnl >= 0 else ''}${pnl:.2f} realized on ${_dep:.2f} in")
