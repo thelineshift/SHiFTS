@@ -43,15 +43,6 @@
   "bot_version": "9.24.21",
   "unannounced_results": [
     {
-      "id": "chicago-cubs-ml-0728",
-      "desc": "Chicago Cubs ML",
-      "odds": -112,
-      "result": "WIN",
-      "units": 0.89,
-      "score": "Chicago Cubs 10, St. Louis Cardinals 2",
-      "tier": "lock"
-    },
-    {
       "id": "athletics-ml-0728",
       "desc": "Athletics ML",
       "odds": 158,
@@ -133,7 +124,7 @@
       "tier": "whale"
     }
   ],
-  "last_x_receipt_ts": 1785347862.33238,
+  "last_x_receipt_ts": 1785356643.4534667,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -378,7 +369,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "c97f7bce-a31e-4ac5-abce-f45b11c884d8",
+  "last_deploy_id": "0936e034-0312-4258-97ea-a2cf3e763d6f",
   "op_month": "2026-07",
   "op_calls": 80,
   "op_meta": {
@@ -33130,78 +33121,13 @@
       "qty": 4,
       "market_slug": "aec-valorant-gm-vit-2026-07-29",
       "outcome": "Gentle Mates",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T10:20:06Z",
-      "price_path": [
-        {
-          "ts": 1785320668,
-          "px": 0.39
-        },
-        {
-          "ts": 1785322918,
-          "px": 0.39
-        },
-        {
-          "ts": 1785325313,
-          "px": 0.39
-        },
-        {
-          "ts": 1785327158,
-          "px": 0.39
-        },
-        {
-          "ts": 1785329097,
-          "px": 0.39
-        },
-        {
-          "ts": 1785331335,
-          "px": 0.39
-        },
-        {
-          "ts": 1785333163,
-          "px": 0.39
-        },
-        {
-          "ts": 1785335461,
-          "px": 0.39
-        },
-        {
-          "ts": 1785337644,
-          "px": 0.39
-        },
-        {
-          "ts": 1785339445,
-          "px": 0.39
-        },
-        {
-          "ts": 1785341851,
-          "px": 0.39
-        },
-        {
-          "ts": 1785344251,
-          "px": 0.39
-        },
-        {
-          "ts": 1785346644,
-          "px": 0.26
-        },
-        {
-          "ts": 1785349043,
-          "px": 0.41
-        },
-        {
-          "ts": 1785350844,
-          "px": 0.53
-        },
-        {
-          "ts": 1785353240,
-          "px": 0.4
-        },
-        {
-          "ts": 1785355042,
-          "px": 0.42
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T20:24:04Z",
+      "pnl": -1.56,
+      "autopsy": "model 50% vs market 39% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.42 before the result \u2014 beat the number by 3\u00a2 \u2705"
     },
     {
       "price": 0.04,
@@ -33858,15 +33784,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 45,
-    "losses": 97,
-    "pnl": -51.61,
+    "losses": 98,
+    "pnl": -53.17,
     "trades": 456,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-20",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 118.95,
-    "net": 54.95,
+    "account": 117.39,
+    "net": 53.39,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -33876,7 +33802,7 @@
       ],
       "EDGE": [
         36,
-        82,
+        83,
         0
       ],
       "LIVE-BET": [
@@ -34135,6 +34061,14 @@
       "result": "WIN",
       "pnl": 17.5,
       "lesson": "+$17.50 \u2014 model 56% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.99 before the result \u2014 the number ran 69\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T20:24:04Z",
+      "kind": "EDGE",
+      "outcome": "Gentle Mates",
+      "result": "LOSS",
+      "pnl": -1.56,
+      "lesson": "model 50% vs market 39% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.42 before the result \u2014 beat the number by 3\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
