@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.27'  # FULL-GAME LAW + ONE-POSITION-PER-EVENT LAW — f5/prop markets excluded from model paths; event-direction shield stops phantom both-sides entries
+BOT_VERSION = '9.24.28'  # event-direction shield refined: opponent-side blocked, same-team adds legal under event cap
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -5031,11 +5031,14 @@ def pm_trader_scan(st):
                 continue
             if o['slug'] in have_slugs:
                 continue  # already positioned on this contract — never both directions
-            if any((t.get('event') or '') == title for t in held_trades) or any(it.get('event') == title for it in intents):
+            _held_teams = {norm_txt(t.get('outcome') or '') for t in held_trades if (t.get('event') or '') == title}
+            _held_teams |= {norm_txt(it.get('outcome') or '') for it in intents if it.get('event') == title}
+            if _held_teams and norm_txt(o['team']) not in _held_teams:
                 hb['evshield'] = hb.get('evshield', 0) + 1
                 continue  # ONE-POSITION-PER-EVENT LAW (7/29): the opponent's side of an event we
                 # already hold is phantom both-sides exposure — the f5 HOU+LAA double-entry bought
-                # BOTH teams on Astros-Angels in one cycle because the shield was per-slug only
+                # BOTH teams on Astros-Angels in one cycle because the shield was per-slug only.
+                # Same-team adds stay legal (bounded by the event cap) — direction is what's guarded.
             _tk = (title, norm_txt(o['team']))
             if _tk in taken_keys:
                 continue  # same team via a second market slug — already intented this scan
