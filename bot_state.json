@@ -33302,7 +33302,7 @@
       "qty": 1,
       "market_slug": "aec-kbo-sla-kti-2026-07-29",
       "outcome": "Kia Tigers",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T12:50:40Z"
     },
     {
@@ -33318,7 +33318,7 @@
       "qty": 1,
       "market_slug": "aec-kbo-ndc-kwt-2026-07-29",
       "outcome": "KT Wiz",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T12:50:41Z"
     },
     {
@@ -33334,7 +33334,7 @@
       "qty": 1,
       "market_slug": "aec-kbo-ltg-khi-2026-07-29",
       "outcome": "Kiwoom Heroes",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T12:50:42Z"
     },
     {
@@ -33350,7 +33350,7 @@
       "qty": 1,
       "market_slug": "aec-hundredw-wfe-trr-2026-07-29",
       "outcome": "Trent Rockets",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T12:50:43Z"
     }
   ],
