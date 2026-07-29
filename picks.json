@@ -2649,11 +2649,12 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 139,
-        "away_ml": -168,
+        "home_ml": 144,
+        "away_ml": -175,
         "total": 7.5,
-        "ts": 1785307459
-      }
+        "ts": 1785309259
+      },
+      "last_alert_odds": 144
     },
     {
       "id": "3-leg-parlay-0729-whale",
