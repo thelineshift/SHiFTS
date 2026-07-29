@@ -43,15 +43,6 @@
   "bot_version": "9.24.21",
   "unannounced_results": [
     {
-      "id": "3-leg-parlay-0728-lock",
-      "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
-      "odds": 262,
-      "result": "WIN",
-      "units": 1.31,
-      "score": "Legs: None: win \u00b7 None: win \u00b7 None: win",
-      "tier": "lock"
-    },
-    {
       "id": "pittsburgh-pirates-ml-0728",
       "desc": "Pittsburgh Pirates ML",
       "odds": -117,
@@ -151,7 +142,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785334849.0764508,
+  "last_x_receipt_ts": 1785344237.4412947,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
