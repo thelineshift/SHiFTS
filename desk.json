@@ -1,38 +1,14 @@
 {
-  "updated": "2026-07-29T00:09:19Z",
+  "updated": "2026-07-29T02:00:08Z",
   "record": "32-74",
-  "trades": 370,
-  "open": 35,
+  "trades": 387,
+  "open": 41,
   "pnl": -70.52,
-  "account": 98.31,
+  "account": 131.7,
   "deposits": 64.0,
-  "net_pnl": 34.31,
+  "net_pnl": 67.7,
   "playbooks": "ARB 3-5 \u00b7 EDGE 24-59 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 3-3",
   "recent": [
-    {
-      "outcome": "Ici Japon Corp. Esport",
-      "short": true,
-      "result": "lost",
-      "pnl": -1.12
-    },
-    {
-      "outcome": "Maze Gaming",
-      "short": true,
-      "result": "lost",
-      "pnl": -0.93
-    },
-    {
-      "outcome": "Tomas Etcheverry",
-      "short": true,
-      "result": "lost",
-      "pnl": -1.55
-    },
-    {
-      "outcome": "INTZ e-Sports",
-      "short": true,
-      "result": "lost",
-      "pnl": -2.7
-    },
     {
       "outcome": "7REX",
       "short": false,
@@ -40,10 +16,34 @@
       "pnl": -3.06
     },
     {
+      "outcome": "RED Academy",
+      "short": true,
+      "result": "won",
+      "pnl": 10.67
+    },
+    {
       "outcome": "One More Esports",
       "short": false,
       "result": "lost",
       "pnl": -1.76
+    },
+    {
+      "outcome": "Hugo Grenier",
+      "short": true,
+      "result": "won",
+      "pnl": 0.0
+    },
+    {
+      "outcome": "Magdalena Frech",
+      "short": false,
+      "result": "won",
+      "pnl": 3.04
+    },
+    {
+      "outcome": "Magdalena Frech",
+      "short": false,
+      "result": "won",
+      "pnl": 3.85
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
