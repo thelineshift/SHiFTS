@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 12:24 UTC",
+    "at": "2026-07-29 12:54 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-3": "2026-07-29 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 12:22 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 12:34 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-29 12:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 12:24 UTC",
+    "at": "2026-07-29 12:54 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,11 +33,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 12:24 UTC",
+    "at": "2026-07-29 12:54 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 12:24 UTC",
+    "at": "2026-07-29 12:54 UTC",
     "flags": []
   },
   "bot_version": "9.24.18",
@@ -25505,6 +25505,10 @@
       "ts": "2026-07-27T16:25:14Z",
       "price_path": [
         {
+          "ts": 1785276860,
+          "px": 0.525
+        },
+        {
           "ts": 1785279260,
           "px": 0.525
         },
@@ -25594,10 +25598,6 @@
         },
         {
           "ts": 1785327759,
-          "px": 0.54
-        },
-        {
-          "ts": 1785329692,
           "px": 0.54
         }
       ]
@@ -25743,6 +25743,10 @@
       "ts": "2026-07-27T17:30:12Z",
       "price_path": [
         {
+          "ts": 1785274464,
+          "px": 0.25
+        },
+        {
           "ts": 1785276861,
           "px": 0.25
         },
@@ -25832,10 +25836,6 @@
         },
         {
           "ts": 1785327759,
-          "px": 0.25
-        },
-        {
-          "ts": 1785329692,
           "px": 0.25
         }
       ]
@@ -33303,13 +33303,7 @@
       "market_slug": "aec-kbo-sla-kti-2026-07-29",
       "outcome": "Kia Tigers",
       "status": "resting",
-      "ts": "2026-07-29T12:50:40Z",
-      "price_path": [
-        {
-          "ts": 1785329694,
-          "px": 0.99
-        }
-      ]
+      "ts": "2026-07-29T12:50:40Z"
     },
     {
       "price": 0.98,
@@ -33325,13 +33319,7 @@
       "market_slug": "aec-kbo-ndc-kwt-2026-07-29",
       "outcome": "KT Wiz",
       "status": "resting",
-      "ts": "2026-07-29T12:50:41Z",
-      "price_path": [
-        {
-          "ts": 1785329695,
-          "px": 0.98
-        }
-      ]
+      "ts": "2026-07-29T12:50:41Z"
     },
     {
       "price": 0.98,
@@ -33347,13 +33335,7 @@
       "market_slug": "aec-kbo-ltg-khi-2026-07-29",
       "outcome": "Kiwoom Heroes",
       "status": "resting",
-      "ts": "2026-07-29T12:50:42Z",
-      "price_path": [
-        {
-          "ts": 1785329695,
-          "px": 0.96
-        }
-      ]
+      "ts": "2026-07-29T12:50:42Z"
     },
     {
       "price": 0.99,
@@ -33369,8 +33351,7 @@
       "market_slug": "aec-hundredw-wfe-trr-2026-07-29",
       "outcome": "Trent Rockets",
       "status": "resting",
-      "ts": "2026-07-29T12:50:43Z",
-      "price_path": []
+      "ts": "2026-07-29T12:50:43Z"
     }
   ],
   "pm_stats": {
