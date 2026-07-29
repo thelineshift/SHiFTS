@@ -2266,10 +2266,10 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -121,
-        "away_ml": 100,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 180.5,
-        "ts": 1785322904
+        "ts": 1785326504
       }
     },
     {
@@ -2392,10 +2392,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": 108,
-        "away_ml": -130,
+        "home_ml": 104,
+        "away_ml": -126,
         "total": 7.5,
-        "ts": 1785324704
+        "ts": 1785326504
       }
     },
     {
