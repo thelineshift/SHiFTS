@@ -7670,6 +7670,64 @@
             }
           ]
         }
+      },
+      "cs2:137953": {
+        "ts": 1785291882.1330965,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "OLDBOYS PL"
+            },
+            {
+              "won": true,
+              "opp": "Inner Circle Academy"
+            },
+            {
+              "won": false,
+              "opp": "STATE"
+            },
+            {
+              "won": false,
+              "opp": "ENJOY"
+            },
+            {
+              "won": false,
+              "opp": "SAW Youngsters"
+            }
+          ]
+        }
+      },
+      "cs2:137861": {
+        "ts": 1785291882.7954683,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Lazer Cats"
+            },
+            {
+              "won": true,
+              "opp": "Fortress"
+            },
+            {
+              "won": true,
+              "opp": "MASQ"
+            },
+            {
+              "won": false,
+              "opp": "MASONIC"
+            },
+            {
+              "won": true,
+              "opp": "Washed"
+            }
+          ]
+        }
       }
     },
     "tennis": {
@@ -30553,10 +30611,6 @@
         {
           "ts": 1785290062,
           "px": 0.545
-        },
-        {
-          "ts": 1785291867,
-          "px": 0.545
         }
       ]
     },
@@ -30582,10 +30636,6 @@
         },
         {
           "ts": 1785290062,
-          "px": 0.595
-        },
-        {
-          "ts": 1785291867,
           "px": 0.595
         }
       ]
@@ -30689,10 +30739,6 @@
         },
         {
           "ts": 1785290062,
-          "px": 0.57
-        },
-        {
-          "ts": 1785291868,
           "px": 0.57
         }
       ]
@@ -30840,10 +30886,6 @@
         {
           "ts": 1785290063,
           "px": 0.67
-        },
-        {
-          "ts": 1785291868,
-          "px": 0.67
         }
       ]
     },
@@ -30865,10 +30907,6 @@
         {
           "ts": 1785290063,
           "px": 0.62
-        },
-        {
-          "ts": 1785291868,
-          "px": 0.61
         }
       ]
     },
@@ -30891,10 +30929,6 @@
         {
           "ts": 1785290063,
           "px": 0.34
-        },
-        {
-          "ts": 1785291868,
-          "px": 0.34
         }
       ]
     },
@@ -30916,10 +30950,6 @@
       "price_path": [
         {
           "ts": 1785290063,
-          "px": 0.21
-        },
-        {
-          "ts": 1785291868,
           "px": 0.21
         }
       ]
@@ -30958,27 +30988,36 @@
       "market_slug": "aec-ow-wbg-tl-2026-07-29",
       "outcome": "Weibo Gaming",
       "status": "open",
-      "ts": "2026-07-29T02:20:05Z",
-      "price_path": [
-        {
-          "ts": 1785291869,
-          "px": 0.66
-        }
-      ]
+      "ts": "2026-07-29T02:20:05Z"
+    },
+    {
+      "price": 0.09,
+      "stake": 6.03,
+      "kind": "EDGE",
+      "p_model": 0.3684210526315789,
+      "event": "Fortress vs. STATE",
+      "ev_start": "2026-07-29T08:00:00Z",
+      "reason": "model 37% vs market 9% \u2014 28% edge, half-Kelly",
+      "order_id": "BHFFG46RM9NS",
+      "qty": 67,
+      "market_slug": "aec-cs2-for-sta-2026-07-29",
+      "outcome": "Fortress",
+      "status": "open",
+      "ts": "2026-07-29T02:25:05Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 34,
+    "wins": 32,
     "losses": 74,
-    "pnl": -68.15,
-    "trades": 389,
+    "pnl": -70.52,
+    "trades": 390,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-02",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 134.07,
-    "net": 70.07,
+    "account": 131.7,
+    "net": 67.7,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -30987,7 +31026,7 @@
         0
       ],
       "EDGE": [
-        26,
+        24,
         59,
         0
       ],
@@ -31008,6 +31047,22 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
+    {
+      "ts": "2026-07-28T00:54:24Z",
+      "kind": "EDGE",
+      "outcome": "Revenge",
+      "result": "LOSS",
+      "pnl": -1.02,
+      "lesson": "model 52% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.36 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-28T01:04:20Z",
+      "kind": "EDGE",
+      "outcome": "ROSO GC",
+      "result": "LOSS",
+      "pnl": -3.04,
+      "lesson": "model 50% vs market 19% missed \u2014 logged for the playbook review. Taken 0.19, rode to 0.02 before the result \u2014 beat the number by 17\u00a2 \u2705"
+    },
     {
       "ts": "2026-07-28T01:54:21Z",
       "kind": "EDGE",
@@ -31231,22 +31286,6 @@
       "result": "LOSS",
       "pnl": -0.93,
       "lesson": "model 43% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.11 before the result \u2014 beat the number by 20\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-29T02:24:22Z",
-      "kind": "EDGE",
-      "outcome": "Benjamin Bonzi",
-      "result": "WIN",
-      "pnl": 0.66,
-      "lesson": "+$0.66 \u2014 model 88% vs market 78% was real edge; thesis held. Taken 0.78, slid to 0.64 before the result \u2014 the number ran 14\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-29T02:24:24Z",
-      "kind": "EDGE",
-      "outcome": "Harry Wendelken",
-      "result": "WIN",
-      "pnl": 1.71,
-      "lesson": "+$1.71 \u2014 model 64% vs market 43% was real edge; thesis held. Taken 0.43, rode to 0.71 before the result \u2014 beat the number by 28\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
