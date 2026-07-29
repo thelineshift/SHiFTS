@@ -7586,6 +7586,64 @@
             }
           ]
         }
+      },
+      "lol:137836": {
+        "ts": 1785290382.2659016,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Volda E-Sport"
+            },
+            {
+              "won": false,
+              "opp": "Deer Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Lundqvist Lightside"
+            },
+            {
+              "won": false,
+              "opp": "Bulldog Esports"
+            },
+            {
+              "won": false,
+              "opp": "Arctic Pandas"
+            }
+          ]
+        }
+      },
+      "lol:135466": {
+        "ts": 1785290382.8782222,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Ruddy Corporation"
+            },
+            {
+              "won": false,
+              "opp": "Forsaken"
+            },
+            {
+              "won": true,
+              "opp": "mCon esports"
+            },
+            {
+              "won": false,
+              "opp": "Verdant"
+            },
+            {
+              "won": false,
+              "opp": "Los Ratones"
+            }
+          ]
+        }
       }
     },
     "tennis": {
@@ -30988,11 +31046,11 @@
     "pnl": -70.52,
     "trades": 387,
     "last_recap": "2026-07-28",
-    "last_recap_hour": "2026-07-29-00",
+    "last_recap_hour": "2026-07-29-02",
     "deposits": 64.0,
     "deposits_since": "2026-07-24",
-    "account": 98.31,
-    "net": 34.31,
+    "account": 131.7,
+    "net": 67.7,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -31344,7 +31402,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785281662.2241652,
+  "dep_checked_ts": 1785290405.7954857,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
