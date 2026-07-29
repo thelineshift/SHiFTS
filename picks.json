@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T20:17:19Z",
+  "updated": "2026-07-29T20:54:47Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2508,7 +2508,10 @@
         "total": 7.5,
         "ts": 1785342437
       },
-      "last_alert_odds": 162
+      "last_alert_odds": 162,
+      "result": "WIN",
+      "score": "Baltimore Orioles 10, Detroit Tigers 9",
+      "units_result": 1.39
     },
     {
       "id": "boston-red-sox--1.5-0729",
