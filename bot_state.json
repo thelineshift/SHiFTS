@@ -25505,10 +25505,6 @@
       "ts": "2026-07-27T16:25:14Z",
       "price_path": [
         {
-          "ts": 1785274464,
-          "px": 0.525
-        },
-        {
           "ts": 1785276860,
           "px": 0.525
         },
@@ -25598,6 +25594,10 @@
         },
         {
           "ts": 1785325905,
+          "px": 0.54
+        },
+        {
+          "ts": 1785327759,
           "px": 0.54
         }
       ]
@@ -25743,10 +25743,6 @@
       "ts": "2026-07-27T17:30:12Z",
       "price_path": [
         {
-          "ts": 1785272066,
-          "px": 0.25
-        },
-        {
           "ts": 1785274464,
           "px": 0.25
         },
@@ -25836,6 +25832,10 @@
         },
         {
           "ts": 1785325905,
+          "px": 0.25
+        },
+        {
+          "ts": 1785327759,
           "px": 0.25
         }
       ]
@@ -31825,54 +31825,13 @@
       "qty": 67,
       "market_slug": "aec-cs2-for-sta-2026-07-29",
       "outcome": "Fortress",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T02:25:05Z",
-      "price_path": [
-        {
-          "ts": 1785292469,
-          "px": 0.09
-        },
-        {
-          "ts": 1785295467,
-          "px": 0.09
-        },
-        {
-          "ts": 1785298501,
-          "px": 0.09
-        },
-        {
-          "ts": 1785300868,
-          "px": 0.1
-        },
-        {
-          "ts": 1785302672,
-          "px": 0.11
-        },
-        {
-          "ts": 1785305072,
-          "px": 0.11
-        },
-        {
-          "ts": 1785307467,
-          "px": 0.1
-        },
-        {
-          "ts": 1785309276,
-          "px": 0.1
-        },
-        {
-          "ts": 1785311666,
-          "px": 0.11
-        },
-        {
-          "ts": 1785313472,
-          "px": 0.12
-        },
-        {
-          "ts": 1785315872,
-          "px": 0.11
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T12:22:41Z",
+      "pnl": -6.03,
+      "autopsy": "model 37% vs market 9% missed \u2014 logged for the playbook review. Taken 0.09, rode to 0.11 before the result \u2014 beat the number by 2\u00a2 \u2705"
     },
     {
       "price": 0.58,
@@ -33127,7 +33086,13 @@
       "market_slug": "aec-kbo-ndc-kwt-2026-07-29",
       "outcome": "KT Wiz",
       "status": "resting",
-      "ts": "2026-07-29T12:13:22Z"
+      "ts": "2026-07-29T12:13:22Z",
+      "price_path": [
+        {
+          "ts": 1785327766,
+          "px": 0.69
+        }
+      ]
     },
     {
       "price": 0.96,
@@ -33143,7 +33108,13 @@
       "market_slug": "aec-kbo-ltg-khi-2026-07-29",
       "outcome": "Kiwoom Heroes",
       "status": "resting",
-      "ts": "2026-07-29T12:13:23Z"
+      "ts": "2026-07-29T12:13:23Z",
+      "price_path": [
+        {
+          "ts": 1785327766,
+          "px": 0.96
+        }
+      ]
     },
     {
       "price": 0.96,
@@ -33158,7 +33129,13 @@
       "market_slug": "aec-kbo-hea-lgo-2026-07-29",
       "outcome": "Hanwha Eagles",
       "status": "open",
-      "ts": "2026-07-29T12:18:22Z"
+      "ts": "2026-07-29T12:18:22Z",
+      "price_path": [
+        {
+          "ts": 1785327766,
+          "px": 0.98
+        }
+      ]
     },
     {
       "price": 0.95,
@@ -33174,21 +33151,27 @@
       "market_slug": "aec-hundredw-wfe-trr-2026-07-29",
       "outcome": "Trent Rockets",
       "status": "resting",
-      "ts": "2026-07-29T12:18:24Z"
+      "ts": "2026-07-29T12:18:24Z",
+      "price_path": [
+        {
+          "ts": 1785327766,
+          "px": 0.96
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 35,
-    "losses": 84,
-    "pnl": -65.27,
+    "losses": 85,
+    "pnl": -71.3,
     "trades": 438,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-12",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 107.41,
-    "net": 43.41,
+    "account": 101.38,
+    "net": 37.38,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -33198,7 +33181,7 @@
       ],
       "EDGE": [
         27,
-        69,
+        70,
         0
       ],
       "LIVE-BET": [
@@ -33218,14 +33201,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T17:24:31Z",
-      "kind": "EDGE",
-      "outcome": "BakS eSports",
-      "result": "WIN",
-      "pnl": 6.88,
-      "lesson": "+$6.88 \u2014 model 31% vs market 14% was real edge; thesis held. Taken 0.14, slid to 0.51 before the result \u2014 the number ran 37\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-28T17:24:33Z",
       "kind": "EDGE",
@@ -33457,6 +33432,14 @@
       "result": "LOSS",
       "pnl": -0.33,
       "lesson": "model 52% vs market 47% missed \u2014 logged for the playbook review. Rode the number flat to the result. (cashed out early at $1.08)"
+    },
+    {
+      "ts": "2026-07-29T12:22:41Z",
+      "kind": "EDGE",
+      "outcome": "Fortress",
+      "result": "LOSS",
+      "pnl": -6.03,
+      "lesson": "model 37% vs market 9% missed \u2014 logged for the playbook review. Taken 0.09, rode to 0.11 before the result \u2014 beat the number by 2\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
