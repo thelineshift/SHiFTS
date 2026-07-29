@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.24'  # EVERY-SPORT LAW: live soccer Poisson path, esports roster +4 (r6/kog/cod/rl), live-state configs for nfl/cfl/ncaaf/ncaab/nhl
+BOT_VERSION = '9.24.25'  # cs2 EDGE un-retired (owner decree PM#6) — notable gate + noise bar + tuning seatbelt
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4144,8 +4144,10 @@ TAIL_FAR_SECS = 14 * 3600
 # Sub-0.30 entries need a monster edge (>= 15pp) — the Stephens/Maestrelli profile.
 EDGE_BAND = (0.25, 0.52)
 EDGE_BAND_DEEP = 0.15
-PM_EDGE_RETIRED = ('cs2', 'csgo')  # cs2 EDGE: 9-22, -$46.75 all-time — 8-19, -$45.67 AFTER the
-                                   # 7/27 hardening. The shrink/clamp/bar didn't save it. Retired.
+PM_EDGE_RETIRED = ()  # cs2 UN-retired by direct owner decree 7/29 PM#6 ("You can bet cs2").
+                      # Autopsy disclosed (9-22, -$46.75). Guards stay: notable-league gate,
+                      # +4pp esports noise bar, form shrink/clamp; tuning loop self-raises if
+                      # it runs cold again. Mechanism kept for future kills.
 
 def _desk_room(B, expo, expo0=0.0):
     """Stake room under the DEPLOYMENT LAW (owner decree 2026-07-29): deploy the cash —
