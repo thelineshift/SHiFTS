@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T16:00:54Z",
+  "updated": "2026-07-29T16:57:20Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2313,10 +2313,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -164,
+        "home_ml": -163,
         "away_ml": 135,
         "total": 8.5,
-        "ts": 1785344236
+        "ts": 1785338836
       },
       "last_alert_odds": -163
     },
@@ -2394,12 +2394,11 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -107,
-        "away_ml": -112,
+        "home_ml": 108,
+        "away_ml": -130,
         "total": 7.5,
-        "ts": 1785344236
-      },
-      "last_alert_odds": -112
+        "ts": 1785333157
+      }
     },
     {
       "id": "fortaleza-ml-0729",
@@ -2500,10 +2499,10 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -187,
-        "away_ml": 154,
+        "home_ml": -198,
+        "away_ml": 162,
         "total": 7.5,
-        "ts": 1785344237
+        "ts": 1785342437
       },
       "last_alert_odds": 162
     },
@@ -2636,12 +2635,12 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -168,
-        "away_ml": 139,
+        "home_ml": -158,
+        "away_ml": 131,
         "total": 9.5,
-        "ts": 1785344237
+        "ts": 1785336010
       },
-      "last_alert_odds": -168
+      "last_alert_odds": -156
     },
     {
       "id": "miami-marlins-ml-0729",
@@ -2839,10 +2838,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -168,
-        "away_ml": 139,
+        "home_ml": -158,
+        "away_ml": 131,
         "total": 9.5,
-        "ts": 1785344237
+        "ts": 1785336010
       },
       "last_alert_odds": -167
     },
@@ -2861,7 +2860,10 @@
       "opp": "G2 Gozen",
       "analysis": "4-1 last 5 (beat ALTERNATE aTTaX Ruby, Bar\u00e7a eSports GC, GIANTX GC) (lost to Gentle Mates GC) vs 2-3 \u2014 live Pinnacle line -115 (our 86% vs book 50%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ALTERNATE aTTaX Ruby, Bar\u00e7a eSports GC, GIANTX GC) (lost to Gentle Mates GC) vs 2-3 \u2014 live Pinnacle line -115 (o",
       "awayTeam": "SK Nebula",
-      "homeTeam": "G2 Gozen"
+      "homeTeam": "G2 Gozen",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "SK Nebula 0-2 G2 Gozen \u00b7 final"
     },
     {
       "id": "gentle-mates-gc-ml-0729",
@@ -2914,10 +2916,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "Colorado Rockies",
       "live_odds": {
-        "home_ml": -164,
+        "home_ml": -163,
         "away_ml": 135,
         "total": 8.5,
-        "ts": 1785344237
+        "ts": 1785342438
       },
       "last_alert_odds": -163
     },
