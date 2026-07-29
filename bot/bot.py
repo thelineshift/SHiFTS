@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.18'  # 3-WAY MARKET-TAIL: UEFA/early-season favorites >=0.94 on complete books tail-eligible same-day
+BOT_VERSION = '9.24.19'  # COMEBACK LAW: pre-match anchors + set-tree floors buy favorites down a set/map; esports 95c tails banned; caps 15%/20%
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4461,6 +4461,21 @@ def pm_esport_prob(cache, team_a, team_b):
         return (p1 if na == n1 else 1 - p1), (m.get('league') or '')
     return None, None
 
+def _pm_esp_pair(cache, team_a, team_b):
+    """True when both names pair-match a PandaScore-tracked match — the esports-event
+    detector for model-less paths (market tails). pm_esport_prob returns (None, None)
+    when form is missing even on a real pairing, and upcoming-only feeds drop live
+    matches (owner 7/29: no blind 95c esports favorites — detection must not depend
+    on the model having a read)."""
+    na, nb = norm_txt(team_a), norm_txt(team_b)
+    if not na or not nb:
+        return False
+    for m in cache.get('esp') or []:
+        n1, n2 = norm_txt(m['t1']['name']), norm_txt(m['t2']['name'])
+        if (na == n1 and nb == n2) or (na == n2 and nb == n1):
+            return True
+    return False
+
 # ---- TENNIS LAW (owner decree 2026-07-28: "tennis both men and women, hockey, and
 # literally any other available market — bet all of them"). ESPN carries tennis as a
 # tournament shell only (7/28 probe: 0 matchups, 0 odds on the ATP/WTA scoreboards) and
@@ -4558,6 +4573,32 @@ def pm_tennis_prob(cache, player_a, player_b, title=''):
     p = 1.0 / (1.0 + 10 ** (-(ra - rb) / 400.0))
     return min(0.88, max(0.12, p))
 
+# ---- COMEBACK LAW (owner decree 2026-07-29): "maybe the favorite lost the first map or
+# the first set — there's still a chance they come back, grab that value when the position
+# is good." The pattern: pre-match favorite drops set/map 1, the live market OVERREACTS,
+# price dips below the set-tree floor. We anchor every 2-way market pre-match (price p0 +
+# model m0), then buy the dip when the drop exceeds what one set/map actually costs.
+def _tree_p(s, a, b, n):
+    """Match win prob from set/map state (a,b) with set-win prob s, first to n (iid sets)."""
+    if a >= n:
+        return 1.0
+    if b >= n:
+        return 0.0
+    return s * _tree_p(s, a + 1, b, n) + (1 - s) * _tree_p(s, a, b + 1, n)
+
+def _set_prob(m, n):
+    """Set/map win prob implied by match prob m (first to n), bisection on the tree."""
+    if m is None or not (0.02 < m < 0.98):
+        return None
+    lo, hi = 0.02, 0.98
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        if _tree_p(mid, 0, 0, n) < m:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
+
 def pm_kelly(p, price, B):
     """Fractional-Kelly stake for a binary buy at `price` with model prob p."""
     edge = p - price
@@ -4571,14 +4612,16 @@ def pm_kelly(p, price, B):
 # resting-order re-entries, uncapped same-event stacks, raw esports win-rate reads,
 # and live-divergence fades.
 def _desk_trade_cap(B, pmstats):
-    """Max stake on ONE trade: 10% of account (floor $6) — Gen.G's $17.98 becomes ~$7.50."""
+    """Max stake on ONE trade: 15% of account (floor $6) — owner decree 7/29: "if you need to
+    up the cap, go ahead" (was 10%). BAND LAW + the gates carry the blowup protection now."""
     acct = float((pmstats or {}).get('account') or B or 50.0)
-    return max(6.0, 0.10 * acct)
+    return max(6.0, 0.15 * acct)
 
 def _desk_event_cap(B, pmstats):
-    """Max total stake on ONE event title (open+resting+intents): 15% of account (floor $8)."""
+    """Max total stake on ONE event title (open+resting+intents): 20% of account (floor $8)
+    — owner decree 7/29 (was 15%). Gen.G's $35 triple-stack still can't happen: $22 ceiling."""
     acct = float((pmstats or {}).get('account') or B or 50.0)
-    return max(8.0, 0.15 * acct)
+    return max(8.0, 0.20 * acct)
 
 def pm_trader_scan(st):
     """One desk cycle. Returns (trade_intents, notes). Each intent: market/outcome/price/stake/kind."""
@@ -4639,7 +4682,9 @@ def pm_trader_scan(st):
     intents, notes = [], []
     taken_keys = set()  # intra-scan duplicate shield (event, team) across market slugs — the
                         # Frech ×2 same-minute double-entry slipped between two slugs (7/28)
-    hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B, 'leagues': {}}
+    cbc = {k: v for k, v in (cache.get('cb') or {}).items() if now - float(v.get('ts') or 0) < 36 * 3600}
+    cache['cb'] = cbc  # COMEBACK LAW anchors: pre-match price + model per 2-way slug (36h TTL)
+    hb = {'vs': 0, 'three_way': 0, 'expo': expo, 'B': B, 'leagues': {}, 'cb': len(cbc)}
     _tune = _desk_tuning(st)
     _tb = lambda k: (_tune.get(k) or {}).get('edge_bonus', 0.0)
     _tm = lambda k: (_tune.get(k) or {}).get('stake_mult', 1.0)
@@ -4805,6 +4850,13 @@ def pm_trader_scan(st):
                         expo += stake
             continue
         # ---- PLAYBOOK: MODEL EDGE (Kelly) + TAIL-END yield + LIVE-YIELD
+        # Event-level esports detector (owner decree 7/29: "we can't just bet favorites on
+        # esports 95% — there's no value in that") — esports gets EDGE/COMEBACK/ARB only,
+        # never blind tails. Tags + title keywords; the per-outcome pair match joins below.
+        _evtags = {str(t.get('slug') or '').lower() for t in (ev.get('tags') or []) if isinstance(t, dict)}
+        _es_ev = bool(_evtags & {'esports', 'cs2', 'csgo', 'lol', 'valorant', 'dota2', 'ow',
+                                 'league-of-legends', 'counter-strike', 'overwatch', 'dota'}) \
+            or bool(re.search(r'\b(cs2|csgo|counter[- ]strike|valorant|dota ?2|league of legends|overwatch)\b', (title or '').lower()))
         for o in outcomes:
             if (o['slug'], o['team']) in have:
                 continue
@@ -4829,19 +4881,67 @@ def pm_trader_scan(st):
             if pm_ is None and others and (not leagues or (leagues & PM_TENNIS)):
                 pm_ = pm_tennis_prob(cache, o['team'], others[0], title)
                 _ten = pm_ is not None
+            _cbk = f"{o['slug']}|{norm_txt(o['team'])}"  # per-team anchor key: long+short share a slug
+            _esp_ev = _es_ev or _esp or bool(others and _pm_esp_pair(cache, o['team'], others[0]))
+            _cb0 = cbc.get(_cbk)
+            if _cb0 and _cb0.get('esp'):
+                _esp_ev = True  # anchored as esports pre-match — the upcoming feed drops live matches
+            # COMEBACK LAW anchor (owner decree 7/29): remember the pre-match consensus —
+            # price, model, series length — for every set/map sport. A live dip off THIS
+            # number is what the set tree later prices; without it a comeback is just hope.
+            if not live and pm_ is not None and (_ten or _esp_ev) and 0.05 < o['price'] < 0.98 and len(outcomes) == 2:
+                _bo = 3
+                if _esp_ev:
+                    for _m in cache.get('esp') or []:
+                        if {norm_txt(_m['t1']['name']), norm_txt(_m['t2']['name'])} == {norm_txt(o['team']), norm_txt(others[0] if others else '')}:
+                            _bo = int(_m.get('bo') or 3)
+                            break
+                elif _ten:
+                    _bo = 5 if any(k in _ten_norm(title).replace(' ', '') for k in ('australianopen', 'roland', 'frenchopen', 'wimbledon', 'usopen')) else 3
+                cbc[_cbk] = {'p0': o['price'], 'm0': pm_, 'bo': _bo, 'ts': now, 'ten': _ten, 'esp': bool(_esp_ev)}
             _book_ok = len(outcomes) == 2 and all(0.005 < float(x.get('price') or 0) < 0.995 for x in outcomes)
             edge = (pm_ - o['price']) if pm_ is not None else None
-            if edge is not None and edge > 0.35:
+            if edge is not None and edge > 0.35 and not (live and _cb0):
+                # anchored live dips bypass the cap: the set-tree floor, not stale pre-match
+                # pm_, is the benchmark down a set/map (a 0.70 model vs a 0.30 dipped price
+                # reads as "edge 0.40" — that's the comeback profile, not a stale line)
                 print(f"[trader] edge-cap: {o['team']} claims {edge:.0%} — distrusting model read, skipping")
                 continue
             if live:
+                # COMEBACK LAW (owner decree 7/29: "grab the value of a favorite being down a
+                # set or down a map — maybe they win two sets in a row; when it's a good
+                # position, grab that value"). The pre-match anchor says who SHOULD win; the
+                # live book overreacts to one lost set/map. The iid set-tree floor down 0-1
+                # (bo3: s², bo5: s²(3−2s)) must still beat the dipped price by 6pp + tuning —
+                # we buy the overreaction, never the collapse. No anchor = no comeback.
+                _cb = cbc.get(_cbk)
+                if (_cb and _cb.get('m0') is not None
+                        and _cb['p0'] >= 0.58 and _cb['m0'] >= 0.55
+                        and _cb['p0'] - o['price'] >= 0.15 and 0.20 <= o['price'] <= 0.55):
+                    _n = (int(_cb.get('bo') or 3) + 1) // 2
+                    _s = _set_prob(_cb['m0'], _n)
+                    _fl = _tree_p(_s, 0, 1, _n) if _s is not None else None
+                    if _fl is not None:
+                        _fl = max(0.20, min(0.65, _fl))
+                        if _fl >= o['price'] + 0.06 + _tb('EDGE'):
+                            _unit = 'set' if _cb.get('ten') else 'map'
+                            stake = min(pm_kelly(_fl, o['price'], B) * _tm('EDGE'), _desk_trade_cap(B, pmstats))
+                            if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
+                                intents.append({**o, 'stake': round(stake, 2), 'kind': 'COMEBACK', 'p_model': _fl,
+                                                'event': title, 'ev_start': ev_start,
+                                                'reason': f"comeback value — pre-match {_cb['p0']:.0%} favorite (model {_cb['m0']:.0%}) dipped to {o['price']:.0%} live, down a {_unit}: set-tree floor {_fl:.0%} = {_fl - o['price']:.0%} overreaction"})
+                                taken_keys.add(_tk)
+                                expo += stake
+                                print(f"[trader] comeback: {o['team']} @ {o['price']:.2f} — anchor {_cb['p0']:.0%}, floor {_fl:.0%} ({title[:44]})")
                 # LIVE-BET fades stay retired (7/27 autopsy: 3-7, −$16.55 — stale pregame model
                 # vs smarter live money). LIVE-YIELD (owner decree 7/29: "games that are live to
                 # be bet on") buys live near-certainties only: model-backed at price >= 0.90 with
                 # model >= 0.80; MARKET-TAIL (no model — KBO/cricket/early-season UEFA) at >= 0.95
                 # on a complete book. Both settle within 12h, half stake. Never a fade.
-                _ly_model = pm_ is not None and o['price'] >= TRADER_TAIL_MIN and pm_ >= 0.80
-                _ly_mkt = pm_ is None and o['price'] >= 0.95 and _book_ok
+                # ESPORTS EXCLUDED (owner 7/29: "can't just bet favorites on esports 95% —
+                # there's no value in that") — esports value comes from EDGE + COMEBACK now.
+                _ly_model = not _esp_ev and pm_ is not None and o['price'] >= TRADER_TAIL_MIN and pm_ >= 0.80
+                _ly_mkt = not _esp_ev and pm_ is None and o['price'] >= 0.95 and _book_ok
                 if (_ly_model or _ly_mkt) and ts_ev - now > -12 * 3600:
                     stake = min(B * 0.10, B - 1, _desk_trade_cap(B, pmstats)) * 0.5 * _tm('TAIL')
                     if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
@@ -4854,8 +4954,9 @@ def pm_trader_scan(st):
                 continue
             if o['price'] >= TRADER_TAIL_MIN + _tb('TAIL') and ts_ev - now < TAIL_FAR_SECS:
                 # TAIL-WINDOW LAW: same-day tails deploy idle cash — capital returns TONIGHT.
-                _tl_model = pm_ is not None and pm_ >= 0.78
-                _tl_mkt = pm_ is None and o['price'] >= 0.94 and _book_ok
+                # ESPORTS EXCLUDED (owner 7/29): no 95c esports favorites, pregame or live.
+                _tl_model = not _esp_ev and pm_ is not None and pm_ >= 0.78
+                _tl_mkt = not _esp_ev and pm_ is None and o['price'] >= 0.94 and _book_ok
                 if _tl_model or _tl_mkt:
                     stake = min(B * 0.15, B - 1, _desk_trade_cap(B, pmstats)) * _tm('TAIL') * (1.0 if _tl_model else 0.5)
                     if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
@@ -5409,7 +5510,7 @@ async def pm_trader():
         if notes:
             _lgmix = ' '.join(f"{k}:{v}" for k, v in sorted(hb.get('leagues', {}).items())) or 'none'
             print(f"[trader] cycle: {hb.get('vs', '?')} vs-events ({_lgmix}) · {hb.get('three_way', '?')} 3-way priced · "
-                  f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f}")
+                  f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f} · cb {hb.get('cb', 0)}")
             for _tw in (hb.get('tuning') or []):
                 print(f"[trader] tuning: {_tw}")
         else:
