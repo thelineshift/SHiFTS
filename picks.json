@@ -2268,8 +2268,8 @@
       "live_odds": {
         "home_ml": -109,
         "away_ml": -111,
-        "total": 180.5,
-        "ts": 1785329689
+        "total": 181.5,
+        "ts": 1785330614
       }
     },
     {
@@ -2289,10 +2289,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -144,
-        "away_ml": 119,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 7.5,
-        "ts": 1785327150
+        "ts": 1785330614
       }
     },
     {
@@ -2496,10 +2496,10 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -161,
+        "away_ml": 133,
         "total": 7.5,
-        "ts": 1785329689
+        "ts": 1785330614
       },
       "last_alert_odds": 135
     },
@@ -2608,10 +2608,10 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 155,
-        "away_ml": -190,
+        "home_ml": 163,
+        "away_ml": -199,
         "total": 155.5,
-        "ts": 1785329689
+        "ts": 1785330614
       },
       "last_alert_odds": -190
     },
