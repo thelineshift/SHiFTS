@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.16'  # NEAR-TERM + DEPLOYMENT LAW: live/≤90min entries only, cash fully deployed, BAND LAW, cs2 EDGE retired
+BOT_VERSION = '9.24.17'  # TAIL-WINDOW + MARKET-TAIL LAW: same-day tails deploy idle cash, model-less markets tail-eligible
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -443,17 +443,24 @@ def _desk_sync_money(st, stats, bal):
     return acct, dep, net
 
 def pm_cash_balance():
-    """Real USD cash + buying power. None if unavailable."""
+    """Real USD cash + buying power. None if unavailable. One retry — the exchange edge
+    rate-limits (CF-1015) a few reads a day, and a single dead read used to kill the whole
+    scan cycle. Error strings truncated: SDK exceptions carry the full CF HTML body, which
+    was drowning the 100-line log window."""
     c = _pm_client()
     if not c:
         return None
-    try:
-        bals = ((c.account.balances() or {}).get('balances')) or []
-        usd = next((b for b in bals if b.get('currency') == 'USD'), bals[0] if bals else {})
-        return {'balance': round(float(usd.get('currentBalance') or 0), 2),
-                'buying_power': round(float(usd.get('buyingPower') or 0), 2)}
-    except Exception as e:
-        print('[pm] balance:', e); return None
+    for _try in range(2):
+        try:
+            bals = ((c.account.balances() or {}).get('balances')) or []
+            usd = next((b for b in bals if b.get('currency') == 'USD'), bals[0] if bals else {})
+            return {'balance': round(float(usd.get('currentBalance') or 0), 2),
+                    'buying_power': round(float(usd.get('buyingPower') or 0), 2)}
+        except Exception as e:
+            if _try == 0:
+                time.sleep(2)
+                continue
+            print('[pm] balance:', str(e)[:140]); return None
 
 def pm_find_market(team, opp, start_iso):
     """Tradable winner/moneyline market for team (vs opp) around start time. Dict or None."""
@@ -507,7 +514,7 @@ def pm_find_market(team, opp, start_iso):
                         'start': ev.get('startTime') or start_iso, 'smt': smt}
         return None
     except Exception as e:
-        print('[pm] find:', e); return None
+        print('[pm] find:', str(e)[:140]); return None
 
 def pm_place_bet(info, stake):
     """Place a capped GTC limit BUY_LONG. {'order_id','qty','price','stake'} or {'error'}."""
@@ -594,7 +601,7 @@ def pm_check_settled(lb):
             return {'result': 'WIN' if won else 'LOSS', 'payout': payout, 'pnl': pnl}
         return None
     except Exception as e:
-        print('[pm] settle:', e); return None
+        print('[pm] settle:', str(e)[:140]); return None
 
 def wallet_balances():
     """On-chain balances for all hot wallets + USD values. Never raises."""
@@ -4121,6 +4128,16 @@ TRADER_MIN_LIQUID = 0.03    # DEPLOYMENT LAW (owner decree 2026-07-29: "I don't 
 # yield) may reach 24h; anything farther is skipped at the event level.
 NEAR_TERM_SECS = 90 * 60
 ARB_FAR_SECS = 24 * 3600
+# TAIL-WINDOW LAW (owner 7/29: "there's $26 ready — why isn't it used?"): the 90-minute
+# gate was right for EDGE (edge decays with time) but wrong for TAIL — tails are the
+# DEPLOYMENT vehicle: near-certainties settling TONIGHT recycle capital by tomorrow.
+# Pregame tails reach 14h (same-day); live tails settle within 12h.
+TAIL_FAR_SECS = 14 * 3600
+# MARKET-TAIL LAW: model-less sports (KBO, cricket, UEFA early-season with no records) were
+# invisible — 24 tail candidates sat idle at 11:47 while the desk waited on a model read that
+# can never exist. A complete two-sided book IS the validator at extreme prices: pregame
+# >= 0.94, live >= 0.95, half stake. Exchange longshot bias (favorites outrun their price)
+# is the documented edge here; the tuning loop throttles it automatically if it runs cold.
 # ---- BAND LAW (7/29 autopsy, 146 settles): EDGE only prints in the 0.25-0.52 underdog window
 # (all-time 22-34, +$35.26, +26% ROI — tennis Elo longshots are the engine). 0.52-0.90 is the
 # model-overclaim band (12-13, -$31.10); <0.25 is lotto territory (7-29, -$27.43, 80% esports).
@@ -4770,8 +4787,6 @@ def pm_trader_scan(st):
                 continue
             if o['slug'] in have_slugs:
                 continue  # already positioned on this contract — never both directions
-            if not live and ts_ev - now > NEAR_TERM_SECS:
-                continue  # NEAR-TERM LAW: model entries wait for the 90-minute window (owner 7/29)
             _tk = (title, norm_txt(o['team']))
             if _tk in taken_keys:
                 continue  # same team via a second market slug — already intented this scan
@@ -4791,36 +4806,49 @@ def pm_trader_scan(st):
             if pm_ is None and others and (not leagues or (leagues & PM_TENNIS)):
                 pm_ = pm_tennis_prob(cache, o['team'], others[0], title)
                 _ten = pm_ is not None
-            if pm_ is None:
-                continue
-            edge = pm_ - o['price']
-            if edge > 0.35:
+            _book_ok = len(outcomes) == 2 and all(0.005 < float(x.get('price') or 0) < 0.995 for x in outcomes)
+            edge = (pm_ - o['price']) if pm_ is not None else None
+            if edge is not None and edge > 0.35:
                 print(f"[trader] edge-cap: {o['team']} claims {edge:.0%} — distrusting model read, skipping")
                 continue
             if live:
                 # LIVE-BET fades stay retired (7/27 autopsy: 3-7, −$16.55 — stale pregame model
                 # vs smarter live money). LIVE-YIELD (owner decree 7/29: "games that are live to
-                # be bet on") re-opens live entries ONLY as near-certainty buys where the LIVE
-                # MARKET validates the read: price >= 0.90 AND model >= 0.80 AND settles within
-                # 12h, at half the normal tail stake. Never a fade, never mid-price.
-                if o['price'] >= TRADER_TAIL_MIN and pm_ >= 0.80 and ts_ev - now > -12 * 3600:
+                # be bet on") buys live near-certainties only: model-backed at price >= 0.90 with
+                # model >= 0.80; MARKET-TAIL (no model — KBO/cricket/early-season UEFA) at >= 0.95
+                # on a complete book. Both settle within 12h, half stake. Never a fade.
+                _ly_model = pm_ is not None and o['price'] >= TRADER_TAIL_MIN and pm_ >= 0.80
+                _ly_mkt = pm_ is None and o['price'] >= 0.95 and _book_ok
+                if (_ly_model or _ly_mkt) and ts_ev - now > -12 * 3600:
                     stake = min(B * 0.10, B - 1, _desk_trade_cap(B, pmstats)) * 0.5 * _tm('TAIL')
                     if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
+                        _how = f"model {pm_:.0%} confirms" if _ly_model else "market-validated (no model — complete live book)"
                         intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': pm_,
                                         'event': title, 'ev_start': ev_start,
-                                        'reason': f"[live] near-certainty yield — live market {o['price']:.0%} + model {pm_:.0%} agree, settles within hours, half size"})
+                                        'reason': f"[live] near-certainty yield — live price {o['price']:.0%}, {_how}, settles within hours, half size"})
                         taken_keys.add(_tk)
                         expo += stake
                 continue
-            if o['price'] >= TRADER_TAIL_MIN + _tb('TAIL') and ts_ev - now < 24 * 3600 and pm_ >= 0.78:
-                stake = min(B * 0.15, B - 1, _desk_trade_cap(B, pmstats)) * _tm('TAIL')
-                if stake <= _desk_room(B, expo, expo0):
-                    yld = (1 - o['price']) / o['price']
-                    intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': pm_,
-                                    'event': title, 'ev_start': ev_start,
-                                    'reason': f"tail-end yield — {yld * 100:.1f}% on a near-certain that settles today"})
-                    taken_keys.add(_tk)
-                    expo += stake
+            if o['price'] >= TRADER_TAIL_MIN + _tb('TAIL') and ts_ev - now < TAIL_FAR_SECS:
+                # TAIL-WINDOW LAW: same-day tails deploy idle cash — capital returns TONIGHT.
+                _tl_model = pm_ is not None and pm_ >= 0.78
+                _tl_mkt = pm_ is None and o['price'] >= 0.94 and _book_ok
+                if _tl_model or _tl_mkt:
+                    stake = min(B * 0.15, B - 1, _desk_trade_cap(B, pmstats)) * _tm('TAIL') * (1.0 if _tl_model else 0.5)
+                    if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
+                        yld = (1 - o['price']) / o['price']
+                        _how = f"model {pm_:.0%} confirms" if _tl_model else "market-validated (no model — complete book)"
+                        intents.append({**o, 'stake': round(stake, 2), 'kind': 'TAIL', 'p_model': pm_,
+                                        'event': title, 'ev_start': ev_start,
+                                        'reason': f"tail-end yield — {yld * 100:.1f}% on a near-certain settling today, {_how}"})
+                        taken_keys.add(_tk)
+                        expo += stake
+                continue
+            if pm_ is None:
+                continue
+            # NEAR-TERM LAW: EDGE entries wait for the 90-minute window (owner 7/29) — model
+            # edge decays with time; tails (above) don't, so tails deploy all day.
+            if ts_ev - now > NEAR_TERM_SECS:
                 continue
             # BAND LAW (7/29 autopsy, 146 settles): EDGE prints ONLY in the 0.25-0.52 underdog
             # window (+$35.26 all-time). 0.52-0.90 = overclaim band (-$31.10), <0.25 = lotto
@@ -9517,4 +9545,4 @@ def run_guarded():
         time.sleep(120)
     sys.exit(1)  # non-zero so Railway actually restarts us after the throttle nap
 
-run_guarded()
+run
