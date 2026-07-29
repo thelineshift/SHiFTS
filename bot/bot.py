@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.21'  # NO-TAIL LAW: all 95c paths retired board-wide — EDGE band @3.0%/150min, comebacks looser, 3-way EDGE bar halved. Volume in benchmarked zones only
+BOT_VERSION = '9.24.22'  # VOLUME LAW: EDGE 2.5%/240min, comeback dip 10pp/tree bar 3pp, anchorless-comeback unblocked w/ trap guard, 14 slots
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4114,7 +4114,7 @@ def pm_slip_png(lb, status='LIVE', pnl=None, title='SHiFT — POLYMARKET US BET 
 # model edge (Kelly) + sum-arbitrage + tail-end yield + live divergence. Always scanning.
 TRADER_ON = os.environ.get('POLYMARKET_TRADER', '') == '1'
 TRADER_BANK_START = 50.0
-TRADER_MIN_EDGE = 0.030     # owner decree 2026-07-29 PM#2 ("bet what you see — profit at day end, not win rate") — 3.0% base bar; BAND LAW unchanged (0.25-0.52 only, the autopsy's profit zone)
+TRADER_MIN_EDGE = 0.025     # owner decree 2026-07-29 PM#3 — 2.5% base bar; BAND LAW unchanged (0.25-0.52 only, the autopsy's profit zone: 14-15, +$34.91 last 30 settles)
 TRADER_LIVE_EDGE = 0.08
 TRADER_ARB_SUM = 0.985
 TRADER_TAIL_MIN = 0.90
@@ -4126,7 +4126,7 @@ TRADER_MIN_LIQUID = 0.03    # DEPLOYMENT LAW (owner decree 2026-07-29: "I don't 
 # starting today within an hour — not two or three days away." Capital locked for days can't
 # compound. Model entries (EDGE/TAIL) require LIVE or start <= 90 min out; ARB (risk-free
 # yield) may reach 24h; anything farther is skipped at the event level.
-NEAR_TERM_SECS = 150 * 60  # widened 90→150 min 7/29 PM#2 — more band-volume supply, model still fresh
+NEAR_TERM_SECS = 240 * 60  # widened 150→240 min 7/29 PM#3 (0 intents all afternoon, $80 idle) — same-day settlement kept; records-based models don't decay in 4h
 ARB_FAR_SECS = 24 * 3600
 # TAIL-WINDOW LAW (owner 7/29: "there's $26 ready — why isn't it used?"): the 90-minute
 # gate was right for EDGE (edge decays with time) but wrong for TAIL — tails are the
@@ -4917,14 +4917,14 @@ def pm_trader_scan(st):
                 # gatekeeping — a weak favorite's down-0-1 floor simply won't clear the bar.
                 if (_cb and _cb.get('m0') is not None
                         and _cb['p0'] >= 0.55 and _cb['m0'] >= 0.52
-                        and 0.12 <= _cb['p0'] - o['price'] <= 0.45 and 0.15 <= o['price'] <= 0.60):  # >45pp collapse = injury/0-2 news, not overreaction
+                        and 0.10 <= _cb['p0'] - o['price'] <= 0.45 and 0.15 <= o['price'] <= 0.60):  # >45pp collapse = injury/0-2 news, not overreaction; dip bar 12→10pp 7/29 PM#3
                     hb['cbgate'] = hb.get('cbgate', 0) + 1
                     _n = max(2, (int(_cb.get('bo') or 3) + 1) // 2)  # PandaScore bo2 (OW) = first-to-2 → n=2; n=1 would zero the tree
                     _s = _set_prob(_cb['m0'], _n)
                     _fl = _tree_p(_s, 0, 1, _n) if _s is not None else None
                     if _fl is not None:
                         _fl = max(0.15, min(0.65, _fl))
-                        if _fl < o['price'] + 0.04 + _tb('EDGE'):
+                        if _fl < o['price'] + 0.03 + _tb('EDGE'):  # tree bar 4→3pp 7/29 PM#3
                             hb['cbfl'] = hb.get('cbfl', 0) + 1  # gates passed, tree said no value
                         else:
                             _unit = 'set' if _cb.get('ten') else 'map'
@@ -4943,7 +4943,13 @@ def pm_trader_scan(st):
                 # 0.25-0.55 (a deeper collapse means 0-2 or news — not the one-set dip we buy).
                 # v9.24.21 loosened (owner 7/29 PM#2): m0 0.58→0.55, dip 18→15pp, window
                 # 0.25-0.55→0.20-0.58, tree bar 6→5pp. Still no deep collapses (0-2/news).
-                if (_cb is None and pm_ is not None and (_ten or _esp_ev)
+                # v9.24.22 (7/29 PM#3): also fires when the anchor carried NO model information
+                # (m0 ≈ coinflip = formless read) — that anchor benchmarks nothing. TRAP GUARD:
+                # if the pre-match market had the team a clear dog (p0 <= 0.35) while the model
+                # now claims favorite, that's a market-model war (LUA/Gen.G profile) — skip.
+                if (pm_ is not None and (_ten or _esp_ev)
+                        and (_cb is None or 0.47 <= (_cb.get('m0') or 0.5) <= 0.53)
+                        and not (_cb and _cb['p0'] <= 0.35)
                         and pm_ >= 0.55 and o['price'] <= pm_ - 0.15 and 0.20 <= o['price'] <= 0.58):
                     hb['cbgate'] = hb.get('cbgate', 0) + 1
                     _bo2 = 3
@@ -4987,6 +4993,7 @@ def pm_trader_scan(st):
             # (-$27.43). Sub-0.30 needs a >= 15pp monster edge (the Stephens/Maestrelli profile).
             if not (EDGE_BAND[0] <= o['price'] <= EDGE_BAND[1]):
                 continue
+            hb['band'] = hb.get('band', 0) + 1  # x-ray: reached the profit band
             if o['price'] < 0.30 and edge < EDGE_BAND_DEEP:
                 continue
             _sl_l = ((o.get('slug') or '') + ' ' + (title or '')).lower()
@@ -5004,9 +5011,11 @@ def pm_trader_scan(st):
                                     'reason': f"{'Elo' if _ten else 'model'} {pm_:.0%} vs market {o['price']:.0%} — {edge:.0%} edge, half-Kelly"})
                     taken_keys.add(_tk)
                     expo += stake
+            else:
+                hb['bandfail'] = hb.get('bandfail', 0) + 1  # in-band but under the edge bar
     non_arb = [i for i in intents if i.get('kind') != 'ARB']
-    if len(non_arb) > 10:  # DEPLOYMENT LAW (7/29): 10 slots — velocity comes from count, not size
-        keep = {id(i) for i in sorted(non_arb, key=lambda x: -x.get('stake', 0))[:10]}
+    if len(non_arb) > 14:  # DEPLOYMENT LAW (7/29 PM#3): 10→14 slots — $80 idle means let volume through; caps still govern size
+        keep = {id(i) for i in sorted(non_arb, key=lambda x: -x.get('stake', 0))[:14]}
         intents = [i for i in intents if i.get('kind') == 'ARB' or id(i) in keep]
     expo = expo0 + sum(float(i.get('stake', 0)) for i in intents)
     hb['expo'], hb['B'], hb['expo0'] = expo, B, expo0
@@ -5519,7 +5528,7 @@ async def pm_trader():
             _lgmix = ' '.join(f"{k}:{v}" for k, v in sorted(hb.get('leagues', {}).items())) or 'none'
             print(f"[trader] cycle: {hb.get('vs', '?')} vs-events ({_lgmix}) · {hb.get('three_way', '?')} 3-way priced · "
                   f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f} · cb {hb.get('cb', 0)} · "
-                  f"live {hb.get('lv', 0)}(esp {hb.get('lvesp', 0)},>88 {hb.get('lv88', 0)},bf {hb.get('lvbf', 0)}) cb g{hb.get('cbgate', 0)}/fl{hb.get('cbfl', 0)} tw3 {hb.get('tw3', 0)}/{hb.get('tw3b', 0)}")
+                  f"live {hb.get('lv', 0)}(esp {hb.get('lvesp', 0)}) cb g{hb.get('cbgate', 0)}/fl{hb.get('cbfl', 0)} tw3 {hb.get('tw3', 0)}/{hb.get('tw3b', 0)} band {hb.get('band', 0)}/nf{hb.get('bandfail', 0)}")
             for _tw in (hb.get('tuning') or []):
                 print(f"[trader] tuning: {_tw}")
         else:
