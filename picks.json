@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T12:01:27Z",
+  "updated": "2026-07-29T16:00:54Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2894,6 +2894,74 @@
       "analysis": "9-3-4 overall \u2014 our 51% vs book 44% (no-vig) | \ud83e\udde0 **The read:** 9-3-4 overall \u2014 our 51% vs book 44% (no-vig). Model makes Utah Royals **51%** \u2014 books imply **35%**. SHiFT presses the gap.",
       "homeTeam": "Utah Royals",
       "awayTeam": "Washington Spirit"
+    },
+    {
+      "id": "san-diego-padres--1.5-0729",
+      "date": "2026-07-29",
+      "sport": "mlb",
+      "desc": "San Diego Padres -1.5",
+      "market": "run line",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "04:10 PM ET",
+      "vs": "Colorado Rockies",
+      "team": "San Diego Padres",
+      "opp": "Colorado Rockies",
+      "analysis": "54-53 overall, 28-24 at home \u2014 ML juiced to -163, so the -1.5 at the standard number is the bet; model makes San Diego Padres 69% straight up | \ud83d\udcb0 **Value hunt:** 54-53 overall, 28-24 at home \u2014 ML juiced to -163, so the -1.5 at the standard number is the bet; model makes San Diego Padres 69% straight",
+      "homeTeam": "San Diego Padres",
+      "awayTeam": "Colorado Rockies"
+    },
+    {
+      "id": "chicago-cubs-ml-0729",
+      "date": "2026-07-29",
+      "sport": "mlb",
+      "desc": "Chicago Cubs ML",
+      "market": "ML",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "07:45 PM ET",
+      "vs": "St. Louis Cardinals",
+      "team": "Chicago Cubs",
+      "opp": "St. Louis Cardinals",
+      "analysis": "61-46 overall, 31-24 on the road \u2014 our 56% vs book 50% (no-vig) | \ud83d\udcc8 **Market angle:** 61-46 overall, 31-24 on the road \u2014 our 56% vs book 50% (no-vig). The number's off by **6 points** \u2014 this is where CLV hunters eat.",
+      "awayTeam": "Chicago Cubs",
+      "homeTeam": "St. Louis Cardinals"
+    },
+    {
+      "id": "cincinnati-reds-ml-0729",
+      "date": "2026-07-29",
+      "sport": "mlb",
+      "desc": "Cincinnati Reds ML",
+      "market": "ML",
+      "odds": 114,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "07:10 PM ET",
+      "vs": "Cleveland Guardians",
+      "team": "Cincinnati Reds",
+      "opp": "Cleveland Guardians",
+      "analysis": "50-56 overall, 23-29 at home \u2014 our 48% vs book 45% (no-vig) | \ud83d\udcb0 **Value hunt:** 50-56 overall, 23-29 at home \u2014 our 48% vs book 45% (no-vig). The book shaded this line toward the public side; we collect the **4 points** they left.",
+      "homeTeam": "Cincinnati Reds",
+      "awayTeam": "Cleveland Guardians"
+    },
+    {
+      "id": "flamengo-ml-0729",
+      "date": "2026-07-29",
+      "sport": "bra1",
+      "desc": "Flamengo ML",
+      "market": "ML",
+      "odds": 100,
+      "units": 1.0,
+      "tier": "free",
+      "time_et": "06:30 PM ET",
+      "vs": "Internacional",
+      "team": "Flamengo",
+      "opp": "Internacional",
+      "analysis": "11-5-3 overall \u2014 our 69% vs book 65% (no-vig) | \ud83e\udde0 **The read:** 11-5-3 overall \u2014 our 69% vs book 65% (no-vig). Model makes Flamengo **69%** \u2014 books imply **50%**. SHiFT presses the gap.",
+      "awayTeam": "Flamengo",
+      "homeTeam": "Internacional"
     }
   ]
 }
