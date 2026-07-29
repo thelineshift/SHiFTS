@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T19:57:19Z",
+  "updated": "2026-07-29T20:00:53Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2995,6 +2995,57 @@
       "analysis": "11-5-3 overall \u2014 our 69% vs book 65% (no-vig) | \ud83e\udde0 **The read:** 11-5-3 overall \u2014 our 69% vs book 65% (no-vig). Model makes Flamengo **69%** \u2014 books imply **50%**. SHiFT presses the gap.",
       "awayTeam": "Flamengo",
       "homeTeam": "Internacional"
+    },
+    {
+      "id": "fluxo-w7m-ml-0729",
+      "date": "2026-07-29",
+      "sport": "cs2",
+      "desc": "Fluxo W7M ML",
+      "market": "StarLadder StarSeries Bo3",
+      "odds": -232,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "05:00 PM ET",
+      "vs": "Bounty Hunters Esports",
+      "team": "Fluxo W7M",
+      "opp": "Bounty Hunters Esports",
+      "analysis": "4-1 last 5 (beat Imperial, Bounty Hunters Esports, Imperial) (lost to MIBR) vs 1-4 \u2014 live Pinnacle line -232 (our 90% vs book 65%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Imperial, Bounty Hunters Esports, Imperial) (lost to MIBR) vs 1-4 \u2014 live Pinnacle line -232 (our 90% vs book 65%). That's a **25-point",
+      "awayTeam": "Fluxo W7M",
+      "homeTeam": "Bounty Hunters Esports"
+    },
+    {
+      "id": "marsborne-ml-0729",
+      "date": "2026-07-29",
+      "sport": "cs2",
+      "desc": "Marsborne ML",
+      "market": "StarLadder StarSeries Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "06:00 PM ET",
+      "vs": "NRG",
+      "team": "Marsborne",
+      "opp": "NRG",
+      "analysis": "4-1 last 5 (beat LAG Gaming, Iowa Stormboar, Festina Lente) (lost to regain) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat LAG Gaming, Iowa Stormboar, Festina Lente) (lost to regain) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** ",
+      "awayTeam": "Marsborne",
+      "homeTeam": "NRG"
+    },
+    {
+      "id": "golden-state-valkyries--3.5-0729",
+      "date": "2026-07-29",
+      "sport": "wnba",
+      "desc": "Golden State Valkyries -3.5",
+      "market": "spread",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 PM ET",
+      "vs": "Phoenix Mercury",
+      "team": "Golden State Valkyries",
+      "opp": "Phoenix Mercury",
+      "analysis": "19-8 overall, 8-4 on the road \u2014 ML juiced to -181, so the -3.5 at the standard number is the bet; model makes Golden State Valkyries 77% straight up | \ud83d\udcb0 **Value hunt:** 19-8 overall, 8-4 on the road \u2014 ML juiced to -181, so the -3.5 at the standard number is the bet; model makes Golden State Valkyrie",
+      "awayTeam": "Golden State Valkyries",
+      "homeTeam": "Phoenix Mercury"
     }
   ]
 }
