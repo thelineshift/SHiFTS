@@ -33302,8 +33302,9 @@
       "qty": 1,
       "market_slug": "aec-kbo-sla-kti-2026-07-29",
       "outcome": "Kia Tigers",
-      "status": "resting",
-      "ts": "2026-07-29T12:50:40Z"
+      "status": "unfilled",
+      "ts": "2026-07-29T12:50:40Z",
+      "note": " [stale-swept]"
     },
     {
       "price": 0.98,
