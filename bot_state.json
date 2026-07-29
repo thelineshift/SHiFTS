@@ -43,6 +43,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "minnesota-twins--1.5-0728",
+      "desc": "Minnesota Twins -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Kansas City Royals 2, Minnesota Twins 3",
+      "tier": "sharp"
+    },
+    {
       "id": "3-leg-parlay-0728-whale",
       "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
       "odds": 262,
@@ -32492,9 +32501,7 @@
           "px": 0.59
         }
       ],
-      "result": null,
-      "pnl": 0.0,
-      "autopsy": "order never filled \u2014 cancelled; no money moved."
+      "note": " [stale-swept]"
     },
     {
       "price": 0.1,
