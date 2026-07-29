@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 14:40 UTC",
+    "at": "2026-07-29 14:57 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 14:40 UTC",
+    "at": "2026-07-29 14:57 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,14 +33,14 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 14:40 UTC",
+    "at": "2026-07-29 14:57 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 14:40 UTC",
+    "at": "2026-07-29 14:57 UTC",
     "flags": []
   },
-  "bot_version": "9.24.20",
+  "bot_version": "9.24.21",
   "unannounced_results": [
     {
       "id": "3-leg-parlay-0728-lock",
@@ -389,7 +389,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "d14be2ad-8cf8-492b-9485-34229b0702ee",
+  "last_deploy_id": "aa201672-53d7-4bbf-92a4-360118beb4e1",
   "op_month": "2026-07",
   "op_calls": 75,
   "op_meta": {
