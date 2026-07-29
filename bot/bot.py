@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.23'  # LIVE-STATE LAW: live MLB/WNBA/NBA entries on pre-game model + current score + time-left vs live price (8pp bar, 0.12-0.75)
+BOT_VERSION = '9.24.24'  # EVERY-SPORT LAW: live soccer Poisson path, esports roster +4 (r6/kog/cod/rl), live-state configs for nfl/cfl/ncaaf/ncaab/nhl
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4435,7 +4435,9 @@ def pm_sport_prob(games, team_a, team_b, leagues=None):
 # plus CURRENT score and time remaining — the state, recomputed every cycle. Remaining
 # scoring ~ Normal(team edge x time left, sd x sqrt(time left)); win prob = P(margin +
 # remaining diff > 0). Both sides eligible; the math, not a side, picks the entry.
-_LIVE_STATE = {'mlb': (9, 4.4, 8.5), 'wnba': (4, 13.5, 40.0), 'nba': (4, 13.0, 40.0)}
+_LIVE_STATE = {'mlb': (9, 4.4, 8.5), 'wnba': (4, 13.5, 40.0), 'nba': (4, 13.0, 40.0),
+               'nfl': (4, 13.5, 38.0), 'cfl': (4, 13.0, 38.0), 'ncaaf': (4, 14.0, 38.0),
+               'ncaab': (2, 11.0, 34.0), 'nhl': (3, 2.2, 6.0)}  # periods, full-game margin SD, prob->score-edge factor
 
 def _pm_find_live(games, team_a, team_b):
     """The name-matched ESPN game dict when it's LIVE ('in') — carries score + period."""
@@ -4467,6 +4469,93 @@ def _live_prob(sport, p0, g, a_home):
     margin = (g.get('sh', 0) - g.get('sa', 0)) if a_home else (g.get('sa', 0) - g.get('sh', 0))
     z = (margin + mu) / sd
     p = 0.5 * (1 + math.erf(z / math.sqrt(2)))
+    return min(0.97, max(0.03, p))
+
+# ---- LIVE-SOCCER LAW (same decree: never leave a sport out — the 60+ event daily soccer
+# slate had ZERO live paths). Independent-Poisson goals model. The PRE-MATCH 3-way book
+# (anchored below) inverts to expected goals (lam_home, lam_away); live prob = current
+# score + remaining-minutes Poisson. No league table, no form feed needed — the book IS
+# the strength benchmark, and the state does the rest.
+def _pois(k, lam):
+    import math
+    return math.exp(-lam) * lam ** k / math.factorial(k)
+
+def _soc_probs(lh, la, maxg=10):
+    """P(win, draw, loss) for the home side from independent Poissons."""
+    pw = pd = pl = 0.0
+    for i in range(maxg):
+        pi = _pois(i, lh)
+        for j in range(maxg):
+            p = pi * _pois(j, la)
+            if i > j:
+                pw += p
+            elif i == j:
+                pd += p
+            else:
+                pl += p
+    return pw, pd, pl
+
+def _pm_find_soc(games, team_a, team_b):
+    """The name-matched ESPN soccer game when it's LIVE ('in') — score + clock on board."""
+    na, nb = norm_txt(team_a), norm_txt(team_b)
+    for g in games:
+        if g.get('sport') not in PM_SOCCER or g.get('state') != 'in':
+            continue
+        gh, ga = norm_txt(g['home']), norm_txt(g['away'])
+        if (na in gh and nb in ga) or (na in ga and nb in gh):
+            return g
+    return None
+
+def _soc_lams(pa0, pd0):
+    """Invert a pre-match 3-way book to (lam_home, lam_away) — coarse grid, least squares."""
+    pb0 = max(0.02, 1.0 - pa0 - pd0)
+    tot = pa0 + pd0 + pb0
+    ta, td = pa0 / tot, pd0 / tot
+    best, err = None, 9e9
+    for i in range(15):
+        T = 1.4 + 0.2 * i
+        for j in range(18):
+            r = 0.25 * (1.15 ** j)
+            lh, la = T * r / (1 + r), T / (1 + r)
+            ph, pd, _ = _soc_probs(lh, la)
+            e = (ph - ta) ** 2 + (pd - td) ** 2
+            if e < err:
+                err, best = e, (lh, la)
+    return best
+
+def _soc_minute(g):
+    """Match minute from ESPN soccer status: clock text + period, HT-aware."""
+    clk = str(g.get('det') or '')
+    per = int(g.get('period') or 0)
+    if 'ht' in clk.lower() or 'halftime' in clk.lower():
+        return 45.0
+    m = 0.0
+    mm = re.match(r'(\d+)(?:\+(\d+))?[:.]', clk)
+    if mm:
+        m = float(mm.group(1)) + float(mm.group(2) or 0)
+    if not m:
+        return {1: 10.0, 2: 55.0}.get(per, 88.0 if per >= 3 else 0.0)
+    return min(90.0, m)
+
+def _soc_live_prob(g, lams, a_home):
+    """Live win prob for the outcome team: current score + remaining Poisson goals."""
+    if not lams:
+        return None
+    lh0, la0 = lams
+    m = _soc_minute(g)
+    if m <= 0 or m >= 94:
+        return None
+    rem = max(0.02, (90.0 - m) / 90.0)
+    lh, la = lh0 * rem, la0 * rem
+    sh, sa = int(g.get('sh', 0)), int(g.get('sa', 0))
+    gh, ga = (sh, sa) if a_home else (sa, sh)  # goals for/against the OUTCOME team
+    p = 0.0
+    for i in range(9):
+        pi = _pois(i, lh if a_home else la)
+        for j in range(9):
+            pj = pi * _pois(j, la if a_home else lh)
+            if gh + i > ga + j:
+                p += pj  # 3-way winner market: a draw is a LOSS — strict win prob, no credit
     return min(0.97, max(0.03, p))
 
 def pm_esport_prob(cache, team_a, team_b):
@@ -4696,7 +4785,7 @@ def pm_trader_scan(st):
     cache = st.setdefault('pm_cache', {})
     if now - (cache.get('esp_ts') or 0) > 7200:
         esp = []
-        for gg in ('cs2', 'lol', 'valorant', 'dota2', 'ow'):
+        for gg in PS_GAMES:
             esp += se_ps_upcoming(gg)
             esp += se_ps_running(gg)  # running matches: live model reads + live esports detection
         cache['esp'], cache['esp_ts'] = esp, now
@@ -4839,6 +4928,47 @@ def pm_trader_scan(st):
                 hb['tw3'] = hb.get('tw3', 0) + 1
                 if _tw_book:
                     hb['tw3b'] = hb.get('tw3b', 0) + 1
+            # LIVE-SOCCER LAW (7/29 PM#5): pre-match 3-way book anchors → λ inversion → live
+            # Poisson vs the live price. The 60+ event daily soccer slate's first live path.
+            # Book prices ARE the strength benchmark — no table/form feed required.
+            for o in outcomes:
+                _cbk3 = f"{o['slug']}|{norm_txt(o['team'])}"
+                if not live and _tw_book and 0.05 < o['price'] < 0.98:
+                    cbc[_cbk3] = {'p0': o['price'], 'pd0': draw_px, 'ts': now, 'soc': True}
+                if not live:
+                    continue
+                cb3 = cbc.get(_cbk3)
+                if not (cb3 and cb3.get('soc') and cb3.get('pd0')):
+                    continue
+                if (o['slug'], o['team']) in have or o['slug'] in have_slugs:
+                    continue
+                _tk3l = (title, norm_txt(o['team']))
+                if _tk3l in taken_keys:
+                    continue
+                others3 = [x['team'] for x in outcomes if x['team'] != o['team']]
+                _gs = _pm_find_soc(games, o['team'], others3[0] if others3 else '')
+                if not _gs:
+                    continue
+                _ah = norm_txt(o['team']) in norm_txt(_gs['home'])
+                pa0 = cb3['p0'] if _ah else max(0.02, 1.0 - cb3['p0'] - cb3['pd0'])
+                _lp = _soc_live_prob(_gs, _soc_lams(pa0, cb3['pd0']), _ah)
+                if _lp is None or not (0.12 <= o['price'] <= 0.75):
+                    continue
+                hb['lsg'] = hb.get('lsg', 0) + 1
+                if _lp < o['price'] + 0.08 + _tb('EDGE'):
+                    hb['lsf'] = hb.get('lsf', 0) + 1
+                    continue
+                _ev_open3 = sum(float(t.get('stake', 0)) for t in held_trades if (t.get('event') or '') == title)
+                if _ev_open3 >= _desk_event_cap(B, pmstats):
+                    continue
+                stake = min(pm_kelly(_lp, o['price'], B) * _tm('EDGE'), _desk_trade_cap(B, pmstats))
+                if 0.5 <= stake <= _desk_room(B, expo, expo0):
+                    intents.append({**o, 'stake': round(stake, 2), 'kind': 'LIVEEDGE', 'p_model': _lp,
+                                    'event': title, 'ev_start': ev_start,
+                                    'reason': f"[live-state] soccer {_gs.get('det', 'live')} — book-implied goals + score {_gs.get('sa', 0)}-{_gs.get('sh', 0)} → {_lp:.0%} vs {o['price']:.0%}, {_lp - o['price']:.0%} edge, half-Kelly"})
+                    taken_keys.add(_tk3l)
+                    expo += stake
+                    print(f"[trader] live-state: {o['team']} @ {o['price']:.2f} — {_lp:.0%} ({title[:40]})")
             # ALL-SPORTS LAW (owner decree 2026-07-27): draw sports get PRICED, not
             # skipped. Model rates decisive-result strength (draw-adjusted soccer
             # records via _pm_rec); outright prob = (1 - book draw) x decisive prob.
@@ -8159,8 +8289,13 @@ def boots_last_hour():
 # Deterministic, in-bot scan runner: no agent turns, no prompt budget. Fires at slot
 # start when SCAN_LIVE=1; posts everything to shift-lab instead when SCAN_DRY_RUN=1.
 SCAN_SLOTS_UTC = (0, 4, 8, 12, 16, 20)
-SCAN_NOTABLE = ('BLAST', 'StarLadder', 'CCT', 'IEM', 'LCK', 'LPL', 'LEC', 'LCS', 'LCP', 'KeSPA', 'VCT')
-PS_GAMES = {'cs2': 'csgo', 'lol': 'lol', 'dota2': 'dota2', 'valorant': 'valorant', 'ow': 'ow'}
+SCAN_NOTABLE = ('BLAST', 'StarLadder', 'CCT', 'IEM', 'LCK', 'LPL', 'LEC', 'LCS', 'LCP', 'KeSPA', 'VCT',
+                'Esports World Cup', 'KPL', 'King Pro League', 'CDL', 'Call of Duty League', 'Six Invitational', 'RLCS')
+# EVERY-ESPORT LAW (owner 7/29 PM#5: "bet every sport and every esport — never leave one out"):
+# PandaScore's whole free roster, not just the big 5. cs2 stays EDGE-retired (9-22, −$46.75
+# autopsy) but keeps ARB + COMEBACK coverage — a helmet, not an exclusion.
+PS_GAMES = {'cs2': 'csgo', 'lol': 'lol', 'dota2': 'dota2', 'valorant': 'valorant', 'ow': 'ow',
+            'r6': 'r6siege', 'kog': 'kog', 'cod': 'codmw', 'rl': 'rl'}
 SCAN_ROOMS = {'free': 'free-pick', 'lock': 'lock-room', 'sharp': 'sharp-room', 'whale': 'whale-room'}
 # room identity colors (embed rail): instant visual tier recognition, zero confusion
 TIER_COLORS = {'whale': 0xF5C518, 'sharp': 0x3498DB, 'lock': 0x2ECC71, 'free': 0x95A5A6}
@@ -8558,7 +8693,7 @@ async def scan_engine_run(g0, slot_key, dry):
         pulled[g['sport']] = pulled.get(g['sport'], 0) + 1
         cands += se_edges(g, now_ts)
     esp = []
-    for gg in ('cs2', 'lol', 'valorant', 'dota2', 'ow'):
+    for gg in PS_GAMES:  # EVERY-ESPORT LAW: full PandaScore roster for picks too
         esp += await asyncio.to_thread(se_ps_upcoming, gg)
     # LIVE BOOK LINES (OddsPapi): real Pinnacle moneylines for esports, budget-guarded
     op_state = await asyncio.to_thread(get_state) or {}
