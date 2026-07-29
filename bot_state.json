@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 01:44 UTC",
+    "at": "2026-07-29 00:44 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-3-3": "2026-07-29 00:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 01:34 UTC",
+    "\ud83c\udfaffree-pick-2-3": "2026-07-29 00:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 00:04 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-29 00:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-28 16:43 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 01:44 UTC",
+    "at": "2026-07-29 00:44 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -31,13 +31,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 01:44 UTC",
+    "at": "2026-07-29 00:44 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-28 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-29 01:44 UTC",
+    "at": "2026-07-29 00:44 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
@@ -5300,7 +5300,7 @@
         }
       },
       "ow:129810": {
-        "ts": 1785258295.3496346,
+        "ts": 1785289481.5316384,
         "f": {
           "w": 3,
           "l": 2,
@@ -5329,7 +5329,7 @@
         }
       },
       "ow:132167": {
-        "ts": 1785258295.9745202,
+        "ts": 1785289482.1376297,
         "f": {
           "w": 3,
           "l": 2,
@@ -7467,6 +7467,122 @@
             {
               "won": true,
               "opp": "Forsaken"
+            }
+          ]
+        }
+      },
+      "lol:137898": {
+        "ts": 1785289482.8514044,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Skillcamp Esport"
+            },
+            {
+              "won": true,
+              "opp": "Karmine Corp Blue"
+            },
+            {
+              "won": true,
+              "opp": "Vitality.Bee"
+            },
+            {
+              "won": false,
+              "opp": "Ici Japon Corp. Esport"
+            },
+            {
+              "won": false,
+              "opp": "Galions"
+            }
+          ]
+        }
+      },
+      "lol:137901": {
+        "ts": 1785289483.445747,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": true,
+              "opp": "Esprit Sh\u014dnen"
+            },
+            {
+              "won": false,
+              "opp": "Solary"
+            },
+            {
+              "won": false,
+              "opp": "Skillcamp Esport"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp Blue"
+            },
+            {
+              "won": false,
+              "opp": "Vitality.Bee"
+            }
+          ]
+        }
+      },
+      "lol:131053": {
+        "ts": 1785289484.1555264,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "3BL Esports"
+            },
+            {
+              "won": true,
+              "opp": "JSK Esports"
+            },
+            {
+              "won": true,
+              "opp": "Baam Esports"
+            },
+            {
+              "won": false,
+              "opp": "Eintracht Spandau"
+            },
+            {
+              "won": true,
+              "opp": "BOMBA Team"
+            }
+          ]
+        }
+      },
+      "lol:134461": {
+        "ts": 1785289484.7545712,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "One More Esports"
+            },
+            {
+              "won": false,
+              "opp": "Disruptors"
+            },
+            {
+              "won": true,
+              "opp": "Pyramid IV Esports"
+            },
+            {
+              "won": true,
+              "opp": "One More Esports"
+            },
+            {
+              "won": false,
+              "opp": "JSK Esports"
             }
           ]
         }
@@ -30795,6 +30911,38 @@
       "outcome": "Denis Shapovalov",
       "status": "resting",
       "ts": "2026-07-29T01:35:02Z"
+    },
+    {
+      "price": 0.34,
+      "short": true,
+      "stake": 1.02,
+      "kind": "EDGE",
+      "p_model": 0.43243243243243246,
+      "event": "TLN Pirates vs. ZYB Esport",
+      "ev_start": "2026-07-29T16:00:00Z",
+      "reason": "model 43% vs market 34% \u2014 9% edge, half-Kelly",
+      "order_id": "BHEY9V2FC9NJ",
+      "qty": 3,
+      "market_slug": "aec-lol-tlnp-zyb-2026-07-29",
+      "outcome": "ZYB Esport",
+      "status": "open",
+      "ts": "2026-07-29T01:45:07Z"
+    },
+    {
+      "price": 0.21,
+      "short": true,
+      "stake": 1.47,
+      "kind": "EDGE",
+      "p_model": 0.368421052631579,
+      "event": "Anubis Gaming vs. GnG Amazigh",
+      "ev_start": "2026-07-29T16:00:00Z",
+      "reason": "model 37% vs market 21% \u2014 16% edge, half-Kelly",
+      "order_id": "BHEZD6P2J9NH",
+      "qty": 7,
+      "market_slug": "aec-lol-anb-gng-2026-07-29",
+      "outcome": "GnG Amazigh",
+      "status": "open",
+      "ts": "2026-07-29T01:45:08Z"
     }
   ],
   "pm_stats": {
@@ -30802,7 +30950,7 @@
     "wins": 32,
     "losses": 74,
     "pnl": -70.52,
-    "trades": 385,
+    "trades": 387,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-00",
     "deposits": 64.0,
