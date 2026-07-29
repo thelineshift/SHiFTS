@@ -5358,7 +5358,7 @@
         }
       },
       "ow:137196": {
-        "ts": 1785268794.8387787,
+        "ts": 1785291583.0683236,
         "f": {
           "w": 5,
           "l": 0,
@@ -5387,7 +5387,7 @@
         }
       },
       "ow:136396": {
-        "ts": 1785268795.4217403,
+        "ts": 1785291583.7063653,
         "f": {
           "w": 2,
           "l": 3,
@@ -30986,6 +30986,21 @@
           "px": 0.09
         }
       ]
+    },
+    {
+      "price": 0.6,
+      "stake": 4.8,
+      "kind": "EDGE",
+      "p_model": 0.6956521739130435,
+      "event": "Weibo Gaming vs. Team Liquid",
+      "ev_start": "2026-07-29T16:15:00Z",
+      "reason": "model 70% vs market 60% \u2014 10% edge, half-Kelly",
+      "order_id": "BHFDVHMZW9QM",
+      "qty": 8,
+      "market_slug": "aec-ow-wbg-tl-2026-07-29",
+      "outcome": "Weibo Gaming",
+      "status": "open",
+      "ts": "2026-07-29T02:20:05Z"
     }
   ],
   "pm_stats": {
@@ -30993,7 +31008,7 @@
     "wins": 32,
     "losses": 74,
     "pnl": -70.52,
-    "trades": 388,
+    "trades": 389,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-02",
     "deposits": 64.0,
