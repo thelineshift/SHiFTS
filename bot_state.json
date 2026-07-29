@@ -43,15 +43,6 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
-      "id": "chicago-white-sox-ml-0728",
-      "desc": "Chicago White Sox ML",
-      "odds": 114,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "New York Yankees 3, Chicago White Sox 2",
-      "tier": "whale"
-    },
-    {
       "id": "minnesota-twins--1.5-0728",
       "desc": "Minnesota Twins -1.5",
       "odds": -110,
