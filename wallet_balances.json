@@ -1,5 +1,5 @@
 {
-  "ts": "2026-07-29T13:22:32Z",
+  "ts": "2026-07-29T13:22:36Z",
   "wallets": [
     {
       "chain": "solana",
@@ -67,8 +67,9 @@
       "label": "\ud83d\udcbc OPS WALLET",
       "address": "14C6FDubcA5baeAkCtSzbjENvBVuQGdHrz",
       "note": "BTC revenue",
-      "balance": 0.0,
-      "usd": 0.0
+      "balance": null,
+      "usd": null,
+      "error": "HTTP Error 429: Too Many Requests"
     }
   ]
 }
