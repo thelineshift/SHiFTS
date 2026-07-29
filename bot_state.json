@@ -33029,8 +33029,11 @@
       "qty": 65,
       "market_slug": "aec-lol-mkf-flk-2026-07-29",
       "outcome": "FALKE Esports",
-      "status": "open",
-      "ts": "2026-07-29T10:10:08Z"
+      "status": "unfilled",
+      "ts": "2026-07-29T10:10:08Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.575,
@@ -33045,7 +33048,7 @@
       "qty": 3,
       "market_slug": "aec-mlb-sf-sd-2026-07-31",
       "outcome": "San Diego Padres",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T10:10:09Z"
     }
   ],
