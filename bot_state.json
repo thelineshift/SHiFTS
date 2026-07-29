@@ -30545,10 +30545,6 @@
         {
           "ts": 1785286477,
           "px": 0.55
-        },
-        {
-          "ts": 1785288865,
-          "px": 0.545
         }
       ]
     },
@@ -30570,10 +30566,6 @@
       "price_path": [
         {
           "ts": 1785286478,
-          "px": 0.6
-        },
-        {
-          "ts": 1785288865,
           "px": 0.6
         }
       ]
@@ -30787,20 +30779,30 @@
       "outcome": "Dalibor Svrcina",
       "status": "resting",
       "ts": "2026-07-29T01:20:19Z",
-      "price_path": [
-        {
-          "ts": 1785288865,
-          "px": 0.67
-        }
-      ]
+      "price_path": []
+    },
+    {
+      "price": 0.41,
+      "stake": 1.64,
+      "kind": "EDGE",
+      "p_model": 0.5910825531326155,
+      "event": "Denis Shapovalov vs. Rinky Hijikata",
+      "ev_start": "2026-07-29T02:30:00Z",
+      "reason": "Elo 59% vs market 41% \u2014 18% edge, half-Kelly",
+      "order_id": "BHETEM2T89QM",
+      "qty": 4,
+      "market_slug": "astatc-atp-densha-rinhij-2026-07-27-sw1",
+      "outcome": "Denis Shapovalov",
+      "status": "open",
+      "ts": "2026-07-29T01:35:02Z"
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 33,
+    "wins": 32,
     "losses": 74,
     "pnl": -70.52,
-    "trades": 384,
+    "trades": 385,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-00",
     "deposits": 64.0,
@@ -30815,7 +30817,7 @@
         0
       ],
       "EDGE": [
-        25,
+        24,
         59,
         0
       ],
@@ -30836,6 +30838,14 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
+    {
+      "ts": "2026-07-28T00:54:24Z",
+      "kind": "EDGE",
+      "outcome": "Revenge",
+      "result": "LOSS",
+      "pnl": -1.02,
+      "lesson": "model 52% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.36 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
+    },
     {
       "ts": "2026-07-28T01:04:20Z",
       "kind": "EDGE",
@@ -31067,14 +31077,6 @@
       "result": "LOSS",
       "pnl": -0.93,
       "lesson": "model 43% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.11 before the result \u2014 beat the number by 20\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-29T01:34:22Z",
-      "kind": "EDGE",
-      "outcome": "Hugo Grenier",
-      "result": "WIN",
-      "pnl": 0.0,
-      "lesson": "+$0.00 \u2014 model 47% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.32 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -31158,7 +31160,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785288862.1897051,
+  "dep_checked_ts": 1785281662.2241652,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
