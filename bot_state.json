@@ -33414,6 +33414,22 @@
           "px": 0.97
         }
       ]
+    },
+    {
+      "price": 0.99,
+      "short": true,
+      "stake": 0.99,
+      "kind": "TAIL",
+      "p_model": null,
+      "event": "LG Twins vs. Kiwoom Heroes",
+      "ev_start": "2026-07-29T09:30:00Z",
+      "reason": "[live] near-certainty yield \u2014 live price 99%, market-validated (no model \u2014 complete live book), settles within hours, half size",
+      "order_id": "BHRM48JMC9S2",
+      "qty": 1,
+      "market_slug": "aec-kbo-ltg-khi-2026-07-29",
+      "outcome": "Kiwoom Heroes",
+      "status": "open",
+      "ts": "2026-07-29T13:10:51Z"
     }
   ],
   "pm_stats": {
@@ -33421,7 +33437,7 @@
     "wins": 36,
     "losses": 85,
     "pnl": -71.25,
-    "trades": 450,
+    "trades": 451,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-12",
     "deposits": 14.0,
