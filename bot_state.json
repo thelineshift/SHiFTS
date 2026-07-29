@@ -31423,106 +31423,13 @@
       "qty": 2,
       "market_slug": "aec-cs2-shin-gls-2026-07-29",
       "outcome": "Galorys",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T00:55:02Z",
-      "price_path": [
-        {
-          "ts": 1785295465,
-          "px": 0.44
-        },
-        {
-          "ts": 1785298470,
-          "px": 0.44
-        },
-        {
-          "ts": 1785300867,
-          "px": 0.44
-        },
-        {
-          "ts": 1785302670,
-          "px": 0.44
-        },
-        {
-          "ts": 1785305070,
-          "px": 0.44
-        },
-        {
-          "ts": 1785307466,
-          "px": 0.44
-        },
-        {
-          "ts": 1785309275,
-          "px": 0.44
-        },
-        {
-          "ts": 1785311665,
-          "px": 0.44
-        },
-        {
-          "ts": 1785313470,
-          "px": 0.44
-        },
-        {
-          "ts": 1785315871,
-          "px": 0.44
-        },
-        {
-          "ts": 1785318266,
-          "px": 0.44
-        },
-        {
-          "ts": 1785320066,
-          "px": 0.44
-        },
-        {
-          "ts": 1785321867,
-          "px": 0.44
-        },
-        {
-          "ts": 1785324109,
-          "px": 0.44
-        },
-        {
-          "ts": 1785326508,
-          "px": 0.44
-        },
-        {
-          "ts": 1785329095,
-          "px": 0.44
-        },
-        {
-          "ts": 1785331332,
-          "px": 0.44
-        },
-        {
-          "ts": 1785333161,
-          "px": 0.44
-        },
-        {
-          "ts": 1785335458,
-          "px": 0.44
-        },
-        {
-          "ts": 1785337642,
-          "px": 0.44
-        },
-        {
-          "ts": 1785339442,
-          "px": 0.25
-        },
-        {
-          "ts": 1785341242,
-          "px": 0.18
-        },
-        {
-          "ts": 1785343046,
-          "px": 0.13
-        },
-        {
-          "ts": 1785345440,
-          "px": 0.03
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T17:27:18Z",
+      "pnl": -0.88,
+      "autopsy": "model 57% vs market 44% missed \u2014 logged for the playbook review. Taken 0.44, rode to 0.03 before the result \u2014 beat the number by 41\u00a2 \u2705"
     },
     {
       "price": 0.66,
@@ -34264,21 +34171,27 @@
       "market_slug": "aec-atp-jjwol-zhizha-2026-07-27",
       "outcome": "Zhizhen Zhang",
       "status": "open",
-      "ts": "2026-07-29T17:23:03Z"
+      "ts": "2026-07-29T17:23:03Z",
+      "price_path": [
+        {
+          "ts": 1785346041,
+          "px": 0.48
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 37,
-    "losses": 90,
-    "pnl": -76.06,
+    "losses": 91,
+    "pnl": -76.94,
     "trades": 455,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-16",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 90.98,
-    "net": 26.98,
+    "account": 90.1,
+    "net": 26.1,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -34288,7 +34201,7 @@
       ],
       "EDGE": [
         28,
-        75,
+        76,
         0
       ],
       "LIVE-BET": [
@@ -34308,14 +34221,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T20:14:21Z",
-      "kind": "EDGE",
-      "outcome": "ALTERNATE aTTaX Ruby",
-      "result": "LOSS",
-      "pnl": -1.0,
-      "lesson": "model 37% vs market 25% missed \u2014 logged for the playbook review. Taken 0.25, rode to 0.08 before the result \u2014 beat the number by 17\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-28T20:34:22Z",
       "kind": "EDGE",
@@ -34547,6 +34452,14 @@
       "result": "WIN",
       "pnl": 1.98,
       "lesson": "+$1.98 \u2014 model 43% vs market 34% was real edge; thesis held. Taken 0.34, rode to 0.17 before the result \u2014 beat the number by 17\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T17:27:18Z",
+      "kind": "EDGE",
+      "outcome": "Galorys",
+      "result": "LOSS",
+      "pnl": -0.88,
+      "lesson": "model 57% vs market 44% missed \u2014 logged for the playbook review. Taken 0.44, rode to 0.03 before the result \u2014 beat the number by 41\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
