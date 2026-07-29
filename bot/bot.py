@@ -4658,6 +4658,7 @@ def pm_trader_scan(st):
         esp = []
         for gg in ('cs2', 'lol', 'valorant', 'dota2', 'ow'):
             esp += se_ps_upcoming(gg)
+            esp += se_ps_running(gg)  # running matches: live model reads + live esports detection
         cache['esp'], cache['esp_ts'] = esp, now
     fmt = lambda ts: time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(ts))
     # ALL-SPORTS LAW (owner decree 2026-07-27): the desk eats EVERY sport the horizon
@@ -4939,7 +4940,7 @@ def pm_trader_scan(st):
                 # gatekeeping — a weak favorite's down-0-1 floor simply won't clear the bar.
                 if (_cb and _cb.get('m0') is not None
                         and _cb['p0'] >= 0.55 and _cb['m0'] >= 0.52
-                        and _cb['p0'] - o['price'] >= 0.12 and 0.15 <= o['price'] <= 0.60):
+                        and 0.12 <= _cb['p0'] - o['price'] <= 0.45 and 0.15 <= o['price'] <= 0.60):  # >45pp collapse = injury/0-2 news, not overreaction
                     hb['cbgate'] = hb.get('cbgate', 0) + 1
                     _n = max(2, (int(_cb.get('bo') or 3) + 1) // 2)  # PandaScore bo2 (OW) = first-to-2 → n=2; n=1 would zero the tree
                     _s = _set_prob(_cb['m0'], _n)
@@ -4958,6 +4959,39 @@ def pm_trader_scan(st):
                                 taken_keys.add(_tk)
                                 expo += stake
                                 print(f"[trader] comeback: {o['team']} @ {o['price']:.2f} — anchor {_cb['p0']:.0%}, floor {_fl:.0%} ({title[:44]})")
+                # MODEL-ANCHORED COMEBACK (v9.24.20b): match started before this boot, so no
+                # pre-match anchor — the model itself is the fair-value benchmark. Elo/form
+                # don't know the live score, so a live price 18pp+ under a strong model read
+                # IS the dip. Stricter than anchored: m0 >= 0.58, tree bar 6pp, window
+                # 0.25-0.55 (a deeper collapse means 0-2 or news — not the one-set dip we buy).
+                if (_cb is None and pm_ is not None and (_ten or _esp_ev)
+                        and pm_ >= 0.58 and o['price'] <= pm_ - 0.18 and 0.25 <= o['price'] <= 0.55):
+                    hb['cbgate'] = hb.get('cbgate', 0) + 1
+                    _bo2 = 3
+                    if _esp_ev:
+                        for _m in cache.get('esp') or []:
+                            if {norm_txt(_m['t1']['name']), norm_txt(_m['t2']['name'])} == {norm_txt(o['team']), norm_txt(others[0] if others else '')}:
+                                _bo2 = int(_m.get('bo') or 3)
+                                break
+                    elif _ten:
+                        _bo2 = 5 if any(k in _ten_norm(title).replace(' ', '') for k in ('australianopen', 'roland', 'frenchopen', 'wimbledon', 'usopen')) else 3
+                    _n = max(2, (_bo2 + 1) // 2)
+                    _s = _set_prob(pm_, _n)
+                    _fl = _tree_p(_s, 0, 1, _n) if _s is not None else None
+                    if _fl is not None:
+                        _fl = max(0.15, min(0.65, _fl))
+                        if _fl < o['price'] + 0.06 + _tb('EDGE'):
+                            hb['cbfl'] = hb.get('cbfl', 0) + 1
+                        else:
+                            _unit = 'set' if _ten else 'map'
+                            stake = min(pm_kelly(_fl, o['price'], B) * _tm('EDGE'), _desk_trade_cap(B, pmstats))
+                            if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
+                                intents.append({**o, 'stake': round(stake, 2), 'kind': 'COMEBACK', 'p_model': _fl,
+                                                'event': title, 'ev_start': ev_start,
+                                                'reason': f"model-anchored comeback — model {pm_:.0%} vs dipped live {o['price']:.0%} (no pre-match anchor), down a {_unit}: set-tree floor {_fl:.0%} = {_fl - o['price']:.0%} overreaction"})
+                                taken_keys.add(_tk)
+                                expo += stake
+                                print(f"[trader] comeback: {o['team']} @ {o['price']:.2f} — model-only {pm_:.0%}, floor {_fl:.0%} ({title[:44]})")
                 # LIVE-BET fades stay retired (7/27 autopsy: 3-7, −$16.55 — stale pregame model
                 # vs smarter live money). LIVE-YIELD (owner decree 7/29: "games that are live to
                 # be bet on") buys live near-certainties only: model-backed at price >= 0.90 with
@@ -8283,6 +8317,26 @@ def se_ps_upcoming(game):
         ms = se_ps('/%s/matches/upcoming' % PS_GAMES[game], per_page=20)
     except Exception as e:
         print('se ps fail', game, e)
+        return []
+    out = []
+    for m in ms or []:
+        opps = m.get('opponents') or []
+        if len(opps) < 2:
+            continue
+        a, b = opps[0].get('opponent') or {}, opps[1].get('opponent') or {}
+        out.append({'sport': game, 'start': m.get('begin_at') or m.get('scheduled_at'),
+                    't1': {'id': a.get('id'), 'name': a.get('name', '?')},
+                    't2': {'id': b.get('id'), 'name': b.get('name', '?')},
+                    'league': (m.get('league') or {}).get('name', ''), 'bo': m.get('number_of_games')})
+    return out
+
+def se_ps_running(game):
+    """Live matches — same shape as se_ps_upcoming. The upcoming feed drops a match the
+    minute it starts, which blinded live model reads and the live esports detector."""
+    try:
+        ms = se_ps('/%s/matches/running' % PS_GAMES[game], per_page=20)
+    except Exception as e:
+        print('se ps fail', game, str(e)[:60])
         return []
     out = []
     for m in ms or []:
