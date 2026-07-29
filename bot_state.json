@@ -26668,10 +26668,6 @@
       "ts": "2026-07-27T16:25:14Z",
       "price_path": [
         {
-          "ts": 1785300862,
-          "px": 0.535
-        },
-        {
           "ts": 1785302665,
           "px": 0.535
         },
@@ -26762,6 +26758,10 @@
         {
           "ts": 1785350237,
           "px": 0.515
+        },
+        {
+          "ts": 1785352037,
+          "px": 0.51
         }
       ]
     },
@@ -27383,10 +27383,6 @@
       "ts": "2026-07-27T22:50:05Z",
       "price_path": [
         {
-          "ts": 1785300862,
-          "px": 0.58
-        },
-        {
           "ts": 1785302666,
           "px": 0.58
         },
@@ -27477,6 +27473,10 @@
         {
           "ts": 1785350237,
           "px": 0.52
+        },
+        {
+          "ts": 1785352037,
+          "px": 0.91
         }
       ]
     },
@@ -30213,10 +30213,6 @@
       "ts": "2026-07-28T16:25:06Z",
       "price_path": [
         {
-          "ts": 1785300865,
-          "px": 0.24
-        },
-        {
           "ts": 1785302668,
           "px": 0.24
         },
@@ -30306,6 +30302,10 @@
         },
         {
           "ts": 1785350238,
+          "px": 0.29
+        },
+        {
+          "ts": 1785352038,
           "px": 0.29
         }
       ]
@@ -30845,106 +30845,13 @@
       "qty": 10,
       "market_slug": "aec-dota2-agm-nemiga-2026-07-29",
       "outcome": "Amaru Gaming",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T18:50:05Z",
-      "price_path": [
-        {
-          "ts": 1785300865,
-          "px": 0.36
-        },
-        {
-          "ts": 1785302668,
-          "px": 0.36
-        },
-        {
-          "ts": 1785305068,
-          "px": 0.36
-        },
-        {
-          "ts": 1785307465,
-          "px": 0.36
-        },
-        {
-          "ts": 1785309273,
-          "px": 0.36
-        },
-        {
-          "ts": 1785311664,
-          "px": 0.36
-        },
-        {
-          "ts": 1785313469,
-          "px": 0.36
-        },
-        {
-          "ts": 1785315869,
-          "px": 0.36
-        },
-        {
-          "ts": 1785318265,
-          "px": 0.36
-        },
-        {
-          "ts": 1785320065,
-          "px": 0.36
-        },
-        {
-          "ts": 1785321865,
-          "px": 0.36
-        },
-        {
-          "ts": 1785324108,
-          "px": 0.36
-        },
-        {
-          "ts": 1785326507,
-          "px": 0.36
-        },
-        {
-          "ts": 1785329094,
-          "px": 0.36
-        },
-        {
-          "ts": 1785331331,
-          "px": 0.36
-        },
-        {
-          "ts": 1785333160,
-          "px": 0.36
-        },
-        {
-          "ts": 1785335457,
-          "px": 0.36
-        },
-        {
-          "ts": 1785337641,
-          "px": 0.38
-        },
-        {
-          "ts": 1785339441,
-          "px": 0.56
-        },
-        {
-          "ts": 1785341241,
-          "px": 0.19
-        },
-        {
-          "ts": 1785343045,
-          "px": 0.29
-        },
-        {
-          "ts": 1785345439,
-          "px": 0.23
-        },
-        {
-          "ts": 1785348439,
-          "px": 0.53
-        },
-        {
-          "ts": 1785350841,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T19:07:18Z",
+      "pnl": -3.6,
+      "autopsy": "model 70% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, slid to 0.01 before the result \u2014 the number ran 35\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.26,
@@ -31329,106 +31236,13 @@
       "qty": 3,
       "market_slug": "aec-valorant-beg-aar-2026-07-29",
       "outcome": "ALTERNATE aTTaX Ruby",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T20:50:08Z",
-      "price_path": [
-        {
-          "ts": 1785300866,
-          "px": 0.49
-        },
-        {
-          "ts": 1785302669,
-          "px": 0.48
-        },
-        {
-          "ts": 1785305069,
-          "px": 0.52
-        },
-        {
-          "ts": 1785307465,
-          "px": 0.51
-        },
-        {
-          "ts": 1785309274,
-          "px": 0.5
-        },
-        {
-          "ts": 1785311664,
-          "px": 0.42
-        },
-        {
-          "ts": 1785313470,
-          "px": 0.45
-        },
-        {
-          "ts": 1785315870,
-          "px": 0.45
-        },
-        {
-          "ts": 1785318265,
-          "px": 0.45
-        },
-        {
-          "ts": 1785320066,
-          "px": 0.46
-        },
-        {
-          "ts": 1785321866,
-          "px": 0.46
-        },
-        {
-          "ts": 1785324109,
-          "px": 0.47
-        },
-        {
-          "ts": 1785326507,
-          "px": 0.47
-        },
-        {
-          "ts": 1785329095,
-          "px": 0.48
-        },
-        {
-          "ts": 1785331332,
-          "px": 0.48
-        },
-        {
-          "ts": 1785333161,
-          "px": 0.48
-        },
-        {
-          "ts": 1785335458,
-          "px": 0.5
-        },
-        {
-          "ts": 1785337642,
-          "px": 0.5
-        },
-        {
-          "ts": 1785339442,
-          "px": 0.5
-        },
-        {
-          "ts": 1785341242,
-          "px": 0.5
-        },
-        {
-          "ts": 1785343046,
-          "px": 0.5
-        },
-        {
-          "ts": 1785345440,
-          "px": 0.54
-        },
-        {
-          "ts": 1785348439,
-          "px": 0.24
-        },
-        {
-          "ts": 1785350842,
-          "px": 0.18
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T19:07:20Z",
+      "pnl": -1.47,
+      "autopsy": "model 50% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, rode to 0.18 before the result \u2014 beat the number by 16\u00a2 \u2705"
     },
     {
       "price": 0.24,
@@ -33129,78 +32943,13 @@
       "qty": 20,
       "market_slug": "aec-lol-sly-ess-2026-07-29",
       "outcome": "Esprit Sh\u014dnen",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T08:55:20Z",
-      "price_path": [
-        {
-          "ts": 1785315873,
-          "px": 0.13
-        },
-        {
-          "ts": 1785318268,
-          "px": 0.13
-        },
-        {
-          "ts": 1785320068,
-          "px": 0.12
-        },
-        {
-          "ts": 1785321868,
-          "px": 0.13
-        },
-        {
-          "ts": 1785324111,
-          "px": 0.13
-        },
-        {
-          "ts": 1785326509,
-          "px": 0.12
-        },
-        {
-          "ts": 1785329097,
-          "px": 0.12
-        },
-        {
-          "ts": 1785331334,
-          "px": 0.11
-        },
-        {
-          "ts": 1785333163,
-          "px": 0.11
-        },
-        {
-          "ts": 1785335460,
-          "px": 0.11
-        },
-        {
-          "ts": 1785337644,
-          "px": 0.11
-        },
-        {
-          "ts": 1785339444,
-          "px": 0.11
-        },
-        {
-          "ts": 1785341850,
-          "px": 0.11
-        },
-        {
-          "ts": 1785344251,
-          "px": 0.11
-        },
-        {
-          "ts": 1785346643,
-          "px": 0.11
-        },
-        {
-          "ts": 1785349043,
-          "px": 0.08
-        },
-        {
-          "ts": 1785350843,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T19:07:23Z",
+      "pnl": -2.6,
+      "autopsy": "model 30% vs market 13% missed \u2014 logged for the playbook review. Taken 0.13, rode to 0.01 before the result \u2014 beat the number by 12\u00a2 \u2705"
     },
     {
       "price": 0.04,
@@ -34237,15 +33986,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 41,
-    "losses": 91,
-    "pnl": -61.56,
+    "losses": 94,
+    "pnl": -69.23,
     "trades": 456,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-18",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 132.35,
-    "net": 68.35,
+    "account": 124.68,
+    "net": 60.68,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -34255,7 +34004,7 @@
       ],
       "EDGE": [
         32,
-        76,
+        79,
         0
       ],
       "LIVE-BET": [
@@ -34275,30 +34024,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T21:44:22Z",
-      "kind": "EDGE",
-      "outcome": "Tomas Etcheverry",
-      "result": "LOSS",
-      "pnl": -1.55,
-      "lesson": "model 46% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.01 before the result \u2014 beat the number by 30\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-28T23:34:22Z",
-      "kind": "EDGE",
-      "outcome": "INTZ e-Sports",
-      "result": "LOSS",
-      "pnl": -2.7,
-      "lesson": "model 50% vs market 27% missed \u2014 logged for the playbook review. Taken 0.27, slid to 0.33 before the result \u2014 the number ran 6\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-28T23:34:24Z",
-      "kind": "EDGE",
-      "outcome": "7REX",
-      "result": "LOSS",
-      "pnl": -3.06,
-      "lesson": "model 57% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.01 before the result \u2014 the number ran 33\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T00:04:24Z",
       "kind": "EDGE",
@@ -34514,6 +34239,30 @@
       "result": "WIN",
       "pnl": 1.14,
       "lesson": "+$1.14 \u2014 model 51% vs market 43% was real edge; thesis held. Taken 0.43, slid to 0.46 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T19:07:18Z",
+      "kind": "EDGE",
+      "outcome": "Amaru Gaming",
+      "result": "LOSS",
+      "pnl": -3.6,
+      "lesson": "model 70% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, slid to 0.01 before the result \u2014 the number ran 35\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T19:07:20Z",
+      "kind": "EDGE",
+      "outcome": "ALTERNATE aTTaX Ruby",
+      "result": "LOSS",
+      "pnl": -1.47,
+      "lesson": "model 50% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, rode to 0.18 before the result \u2014 beat the number by 16\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T19:07:23Z",
+      "kind": "EDGE",
+      "outcome": "Esprit Sh\u014dnen",
+      "result": "LOSS",
+      "pnl": -2.6,
+      "lesson": "model 30% vs market 13% missed \u2014 logged for the playbook review. Taken 0.13, rode to 0.01 before the result \u2014 beat the number by 12\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -34597,7 +34346,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785348441.2634306,
+  "dep_checked_ts": 1785352043.9848669,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
   "x_ads": []
