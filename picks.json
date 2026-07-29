@@ -2266,10 +2266,10 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": 109,
-        "away_ml": -132,
+        "home_ml": 100,
+        "away_ml": -121,
         "total": 181.5,
-        "ts": 1785358443
+        "ts": 1785360657
       },
       "last_alert_odds": 100
     },
