@@ -4918,7 +4918,7 @@ def pm_trader_scan(st):
                 if (_cb and _cb.get('m0') is not None
                         and _cb['p0'] >= 0.58 and _cb['m0'] >= 0.55
                         and _cb['p0'] - o['price'] >= 0.15 and 0.20 <= o['price'] <= 0.55):
-                    _n = (int(_cb.get('bo') or 3) + 1) // 2
+                    _n = max(2, (int(_cb.get('bo') or 3) + 1) // 2)  # PandaScore bo2 (OW) = first-to-2 → n=2; n=1 would zero the tree
                     _s = _set_prob(_cb['m0'], _n)
                     _fl = _tree_p(_s, 0, 1, _n) if _s is not None else None
                     if _fl is not None:
