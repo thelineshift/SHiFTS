@@ -2266,10 +2266,10 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -105,
+        "home_ml": -121,
+        "away_ml": 100,
         "total": 180.5,
-        "ts": 1785320059
+        "ts": 1785322904
       }
     },
     {
@@ -2455,10 +2455,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -181,
-        "away_ml": 149,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 8.5,
-        "ts": 1785305659
+        "ts": 1785322904
       },
       "last_alert_odds": -175
     },
