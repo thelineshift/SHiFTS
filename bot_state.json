@@ -30197,42 +30197,13 @@
       "qty": 4,
       "market_slug": "aec-atp-aughol-huggre-2026-07-27",
       "outcome": "Hugo Grenier",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T19:40:10Z",
-      "price_path": [
-        {
-          "ts": 1785267869,
-          "px": 0.3
-        },
-        {
-          "ts": 1785269672,
-          "px": 0.3
-        },
-        {
-          "ts": 1785272072,
-          "px": 0.3
-        },
-        {
-          "ts": 1785274469,
-          "px": 0.3
-        },
-        {
-          "ts": 1785276865,
-          "px": 0.29
-        },
-        {
-          "ts": 1785279265,
-          "px": 0.3
-        },
-        {
-          "ts": 1785281068,
-          "px": 0.3
-        },
-        {
-          "ts": 1785283467,
-          "px": 0.32
-        }
-      ]
+      "result": "WIN",
+      "payout": 1.2,
+      "settled_at": "2026-07-29T01:34:22Z",
+      "pnl": 0.0,
+      "autopsy": "+$0.00 \u2014 model 47% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.32 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.26,
@@ -30574,6 +30545,10 @@
         {
           "ts": 1785286477,
           "px": 0.55
+        },
+        {
+          "ts": 1785288865,
+          "px": 0.545
         }
       ]
     },
@@ -30595,6 +30570,10 @@
       "price_path": [
         {
           "ts": 1785286478,
+          "px": 0.6
+        },
+        {
+          "ts": 1785288865,
           "px": 0.6
         }
       ]
@@ -30808,12 +30787,17 @@
       "outcome": "Dalibor Svrcina",
       "status": "resting",
       "ts": "2026-07-29T01:20:19Z",
-      "price_path": []
+      "price_path": [
+        {
+          "ts": 1785288865,
+          "px": 0.67
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 32,
+    "wins": 33,
     "losses": 74,
     "pnl": -70.52,
     "trades": 384,
@@ -30831,7 +30815,7 @@
         0
       ],
       "EDGE": [
-        24,
+        25,
         59,
         0
       ],
@@ -30852,14 +30836,6 @@
   },
   "x_purge_complete": 1785206539.4448473,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T00:54:24Z",
-      "kind": "EDGE",
-      "outcome": "Revenge",
-      "result": "LOSS",
-      "pnl": -1.02,
-      "lesson": "model 52% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.36 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-28T01:04:20Z",
       "kind": "EDGE",
@@ -31091,6 +31067,14 @@
       "result": "LOSS",
       "pnl": -0.93,
       "lesson": "model 43% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.11 before the result \u2014 beat the number by 20\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T01:34:22Z",
+      "kind": "EDGE",
+      "outcome": "Hugo Grenier",
+      "result": "WIN",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 47% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.32 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -31174,7 +31158,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785281662.2241652,
+  "dep_checked_ts": 1785288862.1897051,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
