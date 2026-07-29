@@ -2432,10 +2432,10 @@
       "homeTeam": "Washington Nationals",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": 102,
-        "away_ml": -123,
-        "total": 9.5,
-        "ts": 1785303859
+        "home_ml": 100,
+        "away_ml": -120,
+        "total": 9.0,
+        "ts": 1785312859
       }
     },
     {
@@ -2543,10 +2543,10 @@
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 109,
-        "away_ml": -131,
+        "home_ml": 112,
+        "away_ml": -135,
         "total": 9.5,
-        "ts": 1785298460
+        "ts": 1785312859
       },
       "last_alert_odds": -131
     },
@@ -2601,10 +2601,10 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 159,
-        "away_ml": -194,
+        "home_ml": 166,
+        "away_ml": -204,
         "total": 155.5,
-        "ts": 1785303859
+        "ts": 1785312859
       },
       "last_alert_odds": -204
     },
@@ -2826,7 +2826,13 @@
       "opp": "Seattle Mariners",
       "analysis": "67-40 overall, 31-20 at home \u2014 our 69% vs book 57% (no-vig) | \u2694\ufe0f **Matchup read:** 67-40 overall, 31-20 at home \u2014 our 69% vs book 57% (no-vig). Los Angeles Dodgers in the better spot and priced like it isn't \u2014 **12-point** edge.",
       "homeTeam": "Los Angeles Dodgers",
-      "awayTeam": "Seattle Mariners"
+      "awayTeam": "Seattle Mariners",
+      "live_odds": {
+        "home_ml": -150,
+        "away_ml": 124,
+        "total": 9.5,
+        "ts": 1785312859
+      }
     }
   ]
 }
