@@ -1,25 +1,25 @@
 {
-  "updated": "2026-07-29T00:04:19Z",
-  "record": "32-73",
+  "updated": "2026-07-29T00:09:19Z",
+  "record": "32-74",
   "trades": 370,
-  "open": 36,
-  "pnl": -69.59,
+  "open": 35,
+  "pnl": -70.52,
   "account": 98.31,
   "deposits": 64.0,
   "net_pnl": 34.31,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 24-58 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 3-3",
+  "playbooks": "ARB 3-5 \u00b7 EDGE 24-59 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 3-3",
   "recent": [
-    {
-      "outcome": "Fluxo W7M",
-      "short": true,
-      "result": "lost",
-      "pnl": -2.61
-    },
     {
       "outcome": "Ici Japon Corp. Esport",
       "short": true,
       "result": "lost",
       "pnl": -1.12
+    },
+    {
+      "outcome": "Maze Gaming",
+      "short": true,
+      "result": "lost",
+      "pnl": -0.93
     },
     {
       "outcome": "Tomas Etcheverry",
