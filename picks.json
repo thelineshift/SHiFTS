@@ -2228,7 +2228,13 @@
       "opp": "Atlanta Dream",
       "analysis": "18-9 overall, 8-4 at home \u2014 our 64% vs book 50% (no-vig) | \ud83d\udcc8 **Market angle:** 18-9 overall, 8-4 at home \u2014 our 64% vs book 50% (no-vig). The number's off by **14 points** \u2014 this is where CLV hunters eat.",
       "homeTeam": "Dallas Wings",
-      "awayTeam": "Atlanta Dream"
+      "awayTeam": "Atlanta Dream",
+      "live_odds": {
+        "home_ml": -116,
+        "away_ml": -105,
+        "total": 180.5,
+        "ts": 1785298458
+      }
     },
     {
       "id": "tampa-bay-rays-ml-0729",
@@ -2245,7 +2251,13 @@
       "opp": "Texas Rangers",
       "analysis": "62-43 overall, 38-15 at home \u2014 our 68% vs book 56% (no-vig) | \ud83d\udcca **Form + price:** 62-43 overall, 38-15 at home \u2014 our 68% vs book 56% (no-vig). Model makes Tampa Bay Rays **68%** \u2014 books imply **59%**. Small edge, real edge, pressed.",
       "homeTeam": "Tampa Bay Rays",
-      "awayTeam": "Texas Rangers"
+      "awayTeam": "Texas Rangers",
+      "live_odds": {
+        "home_ml": -143,
+        "away_ml": 119,
+        "total": 7.5,
+        "ts": 1785298458
+      }
     },
     {
       "id": "san-diego-padres-ml-0729",
@@ -2262,7 +2274,13 @@
       "opp": "Colorado Rockies",
       "analysis": "53-53 overall, 27-24 at home \u2014 our 68% vs book 56% (no-vig) | \ud83d\udcc8 **Market angle:** 53-53 overall, 27-24 at home \u2014 our 68% vs book 56% (no-vig). The number's off by **12 points** \u2014 this is where CLV hunters eat.",
       "homeTeam": "San Diego Padres",
-      "awayTeam": "Colorado Rockies"
+      "awayTeam": "Colorado Rockies",
+      "live_odds": {
+        "home_ml": -143,
+        "away_ml": 119,
+        "total": 8.0,
+        "ts": 1785298459
+      }
     },
     {
       "id": "over-8.5-0729",
@@ -2313,7 +2331,13 @@
       "opp": "New York Yankees",
       "analysis": "55-50 overall, 32-20 at home \u2014 our 52% vs book 43% (no-vig) | \ud83d\udcb0 **Value hunt:** 55-50 overall, 32-20 at home \u2014 our 52% vs book 43% (no-vig). The book shaded this line toward the public side; we collect the **9 points** they left.",
       "homeTeam": "Chicago White Sox",
-      "awayTeam": "New York Yankees"
+      "awayTeam": "New York Yankees",
+      "live_odds": {
+        "home_ml": 119,
+        "away_ml": -144,
+        "total": 7.5,
+        "ts": 1785298459
+      }
     },
     {
       "id": "milwaukee-brewers-ml-0729",
@@ -2330,7 +2354,13 @@
       "opp": "San Francisco Giants",
       "analysis": "66-40 overall, 30-20 on the road \u2014 our 62% vs book 53% (no-vig) | \u2694\ufe0f **Matchup read:** 66-40 overall, 30-20 on the road \u2014 our 62% vs book 53% (no-vig). Milwaukee Brewers in the better spot and priced like it isn't \u2014 **9-point** edge.",
       "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "San Francisco Giants"
+      "homeTeam": "San Francisco Giants",
+      "live_odds": {
+        "home_ml": 104,
+        "away_ml": -126,
+        "total": 7.5,
+        "ts": 1785298459
+      }
     },
     {
       "id": "fortaleza-ml-0729",
@@ -2364,7 +2394,13 @@
       "opp": "Toronto Blue Jays",
       "analysis": "54-53 overall, 22-33 at home \u2014 our 53% vs book 47% (no-vig) | \ud83d\udcb0 **Value hunt:** 54-53 overall, 22-33 at home \u2014 our 53% vs book 47% (no-vig). The book shaded this line toward the public side; we collect the **6 points** they left.",
       "homeTeam": "Washington Nationals",
-      "awayTeam": "Toronto Blue Jays"
+      "awayTeam": "Toronto Blue Jays",
+      "live_odds": {
+        "home_ml": 101,
+        "away_ml": -122,
+        "total": 9.5,
+        "ts": 1785298459
+      }
     },
     {
       "id": "minnesota-twins--1.5-0729",
@@ -2381,7 +2417,14 @@
       "opp": "Kansas City Royals",
       "analysis": "53-54 overall, 28-26 at home \u2014 ML juiced to -171, so the -1.5 at the standard number is the bet; model makes Minnesota Twins 65% straight up | \ud83d\udcc8 **Market angle:** 53-54 overall, 28-26 at home \u2014 ML juiced to -171, so the -1.5 at the standard number is the bet; model makes Minnesota Twins 65% straight",
       "homeTeam": "Minnesota Twins",
-      "awayTeam": "Kansas City Royals"
+      "awayTeam": "Kansas City Royals",
+      "live_odds": {
+        "home_ml": -175,
+        "away_ml": 144,
+        "total": 8.5,
+        "ts": 1785298459
+      },
+      "last_alert_odds": -175
     },
     {
       "id": "los-angeles-sparks-ml-0729",
@@ -2415,7 +2458,13 @@
       "opp": "Detroit Tigers",
       "analysis": "52-55 overall, 23-28 on the road \u2014 our 44% vs book 40% (no-vig) | \ud83d\udcc8 **Market angle:** 52-55 overall, 23-28 on the road \u2014 our 44% vs book 40% (no-vig). The number's off by **4 points** \u2014 this is where CLV hunters eat.",
       "awayTeam": "Baltimore Orioles",
-      "homeTeam": "Detroit Tigers"
+      "homeTeam": "Detroit Tigers",
+      "live_odds": {
+        "home_ml": -172,
+        "away_ml": 142,
+        "total": 8.0,
+        "ts": 1785298459
+      }
     },
     {
       "id": "boston-red-sox--1.5-0729",
@@ -2432,7 +2481,14 @@
       "opp": "Athletics",
       "analysis": "55-50 overall, 30-21 on the road \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Boston Red Sox 62% straight up | \u2694\ufe0f **Matchup read:** 55-50 overall, 30-21 on the road \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Boston Red Sox 62% s",
       "awayTeam": "Boston Red Sox",
-      "homeTeam": "Athletics"
+      "homeTeam": "Athletics",
+      "live_odds": {
+        "home_ml": 129,
+        "away_ml": -156,
+        "total": 10.5,
+        "ts": 1785298459
+      },
+      "last_alert_odds": -156
     },
     {
       "id": "houston-astros-ml-0729",
@@ -2449,7 +2505,14 @@
       "opp": "Los Angeles Angels",
       "analysis": "53-55 overall, 27-28 on the road \u2014 our 54% vs book 50% (no-vig) | \ud83e\udde0 **The read:** 53-55 overall, 27-28 on the road \u2014 our 54% vs book 50% (no-vig). Model makes Houston Astros **54%** \u2014 books imply **53%**. SHiFT presses the gap.",
       "awayTeam": "Houston Astros",
-      "homeTeam": "Los Angeles Angels"
+      "homeTeam": "Los Angeles Angels",
+      "live_odds": {
+        "home_ml": 109,
+        "away_ml": -131,
+        "total": 9.5,
+        "ts": 1785298460
+      },
+      "last_alert_odds": -131
     },
     {
       "id": "nongshim-red-force-ml-0729",
@@ -2500,7 +2563,14 @@
       "opp": "Phoenix Mercury",
       "analysis": "19-8 overall, 8-4 on the road \u2014 ML juiced to -204, so the -5.5 at the standard number is the bet; model makes Golden State Valkyries 77% straight up | \u2694\ufe0f **Matchup read:** 19-8 overall, 8-4 on the road \u2014 ML juiced to -204, so the -5.5 at the standard number is the bet; model makes Golden State Valky",
       "awayTeam": "Golden State Valkyries",
-      "homeTeam": "Phoenix Mercury"
+      "homeTeam": "Phoenix Mercury",
+      "live_odds": {
+        "home_ml": 166,
+        "away_ml": -204,
+        "total": 155.5,
+        "ts": 1785298460
+      },
+      "last_alert_odds": -204
     },
     {
       "id": "los-angeles-dodgers--1.5-0729",
@@ -2517,7 +2587,14 @@
       "opp": "Seattle Mariners",
       "analysis": "67-39 overall, 31-19 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Los Angeles Dodgers 70% straight up | \ud83e\udde0 **The read:** 67-39 overall, 31-19 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Los Angeles Dodgers 70% stra",
       "homeTeam": "Los Angeles Dodgers",
-      "awayTeam": "Seattle Mariners"
+      "awayTeam": "Seattle Mariners",
+      "live_odds": {
+        "home_ml": -156,
+        "away_ml": 129,
+        "total": 9.0,
+        "ts": 1785298460
+      },
+      "last_alert_odds": -156
     },
     {
       "id": "miami-marlins-ml-0729",
@@ -2534,7 +2611,13 @@
       "opp": "Philadelphia Phillies",
       "analysis": "54-54 overall, 33-23 at home \u2014 our 54% vs book 42% (no-vig) | \u2694\ufe0f **Matchup read:** 54-54 overall, 33-23 at home \u2014 our 54% vs book 42% (no-vig). Miami Marlins in the better spot and priced like it isn't \u2014 **12-point** edge.",
       "homeTeam": "Miami Marlins",
-      "awayTeam": "Philadelphia Phillies"
+      "awayTeam": "Philadelphia Phillies",
+      "live_odds": {
+        "home_ml": 130,
+        "away_ml": -157,
+        "total": 7.5,
+        "ts": 1785298460
+      }
     },
     {
       "id": "3-leg-parlay-0729-whale",
@@ -2682,7 +2765,14 @@
       "opp": "New York Mets",
       "analysis": "62-44 overall, 30-24 on the road \u2014 our 61% vs book 54% (no-vig) | \ud83d\udcb0 **Value hunt:** 62-44 overall, 30-24 on the road \u2014 our 61% vs book 54% (no-vig). The book shaded this line toward the public side; we collect the **7 points** they left.",
       "awayTeam": "Atlanta Braves",
-      "homeTeam": "New York Mets"
+      "homeTeam": "New York Mets",
+      "live_odds": {
+        "home_ml": -105,
+        "away_ml": -115,
+        "total": 8.5,
+        "ts": 1785298460
+      },
+      "last_alert_odds": -115
     }
   ]
 }
