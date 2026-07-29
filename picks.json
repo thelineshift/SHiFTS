@@ -2394,10 +2394,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -107,
-        "away_ml": -112,
+        "home_ml": -104,
+        "away_ml": -116,
         "total": 7.5,
-        "ts": 1785346036
+        "ts": 1785349636
       },
       "last_alert_odds": -112
     },
@@ -2614,8 +2614,8 @@
       "live_odds": {
         "home_ml": 141,
         "away_ml": -172,
-        "total": 156.5,
-        "ts": 1785342437
+        "total": 157.5,
+        "ts": 1785349636
       },
       "last_alert_odds": -172
     },
@@ -2944,10 +2944,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -110,
-        "away_ml": -110,
+        "home_ml": -113,
+        "away_ml": -106,
         "total": 8.0,
-        "ts": 1785342438
+        "ts": 1785349637
       }
     },
     {
