@@ -1,26 +1,14 @@
 {
-  "updated": "2026-07-29T04:05:40Z",
-  "record": "32-75",
-  "trades": 395,
-  "open": 44,
-  "pnl": -72.08,
-  "account": 113.22,
+  "updated": "2026-07-29T06:00:02Z",
+  "record": "33-78",
+  "trades": 400,
+  "open": 38,
+  "pnl": -74.69,
+  "account": 117.96,
   "deposits": 14.0,
-  "net_pnl": 99.22,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 24-60 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 3-3",
+  "net_pnl": 103.96,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 25-63 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 3-3",
   "recent": [
-    {
-      "outcome": "Benjamin Bonzi",
-      "short": false,
-      "result": "won",
-      "pnl": 0.66
-    },
-    {
-      "outcome": "Harry Wendelken",
-      "short": false,
-      "result": "won",
-      "pnl": 1.71
-    },
     {
       "outcome": "Hugo Grenier",
       "short": true,
@@ -44,6 +32,18 @@
       "short": false,
       "result": "won",
       "pnl": 3.85
+    },
+    {
+      "outcome": "Charles Broom",
+      "short": true,
+      "result": "lost",
+      "pnl": -0.96
+    },
+    {
+      "outcome": "Haruka Kaji",
+      "short": false,
+      "result": "lost",
+      "pnl": -1.43
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
