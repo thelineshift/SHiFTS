@@ -43,6 +43,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "minnesota-twins--1.5-0728",
+      "desc": "Minnesota Twins -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Kansas City Royals 2, Minnesota Twins 3",
+      "tier": "sharp"
+    },
+    {
       "id": "3-leg-parlay-0728-whale",
       "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
       "odds": 262,
@@ -32369,8 +32378,11 @@
       "qty": 72,
       "market_slug": "aec-lol-mkf-flk-2026-07-29",
       "outcome": "FALKE Esports",
-      "status": "open",
-      "ts": "2026-07-29T08:00:02Z"
+      "status": "unfilled",
+      "ts": "2026-07-29T08:00:02Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     }
   ],
   "pm_stats": {
