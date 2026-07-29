@@ -106,6 +106,33 @@
       "units": 1.39,
       "score": "Baltimore Orioles 10, Detroit Tigers 9",
       "tier": "lock"
+    },
+    {
+      "id": "san-diego-padres-ml-0729",
+      "desc": "San Diego Padres ML",
+      "odds": -143,
+      "result": "WIN",
+      "units": 0.7,
+      "score": "Colorado Rockies 1, San Diego Padres 3",
+      "tier": "whale"
+    },
+    {
+      "id": "milwaukee-brewers-ml-0729",
+      "desc": "Milwaukee Brewers ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Milwaukee Brewers 3, San Francisco Giants 16",
+      "tier": "sharp"
+    },
+    {
+      "id": "san-diego-padres--1.5-0729",
+      "desc": "San Diego Padres -1.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Colorado Rockies 1, San Diego Padres 3",
+      "tier": "sharp"
     }
   ],
   "last_x_receipt_ts": 1785362587.0271225,
