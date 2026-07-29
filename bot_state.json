@@ -43,15 +43,6 @@
   "bot_version": "9.24.18",
   "unannounced_results": [
     {
-      "id": "3-leg-parlay-0728-sharp",
-      "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
-      "odds": 262,
-      "result": "WIN",
-      "units": 1.31,
-      "score": "Legs: None: win \u00b7 None: win \u00b7 None: win",
-      "tier": "sharp"
-    },
-    {
       "id": "3-leg-parlay-0728-lock",
       "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
       "odds": 262,
@@ -160,7 +151,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785326504.6045616,
+  "last_x_receipt_ts": 1785330615.01073,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -25505,10 +25496,6 @@
       "ts": "2026-07-27T16:25:14Z",
       "price_path": [
         {
-          "ts": 1785276860,
-          "px": 0.525
-        },
-        {
           "ts": 1785279260,
           "px": 0.525
         },
@@ -25598,6 +25585,10 @@
         },
         {
           "ts": 1785327759,
+          "px": 0.54
+        },
+        {
+          "ts": 1785330620,
           "px": 0.54
         }
       ]
@@ -25743,10 +25734,6 @@
       "ts": "2026-07-27T17:30:12Z",
       "price_path": [
         {
-          "ts": 1785274464,
-          "px": 0.25
-        },
-        {
           "ts": 1785276861,
           "px": 0.25
         },
@@ -25836,6 +25823,10 @@
         },
         {
           "ts": 1785327759,
+          "px": 0.25
+        },
+        {
+          "ts": 1785330620,
           "px": 0.25
         }
       ]
@@ -33139,14 +33130,13 @@
       "qty": 1,
       "market_slug": "aec-kbo-hea-lgo-2026-07-29",
       "outcome": "Hanwha Eagles",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T12:18:22Z",
-      "price_path": [
-        {
-          "ts": 1785327766,
-          "px": 0.98
-        }
-      ]
+      "result": "WIN",
+      "payout": 1.01,
+      "settled_at": "2026-07-29T13:10:23Z",
+      "pnl": 0.05,
+      "autopsy": "+$0.05 \u2014 thesis held."
     },
     {
       "price": 0.95,
@@ -33422,9 +33412,9 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 35,
+    "wins": 36,
     "losses": 85,
-    "pnl": -71.3,
+    "pnl": -71.25,
     "trades": 450,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-12",
@@ -33450,7 +33440,7 @@
         0
       ],
       "TAIL": [
-        3,
+        4,
         3,
         0
       ]
@@ -33700,6 +33690,14 @@
       "result": "LOSS",
       "pnl": -6.03,
       "lesson": "model 37% vs market 9% missed \u2014 logged for the playbook review. Taken 0.09, rode to 0.11 before the result \u2014 beat the number by 2\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T13:10:23Z",
+      "kind": "TAIL",
+      "outcome": "Hanwha Eagles",
+      "result": "WIN",
+      "pnl": 0.05,
+      "lesson": "+$0.05 \u2014 thesis held."
     }
   ],
   "giveaway_x_posts": [
