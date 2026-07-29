@@ -31492,6 +31492,22 @@
           "px": 0.56
         }
       ]
+    },
+    {
+      "price": 0.58,
+      "short": true,
+      "stake": 1.74,
+      "kind": "EDGE",
+      "p_model": 0.6344127989077069,
+      "event": "New York vs. Las Vegas",
+      "ev_start": "2026-07-31T02:00:00Z",
+      "reason": "model 63% vs market 58% \u2014 5% edge, half-Kelly",
+      "order_id": "BHHA1CRQM9P1",
+      "qty": 3,
+      "market_slug": "aec-wnba-ny-lv-2026-07-30",
+      "outcome": "Las Vegas",
+      "status": "open",
+      "ts": "2026-07-29T04:40:03Z"
     }
   ],
   "pm_stats": {
@@ -31499,7 +31515,7 @@
     "wins": 32,
     "losses": 78,
     "pnl": -75.59,
-    "trades": 396,
+    "trades": 397,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-04",
     "deposits": 14.0,
