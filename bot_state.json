@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 12:54 UTC",
+    "at": "2026-07-29 13:10 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 12:54 UTC",
+    "at": "2026-07-29 13:10 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,11 +33,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 12:54 UTC",
+    "at": "2026-07-29 13:10 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 12:54 UTC",
+    "at": "2026-07-29 13:10 UTC",
     "flags": []
   },
   "bot_version": "9.24.18",
@@ -18913,7 +18913,7 @@
           "sara lanca"
         ]
       },
-      "ts": 1785307775.961212
+      "ts": 1785330625.7546096
     }
   },
   "pm_trades": [
@@ -33407,7 +33407,13 @@
       "market_slug": "aec-cs2-exmana-lk-2026-07-29",
       "outcome": "los kogutos",
       "status": "resting",
-      "ts": "2026-07-29T13:05:37Z"
+      "ts": "2026-07-29T13:05:37Z",
+      "price_path": [
+        {
+          "ts": 1785330627,
+          "px": 0.97
+        }
+      ]
     }
   ],
   "pm_stats": {
@@ -33420,8 +33426,8 @@
     "last_recap_hour": "2026-07-29-12",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 101.38,
-    "net": 37.38,
+    "account": 101.43,
+    "net": 37.43,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -33451,14 +33457,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T17:24:33Z",
-      "kind": "EDGE",
-      "outcome": "Fluxo W7M",
-      "result": "LOSS",
-      "pnl": -2.61,
-      "lesson": "model 63% vs market 29% missed \u2014 logged for the playbook review. Taken 0.29, rode to 0.08 before the result \u2014 beat the number by 21\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-28T17:44:26Z",
       "kind": "EDGE",
@@ -33781,7 +33779,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785324705.0141618,
+  "dep_checked_ts": 1785330625.27028,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
   "x_ads": [
