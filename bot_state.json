@@ -32198,7 +32198,13 @@
       "market_slug": "astatc-atp-alemin-stetsi-2026-07-27-sw2",
       "outcome": "Alex de Minaur",
       "status": "open",
-      "ts": "2026-07-29T07:30:50Z"
+      "ts": "2026-07-29T07:30:50Z",
+      "price_path": [
+        {
+          "ts": 1785310465,
+          "px": 0.59
+        }
+      ]
     },
     {
       "price": 0.04,
