@@ -31004,7 +31004,9 @@
           "px": 0.595
         }
       ],
-      "note": " [stale-swept]"
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.21,
@@ -32010,8 +32012,11 @@
       "qty": 79,
       "market_slug": "aec-lol-mkf-flk-2026-07-29",
       "outcome": "FALKE Esports",
-      "status": "open",
-      "ts": "2026-07-29T06:50:29Z"
+      "status": "unfilled",
+      "ts": "2026-07-29T06:50:29Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     }
   ],
   "pm_stats": {
