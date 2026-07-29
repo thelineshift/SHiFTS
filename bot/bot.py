@@ -13,7 +13,7 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.26'  # DRAW-ONLY QUARANTINE LAW — junk legs no longer flip MLB/NBA/tennis events to 3-way (3h MLB blackout root cause); ESPN feed X-ray in cycle print
+BOT_VERSION = '9.24.27'  # FULL-GAME LAW + ONE-POSITION-PER-EVENT LAW — f5/prop markets excluded from model paths; event-direction shield stops phantom both-sides entries
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -4854,6 +4854,10 @@ def pm_trader_scan(st):
             if re.search(r'-(game|map)\d+', _mslug):
                 continue  # esports game-N/map-N markets: our model is match-level — wrong granularity
                 # (DESK HARDENING: the Gen.G −$17.55 double loss was on -map1 with a match-level read)
+            if any(_s in smt for _s in ('first', 'period', 'quarter', 'half', 'inning', 'f5', 'set', 'spread', 'total', 'player')) or re.search(r'-(f5|1h|1q|fh|sh)-', _mslug):
+                continue  # FULL-GAME LAW (7/29): the model prices full games only — partial-game
+                # and prop markets (f5 winner/spread/total, player props) make it hallucinate edges
+                # (the 7/29 f5 spree: $46 into first-5-innings markets priced with a full-game read)
             md = m.get('marketMetadata') if isinstance(m.get('marketMetadata'), dict) else {}
             sides = m.get('marketSides') or []
             long_side = next((s for s in sides if s.get('long')), sides[0] if sides else {})
@@ -5027,6 +5031,11 @@ def pm_trader_scan(st):
                 continue
             if o['slug'] in have_slugs:
                 continue  # already positioned on this contract — never both directions
+            if any((t.get('event') or '') == title for t in held_trades) or any(it.get('event') == title for it in intents):
+                hb['evshield'] = hb.get('evshield', 0) + 1
+                continue  # ONE-POSITION-PER-EVENT LAW (7/29): the opponent's side of an event we
+                # already hold is phantom both-sides exposure — the f5 HOU+LAA double-entry bought
+                # BOTH teams on Astros-Angels in one cycle because the shield was per-slug only
             _tk = (title, norm_txt(o['team']))
             if _tk in taken_keys:
                 continue  # same team via a second market slug — already intented this scan
@@ -5724,7 +5733,7 @@ async def pm_trader():
             _lgmix = ' '.join(f"{k}:{v}" for k, v in sorted(hb.get('leagues', {}).items())) or 'none'
             print(f"[trader] cycle: {hb.get('vs', '?')} vs-events ({_lgmix}) · {hb.get('three_way', '?')} 3-way priced · "
                   f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f} · cb {hb.get('cb', 0)} · "
-                  f"live {hb.get('lv', 0)}(esp {hb.get('lvesp', 0)}) espn {hb.get('espn', 0)}(l{hb.get('espnl', 0)}) cb g{hb.get('cbgate', 0)}/fl{hb.get('cbfl', 0)} tw3 {hb.get('tw3', 0)}/{hb.get('tw3b', 0)} band {hb.get('band', 0)}/nf{hb.get('bandfail', 0)} ls {hb.get('lsg', 0)}/nf{hb.get('lsf', 0)}")
+                  f"live {hb.get('lv', 0)}(esp {hb.get('lvesp', 0)}) espn {hb.get('espn', 0)}(l{hb.get('espnl', 0)}) cb g{hb.get('cbgate', 0)}/fl{hb.get('cbfl', 0)} tw3 {hb.get('tw3', 0)}/{hb.get('tw3b', 0)} band {hb.get('band', 0)}/nf{hb.get('bandfail', 0)} ls {hb.get('lsg', 0)}/nf{hb.get('lsf', 0)} es{hb.get('evshield', 0)}")
             for _tw in (hb.get('tuning') or []):
                 print(f"[trader] tuning: {_tw}")
         else:
