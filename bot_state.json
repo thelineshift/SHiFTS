@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 11:31 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -13,10 +13,10 @@
     "\ud83e\uddfereceipts": "2026-07-29 10:54 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-29 11:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
+    "\ud83c\udf81giveaway": "2026-07-29 02:45 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 11:31 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,11 +33,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 11:31 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 11:31 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": []
   },
   "bot_version": "9.24.16",
@@ -27304,106 +27304,14 @@
       "qty": 4,
       "market_slug": "aec-valorant-var-dfm-2026-07-30",
       "outcome": "VARREL",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T04:05:08Z",
-      "price_path": [
-        {
-          "ts": 1785269667,
-          "px": 0.53
-        },
-        {
-          "ts": 1785272068,
-          "px": 0.53
-        },
-        {
-          "ts": 1785274465,
-          "px": 0.53
-        },
-        {
-          "ts": 1785276862,
-          "px": 0.53
-        },
-        {
-          "ts": 1785279262,
-          "px": 0.53
-        },
-        {
-          "ts": 1785281065,
-          "px": 0.53
-        },
-        {
-          "ts": 1785283462,
-          "px": 0.53
-        },
-        {
-          "ts": 1785288268,
-          "px": 0.53
-        },
-        {
-          "ts": 1785291262,
-          "px": 0.53
-        },
-        {
-          "ts": 1785293076,
-          "px": 0.53
-        },
-        {
-          "ts": 1785295462,
-          "px": 0.53
-        },
-        {
-          "ts": 1785298467,
-          "px": 0.53
-        },
-        {
-          "ts": 1785300863,
-          "px": 0.53
-        },
-        {
-          "ts": 1785302666,
-          "px": 0.53
-        },
-        {
-          "ts": 1785305067,
-          "px": 0.53
-        },
-        {
-          "ts": 1785307463,
-          "px": 0.53
-        },
-        {
-          "ts": 1785309271,
-          "px": 0.53
-        },
-        {
-          "ts": 1785311071,
-          "px": 0.53
-        },
-        {
-          "ts": 1785313467,
-          "px": 0.52
-        },
-        {
-          "ts": 1785315868,
-          "px": 0.52
-        },
-        {
-          "ts": 1785318263,
-          "px": 0.52
-        },
-        {
-          "ts": 1785320063,
-          "px": 0.52
-        },
-        {
-          "ts": 1785321864,
-          "px": 0.52
-        },
-        {
-          "ts": 1785324106,
-          "px": 0.52
-        }
-      ]
+      "result": "LOSS",
+      "payout": 1.64,
+      "pnl": -0.48,
+      "cashout": true,
+      "settled_at": "2026-07-29T11:31:44Z",
+      "autopsy": "model 75% vs market 53% missed \u2014 logged for the playbook review. Taken 0.53, slid to 0.52 before the result \u2014 the number ran 1\u00a2 against us \u26a0\ufe0f (cashed out early at $1.64)"
     },
     {
       "price": 0.6,
@@ -28527,106 +28435,14 @@
       "qty": 2,
       "market_slug": "aec-dota2-stray-tt-2026-07-30",
       "outcome": "Stray Team",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T11:20:06Z",
-      "price_path": [
-        {
-          "ts": 1785269667,
-          "px": 0.34
-        },
-        {
-          "ts": 1785272068,
-          "px": 0.34
-        },
-        {
-          "ts": 1785274466,
-          "px": 0.34
-        },
-        {
-          "ts": 1785276862,
-          "px": 0.34
-        },
-        {
-          "ts": 1785279262,
-          "px": 0.34
-        },
-        {
-          "ts": 1785281065,
-          "px": 0.34
-        },
-        {
-          "ts": 1785283463,
-          "px": 0.34
-        },
-        {
-          "ts": 1785288269,
-          "px": 0.34
-        },
-        {
-          "ts": 1785291262,
-          "px": 0.34
-        },
-        {
-          "ts": 1785293076,
-          "px": 0.34
-        },
-        {
-          "ts": 1785295462,
-          "px": 0.34
-        },
-        {
-          "ts": 1785298467,
-          "px": 0.34
-        },
-        {
-          "ts": 1785300864,
-          "px": 0.34
-        },
-        {
-          "ts": 1785302667,
-          "px": 0.34
-        },
-        {
-          "ts": 1785305067,
-          "px": 0.34
-        },
-        {
-          "ts": 1785307463,
-          "px": 0.34
-        },
-        {
-          "ts": 1785309272,
-          "px": 0.34
-        },
-        {
-          "ts": 1785311072,
-          "px": 0.34
-        },
-        {
-          "ts": 1785313467,
-          "px": 0.34
-        },
-        {
-          "ts": 1785315868,
-          "px": 0.34
-        },
-        {
-          "ts": 1785318263,
-          "px": 0.34
-        },
-        {
-          "ts": 1785320064,
-          "px": 0.34
-        },
-        {
-          "ts": 1785321864,
-          "px": 0.34
-        },
-        {
-          "ts": 1785324107,
-          "px": 0.34
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.46,
+      "pnl": -0.28,
+      "cashout": true,
+      "settled_at": "2026-07-29T11:31:47Z",
+      "autopsy": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.34 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f (cashed out early at $0.46)"
     },
     {
       "price": 0.01,
@@ -28936,106 +28752,14 @@
       "qty": 10,
       "market_slug": "aec-valorant-navi-pcfic-2026-07-30",
       "outcome": "Pcific Esports",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T13:35:25Z",
-      "price_path": [
-        {
-          "ts": 1785269668,
-          "px": 0.2
-        },
-        {
-          "ts": 1785272068,
-          "px": 0.2
-        },
-        {
-          "ts": 1785274466,
-          "px": 0.2
-        },
-        {
-          "ts": 1785276863,
-          "px": 0.2
-        },
-        {
-          "ts": 1785279263,
-          "px": 0.2
-        },
-        {
-          "ts": 1785281066,
-          "px": 0.2
-        },
-        {
-          "ts": 1785283463,
-          "px": 0.2
-        },
-        {
-          "ts": 1785288269,
-          "px": 0.2
-        },
-        {
-          "ts": 1785291262,
-          "px": 0.2
-        },
-        {
-          "ts": 1785293076,
-          "px": 0.2
-        },
-        {
-          "ts": 1785295463,
-          "px": 0.2
-        },
-        {
-          "ts": 1785298467,
-          "px": 0.2
-        },
-        {
-          "ts": 1785300864,
-          "px": 0.2
-        },
-        {
-          "ts": 1785302667,
-          "px": 0.2
-        },
-        {
-          "ts": 1785305067,
-          "px": 0.2
-        },
-        {
-          "ts": 1785307464,
-          "px": 0.2
-        },
-        {
-          "ts": 1785309272,
-          "px": 0.2
-        },
-        {
-          "ts": 1785311072,
-          "px": 0.2
-        },
-        {
-          "ts": 1785313468,
-          "px": 0.2
-        },
-        {
-          "ts": 1785315868,
-          "px": 0.2
-        },
-        {
-          "ts": 1785318264,
-          "px": 0.2
-        },
-        {
-          "ts": 1785320064,
-          "px": 0.2
-        },
-        {
-          "ts": 1785321864,
-          "px": 0.2
-        },
-        {
-          "ts": 1785324107,
-          "px": 0.2
-        }
-      ]
+      "result": "WIN",
+      "payout": 9.1,
+      "pnl": 7.6,
+      "cashout": true,
+      "settled_at": "2026-07-29T11:31:48Z",
+      "autopsy": "+$7.60 \u2014 model 43% vs market 15% was real edge; thesis held. Taken 0.15, slid to 0.20 before the result \u2014 the number ran 5\u00a2 against us \u26a0\ufe0f (cashed out early at $9.10)"
     },
     {
       "price": 0.42,
@@ -30879,102 +30603,14 @@
       "qty": 6,
       "market_slug": "aec-valorant-ggo-tmo-2026-07-30",
       "outcome": "Twisted Minds Orchid",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T21:05:11Z",
-      "price_path": [
-        {
-          "ts": 1785273263,
-          "px": 0.29
-        },
-        {
-          "ts": 1785275065,
-          "px": 0.29
-        },
-        {
-          "ts": 1785276866,
-          "px": 0.28
-        },
-        {
-          "ts": 1785279266,
-          "px": 0.29
-        },
-        {
-          "ts": 1785281069,
-          "px": 0.29
-        },
-        {
-          "ts": 1785283468,
-          "px": 0.29
-        },
-        {
-          "ts": 1785288272,
-          "px": 0.29
-        },
-        {
-          "ts": 1785291265,
-          "px": 0.29
-        },
-        {
-          "ts": 1785293078,
-          "px": 0.29
-        },
-        {
-          "ts": 1785295465,
-          "px": 0.29
-        },
-        {
-          "ts": 1785298469,
-          "px": 0.29
-        },
-        {
-          "ts": 1785300866,
-          "px": 0.29
-        },
-        {
-          "ts": 1785302669,
-          "px": 0.29
-        },
-        {
-          "ts": 1785305069,
-          "px": 0.29
-        },
-        {
-          "ts": 1785307465,
-          "px": 0.29
-        },
-        {
-          "ts": 1785309274,
-          "px": 0.29
-        },
-        {
-          "ts": 1785311665,
-          "px": 0.28
-        },
-        {
-          "ts": 1785313470,
-          "px": 0.28
-        },
-        {
-          "ts": 1785315870,
-          "px": 0.28
-        },
-        {
-          "ts": 1785318265,
-          "px": 0.29
-        },
-        {
-          "ts": 1785320066,
-          "px": 0.3
-        },
-        {
-          "ts": 1785321866,
-          "px": 0.28
-        },
-        {
-          "ts": 1785324109,
-          "px": 0.27
-        }
-      ]
+      "result": "WIN",
+      "payout": 10.8,
+      "pnl": 9.06,
+      "cashout": true,
+      "settled_at": "2026-07-29T11:31:50Z",
+      "autopsy": "+$9.06 \u2014 model 57% vs market 29% was real edge; thesis held. Taken 0.29, rode to 0.27 before the result \u2014 beat the number by 2\u00a2 \u2705 (cashed out early at $10.80)"
     },
     {
       "price": 0.1,
@@ -30988,94 +30624,14 @@
       "qty": 11,
       "market_slug": "aec-valorant-ts-pr-2026-07-31",
       "outcome": "Team Secret",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T22:05:17Z",
-      "price_path": [
-        {
-          "ts": 1785276866,
-          "px": 0.1
-        },
-        {
-          "ts": 1785279266,
-          "px": 0.1
-        },
-        {
-          "ts": 1785281069,
-          "px": 0.1
-        },
-        {
-          "ts": 1785283468,
-          "px": 0.1
-        },
-        {
-          "ts": 1785288272,
-          "px": 0.1
-        },
-        {
-          "ts": 1785291265,
-          "px": 0.1
-        },
-        {
-          "ts": 1785293079,
-          "px": 0.1
-        },
-        {
-          "ts": 1785295465,
-          "px": 0.1
-        },
-        {
-          "ts": 1785298469,
-          "px": 0.1
-        },
-        {
-          "ts": 1785300866,
-          "px": 0.1
-        },
-        {
-          "ts": 1785302669,
-          "px": 0.1
-        },
-        {
-          "ts": 1785305070,
-          "px": 0.1
-        },
-        {
-          "ts": 1785307465,
-          "px": 0.1
-        },
-        {
-          "ts": 1785309274,
-          "px": 0.1
-        },
-        {
-          "ts": 1785311665,
-          "px": 0.1
-        },
-        {
-          "ts": 1785313470,
-          "px": 0.1
-        },
-        {
-          "ts": 1785315870,
-          "px": 0.1
-        },
-        {
-          "ts": 1785318266,
-          "px": 0.1
-        },
-        {
-          "ts": 1785320066,
-          "px": 0.1
-        },
-        {
-          "ts": 1785321866,
-          "px": 0.1
-        },
-        {
-          "ts": 1785324109,
-          "px": 0.1
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.11,
+      "pnl": -0.99,
+      "cashout": true,
+      "settled_at": "2026-07-29T11:31:51Z",
+      "autopsy": "model 43% vs market 10% missed \u2014 logged for the playbook review. Rode the number flat to the result. (cashed out early at $0.11)"
     },
     {
       "price": 0.68,
@@ -33518,16 +33074,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 33,
-    "losses": 80,
-    "pnl": -79.85,
+    "wins": 35,
+    "losses": 83,
+    "pnl": -64.94,
     "trades": 434,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-10",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 125.92,
-    "net": 111.92,
+    "account": 107.41,
+    "net": 43.41,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -33536,8 +33092,8 @@
         0
       ],
       "EDGE": [
-        25,
-        65,
+        27,
+        68,
         0
       ],
       "LIVE-BET": [
@@ -33557,46 +33113,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T13:24:23Z",
-      "kind": "EDGE",
-      "outcome": "Sascha Gueymard-Wayenburg",
-      "result": "LOSS",
-      "pnl": -0.94,
-      "lesson": "model 59% vs market 47% missed \u2014 logged for the playbook review. Taken 0.47, rode to 0.01 before the result \u2014 beat the number by 46\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-28T15:24:27Z",
-      "kind": "EDGE",
-      "outcome": "Arda Azkara",
-      "result": "LOSS",
-      "pnl": -1.61,
-      "lesson": "model 43% vs market 23% missed \u2014 logged for the playbook review. Taken 0.23, slid to 0.01 before the result \u2014 the number ran 22\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-28T15:24:31Z",
-      "kind": "EDGE",
-      "outcome": "Carlos Taberner",
-      "result": "LOSS",
-      "pnl": -1.64,
-      "lesson": "model 68% vs market 41% missed \u2014 logged for the playbook review. Taken 0.41, rode to 0.01 before the result \u2014 beat the number by 40\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-28T16:44:23Z",
-      "kind": "EDGE",
-      "outcome": "Francesco Maestrelli",
-      "result": "WIN",
-      "pnl": 6.12,
-      "lesson": "+$6.12 \u2014 model 53% vs market 32% was real edge; thesis held. Taken 0.32, rode to 0.86 before the result \u2014 beat the number by 54\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-28T17:24:23Z",
-      "kind": "TAIL",
-      "outcome": "Zeynep Sonmez",
-      "result": "WIN",
-      "pnl": 0.03,
-      "lesson": "+$0.03 \u2014 model 86% vs market 99% was real edge; thesis held. Taken 0.99, slid to 0.81 before the result \u2014 the number ran 18\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-28T17:24:27Z",
       "kind": "EDGE",
@@ -33796,6 +33312,46 @@
       "result": "LOSS",
       "pnl": -3.93,
       "lesson": "model 57% vs market 32% missed \u2014 logged for the playbook review. Taken 0.32, rode to 0.13 before the result \u2014 beat the number by 19\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T11:31:44Z",
+      "kind": "EDGE",
+      "outcome": "VARREL",
+      "result": "LOSS",
+      "pnl": -0.48,
+      "lesson": "model 75% vs market 53% missed \u2014 logged for the playbook review. Taken 0.53, slid to 0.52 before the result \u2014 the number ran 1\u00a2 against us \u26a0\ufe0f (cashed out early at $1.64)"
+    },
+    {
+      "ts": "2026-07-29T11:31:47Z",
+      "kind": "EDGE",
+      "outcome": "Stray Team",
+      "result": "LOSS",
+      "pnl": -0.28,
+      "lesson": "model 50% vs market 37% missed \u2014 logged for the playbook review. Taken 0.37, slid to 0.34 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f (cashed out early at $0.46)"
+    },
+    {
+      "ts": "2026-07-29T11:31:48Z",
+      "kind": "EDGE",
+      "outcome": "Pcific Esports",
+      "result": "WIN",
+      "pnl": 7.6,
+      "lesson": "+$7.60 \u2014 model 43% vs market 15% was real edge; thesis held. Taken 0.15, slid to 0.20 before the result \u2014 the number ran 5\u00a2 against us \u26a0\ufe0f (cashed out early at $9.10)"
+    },
+    {
+      "ts": "2026-07-29T11:31:50Z",
+      "kind": "EDGE",
+      "outcome": "Twisted Minds Orchid",
+      "result": "WIN",
+      "pnl": 9.06,
+      "lesson": "+$9.06 \u2014 model 57% vs market 29% was real edge; thesis held. Taken 0.29, rode to 0.27 before the result \u2014 beat the number by 2\u00a2 \u2705 (cashed out early at $10.80)"
+    },
+    {
+      "ts": "2026-07-29T11:31:51Z",
+      "kind": "EDGE",
+      "outcome": "Team Secret",
+      "result": "LOSS",
+      "pnl": -0.99,
+      "lesson": "model 43% vs market 10% missed \u2014 logged for the playbook review. Rode the number flat to the result. (cashed out early at $0.11)"
     }
   ],
   "giveaway_x_posts": [
@@ -33879,7 +33435,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785319210.4807038,
+  "dep_checked_ts": 1785324705.0141618,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
