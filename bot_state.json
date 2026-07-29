@@ -2650,90 +2650,6 @@
     "esp": [
       {
         "sport": "cs2",
-        "start": "2026-07-29T10:50:00Z",
-        "t1": {
-          "id": 136593,
-          "name": "Sangal ALTERS"
-        },
-        "t2": {
-          "id": 135474,
-          "name": "Fire Flux Esports"
-        },
-        "league": "United21",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-29T11:00:00Z",
-        "t1": {
-          "id": 138777,
-          "name": "ex-MANA eSports"
-        },
-        "t2": {
-          "id": 127837,
-          "name": "los kogutos"
-        },
-        "league": "Thunderpick World Championship",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-29T11:00:00Z",
-        "t1": {
-          "id": 138026,
-          "name": "Atreides"
-        },
-        "t2": {
-          "id": 135227,
-          "name": "ENJOY"
-        },
-        "league": "CCT Europe",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-29T11:00:00Z",
-        "t1": {
-          "id": 138963,
-          "name": "Black Phoenix"
-        },
-        "t2": {
-          "id": 128258,
-          "name": "Entropy"
-        },
-        "league": "CCT Europe",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-29T11:00:00Z",
-        "t1": {
-          "id": 138974,
-          "name": "ex-RUSTEC"
-        },
-        "t2": {
-          "id": 135321,
-          "name": "G2 Ares"
-        },
-        "league": "NODWIN Clutch Series",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-29T12:00:00Z",
-        "t1": {
-          "id": 130360,
-          "name": "ARCRED"
-        },
-        "t2": {
-          "id": 135497,
-          "name": "WW Team"
-        },
-        "league": "CIS LAN Championship",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
         "start": "2026-07-29T14:00:00Z",
         "t1": {
           "id": 128258,
@@ -2929,17 +2845,87 @@
         "bo": 1
       },
       {
-        "sport": "lol",
-        "start": "2026-07-29T11:00:00Z",
+        "sport": "cs2",
+        "start": "2026-07-29T18:00:00Z",
         "t1": {
-          "id": 1566,
-          "name": "Bilibili Gaming"
+          "id": 133542,
+          "name": "CYBERSHOKE Esports"
         },
         "t2": {
-          "id": 408,
-          "name": "LGD Gaming"
+          "id": 3288,
+          "name": "Virtus.pro"
         },
-        "league": "LPL",
+        "league": "CIS LAN Championship",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T18:00:00Z",
+        "t1": {
+          "id": 3250,
+          "name": "MIBR"
+        },
+        "t2": {
+          "id": 131848,
+          "name": "largadosypelados"
+        },
+        "league": "StarLadder StarSeries",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T18:15:00Z",
+        "t1": {
+          "id": 139004,
+          "name": "GameSport"
+        },
+        "t2": {
+          "id": 138897,
+          "name": "TrafficPills Esports"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T18:15:00Z",
+        "t1": {
+          "id": 133125,
+          "name": "Aurora Young Blood"
+        },
+        "t2": {
+          "id": 139003,
+          "name": "gribo4ki"
+        },
+        "league": "CCT Europe",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T19:00:00Z",
+        "t1": {
+          "id": 136064,
+          "name": "Chicken Coop Esports"
+        },
+        "t2": {
+          "id": 137496,
+          "name": "SportsBetExpert"
+        },
+        "league": "StarLadder StarSeries",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-07-29T21:00:00Z",
+        "t1": {
+          "id": 139000,
+          "name": "K28"
+        },
+        "t2": {
+          "id": 130794,
+          "name": "BakS eSports"
+        },
+        "league": "CIS LAN Championship",
         "bo": 3
       },
       {
@@ -3204,6 +3190,20 @@
         "t2": {
           "id": 138968,
           "name": "S\u00f8rby eSport"
+        },
+        "league": "NLC",
+        "bo": 3
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-29T18:00:00Z",
+        "t1": {
+          "id": 134156,
+          "name": "DMG Esports"
+        },
+        "t2": {
+          "id": 138965,
+          "name": "2 Massive"
         },
         "league": "NLC",
         "bo": 3
@@ -3490,34 +3490,6 @@
       },
       {
         "sport": "dota2",
-        "start": "2026-07-29T12:00:00Z",
-        "t1": {
-          "id": 136960,
-          "name": "YBN Team"
-        },
-        "t2": {
-          "id": 136968,
-          "name": "VooDooSh Team"
-        },
-        "league": "BetBoom Streamers Battle",
-        "bo": 3
-      },
-      {
-        "sport": "dota2",
-        "start": "2026-07-29T12:00:00Z",
-        "t1": {
-          "id": 138858,
-          "name": "RE.Arise"
-        },
-        "t2": {
-          "id": 135854,
-          "name": "Zero Tenacity"
-        },
-        "league": "EPL Masters",
-        "bo": 3
-      },
-      {
-        "sport": "dota2",
         "start": "2026-07-29T15:00:00Z",
         "t1": {
           "id": 139008,
@@ -3769,32 +3741,18 @@
         "bo": 3
       },
       {
-        "sport": "ow",
-        "start": "2026-07-29T11:15:00Z",
+        "sport": "dota2",
+        "start": "2026-07-31T08:00:00Z",
         "t1": {
-          "id": 134817,
-          "name": "Crazy Raccoon"
+          "id": 1676,
+          "name": "Vici Gaming"
         },
         "t2": {
-          "id": 138402,
-          "name": "Team Secret"
+          "id": 137685,
+          "name": "Amaru Gaming"
         },
-        "league": "OCS",
-        "bo": 2
-      },
-      {
-        "sport": "ow",
-        "start": "2026-07-29T12:30:00Z",
-        "t1": {
-          "id": 132128,
-          "name": "Geekay Esports"
-        },
-        "t2": {
-          "id": 137219,
-          "name": "AG.AL"
-        },
-        "league": "OCS",
-        "bo": 2
+        "league": "Games of the Future",
+        "bo": 3
       },
       {
         "sport": "ow",
@@ -3867,7 +3825,7 @@
         "bo": 2
       }
     ],
-    "esp_ts": 1785322759.2352333,
+    "esp_ts": 1785329992.2839649,
     "form": {
       "dota2:1948": {
         "ts": 1785327489.9279194,
@@ -5358,7 +5316,7 @@
         }
       },
       "ow:134624": {
-        "ts": 1785322785.6421795,
+        "ts": 1785330015.7453218,
         "f": {
           "w": 4,
           "l": 1,
@@ -5387,7 +5345,7 @@
         }
       },
       "ow:138011": {
-        "ts": 1785322786.238756,
+        "ts": 1785330016.362955,
         "f": {
           "w": 2,
           "l": 3,
@@ -5416,7 +5374,7 @@
         }
       },
       "ow:129810": {
-        "ts": 1785322789.450276,
+        "ts": 1785330019.7655377,
         "f": {
           "w": 3,
           "l": 2,
@@ -5445,7 +5403,7 @@
         }
       },
       "ow:132167": {
-        "ts": 1785322790.0754623,
+        "ts": 1785330020.5214553,
         "f": {
           "w": 3,
           "l": 2,
@@ -5627,7 +5585,7 @@
         }
       },
       "dota2:128357": {
-        "ts": 1785322809.2170117,
+        "ts": 1785330039.5899248,
         "f": {
           "w": 2,
           "l": 3,
@@ -5896,7 +5854,7 @@
         }
       },
       "lol:126204": {
-        "ts": 1785322793.139964,
+        "ts": 1785330023.500525,
         "f": {
           "w": 2,
           "l": 3,
@@ -5983,7 +5941,7 @@
         }
       },
       "lol:134337": {
-        "ts": 1785322792.5344691,
+        "ts": 1785330022.9136314,
         "f": {
           "w": 1,
           "l": 4,
@@ -7530,7 +7488,7 @@
         }
       },
       "lol:134303": {
-        "ts": 1785322787.5502996,
+        "ts": 1785330017.9852817,
         "f": {
           "w": 3,
           "l": 2,
@@ -7559,7 +7517,7 @@
         }
       },
       "lol:132212": {
-        "ts": 1785322788.149047,
+        "ts": 1785330018.5813897,
         "f": {
           "w": 3,
           "l": 2,
@@ -7704,7 +7662,7 @@
         }
       },
       "lol:137836": {
-        "ts": 1785322790.997632,
+        "ts": 1785330021.4168613,
         "f": {
           "w": 1,
           "l": 4,
@@ -7733,7 +7691,7 @@
         }
       },
       "lol:135466": {
-        "ts": 1785322791.593005,
+        "ts": 1785330021.997198,
         "f": {
           "w": 1,
           "l": 4,
@@ -7846,7 +7804,7 @@
         }
       },
       "lol:133759": {
-        "ts": 1785322793.880308,
+        "ts": 1785330024.2046034,
         "f": {
           "w": 1,
           "l": 4,
@@ -7875,7 +7833,7 @@
         }
       },
       "lol:126832": {
-        "ts": 1785322794.4851685,
+        "ts": 1785330024.9415917,
         "f": {
           "w": 4,
           "l": 1,
@@ -7904,7 +7862,7 @@
         }
       },
       "lol:363": {
-        "ts": 1785322795.3660822,
+        "ts": 1785330025.9032516,
         "f": {
           "w": 4,
           "l": 1,
@@ -7933,7 +7891,7 @@
         }
       },
       "lol:134250": {
-        "ts": 1785322796.011366,
+        "ts": 1785330026.4984977,
         "f": {
           "w": 0,
           "l": 5,
@@ -8049,7 +8007,7 @@
         }
       },
       "lol:138969": {
-        "ts": 1785322798.3165982,
+        "ts": 1785330027.6578658,
         "f": {
           "w": 0,
           "l": 1,
@@ -8062,7 +8020,7 @@
         }
       },
       "lol:138968": {
-        "ts": 1785322798.7670739,
+        "ts": 1785330028.090263,
         "f": {
           "w": 0,
           "l": 1,
@@ -8124,6 +8082,48 @@
             {
               "won": true,
               "opp": "Level UP"
+            }
+          ]
+        }
+      },
+      "lol:134156": {
+        "ts": 1785330028.6842053,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Epic Avalanche"
+            },
+            {
+              "won": true,
+              "opp": "Lundqvist Lightside"
+            },
+            {
+              "won": false,
+              "opp": "Bulldog Esports"
+            },
+            {
+              "won": false,
+              "opp": "Deer Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Verdant"
+            }
+          ]
+        }
+      },
+      "lol:138965": {
+        "ts": 1785330029.3253033,
+        "f": {
+          "w": 0,
+          "l": 1,
+          "res": [
+            {
+              "won": false,
+              "opp": "Deer Gaming"
             }
           ]
         }
@@ -33355,6 +33355,38 @@
       "status": "unfilled",
       "ts": "2026-07-29T12:50:43Z",
       "note": " [stale-swept]"
+    },
+    {
+      "price": 0.98,
+      "short": true,
+      "stake": 0.98,
+      "kind": "TAIL",
+      "p_model": null,
+      "event": "NC Dinos vs. KT Wiz",
+      "ev_start": "2026-07-29T09:30:00Z",
+      "reason": "[live] near-certainty yield \u2014 live price 98%, market-validated (no model \u2014 complete live book), settles within hours, half size",
+      "order_id": "BHREVXFE09RC",
+      "qty": 1,
+      "market_slug": "aec-kbo-ndc-kwt-2026-07-29",
+      "outcome": "KT Wiz",
+      "status": "open",
+      "ts": "2026-07-29T13:00:54Z"
+    },
+    {
+      "price": 0.98,
+      "short": true,
+      "stake": 0.98,
+      "kind": "TAIL",
+      "p_model": null,
+      "event": "LG Twins vs. Kiwoom Heroes",
+      "ev_start": "2026-07-29T09:30:00Z",
+      "reason": "[live] near-certainty yield \u2014 live price 98%, market-validated (no model \u2014 complete live book), settles within hours, half size",
+      "order_id": "BHRG6KEA09NX",
+      "qty": 1,
+      "market_slug": "aec-kbo-ltg-khi-2026-07-29",
+      "outcome": "Kiwoom Heroes",
+      "status": "open",
+      "ts": "2026-07-29T13:00:55Z"
     }
   ],
   "pm_stats": {
@@ -33362,7 +33394,7 @@
     "wins": 35,
     "losses": 85,
     "pnl": -71.3,
-    "trades": 447,
+    "trades": 449,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-12",
     "deposits": 14.0,
