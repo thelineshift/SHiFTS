@@ -30901,14 +30901,15 @@
       "qty": 4,
       "market_slug": "astatc-atp-densha-rinhij-2026-07-27-sw1",
       "outcome": "Denis Shapovalov",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T01:35:02Z",
       "price_path": [
         {
           "ts": 1785290063,
           "px": 0.62
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.34,
