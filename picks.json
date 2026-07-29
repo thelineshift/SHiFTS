@@ -2266,10 +2266,10 @@
       "homeTeam": "Dallas Wings",
       "awayTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -105,
+        "home_ml": -109,
+        "away_ml": -111,
         "total": 180.5,
-        "ts": 1785326504
+        "ts": 1785329689
       }
     },
     {
@@ -2432,10 +2432,10 @@
       "homeTeam": "Washington Nationals",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": 101,
-        "away_ml": -122,
+        "home_ml": 100,
+        "away_ml": -120,
         "total": 9.5,
-        "ts": 1785324704
+        "ts": 1785329689
       }
     },
     {
@@ -2455,10 +2455,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -180,
+        "away_ml": 148,
         "total": 8.5,
-        "ts": 1785322904
+        "ts": 1785329689
       },
       "last_alert_odds": -175
     },
@@ -2496,12 +2496,12 @@
       "awayTeam": "Baltimore Orioles",
       "homeTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -184,
-        "away_ml": 151,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 7.5,
-        "ts": 1785327889
+        "ts": 1785329689
       },
-      "last_alert_odds": 151
+      "last_alert_odds": 135
     },
     {
       "id": "boston-red-sox--1.5-0729",
@@ -2608,12 +2608,12 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 164,
-        "away_ml": -201,
+        "home_ml": 155,
+        "away_ml": -190,
         "total": 155.5,
-        "ts": 1785316459
+        "ts": 1785329689
       },
-      "last_alert_odds": -204
+      "last_alert_odds": -190
     },
     {
       "id": "los-angeles-dodgers--1.5-0729",
@@ -2656,10 +2656,10 @@
       "homeTeam": "Miami Marlins",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 149,
-        "away_ml": -181,
+        "home_ml": 144,
+        "away_ml": -175,
         "total": 7.5,
-        "ts": 1785324704
+        "ts": 1785329690
       },
       "last_alert_odds": 144
     },
@@ -2811,12 +2811,12 @@
       "awayTeam": "Atlanta Braves",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": 103,
-        "away_ml": -125,
-        "total": 8.0,
-        "ts": 1785324704
+        "home_ml": 105,
+        "away_ml": -127,
+        "total": 8.5,
+        "ts": 1785329690
       },
-      "last_alert_odds": -115
+      "last_alert_odds": -127
     },
     {
       "id": "los-angeles-dodgers-ml-0729",
