@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 08:44 UTC",
+    "at": "2026-07-29 09:44 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-29 02:45 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 08:44 UTC",
+    "at": "2026-07-29 09:44 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,15 +33,24 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 08:44 UTC",
+    "at": "2026-07-29 09:44 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 08:44 UTC",
+    "at": "2026-07-29 09:44 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
   "unannounced_results": [
+    {
+      "id": "minnesota-twins--1.5-0728",
+      "desc": "Minnesota Twins -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Kansas City Royals 2, Minnesota Twins 3",
+      "tier": "sharp"
+    },
     {
       "id": "3-leg-parlay-0728-whale",
       "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
@@ -167,6 +176,24 @@
       "units": -1.0,
       "score": "Colorado Rockies 7, San Diego Padres 8",
       "tier": "lock"
+    },
+    {
+      "id": "nongshim-red-force-ml-0729",
+      "desc": "Nongshim Red Force ML",
+      "odds": -265,
+      "result": "WIN",
+      "units": 0.38,
+      "score": "Nongshim Red Force 2-0 Kiwoom DRX \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "ex-mana-esports-ml-0729",
+      "desc": "ex-MANA eSports ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "ex-MANA eSports 0-2 los kogutos \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785246260.6717944,
