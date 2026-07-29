@@ -33233,14 +33233,15 @@
       "qty": 1,
       "market_slug": "aec-kbo-sla-kti-2026-07-29",
       "outcome": "Kia Tigers",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T12:35:34Z",
       "price_path": [
         {
           "ts": 1785329098,
           "px": 0.98
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.99,
@@ -33255,14 +33256,15 @@
       "qty": 1,
       "market_slug": "aec-kbo-ltg-khi-2026-07-29",
       "outcome": "Kiwoom Heroes",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T12:40:34Z",
       "price_path": [
         {
           "ts": 1785329098,
           "px": 0.97
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.99,
@@ -33277,14 +33279,15 @@
       "qty": 1,
       "market_slug": "aec-hundredw-wfe-trr-2026-07-29",
       "outcome": "Trent Rockets",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T12:40:35Z",
       "price_path": [
         {
           "ts": 1785329098,
           "px": 0.99
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     }
   ],
   "pm_stats": {
