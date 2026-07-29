@@ -33370,14 +33370,15 @@
       "qty": 1,
       "market_slug": "aec-kbo-ndc-kwt-2026-07-29",
       "outcome": "KT Wiz",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T13:00:54Z",
       "price_path": [
         {
           "ts": 1785330298,
           "px": 0.99
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.98,
@@ -33392,14 +33393,15 @@
       "qty": 1,
       "market_slug": "aec-kbo-ltg-khi-2026-07-29",
       "outcome": "Kiwoom Heroes",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T13:00:55Z",
       "price_path": [
         {
           "ts": 1785330298,
           "px": 0.99
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.95,
