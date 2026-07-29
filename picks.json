@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T03:04:26Z",
+  "updated": "2026-07-29T04:01:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2450,6 +2450,239 @@
       "analysis": "53-55 overall, 27-28 on the road \u2014 our 54% vs book 50% (no-vig) | \ud83e\udde0 **The read:** 53-55 overall, 27-28 on the road \u2014 our 54% vs book 50% (no-vig). Model makes Houston Astros **54%** \u2014 books imply **53%**. SHiFT presses the gap.",
       "awayTeam": "Houston Astros",
       "homeTeam": "Los Angeles Angels"
+    },
+    {
+      "id": "nongshim-red-force-ml-0729",
+      "date": "2026-07-29",
+      "sport": "lol",
+      "desc": "Nongshim Red Force ML",
+      "market": "LCK Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Kiwoom DRX",
+      "team": "Nongshim Red Force",
+      "opp": "Kiwoom DRX",
+      "analysis": "4-1 last 5 (beat T1, BNK FEARX, KT Rolster) (lost to Hanwha Life Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat T1, BNK FEARX, KT Rolster) (lost to Hanwha Life Esports) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of mod",
+      "awayTeam": "Nongshim Red Force",
+      "homeTeam": "Kiwoom DRX"
+    },
+    {
+      "id": "ex-mana-esports-ml-0729",
+      "date": "2026-07-29",
+      "sport": "cs2",
+      "desc": "ex-MANA eSports ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "los kogutos",
+      "team": "ex-MANA eSports",
+      "opp": "los kogutos",
+      "analysis": "2-3 last 5 (beat NEW VISION, OlyBet SB) (lost to Rune Eaters) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat NEW VISION, OlyBet SB) (lost to Rune Eaters) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over los kogutos the number hasn't priced.",
+      "awayTeam": "ex-MANA eSports",
+      "homeTeam": "los kogutos"
+    },
+    {
+      "id": "golden-state-valkyries--5.5-0729",
+      "date": "2026-07-29",
+      "sport": "wnba",
+      "desc": "Golden State Valkyries -5.5",
+      "market": "spread",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 PM ET",
+      "vs": "Phoenix Mercury",
+      "team": "Golden State Valkyries",
+      "opp": "Phoenix Mercury",
+      "analysis": "19-8 overall, 8-4 on the road \u2014 ML juiced to -204, so the -5.5 at the standard number is the bet; model makes Golden State Valkyries 77% straight up | \u2694\ufe0f **Matchup read:** 19-8 overall, 8-4 on the road \u2014 ML juiced to -204, so the -5.5 at the standard number is the bet; model makes Golden State Valky",
+      "awayTeam": "Golden State Valkyries",
+      "homeTeam": "Phoenix Mercury"
+    },
+    {
+      "id": "los-angeles-dodgers--1.5-0729",
+      "date": "2026-07-29",
+      "sport": "mlb",
+      "desc": "Los Angeles Dodgers -1.5",
+      "market": "run line",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:10 PM ET",
+      "vs": "Seattle Mariners",
+      "team": "Los Angeles Dodgers",
+      "opp": "Seattle Mariners",
+      "analysis": "67-39 overall, 31-19 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Los Angeles Dodgers 70% straight up | \ud83e\udde0 **The read:** 67-39 overall, 31-19 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Los Angeles Dodgers 70% stra",
+      "homeTeam": "Los Angeles Dodgers",
+      "awayTeam": "Seattle Mariners"
+    },
+    {
+      "id": "miami-marlins-ml-0729",
+      "date": "2026-07-29",
+      "sport": "mlb",
+      "desc": "Miami Marlins ML",
+      "market": "ML",
+      "odds": 130,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "12:10 PM ET",
+      "vs": "Philadelphia Phillies",
+      "team": "Miami Marlins",
+      "opp": "Philadelphia Phillies",
+      "analysis": "54-54 overall, 33-23 at home \u2014 our 54% vs book 42% (no-vig) | \u2694\ufe0f **Matchup read:** 54-54 overall, 33-23 at home \u2014 our 54% vs book 42% (no-vig). Miami Marlins in the better spot and priced like it isn't \u2014 **12-point** edge.",
+      "homeTeam": "Miami Marlins",
+      "awayTeam": "Philadelphia Phillies"
+    },
+    {
+      "id": "3-leg-parlay-0729-whale",
+      "date": "2026-07-29",
+      "sport": "parlay",
+      "desc": "Minnesota Twins -1.5 + Boston Red Sox -1.5 + Chicago Cubs ML",
+      "market": "3-leg parlay (MLB)",
+      "odds": 568,
+      "units": 0.5,
+      "tier": "whale",
+      "time_et": "07:40 PM ET",
+      "vs": "Minnesota Twins -1.5 vs Kansas City Royals \u00b7 Boston Red Sox -1.5 vs Athletics \u00b7 Chicago Cubs ML vs St. Louis Cardinals",
+      "team": null,
+      "opp": null,
+      "analysis": "Minnesota Twins -1.5 (-110) \u30fb Boston Red Sox -1.5 (-110) \u30fb Chicago Cubs ML (-120) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Minnesota Twins -1.5",
+          "vs": "Kansas City Royals",
+          "sport": "mlb",
+          "date": "2026-07-29",
+          "time_et": "07:40 PM ET"
+        },
+        {
+          "team": "Boston Red Sox -1.5",
+          "vs": "Athletics",
+          "sport": "mlb",
+          "date": "2026-07-29",
+          "time_et": "09:40 PM ET"
+        },
+        {
+          "team": "Chicago Cubs",
+          "vs": "St. Louis Cardinals",
+          "sport": "mlb",
+          "date": "2026-07-29",
+          "time_et": "07:45 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "over-7.5-0729",
+      "date": "2026-07-29",
+      "sport": "mlb",
+      "desc": "Over 7.5",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "12:10 PM ET",
+      "vs": "Philadelphia Phillies @ Miami Marlins",
+      "team": "Miami Marlins",
+      "opp": "Philadelphia Phillies",
+      "analysis": "posted 7.5 vs 13.0 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \u2694\ufe0f **Matchup read:** posted 7.5 vs 13.0 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. Over 7.5 in the better spot and priced l",
+      "awayTeam": "Miami Marlins",
+      "homeTeam": "Philadelphia Phillies"
+    },
+    {
+      "id": "3-leg-parlay-0729-sharp",
+      "date": "2026-07-29",
+      "sport": "parlay",
+      "desc": "Minnesota Twins -1.5 + Boston Red Sox -1.5 + Chicago Cubs ML",
+      "market": "3-leg parlay (MLB)",
+      "odds": 568,
+      "units": 0.5,
+      "tier": "sharp",
+      "time_et": "07:40 PM ET",
+      "vs": "Minnesota Twins -1.5 vs Kansas City Royals \u00b7 Boston Red Sox -1.5 vs Athletics \u00b7 Chicago Cubs ML vs St. Louis Cardinals",
+      "team": null,
+      "opp": null,
+      "analysis": "Minnesota Twins -1.5 (-110) \u30fb Boston Red Sox -1.5 (-110) \u30fb Chicago Cubs ML (-120) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Minnesota Twins -1.5",
+          "vs": "Kansas City Royals",
+          "sport": "mlb",
+          "date": "2026-07-29",
+          "time_et": "07:40 PM ET"
+        },
+        {
+          "team": "Boston Red Sox -1.5",
+          "vs": "Athletics",
+          "sport": "mlb",
+          "date": "2026-07-29",
+          "time_et": "09:40 PM ET"
+        },
+        {
+          "team": "Chicago Cubs",
+          "vs": "St. Louis Cardinals",
+          "sport": "mlb",
+          "date": "2026-07-29",
+          "time_et": "07:45 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "3-leg-parlay-0729-lock",
+      "date": "2026-07-29",
+      "sport": "parlay",
+      "desc": "Minnesota Twins -1.5 + Boston Red Sox -1.5 + Chicago Cubs ML",
+      "market": "3-leg parlay (MLB)",
+      "odds": 568,
+      "units": 0.5,
+      "tier": "lock",
+      "time_et": "07:40 PM ET",
+      "vs": "Minnesota Twins -1.5 vs Kansas City Royals \u00b7 Boston Red Sox -1.5 vs Athletics \u00b7 Chicago Cubs ML vs St. Louis Cardinals",
+      "team": null,
+      "opp": null,
+      "analysis": "Minnesota Twins -1.5 (-110) \u30fb Boston Red Sox -1.5 (-110) \u30fb Chicago Cubs ML (-120) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Minnesota Twins -1.5",
+          "vs": "Kansas City Royals",
+          "sport": "mlb",
+          "date": "2026-07-29",
+          "time_et": "07:40 PM ET"
+        },
+        {
+          "team": "Boston Red Sox -1.5",
+          "vs": "Athletics",
+          "sport": "mlb",
+          "date": "2026-07-29",
+          "time_et": "09:40 PM ET"
+        },
+        {
+          "team": "Chicago Cubs",
+          "vs": "St. Louis Cardinals",
+          "sport": "mlb",
+          "date": "2026-07-29",
+          "time_et": "07:45 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "atlanta-braves-ml-0729",
+      "date": "2026-07-29",
+      "sport": "mlb",
+      "desc": "Atlanta Braves ML",
+      "market": "ML",
+      "odds": -132,
+      "units": 1.0,
+      "tier": "free",
+      "time_et": "01:10 PM ET",
+      "vs": "New York Mets",
+      "team": "Atlanta Braves",
+      "opp": "New York Mets",
+      "analysis": "62-44 overall, 30-24 on the road \u2014 our 61% vs book 54% (no-vig) | \ud83d\udcb0 **Value hunt:** 62-44 overall, 30-24 on the road \u2014 our 61% vs book 54% (no-vig). The book shaded this line toward the public side; we collect the **7 points** they left.",
+      "awayTeam": "Atlanta Braves",
+      "homeTeam": "New York Mets"
     }
   ]
 }
