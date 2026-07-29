@@ -43,6 +43,15 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
+      "id": "minnesota-twins--1.5-0728",
+      "desc": "Minnesota Twins -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Kansas City Royals 2, Minnesota Twins 3",
+      "tier": "sharp"
+    },
+    {
       "id": "3-leg-parlay-0728-whale",
       "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
       "odds": 262,
@@ -31174,7 +31183,7 @@
       "qty": 3,
       "market_slug": "aec-mlb-kc-min-2026-07-30",
       "outcome": "Minnesota Twins",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T01:00:08Z",
       "price_path": [
         {
@@ -31213,7 +31222,8 @@
           "ts": 1785307466,
           "px": 0.55
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.24,
