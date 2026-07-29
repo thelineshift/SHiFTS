@@ -241,7 +241,7 @@
     "20260729-1550"
   ],
   "boot_log": [
-    "2026-07-29T21:31:15Z"
+    "2026-07-29T21:36:58Z"
   ],
   "teasers": {
     "weekly": "2026-08-02",
@@ -369,7 +369,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "d97e08e5-511e-4ab2-b348-6b52dc7e84a6",
+  "last_deploy_id": "be2b6fa1-3cff-4a79-b95e-335701e6382a",
   "op_month": "2026-07",
   "op_calls": 80,
   "op_meta": {
