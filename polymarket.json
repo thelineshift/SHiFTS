@@ -1,39 +1,5 @@
 {
-  "ts": "2026-07-29T07:59:20Z",
+  "ts": "2026-07-29T08:14:24Z",
   "configured": true,
-  "balance_usd": 112.58,
-  "buying_power": 26.58,
-  "positions": [],
-  "open_orders": [
-    {
-      "market": "aec-ow-wbg-tl-2026-07-29",
-      "intent": "ORDER_INTENT_BUY_LONG",
-      "price": "0.6",
-      "qty": 8
-    },
-    {
-      "market": "aec-mlb-sf-sd-2026-07-30",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.56",
-      "qty": 6
-    },
-    {
-      "market": "aec-mlb-sf-sd-2026-07-31",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.58",
-      "qty": 4
-    },
-    {
-      "market": "aec-wnba-conn-chi-2026-07-30",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.62",
-      "qty": 3
-    },
-    {
-      "market": "aec-wnba-ny-lv-2026-07-30",
-      "intent": "ORDER_INTENT_BUY_SHORT",
-      "price": "0.58",
-      "qty": 3
-    }
-  ]
+  "error": "<!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-"
 }
