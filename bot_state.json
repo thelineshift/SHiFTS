@@ -31286,7 +31286,7 @@
       "qty": 4,
       "market_slug": "astatc-atp-alemin-stetsi-2026-07-27-sw1",
       "outcome": "Alex de Minaur",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T04:05:29Z"
     },
     {
@@ -31302,7 +31302,7 @@
       "qty": 6,
       "market_slug": "aec-mlb-sf-sd-2026-07-30",
       "outcome": "San Diego Padres",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T04:05:30Z"
     },
     {
@@ -31333,7 +31333,7 @@
       "qty": 4,
       "market_slug": "aec-mlb-sf-sd-2026-07-31",
       "outcome": "San Diego Padres",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T04:05:33Z"
     },
     {
