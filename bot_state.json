@@ -32591,7 +32591,7 @@
       "qty": 3,
       "market_slug": "aec-wnba-conn-chi-2026-07-30",
       "outcome": "Chicago",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T04:45:07Z",
       "price_path": [
         {
@@ -32638,7 +32638,8 @@
           "ts": 1785321868,
           "px": 0.61
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.15,
