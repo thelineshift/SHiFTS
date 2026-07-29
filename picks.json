@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T04:24:24Z",
+  "updated": "2026-07-29T04:44:20Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -1889,7 +1889,10 @@
           "date": "2026-07-28",
           "time_et": "10:00 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: win \u00b7 None: loss"
     },
     {
       "id": "2-leg-parlay-0728-sharp",
@@ -1920,7 +1923,10 @@
           "date": "2026-07-28",
           "time_et": "10:00 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: win \u00b7 None: loss"
     },
     {
       "id": "chicago-cubs-ml-0728",
@@ -2004,7 +2010,10 @@
           "date": "2026-07-28",
           "time_et": "10:00 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: win \u00b7 None: loss"
     },
     {
       "id": "milwaukee-brewers--1.5-0728",
