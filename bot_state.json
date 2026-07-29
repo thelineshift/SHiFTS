@@ -34506,11 +34506,11 @@
     "pnl": -70.46,
     "trades": 456,
     "last_recap": "2026-07-29",
-    "last_recap_hour": "2026-07-29-16",
+    "last_recap_hour": "2026-07-29-18",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 97.26,
-    "net": 33.26,
+    "account": 123.45,
+    "net": 59.45,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
