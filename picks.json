@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T16:57:20Z",
+  "updated": "2026-07-29T17:37:21Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2881,7 +2881,10 @@
       "opp": "FOKUS Sakura",
       "analysis": "4-1 last 5 (beat GIANTX GC, Habos Babos, SK Nebula) (lost to SK Nebula) vs 2-3 \u2014 live Pinnacle line -386 (our 86% vs book 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat GIANTX GC, Habos Babos, SK Nebula) (lost to SK Nebula) vs 2-3 \u2014 live Pinnacle line -386 (our 86% vs book 73%). Ride the **13-point** ",
       "awayTeam": "Gentle Mates GC",
-      "homeTeam": "FOKUS Sakura"
+      "homeTeam": "FOKUS Sakura",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Gentle Mates GC 1-2 FOKUS Sakura \u00b7 final"
     },
     {
       "id": "utah-royals-ml-0729",
