@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 12:01 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-3-3": "2026-07-29 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 11:41 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-29 12:01 UTC",
+    "\ud83c\udfaffree-pick-3-3": "2026-07-29 08:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 10:54 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-29 11:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
+    "\ud83c\udf81giveaway": "2026-07-29 02:45 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 12:01 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,24 +33,15 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 12:01 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 12:01 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": []
   },
   "bot_version": "9.24.16",
   "unannounced_results": [
-    {
-      "id": "3-leg-parlay-0728-whale",
-      "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
-      "odds": 262,
-      "result": "WIN",
-      "units": 1.31,
-      "score": "Legs: None: win \u00b7 None: win \u00b7 None: win",
-      "tier": "whale"
-    },
     {
       "id": "3-leg-parlay-0728-sharp",
       "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
@@ -169,7 +160,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785246260.6717944,
+  "last_x_receipt_ts": 1785326504.6045616,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -28891,10 +28882,6 @@
       "ts": "2026-07-28T14:05:14Z",
       "price_path": [
         {
-          "ts": 1785269668,
-          "px": 0.49
-        },
-        {
           "ts": 1785272069,
           "px": 0.49
         },
@@ -28984,6 +28971,10 @@
         },
         {
           "ts": 1785324107,
+          "px": 0.41
+        },
+        {
+          "ts": 1785326506,
           "px": 0.41
         }
       ]
@@ -29338,10 +29329,6 @@
       "ts": "2026-07-28T16:25:06Z",
       "price_path": [
         {
-          "ts": 1785269669,
-          "px": 0.37
-        },
-        {
           "ts": 1785272069,
           "px": 0.37
         },
@@ -29431,6 +29418,10 @@
         },
         {
           "ts": 1785324108,
+          "px": 0.24
+        },
+        {
+          "ts": 1785326506,
           "px": 0.24
         }
       ]
@@ -29812,10 +29803,6 @@
       "ts": "2026-07-28T18:45:22Z",
       "price_path": [
         {
-          "ts": 1785269670,
-          "px": 0.5
-        },
-        {
           "ts": 1785272071,
           "px": 0.5
         },
@@ -29906,6 +29893,10 @@
         {
           "ts": 1785324108,
           "px": 0.51
+        },
+        {
+          "ts": 1785326506,
+          "px": 0.5
         }
       ]
     },
@@ -29973,10 +29964,6 @@
       "status": "open",
       "ts": "2026-07-28T18:50:05Z",
       "price_path": [
-        {
-          "ts": 1785269671,
-          "px": 0.3
-        },
         {
           "ts": 1785272071,
           "px": 0.3
@@ -30068,6 +30055,10 @@
         {
           "ts": 1785324108,
           "px": 0.36
+        },
+        {
+          "ts": 1785326507,
+          "px": 0.36
         }
       ]
     },
@@ -30086,10 +30077,6 @@
       "status": "open",
       "ts": "2026-07-28T18:50:07Z",
       "price_path": [
-        {
-          "ts": 1785269671,
-          "px": 0.25
-        },
         {
           "ts": 1785272071,
           "px": 0.25
@@ -30180,6 +30167,10 @@
         },
         {
           "ts": 1785324108,
+          "px": 0.21
+        },
+        {
+          "ts": 1785326507,
           "px": 0.21
         }
       ]
@@ -30344,10 +30335,6 @@
       "ts": "2026-07-28T19:55:12Z",
       "price_path": [
         {
-          "ts": 1785270868,
-          "px": 0.43
-        },
-        {
           "ts": 1785273262,
           "px": 0.43
         },
@@ -30437,6 +30424,10 @@
         },
         {
           "ts": 1785324108,
+          "px": 0.58
+        },
+        {
+          "ts": 1785326507,
           "px": 0.58
         }
       ]
@@ -30547,6 +30538,10 @@
         },
         {
           "ts": 1785324109,
+          "px": 0.47
+        },
+        {
+          "ts": 1785326507,
           "px": 0.47
         }
       ]
@@ -30740,6 +30735,10 @@
         {
           "ts": 1785324109,
           "px": 0.14
+        },
+        {
+          "ts": 1785326508,
+          "px": 0.07
         }
       ]
     },
