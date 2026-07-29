@@ -30264,78 +30264,13 @@
       "qty": 3,
       "market_slug": "aec-lol-nsea-dnsc-2026-07-29",
       "outcome": "DN SOOPers Challengers",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T18:55:09Z",
-      "price_path": [
-        {
-          "ts": 1785265472,
-          "px": 0.41
-        },
-        {
-          "ts": 1785267869,
-          "px": 0.41
-        },
-        {
-          "ts": 1785269671,
-          "px": 0.41
-        },
-        {
-          "ts": 1785272071,
-          "px": 0.41
-        },
-        {
-          "ts": 1785274468,
-          "px": 0.41
-        },
-        {
-          "ts": 1785276865,
-          "px": 0.41
-        },
-        {
-          "ts": 1785279265,
-          "px": 0.41
-        },
-        {
-          "ts": 1785281067,
-          "px": 0.41
-        },
-        {
-          "ts": 1785283467,
-          "px": 0.41
-        },
-        {
-          "ts": 1785288271,
-          "px": 0.41
-        },
-        {
-          "ts": 1785291264,
-          "px": 0.41
-        },
-        {
-          "ts": 1785293078,
-          "px": 0.41
-        },
-        {
-          "ts": 1785295464,
-          "px": 0.42
-        },
-        {
-          "ts": 1785298469,
-          "px": 0.42
-        },
-        {
-          "ts": 1785300866,
-          "px": 0.42
-        },
-        {
-          "ts": 1785302669,
-          "px": 0.35
-        },
-        {
-          "ts": 1785305069,
-          "px": 0.17
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T06:34:24Z",
+      "pnl": -1.23,
+      "autopsy": "model 57% vs market 41% missed \u2014 logged for the playbook review. Taken 0.41, rode to 0.17 before the result \u2014 beat the number by 24\u00a2 \u2705"
     },
     {
       "price": 0.78,
@@ -31894,15 +31829,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 33,
-    "losses": 78,
-    "pnl": -74.69,
+    "losses": 79,
+    "pnl": -75.92,
     "trades": 400,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-06",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 117.96,
-    "net": 103.96,
+    "account": 116.73,
+    "net": 102.73,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -31912,7 +31847,7 @@
       ],
       "EDGE": [
         25,
-        63,
+        64,
         0
       ],
       "LIVE-BET": [
@@ -31932,14 +31867,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T12:24:23Z",
-      "kind": "EDGE",
-      "outcome": "Timofey Skatov",
-      "result": "WIN",
-      "pnl": 1.64,
-      "lesson": "+$1.64 \u2014 model 70% vs market 59% was real edge; thesis held. Taken 0.59, rode to 0.67 before the result \u2014 beat the number by 8\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-28T13:14:22Z",
       "kind": "EDGE",
@@ -32171,6 +32098,14 @@
       "result": "WIN",
       "pnl": 0.9,
       "lesson": "+$0.90 \u2014 model 63% vs market 55% was real edge; thesis held. Taken 0.55, rode to 0.98 before the result \u2014 beat the number by 43\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T06:34:24Z",
+      "kind": "EDGE",
+      "outcome": "DN SOOPers Challengers",
+      "result": "LOSS",
+      "pnl": -1.23,
+      "lesson": "model 57% vs market 41% missed \u2014 logged for the playbook review. Taken 0.41, rode to 0.17 before the result \u2014 beat the number by 24\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -32254,7 +32189,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785301465.407469,
+  "dep_checked_ts": 1785306864.148101,
   "x_bio_v": 2,
   "op_cool_until": 1785240924.7841196
 }
