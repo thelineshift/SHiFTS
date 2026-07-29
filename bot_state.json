@@ -30850,14 +30850,15 @@
       "qty": 2,
       "market_slug": "aec-atp-yuhhsu-micmmo-2026-07-27",
       "outcome": "Michael Mmoh",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-29T01:15:13Z",
       "price_path": [
         {
           "ts": 1785288273,
           "px": 0.55
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     },
     {
       "price": 0.2,
