@@ -5890,11 +5890,15 @@
         }
       },
       "lol:126204": {
-        "ts": 1785229494.011792,
+        "ts": 1785299381.8931634,
         "f": {
-          "w": 3,
-          "l": 2,
+          "w": 2,
+          "l": 3,
           "res": [
+            {
+              "won": false,
+              "opp": "Joblife"
+            },
             {
               "won": true,
               "opp": "Galions"
@@ -5910,10 +5914,6 @@
             {
               "won": false,
               "opp": "TLN Pirates"
-            },
-            {
-              "won": true,
-              "opp": "ZYB Esport"
             }
           ]
         }
@@ -5977,11 +5977,15 @@
         }
       },
       "lol:134337": {
-        "ts": 1785242680.560945,
+        "ts": 1785299381.252603,
         "f": {
           "w": 1,
           "l": 4,
           "res": [
+            {
+              "won": false,
+              "opp": "Solary"
+            },
             {
               "won": false,
               "opp": "Joblife"
@@ -5997,10 +6001,6 @@
             {
               "won": false,
               "opp": "Esprit Sh\u014dnen"
-            },
-            {
-              "won": false,
-              "opp": "Karmine Corp Blue"
             }
           ]
         }
@@ -7835,6 +7835,64 @@
             {
               "won": true,
               "opp": "Washed"
+            }
+          ]
+        }
+      },
+      "lol:133759": {
+        "ts": 1785299382.608441,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "G2 NORD"
+            },
+            {
+              "won": false,
+              "opp": "Unicorns Of Love Sexy Edition"
+            },
+            {
+              "won": false,
+              "opp": "G2 NORD"
+            },
+            {
+              "won": true,
+              "opp": "ROSSMANN Centaurs"
+            },
+            {
+              "won": false,
+              "opp": "BIG"
+            }
+          ]
+        }
+      },
+      "lol:126832": {
+        "ts": 1785299383.2116024,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Kaufland Hangry Knights"
+            },
+            {
+              "won": true,
+              "opp": "ROSSMANN Centaurs"
+            },
+            {
+              "won": true,
+              "opp": "TeamOrangeGaming"
+            },
+            {
+              "won": true,
+              "opp": "E WIE EINFACH E-SPORTS"
+            },
+            {
+              "won": false,
+              "opp": "Kaufland Hangry Knights"
             }
           ]
         }
@@ -31413,6 +31471,21 @@
           "px": 0.36
         }
       ]
+    },
+    {
+      "price": 0.25,
+      "stake": 5.75,
+      "kind": "EDGE",
+      "p_model": 0.567172319544289,
+      "event": "Michael Zheng vs. Martin Landaluce",
+      "ev_start": "2026-07-29T05:35:00Z",
+      "reason": "Elo 57% vs market 25% \u2014 32% edge, half-Kelly",
+      "order_id": "BHH2QVZ6W9NV",
+      "qty": 23,
+      "market_slug": "astatc-atp-miczhe-marlan-2026-07-27-sw2",
+      "outcome": "Michael Zheng",
+      "status": "open",
+      "ts": "2026-07-29T04:30:07Z"
     }
   ],
   "pm_stats": {
@@ -31420,7 +31493,7 @@
     "wins": 32,
     "losses": 78,
     "pnl": -75.59,
-    "trades": 395,
+    "trades": 396,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-04",
     "deposits": 14.0,
