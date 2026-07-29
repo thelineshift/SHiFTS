@@ -43,12 +43,21 @@
   "bot_version": "9.24.15",
   "unannounced_results": [
     {
-      "id": "cincinnati-reds-ml-0728",
-      "desc": "Cincinnati Reds ML",
-      "odds": 112,
+      "id": "detroit-tigers-ml-0728",
+      "desc": "Detroit Tigers ML",
+      "odds": -144,
+      "result": "WIN",
+      "units": 0.69,
+      "score": "Baltimore Orioles 0, Detroit Tigers 14",
+      "tier": "free"
+    },
+    {
+      "id": "tampa-bay-rays--1.5-0728",
+      "desc": "Tampa Bay Rays -1.5",
+      "odds": -110,
       "result": "LOSS",
       "units": -1.0,
-      "score": "Cleveland Guardians 6, Cincinnati Reds 5",
+      "score": "Texas Rangers 4, Tampa Bay Rays 1",
       "tier": "sharp"
     }
   ],
