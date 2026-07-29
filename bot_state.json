@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 15:57 UTC",
+    "at": "2026-07-29 14:57 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-3": "2026-07-29 12:01 UTC",
     "\ud83e\uddfereceipts": "2026-07-29 14:12 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-29 15:50 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-29 12:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 15:57 UTC",
+    "at": "2026-07-29 14:57 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,15 +33,24 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 15:57 UTC",
+    "at": "2026-07-29 14:57 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 15:57 UTC",
+    "at": "2026-07-29 14:57 UTC",
     "flags": []
   },
   "bot_version": "9.24.21",
   "unannounced_results": [
+    {
+      "id": "3-leg-parlay-0728-lock",
+      "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
+      "odds": 262,
+      "result": "WIN",
+      "units": 1.31,
+      "score": "Legs: None: win \u00b7 None: win \u00b7 None: win",
+      "tier": "lock"
+    },
     {
       "id": "pittsburgh-pirates-ml-0728",
       "desc": "Pittsburgh Pirates ML",
@@ -142,7 +151,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785340637.5749536,
+  "last_x_receipt_ts": 1785334849.0764508,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
