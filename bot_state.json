@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 08:44 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-3": "2026-07-29 08:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 06:34 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-29 08:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 10:54 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-29 11:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 02:45 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 08:44 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,24 +33,15 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 08:44 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 08:44 UTC",
+    "at": "2026-07-29 11:01 UTC",
     "flags": []
   },
-  "bot_version": "9.24.15",
+  "bot_version": "9.24.16",
   "unannounced_results": [
-    {
-      "id": "minnesota-twins--1.5-0728",
-      "desc": "Minnesota Twins -1.5",
-      "odds": -110,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Kansas City Royals 2, Minnesota Twins 3",
-      "tier": "sharp"
-    },
     {
       "id": "3-leg-parlay-0728-whale",
       "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
@@ -286,7 +277,7 @@
     "20260729-0350"
   ],
   "boot_log": [
-    "2026-07-29T11:01:41Z"
+    "2026-07-29T11:01:38Z"
   ],
   "teasers": {
     "weekly": "2026-08-02",
@@ -414,7 +405,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "2a55fc1c-dd10-43a2-b2a3-660f0bef8e64",
+  "last_deploy_id": "0e453e70-cb0e-4bd0-bd2b-afcef9e484ee",
   "op_month": "2026-07",
   "op_calls": 73,
   "op_meta": {
@@ -33408,8 +33399,11 @@
       "qty": 50,
       "market_slug": "aec-lol-mkf-flk-2026-07-29",
       "outcome": "FALKE Esports",
-      "status": "open",
-      "ts": "2026-07-29T11:00:23Z"
+      "status": "unfilled",
+      "ts": "2026-07-29T11:00:23Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.53,
@@ -33424,7 +33418,7 @@
       "qty": 3,
       "market_slug": "aec-lol-mgz-lps-2026-07-29",
       "outcome": "Lupus Esports",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T11:00:25Z"
     }
   ],
