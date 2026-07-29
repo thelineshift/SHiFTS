@@ -4513,11 +4513,15 @@
         }
       },
       "dota2:136962": {
-        "ts": 1785247501.059099,
+        "ts": 1785327189.446149,
         "f": {
-          "w": 1,
-          "l": 4,
+          "w": 2,
+          "l": 3,
           "res": [
+            {
+              "won": true,
+              "opp": "Rostik Team"
+            },
             {
               "won": false,
               "opp": "SoloTeam"
@@ -4533,10 +4537,6 @@
             {
               "won": false,
               "opp": "Nix Team"
-            },
-            {
-              "won": false,
-              "opp": "Recrent Team"
             }
           ]
         }
@@ -5532,7 +5532,7 @@
         }
       },
       "ow:135135": {
-        "ts": 1785318581.2004466,
+        "ts": 1785327177.0203166,
         "f": {
           "w": 5,
           "l": 0,
@@ -5561,7 +5561,7 @@
         }
       },
       "ow:138962": {
-        "ts": 1785318581.8568883,
+        "ts": 1785327177.618755,
         "f": {
           "w": 0,
           "l": 0,
@@ -5925,7 +5925,7 @@
         }
       },
       "dota2:136963": {
-        "ts": 1785250200.0563352,
+        "ts": 1785327190.0525134,
         "f": {
           "w": 1,
           "l": 4,
@@ -33112,6 +33112,38 @@
           "px": 0.51
         }
       ]
+    },
+    {
+      "price": 0.98,
+      "short": true,
+      "stake": 0.98,
+      "kind": "TAIL",
+      "p_model": null,
+      "event": "NC Dinos vs. KT Wiz",
+      "ev_start": "2026-07-29T09:30:00Z",
+      "reason": "[live] near-certainty yield \u2014 live price 98%, market-validated (no model \u2014 complete live book), settles within hours, half size",
+      "order_id": "BHQT7ZYMP9S2",
+      "qty": 1,
+      "market_slug": "aec-kbo-ndc-kwt-2026-07-29",
+      "outcome": "KT Wiz",
+      "status": "open",
+      "ts": "2026-07-29T12:13:22Z"
+    },
+    {
+      "price": 0.96,
+      "short": true,
+      "stake": 0.96,
+      "kind": "TAIL",
+      "p_model": null,
+      "event": "LG Twins vs. Kiwoom Heroes",
+      "ev_start": "2026-07-29T09:30:00Z",
+      "reason": "[live] near-certainty yield \u2014 live price 96%, market-validated (no model \u2014 complete live book), settles within hours, half size",
+      "order_id": "BHQRXPKP69NR",
+      "qty": 1,
+      "market_slug": "aec-kbo-ltg-khi-2026-07-29",
+      "outcome": "Kiwoom Heroes",
+      "status": "open",
+      "ts": "2026-07-29T12:13:23Z"
     }
   ],
   "pm_stats": {
@@ -33119,7 +33151,7 @@
     "wins": 35,
     "losses": 84,
     "pnl": -65.27,
-    "trades": 434,
+    "trades": 436,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-12",
     "deposits": 14.0,
