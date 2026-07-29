@@ -601,7 +601,7 @@ def pm_check_settled(lb):
             return {'result': 'WIN' if won else 'LOSS', 'payout': payout, 'pnl': pnl}
         return None
     except Exception as e:
-        print('[pm] settle:', str(e)[:140]); return None
+        print('[pm] settle:', str(e)[:80].replace('\n', ' ')); return None  # CF-1015 HTML bodies eat the 100-line log window — flatten
 
 def wallet_balances():
     """On-chain balances for all hot wallets + USD values. Never raises."""
@@ -4797,6 +4797,10 @@ def pm_trader_scan(st):
             # live"): a live draw-sport favorite >=0.95 on a complete 3-leg book is leading late —
             # settles in hours, half stake. Pregame bar stays 0.94 in the same-day window.
             _tw_book = draw_px is not None and 0.005 < draw_px < 0.995 and len(outcomes) == 2
+            if live:
+                hb['tw3'] = hb.get('tw3', 0) + 1
+                if _tw_book:
+                    hb['tw3b'] = hb.get('tw3b', 0) + 1
             _tw_ok = (live and ts_ev - now > -12 * 3600) or (not live and ts_ev - now < TAIL_FAR_SECS)
             if _tw_book and _tw_ok:
                 for o in outcomes:
@@ -4920,6 +4924,15 @@ def pm_trader_scan(st):
                 # (bo3: s², bo5: s²(3−2s)) must still beat the dipped price by 6pp + tuning —
                 # we buy the overreaction, never the collapse. No anchor = no comeback.
                 _cb = cbc.get(_cbk)
+                hb['lv'] = hb.get('lv', 0) + 1  # SCAN X-RAY (v9.24.20a): per-cycle reject anatomy
+                if _esp_ev:
+                    hb['lvesp'] = hb.get('lvesp', 0) + 1
+                if o['price'] >= 0.88:
+                    hb['lv88'] = hb.get('lv88', 0) + 1
+                if pm_ is None and o['price'] >= 0.93 and not _book_ok:
+                    hb['lvbf'] = hb.get('lvbf', 0) + 1  # price in range but book incomplete
+                if _cb:
+                    hb['cbok'] = hb.get('cbok', 0) + 1
                 # v9.24.20 threshold loosening (owner 7/29 PM: "lower our threshold to get into
                 # more bets, especially live"): p0 0.58→0.55, m0 0.55→0.52, dip 15→12pp,
                 # window 0.20-0.55→0.15-0.60, floor bar 6→4pp. The set tree still does the
@@ -4927,12 +4940,15 @@ def pm_trader_scan(st):
                 if (_cb and _cb.get('m0') is not None
                         and _cb['p0'] >= 0.55 and _cb['m0'] >= 0.52
                         and _cb['p0'] - o['price'] >= 0.12 and 0.15 <= o['price'] <= 0.60):
+                    hb['cbgate'] = hb.get('cbgate', 0) + 1
                     _n = max(2, (int(_cb.get('bo') or 3) + 1) // 2)  # PandaScore bo2 (OW) = first-to-2 → n=2; n=1 would zero the tree
                     _s = _set_prob(_cb['m0'], _n)
                     _fl = _tree_p(_s, 0, 1, _n) if _s is not None else None
                     if _fl is not None:
                         _fl = max(0.15, min(0.65, _fl))
-                        if _fl >= o['price'] + 0.04 + _tb('EDGE'):
+                        if _fl < o['price'] + 0.04 + _tb('EDGE'):
+                            hb['cbfl'] = hb.get('cbfl', 0) + 1  # gates passed, tree said no value
+                        else:
                             _unit = 'set' if _cb.get('ten') else 'map'
                             stake = min(pm_kelly(_fl, o['price'], B) * _tm('EDGE'), _desk_trade_cap(B, pmstats))
                             if stake >= 0.5 and stake <= _desk_room(B, expo, expo0):
@@ -5522,7 +5538,8 @@ async def pm_trader():
         if notes:
             _lgmix = ' '.join(f"{k}:{v}" for k, v in sorted(hb.get('leagues', {}).items())) or 'none'
             print(f"[trader] cycle: {hb.get('vs', '?')} vs-events ({_lgmix}) · {hb.get('three_way', '?')} 3-way priced · "
-                  f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f} · cb {hb.get('cb', 0)}")
+                  f"{len(intents)} intents · expo ${hb.get('expo', 0):.2f} · cash ${hb.get('B', 0):.2f} · room ${_desk_room(hb.get('B', 0), hb.get('expo', 0), hb.get('expo0', hb.get('expo', 0))):.2f} · cb {hb.get('cb', 0)} · "
+                  f"live {hb.get('lv', 0)}(esp {hb.get('lvesp', 0)},>88 {hb.get('lv88', 0)},bf {hb.get('lvbf', 0)}) cb g{hb.get('cbgate', 0)}/fl{hb.get('cbfl', 0)} tw3 {hb.get('tw3', 0)}/{hb.get('tw3b', 0)}")
             for _tw in (hb.get('tuning') or []):
                 print(f"[trader] tuning: {_tw}")
         else:
