@@ -2289,10 +2289,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 124,
+        "home_ml": -141,
+        "away_ml": 117,
         "total": 7.5,
-        "ts": 1785331357
+        "ts": 1785336009
       }
     },
     {
@@ -2432,11 +2432,12 @@
       "homeTeam": "Washington Nationals",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": 102,
-        "away_ml": -123,
+        "home_ml": -103,
+        "away_ml": -117,
         "total": 9.0,
-        "ts": 1785334848
-      }
+        "ts": 1785336010
+      },
+      "last_alert_odds": -103
     },
     {
       "id": "minnesota-twins--1.5-0729",
@@ -2608,10 +2609,10 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 170,
-        "away_ml": -209,
-        "total": 155.5,
-        "ts": 1785334848
+        "home_ml": 163,
+        "away_ml": -199,
+        "total": 156.5,
+        "ts": 1785336010
       },
       "last_alert_odds": -209
     },
@@ -2632,10 +2633,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -167,
-        "away_ml": 138,
+        "home_ml": -158,
+        "away_ml": 131,
         "total": 9.5,
-        "ts": 1785333158
+        "ts": 1785336010
       },
       "last_alert_odds": -156
     },
@@ -2835,10 +2836,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -167,
-        "away_ml": 138,
+        "home_ml": -158,
+        "away_ml": 131,
         "total": 9.5,
-        "ts": 1785333159
+        "ts": 1785336010
       },
       "last_alert_odds": -167
     },
