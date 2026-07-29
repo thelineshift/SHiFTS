@@ -33336,8 +33336,11 @@
       "qty": 50,
       "market_slug": "aec-lol-mkf-flk-2026-07-29",
       "outcome": "FALKE Esports",
-      "status": "open",
-      "ts": "2026-07-29T10:50:10Z"
+      "status": "unfilled",
+      "ts": "2026-07-29T10:50:10Z",
+      "result": null,
+      "pnl": 0.0,
+      "autopsy": "order never filled \u2014 cancelled; no money moved."
     },
     {
       "price": 0.61,
@@ -33352,7 +33355,7 @@
       "qty": 2,
       "market_slug": "aec-wnba-conn-chi-2026-07-30",
       "outcome": "Chicago",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T10:50:12Z"
     }
   ],
