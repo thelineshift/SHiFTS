@@ -151,7 +151,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785330615.01073,
+  "last_x_receipt_ts": 1785333759.4569845,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -34171,7 +34171,5 @@
   "dep_checked_ts": 1785330625.27028,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
-  "x_ads": [
-    "\ud83d\udd12 The LOCK room went 9-10 this week \u2014 +0.0 units.\n\n$100 on every pick we posted = +$1 in 7 days.\n\nEvery pick posted before start. Every result receipted.\n\ud83d\udc8e https://thelineshift.github.io/SHiFTS/upgrade.html"
-  ]
+  "x_ads": []
 }
