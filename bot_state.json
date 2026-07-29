@@ -32955,6 +32955,22 @@
       "result": null,
       "pnl": 0.0,
       "autopsy": "order never filled \u2014 cancelled; no money moved."
+    },
+    {
+      "price": 0.04,
+      "short": true,
+      "stake": 2.6,
+      "kind": "EDGE",
+      "p_model": 0.25,
+      "event": "Movistar KOI Fenix vs. FALKE Esports",
+      "ev_start": "2026-07-29T17:30:00Z",
+      "reason": "model 25% vs market 4% \u2014 21% edge, half-Kelly",
+      "order_id": "BHNQ3A4QJ9NJ",
+      "qty": 65,
+      "market_slug": "aec-lol-mkf-flk-2026-07-29",
+      "outcome": "FALKE Esports",
+      "status": "open",
+      "ts": "2026-07-29T10:00:06Z"
     }
   ],
   "pm_stats": {
@@ -32962,7 +32978,7 @@
     "wins": 33,
     "losses": 79,
     "pnl": -75.92,
-    "trades": 421,
+    "trades": 422,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-08",
     "deposits": 14.0,
