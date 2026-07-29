@@ -43,6 +43,15 @@
   "bot_version": "9.24.25",
   "unannounced_results": [
     {
+      "id": "boston-red-sox--1.5-0728",
+      "desc": "Boston Red Sox -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 3, Athletics 4",
+      "tier": "lock"
+    },
+    {
       "id": "boston-red-sox-ml-0728",
       "desc": "Boston Red Sox ML",
       "odds": -150,
@@ -33399,42 +33408,13 @@
       "qty": 7,
       "market_slug": "aec-atp-jjwol-zhizha-2026-07-27",
       "outcome": "Zhizhen Zhang",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T17:23:03Z",
-      "price_path": [
-        {
-          "ts": 1785346644,
-          "px": 0.48
-        },
-        {
-          "ts": 1785348444,
-          "px": 0.49
-        },
-        {
-          "ts": 1785350844,
-          "px": 0.5
-        },
-        {
-          "ts": 1785353241,
-          "px": 0.51
-        },
-        {
-          "ts": 1785355042,
-          "px": 0.57
-        },
-        {
-          "ts": 1785357249,
-          "px": 0.4
-        },
-        {
-          "ts": 1785359087,
-          "px": 0.71
-        },
-        {
-          "ts": 1785361027,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T21:57:07Z",
+      "pnl": -3.36,
+      "autopsy": "model 61% vs market 48% missed \u2014 logged for the playbook review. Taken 0.48, rode to 0.01 before the result \u2014 beat the number by 47\u00a2 \u2705"
     },
     {
       "price": 0.3,
@@ -33461,15 +33441,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 45,
-    "losses": 100,
-    "pnl": -55.01,
+    "losses": 101,
+    "pnl": -58.37,
     "trades": 456,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-20",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 115.55,
-    "net": 51.55,
+    "account": 112.19,
+    "net": 48.19,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -33479,7 +33459,7 @@
       ],
       "EDGE": [
         36,
-        85,
+        86,
         0
       ],
       "LIVE-BET": [
@@ -33499,14 +33479,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T11:31:48Z",
-      "kind": "EDGE",
-      "outcome": "Pcific Esports",
-      "result": "WIN",
-      "pnl": 7.6,
-      "lesson": "+$7.60 \u2014 model 43% vs market 15% was real edge; thesis held. Taken 0.15, slid to 0.20 before the result \u2014 the number ran 5\u00a2 against us \u26a0\ufe0f (cashed out early at $9.10)"
-    },
     {
       "ts": "2026-07-29T11:31:50Z",
       "kind": "EDGE",
@@ -33738,6 +33710,14 @@
       "result": "LOSS",
       "pnl": -1.0,
       "lesson": "model 64% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.09 before the result \u2014 the number ran 41\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T21:57:07Z",
+      "kind": "EDGE",
+      "outcome": "Zhizhen Zhang",
+      "result": "LOSS",
+      "pnl": -3.36,
+      "lesson": "model 61% vs market 48% missed \u2014 logged for the playbook review. Taken 0.48, rode to 0.01 before the result \u2014 beat the number by 47\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -33821,7 +33801,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785357244.366945,
+  "dep_checked_ts": 1785362227.3032138,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
   "x_ads": []
