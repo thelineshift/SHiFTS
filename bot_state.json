@@ -30675,6 +30675,21 @@
       "outcome": "FOKUS Sakura",
       "status": "open",
       "ts": "2026-07-29T01:15:14Z"
+    },
+    {
+      "price": 0.13,
+      "stake": 1.82,
+      "kind": "EDGE",
+      "p_model": 0.37980097709539967,
+      "event": "Dalibor Svrcina vs. Adam Walton",
+      "ev_start": "2026-07-29T04:00:00Z",
+      "reason": "Elo 38% vs market 13% \u2014 25% edge, half-Kelly",
+      "order_id": "BHEHVGMKM9QM",
+      "qty": 14,
+      "market_slug": "astatc-atp-dalsvr-adawal-2026-07-27-sw2",
+      "outcome": "Dalibor Svrcina",
+      "status": "open",
+      "ts": "2026-07-29T01:20:19Z"
     }
   ],
   "pm_stats": {
@@ -30682,7 +30697,7 @@
     "wins": 32,
     "losses": 74,
     "pnl": -70.52,
-    "trades": 383,
+    "trades": 384,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-00",
     "deposits": 64.0,
