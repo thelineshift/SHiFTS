@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T17:37:21Z",
+  "updated": "2026-07-29T18:57:19Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2665,7 +2665,10 @@
         "total": 7.5,
         "ts": 1785329690
       },
-      "last_alert_odds": 144
+      "last_alert_odds": 144,
+      "result": "WIN",
+      "score": "Philadelphia Phillies 6, Miami Marlins 8",
+      "units_result": 1.95
     },
     {
       "id": "3-leg-parlay-0729-whale",
