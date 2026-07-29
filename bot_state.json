@@ -4224,7 +4224,7 @@
         }
       },
       "dota2:135854": {
-        "ts": 1785355366.447197,
+        "ts": 1785362636.2352989,
         "f": {
           "w": 3,
           "l": 2,
@@ -4456,7 +4456,7 @@
         }
       },
       "lol:138384": {
-        "ts": 1785348173.2900286,
+        "ts": 1785362620.6788628,
         "f": {
           "w": 2,
           "l": 3,
@@ -4485,7 +4485,7 @@
         }
       },
       "lol:128528": {
-        "ts": 1785348174.1440787,
+        "ts": 1785362621.2754657,
         "f": {
           "w": 1,
           "l": 4,
@@ -4643,7 +4643,7 @@
         }
       },
       "lol:138387": {
-        "ts": 1785348175.5610135,
+        "ts": 1785362622.5499387,
         "f": {
           "w": 2,
           "l": 3,
@@ -4730,7 +4730,7 @@
         }
       },
       "lol:132323": {
-        "ts": 1785348176.151558,
+        "ts": 1785362623.1367633,
         "f": {
           "w": 3,
           "l": 2,
@@ -4759,7 +4759,7 @@
         }
       },
       "lol:128363": {
-        "ts": 1785348174.7273152,
+        "ts": 1785362621.8626933,
         "f": {
           "w": 5,
           "l": 0,
@@ -4788,7 +4788,7 @@
         }
       },
       "lol:128347": {
-        "ts": 1785348178.735629,
+        "ts": 1785362625.7738297,
         "f": {
           "w": 2,
           "l": 3,
@@ -5612,7 +5612,7 @@
         }
       },
       "valorant:134426": {
-        "ts": 1785355364.114693,
+        "ts": 1785362631.666444,
         "f": {
           "w": 4,
           "l": 1,
@@ -5641,7 +5641,7 @@
         }
       },
       "valorant:131974": {
-        "ts": 1785355364.7008224,
+        "ts": 1785362632.251462,
         "f": {
           "w": 0,
           "l": 5,
@@ -5670,7 +5670,7 @@
         }
       },
       "dota2:128357": {
-        "ts": 1785355365.837391,
+        "ts": 1785362635.6477437,
         "f": {
           "w": 2,
           "l": 3,
@@ -6350,7 +6350,7 @@
         }
       },
       "lol:128529": {
-        "ts": 1785348172.6997504,
+        "ts": 1785362620.0925322,
         "f": {
           "w": 3,
           "l": 2,
@@ -8535,7 +8535,7 @@
         }
       },
       "lol:138982": {
-        "ts": 1785348169.2966652,
+        "ts": 1785362617.9623597,
         "f": {
           "w": 0,
           "l": 1,
@@ -8548,7 +8548,7 @@
         }
       },
       "lol:138983": {
-        "ts": 1785348169.7378643,
+        "ts": 1785362618.4050558,
         "f": {
           "w": 0,
           "l": 1,
@@ -8561,7 +8561,7 @@
         }
       },
       "lol:138936": {
-        "ts": 1785348170.264537,
+        "ts": 1785362618.963833,
         "f": {
           "w": 1,
           "l": 1,
@@ -8578,7 +8578,7 @@
         }
       },
       "lol:135069": {
-        "ts": 1785348170.711541,
+        "ts": 1785362619.4087853,
         "f": {
           "w": 2,
           "l": 3,
@@ -8607,7 +8607,7 @@
         }
       },
       "lol:135158": {
-        "ts": 1785348176.8501124,
+        "ts": 1785362623.7363403,
         "f": {
           "w": 0,
           "l": 5,
@@ -8636,7 +8636,7 @@
         }
       },
       "lol:138938": {
-        "ts": 1785348177.4551518,
+        "ts": 1785362624.3250244,
         "f": {
           "w": 1,
           "l": 0,
@@ -8649,7 +8649,7 @@
         }
       },
       "lol:134155": {
-        "ts": 1785348178.1425138,
+        "ts": 1785362625.186599,
         "f": {
           "w": 2,
           "l": 3,
@@ -8678,7 +8678,7 @@
         }
       },
       "cs2:130733": {
-        "ts": 1785355362.686465,
+        "ts": 1785362629.0777442,
         "f": {
           "w": 2,
           "l": 3,
@@ -8707,7 +8707,7 @@
         }
       },
       "cs2:137707": {
-        "ts": 1785355363.2791703,
+        "ts": 1785362629.6628716,
         "f": {
           "w": 2,
           "l": 3,
@@ -8736,7 +8736,7 @@
         }
       },
       "cs2:3251": {
-        "ts": 1785355367.7990859,
+        "ts": 1785362637.5254421,
         "f": {
           "w": 2,
           "l": 3,
@@ -8765,7 +8765,7 @@
         }
       },
       "cs2:138129": {
-        "ts": 1785355368.4092329,
+        "ts": 1785362638.1151605,
         "f": {
           "w": 4,
           "l": 1,
@@ -8789,6 +8789,354 @@
             {
               "won": true,
               "opp": "PURE"
+            }
+          ]
+        }
+      },
+      "lol:132567": {
+        "ts": 1785362626.487163,
+        "f": {
+          "w": 5,
+          "l": 0,
+          "res": [
+            {
+              "won": true,
+              "opp": "KT Rolster Challengers"
+            },
+            {
+              "won": true,
+              "opp": "T1 Academy"
+            },
+            {
+              "won": true,
+              "opp": "T1 Academy"
+            },
+            {
+              "won": true,
+              "opp": "KT Rolster Challengers"
+            },
+            {
+              "won": true,
+              "opp": "Top Esports Challenger"
+            }
+          ]
+        }
+      },
+      "lol:131040": {
+        "ts": 1785362627.0764303,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "Nongshim Esports Academy"
+            },
+            {
+              "won": false,
+              "opp": "Dplus KIA Challengers"
+            },
+            {
+              "won": true,
+              "opp": "KT Rolster Challengers"
+            },
+            {
+              "won": false,
+              "opp": "Dplus KIA Challengers"
+            },
+            {
+              "won": true,
+              "opp": "Nongshim Esports Academy"
+            }
+          ]
+        }
+      },
+      "lol:641": {
+        "ts": 1785362627.7807944,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "LNG Esports"
+            },
+            {
+              "won": false,
+              "opp": "EDward Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Team WE"
+            },
+            {
+              "won": true,
+              "opp": "Top Esports"
+            },
+            {
+              "won": false,
+              "opp": "Weibo Gaming"
+            }
+          ]
+        }
+      },
+      "lol:129972": {
+        "ts": 1785362628.369903,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Invictus Gaming"
+            },
+            {
+              "won": false,
+              "opp": "LGD Gaming"
+            },
+            {
+              "won": false,
+              "opp": "JD Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": true,
+              "opp": "JD Gaming"
+            }
+          ]
+        }
+      },
+      "lol:136063": {
+        "ts": 1785362630.3776276,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "HANJIN BRION"
+            },
+            {
+              "won": false,
+              "opp": "T1"
+            },
+            {
+              "won": true,
+              "opp": "Hanwha Life Esports"
+            },
+            {
+              "won": false,
+              "opp": "KT Rolster"
+            },
+            {
+              "won": false,
+              "opp": "HANJIN BRION"
+            }
+          ]
+        }
+      },
+      "lol:134115": {
+        "ts": 1785362630.9632952,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Gen.G"
+            },
+            {
+              "won": true,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": false,
+              "opp": "Nongshim Red Force"
+            },
+            {
+              "won": true,
+              "opp": "Kiwoom DRX"
+            },
+            {
+              "won": false,
+              "opp": "DN SOOPers"
+            }
+          ]
+        }
+      },
+      "lol:130356": {
+        "ts": 1785362632.9610767,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "CTBC Flying Oyster"
+            },
+            {
+              "won": false,
+              "opp": "Team Liquid"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": false,
+              "opp": "Team Secret Whales"
+            },
+            {
+              "won": true,
+              "opp": "GAM Esports"
+            }
+          ]
+        }
+      },
+      "lol:132568": {
+        "ts": 1785362633.549811,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "MVK Esports"
+            },
+            {
+              "won": false,
+              "opp": "Deep Cross Gaming"
+            },
+            {
+              "won": false,
+              "opp": "MVK Esports"
+            },
+            {
+              "won": false,
+              "opp": "CTBC Flying Oyster"
+            },
+            {
+              "won": false,
+              "opp": "CTBC Flying Oyster"
+            }
+          ]
+        }
+      },
+      "lol:405": {
+        "ts": 1785362634.2486534,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "ThunderTalk Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": false,
+              "opp": "LGD Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Anyone's Legend"
+            }
+          ]
+        }
+      },
+      "lol:2574": {
+        "ts": 1785362634.838323,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "LGD Gaming"
+            },
+            {
+              "won": true,
+              "opp": "JD Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Top Esports"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Top Esports"
+            }
+          ]
+        }
+      },
+      "lol:2883": {
+        "ts": 1785362638.8165655,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Kiwoom DRX"
+            },
+            {
+              "won": true,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": false,
+              "opp": "DN SOOPers"
+            },
+            {
+              "won": true,
+              "opp": "Nongshim Red Force"
+            },
+            {
+              "won": true,
+              "opp": "Gen.G"
+            }
+          ]
+        }
+      },
+      "lol:132531": {
+        "ts": 1785362639.4035177,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "HANJIN BRION"
+            },
+            {
+              "won": false,
+              "opp": "T1"
+            },
+            {
+              "won": false,
+              "opp": "Hanwha Life Esports"
+            },
+            {
+              "won": false,
+              "opp": "KT Rolster"
+            },
+            {
+              "won": false,
+              "opp": "BNK FEARX"
             }
           ]
         }
@@ -20095,66 +20443,66 @@
         "esp": true
       },
       "aec-lol-reda-est-2026-07-29|redacademy": {
-        "p0": 0.13,
+        "p0": 0.16,
         "m0": 0.25000000000000006,
         "bo": 1,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-lol-reda-est-2026-07-29|estralesports": {
-        "p0": 0.88,
+        "p0": 0.85,
         "m0": 0.75,
         "bo": 1,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-lol-tse-vksa-2026-07-30|teamsolid": {
-        "p0": 0.26,
+        "p0": 0.27,
         "m0": 0.4336283185840708,
         "bo": 1,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-lol-tse-vksa-2026-07-30|vivokeydstarsacademy": {
-        "p0": 0.75,
+        "p0": 0.74,
         "m0": 0.5663716814159292,
         "bo": 1,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-lol-blue-cont-2026-07-30|blueotter": {
-        "p0": 0.45,
+        "p0": 0.48,
         "m0": 0.2941176470588236,
         "bo": 3,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-lol-blue-cont-2026-07-30|contingentesports": {
-        "p0": 0.56,
+        "p0": 0.53,
         "m0": 0.7058823529411764,
         "bo": 3,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-lol-foxy-hlec-2026-07-30|bnkfearxyouth": {
-        "p0": 0.5,
+        "p0": 0.64,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-lol-foxy-hlec-2026-07-30|hanwhalifeesportschallengers": {
-        "p0": 0.51,
+        "p0": 0.37,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
@@ -20162,7 +20510,7 @@
         "p0": 0.57,
         "m0": 0.5,
         "bo": 1,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
@@ -20170,39 +20518,39 @@
         "p0": 0.44,
         "m0": 0.5,
         "bo": 1,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-valorant-var-dfm-2026-07-30|varrel": {
-        "p0": 0.48,
+        "p0": 0.51,
         "m0": 0.75,
         "bo": 3,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-valorant-var-dfm-2026-07-30|detonationfocusme": {
-        "p0": 0.53,
+        "p0": 0.5,
         "m0": 0.25,
         "bo": 3,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-dota2-pckcp-z10-2026-07-30|puckchamp": {
-        "p0": 0.26,
+        "p0": 0.23,
         "m0": 0.4336283185840708,
         "bo": 3,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
       "aec-dota2-pckcp-z10-2026-07-30|zerotenacity": {
-        "p0": 0.75,
+        "p0": 0.78,
         "m0": 0.5663716814159292,
         "bo": 3,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
@@ -20210,7 +20558,7 @@
         "p0": 0.72,
         "m0": 0.3684210526315789,
         "bo": 1,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
@@ -20218,7 +20566,7 @@
         "p0": 0.29,
         "m0": 0.631578947368421,
         "bo": 1,
-        "ts": 1785355336.6995795,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       },
@@ -20283,6 +20631,102 @@
         "m0": 0.6956521739130435,
         "bo": 3,
         "ts": 1785355336.6995795,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-dkc-t1a-2026-07-30|dpluskiachallengers": {
+        "p0": 0.34,
+        "m0": 0.6363636363636364,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-dkc-t1a-2026-07-30|tacademy": {
+        "p0": 0.67,
+        "m0": 0.36363636363636365,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-nip-wb-2026-07-30|ninjasinpyjamas": {
+        "p0": 0.4,
+        "m0": 0.5663716814159292,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-nip-wb-2026-07-30|weibogaming": {
+        "p0": 0.61,
+        "m0": 0.4336283185840708,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-dns-bfx-2026-07-30|dnsoopers": {
+        "p0": 0.2,
+        "m0": 0.5,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-dns-bfx-2026-07-30|bnkfearx": {
+        "p0": 0.81,
+        "m0": 0.5,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-dcg-gz-2026-07-30|deepcrossgaming": {
+        "p0": 0.63,
+        "m0": 0.5714285714285714,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-dcg-gz-2026-07-30|groundzerogaming": {
+        "p0": 0.38,
+        "m0": 0.4285714285714286,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-edg-we-2026-07-30|edwardgaming": {
+        "p0": 0.32,
+        "m0": 0.36363636363636365,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-edg-we-2026-07-30|teamwe": {
+        "p0": 0.69,
+        "m0": 0.6363636363636364,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-hle-dk-2026-07-30|hanwhalifeesports": {
+        "p0": 0.7,
+        "m0": 0.75,
+        "bo": 3,
+        "ts": 1785362605.228625,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-hle-dk-2026-07-30|dpluskia": {
+        "p0": 0.31,
+        "m0": 0.25,
+        "bo": 3,
+        "ts": 1785362605.228625,
         "ten": false,
         "esp": true
       }
@@ -33429,6 +33873,158 @@
       "settled_at": "2026-07-29T20:07:20Z",
       "pnl": 17.5,
       "autopsy": "+$17.50 \u2014 model 56% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.99 before the result \u2014 the number ran 69\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "price": 0.385,
+      "short": true,
+      "stake": 1.54,
+      "kind": "EDGE",
+      "p_model": 0.41119087367835294,
+      "event": "Atlanta Braves vs. New York Mets",
+      "ev_start": "2026-07-29T23:10:00Z",
+      "reason": "model 41% vs market 38% \u2014 3% edge, half-Kelly",
+      "order_id": "BJ0CR5XAE9NR",
+      "qty": 4,
+      "market_slug": "aec-mlb-atl-nym-2026-07-28",
+      "outcome": "New York Mets",
+      "status": "open",
+      "ts": "2026-07-29T22:04:23Z"
+    },
+    {
+      "price": 0.3,
+      "stake": 2.4,
+      "kind": "EDGE",
+      "p_model": 0.3451289963842319,
+      "event": "Kansas City Royals vs. Minnesota Twins",
+      "ev_start": "2026-07-29T23:40:00Z",
+      "reason": "model 35% vs market 30% \u2014 5% edge, half-Kelly",
+      "order_id": "BJ0E29QG69NJ",
+      "qty": 8,
+      "market_slug": "atc-mlb-kc-min-2026-07-29-f5-kc",
+      "outcome": "Kansas City Royals",
+      "status": "open",
+      "ts": "2026-07-29T22:04:25Z"
+    },
+    {
+      "price": 0.47,
+      "stake": 5.64,
+      "kind": "EDGE",
+      "p_model": 0.5468261964735517,
+      "event": "Houston Astros vs. Los Angeles Angels",
+      "ev_start": "2026-07-30T01:38:00Z",
+      "reason": "model 55% vs market 47% \u2014 8% edge, half-Kelly",
+      "order_id": "BJ0EP9M8J9NM",
+      "qty": 12,
+      "market_slug": "atc-mlb-hou-laa-2026-07-29-f5-hou",
+      "outcome": "Houston Astros",
+      "status": "open",
+      "ts": "2026-07-29T22:04:26Z"
+    },
+    {
+      "price": 0.4,
+      "stake": 3.6,
+      "kind": "EDGE",
+      "p_model": 0.4531738035264483,
+      "event": "Houston Astros vs. Los Angeles Angels",
+      "ev_start": "2026-07-30T01:38:00Z",
+      "reason": "model 45% vs market 40% \u2014 5% edge, half-Kelly",
+      "order_id": "BJ0C3HBR69P5",
+      "qty": 9,
+      "market_slug": "atc-mlb-hou-laa-2026-07-29-f5-laa",
+      "outcome": "Los Angeles Angels",
+      "status": "open",
+      "ts": "2026-07-29T22:04:27Z"
+    },
+    {
+      "price": 0.35,
+      "stake": 9.45,
+      "kind": "EDGE",
+      "p_model": 0.5054029945267461,
+      "event": "New York Yankees vs. Chicago White Sox",
+      "ev_start": "2026-07-29T23:40:00Z",
+      "reason": "model 51% vs market 35% \u2014 16% edge, half-Kelly",
+      "order_id": "BJ0C6NY2G9SK",
+      "qty": 27,
+      "market_slug": "atc-mlb-nyy-cws-2026-07-29-f5-cws",
+      "outcome": "Chicago White Sox",
+      "status": "open",
+      "ts": "2026-07-29T22:04:28Z"
+    },
+    {
+      "price": 0.5,
+      "stake": 7.5,
+      "kind": "EDGE",
+      "p_model": 0.5965567533583128,
+      "event": "Boston Red Sox vs. Athletics",
+      "ev_start": "2026-07-30T01:40:00Z",
+      "reason": "model 60% vs market 50% \u2014 10% edge, half-Kelly",
+      "order_id": "BJ0DVP73C9ST",
+      "qty": 15,
+      "market_slug": "atc-mlb-bos-ath-2026-07-29-f5-bos",
+      "outcome": "Boston Red Sox",
+      "status": "open",
+      "ts": "2026-07-29T22:04:30Z"
+    },
+    {
+      "price": 0.495,
+      "stake": 4.46,
+      "kind": "EDGE",
+      "p_model": 0.5514703573429913,
+      "event": "Chicago Cubs vs. St. Louis Cardinals",
+      "ev_start": "2026-07-29T23:45:00Z",
+      "reason": "model 55% vs market 50% \u2014 6% edge, half-Kelly",
+      "order_id": "BJ0BEQKR09P8",
+      "qty": 9,
+      "market_slug": "aec-mlb-chc-stl-2026-07-29",
+      "outcome": "Chicago Cubs",
+      "status": "open",
+      "ts": "2026-07-29T22:04:31Z"
+    },
+    {
+      "price": 0.47,
+      "stake": 14.57,
+      "kind": "EDGE",
+      "p_model": 0.6604097534899979,
+      "event": "Texas Rangers vs. Tampa Bay Rays",
+      "ev_start": "2026-07-29T22:40:00Z",
+      "reason": "model 66% vs market 47% \u2014 19% edge, half-Kelly",
+      "order_id": "BJ0BGEA2J9NC",
+      "qty": 31,
+      "market_slug": "atc-mlb-tex-tb-2026-07-29-f5-tb",
+      "outcome": "Tampa Bay Rays",
+      "status": "open",
+      "ts": "2026-07-29T22:04:32Z"
+    },
+    {
+      "price": 0.44,
+      "short": true,
+      "stake": 3.08,
+      "kind": "EDGE",
+      "p_model": 0.4871475693174745,
+      "event": "Cleveland Guardians vs. Cincinnati Reds",
+      "ev_start": "2026-07-29T23:10:00Z",
+      "reason": "model 49% vs market 44% \u2014 5% edge, half-Kelly",
+      "order_id": "BJ0C1QRZR9NY",
+      "qty": 7,
+      "market_slug": "aec-mlb-cle-cin-2026-07-29",
+      "outcome": "Cincinnati Reds",
+      "status": "open",
+      "ts": "2026-07-29T22:04:34Z"
+    },
+    {
+      "price": 0.47,
+      "stake": 3.29,
+      "kind": "EDGE",
+      "p_model": 0.5128524306825255,
+      "event": "Cleveland Guardians vs. Cincinnati Reds",
+      "ev_start": "2026-07-29T23:10:00Z",
+      "reason": "model 51% vs market 47% \u2014 4% edge, half-Kelly",
+      "order_id": "BJ0D4SQ329NF",
+      "qty": 7,
+      "market_slug": "atc-mlb-cle-cin-2026-07-29-f5-cle",
+      "outcome": "Cleveland Guardians",
+      "status": "open",
+      "ts": "2026-07-29T22:04:35Z"
     }
   ],
   "pm_stats": {
@@ -33436,7 +34032,7 @@
     "wins": 45,
     "losses": 101,
     "pnl": -58.37,
-    "trades": 456,
+    "trades": 466,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-29-20",
     "deposits": 14.0,
