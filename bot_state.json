@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 04:14 UTC",
+    "at": "2026-07-29 03:14 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-3-3": "2026-07-29 04:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-29 03:44 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-29 04:01 UTC",
+    "\ud83c\udfaffree-pick-3-3": "2026-07-29 00:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-29 03:04 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-29 03:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 02:45 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 04:14 UTC",
+    "at": "2026-07-29 03:14 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,11 +33,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 04:14 UTC",
-    "flags": []
+    "at": "2026-07-29 03:14 UTC",
+    "flags": [
+      "no challenge bet registered for 2026-07-28 (due 6 PM ET)"
+    ]
   },
   "giveaway_watch": {
-    "at": "2026-07-29 04:14 UTC",
+    "at": "2026-07-29 03:14 UTC",
     "flags": []
   },
   "bot_version": "9.24.15",
@@ -23227,106 +23229,13 @@
       "qty": 7,
       "market_slug": "aec-wnba-por-lv-2026-07-28",
       "outcome": "Portland",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-27T10:11:53Z",
-      "price_path": [
-        {
-          "ts": 1785239660,
-          "px": 0.16
-        },
-        {
-          "ts": 1785241460,
-          "px": 0.16
-        },
-        {
-          "ts": 1785243260,
-          "px": 0.16
-        },
-        {
-          "ts": 1785245060,
-          "px": 0.16
-        },
-        {
-          "ts": 1785248059,
-          "px": 0.16
-        },
-        {
-          "ts": 1785249860,
-          "px": 0.16
-        },
-        {
-          "ts": 1785252266,
-          "px": 0.16
-        },
-        {
-          "ts": 1785254660,
-          "px": 0.16
-        },
-        {
-          "ts": 1785257060,
-          "px": 0.16
-        },
-        {
-          "ts": 1785259460,
-          "px": 0.16
-        },
-        {
-          "ts": 1785261859,
-          "px": 0.16
-        },
-        {
-          "ts": 1785263662,
-          "px": 0.16
-        },
-        {
-          "ts": 1785267262,
-          "px": 0.15
-        },
-        {
-          "ts": 1785269660,
-          "px": 0.15
-        },
-        {
-          "ts": 1785272065,
-          "px": 0.15
-        },
-        {
-          "ts": 1785274459,
-          "px": 0.15
-        },
-        {
-          "ts": 1785276859,
-          "px": 0.15
-        },
-        {
-          "ts": 1785279259,
-          "px": 0.15
-        },
-        {
-          "ts": 1785281062,
-          "px": 0.15
-        },
-        {
-          "ts": 1785283460,
-          "px": 0.15
-        },
-        {
-          "ts": 1785288266,
-          "px": 0.15
-        },
-        {
-          "ts": 1785291260,
-          "px": 0.1
-        },
-        {
-          "ts": 1785293074,
-          "px": 0.08
-        },
-        {
-          "ts": 1785295460,
-          "px": 0.07
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T04:14:22Z",
+      "pnl": -1.12,
+      "autopsy": "model 26% vs market 16% missed \u2014 logged for the playbook review. Taken 0.16, slid to 0.07 before the result \u2014 the number ran 9\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.22,
@@ -25364,10 +25273,6 @@
       "ts": "2026-07-27T16:25:14Z",
       "price_path": [
         {
-          "ts": 1785242061,
-          "px": 0.535
-        },
-        {
           "ts": 1785243861,
           "px": 0.535
         },
@@ -25457,6 +25362,10 @@
         },
         {
           "ts": 1785295461,
+          "px": 0.535
+        },
+        {
+          "ts": 1785298466,
           "px": 0.535
         }
       ]
@@ -25602,10 +25511,6 @@
       "ts": "2026-07-27T17:30:12Z",
       "price_path": [
         {
-          "ts": 1785239663,
-          "px": 0.27
-        },
-        {
           "ts": 1785242062,
           "px": 0.27
         },
@@ -25695,6 +25600,10 @@
         },
         {
           "ts": 1785295461,
+          "px": 0.25
+        },
+        {
+          "ts": 1785298466,
           "px": 0.25
         }
       ]
@@ -26172,10 +26081,6 @@
       "ts": "2026-07-27T22:50:05Z",
       "price_path": [
         {
-          "ts": 1785242063,
-          "px": 0.55
-        },
-        {
           "ts": 1785243863,
           "px": 0.55
         },
@@ -26266,6 +26171,10 @@
         {
           "ts": 1785295461,
           "px": 0.57
+        },
+        {
+          "ts": 1785298466,
+          "px": 0.58
         }
       ]
     },
@@ -26679,10 +26588,6 @@
       "ts": "2026-07-28T00:45:02Z",
       "price_path": [
         {
-          "ts": 1785242065,
-          "px": 0.33
-        },
-        {
           "ts": 1785243865,
           "px": 0.31
         },
@@ -26772,6 +26677,10 @@
         },
         {
           "ts": 1785295462,
+          "px": 0.44
+        },
+        {
+          "ts": 1785298466,
           "px": 0.44
         }
       ]
@@ -27252,10 +27161,6 @@
       "ts": "2026-07-28T04:05:08Z",
       "price_path": [
         {
-          "ts": 1785242065,
-          "px": 0.54
-        },
-        {
           "ts": 1785243865,
           "px": 0.54
         },
@@ -27345,6 +27250,10 @@
         },
         {
           "ts": 1785295462,
+          "px": 0.53
+        },
+        {
+          "ts": 1785298467,
           "px": 0.53
         }
       ]
@@ -27772,10 +27681,6 @@
       "ts": "2026-07-28T06:05:03Z",
       "price_path": [
         {
-          "ts": 1785242065,
-          "px": 0.33
-        },
-        {
           "ts": 1785243866,
           "px": 0.33
         },
@@ -27865,6 +27770,10 @@
         },
         {
           "ts": 1785295462,
+          "px": 0.33
+        },
+        {
+          "ts": 1785298467,
           "px": 0.33
         }
       ]
@@ -28475,10 +28384,6 @@
       "ts": "2026-07-28T11:20:06Z",
       "price_path": [
         {
-          "ts": 1785242067,
-          "px": 0.39
-        },
-        {
           "ts": 1785243867,
           "px": 0.39
         },
@@ -28568,6 +28473,10 @@
         },
         {
           "ts": 1785295462,
+          "px": 0.34
+        },
+        {
+          "ts": 1785298467,
           "px": 0.34
         }
       ]
@@ -28966,6 +28875,10 @@
         {
           "ts": 1785295463,
           "px": 0.2
+        },
+        {
+          "ts": 1785298467,
+          "px": 0.2
         }
       ]
     },
@@ -29067,6 +28980,10 @@
         {
           "ts": 1785295463,
           "px": 0.63
+        },
+        {
+          "ts": 1785298468,
+          "px": 0.65
         }
       ]
     },
@@ -29168,6 +29085,10 @@
         {
           "ts": 1785295463,
           "px": 0.42
+        },
+        {
+          "ts": 1785298468,
+          "px": 0.41
         }
       ]
     },
@@ -29586,6 +29507,10 @@
         },
         {
           "ts": 1785295463,
+          "px": 0.24
+        },
+        {
+          "ts": 1785298468,
           "px": 0.24
         }
       ]
@@ -30017,6 +29942,10 @@
         {
           "ts": 1785295463,
           "px": 0.5
+        },
+        {
+          "ts": 1785298468,
+          "px": 0.5
         }
       ]
     },
@@ -30135,6 +30064,10 @@
         {
           "ts": 1785295464,
           "px": 0.36
+        },
+        {
+          "ts": 1785298468,
+          "px": 0.36
         }
       ]
     },
@@ -30203,6 +30136,10 @@
         },
         {
           "ts": 1785295464,
+          "px": 0.21
+        },
+        {
+          "ts": 1785298469,
           "px": 0.21
         }
       ]
@@ -30273,6 +30210,10 @@
         },
         {
           "ts": 1785295464,
+          "px": 0.42
+        },
+        {
+          "ts": 1785298469,
           "px": 0.42
         }
       ]
@@ -30462,6 +30403,10 @@
         {
           "ts": 1785295464,
           "px": 0.58
+        },
+        {
+          "ts": 1785298469,
+          "px": 0.58
         }
       ]
     },
@@ -30519,6 +30464,10 @@
         },
         {
           "ts": 1785295464,
+          "px": 0.49
+        },
+        {
+          "ts": 1785298469,
           "px": 0.49
         }
       ]
@@ -30618,6 +30567,10 @@
         {
           "ts": 1785295465,
           "px": 0.29
+        },
+        {
+          "ts": 1785298469,
+          "px": 0.29
         }
       ]
     },
@@ -30666,6 +30619,10 @@
         },
         {
           "ts": 1785295465,
+          "px": 0.1
+        },
+        {
+          "ts": 1785298469,
           "px": 0.1
         }
       ]
@@ -30724,6 +30681,10 @@
         {
           "ts": 1785295465,
           "px": 0.14
+        },
+        {
+          "ts": 1785298470,
+          "px": 0.14
         }
       ]
     },
@@ -30757,6 +30718,10 @@
         },
         {
           "ts": 1785295465,
+          "px": 0.545
+        },
+        {
+          "ts": 1785298470,
           "px": 0.545
         }
       ]
@@ -30792,6 +30757,10 @@
         {
           "ts": 1785295465,
           "px": 0.595
+        },
+        {
+          "ts": 1785298470,
+          "px": 0.595
         }
       ]
     },
@@ -30825,6 +30794,10 @@
         },
         {
           "ts": 1785295465,
+          "px": 0.21
+        },
+        {
+          "ts": 1785298470,
           "px": 0.21
         }
       ]
@@ -30860,6 +30833,10 @@
         {
           "ts": 1785295465,
           "px": 0.44
+        },
+        {
+          "ts": 1785298470,
+          "px": 0.44
         }
       ]
     },
@@ -30892,6 +30869,10 @@
         },
         {
           "ts": 1785295465,
+          "px": 0.66
+        },
+        {
+          "ts": 1785298470,
           "px": 0.66
         }
       ]
@@ -30927,6 +30908,10 @@
         {
           "ts": 1785295466,
           "px": 0.555
+        },
+        {
+          "ts": 1785298470,
+          "px": 0.555
         }
       ]
     },
@@ -30960,6 +30945,10 @@
         {
           "ts": 1785295466,
           "px": 0.23
+        },
+        {
+          "ts": 1785298471,
+          "px": 0.23
         }
       ]
     },
@@ -30976,22 +30965,13 @@
       "qty": 3,
       "market_slug": "aec-atp-shimoc-chabro-2026-07-27",
       "outcome": "Charles Broom",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T01:05:12Z",
-      "price_path": [
-        {
-          "ts": 1785288273,
-          "px": 0.39
-        },
-        {
-          "ts": 1785291266,
-          "px": 0.52
-        },
-        {
-          "ts": 1785293080,
-          "px": 0.1
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T04:14:31Z",
+      "pnl": -0.96,
+      "autopsy": "model 40% vs market 32% missed \u2014 logged for the playbook review. Taken 0.32, rode to 0.10 before the result \u2014 beat the number by 22\u00a2 \u2705"
     },
     {
       "price": 0.07,
@@ -31022,6 +31002,10 @@
         },
         {
           "ts": 1785295466,
+          "px": 0.07
+        },
+        {
+          "ts": 1785298473,
           "px": 0.07
         }
       ]
@@ -31079,6 +31063,10 @@
         },
         {
           "ts": 1785295466,
+          "px": 0.2
+        },
+        {
+          "ts": 1785298473,
           "px": 0.2
         }
       ]
@@ -31164,6 +31152,10 @@
         {
           "ts": 1785295467,
           "px": 0.34
+        },
+        {
+          "ts": 1785298473,
+          "px": 0.34
         }
       ]
     },
@@ -31194,6 +31186,10 @@
         {
           "ts": 1785295467,
           "px": 0.21
+        },
+        {
+          "ts": 1785298474,
+          "px": 0.21
         }
       ]
     },
@@ -31209,18 +31205,13 @@
       "qty": 11,
       "market_slug": "aec-wta-harkaj-taypre-2026-07-27",
       "outcome": "Haruka Kaji",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T02:05:04Z",
-      "price_path": [
-        {
-          "ts": 1785291266,
-          "px": 0.09
-        },
-        {
-          "ts": 1785293080,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-29T04:14:59Z",
+      "pnl": -1.43,
+      "autopsy": "model 28% vs market 13% missed \u2014 logged for the playbook review. Taken 0.13, slid to 0.01 before the result \u2014 the number ran 12\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.6,
@@ -31243,6 +31234,10 @@
         },
         {
           "ts": 1785295467,
+          "px": 0.63
+        },
+        {
+          "ts": 1785298501,
           "px": 0.63
         }
       ]
@@ -31269,6 +31264,10 @@
         {
           "ts": 1785295467,
           "px": 0.09
+        },
+        {
+          "ts": 1785298501,
+          "px": 0.09
         }
       ]
     },
@@ -31285,7 +31284,13 @@
       "market_slug": "astatc-atp-alemin-stetsi-2026-07-27-sw1",
       "outcome": "Alex de Minaur",
       "status": "resting",
-      "ts": "2026-07-29T04:05:29Z"
+      "ts": "2026-07-29T04:05:29Z",
+      "price_path": [
+        {
+          "ts": 1785298501,
+          "px": 0.64
+        }
+      ]
     },
     {
       "price": 0.555,
@@ -31301,7 +31306,13 @@
       "market_slug": "aec-mlb-sf-sd-2026-07-30",
       "outcome": "San Diego Padres",
       "status": "resting",
-      "ts": "2026-07-29T04:05:30Z"
+      "ts": "2026-07-29T04:05:30Z",
+      "price_path": [
+        {
+          "ts": 1785298502,
+          "px": 0.555
+        }
+      ]
     },
     {
       "price": 0.47,
@@ -31316,7 +31327,13 @@
       "market_slug": "aec-mlb-pit-cin-2026-07-31",
       "outcome": "Pittsburgh Pirates",
       "status": "open",
-      "ts": "2026-07-29T04:05:31Z"
+      "ts": "2026-07-29T04:05:31Z",
+      "price_path": [
+        {
+          "ts": 1785298502,
+          "px": 0.475
+        }
+      ]
     },
     {
       "price": 0.58,
@@ -31332,7 +31349,13 @@
       "market_slug": "aec-mlb-sf-sd-2026-07-31",
       "outcome": "San Diego Padres",
       "status": "resting",
-      "ts": "2026-07-29T04:05:33Z"
+      "ts": "2026-07-29T04:05:33Z",
+      "price_path": [
+        {
+          "ts": 1785298502,
+          "px": 0.575
+        }
+      ]
     },
     {
       "price": 0.36,
@@ -31347,21 +31370,27 @@
       "market_slug": "aec-mlb-wsh-atl-2026-07-31",
       "outcome": "Washington Nationals",
       "status": "open",
-      "ts": "2026-07-29T04:05:34Z"
+      "ts": "2026-07-29T04:05:34Z",
+      "price_path": [
+        {
+          "ts": 1785298502,
+          "px": 0.36
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 32,
-    "losses": 75,
-    "pnl": -72.08,
+    "losses": 78,
+    "pnl": -75.59,
     "trades": 395,
     "last_recap": "2026-07-28",
     "last_recap_hour": "2026-07-29-04",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 113.22,
-    "net": 99.22,
+    "account": 109.71,
+    "net": 95.71,
     "last_archive": "2026-07-29",
     "kind_totals": {
       "ARB": [
@@ -31371,7 +31400,7 @@
       ],
       "EDGE": [
         24,
-        60,
+        63,
         0
       ],
       "LIVE-BET": [
@@ -31391,30 +31420,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-28T01:04:20Z",
-      "kind": "EDGE",
-      "outcome": "ROSO GC",
-      "result": "LOSS",
-      "pnl": -3.04,
-      "lesson": "model 50% vs market 19% missed \u2014 logged for the playbook review. Taken 0.19, rode to 0.02 before the result \u2014 beat the number by 17\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-28T01:54:21Z",
-      "kind": "EDGE",
-      "outcome": "Eternal Focus Amethyst",
-      "result": "LOSS",
-      "pnl": -2.24,
-      "lesson": "model 50% vs market 28% missed \u2014 logged for the playbook review. Taken 0.28, rode to 0.59 before the result \u2014 beat the number by 31\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-28T02:04:20Z",
-      "kind": "TAIL",
-      "outcome": "Fuego",
-      "result": "WIN",
-      "pnl": 0.12,
-      "lesson": "+$0.12 \u2014 model 100% vs market 94% was real edge; thesis held. Taken 0.94, rode to 0.98 before the result \u2014 beat the number by 4\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-28T11:54:26Z",
       "kind": "EDGE",
@@ -31630,6 +31635,30 @@
       "result": "LOSS",
       "pnl": -1.56,
       "lesson": "model 50% vs market 26% missed \u2014 logged for the playbook review. Taken 0.26, slid to 0.04 before the result \u2014 the number ran 22\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T04:14:22Z",
+      "kind": "EDGE",
+      "outcome": "Portland",
+      "result": "LOSS",
+      "pnl": -1.12,
+      "lesson": "model 26% vs market 16% missed \u2014 logged for the playbook review. Taken 0.16, slid to 0.07 before the result \u2014 the number ran 9\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-29T04:14:31Z",
+      "kind": "EDGE",
+      "outcome": "Charles Broom",
+      "result": "LOSS",
+      "pnl": -0.96,
+      "lesson": "model 40% vs market 32% missed \u2014 logged for the playbook review. Taken 0.32, rode to 0.10 before the result \u2014 beat the number by 22\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-29T04:14:59Z",
+      "kind": "EDGE",
+      "outcome": "Haruka Kaji",
+      "result": "LOSS",
+      "pnl": -1.43,
+      "lesson": "model 28% vs market 13% missed \u2014 logged for the playbook review. Taken 0.13, slid to 0.01 before the result \u2014 the number ran 12\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
