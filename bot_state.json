@@ -5,7 +5,7 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-29 12:54 UTC",
+    "at": "2026-07-29 13:10 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -16,7 +16,7 @@
     "\ud83c\udf81giveaway": "2026-07-29 11:01 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-29 12:54 UTC",
+    "at": "2026-07-29 13:10 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,24 +33,15 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-29 12:54 UTC",
+    "at": "2026-07-29 13:10 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-29 12:54 UTC",
+    "at": "2026-07-29 13:10 UTC",
     "flags": []
   },
   "bot_version": "9.24.18",
   "unannounced_results": [
-    {
-      "id": "3-leg-parlay-0728-sharp",
-      "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
-      "odds": 262,
-      "result": "WIN",
-      "units": 1.31,
-      "score": "Legs: None: win \u00b7 None: win \u00b7 None: win",
-      "tier": "sharp"
-    },
     {
       "id": "3-leg-parlay-0728-lock",
       "desc": "Chicago Cubs ML + Marsborne ML + Washington Mystics ML",
@@ -160,7 +151,7 @@
       "tier": "lock"
     }
   ],
-  "last_x_receipt_ts": 1785326504.6045616,
+  "last_x_receipt_ts": 1785330615.01073,
   "last_recap_date": "2026-07-23",
   "scan_events": {
     "20260722-12": "ok",
@@ -276,7 +267,7 @@
     "weekly": "2026-08-02",
     "monthly": "2026-08-01",
     "deepdive_fired": "2026-07-25",
-    "x_ad": "2026-07-27"
+    "x_ad": "2026-07-29"
   },
   "gw_handled": [
     "1530230873780129892",
@@ -33416,7 +33407,7 @@
       "qty": 1,
       "market_slug": "aec-cs2-exmana-lk-2026-07-29",
       "outcome": "los kogutos",
-      "status": "open",
+      "status": "resting",
       "ts": "2026-07-29T13:05:37Z"
     }
   ],
@@ -33785,5 +33776,8 @@
   "deepdive_last": "2026-07-25",
   "dep_checked_ts": 1785324705.0141618,
   "x_bio_v": 2,
-  "op_cool_until": 1785327350.8907995
+  "op_cool_until": 1785327350.8907995,
+  "x_ads": [
+    "\ud83d\udd12 The LOCK room went 9-10 this week \u2014 +0.0 units.\n\n$100 on every pick we posted = +$1 in 7 days.\n\nEvery pick posted before start. Every result receipted.\n\ud83d\udc8e https://thelineshift.github.io/SHiFTS/upgrade.html"
+  ]
 }
