@@ -3623,12 +3623,12 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -219,
-        "away_ml": 177,
+        "home_ml": -207,
+        "away_ml": 169,
         "total": 181.5,
-        "ts": 1785394742
+        "ts": 1785400142
       },
-      "last_alert_odds": -219
+      "last_alert_odds": -207
     },
     {
       "id": "chicago-white-sox-ml-0730",
