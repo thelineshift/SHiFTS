@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T08:09:07Z",
+  "updated": "2026-07-30T11:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3540,7 +3540,10 @@
       "opp": "DetonatioN FocusMe",
       "analysis": "4-1 last 5 (beat T1, Team Secret, Team Secret) (lost to Gen.G Esports) vs 0-5 \u2014 live Pinnacle line -115 (our 90% vs book 50%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat T1, Team Secret, Team Secret) (lost to Gen.G Esports) vs 0-5 \u2014 live Pinnacle line -115 (our 90% vs book 50%). Books hang respect on the",
       "awayTeam": "VARREL",
-      "homeTeam": "DetonatioN FocusMe"
+      "homeTeam": "DetonatioN FocusMe",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "VARREL 1-2 DetonatioN FocusMe \u00b7 final"
     },
     {
       "id": "san-diego-padres-ml-0730",
@@ -3728,7 +3731,10 @@
       "opp": "EDward Gaming",
       "analysis": "2-3 last 5 (beat LGD Gaming, JD Gaming) (lost to Top Esports) vs 0-5 \u2014 live Pinnacle line -256 (our 90% vs book 68%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat LGD Gaming, JD Gaming) (lost to Top Esports) vs 0-5 \u2014 live Pinnacle line -256 (our 90% vs book 68%). Books hang respect on the wrong side \u2014 **22",
       "awayTeam": "Team WE",
-      "homeTeam": "EDward Gaming"
+      "homeTeam": "EDward Gaming",
+      "result": "WIN",
+      "units_result": 0.59,
+      "score": "Team WE 2-0 EDward Gaming \u00b7 final"
     }
   ]
 }
