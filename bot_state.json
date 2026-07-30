@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "tampa-bay-rays-ml-0730",
+      "desc": "Tampa Bay Rays ML",
+      "odds": -125,
+      "result": "WIN",
+      "units": 1.2,
+      "score": "Texas Rangers 2, Tampa Bay Rays 3",
+      "tier": "whale"
+    },
+    {
+      "id": "tampa-bay-rays--1.5-0730",
+      "desc": "Tampa Bay Rays -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Texas Rangers 2, Tampa Bay Rays 3",
+      "tier": "sharp"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -31931,10 +31950,6 @@
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
         {
-          "ts": 1785391142,
-          "px": 0.19
-        },
-        {
           "ts": 1785395942,
           "px": 0.19
         },
@@ -32025,6 +32040,10 @@
         {
           "ts": 1785438554,
           "px": 0.22
+        },
+        {
+          "ts": 1785440942,
+          "px": 0.2
         }
       ]
     },
@@ -32446,10 +32465,6 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
-          "ts": 1785390543,
-          "px": 0.445
-        },
-        {
           "ts": 1785394742,
           "px": 0.445
         },
@@ -32539,6 +32554,10 @@
         },
         {
           "ts": 1785438555,
+          "px": 0.445
+        },
+        {
+          "ts": 1785440942,
           "px": 0.445
         }
       ]
@@ -32727,10 +32746,6 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
-          "ts": 1785386343,
-          "px": 0.15
-        },
-        {
           "ts": 1785388743,
           "px": 0.15
         },
@@ -32820,6 +32835,10 @@
         },
         {
           "ts": 1785438555,
+          "px": 0.15
+        },
+        {
+          "ts": 1785440943,
           "px": 0.15
         }
       ]
