@@ -51,7 +51,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "chicago-white-sox-ml-0729",
+      "desc": "Chicago White Sox ML",
+      "odds": 123,
+      "result": "WIN",
+      "units": 1.23,
+      "score": "New York Yankees 5, Chicago White Sox 6",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -30121,10 +30131,6 @@
       "ts": "2026-07-29T01:00:07Z",
       "price_path": [
         {
-          "ts": 1785333161,
-          "px": 0.65
-        },
-        {
           "ts": 1785335458,
           "px": 0.65
         },
@@ -30215,6 +30221,10 @@
         {
           "ts": 1785381542,
           "px": 0.85
+        },
+        {
+          "ts": 1785383342,
+          "px": 0.8
         }
       ]
     },
@@ -30288,10 +30298,6 @@
       "status": "open",
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
-        {
-          "ts": 1785333161,
-          "px": 0.22
-        },
         {
           "ts": 1785335459,
           "px": 0.22
@@ -30382,6 +30388,10 @@
         },
         {
           "ts": 1785381542,
+          "px": 0.2
+        },
+        {
+          "ts": 1785383342,
           "px": 0.2
         }
       ]
@@ -32753,6 +32763,10 @@
         {
           "ts": 1785380948,
           "px": 0.4
+        },
+        {
+          "ts": 1785383343,
+          "px": 0.4
         }
       ]
     },
@@ -32770,7 +32784,13 @@
       "market_slug": "aec-mlb-bos-ath-2026-07-29",
       "outcome": "Athletics",
       "status": "open",
-      "ts": "2026-07-30T03:44:45Z"
+      "ts": "2026-07-30T03:44:45Z",
+      "price_path": [
+        {
+          "ts": 1785383343,
+          "px": 0.39
+        }
+      ]
     }
   ],
   "pm_stats": {
