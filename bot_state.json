@@ -13,7 +13,7 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-07-30 10:59 UTC",
+    "at": "2026-07-30 10:29 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -24,7 +24,7 @@
     "\ud83c\udf81giveaway": "2026-07-30 02:16 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 10:59 UTC",
+    "at": "2026-07-30 10:29 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,11 +41,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 10:59 UTC",
+    "at": "2026-07-30 10:29 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-30 10:59 UTC",
+    "at": "2026-07-30 10:29 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
@@ -27990,10 +27990,6 @@
       "ts": "2026-07-28T06:05:03Z",
       "price_path": [
         {
-          "ts": 1785359085,
-          "px": 0.27
-        },
-        {
           "ts": 1785361025,
           "px": 0.27
         },
@@ -28084,6 +28080,10 @@
         {
           "ts": 1785406742,
           "px": 0.26
+        },
+        {
+          "ts": 1785409142,
+          "px": 0.22
         }
       ]
     },
@@ -30436,10 +30436,6 @@
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
         {
-          "ts": 1785359086,
-          "px": 0.22
-        },
-        {
           "ts": 1785361026,
           "px": 0.22
         },
@@ -30529,6 +30525,10 @@
         },
         {
           "ts": 1785406742,
+          "px": 0.2
+        },
+        {
+          "ts": 1785409142,
           "px": 0.2
         }
       ]
@@ -31232,10 +31232,6 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
-          "ts": 1785355042,
-          "px": 0.14
-        },
-        {
           "ts": 1785357249,
           "px": 0.14
         },
@@ -31325,6 +31321,10 @@
         },
         {
           "ts": 1785406743,
+          "px": 0.16
+        },
+        {
+          "ts": 1785409142,
           "px": 0.16
         }
       ]
@@ -32901,50 +32901,13 @@
       "qty": 19,
       "market_slug": "aec-valorant-var-dfm-2026-07-30",
       "outcome": "VARREL",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-30T04:04:54Z",
-      "price_path": [
-        {
-          "ts": 1785384544,
-          "px": 0.52
-        },
-        {
-          "ts": 1785386344,
-          "px": 0.52
-        },
-        {
-          "ts": 1785388743,
-          "px": 0.51
-        },
-        {
-          "ts": 1785390544,
-          "px": 0.54
-        },
-        {
-          "ts": 1785394743,
-          "px": 0.52
-        },
-        {
-          "ts": 1785396548,
-          "px": 0.56
-        },
-        {
-          "ts": 1785398943,
-          "px": 0.63
-        },
-        {
-          "ts": 1785400743,
-          "px": 0.47
-        },
-        {
-          "ts": 1785403143,
-          "px": 0.35
-        },
-        {
-          "ts": 1785406743,
-          "px": 0.82
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T10:59:03Z",
+      "pnl": -9.96,
+      "autopsy": "model 75% vs market 52% missed \u2014 logged for the playbook review. Taken 0.52, rode to 0.82 before the result \u2014 beat the number by 30\u00a2 \u2705"
     },
     {
       "price": 0.3,
@@ -32993,6 +32956,10 @@
         {
           "ts": 1785406743,
           "px": 0.28
+        },
+        {
+          "ts": 1785409145,
+          "px": 0.25
         }
       ]
     },
@@ -33100,21 +33067,27 @@
       "market_slug": "aec-lol-hle-dk-2026-07-30",
       "outcome": "Hanwha Life Esports",
       "status": "open",
-      "ts": "2026-07-30T10:49:46Z"
+      "ts": "2026-07-30T10:49:46Z",
+      "price_path": [
+        {
+          "ts": 1785409145,
+          "px": 0.37
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 50,
-    "losses": 115,
-    "pnl": -44.58,
+    "losses": 116,
+    "pnl": -54.54,
     "trades": 480,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-10",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 86.5,
-    "net": 22.5,
+    "account": 76.54,
+    "net": 12.54,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33124,7 +33097,7 @@
       ],
       "EDGE": [
         41,
-        100,
+        101,
         0
       ],
       "LIVE-BET": [
@@ -33144,14 +33117,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T19:37:19Z",
-      "kind": "EDGE",
-      "outcome": "Alex de Minaur",
-      "result": "LOSS",
-      "pnl": -2.32,
-      "lesson": "model 65% vs market 58% missed \u2014 logged for the playbook review. Taken 0.58, slid to 0.50 before the result \u2014 the number ran 8\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T19:37:21Z",
       "kind": "EDGE",
@@ -33383,6 +33348,14 @@
       "result": "LOSS",
       "pnl": -10.14,
       "lesson": "model 50% vs market 26% missed \u2014 logged for the playbook review. Taken 0.26, slid to 0.06 before the result \u2014 the number ran 20\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T10:59:03Z",
+      "kind": "EDGE",
+      "outcome": "VARREL",
+      "result": "LOSS",
+      "pnl": -9.96,
+      "lesson": "model 75% vs market 52% missed \u2014 logged for the playbook review. Taken 0.52, rode to 0.82 before the result \u2014 beat the number by 30\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
