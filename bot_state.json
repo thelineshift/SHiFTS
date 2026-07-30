@@ -45,6 +45,15 @@
   "bot_version": "9.24.28",
   "unannounced_results": [
     {
+      "id": "boston-red-sox-ml-0728",
+      "desc": "Boston Red Sox ML",
+      "odds": -150,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 3, Athletics 4",
+      "tier": "sharp"
+    },
+    {
       "id": "los-angeles-sparks-ml-0728",
       "desc": "Los Angeles Sparks ML",
       "odds": 163,
@@ -24194,10 +24203,6 @@
       "ts": "2026-07-27T10:16:51Z",
       "price_path": [
         {
-          "ts": 1785321862,
-          "px": 0.43
-        },
-        {
           "ts": 1785324105,
           "px": 0.43
         },
@@ -24288,6 +24293,10 @@
         {
           "ts": 1785371340,
           "px": 0.105
+        },
+        {
+          "ts": 1785373140,
+          "px": 0.08
         }
       ]
     },
@@ -32888,26 +32897,13 @@
       "qty": 7,
       "market_slug": "atc-mlb-cle-cin-2026-07-29-f5-cle",
       "outcome": "Cleveland Guardians",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T22:04:35Z",
-      "price_path": [
-        {
-          "ts": 1785363190,
-          "px": 0.47
-        },
-        {
-          "ts": 1785365948,
-          "px": 0.47
-        },
-        {
-          "ts": 1785368344,
-          "px": 0.4
-        },
-        {
-          "ts": 1785370147,
-          "px": 0.27
-        }
-      ]
+      "result": "WIN",
+      "payout": 7.0,
+      "settled_at": "2026-07-30T00:59:03Z",
+      "pnl": 3.71,
+      "autopsy": "+$3.71 \u2014 model 51% vs market 47% was real edge; thesis held. Taken 0.47, slid to 0.27 before the result \u2014 the number ran 20\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.34,
@@ -33006,16 +33002,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 46,
+    "wins": 47,
     "losses": 104,
-    "pnl": -45.69,
+    "pnl": -41.98,
     "trades": 469,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-00",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 89.47,
-    "net": 25.47,
+    "account": 93.18,
+    "net": 29.18,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33024,7 +33020,7 @@
         0
       ],
       "EDGE": [
-        37,
+        38,
         89,
         0
       ],
@@ -33045,14 +33041,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T13:10:23Z",
-      "kind": "TAIL",
-      "outcome": "Hanwha Eagles",
-      "result": "WIN",
-      "pnl": 0.05,
-      "lesson": "+$0.05 \u2014 thesis held."
-    },
     {
       "ts": "2026-07-29T13:22:07Z",
       "kind": "EDGE",
@@ -33284,6 +33272,14 @@
       "result": "LOSS",
       "pnl": -1.36,
       "lesson": "model 41% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.16 before the result \u2014 the number ran 18\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T00:59:03Z",
+      "kind": "EDGE",
+      "outcome": "Cleveland Guardians",
+      "result": "WIN",
+      "pnl": 3.71,
+      "lesson": "+$3.71 \u2014 model 51% vs market 47% was real edge; thesis held. Taken 0.47, slid to 0.27 before the result \u2014 the number ran 20\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
