@@ -316,7 +316,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-07",
-  "op_calls": 87,
+  "op_calls": 94,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1201,51 +1201,75 @@
       "meta_ts": 1784925282.1446652,
       "lines": [
         [
+          "Imperial eSports",
+          "Shinden",
+          1.45,
+          2.65
+        ],
+        [
+          "Bestia",
+          "Galorys",
+          1.46,
+          2.61
+        ],
+        [
           "Team Spirit",
           "Team Liquid",
-          1.278,
-          3.78
+          1.244,
+          3.5
         ],
         [
           "3Dmax",
           "MOUZ",
-          1.229,
-          4.29
+          1.195,
+          4.78
+        ],
+        [
+          "The Mongolz",
+          "Faze Clan",
+          2.45,
+          1.564
+        ],
+        [
+          "Astralis",
+          "Pain Gaming",
+          1.709,
+          2.16
         ],
         [
           "Sparta eSports",
           "Just Players",
-          1.729,
-          2.03
+          1.769,
+          1.98
         ],
         [
           "Sparta eSports",
           "New Vision",
-          1.25,
-          3.6
+          1.234,
+          3.73
         ],
         [
           "Just Players",
           "Inner Circle Academy",
-          1.561,
-          2.36
+          1.505,
+          2.49
         ]
       ],
-      "odds_ts": 1785384022.229222
+      "odds_ts": 1785412823.0752492
     },
     "valorant": {
       "lines": [
         [
           "Natus Vincere",
           "PCIFIC",
-          1.235,
-          4.19
+          1.274,
+          3.79
         ],
         [
           "Eternal Fire",
           "Fnatic",
-          3.28,
-          1.344
+          2.83,
+          1.438
         ],
         [
           "BBL",
@@ -1262,23 +1286,23 @@
         [
           "FULL SENSE",
           "ZETA DIVISION",
-          1.232,
-          3.86
+          1.238,
+          3.8
         ],
         [
           "KRU",
           "G2",
-          4.77,
-          1.193
+          4.42,
+          1.217
         ],
         [
           "100 Thieves",
           "Sentinels",
-          1.37,
-          3.15
+          1.366,
+          3.16
         ]
       ],
-      "odds_ts": 1785384025.9896624,
+      "odds_ts": 1785412826.4763565,
       "active": [
         901974,
         902246,
@@ -2483,14 +2507,8 @@
         [
           "Soopers",
           "FEARX",
-          4.54,
-          1.187
-        ],
-        [
-          "Hanwha Life Esports",
-          "Dplus",
-          1.431,
-          2.82
+          15.65,
+          1.022
         ],
         [
           "Gen.g Esports",
@@ -2501,26 +2519,26 @@
         [
           "Eintracht Spandau",
           "Centaurs",
-          1.31,
-          3.39
+          1.248,
+          3.85
         ],
         [
           "Kaufland Hangry Knights",
           "VfB eSports",
-          5.07,
-          1.153
+          5.58,
+          1.129
         ],
         [
-          "Fearx Youth",
-          "Hanwha Life Esports Challengers",
-          1.578,
-          2.4
+          "Drx Challengers",
+          "Brion Challengers",
+          1.469,
+          2.69
         ],
         [
-          "Dplus Challengers",
-          "T1 Esports Academy",
-          2.76,
-          1.448
+          "Soopers Challengers",
+          "KT Rolster Challengers",
+          1.68,
+          2.2
         ],
         [
           "Winthrop University",
@@ -2529,43 +2547,55 @@
           4.7
         ],
         [
+          "Conviction",
+          "Dorado Gaming",
+          1.175,
+          4.7
+        ],
+        [
           "Weibo Gaming",
           "Shenzhen Ninjas In Pyjamas",
-          2.39,
-          1.581
+          1.039,
+          10.41
         ],
         [
           "Edward Gaming",
           "Team WE",
-          2.98,
-          1.39
+          6.2,
+          1.099
         ],
         [
           "ThunderTalk Gaming",
           "JD Gaming",
-          2.96,
-          1.393
+          2.92,
+          1.404
         ],
         [
           "Fukuoka Softbank Hawks Gaming",
           "Detonation Focusme",
-          1.063,
-          8.25
+          1.236,
+          3.81
         ],
         [
           "Deep Cross Gaming",
           "Ground Zero",
-          1.42,
-          2.86
+          1.211,
+          4.23
+        ],
+        [
+          "Once Upon A Team",
+          "Frites eSports Club",
+          1.02,
+          6.68
         ],
         [
           "mCon esports",
           "Senshi eSports",
-          1.746,
-          2.1
+          1.735,
+          2.12
         ]
       ],
-      "odds_ts": 1785384016.59595
+      "odds_ts": 1785412817.330519
     }
   },
   "parlay_rot": 18,
@@ -33566,6 +33596,6 @@
   "deepdive_last": "2026-07-25",
   "dep_checked_ts": 1785412143.48376,
   "x_bio_v": 2,
-  "op_cool_until": 1785384925.9896624,
+  "op_cool_until": 1785413726.4763565,
   "x_ads": []
 }
