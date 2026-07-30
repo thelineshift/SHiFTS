@@ -51,12 +51,12 @@
   "bot_version": "9.24.29",
   "unannounced_results": [
     {
-      "id": "habos-babos-ml-0730",
-      "desc": "Habos Babos ML",
-      "odds": -265,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Habos Babos 0-2 SK Nebula \u00b7 final",
+      "id": "just-players-ml-0730",
+      "desc": "Just Players ML",
+      "odds": -198,
+      "result": "WIN",
+      "units": 0.76,
+      "score": "Just Players 2-1 SPARTA \u00b7 final",
       "tier": "whale"
     }
   ],
@@ -31388,10 +31388,6 @@
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
         {
-          "ts": 1785381542,
-          "px": 0.2
-        },
-        {
           "ts": 1785383342,
           "px": 0.2
         },
@@ -31481,6 +31477,10 @@
         },
         {
           "ts": 1785428342,
+          "px": 0.2
+        },
+        {
+          "ts": 1785430142,
           "px": 0.2
         }
       ]
@@ -31903,10 +31903,6 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
-          "ts": 1785380345,
-          "px": 0.445
-        },
-        {
           "ts": 1785382742,
           "px": 0.445
         },
@@ -31996,6 +31992,10 @@
         },
         {
           "ts": 1785428342,
+          "px": 0.445
+        },
+        {
+          "ts": 1785430142,
           "px": 0.445
         }
       ]
