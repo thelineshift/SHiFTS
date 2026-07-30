@@ -12,18 +12,18 @@
     "x_pin: all attempts failed"
   ],
   "time_audit": {
-    "at": "2026-07-30 02:16 UTC",
+    "at": "2026-07-30 02:28 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-4": "2026-07-30 00:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-30 02:16 UTC",
+    "\ud83e\uddfereceipts": "2026-07-30 02:26 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-30 00:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-30 02:16 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 02:16 UTC",
+    "at": "2026-07-30 02:28 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -40,13 +40,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 02:16 UTC",
+    "at": "2026-07-30 02:28 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-29 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-30 02:16 UTC",
+    "at": "2026-07-30 02:28 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
@@ -171,7 +171,7 @@
     "20260729-1950"
   ],
   "boot_log": [
-    "2026-07-30T02:28:56Z"
+    "2026-07-30T02:28:49Z"
   ],
   "teasers": {
     "weekly": "2026-08-02",
@@ -299,7 +299,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
+  "last_deploy_id": "11f81fb2-3a34-463b-9ab5-e8cfb39c9235",
   "op_month": "2026-07",
   "op_calls": 80,
   "op_meta": {
