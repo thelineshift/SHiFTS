@@ -45,6 +45,15 @@
   "bot_version": "9.24.28",
   "unannounced_results": [
     {
+      "id": "boston-red-sox-ml-0728",
+      "desc": "Boston Red Sox ML",
+      "odds": -150,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 3, Athletics 4",
+      "tier": "sharp"
+    },
+    {
       "id": "los-angeles-sparks-ml-0728",
       "desc": "Los Angeles Sparks ML",
       "odds": 163,
@@ -106,15 +115,6 @@
       "units": 1.39,
       "score": "Baltimore Orioles 10, Detroit Tigers 9",
       "tier": "lock"
-    },
-    {
-      "id": "marsborne-ml-0729",
-      "desc": "Marsborne ML",
-      "odds": -265,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Marsborne 1-2 NRG \u00b7 final",
-      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785362587.0271225,
@@ -30327,10 +30327,6 @@
       "ts": "2026-07-29T01:00:07Z",
       "price_path": [
         {
-          "ts": 1785320066,
-          "px": 0.65
-        },
-        {
           "ts": 1785321867,
           "px": 0.65
         },
@@ -30421,6 +30417,10 @@
         {
           "ts": 1785370141,
           "px": 0.63
+        },
+        {
+          "ts": 1785371941,
+          "px": 0.63
         }
       ]
     },
@@ -30494,10 +30494,6 @@
       "status": "open",
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
-        {
-          "ts": 1785320066,
-          "px": 0.22
-        },
         {
           "ts": 1785321867,
           "px": 0.22
@@ -30588,6 +30584,10 @@
         },
         {
           "ts": 1785370141,
+          "px": 0.22
+        },
+        {
+          "ts": 1785371941,
           "px": 0.22
         }
       ]
@@ -32670,6 +32670,10 @@
         },
         {
           "ts": 1785370142,
+          "px": 0.47
+        },
+        {
+          "ts": 1785371942,
           "px": 0.47
         }
       ]
