@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T05:09:03Z",
+  "updated": "2026-07-30T05:09:20Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2553,7 +2553,10 @@
         "total": 11.0,
         "ts": 1785365340
       },
-      "last_alert_odds": -156
+      "last_alert_odds": -156,
+      "result": "WIN",
+      "score": "Boston Red Sox 4, Athletics 2",
+      "units_result": 0.91
     },
     {
       "id": "houston-astros-ml-0729",
