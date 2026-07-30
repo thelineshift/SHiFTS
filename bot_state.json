@@ -33852,7 +33852,13 @@
       "market_slug": "aec-valorant-skn-hbs-2026-07-30",
       "outcome": "Habos Babos",
       "status": "open",
-      "ts": "2026-07-30T14:44:58Z"
+      "ts": "2026-07-30T14:44:58Z",
+      "price_path": [
+        {
+          "ts": 1785422942,
+          "px": 0.35
+        }
+      ]
     }
   ],
   "pm_stats": {
