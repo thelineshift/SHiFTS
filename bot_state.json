@@ -1,7 +1,7 @@
 {
-  "executed_seq": 518,
+  "executed_seq": 519,
   "last_log": [
-    "seq 518 executed 2026-07-30 02:24 UTC",
+    "seq 519 executed 2026-07-30 02:32 UTC",
     "x_pin oauth2 api.x.com HTTP 404: b''",
     "x_pin oauth2 api.twitter.com HTTP 404: b''",
     "x_pin oauth2 api.x.com HTTP 404: b''",
@@ -9,7 +9,8 @@
     "x_pin oauth1[app2] api.twitter.com HTTP 404: b''",
     "x_pin oauth1[legacy] api.x.com HTTP 404: b''",
     "x_pin oauth1[legacy] api.twitter.com HTTP 404: b''",
-    "x_pin: all attempts failed"
+    "x_pin: all attempts failed",
+    "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
     "at": "2026-07-30 02:29 UTC",
@@ -121,7 +122,7 @@
     "pod-20260729": "ok-bot",
     "20260730-00": "ok-bot"
   },
-  "executed_cmd_seq": 520,
+  "executed_cmd_seq": 522,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 37,
