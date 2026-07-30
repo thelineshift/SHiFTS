@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-30 01:19 UTC",
+    "at": "2026-07-30 00:49 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-4": "2026-07-30 00:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-30 01:09 UTC",
+    "\ud83e\uddfereceipts": "2026-07-30 00:39 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-30 00:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 20:24 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 01:19 UTC",
+    "at": "2026-07-30 00:49 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,17 +33,26 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 01:19 UTC",
+    "at": "2026-07-30 00:49 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-29 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-30 01:19 UTC",
+    "at": "2026-07-30 00:49 UTC",
     "flags": []
   },
   "bot_version": "9.24.28",
   "unannounced_results": [
+    {
+      "id": "boston-red-sox-ml-0728",
+      "desc": "Boston Red Sox ML",
+      "odds": -150,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 3, Athletics 4",
+      "tier": "sharp"
+    },
     {
       "id": "los-angeles-sparks-ml-0728",
       "desc": "Los Angeles Sparks ML",
@@ -114,15 +123,6 @@
       "result": "WIN",
       "units": 0.65,
       "score": "Fluxo W7M 2-1 Bounty Hunters Esports \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "tampa-bay-rays-ml-0729",
-      "desc": "Tampa Bay Rays ML",
-      "odds": -142,
-      "result": "WIN",
-      "units": 1.06,
-      "score": "Texas Rangers 0, Tampa Bay Rays 3",
       "tier": "whale"
     }
   ],
@@ -27779,10 +27779,6 @@
       "ts": "2026-07-28T06:05:03Z",
       "price_path": [
         {
-          "ts": 1785321864,
-          "px": 0.31
-        },
-        {
           "ts": 1785324106,
           "px": 0.31
         },
@@ -27872,6 +27868,10 @@
         },
         {
           "ts": 1785372541,
+          "px": 0.27
+        },
+        {
+          "ts": 1785374341,
           "px": 0.27
         }
       ]
@@ -29575,10 +29575,6 @@
       "ts": "2026-07-28T18:45:22Z",
       "price_path": [
         {
-          "ts": 1785321865,
-          "px": 0.51
-        },
-        {
           "ts": 1785324108,
           "px": 0.51
         },
@@ -29669,6 +29665,10 @@
         {
           "ts": 1785372541,
           "px": 0.72
+        },
+        {
+          "ts": 1785374341,
+          "px": 0.74
         }
       ]
     },
@@ -31300,10 +31300,6 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
-          "ts": 1785321868,
-          "px": 0.15
-        },
-        {
           "ts": 1785324110,
           "px": 0.15
         },
@@ -31393,6 +31389,10 @@
         },
         {
           "ts": 1785372542,
+          "px": 0.15
+        },
+        {
+          "ts": 1785374342,
           "px": 0.15
         }
       ]
@@ -32618,6 +32618,10 @@
         {
           "ts": 1785372542,
           "px": 0.27
+        },
+        {
+          "ts": 1785374342,
+          "px": 0.22
         }
       ]
     },
@@ -32731,30 +32735,13 @@
       "qty": 27,
       "market_slug": "atc-mlb-nyy-cws-2026-07-29-f5-cws",
       "outcome": "Chicago White Sox",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T22:04:28Z",
-      "price_path": [
-        {
-          "ts": 1785363189,
-          "px": 0.35
-        },
-        {
-          "ts": 1785365948,
-          "px": 0.35
-        },
-        {
-          "ts": 1785368343,
-          "px": 0.35
-        },
-        {
-          "ts": 1785370143,
-          "px": 0.05
-        },
-        {
-          "ts": 1785372543,
-          "px": 0.02
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T01:19:02Z",
+      "pnl": -9.45,
+      "autopsy": "model 51% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, slid to 0.02 before the result \u2014 the number ran 33\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.5,
@@ -32789,6 +32776,10 @@
         },
         {
           "ts": 1785372543,
+          "px": 0.5
+        },
+        {
+          "ts": 1785374344,
           "px": 0.5
         }
       ]
@@ -32878,6 +32869,10 @@
         {
           "ts": 1785372543,
           "px": 0.065
+        },
+        {
+          "ts": 1785374345,
+          "px": 0.055
         }
       ]
     },
@@ -33051,21 +33046,27 @@
       "market_slug": "aec-mlb-chc-stl-2026-07-29",
       "outcome": "Chicago Cubs",
       "status": "open",
-      "ts": "2026-07-30T01:14:42Z"
+      "ts": "2026-07-30T01:14:42Z",
+      "price_path": [
+        {
+          "ts": 1785374345,
+          "px": 0.45
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 47,
-    "losses": 104,
-    "pnl": -40.09,
+    "losses": 105,
+    "pnl": -49.54,
     "trades": 472,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-00",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 95.07,
-    "net": 31.07,
+    "account": 85.62,
+    "net": 21.62,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33075,7 +33076,7 @@
       ],
       "EDGE": [
         38,
-        89,
+        90,
         0
       ],
       "LIVE-BET": [
@@ -33095,14 +33096,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T13:22:07Z",
-      "kind": "EDGE",
-      "outcome": "AG.AL",
-      "result": "LOSS",
-      "pnl": -1.28,
-      "lesson": "model 45% vs market 31% missed \u2014 logged for the playbook review. Taken 0.31, rode to 0.21 before the result \u2014 beat the number by 10\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-29T14:12:40Z",
       "kind": "EDGE",
@@ -33334,6 +33327,14 @@
       "result": "WIN",
       "pnl": 5.6,
       "lesson": "+$5.60 \u2014 model 35% vs market 30% was real edge; thesis held. Taken 0.30, rode to 0.89 before the result \u2014 beat the number by 59\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T01:19:02Z",
+      "kind": "EDGE",
+      "outcome": "Chicago White Sox",
+      "result": "LOSS",
+      "pnl": -9.45,
+      "lesson": "model 51% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, slid to 0.02 before the result \u2014 the number ran 33\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
