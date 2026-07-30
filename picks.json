@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T08:01:02Z",
+  "updated": "2026-07-30T08:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3691,7 +3691,10 @@
       "opp": "Dplus KIA",
       "analysis": "4-1 last 5 (beat Kiwoom DRX, Dplus KIA, Nongshim Red Force) (lost to DN SOOPers) vs 0-5 \u2014 live Pinnacle line -232 (our 90% vs book 66%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Kiwoom DRX, Dplus KIA, Nongshim Red Force) (lost to DN SOOPers) vs 0-5 \u2014 live Pinnacle line -232 (our 90% vs book 66%). That's a ",
       "awayTeam": "Hanwha Life Esports",
-      "homeTeam": "Dplus KIA"
+      "homeTeam": "Dplus KIA",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Hanwha Life Esports 0-2 BNK FearX Youth \u00b7 final"
     },
     {
       "id": "deep-cross-gaming-ml-0730",
