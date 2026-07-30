@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T02:49:05Z",
+  "updated": "2026-07-30T03:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2384,7 +2384,10 @@
         "away_ml": -149,
         "total": 7.5,
         "ts": 1785367140
-      }
+      },
+      "result": "WIN",
+      "score": "New York Yankees 5, Chicago White Sox 6",
+      "units_result": 1.23
     },
     {
       "id": "milwaukee-brewers-ml-0729",
