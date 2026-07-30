@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T17:09:07Z",
+  "updated": "2026-07-30T17:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3756,7 +3756,10 @@
       "opp": "mellren",
       "analysis": "2-1 last 5 (beat TrafficPills Esports, BakS eSports) (lost to Spirit Academy) vs 2-3 \u2014 model line -300 (our 75%) | \ud83e\udde0 **The read:** 2-1 last 5 (beat TrafficPills Esports, BakS eSports) (lost to Spirit Academy) vs 2-3 \u2014 model line -300 (our 75%). That's a **27-point** gap over mellren the number hasn'",
       "awayTeam": "GameSport",
-      "homeTeam": "mellren"
+      "homeTeam": "mellren",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "GameSport 0-2 mellren \u00b7 final"
     },
     {
       "id": "habos-babos-ml-0730",
@@ -3915,7 +3918,10 @@
       "opp": "B8 Academy",
       "analysis": "3-2 last 5 (beat ROUNDS, Bushido Wildcats, megoshort) (lost to Honv\u00e9d) vs 2-2 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat ROUNDS, Bushido Wildcats, megoshort) (lost to Honv\u00e9d) vs 2-2 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "Privateer Gaming",
-      "homeTeam": "B8 Academy"
+      "homeTeam": "B8 Academy",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Privateer Gaming 0-1 B8 Academy \u00b7 final"
     },
     {
       "id": "san-diego-padres--1.5-0730",
