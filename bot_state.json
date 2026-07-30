@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "varrel-ml-0730",
+      "desc": "VARREL ML",
+      "odds": -115,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "VARREL 1-2 DetonatioN FocusMe \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "team-we-ml-0730",
+      "desc": "Team WE ML",
+      "odds": -256,
+      "result": "WIN",
+      "units": 0.59,
+      "score": "Team WE 2-0 EDward Gaming \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -27991,10 +28010,6 @@
       "ts": "2026-07-28T06:05:03Z",
       "price_path": [
         {
-          "ts": 1785361025,
-          "px": 0.27
-        },
-        {
           "ts": 1785363187,
           "px": 0.27
         },
@@ -28085,6 +28100,10 @@
         {
           "ts": 1785409142,
           "px": 0.22
+        },
+        {
+          "ts": 1785410942,
+          "px": 0.29
         }
       ]
     },
@@ -30437,10 +30456,6 @@
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
         {
-          "ts": 1785361026,
-          "px": 0.22
-        },
-        {
           "ts": 1785363188,
           "px": 0.22
         },
@@ -30530,6 +30545,10 @@
         },
         {
           "ts": 1785409142,
+          "px": 0.2
+        },
+        {
+          "ts": 1785410942,
           "px": 0.2
         }
       ]
@@ -31233,10 +31252,6 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
-          "ts": 1785357249,
-          "px": 0.14
-        },
-        {
           "ts": 1785359086,
           "px": 0.14
         },
@@ -31326,6 +31341,10 @@
         },
         {
           "ts": 1785409142,
+          "px": 0.16
+        },
+        {
+          "ts": 1785410943,
           "px": 0.16
         }
       ]
