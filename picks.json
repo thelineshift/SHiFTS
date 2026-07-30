@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T20:00:55Z",
+  "updated": "2026-07-30T20:09:05Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3298,7 +3298,10 @@
         "away_ml": 113,
         "total": 9.0,
         "ts": 1785430742
-      }
+      },
+      "result": "WIN",
+      "score": "Kansas City Royals 3, Minnesota Twins 4",
+      "units_result": 0.7
     },
     {
       "id": "chicago-cubs-ml-0730",
