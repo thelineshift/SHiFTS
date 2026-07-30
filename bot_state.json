@@ -24203,10 +24203,6 @@
       "ts": "2026-07-27T10:16:51Z",
       "price_path": [
         {
-          "ts": 1785319465,
-          "px": 0.43
-        },
-        {
           "ts": 1785321862,
           "px": 0.43
         },
@@ -24296,6 +24292,10 @@
         },
         {
           "ts": 1785369540,
+          "px": 0.105
+        },
+        {
+          "ts": 1785371340,
           "px": 0.105
         }
       ]
@@ -32902,26 +32902,13 @@
       "qty": 4,
       "market_slug": "atc-mlb-atl-nym-2026-07-28-f5-nym",
       "outcome": "New York Mets",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T22:09:12Z",
-      "price_path": [
-        {
-          "ts": 1785363191,
-          "px": 0.34
-        },
-        {
-          "ts": 1785365948,
-          "px": 0.34
-        },
-        {
-          "ts": 1785368344,
-          "px": 0.29
-        },
-        {
-          "ts": 1785370147,
-          "px": 0.16
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T00:29:02Z",
+      "pnl": -1.36,
+      "autopsy": "model 41% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.16 before the result \u2014 the number ran 18\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.41,
@@ -32993,15 +32980,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 46,
-    "losses": 103,
-    "pnl": -44.33,
+    "losses": 104,
+    "pnl": -45.69,
     "trades": 469,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-00",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 90.83,
-    "net": 26.83,
+    "account": 89.47,
+    "net": 25.47,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33011,7 +32998,7 @@
       ],
       "EDGE": [
         37,
-        88,
+        89,
         0
       ],
       "LIVE-BET": [
@@ -33031,14 +33018,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T12:22:41Z",
-      "kind": "EDGE",
-      "outcome": "Fortress",
-      "result": "LOSS",
-      "pnl": -6.03,
-      "lesson": "model 37% vs market 9% missed \u2014 logged for the playbook review. Taken 0.09, rode to 0.11 before the result \u2014 beat the number by 2\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-29T13:10:23Z",
       "kind": "TAIL",
@@ -33270,6 +33249,14 @@
       "result": "WIN",
       "pnl": 16.43,
       "lesson": "+$16.43 \u2014 model 66% vs market 47% was real edge; thesis held. Taken 0.47, rode to 0.98 before the result \u2014 beat the number by 51\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T00:29:02Z",
+      "kind": "EDGE",
+      "outcome": "New York Mets",
+      "result": "LOSS",
+      "pnl": -1.36,
+      "lesson": "model 41% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.16 before the result \u2014 the number ran 18\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
