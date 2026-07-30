@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T01:39:03Z",
+  "updated": "2026-07-30T02:15:56Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2271,7 +2271,10 @@
         "total": 181.5,
         "ts": 1785368940
       },
-      "last_alert_odds": -105
+      "last_alert_odds": -105,
+      "result": "LOSS",
+      "score": "Atlanta Dream 82, Dallas Wings 81",
+      "units_result": -1.5
     },
     {
       "id": "tampa-bay-rays-ml-0729",
@@ -2476,7 +2479,10 @@
         "total": 9.0,
         "ts": 1785360284
       },
-      "last_alert_odds": -198
+      "last_alert_odds": -198,
+      "result": "LOSS",
+      "score": "Kansas City Royals 4, Minnesota Twins 0",
+      "units_result": -1.0
     },
     {
       "id": "los-angeles-sparks-ml-0729",
@@ -2995,7 +3001,10 @@
         "away_ml": -139,
         "total": 8.5,
         "ts": 1785361025
-      }
+      },
+      "result": "LOSS",
+      "score": "Cleveland Guardians 6, Cincinnati Reds 1",
+      "units_result": -1.0
     },
     {
       "id": "flamengo-ml-0729",
