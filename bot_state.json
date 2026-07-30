@@ -13,18 +13,18 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-07-30 19:29 UTC",
+    "at": "2026-07-30 18:59 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-4-4": "2026-07-30 16:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-30 19:09 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-30 19:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-30 17:49 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-30 16:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-30 12:34 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 19:29 UTC",
+    "at": "2026-07-30 18:59 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,11 +41,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 19:29 UTC",
+    "at": "2026-07-30 18:59 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-30 19:29 UTC",
+    "at": "2026-07-30 18:59 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
@@ -66,15 +66,6 @@
       "result": "LOSS",
       "units": -1.0,
       "score": "Texas Rangers 2, Tampa Bay Rays 3",
-      "tier": "sharp"
-    },
-    {
-      "id": "fnatic-ml-0730",
-      "desc": "Fnatic ML",
-      "odds": -228,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Fnatic 0-2 Eternal Fire \u00b7 final",
       "tier": "sharp"
     }
   ],
@@ -34568,26 +34559,13 @@
       "qty": 4,
       "market_slug": "aec-valorant-ggo-tmo-2026-07-30",
       "outcome": "Twisted Minds Orchid",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-30T17:05:14Z",
-      "price_path": [
-        {
-          "ts": 1785431346,
-          "px": 0.26
-        },
-        {
-          "ts": 1785433754,
-          "px": 0.55
-        },
-        {
-          "ts": 1785436743,
-          "px": 0.29
-        },
-        {
-          "ts": 1785438555,
-          "px": 0.11
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T19:29:02Z",
+      "pnl": -1.58,
+      "autopsy": "model 50% vs market 26% missed \u2014 logged for the playbook review. Taken 0.26, rode to 0.11 before the result \u2014 beat the number by 15\u00a2 \u2705"
     },
     {
       "price": 0.545,
@@ -34616,15 +34594,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 52,
-    "losses": 119,
-    "pnl": -117.68,
+    "losses": 120,
+    "pnl": -119.26,
     "trades": 483,
     "last_recap": "2026-07-30",
     "last_recap_hour": "2026-07-30-18",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 16.15,
-    "net": -47.85,
+    "account": 14.57,
+    "net": -49.43,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -34634,7 +34612,7 @@
       ],
       "EDGE": [
         43,
-        103,
+        104,
         0
       ],
       "LIVE-BET": [
@@ -34659,14 +34637,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T20:07:20Z",
-      "kind": "EDGE",
-      "outcome": "Way Gaming Esports",
-      "result": "WIN",
-      "pnl": 17.5,
-      "lesson": "+$17.50 \u2014 model 56% vs market 30% was real edge; thesis held. Taken 0.30, slid to 0.99 before the result \u2014 the number ran 69\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T20:24:04Z",
       "kind": "EDGE",
@@ -34898,6 +34868,14 @@
       "result": "LOSS",
       "pnl": -1.05,
       "lesson": "model 57% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, rode to 0.01 before the result \u2014 beat the number by 34\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T19:29:02Z",
+      "kind": "EDGE",
+      "outcome": "Twisted Minds Orchid",
+      "result": "LOSS",
+      "pnl": -1.58,
+      "lesson": "model 50% vs market 26% missed \u2014 logged for the playbook review. Taken 0.26, rode to 0.11 before the result \u2014 beat the number by 15\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -34982,7 +34960,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785435017.0395126,
+  "dep_checked_ts": 1785439743.0676308,
   "x_bio_v": 2,
   "op_cool_until": 1785413726.4763565,
   "x_ads": []
