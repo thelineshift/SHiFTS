@@ -3631,10 +3631,10 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -193,
-        "away_ml": 158,
-        "total": 182.5,
-        "ts": 1785437942
+        "home_ml": -186,
+        "away_ml": 152,
+        "total": 181.5,
+        "ts": 1785439742
       },
       "last_alert_odds": -193
     },
@@ -3678,10 +3678,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -115,
+        "home_ml": -103,
+        "away_ml": -117,
         "total": 9.5,
-        "ts": 1785437942
+        "ts": 1785439742
       }
     },
     {
@@ -3848,10 +3848,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -193,
-        "away_ml": 158,
-        "total": 182.5,
-        "ts": 1785437942
+        "home_ml": -186,
+        "away_ml": 152,
+        "total": 181.5,
+        "ts": 1785439742
       },
       "last_alert_odds": 158
     },
