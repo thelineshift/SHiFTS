@@ -1,20 +1,14 @@
 {
-  "updated": "2026-07-30T20:05:12Z",
-  "record": "52-120",
-  "trades": 483,
+  "updated": "2026-07-30T22:04:47Z",
+  "record": "52-121",
+  "trades": 484,
   "open": 3,
-  "pnl": -119.26,
-  "account": 12.15,
+  "pnl": -121.74,
+  "account": 9.68,
   "deposits": 64.0,
-  "net_pnl": -51.85,
+  "net_pnl": -54.32,
   "playbooks": "ARB 3-5 \u00b7 EDGE 43-104 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
   "recent": [
-    {
-      "outcome": "ThunderTalk Gaming",
-      "short": false,
-      "result": "lost",
-      "pnl": -4.03
-    },
     {
       "outcome": "DN SOOPers",
       "short": false,
@@ -44,6 +38,12 @@
       "short": true,
       "result": "lost",
       "pnl": -1.58
+    },
+    {
+      "outcome": "New York Yankees",
+      "short": false,
+      "result": "lost",
+      "pnl": -2.48
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
