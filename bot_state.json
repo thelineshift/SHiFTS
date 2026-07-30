@@ -51,7 +51,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "chicago-cubs-ml-0729",
+      "desc": "Chicago Cubs ML",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Chicago Cubs 2, St. Louis Cardinals 3",
+      "tier": "lock"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -24276,10 +24286,6 @@
       "ts": "2026-07-27T10:16:51Z",
       "price_path": [
         {
-          "ts": 1785331325,
-          "px": 0.43
-        },
-        {
           "ts": 1785333158,
           "px": 0.43
         },
@@ -24370,6 +24376,10 @@
         {
           "ts": 1785379142,
           "px": 0.835
+        },
+        {
+          "ts": 1785380942,
+          "px": 0.49
         }
       ]
     },
@@ -32514,46 +32524,13 @@
       "qty": 12,
       "market_slug": "atc-mlb-hou-laa-2026-07-29-f5-hou",
       "outcome": "Houston Astros",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T22:04:26Z",
-      "price_path": [
-        {
-          "ts": 1785363189,
-          "px": 0.47
-        },
-        {
-          "ts": 1785365947,
-          "px": 0.47
-        },
-        {
-          "ts": 1785368342,
-          "px": 0.47
-        },
-        {
-          "ts": 1785370142,
-          "px": 0.47
-        },
-        {
-          "ts": 1785371942,
-          "px": 0.47
-        },
-        {
-          "ts": 1785373746,
-          "px": 0.47
-        },
-        {
-          "ts": 1785376143,
-          "px": 0.47
-        },
-        {
-          "ts": 1785378372,
-          "px": 0.24
-        },
-        {
-          "ts": 1785380346,
-          "px": 0.08
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T03:09:03Z",
+      "pnl": -5.64,
+      "autopsy": "model 55% vs market 47% missed \u2014 logged for the playbook review. Taken 0.47, slid to 0.08 before the result \u2014 the number ran 39\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.4,
@@ -32567,46 +32544,13 @@
       "qty": 9,
       "market_slug": "atc-mlb-hou-laa-2026-07-29-f5-laa",
       "outcome": "Los Angeles Angels",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T22:04:27Z",
-      "price_path": [
-        {
-          "ts": 1785363189,
-          "px": 0.4
-        },
-        {
-          "ts": 1785365947,
-          "px": 0.4
-        },
-        {
-          "ts": 1785368343,
-          "px": 0.4
-        },
-        {
-          "ts": 1785370143,
-          "px": 0.4
-        },
-        {
-          "ts": 1785372543,
-          "px": 0.4
-        },
-        {
-          "ts": 1785374942,
-          "px": 0.4
-        },
-        {
-          "ts": 1785376742,
-          "px": 0.78
-        },
-        {
-          "ts": 1785378543,
-          "px": 0.61
-        },
-        {
-          "ts": 1785380346,
-          "px": 0.9
-        }
-      ]
+      "result": "WIN",
+      "payout": 9.0,
+      "settled_at": "2026-07-30T03:09:05Z",
+      "pnl": 5.4,
+      "autopsy": "+$5.40 \u2014 model 45% vs market 40% was real edge; thesis held. Taken 0.40, rode to 0.90 before the result \u2014 beat the number by 50\u00a2 \u2705"
     },
     {
       "price": 0.35,
@@ -32932,21 +32876,27 @@
       "market_slug": "aec-lol-nip-wb-2026-07-30",
       "outcome": "Ninjas in Pyjamas",
       "status": "open",
-      "ts": "2026-07-30T03:05:30Z"
+      "ts": "2026-07-30T03:05:30Z",
+      "price_path": [
+        {
+          "ts": 1785380948,
+          "px": 0.4
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 47,
-    "losses": 111,
-    "pnl": -60.94,
+    "wins": 48,
+    "losses": 112,
+    "pnl": -61.18,
     "trades": 473,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-02",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 73.06,
-    "net": 9.06,
+    "account": 72.4,
+    "net": 8.4,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -32955,8 +32905,8 @@
         0
       ],
       "EDGE": [
-        38,
-        96,
+        39,
+        97,
         0
       ],
       "LIVE-BET": [
@@ -32976,22 +32926,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T18:07:21Z",
-      "kind": "EDGE",
-      "outcome": "B2U",
-      "result": "WIN",
-      "pnl": 6.03,
-      "lesson": "+$6.03 \u2014 model 50% vs market 33% was real edge; thesis held. Taken 0.33, rode to 0.77 before the result \u2014 beat the number by 44\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-29T18:17:19Z",
-      "kind": "EDGE",
-      "outcome": "GnG Amazigh",
-      "result": "LOSS",
-      "pnl": -1.47,
-      "lesson": "model 37% vs market 21% missed \u2014 logged for the playbook review. Taken 0.21, rode to 0.05 before the result \u2014 beat the number by 16\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-29T18:27:18Z",
       "kind": "EDGE",
@@ -33215,6 +33149,22 @@
       "result": "LOSS",
       "pnl": 0.0,
       "lesson": "+$0.00 \u2014 model 43% vs market 26% was real edge; thesis held. Taken 0.26, rode to 0.42 before the result \u2014 beat the number by 16\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T03:09:03Z",
+      "kind": "EDGE",
+      "outcome": "Houston Astros",
+      "result": "LOSS",
+      "pnl": -5.64,
+      "lesson": "model 55% vs market 47% missed \u2014 logged for the playbook review. Taken 0.47, slid to 0.08 before the result \u2014 the number ran 39\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T03:09:05Z",
+      "kind": "EDGE",
+      "outcome": "Los Angeles Angels",
+      "result": "WIN",
+      "pnl": 5.4,
+      "lesson": "+$5.40 \u2014 model 45% vs market 40% was real edge; thesis held. Taken 0.40, rode to 0.90 before the result \u2014 beat the number by 50\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
