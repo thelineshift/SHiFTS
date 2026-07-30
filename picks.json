@@ -3214,8 +3214,8 @@
       "live_odds": {
         "home_ml": -199,
         "away_ml": 163,
-        "total": 174.5,
-        "ts": 1785387542
+        "total": 175.5,
+        "ts": 1785391142
       },
       "last_alert_odds": -199
     },
@@ -3601,8 +3601,8 @@
       "live_odds": {
         "home_ml": -199,
         "away_ml": 163,
-        "total": 174.5,
-        "ts": 1785387542
+        "total": 175.5,
+        "ts": 1785391142
       },
       "last_alert_odds": -199
     },
@@ -3623,10 +3623,10 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -207,
-        "away_ml": 169,
+        "home_ml": -206,
+        "away_ml": 168,
         "total": 181.5,
-        "ts": 1785385744
+        "ts": 1785391142
       },
       "last_alert_odds": -207
     },
