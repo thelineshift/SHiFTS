@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T02:15:56Z",
+  "updated": "2026-07-30T02:49:05Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2978,7 +2978,10 @@
         "away_ml": -111,
         "total": 8.0,
         "ts": 1785358443
-      }
+      },
+      "result": "LOSS",
+      "score": "Chicago Cubs 2, St. Louis Cardinals 3",
+      "units_result": -1.0
     },
     {
       "id": "cincinnati-reds-ml-0729",
