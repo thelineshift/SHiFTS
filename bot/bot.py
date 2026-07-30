@@ -2310,7 +2310,9 @@ async def run_command(cmd, guild, log):
             if time.time() > c.get('oauth2_expires_at', 0):
                 c = await asyncio.to_thread(x_oauth2_refresh, c)
             me = await asyncio.to_thread(x_get_json, 'https://api.x.com/2/users/me', c['oauth2_access'])
-            uid = me.get('data', {}).get('id')
+            uid = me.get('data', {}).get('id') or '1831457082828021760'  # the desk account (x_timeline uses it)
+            if not me.get('data'):
+                log.append(f"x_pin: users/me gave no id — using account fallback ({str(me)[:120]})")
             tid = str(cmd['tweet_id'])
             payload = json.dumps({'tweet_id': tid}).encode()
             ok = False
