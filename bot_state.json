@@ -13,18 +13,18 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-07-30 19:59 UTC",
+    "at": "2026-07-30 20:59 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-4-4": "2026-07-30 16:00 UTC",
-    "\ud83e\uddfereceipts": "2026-07-30 19:29 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-30 19:50 UTC",
+    "\ud83c\udfaffree-pick-4-4": "2026-07-30 20:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-30 20:09 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-30 20:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-30 12:34 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 19:59 UTC",
+    "at": "2026-07-30 20:59 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,11 +41,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 19:59 UTC",
+    "at": "2026-07-30 20:59 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-30 19:59 UTC",
+    "at": "2026-07-30 20:59 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
@@ -32880,6 +32880,10 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
+          "ts": 1785396542,
+          "px": 0.445
+        },
+        {
           "ts": 1785398942,
           "px": 0.445
         },
@@ -32970,10 +32974,6 @@
         {
           "ts": 1785442743,
           "px": 0.445
-        },
-        {
-          "ts": 1785445142,
-          "px": 0.45
         }
       ]
     },
@@ -33161,6 +33161,10 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
+          "ts": 1785390543,
+          "px": 0.15
+        },
+        {
           "ts": 1785395943,
           "px": 0.16
         },
@@ -33250,10 +33254,6 @@
         },
         {
           "ts": 1785442743,
-          "px": 0.15
-        },
-        {
-          "ts": 1785445142,
           "px": 0.15
         }
       ]
@@ -35018,13 +35018,7 @@
       "market_slug": "aec-mlb-nyy-cws-2026-07-30",
       "outcome": "New York Yankees",
       "status": "open",
-      "ts": "2026-07-30T20:55:13Z",
-      "price_path": [
-        {
-          "ts": 1785445143,
-          "px": 0.605
-        }
-      ]
+      "ts": "2026-07-30T20:55:13Z"
     }
   ],
   "pm_stats": {
