@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-30 00:49 UTC",
+    "at": "2026-07-30 02:15 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-4": "2026-07-30 00:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-30 00:39 UTC",
+    "\ud83e\uddfereceipts": "2026-07-30 01:49 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-30 00:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 20:24 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 00:49 UTC",
+    "at": "2026-07-30 02:15 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,17 +33,45 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 00:49 UTC",
+    "at": "2026-07-30 02:15 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-29 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-30 00:49 UTC",
+    "at": "2026-07-30 02:15 UTC",
     "flags": []
   },
-  "bot_version": "9.24.28",
-  "unannounced_results": [],
+  "bot_version": "9.24.29",
+  "unannounced_results": [
+    {
+      "id": "dallas-wings-ml-0729",
+      "desc": "Dallas Wings ML",
+      "odds": -112,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "Atlanta Dream 82, Dallas Wings 81",
+      "tier": "whale"
+    },
+    {
+      "id": "minnesota-twins--1.5-0729",
+      "desc": "Minnesota Twins -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Kansas City Royals 4, Minnesota Twins 0",
+      "tier": "sharp"
+    },
+    {
+      "id": "cincinnati-reds-ml-0729",
+      "desc": "Cincinnati Reds ML",
+      "odds": 114,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Cleveland Guardians 6, Cincinnati Reds 1",
+      "tier": "lock"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -164,7 +192,7 @@
     "20260729-1950"
   ],
   "boot_log": [
-    "2026-07-30T02:16:02Z"
+    "2026-07-30T02:15:46Z"
   ],
   "teasers": {
     "weekly": "2026-08-02",
@@ -292,7 +320,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "37d242f6-0d02-42ea-9ed3-f98b280a407c",
+  "last_deploy_id": "d992cc71-4352-4516-95da-df06390ae262",
   "op_month": "2026-07",
   "op_calls": 80,
   "op_meta": {
@@ -32967,6 +32995,14 @@
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
     {
+      "ts": "2026-07-29T17:07:21Z",
+      "kind": "EDGE",
+      "outcome": "SK Nebula",
+      "result": "LOSS",
+      "pnl": -1.0,
+      "lesson": "model 63% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.30 before the result \u2014 the number ran 20\u00a2 against us \u26a0\ufe0f"
+    },
+    {
       "ts": "2026-07-29T17:17:21Z",
       "kind": "EDGE",
       "outcome": "ZYB Esport",
@@ -33289,7 +33325,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785377754.1812985,
+  "dep_checked_ts": 1785373742.4960806,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
   "x_ads": []
