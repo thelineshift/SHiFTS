@@ -3349,8 +3349,8 @@
       "live_odds": {
         "home_ml": -163,
         "away_ml": 135,
-        "total": 9.0,
-        "ts": 1785445142
+        "total": 8.5,
+        "ts": 1785448742
       },
       "last_alert_odds": -156
     },
@@ -3373,8 +3373,8 @@
       "live_odds": {
         "home_ml": -163,
         "away_ml": 135,
-        "total": 9.0,
-        "ts": 1785445142
+        "total": 8.5,
+        "ts": 1785448742
       },
       "last_alert_odds": -156
     },
@@ -3572,12 +3572,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -172,
+        "away_ml": 142,
         "total": 8.0,
-        "ts": 1785446942
+        "ts": 1785448742
       },
-      "last_alert_odds": -157
+      "last_alert_odds": -172
     },
     {
       "id": "over-7.5-0730",
@@ -3687,10 +3687,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -121,
+        "home_ml": -102,
+        "away_ml": -119,
         "total": 9.5,
-        "ts": 1785446942
+        "ts": 1785448742
       }
     },
     {
@@ -3955,10 +3955,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -172,
+        "away_ml": 142,
         "total": 8.0,
-        "ts": 1785446942
+        "ts": 1785448742
       },
       "last_alert_odds": -161
     },
