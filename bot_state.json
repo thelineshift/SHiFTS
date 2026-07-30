@@ -13,18 +13,18 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-07-30 02:59 UTC",
+    "at": "2026-07-30 02:29 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-4": "2026-07-30 00:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-30 02:49 UTC",
+    "\ud83e\uddfereceipts": "2026-07-30 02:26 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-30 00:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-30 02:16 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 02:59 UTC",
+    "at": "2026-07-30 02:29 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,13 +41,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 02:59 UTC",
+    "at": "2026-07-30 02:29 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-29 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-30 02:59 UTC",
+    "at": "2026-07-30 02:29 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
@@ -27715,10 +27715,6 @@
       "ts": "2026-07-28T06:05:03Z",
       "price_path": [
         {
-          "ts": 1785329093,
-          "px": 0.3
-        },
-        {
           "ts": 1785331330,
           "px": 0.3
         },
@@ -27808,6 +27804,10 @@
         },
         {
           "ts": 1785378542,
+          "px": 0.25
+        },
+        {
+          "ts": 1785380342,
           "px": 0.25
         }
       ]
@@ -29596,106 +29596,13 @@
       "qty": 6,
       "market_slug": "aec-dota2-agm-stx-2026-07-29",
       "outcome": "Amaru Gaming",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T18:50:07Z",
-      "price_path": [
-        {
-          "ts": 1785313469,
-          "px": 0.21
-        },
-        {
-          "ts": 1785315870,
-          "px": 0.21
-        },
-        {
-          "ts": 1785318265,
-          "px": 0.21
-        },
-        {
-          "ts": 1785320065,
-          "px": 0.21
-        },
-        {
-          "ts": 1785321866,
-          "px": 0.21
-        },
-        {
-          "ts": 1785324108,
-          "px": 0.21
-        },
-        {
-          "ts": 1785326507,
-          "px": 0.21
-        },
-        {
-          "ts": 1785329094,
-          "px": 0.21
-        },
-        {
-          "ts": 1785331331,
-          "px": 0.21
-        },
-        {
-          "ts": 1785333160,
-          "px": 0.21
-        },
-        {
-          "ts": 1785335457,
-          "px": 0.21
-        },
-        {
-          "ts": 1785337641,
-          "px": 0.21
-        },
-        {
-          "ts": 1785339441,
-          "px": 0.21
-        },
-        {
-          "ts": 1785341241,
-          "px": 0.21
-        },
-        {
-          "ts": 1785343046,
-          "px": 0.24
-        },
-        {
-          "ts": 1785345439,
-          "px": 0.25
-        },
-        {
-          "ts": 1785348439,
-          "px": 0.26
-        },
-        {
-          "ts": 1785350842,
-          "px": 0.26
-        },
-        {
-          "ts": 1785353238,
-          "px": 0.42
-        },
-        {
-          "ts": 1785355041,
-          "px": 0.48
-        },
-        {
-          "ts": 1785357248,
-          "px": 0.42
-        },
-        {
-          "ts": 1785359085,
-          "px": 0.42
-        },
-        {
-          "ts": 1785361026,
-          "px": 0.46
-        },
-        {
-          "ts": 1785363187,
-          "px": 0.42
-        }
-      ]
+      "result": "LOSS",
+      "payout": 1.56,
+      "settled_at": "2026-07-30T02:59:03Z",
+      "pnl": 0.0,
+      "autopsy": "+$0.00 \u2014 model 43% vs market 26% was real edge; thesis held. Taken 0.26, rode to 0.42 before the result \u2014 beat the number by 16\u00a2 \u2705"
     },
     {
       "price": 0.41,
@@ -30862,10 +30769,6 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
-          "ts": 1785329096,
-          "px": 0.36
-        },
-        {
           "ts": 1785331334,
           "px": 0.36
         },
@@ -30956,6 +30859,10 @@
         {
           "ts": 1785378542,
           "px": 0.44
+        },
+        {
+          "ts": 1785380345,
+          "px": 0.445
         }
       ]
     },
@@ -31143,10 +31050,6 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
-          "ts": 1785329097,
-          "px": 0.16
-        },
-        {
           "ts": 1785331334,
           "px": 0.15
         },
@@ -31236,6 +31139,10 @@
         },
         {
           "ts": 1785378543,
+          "px": 0.15
+        },
+        {
+          "ts": 1785380345,
           "px": 0.15
         }
       ]
@@ -32513,6 +32420,10 @@
         {
           "ts": 1785378372,
           "px": 0.24
+        },
+        {
+          "ts": 1785380346,
+          "px": 0.08
         }
       ]
     },
@@ -32562,6 +32473,10 @@
         {
           "ts": 1785378543,
           "px": 0.61
+        },
+        {
+          "ts": 1785380346,
+          "px": 0.9
         }
       ]
     },
@@ -32631,6 +32546,10 @@
         {
           "ts": 1785378543,
           "px": 0.29
+        },
+        {
+          "ts": 1785380346,
+          "px": 0.14
         }
       ]
     },
@@ -32812,6 +32731,10 @@
         {
           "ts": 1785378372,
           "px": 0.38
+        },
+        {
+          "ts": 1785380346,
+          "px": 0.38
         }
       ]
     },
@@ -32841,6 +32764,10 @@
         {
           "ts": 1785378373,
           "px": 0.34
+        },
+        {
+          "ts": 1785380346,
+          "px": 0.34
         }
       ]
     },
@@ -32868,7 +32795,7 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 47,
-    "losses": 110,
+    "losses": 111,
     "pnl": -60.94,
     "trades": 472,
     "last_recap": "2026-07-29",
@@ -32886,7 +32813,7 @@
       ],
       "EDGE": [
         38,
-        95,
+        96,
         0
       ],
       "LIVE-BET": [
@@ -32906,14 +32833,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T17:37:19Z",
-      "kind": "EDGE",
-      "outcome": "FOKUS Sakura",
-      "result": "WIN",
-      "pnl": 5.6,
-      "lesson": "+$5.60 \u2014 model 37% vs market 20% was real edge; thesis held. Taken 0.20, slid to 0.96 before the result \u2014 the number ran 76\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T18:07:21Z",
       "kind": "EDGE",
@@ -33145,6 +33064,14 @@
       "result": "LOSS",
       "pnl": -1.5,
       "lesson": "model 62% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.82 before the result \u2014 the number ran 32\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T02:59:03Z",
+      "kind": "EDGE",
+      "outcome": "Amaru Gaming",
+      "result": "LOSS",
+      "pnl": 0.0,
+      "lesson": "+$0.00 \u2014 model 43% vs market 26% was real edge; thesis held. Taken 0.26, rode to 0.42 before the result \u2014 beat the number by 16\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
