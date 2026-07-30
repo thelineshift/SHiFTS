@@ -3464,10 +3464,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 152,
-        "away_ml": -185,
+        "home_ml": 157,
+        "away_ml": -191,
         "total": 10.0,
-        "ts": 1785421742
+        "ts": 1785436142
       },
       "last_alert_odds": -185
     },
@@ -3628,12 +3628,12 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -207,
-        "away_ml": 168,
-        "total": 182.5,
-        "ts": 1785432542
+        "home_ml": -193,
+        "away_ml": 158,
+        "total": 181.5,
+        "ts": 1785436142
       },
-      "last_alert_odds": -210
+      "last_alert_odds": -193
     },
     {
       "id": "chicago-white-sox-ml-0730",
@@ -3842,12 +3842,12 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -207,
-        "away_ml": 168,
-        "total": 182.5,
-        "ts": 1785432542
+        "home_ml": -193,
+        "away_ml": 158,
+        "total": 181.5,
+        "ts": 1785436142
       },
-      "last_alert_odds": 170
+      "last_alert_odds": 158
     },
     {
       "id": "just-players-ml-0730",
