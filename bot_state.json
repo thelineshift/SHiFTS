@@ -34318,14 +34318,15 @@
       "qty": 2,
       "market_slug": "aec-mlb-tex-tb-2026-07-30",
       "outcome": "Tampa Bay Rays",
-      "status": "resting",
+      "status": "unfilled",
       "ts": "2026-07-30T17:14:55Z",
       "price_path": [
         {
           "ts": 1785431945,
           "px": 0.645
         }
-      ]
+      ],
+      "note": " [stale-swept]"
     }
   ],
   "pm_stats": {
