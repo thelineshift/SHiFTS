@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T16:49:06Z",
+  "updated": "2026-07-30T17:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3793,7 +3793,10 @@
       "opp": "Pcific Esports",
       "analysis": "1-4 last 5 (beat FUT Esports) (lost to BBL Esports) vs 0-5 \u2014 live Pinnacle line -365 (our 90% vs book 75%) | \u2694\ufe0f **Matchup read:** 1-4 last 5 (beat FUT Esports) (lost to BBL Esports) vs 0-5 \u2014 live Pinnacle line -365 (our 90% vs book 75%). When the form gap runs **15 points** wide, the better side win",
       "awayTeam": "Natus Vincere",
-      "homeTeam": "Pcific Esports"
+      "homeTeam": "Pcific Esports",
+      "result": "WIN",
+      "units_result": 0.41,
+      "score": "Natus Vincere 2-0 Pcific Esports \u00b7 final"
     },
     {
       "id": "tampa-bay-rays--1.5-0730",
