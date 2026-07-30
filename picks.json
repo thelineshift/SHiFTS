@@ -3440,10 +3440,10 @@
       "awayTeam": "Miami Marlins",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -131,
+        "away_ml": 109,
         "total": 7.0,
-        "ts": 1785385743
+        "ts": 1785396542
       }
     },
     {
@@ -3670,10 +3670,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -114,
+        "home_ml": -103,
+        "away_ml": -117,
         "total": 9.5,
-        "ts": 1785385749
+        "ts": 1785396542
       }
     }
   ]
