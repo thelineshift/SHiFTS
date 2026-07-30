@@ -5415,11 +5415,15 @@
         }
       },
       "lol:126204": {
-        "ts": 1785340971.4215229,
+        "ts": 1785422665.3252764,
         "f": {
           "w": 2,
           "l": 3,
           "res": [
+            {
+              "won": false,
+              "opp": "Ici Japon Corp. Esport"
+            },
             {
               "won": false,
               "opp": "Joblife"
@@ -5435,10 +5439,6 @@
             {
               "won": true,
               "opp": "Esprit Sh\u014dnen"
-            },
-            {
-              "won": false,
-              "opp": "TLN Pirates"
             }
           ]
         }
@@ -5473,11 +5473,15 @@
         }
       },
       "lol:1449": {
-        "ts": 1785315294.8743234,
+        "ts": 1785422664.747151,
         "f": {
-          "w": 3,
-          "l": 2,
+          "w": 4,
+          "l": 1,
           "res": [
+            {
+              "won": true,
+              "opp": "Esprit Sh\u014dnen"
+            },
             {
               "won": true,
               "opp": "Ici Japon Corp. Esport"
@@ -5493,10 +5497,6 @@
             {
               "won": true,
               "opp": "Skillcamp Esport"
-            },
-            {
-              "won": false,
-              "opp": "Galions"
             }
           ]
         }
@@ -6336,11 +6336,15 @@
         }
       },
       "lol:137064": {
-        "ts": 1785287088.3177247,
+        "ts": 1785422665.999126,
         "f": {
           "w": 1,
           "l": 4,
           "res": [
+            {
+              "won": false,
+              "opp": "G2 NORD"
+            },
             {
               "won": false,
               "opp": "E WIE EINFACH E-SPORTS"
@@ -6356,10 +6360,6 @@
             {
               "won": true,
               "opp": "Eintracht Frankfurt"
-            },
-            {
-              "won": false,
-              "opp": "ROSSMANN Centaurs"
             }
           ]
         }
@@ -8220,7 +8220,7 @@
         }
       },
       "lol:130010": {
-        "ts": 1785412780.1485999,
+        "ts": 1785422662.2562308,
         "f": {
           "w": 3,
           "l": 2,
@@ -8249,7 +8249,7 @@
         }
       },
       "lol:135653": {
-        "ts": 1785412780.7203264,
+        "ts": 1785422662.8715272,
         "f": {
           "w": 3,
           "l": 2,
@@ -8559,6 +8559,230 @@
             {
               "won": true,
               "opp": "Execration"
+            }
+          ]
+        }
+      },
+      "lol:132014": {
+        "ts": 1785422666.5783684,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Unicorns Of Love Sexy Edition"
+            },
+            {
+              "won": true,
+              "opp": "VfB eSports"
+            },
+            {
+              "won": false,
+              "opp": "ROSSMANN Centaurs"
+            },
+            {
+              "won": true,
+              "opp": "Eintracht Frankfurt"
+            },
+            {
+              "won": true,
+              "opp": "Unicorns Of Love Sexy Edition"
+            }
+          ]
+        }
+      },
+      "lol:136252": {
+        "ts": 1785422667.2760997,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": true,
+              "opp": "P11 Esports"
+            },
+            {
+              "won": true,
+              "opp": "TITANS"
+            },
+            {
+              "won": false,
+              "opp": "HMBLE"
+            },
+            {
+              "won": false,
+              "opp": "GOAL"
+            },
+            {
+              "won": true,
+              "opp": "MAGAZA"
+            }
+          ]
+        }
+      },
+      "lol:138435": {
+        "ts": 1785422667.856859,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "EKO Esports"
+            },
+            {
+              "won": true,
+              "opp": "Zena Esports"
+            },
+            {
+              "won": true,
+              "opp": "P11 Esports"
+            },
+            {
+              "won": false,
+              "opp": "Zena Esports"
+            },
+            {
+              "won": true,
+              "opp": "TITANS"
+            }
+          ]
+        }
+      },
+      "lol:137833": {
+        "ts": 1785422668.5400038,
+        "f": {
+          "w": 4,
+          "l": 1,
+          "res": [
+            {
+              "won": true,
+              "opp": "Senshi Esports"
+            },
+            {
+              "won": true,
+              "opp": "The Bandits"
+            },
+            {
+              "won": false,
+              "opp": "BOMBA Team"
+            },
+            {
+              "won": true,
+              "opp": "BOMBA Team"
+            },
+            {
+              "won": true,
+              "opp": "FN Esports"
+            }
+          ]
+        }
+      },
+      "lol:134203": {
+        "ts": 1785422669.1175086,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "mCon esports"
+            },
+            {
+              "won": false,
+              "opp": "Myth Esports"
+            },
+            {
+              "won": false,
+              "opp": "mCon esports"
+            },
+            {
+              "won": true,
+              "opp": "Dynasty"
+            },
+            {
+              "won": true,
+              "opp": "ZennIT"
+            }
+          ]
+        }
+      },
+      "dota2:128329": {
+        "ts": 1785422681.3722079,
+        "f": {
+          "w": 1,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team Liquid"
+            },
+            {
+              "won": false,
+              "opp": "Team Falcons"
+            },
+            {
+              "won": false,
+              "opp": "BetBoom Team"
+            },
+            {
+              "won": true,
+              "opp": "GamerLegion"
+            }
+          ]
+        }
+      },
+      "dota2:1657": {
+        "ts": 1785422681.9609036,
+        "f": {
+          "w": 2,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "BetBoom Team"
+            },
+            {
+              "won": true,
+              "opp": "MOUZ"
+            },
+            {
+              "won": true,
+              "opp": "Inner Circle x Insanity"
+            },
+            {
+              "won": false,
+              "opp": "Team Yandex"
+            }
+          ]
+        }
+      },
+      "dota2:135697": {
+        "ts": 1785422682.7211034,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Vici Gaming"
+            },
+            {
+              "won": false,
+              "opp": "Team Resilience"
+            },
+            {
+              "won": true,
+              "opp": "Vici Gaming"
+            },
+            {
+              "won": true,
+              "opp": "Game Master"
+            },
+            {
+              "won": true,
+              "opp": "Team Refuser"
             }
           ]
         }
@@ -19657,50 +19881,50 @@
         "esp": true
       },
       "aec-valorant-m8gc-beg-2026-07-30|gentlematesgc": {
-        "p0": 0.83,
+        "p0": 0.84,
         "m0": 0.6923076923076923,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
       "aec-valorant-m8gc-beg-2026-07-30|baraesportsgc": {
-        "p0": 0.18,
+        "p0": 0.17,
         "m0": 0.3076923076923077,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
       "aec-valorant-skn-hbs-2026-07-30|sknebula": {
-        "p0": 0.67,
+        "p0": 0.66,
         "m0": 0.4324324324324325,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
       "aec-valorant-skn-hbs-2026-07-30|habosbabos": {
-        "p0": 0.34,
+        "p0": 0.35,
         "m0": 0.5675675675675675,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
       "aec-valorant-navi-pcfic-2026-07-30|natusvincere": {
-        "p0": 0.78,
+        "p0": 0.77,
         "m0": 0.5714285714285714,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
       "aec-valorant-navi-pcfic-2026-07-30|pcificesports": {
-        "p0": 0.23,
+        "p0": 0.24,
         "m0": 0.4285714285714286,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -19708,7 +19932,7 @@
         "p0": 0.66,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -19716,7 +19940,7 @@
         "p0": 0.35,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -19724,7 +19948,7 @@
         "p0": 0.27,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -19732,7 +19956,7 @@
         "p0": 0.74,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20332,7 +20556,7 @@
         "p0": 0.76,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20340,7 +20564,7 @@
         "p0": 0.25,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20348,7 +20572,7 @@
         "p0": 0.09,
         "m0": 0.631578947368421,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20356,7 +20580,7 @@
         "p0": 0.92,
         "m0": 0.368421052631579,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20364,7 +20588,7 @@
         "p0": 0.49,
         "m0": 0.5,
         "bo": 1,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20372,7 +20596,7 @@
         "p0": 0.52,
         "m0": 0.5,
         "bo": 1,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20380,7 +20604,7 @@
         "p0": 0.66,
         "m0": 0.631578947368421,
         "bo": 1,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20388,7 +20612,7 @@
         "p0": 0.35,
         "m0": 0.368421052631579,
         "bo": 1,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20396,7 +20620,7 @@
         "p0": 0.8,
         "m0": 0.6,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20404,7 +20628,7 @@
         "p0": 0.21,
         "m0": 0.4,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20412,7 +20636,7 @@
         "p0": 0.95,
         "m0": 0.5663716814159292,
         "bo": 1,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20420,7 +20644,7 @@
         "p0": 0.06,
         "m0": 0.4336283185840708,
         "bo": 1,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20428,7 +20652,7 @@
         "p0": 0.49,
         "m0": 0.3684210526315789,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20436,7 +20660,7 @@
         "p0": 0.52,
         "m0": 0.631578947368421,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20444,7 +20668,7 @@
         "p0": 0.42,
         "m0": 0.45454545454545453,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20452,7 +20676,7 @@
         "p0": 0.59,
         "m0": 0.5454545454545454,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20460,7 +20684,7 @@
         "p0": 0.54,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       },
@@ -20468,7 +20692,103 @@
         "p0": 0.47,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785419942.2712831,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-sly-vitb-2026-07-30|solary": {
+        "p0": 0.81,
+        "m0": 0.631578947368421,
+        "bo": 1,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-sly-vitb-2026-07-30|vitalitybee": {
+        "p0": 0.2,
+        "m0": 0.368421052631579,
+        "bo": 1,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-vfb-khk-2026-07-30|vfbesports": {
+        "p0": 0.16,
+        "m0": 0.3684210526315789,
+        "bo": 3,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-vfb-khk-2026-07-30|kauflandhangryknights": {
+        "p0": 0.85,
+        "m0": 0.631578947368421,
+        "bo": 3,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-gmb-aee-2026-07-30|gmblersesports": {
+        "p0": 0.63,
+        "m0": 0.5,
+        "bo": 1,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-gmb-aee-2026-07-30|aeternaesports": {
+        "p0": 0.38,
+        "m0": 0.5,
+        "bo": 1,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-fec-ouat-2026-07-30|fritesesportsclub": {
+        "p0": 0.95,
+        "m0": 0.631578947368421,
+        "bo": 3,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-fec-ouat-2026-07-30|onceuponateam": {
+        "p0": 0.06,
+        "m0": 0.368421052631579,
+        "bo": 3,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-dota2-xtreme-lgd-2026-07-31|xtremegaming": {
+        "p0": 0.38,
+        "m0": 0.4285714285714286,
+        "bo": 3,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-dota2-xtreme-lgd-2026-07-31|lgdgaming": {
+        "p0": 0.63,
+        "m0": 0.5714285714285714,
+        "bo": 3,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-dota2-yb-z10-2026-07-31|yakultbrothers": {
+        "p0": 0.66,
+        "m0": 0.4324324324324325,
+        "bo": 3,
+        "ts": 1785422642.0585363,
+        "ten": false,
+        "esp": true
+      },
+      "aec-dota2-yb-z10-2026-07-31|zerotenacity": {
+        "p0": 0.35,
+        "m0": 0.5675675675675675,
+        "bo": 3,
+        "ts": 1785422642.0585363,
         "ten": false,
         "esp": true
       }
@@ -33517,6 +33837,22 @@
       "settled_at": "2026-07-30T13:09:03Z",
       "pnl": -67.16,
       "autopsy": "model 45% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, rode to 0.89 before the result \u2014 beat the number by 53\u00a2 \u2705"
+    },
+    {
+      "price": 0.35,
+      "short": true,
+      "stake": 1.05,
+      "kind": "EDGE",
+      "p_model": 0.5675675675675675,
+      "event": "SK Nebula vs. Habos Babos",
+      "ev_start": "2026-07-30T15:00:00Z",
+      "reason": "model 57% vs market 35% \u2014 22% edge, half-Kelly",
+      "order_id": "BJF9W1ZMGB9G",
+      "qty": 3,
+      "market_slug": "aec-valorant-skn-hbs-2026-07-30",
+      "outcome": "Habos Babos",
+      "status": "open",
+      "ts": "2026-07-30T14:44:58Z"
     }
   ],
   "pm_stats": {
@@ -33524,7 +33860,7 @@
     "wins": 52,
     "losses": 117,
     "pnl": -113.93,
-    "trades": 480,
+    "trades": 481,
     "last_recap": "2026-07-30",
     "last_recap_hour": "2026-07-30-14",
     "deposits": 14.0,
