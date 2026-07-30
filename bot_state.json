@@ -13,18 +13,18 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-07-30 07:29 UTC",
+    "at": "2026-07-30 05:59 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-4-4": "2026-07-30 04:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-30 07:19 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-30 07:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-30 05:09 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-30 04:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-30 02:16 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 07:29 UTC",
+    "at": "2026-07-30 05:59 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,11 +41,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 07:29 UTC",
+    "at": "2026-07-30 05:59 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-30 07:29 UTC",
+    "at": "2026-07-30 05:59 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
@@ -30730,10 +30730,6 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
-          "ts": 1785344250,
-          "px": 0.42
-        },
-        {
           "ts": 1785346642,
           "px": 0.42
         },
@@ -30823,6 +30819,10 @@
         },
         {
           "ts": 1785394742,
+          "px": 0.445
+        },
+        {
+          "ts": 1785396542,
           "px": 0.445
         }
       ]
@@ -32599,50 +32599,13 @@
       "qty": 39,
       "market_slug": "aec-lol-dkc-t1a-2026-07-30",
       "outcome": "Dplus KIA Challengers",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-30T01:04:45Z",
-      "price_path": [
-        {
-          "ts": 1785373747,
-          "px": 0.34
-        },
-        {
-          "ts": 1785376144,
-          "px": 0.34
-        },
-        {
-          "ts": 1785378373,
-          "px": 0.34
-        },
-        {
-          "ts": 1785380346,
-          "px": 0.34
-        },
-        {
-          "ts": 1785382743,
-          "px": 0.34
-        },
-        {
-          "ts": 1785384543,
-          "px": 0.34
-        },
-        {
-          "ts": 1785386343,
-          "px": 0.34
-        },
-        {
-          "ts": 1785388743,
-          "px": 0.31
-        },
-        {
-          "ts": 1785390543,
-          "px": 0.62
-        },
-        {
-          "ts": 1785394743,
-          "px": 0.48
-        }
-      ]
+      "result": "WIN",
+      "payout": 39.0,
+      "settled_at": "2026-07-30T07:29:02Z",
+      "pnl": 25.74,
+      "autopsy": "+$25.74 \u2014 model 64% vs market 34% was real edge; thesis held. Taken 0.34, rode to 0.48 before the result \u2014 beat the number by 14\u00a2 \u2705"
     },
     {
       "price": 0.415,
@@ -32764,6 +32727,10 @@
         {
           "ts": 1785394743,
           "px": 0.52
+        },
+        {
+          "ts": 1785396548,
+          "px": 0.56
         }
       ]
     },
@@ -32821,16 +32788,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 48,
+    "wins": 49,
     "losses": 114,
-    "pnl": -68.58,
+    "pnl": -42.84,
     "trades": 477,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-06",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 58.21,
-    "net": -5.79,
+    "account": 83.95,
+    "net": 19.95,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -32839,7 +32806,7 @@
         0
       ],
       "EDGE": [
-        39,
+        40,
         99,
         0
       ],
@@ -32860,14 +32827,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T19:07:18Z",
-      "kind": "EDGE",
-      "outcome": "Amaru Gaming",
-      "result": "LOSS",
-      "pnl": -3.6,
-      "lesson": "model 70% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, slid to 0.01 before the result \u2014 the number ran 35\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T19:07:20Z",
       "kind": "EDGE",
@@ -33099,6 +33058,14 @@
       "result": "LOSS",
       "pnl": -6.08,
       "lesson": "model 50% vs market 38% missed \u2014 logged for the playbook review. Taken 0.38, rode to 0.21 before the result \u2014 beat the number by 17\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T07:29:02Z",
+      "kind": "EDGE",
+      "outcome": "Dplus KIA Challengers",
+      "result": "WIN",
+      "pnl": 25.74,
+      "lesson": "+$25.74 \u2014 model 64% vs market 34% was real edge; thesis held. Taken 0.34, rode to 0.48 before the result \u2014 beat the number by 14\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
