@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T00:59:03Z",
+  "updated": "2026-07-30T01:19:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2294,7 +2294,10 @@
         "away_ml": 119,
         "total": 7.5,
         "ts": 1785356642
-      }
+      },
+      "result": "WIN",
+      "score": "Texas Rangers 0, Tampa Bay Rays 3",
+      "units_result": 1.06
     },
     {
       "id": "san-diego-padres-ml-0729",
