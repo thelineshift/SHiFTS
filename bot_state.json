@@ -51,12 +51,12 @@
   "bot_version": "9.24.29",
   "unannounced_results": [
     {
-      "id": "natus-vincere-ml-0730",
-      "desc": "Natus Vincere ML",
-      "odds": -365,
+      "id": "just-players-ml-0730",
+      "desc": "Just Players ML",
+      "odds": -198,
       "result": "WIN",
-      "units": 0.41,
-      "score": "Natus Vincere 2-0 Pcific Esports \u00b7 final",
+      "units": 0.76,
+      "score": "Just Players 2-1 SPARTA \u00b7 final",
       "tier": "whale"
     }
   ],
@@ -34185,30 +34185,13 @@
       "qty": 3,
       "market_slug": "aec-valorant-skn-hbs-2026-07-30",
       "outcome": "Habos Babos",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-30T14:44:58Z",
-      "price_path": [
-        {
-          "ts": 1785422942,
-          "px": 0.35
-        },
-        {
-          "ts": 1785424743,
-          "px": 0.52
-        },
-        {
-          "ts": 1785426543,
-          "px": 0.69
-        },
-        {
-          "ts": 1785428942,
-          "px": 0.29
-        },
-        {
-          "ts": 1785430743,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T17:09:02Z",
+      "pnl": -1.05,
+      "autopsy": "model 57% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, rode to 0.01 before the result \u2014 beat the number by 34\u00a2 \u2705"
     },
     {
       "price": 0.26,
@@ -34224,21 +34207,27 @@
       "market_slug": "aec-valorant-ggo-tmo-2026-07-30",
       "outcome": "Twisted Minds Orchid",
       "status": "open",
-      "ts": "2026-07-30T17:05:14Z"
+      "ts": "2026-07-30T17:05:14Z",
+      "price_path": [
+        {
+          "ts": 1785431346,
+          "px": 0.26
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 52,
-    "losses": 118,
-    "pnl": -116.63,
+    "losses": 119,
+    "pnl": -117.68,
     "trades": 482,
     "last_recap": "2026-07-30",
     "last_recap_hour": "2026-07-30-16",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 16.24,
-    "net": -47.76,
+    "account": 15.19,
+    "net": -48.81,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -34248,7 +34237,7 @@
       ],
       "EDGE": [
         43,
-        102,
+        103,
         0
       ],
       "LIVE-BET": [
@@ -34273,14 +34262,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T20:07:18Z",
-      "kind": "EDGE",
-      "outcome": "Tung Tung Bogi",
-      "result": "LOSS",
-      "pnl": -2.0,
-      "lesson": "model 49% vs market 40% missed \u2014 logged for the playbook review. Taken 0.40, rode to 0.01 before the result \u2014 beat the number by 39\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-29T20:07:20Z",
       "kind": "EDGE",
@@ -34512,6 +34493,14 @@
       "result": "LOSS",
       "pnl": -2.7,
       "lesson": "model 43% vs market 30% missed \u2014 logged for the playbook review. Taken 0.30, slid to 0.35 before the result \u2014 the number ran 5\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T17:09:02Z",
+      "kind": "EDGE",
+      "outcome": "Habos Babos",
+      "result": "LOSS",
+      "pnl": -1.05,
+      "lesson": "model 57% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, rode to 0.01 before the result \u2014 beat the number by 34\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -34596,7 +34585,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785427515.9316418,
+  "dep_checked_ts": 1785431343.0509682,
   "x_bio_v": 2,
   "op_cool_until": 1785413726.4763565,
   "x_ads": []
