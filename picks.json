@@ -3200,12 +3200,12 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Connecticut Sun",
       "live_odds": {
-        "home_ml": -187,
-        "away_ml": 153,
+        "home_ml": -199,
+        "away_ml": 163,
         "total": 174.5,
-        "ts": 1785385742
+        "ts": 1785387542
       },
-      "last_alert_odds": -187
+      "last_alert_odds": -199
     },
     {
       "id": "over-9.5-0730",
@@ -3587,12 +3587,12 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Connecticut Sun",
       "live_odds": {
-        "home_ml": -187,
-        "away_ml": 153,
+        "home_ml": -199,
+        "away_ml": 163,
         "total": 174.5,
-        "ts": 1785385744
+        "ts": 1785387542
       },
-      "last_alert_odds": -187
+      "last_alert_odds": -199
     },
     {
       "id": "las-vegas-aces--4.5-0730",
