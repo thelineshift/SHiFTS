@@ -24212,10 +24212,6 @@
       "ts": "2026-07-27T10:16:51Z",
       "price_path": [
         {
-          "ts": 1785321862,
-          "px": 0.43
-        },
-        {
           "ts": 1785324105,
           "px": 0.43
         },
@@ -24306,6 +24302,10 @@
         {
           "ts": 1785371340,
           "px": 0.105
+        },
+        {
+          "ts": 1785373740,
+          "px": 0.06
         }
       ]
     },
@@ -30336,10 +30336,6 @@
       "ts": "2026-07-29T01:00:07Z",
       "price_path": [
         {
-          "ts": 1785321867,
-          "px": 0.65
-        },
-        {
           "ts": 1785324109,
           "px": 0.65
         },
@@ -30430,6 +30426,10 @@
         {
           "ts": 1785371941,
           "px": 0.63
+        },
+        {
+          "ts": 1785373741,
+          "px": 0.58
         }
       ]
     },
@@ -30503,10 +30503,6 @@
       "status": "open",
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
-        {
-          "ts": 1785321867,
-          "px": 0.22
-        },
         {
           "ts": 1785324110,
           "px": 0.22
@@ -30597,6 +30593,10 @@
         },
         {
           "ts": 1785371941,
+          "px": 0.22
+        },
+        {
+          "ts": 1785373741,
           "px": 0.22
         }
       ]
@@ -32633,30 +32633,13 @@
       "qty": 8,
       "market_slug": "atc-mlb-kc-min-2026-07-29-f5-kc",
       "outcome": "Kansas City Royals",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T22:04:25Z",
-      "price_path": [
-        {
-          "ts": 1785363189,
-          "px": 0.3
-        },
-        {
-          "ts": 1785365947,
-          "px": 0.3
-        },
-        {
-          "ts": 1785368342,
-          "px": 0.3
-        },
-        {
-          "ts": 1785370142,
-          "px": 0.23
-        },
-        {
-          "ts": 1785372542,
-          "px": 0.89
-        }
-      ]
+      "result": "WIN",
+      "payout": 8.0,
+      "settled_at": "2026-07-30T01:09:02Z",
+      "pnl": 5.6,
+      "autopsy": "+$5.60 \u2014 model 35% vs market 30% was real edge; thesis held. Taken 0.30, rode to 0.89 before the result \u2014 beat the number by 59\u00a2 \u2705"
     },
     {
       "price": 0.47,
@@ -32691,6 +32674,10 @@
         },
         {
           "ts": 1785371942,
+          "px": 0.47
+        },
+        {
+          "ts": 1785373746,
           "px": 0.47
         }
       ]
@@ -33022,7 +33009,13 @@
       "market_slug": "aec-lol-foxy-hlec-2026-07-30",
       "outcome": "Hanwha Life Esports Challengers",
       "status": "open",
-      "ts": "2026-07-30T01:04:44Z"
+      "ts": "2026-07-30T01:04:44Z",
+      "price_path": [
+        {
+          "ts": 1785373747,
+          "px": 0.38
+        }
+      ]
     },
     {
       "price": 0.34,
@@ -33037,21 +33030,27 @@
       "market_slug": "aec-lol-dkc-t1a-2026-07-30",
       "outcome": "Dplus KIA Challengers",
       "status": "open",
-      "ts": "2026-07-30T01:04:45Z"
+      "ts": "2026-07-30T01:04:45Z",
+      "price_path": [
+        {
+          "ts": 1785373747,
+          "px": 0.34
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 46,
+    "wins": 47,
     "losses": 104,
-    "pnl": -45.69,
+    "pnl": -40.09,
     "trades": 471,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-00",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 89.47,
-    "net": 25.47,
+    "account": 95.07,
+    "net": 31.07,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33060,7 +33059,7 @@
         0
       ],
       "EDGE": [
-        37,
+        38,
         89,
         0
       ],
@@ -33081,14 +33080,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T13:10:23Z",
-      "kind": "TAIL",
-      "outcome": "Hanwha Eagles",
-      "result": "WIN",
-      "pnl": 0.05,
-      "lesson": "+$0.05 \u2014 thesis held."
-    },
     {
       "ts": "2026-07-29T13:22:07Z",
       "kind": "EDGE",
@@ -33320,6 +33311,14 @@
       "result": "LOSS",
       "pnl": -1.36,
       "lesson": "model 41% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.16 before the result \u2014 the number ran 18\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T01:09:02Z",
+      "kind": "EDGE",
+      "outcome": "Kansas City Royals",
+      "result": "WIN",
+      "pnl": 5.6,
+      "lesson": "+$5.60 \u2014 model 35% vs market 30% was real edge; thesis held. Taken 0.30, rode to 0.89 before the result \u2014 beat the number by 59\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -33404,7 +33403,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785369907.628097,
+  "dep_checked_ts": 1785373742.4960806,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
   "x_ads": []
