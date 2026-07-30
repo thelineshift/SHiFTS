@@ -1,49 +1,49 @@
 {
-  "updated": "2026-07-30T00:05:09Z",
-  "record": "45-103",
-  "trades": 469,
-  "open": 20,
-  "pnl": -60.76,
-  "account": 74.4,
+  "updated": "2026-07-30T02:04:56Z",
+  "record": "47-108",
+  "trades": 472,
+  "open": 15,
+  "pnl": -56.36,
+  "account": 77.64,
   "deposits": 64.0,
-  "net_pnl": 10.4,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 36-88 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
+  "net_pnl": 13.64,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 38-93 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
   "recent": [
     {
-      "outcome": "B2U",
-      "short": false,
-      "result": "won",
-      "pnl": 6.03
-    },
-    {
-      "outcome": "Gentle Mates",
+      "outcome": "Chicago White Sox",
       "short": false,
       "result": "lost",
-      "pnl": -1.56
+      "pnl": -9.45
     },
     {
-      "outcome": "Hanwha Eagles",
+      "outcome": "Tampa Bay Rays",
       "short": false,
       "result": "won",
-      "pnl": 0.05
+      "pnl": 16.43
     },
     {
-      "outcome": "Tung Tung Bogi",
-      "short": true,
+      "outcome": "Cleveland Guardians",
+      "short": false,
+      "result": "won",
+      "pnl": 3.71
+    },
+    {
+      "outcome": "New York Mets",
+      "short": false,
+      "result": "lost",
+      "pnl": -1.36
+    },
+    {
+      "outcome": "Chicago Cubs",
+      "short": false,
+      "result": "lost",
+      "pnl": -3.28
+    },
+    {
+      "outcome": "Cincinnati Reds",
+      "short": false,
       "result": "lost",
       "pnl": -2.0
-    },
-    {
-      "outcome": "Zhizhen Zhang",
-      "short": true,
-      "result": "lost",
-      "pnl": -3.36
-    },
-    {
-      "outcome": "Way Gaming Esports",
-      "short": true,
-      "result": "won",
-      "pnl": 17.5
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
