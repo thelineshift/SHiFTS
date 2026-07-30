@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T20:09:05Z",
+  "updated": "2026-07-30T21:29:05Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3325,7 +3325,10 @@
         "total": 8.5,
         "ts": 1785430742
       },
-      "last_alert_odds": -101
+      "last_alert_odds": -101,
+      "result": "WIN",
+      "score": "Chicago Cubs 4, St. Louis Cardinals 2",
+      "units_result": 1.0
     },
     {
       "id": "los-angeles-dodgers--1.5-0730",
@@ -3662,7 +3665,10 @@
         "away_ml": -110,
         "total": 7.5,
         "ts": 1785427142
-      }
+      },
+      "result": "WIN",
+      "score": "New York Yankees 1, Chicago White Sox 2",
+      "units_result": 0.88
     },
     {
       "id": "pittsburgh-pirates-ml-0730",
