@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "chicago-cubs-ml-0730",
+      "desc": "Chicago Cubs ML",
+      "odds": 100,
+      "result": "WIN",
+      "units": 1.0,
+      "score": "Chicago Cubs 4, St. Louis Cardinals 2",
+      "tier": "sharp"
+    },
+    {
+      "id": "chicago-white-sox-ml-0730",
+      "desc": "Chicago White Sox ML",
+      "odds": -114,
+      "result": "WIN",
+      "units": 0.88,
+      "score": "New York Yankees 1, Chicago White Sox 2",
+      "tier": "lock"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
