@@ -3344,10 +3344,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 9.0,
-        "ts": 1785430742
+        "ts": 1785445142
       },
       "last_alert_odds": -156
     },
@@ -3368,10 +3368,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 9.0,
-        "ts": 1785430742
+        "ts": 1785445142
       },
       "last_alert_odds": -156
     },
@@ -3470,12 +3470,12 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 157,
-        "away_ml": -191,
+        "home_ml": 163,
+        "away_ml": -198,
         "total": 10.0,
-        "ts": 1785436142
+        "ts": 1785445142
       },
-      "last_alert_odds": -185
+      "last_alert_odds": -198
     },
     {
       "id": "3-leg-parlay-0730-lock",
@@ -3634,10 +3634,10 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -191,
-        "away_ml": 156,
-        "total": 182.5,
-        "ts": 1785441542
+        "home_ml": -186,
+        "away_ml": 152,
+        "total": 181.5,
+        "ts": 1785445142
       },
       "last_alert_odds": -193
     },
@@ -3851,10 +3851,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -191,
-        "away_ml": 156,
-        "total": 182.5,
-        "ts": 1785441542
+        "home_ml": -186,
+        "away_ml": 152,
+        "total": 181.5,
+        "ts": 1785445142
       },
       "last_alert_odds": 158
     },
@@ -4108,10 +4108,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Boston Red Sox",
       "live_odds": {
-        "home_ml": 157,
-        "away_ml": -191,
+        "home_ml": 163,
+        "away_ml": -198,
         "total": 10.0,
-        "ts": 1785443343
+        "ts": 1785445142
       }
     }
   ]
