@@ -3215,12 +3215,12 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Connecticut Sun",
       "live_odds": {
-        "home_ml": -206,
-        "away_ml": 167,
+        "home_ml": -219,
+        "away_ml": 177,
         "total": 175.5,
-        "ts": 1785425342
+        "ts": 1785441542
       },
-      "last_alert_odds": -199
+      "last_alert_odds": -219
     },
     {
       "id": "over-9.5-0730",
@@ -3607,12 +3607,12 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Connecticut Sun",
       "live_odds": {
-        "home_ml": -206,
-        "away_ml": 167,
+        "home_ml": -219,
+        "away_ml": 177,
         "total": 175.5,
-        "ts": 1785425342
+        "ts": 1785441542
       },
-      "last_alert_odds": -199
+      "last_alert_odds": -219
     },
     {
       "id": "las-vegas-aces--4.5-0730",
@@ -3631,10 +3631,10 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -193,
-        "away_ml": 158,
+        "home_ml": -191,
+        "away_ml": 156,
         "total": 182.5,
-        "ts": 1785437942
+        "ts": 1785441542
       },
       "last_alert_odds": -193
     },
@@ -3678,10 +3678,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -115,
+        "home_ml": -103,
+        "away_ml": -117,
         "total": 9.5,
-        "ts": 1785437942
+        "ts": 1785441542
       }
     },
     {
@@ -3848,10 +3848,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -193,
-        "away_ml": 158,
+        "home_ml": -191,
+        "away_ml": 156,
         "total": 182.5,
-        "ts": 1785437942
+        "ts": 1785441542
       },
       "last_alert_odds": 158
     },
