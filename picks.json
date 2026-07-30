@@ -3291,10 +3291,10 @@
       "homeTeam": "Minnesota Twins",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -137,
-        "away_ml": 114,
+        "home_ml": -142,
+        "away_ml": 118,
         "total": 9.0,
-        "ts": 1785425342
+        "ts": 1785428942
       }
     },
     {
@@ -3314,10 +3314,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -114,
+        "home_ml": -115,
         "away_ml": -105,
         "total": 8.5,
-        "ts": 1785423542
+        "ts": 1785428942
       },
       "last_alert_odds": -101
     },
@@ -3628,10 +3628,10 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -219,
-        "away_ml": 178,
+        "home_ml": -207,
+        "away_ml": 168,
         "total": 181.5,
-        "ts": 1785427142
+        "ts": 1785428942
       },
       "last_alert_odds": -210
     },
@@ -3833,10 +3833,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -219,
-        "away_ml": 178,
+        "home_ml": -207,
+        "away_ml": 168,
         "total": 181.5,
-        "ts": 1785427143
+        "ts": 1785428942
       },
       "last_alert_odds": 170
     },
@@ -3926,7 +3926,14 @@
       "opp": "San Francisco Giants",
       "analysis": "55-53 overall, 29-24 at home \u2014 ML juiced to -161, so the -1.5 at the standard number is the bet; model makes San Diego Padres 66% straight up | \ud83d\udcc8 **Market angle:** 55-53 overall, 29-24 at home \u2014 ML juiced to -161, so the -1.5 at the standard number is the bet; model makes San Diego Padres 66% straig",
       "homeTeam": "San Diego Padres",
-      "awayTeam": "San Francisco Giants"
+      "awayTeam": "San Francisco Giants",
+      "live_odds": {
+        "home_ml": -161,
+        "away_ml": 133,
+        "total": 8.5,
+        "ts": 1785428942
+      },
+      "last_alert_odds": -161
     },
     {
       "id": "fnatic-ml-0730",
@@ -3960,7 +3967,13 @@
       "opp": "Atlanta Braves",
       "analysis": "55-54 overall, 32-20 on the road \u2014 our 43% vs book 42% (no-vig) | \ud83d\udcca **Form + price:** 55-54 overall, 32-20 on the road \u2014 our 43% vs book 42% (no-vig). Model makes Washington Nationals **43%** \u2014 books imply **44%**. Small edge, real edge, pressed.",
       "awayTeam": "Washington Nationals",
-      "homeTeam": "Atlanta Braves"
+      "homeTeam": "Atlanta Braves",
+      "live_odds": {
+        "home_ml": -156,
+        "away_ml": 129,
+        "total": 9.5,
+        "ts": 1785428943
+      }
     }
   ]
 }
