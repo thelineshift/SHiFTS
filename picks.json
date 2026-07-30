@@ -3214,8 +3214,8 @@
       "live_odds": {
         "home_ml": -199,
         "away_ml": 163,
-        "total": 175.5,
-        "ts": 1785391142
+        "total": 176.5,
+        "ts": 1785394742
       },
       "last_alert_odds": -199
     },
@@ -3601,8 +3601,8 @@
       "live_odds": {
         "home_ml": -199,
         "away_ml": 163,
-        "total": 175.5,
-        "ts": 1785391142
+        "total": 176.5,
+        "ts": 1785394742
       },
       "last_alert_odds": -199
     },
@@ -3623,12 +3623,12 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -206,
-        "away_ml": 168,
-        "total": 182.5,
-        "ts": 1785392942
+        "home_ml": -219,
+        "away_ml": 177,
+        "total": 181.5,
+        "ts": 1785394742
       },
-      "last_alert_odds": -207
+      "last_alert_odds": -219
     },
     {
       "id": "chicago-white-sox-ml-0730",
@@ -3647,10 +3647,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -114,
-        "away_ml": -106,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 8.0,
-        "ts": 1785385749
+        "ts": 1785394742
       }
     },
     {
