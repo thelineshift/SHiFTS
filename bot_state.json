@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "chicago-white-sox-ml-0729",
+      "desc": "Chicago White Sox ML",
+      "odds": 123,
+      "result": "WIN",
+      "units": 1.23,
+      "score": "New York Yankees 5, Chicago White Sox 6",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -30059,106 +30069,13 @@
       "qty": 2,
       "market_slug": "aec-wnba-gsv-phx-2026-07-29",
       "outcome": "Golden State",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T01:00:07Z",
-      "price_path": [
-        {
-          "ts": 1785337642,
-          "px": 0.64
-        },
-        {
-          "ts": 1785339442,
-          "px": 0.62
-        },
-        {
-          "ts": 1785341242,
-          "px": 0.62
-        },
-        {
-          "ts": 1785343046,
-          "px": 0.61
-        },
-        {
-          "ts": 1785345440,
-          "px": 0.61
-        },
-        {
-          "ts": 1785348440,
-          "px": 0.61
-        },
-        {
-          "ts": 1785350842,
-          "px": 0.61
-        },
-        {
-          "ts": 1785353239,
-          "px": 0.62
-        },
-        {
-          "ts": 1785355041,
-          "px": 0.62
-        },
-        {
-          "ts": 1785357248,
-          "px": 0.63
-        },
-        {
-          "ts": 1785359086,
-          "px": 0.63
-        },
-        {
-          "ts": 1785361026,
-          "px": 0.63
-        },
-        {
-          "ts": 1785363188,
-          "px": 0.63
-        },
-        {
-          "ts": 1785365946,
-          "px": 0.63
-        },
-        {
-          "ts": 1785368341,
-          "px": 0.63
-        },
-        {
-          "ts": 1785370141,
-          "px": 0.63
-        },
-        {
-          "ts": 1785371941,
-          "px": 0.63
-        },
-        {
-          "ts": 1785373741,
-          "px": 0.58
-        },
-        {
-          "ts": 1785375541,
-          "px": 0.58
-        },
-        {
-          "ts": 1785377341,
-          "px": 0.59
-        },
-        {
-          "ts": 1785379143,
-          "px": 0.55
-        },
-        {
-          "ts": 1785381542,
-          "px": 0.85
-        },
-        {
-          "ts": 1785383342,
-          "px": 0.8
-        },
-        {
-          "ts": 1785385142,
-          "px": 0.34
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T04:49:02Z",
+      "pnl": -1.32,
+      "autopsy": "model 72% vs market 66% missed \u2014 logged for the playbook review. Taken 0.66, slid to 0.34 before the result \u2014 the number ran 32\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.57,
@@ -30230,10 +30147,6 @@
       "status": "open",
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
-        {
-          "ts": 1785337642,
-          "px": 0.22
-        },
         {
           "ts": 1785339443,
           "px": 0.22
@@ -30324,6 +30237,10 @@
         },
         {
           "ts": 1785385142,
+          "px": 0.2
+        },
+        {
+          "ts": 1785386945,
           "px": 0.2
         }
       ]
@@ -32719,6 +32636,10 @@
         {
           "ts": 1785385143,
           "px": 0.4
+        },
+        {
+          "ts": 1785386945,
+          "px": 0.4
         }
       ]
     },
@@ -32745,6 +32666,10 @@
         {
           "ts": 1785385143,
           "px": 0.49
+        },
+        {
+          "ts": 1785386946,
+          "px": 0.15
         }
       ]
     },
@@ -32777,15 +32702,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 48,
-    "losses": 112,
-    "pnl": -61.18,
+    "losses": 113,
+    "pnl": -62.5,
     "trades": 475,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-04",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 68.1,
-    "net": 4.1,
+    "account": 66.78,
+    "net": 2.78,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -32795,7 +32720,7 @@
       ],
       "EDGE": [
         39,
-        97,
+        98,
         0
       ],
       "LIVE-BET": [
@@ -32815,14 +32740,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T18:27:18Z",
-      "kind": "EDGE",
-      "outcome": "Weibo Gaming",
-      "result": "WIN",
-      "pnl": 3.2,
-      "lesson": "+$3.20 \u2014 model 70% vs market 60% was real edge; thesis held. Taken 0.60, rode to 0.66 before the result \u2014 beat the number by 6\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-29T18:47:17Z",
       "kind": "EDGE",
@@ -33054,6 +32971,14 @@
       "result": "WIN",
       "pnl": 5.4,
       "lesson": "+$5.40 \u2014 model 45% vs market 40% was real edge; thesis held. Taken 0.40, rode to 0.90 before the result \u2014 beat the number by 50\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T04:49:02Z",
+      "kind": "EDGE",
+      "outcome": "Golden State",
+      "result": "LOSS",
+      "pnl": -1.32,
+      "lesson": "model 72% vs market 66% missed \u2014 logged for the playbook review. Taken 0.66, slid to 0.34 before the result \u2014 the number ran 32\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
