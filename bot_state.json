@@ -45,6 +45,15 @@
   "bot_version": "9.24.28",
   "unannounced_results": [
     {
+      "id": "boston-red-sox-ml-0728",
+      "desc": "Boston Red Sox ML",
+      "odds": -150,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 3, Athletics 4",
+      "tier": "sharp"
+    },
+    {
       "id": "los-angeles-sparks-ml-0728",
       "desc": "Los Angeles Sparks ML",
       "odds": 163,
@@ -114,15 +123,6 @@
       "result": "WIN",
       "units": 0.65,
       "score": "Fluxo W7M 2-1 Bounty Hunters Esports \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "tampa-bay-rays-ml-0729",
-      "desc": "Tampa Bay Rays ML",
-      "odds": -142,
-      "result": "WIN",
-      "units": 1.06,
-      "score": "Texas Rangers 0, Tampa Bay Rays 3",
       "tier": "whale"
     }
   ],
@@ -24212,10 +24212,6 @@
       "ts": "2026-07-27T10:16:51Z",
       "price_path": [
         {
-          "ts": 1785324105,
-          "px": 0.43
-        },
-        {
           "ts": 1785326504,
           "px": 0.43
         },
@@ -24306,6 +24302,10 @@
         {
           "ts": 1785373740,
           "px": 0.06
+        },
+        {
+          "ts": 1785375540,
+          "px": 0.095
         }
       ]
     },
@@ -30336,10 +30336,6 @@
       "ts": "2026-07-29T01:00:07Z",
       "price_path": [
         {
-          "ts": 1785324109,
-          "px": 0.65
-        },
-        {
           "ts": 1785326508,
           "px": 0.65
         },
@@ -30430,6 +30426,10 @@
         {
           "ts": 1785373741,
           "px": 0.58
+        },
+        {
+          "ts": 1785375541,
+          "px": 0.58
         }
       ]
     },
@@ -30503,10 +30503,6 @@
       "status": "open",
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
-        {
-          "ts": 1785324110,
-          "px": 0.22
-        },
         {
           "ts": 1785326508,
           "px": 0.22
@@ -30597,6 +30593,10 @@
         },
         {
           "ts": 1785373741,
+          "px": 0.22
+        },
+        {
+          "ts": 1785375541,
           "px": 0.22
         }
       ]
