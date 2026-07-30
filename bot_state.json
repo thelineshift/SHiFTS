@@ -32760,38 +32760,13 @@
       "qty": 7,
       "market_slug": "aec-mlb-cle-cin-2026-07-29",
       "outcome": "Cincinnati Reds",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T22:04:34Z",
-      "price_path": [
-        {
-          "ts": 1785363190,
-          "px": 0.44
-        },
-        {
-          "ts": 1785365948,
-          "px": 0.44
-        },
-        {
-          "ts": 1785368344,
-          "px": 0.455
-        },
-        {
-          "ts": 1785370147,
-          "px": 0.49
-        },
-        {
-          "ts": 1785372543,
-          "px": 0.065
-        },
-        {
-          "ts": 1785374345,
-          "px": 0.055
-        },
-        {
-          "ts": 1785376742,
-          "px": 0.005
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T02:15:53Z",
+      "pnl": -3.08,
+      "autopsy": "model 49% vs market 44% missed \u2014 logged for the playbook review. Taken 0.44, rode to 0.01 before the result \u2014 beat the number by 44\u00a2 \u2705"
     },
     {
       "price": 0.47,
@@ -32953,15 +32928,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 47,
-    "losses": 108,
-    "pnl": -56.36,
+    "losses": 109,
+    "pnl": -59.44,
     "trades": 472,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-02",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 77.64,
-    "net": 13.64,
+    "account": 74.56,
+    "net": 10.56,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -32971,7 +32946,7 @@
       ],
       "EDGE": [
         38,
-        93,
+        94,
         0
       ],
       "LIVE-BET": [
@@ -32991,14 +32966,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T17:07:21Z",
-      "kind": "EDGE",
-      "outcome": "SK Nebula",
-      "result": "LOSS",
-      "pnl": -1.0,
-      "lesson": "model 63% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.30 before the result \u2014 the number ran 20\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T17:17:21Z",
       "kind": "EDGE",
@@ -33230,6 +33197,14 @@
       "result": "LOSS",
       "pnl": -1.54,
       "lesson": "model 41% vs market 38% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.22 before the result \u2014 beat the number by 16\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T02:15:53Z",
+      "kind": "EDGE",
+      "outcome": "Cincinnati Reds",
+      "result": "LOSS",
+      "pnl": -3.08,
+      "lesson": "model 49% vs market 44% missed \u2014 logged for the playbook review. Taken 0.44, rode to 0.01 before the result \u2014 beat the number by 44\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -33314,7 +33289,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785373742.4960806,
+  "dep_checked_ts": 1785377754.1812985,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
   "x_ads": []
