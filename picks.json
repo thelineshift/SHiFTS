@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T21:29:05Z",
+  "updated": "2026-07-30T20:09:05Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3325,10 +3325,7 @@
         "total": 8.5,
         "ts": 1785430742
       },
-      "last_alert_odds": -101,
-      "result": "WIN",
-      "score": "Chicago Cubs 4, St. Louis Cardinals 2",
-      "units_result": 1.0
+      "last_alert_odds": -101
     },
     {
       "id": "los-angeles-dodgers--1.5-0730",
@@ -3450,10 +3447,10 @@
       "awayTeam": "Miami Marlins",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 7.0,
-        "ts": 1785396542
+        "ts": 1785446942
       }
     },
     {
@@ -3572,10 +3569,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -161,
-        "away_ml": 133,
-        "total": 8.5,
-        "ts": 1785425342
+        "home_ml": -162,
+        "away_ml": 134,
+        "total": 8.0,
+        "ts": 1785446942
       },
       "last_alert_odds": -157
     },
@@ -3665,10 +3662,7 @@
         "away_ml": -110,
         "total": 7.5,
         "ts": 1785427142
-      },
-      "result": "WIN",
-      "score": "New York Yankees 1, Chicago White Sox 2",
-      "units_result": 0.88
+      }
     },
     {
       "id": "pittsburgh-pirates-ml-0730",
@@ -3687,10 +3681,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -103,
-        "away_ml": -117,
+        "home_ml": 100,
+        "away_ml": -121,
         "total": 9.5,
-        "ts": 1785441542
+        "ts": 1785446942
       }
     },
     {
@@ -3955,10 +3949,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -161,
-        "away_ml": 133,
-        "total": 8.5,
-        "ts": 1785428942
+        "home_ml": -162,
+        "away_ml": 134,
+        "total": 8.0,
+        "ts": 1785446942
       },
       "last_alert_odds": -161
     },
