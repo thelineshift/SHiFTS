@@ -1,10 +1,14 @@
 {
- "seq": 515,
+ "seq": 517,
  "commands": [
   {
-   "seq": 516,
+   "seq": 517,
+   "action": "x_timeline"
+  },
+  {
+   "seq": 518,
    "action": "x_post_text",
-   "text": "\u2705 $50 GIVEAWAY \u2014 PAID ON-CHAIN \u2705\n\n\ud83e\udd47 $35 @hayjay_web3\nsolscan.io/tx/4G6yUNZCseWUkFudZyLi6xs6o3VxU5eBoWiAvrAvUac2Wir5xkEJmQ4zRxsbLfAXd5MDbJJU5QVrSni7faaTiCVy\n\n\ud83e\udd48 $15 @umhomdani\nsolscan.io/tx/3rwDvoohXuiVVbt9RkqDBXr5fxt39XzAs8JLm82wunoFHou7hAQSRTRabswJ1NBu8J2RWtk8AdWX76QSygBYs5Mx\n\nProvably fair \u00b7 winners auto-DM'd \u00b7 paid in minutes.\nTHE FINALE: Sun Aug 2, 6 PM ET \u2014 last one ever \u26a1"
+   "text": "\u26a1 SHiFT DESK \u2014 cashing tonight\n\n\ud83d\udcb0 Tampa Bay Rays @ 0.47 \u2192 +$16.43\n\ud83d\udcb0 KC Royals @ 0.30 \u2192 +$5.60\n\ud83d\udcb0 Cleveland Guardians @ 0.47 \u2192 +$3.71\n\nAccount $77.64 and climbing \u00b7 15 live positions working.\n\n\ud83d\udc0b Desk floor: https://thelineshift.github.io/SHiFTS/upgrade.html"
   }
  ]
 }
