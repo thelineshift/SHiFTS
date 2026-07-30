@@ -31019,10 +31019,6 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
-          "ts": 1785322917,
-          "px": 0.36
-        },
-        {
           "ts": 1785325312,
           "px": 0.36
         },
@@ -31113,6 +31109,10 @@
         {
           "ts": 1785372542,
           "px": 0.435
+        },
+        {
+          "ts": 1785374941,
+          "px": 0.44
         }
       ]
     },
@@ -32720,6 +32720,10 @@
         {
           "ts": 1785372543,
           "px": 0.4
+        },
+        {
+          "ts": 1785374942,
+          "px": 0.4
         }
       ]
     },
@@ -32928,30 +32932,13 @@
       "qty": 8,
       "market_slug": "atc-mlb-chc-stl-2026-07-29-f5-chc",
       "outcome": "Chicago Cubs",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T22:09:13Z",
-      "price_path": [
-        {
-          "ts": 1785363191,
-          "px": 0.41
-        },
-        {
-          "ts": 1785365948,
-          "px": 0.41
-        },
-        {
-          "ts": 1785368344,
-          "px": 0.41
-        },
-        {
-          "ts": 1785370148,
-          "px": 0.32
-        },
-        {
-          "ts": 1785372544,
-          "px": 0.01
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T01:29:02Z",
+      "pnl": -3.28,
+      "autopsy": "model 55% vs market 41% missed \u2014 logged for the playbook review. Taken 0.41, slid to 0.01 before the result \u2014 the number ran 40\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.4,
@@ -32965,30 +32952,13 @@
       "qty": 5,
       "market_slug": "atc-mlb-cle-cin-2026-07-29-f5-cin",
       "outcome": "Cincinnati Reds",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T22:09:15Z",
-      "price_path": [
-        {
-          "ts": 1785363191,
-          "px": 0.4
-        },
-        {
-          "ts": 1785365949,
-          "px": 0.39
-        },
-        {
-          "ts": 1785368345,
-          "px": 0.38
-        },
-        {
-          "ts": 1785370148,
-          "px": 0.32
-        },
-        {
-          "ts": 1785372544,
-          "px": 0.02
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T01:29:05Z",
+      "pnl": -2.0,
+      "autopsy": "model 49% vs market 40% missed \u2014 logged for the playbook review. Taken 0.40, slid to 0.02 before the result \u2014 the number ran 38\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.38,
@@ -33058,15 +33028,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 47,
-    "losses": 105,
-    "pnl": -49.54,
+    "losses": 107,
+    "pnl": -54.82,
     "trades": 472,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-00",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 85.62,
-    "net": 21.62,
+    "account": 79.64,
+    "net": 15.64,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33076,7 +33046,7 @@
       ],
       "EDGE": [
         38,
-        90,
+        92,
         0
       ],
       "LIVE-BET": [
@@ -33096,22 +33066,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T14:12:40Z",
-      "kind": "EDGE",
-      "outcome": "LGD Gaming",
-      "result": "LOSS",
-      "pnl": -1.12,
-      "lesson": "model 37% vs market 14% missed \u2014 logged for the playbook review. Taken 0.14, rode to 0.10 before the result \u2014 beat the number by 4\u00a2 \u2705"
-    },
-    {
-      "ts": "2026-07-29T16:37:27Z",
-      "kind": "EDGE",
-      "outcome": "VfB eSports",
-      "result": "LOSS",
-      "pnl": -2.31,
-      "lesson": "model 31% vs market 7% missed \u2014 logged for the playbook review. Taken 0.07, slid to 0.05 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T17:07:17Z",
       "kind": "EDGE",
@@ -33335,6 +33289,22 @@
       "result": "LOSS",
       "pnl": -9.45,
       "lesson": "model 51% vs market 35% missed \u2014 logged for the playbook review. Taken 0.35, slid to 0.02 before the result \u2014 the number ran 33\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T01:29:02Z",
+      "kind": "EDGE",
+      "outcome": "Chicago Cubs",
+      "result": "LOSS",
+      "pnl": -3.28,
+      "lesson": "model 55% vs market 41% missed \u2014 logged for the playbook review. Taken 0.41, slid to 0.01 before the result \u2014 the number ran 40\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T01:29:05Z",
+      "kind": "EDGE",
+      "outcome": "Cincinnati Reds",
+      "result": "LOSS",
+      "pnl": -2.0,
+      "lesson": "model 49% vs market 40% missed \u2014 logged for the playbook review. Taken 0.40, slid to 0.02 before the result \u2014 the number ran 38\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
