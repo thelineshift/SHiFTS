@@ -3188,10 +3188,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -173,
-        "away_ml": 143,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 7.5,
-        "ts": 1785421742
+        "ts": 1785423541
       },
       "last_alert_odds": -173
     },
@@ -3314,10 +3314,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -115,
+        "home_ml": -114,
         "away_ml": -105,
-        "total": 9.0,
-        "ts": 1785421742
+        "total": 8.5,
+        "ts": 1785423542
       },
       "last_alert_odds": -101
     },
@@ -3340,8 +3340,8 @@
       "live_odds": {
         "home_ml": -157,
         "away_ml": 130,
-        "total": 9.0,
-        "ts": 1785418142
+        "total": 8.5,
+        "ts": 1785423542
       },
       "last_alert_odds": -156
     },
@@ -3364,8 +3364,8 @@
       "live_odds": {
         "home_ml": -157,
         "away_ml": 130,
-        "total": 9.0,
-        "ts": 1785418142
+        "total": 8.5,
+        "ts": 1785423542
       },
       "last_alert_odds": -156
     },
@@ -3628,10 +3628,10 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -210,
-        "away_ml": 170,
+        "home_ml": -220,
+        "away_ml": 178,
         "total": 181.5,
-        "ts": 1785421742
+        "ts": 1785423542
       },
       "last_alert_odds": -210
     },
@@ -3806,10 +3806,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -173,
-        "away_ml": 143,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 7.5,
-        "ts": 1785421743
+        "ts": 1785423542
       },
       "last_alert_odds": -173
     },
@@ -3830,10 +3830,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -210,
-        "away_ml": 170,
+        "home_ml": -220,
+        "away_ml": 178,
         "total": 181.5,
-        "ts": 1785421743
+        "ts": 1785423542
       },
       "last_alert_odds": 170
     }
