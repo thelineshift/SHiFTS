@@ -32899,10 +32899,6 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
-          "ts": 1785398942,
-          "px": 0.445
-        },
-        {
           "ts": 1785400742,
           "px": 0.445
         },
@@ -32992,6 +32988,10 @@
         },
         {
           "ts": 1785445742,
+          "px": 0.45
+        },
+        {
+          "ts": 1785447543,
           "px": 0.45
         }
       ]
@@ -33180,10 +33180,6 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
-          "ts": 1785395943,
-          "px": 0.16
-        },
-        {
           "ts": 1785398942,
           "px": 0.16
         },
@@ -33273,6 +33269,10 @@
         },
         {
           "ts": 1785445742,
+          "px": 0.15
+        },
+        {
+          "ts": 1785447543,
           "px": 0.15
         }
       ]
@@ -35036,28 +35036,27 @@
       "qty": 4,
       "market_slug": "aec-mlb-nyy-cws-2026-07-30",
       "outcome": "New York Yankees",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-30T20:55:13Z",
-      "price_path": [
-        {
-          "ts": 1785445742,
-          "px": 0.57
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.02,
+      "settled_at": "2026-07-30T21:39:04Z",
+      "pnl": -2.48,
+      "autopsy": "model 94% vs market 62% missed \u2014 logged for the playbook review."
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 52,
-    "losses": 120,
-    "pnl": -119.26,
+    "losses": 121,
+    "pnl": -121.74,
     "trades": 484,
     "last_recap": "2026-07-30",
     "last_recap_hour": "2026-07-30-20",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 12.15,
-    "net": -51.85,
+    "account": 9.68,
+    "net": -54.32,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -35084,6 +35083,11 @@
         0,
         1,
         0
+      ],
+      "LIVEEDGE": [
+        0,
+        1,
+        0
       ]
     },
     "archived": 0,
@@ -35092,14 +35096,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T20:24:04Z",
-      "kind": "EDGE",
-      "outcome": "Gentle Mates",
-      "result": "LOSS",
-      "pnl": -1.56,
-      "lesson": "model 50% vs market 39% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.42 before the result \u2014 beat the number by 3\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-29T20:34:04Z",
       "kind": "EDGE",
@@ -35331,6 +35327,14 @@
       "result": "LOSS",
       "pnl": -1.58,
       "lesson": "model 50% vs market 26% missed \u2014 logged for the playbook review. Taken 0.26, rode to 0.11 before the result \u2014 beat the number by 15\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T21:39:04Z",
+      "kind": "LIVEEDGE",
+      "outcome": "New York Yankees",
+      "result": "LOSS",
+      "pnl": -2.48,
+      "lesson": "model 94% vs market 62% missed \u2014 logged for the playbook review."
     }
   ],
   "giveaway_x_posts": [
@@ -35415,7 +35419,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785439743.0676308,
+  "dep_checked_ts": 1785447544.3439121,
   "x_bio_v": 2,
   "op_cool_until": 1785442516.5131896,
   "x_ads": []
