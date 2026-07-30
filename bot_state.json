@@ -45,15 +45,6 @@
   "bot_version": "9.24.28",
   "unannounced_results": [
     {
-      "id": "boston-red-sox-ml-0728",
-      "desc": "Boston Red Sox ML",
-      "odds": -150,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Boston Red Sox 3, Athletics 4",
-      "tier": "sharp"
-    },
-    {
       "id": "los-angeles-sparks-ml-0728",
       "desc": "Los Angeles Sparks ML",
       "odds": 163,
