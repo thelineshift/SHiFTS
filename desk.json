@@ -1,20 +1,14 @@
 {
-  "updated": "2026-07-30T18:10:19Z",
-  "record": "52-119",
+  "updated": "2026-07-30T20:00:20Z",
+  "record": "52-120",
   "trades": 483,
-  "open": 4,
-  "pnl": -117.68,
-  "account": 16.15,
+  "open": 3,
+  "pnl": -119.26,
+  "account": 12.15,
   "deposits": 64.0,
-  "net_pnl": -47.85,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 43-103 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
+  "net_pnl": -51.85,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 43-104 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
   "recent": [
-    {
-      "outcome": "Ground Zero Gaming",
-      "short": true,
-      "result": "lost",
-      "pnl": -2.7
-    },
     {
       "outcome": "ThunderTalk Gaming",
       "short": false,
@@ -44,6 +38,12 @@
       "short": true,
       "result": "lost",
       "pnl": -1.05
+    },
+    {
+      "outcome": "Twisted Minds Orchid",
+      "short": true,
+      "result": "lost",
+      "pnl": -1.58
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
