@@ -27769,10 +27769,6 @@
       "ts": "2026-07-28T06:05:03Z",
       "price_path": [
         {
-          "ts": 1785343044,
-          "px": 0.28
-        },
-        {
           "ts": 1785345438,
           "px": 0.27
         },
@@ -27862,6 +27858,10 @@
         },
         {
           "ts": 1785392342,
+          "px": 0.24
+        },
+        {
+          "ts": 1785395942,
           "px": 0.24
         }
       ]
@@ -30215,10 +30215,6 @@
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
         {
-          "ts": 1785344249,
-          "px": 0.22
-        },
-        {
           "ts": 1785346639,
           "px": 0.22
         },
@@ -30308,6 +30304,10 @@
         },
         {
           "ts": 1785391142,
+          "px": 0.19
+        },
+        {
+          "ts": 1785395942,
           "px": 0.19
         }
       ]
@@ -31011,10 +31011,6 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
-          "ts": 1785341850,
-          "px": 0.15
-        },
-        {
           "ts": 1785344250,
           "px": 0.15
         },
@@ -31105,6 +31101,10 @@
         {
           "ts": 1785390543,
           "px": 0.15
+        },
+        {
+          "ts": 1785395943,
+          "px": 0.16
         }
       ]
     },
@@ -32579,46 +32579,13 @@
       "qty": 16,
       "market_slug": "aec-lol-foxy-hlec-2026-07-30",
       "outcome": "Hanwha Life Esports Challengers",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-30T01:04:44Z",
-      "price_path": [
-        {
-          "ts": 1785373747,
-          "px": 0.38
-        },
-        {
-          "ts": 1785376144,
-          "px": 0.38
-        },
-        {
-          "ts": 1785378372,
-          "px": 0.38
-        },
-        {
-          "ts": 1785380346,
-          "px": 0.38
-        },
-        {
-          "ts": 1785382743,
-          "px": 0.38
-        },
-        {
-          "ts": 1785384543,
-          "px": 0.39
-        },
-        {
-          "ts": 1785386343,
-          "px": 0.39
-        },
-        {
-          "ts": 1785388743,
-          "px": 0.32
-        },
-        {
-          "ts": 1785390543,
-          "px": 0.21
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T07:19:03Z",
+      "pnl": -6.08,
+      "autopsy": "model 50% vs market 38% missed \u2014 logged for the playbook review. Taken 0.38, rode to 0.21 before the result \u2014 beat the number by 17\u00a2 \u2705"
     },
     {
       "price": 0.34,
@@ -32735,6 +32702,10 @@
         {
           "ts": 1785391143,
           "px": 0.4
+        },
+        {
+          "ts": 1785395948,
+          "px": 0.43
         }
       ]
     },
@@ -32819,6 +32790,10 @@
         {
           "ts": 1785391743,
           "px": 0.3
+        },
+        {
+          "ts": 1785395948,
+          "px": 0.28
         }
       ]
     },
@@ -32835,21 +32810,27 @@
       "market_slug": "aec-lol-tt-jdg-2026-07-30",
       "outcome": "ThunderTalk Gaming",
       "status": "open",
-      "ts": "2026-07-30T07:09:52Z"
+      "ts": "2026-07-30T07:09:52Z",
+      "price_path": [
+        {
+          "ts": 1785395948,
+          "px": 0.31
+        }
+      ]
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 48,
-    "losses": 113,
-    "pnl": -62.5,
+    "losses": 114,
+    "pnl": -68.58,
     "trades": 477,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-06",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 64.29,
-    "net": 0.29,
+    "account": 58.21,
+    "net": -5.79,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -32859,7 +32840,7 @@
       ],
       "EDGE": [
         39,
-        98,
+        99,
         0
       ],
       "LIVE-BET": [
@@ -32879,14 +32860,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T18:47:17Z",
-      "kind": "EDGE",
-      "outcome": "Miami Marlins",
-      "result": "WIN",
-      "pnl": 1.14,
-      "lesson": "+$1.14 \u2014 model 51% vs market 43% was real edge; thesis held. Taken 0.43, slid to 0.46 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T19:07:18Z",
       "kind": "EDGE",
@@ -33118,6 +33091,14 @@
       "result": "LOSS",
       "pnl": -1.32,
       "lesson": "model 72% vs market 66% missed \u2014 logged for the playbook review. Taken 0.66, slid to 0.34 before the result \u2014 the number ran 32\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T07:19:03Z",
+      "kind": "EDGE",
+      "outcome": "Hanwha Life Esports Challengers",
+      "result": "LOSS",
+      "pnl": -6.08,
+      "lesson": "model 50% vs market 38% missed \u2014 logged for the playbook review. Taken 0.38, rode to 0.21 before the result \u2014 beat the number by 17\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -33202,7 +33183,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785391483.175238,
+  "dep_checked_ts": 1785395943.4821486,
   "x_bio_v": 2,
   "op_cool_until": 1785384925.9896624,
   "x_ads": []
