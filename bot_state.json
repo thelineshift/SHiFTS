@@ -32846,36 +32846,27 @@
       "qty": 9,
       "market_slug": "aec-mlb-chc-stl-2026-07-29",
       "outcome": "Chicago Cubs",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-30T01:14:42Z",
-      "price_path": [
-        {
-          "ts": 1785374345,
-          "px": 0.45
-        },
-        {
-          "ts": 1785376743,
-          "px": 0.535
-        },
-        {
-          "ts": 1785378544,
-          "px": 0.82
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T02:49:04Z",
+      "pnl": -8.1,
+      "autopsy": "model 52% vs market 42% missed \u2014 logged for the playbook review. Taken 0.41, rode to 0.82 before the result \u2014 beat the number by 40\u00a2 \u2705"
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 47,
-    "losses": 110,
-    "pnl": -60.94,
+    "losses": 111,
+    "pnl": -69.04,
     "trades": 472,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-02",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 73.06,
-    "net": 9.06,
+    "account": 64.96,
+    "net": 0.96,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -32897,6 +32888,11 @@
         4,
         3,
         0
+      ],
+      "LIVEEDGE": [
+        0,
+        1,
+        0
       ]
     },
     "archived": 0,
@@ -32905,14 +32901,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T17:37:19Z",
-      "kind": "EDGE",
-      "outcome": "FOKUS Sakura",
-      "result": "WIN",
-      "pnl": 5.6,
-      "lesson": "+$5.60 \u2014 model 37% vs market 20% was real edge; thesis held. Taken 0.20, slid to 0.96 before the result \u2014 the number ran 76\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T18:07:21Z",
       "kind": "EDGE",
@@ -33144,6 +33132,14 @@
       "result": "LOSS",
       "pnl": -1.5,
       "lesson": "model 62% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.82 before the result \u2014 the number ran 32\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T02:49:04Z",
+      "kind": "LIVEEDGE",
+      "outcome": "Chicago Cubs",
+      "result": "LOSS",
+      "pnl": -8.1,
+      "lesson": "model 52% vs market 42% missed \u2014 logged for the playbook review. Taken 0.41, rode to 0.82 before the result \u2014 beat the number by 40\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
