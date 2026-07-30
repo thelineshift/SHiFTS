@@ -3188,10 +3188,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
+        "home_ml": -158,
+        "away_ml": 131,
         "total": 7.5,
-        "ts": 1785410942
+        "ts": 1785412741
       },
       "last_alert_odds": -157
     },
@@ -3214,8 +3214,8 @@
       "live_odds": {
         "home_ml": -199,
         "away_ml": 163,
-        "total": 176.5,
-        "ts": 1785394742
+        "total": 177.5,
+        "ts": 1785412741
       },
       "last_alert_odds": -199
     },
@@ -3605,8 +3605,8 @@
       "live_odds": {
         "home_ml": -199,
         "away_ml": 163,
-        "total": 176.5,
-        "ts": 1785394742
+        "total": 177.5,
+        "ts": 1785412742
       },
       "last_alert_odds": -199
     },
@@ -3653,8 +3653,8 @@
       "live_odds": {
         "home_ml": -115,
         "away_ml": -105,
-        "total": 8.0,
-        "ts": 1785394742
+        "total": 7.5,
+        "ts": 1785412742
       }
     },
     {
