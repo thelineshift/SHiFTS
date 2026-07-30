@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T16:09:06Z",
+  "updated": "2026-07-30T16:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3773,7 +3773,10 @@
       "opp": "SK Nebula",
       "analysis": "4-1 last 5 (beat GIANTX GC, Twisted Minds Orchid, Bar\u00e7a eSports GC) (lost to Gentle Mates GC) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat GIANTX GC, Twisted Minds Orchid, Bar\u00e7a eSports GC) (lost to Gentle Mates GC) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** g",
       "awayTeam": "Habos Babos",
-      "homeTeam": "SK Nebula"
+      "homeTeam": "SK Nebula",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Habos Babos 0-2 SK Nebula \u00b7 final"
     },
     {
       "id": "natus-vincere-ml-0730",
