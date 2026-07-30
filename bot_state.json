@@ -32759,11 +32759,11 @@
     "pnl": -61.18,
     "trades": 475,
     "last_recap": "2026-07-29",
-    "last_recap_hour": "2026-07-30-02",
+    "last_recap_hour": "2026-07-30-04",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 72.4,
-    "net": 8.4,
+    "account": 68.1,
+    "net": 4.1,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -32788,8 +32788,8 @@
       ]
     },
     "archived": 0,
-    "day_date": "2026-07-29",
-    "day_anchor": 130.14
+    "day_date": "2026-07-30",
+    "day_anchor": 72.4
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
@@ -33116,7 +33116,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785377754.1812985,
+  "dep_checked_ts": 1785384299.4556587,
   "x_bio_v": 2,
   "op_cool_until": 1785384925.9896624,
   "x_ads": []
