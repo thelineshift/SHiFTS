@@ -3188,10 +3188,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -158,
-        "away_ml": 131,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 7.5,
-        "ts": 1785412741
+        "ts": 1785416342
       },
       "last_alert_odds": -157
     },
@@ -3338,10 +3338,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 8.5,
-        "ts": 1785385742
+        "ts": 1785416342
       },
       "last_alert_odds": -156
     },
@@ -3362,10 +3362,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 8.5,
-        "ts": 1785385743
+        "ts": 1785416342
       },
       "last_alert_odds": -156
     },
@@ -3464,10 +3464,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 141,
-        "away_ml": -171,
-        "total": 10.5,
-        "ts": 1785410942
+        "home_ml": 144,
+        "away_ml": -175,
+        "total": 10.0,
+        "ts": 1785416342
       },
       "last_alert_odds": -168
     },
@@ -3563,10 +3563,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 8.5,
-        "ts": 1785385743
+        "ts": 1785416342
       }
     },
     {
@@ -3627,12 +3627,12 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -245,
-        "away_ml": 197,
+        "home_ml": -225,
+        "away_ml": 182,
         "total": 181.5,
-        "ts": 1785414542
+        "ts": 1785416342
       },
-      "last_alert_odds": -245
+      "last_alert_odds": -225
     },
     {
       "id": "chicago-white-sox-ml-0730",
@@ -3651,10 +3651,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -117,
-        "away_ml": -103,
+        "home_ml": -114,
+        "away_ml": -105,
         "total": 7.5,
-        "ts": 1785414542
+        "ts": 1785416342
       }
     },
     {
@@ -3805,10 +3805,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -158,
-        "away_ml": 131,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 7.5,
-        "ts": 1785414542
+        "ts": 1785416342
       },
       "last_alert_odds": -158
     },
@@ -3829,10 +3829,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -245,
-        "away_ml": 197,
+        "home_ml": -225,
+        "away_ml": 182,
         "total": 181.5,
-        "ts": 1785414543
+        "ts": 1785416342
       }
     }
   ]
