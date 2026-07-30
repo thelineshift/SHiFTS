@@ -32848,7 +32848,13 @@
       "market_slug": "aec-lol-dcg-gz-2026-07-30",
       "outcome": "Ground Zero Gaming",
       "status": "open",
-      "ts": "2026-07-30T05:34:59Z"
+      "ts": "2026-07-30T05:34:59Z",
+      "price_path": [
+        {
+          "ts": 1785389943,
+          "px": 0.3
+        }
+      ]
     }
   ],
   "pm_stats": {
