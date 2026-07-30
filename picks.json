@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T19:09:05Z",
+  "updated": "2026-07-30T19:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3631,10 +3631,10 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -186,
-        "away_ml": 152,
-        "total": 181.5,
-        "ts": 1785439742
+        "home_ml": -193,
+        "away_ml": 158,
+        "total": 182.5,
+        "ts": 1785437942
       },
       "last_alert_odds": -193
     },
@@ -3678,10 +3678,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -103,
-        "away_ml": -117,
+        "home_ml": -105,
+        "away_ml": -115,
         "total": 9.5,
-        "ts": 1785439742
+        "ts": 1785437942
       }
     },
     {
@@ -3848,10 +3848,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -186,
-        "away_ml": 152,
-        "total": 181.5,
-        "ts": 1785439742
+        "home_ml": -193,
+        "away_ml": 158,
+        "total": 182.5,
+        "ts": 1785437942
       },
       "last_alert_odds": 158
     },
@@ -3968,7 +3968,10 @@
       "opp": "Eternal Fire",
       "analysis": "2-3 last 5 (beat Karmine Corp, GIANTX) (lost to Team Liquid) vs 1-4 \u2014 live Pinnacle line -228 (our 73% vs book 66%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat Karmine Corp, GIANTX) (lost to Team Liquid) vs 1-4 \u2014 live Pinnacle line -228 (our 73% vs book 66%). Ride the **6-point** form edge before the ma",
       "awayTeam": "Fnatic",
-      "homeTeam": "Eternal Fire"
+      "homeTeam": "Eternal Fire",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Fnatic 0-2 Eternal Fire \u00b7 final"
     },
     {
       "id": "washington-nationals-ml-0730",
