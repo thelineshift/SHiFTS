@@ -1,22 +1,122 @@
 {
-  "executed_seq": 515,
+  "executed_seq": 517,
   "last_log": [
-    "seq 515 executed 2026-07-27 13:18 UTC",
-    "x_post_text OK: id 2081731028029493634"
+    "seq 517 executed 2026-07-30 02:16 UTC",
+    "2082634552972021793 | 2026-07-30T01:09 | post | \u2705 WIN +$5.60 \u2014 Kansas City Royals @ 0.30\n\n\ud83d\udcbc Account $95.07 \u00b7 \ud83d\udcca today $",
+    "2082632037161394181 | 2026-07-30T00:59 | post | \u2705 WIN +$3.71 \u2014 Cleveland Guardians @ 0.47\n\n\ud83d\udcbc Account $93.18 \u00b7 \ud83d\udcca today ",
+    "2082619456363307170 | 2026-07-30T00:09 | post | \u2705 WIN +$16.43 \u2014 Tampa Bay Rays @ 0.47\n\n\ud83d\udcbc Account $90.83 \u00b7 \ud83d\udcca today $-39",
+    "2082587749983682593 | 2026-07-29T22:03 | post | \ud83d\udd12 The Lock Room is where parlays are unlocked \u2014 every parlay built off",
+    "2082575584790827024 | 2026-07-29T21:14 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Athletics ML (+158) \u2705 +1.58u\nBoston Red S",
+    "2082567842667356607 | 2026-07-29T20:44 | replied_to | @elonmusk @KatieMiller @Google @sundarpichai That\u2019s actually disgustin",
+    "2082566026902872536 | 2026-07-29T20:36 | replied_to | @Lordmiles @grok is this true, why can\u2019t these companies  ever be tran",
+    "2082562820630340066 | 2026-07-29T20:24 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML (-112) \u2705 +0.89u\nChicago C",
+    "2082561117864493165 | 2026-07-29T20:17 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML (-112) \u2705 +0.89u\nChicago C",
+    "2082558623268688057 | 2026-07-29T20:07 | post | \u2705 WIN +$17.50 \u2014 SHORT Way Gaming Esports @ 0.30\n\n\ud83d\udcbc Account $118.95 \u00b7 \ud83d\udcca",
+    "2082557032188776731 | 2026-07-29T20:01 | post | \u26a1 PLAY OF THE DAY just dropped in the Discord \u2014 SHiFT's single highest",
+    "2082553587281129588 | 2026-07-29T19:47 | post | \u2705 WIN +$1.59 \u2014 SHORT Habos Babos @ 0.48\n\n\ud83d\udcbc Account $128.31 \u00b7 \ud83d\udcca today $",
+    "2082553574446493910 | 2026-07-29T19:47 | post | \u2705 WIN +$0.92 \u2014 Alex de Minaur @ 0.54\n\n\ud83d\udcbc Account $126.72 \u00b7 \ud83d\udcca today $-3.",
+    "2082551073764696555 | 2026-07-29T19:37 | post | \u2705 WIN +$3.44 \u2014 Alex de Minaur @ 0.56\n\n\ud83d\udcbc Account $125.80 \u00b7 \ud83d\udcca today $-4.",
+    "2082551051585208350 | 2026-07-29T19:37 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML (-112) \u2705 +0.89u\nChicago C",
+    "2082538476583698485 | 2026-07-29T18:47 | post | \u2705 WIN +$1.14 \u2014 SHORT Miami Marlins @ 0.43\n\n\ud83d\udcbc Account $132.35 \u00b7 \ud83d\udcca today",
+    "2082533461425070176 | 2026-07-29T18:27 | post | \u2705 WIN +$3.20 \u2014 Weibo Gaming @ 0.60\n\n\ud83d\udcbc Account $131.21 \u00b7 \ud83d\udcca today +$1.07",
+    "2082528425131299207 | 2026-07-29T18:07 | post | \u2705 WIN +$6.03 \u2014 B2U @ 0.33\n\n\ud83d\udcbc Account $129.48 \u00b7 \ud83d\udcca today $-0.66 (-0.5%)\n",
+    "2082525999745601694 | 2026-07-29T17:57 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washingt",
+    "2082525990241358109 | 2026-07-29T17:57 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washingt",
+    "2082520868731895970 | 2026-07-29T17:37 | post | \u2705 WIN +$5.60 \u2014 SHORT FOKUS Sakura @ 0.20\n\n\ud83d\udcbc Account $97.26 \u00b7 \ud83d\udcca today $",
+    "2082515843309842755 | 2026-07-29T17:17 | post | \u2705 WIN +$1.98 \u2014 SHORT ZYB Esport @ 0.34\n\n\ud83d\udcbc Account $90.98 \u00b7 \ud83d\udcca today $-3",
+    "2082514560750346412 | 2026-07-29T17:12 | post | \ud83c\udf93 Betting school, one minute:\n\nClosing line value is the only report c",
+    "2082510786069717405 | 2026-07-29T16:57 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washingt",
+    "2082505753118843285 | 2026-07-29T16:37 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washingt",
+    "2082500727378002420 | 2026-07-29T16:17 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washingt",
+    "2082495687376400447 | 2026-07-29T15:57 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washingt",
+    "2082490653565649287 | 2026-07-29T15:37 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washingt",
+    "2082485620329574790 | 2026-07-29T15:17 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washingt",
+    "2082466838467039620 | 2026-07-29T14:02 | post | \ud83d\udd12 The LOCK room went 9-10 this week \u2014 +0.0 units.\n\n$100 on every pick ",
+    "2082453698819784878 | 2026-07-29T13:10 | post | \u2705 WIN +$0.05 \u2014 Hanwha Eagles @ 0.96\n\n\ud83d\udcbc Account $101.43 \u00b7 \ud83d\udcca today $-28.",
+    "2082453649687806141 | 2026-07-29T13:10 | post | \ud83e\uddfe RESULT \ud83d\udcca SHARP ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washing",
+    "2082452288292209002 | 2026-07-29T13:04 | post | \ud83e\uddfe RESULT \ud83d\udcca SHARP ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washing",
+    "2082447255416758503 | 2026-07-29T12:44 | post | \ud83e\uddfe RESULT \ud83d\udcca SHARP ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washing",
+    "2082444770258071675 | 2026-07-29T12:34 | post | \u2705 WIN +$3.95 \u2014 SHORT KT Rolster @ 0.21\n\n\ud83d\udcbc Account $105.33 \u00b7 \ud83d\udcca today $-",
+    "2082436409416450365 | 2026-07-29T12:01 | post | \ud83e\uddfe RESULT \ud83d\udc0b WHALE ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washing",
+    "2082431378642313571 | 2026-07-29T11:41 | post | \ud83e\uddfe RESULT \ud83d\udc0b WHALE ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washing",
+    "2082426349776785804 | 2026-07-29T11:21 | post | \ud83e\uddfe RESULT \ud83d\udc0b WHALE ROOM: [PICK] Chicago Cubs ML + Marsborne ML + Washing",
+    "2082350618736271372 | 2026-07-29T06:20 | replied_to | @0xSurferX Transparency is the key in this industry.",
+    "2082331404369875396 | 2026-07-29T05:04 | post | \u2705 WIN +$0.90 \u2014 Milwaukee Brewers @ 0.55\n\n\ud83d\udcbc Account $110.61 \u00b7 \ud83d\udcca today $",
+    "2082291126187466849 | 2026-07-29T02:24 | post | \u2705 WIN +$1.71 \u2014 Harry Wendelken @ 0.43\n\n\ud83d\udcbc Account $134.07 \u00b7 \ud83d\udcca today +$3",
+    "2082291114107904457 | 2026-07-29T02:24 | post | \u2705 WIN +$0.66 \u2014 Benjamin Bonzi @ 0.78\n\n\ud83d\udcbc Account $132.36 \u00b7 \ud83d\udcca today +$30",
+    "2082286093177864563 | 2026-07-29T02:04 | post | \u2705 WIN +$17.53 \u2014 SHORT Sloane Stephens @ 0.33\n\n\ud83d\udcbc Account $148.02 \u00b7 \ud83d\udcca to",
+    "2082278533167288389 | 2026-07-29T01:34 | post | \u2705 WIN +$0.00 \u2014 SHORT Hugo Grenier @ 0.30\n\n\ud83d\udcbc Account $98.31 \u00b7 \ud83d\udcca today $",
+    "2082268516284305907 | 2026-07-29T00:54 | post | \u2705 WIN +$3.85 \u2014 Magdalena Frech @ 0.23\n\n\ud83d\udcbc Account $115.87 \u00b7 \ud83d\udcca today +$1",
+    "2082268504833822999 | 2026-07-29T00:54 | post | \u2705 WIN +$3.04 \u2014 Magdalena Frech @ 0.24\n\n\ud83d\udcbc Account $112.02 \u00b7 \ud83d\udcca today +$1",
+    "2082268486345347347 | 2026-07-29T00:54 | post | \u2705 WIN +$10.67 \u2014 SHORT RED Academy @ 0.23\n\n\ud83d\udcbc Account $108.98 \u00b7 \ud83d\udcca today ",
+    "2082228188399456465 | 2026-07-28T22:14 | post | \ud83d\udcc8 SHiFT desk, live: 32-71 \u00b7 \ud83d\udcb0 account $97.32 \u00b7 net +$33.32 on $64.00 i",
+    "2082219758758305804 | 2026-07-28T21:40 | replied_to | @CS2Rui Yeah you could freeroll your way to a lambo back in the day \ud83d\ude2d",
+    "2082203036244701280 | 2026-07-28T20:34 | post | \u2705 WIN +$1.18 \u2014 SHORT Myth Esports @ 0.41\n\n\ud83d\udcbc Account $111.94 \u00b7 \ud83d\udcca today ",
+    "2082194611817365755 | 2026-07-28T20:00 | post | \u26a1 PLAY OF THE DAY just dropped in the Discord \u2014 SHiFT's single highest",
+    "2082190447708090850 | 2026-07-28T19:44 | post | \u2705 WIN +$2.82 \u2014 SHORT Habos Babos @ 0.37\n\n\ud83d\udcbc Account $124.50 \u00b7 \ud83d\udcca today +",
+    "2082177881908891699 | 2026-07-28T18:54 | post | \u2705 WIN +$2.16 \u2014 Karmine Corp Blue @ 0.28\n\n\ud83d\udcbc Account $125.97 \u00b7 \ud83d\udcca today +",
+    "2082156188884463751 | 2026-07-28T17:28 | replied_to | @muskonomy @grok this person didn\u2019t mention one fee, that\u2019s fine can y",
+    "2082155256704852096 | 2026-07-28T17:24 | post | \u2705 WIN +$6.88 \u2014 SHORT BakS eSports @ 0.14\n\n\ud83d\udcbc Account $134.23 \u00b7 \ud83d\udcca today ",
+    "2082155224786169874 | 2026-07-28T17:24 | post | \u2705 WIN +$0.03 \u2014 Zeynep Sonmez @ 0.99\n\n\ud83d\udcbc Account $129.38 \u00b7 \ud83d\udcca today +$27.",
+    "2082152732681466280 | 2026-07-28T17:14 | replied_to | @PalmerLuckey @AzorFrank @modretro @AMDembedded @AMDGaming We\u2019re all e",
+    "2082152686439575636 | 2026-07-28T17:14 | post | \ud83d\udd2c Desk autopsy (WIN): +$6.12 \u2014 model 53% vs market 32% was real edge; ",
+    "2082150945727656355 | 2026-07-28T17:07 | replied_to | @gamblito22 Wow, we\u2019ve made no where near $6 million and we giveaway $",
+    "2082150241386775000 | 2026-07-28T17:04 | post | \u2705 WIN +$4.20 \u2014 SHORT Skillcamp Esport @ 0.30\n\n\ud83d\udcbc Account $135.35 \u00b7 \ud83d\udcca to",
+    "2082150228254490812 | 2026-07-28T17:04 | post | \u2705 WIN +$1.80 \u2014 SHORT FOKUS Sakura @ 0.10\n\n\ud83d\udcbc Account $131.15 \u00b7 \ud83d\udcca today ",
+    "2082147670974398595 | 2026-07-28T16:54 | post | @Polymarket how long does it take to get a reply for support? No excus",
+    "2082145386823639208 | 2026-07-28T16:45 | replied_to | @0xd1namit We\u2019re here to help.",
+    "2082145164940947835 | 2026-07-28T16:44 | post | \u2705 WIN +$6.12 \u2014 Francesco Maestrelli @ 0.32\n\n\ud83d\udcbc Account $129.35 \u00b7 \ud83d\udcca toda",
+    "2082138255512801315 | 2026-07-28T16:16 | replied_to | @0xFramez Then why is it plugged into the internet",
+    "2082125924162572507 | 2026-07-28T15:27 | replied_to | @washghost1 Not one strap? How is this company allows to ship anything",
+    "2082092289544139122 | 2026-07-28T13:14 | post | Receipts don't sleep either: every result graded in public, wins AND l",
+    "2082084763364704463 | 2026-07-28T12:44 | post | \u2705 WIN +$2.70 \u2014 SHORT Dplus KIA Challengers @ 0.46\n\n\ud83d\udcbc Account $115.18 \u00b7",
+    "2082079726223712662 | 2026-07-28T12:24 | post | \u2705 WIN +$1.64 \u2014 Timofey Skatov @ 0.59\n\n\ud83d\udcbc Account $112.48 \u00b7 \ud83d\udcca today +$11",
+    "2082073614992678993 | 2026-07-28T12:00 | post | \u2705 SHiFT DESK \u2014 green day 2026-07-28\n\n\ud83d\udcbc Account $110.84 \u00b7 \ud83d\udcca today +$9.4",
+    "2082072189801812104 | 2026-07-28T11:54 | post | \u2705 WIN +$3.40 \u2014 SHORT Frederico Ferreira Silva @ 0.32\n\n\ud83d\udcbc Account $108.5",
+    "2082044479398428852 | 2026-07-28T10:04 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML (-114) \u2705 +0.88u\nChicago C",
+    "2082014280225022111 | 2026-07-28T08:04 | post | \ud83e\uddfe RESULT \ud83d\udd12 LOCK ROOM: [PICK] Chicago Cubs ML (-114) \u2705 +0.88u\nChicago C",
+    "2081933744928411993 | 2026-07-28T02:44 | post | \ud83e\uddfe RESULT \ud83d\udc0b WHALE ROOM: [PICK] Miami Marlins ML (+144) \u2705 +1.44u\nPhilade",
+    "2081923691303305459 | 2026-07-28T02:04 | post | \u2705 WIN +$0.12 \u2014 Fuego @ 0.94\n\n\ud83d\udcbc Account $101.44 \u00b7 \ud83d\udcca today +$3.98 (+4.1%",
+    "2081893483493929393 | 2026-07-28T00:04 | post | \ud83e\uddfe RESULT \ud83d\udc0b WHALE ROOM: [PICK] Texas Rangers ML (+109) \u2705 +1.64u\nSeattle",
+    "2081883412621844985 | 2026-07-27T23:24 | post | \ud83e\uddfe RESULT \ud83d\udc0b WHALE ROOM: [PICK] Texas Rangers ML (+109) \u2705 +1.64u\nSeattle",
+    "2081880921675108389 | 2026-07-27T23:14 | post | \u2705 WIN +$0.09 \u2014 BESTIA @ 0.97\n\n\ud83d\udcbc Account $95.89 \u00b7 \ud83d\udcca today $-1.57 (-1.6%",
+    "2081880908773396551 | 2026-07-27T23:14 | post | \u2705 WIN +$2.61 \u2014 BESTIA @ 0.71\n\n\ud83d\udcbc Account $95.80 \u00b7 \ud83d\udcca today $-1.66 (-1.7%",
+    "2081875880021012922 | 2026-07-27T22:54 | post | \u2705 WIN +$6.39 \u2014 ORA Temper @ 0.29\n\n\ud83d\udcbc Account $99.58 \u00b7 \ud83d\udcca today +$2.12 (+",
+    "2081872325344215501 | 2026-07-27T22:40 | post | \ud83e\uddfe RESULT \ud83d\udc0b WHALE ROOM: [PICK] Rune Eaters ML (-177) \u2705 +0.85u\nRune Eate",
+    "2081863385461981294 | 2026-07-27T22:04 | post | \u2705 WIN +$1.80 \u2014 NAVI Junior @ 0.40\n\n\ud83d\udcbc Account $101.65 \u00b7 \ud83d\udcca today +$4.19 ",
+    "2081863331720421532 | 2026-07-27T22:04 | post | \ud83c\udd93 The free room eats too: a daily free pick, $50 in SOL drawn every Su",
+    "2081845738775200133 | 2026-07-27T20:54 | post | \u2705 WIN +$2.60 \u2014 SHORT Bulldog Esports @ 0.48\n\n\ud83d\udcbc Account $142.45 \u00b7 \ud83d\udcca tod",
+    "2081832355275452593 | 2026-07-27T20:01 | post | \u26a1 PLAY OF THE DAY just dropped in the Discord \u2014 SHiFT's single highest",
+    "2081828104436351109 | 2026-07-27T19:44 | post | \u2705 WIN +$1.20 \u2014 SHORT Falcons Force @ 0.40\n\n\ud83d\udcbc Account $143.34 \u00b7 \ud83d\udcca today",
+    "2081805451105288227 | 2026-07-27T18:14 | post | \u2705 WIN +$1.17 \u2014 Brute @ 0.61\n\n\ud83d\udcbc Account $145.45 \u00b7 \ud83d\udcca today +$47.99 (+49.",
+    "2081787836442005739 | 2026-07-27T17:04 | post | \ud83c\udf93 Betting school, one minute:\n\nAny capper who deletes losses is sellin",
+    "2081780302138249259 | 2026-07-27T16:34 | post | \u2705 WIN +$2.03 \u2014 Gentle Mates GC @ 0.71\n\n\ud83d\udcbc Account $145.46 \u00b7 \ud83d\udcca today +$4",
+    "2081777765746139486 | 2026-07-27T16:24 | post | \u2705 WIN +$1.82 \u2014 Gentle Mates GC @ 0.74\n\n\ud83d\udcbc Account $145.25 \u00b7 \ud83d\udcca today +$4",
+    "2081767729258995755 | 2026-07-27T15:44 | post | \u2705 WIN +$4.94 \u2014 ASTRAL @ 0.62\n\n\ud83d\udcbc Account $106.70 \u00b7 \ud83d\udcca today +$9.24 (+9.5",
+    "2081767707855466775 | 2026-07-27T15:44 | post | \u2705 WIN +$2.15 \u2014 Gentle Mates GC @ 0.66\n\n\ud83d\udcbc Account $101.76 \u00b7 \ud83d\udcca today +$4",
+    "2081767696556069272 | 2026-07-27T15:44 | post | \u2705 WIN +$2.15 \u2014 Gentle Mates GC @ 0.65\n\n\ud83d\udcbc Account $99.61 \u00b7 \ud83d\udcca today +$2.",
+    "2081757637738422630 | 2026-07-27T15:04 | post | \u2705 WIN +$9.95 \u2014 SHORT PURE @ 0.50\n\n\ud83d\udcbc Account $97.46 \u00b7 \ud83d\udcca today +$0.00 (+",
+    "2081755750968492359 | 2026-07-27T14:57 | post | \ud83e\uddfe RESULT \ud83d\udc0b WHALE ROOM: [PICK] San Jose Earthquakes ML (-120) \u274c -1.5u\nL",
+    "2081743747562578227 | 2026-07-27T14:09 | post | \ud83e\uddfe RESULT \ud83d\udcca SHARP ROOM: [PICK] Vancouver Whitecaps ML (-120) \u274c -1.0u\nVa",
+    "2081740157666177064 | 2026-07-27T13:55 | post | \ud83d\udcc8 SHiFT desk \u2014 SHORT BNK FearX Youth @ 0.69 \u2705 WIN +$0.86\nDesk record 1",
+    "2081738751198531732 | 2026-07-27T13:49 | post | \ud83d\udcc8 SHiFT desk \u2014 SHORT BNK FearX Youth @ 0.69 \u2705 WIN +$0.86\nDesk record 1",
+    "2081737879424774186 | 2026-07-27T13:46 | quoted | Congrats this weeks winners!\n\nhttps://t.co/Eqs7k9h5I8",
+    "2081731028029493634 | 2026-07-27T13:18 | post | \u2705 $50 GIVEAWAY \u2014 PAID ON-CHAIN \u2705\n\n\ud83e\udd47 $35 @hayjay_web3\nhttps://t.co/QVnF",
+    "x_post_text OK: id 2082651432390721584"
   ],
   "time_audit": {
-    "at": "2026-07-30 02:15 UTC",
+    "at": "2026-07-30 02:16 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-4": "2026-07-30 00:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-30 01:49 UTC",
+    "\ud83e\uddfereceipts": "2026-07-30 02:16 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-30 00:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
-    "\ud83c\udf81giveaway": "2026-07-29 20:24 UTC"
+    "\ud83c\udf81giveaway": "2026-07-30 02:16 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 02:15 UTC",
+    "at": "2026-07-30 02:16 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,45 +133,17 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 02:15 UTC",
+    "at": "2026-07-30 02:16 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-29 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-30 02:15 UTC",
+    "at": "2026-07-30 02:16 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "dallas-wings-ml-0729",
-      "desc": "Dallas Wings ML",
-      "odds": -112,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "Atlanta Dream 82, Dallas Wings 81",
-      "tier": "whale"
-    },
-    {
-      "id": "minnesota-twins--1.5-0729",
-      "desc": "Minnesota Twins -1.5",
-      "odds": -110,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Kansas City Royals 4, Minnesota Twins 0",
-      "tier": "sharp"
-    },
-    {
-      "id": "cincinnati-reds-ml-0729",
-      "desc": "Cincinnati Reds ML",
-      "odds": 114,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Cleveland Guardians 6, Cincinnati Reds 1",
-      "tier": "lock"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -142,7 +214,7 @@
     "pod-20260729": "ok-bot",
     "20260730-00": "ok-bot"
   },
-  "executed_cmd_seq": 516,
+  "executed_cmd_seq": 518,
   "scan_role_id": 1529569745517674599,
   "scan_role_msg": 1529569746620645406,
   "count10_idx": 37,
@@ -192,7 +264,7 @@
     "20260729-1950"
   ],
   "boot_log": [
-    "2026-07-30T02:15:46Z"
+    "2026-07-30T02:16:02Z"
   ],
   "teasers": {
     "weekly": "2026-08-02",
@@ -320,7 +392,7 @@
   },
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
-  "last_deploy_id": "d992cc71-4352-4516-95da-df06390ae262",
+  "last_deploy_id": "37d242f6-0d02-42ea-9ed3-f98b280a407c",
   "op_month": "2026-07",
   "op_calls": 80,
   "op_meta": {
@@ -32995,14 +33067,6 @@
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
     {
-      "ts": "2026-07-29T17:07:21Z",
-      "kind": "EDGE",
-      "outcome": "SK Nebula",
-      "result": "LOSS",
-      "pnl": -1.0,
-      "lesson": "model 63% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.30 before the result \u2014 the number ran 20\u00a2 against us \u26a0\ufe0f"
-    },
-    {
       "ts": "2026-07-29T17:17:21Z",
       "kind": "EDGE",
       "outcome": "ZYB Esport",
@@ -33325,7 +33389,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785373742.4960806,
+  "dep_checked_ts": 1785377754.1812985,
   "x_bio_v": 2,
   "op_cool_until": 1785327350.8907995,
   "x_ads": []
