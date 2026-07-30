@@ -5,18 +5,18 @@
     "x_post_text OK: id 2081731028029493634"
   ],
   "time_audit": {
-    "at": "2026-07-30 01:49 UTC",
+    "at": "2026-07-30 00:49 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-3-4": "2026-07-30 00:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-30 01:39 UTC",
+    "\ud83e\uddfereceipts": "2026-07-30 00:39 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-30 00:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-29 20:24 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 01:49 UTC",
+    "at": "2026-07-30 00:49 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -33,13 +33,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 01:49 UTC",
+    "at": "2026-07-30 00:49 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-29 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-07-30 01:49 UTC",
+    "at": "2026-07-30 00:49 UTC",
     "flags": []
   },
   "bot_version": "9.24.28",
@@ -32596,34 +32596,13 @@
       "qty": 4,
       "market_slug": "aec-mlb-atl-nym-2026-07-28",
       "outcome": "New York Mets",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T22:04:23Z",
-      "price_path": [
-        {
-          "ts": 1785363188,
-          "px": 0.385
-        },
-        {
-          "ts": 1785365947,
-          "px": 0.385
-        },
-        {
-          "ts": 1785368342,
-          "px": 0.395
-        },
-        {
-          "ts": 1785370142,
-          "px": 0.4
-        },
-        {
-          "ts": 1785372542,
-          "px": 0.27
-        },
-        {
-          "ts": 1785374342,
-          "px": 0.22
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T01:49:01Z",
+      "pnl": -1.54,
+      "autopsy": "model 41% vs market 38% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.22 before the result \u2014 beat the number by 16\u00a2 \u2705"
     },
     {
       "price": 0.3,
@@ -32682,6 +32661,10 @@
         },
         {
           "ts": 1785373746,
+          "px": 0.47
+        },
+        {
+          "ts": 1785376143,
           "px": 0.47
         }
       ]
@@ -32979,6 +32962,10 @@
         {
           "ts": 1785373747,
           "px": 0.38
+        },
+        {
+          "ts": 1785376144,
+          "px": 0.38
         }
       ]
     },
@@ -32999,6 +32986,10 @@
       "price_path": [
         {
           "ts": 1785373747,
+          "px": 0.34
+        },
+        {
+          "ts": 1785376144,
           "px": 0.34
         }
       ]
@@ -33028,15 +33019,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 47,
-    "losses": 107,
-    "pnl": -54.82,
+    "losses": 108,
+    "pnl": -56.36,
     "trades": 472,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-00",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 79.64,
-    "net": 15.64,
+    "account": 77.64,
+    "net": 13.64,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33046,7 +33037,7 @@
       ],
       "EDGE": [
         38,
-        92,
+        93,
         0
       ],
       "LIVE-BET": [
@@ -33066,14 +33057,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T17:07:17Z",
-      "kind": "EDGE",
-      "outcome": "GIANTX",
-      "result": "LOSS",
-      "pnl": -1.08,
-      "lesson": "model 50% vs market 27% missed \u2014 logged for the playbook review. Taken 0.27, slid to 0.08 before the result \u2014 the number ran 19\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T17:07:21Z",
       "kind": "EDGE",
@@ -33305,6 +33288,14 @@
       "result": "LOSS",
       "pnl": -2.0,
       "lesson": "model 49% vs market 40% missed \u2014 logged for the playbook review. Taken 0.40, slid to 0.02 before the result \u2014 the number ran 38\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T01:49:01Z",
+      "kind": "EDGE",
+      "outcome": "New York Mets",
+      "result": "LOSS",
+      "pnl": -1.54,
+      "lesson": "model 41% vs market 38% missed \u2014 logged for the playbook review. Taken 0.39, rode to 0.22 before the result \u2014 beat the number by 16\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
