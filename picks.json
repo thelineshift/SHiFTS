@@ -3993,10 +3993,10 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Atlanta Braves",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -162,
+        "away_ml": 134,
         "total": 10.0,
-        "ts": 1785437942
+        "ts": 1785443342
       }
     },
     {
@@ -4065,7 +4065,14 @@
       "opp": "Connecticut Sun",
       "analysis": "9-18 overall, 5-7 at home \u2014 ML juiced to -219, so the -5.5 at the standard number is the bet; model makes Chicago Sky 71% straight up | \ud83d\udcca **Form + price:** 9-18 overall, 5-7 at home \u2014 ML juiced to -219, so the -5.5 at the standard number is the bet; model makes Chicago Sky 71% straight up. Model mak",
       "homeTeam": "Chicago Sky",
-      "awayTeam": "Connecticut Sun"
+      "awayTeam": "Connecticut Sun",
+      "live_odds": {
+        "home_ml": -219,
+        "away_ml": 177,
+        "total": 175.5,
+        "ts": 1785443342
+      },
+      "last_alert_odds": -219
     },
     {
       "id": "new-york-yankees-ml-0730",
@@ -4099,7 +4106,13 @@
       "opp": "Boston Red Sox",
       "analysis": "45-63 overall, 21-32 at home \u2014 our 39% vs book 37% (no-vig) | \ud83e\udde0 **The read:** 45-63 overall, 21-32 at home \u2014 our 39% vs book 37% (no-vig). Model makes Athletics **39%** \u2014 books imply **39%**. SHiFT presses the gap.",
       "homeTeam": "Athletics",
-      "awayTeam": "Boston Red Sox"
+      "awayTeam": "Boston Red Sox",
+      "live_odds": {
+        "home_ml": 157,
+        "away_ml": -191,
+        "total": 10.0,
+        "ts": 1785443343
+      }
     }
   ]
 }
