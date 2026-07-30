@@ -34158,7 +34158,6 @@
     "2026-07-29-22": "store-ad"
   },
   "board_posted": [
-    "aec-dota2-agm-nemiga-2026-07-29",
     "aec-dota2-agm-stx-2026-07-29",
     "aec-lol-nsea-dnsc-2026-07-29",
     "aec-atp-benbon-blabic-2026-07-27",
@@ -34217,7 +34216,8 @@
     "aec-lol-tt-jdg-2026-07-30",
     "aec-lol-dns-bfx-2026-07-30",
     "aec-lol-shg-dfm-2026-07-30",
-    "aec-lol-hle-dk-2026-07-30"
+    "aec-lol-hle-dk-2026-07-30",
+    "aec-valorant-skn-hbs-2026-07-30"
   ],
   "odds_api": {
     "month": "2026-07",
