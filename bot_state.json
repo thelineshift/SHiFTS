@@ -67,6 +67,15 @@
       "units": -1.0,
       "score": "Texas Rangers 2, Tampa Bay Rays 3",
       "tier": "sharp"
+    },
+    {
+      "id": "fnatic-ml-0730",
+      "desc": "Fnatic ML",
+      "odds": -228,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Fnatic 0-2 Eternal Fire \u00b7 final",
+      "tier": "sharp"
     }
   ],
   "last_x_receipt_ts": 1785362587.0271225,
