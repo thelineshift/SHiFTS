@@ -1,25 +1,19 @@
 {
-  "updated": "2026-07-30T02:04:56Z",
-  "record": "47-108",
-  "trades": 472,
-  "open": 15,
-  "pnl": -56.36,
-  "account": 77.64,
+  "updated": "2026-07-30T04:05:01Z",
+  "record": "48-112",
+  "trades": 475,
+  "open": 10,
+  "pnl": -61.18,
+  "account": 68.1,
   "deposits": 64.0,
-  "net_pnl": 13.64,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 38-93 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
+  "net_pnl": 4.1,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 39-97 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
   "recent": [
     {
-      "outcome": "Chicago White Sox",
-      "short": false,
+      "outcome": "Cincinnati Reds",
+      "short": true,
       "result": "lost",
-      "pnl": -9.45
-    },
-    {
-      "outcome": "Tampa Bay Rays",
-      "short": false,
-      "result": "won",
-      "pnl": 16.43
+      "pnl": -3.08
     },
     {
       "outcome": "Cleveland Guardians",
@@ -44,6 +38,12 @@
       "short": false,
       "result": "lost",
       "pnl": -2.0
+    },
+    {
+      "outcome": "Chicago Cubs",
+      "short": false,
+      "result": "lost",
+      "pnl": -8.1
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
