@@ -3293,8 +3293,8 @@
       "live_odds": {
         "home_ml": -143,
         "away_ml": 119,
-        "total": 9.5,
-        "ts": 1785385742
+        "total": 9.0,
+        "ts": 1785418142
       }
     },
     {
@@ -3316,8 +3316,8 @@
       "live_odds": {
         "home_ml": -117,
         "away_ml": -103,
-        "total": 8.5,
-        "ts": 1785414542
+        "total": 9.0,
+        "ts": 1785418142
       },
       "last_alert_odds": -101
     },
@@ -3340,8 +3340,8 @@
       "live_odds": {
         "home_ml": -157,
         "away_ml": 130,
-        "total": 8.5,
-        "ts": 1785416342
+        "total": 9.0,
+        "ts": 1785418142
       },
       "last_alert_odds": -156
     },
@@ -3364,8 +3364,8 @@
       "live_odds": {
         "home_ml": -157,
         "away_ml": 130,
-        "total": 8.5,
-        "ts": 1785416342
+        "total": 9.0,
+        "ts": 1785418142
       },
       "last_alert_odds": -156
     },
@@ -3464,10 +3464,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 144,
-        "away_ml": -175,
+        "home_ml": 147,
+        "away_ml": -179,
         "total": 10.0,
-        "ts": 1785416342
+        "ts": 1785418142
       },
       "last_alert_odds": -168
     },
@@ -3627,12 +3627,12 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -225,
-        "away_ml": 182,
+        "home_ml": -238,
+        "away_ml": 192,
         "total": 181.5,
-        "ts": 1785416342
+        "ts": 1785418142
       },
-      "last_alert_odds": -225
+      "last_alert_odds": -238
     },
     {
       "id": "chicago-white-sox-ml-0730",
@@ -3651,10 +3651,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -114,
-        "away_ml": -105,
+        "home_ml": -117,
+        "away_ml": -103,
         "total": 7.5,
-        "ts": 1785416342
+        "ts": 1785418142
       }
     },
     {
@@ -3829,10 +3829,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -225,
-        "away_ml": 182,
+        "home_ml": -238,
+        "away_ml": 192,
         "total": 181.5,
-        "ts": 1785416342
+        "ts": 1785418142
       }
     }
   ]
