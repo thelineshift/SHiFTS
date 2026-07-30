@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T05:09:20Z",
+  "updated": "2026-07-30T08:01:02Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3675,6 +3675,57 @@
         "total": 9.5,
         "ts": 1785396542
       }
+    },
+    {
+      "id": "hanwha-life-esports-ml-0730",
+      "date": "2026-07-30",
+      "sport": "lol",
+      "desc": "Hanwha Life Esports ML",
+      "market": "LCK Bo3",
+      "odds": -232,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "06:00 AM ET",
+      "vs": "Dplus KIA",
+      "team": "Hanwha Life Esports",
+      "opp": "Dplus KIA",
+      "analysis": "4-1 last 5 (beat Kiwoom DRX, Dplus KIA, Nongshim Red Force) (lost to DN SOOPers) vs 0-5 \u2014 live Pinnacle line -232 (our 90% vs book 66%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Kiwoom DRX, Dplus KIA, Nongshim Red Force) (lost to DN SOOPers) vs 0-5 \u2014 live Pinnacle line -232 (our 90% vs book 66%). That's a ",
+      "awayTeam": "Hanwha Life Esports",
+      "homeTeam": "Dplus KIA"
+    },
+    {
+      "id": "deep-cross-gaming-ml-0730",
+      "date": "2026-07-30",
+      "sport": "lol",
+      "desc": "Deep Cross Gaming ML",
+      "market": "LCP Bo3",
+      "odds": -238,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "07:30 AM ET",
+      "vs": "Ground Zero Gaming",
+      "team": "Deep Cross Gaming",
+      "opp": "Ground Zero Gaming",
+      "analysis": "1-4 last 5 (beat GAM Esports) (lost to CTBC Flying Oyster) vs 0-5 \u2014 live Pinnacle line -238 (our 90% vs book 67%) | \ud83d\udcc8 **Market angle:** 1-4 last 5 (beat GAM Esports) (lost to CTBC Flying Oyster) vs 0-5 \u2014 live Pinnacle line -238 (our 90% vs book 67%). Books hang respect on the wrong side \u2014 **23 point",
+      "awayTeam": "Deep Cross Gaming",
+      "homeTeam": "Ground Zero Gaming"
+    },
+    {
+      "id": "team-we-ml-0730",
+      "date": "2026-07-30",
+      "sport": "lol",
+      "desc": "Team WE ML",
+      "market": "LPL Bo3",
+      "odds": -256,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "EDward Gaming",
+      "team": "Team WE",
+      "opp": "EDward Gaming",
+      "analysis": "2-3 last 5 (beat LGD Gaming, JD Gaming) (lost to Top Esports) vs 0-5 \u2014 live Pinnacle line -256 (our 90% vs book 68%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat LGD Gaming, JD Gaming) (lost to Top Esports) vs 0-5 \u2014 live Pinnacle line -256 (our 90% vs book 68%). Books hang respect on the wrong side \u2014 **22",
+      "awayTeam": "Team WE",
+      "homeTeam": "EDward Gaming"
     }
   ]
 }
