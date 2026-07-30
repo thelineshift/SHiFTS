@@ -28529,106 +28529,13 @@
       "qty": 4,
       "market_slug": "aec-valorant-fs-zeta-2026-07-30",
       "outcome": "ZETA DIVISION",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T06:05:03Z",
-      "price_path": [
-        {
-          "ts": 1785374341,
-          "px": 0.27
-        },
-        {
-          "ts": 1785376740,
-          "px": 0.26
-        },
-        {
-          "ts": 1785378542,
-          "px": 0.25
-        },
-        {
-          "ts": 1785380342,
-          "px": 0.25
-        },
-        {
-          "ts": 1785382742,
-          "px": 0.25
-        },
-        {
-          "ts": 1785384542,
-          "px": 0.24
-        },
-        {
-          "ts": 1785386342,
-          "px": 0.24
-        },
-        {
-          "ts": 1785388742,
-          "px": 0.24
-        },
-        {
-          "ts": 1785390542,
-          "px": 0.24
-        },
-        {
-          "ts": 1785392342,
-          "px": 0.24
-        },
-        {
-          "ts": 1785395942,
-          "px": 0.24
-        },
-        {
-          "ts": 1785397742,
-          "px": 0.24
-        },
-        {
-          "ts": 1785399542,
-          "px": 0.25
-        },
-        {
-          "ts": 1785401342,
-          "px": 0.25
-        },
-        {
-          "ts": 1785403142,
-          "px": 0.26
-        },
-        {
-          "ts": 1785404942,
-          "px": 0.26
-        },
-        {
-          "ts": 1785406742,
-          "px": 0.26
-        },
-        {
-          "ts": 1785409142,
-          "px": 0.22
-        },
-        {
-          "ts": 1785411542,
-          "px": 0.19
-        },
-        {
-          "ts": 1785413342,
-          "px": 0.36
-        },
-        {
-          "ts": 1785415142,
-          "px": 0.19
-        },
-        {
-          "ts": 1785416942,
-          "px": 0.33
-        },
-        {
-          "ts": 1785418742,
-          "px": 0.38
-        },
-        {
-          "ts": 1785420542,
-          "px": 0.21
-        }
-      ]
+      "result": "WIN",
+      "payout": 4.0,
+      "settled_at": "2026-07-30T14:39:02Z",
+      "pnl": 2.64,
+      "autopsy": "+$2.64 \u2014 model 57% vs market 34% was real edge; thesis held. Taken 0.34, rode to 0.21 before the result \u2014 beat the number by 13\u00a2 \u2705"
     },
     {
       "price": 0.9,
@@ -30979,10 +30886,6 @@
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
         {
-          "ts": 1785373741,
-          "px": 0.22
-        },
-        {
           "ts": 1785375541,
           "px": 0.22
         },
@@ -31072,6 +30975,10 @@
         },
         {
           "ts": 1785420542,
+          "px": 0.2
+        },
+        {
+          "ts": 1785422346,
           "px": 0.2
         }
       ]
@@ -31494,10 +31401,6 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
-          "ts": 1785372542,
-          "px": 0.435
-        },
-        {
           "ts": 1785374941,
           "px": 0.44
         },
@@ -31587,6 +31490,10 @@
         },
         {
           "ts": 1785420542,
+          "px": 0.445
+        },
+        {
+          "ts": 1785422346,
           "px": 0.445
         }
       ]
@@ -31775,10 +31682,6 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
-          "ts": 1785368342,
-          "px": 0.15
-        },
-        {
           "ts": 1785370142,
           "px": 0.15
         },
@@ -31869,6 +31772,10 @@
         {
           "ts": 1785420543,
           "px": 0.15
+        },
+        {
+          "ts": 1785422346,
+          "px": 0.14
         }
       ]
     },
@@ -33523,6 +33430,10 @@
         {
           "ts": 1785420543,
           "px": 0.46
+        },
+        {
+          "ts": 1785422347,
+          "px": 0.35
         }
       ]
     },
@@ -33610,16 +33521,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 51,
+    "wins": 52,
     "losses": 117,
-    "pnl": -116.57,
+    "pnl": -113.93,
     "trades": 480,
     "last_recap": "2026-07-30",
     "last_recap_hour": "2026-07-30-14",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 23.33,
-    "net": -40.67,
+    "account": 25.97,
+    "net": -38.03,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33628,7 +33539,7 @@
         0
       ],
       "EDGE": [
-        42,
+        43,
         101,
         0
       ],
@@ -33654,14 +33565,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T19:47:20Z",
-      "kind": "EDGE",
-      "outcome": "Habos Babos",
-      "result": "WIN",
-      "pnl": 1.59,
-      "lesson": "+$1.59 \u2014 model 63% vs market 48% was real edge; thesis held. Taken 0.48, slid to 0.84 before the result \u2014 the number ran 36\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T19:57:17Z",
       "kind": "EDGE",
@@ -33893,6 +33796,14 @@
       "result": "LOSS",
       "pnl": -67.16,
       "lesson": "model 45% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, rode to 0.89 before the result \u2014 beat the number by 53\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T14:39:02Z",
+      "kind": "EDGE",
+      "outcome": "ZETA DIVISION",
+      "result": "WIN",
+      "pnl": 2.64,
+      "lesson": "+$2.64 \u2014 model 57% vs market 34% was real edge; thesis held. Taken 0.34, rode to 0.21 before the result \u2014 beat the number by 13\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -33977,7 +33888,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785416943.6902144,
+  "dep_checked_ts": 1785422342.7382128,
   "x_bio_v": 2,
   "op_cool_until": 1785413726.4763565,
   "x_ads": []
