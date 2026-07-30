@@ -3212,10 +3212,10 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Connecticut Sun",
       "live_odds": {
-        "home_ml": -199,
-        "away_ml": 163,
-        "total": 177.5,
-        "ts": 1785412741
+        "home_ml": -207,
+        "away_ml": 169,
+        "total": 176.5,
+        "ts": 1785419942
       },
       "last_alert_odds": -199
     },
@@ -3563,11 +3563,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 8.5,
-        "ts": 1785416342
-      }
+        "ts": 1785419942
+      },
+      "last_alert_odds": -157
     },
     {
       "id": "over-7.5-0730",
@@ -3603,10 +3604,10 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Connecticut Sun",
       "live_odds": {
-        "home_ml": -199,
-        "away_ml": 163,
-        "total": 177.5,
-        "ts": 1785412742
+        "home_ml": -207,
+        "away_ml": 169,
+        "total": 176.5,
+        "ts": 1785419942
       },
       "last_alert_odds": -199
     },
@@ -3674,10 +3675,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -115,
+        "home_ml": -103,
+        "away_ml": -117,
         "total": 9.5,
-        "ts": 1785414542
+        "ts": 1785419942
       }
     },
     {
