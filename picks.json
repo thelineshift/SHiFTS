@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T04:49:07Z",
+  "updated": "2026-07-30T05:09:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2739,7 +2739,10 @@
           "date": "2026-07-29",
           "time_et": "07:45 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: loss \u00b7 None: win \u00b7 None: loss"
     },
     {
       "id": "over-7.5-0729",
@@ -2794,7 +2797,10 @@
           "date": "2026-07-29",
           "time_et": "07:45 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: loss \u00b7 None: win \u00b7 None: loss"
     },
     {
       "id": "3-leg-parlay-0729-lock",
@@ -2832,7 +2838,10 @@
           "date": "2026-07-29",
           "time_et": "07:45 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: loss \u00b7 None: win \u00b7 None: loss"
     },
     {
       "id": "atlanta-braves-ml-0729",
