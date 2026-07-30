@@ -33360,7 +33360,6 @@
     "2026-07-29-22": "store-ad"
   },
   "board_posted": [
-    "aec-lol-rmd-reda-2026-07-29",
     "aec-lol-one-piv-2026-07-28",
     "aec-dota2-agm-nemiga-2026-07-29",
     "aec-dota2-agm-stx-2026-07-29",
@@ -33419,7 +33418,8 @@
     "aec-valorant-var-dfm-2026-07-30",
     "aec-lol-dcg-gz-2026-07-30",
     "aec-lol-tt-jdg-2026-07-30",
-    "aec-lol-dns-bfx-2026-07-30"
+    "aec-lol-dns-bfx-2026-07-30",
+    "aec-lol-shg-dfm-2026-07-30"
   ],
   "odds_api": {
     "month": "2026-07",
