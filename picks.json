@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T12:01:19Z",
+  "updated": "2026-07-30T15:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3716,7 +3716,10 @@
       "opp": "Ground Zero Gaming",
       "analysis": "1-4 last 5 (beat GAM Esports) (lost to CTBC Flying Oyster) vs 0-5 \u2014 live Pinnacle line -238 (our 90% vs book 67%) | \ud83d\udcc8 **Market angle:** 1-4 last 5 (beat GAM Esports) (lost to CTBC Flying Oyster) vs 0-5 \u2014 live Pinnacle line -238 (our 90% vs book 67%). Books hang respect on the wrong side \u2014 **23 point",
       "awayTeam": "Deep Cross Gaming",
-      "homeTeam": "Ground Zero Gaming"
+      "homeTeam": "Ground Zero Gaming",
+      "result": "WIN",
+      "units_result": 0.63,
+      "score": "Deep Cross Gaming 2-1 Ground Zero Gaming \u00b7 final"
     },
     {
       "id": "team-we-ml-0730",
