@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "tampa-bay-rays-ml-0730",
+      "desc": "Tampa Bay Rays ML",
+      "odds": -125,
+      "result": "WIN",
+      "units": 1.2,
+      "score": "Texas Rangers 2, Tampa Bay Rays 3",
+      "tier": "whale"
+    },
+    {
+      "id": "tampa-bay-rays--1.5-0730",
+      "desc": "Tampa Bay Rays -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Texas Rangers 2, Tampa Bay Rays 3",
+      "tier": "sharp"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
