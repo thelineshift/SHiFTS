@@ -115,6 +115,15 @@
       "units": 1.39,
       "score": "Baltimore Orioles 10, Detroit Tigers 9",
       "tier": "lock"
+    },
+    {
+      "id": "fluxo-w7m-ml-0729",
+      "desc": "Fluxo W7M ML",
+      "odds": -232,
+      "result": "WIN",
+      "units": 0.65,
+      "score": "Fluxo W7M 2-1 Bounty Hunters Esports \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785362587.0271225,
@@ -24203,6 +24212,10 @@
       "ts": "2026-07-27T10:16:51Z",
       "price_path": [
         {
+          "ts": 1785321862,
+          "px": 0.43
+        },
+        {
           "ts": 1785324105,
           "px": 0.43
         },
@@ -24293,10 +24306,6 @@
         {
           "ts": 1785371340,
           "px": 0.105
-        },
-        {
-          "ts": 1785373140,
-          "px": 0.08
         }
       ]
     },
@@ -33002,16 +33011,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 47,
+    "wins": 46,
     "losses": 104,
-    "pnl": -41.98,
+    "pnl": -45.69,
     "trades": 469,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-00",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 93.18,
-    "net": 29.18,
+    "account": 89.47,
+    "net": 25.47,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33020,7 +33029,7 @@
         0
       ],
       "EDGE": [
-        38,
+        37,
         89,
         0
       ],
@@ -33041,6 +33050,14 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
+    {
+      "ts": "2026-07-29T13:10:23Z",
+      "kind": "TAIL",
+      "outcome": "Hanwha Eagles",
+      "result": "WIN",
+      "pnl": 0.05,
+      "lesson": "+$0.05 \u2014 thesis held."
+    },
     {
       "ts": "2026-07-29T13:22:07Z",
       "kind": "EDGE",
@@ -33272,14 +33289,6 @@
       "result": "LOSS",
       "pnl": -1.36,
       "lesson": "model 41% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, slid to 0.16 before the result \u2014 the number ran 18\u00a2 against us \u26a0\ufe0f"
-    },
-    {
-      "ts": "2026-07-30T00:59:03Z",
-      "kind": "EDGE",
-      "outcome": "Cleveland Guardians",
-      "result": "WIN",
-      "pnl": 3.71,
-      "lesson": "+$3.71 \u2014 model 51% vs market 47% was real edge; thesis held. Taken 0.47, slid to 0.27 before the result \u2014 the number ran 20\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
