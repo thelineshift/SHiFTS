@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T00:39:03Z",
+  "updated": "2026-07-30T00:59:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3026,7 +3026,10 @@
       "opp": "Bounty Hunters Esports",
       "analysis": "4-1 last 5 (beat Imperial, Bounty Hunters Esports, Imperial) (lost to MIBR) vs 1-4 \u2014 live Pinnacle line -232 (our 90% vs book 65%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Imperial, Bounty Hunters Esports, Imperial) (lost to MIBR) vs 1-4 \u2014 live Pinnacle line -232 (our 90% vs book 65%). That's a **25-point",
       "awayTeam": "Fluxo W7M",
-      "homeTeam": "Bounty Hunters Esports"
+      "homeTeam": "Bounty Hunters Esports",
+      "result": "WIN",
+      "units_result": 0.65,
+      "score": "Fluxo W7M 2-1 Bounty Hunters Esports \u00b7 final"
     },
     {
       "id": "marsborne-ml-0729",
