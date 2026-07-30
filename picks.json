@@ -3630,8 +3630,8 @@
       "live_odds": {
         "home_ml": -193,
         "away_ml": 158,
-        "total": 181.5,
-        "ts": 1785436142
+        "total": 182.5,
+        "ts": 1785437942
       },
       "last_alert_odds": -193
     },
@@ -3675,10 +3675,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -103,
-        "away_ml": -117,
+        "home_ml": -105,
+        "away_ml": -115,
         "total": 9.5,
-        "ts": 1785434342
+        "ts": 1785437942
       }
     },
     {
@@ -3844,8 +3844,8 @@
       "live_odds": {
         "home_ml": -193,
         "away_ml": 158,
-        "total": 181.5,
-        "ts": 1785436142
+        "total": 182.5,
+        "ts": 1785437942
       },
       "last_alert_odds": 158
     },
@@ -3983,8 +3983,8 @@
       "live_odds": {
         "home_ml": -156,
         "away_ml": 129,
-        "total": 9.5,
-        "ts": 1785428943
+        "total": 10.0,
+        "ts": 1785437942
       }
     }
   ]
