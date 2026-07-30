@@ -3188,10 +3188,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 124,
+        "home_ml": -151,
+        "away_ml": 125,
         "total": 7.5,
-        "ts": 1785392942
+        "ts": 1785407342
       },
       "last_alert_odds": -144
     },
@@ -3623,10 +3623,10 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -207,
-        "away_ml": 169,
+        "home_ml": -198,
+        "away_ml": 161,
         "total": 181.5,
-        "ts": 1785400142
+        "ts": 1785407342
       },
       "last_alert_odds": -207
     },
