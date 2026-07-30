@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "varrel-ml-0730",
+      "desc": "VARREL ML",
+      "odds": -115,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "VARREL 1-2 DetonatioN FocusMe \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "team-we-ml-0730",
+      "desc": "Team WE ML",
+      "odds": -256,
+      "result": "WIN",
+      "units": 0.59,
+      "score": "Team WE 2-0 EDward Gaming \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -28115,10 +28134,6 @@
       "ts": "2026-07-28T06:05:03Z",
       "price_path": [
         {
-          "ts": 1785368340,
-          "px": 0.27
-        },
-        {
           "ts": 1785370141,
           "px": 0.27
         },
@@ -28209,6 +28224,10 @@
         {
           "ts": 1785415142,
           "px": 0.19
+        },
+        {
+          "ts": 1785416942,
+          "px": 0.33
         }
       ]
     },
@@ -30561,10 +30580,6 @@
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
         {
-          "ts": 1785368341,
-          "px": 0.22
-        },
-        {
           "ts": 1785370141,
           "px": 0.22
         },
@@ -30654,6 +30669,10 @@
         },
         {
           "ts": 1785415142,
+          "px": 0.2
+        },
+        {
+          "ts": 1785416942,
           "px": 0.2
         }
       ]
@@ -33214,40 +33233,27 @@
       "qty": 12,
       "market_slug": "aec-lol-hle-dk-2026-07-30",
       "outcome": "Hanwha Life Esports",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-30T10:49:46Z",
-      "price_path": [
-        {
-          "ts": 1785409145,
-          "px": 0.37
-        },
-        {
-          "ts": 1785411543,
-          "px": 0.53
-        },
-        {
-          "ts": 1785413343,
-          "px": 0.54
-        },
-        {
-          "ts": 1785415143,
-          "px": 0.89
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T13:09:03Z",
+      "pnl": -67.16,
+      "autopsy": "model 45% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, rode to 0.89 before the result \u2014 beat the number by 53\u00a2 \u2705"
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 51,
-    "losses": 116,
-    "pnl": -49.41,
+    "losses": 117,
+    "pnl": -116.57,
     "trades": 480,
     "last_recap": "2026-07-30",
     "last_recap_hour": "2026-07-30-12",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 23.33,
-    "net": -40.67,
+    "account": -43.83,
+    "net": -107.83,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33269,6 +33275,11 @@
         4,
         3,
         0
+      ],
+      "COMEBACK": [
+        0,
+        1,
+        0
       ]
     },
     "archived": 0,
@@ -33277,14 +33288,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T19:47:17Z",
-      "kind": "EDGE",
-      "outcome": "Alex de Minaur",
-      "result": "WIN",
-      "pnl": 0.92,
-      "lesson": "+$0.92 \u2014 model 65% vs market 54% was real edge; thesis held. Taken 0.54, rode to 0.91 before the result \u2014 beat the number by 37\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-29T19:47:20Z",
       "kind": "EDGE",
@@ -33516,6 +33519,14 @@
       "result": "WIN",
       "pnl": 5.13,
       "lesson": "+$5.13 \u2014 model 50% vs market 43% was real edge; thesis held. Taken 0.43, slid to 0.73 before the result \u2014 the number ran 30\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T13:09:03Z",
+      "kind": "COMEBACK",
+      "outcome": "Hanwha Life Esports",
+      "result": "LOSS",
+      "pnl": -67.16,
+      "lesson": "model 45% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, rode to 0.89 before the result \u2014 beat the number by 53\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -33600,7 +33611,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785412143.48376,
+  "dep_checked_ts": 1785416943.6902144,
   "x_bio_v": 2,
   "op_cool_until": 1785413726.4763565,
   "x_ads": []
