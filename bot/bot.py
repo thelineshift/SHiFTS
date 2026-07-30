@@ -13,7 +13,16 @@ TIER_ROLES = {'\U0001F512 Lock Room': 'lock', '\U0001F4CA Sharp': 'sharp', '\U00
 
 BOT_NICK = '⚡ SHiFT'
 BOT_STATUS = 'the board 🛰️'
-BOT_VERSION = '9.24.28'  # event-direction shield refined: opponent-side blocked, same-team adds legal under event cap
+BOT_VERSION = '9.24.29'  # QUIET-X LAW + GIVEAWAY CANCELED (owner decree 7/30): X = big winners only; Sunday draw dead
+
+# QUIET-X LAW (owner decree 2026-07-30: "posting on X too much — just post our best winners"):
+# engagement posts, the receipt drainer and daily tier ads are OFF — X gets desk winners
+# >= X_DESK_WIN_MIN profit + the daily green recap, nothing else. GIVEAWAY CANCELED by the
+# same decree: Sunday draw, entries, claim/reverify watches and "$50 in SOL" promo all dead.
+X_ENGAGE_ON = False
+X_DRAINER_ON = False
+X_DESK_WIN_MIN = 10.0
+GIVEAWAY_ON = False
 
 SCAM_RX = [r'\bd[\.\s]*m[\.\s]*me\b', r'send (me )?a d[\.\s]*m', r'\bdm for\b', r'direct message me',
            r't\.me/', r'telegram', r'whats?app', r'free nitro', r'nitro for free', r'claim (your|ur)',
@@ -760,10 +769,10 @@ def make_client(privileged=True):
             pm_watch.start()
         if not pm_trader.is_running():
             pm_trader.start()
-        if not gw_reverify.is_running():
+        if GIVEAWAY_ON and not gw_reverify.is_running():
             gw_reverify.start()
-        if not giveaway_claim_watch.is_running():
-            giveaway_claim_watch.start()
+        if GIVEAWAY_ON and not giveaway_claim_watch.is_running():
+            giveaway_claim_watch.start()  # GIVEAWAY CANCELED (7/30 owner decree) — watches stay parked
 
     @c.event
     async def on_message(message):
@@ -839,7 +848,7 @@ def make_client(privileged=True):
                         return
             except Exception as e:
                 print('mention responder:', e)
-            if 'giveaway' in chname:
+            if GIVEAWAY_ON and 'giveaway' in chname:
                 # 24h CLAIM LAW first: a pending winner's reply claims the prize — never
                 # let it fall through into entry parsing (owner decree 2026-07-27).
                 try:
@@ -980,6 +989,8 @@ def make_client(privileged=True):
     @c.event
     async def on_message_edit(before, after):
         # edited giveaway posts must be (re)scanned — handled-ID dedupe inside on_message
+        if not GIVEAWAY_ON:
+            return  # GIVEAWAY CANCELED 7/30 — nothing to rescan
         try:
             if after.author.bot:
                 return
@@ -6196,7 +6207,8 @@ async def pm_watch():
         # X exposure law (owner decree 2026-07-25): desk WINNERS post to X with the record + funnel.
         # PORTFOLIO-CARD LAW (owner decree 2026-07-27): X results show the app card —
         # account balance, today's P&L %, the $64 deposit + net, open positions.
-        if res['result'] == 'WIN':
+        # QUIET-X LAW (7/30): only BEST winners post — profit >= X_DESK_WIN_MIN; the rest receipt on Discord.
+        if res['result'] == 'WIN' and pnl >= X_DESK_WIN_MIN:
             _pl1, _pl2, _pl3 = _desk_portfolio_lines(stats, st)
             xt = (f"✅ WIN {sign} — {_trade_label(t)} @ {t['price']:.2f}\n\n"
                   f"{_pl1}\n{_pl2}\n{_pl3}\n\n"
@@ -7243,6 +7255,8 @@ async def x_engagement_watch():
     """3 conversation-starting posts/day at ET peak windows (9a/1p/6p ET = 13/17/22 UTC).
     Rotating kinds per weekday so the same hour never carries the same flavor twice.
     Shares the global X pacing with receipts — one post at a time, ≥40 min apart."""
+    if not X_ENGAGE_ON:
+        return  # QUIET-X LAW: engagement posts retired — big winners only on X
     try:
         now = time.gmtime()
         windows = {13: ('question', 'persona'), 17: ('edu', 'lesson'), 22: ('store-ad', 'proof')}
@@ -7289,6 +7303,12 @@ async def x_drainer():
         state = await asyncio.to_thread(get_state)
         if state is None:
             return
+        if not X_DRAINER_ON:
+            if state.get('unannounced_results') or state.get('x_ads'):
+                state['unannounced_results'], state['x_ads'] = [], []
+                await asyncio.to_thread(gh_put, 'bot_state.json', state,
+                                        'QUIET-X LAW: receipt/ad queue flushed — results receipt on Discord only')
+            return  # QUIET-X LAW: drainer retired — big desk winners post directly
         queue = state.get('unannounced_results') or []
         if not queue:
             return
@@ -8130,7 +8150,7 @@ async def teaser_watch():
         # so the next tick retries: never a silent skip again.
         last_sun = today - _dt.timedelta(days=(today.weekday() + 1) % 7)
         sun_key = last_sun.isoformat()
-        _gd_due = (now.tm_wday == 6 and now.tm_hour >= 22) or ((today - last_sun).days == 1)
+        _gd_due = GIVEAWAY_ON and ((now.tm_wday == 6 and now.tm_hour >= 22) or ((today - last_sun).days == 1))  # GIVEAWAY CANCELED 7/30 — draw never fires
         if _gd_due and tz.get('draw_fired') != sun_key:
             _gdoc = await asyncio.to_thread(gh_get_json_ref, 'giveaway_draw.json', QUEUE_BRANCH) or {}
             if _gdoc.get('draw_id') != sun_key:
@@ -9139,7 +9159,7 @@ async def scan_engine_run(g0, slot_key, dry):
                     try:
                         await asyncio.to_thread(x_post,
                             "⚡ PLAY OF THE DAY just dropped in the Discord — SHiFT's single highest-edge play, every day 4 PM ET.\n\n"
-                            "Free picks daily + $50 in SOL every Sunday: https://thelineshift.github.io/SHiFTS/upgrade.html")
+                            "Free picks daily, every result receipted in public: https://thelineshift.github.io/SHiFTS/upgrade.html")
                     except Exception as _xe:
                         print('pod x:', _xe)
                     st.setdefault('scan_events', {})[_pod_key] = 'ok-bot'
