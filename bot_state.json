@@ -29496,106 +29496,13 @@
       "qty": 3,
       "market_slug": "aec-wnba-atl-dal-2026-07-29",
       "outcome": "Dallas",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-28T18:45:22Z",
-      "price_path": [
-        {
-          "ts": 1785326506,
-          "px": 0.5
-        },
-        {
-          "ts": 1785329094,
-          "px": 0.5
-        },
-        {
-          "ts": 1785331331,
-          "px": 0.5
-        },
-        {
-          "ts": 1785333160,
-          "px": 0.5
-        },
-        {
-          "ts": 1785335457,
-          "px": 0.5
-        },
-        {
-          "ts": 1785337641,
-          "px": 0.5
-        },
-        {
-          "ts": 1785339441,
-          "px": 0.5
-        },
-        {
-          "ts": 1785341241,
-          "px": 0.49
-        },
-        {
-          "ts": 1785343045,
-          "px": 0.48
-        },
-        {
-          "ts": 1785345439,
-          "px": 0.48
-        },
-        {
-          "ts": 1785348439,
-          "px": 0.48
-        },
-        {
-          "ts": 1785350841,
-          "px": 0.48
-        },
-        {
-          "ts": 1785353238,
-          "px": 0.48
-        },
-        {
-          "ts": 1785355041,
-          "px": 0.48
-        },
-        {
-          "ts": 1785357247,
-          "px": 0.48
-        },
-        {
-          "ts": 1785359085,
-          "px": 0.47
-        },
-        {
-          "ts": 1785361025,
-          "px": 0.47
-        },
-        {
-          "ts": 1785363187,
-          "px": 0.47
-        },
-        {
-          "ts": 1785365945,
-          "px": 0.47
-        },
-        {
-          "ts": 1785368340,
-          "px": 0.47
-        },
-        {
-          "ts": 1785370141,
-          "px": 0.52
-        },
-        {
-          "ts": 1785372541,
-          "px": 0.72
-        },
-        {
-          "ts": 1785374341,
-          "px": 0.74
-        },
-        {
-          "ts": 1785376741,
-          "px": 0.82
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T02:26:09Z",
+      "pnl": -1.5,
+      "autopsy": "model 62% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.82 before the result \u2014 the number ran 32\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.565,
@@ -32591,6 +32498,10 @@
         {
           "ts": 1785376143,
           "px": 0.47
+        },
+        {
+          "ts": 1785378372,
+          "px": 0.24
         }
       ]
     },
@@ -32878,6 +32789,10 @@
         {
           "ts": 1785376144,
           "px": 0.38
+        },
+        {
+          "ts": 1785378372,
+          "px": 0.38
         }
       ]
     },
@@ -32902,6 +32817,10 @@
         },
         {
           "ts": 1785376144,
+          "px": 0.34
+        },
+        {
+          "ts": 1785378373,
           "px": 0.34
         }
       ]
@@ -32935,15 +32854,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 47,
-    "losses": 109,
-    "pnl": -59.44,
+    "losses": 110,
+    "pnl": -60.94,
     "trades": 472,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-02",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 74.56,
-    "net": 10.56,
+    "account": 73.06,
+    "net": 9.06,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -32953,7 +32872,7 @@
       ],
       "EDGE": [
         38,
-        94,
+        95,
         0
       ],
       "LIVE-BET": [
@@ -32973,14 +32892,6 @@
   },
   "x_purge_complete": 1785293239.966202,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T17:17:21Z",
-      "kind": "EDGE",
-      "outcome": "ZYB Esport",
-      "result": "WIN",
-      "pnl": 1.98,
-      "lesson": "+$1.98 \u2014 model 43% vs market 34% was real edge; thesis held. Taken 0.34, rode to 0.17 before the result \u2014 beat the number by 17\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-29T17:37:19Z",
       "kind": "EDGE",
@@ -33212,6 +33123,14 @@
       "result": "LOSS",
       "pnl": -3.08,
       "lesson": "model 49% vs market 44% missed \u2014 logged for the playbook review. Taken 0.44, rode to 0.01 before the result \u2014 beat the number by 44\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T02:26:09Z",
+      "kind": "EDGE",
+      "outcome": "Dallas",
+      "result": "LOSS",
+      "pnl": -1.5,
+      "lesson": "model 62% vs market 50% missed \u2014 logged for the playbook review. Taken 0.50, slid to 0.82 before the result \u2014 the number ran 32\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
