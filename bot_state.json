@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "varrel-ml-0730",
+      "desc": "VARREL ML",
+      "odds": -115,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "VARREL 1-2 DetonatioN FocusMe \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "team-we-ml-0730",
+      "desc": "Team WE ML",
+      "odds": -256,
+      "result": "WIN",
+      "units": 0.59,
+      "score": "Team WE 2-0 EDward Gaming \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -33014,6 +33033,10 @@
         {
           "ts": 1785410342,
           "px": 0.32
+        },
+        {
+          "ts": 1785412143,
+          "px": 0.22
         }
       ]
     },
@@ -33050,26 +33073,13 @@
       "qty": 9,
       "market_slug": "aec-lol-shg-dfm-2026-07-30",
       "outcome": "DetonatioN FocusMe",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-30T10:04:50Z",
-      "price_path": [
-        {
-          "ts": 1785406143,
-          "px": 0.43
-        },
-        {
-          "ts": 1785407943,
-          "px": 0.79
-        },
-        {
-          "ts": 1785409743,
-          "px": 0.24
-        },
-        {
-          "ts": 1785411543,
-          "px": 0.73
-        }
-      ]
+      "result": "WIN",
+      "payout": 9.0,
+      "settled_at": "2026-07-30T11:49:03Z",
+      "pnl": 5.13,
+      "autopsy": "+$5.13 \u2014 model 50% vs market 43% was real edge; thesis held. Taken 0.43, slid to 0.73 before the result \u2014 the number ran 30\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.36,
@@ -33099,16 +33109,16 @@
   ],
   "pm_stats": {
     "start": 50.0,
-    "wins": 50,
+    "wins": 51,
     "losses": 116,
-    "pnl": -54.54,
+    "pnl": -49.41,
     "trades": 480,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-10",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 76.54,
-    "net": 12.54,
+    "account": 81.67,
+    "net": 17.67,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -33117,7 +33127,7 @@
         0
       ],
       "EDGE": [
-        41,
+        42,
         101,
         0
       ],
@@ -33138,14 +33148,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T19:37:21Z",
-      "kind": "EDGE",
-      "outcome": "Alex de Minaur",
-      "result": "WIN",
-      "pnl": 3.44,
-      "lesson": "+$3.44 \u2014 model 65% vs market 56% was real edge; thesis held. Taken 0.56, slid to 0.54 before the result \u2014 the number ran 2\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T19:47:17Z",
       "kind": "EDGE",
@@ -33377,6 +33379,14 @@
       "result": "LOSS",
       "pnl": -9.96,
       "lesson": "model 75% vs market 52% missed \u2014 logged for the playbook review. Taken 0.52, rode to 0.82 before the result \u2014 beat the number by 30\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-30T11:49:03Z",
+      "kind": "EDGE",
+      "outcome": "DetonatioN FocusMe",
+      "result": "WIN",
+      "pnl": 5.13,
+      "lesson": "+$5.13 \u2014 model 50% vs market 43% was real edge; thesis held. Taken 0.43, slid to 0.73 before the result \u2014 the number ran 30\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -33461,7 +33471,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785405601.5665708,
+  "dep_checked_ts": 1785412143.48376,
   "x_bio_v": 2,
   "op_cool_until": 1785384925.9896624,
   "x_ads": []
