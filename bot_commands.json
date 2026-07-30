@@ -1,14 +1,15 @@
 {
- "seq": 517,
+ "seq": 518,
  "commands": [
   {
-   "seq": 517,
-   "action": "x_timeline"
+   "seq": 519,
+   "action": "x_pin",
+   "tweet_id": "2082651432390721584"
   },
   {
-   "seq": 518,
-   "action": "x_post_text",
-   "text": "\u26a1 SHiFT DESK \u2014 cashing tonight\n\n\ud83d\udcb0 Tampa Bay Rays @ 0.47 \u2192 +$16.43\n\ud83d\udcb0 KC Royals @ 0.30 \u2192 +$5.60\n\ud83d\udcb0 Cleveland Guardians @ 0.47 \u2192 +$3.71\n\nAccount $77.64 and climbing \u00b7 15 live positions working.\n\n\ud83d\udc0b Desk floor: https://thelineshift.github.io/SHiFTS/upgrade.html"
+   "seq": 520,
+   "action": "x_delete",
+   "tweet_id": "2081043081114370064"
   }
  ]
 }
