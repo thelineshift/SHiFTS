@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T04:01:12Z",
+  "updated": "2026-07-30T04:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2577,7 +2577,10 @@
         "total": 9.5,
         "ts": 1785367140
       },
-      "last_alert_odds": -131
+      "last_alert_odds": -131,
+      "result": "WIN",
+      "score": "Houston Astros 7, Los Angeles Angels 4",
+      "units_result": 0.9
     },
     {
       "id": "nongshim-red-force-ml-0729",
@@ -2641,7 +2644,10 @@
         "total": 156.5,
         "ts": 1785374340
       },
-      "last_alert_odds": -153
+      "last_alert_odds": -153,
+      "result": "LOSS",
+      "score": "Golden State Valkyries 89, Phoenix Mercury 91",
+      "units_result": -1.0
     },
     {
       "id": "los-angeles-dodgers--1.5-0729",
@@ -2665,7 +2671,10 @@
         "total": 9.5,
         "ts": 1785374340
       },
-      "last_alert_odds": -180
+      "last_alert_odds": -180,
+      "result": "WIN",
+      "score": "Seattle Mariners 2, Los Angeles Dodgers 4",
+      "units_result": 0.91
     },
     {
       "id": "miami-marlins-ml-0729",
@@ -2874,7 +2883,10 @@
         "total": 9.5,
         "ts": 1785374340
       },
-      "last_alert_odds": -179
+      "last_alert_odds": -179,
+      "result": "WIN",
+      "score": "Seattle Mariners 2, Los Angeles Dodgers 4",
+      "units_result": 0.67
     },
     {
       "id": "sk-nebula-ml-0729",
@@ -3091,7 +3103,10 @@
         "total": 156.5,
         "ts": 1785374340
       },
-      "last_alert_odds": -153
+      "last_alert_odds": -153,
+      "result": "LOSS",
+      "score": "Golden State Valkyries 89, Phoenix Mercury 91",
+      "units_result": -1.0
     },
     {
       "id": "golden-state-valkyries--3.5-0730",
