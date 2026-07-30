@@ -49,7 +49,62 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "chicago-white-sox-ml-0729",
+      "desc": "Chicago White Sox ML",
+      "odds": 123,
+      "result": "WIN",
+      "units": 1.23,
+      "score": "New York Yankees 5, Chicago White Sox 6",
+      "tier": "whale"
+    },
+    {
+      "id": "houston-astros-ml-0729",
+      "desc": "Houston Astros ML",
+      "odds": -111,
+      "result": "WIN",
+      "units": 0.9,
+      "score": "Houston Astros 7, Los Angeles Angels 4",
+      "tier": "free"
+    },
+    {
+      "id": "golden-state-valkyries--5.5-0729",
+      "desc": "Golden State Valkyries -5.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Golden State Valkyries 89, Phoenix Mercury 91",
+      "tier": "whale"
+    },
+    {
+      "id": "los-angeles-dodgers--1.5-0729",
+      "desc": "Los Angeles Dodgers -1.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Seattle Mariners 2, Los Angeles Dodgers 4",
+      "tier": "whale"
+    },
+    {
+      "id": "los-angeles-dodgers-ml-0729",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -150,
+      "result": "WIN",
+      "units": 0.67,
+      "score": "Seattle Mariners 2, Los Angeles Dodgers 4",
+      "tier": "whale"
+    },
+    {
+      "id": "golden-state-valkyries--3.5-0729",
+      "desc": "Golden State Valkyries -3.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Golden State Valkyries 89, Phoenix Mercury 91",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -27692,10 +27747,6 @@
       "ts": "2026-07-28T06:05:03Z",
       "price_path": [
         {
-          "ts": 1785337640,
-          "px": 0.28
-        },
-        {
           "ts": 1785339440,
           "px": 0.28
         },
@@ -27785,6 +27836,10 @@
         },
         {
           "ts": 1785386342,
+          "px": 0.24
+        },
+        {
+          "ts": 1785388142,
           "px": 0.24
         }
       ]
@@ -32532,6 +32587,10 @@
         {
           "ts": 1785386343,
           "px": 0.39
+        },
+        {
+          "ts": 1785388143,
+          "px": 0.36
         }
       ]
     },
@@ -32577,6 +32636,10 @@
         {
           "ts": 1785386343,
           "px": 0.34
+        },
+        {
+          "ts": 1785388143,
+          "px": 0.29
         }
       ]
     },
@@ -32646,22 +32709,13 @@
       "qty": 10,
       "market_slug": "aec-mlb-bos-ath-2026-07-29",
       "outcome": "Athletics",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-30T03:44:45Z",
-      "price_path": [
-        {
-          "ts": 1785383343,
-          "px": 0.39
-        },
-        {
-          "ts": 1785385143,
-          "px": 0.49
-        },
-        {
-          "ts": 1785386946,
-          "px": 0.15
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-30T05:09:03Z",
+      "pnl": -4.0,
+      "autopsy": "model 46% vs market 36% missed \u2014 logged for the playbook review. Taken 0.35, rode to 0.15 before the result \u2014 beat the number by 20\u00a2 \u2705"
     },
     {
       "price": 0.52,
@@ -32685,6 +32739,10 @@
         {
           "ts": 1785386344,
           "px": 0.52
+        },
+        {
+          "ts": 1785388147,
+          "px": 0.51
         }
       ]
     }
@@ -32692,15 +32750,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 48,
-    "losses": 113,
-    "pnl": -62.5,
+    "losses": 114,
+    "pnl": -66.5,
     "trades": 475,
     "last_recap": "2026-07-29",
     "last_recap_hour": "2026-07-30-04",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 66.78,
-    "net": 2.78,
+    "account": 62.78,
+    "net": -1.22,
     "last_archive": "2026-07-30",
     "kind_totals": {
       "ARB": [
@@ -32722,6 +32780,11 @@
         4,
         3,
         0
+      ],
+      "LIVEEDGE": [
+        0,
+        1,
+        0
       ]
     },
     "archived": 0,
@@ -32730,14 +32793,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T18:47:17Z",
-      "kind": "EDGE",
-      "outcome": "Miami Marlins",
-      "result": "WIN",
-      "pnl": 1.14,
-      "lesson": "+$1.14 \u2014 model 51% vs market 43% was real edge; thesis held. Taken 0.43, slid to 0.46 before the result \u2014 the number ran 3\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T19:07:18Z",
       "kind": "EDGE",
@@ -32969,6 +33024,14 @@
       "result": "LOSS",
       "pnl": -1.32,
       "lesson": "model 72% vs market 66% missed \u2014 logged for the playbook review. Taken 0.66, slid to 0.34 before the result \u2014 the number ran 32\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-07-30T05:09:03Z",
+      "kind": "LIVEEDGE",
+      "outcome": "Athletics",
+      "result": "LOSS",
+      "pnl": -4.0,
+      "lesson": "model 46% vs market 36% missed \u2014 logged for the playbook review. Taken 0.35, rode to 0.15 before the result \u2014 beat the number by 20\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -33053,7 +33116,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785384299.4556587,
+  "dep_checked_ts": 1785388143.9329183,
   "x_bio_v": 2,
   "op_cool_until": 1785384925.9896624,
   "x_ads": []
