@@ -3314,10 +3314,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": -101,
+        "home_ml": -117,
+        "away_ml": -103,
         "total": 8.5,
-        "ts": 1785410942
+        "ts": 1785414542
       },
       "last_alert_odds": -101
     },
@@ -3627,12 +3627,12 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -232,
-        "away_ml": 187,
+        "home_ml": -245,
+        "away_ml": 197,
         "total": 181.5,
-        "ts": 1785410942
+        "ts": 1785414542
       },
-      "last_alert_odds": -232
+      "last_alert_odds": -245
     },
     {
       "id": "chicago-white-sox-ml-0730",
@@ -3651,10 +3651,10 @@
       "homeTeam": "Chicago White Sox",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -105,
+        "home_ml": -117,
+        "away_ml": -103,
         "total": 7.5,
-        "ts": 1785412742
+        "ts": 1785414542
       }
     },
     {
@@ -3674,10 +3674,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -103,
-        "away_ml": -117,
+        "home_ml": -105,
+        "away_ml": -115,
         "total": 9.5,
-        "ts": 1785396542
+        "ts": 1785414542
       }
     },
     {
@@ -3803,7 +3803,14 @@
       "opp": "Texas Rangers",
       "analysis": "63-44 overall, 39-16 at home \u2014 ML juiced to -158, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 68% straight up | \ud83d\udcca **Form + price:** 63-44 overall, 39-16 at home \u2014 ML juiced to -158, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 68% straight u",
       "homeTeam": "Tampa Bay Rays",
-      "awayTeam": "Texas Rangers"
+      "awayTeam": "Texas Rangers",
+      "live_odds": {
+        "home_ml": -158,
+        "away_ml": 131,
+        "total": 7.5,
+        "ts": 1785414542
+      },
+      "last_alert_odds": -158
     },
     {
       "id": "new-york-liberty-ml-0730",
@@ -3820,7 +3827,13 @@
       "opp": "Las Vegas Aces",
       "analysis": "16-12 overall, 8-7 on the road \u2014 our 34% vs book 33% (no-vig) | \u2694\ufe0f **Matchup read:** 16-12 overall, 8-7 on the road \u2014 our 34% vs book 33% (no-vig). New York Liberty in the better spot and priced like it isn't \u2014 **1-point** edge.",
       "awayTeam": "New York Liberty",
-      "homeTeam": "Las Vegas Aces"
+      "homeTeam": "Las Vegas Aces",
+      "live_odds": {
+        "home_ml": -245,
+        "away_ml": 197,
+        "total": 181.5,
+        "ts": 1785414543
+      }
     }
   ]
 }
