@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T01:19:03Z",
+  "updated": "2026-07-30T00:59:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -2294,10 +2294,7 @@
         "away_ml": 119,
         "total": 7.5,
         "ts": 1785356642
-      },
-      "result": "WIN",
-      "score": "Texas Rangers 0, Tampa Bay Rays 3",
-      "units_result": 1.06
+      }
     },
     {
       "id": "san-diego-padres-ml-0729",
@@ -2627,12 +2624,12 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 144,
-        "away_ml": -175,
+        "home_ml": 126,
+        "away_ml": -153,
         "total": 156.5,
-        "ts": 1785365340
+        "ts": 1785374340
       },
-      "last_alert_odds": -172
+      "last_alert_odds": -153
     },
     {
       "id": "los-angeles-dodgers--1.5-0729",
@@ -2651,10 +2648,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -180,
-        "away_ml": 148,
+        "home_ml": -186,
+        "away_ml": 153,
         "total": 9.5,
-        "ts": 1785367140
+        "ts": 1785374340
       },
       "last_alert_odds": -180
     },
@@ -2860,10 +2857,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -180,
-        "away_ml": 148,
+        "home_ml": -186,
+        "away_ml": 153,
         "total": 9.5,
-        "ts": 1785367142
+        "ts": 1785374340
       },
       "last_alert_odds": -179
     },
@@ -3071,12 +3068,12 @@
       "awayTeam": "Golden State Valkyries",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 144,
-        "away_ml": -175,
+        "home_ml": 126,
+        "away_ml": -153,
         "total": 156.5,
-        "ts": 1785365340
+        "ts": 1785374340
       },
-      "last_alert_odds": -175
+      "last_alert_odds": -153
     },
     {
       "id": "golden-state-valkyries--3.5-0730",
