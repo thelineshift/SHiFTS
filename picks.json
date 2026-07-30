@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T16:01:01Z",
+  "updated": "2026-07-30T16:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3855,7 +3855,10 @@
       "opp": "Inner Circle Academy",
       "analysis": "4-1 last 5 (beat SPARTA, G2 Ares, Inner Circle Academy) (lost to Butterfly) vs 1-4 \u2014 live Pinnacle line -198 (our 90% vs book 62%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat SPARTA, G2 Ares, Inner Circle Academy) (lost to Butterfly) vs 1-4 \u2014 live Pinnacle line -198 (our 90% vs book 62%). When the form ",
       "awayTeam": "Just Players",
-      "homeTeam": "Inner Circle Academy"
+      "homeTeam": "Inner Circle Academy",
+      "result": "WIN",
+      "units_result": 0.76,
+      "score": "Just Players 2-1 SPARTA \u00b7 final"
     },
     {
       "id": "over-8.0-0730",
