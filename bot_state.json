@@ -49,26 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "gamesport-ml-0730",
-      "desc": "GameSport ML",
-      "odds": -300,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "GameSport 0-2 mellren \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "privateer-gaming-ml-0730",
-      "desc": "Privateer Gaming ML",
-      "odds": -150,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Privateer Gaming 0-1 B8 Academy \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -31949,6 +31930,10 @@
       "ts": "2026-07-29T01:00:09Z",
       "price_path": [
         {
+          "ts": 1785386945,
+          "px": 0.2
+        },
+        {
           "ts": 1785389342,
           "px": 0.19
         },
@@ -32038,10 +32023,6 @@
         },
         {
           "ts": 1785433753,
-          "px": 0.22
-        },
-        {
-          "ts": 1785436142,
           "px": 0.22
         }
       ]
@@ -32464,6 +32445,10 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
+          "ts": 1785386343,
+          "px": 0.445
+        },
+        {
           "ts": 1785388742,
           "px": 0.445
         },
@@ -32553,10 +32538,6 @@
         },
         {
           "ts": 1785433753,
-          "px": 0.445
-        },
-        {
-          "ts": 1785436142,
           "px": 0.445
         }
       ]
@@ -32745,6 +32726,10 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
+          "ts": 1785382743,
+          "px": 0.15
+        },
+        {
           "ts": 1785384543,
           "px": 0.15
         },
@@ -32834,10 +32819,6 @@
         },
         {
           "ts": 1785434342,
-          "px": 0.15
-        },
-        {
-          "ts": 1785436143,
           "px": 0.15
         }
       ]
@@ -34568,10 +34549,6 @@
         {
           "ts": 1785433754,
           "px": 0.55
-        },
-        {
-          "ts": 1785436143,
-          "px": 0.41
         }
       ]
     },
