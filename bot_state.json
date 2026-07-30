@@ -51,17 +51,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "chicago-cubs-ml-0729",
-      "desc": "Chicago Cubs ML",
-      "odds": -110,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Chicago Cubs 2, St. Louis Cardinals 3",
-      "tier": "lock"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
