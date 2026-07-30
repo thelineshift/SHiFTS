@@ -3675,10 +3675,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -115,
+        "home_ml": -103,
+        "away_ml": -117,
         "total": 9.5,
-        "ts": 1785421743
+        "ts": 1785434342
       }
     },
     {
