@@ -3314,10 +3314,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": 100,
+        "home_ml": -123,
+        "away_ml": 102,
         "total": 8.5,
-        "ts": 1785385742
+        "ts": 1785409142
       }
     },
     {
@@ -3623,12 +3623,12 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -198,
-        "away_ml": 161,
+        "home_ml": -219,
+        "away_ml": 177,
         "total": 181.5,
-        "ts": 1785407342
+        "ts": 1785409142
       },
-      "last_alert_odds": -207
+      "last_alert_odds": -219
     },
     {
       "id": "chicago-white-sox-ml-0730",
