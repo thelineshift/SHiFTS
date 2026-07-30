@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T17:29:05Z",
+  "updated": "2026-07-30T17:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3630,8 +3630,8 @@
       "live_odds": {
         "home_ml": -207,
         "away_ml": 168,
-        "total": 181.5,
-        "ts": 1785428942
+        "total": 182.5,
+        "ts": 1785432542
       },
       "last_alert_odds": -210
     },
@@ -3756,10 +3756,7 @@
       "opp": "mellren",
       "analysis": "2-1 last 5 (beat TrafficPills Esports, BakS eSports) (lost to Spirit Academy) vs 2-3 \u2014 model line -300 (our 75%) | \ud83e\udde0 **The read:** 2-1 last 5 (beat TrafficPills Esports, BakS eSports) (lost to Spirit Academy) vs 2-3 \u2014 model line -300 (our 75%). That's a **27-point** gap over mellren the number hasn'",
       "awayTeam": "GameSport",
-      "homeTeam": "mellren",
-      "result": "LOSS",
-      "units_result": -1.0,
-      "score": "GameSport 0-2 mellren \u00b7 final"
+      "homeTeam": "mellren"
     },
     {
       "id": "habos-babos-ml-0730",
@@ -3844,8 +3841,8 @@
       "live_odds": {
         "home_ml": -207,
         "away_ml": 168,
-        "total": 181.5,
-        "ts": 1785428942
+        "total": 182.5,
+        "ts": 1785432542
       },
       "last_alert_odds": 170
     },
