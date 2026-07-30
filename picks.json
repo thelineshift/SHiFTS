@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T17:49:06Z",
+  "updated": "2026-07-30T19:09:05Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3193,7 +3193,10 @@
         "total": 8.0,
         "ts": 1785427142
       },
-      "last_alert_odds": -185
+      "last_alert_odds": -185,
+      "result": "WIN",
+      "score": "Texas Rangers 2, Tampa Bay Rays 3",
+      "units_result": 1.2
     },
     {
       "id": "chicago-sky--3.5-0730",
@@ -3823,7 +3826,10 @@
         "total": 8.0,
         "ts": 1785427142
       },
-      "last_alert_odds": -185
+      "last_alert_odds": -185,
+      "result": "LOSS",
+      "score": "Texas Rangers 2, Tampa Bay Rays 3",
+      "units_result": -1.0
     },
     {
       "id": "new-york-liberty-ml-0730",
