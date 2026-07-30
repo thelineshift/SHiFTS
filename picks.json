@@ -3188,12 +3188,12 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -173,
+        "away_ml": 143,
         "total": 7.5,
-        "ts": 1785416342
+        "ts": 1785421742
       },
-      "last_alert_odds": -157
+      "last_alert_odds": -173
     },
     {
       "id": "chicago-sky--3.5-0730",
@@ -3314,10 +3314,10 @@
       "awayTeam": "Chicago Cubs",
       "homeTeam": "St. Louis Cardinals",
       "live_odds": {
-        "home_ml": -117,
-        "away_ml": -103,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 9.0,
-        "ts": 1785418142
+        "ts": 1785421742
       },
       "last_alert_odds": -101
     },
@@ -3464,12 +3464,12 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Athletics",
       "live_odds": {
-        "home_ml": 147,
-        "away_ml": -179,
+        "home_ml": 152,
+        "away_ml": -185,
         "total": 10.0,
-        "ts": 1785418142
+        "ts": 1785421742
       },
-      "last_alert_odds": -168
+      "last_alert_odds": -185
     },
     {
       "id": "3-leg-parlay-0730-lock",
@@ -3628,12 +3628,12 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -238,
-        "away_ml": 192,
+        "home_ml": -210,
+        "away_ml": 170,
         "total": 181.5,
-        "ts": 1785418142
+        "ts": 1785421742
       },
-      "last_alert_odds": -238
+      "last_alert_odds": -210
     },
     {
       "id": "chicago-white-sox-ml-0730",
@@ -3675,10 +3675,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -103,
-        "away_ml": -117,
+        "home_ml": -105,
+        "away_ml": -115,
         "total": 9.5,
-        "ts": 1785419942
+        "ts": 1785421743
       }
     },
     {
@@ -3806,12 +3806,12 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -173,
+        "away_ml": 143,
         "total": 7.5,
-        "ts": 1785416342
+        "ts": 1785421743
       },
-      "last_alert_odds": -158
+      "last_alert_odds": -173
     },
     {
       "id": "new-york-liberty-ml-0730",
@@ -3830,11 +3830,12 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -238,
-        "away_ml": 192,
+        "home_ml": -210,
+        "away_ml": 170,
         "total": 181.5,
-        "ts": 1785418142
-      }
+        "ts": 1785421743
+      },
+      "last_alert_odds": 170
     }
   ]
 }
