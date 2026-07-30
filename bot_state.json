@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "just-players-ml-0730",
+      "desc": "Just Players ML",
+      "odds": -198,
+      "result": "WIN",
+      "units": 0.76,
+      "score": "Just Players 2-1 SPARTA \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "gamesport-ml-0730",
+      "desc": "GameSport ML",
+      "odds": -300,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "GameSport 0-2 mellren \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -32473,10 +32492,6 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
-          "ts": 1785378543,
-          "px": 0.15
-        },
-        {
           "ts": 1785380345,
           "px": 0.15
         },
@@ -32566,6 +32581,10 @@
         },
         {
           "ts": 1785430742,
+          "px": 0.15
+        },
+        {
+          "ts": 1785432542,
           "px": 0.15
         }
       ]
