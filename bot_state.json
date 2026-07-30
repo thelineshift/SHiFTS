@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "just-players-ml-0730",
+      "desc": "Just Players ML",
+      "odds": -198,
+      "result": "WIN",
+      "units": 0.76,
+      "score": "Just Players 2-1 SPARTA \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -32174,10 +32184,6 @@
       "ts": "2026-07-29T05:45:00Z",
       "price_path": [
         {
-          "ts": 1785374342,
-          "px": 0.15
-        },
-        {
           "ts": 1785376741,
           "px": 0.15
         },
@@ -32267,6 +32273,10 @@
         },
         {
           "ts": 1785426543,
+          "px": 0.14
+        },
+        {
+          "ts": 1785428942,
           "px": 0.14
         }
       ]
@@ -33980,6 +33990,10 @@
         {
           "ts": 1785426543,
           "px": 0.69
+        },
+        {
+          "ts": 1785428942,
+          "px": 0.29
         }
       ]
     }
