@@ -13,7 +13,7 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-07-30 06:29 UTC",
+    "at": "2026-07-30 05:59 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -24,7 +24,7 @@
     "\ud83c\udf81giveaway": "2026-07-30 02:16 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-30 06:29 UTC",
+    "at": "2026-07-30 05:59 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,106 +41,15 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-30 06:29 UTC",
+    "at": "2026-07-30 05:59 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-30 06:29 UTC",
+    "at": "2026-07-30 05:59 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "chicago-white-sox-ml-0729",
-      "desc": "Chicago White Sox ML",
-      "odds": 123,
-      "result": "WIN",
-      "units": 1.23,
-      "score": "New York Yankees 5, Chicago White Sox 6",
-      "tier": "whale"
-    },
-    {
-      "id": "houston-astros-ml-0729",
-      "desc": "Houston Astros ML",
-      "odds": -111,
-      "result": "WIN",
-      "units": 0.9,
-      "score": "Houston Astros 7, Los Angeles Angels 4",
-      "tier": "free"
-    },
-    {
-      "id": "golden-state-valkyries--5.5-0729",
-      "desc": "Golden State Valkyries -5.5",
-      "odds": -110,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Golden State Valkyries 89, Phoenix Mercury 91",
-      "tier": "whale"
-    },
-    {
-      "id": "los-angeles-dodgers--1.5-0729",
-      "desc": "Los Angeles Dodgers -1.5",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "Seattle Mariners 2, Los Angeles Dodgers 4",
-      "tier": "whale"
-    },
-    {
-      "id": "los-angeles-dodgers-ml-0729",
-      "desc": "Los Angeles Dodgers ML",
-      "odds": -150,
-      "result": "WIN",
-      "units": 0.67,
-      "score": "Seattle Mariners 2, Los Angeles Dodgers 4",
-      "tier": "whale"
-    },
-    {
-      "id": "golden-state-valkyries--3.5-0729",
-      "desc": "Golden State Valkyries -3.5",
-      "odds": -110,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Golden State Valkyries 89, Phoenix Mercury 91",
-      "tier": "whale"
-    },
-    {
-      "id": "3-leg-parlay-0729-whale",
-      "desc": "Minnesota Twins -1.5 + Boston Red Sox -1.5 + Chicago Cubs ML",
-      "odds": 568,
-      "result": "LOSS",
-      "units": -0.5,
-      "score": "Legs: None: loss \u00b7 None: win \u00b7 None: loss",
-      "tier": "whale"
-    },
-    {
-      "id": "3-leg-parlay-0729-sharp",
-      "desc": "Minnesota Twins -1.5 + Boston Red Sox -1.5 + Chicago Cubs ML",
-      "odds": 568,
-      "result": "LOSS",
-      "units": -0.5,
-      "score": "Legs: None: loss \u00b7 None: win \u00b7 None: loss",
-      "tier": "sharp"
-    },
-    {
-      "id": "3-leg-parlay-0729-lock",
-      "desc": "Minnesota Twins -1.5 + Boston Red Sox -1.5 + Chicago Cubs ML",
-      "odds": 568,
-      "result": "LOSS",
-      "units": -0.5,
-      "score": "Legs: None: loss \u00b7 None: win \u00b7 None: loss",
-      "tier": "lock"
-    },
-    {
-      "id": "boston-red-sox--1.5-0729",
-      "desc": "Boston Red Sox -1.5",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "Boston Red Sox 4, Athletics 2",
-      "tier": "lock"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
