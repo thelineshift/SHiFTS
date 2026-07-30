@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T00:01:46Z",
+  "updated": "2026-07-30T00:39:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3043,7 +3043,10 @@
       "opp": "NRG",
       "analysis": "4-1 last 5 (beat LAG Gaming, Iowa Stormboar, Festina Lente) (lost to regain) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat LAG Gaming, Iowa Stormboar, Festina Lente) (lost to regain) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** ",
       "awayTeam": "Marsborne",
-      "homeTeam": "NRG"
+      "homeTeam": "NRG",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Marsborne 1-2 NRG \u00b7 final"
     },
     {
       "id": "golden-state-valkyries--3.5-0729",
