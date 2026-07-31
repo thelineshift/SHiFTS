@@ -13,18 +13,18 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-07-31 04:29 UTC",
+    "at": "2026-07-31 03:59 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-4-5": "2026-07-31 04:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-31 04:09 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-07-31 04:01 UTC",
+    "\ud83c\udfaffree-pick-4-5": "2026-07-31 00:00 UTC",
+    "\ud83e\uddfereceipts": "2026-07-31 03:09 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-07-31 03:50 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-30 12:34 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-31 04:29 UTC",
+    "at": "2026-07-31 03:59 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,34 +41,17 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-31 04:29 UTC",
-    "flags": []
+    "at": "2026-07-31 03:59 UTC",
+    "flags": [
+      "no challenge bet registered for 2026-07-30 (due 6 PM ET)"
+    ]
   },
   "giveaway_watch": {
-    "at": "2026-07-31 04:29 UTC",
+    "at": "2026-07-31 03:59 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "boston-red-sox--1.5-0730",
-      "desc": "Boston Red Sox -1.5",
-      "odds": -110,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Boston Red Sox 5, Athletics 4",
-      "tier": "lock"
-    },
-    {
-      "id": "athletics-ml-0730",
-      "desc": "Athletics ML",
-      "odds": 157,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Boston Red Sox 5, Athletics 4",
-      "tier": "sharp"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
