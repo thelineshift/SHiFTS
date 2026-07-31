@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T15:29:06Z",
+  "updated": "2026-07-31T16:00:48Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4893,6 +4893,40 @@
       "analysis": "posted 8.0 vs 19.2 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \u2694\ufe0f **Matchup read:** posted 8.0 vs 19.2 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. Over 8.0 in the better spot and priced l",
       "awayTeam": "Cincinnati Reds",
       "homeTeam": "Pittsburgh Pirates"
+    },
+    {
+      "id": "fluxo-w7m-ml-0731",
+      "date": "2026-07-31",
+      "sport": "cs2",
+      "desc": "Fluxo W7M ML",
+      "market": "StarLadder StarSeries Bo3",
+      "odds": -185,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "02:00 PM ET",
+      "vs": "Imperial",
+      "team": "Fluxo W7M",
+      "opp": "Imperial",
+      "analysis": "4-1 last 5 (beat Bounty Hunters Esports, Imperial, Bounty Hunters Esports) (lost to MIBR) vs 2-3 \u2014 live Pinnacle line -185 (our 86% vs book 61%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Bounty Hunters Esports, Imperial, Bounty Hunters Esports) (lost to MIBR) vs 2-3 \u2014 live Pinnacle line -185 (our 86% ",
+      "awayTeam": "Fluxo W7M",
+      "homeTeam": "Imperial"
+    },
+    {
+      "id": "new-york-city-fc-ml-0731",
+      "date": "2026-07-31",
+      "sport": "mls",
+      "desc": "New York City FC ML",
+      "market": "ML",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:30 PM ET",
+      "vs": "Toronto FC",
+      "team": "New York City FC",
+      "opp": "Toronto FC",
+      "analysis": "7-4-6 overall \u2014 our 85% vs book 73% (no-vig) | \ud83e\udde0 **The read:** 7-4-6 overall \u2014 our 85% vs book 73% (no-vig). Model makes New York City FC **85%** \u2014 books imply **60%**. SHiFT presses the gap.",
+      "homeTeam": "New York City FC",
+      "awayTeam": "Toronto FC"
     }
   ]
 }
