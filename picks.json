@@ -4637,8 +4637,8 @@
       "live_odds": {
         "home_ml": 135,
         "away_ml": -163,
-        "total": 10.5,
-        "ts": 1785473942
+        "total": 11.0,
+        "ts": 1785486542
       }
     },
     {
@@ -4766,7 +4766,14 @@
       "opp": "Chicago White Sox",
       "analysis": "64-44 overall, 40-16 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 70% straight up | \u2694\ufe0f **Matchup read:** 64-44 overall, 40-16 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 70% straight ",
       "homeTeam": "Tampa Bay Rays",
-      "awayTeam": "Chicago White Sox"
+      "awayTeam": "Chicago White Sox",
+      "live_odds": {
+        "home_ml": -156,
+        "away_ml": 129,
+        "total": 8.5,
+        "ts": 1785486542
+      },
+      "last_alert_odds": -156
     },
     {
       "id": "philadelphia-phillies-ml-0731",
@@ -4783,7 +4790,13 @@
       "opp": "Baltimore Orioles",
       "analysis": "57-52 overall, 29-25 on the road \u2014 our 50% vs book 47% (no-vig) | \ud83e\udde0 **The read:** 57-52 overall, 29-25 on the road \u2014 our 50% vs book 47% (no-vig). Model makes Philadelphia Phillies **50%** \u2014 books imply **49%**. SHiFT presses the gap.",
       "awayTeam": "Philadelphia Phillies",
-      "homeTeam": "Baltimore Orioles"
+      "homeTeam": "Baltimore Orioles",
+      "live_odds": {
+        "home_ml": -126,
+        "away_ml": 105,
+        "total": 9.0,
+        "ts": 1785486542
+      }
     }
   ]
 }
