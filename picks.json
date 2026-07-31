@@ -4191,10 +4191,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 8.5,
-        "ts": 1785506341
+        "ts": 1785522541
       },
       "last_alert_odds": -142
     },
@@ -4698,10 +4698,10 @@
       "awayTeam": "Minnesota Twins",
       "homeTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -168,
-        "away_ml": 139,
-        "total": 7.5,
-        "ts": 1785515342
+        "home_ml": -167,
+        "away_ml": 138,
+        "total": 8.0,
+        "ts": 1785522542
       },
       "last_alert_odds": 143
     },
@@ -4789,10 +4789,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 8.5,
-        "ts": 1785506342
+        "ts": 1785522542
       },
       "last_alert_odds": -142
     },
