@@ -4191,10 +4191,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 8.5,
-        "ts": 1785481141
+        "ts": 1785497342
       },
       "last_alert_odds": -156
     },
@@ -4470,10 +4470,10 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 9.0,
-        "ts": 1785491942
+        "ts": 1785497342
       },
       "last_alert_odds": 130
     },
@@ -4574,8 +4574,8 @@
       "live_odds": {
         "home_ml": 131,
         "away_ml": -160,
-        "total": 168.5,
-        "ts": 1785473942
+        "total": 169.5,
+        "ts": 1785497342
       }
     },
     {
@@ -4782,10 +4782,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 8.5,
-        "ts": 1785486542
+        "ts": 1785497342
       },
       "last_alert_odds": -156
     },
