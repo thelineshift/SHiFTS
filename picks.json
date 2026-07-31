@@ -4650,10 +4650,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": 123,
-        "away_ml": -149,
-        "total": 10.5,
-        "ts": 1785508142
+        "home_ml": 119,
+        "away_ml": -143,
+        "total": 11.0,
+        "ts": 1785509942
       },
       "last_alert_odds": 123
     },
@@ -4674,10 +4674,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -110,
-        "away_ml": -110,
+        "home_ml": -108,
+        "away_ml": -111,
         "total": 11.0,
-        "ts": 1785506342
+        "ts": 1785509942
       }
     },
     {
