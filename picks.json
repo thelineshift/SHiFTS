@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T20:49:06Z",
+  "updated": "2026-07-31T21:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4915,7 +4915,10 @@
       "opp": "Imperial",
       "analysis": "4-1 last 5 (beat Bounty Hunters Esports, Imperial, Bounty Hunters Esports) (lost to MIBR) vs 2-3 \u2014 live Pinnacle line -185 (our 86% vs book 61%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Bounty Hunters Esports, Imperial, Bounty Hunters Esports) (lost to MIBR) vs 2-3 \u2014 live Pinnacle line -185 (our 86% ",
       "awayTeam": "Fluxo W7M",
-      "homeTeam": "Imperial"
+      "homeTeam": "Imperial",
+      "result": "WIN",
+      "units_result": 0.81,
+      "score": "Fluxo W7M 2-1 Imperial \u00b7 final"
     },
     {
       "id": "new-york-city-fc-ml-0731",
