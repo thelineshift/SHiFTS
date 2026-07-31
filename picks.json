@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T08:01:04Z",
+  "updated": "2026-07-31T12:01:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4811,6 +4811,74 @@
         "total": 9.0,
         "ts": 1785486542
       }
+    },
+    {
+      "id": "wolves-ml-0731",
+      "date": "2026-07-31",
+      "sport": "kog",
+      "desc": "Wolves ML",
+      "market": "King Pro League Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "08:00 AM ET",
+      "vs": "Weibo Gaming",
+      "team": "Wolves",
+      "opp": "Weibo Gaming",
+      "analysis": "4-1 last 5 (beat Kuaishou Gaming, Hero JiuJing, SYGaming) (lost to TOP Esports Armor) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 4-1 last 5 (beat Kuaishou Gaming, Hero JiuJing, SYGaming) (lost to TOP Esports Armor) vs 3-2 \u2014 model line -265 (our 73%). The book shaded this line toward the ",
+      "awayTeam": "Wolves",
+      "homeTeam": "Weibo Gaming"
+    },
+    {
+      "id": "team-vitality-ml-0731",
+      "date": "2026-07-31",
+      "sport": "lol",
+      "desc": "Team Vitality ML",
+      "market": "LEC Bo3",
+      "odds": -340,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "Team Heretics",
+      "team": "Team Vitality",
+      "opp": "Team Heretics",
+      "analysis": "1-4 last 5 (beat Movistar KOI) (lost to G2 Esports) vs 0-5 \u2014 live Pinnacle line -340 (our 90% vs book 73%) | \ud83d\udd25 **Momentum play:** 1-4 last 5 (beat Movistar KOI) (lost to G2 Esports) vs 0-5 \u2014 live Pinnacle line -340 (our 90% vs book 73%). Ride the **17-point** form edge before the market catches up.",
+      "awayTeam": "Team Vitality",
+      "homeTeam": "Team Heretics"
+    },
+    {
+      "id": "faze-ml-0731",
+      "date": "2026-07-31",
+      "sport": "cs2",
+      "desc": "FaZe ML",
+      "market": "BLAST Bounty Bo3",
+      "odds": -176,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "08:30 AM ET",
+      "vs": "TheMongolz",
+      "team": "FaZe",
+      "opp": "TheMongolz",
+      "analysis": "4-1 last 5 (beat DENDELE CS, EYEBALLERS, BetBoom Team) (lost to PARIVISION) vs 3-2 \u2014 live Pinnacle line -176 (our 73% vs book 61%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat DENDELE CS, EYEBALLERS, BetBoom Team) (lost to PARIVISION) vs 3-2 \u2014 live Pinnacle line -176 (our 73% vs book 61%). Books hang resp",
+      "awayTeam": "FaZe",
+      "homeTeam": "TheMongolz"
+    },
+    {
+      "id": "over-8.0-0731",
+      "date": "2026-07-31",
+      "sport": "mlb",
+      "desc": "Over 8.0",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "06:10 PM ET",
+      "vs": "Pittsburgh Pirates @ Cincinnati Reds",
+      "team": "Cincinnati Reds",
+      "opp": "Pittsburgh Pirates",
+      "analysis": "posted 8.0 vs 19.2 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \u2694\ufe0f **Matchup read:** posted 8.0 vs 19.2 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. Over 8.0 in the better spot and priced l",
+      "awayTeam": "Cincinnati Reds",
+      "homeTeam": "Pittsburgh Pirates"
     }
   ]
 }
