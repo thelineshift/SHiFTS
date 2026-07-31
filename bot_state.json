@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "new-york-yankees-ml-0731",
+      "desc": "New York Yankees ML",
+      "odds": 118,
+      "result": "WIN",
+      "units": 1.18,
+      "score": "New York Yankees 2, Chicago Cubs 0",
+      "tier": "lock"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
