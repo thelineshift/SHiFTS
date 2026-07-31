@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T00:00:51Z",
+  "updated": "2026-07-31T01:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4003,7 +4003,10 @@
         "away_ml": 134,
         "total": 10.0,
         "ts": 1785443342
-      }
+      },
+      "result": "LOSS",
+      "score": "Washington Nationals 4, Atlanta Braves 5",
+      "units_result": -1.0
     },
     {
       "id": "100-thieves-ml-0730",
