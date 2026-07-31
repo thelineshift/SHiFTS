@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T04:29:06Z",
+  "updated": "2026-07-31T04:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3595,7 +3595,10 @@
         "total": 8.0,
         "ts": 1785452342
       },
-      "last_alert_odds": -172
+      "last_alert_odds": -172,
+      "result": "LOSS",
+      "score": "San Francisco Giants 4, San Diego Padres 1",
+      "units_result": -1.0
     },
     {
       "id": "over-7.5-0730",
@@ -3990,7 +3993,10 @@
         "total": 8.0,
         "ts": 1785452342
       },
-      "last_alert_odds": -161
+      "last_alert_odds": -161,
+      "result": "LOSS",
+      "score": "San Francisco Giants 4, San Diego Padres 1",
+      "units_result": -1.0
     },
     {
       "id": "fnatic-ml-0730",
