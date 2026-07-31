@@ -49,17 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "faze-ml-0731",
-      "desc": "FaZe ML",
-      "odds": -176,
-      "result": "WIN",
-      "units": 0.57,
-      "score": "FaZe 2-1 TheMongolz \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -30924,6 +30914,10 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
+          "ts": 1785469742,
+          "px": 0.455
+        },
+        {
           "ts": 1785471542,
           "px": 0.455
         },
@@ -31013,10 +31007,6 @@
         },
         {
           "ts": 1785511142,
-          "px": 0.48
-        },
-        {
-          "ts": 1785512942,
           "px": 0.48
         }
       ]
