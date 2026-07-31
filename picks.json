@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T16:49:06Z",
+  "updated": "2026-07-31T20:00:38Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4937,6 +4937,40 @@
         "ts": 1785515342
       },
       "last_alert_odds": 350
+    },
+    {
+      "id": "loud-ml-0731",
+      "date": "2026-07-31",
+      "sport": "valorant",
+      "desc": "LOUD ML",
+      "market": "VCT Bo3",
+      "odds": 112,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "05:00 PM ET",
+      "vs": "Cloud9",
+      "team": "LOUD",
+      "opp": "Cloud9",
+      "analysis": "2-3 last 5 (beat KR\u00dc Esports, Sentinels) (lost to Sentinels) vs 0-5 \u2014 live Pinnacle line +112 (our 90% vs book 45%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat KR\u00dc Esports, Sentinels) (lost to Sentinels) vs 0-5 \u2014 live Pinnacle line +112 (our 90% vs book 45%). When the form gap runs **45 points** wide, t",
+      "awayTeam": "LOUD",
+      "homeTeam": "Cloud9"
+    },
+    {
+      "id": "over-8.5-0731",
+      "date": "2026-07-31",
+      "sport": "mlb",
+      "desc": "Over 8.5",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:05 PM ET",
+      "vs": "Philadelphia Phillies @ Baltimore Orioles",
+      "team": "Baltimore Orioles",
+      "opp": "Philadelphia Phillies",
+      "analysis": "posted 8.5 vs 17.4 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \ud83d\udcca **Form + price:** posted 8.5 vs 17.4 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. Model makes Over 8.5 **60%** \u2014 books impl",
+      "awayTeam": "Baltimore Orioles",
+      "homeTeam": "Philadelphia Phillies"
     }
   ]
 }
