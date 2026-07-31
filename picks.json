@@ -4698,10 +4698,10 @@
       "awayTeam": "Minnesota Twins",
       "homeTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -171,
-        "away_ml": 141,
+        "home_ml": -168,
+        "away_ml": 139,
         "total": 7.5,
-        "ts": 1785513542
+        "ts": 1785515342
       },
       "last_alert_odds": 143
     },
@@ -4722,12 +4722,12 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 132,
-        "away_ml": -160,
+        "home_ml": 126,
+        "away_ml": -152,
         "total": 9.0,
-        "ts": 1785513542
+        "ts": 1785515342
       },
-      "last_alert_odds": -171
+      "last_alert_odds": -152
     },
     {
       "id": "cincinnati-reds-ml-0731",
@@ -4746,10 +4746,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": 110,
-        "away_ml": -132,
+        "home_ml": 115,
+        "away_ml": -139,
         "total": 8.0,
-        "ts": 1785513542
+        "ts": 1785515342
       }
     },
     {
@@ -4926,7 +4926,14 @@
       "opp": "Toronto FC",
       "analysis": "7-4-6 overall \u2014 our 85% vs book 73% (no-vig) | \ud83e\udde0 **The read:** 7-4-6 overall \u2014 our 85% vs book 73% (no-vig). Model makes New York City FC **85%** \u2014 books imply **60%**. SHiFT presses the gap.",
       "homeTeam": "New York City FC",
-      "awayTeam": "Toronto FC"
+      "awayTeam": "Toronto FC",
+      "live_odds": {
+        "home_ml": -150,
+        "away_ml": 350,
+        "total": 2.5,
+        "ts": 1785515342
+      },
+      "last_alert_odds": 350
     }
   ]
 }
