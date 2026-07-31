@@ -4193,8 +4193,8 @@
       "live_odds": {
         "home_ml": -135,
         "away_ml": 112,
-        "total": 8.0,
-        "ts": 1785526141
+        "total": 8.5,
+        "ts": 1785527941
       },
       "last_alert_odds": -142
     },
@@ -4215,10 +4215,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -194,
-        "away_ml": 159,
+        "home_ml": -193,
+        "away_ml": 158,
         "total": 7.5,
-        "ts": 1785526141
+        "ts": 1785527941
       },
       "last_alert_odds": 158
     },
@@ -4410,10 +4410,10 @@
       "awayTeam": "Miami Marlins",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -125,
-        "away_ml": 104,
+        "home_ml": -122,
+        "away_ml": 101,
         "total": 8.5,
-        "ts": 1785526142
+        "ts": 1785527942
       }
     },
     {
@@ -4495,10 +4495,10 @@
       "homeTeam": "Atlanta Braves",
       "awayTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -118,
-        "away_ml": -102,
+        "home_ml": -124,
+        "away_ml": 103,
         "total": 9.0,
-        "ts": 1785502742
+        "ts": 1785527942
       },
       "last_alert_odds": -118
     },
@@ -4675,10 +4675,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -108,
-        "away_ml": -111,
+        "home_ml": -106,
+        "away_ml": -114,
         "total": 11.0,
-        "ts": 1785524342
+        "ts": 1785527942
       }
     },
     {
@@ -4722,10 +4722,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 139,
-        "away_ml": -168,
+        "home_ml": 141,
+        "away_ml": -171,
         "total": 9.0,
-        "ts": 1785520742
+        "ts": 1785527942
       },
       "last_alert_odds": -168
     },
@@ -4746,10 +4746,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": 115,
-        "away_ml": -139,
+        "home_ml": 110,
+        "away_ml": -132,
         "total": 8.0,
-        "ts": 1785515342
+        "ts": 1785527942
       }
     },
     {
@@ -4791,8 +4791,8 @@
       "live_odds": {
         "home_ml": -135,
         "away_ml": 112,
-        "total": 8.0,
-        "ts": 1785526142
+        "total": 8.5,
+        "ts": 1785527942
       },
       "last_alert_odds": -142
     },
@@ -4813,10 +4813,10 @@
       "awayTeam": "Philadelphia Phillies",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -119,
-        "away_ml": -102,
+        "home_ml": -112,
+        "away_ml": -107,
         "total": 8.5,
-        "ts": 1785517142
+        "ts": 1785527942
       },
       "last_alert_odds": -105
     },
