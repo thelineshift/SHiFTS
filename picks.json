@@ -4455,11 +4455,12 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 9.0,
-        "ts": 1785473942
-      }
+        "ts": 1785475742
+      },
+      "last_alert_odds": 130
     },
     {
       "id": "atlanta-braves-ml-0731",
@@ -4478,10 +4479,10 @@
       "homeTeam": "Atlanta Braves",
       "awayTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -130,
-        "away_ml": 108,
+        "home_ml": -126,
+        "away_ml": 105,
         "total": 9.0,
-        "ts": 1785473942
+        "ts": 1785475742
       }
     },
     {
@@ -4723,10 +4724,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": 104,
-        "away_ml": -126,
+        "home_ml": 109,
+        "away_ml": -131,
         "total": 7.5,
-        "ts": 1785473942
+        "ts": 1785475742
       }
     }
   ]
