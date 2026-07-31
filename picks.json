@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T04:49:06Z",
+  "updated": "2026-07-31T05:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3358,7 +3358,10 @@
         "total": 8.5,
         "ts": 1785461342
       },
-      "last_alert_odds": -156
+      "last_alert_odds": -156,
+      "result": "WIN",
+      "score": "Seattle Mariners 2, Los Angeles Dodgers 6",
+      "units_result": 0.91
     },
     {
       "id": "los-angeles-dodgers-ml-0730",
@@ -3382,7 +3385,10 @@
         "total": 8.5,
         "ts": 1785461342
       },
-      "last_alert_odds": -156
+      "last_alert_odds": -156,
+      "result": "WIN",
+      "score": "Seattle Mariners 2, Los Angeles Dodgers 6",
+      "units_result": 0.56
     },
     {
       "id": "3-leg-parlay-0730-sharp",
