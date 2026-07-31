@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T02:29:20Z",
+  "updated": "2026-07-31T02:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4041,7 +4041,10 @@
       "opp": "Sentinels",
       "analysis": "5-0 last 5 (beat KR\u00dc Esports, G2 Esports, NRG) vs 3-2 \u2014 live Pinnacle line -284 (our 90% vs book 71%) | \ud83e\udde0 **The read:** 5-0 last 5 (beat KR\u00dc Esports, G2 Esports, NRG) vs 3-2 \u2014 live Pinnacle line -284 (our 90% vs book 71%). That's a **19-point** gap over Sentinels the number hasn't priced.",
       "awayTeam": "100 Thieves",
-      "homeTeam": "Sentinels"
+      "homeTeam": "Sentinels",
+      "result": "WIN",
+      "units_result": 0.53,
+      "score": "100 Thieves 2-1 Sentinels \u00b7 final"
     },
     {
       "id": "over-10.0-0730",
