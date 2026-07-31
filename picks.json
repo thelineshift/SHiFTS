@@ -4672,10 +4672,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -108,
-        "away_ml": -111,
+        "home_ml": -111,
+        "away_ml": -108,
         "total": 11.0,
-        "ts": 1785479342
+        "ts": 1785499142
       }
     },
     {
@@ -4742,10 +4742,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": 112,
-        "away_ml": -135,
-        "total": 7.5,
-        "ts": 1785481142
+        "home_ml": 113,
+        "away_ml": -136,
+        "total": 8.0,
+        "ts": 1785499142
       }
     },
     {
