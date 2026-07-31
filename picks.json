@@ -4494,10 +4494,10 @@
       "homeTeam": "Atlanta Braves",
       "awayTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -126,
-        "away_ml": 105,
+        "home_ml": -125,
+        "away_ml": 103,
         "total": 9.0,
-        "ts": 1785475742
+        "ts": 1785493742
       }
     },
     {
