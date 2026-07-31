@@ -4191,10 +4191,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 8.5,
-        "ts": 1785535141
+        "ts": 1785538741
       },
       "last_alert_odds": -142
     },
@@ -4215,10 +4215,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -198,
-        "away_ml": 163,
+        "home_ml": -197,
+        "away_ml": 161,
         "total": 7.5,
-        "ts": 1785536941
+        "ts": 1785538741
       },
       "last_alert_odds": 158
     },
@@ -4290,10 +4290,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 8.5,
-        "ts": 1785536942
+        "ts": 1785538742
       },
       "last_alert_odds": -146
     },
@@ -4352,10 +4352,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 8.5,
-        "ts": 1785536942
+        "ts": 1785538742
       },
       "last_alert_odds": -146
     },
@@ -4655,10 +4655,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": 123,
-        "away_ml": -149,
+        "home_ml": 118,
+        "away_ml": -143,
         "total": 11.0,
-        "ts": 1785536942
+        "ts": 1785538742
       },
       "last_alert_odds": 123
     },
@@ -4679,10 +4679,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -106,
-        "away_ml": -114,
+        "home_ml": -107,
+        "away_ml": -112,
         "total": 11.0,
-        "ts": 1785527942
+        "ts": 1785538742
       }
     },
     {
@@ -4793,10 +4793,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 8.5,
-        "ts": 1785535142
+        "ts": 1785538742
       },
       "last_alert_odds": -142
     },
@@ -4938,10 +4938,10 @@
       "homeTeam": "New York City FC",
       "awayTeam": "Toronto FC",
       "live_odds": {
-        "home_ml": -155,
-        "away_ml": 360,
+        "home_ml": -150,
+        "away_ml": 350,
         "total": 2.5,
-        "ts": 1785533342
+        "ts": 1785538742
       },
       "last_alert_odds": 350
     },
