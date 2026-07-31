@@ -311,7 +311,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-07",
-  "op_calls": 112,
+  "op_calls": 116,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1198,79 +1198,73 @@
         [
           "Imperial eSports",
           "Fluxo W7M",
-          2.41,
-          1.54
+          2.53,
+          1.478
         ],
         [
           "LP",
           "Bestia",
-          2.39,
-          1.546
+          2.48,
+          1.507
         ],
         [
           "Marsborne",
           "Regain",
-          1.264,
-          3.5
+          1.224,
+          3.82
         ],
         [
-          "The Mongolz",
-          "Faze Clan",
-          2.44,
-          1.568
+          "Shinden",
+          "Mibr",
+          1.34,
+          3.06
         ],
         [
           "Astralis",
           "Pain Gaming",
-          1.621,
-          2.32
-        ],
-        [
-          "Sinners",
-          "Rune Eaters eSports",
-          1.106,
-          6.33
+          1.467,
+          2.64
         ],
         [
           "Genone",
           "Enjoy",
-          1.27,
-          3.46
+          1.021,
+          15.92
+        ],
+        [
+          "Rune Eaters eSports",
+          "Sparta eSports",
+          1.662,
+          2.17
+        ],
+        [
+          "Just Players",
+          "Black Phoenix",
+          2.26,
+          1.613
         ]
       ],
-      "odds_ts": 1785499223.3830576
+      "odds_ts": 1785528014.2648404
     },
     "valorant": {
       "lines": [
         [
           "BBL",
           "Gentle Mates",
-          1.751,
-          2.1
+          1.383,
+          2.84
         ],
         [
           "GIANTX",
           "Heretics",
-          3.49,
-          1.313
-        ],
-        [
-          "Secret",
-          "Paper Rex",
-          9.61,
-          1.049
-        ],
-        [
-          "Global",
-          "Gen.G",
-          1.884,
-          1.854
+          6.5,
+          1.101
         ],
         [
           "T1",
           "DetonatioN FocusMe",
-          1.21,
-          4.09
+          1.156,
+          4.88
         ],
         [
           "FULL SENSE",
@@ -1281,20 +1275,20 @@
         [
           "Cloud9",
           "LOUD",
-          2.15,
-          1.719
+          2.12,
+          1.735
         ],
         [
           "Evil Geniuses",
           "MIBR",
-          4.5,
-          1.211
+          4.93,
+          1.184
         ],
         [
           "ENVY",
           "FURIA",
-          2.89,
-          1.423
+          3.02,
+          1.395
         ],
         [
           "Leviatan",
@@ -1303,7 +1297,7 @@
           2.12
         ]
       ],
-      "odds_ts": 1785499227.0264118,
+      "odds_ts": 1785528017.8396041,
       "active": [
         901974,
         902246,
@@ -33367,6 +33361,6 @@
   "deepdive_last": "2026-07-25",
   "dep_checked_ts": 1785521103.0453725,
   "x_bio_v": 2,
-  "op_cool_until": 1785500127.0264118,
+  "op_cool_until": 1785528917.8396041,
   "x_ads": []
 }
