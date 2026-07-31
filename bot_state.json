@@ -51,7 +51,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "boston-red-sox--1.5-0730",
+      "desc": "Boston Red Sox -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 5, Athletics 4",
+      "tier": "lock"
+    },
+    {
+      "id": "athletics-ml-0730",
+      "desc": "Athletics ML",
+      "odds": 157,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Boston Red Sox 5, Athletics 4",
+      "tier": "sharp"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
