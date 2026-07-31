@@ -78,6 +78,42 @@
       "units": -0.5,
       "score": "Legs: None: loss \u00b7 None: loss \u00b7 None: win",
       "tier": "lock"
+    },
+    {
+      "id": "chicago-sky--3.5-0730",
+      "desc": "Chicago Sky -3.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Connecticut Sun 88, Chicago Sky 94",
+      "tier": "whale"
+    },
+    {
+      "id": "chicago-sky--4.5-0730",
+      "desc": "Chicago Sky -4.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Connecticut Sun 88, Chicago Sky 94",
+      "tier": "sharp"
+    },
+    {
+      "id": "pittsburgh-pirates-ml-0730",
+      "desc": "Pittsburgh Pirates ML",
+      "odds": -117,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Pittsburgh Pirates 2, Cincinnati Reds 3",
+      "tier": "lock"
+    },
+    {
+      "id": "chicago-sky--5.5-0730",
+      "desc": "Chicago Sky -5.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Connecticut Sun 88, Chicago Sky 94",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785362587.0271225,
