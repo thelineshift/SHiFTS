@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T06:49:06Z",
+  "updated": "2026-07-31T08:01:04Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4733,6 +4733,57 @@
         "total": 7.5,
         "ts": 1785481142
       }
+    },
+    {
+      "id": "gen.g-esports-ml-0731",
+      "date": "2026-07-31",
+      "sport": "valorant",
+      "desc": "Gen.G Esports ML",
+      "market": "VCT Bo3",
+      "odds": -120,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Global Esports",
+      "team": "Gen.G Esports",
+      "opp": "Global Esports",
+      "analysis": "4-1 last 5 (beat Rex Regum Qeon, Nongshim RedForce, ZETA DIVISION) (lost to Nongshim RedForce) vs 2-3 \u2014 live Pinnacle line -120 (our 86% vs book 51%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Rex Regum Qeon, Nongshim RedForce, ZETA DIVISION) (lost to Nongshim RedForce) vs 2-3 \u2014 live Pinnacle line -120",
+      "awayTeam": "Gen.G Esports",
+      "homeTeam": "Global Esports"
+    },
+    {
+      "id": "tampa-bay-rays--1.5-0731",
+      "date": "2026-07-31",
+      "sport": "mlb",
+      "desc": "Tampa Bay Rays -1.5",
+      "market": "run line",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:10 PM ET",
+      "vs": "Chicago White Sox",
+      "team": "Tampa Bay Rays",
+      "opp": "Chicago White Sox",
+      "analysis": "64-44 overall, 40-16 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 70% straight up | \u2694\ufe0f **Matchup read:** 64-44 overall, 40-16 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 70% straight ",
+      "homeTeam": "Tampa Bay Rays",
+      "awayTeam": "Chicago White Sox"
+    },
+    {
+      "id": "philadelphia-phillies-ml-0731",
+      "date": "2026-07-31",
+      "sport": "mlb",
+      "desc": "Philadelphia Phillies ML",
+      "market": "ML",
+      "odds": 105,
+      "units": 1.0,
+      "tier": "lock",
+      "time_et": "07:05 PM ET",
+      "vs": "Baltimore Orioles",
+      "team": "Philadelphia Phillies",
+      "opp": "Baltimore Orioles",
+      "analysis": "57-52 overall, 29-25 on the road \u2014 our 50% vs book 47% (no-vig) | \ud83e\udde0 **The read:** 57-52 overall, 29-25 on the road \u2014 our 50% vs book 47% (no-vig). Model makes Philadelphia Phillies **50%** \u2014 books imply **49%**. SHiFT presses the gap.",
+      "awayTeam": "Philadelphia Phillies",
+      "homeTeam": "Baltimore Orioles"
     }
   ]
 }
