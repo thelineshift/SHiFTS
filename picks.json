@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T04:01:10Z",
+  "updated": "2026-07-31T04:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3490,7 +3490,10 @@
         "total": 10.0,
         "ts": 1785454142
       },
-      "last_alert_odds": -198
+      "last_alert_odds": -198,
+      "result": "LOSS",
+      "score": "Boston Red Sox 5, Athletics 4",
+      "units_result": -1.0
     },
     {
       "id": "3-leg-parlay-0730-lock",
@@ -4148,7 +4151,10 @@
         "away_ml": -191,
         "total": 10.0,
         "ts": 1785454143
-      }
+      },
+      "result": "LOSS",
+      "score": "Boston Red Sox 5, Athletics 4",
+      "units_result": -1.0
     },
     {
       "id": "tampa-bay-rays-ml-0731",
