@@ -30862,10 +30862,6 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
-          "ts": 1785415742,
-          "px": 0.445
-        },
-        {
           "ts": 1785417543,
           "px": 0.445
         },
@@ -30955,6 +30951,10 @@
         },
         {
           "ts": 1785462542,
+          "px": 0.455
+        },
+        {
+          "ts": 1785464342,
           "px": 0.455
         }
       ]
@@ -32926,21 +32926,20 @@
       "qty": 1,
       "market_slug": "aec-wnba-conn-chi-2026-07-30",
       "outcome": "Connecticut",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-31T01:39:46Z",
-      "price_path": [
-        {
-          "ts": 1785462542,
-          "px": 0.33
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-07-31T02:19:02Z",
+      "pnl": -0.55,
+      "autopsy": "model 81% vs market 55% missed \u2014 logged for the playbook review."
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 52,
-    "losses": 123,
-    "pnl": -124.32,
+    "losses": 124,
+    "pnl": -124.87,
     "trades": 485,
     "last_recap": "2026-07-30",
     "last_recap_hour": "2026-07-31-02",
@@ -32977,7 +32976,7 @@
       ],
       "LIVEEDGE": [
         0,
-        1,
+        2,
         0
       ]
     },
@@ -32987,14 +32986,6 @@
   },
   "x_purge_complete": 1785380582.4500463,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T21:57:07Z",
-      "kind": "EDGE",
-      "outcome": "Zhizhen Zhang",
-      "result": "LOSS",
-      "pnl": -3.36,
-      "lesson": "model 61% vs market 48% missed \u2014 logged for the playbook review. Taken 0.48, rode to 0.01 before the result \u2014 beat the number by 47\u00a2 \u2705"
-    },
     {
       "ts": "2026-07-29T22:59:01Z",
       "kind": "EDGE",
@@ -33226,6 +33217,14 @@
       "result": "LOSS",
       "pnl": -0.9,
       "lesson": "model 21% vs market 15% missed \u2014 logged for the playbook review. Taken 0.15, rode to 0.01 before the result \u2014 beat the number by 14\u00a2 \u2705"
+    },
+    {
+      "ts": "2026-07-31T02:19:02Z",
+      "kind": "LIVEEDGE",
+      "outcome": "Connecticut",
+      "result": "LOSS",
+      "pnl": -0.55,
+      "lesson": "model 81% vs market 55% missed \u2014 logged for the playbook review."
     }
   ],
   "giveaway_x_posts": [
