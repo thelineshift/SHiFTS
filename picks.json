@@ -4494,10 +4494,10 @@
       "homeTeam": "Atlanta Braves",
       "awayTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -122,
-        "away_ml": 101,
+        "home_ml": -120,
+        "away_ml": -101,
         "total": 9.0,
-        "ts": 1785495542
+        "ts": 1785500942
       }
     },
     {
@@ -4574,8 +4574,8 @@
       "live_odds": {
         "home_ml": 131,
         "away_ml": -160,
-        "total": 169.5,
-        "ts": 1785497342
+        "total": 167.5,
+        "ts": 1785500942
       }
     },
     {
@@ -4718,10 +4718,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 141,
-        "away_ml": -171,
+        "home_ml": 149,
+        "away_ml": -181,
         "total": 9.0,
-        "ts": 1785473942
+        "ts": 1785500942
       },
       "last_alert_odds": -171
     },
@@ -4806,11 +4806,12 @@
       "awayTeam": "Philadelphia Phillies",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -126,
-        "away_ml": 105,
+        "home_ml": -114,
+        "away_ml": -105,
         "total": 9.0,
-        "ts": 1785486542
-      }
+        "ts": 1785500942
+      },
+      "last_alert_odds": -105
     },
     {
       "id": "wolves-ml-0731",
