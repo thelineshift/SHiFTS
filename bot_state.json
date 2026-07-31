@@ -49,44 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "boston-red-sox--1.5-0730",
-      "desc": "Boston Red Sox -1.5",
-      "odds": -110,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Boston Red Sox 5, Athletics 4",
-      "tier": "lock"
-    },
-    {
-      "id": "athletics-ml-0730",
-      "desc": "Athletics ML",
-      "odds": 157,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Boston Red Sox 5, Athletics 4",
-      "tier": "sharp"
-    },
-    {
-      "id": "las-vegas-aces--4.5-0730",
-      "desc": "Las Vegas Aces -4.5",
-      "odds": -110,
-      "result": "WIN",
-      "units": 0.91,
-      "score": "New York Liberty 99, Las Vegas Aces 104",
-      "tier": "lock"
-    },
-    {
-      "id": "new-york-liberty-ml-0730",
-      "desc": "New York Liberty ML",
-      "odds": 187,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "New York Liberty 99, Las Vegas Aces 104",
-      "tier": "free"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
