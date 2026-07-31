@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T05:09:06Z",
+  "updated": "2026-07-31T06:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4578,7 +4578,10 @@
       "opp": "HANJIN BRION Challengers",
       "analysis": "4-1 last 5 (beat Gen.G Global Academy, BNK FearX Youth, HANJIN BRION Challengers) (lost to Dplus KIA Challengers) vs 1-4 \u2014 live Pinnacle line -242 (our 90% vs book 67%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Gen.G Global Academy, BNK FearX Youth, HANJIN BRION Challengers) (lost to Dplus KIA Challengers)",
       "awayTeam": "Kiwoom DRX Challengers",
-      "homeTeam": "HANJIN BRION Challengers"
+      "homeTeam": "HANJIN BRION Challengers",
+      "result": "WIN",
+      "units_result": 0.62,
+      "score": "Kiwoom DRX Challengers 2-0 HANJIN BRION Challengers \u00b7 final"
     },
     {
       "id": "over-9.0-0731",
