@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T02:29:02Z",
+  "updated": "2026-07-31T02:29:20Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3220,7 +3220,10 @@
         "total": 176.5,
         "ts": 1785452342
       },
-      "last_alert_odds": -219
+      "last_alert_odds": -219,
+      "result": "WIN",
+      "score": "Connecticut Sun 88, Chicago Sky 94",
+      "units_result": 0.91
     },
     {
       "id": "over-9.5-0730",
@@ -3627,7 +3630,10 @@
         "total": 176.5,
         "ts": 1785452342
       },
-      "last_alert_odds": -219
+      "last_alert_odds": -219,
+      "result": "WIN",
+      "score": "Connecticut Sun 88, Chicago Sky 94",
+      "units_result": 0.91
     },
     {
       "id": "las-vegas-aces--4.5-0730",
@@ -3700,7 +3706,10 @@
         "away_ml": -120,
         "total": 9.5,
         "ts": 1785452342
-      }
+      },
+      "result": "LOSS",
+      "score": "Pittsburgh Pirates 2, Cincinnati Reds 3",
+      "units_result": -1.0
     },
     {
       "id": "hanwha-life-esports-ml-0730",
@@ -4090,7 +4099,10 @@
         "total": 176.5,
         "ts": 1785452342
       },
-      "last_alert_odds": -219
+      "last_alert_odds": -219,
+      "result": "WIN",
+      "score": "Connecticut Sun 88, Chicago Sky 94",
+      "units_result": 0.91
     },
     {
       "id": "new-york-yankees-ml-0730",
