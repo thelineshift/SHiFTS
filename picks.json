@@ -4574,10 +4574,10 @@
       "homeTeam": "Washington Mystics",
       "awayTeam": "Dallas Wings",
       "live_odds": {
-        "home_ml": 129,
-        "away_ml": -156,
+        "home_ml": 130,
+        "away_ml": -155,
         "total": 166.5,
-        "ts": 1785513542
+        "ts": 1785517142
       }
     },
     {
@@ -4722,10 +4722,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 126,
-        "away_ml": -152,
+        "home_ml": 133,
+        "away_ml": -160,
         "total": 9.0,
-        "ts": 1785515342
+        "ts": 1785517142
       },
       "last_alert_odds": -152
     },
@@ -4813,10 +4813,10 @@
       "awayTeam": "Philadelphia Phillies",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -114,
-        "away_ml": -105,
+        "home_ml": -119,
+        "away_ml": -102,
         "total": 8.5,
-        "ts": 1785513542
+        "ts": 1785517142
       },
       "last_alert_odds": -105
     },
