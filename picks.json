@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T20:00:38Z",
+  "updated": "2026-07-31T20:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4476,7 +4476,10 @@
         "total": 9.0,
         "ts": 1785520742
       },
-      "last_alert_odds": 130
+      "last_alert_odds": 130,
+      "result": "WIN",
+      "score": "New York Yankees 2, Chicago Cubs 0",
+      "units_result": 1.18
     },
     {
       "id": "atlanta-braves-ml-0731",
