@@ -2576,62 +2576,6 @@
     "esp": [
       {
         "sport": "cs2",
-        "start": "2026-07-31T18:00:00Z",
-        "t1": {
-          "id": 131849,
-          "name": "paiN Academy"
-        },
-        "t2": {
-          "id": 138939,
-          "name": "Rush"
-        },
-        "league": "Gamers Club Liga S\u00e9rie A",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-31T18:00:00Z",
-        "t1": {
-          "id": 137992,
-          "name": "Fluxo W7M"
-        },
-        "t2": {
-          "id": 126377,
-          "name": "Imperial"
-        },
-        "league": "StarLadder StarSeries",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-31T18:15:00Z",
-        "t1": {
-          "id": 128766,
-          "name": "Spirit Academy"
-        },
-        "t2": {
-          "id": 139002,
-          "name": "sleepers"
-        },
-        "league": "CCT Europe",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-31T20:30:00Z",
-        "t1": {
-          "id": 131848,
-          "name": "largadosypelados"
-        },
-        "t2": {
-          "id": 132800,
-          "name": "BESTIA"
-        },
-        "league": "StarLadder StarSeries",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
         "start": "2026-07-31T22:00:00Z",
         "t1": {
           "id": 132366,
@@ -2670,6 +2614,20 @@
           "name": "Dynamo Eclot Phoenix"
         },
         "league": "United21",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-08-01T08:00:00Z",
+        "t1": {
+          "id": 3251,
+          "name": "ENCE"
+        },
+        "t2": {
+          "id": 125774,
+          "name": "HAVU"
+        },
+        "league": "Elisa BreakOut",
         "bo": 3
       },
       {
@@ -2758,6 +2716,34 @@
       },
       {
         "sport": "cs2",
+        "start": "2026-08-01T10:30:00Z",
+        "t1": {
+          "id": 3212,
+          "name": "FaZe"
+        },
+        "t2": {
+          "id": 124523,
+          "name": "Spirit"
+        },
+        "league": "BLAST Bounty",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-08-01T11:00:00Z",
+        "t1": {
+          "id": 128629,
+          "name": "megoshort"
+        },
+        "t2": {
+          "id": 133542,
+          "name": "CYBERSHOKE Esports"
+        },
+        "league": "Thunderpick World Championship",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
         "start": "2026-08-01T11:00:00Z",
         "t1": {
           "id": 127837,
@@ -2786,6 +2772,20 @@
       },
       {
         "sport": "cs2",
+        "start": "2026-08-01T12:00:00Z",
+        "t1": {
+          "id": 137707,
+          "name": "SINQU"
+        },
+        "t2": {
+          "id": 135177,
+          "name": "BC.Game Esports"
+        },
+        "league": "Elisa BreakOut",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
         "start": "2026-08-01T13:00:00Z",
         "t1": {
           "id": 138602,
@@ -2800,128 +2800,44 @@
       },
       {
         "sport": "cs2",
-        "start": "2026-07-31T15:59:56Z",
+        "start": "2026-08-01T13:30:00Z",
         "t1": {
-          "id": 138685,
-          "name": "Esport Academy Copenhagen"
-        },
-        "t2": {
-          "id": 130569,
-          "name": "HOTU"
-        },
-        "league": "Stake Pulse",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-31T16:11:59Z",
-        "t1": {
-          "id": 125751,
-          "name": "paiN"
-        },
-        "t2": {
           "id": 3209,
           "name": "Astralis"
+        },
+        "t2": {
+          "id": 3240,
+          "name": "MOUZ"
         },
         "league": "BLAST Bounty",
         "bo": 3
       },
       {
         "sport": "cs2",
-        "start": "2026-07-31T17:13:44Z",
+        "start": "2026-08-01T14:00:00Z",
         "t1": {
-          "id": 126994,
-          "name": "JiJieHao"
+          "id": 138610,
+          "name": "Walczaki"
         },
         "t2": {
-          "id": 138963,
-          "name": "Black Phoenix"
-        },
-        "league": "CCT Europe",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-31T17:16:59Z",
-        "t1": {
-          "id": 128519,
-          "name": "GenOne"
-        },
-        "t2": {
-          "id": 135227,
-          "name": "ENJOY"
-        },
-        "league": "CCT Europe",
-        "bo": 3
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-31T17:17:22Z",
-        "t1": {
-          "id": 138934,
-          "name": "Fraternity"
-        },
-        "t2": {
-          "id": 137356,
-          "name": "JUMBO TEAM"
-        },
-        "league": "ESEA",
-        "bo": 1
-      },
-      {
-        "sport": "cs2",
-        "start": "2026-07-31T17:20:14Z",
-        "t1": {
-          "id": 133542,
-          "name": "CYBERSHOKE Esports"
-        },
-        "t2": {
-          "id": 137861,
-          "name": "STATE"
+          "id": 132426,
+          "name": "Lazer Cats"
         },
         "league": "Thunderpick World Championship",
         "bo": 3
       },
       {
-        "sport": "lol",
-        "start": "2026-07-31T18:00:00Z",
+        "sport": "cs2",
+        "start": "2026-07-31T21:30:15Z",
         "t1": {
-          "id": 138435,
-          "name": "Aeterna Esports"
+          "id": 131848,
+          "name": "largadosypelados"
         },
         "t2": {
-          "id": 136722,
-          "name": "Colossal Gaming"
+          "id": 132800,
+          "name": "BESTIA"
         },
-        "league": "LIT",
-        "bo": 1
-      },
-      {
-        "sport": "lol",
-        "start": "2026-07-31T19:00:00Z",
-        "t1": {
-          "id": 136336,
-          "name": "Zena Esports"
-        },
-        "t2": {
-          "id": 138418,
-          "name": "TITANS"
-        },
-        "league": "LIT",
-        "bo": 1
-      },
-      {
-        "sport": "lol",
-        "start": "2026-07-31T21:00:00Z",
-        "t1": {
-          "id": 130635,
-          "name": "Maryville University"
-        },
-        "t2": {
-          "id": 138937,
-          "name": "Cupid Esports"
-        },
-        "league": "North American Challengers League",
+        "league": "StarLadder StarSeries",
         "bo": 3
       },
       {
@@ -3164,45 +3080,59 @@
       },
       {
         "sport": "lol",
-        "start": "2026-07-31T16:53:26Z",
+        "start": "2026-08-01T20:00:00Z",
         "t1": {
-          "id": 126536,
-          "name": "Movistar KOI"
+          "id": 1097,
+          "name": "Cloud9"
         },
         "t2": {
-          "id": 137726,
-          "name": "Shifters"
+          "id": 384,
+          "name": "Dignitas"
         },
-        "league": "LEC",
+        "league": "LCS",
         "bo": 3
       },
       {
-        "sport": "dota2",
-        "start": "2026-07-31T18:00:00Z",
+        "sport": "lol",
+        "start": "2026-08-01T23:00:00Z",
         "t1": {
-          "id": 136963,
-          "name": "Travoman Team"
+          "id": 311,
+          "name": "FlyQuest"
         },
         "t2": {
-          "id": 139007,
-          "name": "Daxak Team"
+          "id": 133267,
+          "name": "Disguised"
         },
-        "league": "BetBoom Streamers Battle",
+        "league": "LCS",
         "bo": 3
       },
       {
-        "sport": "dota2",
-        "start": "2026-07-31T18:30:00Z",
+        "sport": "lol",
+        "start": "2026-08-02T07:00:00Z",
         "t1": {
-          "id": 133868,
-          "name": "Team Falcons"
+          "id": 128221,
+          "name": "ThunderTalk Gaming"
         },
         "t2": {
-          "id": 129609,
-          "name": "Nigma Galaxy"
+          "id": 2574,
+          "name": "Team WE"
         },
-        "league": "1win Essence",
-        "bo": 2
+        "league": "LPL",
+        "bo": 3
+      },
+      {
+        "sport": "lol",
+        "start": "2026-07-31T21:04:39Z",
+        "t1": {
+          "id": 130635,
+          "name": "Maryville University"
+        },
+        "t2": {
+          "id": 138937,
+          "name": "Cupid Esports"
+        },
+        "league": "North American Challengers League",
+        "bo": 3
       },
       {
         "sport": "dota2",
@@ -3264,6 +3194,20 @@
         "sport": "dota2",
         "start": "2026-08-01T09:00:00Z",
         "t1": {
+          "id": 139007,
+          "name": "Daxak Team"
+        },
+        "t2": {
+          "id": 139006,
+          "name": "avice Team"
+        },
+        "league": "BetBoom Streamers Battle",
+        "bo": 3
+      },
+      {
+        "sport": "dota2",
+        "start": "2026-08-01T09:00:00Z",
+        "t1": {
           "id": 130768,
           "name": "BetBoom Team"
         },
@@ -3292,6 +3236,20 @@
         "sport": "dota2",
         "start": "2026-08-01T11:00:00Z",
         "t1": {
+          "id": 134134,
+          "name": "L1ga Team"
+        },
+        "t2": {
+          "id": 1657,
+          "name": "LGD Gaming"
+        },
+        "league": "Games of the Future",
+        "bo": 3
+      },
+      {
+        "sport": "dota2",
+        "start": "2026-08-01T11:00:00Z",
+        "t1": {
           "id": 138747,
           "name": "Enjoy"
         },
@@ -3300,6 +3258,20 @@
           "name": "Yakult Brothers"
         },
         "league": "Games of the Future",
+        "bo": 3
+      },
+      {
+        "sport": "dota2",
+        "start": "2026-08-01T12:00:00Z",
+        "t1": {
+          "id": 139008,
+          "name": "NS Team"
+        },
+        "t2": {
+          "id": 136968,
+          "name": "VooDooSh Team"
+        },
+        "league": "BetBoom Streamers Battle",
         "bo": 3
       },
       {
@@ -3320,6 +3292,20 @@
         "sport": "dota2",
         "start": "2026-08-01T14:00:00Z",
         "t1": {
+          "id": 137156,
+          "name": "REKONIX"
+        },
+        "t2": {
+          "id": 128329,
+          "name": "Xtreme Gaming"
+        },
+        "league": "Games of the Future",
+        "bo": 3
+      },
+      {
+        "sport": "dota2",
+        "start": "2026-08-01T14:00:00Z",
+        "t1": {
           "id": 138168,
           "name": "GLYPH"
         },
@@ -3328,6 +3314,20 @@
           "name": "Zero Tenacity"
         },
         "league": "Games of the Future",
+        "bo": 3
+      },
+      {
+        "sport": "dota2",
+        "start": "2026-08-01T15:00:00Z",
+        "t1": {
+          "id": 136962,
+          "name": "Stray Team"
+        },
+        "t2": {
+          "id": 136963,
+          "name": "Travoman Team"
+        },
+        "league": "BetBoom Streamers Battle",
         "bo": 3
       },
       {
@@ -3360,59 +3360,17 @@
       },
       {
         "sport": "dota2",
-        "start": "2026-07-31T16:09:01Z",
+        "start": "2026-08-02T09:00:00Z",
         "t1": {
-          "id": 130768,
-          "name": "BetBoom Team"
+          "id": 129609,
+          "name": "Nigma Galaxy"
         },
         "t2": {
-          "id": 1647,
-          "name": "Team Liquid"
+          "id": 1654,
+          "name": "OG"
         },
         "league": "1win Essence",
         "bo": 2
-      },
-      {
-        "sport": "dota2",
-        "start": "2026-07-31T17:32:57Z",
-        "t1": {
-          "id": 128329,
-          "name": "Xtreme Gaming"
-        },
-        "t2": {
-          "id": 1657,
-          "name": "LGD Gaming"
-        },
-        "league": "Games of the Future",
-        "bo": 3
-      },
-      {
-        "sport": "valorant",
-        "start": "2026-07-31T18:30:00Z",
-        "t1": {
-          "id": 134423,
-          "name": "GIANTX"
-        },
-        "t2": {
-          "id": 128622,
-          "name": "Team Heretics"
-        },
-        "league": "VCT",
-        "bo": 3
-      },
-      {
-        "sport": "valorant",
-        "start": "2026-07-31T21:00:00Z",
-        "t1": {
-          "id": 128819,
-          "name": "Cloud9"
-        },
-        "t2": {
-          "id": 130338,
-          "name": "LOUD"
-        },
-        "league": "VCT",
-        "bo": 3
       },
       {
         "sport": "valorant",
@@ -3668,14 +3626,42 @@
       },
       {
         "sport": "valorant",
-        "start": "2026-07-31T15:05:30Z",
+        "start": "2026-08-03T21:00:00Z",
         "t1": {
-          "id": 128577,
-          "name": "BBL Esports"
+          "id": 138961,
+          "name": "Axolotl"
         },
         "t2": {
-          "id": 133115,
-          "name": "Gentle Mates"
+          "id": 138571,
+          "name": "SEN Otters"
+        },
+        "league": "VCT",
+        "bo": 3
+      },
+      {
+        "sport": "valorant",
+        "start": "2026-08-03T21:00:00Z",
+        "t1": {
+          "id": 138960,
+          "name": "ORA Temper"
+        },
+        "t2": {
+          "id": 131274,
+          "name": "Shopify Rebellion Gold"
+        },
+        "league": "VCT",
+        "bo": 3
+      },
+      {
+        "sport": "valorant",
+        "start": "2026-07-31T21:07:08Z",
+        "t1": {
+          "id": 128819,
+          "name": "Cloud9"
+        },
+        "t2": {
+          "id": 130338,
+          "name": "LOUD"
         },
         "league": "VCT",
         "bo": 3
@@ -4115,7 +4101,7 @@
         "bo": 5
       }
     ],
-    "esp_ts": 1785521042.2385828,
+    "esp_ts": 1785535142.3676407,
     "form": {
       "dota2:1948": {
         "ts": 1785419976.4977796,
@@ -18948,38 +18934,6 @@
         "ten": false,
         "esp": true
       },
-      "aec-dota2-pckcp-z10-2026-07-30|puckchamp": {
-        "p0": 0.21,
-        "m0": 0.4336283185840708,
-        "bo": 3,
-        "ts": 1785398642.3264198,
-        "ten": false,
-        "esp": true
-      },
-      "aec-dota2-pckcp-z10-2026-07-30|zerotenacity": {
-        "p0": 0.82,
-        "m0": 0.5663716814159292,
-        "bo": 3,
-        "ts": 1785398642.3264198,
-        "ten": false,
-        "esp": true
-      },
-      "aec-cs2-ence-bjng-2026-07-30|ence": {
-        "p0": 0.74,
-        "m0": 0.3684210526315789,
-        "bo": 1,
-        "ts": 1785405542.0943332,
-        "ten": false,
-        "esp": true
-      },
-      "aec-cs2-ence-bjng-2026-07-30|bojong": {
-        "p0": 0.35,
-        "m0": 0.631578947368421,
-        "bo": 1,
-        "ts": 1785405542.0943332,
-        "ten": false,
-        "esp": true
-      },
       "aec-valorant-ggo-tmo-2026-07-30|ggozen": {
         "p0": 0.75,
         "m0": 0.5,
@@ -19033,38 +18987,6 @@
         "m0": 0.6956521739130435,
         "bo": 3,
         "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-edg-we-2026-07-30|edwardgaming": {
-        "p0": 0.31,
-        "m0": 0.36363636363636365,
-        "bo": 3,
-        "ts": 1785398642.3264198,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-edg-we-2026-07-30|teamwe": {
-        "p0": 0.7,
-        "m0": 0.6363636363636364,
-        "bo": 3,
-        "ts": 1785398642.3264198,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-hle-dk-2026-07-30|hanwhalifeesports": {
-        "p0": 0.67,
-        "m0": 0.75,
-        "bo": 3,
-        "ts": 1785405542.0943332,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-hle-dk-2026-07-30|dpluskia": {
-        "p0": 0.34,
-        "m0": 0.25,
-        "bo": 3,
-        "ts": 1785405542.0943332,
         "ten": false,
         "esp": true
       },
@@ -32960,7 +32882,7 @@
     "pnl": -124.87,
     "trades": 485,
     "last_recap": "2026-07-31",
-    "last_recap_hour": "2026-07-31-20",
+    "last_recap_hour": "2026-07-31-22",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
     "account": 3.13,
@@ -33327,7 +33249,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785528029.0238538,
+  "dep_checked_ts": 1785535227.619488,
   "x_bio_v": 2,
   "op_cool_until": 1785500127.0264118,
   "x_ads": []
