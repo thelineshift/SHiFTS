@@ -4650,11 +4650,12 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": 135,
-        "away_ml": -163,
+        "home_ml": 123,
+        "away_ml": -149,
         "total": 10.5,
-        "ts": 1785488342
-      }
+        "ts": 1785508142
+      },
+      "last_alert_odds": 123
     },
     {
       "id": "colorado-rockies-ml-0731",
@@ -4811,10 +4812,10 @@
       "awayTeam": "Philadelphia Phillies",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -112,
-        "away_ml": -108,
-        "total": 9.0,
-        "ts": 1785506343
+        "home_ml": -115,
+        "away_ml": -105,
+        "total": 8.5,
+        "ts": 1785508142
       },
       "last_alert_odds": -105
     },
