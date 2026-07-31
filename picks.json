@@ -4410,10 +4410,10 @@
       "awayTeam": "Miami Marlins",
       "homeTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -122,
-        "away_ml": 101,
+        "home_ml": -120,
+        "away_ml": 100,
         "total": 8.5,
-        "ts": 1785527942
+        "ts": 1785529742
       }
     },
     {
@@ -4576,8 +4576,8 @@
       "live_odds": {
         "home_ml": 130,
         "away_ml": -155,
-        "total": 166.5,
-        "ts": 1785517142
+        "total": 167.5,
+        "ts": 1785529742
       }
     },
     {
