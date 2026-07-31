@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T16:00:48Z",
+  "updated": "2026-07-31T16:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4855,7 +4855,10 @@
       "opp": "Team Heretics",
       "analysis": "1-4 last 5 (beat Movistar KOI) (lost to G2 Esports) vs 0-5 \u2014 live Pinnacle line -340 (our 90% vs book 73%) | \ud83d\udd25 **Momentum play:** 1-4 last 5 (beat Movistar KOI) (lost to G2 Esports) vs 0-5 \u2014 live Pinnacle line -340 (our 90% vs book 73%). Ride the **17-point** form edge before the market catches up.",
       "awayTeam": "Team Vitality",
-      "homeTeam": "Team Heretics"
+      "homeTeam": "Team Heretics",
+      "result": "WIN",
+      "units_result": 0.44,
+      "score": "Team Vitality 2-0 Team Heretics \u00b7 final"
     },
     {
       "id": "faze-ml-0731",
