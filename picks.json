@@ -4471,10 +4471,10 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -167,
+        "away_ml": 138,
         "total": 9.0,
-        "ts": 1785513542
+        "ts": 1785518942
       },
       "last_alert_odds": 130
     },
@@ -4675,10 +4675,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -108,
-        "away_ml": -111,
+        "home_ml": -110,
+        "away_ml": -110,
         "total": 11.0,
-        "ts": 1785509942
+        "ts": 1785518942
       }
     },
     {
