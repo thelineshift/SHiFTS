@@ -13,18 +13,18 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-07-31 13:59 UTC",
+    "at": "2026-07-31 13:29 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-4-6": "2026-07-31 12:01 UTC",
-    "\ud83e\uddfereceipts": "2026-07-31 13:29 UTC",
+    "\ud83e\uddfereceipts": "2026-07-31 06:49 UTC",
     "\ud83d\udcacgeneral-chat": "2026-07-31 12:01 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-30 12:34 UTC"
   },
   "resolution_watch": {
-    "at": "2026-07-31 13:59 UTC",
+    "at": "2026-07-31 13:29 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,11 +41,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-07-31 13:59 UTC",
+    "at": "2026-07-31 13:29 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-07-31 13:59 UTC",
+    "at": "2026-07-31 13:29 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
@@ -6366,11 +6366,15 @@
         }
       },
       "lol:137820": {
-        "ts": 1785427483.0655665,
+        "ts": 1785506369.8511016,
         "f": {
-          "w": 3,
-          "l": 2,
+          "w": 4,
+          "l": 1,
           "res": [
+            {
+              "won": true,
+              "opp": "TITANS"
+            },
             {
               "won": true,
               "opp": "Zena Esports"
@@ -6386,20 +6390,20 @@
             {
               "won": false,
               "opp": "E WIE EINFACH E-SPORTS"
-            },
-            {
-              "won": false,
-              "opp": "UCAM Esports Club"
             }
           ]
         }
       },
       "lol:138418": {
-        "ts": 1785427483.6384351,
+        "ts": 1785506377.2924175,
         "f": {
-          "w": 2,
-          "l": 3,
+          "w": 1,
+          "l": 4,
           "res": [
+            {
+              "won": false,
+              "opp": "HMBLE"
+            },
             {
               "won": false,
               "opp": "Colossal Gaming"
@@ -6414,10 +6418,6 @@
             },
             {
               "won": false,
-              "opp": "Aeterna Esports"
-            },
-            {
-              "won": true,
               "opp": "Aeterna Esports"
             }
           ]
@@ -6623,11 +6623,15 @@
         }
       },
       "lol:136252": {
-        "ts": 1785431068.5320094,
+        "ts": 1785506368.5446799,
         "f": {
-          "w": 3,
-          "l": 2,
+          "w": 2,
+          "l": 3,
           "res": [
+            {
+              "won": false,
+              "opp": "Aeterna Esports"
+            },
             {
               "won": true,
               "opp": "P11 Esports"
@@ -6643,20 +6647,20 @@
             {
               "won": false,
               "opp": "GOAL"
-            },
-            {
-              "won": true,
-              "opp": "MAGAZA"
             }
           ]
         }
       },
       "lol:138435": {
-        "ts": 1785431069.104988,
+        "ts": 1785506374.1528482,
         "f": {
           "w": 3,
           "l": 2,
           "res": [
+            {
+              "won": true,
+              "opp": "GMBLERS ESPORTS"
+            },
             {
               "won": false,
               "opp": "EKO Esports"
@@ -6672,10 +6676,6 @@
             {
               "won": false,
               "opp": "Zena Esports"
-            },
-            {
-              "won": true,
-              "opp": "TITANS"
             }
           ]
         }
@@ -6847,11 +6847,15 @@
         }
       },
       "lol:136722": {
-        "ts": 1785431071.8533778,
+        "ts": 1785506374.7325058,
         "f": {
-          "w": 2,
-          "l": 3,
+          "w": 3,
+          "l": 2,
           "res": [
+            {
+              "won": true,
+              "opp": "P11 Esports"
+            },
             {
               "won": true,
               "opp": "TITANS"
@@ -6867,20 +6871,20 @@
             {
               "won": false,
               "opp": "GMBLERS ESPORTS"
-            },
-            {
-              "won": false,
-              "opp": "HMBLE"
             }
           ]
         }
       },
       "lol:137821": {
-        "ts": 1785431072.4259624,
+        "ts": 1785506369.268226,
         "f": {
-          "w": 1,
-          "l": 4,
+          "w": 0,
+          "l": 5,
           "res": [
+            {
+              "won": false,
+              "opp": "Colossal Gaming"
+            },
             {
               "won": false,
               "opp": "GMBLERS ESPORTS"
@@ -6896,10 +6900,6 @@
             {
               "won": false,
               "opp": "GMBLERS ESPORTS"
-            },
-            {
-              "won": true,
-              "opp": "Axolotl"
             }
           ]
         }
@@ -6992,11 +6992,15 @@
         }
       },
       "lol:134123": {
-        "ts": 1785431666.0816903,
+        "ts": 1785506367.9520104,
         "f": {
           "w": 2,
           "l": 3,
           "res": [
+            {
+              "won": false,
+              "opp": "Zena Esports"
+            },
             {
               "won": true,
               "opp": "Aeterna Esports"
@@ -7012,20 +7016,20 @@
             {
               "won": false,
               "opp": "GMBLERS ESPORTS"
-            },
-            {
-              "won": false,
-              "opp": "Colossal Gaming"
             }
           ]
         }
       },
       "lol:136336": {
-        "ts": 1785431666.6731791,
+        "ts": 1785506376.71699,
         "f": {
           "w": 1,
           "l": 4,
           "res": [
+            {
+              "won": true,
+              "opp": "EKO Esports"
+            },
             {
               "won": false,
               "opp": "HMBLE"
@@ -7041,10 +7045,6 @@
             {
               "won": false,
               "opp": "GMBLERS ESPORTS"
-            },
-            {
-              "won": true,
-              "opp": "Aeterna Esports"
             }
           ]
         }
@@ -7311,11 +7311,19 @@
         }
       },
       "cs2:125774": {
-        "ts": 1785484768.9691544,
+        "ts": 1785506373.4594517,
         "f": {
-          "w": 1,
-          "l": 4,
+          "w": 2,
+          "l": 3,
           "res": [
+            {
+              "won": false,
+              "opp": "BC.Game Esports"
+            },
+            {
+              "won": true,
+              "opp": "Trainwrecks eSports"
+            },
             {
               "won": false,
               "opp": "Rebels Gaming"
@@ -7327,14 +7335,6 @@
             {
               "won": false,
               "opp": "Leo Team"
-            },
-            {
-              "won": false,
-              "opp": "Oramond"
-            },
-            {
-              "won": false,
-              "opp": "KOLESIE"
             }
           ]
         }
@@ -7469,11 +7469,19 @@
         }
       },
       "cs2:135177": {
-        "ts": 1785492275.403253,
+        "ts": 1785506367.2405236,
         "f": {
-          "w": 0,
-          "l": 5,
+          "w": 2,
+          "l": 3,
           "res": [
+            {
+              "won": true,
+              "opp": "HAVU"
+            },
+            {
+              "won": true,
+              "opp": "ROUNDS"
+            },
             {
               "won": false,
               "opp": "paiN"
@@ -7485,14 +7493,6 @@
             {
               "won": false,
               "opp": "B8"
-            },
-            {
-              "won": false,
-              "opp": "Vitality"
-            },
-            {
-              "won": false,
-              "opp": "FOKUS"
             }
           ]
         }
@@ -7812,6 +7812,176 @@
             {
               "won": true,
               "opp": "A Great Chaos"
+            }
+          ]
+        }
+      },
+      "lol:126536": {
+        "ts": 1785506370.8863866,
+        "f": {
+          "w": 0,
+          "l": 5,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team Vitality"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": false,
+              "opp": "G2 Esports"
+            },
+            {
+              "won": false,
+              "opp": "GAM Esports"
+            },
+            {
+              "won": false,
+              "opp": "Bilibili Gaming"
+            }
+          ]
+        }
+      },
+      "lol:137726": {
+        "ts": 1785506371.4790049,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Galions"
+            },
+            {
+              "won": false,
+              "opp": "Movistar KOI"
+            },
+            {
+              "won": true,
+              "opp": "Team Heretics"
+            },
+            {
+              "won": true,
+              "opp": "Team Vitality"
+            },
+            {
+              "won": false,
+              "opp": "Fnatic"
+            }
+          ]
+        }
+      },
+      "cs2:131849": {
+        "ts": 1785506372.1977277,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "ODDIK"
+            },
+            {
+              "won": false,
+              "opp": "Fluxo"
+            },
+            {
+              "won": true,
+              "opp": "Gr\u00eamio Esports"
+            },
+            {
+              "won": true,
+              "opp": "HATERS"
+            },
+            {
+              "won": true,
+              "opp": "Guara Esports"
+            }
+          ]
+        }
+      },
+      "cs2:138939": {
+        "ts": 1785506372.7752068,
+        "f": {
+          "w": 1,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "HATERS"
+            },
+            {
+              "won": false,
+              "opp": "ShindeN"
+            },
+            {
+              "won": false,
+              "opp": "Fluxo W7M"
+            },
+            {
+              "won": false,
+              "opp": "ODDIK"
+            }
+          ]
+        }
+      },
+      "valorant:134423": {
+        "ts": 1785506375.427226,
+        "f": {
+          "w": 1,
+          "l": 4,
+          "res": [
+            {
+              "won": false,
+              "opp": "Team Liquid"
+            },
+            {
+              "won": true,
+              "opp": "Eternal Fire"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": false,
+              "opp": "Fnatic"
+            },
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            }
+          ]
+        }
+      },
+      "valorant:128622": {
+        "ts": 1785506376.003679,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": false,
+              "opp": "Karmine Corp"
+            },
+            {
+              "won": true,
+              "opp": "Eternal Fire"
+            },
+            {
+              "won": false,
+              "opp": "Team Liquid"
+            },
+            {
+              "won": false,
+              "opp": "BBL Esports"
+            },
+            {
+              "won": true,
+              "opp": "MIBR LOS"
             }
           ]
         }
@@ -18725,22 +18895,6 @@
         "ten": false,
         "esp": true
       },
-      "aec-lol-foxy-hlec-2026-07-30|bnkfearxyouth": {
-        "p0": 0.63,
-        "m0": 0.5,
-        "bo": 3,
-        "ts": 1785373440.2136219,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-foxy-hlec-2026-07-30|hanwhalifeesportschallengers": {
-        "p0": 0.38,
-        "m0": 0.5,
-        "bo": 3,
-        "ts": 1785373440.2136219,
-        "ten": false,
-        "esp": true
-      },
       "aec-cs2-ksm-sinqu-2026-07-30|kuusamogg": {
         "p0": 0.81,
         "m0": 0.5,
@@ -18858,14 +19012,6 @@
         "m0": 0.6956521739130435,
         "bo": 3,
         "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-dkc-t1a-2026-07-30|dpluskiachallengers": {
-        "p0": 0.34,
-        "m0": 0.6363636363636364,
-        "bo": 3,
-        "ts": 1785373440.2136219,
         "ten": false,
         "esp": true
       },
@@ -19334,34 +19480,34 @@
         "esp": true
       },
       "aec-dota2-xtreme-lgd-2026-07-31|xtremegaming": {
-        "p0": 0.42,
+        "p0": 0.46,
         "m0": 0.36000000000000004,
         "bo": 3,
-        "ts": 1785499442.4798543,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       },
       "aec-dota2-xtreme-lgd-2026-07-31|lgdgaming": {
-        "p0": 0.59,
+        "p0": 0.55,
         "m0": 0.6399999999999999,
         "bo": 3,
-        "ts": 1785499442.4798543,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       },
       "aec-dota2-yb-z10-2026-07-31|yakultbrothers": {
-        "p0": 0.66,
+        "p0": 0.62,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785499442.4798543,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       },
       "aec-dota2-yb-z10-2026-07-31|zerotenacity": {
-        "p0": 0.35,
+        "p0": 0.39,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785499442.4798543,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       },
@@ -19406,18 +19552,18 @@
         "esp": true
       },
       "aec-valorant-bbl-gm-2026-07-31|bblesports": {
-        "p0": 0.57,
+        "p0": 0.56,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785499442.4798543,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       },
       "aec-valorant-bbl-gm-2026-07-31|gentlemates": {
-        "p0": 0.44,
+        "p0": 0.45,
         "m0": 0.5,
         "bo": 3,
-        "ts": 1785499442.4798543,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       },
@@ -19569,7 +19715,7 @@
         "p0": 0.76,
         "m0": 0.5714285714285714,
         "bo": 3,
-        "ts": 1785499442.4798543,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       },
@@ -19577,7 +19723,7 @@
         "p0": 0.25,
         "m0": 0.4285714285714286,
         "bo": 3,
-        "ts": 1785499442.4798543,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       },
@@ -19777,7 +19923,7 @@
         "p0": 0.69,
         "m0": 0.5,
         "bo": 1,
-        "ts": 1785499442.4798543,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       },
@@ -19785,7 +19931,7 @@
         "p0": 0.32,
         "m0": 0.5,
         "bo": 1,
-        "ts": 1785499442.4798543,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       },
@@ -19802,6 +19948,142 @@
         "m0": 0.5555555555555556,
         "bo": 1,
         "ts": 1785499442.4798543,
+        "ten": false,
+        "esp": true
+      },
+      "aec-cs2-bcg-tera-2026-07-31|bcgameesports": {
+        "p0": 0.96,
+        "m0": 0.5121951219512195,
+        "bo": 1,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-eko-gmb-2026-07-31|ekoesports": {
+        "p0": 0.37,
+        "m0": 0.5,
+        "bo": 1,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-eko-gmb-2026-07-31|gmblersesports": {
+        "p0": 0.65,
+        "m0": 0.5,
+        "bo": 1,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-p11-hmble-2026-07-31|pesports": {
+        "p0": 0.09,
+        "m0": 0.25000000000000006,
+        "bo": 1,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-p11-hmble-2026-07-31|hmble": {
+        "p0": 0.92,
+        "m0": 0.75,
+        "bo": 1,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-mkoi-shft-2026-07-31|movistarkoi": {
+        "p0": 0.81,
+        "m0": 0.36363636363636365,
+        "bo": 3,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-mkoi-shft-2026-07-31|shifters": {
+        "p0": 0.2,
+        "m0": 0.6363636363636364,
+        "bo": 3,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-cs2-paina-rush-2026-07-31|painacademy": {
+        "p0": 0.72,
+        "m0": 0.6037735849056604,
+        "bo": 3,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-cs2-paina-rush-2026-07-31|rush": {
+        "p0": 0.29,
+        "m0": 0.39622641509433965,
+        "bo": 3,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-cs2-havu-rgg-2026-07-31|havu": {
+        "p0": 0.77,
+        "m0": 0.5675675675675675,
+        "bo": 1,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-cs2-havu-rgg-2026-07-31|rounds": {
+        "p0": 0.24,
+        "m0": 0.43243243243243246,
+        "bo": 1,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-aee-cg-2026-07-31|aeternaesports": {
+        "p0": 0.25,
+        "m0": 0.5,
+        "bo": 1,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-aee-cg-2026-07-31|colossalgaming": {
+        "p0": 0.76,
+        "m0": 0.5,
+        "bo": 1,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-valorant-gx-th-2026-07-31|giantx": {
+        "p0": 0.26,
+        "m0": 0.4324324324324325,
+        "bo": 3,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-valorant-gx-th-2026-07-31|teamheretics": {
+        "p0": 0.75,
+        "m0": 0.5675675675675675,
+        "bo": 3,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-zena-tts-2026-07-31|zenaesports": {
+        "p0": 0.67,
+        "m0": 0.5,
+        "bo": 1,
+        "ts": 1785506342.1058192,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-zena-tts-2026-07-31|titans": {
+        "p0": 0.34,
+        "m0": 0.5,
+        "bo": 1,
+        "ts": 1785506342.1058192,
         "ten": false,
         "esp": true
       }
@@ -32721,7 +33003,7 @@
     "pnl": -124.87,
     "trades": 485,
     "last_recap": "2026-07-31",
-    "last_recap_hour": "2026-07-31-12",
+    "last_recap_hour": "2026-07-31-14",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
     "account": 3.13,
@@ -33088,7 +33370,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785499507.7163596,
+  "dep_checked_ts": 1785506401.3353994,
   "x_bio_v": 2,
   "op_cool_until": 1785500127.0264118,
   "x_ads": []
