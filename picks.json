@@ -4191,10 +4191,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
-        "total": 8.5,
-        "ts": 1785497342
+        "home_ml": -150,
+        "away_ml": 124,
+        "total": 8.0,
+        "ts": 1785502741
       },
       "last_alert_odds": -156
     },
@@ -4289,10 +4289,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 8.5,
-        "ts": 1785491942
+        "ts": 1785502742
       },
       "last_alert_odds": -146
     },
@@ -4351,10 +4351,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 8.5,
-        "ts": 1785491942
+        "ts": 1785502742
       },
       "last_alert_odds": -146
     },
@@ -4494,11 +4494,12 @@
       "homeTeam": "Atlanta Braves",
       "awayTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": -101,
+        "home_ml": -118,
+        "away_ml": -102,
         "total": 9.0,
-        "ts": 1785500942
-      }
+        "ts": 1785502742
+      },
+      "last_alert_odds": -118
     },
     {
       "id": "libertad-(ecuador)-ml-0731",
@@ -4572,10 +4573,10 @@
       "homeTeam": "Washington Mystics",
       "awayTeam": "Dallas Wings",
       "live_odds": {
-        "home_ml": 131,
-        "away_ml": -160,
+        "home_ml": 129,
+        "away_ml": -157,
         "total": 167.5,
-        "ts": 1785500942
+        "ts": 1785502742
       }
     },
     {
@@ -4695,10 +4696,10 @@
       "awayTeam": "Minnesota Twins",
       "homeTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -193,
-        "away_ml": 158,
+        "home_ml": -187,
+        "away_ml": 153,
         "total": 8.0,
-        "ts": 1785473942
+        "ts": 1785502742
       }
     },
     {
@@ -4782,10 +4783,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
-        "total": 8.5,
-        "ts": 1785497342
+        "home_ml": -150,
+        "away_ml": 124,
+        "total": 8.0,
+        "ts": 1785502742
       },
       "last_alert_odds": -156
     },
