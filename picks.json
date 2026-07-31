@@ -4471,10 +4471,10 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": -167,
-        "away_ml": 138,
+        "home_ml": -168,
+        "away_ml": 139,
         "total": 9.0,
-        "ts": 1785518942
+        "ts": 1785520742
       },
       "last_alert_odds": 130
     },
@@ -4722,12 +4722,12 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 133,
-        "away_ml": -160,
+        "home_ml": 139,
+        "away_ml": -168,
         "total": 9.0,
-        "ts": 1785517142
+        "ts": 1785520742
       },
-      "last_alert_odds": -152
+      "last_alert_odds": -168
     },
     {
       "id": "cincinnati-reds-ml-0731",
