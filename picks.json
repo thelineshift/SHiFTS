@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T12:01:03Z",
+  "updated": "2026-07-31T13:29:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4696,12 +4696,11 @@
       "awayTeam": "Minnesota Twins",
       "homeTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -173,
-        "away_ml": 143,
+        "home_ml": -187,
+        "away_ml": 153,
         "total": 8.0,
-        "ts": 1785504542
-      },
-      "last_alert_odds": 143
+        "ts": 1785502742
+      }
     },
     {
       "id": "milwaukee-brewers--1.5-0731",
@@ -4744,10 +4743,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": 110,
-        "away_ml": -132,
+        "home_ml": 113,
+        "away_ml": -136,
         "total": 8.0,
-        "ts": 1785504542
+        "ts": 1785499142
       }
     },
     {
@@ -4765,7 +4764,10 @@
       "opp": "Global Esports",
       "analysis": "4-1 last 5 (beat Rex Regum Qeon, Nongshim RedForce, ZETA DIVISION) (lost to Nongshim RedForce) vs 2-3 \u2014 live Pinnacle line -120 (our 86% vs book 51%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Rex Regum Qeon, Nongshim RedForce, ZETA DIVISION) (lost to Nongshim RedForce) vs 2-3 \u2014 live Pinnacle line -120",
       "awayTeam": "Gen.G Esports",
-      "homeTeam": "Global Esports"
+      "homeTeam": "Global Esports",
+      "result": "WIN",
+      "units_result": 1.25,
+      "score": "Gen.G Esports 2-1 Global Esports \u00b7 final"
     },
     {
       "id": "tampa-bay-rays--1.5-0731",
