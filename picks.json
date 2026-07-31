@@ -4702,10 +4702,10 @@
       "awayTeam": "Minnesota Twins",
       "homeTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -167,
-        "away_ml": 138,
+        "home_ml": -164,
+        "away_ml": 136,
         "total": 7.5,
-        "ts": 1785540542
+        "ts": 1785542342
       },
       "last_alert_odds": 143
     },
@@ -4726,10 +4726,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 141,
-        "away_ml": -171,
+        "home_ml": 144,
+        "away_ml": -175,
         "total": 9.0,
-        "ts": 1785527942
+        "ts": 1785542342
       },
       "last_alert_odds": -168
     },
@@ -4943,7 +4943,13 @@
         "total": 2.5,
         "ts": 1785540542
       },
-      "last_alert_odds": 350
+      "last_alert_odds": 350,
+      "closing_odds": {
+        "home_ml": -145,
+        "away_ml": 340,
+        "total": 2.5,
+        "ts": 1785540542
+      }
     },
     {
       "id": "loud-ml-0731",
