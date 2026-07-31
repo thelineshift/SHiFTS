@@ -4287,7 +4287,14 @@
       "opp": "San Francisco Giants",
       "analysis": "55-53 overall, 29-24 at home \u2014 ML juiced to -166, so the -1.5 at the standard number is the bet; model makes San Diego Padres 66% straight up | \ud83d\udcc8 **Market angle:** 55-53 overall, 29-24 at home \u2014 ML juiced to -166, so the -1.5 at the standard number is the bet; model makes San Diego Padres 66% straig",
       "homeTeam": "San Diego Padres",
-      "awayTeam": "San Francisco Giants"
+      "awayTeam": "San Francisco Giants",
+      "live_odds": {
+        "home_ml": -146,
+        "away_ml": 121,
+        "total": 8.5,
+        "ts": 1785490142
+      },
+      "last_alert_odds": -146
     },
     {
       "id": "3-leg-parlay-0731-whale",
@@ -4342,7 +4349,14 @@
       "opp": "San Francisco Giants",
       "analysis": "55-53 overall, 29-24 at home \u2014 our 66% vs book 60% (no-vig) | \u2694\ufe0f **Matchup read:** 55-53 overall, 29-24 at home \u2014 our 66% vs book 60% (no-vig). San Diego Padres in the better spot and priced like it isn't \u2014 **7-point** edge.",
       "homeTeam": "San Diego Padres",
-      "awayTeam": "San Francisco Giants"
+      "awayTeam": "San Francisco Giants",
+      "live_odds": {
+        "home_ml": -146,
+        "away_ml": 121,
+        "total": 8.5,
+        "ts": 1785490142
+      },
+      "last_alert_odds": -146
     },
     {
       "id": "chicago-sky--5.5-0731",
