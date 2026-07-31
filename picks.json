@@ -3347,10 +3347,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 8.5,
-        "ts": 1785454142
+        "ts": 1785457742
       },
       "last_alert_odds": -156
     },
@@ -3371,10 +3371,10 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 8.5,
-        "ts": 1785454142
+        "ts": 1785457742
       },
       "last_alert_odds": -156
     },
@@ -3637,10 +3637,10 @@
       "homeTeam": "Las Vegas Aces",
       "awayTeam": "New York Liberty",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -182,
+        "away_ml": 149,
         "total": 182.5,
-        "ts": 1785454142
+        "ts": 1785457742
       },
       "last_alert_odds": -175
     },
@@ -3857,10 +3857,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Las Vegas Aces",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -182,
+        "away_ml": 149,
         "total": 182.5,
-        "ts": 1785454142
+        "ts": 1785457742
       },
       "last_alert_odds": 144
     },
