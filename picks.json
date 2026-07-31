@@ -4654,10 +4654,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -110,
-        "away_ml": -110,
+        "home_ml": -108,
+        "away_ml": -111,
         "total": 11.0,
-        "ts": 1785473942
+        "ts": 1785479342
       }
     },
     {
