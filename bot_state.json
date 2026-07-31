@@ -85,6 +85,24 @@
       "units": -1.0,
       "score": "New York Liberty 99, Las Vegas Aces 104",
       "tier": "free"
+    },
+    {
+      "id": "los-angeles-dodgers--1.5-0730",
+      "desc": "Los Angeles Dodgers -1.5",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Seattle Mariners 2, Los Angeles Dodgers 6",
+      "tier": "sharp"
+    },
+    {
+      "id": "los-angeles-dodgers-ml-0730",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -180,
+      "result": "WIN",
+      "units": 0.56,
+      "score": "Seattle Mariners 2, Los Angeles Dodgers 6",
+      "tier": "sharp"
     }
   ],
   "last_x_receipt_ts": 1785362587.0271225,
