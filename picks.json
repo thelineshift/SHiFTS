@@ -4655,9 +4655,9 @@
       "awayTeam": "Detroit Tigers",
       "live_odds": {
         "home_ml": 119,
-        "away_ml": -143,
+        "away_ml": -144,
         "total": 11.0,
-        "ts": 1785509942
+        "ts": 1785531542
       },
       "last_alert_odds": 123
     },
@@ -4816,10 +4816,10 @@
       "awayTeam": "Philadelphia Phillies",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -112,
-        "away_ml": -107,
+        "home_ml": -114,
+        "away_ml": -105,
         "total": 8.5,
-        "ts": 1785527942
+        "ts": 1785531542
       },
       "last_alert_odds": -105
     },
