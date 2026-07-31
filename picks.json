@@ -4470,10 +4470,10 @@
       "awayTeam": "New York Yankees",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 9.0,
-        "ts": 1785506342
+        "ts": 1785511742
       },
       "last_alert_odds": 130
     },
@@ -4573,10 +4573,10 @@
       "homeTeam": "Washington Mystics",
       "awayTeam": "Dallas Wings",
       "live_odds": {
-        "home_ml": 135,
-        "away_ml": -164,
-        "total": 167.5,
-        "ts": 1785506342
+        "home_ml": 129,
+        "away_ml": -156,
+        "total": 166.5,
+        "ts": 1785511742
       }
     },
     {
@@ -4699,8 +4699,8 @@
       "live_odds": {
         "home_ml": -173,
         "away_ml": 143,
-        "total": 8.0,
-        "ts": 1785506342
+        "total": 7.5,
+        "ts": 1785511742
       },
       "last_alert_odds": 143
     },
@@ -4745,10 +4745,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": 104,
-        "away_ml": -125,
+        "home_ml": 109,
+        "away_ml": -132,
         "total": 8.0,
-        "ts": 1785506342
+        "ts": 1785511742
       }
     },
     {
@@ -4812,10 +4812,10 @@
       "awayTeam": "Philadelphia Phillies",
       "homeTeam": "Baltimore Orioles",
       "live_odds": {
-        "home_ml": -115,
+        "home_ml": -114,
         "away_ml": -105,
         "total": 8.5,
-        "ts": 1785508142
+        "ts": 1785511742
       },
       "last_alert_odds": -105
     },
