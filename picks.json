@@ -4749,10 +4749,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": 110,
-        "away_ml": -132,
+        "home_ml": 104,
+        "away_ml": -126,
         "total": 8.0,
-        "ts": 1785527942
+        "ts": 1785533342
       }
     },
     {
@@ -4937,10 +4937,10 @@
       "homeTeam": "New York City FC",
       "awayTeam": "Toronto FC",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 350,
+        "home_ml": -155,
+        "away_ml": 360,
         "total": 2.5,
-        "ts": 1785515342
+        "ts": 1785533342
       },
       "last_alert_odds": 350
     },
