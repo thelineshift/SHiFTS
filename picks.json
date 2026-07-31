@@ -4696,11 +4696,12 @@
       "awayTeam": "Minnesota Twins",
       "homeTeam": "Seattle Mariners",
       "live_odds": {
-        "home_ml": -187,
-        "away_ml": 153,
+        "home_ml": -173,
+        "away_ml": 143,
         "total": 8.0,
-        "ts": 1785502742
-      }
+        "ts": 1785504542
+      },
+      "last_alert_odds": 143
     },
     {
       "id": "milwaukee-brewers--1.5-0731",
@@ -4743,10 +4744,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": 113,
-        "away_ml": -136,
+        "home_ml": 110,
+        "away_ml": -132,
         "total": 8.0,
-        "ts": 1785499142
+        "ts": 1785504542
       }
     },
     {
