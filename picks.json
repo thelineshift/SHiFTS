@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T02:49:06Z",
+  "updated": "2026-07-31T03:09:04Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -3463,7 +3463,10 @@
         "away_ml": 114,
         "total": 7.0,
         "ts": 1785446942
-      }
+      },
+      "result": "LOSS",
+      "score": "Miami Marlins 2, New York Mets 4",
+      "units_result": -1.0
     },
     {
       "id": "boston-red-sox--1.5-0730",
