@@ -4679,10 +4679,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -107,
-        "away_ml": -112,
+        "home_ml": -106,
+        "away_ml": -114,
         "total": 11.0,
-        "ts": 1785538742
+        "ts": 1785540542
       }
     },
     {
@@ -4704,8 +4704,8 @@
       "live_odds": {
         "home_ml": -167,
         "away_ml": 138,
-        "total": 8.0,
-        "ts": 1785522542
+        "total": 7.5,
+        "ts": 1785540542
       },
       "last_alert_odds": 143
     },
@@ -4938,10 +4938,10 @@
       "homeTeam": "New York City FC",
       "awayTeam": "Toronto FC",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 350,
+        "home_ml": -145,
+        "away_ml": 340,
         "total": 2.5,
-        "ts": 1785538742
+        "ts": 1785540542
       },
       "last_alert_odds": 350
     },
