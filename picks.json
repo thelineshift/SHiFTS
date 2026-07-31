@@ -4191,11 +4191,12 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
-        "total": 8.0,
-        "ts": 1785473941
-      }
+        "home_ml": -156,
+        "away_ml": 129,
+        "total": 8.5,
+        "ts": 1785481141
+      },
+      "last_alert_odds": -156
     },
     {
       "id": "st.-louis-cardinals-ml-0731",
@@ -4727,10 +4728,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": 109,
-        "away_ml": -131,
+        "home_ml": 112,
+        "away_ml": -135,
         "total": 7.5,
-        "ts": 1785475742
+        "ts": 1785481142
       }
     }
   ]
