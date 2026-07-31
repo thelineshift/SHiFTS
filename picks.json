@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T13:29:09Z",
+  "updated": "2026-07-31T14:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4834,7 +4834,10 @@
       "opp": "Weibo Gaming",
       "analysis": "4-1 last 5 (beat Kuaishou Gaming, Hero JiuJing, SYGaming) (lost to TOP Esports Armor) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 4-1 last 5 (beat Kuaishou Gaming, Hero JiuJing, SYGaming) (lost to TOP Esports Armor) vs 3-2 \u2014 model line -265 (our 73%). The book shaded this line toward the ",
       "awayTeam": "Wolves",
-      "homeTeam": "Weibo Gaming"
+      "homeTeam": "Weibo Gaming",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Wolves 3-1 Weibo Gaming \u00b7 final"
     },
     {
       "id": "team-vitality-ml-0731",
