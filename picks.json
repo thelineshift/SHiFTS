@@ -5218,12 +5218,12 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Chicago Sky",
       "live_odds": {
-        "home_ml": 210,
-        "away_ml": -258,
+        "home_ml": 205,
+        "away_ml": -250,
         "total": 183.5,
-        "ts": 1785590942
+        "ts": 1785596342
       },
-      "last_alert_odds": -265
+      "last_alert_odds": -250
     },
     {
       "id": "colorado-rockies-ml-0801",
@@ -5243,9 +5243,9 @@
       "awayTeam": "Kansas City Royals",
       "live_odds": {
         "home_ml": -120,
-        "away_ml": -101,
+        "away_ml": 100,
         "total": 11.5,
-        "ts": 1785590942
+        "ts": 1785596342
       },
       "last_alert_odds": -118
     },
@@ -5266,10 +5266,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": 106,
-        "away_ml": -128,
+        "home_ml": 108,
+        "away_ml": -130,
         "total": 8.5,
-        "ts": 1785590942
+        "ts": 1785596342
       }
     },
     {
