@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T00:00:54Z",
+  "updated": "2026-08-01T00:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4966,7 +4966,10 @@
       "opp": "Cloud9",
       "analysis": "2-3 last 5 (beat KR\u00dc Esports, Sentinels) (lost to Sentinels) vs 0-5 \u2014 live Pinnacle line +112 (our 90% vs book 45%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat KR\u00dc Esports, Sentinels) (lost to Sentinels) vs 0-5 \u2014 live Pinnacle line +112 (our 90% vs book 45%). When the form gap runs **45 points** wide, t",
       "awayTeam": "LOUD",
-      "homeTeam": "Cloud9"
+      "homeTeam": "Cloud9",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "LOUD 1-2 LOUD \u00b7 final"
     },
     {
       "id": "over-8.5-0731",
