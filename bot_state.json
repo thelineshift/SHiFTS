@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "minnesota-twins-ml-0731",
+      "desc": "Minnesota Twins ML",
+      "odds": 158,
+      "result": "WIN",
+      "units": 1.58,
+      "score": "Minnesota Twins 5, Seattle Mariners 3",
+      "tier": "sharp"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -16812,22 +16822,6 @@
       "ts": 1785377069.3637621
     },
     "cb": {
-      "aec-valorant-ggo-tmo-2026-07-30|ggozen": {
-        "p0": 0.75,
-        "m0": 0.5,
-        "bo": 3,
-        "ts": 1785431043.3937848,
-        "ten": false,
-        "esp": true
-      },
-      "aec-valorant-ggo-tmo-2026-07-30|twistedmindsorchid": {
-        "p0": 0.26,
-        "m0": 0.5,
-        "bo": 3,
-        "ts": 1785431043.3937848,
-        "ten": false,
-        "esp": true
-      },
       "aec-valorant-gxgc-aar-2026-07-30|giantxgc": {
         "p0": 0.63,
         "m0": 0.5,
@@ -17028,70 +17022,6 @@
         "ten": false,
         "esp": true
       },
-      "aec-lol-sly-vitb-2026-07-30|solary": {
-        "p0": 0.81,
-        "m0": 0.631578947368421,
-        "bo": 1,
-        "ts": 1785427442.219664,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-sly-vitb-2026-07-30|vitalitybee": {
-        "p0": 0.2,
-        "m0": 0.368421052631579,
-        "bo": 1,
-        "ts": 1785427442.219664,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-vfb-khk-2026-07-30|vfbesports": {
-        "p0": 0.16,
-        "m0": 0.3684210526315789,
-        "bo": 3,
-        "ts": 1785427442.219664,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-vfb-khk-2026-07-30|kauflandhangryknights": {
-        "p0": 0.85,
-        "m0": 0.631578947368421,
-        "bo": 3,
-        "ts": 1785427442.219664,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-gmb-aee-2026-07-30|gmblersesports": {
-        "p0": 0.68,
-        "m0": 0.5,
-        "bo": 1,
-        "ts": 1785427442.219664,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-gmb-aee-2026-07-30|aeternaesports": {
-        "p0": 0.33,
-        "m0": 0.5,
-        "bo": 1,
-        "ts": 1785427442.219664,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-fec-ouat-2026-07-30|fritesesportsclub": {
-        "p0": 0.95,
-        "m0": 0.631578947368421,
-        "bo": 3,
-        "ts": 1785427442.219664,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-fec-ouat-2026-07-30|onceuponateam": {
-        "p0": 0.06,
-        "m0": 0.368421052631579,
-        "bo": 3,
-        "ts": 1785427442.219664,
-        "ten": false,
-        "esp": true
-      },
       "aec-dota2-xtreme-lgd-2026-07-31|xtremegaming": {
         "p0": 0.46,
         "m0": 0.36000000000000004,
@@ -17121,14 +17051,6 @@
         "m0": 0.5,
         "bo": 3,
         "ts": 1785506342.1058192,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-hrts-flk-2026-07-30|teamhereticsacademy": {
-        "p0": 0.97,
-        "m0": 0.6956521739130435,
-        "bo": 3,
-        "ts": 1785427442.219664,
         "ten": false,
         "esp": true
       },
