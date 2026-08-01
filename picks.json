@@ -5157,10 +5157,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 8.5,
-        "ts": 1785585542
+        "ts": 1785594542
       }
     },
     {
@@ -5289,10 +5289,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 8.5,
-        "ts": 1785592742
+        "ts": 1785594542
       },
       "last_alert_odds": -142
     },
@@ -5351,10 +5351,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 8.5,
-        "ts": 1785592742
+        "ts": 1785594542
       },
       "last_alert_odds": -142
     },
@@ -5584,11 +5584,12 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -180,
+        "away_ml": 148,
         "total": 8.5,
-        "ts": 1785592742
-      }
+        "ts": 1785594542
+      },
+      "last_alert_odds": 148
     },
     {
       "id": "gen.g-ml-0801",
