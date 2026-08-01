@@ -318,7 +318,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 16,
+  "op_calls": 18,
   "op_meta": {
     "cs2": {
       "active": [
@@ -2505,82 +2505,40 @@
           "Cloud9",
           "Dignitas",
           1.09,
-          6.82
+          6.81
         ],
         [
           "Flyquest",
           "Disguisedtoast",
-          1.184,
-          4.57
+          1.177,
+          4.67
         ],
         [
           "SK Gaming",
           "Giantx",
-          1.432,
-          2.81
+          10.19,
+          1.044
         ],
         [
           "Karmine Corp",
           "Natus Vincere",
-          1.216,
-          4.17
-        ],
-        [
-          "Nongshim Redforce",
-          "FEARX",
-          1.074,
-          7.56
-        ],
-        [
-          "Gen.g Esports",
-          "Dplus",
-          2.74,
-          1.416
+          1.184,
+          4.51
         ],
         [
           "Furia Esports",
           "Keyd Stars",
-          1.99,
-          1.84
+          1.024,
+          14.13
         ],
         [
           "Pain Gaming",
           "Leviatan",
-          5.85,
-          1.119
-        ],
-        [
-          "Anyones Legend",
-          "ThunderTalk Gaming",
-          1.014,
-          16.98
-        ],
-        [
-          "LGD Gaming",
-          "TOP Esports",
-          4.82,
-          1.153
-        ],
-        [
-          "Bilibili Gaming",
-          "JD Gaming",
-          3.14,
-          1.357
-        ],
-        [
-          "Deep Cross Gaming",
-          "Detonation Focusme",
-          15.13,
-          1.021
-        ],
-        [
-          "MVK Esports",
-          "GAM Esports",
-          1.163,
-          4.76
+          14.4,
+          1.023
         ]
       ],
-      "odds_ts": 1785585613.1755981
+      "odds_ts": 1785614420.0359058
     }
   },
   "parlay_rot": 29,
@@ -30510,6 +30468,6 @@
   "deepdive_last": "2026-07-25",
   "dep_checked_ts": 1785607479.4220784,
   "x_bio_v": 2,
-  "op_cool_until": 1785600920.9910474,
+  "op_cool_until": 1785615320.0359058,
   "x_ads": []
 }
