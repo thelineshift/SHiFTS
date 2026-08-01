@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T12:49:08Z",
+  "updated": "2026-08-01T16:00:56Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5662,6 +5662,40 @@
       "analysis": "4-1 last 5 (beat UNiTY esports, Atreides, ex-MANA eSports) (lost to Sinners) vs 3-2 \u2014 live Pinnacle line -151 (our 73% vs book 57%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat UNiTY esports, Atreides, ex-MANA eSports) (lost to Sinners) vs 3-2 \u2014 live Pinnacle line -151 (our 73% vs book 57%). Books hang re",
       "awayTeam": "Rune Eaters",
       "homeTeam": "SPARTA"
+    },
+    {
+      "id": "las-vegas-aces--5.5-0801",
+      "date": "2026-08-01",
+      "sport": "wnba",
+      "desc": "Las Vegas Aces -5.5",
+      "market": "spread",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "Chicago Sky",
+      "team": "Las Vegas Aces",
+      "opp": "Chicago Sky",
+      "analysis": "20-8 overall, 11-3 on the road \u2014 ML juiced to -238, so the -5.5 at the standard number is the bet; model makes Las Vegas Aces 77% straight up | \ud83d\udcca **Form + price:** 20-8 overall, 11-3 on the road \u2014 ML juiced to -238, so the -5.5 at the standard number is the bet; model makes Las Vegas Aces 77% straig",
+      "awayTeam": "Las Vegas Aces",
+      "homeTeam": "Chicago Sky"
+    },
+    {
+      "id": "las-vegas-aces-ml-0801",
+      "date": "2026-08-01",
+      "sport": "wnba",
+      "desc": "Las Vegas Aces ML",
+      "market": "ML",
+      "odds": -238,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "01:00 PM ET",
+      "vs": "Chicago Sky",
+      "team": "Las Vegas Aces",
+      "opp": "Chicago Sky",
+      "analysis": "20-8 overall, 11-3 on the road \u2014 our 77% vs book 68% (no-vig) | \ud83d\udcb0 **Value hunt:** 20-8 overall, 11-3 on the road \u2014 our 77% vs book 68% (no-vig). The book shaded this line toward the public side; we collect the **9 points** they left.",
+      "awayTeam": "Las Vegas Aces",
+      "homeTeam": "Chicago Sky"
     }
   ]
 }
