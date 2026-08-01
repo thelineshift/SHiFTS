@@ -315,7 +315,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 14,
+  "op_calls": 16,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1211,8 +1211,14 @@
         [
           "Shinden",
           "Mibr",
-          1.341,
-          3.06
+          1.333,
+          3.1
+        ],
+        [
+          "Fluxo",
+          "Bestia",
+          2.06,
+          1.735
         ],
         [
           "NRG Esports",
@@ -1223,26 +1229,20 @@
         [
           "Marsborne",
           "Sportsbetexpert",
-          1.813,
-          1.961
+          1.862,
+          1.909
         ],
         [
           "Team Spirit",
           "Faze Clan",
-          5.05,
-          1.18
+          3.67,
+          1.266
         ],
         [
           "Astralis",
           "MOUZ",
-          3.44,
-          1.32
-        ],
-        [
-          "Phantom Academy",
-          "Dynamo Eclot Phoenix",
-          1.343,
-          2.96
+          2.53,
+          1.5
         ],
         [
           "Vitality Academy",
@@ -1259,8 +1259,8 @@
         [
           "Gremio",
           "Pain Academy",
-          1.961,
-          1.787
+          1.98,
+          1.769
         ],
         [
           "Yawara eSports",
@@ -1271,27 +1271,33 @@
         [
           "Galorys",
           "Meia Noite",
-          1.324,
-          3.04
+          1.293,
+          3.2
         ],
         [
           "Rune Eaters eSports",
           "Sparta eSports",
-          1.662,
-          2.17
+          1.666,
+          2.15
+        ],
+        [
+          "Ex-Rustec",
+          "Sparta eSports",
+          1.892,
+          1.877
         ],
         [
           "Just Players",
           "Black Phoenix",
-          2.43,
-          1.529
+          2.39,
+          1.549
         ]
       ],
-      "odds_ts": 1785571216.582564
+      "odds_ts": 1785600020.9910474
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1785571220.1472833,
+      "odds_ts": 1785600024.5759404,
       "active": [
         901974,
         902246,
@@ -30687,6 +30693,6 @@
   "deepdive_last": "2026-07-25",
   "dep_checked_ts": 1785593091.2736814,
   "x_bio_v": 2,
-  "op_cool_until": 1785586513.1755981,
+  "op_cool_until": 1785600920.9910474,
   "x_ads": []
 }
