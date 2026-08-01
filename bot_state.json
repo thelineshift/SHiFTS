@@ -309,7 +309,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 7,
+  "op_calls": 11,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1203,22 +1203,46 @@
       "meta_ts": 1785542416.2256446,
       "lines": [
         [
-          "Marsborne",
-          "Regain",
-          1.207,
-          3.97
-        ],
-        [
           "Shinden",
           "Mibr",
-          1.34,
+          1.341,
           3.06
+        ],
+        [
+          "NRG Esports",
+          "Team Voca",
+          1.325,
+          3.14
+        ],
+        [
+          "Marsborne",
+          "Sportsbetexpert",
+          1.813,
+          1.961
         ],
         [
           "Team Spirit",
           "Faze Clan",
-          4.64,
-          1.204
+          5.05,
+          1.18
+        ],
+        [
+          "Astralis",
+          "MOUZ",
+          3.44,
+          1.32
+        ],
+        [
+          "Phantom Academy",
+          "Dynamo Eclot Phoenix",
+          1.343,
+          2.96
+        ],
+        [
+          "Vitality Academy",
+          "Faze Up Next",
+          1.332,
+          3.01
         ],
         [
           "Keyd Stars",
@@ -1257,11 +1281,11 @@
           1.529
         ]
       ],
-      "odds_ts": 1785542416.2256446
+      "odds_ts": 1785571216.582564
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1785542423.264611,
+      "odds_ts": 1785571220.1472833,
       "active": [
         901974,
         902246,
@@ -1959,17 +1983,15 @@
         2450,
         2452,
         2454,
-        15488,
         21962,
         26698,
         33814,
-        34020,
         36997,
-        39009,
         39985,
         45589,
         45623,
         45985,
+        46117,
         46119,
         46121,
         50586
@@ -2459,9 +2481,10 @@
         "1372626": "Pyramid IV eSports",
         "1372988": "Bitfix Rich Gang",
         "1372992": "2 Massive",
-        "1374062": "Volda E-Sport"
+        "1374062": "Volda E-Sport",
+        "1376686": "Shark Attack"
       },
-      "meta_ts": 1784952040.641981,
+      "meta_ts": 1785571212.8008003,
       "lines": [
         [
           "Cloud9",
@@ -30702,6 +30725,6 @@
   "deepdive_last": "2026-07-25",
   "dep_checked_ts": 1785564279.9820366,
   "x_bio_v": 2,
-  "op_cool_until": 1785543316.2256446,
+  "op_cool_until": 1785572116.582564,
   "x_ads": []
 }
