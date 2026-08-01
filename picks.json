@@ -5375,12 +5375,12 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 130,
-        "away_ml": -155,
+        "home_ml": 124,
+        "away_ml": -148,
         "total": 176.5,
-        "ts": 1785598142
+        "ts": 1785599942
       },
-      "last_alert_odds": -162
+      "last_alert_odds": -148
     },
     {
       "id": "athletics-ml-0801",
@@ -5528,10 +5528,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -102,
-        "away_ml": -118,
+        "home_ml": 102,
+        "away_ml": -123,
         "total": 8.5,
-        "ts": 1785589142
+        "ts": 1785599942
       }
     },
     {
