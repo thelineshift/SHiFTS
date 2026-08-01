@@ -5523,9 +5523,9 @@
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
         "home_ml": 102,
-        "away_ml": -122,
+        "away_ml": -123,
         "total": 9.0,
-        "ts": 1785565742
+        "ts": 1785567542
       }
     },
     {
