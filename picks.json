@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T22:29:06Z",
+  "updated": "2026-08-01T22:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5755,7 +5755,10 @@
       "opp": "BESTIA",
       "analysis": "4-1 last 5 (beat Imperial, Bounty Hunters Esports, Imperial) (lost to MIBR) vs 3-2 \u2014 live Pinnacle line +106 (our 73% vs book 46%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Imperial, Bounty Hunters Esports, Imperial) (lost to MIBR) vs 3-2 \u2014 live Pinnacle line +106 (our 73% vs book 46%). That's a **27-point",
       "awayTeam": "Fluxo W7M",
-      "homeTeam": "BESTIA"
+      "homeTeam": "BESTIA",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Fluxo W7M 0-2 BESTIA \u00b7 final"
     },
     {
       "id": "minnesota-twins-ml-0801",
