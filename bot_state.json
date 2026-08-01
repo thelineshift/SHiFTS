@@ -316,21 +316,20 @@
   "x_purge_total": 696,
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
-  "op_month": "2026-07",
-  "op_calls": 112,
+  "op_month": "2026-08",
+  "op_calls": 4,
   "op_meta": {
     "cs2": {
       "active": [
         23903,
         31621,
-        48529,
-        49568,
-        51042,
+        44609,
+        50946,
         51122,
         52290
       ],
       "parts": {
-        "0": "Sponer P / Trummer M",
+        "0": "Carolina Royal Ravens",
         "220602": "Fnatic",
         "220604": "MOUZ",
         "220606": "Natus Vincere",
@@ -361,6 +360,7 @@
         "281851": "Alpha Gaming",
         "282171": "Heroic",
         "284689": "Red Canids",
+        "296630": "Midas Club",
         "298850": "Team Spirit",
         "305398": "Endpoint CEX",
         "308282": "Big",
@@ -576,7 +576,7 @@
         "1100313": "Vexar",
         "1104803": "Rush B",
         "1104809": "Might",
-        "1104811": "Lifes A Game",
+        "1104811": "Lag Gaming",
         "1104823": "The Qube eSports",
         "1106463": "Kono ECF",
         "1107329": "2Game",
@@ -1133,7 +1133,7 @@
         "1348674": "Vitality Academy",
         "1349276": "Mansao Maromba",
         "1349976": "Kill On Sight",
-        "1349978": "Honved Esport",
+        "1349978": "Lenovo Legion Honv\u00e9d",
         "1349980": "Nyxon eSport",
         "1349982": "Hyperion",
         "1350022": "Vrsdelivery",
@@ -1155,6 +1155,7 @@
         "1353318": "X-City",
         "1354960": "Iowa Stormboar",
         "1355370": "Honved eSport",
+        "1355378": "6666",
         "1355386": "25 Cents",
         "1355388": "Black Belt",
         "1355970": "Clutchchain",
@@ -1177,7 +1178,7 @@
         "1365424": "Ex-Sashi Academy",
         "1366266": "Ex-Vexa",
         "1366726": "Sangrija",
-        "1367922": "MAI TAI",
+        "1367922": "Mai Tai",
         "1368320": "Kaganat",
         "1368322": "375",
         "1368324": "Latvjubanda",
@@ -1195,121 +1196,80 @@
         "1372570": "Gremio",
         "1372624": "Rush Gaming",
         "1372856": "Whitebit",
+        "1374214": "Trainwrecks eSports",
         "1374360": "Ex-Rustec",
         "1374362": "Black Phoenix",
-        "1374364": "Butterfly"
+        "1374364": "Butterfly",
+        "1374486": "Dynamo Eclot Phoenix",
+        "1376302": "Ex-Young Ninjas",
+        "1376892": "Teletubisie",
+        "1376902": "Ence Prospect",
+        "1377682": "Ex-Guara",
+        "1377684": "Meia Noite",
+        "1377818": "Nordic Partners"
       },
-      "meta_ts": 1784925282.1446652,
+      "meta_ts": 1785542416.2256446,
       "lines": [
-        [
-          "Imperial eSports",
-          "Fluxo W7M",
-          2.41,
-          1.54
-        ],
-        [
-          "LP",
-          "Bestia",
-          2.39,
-          1.546
-        ],
         [
           "Marsborne",
           "Regain",
-          1.264,
+          1.207,
+          3.97
+        ],
+        [
+          "Shinden",
+          "Mibr",
+          1.34,
+          3.06
+        ],
+        [
+          "Team Spirit",
+          "Faze Clan",
+          4.64,
+          1.204
+        ],
+        [
+          "Keyd Stars",
+          "Borracheiros",
+          1.245,
           3.5
         ],
         [
-          "The Mongolz",
-          "Faze Clan",
-          2.44,
-          1.568
+          "Gremio",
+          "Pain Academy",
+          1.961,
+          1.787
         ],
         [
-          "Astralis",
-          "Pain Gaming",
-          1.621,
-          2.32
+          "Yawara eSports",
+          "Ex-Guara",
+          1.097,
+          5.36
         ],
         [
-          "Sinners",
+          "Galorys",
+          "Meia Noite",
+          1.324,
+          3.04
+        ],
+        [
           "Rune Eaters eSports",
-          1.106,
-          6.33
+          "Sparta eSports",
+          1.662,
+          2.17
         ],
         [
-          "Genone",
-          "Enjoy",
-          1.27,
-          3.46
+          "Just Players",
+          "Black Phoenix",
+          2.43,
+          1.529
         ]
       ],
-      "odds_ts": 1785499223.3830576
+      "odds_ts": 1785542416.2256446
     },
     "valorant": {
-      "lines": [
-        [
-          "BBL",
-          "Gentle Mates",
-          1.751,
-          2.1
-        ],
-        [
-          "GIANTX",
-          "Heretics",
-          3.49,
-          1.313
-        ],
-        [
-          "Secret",
-          "Paper Rex",
-          9.61,
-          1.049
-        ],
-        [
-          "Global",
-          "Gen.G",
-          1.884,
-          1.854
-        ],
-        [
-          "T1",
-          "DetonatioN FocusMe",
-          1.21,
-          4.09
-        ],
-        [
-          "FULL SENSE",
-          "Rex Regum Qeon",
-          1.598,
-          2.25
-        ],
-        [
-          "Cloud9",
-          "LOUD",
-          2.15,
-          1.719
-        ],
-        [
-          "Evil Geniuses",
-          "MIBR",
-          4.5,
-          1.211
-        ],
-        [
-          "ENVY",
-          "FURIA",
-          2.89,
-          1.423
-        ],
-        [
-          "Leviatan",
-          "NRG",
-          1.735,
-          2.12
-        ]
-      ],
-      "odds_ts": 1785499227.0264118,
+      "lines": [],
+      "odds_ts": 1785542423.264611,
       "active": [
         901974,
         902246,
@@ -33255,6 +33215,6 @@
   "deepdive_last": "2026-07-25",
   "dep_checked_ts": 1785535227.619488,
   "x_bio_v": 2,
-  "op_cool_until": 1785500127.0264118,
+  "op_cool_until": 1785543316.2256446,
   "x_ads": []
 }
