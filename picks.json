@@ -5133,10 +5133,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -171,
-        "away_ml": 141,
+        "home_ml": -173,
+        "away_ml": 143,
         "total": 7.5,
-        "ts": 1785590942
+        "ts": 1785601742
       },
       "last_alert_odds": -168
     },
@@ -5157,11 +5157,12 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -164,
+        "away_ml": 136,
         "total": 8.5,
-        "ts": 1785594542
-      }
+        "ts": 1785601742
+      },
+      "last_alert_odds": 136
     },
     {
       "id": "3-leg-parlay-0801-whale",
@@ -5218,10 +5219,10 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Chicago Sky",
       "live_odds": {
-        "home_ml": 195,
-        "away_ml": -238,
+        "home_ml": 190,
+        "away_ml": -230,
         "total": 183.5,
-        "ts": 1785598142
+        "ts": 1785601742
       },
       "last_alert_odds": -238
     },
@@ -5463,8 +5464,8 @@
       "live_odds": {
         "home_ml": 123,
         "away_ml": -149,
-        "total": 8.5,
-        "ts": 1785589142
+        "total": 8.0,
+        "ts": 1785601742
       }
     },
     {
@@ -5678,7 +5679,14 @@
       "opp": "Chicago Sky",
       "analysis": "20-8 overall, 11-3 on the road \u2014 ML juiced to -238, so the -5.5 at the standard number is the bet; model makes Las Vegas Aces 77% straight up | \ud83d\udcca **Form + price:** 20-8 overall, 11-3 on the road \u2014 ML juiced to -238, so the -5.5 at the standard number is the bet; model makes Las Vegas Aces 77% straig",
       "awayTeam": "Las Vegas Aces",
-      "homeTeam": "Chicago Sky"
+      "homeTeam": "Chicago Sky",
+      "live_odds": {
+        "home_ml": 190,
+        "away_ml": -230,
+        "total": 183.5,
+        "ts": 1785601742
+      },
+      "last_alert_odds": -230
     },
     {
       "id": "las-vegas-aces-ml-0801",
@@ -5695,7 +5703,13 @@
       "opp": "Chicago Sky",
       "analysis": "20-8 overall, 11-3 on the road \u2014 our 77% vs book 68% (no-vig) | \ud83d\udcb0 **Value hunt:** 20-8 overall, 11-3 on the road \u2014 our 77% vs book 68% (no-vig). The book shaded this line toward the public side; we collect the **9 points** they left.",
       "awayTeam": "Las Vegas Aces",
-      "homeTeam": "Chicago Sky"
+      "homeTeam": "Chicago Sky",
+      "live_odds": {
+        "home_ml": 190,
+        "away_ml": -230,
+        "total": 183.5,
+        "ts": 1785601743
+      }
     }
   ]
 }
