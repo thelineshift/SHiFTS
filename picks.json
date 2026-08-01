@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T16:00:56Z",
+  "updated": "2026-08-01T17:09:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5662,7 +5662,10 @@
       "opp": "SPARTA",
       "analysis": "4-1 last 5 (beat UNiTY esports, Atreides, ex-MANA eSports) (lost to Sinners) vs 3-2 \u2014 live Pinnacle line -151 (our 73% vs book 57%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat UNiTY esports, Atreides, ex-MANA eSports) (lost to Sinners) vs 3-2 \u2014 live Pinnacle line -151 (our 73% vs book 57%). Books hang re",
       "awayTeam": "Rune Eaters",
-      "homeTeam": "SPARTA"
+      "homeTeam": "SPARTA",
+      "result": "WIN",
+      "units_result": 0.99,
+      "score": "Rune Eaters 2-1 SPARTA \u00b7 final"
     },
     {
       "id": "las-vegas-aces--5.5-0801",
