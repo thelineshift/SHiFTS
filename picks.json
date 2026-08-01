@@ -5059,10 +5059,10 @@
       "awayTeam": "Nashville SC",
       "homeTeam": "D.C. United",
       "live_odds": {
-        "home_ml": 180,
-        "away_ml": 135,
+        "home_ml": 185,
+        "away_ml": 130,
         "total": 2.5,
-        "ts": 1785610741
+        "ts": 1785621541
       }
     },
     {
@@ -5246,12 +5246,12 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": -101,
+        "home_ml": -131,
+        "away_ml": 109,
         "total": 12.0,
-        "ts": 1785610742
+        "ts": 1785621542
       },
-      "last_alert_odds": -118
+      "last_alert_odds": -131
     },
     {
       "id": "houston-astros-ml-0801",
@@ -5406,10 +5406,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": 142,
-        "away_ml": -172,
+        "home_ml": 144,
+        "away_ml": -175,
         "total": 10.5,
-        "ts": 1785607142
+        "ts": 1785621542
       },
       "last_alert_odds": 139
     },
