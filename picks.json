@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T01:49:02Z",
+  "updated": "2026-08-01T01:49:16Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4196,7 +4196,10 @@
         "total": 8.5,
         "ts": 1785538741
       },
-      "last_alert_odds": -142
+      "last_alert_odds": -142,
+      "result": "LOSS",
+      "score": "Chicago White Sox 6, Tampa Bay Rays 1",
+      "units_result": -1.5
     },
     {
       "id": "st.-louis-cardinals-ml-0731",
@@ -4220,7 +4223,10 @@
         "total": 7.5,
         "ts": 1785538741
       },
-      "last_alert_odds": 158
+      "last_alert_odds": 158,
+      "result": "LOSS",
+      "score": "St. Louis Cardinals 1, Toronto Blue Jays 3",
+      "units_result": -1.5
     },
     {
       "id": "los-angeles-dodgers--1.5-0731",
@@ -4591,7 +4597,10 @@
         "away_ml": -155,
         "total": 167.5,
         "ts": 1785529742
-      }
+      },
+      "result": "WIN",
+      "score": "Dallas Wings 75, Washington Mystics 81",
+      "units_result": 1.32
     },
     {
       "id": "kiwoom-drx-challengers-ml-0731",
@@ -4810,7 +4819,10 @@
         "total": 8.5,
         "ts": 1785538742
       },
-      "last_alert_odds": -142
+      "last_alert_odds": -142,
+      "result": "LOSS",
+      "score": "Chicago White Sox 6, Tampa Bay Rays 1",
+      "units_result": -1.0
     },
     {
       "id": "philadelphia-phillies-ml-0731",
@@ -4834,7 +4846,10 @@
         "total": 9.0,
         "ts": 1785535142
       },
-      "last_alert_odds": -105
+      "last_alert_odds": -105,
+      "result": "LOSS",
+      "score": "Philadelphia Phillies 4, Baltimore Orioles 6",
+      "units_result": -1.0
     },
     {
       "id": "wolves-ml-0731",
@@ -4961,7 +4976,10 @@
         "away_ml": 340,
         "total": 2.5,
         "ts": 1785540542
-      }
+      },
+      "result": "LOSS",
+      "score": "Toronto FC 1, New York City FC 1",
+      "units_result": -1.0
     },
     {
       "id": "loud-ml-0731",
