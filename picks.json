@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T12:00:50Z",
+  "updated": "2026-08-01T12:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5604,7 +5604,10 @@
       "opp": "Dplus KIA",
       "analysis": "2-3 last 5 (beat KT Rolster, BNK FEARX) (lost to T1) vs 1-4 \u2014 live Pinnacle line -187 (our 73% vs book 62%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat KT Rolster, BNK FEARX) (lost to T1) vs 1-4 \u2014 live Pinnacle line -187 (our 73% vs book 62%). Ride the **11-point** form edge before the market catches up",
       "awayTeam": "Gen.G",
-      "homeTeam": "Dplus KIA"
+      "homeTeam": "Dplus KIA",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Gen.G 0-2 Dplus KIA \u00b7 final"
     },
     {
       "id": "giantx-ml-0801",
