@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T00:09:06Z",
+  "updated": "2026-08-01T01:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4754,7 +4754,10 @@
         "away_ml": -127,
         "total": 8.0,
         "ts": 1785535142
-      }
+      },
+      "result": "WIN",
+      "score": "Pittsburgh Pirates 7, Cincinnati Reds 8",
+      "units_result": 1.04
     },
     {
       "id": "gen.g-esports-ml-0731",
