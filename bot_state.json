@@ -308,7 +308,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 4,
+  "op_calls": 7,
   "op_meta": {
     "cs2": {
       "active": [
@@ -2463,67 +2463,85 @@
       "meta_ts": 1784952040.641981,
       "lines": [
         [
-          "Team Vitality",
-          "Team Heretics",
-          1.294,
-          3.5
+          "Cloud9",
+          "Dignitas",
+          1.075,
+          7.51
         ],
         [
-          "Movistar Koi",
-          "Shifters",
-          1.208,
-          4.26
+          "Flyquest",
+          "Disguisedtoast",
+          1.187,
+          4.53
+        ],
+        [
+          "SK Gaming",
+          "Giantx",
+          1.507,
+          2.58
+        ],
+        [
+          "Karmine Corp",
+          "Natus Vincere",
+          1.203,
+          4.32
+        ],
+        [
+          "Nongshim Redforce",
+          "FEARX",
+          2.04,
+          1.793
         ],
         [
           "Gen.g Esports",
-          "T1",
-          1.671,
-          2.22
+          "Dplus",
+          1.534,
+          2.5
         ],
         [
-          "Brion",
-          "DRX",
-          1.311,
-          3.24
+          "Furia Esports",
+          "Keyd Stars",
+          1.719,
+          2.14
         ],
         [
-          "Maryville University",
-          "Cupid eSports",
-          2.29,
-          1.632
-        ],
-        [
-          "NRG eSports",
-          "Dorado Gaming",
-          1.088,
-          6.88
+          "Pain Gaming",
+          "Leviatan",
+          4.96,
+          1.16
         ],
         [
           "Anyones Legend",
-          "Edward Gaming",
-          1.015,
-          20.47
+          "ThunderTalk Gaming",
+          1.199,
+          4.37
+        ],
+        [
+          "LGD Gaming",
+          "TOP Esports",
+          3.81,
+          1.253
         ],
         [
           "Bilibili Gaming",
-          "Team WE",
-          14.65,
-          1.02
+          "JD Gaming",
+          3.28,
+          1.33
         ],
         [
-          "Team Secret Whales",
+          "Deep Cross Gaming",
+          "Detonation Focusme",
+          6.33,
+          1.103
+        ],
+        [
           "MVK Esports",
-          1.02,
-          15.41
-        ],
-        [
-          "Ctbc Flying Oyster",
           "GAM Esports",
-          4.32,
-          1.192
+          1.432,
+          2.81
         ]
       ],
-      "odds_ts": 1785499217.5980415
+      "odds_ts": 1785556815.4189703
     }
   },
   "parlay_rot": 25,
