@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T22:49:06Z",
+  "updated": "2026-08-01T23:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5059,10 +5059,10 @@
       "awayTeam": "Nashville SC",
       "homeTeam": "D.C. United",
       "live_odds": {
-        "home_ml": 175,
-        "away_ml": 135,
+        "home_ml": 185,
+        "away_ml": 130,
         "total": 2.5,
-        "ts": 1785626942
+        "ts": 1785621541
       }
     },
     {
@@ -5775,7 +5775,10 @@
       "opp": "Seattle Mariners",
       "analysis": "56-55 overall, 26-28 on the road \u2014 our 45% vs book 40% (no-vig) | \u2694\ufe0f **Matchup read:** 56-55 overall, 26-28 on the road \u2014 our 45% vs book 40% (no-vig). Minnesota Twins in the better spot and priced like it isn't \u2014 **5-point** edge.",
       "awayTeam": "Minnesota Twins",
-      "homeTeam": "Seattle Mariners"
+      "homeTeam": "Seattle Mariners",
+      "result": "LOSS",
+      "score": "Minnesota Twins 3, Seattle Mariners 4",
+      "units_result": -1.0
     }
   ]
 }
