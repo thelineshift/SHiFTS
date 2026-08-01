@@ -49,7 +49,35 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "las-vegas-aces--6.5-0801",
+      "desc": "Las Vegas Aces -6.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Las Vegas Aces 83, Chicago Sky 84",
+      "tier": "sharp"
+    },
+    {
+      "id": "las-vegas-aces--5.5-0801",
+      "desc": "Las Vegas Aces -5.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Las Vegas Aces 83, Chicago Sky 84",
+      "tier": "whale"
+    },
+    {
+      "id": "las-vegas-aces-ml-0801",
+      "desc": "Las Vegas Aces ML",
+      "odds": -238,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Las Vegas Aces 83, Chicago Sky 84",
+      "tier": "sharp"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
