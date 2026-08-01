@@ -5218,12 +5218,12 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Chicago Sky",
       "live_odds": {
-        "home_ml": 205,
-        "away_ml": -250,
+        "home_ml": 195,
+        "away_ml": -238,
         "total": 183.5,
-        "ts": 1785596342
+        "ts": 1785598142
       },
-      "last_alert_odds": -250
+      "last_alert_odds": -238
     },
     {
       "id": "colorado-rockies-ml-0801",
@@ -5268,8 +5268,8 @@
       "live_odds": {
         "home_ml": 108,
         "away_ml": -130,
-        "total": 8.5,
-        "ts": 1785596342
+        "total": 8.0,
+        "ts": 1785598142
       }
     },
     {
@@ -5375,10 +5375,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 136,
-        "away_ml": -162,
-        "total": 177.5,
-        "ts": 1785592742
+        "home_ml": 130,
+        "away_ml": -155,
+        "total": 176.5,
+        "ts": 1785598142
       },
       "last_alert_odds": -162
     },
@@ -5399,11 +5399,12 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": 123,
-        "away_ml": -149,
+        "home_ml": 139,
+        "away_ml": -168,
         "total": 10.5,
-        "ts": 1785590942
-      }
+        "ts": 1785598142
+      },
+      "last_alert_odds": 139
     },
     {
       "id": "3-leg-parlay-0801-lock",
