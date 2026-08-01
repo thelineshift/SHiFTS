@@ -5254,8 +5254,8 @@
       "live_odds": {
         "home_ml": -131,
         "away_ml": 109,
-        "total": 12.0,
-        "ts": 1785621542
+        "total": 11.5,
+        "ts": 1785625142
       },
       "last_alert_odds": -131
     },
@@ -5299,10 +5299,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 8.5,
-        "ts": 1785605342
+        "ts": 1785625142
       },
       "last_alert_odds": -156
     },
@@ -5361,10 +5361,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 8.5,
-        "ts": 1785605342
+        "ts": 1785625142
       },
       "last_alert_odds": -156
     },
@@ -5412,12 +5412,12 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": 144,
-        "away_ml": -175,
+        "home_ml": 153,
+        "away_ml": -186,
         "total": 10.5,
-        "ts": 1785621542
+        "ts": 1785625142
       },
-      "last_alert_odds": 139
+      "last_alert_odds": 153
     },
     {
       "id": "3-leg-parlay-0801-lock",
@@ -5600,10 +5600,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -181,
-        "away_ml": 149,
+        "home_ml": -185,
+        "away_ml": 152,
         "total": 8.5,
-        "ts": 1785614342
+        "ts": 1785625142
       },
       "last_alert_odds": 148
     },
