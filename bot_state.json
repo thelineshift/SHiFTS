@@ -51,17 +51,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "minnesota-twins-ml-0801",
-      "desc": "Minnesota Twins ML",
-      "odds": 141,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Minnesota Twins 3, Seattle Mariners 4",
-      "tier": "free"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
