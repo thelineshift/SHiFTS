@@ -5157,10 +5157,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -147,
-        "away_ml": 122,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 8.5,
-        "ts": 1785581942
+        "ts": 1785585542
       }
     },
     {
@@ -5462,8 +5462,8 @@
       "live_odds": {
         "home_ml": 119,
         "away_ml": -144,
-        "total": 8.0,
-        "ts": 1785571142
+        "total": 8.5,
+        "ts": 1785585542
       }
     },
     {
@@ -5504,9 +5504,9 @@
       "homeTeam": "LA Galaxy",
       "live_odds": {
         "home_ml": 115,
-        "away_ml": 190,
+        "away_ml": 185,
         "total": 3.5,
-        "ts": 1785560343
+        "ts": 1785585542
       }
     },
     {
