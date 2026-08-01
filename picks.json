@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T17:09:08Z",
+  "updated": "2026-08-01T18:09:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5628,7 +5628,10 @@
       "opp": "SK Gaming",
       "analysis": "3-2 last 5 (beat Team Vitality, Solary, Karmine Corp) (lost to Karmine Corp) vs 1-4 \u2014 live Pinnacle line +181 (our 86% vs book 34%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat Team Vitality, Solary, Karmine Corp) (lost to Karmine Corp) vs 1-4 \u2014 live Pinnacle line +181 (our 86% vs book 34%). That's a **52-poi",
       "awayTeam": "GIANTX",
-      "homeTeam": "SK Gaming"
+      "homeTeam": "SK Gaming",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "GIANTX 1-2 SK Gaming \u00b7 final"
     },
     {
       "id": "aimclub-ml-0801",
