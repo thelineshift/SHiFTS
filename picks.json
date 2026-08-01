@@ -5157,10 +5157,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -144,
-        "away_ml": 119,
+        "home_ml": -147,
+        "away_ml": 122,
         "total": 8.5,
-        "ts": 1785560342
+        "ts": 1785581942
       }
     },
     {
@@ -5218,12 +5218,12 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Chicago Sky",
       "live_odds": {
-        "home_ml": 205,
-        "away_ml": -250,
-        "total": 183.5,
-        "ts": 1785560342
+        "home_ml": 215,
+        "away_ml": -265,
+        "total": 185.5,
+        "ts": 1785581942
       },
-      "last_alert_odds": -250
+      "last_alert_odds": -265
     },
     {
       "id": "colorado-rockies-ml-0801",
@@ -5375,11 +5375,12 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 120,
-        "away_ml": -142,
-        "total": 176.5,
-        "ts": 1785560343
-      }
+        "home_ml": 124,
+        "away_ml": -148,
+        "total": 177.5,
+        "ts": 1785581942
+      },
+      "last_alert_odds": -148
     },
     {
       "id": "athletics-ml-0801",
