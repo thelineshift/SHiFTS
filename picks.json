@@ -5157,10 +5157,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -144,
-        "away_ml": 119,
+        "home_ml": -147,
+        "away_ml": 122,
         "total": 8.5,
-        "ts": 1785560342
+        "ts": 1785580142
       }
     },
     {
