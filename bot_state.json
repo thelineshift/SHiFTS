@@ -13,18 +13,18 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-08-01 01:59 UTC",
+    "at": "2026-08-01 01:29 UTC",
     "flags": []
   },
   "room_pulse": {
-    "\ud83c\udfaffree-pick-5-6": "2026-08-01 00:00 UTC",
-    "\ud83e\uddfereceipts": "2026-08-01 01:49 UTC",
+    "\ud83c\udfaffree-pick-4-6": "2026-08-01 00:00 UTC",
+    "\ud83e\uddfereceipts": "2026-08-01 00:09 UTC",
     "\ud83d\udcacgeneral-chat": "2026-08-01 00:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-30 12:34 UTC"
   },
   "resolution_watch": {
-    "at": "2026-08-01 01:59 UTC",
+    "at": "2026-08-01 01:29 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,13 +41,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-08-01 01:59 UTC",
+    "at": "2026-08-01 01:29 UTC",
     "flags": [
       "no challenge bet registered for 2026-07-31 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-08-01 01:59 UTC",
+    "at": "2026-08-01 01:29 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
@@ -28820,106 +28820,13 @@
       "qty": 5,
       "market_slug": "aec-mlb-wsh-atl-2026-07-31",
       "outcome": "Washington Nationals",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-07-29T04:05:34Z",
-      "price_path": [
-        {
-          "ts": 1785505742,
-          "px": 0.48
-        },
-        {
-          "ts": 1785507542,
-          "px": 0.48
-        },
-        {
-          "ts": 1785509342,
-          "px": 0.48
-        },
-        {
-          "ts": 1785511142,
-          "px": 0.48
-        },
-        {
-          "ts": 1785513542,
-          "px": 0.48
-        },
-        {
-          "ts": 1785515342,
-          "px": 0.48
-        },
-        {
-          "ts": 1785517142,
-          "px": 0.48
-        },
-        {
-          "ts": 1785518942,
-          "px": 0.48
-        },
-        {
-          "ts": 1785520742,
-          "px": 0.48
-        },
-        {
-          "ts": 1785523142,
-          "px": 0.48
-        },
-        {
-          "ts": 1785524942,
-          "px": 0.48
-        },
-        {
-          "ts": 1785526742,
-          "px": 0.48
-        },
-        {
-          "ts": 1785528542,
-          "px": 0.48
-        },
-        {
-          "ts": 1785530342,
-          "px": 0.48
-        },
-        {
-          "ts": 1785532742,
-          "px": 0.48
-        },
-        {
-          "ts": 1785534542,
-          "px": 0.48
-        },
-        {
-          "ts": 1785536342,
-          "px": 0.48
-        },
-        {
-          "ts": 1785538142,
-          "px": 0.48
-        },
-        {
-          "ts": 1785539942,
-          "px": 0.465
-        },
-        {
-          "ts": 1785541742,
-          "px": 0.195
-        },
-        {
-          "ts": 1785543542,
-          "px": 0.265
-        },
-        {
-          "ts": 1785545342,
-          "px": 0.045
-        },
-        {
-          "ts": 1785547142,
-          "px": 0.02
-        },
-        {
-          "ts": 1785548942,
-          "px": 0.005
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-08-01T01:59:02Z",
+      "pnl": -1.8,
+      "autopsy": "model 43% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, slid to 0.01 before the result \u2014 the number ran 36\u00a2 against us \u26a0\ufe0f"
     },
     {
       "price": 0.25,
@@ -30900,15 +30807,15 @@
   "pm_stats": {
     "start": 50.0,
     "wins": 52,
-    "losses": 124,
-    "pnl": -124.87,
+    "losses": 125,
+    "pnl": -126.67,
     "trades": 485,
     "last_recap": "2026-07-31",
     "last_recap_hour": "2026-08-01-00",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 3.13,
-    "net": -60.87,
+    "account": 1.33,
+    "net": -62.67,
     "last_archive": "2026-08-01",
     "kind_totals": {
       "ARB": [
@@ -30918,7 +30825,7 @@
       ],
       "EDGE": [
         43,
-        106,
+        107,
         0
       ],
       "LIVE-BET": [
@@ -30948,14 +30855,6 @@
   },
   "x_purge_complete": 1785467283.6252325,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T22:59:01Z",
-      "kind": "EDGE",
-      "outcome": "Milwaukee Brewers",
-      "result": "LOSS",
-      "pnl": -1.07,
-      "lesson": "model 63% vs market 54% missed \u2014 logged for the playbook review. Taken 0.54, slid to 0.01 before the result \u2014 the number ran 53\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-29T23:09:01Z",
       "kind": "EDGE",
@@ -31187,6 +31086,14 @@
       "result": "LOSS",
       "pnl": -0.55,
       "lesson": "model 81% vs market 55% missed \u2014 logged for the playbook review."
+    },
+    {
+      "ts": "2026-08-01T01:59:02Z",
+      "kind": "EDGE",
+      "outcome": "Washington Nationals",
+      "result": "LOSS",
+      "pnl": -1.8,
+      "lesson": "model 43% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, slid to 0.01 before the result \u2014 the number ran 36\u00a2 against us \u26a0\ufe0f"
     }
   ],
   "giveaway_x_posts": [
@@ -31271,7 +31178,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785542700.9202435,
+  "dep_checked_ts": 1785549542.780802,
   "x_bio_v": 2,
   "op_cool_until": 1785543316.2256446,
   "x_ads": []
