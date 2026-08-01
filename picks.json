@@ -5059,10 +5059,10 @@
       "awayTeam": "Nashville SC",
       "homeTeam": "D.C. United",
       "live_odds": {
-        "home_ml": 185,
-        "away_ml": 130,
+        "home_ml": 180,
+        "away_ml": 135,
         "total": 2.5,
-        "ts": 1785560342
+        "ts": 1785610741
       }
     },
     {
@@ -5133,10 +5133,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -172,
+        "away_ml": 142,
         "total": 7.5,
-        "ts": 1785603542
+        "ts": 1785610742
       },
       "last_alert_odds": -168
     },
@@ -5157,10 +5157,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -171,
-        "away_ml": 141,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 8.0,
-        "ts": 1785605342
+        "ts": 1785610742
       },
       "last_alert_odds": 136
     },
@@ -5244,9 +5244,9 @@
       "awayTeam": "Kansas City Royals",
       "live_odds": {
         "home_ml": -120,
-        "away_ml": 100,
-        "total": 11.5,
-        "ts": 1785596342
+        "away_ml": -101,
+        "total": 12.0,
+        "ts": 1785610742
       },
       "last_alert_odds": -118
     },
@@ -5267,10 +5267,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": 108,
-        "away_ml": -130,
+        "home_ml": 105,
+        "away_ml": -126,
         "total": 8.0,
-        "ts": 1785598142
+        "ts": 1785610742
       }
     },
     {
@@ -5376,10 +5376,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -148,
+        "home_ml": 120,
+        "away_ml": -142,
         "total": 176.5,
-        "ts": 1785599942
+        "ts": 1785610742
       },
       "last_alert_odds": -148
     },
