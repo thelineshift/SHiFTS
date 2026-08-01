@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T04:09:09Z",
+  "updated": "2026-08-01T04:29:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4301,7 +4301,10 @@
         "total": 8.5,
         "ts": 1785538742
       },
-      "last_alert_odds": -146
+      "last_alert_odds": -146,
+      "result": "WIN",
+      "score": "San Francisco Giants 0, San Diego Padres 7",
+      "units_result": 0.91
     },
     {
       "id": "3-leg-parlay-0731-whale",
@@ -4366,7 +4369,10 @@
         "total": 8.5,
         "ts": 1785538742
       },
-      "last_alert_odds": -146
+      "last_alert_odds": -146,
+      "result": "WIN",
+      "score": "San Francisco Giants 0, San Diego Padres 7",
+      "units_result": 0.6
     },
     {
       "id": "chicago-sky--5.5-0731",
@@ -4684,7 +4690,10 @@
         "total": 11.0,
         "ts": 1785538742
       },
-      "last_alert_odds": 123
+      "last_alert_odds": 123,
+      "result": "LOSS",
+      "score": "Detroit Tigers 13, Athletics 1",
+      "units_result": -1.0
     },
     {
       "id": "colorado-rockies-ml-0731",
@@ -4758,7 +4767,10 @@
         "total": 9.0,
         "ts": 1785542342
       },
-      "last_alert_odds": -168
+      "last_alert_odds": -168,
+      "result": "WIN",
+      "score": "Milwaukee Brewers 6, Los Angeles Angels 2",
+      "units_result": 0.91
     },
     {
       "id": "cincinnati-reds-ml-0731",
@@ -5042,13 +5054,7 @@
       "opp": "D.C. United",
       "analysis": "12-3-2 overall \u2014 our 80% vs book 55% (no-vig) | \ud83d\udcca **Form + price:** 12-3-2 overall \u2014 our 80% vs book 55% (no-vig). Model makes Nashville SC **80%** \u2014 books imply **43%**. Small edge, real edge, pressed.",
       "awayTeam": "Nashville SC",
-      "homeTeam": "D.C. United",
-      "live_odds": {
-        "home_ml": 185,
-        "away_ml": 130,
-        "total": 2.5,
-        "ts": 1785558542
-      }
+      "homeTeam": "D.C. United"
     },
     {
       "id": "mibr-ml-0801",
@@ -5116,14 +5122,7 @@
       "opp": "Chicago White Sox",
       "analysis": "64-44 overall, 40-16 at home \u2014 ML juiced to -175, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 70% straight up | \u2694\ufe0f **Matchup read:** 64-44 overall, 40-16 at home \u2014 ML juiced to -175, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 70% straight ",
       "homeTeam": "Tampa Bay Rays",
-      "awayTeam": "Chicago White Sox",
-      "live_odds": {
-        "home_ml": -168,
-        "away_ml": 139,
-        "total": 8.0,
-        "ts": 1785558542
-      },
-      "last_alert_odds": -168
+      "awayTeam": "Chicago White Sox"
     },
     {
       "id": "st.-louis-cardinals-ml-0801",
@@ -5140,13 +5139,7 @@
       "opp": "Toronto Blue Jays",
       "analysis": "54-55 overall, 26-23 on the road \u2014 our 52% vs book 44% (no-vig) | \ud83d\udcca **Form + price:** 54-55 overall, 26-23 on the road \u2014 our 52% vs book 44% (no-vig). Model makes St. Louis Cardinals **52%** \u2014 books imply **46%**. Small edge, real edge, pressed.",
       "awayTeam": "St. Louis Cardinals",
-      "homeTeam": "Toronto Blue Jays",
-      "live_odds": {
-        "home_ml": -144,
-        "away_ml": 119,
-        "total": 8.5,
-        "ts": 1785558542
-      }
+      "homeTeam": "Toronto Blue Jays"
     },
     {
       "id": "3-leg-parlay-0801-whale",
@@ -5201,14 +5194,7 @@
       "opp": "Chicago Sky",
       "analysis": "20-8 overall, 11-3 on the road \u2014 ML juiced to -250, so the -6.5 at the standard number is the bet; model makes Las Vegas Aces 77% straight up | \ud83d\udcc8 **Market angle:** 20-8 overall, 11-3 on the road \u2014 ML juiced to -250, so the -6.5 at the standard number is the bet; model makes Las Vegas Aces 77% straig",
       "awayTeam": "Las Vegas Aces",
-      "homeTeam": "Chicago Sky",
-      "live_odds": {
-        "home_ml": 205,
-        "away_ml": -250,
-        "total": 183.5,
-        "ts": 1785558542
-      },
-      "last_alert_odds": -250
+      "homeTeam": "Chicago Sky"
     },
     {
       "id": "colorado-rockies-ml-0801",
@@ -5225,14 +5211,7 @@
       "opp": "Kansas City Royals",
       "analysis": "42-67 overall, 24-29 at home \u2014 our 57% vs book 49% (no-vig) | \ud83d\udcc8 **Market angle:** 42-67 overall, 24-29 at home \u2014 our 57% vs book 49% (no-vig). The number's off by **7 points** \u2014 this is where CLV hunters eat.",
       "homeTeam": "Colorado Rockies",
-      "awayTeam": "Kansas City Royals",
-      "live_odds": {
-        "home_ml": -118,
-        "away_ml": -102,
-        "total": 12.0,
-        "ts": 1785558542
-      },
-      "last_alert_odds": -118
+      "awayTeam": "Kansas City Royals"
     },
     {
       "id": "houston-astros-ml-0801",
@@ -5249,13 +5228,7 @@
       "opp": "Texas Rangers",
       "analysis": "55-55 overall, 26-27 at home \u2014 our 53% vs book 46% (no-vig) | \ud83d\udcb0 **Value hunt:** 55-55 overall, 26-27 at home \u2014 our 53% vs book 46% (no-vig). The book shaded this line toward the public side; we collect the **7 points** they left.",
       "homeTeam": "Houston Astros",
-      "awayTeam": "Texas Rangers",
-      "live_odds": {
-        "home_ml": 109,
-        "away_ml": -131,
-        "total": 8.5,
-        "ts": 1785558543
-      }
+      "awayTeam": "Texas Rangers"
     },
     {
       "id": "san-diego-padres--1.5-0801",
@@ -5272,14 +5245,7 @@
       "opp": "San Francisco Giants",
       "analysis": "55-54 overall, 29-25 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes San Diego Padres 65% straight up | \ud83d\udcc8 **Market angle:** 55-54 overall, 29-25 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes San Diego Padres 65% straig",
       "homeTeam": "San Diego Padres",
-      "awayTeam": "San Francisco Giants",
-      "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
-        "total": 8.5,
-        "ts": 1785558543
-      },
-      "last_alert_odds": -142
+      "awayTeam": "San Francisco Giants"
     },
     {
       "id": "3-leg-parlay-0801-sharp",
@@ -5334,14 +5300,7 @@
       "opp": "San Francisco Giants",
       "analysis": "55-54 overall, 29-25 at home \u2014 our 65% vs book 58% (no-vig) | \u2694\ufe0f **Matchup read:** 55-54 overall, 29-25 at home \u2014 our 65% vs book 58% (no-vig). San Diego Padres in the better spot and priced like it isn't \u2014 **6-point** edge.",
       "homeTeam": "San Diego Padres",
-      "awayTeam": "San Francisco Giants",
-      "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
-        "total": 8.5,
-        "ts": 1785558543
-      },
-      "last_alert_odds": -142
+      "awayTeam": "San Francisco Giants"
     },
     {
       "id": "new-york-liberty-ml-0801",
@@ -5358,13 +5317,7 @@
       "opp": "Phoenix Mercury",
       "analysis": "16-13 overall, 8-8 on the road \u2014 our 61% vs book 55% (no-vig) | \ud83e\udde0 **The read:** 16-13 overall, 8-8 on the road \u2014 our 61% vs book 55% (no-vig). Model makes New York Liberty **61%** \u2014 books imply **57%**. SHiFT presses the gap.",
       "awayTeam": "New York Liberty",
-      "homeTeam": "Phoenix Mercury",
-      "live_odds": {
-        "home_ml": 120,
-        "away_ml": -142,
-        "total": 175.5,
-        "ts": 1785558543
-      }
+      "homeTeam": "Phoenix Mercury"
     },
     {
       "id": "athletics-ml-0801",
@@ -5381,13 +5334,7 @@
       "opp": "Detroit Tigers",
       "analysis": "45-64 overall, 21-33 at home \u2014 our 49% vs book 44% (no-vig) | \ud83d\udcca **Form + price:** 45-64 overall, 21-33 at home \u2014 our 49% vs book 44% (no-vig). Model makes Athletics **49%** \u2014 books imply **46%**. Small edge, real edge, pressed.",
       "homeTeam": "Athletics",
-      "awayTeam": "Detroit Tigers",
-      "live_odds": {
-        "home_ml": 114,
-        "away_ml": -137,
-        "total": 10.5,
-        "ts": 1785558543
-      }
+      "awayTeam": "Detroit Tigers"
     },
     {
       "id": "3-leg-parlay-0801-lock",
@@ -5442,13 +5389,7 @@
       "opp": "Philadelphia Phillies",
       "analysis": "53-56 overall, 29-27 at home \u2014 our 50% vs book 45% (no-vig) | \ud83d\udcca **Form + price:** 53-56 overall, 29-27 at home \u2014 our 50% vs book 45% (no-vig). Model makes Baltimore Orioles **50%** \u2014 books imply **47%**. Small edge, real edge, pressed.",
       "homeTeam": "Baltimore Orioles",
-      "awayTeam": "Philadelphia Phillies",
-      "live_odds": {
-        "home_ml": 118,
-        "away_ml": -142,
-        "total": 8.0,
-        "ts": 1785558543
-      }
+      "awayTeam": "Philadelphia Phillies"
     },
     {
       "id": "nongshim-red-force-ml-0801",
@@ -5482,13 +5423,7 @@
       "opp": "LA Galaxy",
       "analysis": "7-5-5 overall \u2014 our 58% vs book 42% (no-vig) | \u2694\ufe0f **Matchup read:** 7-5-5 overall \u2014 our 58% vs book 42% (no-vig). FC Dallas in the better spot and priced like it isn't \u2014 **17-point** edge.",
       "awayTeam": "FC Dallas",
-      "homeTeam": "LA Galaxy",
-      "live_odds": {
-        "home_ml": 115,
-        "away_ml": 190,
-        "total": 3.5,
-        "ts": 1785558543
-      }
+      "homeTeam": "LA Galaxy"
     },
     {
       "id": "milwaukee-brewers-ml-0801",
@@ -5505,13 +5440,7 @@
       "opp": "Los Angeles Angels",
       "analysis": "67-41 overall, 31-21 on the road \u2014 our 66% vs book 53% (no-vig) | \ud83d\udcca **Form + price:** 67-41 overall, 31-21 on the road \u2014 our 66% vs book 53% (no-vig). Model makes Milwaukee Brewers **66%** \u2014 books imply **55%**. Small edge, real edge, pressed.",
       "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Angels",
-      "live_odds": {
-        "home_ml": 102,
-        "away_ml": -123,
-        "total": 9.0,
-        "ts": 1785558543
-      }
+      "homeTeam": "Los Angeles Angels"
     },
     {
       "id": "over-8.5-0801",
@@ -5562,13 +5491,7 @@
       "opp": "Cleveland Guardians",
       "analysis": "58-52 overall, 27-30 on the road \u2014 our 47% vs book 41% (no-vig) | \ud83d\udcca **Form + price:** 58-52 overall, 27-30 on the road \u2014 our 47% vs book 41% (no-vig). Model makes Arizona Diamondbacks **47%** \u2014 books imply **42%**. Small edge, real edge, pressed.",
       "awayTeam": "Arizona Diamondbacks",
-      "homeTeam": "Cleveland Guardians",
-      "live_odds": {
-        "home_ml": -164,
-        "away_ml": 136,
-        "total": 8.0,
-        "ts": 1785558543
-      }
+      "homeTeam": "Cleveland Guardians"
     }
   ]
 }
