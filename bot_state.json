@@ -17020,22 +17020,6 @@
         "ten": false,
         "esp": true
       },
-      "aec-lol-al-edg-2026-07-31|anyoneslegend": {
-        "p0": 0.86,
-        "m0": 0.6956521739130435,
-        "bo": 3,
-        "ts": 1785477542.102742,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-al-edg-2026-07-31|edwardgaming": {
-        "p0": 0.15,
-        "m0": 0.30434782608695654,
-        "bo": 3,
-        "ts": 1785477542.102742,
-        "ten": false,
-        "esp": true
-      },
       "aec-lol-gen-t1-2026-07-31|geng": {
         "p0": 0.66,
         "m0": 0.4336283185840708,
@@ -30155,7 +30139,7 @@
     "pnl": -126.67,
     "trades": 485,
     "last_recap": "2026-08-01",
-    "last_recap_hour": "2026-08-01-16",
+    "last_recap_hour": "2026-08-01-18",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
     "account": 3.13,
@@ -30522,7 +30506,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785600292.2726722,
+  "dep_checked_ts": 1785607479.4220784,
   "x_bio_v": 2,
   "op_cool_until": 1785600920.9910474,
   "x_ads": []
