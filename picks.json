@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T01:49:16Z",
+  "updated": "2026-08-01T02:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4424,7 +4424,10 @@
         "total": 8.5,
         "ts": 1785536942
       },
-      "last_alert_odds": -101
+      "last_alert_odds": -101,
+      "result": "WIN",
+      "score": "Miami Marlins 5, New York Mets 2",
+      "units_result": 1.09
     },
     {
       "id": "3-leg-parlay-0731-sharp",
@@ -4516,7 +4519,10 @@
         "total": 9.0,
         "ts": 1785527942
       },
-      "last_alert_odds": -118
+      "last_alert_odds": -118,
+      "result": "WIN",
+      "score": "Washington Nationals 2, Atlanta Braves 6",
+      "units_result": 0.76
     },
     {
       "id": "libertad-(ecuador)-ml-0731",
