@@ -58,6 +58,15 @@
       "units": -1.5,
       "score": "GIANTX 1-2 SK Gaming \u00b7 final",
       "tier": "whale"
+    },
+    {
+      "id": "aimclub-ml-0801",
+      "desc": "aimclub ML",
+      "odds": -265,
+      "result": "WIN",
+      "units": 0.38,
+      "score": "aimclub 2-1 Young TigeRES \u00b7 final",
+      "tier": "whale"
     }
   ],
   "last_x_receipt_ts": 1785362587.0271225,
