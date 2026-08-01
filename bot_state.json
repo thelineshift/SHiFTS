@@ -51,7 +51,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "loud-ml-0731",
+      "desc": "LOUD ML",
+      "odds": 112,
+      "result": "LOSS",
+      "units": -1.5,
+      "score": "LOUD 1-2 LOUD \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
@@ -28733,10 +28743,6 @@
       "ts": "2026-07-29T04:05:34Z",
       "price_path": [
         {
-          "ts": 1785500342,
-          "px": 0.48
-        },
-        {
           "ts": 1785502142,
           "px": 0.48
         },
@@ -28827,6 +28833,10 @@
         {
           "ts": 1785543542,
           "px": 0.265
+        },
+        {
+          "ts": 1785545342,
+          "px": 0.045
         }
       ]
     },
