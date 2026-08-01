@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T18:09:08Z",
+  "updated": "2026-08-01T18:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5059,10 +5059,10 @@
       "awayTeam": "Nashville SC",
       "homeTeam": "D.C. United",
       "live_odds": {
-        "home_ml": 180,
-        "away_ml": 135,
+        "home_ml": 185,
+        "away_ml": 130,
         "total": 2.5,
-        "ts": 1785608941
+        "ts": 1785560342
       }
     },
     {
@@ -5157,10 +5157,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -172,
-        "away_ml": 142,
+        "home_ml": -171,
+        "away_ml": 141,
         "total": 8.0,
-        "ts": 1785608942
+        "ts": 1785605342
       },
       "last_alert_odds": 136
     },
@@ -5244,9 +5244,9 @@
       "awayTeam": "Kansas City Royals",
       "live_odds": {
         "home_ml": -120,
-        "away_ml": -101,
-        "total": 12.0,
-        "ts": 1785608942
+        "away_ml": 100,
+        "total": 11.5,
+        "ts": 1785596342
       },
       "last_alert_odds": -118
     },
@@ -5376,10 +5376,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 120,
-        "away_ml": -142,
+        "home_ml": 124,
+        "away_ml": -148,
         "total": 176.5,
-        "ts": 1785608942
+        "ts": 1785599942
       },
       "last_alert_odds": -148
     },
@@ -5648,7 +5648,10 @@
       "opp": "Young TigeRES",
       "analysis": "4-1 last 5 (beat Spirit Academy, mellren, sleepers) (lost to Noir Verse) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Spirit Academy, mellren, sleepers) (lost to Noir Verse) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Young TigeRES the number hasn't pr",
       "awayTeam": "aimclub",
-      "homeTeam": "Young TigeRES"
+      "homeTeam": "Young TigeRES",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "aimclub 2-1 Young TigeRES \u00b7 final"
     },
     {
       "id": "rune-eaters-ml-0801",
