@@ -5133,10 +5133,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -171,
-        "away_ml": 141,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 8.0,
-        "ts": 1785569342
+        "ts": 1785576542
       },
       "last_alert_odds": -168
     },
