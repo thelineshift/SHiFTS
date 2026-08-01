@@ -5579,10 +5579,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -164,
-        "away_ml": 136,
-        "total": 8.0,
-        "ts": 1785560344
+        "home_ml": -163,
+        "away_ml": 135,
+        "total": 8.5,
+        "ts": 1785562142
       }
     }
   ]
