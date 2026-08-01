@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T18:29:06Z",
+  "updated": "2026-08-01T19:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5224,7 +5224,10 @@
         "total": 183.5,
         "ts": 1785601742
       },
-      "last_alert_odds": -238
+      "last_alert_odds": -238,
+      "result": "LOSS",
+      "score": "Las Vegas Aces 83, Chicago Sky 84",
+      "units_result": -1.0
     },
     {
       "id": "colorado-rockies-ml-0801",
@@ -5586,10 +5589,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -181,
-        "away_ml": 149,
+        "home_ml": -180,
+        "away_ml": 148,
         "total": 8.5,
-        "ts": 1785612542
+        "ts": 1785594542
       },
       "last_alert_odds": 148
     },
@@ -5695,7 +5698,10 @@
         "total": 183.5,
         "ts": 1785601742
       },
-      "last_alert_odds": -230
+      "last_alert_odds": -230,
+      "result": "LOSS",
+      "score": "Las Vegas Aces 83, Chicago Sky 84",
+      "units_result": -1.0
     },
     {
       "id": "las-vegas-aces-ml-0801",
@@ -5718,7 +5724,10 @@
         "away_ml": -230,
         "total": 183.5,
         "ts": 1785601743
-      }
+      },
+      "result": "LOSS",
+      "score": "Las Vegas Aces 83, Chicago Sky 84",
+      "units_result": -1.0
     }
   ]
 }
