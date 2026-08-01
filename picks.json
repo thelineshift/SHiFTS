@@ -5289,10 +5289,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 8.5,
-        "ts": 1785560343
+        "ts": 1785563942
       },
       "last_alert_odds": -142
     },
@@ -5351,10 +5351,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 8.5,
-        "ts": 1785560343
+        "ts": 1785563942
       },
       "last_alert_odds": -142
     },
