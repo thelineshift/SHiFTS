@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T19:29:06Z",
+  "updated": "2026-08-01T20:00:47Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5730,6 +5730,40 @@
       "result": "LOSS",
       "score": "Las Vegas Aces 83, Chicago Sky 84",
       "units_result": -1.0
+    },
+    {
+      "id": "fluxo-w7m-ml-0801",
+      "date": "2026-08-01",
+      "sport": "cs2",
+      "desc": "Fluxo W7M ML",
+      "market": "StarLadder StarSeries Bo3",
+      "odds": 106,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "04:30 PM ET",
+      "vs": "BESTIA",
+      "team": "Fluxo W7M",
+      "opp": "BESTIA",
+      "analysis": "4-1 last 5 (beat Imperial, Bounty Hunters Esports, Imperial) (lost to MIBR) vs 3-2 \u2014 live Pinnacle line +106 (our 73% vs book 46%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Imperial, Bounty Hunters Esports, Imperial) (lost to MIBR) vs 3-2 \u2014 live Pinnacle line +106 (our 73% vs book 46%). That's a **27-point",
+      "awayTeam": "Fluxo W7M",
+      "homeTeam": "BESTIA"
+    },
+    {
+      "id": "minnesota-twins-ml-0801",
+      "date": "2026-08-01",
+      "sport": "mlb",
+      "desc": "Minnesota Twins ML",
+      "market": "ML",
+      "odds": 141,
+      "units": 1.0,
+      "tier": "free",
+      "time_et": "04:10 PM ET",
+      "vs": "Seattle Mariners",
+      "team": "Minnesota Twins",
+      "opp": "Seattle Mariners",
+      "analysis": "56-55 overall, 26-28 on the road \u2014 our 45% vs book 40% (no-vig) | \u2694\ufe0f **Matchup read:** 56-55 overall, 26-28 on the road \u2014 our 45% vs book 40% (no-vig). Minnesota Twins in the better spot and priced like it isn't \u2014 **5-point** edge.",
+      "awayTeam": "Minnesota Twins",
+      "homeTeam": "Seattle Mariners"
     }
   ]
 }
