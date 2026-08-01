@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T22:09:06Z",
+  "updated": "2026-08-01T22:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5138,7 +5138,10 @@
         "total": 7.5,
         "ts": 1785610742
       },
-      "last_alert_odds": -168
+      "last_alert_odds": -168,
+      "result": "LOSS",
+      "score": "Chicago White Sox 0, Tampa Bay Rays 1",
+      "units_result": -1.0
     },
     {
       "id": "st.-louis-cardinals-ml-0801",
@@ -5296,10 +5299,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 124,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 8.5,
-        "ts": 1785623342
+        "ts": 1785605342
       },
       "last_alert_odds": -156
     },
@@ -5358,10 +5361,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 124,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 8.5,
-        "ts": 1785623342
+        "ts": 1785605342
       },
       "last_alert_odds": -156
     },
