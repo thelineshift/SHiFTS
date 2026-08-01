@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T10:29:07Z",
+  "updated": "2026-08-01T12:00:50Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5605,6 +5605,57 @@
       "analysis": "2-3 last 5 (beat KT Rolster, BNK FEARX) (lost to T1) vs 1-4 \u2014 live Pinnacle line -187 (our 73% vs book 62%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat KT Rolster, BNK FEARX) (lost to T1) vs 1-4 \u2014 live Pinnacle line -187 (our 73% vs book 62%). Ride the **11-point** form edge before the market catches up",
       "awayTeam": "Gen.G",
       "homeTeam": "Dplus KIA"
+    },
+    {
+      "id": "giantx-ml-0801",
+      "date": "2026-08-01",
+      "sport": "lol",
+      "desc": "GIANTX ML",
+      "market": "LEC Bo3",
+      "odds": 181,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "SK Gaming",
+      "team": "GIANTX",
+      "opp": "SK Gaming",
+      "analysis": "3-2 last 5 (beat Team Vitality, Solary, Karmine Corp) (lost to Karmine Corp) vs 1-4 \u2014 live Pinnacle line +181 (our 86% vs book 34%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat Team Vitality, Solary, Karmine Corp) (lost to Karmine Corp) vs 1-4 \u2014 live Pinnacle line +181 (our 86% vs book 34%). That's a **52-poi",
+      "awayTeam": "GIANTX",
+      "homeTeam": "SK Gaming"
+    },
+    {
+      "id": "aimclub-ml-0801",
+      "date": "2026-08-01",
+      "sport": "cs2",
+      "desc": "aimclub ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:30 AM ET",
+      "vs": "Young TigeRES",
+      "team": "aimclub",
+      "opp": "Young TigeRES",
+      "analysis": "4-1 last 5 (beat Spirit Academy, mellren, sleepers) (lost to Noir Verse) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Spirit Academy, mellren, sleepers) (lost to Noir Verse) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Young TigeRES the number hasn't pr",
+      "awayTeam": "aimclub",
+      "homeTeam": "Young TigeRES"
+    },
+    {
+      "id": "rune-eaters-ml-0801",
+      "date": "2026-08-01",
+      "sport": "cs2",
+      "desc": "Rune Eaters ML",
+      "market": "CCT Europe Bo3",
+      "odds": -151,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "SPARTA",
+      "team": "Rune Eaters",
+      "opp": "SPARTA",
+      "analysis": "4-1 last 5 (beat UNiTY esports, Atreides, ex-MANA eSports) (lost to Sinners) vs 3-2 \u2014 live Pinnacle line -151 (our 73% vs book 57%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat UNiTY esports, Atreides, ex-MANA eSports) (lost to Sinners) vs 3-2 \u2014 live Pinnacle line -151 (our 73% vs book 57%). Books hang re",
+      "awayTeam": "Rune Eaters",
+      "homeTeam": "SPARTA"
     }
   ]
 }
