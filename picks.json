@@ -5135,8 +5135,8 @@
       "live_odds": {
         "home_ml": -171,
         "away_ml": 141,
-        "total": 8.0,
-        "ts": 1785589142
+        "total": 7.5,
+        "ts": 1785590942
       },
       "last_alert_odds": -168
     },
@@ -5220,8 +5220,8 @@
       "live_odds": {
         "home_ml": 210,
         "away_ml": -258,
-        "total": 184.5,
-        "ts": 1785587342
+        "total": 183.5,
+        "ts": 1785590942
       },
       "last_alert_odds": -265
     },
@@ -5242,10 +5242,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -119,
+        "home_ml": -120,
         "away_ml": -101,
         "total": 11.5,
-        "ts": 1785589142
+        "ts": 1785590942
       },
       "last_alert_odds": -118
     },
@@ -5266,10 +5266,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": 105,
-        "away_ml": -127,
+        "home_ml": 106,
+        "away_ml": -128,
         "total": 8.5,
-        "ts": 1785587342
+        "ts": 1785590942
       }
     },
     {
@@ -5375,10 +5375,10 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -148,
-        "total": 177.5,
-        "ts": 1785581942
+        "home_ml": 130,
+        "away_ml": -155,
+        "total": 176.5,
+        "ts": 1785590942
       },
       "last_alert_odds": -148
     },
@@ -5399,10 +5399,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": 114,
-        "away_ml": -137,
+        "home_ml": 123,
+        "away_ml": -149,
         "total": 10.5,
-        "ts": 1785560343
+        "ts": 1785590942
       }
     },
     {
