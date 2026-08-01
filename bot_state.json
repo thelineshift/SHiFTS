@@ -16812,46 +16812,6 @@
       "ts": 1785377069.3637621
     },
     "cb": {
-      "aec-valorant-gxgc-aar-2026-07-30|giantxgc": {
-        "p0": 0.63,
-        "m0": 0.5,
-        "bo": 3,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-valorant-gxgc-aar-2026-07-30|alternateattaxruby": {
-        "p0": 0.38,
-        "m0": 0.5,
-        "bo": 3,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-valorant-ef-fnc-2026-07-30|eternalfire": {
-        "p0": 0.32,
-        "m0": 0.4324324324324325,
-        "bo": 3,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-dota2-agm-ill-2026-07-30|amarugaming": {
-        "p0": 0.37,
-        "m0": 0.3043478260869566,
-        "bo": 3,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-dota2-agm-ill-2026-07-30|ilbirsesports": {
-        "p0": 0.64,
-        "m0": 0.6956521739130435,
-        "bo": 3,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
       "aec-valorant-100t-sen-2026-07-31|thieves": {
         "p0": 0.74,
         "m0": 0.6363636363636364,
@@ -17044,38 +17004,6 @@
         "ten": false,
         "esp": true
       },
-      "aec-cs2-ence-ksm-2026-07-30|ence": {
-        "p0": 0.76,
-        "m0": 0.5663716814159292,
-        "bo": 1,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-cs2-ence-ksm-2026-07-30|kuusamogg": {
-        "p0": 0.25,
-        "m0": 0.4336283185840708,
-        "bo": 1,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-jl-sc-2026-07-30|joblife": {
-        "p0": 0.68,
-        "m0": 0.5,
-        "bo": 1,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-jl-sc-2026-07-30|skillcampesport": {
-        "p0": 0.33,
-        "m0": 0.5,
-        "bo": 1,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
       "aec-valorant-bbl-gm-2026-07-31|bblesports": {
         "p0": 0.56,
         "m0": 0.5,
@@ -17089,38 +17017,6 @@
         "m0": 0.5,
         "bo": 3,
         "ts": 1785506342.1058192,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-cg-p11-2026-07-30|colossalgaming": {
-        "p0": 0.86,
-        "m0": 0.5675675675675675,
-        "bo": 1,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-cg-p11-2026-07-30|pesports": {
-        "p0": 0.15,
-        "m0": 0.43243243243243246,
-        "bo": 1,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-mcn-sec-2026-07-30|mconesports": {
-        "p0": 0.57,
-        "m0": 0.75,
-        "bo": 3,
-        "ts": 1785431642.118729,
-        "ten": false,
-        "esp": true
-      },
-      "aec-lol-mcn-sec-2026-07-30|senshiesports": {
-        "p0": 0.44,
-        "m0": 0.25,
-        "bo": 3,
-        "ts": 1785431642.118729,
         "ten": false,
         "esp": true
       },
@@ -30435,7 +30331,7 @@
     "pnl": -126.67,
     "trades": 485,
     "last_recap": "2026-07-31",
-    "last_recap_hour": "2026-08-01-04",
+    "last_recap_hour": "2026-08-01-06",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
     "account": 3.13,
@@ -30802,7 +30698,7 @@
     "used": 0
   },
   "deepdive_last": "2026-07-25",
-  "dep_checked_ts": 1785557095.699562,
+  "dep_checked_ts": 1785564279.9820366,
   "x_bio_v": 2,
   "op_cool_until": 1785543316.2256446,
   "x_ads": []
