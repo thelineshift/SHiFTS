@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T01:29:06Z",
+  "updated": "2026-08-01T01:49:02Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4333,7 +4333,10 @@
           "date": "2026-07-31",
           "time_et": "07:10 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: loss \u00b7 None: win \u00b7 None: win"
     },
     {
       "id": "san-diego-padres-ml-0731",
@@ -4453,7 +4456,10 @@
           "date": "2026-07-31",
           "time_et": "07:10 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: loss \u00b7 None: win \u00b7 None: win"
     },
     {
       "id": "new-york-yankees-ml-0731",
@@ -4559,7 +4565,10 @@
           "date": "2026-07-31",
           "time_et": "07:10 PM ET"
         }
-      ]
+      ],
+      "result": "LOSS",
+      "units_result": -0.5,
+      "score": "None: loss \u00b7 None: win \u00b7 None: win"
     },
     {
       "id": "washington-mystics-ml-0731",
