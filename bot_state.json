@@ -51,7 +51,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "colorado-rockies-ml-0731",
+      "desc": "Colorado Rockies ML",
+      "odds": -110,
+      "result": "WIN",
+      "units": 0.91,
+      "score": "Kansas City Royals 1, Colorado Rockies 3",
+      "tier": "sharp"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
