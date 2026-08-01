@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T08:00:55Z",
+  "updated": "2026-08-01T10:29:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5157,10 +5157,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -147,
-        "away_ml": 122,
+        "home_ml": -144,
+        "away_ml": 119,
         "total": 8.5,
-        "ts": 1785580142
+        "ts": 1785560342
       }
     },
     {
@@ -5480,7 +5480,10 @@
       "opp": "BNK FEARX",
       "analysis": "4-1 last 5 (beat Kiwoom DRX, T1, BNK FEARX) (lost to Hanwha Life Esports) vs 3-2 \u2014 live Pinnacle line +104 (our 73% vs book 47%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Kiwoom DRX, T1, BNK FEARX) (lost to Hanwha Life Esports) vs 3-2 \u2014 live Pinnacle line +104 (our 73% vs book 47%). When the form gap ",
       "awayTeam": "Nongshim Red Force",
-      "homeTeam": "BNK FEARX"
+      "homeTeam": "BNK FEARX",
+      "result": "WIN",
+      "units_result": 1.56,
+      "score": "Nongshim Red Force 2-1 BNK FEARX \u00b7 final"
     },
     {
       "id": "fc-dallas-ml-0801",
