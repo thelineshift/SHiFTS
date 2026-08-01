@@ -5400,10 +5400,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": 139,
-        "away_ml": -168,
+        "home_ml": 142,
+        "away_ml": -172,
         "total": 10.5,
-        "ts": 1785598142
+        "ts": 1785607142
       },
       "last_alert_odds": 139
     },
@@ -5529,10 +5529,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 108,
-        "away_ml": -130,
+        "home_ml": 102,
+        "away_ml": -123,
         "total": 8.5,
-        "ts": 1785605342
+        "ts": 1785607142
       }
     },
     {
