@@ -5289,10 +5289,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 8.5,
-        "ts": 1785589142
+        "ts": 1785592742
       },
       "last_alert_odds": -142
     },
@@ -5351,10 +5351,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 8.5,
-        "ts": 1785589142
+        "ts": 1785592742
       },
       "last_alert_odds": -142
     },
@@ -5375,12 +5375,12 @@
       "awayTeam": "New York Liberty",
       "homeTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 130,
-        "away_ml": -155,
-        "total": 176.5,
-        "ts": 1785590942
+        "home_ml": 136,
+        "away_ml": -162,
+        "total": 177.5,
+        "ts": 1785592742
       },
-      "last_alert_odds": -148
+      "last_alert_odds": -162
     },
     {
       "id": "athletics-ml-0801",
@@ -5584,10 +5584,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 8.5,
-        "ts": 1785562142
+        "ts": 1785592742
       }
     },
     {
