@@ -30811,11 +30811,11 @@
     "pnl": -126.67,
     "trades": 485,
     "last_recap": "2026-07-31",
-    "last_recap_hour": "2026-08-01-00",
+    "last_recap_hour": "2026-08-01-02",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
-    "account": 1.33,
-    "net": -62.67,
+    "account": 3.13,
+    "net": -60.87,
     "last_archive": "2026-08-01",
     "kind_totals": {
       "ARB": [
