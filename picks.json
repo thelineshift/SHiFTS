@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T04:00:52Z",
+  "updated": "2026-08-01T04:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4707,7 +4707,10 @@
         "away_ml": -114,
         "total": 11.0,
         "ts": 1785540542
-      }
+      },
+      "result": "WIN",
+      "score": "Kansas City Royals 1, Colorado Rockies 3",
+      "units_result": 0.91
     },
     {
       "id": "minnesota-twins-ml-0731",
