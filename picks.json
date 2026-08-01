@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T05:09:09Z",
+  "updated": "2026-08-01T08:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5584,6 +5584,23 @@
         "total": 8.5,
         "ts": 1785562142
       }
+    },
+    {
+      "id": "gen.g-ml-0801",
+      "date": "2026-08-01",
+      "sport": "lol",
+      "desc": "Gen.G ML",
+      "market": "LCK Bo3",
+      "odds": -187,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "06:00 AM ET",
+      "vs": "Dplus KIA",
+      "team": "Gen.G",
+      "opp": "Dplus KIA",
+      "analysis": "2-3 last 5 (beat KT Rolster, BNK FEARX) (lost to T1) vs 1-4 \u2014 live Pinnacle line -187 (our 73% vs book 62%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat KT Rolster, BNK FEARX) (lost to T1) vs 1-4 \u2014 live Pinnacle line -187 (our 73% vs book 62%). Ride the **11-point** form edge before the market catches up",
+      "awayTeam": "Gen.G",
+      "homeTeam": "Dplus KIA"
     }
   ]
 }
