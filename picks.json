@@ -5059,10 +5059,10 @@
       "awayTeam": "Nashville SC",
       "homeTeam": "D.C. United",
       "live_odds": {
-        "home_ml": 185,
-        "away_ml": 130,
+        "home_ml": 175,
+        "away_ml": 135,
         "total": 2.5,
-        "ts": 1785621541
+        "ts": 1785626942
       }
     },
     {
