@@ -5533,10 +5533,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 124,
-        "away_ml": -149,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 9.0,
-        "ts": 1785614342
+        "ts": 1785616142
       },
       "last_alert_odds": -149
     },
