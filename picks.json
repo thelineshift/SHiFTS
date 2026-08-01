@@ -5218,10 +5218,10 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Chicago Sky",
       "live_odds": {
-        "home_ml": 215,
-        "away_ml": -265,
-        "total": 185.5,
-        "ts": 1785581942
+        "home_ml": 210,
+        "away_ml": -258,
+        "total": 184.5,
+        "ts": 1785587342
       },
       "last_alert_odds": -265
     },
@@ -5266,10 +5266,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Texas Rangers",
       "live_odds": {
-        "home_ml": 109,
-        "away_ml": -131,
+        "home_ml": 105,
+        "away_ml": -127,
         "total": 8.5,
-        "ts": 1785560342
+        "ts": 1785587342
       }
     },
     {
@@ -5289,10 +5289,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -144,
+        "away_ml": 119,
         "total": 8.5,
-        "ts": 1785563942
+        "ts": 1785587342
       },
       "last_alert_odds": -142
     },
@@ -5351,10 +5351,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -144,
+        "away_ml": 119,
         "total": 8.5,
-        "ts": 1785563942
+        "ts": 1785587342
       },
       "last_alert_odds": -142
     },
