@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T04:29:09Z",
+  "updated": "2026-08-01T05:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -4743,7 +4743,10 @@
         "total": 7.5,
         "ts": 1785542342
       },
-      "last_alert_odds": 143
+      "last_alert_odds": 143,
+      "result": "WIN",
+      "score": "Minnesota Twins 5, Seattle Mariners 3",
+      "units_result": 1.58
     },
     {
       "id": "milwaukee-brewers--1.5-0731",
