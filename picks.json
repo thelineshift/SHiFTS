@@ -5465,11 +5465,12 @@
       "homeTeam": "Baltimore Orioles",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 123,
-        "away_ml": -149,
+        "home_ml": 127,
+        "away_ml": -154,
         "total": 8.0,
-        "ts": 1785601742
-      }
+        "ts": 1785614342
+      },
+      "last_alert_odds": 127
     },
     {
       "id": "nongshim-red-force-ml-0801",
@@ -5532,11 +5533,12 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 102,
-        "away_ml": -123,
-        "total": 8.5,
-        "ts": 1785607142
-      }
+        "home_ml": 124,
+        "away_ml": -149,
+        "total": 9.0,
+        "ts": 1785614342
+      },
+      "last_alert_odds": -149
     },
     {
       "id": "over-8.5-0801",
@@ -5589,10 +5591,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -180,
-        "away_ml": 148,
+        "home_ml": -181,
+        "away_ml": 149,
         "total": 8.5,
-        "ts": 1785594542
+        "ts": 1785614342
       },
       "last_alert_odds": 148
     },
