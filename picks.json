@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T03:09:11Z",
+  "updated": "2026-08-02T03:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5269,7 +5269,10 @@
         "total": 11.5,
         "ts": 1785625142
       },
-      "last_alert_odds": -131
+      "last_alert_odds": -131,
+      "result": "WIN",
+      "score": "Kansas City Royals 6, Colorado Rockies 12",
+      "units_result": 0.94
     },
     {
       "id": "houston-astros-ml-0801",
