@@ -13,18 +13,18 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-08-02 02:59 UTC",
+    "at": "2026-08-02 03:29 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-5-8": "2026-08-02 00:00 UTC",
-    "\ud83e\uddfereceipts": "2026-08-02 02:29 UTC",
-    "\ud83d\udcacgeneral-chat": "2026-08-02 00:00 UTC",
+    "\ud83e\uddfereceipts": "2026-08-02 03:09 UTC",
+    "\ud83d\udcacgeneral-chat": "2026-08-02 03:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-07-30 12:34 UTC"
   },
   "resolution_watch": {
-    "at": "2026-08-02 02:59 UTC",
+    "at": "2026-08-02 03:29 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,17 +41,54 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-08-02 02:59 UTC",
+    "at": "2026-08-02 03:29 UTC",
     "flags": [
       "no challenge bet registered for 2026-08-01 (due 6 PM ET)"
     ]
   },
   "giveaway_watch": {
-    "at": "2026-08-02 02:59 UTC",
+    "at": "2026-08-02 03:29 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "3-leg-parlay-0801-whale",
+      "desc": "Milwaukee Brewers -1.5 + Chicago Cubs ML + Arizona Diamondbacks ML",
+      "odds": 819,
+      "result": "WIN",
+      "units": 4.09,
+      "score": "Legs: None: win \u00b7 None: win \u00b7 None: win",
+      "tier": "whale"
+    },
+    {
+      "id": "3-leg-parlay-0801-sharp",
+      "desc": "Milwaukee Brewers -1.5 + Chicago Cubs ML + Arizona Diamondbacks ML",
+      "odds": 819,
+      "result": "WIN",
+      "units": 4.09,
+      "score": "Legs: None: win \u00b7 None: win \u00b7 None: win",
+      "tier": "sharp"
+    },
+    {
+      "id": "3-leg-parlay-0801-lock",
+      "desc": "Milwaukee Brewers -1.5 + Chicago Cubs ML + Arizona Diamondbacks ML",
+      "odds": 819,
+      "result": "WIN",
+      "units": 4.09,
+      "score": "Legs: None: win \u00b7 None: win \u00b7 None: win",
+      "tier": "lock"
+    },
+    {
+      "id": "arizona-diamondbacks-ml-0801",
+      "desc": "Arizona Diamondbacks ML",
+      "odds": 136,
+      "result": "WIN",
+      "units": 1.36,
+      "score": "Arizona Diamondbacks 12, Cleveland Guardians 8",
+      "tier": "lock"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
