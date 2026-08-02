@@ -49,17 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "top-esports-ml-0802",
-      "desc": "Top Esports ML",
-      "odds": -135,
-      "result": "WIN",
-      "units": 1.11,
-      "score": "Top Esports 2-0 JD Gaming \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
