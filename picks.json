@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T21:09:06Z",
+  "updated": "2026-08-02T21:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6337,7 +6337,10 @@
         "total": 6.5,
         "ts": 1785688142
       },
-      "last_alert_odds": -101
+      "last_alert_odds": -101,
+      "result": "LOSS",
+      "score": "New York Yankees 2, Chicago Cubs 1",
+      "units_result": -1.0
     },
     {
       "id": "san-diego-wave-fc-ml-0802",
