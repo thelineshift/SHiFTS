@@ -315,7 +315,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 20,
+  "op_calls": 23,
   "op_meta": {
     "cs2": {
       "active": [
@@ -2475,43 +2475,85 @@
       "meta_ts": 1785571212.8008003,
       "lines": [
         [
-          "Cloud9",
-          "Dignitas",
-          1.09,
-          6.81
-        ],
-        [
           "Flyquest",
           "Disguisedtoast",
-          1.177,
-          4.67
+          1.024,
+          15.49
+        ],
+        [
+          "Shopify Rebellion",
+          "Lyon Gaming",
+          1.193,
+          4.44
+        ],
+        [
+          "Team Liquid",
+          "Sentinels",
+          1.202,
+          4.34
         ],
         [
           "SK Gaming",
-          "Giantx",
-          10.19,
-          1.044
+          "G2 Esports",
+          6.71,
+          1.093
         ],
         [
-          "Karmine Corp",
-          "Natus Vincere",
-          1.184,
-          4.51
+          "Fnatic",
+          "Movistar Koi",
+          2.67,
+          1.473
         ],
         [
-          "Furia Esports",
-          "Keyd Stars",
-          1.024,
-          14.13
+          "Soopers",
+          "Brion",
+          3.26,
+          1.333
         ],
         [
-          "Pain Gaming",
-          "Leviatan",
-          14.4,
-          1.023
+          "kt Rolster",
+          "Hanwha Life Esports",
+          3.94,
+          1.239
+        ],
+        [
+          "Loud",
+          "Fluxo W7M",
+          2.3,
+          1.628
+        ],
+        [
+          "Los",
+          "Red Canids",
+          1.315,
+          3.36
+        ],
+        [
+          "ThunderTalk Gaming",
+          "Team WE",
+          2.91,
+          1.406
+        ],
+        [
+          "Invictus Gaming",
+          "LNG Esports",
+          4.82,
+          1.168
+        ],
+        [
+          "TOP Esports",
+          "JD Gaming",
+          1.74,
+          2.11
+        ],
+        [
+          "Team Secret Whales",
+          "Ctbc Flying Oyster",
+          1.236,
+          3.96
         ]
       ],
-      "odds_ts": 1785614420.0359058
+      "odds_ts": 1785643215.740971
     }
   },
   "parlay_rot": 31,
@@ -30392,6 +30434,6 @@
   "deepdive_last": "2026-08-01",
   "dep_checked_ts": 1785636301.9976811,
   "x_bio_v": 2,
-  "op_cool_until": 1785629718.7403362,
+  "op_cool_until": 1785644115.740971,
   "x_ads": []
 }
