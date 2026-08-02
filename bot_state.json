@@ -206,7 +206,7 @@
     "weekly": "2026-08-02",
     "monthly": "2026-08-01",
     "deepdive_fired": "2026-07-25",
-    "x_ad": "2026-08-01"
+    "x_ad": "2026-08-02"
   },
   "gw_handled": [
     "1530230873780129892",
@@ -30577,5 +30577,7 @@
   "dep_checked_ts": 1785672242.2528336,
   "x_bio_v": 2,
   "op_cool_until": 1785658511.9170737,
-  "x_ads": []
+  "x_ads": [
+    "\ud83d\udd12 The LOCK room went 20-20 this week \u2014 +5.4 units.\n\n$100 on every pick we posted = +$541 in 7 days. The room costs $30/mo \u2014 it paid for itself 18x over.\n\nEvery pick posted before start. Every result receipted.\n\ud83d\udc8e https://thelineshift.github.io/SHiFTS/upgrade.html"
+  ]
 }
