@@ -6007,10 +6007,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 195,
-        "away_ml": -240,
+        "home_ml": 192,
+        "away_ml": -237,
         "total": 7.5,
-        "ts": 1785657542
+        "ts": 1785670142
       },
       "last_alert_odds": -239
     },
@@ -6031,10 +6031,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 195,
-        "away_ml": -240,
+        "home_ml": 192,
+        "away_ml": -237,
         "total": 7.5,
-        "ts": 1785657542
+        "ts": 1785670142
       },
       "last_alert_odds": -239
     },
@@ -6055,10 +6055,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -118,
-        "away_ml": -102,
+        "home_ml": -117,
+        "away_ml": -103,
         "total": 12.0,
-        "ts": 1785664742
+        "ts": 1785670142
       }
     },
     {
@@ -6133,12 +6133,12 @@
       "homeTeam": "Portland Fire",
       "awayTeam": "Los Angeles Sparks",
       "live_odds": {
-        "home_ml": -112,
-        "away_ml": -108,
+        "home_ml": -118,
+        "away_ml": -102,
         "total": 185.5,
-        "ts": 1785664742
+        "ts": 1785670142
       },
-      "last_alert_odds": -105
+      "last_alert_odds": -118
     },
     {
       "id": "pittsburgh-pirates-ml-0802",
