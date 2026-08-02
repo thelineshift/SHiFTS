@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T23:09:06Z",
+  "updated": "2026-08-02T23:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5955,7 +5955,10 @@
         "total": 8.0,
         "ts": 1785697142
       },
-      "last_alert_odds": -130
+      "last_alert_odds": -130,
+      "result": "WIN",
+      "score": "San Francisco Giants 4, San Diego Padres 5",
+      "units_result": 0.69
     },
     {
       "id": "3-leg-parlay-0802-whale",
@@ -6597,7 +6600,10 @@
         "total": 8.0,
         "ts": 1785697142
       },
-      "last_alert_odds": -130
+      "last_alert_odds": -130,
+      "result": "LOSS",
+      "score": "San Francisco Giants 4, San Diego Padres 5",
+      "units_result": -1.0
     },
     {
       "id": "minnesota-lynx--5.5-0802",
