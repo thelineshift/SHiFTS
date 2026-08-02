@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T16:00:38Z",
+  "updated": "2026-08-02T19:09:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6594,7 +6594,10 @@
         "total": 191.5,
         "ts": 1785689942
       },
-      "last_alert_odds": -205
+      "last_alert_odds": -205,
+      "result": "WIN",
+      "score": "Indiana Fever 100, Minnesota Lynx 108",
+      "units_result": 0.91
     },
     {
       "id": "fnatic-ml-0802",
