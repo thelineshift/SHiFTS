@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T09:49:07Z",
+  "updated": "2026-08-02T12:00:52Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6515,6 +6515,57 @@
           "time_et": "04:00 PM ET"
         }
       ]
+    },
+    {
+      "id": "spirit-academy-ml-0802",
+      "date": "2026-08-02",
+      "sport": "cs2",
+      "desc": "Spirit Academy ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:30 AM ET",
+      "vs": "Young TigeRES",
+      "team": "Spirit Academy",
+      "opp": "Young TigeRES",
+      "analysis": "4-1 last 5 (beat mellren, sleepers, GameSport) (lost to aimclub) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat mellren, sleepers, GameSport) (lost to aimclub) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Young TigeRES the number hasn't priced.",
+      "awayTeam": "Spirit Academy",
+      "homeTeam": "Young TigeRES"
+    },
+    {
+      "id": "san-diego-padres--1.5-0802",
+      "date": "2026-08-02",
+      "sport": "mlb",
+      "desc": "San Diego Padres -1.5",
+      "market": "run line",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "04:10 PM ET",
+      "vs": "San Francisco Giants",
+      "team": "San Diego Padres",
+      "opp": "San Francisco Giants",
+      "analysis": "57-54 overall, 31-25 at home \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes San Diego Padres 67% straight up | \ud83d\udcc8 **Market angle:** 57-54 overall, 31-25 at home \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes San Diego Padres 67% straig",
+      "homeTeam": "San Diego Padres",
+      "awayTeam": "San Francisco Giants"
+    },
+    {
+      "id": "minnesota-lynx--5.5-0802",
+      "date": "2026-08-02",
+      "sport": "wnba",
+      "desc": "Minnesota Lynx -5.5",
+      "market": "spread",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "free",
+      "time_et": "01:00 PM ET",
+      "vs": "Indiana Fever",
+      "team": "Minnesota Lynx",
+      "opp": "Indiana Fever",
+      "analysis": "24-6 overall, 11-4 at home \u2014 ML juiced to -218, so the -5.5 at the standard number is the bet; model makes Minnesota Lynx 70% straight up | \ud83d\udcb0 **Value hunt:** 24-6 overall, 11-4 at home \u2014 ML juiced to -218, so the -5.5 at the standard number is the bet; model makes Minnesota Lynx 70% straight up. The",
+      "homeTeam": "Minnesota Lynx",
+      "awayTeam": "Indiana Fever"
     }
   ]
 }
