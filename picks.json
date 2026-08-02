@@ -5946,10 +5946,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -155,
+        "away_ml": 128,
         "total": 8.0,
-        "ts": 1785662942
+        "ts": 1785671942
       }
     },
     {
@@ -6007,10 +6007,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 192,
-        "away_ml": -237,
+        "home_ml": 193,
+        "away_ml": -238,
         "total": 7.5,
-        "ts": 1785670142
+        "ts": 1785671942
       },
       "last_alert_odds": -239
     },
@@ -6031,10 +6031,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 192,
-        "away_ml": -237,
+        "home_ml": 193,
+        "away_ml": -238,
         "total": 7.5,
-        "ts": 1785670142
+        "ts": 1785671942
       },
       "last_alert_odds": -239
     },
@@ -6241,11 +6241,12 @@
       "homeTeam": "Baltimore Orioles",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 119,
-        "away_ml": -144,
+        "home_ml": 123,
+        "away_ml": -149,
         "total": 8.0,
-        "ts": 1785662942
-      }
+        "ts": 1785671942
+      },
+      "last_alert_odds": 123
     },
     {
       "id": "team-we-ml-0802",
