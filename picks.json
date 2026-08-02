@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T01:49:07Z",
+  "updated": "2026-08-02T02:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5488,7 +5488,10 @@
         "total": 8.0,
         "ts": 1785614342
       },
-      "last_alert_odds": 127
+      "last_alert_odds": 127,
+      "result": "LOSS",
+      "score": "Philadelphia Phillies 5, Baltimore Orioles 0",
+      "units_result": -1.0
     },
     {
       "id": "nongshim-red-force-ml-0801",
