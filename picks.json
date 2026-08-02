@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T20:29:06Z",
+  "updated": "2026-08-02T21:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6168,7 +6168,10 @@
         "total": 8.5,
         "ts": 1785691742
       },
-      "last_alert_odds": 112
+      "last_alert_odds": 112,
+      "result": "LOSS",
+      "score": "Pittsburgh Pirates 2, Cincinnati Reds 10",
+      "units_result": -1.0
     },
     {
       "id": "atlanta-braves-ml-0802",
