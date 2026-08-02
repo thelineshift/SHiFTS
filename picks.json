@@ -5889,10 +5889,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": 103,
-        "away_ml": -125,
+        "home_ml": 105,
+        "away_ml": -126,
         "total": 10.5,
-        "ts": 1785693541
+        "ts": 1785695342
       },
       "last_alert_odds": 102
     },
@@ -5947,10 +5947,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -130,
-        "away_ml": 108,
+        "home_ml": -127,
+        "away_ml": 105,
         "total": 8.0,
-        "ts": 1785693542
+        "ts": 1785695342
       },
       "last_alert_odds": -130
     },
@@ -6565,10 +6565,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -130,
-        "away_ml": 108,
+        "home_ml": -127,
+        "away_ml": 105,
         "total": 8.0,
-        "ts": 1785693542
+        "ts": 1785695342
       },
       "last_alert_odds": -130
     },
