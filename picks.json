@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T21:49:06Z",
+  "updated": "2026-08-02T22:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6147,7 +6147,10 @@
         "total": 186.5,
         "ts": 1785698942
       },
-      "last_alert_odds": -118
+      "last_alert_odds": -118,
+      "result": "LOSS",
+      "score": "Los Angeles Sparks 106, Portland Fire 101",
+      "units_result": -1.0
     },
     {
       "id": "pittsburgh-pirates-ml-0802",
@@ -6262,7 +6265,10 @@
         "total": 8.0,
         "ts": 1785688142
       },
-      "last_alert_odds": 123
+      "last_alert_odds": 123,
+      "result": "LOSS",
+      "score": "Philadelphia Phillies 8, Baltimore Orioles 0",
+      "units_result": -1.0
     },
     {
       "id": "team-we-ml-0802",
@@ -6384,7 +6390,10 @@
         "total": 8.0,
         "ts": 1785691742
       },
-      "last_alert_odds": 152
+      "last_alert_odds": 152,
+      "result": "LOSS",
+      "score": "Arizona Diamondbacks 0, Cleveland Guardians 5",
+      "units_result": -1.0
     },
     {
       "id": "top-esports-ml-0802",
