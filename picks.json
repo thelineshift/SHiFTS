@@ -5946,10 +5946,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 124,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 8.0,
-        "ts": 1785650342
+        "ts": 1785662942
       }
     },
     {
@@ -6241,10 +6241,10 @@
       "homeTeam": "Baltimore Orioles",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 118,
-        "away_ml": -142,
+        "home_ml": 119,
+        "away_ml": -144,
         "total": 8.0,
-        "ts": 1785655742
+        "ts": 1785662942
       }
     },
     {
