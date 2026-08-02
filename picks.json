@@ -5889,10 +5889,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": 102,
-        "away_ml": -122,
+        "home_ml": 103,
+        "away_ml": -125,
         "total": 10.5,
-        "ts": 1785691742
+        "ts": 1785693541
       },
       "last_alert_odds": 102
     },
@@ -5947,12 +5947,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
+        "home_ml": -130,
+        "away_ml": 108,
         "total": 8.0,
-        "ts": 1785691742
+        "ts": 1785693542
       },
-      "last_alert_odds": -156
+      "last_alert_odds": -130
     },
     {
       "id": "3-leg-parlay-0802-whale",
@@ -6136,10 +6136,10 @@
       "homeTeam": "Portland Fire",
       "awayTeam": "Los Angeles Sparks",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": 100,
+        "home_ml": -112,
+        "away_ml": -108,
         "total": 185.5,
-        "ts": 1785691742
+        "ts": 1785693542
       },
       "last_alert_odds": -118
     },
@@ -6565,12 +6565,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
+        "home_ml": -130,
+        "away_ml": 108,
         "total": 8.0,
-        "ts": 1785691743
+        "ts": 1785693542
       },
-      "last_alert_odds": -155
+      "last_alert_odds": -130
     },
     {
       "id": "minnesota-lynx--5.5-0802",
