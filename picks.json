@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T04:00:49Z",
+  "updated": "2026-08-02T04:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5322,7 +5322,10 @@
         "total": 8.5,
         "ts": 1785625142
       },
-      "last_alert_odds": -156
+      "last_alert_odds": -156,
+      "result": "LOSS",
+      "score": "San Francisco Giants 5, San Diego Padres 6",
+      "units_result": -1.0
     },
     {
       "id": "3-leg-parlay-0801-sharp",
@@ -5387,7 +5390,10 @@
         "total": 8.5,
         "ts": 1785625142
       },
-      "last_alert_odds": -156
+      "last_alert_odds": -156,
+      "result": "WIN",
+      "score": "San Francisco Giants 5, San Diego Padres 6",
+      "units_result": 0.64
     },
     {
       "id": "new-york-liberty-ml-0801",
