@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T21:29:06Z",
+  "updated": "2026-08-02T21:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6065,7 +6065,10 @@
         "total": 11.5,
         "ts": 1785688142
       },
-      "last_alert_odds": -131
+      "last_alert_odds": -131,
+      "result": "WIN",
+      "score": "Kansas City Royals 1, Colorado Rockies 8",
+      "units_result": 0.9
     },
     {
       "id": "utah-royals-ml-0802",
