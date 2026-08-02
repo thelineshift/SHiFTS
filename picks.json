@@ -5531,9 +5531,9 @@
       "homeTeam": "LA Galaxy",
       "live_odds": {
         "home_ml": 135,
-        "away_ml": 165,
+        "away_ml": 160,
         "total": 3.5,
-        "ts": 1785617942
+        "ts": 1785637742
       },
       "last_alert_odds": 170
     },
