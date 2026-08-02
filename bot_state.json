@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "atlanta-braves-ml-0802",
+      "desc": "Atlanta Braves ML",
+      "odds": -126,
+      "result": "WIN",
+      "units": 0.79,
+      "score": "Washington Nationals 2, Atlanta Braves 4",
+      "tier": "lock"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
