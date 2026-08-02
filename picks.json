@@ -6057,8 +6057,8 @@
       "live_odds": {
         "home_ml": -114,
         "away_ml": -106,
-        "total": 12.5,
-        "ts": 1785646743
+        "total": 12.0,
+        "ts": 1785648542
       }
     },
     {
@@ -6241,10 +6241,10 @@
       "homeTeam": "Baltimore Orioles",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 112,
-        "away_ml": -135,
+        "home_ml": 114,
+        "away_ml": -137,
         "total": 8.0,
-        "ts": 1785646743
+        "ts": 1785648543
       }
     },
     {
@@ -6355,10 +6355,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 8.0,
-        "ts": 1785646743
+        "ts": 1785648543
       }
     }
   ]
