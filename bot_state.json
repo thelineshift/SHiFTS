@@ -316,7 +316,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 23,
+  "op_calls": 25,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1210,40 +1210,28 @@
       "meta_ts": 1785542416.2256446,
       "lines": [
         [
-          "Shinden",
-          "Mibr",
-          1.02,
-          10.03
-        ],
-        [
-          "Fluxo",
-          "Bestia",
-          1.99,
-          1.787
-        ],
-        [
           "NRG Esports",
-          "Team Voca",
-          1.326,
-          3.13
+          "Sportsbetexpert",
+          1.241,
+          3.67
         ],
         [
-          "Marsborne",
-          "Sportsbetexpert",
-          1.68,
-          2.14
+          "Bestia",
+          "Shinden",
+          2.45,
+          1.523
         ],
         [
           "Team Spirit",
           "MOUZ",
-          1.228,
-          4.3
+          1.263,
+          3.92
         ],
         [
           "Pcific eSpor",
           "Fire Flux eSports",
-          2.18,
-          1.628
+          2.12,
+          1.671
         ],
         [
           "Keyd Stars",
@@ -1255,7 +1243,7 @@
           "Gremio",
           "Pain Academy",
           1.98,
-          1.769
+          1.645
         ],
         [
           "Yawara eSports",
@@ -1268,13 +1256,25 @@
           "Meia Noite",
           1.293,
           3.2
+        ],
+        [
+          "New Vision",
+          "Inner Circle Academy",
+          1.709,
+          2.1
+        ],
+        [
+          "Sinners",
+          "Sparta eSports",
+          1.454,
+          2.63
         ]
       ],
-      "odds_ts": 1785628818.7403362
+      "odds_ts": 1785657611.9170737
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1785628822.4611397,
+      "odds_ts": 1785657615.4713147,
       "active": [
         901974,
         902246,
@@ -30337,6 +30337,6 @@
   "deepdive_last": "2026-08-01",
   "dep_checked_ts": 1785650691.7985454,
   "x_bio_v": 2,
-  "op_cool_until": 1785644115.740971,
+  "op_cool_until": 1785658511.9170737,
   "x_ads": []
 }
