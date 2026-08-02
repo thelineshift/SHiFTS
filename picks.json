@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T04:49:08Z",
+  "updated": "2026-08-02T05:09:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5444,7 +5444,10 @@
         "total": 10.5,
         "ts": 1785634142
       },
-      "last_alert_odds": 153
+      "last_alert_odds": 153,
+      "result": "LOSS",
+      "score": "Detroit Tigers 8, Athletics 6",
+      "units_result": -1.0
     },
     {
       "id": "3-leg-parlay-0801-lock",
