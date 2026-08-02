@@ -5947,11 +5947,12 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -155,
-        "away_ml": 128,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 8.0,
-        "ts": 1785671942
-      }
+        "ts": 1785679142
+      },
+      "last_alert_odds": -156
     },
     {
       "id": "3-leg-parlay-0802-whale",
@@ -6135,10 +6136,10 @@
       "homeTeam": "Portland Fire",
       "awayTeam": "Los Angeles Sparks",
       "live_odds": {
-        "home_ml": -122,
-        "away_ml": 102,
+        "home_ml": -118,
+        "away_ml": -102,
         "total": 185.5,
-        "ts": 1785677342
+        "ts": 1785679142
       },
       "last_alert_odds": -118
     },
@@ -6184,8 +6185,8 @@
       "live_odds": {
         "home_ml": -122,
         "away_ml": 102,
-        "total": 9.0,
-        "ts": 1785673742
+        "total": 8.5,
+        "ts": 1785679142
       }
     },
     {
@@ -6361,10 +6362,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -158,
-        "away_ml": 131,
+        "home_ml": -175,
+        "away_ml": 144,
         "total": 8.0,
-        "ts": 1785675542
+        "ts": 1785679142
       },
       "last_alert_odds": 133
     },
@@ -6559,10 +6560,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -155,
-        "away_ml": 128,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 8.0,
-        "ts": 1785673742
+        "ts": 1785679142
       },
       "last_alert_odds": -155
     },
@@ -6585,8 +6586,8 @@
       "live_odds": {
         "home_ml": -205,
         "away_ml": 170,
-        "total": 193.5,
-        "ts": 1785675542
+        "total": 191.5,
+        "ts": 1785679142
       },
       "last_alert_odds": -205
     }
