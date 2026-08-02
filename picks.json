@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T20:09:06Z",
+  "updated": "2026-08-02T20:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5853,7 +5853,10 @@
         "total": 7.5,
         "ts": 1785684542
       },
-      "last_alert_odds": -150
+      "last_alert_odds": -150,
+      "result": "LOSS",
+      "score": "Chicago White Sox 9, Tampa Bay Rays 1",
+      "units_result": -1.5
     },
     {
       "id": "fc-dallas-ml-0802",
@@ -6436,7 +6439,10 @@
         "total": 7.5,
         "ts": 1785684542
       },
-      "last_alert_odds": -156
+      "last_alert_odds": -156,
+      "result": "LOSS",
+      "score": "Chicago White Sox 9, Tampa Bay Rays 1",
+      "units_result": -1.0
     },
     {
       "id": "2-leg-parlay-0802-whale",
