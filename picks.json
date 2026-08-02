@@ -5534,11 +5534,17 @@
       "homeTeam": "LA Galaxy",
       "live_odds": {
         "home_ml": 135,
-        "away_ml": 165,
+        "away_ml": 160,
         "total": 3.5,
-        "ts": 1785617942
+        "ts": 1785639542
       },
-      "last_alert_odds": 170
+      "last_alert_odds": 170,
+      "closing_odds": {
+        "home_ml": 135,
+        "away_ml": 160,
+        "total": 3.5,
+        "ts": 1785639542
+      }
     },
     {
       "id": "milwaukee-brewers-ml-0801",
