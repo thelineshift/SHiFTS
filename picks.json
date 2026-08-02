@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T19:09:08Z",
+  "updated": "2026-08-02T19:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6614,7 +6614,10 @@
       "opp": "Movistar KOI",
       "analysis": "2-3 last 5 (beat Team Heretics, Shifters) (lost to Team Vitality) vs 1-4 \u2014 live Pinnacle line +177 (our 73% vs book 34%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Team Heretics, Shifters) (lost to Team Vitality) vs 1-4 \u2014 live Pinnacle line +177 (our 73% vs book 34%). That's a **38-point** gap over Movistar",
       "awayTeam": "Fnatic",
-      "homeTeam": "Movistar KOI"
+      "homeTeam": "Movistar KOI",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Fnatic 1-2 Movistar KOI \u00b7 final"
     },
     {
       "id": "boston-red-sox-ml-0802",
