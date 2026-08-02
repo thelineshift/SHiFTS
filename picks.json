@@ -6133,12 +6133,12 @@
       "homeTeam": "Portland Fire",
       "awayTeam": "Los Angeles Sparks",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -120,
+        "home_ml": -105,
+        "away_ml": -115,
         "total": 186.5,
-        "ts": 1785650342
+        "ts": 1785652142
       },
-      "last_alert_odds": 100
+      "last_alert_odds": -105
     },
     {
       "id": "pittsburgh-pirates-ml-0802",
