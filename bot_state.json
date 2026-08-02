@@ -2560,6 +2560,20 @@
     "esp": [
       {
         "sport": "cs2",
+        "start": "2026-08-02T06:00:00Z",
+        "t1": {
+          "id": 137584,
+          "name": "Omega"
+        },
+        "t2": {
+          "id": 135981,
+          "name": "Donstu Esports"
+        },
+        "league": "BRO SUMMER CUP",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
         "start": "2026-08-02T08:00:00Z",
         "t1": {
           "id": 138660,
@@ -2574,14 +2588,28 @@
       },
       {
         "sport": "cs2",
-        "start": "2026-08-02T10:00:00Z",
+        "start": "2026-08-02T09:00:00Z",
         "t1": {
-          "id": 132426,
-          "name": "Lazer Cats"
+          "id": 135915,
+          "name": "DEPO"
         },
         "t2": {
+          "id": 138110,
+          "name": "THE UNIT"
+        },
+        "league": "BRO SUMMER CUP",
+        "bo": 3
+      },
+      {
+        "sport": "cs2",
+        "start": "2026-08-02T10:00:00Z",
+        "t1": {
           "id": 139044,
           "name": "ex-1win"
+        },
+        "t2": {
+          "id": 132426,
+          "name": "Lazer Cats"
         },
         "league": "Thunderpick World Championship",
         "bo": 3
@@ -2618,12 +2646,12 @@
         "sport": "cs2",
         "start": "2026-08-02T10:00:00Z",
         "t1": {
-          "id": 127014,
-          "name": "Sinners"
+          "id": 131010,
+          "name": "Sashi Esport"
         },
         "t2": {
-          "id": 136659,
-          "name": "SPARTA"
+          "id": 138963,
+          "name": "Black Phoenix"
         },
         "league": "CCT Europe",
         "bo": 3
@@ -3078,20 +3106,6 @@
       },
       {
         "sport": "dota2",
-        "start": "2026-08-02T05:00:00Z",
-        "t1": {
-          "id": 137885,
-          "name": "PlayTime"
-        },
-        "t2": {
-          "id": 1660,
-          "name": "Execration"
-        },
-        "league": "Games of the Future",
-        "bo": 3
-      },
-      {
-        "sport": "dota2",
         "start": "2026-08-02T08:00:00Z",
         "t1": {
           "id": 1931,
@@ -3215,6 +3229,20 @@
         },
         "league": "1win Essence",
         "bo": 2
+      },
+      {
+        "sport": "dota2",
+        "start": "2026-08-02T05:16:09Z",
+        "t1": {
+          "id": 137885,
+          "name": "PlayTime"
+        },
+        "t2": {
+          "id": 1660,
+          "name": "Execration"
+        },
+        "league": "Games of the Future",
+        "bo": 3
       },
       {
         "sport": "valorant",
@@ -3492,20 +3520,6 @@
         "t2": {
           "id": 133128,
           "name": "FOKUS Sakura"
-        },
-        "league": "VCT",
-        "bo": 3
-      },
-      {
-        "sport": "valorant",
-        "start": "2026-08-02T00:59:41Z",
-        "t1": {
-          "id": 128990,
-          "name": "Leviat\u00e1n Esports"
-        },
-        "t2": {
-          "id": 128471,
-          "name": "NRG"
         },
         "league": "VCT",
         "bo": 3
@@ -3917,7 +3931,7 @@
         "bo": 5
       }
     ],
-    "esp_ts": 1785636242.2663324,
+    "esp_ts": 1785650642.217403,
     "form": {
       "dota2:135854": {
         "ts": 1785513877.1953337,
@@ -29952,7 +29966,7 @@
     "pnl": -126.67,
     "trades": 485,
     "last_recap": "2026-08-01",
-    "last_recap_hour": "2026-08-02-04",
+    "last_recap_hour": "2026-08-02-06",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
     "account": 3.13,
@@ -30319,7 +30333,7 @@
     "used": 0
   },
   "deepdive_last": "2026-08-01",
-  "dep_checked_ts": 1785643480.7209501,
+  "dep_checked_ts": 1785650691.7985454,
   "x_bio_v": 2,
   "op_cool_until": 1785644115.740971,
   "x_ads": []
