@@ -5848,10 +5848,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 7.5,
-        "ts": 1785680941
+        "ts": 1785682742
       },
       "last_alert_odds": -162
     },
@@ -6160,10 +6160,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 8.5,
-        "ts": 1785680942
+        "ts": 1785682742
       }
     },
     {
@@ -6244,10 +6244,10 @@
       "homeTeam": "Baltimore Orioles",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 114,
-        "away_ml": -137,
-        "total": 7.5,
-        "ts": 1785677342
+        "home_ml": 113,
+        "away_ml": -136,
+        "total": 8.0,
+        "ts": 1785682742
       },
       "last_alert_odds": 123
     },
@@ -6426,10 +6426,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 7.5,
-        "ts": 1785680942
+        "ts": 1785682742
       },
       "last_alert_odds": -156
     },
@@ -6589,8 +6589,8 @@
       "live_odds": {
         "home_ml": -205,
         "away_ml": 170,
-        "total": 192.5,
-        "ts": 1785680942
+        "total": 191.5,
+        "ts": 1785682742
       },
       "last_alert_odds": -205
     }
