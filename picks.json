@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T14:49:06Z",
+  "updated": "2026-08-02T16:00:38Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6593,6 +6593,40 @@
         "ts": 1785682742
       },
       "last_alert_odds": -205
+    },
+    {
+      "id": "fnatic-ml-0802",
+      "date": "2026-08-02",
+      "sport": "lol",
+      "desc": "Fnatic ML",
+      "market": "LEC Bo3",
+      "odds": 177,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "01:15 PM ET",
+      "vs": "Movistar KOI",
+      "team": "Fnatic",
+      "opp": "Movistar KOI",
+      "analysis": "2-3 last 5 (beat Team Heretics, Shifters) (lost to Team Vitality) vs 1-4 \u2014 live Pinnacle line +177 (our 73% vs book 34%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Team Heretics, Shifters) (lost to Team Vitality) vs 1-4 \u2014 live Pinnacle line +177 (our 73% vs book 34%). That's a **38-point** gap over Movistar",
+      "awayTeam": "Fnatic",
+      "homeTeam": "Movistar KOI"
+    },
+    {
+      "id": "boston-red-sox-ml-0802",
+      "date": "2026-08-02",
+      "sport": "mlb",
+      "desc": "Boston Red Sox ML",
+      "market": "ML",
+      "odds": 152,
+      "units": 1.0,
+      "tier": "free",
+      "time_et": "07:20 PM ET",
+      "vs": "Los Angeles Dodgers",
+      "team": "Boston Red Sox",
+      "opp": "Los Angeles Dodgers",
+      "analysis": "59-51 overall, 34-22 on the road \u2014 our 43% vs book 38% (no-vig) | \ud83d\udcc8 **Market angle:** 59-51 overall, 34-22 on the road \u2014 our 43% vs book 38% (no-vig). The number's off by **5 points** \u2014 this is where CLV hunters eat.",
+      "awayTeam": "Boston Red Sox",
+      "homeTeam": "Los Angeles Dodgers"
     }
   ]
 }
