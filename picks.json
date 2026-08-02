@@ -6410,7 +6410,14 @@
       "opp": "Chicago White Sox",
       "analysis": "65-45 overall, 41-17 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 70% straight up | \u2694\ufe0f **Matchup read:** 65-45 overall, 41-17 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 70% straight ",
       "homeTeam": "Tampa Bay Rays",
-      "awayTeam": "Chicago White Sox"
+      "awayTeam": "Chicago White Sox",
+      "live_odds": {
+        "home_ml": -156,
+        "away_ml": 129,
+        "total": 7.5,
+        "ts": 1785659342
+      },
+      "last_alert_odds": -156
     },
     {
       "id": "2-leg-parlay-0802-whale",
