@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "new-vision-ml-0802",
+      "desc": "NEW VISION ML",
+      "odds": -141,
+      "result": "WIN",
+      "units": 1.06,
+      "score": "NEW VISION 2-0 Inner Circle Academy \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
