@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T08:00:51Z",
+  "updated": "2026-08-02T09:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6262,7 +6262,10 @@
       "opp": "ThunderTalk Gaming",
       "analysis": "3-2 last 5 (beat EDward Gaming, LGD Gaming, JD Gaming) (lost to Bilibili Gaming) vs 1-4 \u2014 live Pinnacle line -246 (our 86% vs book 67%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat EDward Gaming, LGD Gaming, JD Gaming) (lost to Bilibili Gaming) vs 1-4 \u2014 live Pinnacle line -246 (our 86% vs book 67%). That's a ",
       "awayTeam": "Team WE",
-      "homeTeam": "ThunderTalk Gaming"
+      "homeTeam": "ThunderTalk Gaming",
+      "result": "WIN",
+      "units_result": 0.61,
+      "score": "Team WE 2-1 ThunderTalk Gaming \u00b7 final"
     },
     {
       "id": "over-8.0-0802",
