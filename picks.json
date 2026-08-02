@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T00:00:51Z",
+  "updated": "2026-08-02T01:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5069,7 +5069,10 @@
         "away_ml": 135,
         "total": 2.5,
         "ts": 1785628742
-      }
+      },
+      "result": "LOSS",
+      "score": "Nashville SC 2, D.C. United 2",
+      "units_result": -1.5
     },
     {
       "id": "mibr-ml-0801",
