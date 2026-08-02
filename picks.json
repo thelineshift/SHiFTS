@@ -6133,10 +6133,10 @@
       "homeTeam": "Portland Fire",
       "awayTeam": "Los Angeles Sparks",
       "live_odds": {
-        "home_ml": -108,
-        "away_ml": -112,
+        "home_ml": -112,
+        "away_ml": -108,
         "total": 186.5,
-        "ts": 1785655742
+        "ts": 1785661142
       },
       "last_alert_odds": -105
     },
@@ -6157,10 +6157,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 8.5,
-        "ts": 1785646743
+        "ts": 1785661142
       }
     },
     {
@@ -6355,10 +6355,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 8.0,
-        "ts": 1785648543
+        "ts": 1785661142
       }
     },
     {
