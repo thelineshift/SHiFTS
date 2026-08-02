@@ -6057,10 +6057,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -127,
+        "away_ml": 106,
         "total": 11.5,
-        "ts": 1785677342
+        "ts": 1785688142
       },
       "last_alert_odds": -131
     },
@@ -6136,10 +6136,10 @@
       "homeTeam": "Portland Fire",
       "awayTeam": "Los Angeles Sparks",
       "live_odds": {
-        "home_ml": -120,
-        "away_ml": 100,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 185.5,
-        "ts": 1785686342
+        "ts": 1785688142
       },
       "last_alert_odds": -118
     },
@@ -6160,10 +6160,10 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -137,
-        "away_ml": 114,
+        "home_ml": -145,
+        "away_ml": 120,
         "total": 8.5,
-        "ts": 1785682742
+        "ts": 1785688142
       }
     },
     {
@@ -6244,10 +6244,10 @@
       "homeTeam": "Baltimore Orioles",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 113,
-        "away_ml": -136,
+        "home_ml": 124,
+        "away_ml": -150,
         "total": 8.0,
-        "ts": 1785682742
+        "ts": 1785688142
       },
       "last_alert_odds": 123
     },
@@ -6322,11 +6322,12 @@
       "homeTeam": "Chicago Cubs",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 101,
-        "away_ml": -121,
+        "home_ml": -101,
+        "away_ml": -120,
         "total": 6.5,
-        "ts": 1785686342
-      }
+        "ts": 1785688142
+      },
+      "last_alert_odds": -101
     },
     {
       "id": "san-diego-wave-fc-ml-0802",
@@ -6587,12 +6588,12 @@
       "homeTeam": "Minnesota Lynx",
       "awayTeam": "Indiana Fever",
       "live_odds": {
-        "home_ml": -205,
-        "away_ml": 170,
+        "home_ml": -218,
+        "away_ml": 180,
         "total": 191.5,
-        "ts": 1785682742
+        "ts": 1785688142
       },
-      "last_alert_odds": -205
+      "last_alert_odds": -218
     },
     {
       "id": "fnatic-ml-0802",
@@ -6626,7 +6627,13 @@
       "opp": "Los Angeles Dodgers",
       "analysis": "59-51 overall, 34-22 on the road \u2014 our 43% vs book 38% (no-vig) | \ud83d\udcc8 **Market angle:** 59-51 overall, 34-22 on the road \u2014 our 43% vs book 38% (no-vig). The number's off by **5 points** \u2014 this is where CLV hunters eat.",
       "awayTeam": "Boston Red Sox",
-      "homeTeam": "Los Angeles Dodgers"
+      "homeTeam": "Los Angeles Dodgers",
+      "live_odds": {
+        "home_ml": -185,
+        "away_ml": 152,
+        "total": 8.5,
+        "ts": 1785688142
+      }
     }
   ]
 }
