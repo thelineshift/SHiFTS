@@ -5098,11 +5098,15 @@
         }
       },
       "lol:128345": {
-        "ts": 1785477554.0751767,
+        "ts": 1785657863.2581775,
         "f": {
           "w": 1,
           "l": 4,
           "res": [
+            {
+              "won": false,
+              "opp": "Kiwoom DRX Challengers"
+            },
             {
               "won": true,
               "opp": "Hanwha Life Esports Challengers"
@@ -5118,10 +5122,6 @@
             {
               "won": false,
               "opp": "T1 Academy"
-            },
-            {
-              "won": false,
-              "opp": "BNK FearX Youth"
             }
           ]
         }
@@ -5285,11 +5285,19 @@
         }
       },
       "lol:2882": {
-        "ts": 1785484770.128145,
+        "ts": 1785657861.9845622,
         "f": {
           "w": 2,
           "l": 3,
           "res": [
+            {
+              "won": false,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": false,
+              "opp": "T1"
+            },
             {
               "won": true,
               "opp": "KT Rolster"
@@ -5301,14 +5309,6 @@
             {
               "won": false,
               "opp": "HANJIN BRION"
-            },
-            {
-              "won": false,
-              "opp": "T1"
-            },
-            {
-              "won": false,
-              "opp": "Hanwha Life Esports"
             }
           ]
         }
@@ -6233,6 +6233,64 @@
             {
               "won": true,
               "opp": "XLG Gaming"
+            }
+          ]
+        }
+      },
+      "lol:2883": {
+        "ts": 1785657862.5789099,
+        "f": {
+          "w": 3,
+          "l": 2,
+          "res": [
+            {
+              "won": false,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": true,
+              "opp": "Kiwoom DRX"
+            },
+            {
+              "won": true,
+              "opp": "Dplus KIA"
+            },
+            {
+              "won": false,
+              "opp": "DN SOOPers"
+            },
+            {
+              "won": true,
+              "opp": "Nongshim Red Force"
+            }
+          ]
+        }
+      },
+      "lol:134155": {
+        "ts": 1785657863.840421,
+        "f": {
+          "w": 2,
+          "l": 3,
+          "res": [
+            {
+              "won": true,
+              "opp": "Hanwha Life Esports Challengers"
+            },
+            {
+              "won": true,
+              "opp": "Gen.G Global Academy"
+            },
+            {
+              "won": false,
+              "opp": "Kiwoom DRX Challengers"
+            },
+            {
+              "won": false,
+              "opp": "T1 Academy"
+            },
+            {
+              "won": false,
+              "opp": "KT Rolster Challengers"
             }
           ]
         }
@@ -17143,6 +17201,38 @@
         "m0": 0.5,
         "bo": 3,
         "ts": 1785636242.2663324,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-gen-hle-2026-08-03|geng": {
+        "p0": 0.44,
+        "m0": 0.4336283185840708,
+        "bo": 3,
+        "ts": 1785657842.0970209,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-gen-hle-2026-08-03|hanwhalifeesports": {
+        "p0": 0.57,
+        "m0": 0.5663716814159292,
+        "bo": 3,
+        "ts": 1785657842.0970209,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-hbc-foxy-2026-08-03|hanjinbrionchallengers": {
+        "p0": 0.32,
+        "m0": 0.4324324324324325,
+        "bo": 3,
+        "ts": 1785657842.0970209,
+        "ten": false,
+        "esp": true
+      },
+      "aec-lol-hbc-foxy-2026-08-03|bnkfearxyouth": {
+        "p0": 0.69,
+        "m0": 0.5675675675675675,
+        "bo": 3,
+        "ts": 1785657842.0970209,
         "ten": false,
         "esp": true
       }
@@ -29969,7 +30059,7 @@
     "pnl": -126.67,
     "trades": 485,
     "last_recap": "2026-08-01",
-    "last_recap_hour": "2026-08-02-06",
+    "last_recap_hour": "2026-08-02-08",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
     "account": 3.13,
@@ -30336,7 +30426,7 @@
     "used": 0
   },
   "deepdive_last": "2026-08-01",
-  "dep_checked_ts": 1785650691.7985454,
+  "dep_checked_ts": 1785657880.950485,
   "x_bio_v": 2,
   "op_cool_until": 1785658511.9170737,
   "x_ads": []
