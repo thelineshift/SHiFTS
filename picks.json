@@ -6009,10 +6009,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 193,
-        "away_ml": -238,
+        "home_ml": 188,
+        "away_ml": -232,
         "total": 7.5,
-        "ts": 1785684542
+        "ts": 1785686342
       },
       "last_alert_odds": -239
     },
@@ -6033,10 +6033,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 193,
-        "away_ml": -238,
+        "home_ml": 188,
+        "away_ml": -232,
         "total": 7.5,
-        "ts": 1785684542
+        "ts": 1785686342
       },
       "last_alert_odds": -239
     },
@@ -6136,10 +6136,10 @@
       "homeTeam": "Portland Fire",
       "awayTeam": "Los Angeles Sparks",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -105,
-        "total": 186.5,
-        "ts": 1785684542
+        "home_ml": -120,
+        "away_ml": 100,
+        "total": 185.5,
+        "ts": 1785686342
       },
       "last_alert_odds": -118
     },
@@ -6322,10 +6322,10 @@
       "homeTeam": "Chicago Cubs",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 105,
-        "away_ml": -127,
+        "home_ml": 101,
+        "away_ml": -121,
         "total": 6.5,
-        "ts": 1785675542
+        "ts": 1785686342
       }
     },
     {
