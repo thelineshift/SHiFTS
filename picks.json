@@ -5419,9 +5419,9 @@
       "awayTeam": "Detroit Tigers",
       "live_odds": {
         "home_ml": 153,
-        "away_ml": -186,
+        "away_ml": -187,
         "total": 10.5,
-        "ts": 1785625142
+        "ts": 1785634142
       },
       "last_alert_odds": 153
     },
