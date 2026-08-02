@@ -6008,10 +6008,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 193,
-        "away_ml": -238,
+        "home_ml": 188,
+        "away_ml": -232,
         "total": 7.5,
-        "ts": 1785671942
+        "ts": 1785675542
       },
       "last_alert_odds": -239
     },
@@ -6032,10 +6032,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 193,
-        "away_ml": -238,
+        "home_ml": 188,
+        "away_ml": -232,
         "total": 7.5,
-        "ts": 1785671942
+        "ts": 1785675542
       },
       "last_alert_odds": -239
     },
@@ -6136,8 +6136,8 @@
       "live_odds": {
         "home_ml": -118,
         "away_ml": -102,
-        "total": 185.5,
-        "ts": 1785670142
+        "total": 186.5,
+        "ts": 1785675542
       },
       "last_alert_odds": -118
     },
@@ -6242,10 +6242,10 @@
       "homeTeam": "Baltimore Orioles",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 119,
-        "away_ml": -144,
+        "home_ml": 114,
+        "away_ml": -137,
         "total": 8.0,
-        "ts": 1785673742
+        "ts": 1785675542
       },
       "last_alert_odds": 123
     },
@@ -6320,10 +6320,10 @@
       "homeTeam": "Chicago Cubs",
       "awayTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": 108,
-        "away_ml": -130,
+        "home_ml": 105,
+        "away_ml": -127,
         "total": 6.5,
-        "ts": 1785646743
+        "ts": 1785675542
       }
     },
     {
@@ -6360,10 +6360,10 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -161,
-        "away_ml": 133,
+        "home_ml": -158,
+        "away_ml": 131,
         "total": 8.0,
-        "ts": 1785673742
+        "ts": 1785675542
       },
       "last_alert_odds": 133
     },
@@ -6576,12 +6576,12 @@
       "homeTeam": "Minnesota Lynx",
       "awayTeam": "Indiana Fever",
       "live_odds": {
-        "home_ml": -218,
-        "away_ml": 180,
+        "home_ml": -205,
+        "away_ml": 170,
         "total": 193.5,
-        "ts": 1785673743
+        "ts": 1785675542
       },
-      "last_alert_odds": -218
+      "last_alert_odds": -205
     }
   ]
 }
