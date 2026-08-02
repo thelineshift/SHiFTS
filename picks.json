@@ -6663,10 +6663,10 @@
       "awayTeam": "Boston Red Sox",
       "homeTeam": "Los Angeles Dodgers",
       "live_odds": {
-        "home_ml": -185,
-        "away_ml": 152,
+        "home_ml": -181,
+        "away_ml": 149,
         "total": 8.5,
-        "ts": 1785709742
+        "ts": 1785711542
       }
     },
     {
