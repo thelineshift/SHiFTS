@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T13:09:08Z",
+  "updated": "2026-08-02T13:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6383,7 +6383,10 @@
       "opp": "JD Gaming",
       "analysis": "3-2 last 5 (beat LGD Gaming, ThunderTalk Gaming, Team WE) (lost to Anyone's Legend) vs 1-4 \u2014 live Pinnacle line -135 (our 86% vs book 55%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat LGD Gaming, ThunderTalk Gaming, Team WE) (lost to Anyone's Legend) vs 1-4 \u2014 live Pinnacle line -135 (our 86% vs book 55%)",
       "awayTeam": "Top Esports",
-      "homeTeam": "JD Gaming"
+      "homeTeam": "JD Gaming",
+      "result": "WIN",
+      "units_result": 1.11,
+      "score": "Top Esports 2-0 JD Gaming \u00b7 final"
     },
     {
       "id": "new-vision-ml-0802",
