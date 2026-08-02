@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T13:49:07Z",
+  "updated": "2026-08-02T14:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6541,7 +6541,10 @@
       "opp": "Young TigeRES",
       "analysis": "4-1 last 5 (beat mellren, sleepers, GameSport) (lost to aimclub) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat mellren, sleepers, GameSport) (lost to aimclub) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Young TigeRES the number hasn't priced.",
       "awayTeam": "Spirit Academy",
-      "homeTeam": "Young TigeRES"
+      "homeTeam": "Young TigeRES",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Spirit Academy 1-3 MOUZ \u00b7 final"
     },
     {
       "id": "san-diego-padres--1.5-0802",
