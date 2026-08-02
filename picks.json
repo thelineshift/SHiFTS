@@ -5848,10 +5848,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 7.5,
-        "ts": 1785673741
+        "ts": 1785677341
       },
       "last_alert_odds": -162
     },
@@ -5889,10 +5889,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -102,
-        "away_ml": -118,
+        "home_ml": -104,
+        "away_ml": -115,
         "total": 11.0,
-        "ts": 1785657541
+        "ts": 1785677341
       },
       "last_alert_odds": -105
     },
@@ -6056,11 +6056,12 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -118,
-        "away_ml": -102,
-        "total": 12.0,
-        "ts": 1785673742
-      }
+        "home_ml": -131,
+        "away_ml": 109,
+        "total": 11.5,
+        "ts": 1785677342
+      },
+      "last_alert_odds": -131
     },
     {
       "id": "utah-royals-ml-0802",
@@ -6134,10 +6135,10 @@
       "homeTeam": "Portland Fire",
       "awayTeam": "Los Angeles Sparks",
       "live_odds": {
-        "home_ml": -118,
-        "away_ml": -102,
-        "total": 186.5,
-        "ts": 1785675542
+        "home_ml": -122,
+        "away_ml": 102,
+        "total": 185.5,
+        "ts": 1785677342
       },
       "last_alert_odds": -118
     },
@@ -6244,8 +6245,8 @@
       "live_odds": {
         "home_ml": 114,
         "away_ml": -137,
-        "total": 8.0,
-        "ts": 1785675542
+        "total": 7.5,
+        "ts": 1785677342
       },
       "last_alert_odds": 123
     },
@@ -6421,10 +6422,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -162,
-        "away_ml": 134,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 7.5,
-        "ts": 1785673742
+        "ts": 1785677342
       },
       "last_alert_odds": -156
     },
