@@ -5888,10 +5888,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -115,
+        "home_ml": -102,
+        "away_ml": -118,
         "total": 11.0,
-        "ts": 1785646742
+        "ts": 1785657541
       },
       "last_alert_odds": -105
     },
@@ -6007,10 +6007,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 194,
-        "away_ml": -239,
+        "home_ml": 195,
+        "away_ml": -240,
         "total": 7.5,
-        "ts": 1785646742
+        "ts": 1785657542
       },
       "last_alert_odds": -239
     },
@@ -6031,10 +6031,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 194,
-        "away_ml": -239,
+        "home_ml": 195,
+        "away_ml": -240,
         "total": 7.5,
-        "ts": 1785646742
+        "ts": 1785657542
       },
       "last_alert_odds": -239
     },
@@ -6055,10 +6055,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -114,
-        "away_ml": -106,
+        "home_ml": -117,
+        "away_ml": -103,
         "total": 12.0,
-        "ts": 1785648542
+        "ts": 1785657542
       }
     },
     {
