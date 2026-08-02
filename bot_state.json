@@ -324,7 +324,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 18,
+  "op_calls": 20,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1220,44 +1220,38 @@
         [
           "Shinden",
           "Mibr",
-          1.333,
-          3.1
+          1.02,
+          10.03
         ],
         [
           "Fluxo",
           "Bestia",
-          2.06,
-          1.735
+          1.99,
+          1.787
         ],
         [
           "NRG Esports",
           "Team Voca",
-          1.325,
-          3.14
+          1.326,
+          3.13
         ],
         [
           "Marsborne",
           "Sportsbetexpert",
-          1.862,
-          1.909
+          1.68,
+          2.14
         ],
         [
           "Team Spirit",
-          "Faze Clan",
-          3.67,
-          1.266
-        ],
-        [
-          "Astralis",
           "MOUZ",
-          2.53,
-          1.5
+          1.228,
+          4.3
         ],
         [
-          "Vitality Academy",
-          "Faze Up Next",
-          1.332,
-          3.01
+          "Pcific eSpor",
+          "Fire Flux eSports",
+          2.18,
+          1.628
         ],
         [
           "Keyd Stars",
@@ -1282,31 +1276,13 @@
           "Meia Noite",
           1.293,
           3.2
-        ],
-        [
-          "Rune Eaters eSports",
-          "Sparta eSports",
-          1.666,
-          2.15
-        ],
-        [
-          "Ex-Rustec",
-          "Sparta eSports",
-          1.892,
-          1.877
-        ],
-        [
-          "Just Players",
-          "Black Phoenix",
-          2.39,
-          1.549
         ]
       ],
-      "odds_ts": 1785600020.9910474
+      "odds_ts": 1785628818.7403362
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1785600024.5759404,
+      "odds_ts": 1785628822.4611397,
       "active": [
         901974,
         902246,
@@ -30486,6 +30462,6 @@
   "deepdive_last": "2026-08-01",
   "dep_checked_ts": 1785621881.4239144,
   "x_bio_v": 2,
-  "op_cool_until": 1785615320.0359058,
+  "op_cool_until": 1785629718.7403362,
   "x_ads": []
 }
