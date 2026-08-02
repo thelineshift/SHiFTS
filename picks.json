@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T22:09:06Z",
+  "updated": "2026-08-02T23:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6752,7 +6752,10 @@
       "opp": "Seattle Mariners",
       "analysis": "56-56 overall, 26-29 on the road \u2014 our 43% vs book 43% (no-vig) | \u2694\ufe0f **Matchup read:** 56-56 overall, 26-29 on the road \u2014 our 43% vs book 43% (no-vig). Minnesota Twins in the better spot and priced like it isn't \u2014 **0-point** edge.",
       "awayTeam": "Minnesota Twins",
-      "homeTeam": "Seattle Mariners"
+      "homeTeam": "Seattle Mariners",
+      "result": "LOSS",
+      "score": "Minnesota Twins 6, Seattle Mariners 7",
+      "units_result": -1.0
     }
   ]
 }
