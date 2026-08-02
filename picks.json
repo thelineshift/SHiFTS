@@ -5848,12 +5848,12 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 7.5,
-        "ts": 1785682742
+        "ts": 1785684542
       },
-      "last_alert_odds": -162
+      "last_alert_odds": -150
     },
     {
       "id": "fc-dallas-ml-0802",
@@ -5889,10 +5889,10 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -104,
-        "away_ml": -115,
+        "home_ml": -105,
+        "away_ml": -114,
         "total": 11.0,
-        "ts": 1785677341
+        "ts": 1785684542
       },
       "last_alert_odds": -105
     },
@@ -6009,10 +6009,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 188,
-        "away_ml": -232,
+        "home_ml": 193,
+        "away_ml": -238,
         "total": 7.5,
-        "ts": 1785675542
+        "ts": 1785684542
       },
       "last_alert_odds": -239
     },
@@ -6033,10 +6033,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 188,
-        "away_ml": -232,
+        "home_ml": 193,
+        "away_ml": -238,
         "total": 7.5,
-        "ts": 1785675542
+        "ts": 1785684542
       },
       "last_alert_odds": -239
     },
@@ -6138,8 +6138,8 @@
       "live_odds": {
         "home_ml": -115,
         "away_ml": -105,
-        "total": 185.5,
-        "ts": 1785680942
+        "total": 186.5,
+        "ts": 1785684542
       },
       "last_alert_odds": -118
     },
@@ -6184,9 +6184,9 @@
       "awayTeam": "Washington Nationals",
       "live_odds": {
         "home_ml": -122,
-        "away_ml": 102,
-        "total": 8.5,
-        "ts": 1785679142
+        "away_ml": 101,
+        "total": 9.0,
+        "ts": 1785684542
       }
     },
     {
@@ -6426,10 +6426,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 7.5,
-        "ts": 1785682742
+        "ts": 1785684542
       },
       "last_alert_odds": -156
     },
