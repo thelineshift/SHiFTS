@@ -5848,11 +5848,12 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -162,
+        "away_ml": 134,
         "total": 7.5,
-        "ts": 1785655741
-      }
+        "ts": 1785673741
+      },
+      "last_alert_odds": -162
     },
     {
       "id": "fc-dallas-ml-0802",
@@ -6055,10 +6056,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Kansas City Royals",
       "live_odds": {
-        "home_ml": -117,
-        "away_ml": -103,
+        "home_ml": -118,
+        "away_ml": -102,
         "total": 12.0,
-        "ts": 1785670142
+        "ts": 1785673742
       }
     },
     {
@@ -6180,10 +6181,10 @@
       "homeTeam": "Atlanta Braves",
       "awayTeam": "Washington Nationals",
       "live_odds": {
-        "home_ml": -126,
-        "away_ml": 104,
+        "home_ml": -122,
+        "away_ml": 102,
         "total": 9.0,
-        "ts": 1785646743
+        "ts": 1785673742
       }
     },
     {
@@ -6241,10 +6242,10 @@
       "homeTeam": "Baltimore Orioles",
       "awayTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": 123,
-        "away_ml": -149,
+        "home_ml": 119,
+        "away_ml": -144,
         "total": 8.0,
-        "ts": 1785671942
+        "ts": 1785673742
       },
       "last_alert_odds": 123
     },
@@ -6359,11 +6360,12 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -161,
+        "away_ml": 133,
         "total": 8.0,
-        "ts": 1785661142
-      }
+        "ts": 1785673742
+      },
+      "last_alert_odds": 133
     },
     {
       "id": "top-esports-ml-0802",
@@ -6416,10 +6418,10 @@
       "homeTeam": "Tampa Bay Rays",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -162,
+        "away_ml": 134,
         "total": 7.5,
-        "ts": 1785659342
+        "ts": 1785673742
       },
       "last_alert_odds": -156
     },
@@ -6548,7 +6550,14 @@
       "opp": "San Francisco Giants",
       "analysis": "57-54 overall, 31-25 at home \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes San Diego Padres 67% straight up | \ud83d\udcc8 **Market angle:** 57-54 overall, 31-25 at home \u2014 ML juiced to -155, so the -1.5 at the standard number is the bet; model makes San Diego Padres 67% straig",
       "homeTeam": "San Diego Padres",
-      "awayTeam": "San Francisco Giants"
+      "awayTeam": "San Francisco Giants",
+      "live_odds": {
+        "home_ml": -155,
+        "away_ml": 128,
+        "total": 8.0,
+        "ts": 1785673742
+      },
+      "last_alert_odds": -155
     },
     {
       "id": "minnesota-lynx--5.5-0802",
@@ -6565,7 +6574,14 @@
       "opp": "Indiana Fever",
       "analysis": "24-6 overall, 11-4 at home \u2014 ML juiced to -218, so the -5.5 at the standard number is the bet; model makes Minnesota Lynx 70% straight up | \ud83d\udcb0 **Value hunt:** 24-6 overall, 11-4 at home \u2014 ML juiced to -218, so the -5.5 at the standard number is the bet; model makes Minnesota Lynx 70% straight up. The",
       "homeTeam": "Minnesota Lynx",
-      "awayTeam": "Indiana Fever"
+      "awayTeam": "Indiana Fever",
+      "live_odds": {
+        "home_ml": -218,
+        "away_ml": 180,
+        "total": 193.5,
+        "ts": 1785673743
+      },
+      "last_alert_odds": -218
     }
   ]
 }
