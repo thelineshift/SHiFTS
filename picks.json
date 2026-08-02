@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T04:29:07Z",
+  "updated": "2026-08-02T04:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5562,7 +5562,10 @@
         "away_ml": 160,
         "total": 3.5,
         "ts": 1785639542
-      }
+      },
+      "result": "LOSS",
+      "score": "FC Dallas 0, LA Galaxy 0",
+      "units_result": -1.5
     },
     {
       "id": "milwaukee-brewers-ml-0801",
