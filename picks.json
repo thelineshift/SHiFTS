@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T19:49:07Z",
+  "updated": "2026-08-02T20:00:51Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6641,6 +6641,91 @@
         "total": 8.5,
         "ts": 1785689942
       }
+    },
+    {
+      "id": "over-10.0-0802",
+      "date": "2026-08-02",
+      "sport": "mlb",
+      "desc": "Over 10.0",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:05 PM ET",
+      "vs": "Detroit Tigers @ Athletics",
+      "team": "Athletics",
+      "opp": "Detroit Tigers",
+      "analysis": "posted 10.0 vs 29.6 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \u2694\ufe0f **Matchup read:** posted 10.0 vs 29.6 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. Over 10.0 in the better spot and price",
+      "awayTeam": "Athletics",
+      "homeTeam": "Detroit Tigers"
+    },
+    {
+      "id": "over-7.0-0802",
+      "date": "2026-08-02",
+      "sport": "mlb",
+      "desc": "Over 7.0",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:10 PM ET",
+      "vs": "Minnesota Twins @ Seattle Mariners",
+      "team": "Seattle Mariners",
+      "opp": "Minnesota Twins",
+      "analysis": "posted 7.0 vs 29.6 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \ud83d\udcc8 **Market angle:** posted 7.0 vs 29.6 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. The number's off by **10 points** \u2014 this ",
+      "awayTeam": "Seattle Mariners",
+      "homeTeam": "Minnesota Twins"
+    },
+    {
+      "id": "rooster-ml-0802",
+      "date": "2026-08-02",
+      "sport": "cs2",
+      "desc": "Rooster ML",
+      "market": "Dfrag Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "06:00 AM ET",
+      "vs": "Finishers",
+      "team": "Rooster",
+      "opp": "Finishers",
+      "analysis": "3-2 last 5 (beat Abyssal, Ground Zero, DXA Esports) (lost to Mindfreak) vs 0-0 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 3-2 last 5 (beat Abyssal, Ground Zero, DXA Esports) (lost to Mindfreak) vs 0-0 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side win",
+      "awayTeam": "Rooster",
+      "homeTeam": "Finishers"
+    },
+    {
+      "id": "barcelona-sc-ml-0802",
+      "date": "2026-08-02",
+      "sport": "ecu1",
+      "desc": "Barcelona SC ML",
+      "market": "ML",
+      "odds": 185,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "07:10 PM ET",
+      "vs": "Leones",
+      "team": "Barcelona SC",
+      "opp": "Leones",
+      "analysis": "9-7-6 overall \u2014 our 49% vs book 46% (no-vig) | \ud83d\udcc8 **Market angle:** 9-7-6 overall \u2014 our 49% vs book 46% (no-vig). The number's off by **3 points** \u2014 this is where CLV hunters eat.",
+      "awayTeam": "Barcelona SC",
+      "homeTeam": "Leones"
+    },
+    {
+      "id": "minnesota-twins-ml-0802",
+      "date": "2026-08-02",
+      "sport": "mlb",
+      "desc": "Minnesota Twins ML",
+      "market": "ML",
+      "odds": 122,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "04:10 PM ET",
+      "vs": "Seattle Mariners",
+      "team": "Minnesota Twins",
+      "opp": "Seattle Mariners",
+      "analysis": "56-56 overall, 26-29 on the road \u2014 our 43% vs book 43% (no-vig) | \u2694\ufe0f **Matchup read:** 56-56 overall, 26-29 on the road \u2014 our 43% vs book 43% (no-vig). Minnesota Twins in the better spot and priced like it isn't \u2014 **0-point** edge.",
+      "awayTeam": "Minnesota Twins",
+      "homeTeam": "Seattle Mariners"
     }
   ]
 }
