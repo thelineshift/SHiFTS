@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T05:09:08Z",
+  "updated": "2026-08-02T08:00:51Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6360,6 +6360,150 @@
         "total": 8.0,
         "ts": 1785648543
       }
+    },
+    {
+      "id": "top-esports-ml-0802",
+      "date": "2026-08-02",
+      "sport": "lol",
+      "desc": "Top Esports ML",
+      "market": "LPL Bo3",
+      "odds": -135,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "JD Gaming",
+      "team": "Top Esports",
+      "opp": "JD Gaming",
+      "analysis": "3-2 last 5 (beat LGD Gaming, ThunderTalk Gaming, Team WE) (lost to Anyone's Legend) vs 1-4 \u2014 live Pinnacle line -135 (our 86% vs book 55%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat LGD Gaming, ThunderTalk Gaming, Team WE) (lost to Anyone's Legend) vs 1-4 \u2014 live Pinnacle line -135 (our 86% vs book 55%)",
+      "awayTeam": "Top Esports",
+      "homeTeam": "JD Gaming"
+    },
+    {
+      "id": "new-vision-ml-0802",
+      "date": "2026-08-02",
+      "sport": "cs2",
+      "desc": "NEW VISION ML",
+      "market": "CCT Europe Bo3",
+      "odds": -141,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Inner Circle Academy",
+      "team": "NEW VISION",
+      "opp": "Inner Circle Academy",
+      "analysis": "2-3 last 5 (beat GenOne, QUAZAR) (lost to los kogutos) vs 1-4 \u2014 live Pinnacle line -141 (our 73% vs book 55%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat GenOne, QUAZAR) (lost to los kogutos) vs 1-4 \u2014 live Pinnacle line -141 (our 73% vs book 55%). Ride the **18-point** form edge before the market catche",
+      "awayTeam": "NEW VISION",
+      "homeTeam": "Inner Circle Academy"
+    },
+    {
+      "id": "tampa-bay-rays--1.5-0802",
+      "date": "2026-08-02",
+      "sport": "mlb",
+      "desc": "Tampa Bay Rays -1.5",
+      "market": "run line",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:40 PM ET",
+      "vs": "Chicago White Sox",
+      "team": "Tampa Bay Rays",
+      "opp": "Chicago White Sox",
+      "analysis": "65-45 overall, 41-17 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 70% straight up | \u2694\ufe0f **Matchup read:** 65-45 overall, 41-17 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Tampa Bay Rays 70% straight ",
+      "homeTeam": "Tampa Bay Rays",
+      "awayTeam": "Chicago White Sox"
+    },
+    {
+      "id": "2-leg-parlay-0802-whale",
+      "date": "2026-08-02",
+      "sport": "parlay",
+      "desc": "Minnesota Lynx -5.5 + San Diego Wave FC ML",
+      "market": "2-leg parlay (NWSL + WNBA)",
+      "odds": 387,
+      "units": 0.5,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "Minnesota Lynx -5.5 vs Indiana Fever \u00b7 San Diego Wave FC ML vs Washington Spirit",
+      "team": null,
+      "opp": null,
+      "analysis": "Minnesota Lynx -5.5 (-110) \u30fb San Diego Wave FC ML (+155) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Minnesota Lynx -5.5",
+          "vs": "Indiana Fever",
+          "sport": "wnba",
+          "date": "2026-08-02",
+          "time_et": "01:00 PM ET"
+        },
+        {
+          "team": "San Diego Wave FC",
+          "vs": "Washington Spirit",
+          "sport": "nwsl",
+          "date": "2026-08-02",
+          "time_et": "04:00 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "2-leg-parlay-0802-sharp",
+      "date": "2026-08-02",
+      "sport": "parlay",
+      "desc": "Minnesota Lynx -5.5 + San Diego Wave FC ML",
+      "market": "2-leg parlay (NWSL + WNBA)",
+      "odds": 387,
+      "units": 0.5,
+      "tier": "sharp",
+      "time_et": "01:00 PM ET",
+      "vs": "Minnesota Lynx -5.5 vs Indiana Fever \u00b7 San Diego Wave FC ML vs Washington Spirit",
+      "team": null,
+      "opp": null,
+      "analysis": "Minnesota Lynx -5.5 (-110) \u30fb San Diego Wave FC ML (+155) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Minnesota Lynx -5.5",
+          "vs": "Indiana Fever",
+          "sport": "wnba",
+          "date": "2026-08-02",
+          "time_et": "01:00 PM ET"
+        },
+        {
+          "team": "San Diego Wave FC",
+          "vs": "Washington Spirit",
+          "sport": "nwsl",
+          "date": "2026-08-02",
+          "time_et": "04:00 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "2-leg-parlay-0802-lock",
+      "date": "2026-08-02",
+      "sport": "parlay",
+      "desc": "Minnesota Lynx -5.5 + San Diego Wave FC ML",
+      "market": "2-leg parlay (NWSL + WNBA)",
+      "odds": 387,
+      "units": 0.5,
+      "tier": "lock",
+      "time_et": "01:00 PM ET",
+      "vs": "Minnesota Lynx -5.5 vs Indiana Fever \u00b7 San Diego Wave FC ML vs Washington Spirit",
+      "team": null,
+      "opp": null,
+      "analysis": "Minnesota Lynx -5.5 (-110) \u30fb San Diego Wave FC ML (+155) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "Minnesota Lynx -5.5",
+          "vs": "Indiana Fever",
+          "sport": "wnba",
+          "date": "2026-08-02",
+          "time_et": "01:00 PM ET"
+        },
+        {
+          "team": "San Diego Wave FC",
+          "vs": "Washington Spirit",
+          "sport": "nwsl",
+          "date": "2026-08-02",
+          "time_et": "04:00 PM ET"
+        }
+      ]
     }
   ]
 }
