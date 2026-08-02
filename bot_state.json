@@ -319,7 +319,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 25,
+  "op_calls": 30,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1280,11 +1280,9 @@
       "odds_ts": 1785657615.4713147,
       "active": [
         901974,
-        902246,
         902257,
         902258,
         902259,
-        902291,
         904888
       ],
       "parts": {
@@ -1966,9 +1964,11 @@
         "992496851283": "E-Xolos LAZER",
         "992118021506": "STREAMER ARENA",
         "991139636360": "Lazer",
-        "992315478058": "Habos Babos"
+        "992315478058": "Habos Babos",
+        "992797452176": "SR Black",
+        "993074085992": "Shopify Rebellion Black"
       },
-      "meta_ts": 1784952049.655977
+      "meta_ts": 1785672017.9032195
     },
     "lol": {
       "active": [
@@ -2479,85 +2479,91 @@
       "meta_ts": 1785571212.8008003,
       "lines": [
         [
-          "Flyquest",
-          "Disguisedtoast",
-          1.024,
-          15.49
-        ],
-        [
           "Shopify Rebellion",
           "Lyon Gaming",
-          1.193,
-          4.44
+          1.144,
+          5.25
         ],
         [
           "Team Liquid",
           "Sentinels",
-          1.202,
-          4.34
+          1.271,
+          3.67
         ],
         [
           "SK Gaming",
           "G2 Esports",
-          6.71,
-          1.093
+          6.2,
+          1.107
         ],
         [
           "Fnatic",
           "Movistar Koi",
-          2.67,
-          1.473
+          2.77,
+          1.444
         ],
         [
           "Soopers",
           "Brion",
-          3.26,
-          1.333
+          1.302,
+          3.3
         ],
         [
           "kt Rolster",
           "Hanwha Life Esports",
-          3.94,
-          1.239
+          1.74,
+          2.02
         ],
         [
           "Loud",
           "Fluxo W7M",
-          2.3,
-          1.628
+          2.1,
+          1.746
         ],
         [
           "Los",
           "Red Canids",
-          1.315,
-          3.36
+          1.357,
+          3.13
         ],
         [
           "ThunderTalk Gaming",
           "Team WE",
-          2.91,
-          1.406
+          5.73,
+          1.125
         ],
         [
           "Invictus Gaming",
           "LNG Esports",
-          4.82,
-          1.168
+          22.5,
+          1.012
         ],
         [
           "TOP Esports",
           "JD Gaming",
-          1.74,
-          2.11
+          1.781,
+          2.06
         ],
         [
           "Team Secret Whales",
           "Ctbc Flying Oyster",
-          1.236,
-          3.96
+          1.02,
+          15.53
+        ],
+        [
+          "Zeu5 eSports",
+          "G3V E-Sports",
+          1.338,
+          3.23
+        ],
+        [
+          "Volticons",
+          "Docta eSports Club",
+          1.588,
+          2.38
         ]
       ],
-      "odds_ts": 1785643215.740971
+      "odds_ts": 1785672012.6305456
     }
   },
   "parlay_rot": 32,
