@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T20:00:51Z",
+  "updated": "2026-08-02T20:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6188,7 +6188,10 @@
         "away_ml": 101,
         "total": 9.0,
         "ts": 1785684542
-      }
+      },
+      "result": "WIN",
+      "score": "Washington Nationals 2, Atlanta Braves 4",
+      "units_result": 0.79
     },
     {
       "id": "3-leg-parlay-0802-lock",
