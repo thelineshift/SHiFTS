@@ -51,17 +51,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "nashville-sc-ml-0801",
-      "desc": "Nashville SC ML",
-      "odds": 130,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "Nashville SC 2, D.C. United 2",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
