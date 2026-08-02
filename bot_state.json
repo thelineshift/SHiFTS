@@ -51,7 +51,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "milwaukee-brewers-ml-0801",
+      "desc": "Milwaukee Brewers ML",
+      "odds": -123,
+      "result": "WIN",
+      "units": 1.22,
+      "score": "Milwaukee Brewers 3, Los Angeles Angels 1",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
