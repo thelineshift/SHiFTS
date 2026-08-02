@@ -5889,12 +5889,12 @@
       "homeTeam": "Athletics",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -105,
-        "away_ml": -114,
-        "total": 11.0,
-        "ts": 1785684542
+        "home_ml": 102,
+        "away_ml": -122,
+        "total": 10.5,
+        "ts": 1785691742
       },
-      "last_alert_odds": -105
+      "last_alert_odds": 102
     },
     {
       "id": "over-11.5-0802",
@@ -5947,10 +5947,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 8.0,
-        "ts": 1785679142
+        "ts": 1785691742
       },
       "last_alert_odds": -156
     },
@@ -6009,10 +6009,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 188,
-        "away_ml": -232,
+        "home_ml": 190,
+        "away_ml": -234,
         "total": 7.5,
-        "ts": 1785686342
+        "ts": 1785691742
       },
       "last_alert_odds": -239
     },
@@ -6033,10 +6033,10 @@
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": 188,
-        "away_ml": -232,
+        "home_ml": 190,
+        "away_ml": -234,
         "total": 7.5,
-        "ts": 1785686342
+        "ts": 1785691742
       },
       "last_alert_odds": -239
     },
@@ -6136,10 +6136,10 @@
       "homeTeam": "Portland Fire",
       "awayTeam": "Los Angeles Sparks",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -105,
+        "home_ml": -120,
+        "away_ml": 100,
         "total": 185.5,
-        "ts": 1785688142
+        "ts": 1785691742
       },
       "last_alert_odds": -118
     },
@@ -6160,11 +6160,12 @@
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Cincinnati Reds",
       "live_odds": {
-        "home_ml": -137,
-        "away_ml": 114,
+        "home_ml": -135,
+        "away_ml": 112,
         "total": 8.5,
-        "ts": 1785689942
-      }
+        "ts": 1785691742
+      },
+      "last_alert_odds": 112
     },
     {
       "id": "atlanta-braves-ml-0802",
@@ -6363,12 +6364,12 @@
       "awayTeam": "Arizona Diamondbacks",
       "homeTeam": "Cleveland Guardians",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -185,
+        "away_ml": 152,
         "total": 8.0,
-        "ts": 1785679142
+        "ts": 1785691742
       },
-      "last_alert_odds": 133
+      "last_alert_odds": 152
     },
     {
       "id": "top-esports-ml-0802",
@@ -6564,10 +6565,10 @@
       "homeTeam": "San Diego Padres",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 8.0,
-        "ts": 1785679142
+        "ts": 1785691743
       },
       "last_alert_odds": -155
     },
