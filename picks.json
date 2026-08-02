@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T03:09:02Z",
+  "updated": "2026-08-02T03:09:11Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5635,7 +5635,10 @@
         "total": 8.5,
         "ts": 1785625142
       },
-      "last_alert_odds": 148
+      "last_alert_odds": 148,
+      "result": "WIN",
+      "score": "Arizona Diamondbacks 12, Cleveland Guardians 8",
+      "units_result": 1.36
     },
     {
       "id": "gen.g-ml-0801",
