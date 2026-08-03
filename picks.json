@@ -6792,12 +6792,12 @@
       "homeTeam": "New York Liberty",
       "awayTeam": "Seattle Storm",
       "live_odds": {
-        "home_ml": -345,
-        "away_ml": 275,
+        "home_ml": -325,
+        "away_ml": 260,
         "total": 182.5,
-        "ts": 1785743941
+        "ts": 1785754741
       },
-      "last_alert_odds": -345
+      "last_alert_odds": -325
     },
     {
       "id": "texas-rangers-ml-0803",
@@ -6959,12 +6959,12 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -122,
-        "away_ml": 102,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 184.5,
-        "ts": 1785751142
+        "ts": 1785754742
       },
-      "last_alert_odds": 102
+      "last_alert_odds": -105
     },
     {
       "id": "bnk-fearx-youth-ml-0803",
