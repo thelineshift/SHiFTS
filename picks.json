@@ -6841,8 +6841,8 @@
       "live_odds": {
         "home_ml": -149,
         "away_ml": 123,
-        "total": 8.5,
-        "ts": 1785731342
+        "total": 8.0,
+        "ts": 1785765542
       }
     },
     {
@@ -6916,11 +6916,12 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
-        "total": 9.0,
-        "ts": 1785761942
-      }
+        "home_ml": -175,
+        "away_ml": 144,
+        "total": 9.5,
+        "ts": 1785765542
+      },
+      "last_alert_odds": 144
     },
     {
       "id": "st.-louis-cardinals-ml-0803",
@@ -6939,10 +6940,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -208,
-        "away_ml": 170,
+        "home_ml": -217,
+        "away_ml": 177,
         "total": 8.0,
-        "ts": 1785761942
+        "ts": 1785765542
       },
       "last_alert_odds": 177
     },
@@ -6963,10 +6964,10 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -122,
-        "away_ml": 102,
+        "home_ml": -130,
+        "away_ml": 110,
         "total": 184.5,
-        "ts": 1785758342
+        "ts": 1785765542
       },
       "last_alert_odds": 102
     },
