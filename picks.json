@@ -7065,10 +7065,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -104,
+        "home_ml": -118,
+        "away_ml": -102,
         "total": 9.0,
-        "ts": 1785761942
+        "ts": 1785763742
       }
     },
     {
