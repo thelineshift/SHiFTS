@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T12:49:08Z",
+  "updated": "2026-08-03T13:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -7132,7 +7132,10 @@
       "opp": "Just Players",
       "analysis": "4-1 last 5 (beat Fortress, Noir Verse, NEW VISION) (lost to 1WIN) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Fortress, Noir Verse, NEW VISION) (lost to 1WIN) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Just Players the number hasn't priced.",
       "awayTeam": "los kogutos",
-      "homeTeam": "Just Players"
+      "homeTeam": "Just Players",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "los kogutos 2-0 Just Players \u00b7 final"
     },
     {
       "id": "nongshim-red-force-ml-0803",
