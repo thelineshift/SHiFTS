@@ -6941,10 +6941,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -219,
-        "away_ml": 178,
+        "home_ml": -224,
+        "away_ml": 182,
         "total": 7.5,
-        "ts": 1785785342
+        "ts": 1785788942
       },
       "last_alert_odds": 177
     },
@@ -7238,10 +7238,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": 104,
+        "home_ml": 105,
         "away_ml": -126,
         "total": 8.0,
-        "ts": 1785760142
+        "ts": 1785788942
       }
     },
     {
@@ -7259,7 +7259,13 @@
       "opp": "Seattle Storm",
       "analysis": "17-13 overall, 8-5 at home \u2014 our 93% vs book 73% (no-vig) | \ud83e\udde0 **The read:** 17-13 overall, 8-5 at home \u2014 our 93% vs book 73% (no-vig). Model makes New York Liberty **93%** \u2014 books imply **76%**. SHiFT presses the gap.",
       "homeTeam": "New York Liberty",
-      "awayTeam": "Seattle Storm"
+      "awayTeam": "Seattle Storm",
+      "live_odds": {
+        "home_ml": -325,
+        "away_ml": 260,
+        "total": 182.5,
+        "ts": 1785788942
+      }
     },
     {
       "id": "over-7.5-0803",
