@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T11:29:07Z",
+  "updated": "2026-08-03T12:00:59Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -7166,6 +7166,57 @@
       "analysis": "posted 9.5 vs 33.9 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \ud83e\udde0 **The read:** posted 9.5 vs 33.9 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. Model makes Over 9.5 **60%** \u2014 books imply **",
       "awayTeam": "Philadelphia Phillies",
       "homeTeam": "Washington Nationals"
+    },
+    {
+      "id": "new-york-liberty--7.5-0803",
+      "date": "2026-08-03",
+      "sport": "wnba",
+      "desc": "New York Liberty -7.5",
+      "market": "spread",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 PM ET",
+      "vs": "Seattle Storm",
+      "team": "New York Liberty",
+      "opp": "Seattle Storm",
+      "analysis": "17-13 overall, 8-5 at home \u2014 ML juiced to -310, so the -7.5 at the standard number is the bet; model makes New York Liberty 93% straight up | \ud83d\udcc8 **Market angle:** 17-13 overall, 8-5 at home \u2014 ML juiced to -310, so the -7.5 at the standard number is the bet; model makes New York Liberty 93% straight u",
+      "homeTeam": "New York Liberty",
+      "awayTeam": "Seattle Storm"
+    },
+    {
+      "id": "shifters-ml-0803",
+      "date": "2026-08-03",
+      "sport": "lol",
+      "desc": "Shifters ML",
+      "market": "LEC Bo3",
+      "odds": -230,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "11:00 AM ET",
+      "vs": "Natus Vincere",
+      "team": "Shifters",
+      "opp": "Natus Vincere",
+      "analysis": "2-3 last 5 (beat Team Heretics, Team Vitality) (lost to Movistar KOI) vs 1-4 \u2014 live Pinnacle line -230 (our 73% vs book 66%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat Team Heretics, Team Vitality) (lost to Movistar KOI) vs 1-4 \u2014 live Pinnacle line -230 (our 73% vs book 66%). Books hang respect on the w",
+      "awayTeam": "Shifters",
+      "homeTeam": "Natus Vincere"
+    },
+    {
+      "id": "los-angeles-dodgers-ml-0803",
+      "date": "2026-08-03",
+      "sport": "mlb",
+      "desc": "Los Angeles Dodgers ML",
+      "market": "ML",
+      "odds": -126,
+      "units": 1.0,
+      "tier": "free",
+      "time_et": "08:05 PM ET",
+      "vs": "Chicago Cubs",
+      "team": "Los Angeles Dodgers",
+      "opp": "Chicago Cubs",
+      "analysis": "69-43 overall, 36-20 on the road \u2014 our 54% vs book 53% (no-vig) | \ud83d\udcb0 **Value hunt:** 69-43 overall, 36-20 on the road \u2014 our 54% vs book 53% (no-vig). The book shaded this line toward the public side; we collect the **1 points** they left.",
+      "awayTeam": "Los Angeles Dodgers",
+      "homeTeam": "Chicago Cubs"
     }
   ]
 }
