@@ -6965,10 +6965,10 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 120,
+        "home_ml": -130,
+        "away_ml": 110,
         "total": 184.5,
-        "ts": 1785787142
+        "ts": 1785790742
       },
       "last_alert_odds": 114
     },
@@ -7091,9 +7091,9 @@
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
         "home_ml": 152,
-        "away_ml": -184,
+        "away_ml": -185,
         "total": 11.5,
-        "ts": 1785785342
+        "ts": 1785790742
       },
       "last_alert_odds": 151
     },
