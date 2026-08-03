@@ -327,7 +327,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 40,
+  "op_calls": 44,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1254,8 +1254,33 @@
       "odds_ts": 1785744014.9101336
     },
     "valorant": {
-      "lines": [],
-      "odds_ts": 1785686415.3512118,
+      "lines": [
+        [
+          "SK Nebula",
+          "FOKUS Sakura",
+          1.418,
+          2.68
+        ],
+        [
+          "Gentle Mates GC",
+          "Karmine Corp GC",
+          1.131,
+          4.7
+        ],
+        [
+          "G2 Gozen",
+          "ALTERNATE aTTaX Ruby",
+          1.082,
+          5.75
+        ],
+        [
+          "Twisted Minds Orchid",
+          "Barca GC",
+          1.357,
+          2.9
+        ]
+      ],
+      "odds_ts": 1785758416.2465618,
       "active": [
         901974,
         902257,
@@ -2459,44 +2484,50 @@
         [
           "Shifters",
           "Natus Vincere",
-          1.338,
-          3.23
+          1.434,
+          2.81
         ],
         [
           "Team Heretics",
           "Karmine Corp",
-          1.052,
-          9.09
+          1.063,
+          8.23
         ],
         [
           "Gen.g Esports",
           "Hanwha Life Esports",
-          1.98,
-          1.84
+          14.91,
+          1.021
         ],
         [
           "Nongshim Redforce",
           "T1",
-          2.6,
-          1.5
+          1.361,
+          2.98
+        ],
+        [
+          "Eintracht Spandau",
+          "Berlin International Gaming",
+          2.81,
+          1.434
         ],
         [
           "Fearx Youth",
           "Brion Challengers",
-          2.96,
-          1.395
+          4.57,
+          1.14
         ],
         [
           "Soopers Challengers",
           "Dplus Challengers",
-          2.45,
-          1.558
+          1.523,
+          2.39
         ],
         [
           "Zeu5 eSports",
           "G3V E-Sports",
-          1.185,
-          4.56
+          1.159,
+          4.96
         ],
         [
           "Volticons",
@@ -2525,14 +2556,14 @@
         [
           "Keyd Stars Academy",
           "Pain Gaming Academy",
-          1.952,
-          1.862
+          1.925,
+          1.892
         ],
         [
           "Estral E-Sports",
           "7Rex Team",
-          4.99,
-          1.157
+          5.6,
+          1.129
         ],
         [
           "Red Academy",
@@ -2541,7 +2572,7 @@
           4.5
         ]
       ],
-      "odds_ts": 1785729617.4489396
+      "odds_ts": 1785758410.6064677
     }
   },
   "parlay_rot": 33,
