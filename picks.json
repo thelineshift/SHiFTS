@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T08:00:57Z",
+  "updated": "2026-08-03T10:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6981,7 +6981,10 @@
       "opp": "HANJIN BRION Challengers",
       "analysis": "2-3 last 5 (beat Hanwha Life Esports Challengers, Gen.G Global Academy) (lost to Kiwoom DRX Challengers) vs 1-4 \u2014 live Pinnacle line +196 (our 73% vs book 32%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Hanwha Life Esports Challengers, Gen.G Global Academy) (lost to Kiwoom DRX Challengers) vs 1-4 \u2014 liv",
       "awayTeam": "BNK FearX Youth",
-      "homeTeam": "HANJIN BRION Challengers"
+      "homeTeam": "HANJIN BRION Challengers",
+      "result": "WIN",
+      "units_result": 2.94,
+      "score": "BNK FearX Youth 2-1 HANJIN BRION Challengers \u00b7 final"
     },
     {
       "id": "chicago-sky-ml-0803",
