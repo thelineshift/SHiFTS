@@ -6816,10 +6816,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -135,
-        "away_ml": 112,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 8.0,
-        "ts": 1785797942
+        "ts": 1785799742
       },
       "last_alert_odds": -125
     },
@@ -7091,10 +7091,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
-        "home_ml": 152,
-        "away_ml": -185,
+        "home_ml": 157,
+        "away_ml": -191,
         "total": 11.5,
-        "ts": 1785790742
+        "ts": 1785799742
       },
       "last_alert_odds": 151
     },
@@ -7115,11 +7115,12 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -144,
-        "away_ml": 119,
+        "home_ml": -147,
+        "away_ml": 122,
         "total": 9.0,
-        "ts": 1785797942
-      }
+        "ts": 1785799742
+      },
+      "last_alert_odds": -147
     },
     {
       "id": "los-kogutos-ml-0803",
@@ -7239,10 +7240,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": 108,
-        "away_ml": -130,
+        "home_ml": 105,
+        "away_ml": -126,
         "total": 8.0,
-        "ts": 1785797942
+        "ts": 1785799742
       }
     },
     {
