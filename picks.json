@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T16:49:08Z",
+  "updated": "2026-08-03T20:00:58Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -7243,6 +7243,40 @@
         "total": 8.0,
         "ts": 1785760142
       }
+    },
+    {
+      "id": "new-york-liberty-ml-0803",
+      "date": "2026-08-03",
+      "sport": "wnba",
+      "desc": "New York Liberty ML",
+      "market": "ML",
+      "odds": -325,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "07:00 PM ET",
+      "vs": "Seattle Storm",
+      "team": "New York Liberty",
+      "opp": "Seattle Storm",
+      "analysis": "17-13 overall, 8-5 at home \u2014 our 93% vs book 73% (no-vig) | \ud83e\udde0 **The read:** 17-13 overall, 8-5 at home \u2014 our 93% vs book 73% (no-vig). Model makes New York Liberty **93%** \u2014 books imply **76%**. SHiFT presses the gap.",
+      "homeTeam": "New York Liberty",
+      "awayTeam": "Seattle Storm"
+    },
+    {
+      "id": "over-7.5-0803",
+      "date": "2026-08-03",
+      "sport": "mlb",
+      "desc": "Over 7.5",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:05 PM ET",
+      "vs": "St. Louis Cardinals @ New York Yankees",
+      "team": "New York Yankees",
+      "opp": "St. Louis Cardinals",
+      "analysis": "posted 7.5 vs 31.1 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \u2694\ufe0f **Matchup read:** posted 7.5 vs 31.1 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. Over 7.5 in the better spot and priced l",
+      "awayTeam": "New York Yankees",
+      "homeTeam": "St. Louis Cardinals"
     }
   ]
 }
