@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T12:00:59Z",
+  "updated": "2026-08-03T12:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -7149,7 +7149,10 @@
       "opp": "T1",
       "analysis": "4-1 last 5 (beat BNK FEARX, Kiwoom DRX, T1) (lost to Hanwha Life Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat BNK FEARX, Kiwoom DRX, T1) (lost to Hanwha Life Esports) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of mod",
       "awayTeam": "Nongshim Red Force",
-      "homeTeam": "T1"
+      "homeTeam": "T1",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Nongshim Red Force 2-1 T1 \u00b7 final"
     },
     {
       "id": "over-9.5-0803",
