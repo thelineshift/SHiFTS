@@ -6794,8 +6794,8 @@
       "live_odds": {
         "home_ml": -310,
         "away_ml": 250,
-        "total": 183.5,
-        "ts": 1785758341
+        "total": 182.5,
+        "ts": 1785760141
       },
       "last_alert_odds": -310
     },
@@ -6939,11 +6939,12 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -205,
-        "away_ml": 168,
-        "total": 8.0,
-        "ts": 1785736742
-      }
+        "home_ml": -217,
+        "away_ml": 177,
+        "total": 7.5,
+        "ts": 1785760142
+      },
+      "last_alert_odds": 177
     },
     {
       "id": "las-vegas-aces-ml-0803",
@@ -7008,8 +7009,8 @@
       "live_odds": {
         "home_ml": 100,
         "away_ml": -120,
-        "total": 180.5,
-        "ts": 1785758342
+        "total": 179.5,
+        "ts": 1785760142
       },
       "last_alert_odds": 100
     },
@@ -7064,10 +7065,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -118,
-        "away_ml": -102,
+        "home_ml": -115,
+        "away_ml": -104,
         "total": 8.5,
-        "ts": 1785758343
+        "ts": 1785760142
       }
     },
     {
@@ -7088,9 +7089,9 @@
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
         "home_ml": 141,
-        "away_ml": -170,
+        "away_ml": -171,
         "total": 11.5,
-        "ts": 1785745742
+        "ts": 1785760142
       }
     },
     {
@@ -7110,10 +7111,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -132,
+        "away_ml": 110,
         "total": 9.0,
-        "ts": 1785742142
+        "ts": 1785760142
       }
     },
     {
@@ -7182,7 +7183,14 @@
       "opp": "Seattle Storm",
       "analysis": "17-13 overall, 8-5 at home \u2014 ML juiced to -310, so the -7.5 at the standard number is the bet; model makes New York Liberty 93% straight up | \ud83d\udcc8 **Market angle:** 17-13 overall, 8-5 at home \u2014 ML juiced to -310, so the -7.5 at the standard number is the bet; model makes New York Liberty 93% straight u",
       "homeTeam": "New York Liberty",
-      "awayTeam": "Seattle Storm"
+      "awayTeam": "Seattle Storm",
+      "live_odds": {
+        "home_ml": -310,
+        "away_ml": 250,
+        "total": 182.5,
+        "ts": 1785760142
+      },
+      "last_alert_odds": -310
     },
     {
       "id": "shifters-ml-0803",
@@ -7216,7 +7224,13 @@
       "opp": "Chicago Cubs",
       "analysis": "69-43 overall, 36-20 on the road \u2014 our 54% vs book 53% (no-vig) | \ud83d\udcb0 **Value hunt:** 69-43 overall, 36-20 on the road \u2014 our 54% vs book 53% (no-vig). The book shaded this line toward the public side; we collect the **1 points** they left.",
       "awayTeam": "Los Angeles Dodgers",
-      "homeTeam": "Chicago Cubs"
+      "homeTeam": "Chicago Cubs",
+      "live_odds": {
+        "home_ml": 104,
+        "away_ml": -126,
+        "total": 8.0,
+        "ts": 1785760142
+      }
     }
   ]
 }
