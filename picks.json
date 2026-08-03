@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T16:00:55Z",
+  "updated": "2026-08-03T16:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -7216,7 +7216,10 @@
       "opp": "Natus Vincere",
       "analysis": "2-3 last 5 (beat Team Heretics, Team Vitality) (lost to Movistar KOI) vs 1-4 \u2014 live Pinnacle line -230 (our 73% vs book 66%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat Team Heretics, Team Vitality) (lost to Movistar KOI) vs 1-4 \u2014 live Pinnacle line -230 (our 73% vs book 66%). Books hang respect on the w",
       "awayTeam": "Shifters",
-      "homeTeam": "Natus Vincere"
+      "homeTeam": "Natus Vincere",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Shifters 0-2 Natus Vincere \u00b7 final"
     },
     {
       "id": "los-angeles-dodgers-ml-0803",
