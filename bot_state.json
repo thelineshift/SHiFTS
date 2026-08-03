@@ -51,7 +51,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "milwaukee-brewers--1.5-0802",
+      "desc": "Milwaukee Brewers -1.5",
+      "odds": -110,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Milwaukee Brewers 0, Los Angeles Angels 3",
+      "tier": "sharp"
+    },
+    {
+      "id": "milwaukee-brewers-ml-0802",
+      "desc": "Milwaukee Brewers ML",
+      "odds": -156,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Milwaukee Brewers 0, Los Angeles Angels 3",
+      "tier": "sharp"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
