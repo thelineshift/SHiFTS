@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T02:49:09Z",
+  "updated": "2026-08-03T03:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6020,7 +6020,10 @@
         "total": 7.5,
         "ts": 1785691742
       },
-      "last_alert_odds": -239
+      "last_alert_odds": -239,
+      "result": "LOSS",
+      "score": "Milwaukee Brewers 0, Los Angeles Angels 3",
+      "units_result": -1.0
     },
     {
       "id": "milwaukee-brewers-ml-0802",
@@ -6044,7 +6047,10 @@
         "total": 7.5,
         "ts": 1785691742
       },
-      "last_alert_odds": -239
+      "last_alert_odds": -239,
+      "result": "LOSS",
+      "score": "Milwaukee Brewers 0, Los Angeles Angels 3",
+      "units_result": -1.0
     },
     {
       "id": "colorado-rockies-ml-0802",
