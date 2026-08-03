@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T00:00:44Z",
+  "updated": "2026-08-03T02:49:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6673,7 +6673,10 @@
         "away_ml": 149,
         "total": 8.5,
         "ts": 1785711542
-      }
+      },
+      "result": "WIN",
+      "score": "Boston Red Sox 8, Los Angeles Dodgers 4",
+      "units_result": 1.52
     },
     {
       "id": "over-10.0-0802",
