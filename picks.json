@@ -6917,10 +6917,10 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -158,
-        "away_ml": 131,
+        "home_ml": -157,
+        "away_ml": 130,
         "total": 9.0,
-        "ts": 1785772742
+        "ts": 1785783542
       },
       "last_alert_odds": 131
     },
