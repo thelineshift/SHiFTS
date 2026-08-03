@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T04:01:02Z",
+  "updated": "2026-08-03T08:00:57Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -7108,6 +7108,57 @@
         "total": 9.0,
         "ts": 1785742142
       }
+    },
+    {
+      "id": "los-kogutos-ml-0803",
+      "date": "2026-08-03",
+      "sport": "cs2",
+      "desc": "los kogutos ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Just Players",
+      "team": "los kogutos",
+      "opp": "Just Players",
+      "analysis": "4-1 last 5 (beat Fortress, Noir Verse, NEW VISION) (lost to 1WIN) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Fortress, Noir Verse, NEW VISION) (lost to 1WIN) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Just Players the number hasn't priced.",
+      "awayTeam": "los kogutos",
+      "homeTeam": "Just Players"
+    },
+    {
+      "id": "nongshim-red-force-ml-0803",
+      "date": "2026-08-03",
+      "sport": "lol",
+      "desc": "Nongshim Red Force ML",
+      "market": "KeSPA Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "06:30 AM ET",
+      "vs": "T1",
+      "team": "Nongshim Red Force",
+      "opp": "T1",
+      "analysis": "4-1 last 5 (beat BNK FEARX, Kiwoom DRX, T1) (lost to Hanwha Life Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat BNK FEARX, Kiwoom DRX, T1) (lost to Hanwha Life Esports) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of mod",
+      "awayTeam": "Nongshim Red Force",
+      "homeTeam": "T1"
+    },
+    {
+      "id": "over-9.5-0803",
+      "date": "2026-08-03",
+      "sport": "mlb",
+      "desc": "Over 9.5",
+      "market": "total",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "06:40 PM ET",
+      "vs": "Washington Nationals @ Philadelphia Phillies",
+      "team": "Philadelphia Phillies",
+      "opp": "Washington Nationals",
+      "analysis": "posted 9.5 vs 33.9 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears | \ud83e\udde0 **The read:** posted 9.5 vs 33.9 slate average \u2014 slate-low number \u2014 priced like a dud, but this slate's bats and arms say it clears. Model makes Over 9.5 **60%** \u2014 books imply **",
+      "awayTeam": "Philadelphia Phillies",
+      "homeTeam": "Washington Nationals"
     }
   ]
 }
