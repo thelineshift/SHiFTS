@@ -330,7 +330,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 44,
+  "op_calls": 46,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1226,14 +1226,14 @@
         [
           "Eternal Fire Academy",
           "Vp.Prodigy",
-          3.04,
-          1.324
+          3.12,
+          1.309
         ],
         [
           "Keyd Stars",
           "Borracheiros",
-          1.259,
-          3.41
+          1.223,
+          3.66
         ],
         [
           "Gremio",
@@ -1254,7 +1254,7 @@
           3.2
         ]
       ],
-      "odds_ts": 1785744014.9101336
+      "odds_ts": 1785772815.0553236
     },
     "valorant": {
       "lines": [
@@ -30577,6 +30577,6 @@
   "deepdive_last": "2026-08-01",
   "dep_checked_ts": 1785765842.4049726,
   "x_bio_v": 2,
-  "op_cool_until": 1785744914.9101336,
+  "op_cool_until": 1785773715.0553236,
   "x_ads": []
 }
