@@ -6794,8 +6794,8 @@
       "live_odds": {
         "home_ml": -325,
         "away_ml": 260,
-        "total": 183.5,
-        "ts": 1785761941
+        "total": 182.5,
+        "ts": 1785767341
       },
       "last_alert_odds": -325
     },
@@ -6816,11 +6816,12 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -110,
-        "away_ml": -110,
+        "home_ml": -125,
+        "away_ml": 104,
         "total": 8.0,
-        "ts": 1785761942
-      }
+        "ts": 1785767341
+      },
+      "last_alert_odds": -125
     },
     {
       "id": "milwaukee-brewers-ml-0803",
@@ -6918,8 +6919,8 @@
       "live_odds": {
         "home_ml": -175,
         "away_ml": 144,
-        "total": 9.5,
-        "ts": 1785765542
+        "total": 9.0,
+        "ts": 1785767342
       },
       "last_alert_odds": 144
     },
@@ -6966,8 +6967,8 @@
       "live_odds": {
         "home_ml": -130,
         "away_ml": 110,
-        "total": 184.5,
-        "ts": 1785765542
+        "total": 185.5,
+        "ts": 1785767342
       },
       "last_alert_odds": 102
     },
@@ -7008,10 +7009,10 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -120,
+        "home_ml": 102,
+        "away_ml": -122,
         "total": 179.5,
-        "ts": 1785760142
+        "ts": 1785767342
       },
       "last_alert_odds": 100
     },
@@ -7089,11 +7090,12 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
-        "home_ml": 143,
-        "away_ml": -174,
+        "home_ml": 151,
+        "away_ml": -184,
         "total": 11.5,
-        "ts": 1785761942
-      }
+        "ts": 1785767342
+      },
+      "last_alert_odds": 151
     },
     {
       "id": "houston-astros-ml-0803",
@@ -7194,8 +7196,8 @@
       "live_odds": {
         "home_ml": -325,
         "away_ml": 260,
-        "total": 183.5,
-        "ts": 1785761942
+        "total": 182.5,
+        "ts": 1785767342
       },
       "last_alert_odds": -325
     },
