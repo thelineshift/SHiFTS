@@ -6959,12 +6959,12 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -105,
+        "home_ml": -122,
+        "away_ml": 102,
         "total": 184.5,
-        "ts": 1785754742
+        "ts": 1785756542
       },
-      "last_alert_odds": -105
+      "last_alert_odds": 102
     },
     {
       "id": "bnk-fearx-youth-ml-0803",
@@ -7060,10 +7060,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -115,
-        "away_ml": -105,
+        "home_ml": -118,
+        "away_ml": -102,
         "total": 8.5,
-        "ts": 1785743942
+        "ts": 1785756542
       }
     },
     {
