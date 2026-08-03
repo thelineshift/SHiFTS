@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T03:09:09Z",
+  "updated": "2026-08-03T03:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -5897,7 +5897,10 @@
         "total": 10.0,
         "ts": 1785697142
       },
-      "last_alert_odds": 102
+      "last_alert_odds": 102,
+      "result": "LOSS",
+      "score": "Detroit Tigers 11, Athletics 0",
+      "units_result": -1.0
     },
     {
       "id": "over-11.5-0802",
