@@ -6917,10 +6917,10 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -157,
-        "away_ml": 130,
+        "home_ml": -165,
+        "away_ml": 136,
         "total": 9.0,
-        "ts": 1785783542
+        "ts": 1785785342
       },
       "last_alert_odds": 131
     },
@@ -6941,10 +6941,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -217,
-        "away_ml": 177,
-        "total": 8.0,
-        "ts": 1785765542
+        "home_ml": -219,
+        "away_ml": 178,
+        "total": 7.5,
+        "ts": 1785785342
       },
       "last_alert_odds": 177
     },
@@ -7090,10 +7090,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
-        "home_ml": 142,
-        "away_ml": -172,
+        "home_ml": 152,
+        "away_ml": -184,
         "total": 11.5,
-        "ts": 1785781742
+        "ts": 1785785342
       },
       "last_alert_odds": 151
     },
