@@ -6917,10 +6917,10 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
+        "home_ml": -163,
+        "away_ml": 135,
         "total": 9.0,
-        "ts": 1785767342
+        "ts": 1785769142
       },
       "last_alert_odds": 144
     },
@@ -6965,12 +6965,12 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -130,
-        "away_ml": 110,
-        "total": 185.5,
-        "ts": 1785767342
+        "home_ml": -135,
+        "away_ml": 114,
+        "total": 184.5,
+        "ts": 1785769142
       },
-      "last_alert_odds": 102
+      "last_alert_odds": 114
     },
     {
       "id": "bnk-fearx-youth-ml-0803",
@@ -7009,12 +7009,12 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 102,
-        "away_ml": -122,
-        "total": 179.5,
-        "ts": 1785767342
+        "home_ml": 120,
+        "away_ml": -142,
+        "total": 178.5,
+        "ts": 1785769142
       },
-      "last_alert_odds": 100
+      "last_alert_odds": 120
     },
     {
       "id": "over-9.0-0803",
@@ -7090,10 +7090,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
-        "home_ml": 151,
-        "away_ml": -184,
+        "home_ml": 143,
+        "away_ml": -174,
         "total": 11.5,
-        "ts": 1785767342
+        "ts": 1785769142
       },
       "last_alert_odds": 151
     },
