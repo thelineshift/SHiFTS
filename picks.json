@@ -6917,10 +6917,10 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -163,
-        "away_ml": 135,
+        "home_ml": -166,
+        "away_ml": 137,
         "total": 9.0,
-        "ts": 1785769142
+        "ts": 1785770942
       },
       "last_alert_odds": 144
     },
@@ -7009,12 +7009,12 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 120,
-        "away_ml": -142,
+        "home_ml": 105,
+        "away_ml": -125,
         "total": 178.5,
-        "ts": 1785769142
+        "ts": 1785770942
       },
-      "last_alert_odds": 120
+      "last_alert_odds": 105
     },
     {
       "id": "over-9.0-0803",
