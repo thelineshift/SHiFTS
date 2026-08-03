@@ -323,7 +323,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 35,
+  "op_calls": 38,
   "op_meta": {
     "cs2": {
       "active": [
@@ -2477,40 +2477,52 @@
       "meta_ts": 1785571212.8008003,
       "lines": [
         [
-          "Shopify Rebellion",
-          "Lyon Gaming",
-          1.131,
-          5.55
-        ],
-        [
-          "Team Liquid",
-          "Sentinels",
-          1.251,
-          3.83
-        ],
-        [
-          "Fearx Youth",
-          "Brion Challengers",
-          3.05,
-          1.374
-        ],
-        [
-          "Soopers Challengers",
-          "Dplus Challengers",
-          2.86,
-          1.42
-        ],
-        [
-          "Zeu5 eSports",
-          "G3V E-Sports",
+          "Shifters",
+          "Natus Vincere",
           1.338,
           3.23
         ],
         [
+          "Team Heretics",
+          "Karmine Corp",
+          1.052,
+          9.09
+        ],
+        [
+          "Gen.g Esports",
+          "Hanwha Life Esports",
+          1.98,
+          1.84
+        ],
+        [
+          "Nongshim Redforce",
+          "T1",
+          2.6,
+          1.5
+        ],
+        [
+          "Fearx Youth",
+          "Brion Challengers",
+          2.96,
+          1.395
+        ],
+        [
+          "Soopers Challengers",
+          "Dplus Challengers",
+          2.45,
+          1.558
+        ],
+        [
+          "Zeu5 eSports",
+          "G3V E-Sports",
+          1.185,
+          4.56
+        ],
+        [
           "Volticons",
           "Docta eSports Club",
-          1.591,
-          2.37
+          1.392,
+          2.97
         ],
         [
           "Keyd Stars Academy",
@@ -2521,8 +2533,8 @@
         [
           "Rmd Gaming",
           "Ei Nerd eSports",
-          2.83,
-          1.427
+          2.93,
+          1.401
         ],
         [
           "INTZ eSports",
@@ -2533,8 +2545,8 @@
         [
           "Keyd Stars Academy",
           "Pain Gaming Academy",
-          1.934,
-          1.884
+          1.952,
+          1.862
         ],
         [
           "Estral E-Sports",
@@ -2549,7 +2561,7 @@
           4.5
         ]
       ],
-      "odds_ts": 1785700813.631799
+      "odds_ts": 1785729617.4489396
     }
   },
   "parlay_rot": 33,
