@@ -6792,12 +6792,12 @@
       "homeTeam": "New York Liberty",
       "awayTeam": "Seattle Storm",
       "live_odds": {
-        "home_ml": -360,
-        "away_ml": 285,
+        "home_ml": -345,
+        "away_ml": 275,
         "total": 181.5,
-        "ts": 1785731342
+        "ts": 1785733142
       },
-      "last_alert_odds": -360
+      "last_alert_odds": -345
     },
     {
       "id": "texas-rangers-ml-0803",
@@ -7000,10 +7000,10 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": -110,
-        "away_ml": -110,
+        "home_ml": -108,
+        "away_ml": -112,
         "total": 178.5,
-        "ts": 1785731342
+        "ts": 1785733142
       }
     },
     {
