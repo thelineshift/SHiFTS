@@ -6959,12 +6959,12 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -118,
-        "away_ml": -102,
-        "total": 183.5,
-        "ts": 1785731342
+        "home_ml": -122,
+        "away_ml": 102,
+        "total": 184.5,
+        "ts": 1785751142
       },
-      "last_alert_odds": -102
+      "last_alert_odds": 102
     },
     {
       "id": "bnk-fearx-youth-ml-0803",
@@ -7002,8 +7002,8 @@
       "live_odds": {
         "home_ml": -108,
         "away_ml": -112,
-        "total": 179.5,
-        "ts": 1785749342
+        "total": 180.5,
+        "ts": 1785751142
       }
     },
     {
