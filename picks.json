@@ -6794,8 +6794,8 @@
       "live_odds": {
         "home_ml": -325,
         "away_ml": 260,
-        "total": 182.5,
-        "ts": 1785779941
+        "total": 181.5,
+        "ts": 1785792542
       },
       "last_alert_odds": -325
     },
@@ -6816,10 +6816,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -125,
-        "away_ml": 104,
+        "home_ml": -130,
+        "away_ml": 108,
         "total": 8.0,
-        "ts": 1785767341
+        "ts": 1785792542
       },
       "last_alert_odds": -125
     },
@@ -6840,11 +6840,12 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 124,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 8.5,
-        "ts": 1785778142
-      }
+        "ts": 1785792542
+      },
+      "last_alert_odds": -156
     },
     {
       "id": "under-164.5-0803",
@@ -6943,8 +6944,8 @@
       "live_odds": {
         "home_ml": -224,
         "away_ml": 182,
-        "total": 7.5,
-        "ts": 1785788942
+        "total": 8.0,
+        "ts": 1785792542
       },
       "last_alert_odds": 177
     },
@@ -6965,10 +6966,10 @@
       "awayTeam": "Las Vegas Aces",
       "homeTeam": "Atlanta Dream",
       "live_odds": {
-        "home_ml": -130,
-        "away_ml": 110,
+        "home_ml": -135,
+        "away_ml": 114,
         "total": 184.5,
-        "ts": 1785790742
+        "ts": 1785792542
       },
       "last_alert_odds": 114
     },
@@ -7009,10 +7010,10 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 100,
-        "away_ml": -120,
-        "total": 178.5,
-        "ts": 1785779942
+        "home_ml": 105,
+        "away_ml": -125,
+        "total": 179.5,
+        "ts": 1785792542
       },
       "last_alert_odds": 105
     },
@@ -7067,10 +7068,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -118,
-        "away_ml": -102,
+        "home_ml": -114,
+        "away_ml": -105,
         "total": 9.0,
-        "ts": 1785763742
+        "ts": 1785792542
       }
     },
     {
@@ -7196,8 +7197,8 @@
       "live_odds": {
         "home_ml": -325,
         "away_ml": 260,
-        "total": 182.5,
-        "ts": 1785779942
+        "total": 181.5,
+        "ts": 1785792542
       },
       "last_alert_odds": -325
     },
@@ -7238,10 +7239,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": 105,
+        "home_ml": 104,
         "away_ml": -126,
         "total": 8.0,
-        "ts": 1785788942
+        "ts": 1785792542
       }
     },
     {
@@ -7263,8 +7264,8 @@
       "live_odds": {
         "home_ml": -325,
         "away_ml": 260,
-        "total": 182.5,
-        "ts": 1785788942
+        "total": 181.5,
+        "ts": 1785792542
       }
     },
     {
