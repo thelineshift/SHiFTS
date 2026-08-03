@@ -6792,12 +6792,12 @@
       "homeTeam": "New York Liberty",
       "awayTeam": "Seattle Storm",
       "live_odds": {
-        "home_ml": -325,
-        "away_ml": 260,
+        "home_ml": -310,
+        "away_ml": 250,
         "total": 182.5,
-        "ts": 1785767341
+        "ts": 1785778141
       },
-      "last_alert_odds": -325
+      "last_alert_odds": -310
     },
     {
       "id": "texas-rangers-ml-0803",
@@ -6842,8 +6842,8 @@
       "live_odds": {
         "home_ml": -150,
         "away_ml": 124,
-        "total": 8.0,
-        "ts": 1785772742
+        "total": 8.5,
+        "ts": 1785778142
       }
     },
     {
@@ -7194,12 +7194,12 @@
       "homeTeam": "New York Liberty",
       "awayTeam": "Seattle Storm",
       "live_odds": {
-        "home_ml": -325,
-        "away_ml": 260,
+        "home_ml": -310,
+        "away_ml": 250,
         "total": 182.5,
-        "ts": 1785767342
+        "ts": 1785778142
       },
-      "last_alert_odds": -325
+      "last_alert_odds": -310
     },
     {
       "id": "shifters-ml-0803",
