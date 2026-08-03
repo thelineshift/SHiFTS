@@ -6794,8 +6794,8 @@
       "live_odds": {
         "home_ml": -325,
         "away_ml": 260,
-        "total": 181.5,
-        "ts": 1785792542
+        "total": 182.5,
+        "ts": 1785794342
       },
       "last_alert_odds": -325
     },
@@ -6942,12 +6942,12 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -224,
-        "away_ml": 182,
+        "home_ml": -237,
+        "away_ml": 192,
         "total": 8.0,
-        "ts": 1785792542
+        "ts": 1785794342
       },
-      "last_alert_odds": 177
+      "last_alert_odds": 192
     },
     {
       "id": "las-vegas-aces-ml-0803",
@@ -7010,10 +7010,10 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 105,
-        "away_ml": -125,
+        "home_ml": 114,
+        "away_ml": -135,
         "total": 179.5,
-        "ts": 1785792542
+        "ts": 1785794342
       },
       "last_alert_odds": 105
     },
@@ -7115,10 +7115,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -135,
+        "away_ml": 112,
         "total": 9.0,
-        "ts": 1785781742
+        "ts": 1785794342
       }
     },
     {
@@ -7197,8 +7197,8 @@
       "live_odds": {
         "home_ml": -325,
         "away_ml": 260,
-        "total": 181.5,
-        "ts": 1785792542
+        "total": 182.5,
+        "ts": 1785794342
       },
       "last_alert_odds": -325
     },
@@ -7264,8 +7264,8 @@
       "live_odds": {
         "home_ml": -325,
         "away_ml": 260,
-        "total": 181.5,
-        "ts": 1785792542
+        "total": 182.5,
+        "ts": 1785794342
       }
     },
     {
