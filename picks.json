@@ -6792,12 +6792,12 @@
       "homeTeam": "New York Liberty",
       "awayTeam": "Seattle Storm",
       "live_odds": {
-        "home_ml": -310,
-        "away_ml": 250,
-        "total": 182.5,
-        "ts": 1785760141
+        "home_ml": -325,
+        "away_ml": 260,
+        "total": 183.5,
+        "ts": 1785761941
       },
-      "last_alert_odds": -310
+      "last_alert_odds": -325
     },
     {
       "id": "texas-rangers-ml-0803",
@@ -6816,10 +6816,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -109,
+        "home_ml": -110,
         "away_ml": -110,
         "total": 8.0,
-        "ts": 1785731342
+        "ts": 1785761942
       }
     },
     {
@@ -6918,8 +6918,8 @@
       "live_odds": {
         "home_ml": -163,
         "away_ml": 135,
-        "total": 9.5,
-        "ts": 1785758342
+        "total": 9.0,
+        "ts": 1785761942
       }
     },
     {
@@ -6939,10 +6939,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -217,
-        "away_ml": 177,
-        "total": 7.5,
-        "ts": 1785760142
+        "home_ml": -208,
+        "away_ml": 170,
+        "total": 8.0,
+        "ts": 1785761942
       },
       "last_alert_odds": 177
     },
@@ -7067,8 +7067,8 @@
       "live_odds": {
         "home_ml": -115,
         "away_ml": -104,
-        "total": 8.5,
-        "ts": 1785760142
+        "total": 9.0,
+        "ts": 1785761942
       }
     },
     {
@@ -7088,10 +7088,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
-        "home_ml": 141,
-        "away_ml": -171,
+        "home_ml": 143,
+        "away_ml": -174,
         "total": 11.5,
-        "ts": 1785760142
+        "ts": 1785761942
       }
     },
     {
@@ -7188,12 +7188,12 @@
       "homeTeam": "New York Liberty",
       "awayTeam": "Seattle Storm",
       "live_odds": {
-        "home_ml": -310,
-        "away_ml": 250,
-        "total": 182.5,
-        "ts": 1785760142
+        "home_ml": -325,
+        "away_ml": 260,
+        "total": 183.5,
+        "ts": 1785761942
       },
-      "last_alert_odds": -310
+      "last_alert_odds": -325
     },
     {
       "id": "shifters-ml-0803",
