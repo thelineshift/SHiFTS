@@ -6936,10 +6936,10 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -199,
-        "away_ml": 163,
+        "home_ml": -205,
+        "away_ml": 168,
         "total": 8.0,
-        "ts": 1785731342
+        "ts": 1785736742
       }
     },
     {
@@ -7057,10 +7057,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -111,
-        "away_ml": -109,
+        "home_ml": -115,
+        "away_ml": -105,
         "total": 9.0,
-        "ts": 1785731343
+        "ts": 1785736742
       }
     },
     {
@@ -7080,10 +7080,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
-        "home_ml": 135,
-        "away_ml": -163,
+        "home_ml": 137,
+        "away_ml": -166,
         "total": 11.5,
-        "ts": 1785731343
+        "ts": 1785736742
       }
     },
     {
