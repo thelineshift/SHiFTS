@@ -6840,10 +6840,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -150,
+        "away_ml": 124,
         "total": 8.0,
-        "ts": 1785765542
+        "ts": 1785772742
       }
     },
     {
@@ -6917,12 +6917,12 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -166,
-        "away_ml": 137,
+        "home_ml": -158,
+        "away_ml": 131,
         "total": 9.0,
-        "ts": 1785770942
+        "ts": 1785772742
       },
-      "last_alert_odds": 144
+      "last_alert_odds": 131
     },
     {
       "id": "st.-louis-cardinals-ml-0803",
