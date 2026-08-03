@@ -324,7 +324,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 38,
+  "op_calls": 40,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1218,34 +1218,22 @@
       "meta_ts": 1785542416.2256446,
       "lines": [
         [
-          "Bestia",
-          "Shinden",
-          2.43,
-          1.529
-        ],
-        [
-          "NRG Esports",
-          "Sportsbetexpert",
-          1.232,
-          3.74
-        ],
-        [
-          "Team Spirit",
-          "MOUZ",
-          15.32,
-          1.025
+          "Eternal Fire Academy",
+          "Vp.Prodigy",
+          3.04,
+          1.324
         ],
         [
           "Keyd Stars",
           "Borracheiros",
-          1.238,
-          3.55
+          1.259,
+          3.41
         ],
         [
           "Gremio",
           "Pain Academy",
-          1.98,
-          1.645
+          2.11,
+          1.558
         ],
         [
           "Yawara eSports",
@@ -1258,21 +1246,9 @@
           "Meia Noite",
           1.293,
           3.2
-        ],
-        [
-          "New Vision",
-          "Inner Circle Academy",
-          13.56,
-          1.028
-        ],
-        [
-          "Sinners",
-          "Sparta eSports",
-          1.039,
-          11.27
         ]
       ],
-      "odds_ts": 1785686411.2318523
+      "odds_ts": 1785744014.9101336
     },
     "valorant": {
       "lines": [],
@@ -30564,6 +30540,6 @@
   "deepdive_last": "2026-08-01",
   "dep_checked_ts": 1785737042.2892163,
   "x_bio_v": 2,
-  "op_cool_until": 1785687311.2318523,
+  "op_cool_until": 1785744914.9101336,
   "x_ads": []
 }
