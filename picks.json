@@ -7091,10 +7091,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
-        "home_ml": 157,
-        "away_ml": -191,
+        "home_ml": 153,
+        "away_ml": -186,
         "total": 11.5,
-        "ts": 1785799742
+        "ts": 1785801542
       },
       "last_alert_odds": 151
     },
@@ -7115,10 +7115,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -147,
-        "away_ml": 122,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 9.0,
-        "ts": 1785799742
+        "ts": 1785801542
       },
       "last_alert_odds": -147
     },
@@ -7242,8 +7242,8 @@
       "live_odds": {
         "home_ml": 105,
         "away_ml": -126,
-        "total": 8.0,
-        "ts": 1785799742
+        "total": 7.5,
+        "ts": 1785801542
       }
     },
     {
