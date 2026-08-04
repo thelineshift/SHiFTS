@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T15:09:07Z",
+  "updated": "2026-08-04T16:01:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8072,6 +8072,57 @@
         "ts": 1785855543
       },
       "last_alert_odds": -156
+    },
+    {
+      "id": "shopify-rebellion-ml-0804",
+      "date": "2026-08-04",
+      "sport": "r6",
+      "desc": "Shopify Rebellion ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:40 PM ET",
+      "vs": "TYLOO",
+      "team": "Shopify Rebellion",
+      "opp": "TYLOO",
+      "analysis": "4-1 last 5 (beat Al Ula, 100 Thieves, Outlast) (lost to DarkZero Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Al Ula, 100 Thieves, Outlast) (lost to DarkZero Esports) vs 3-2 \u2014 model line -265 (our 73%). The number's off by **20 points** \u2014 this is where CLV hunte",
+      "awayTeam": "Shopify Rebellion",
+      "homeTeam": "TYLOO"
+    },
+    {
+      "id": "habos-babos-ml-0804",
+      "date": "2026-08-04",
+      "sport": "valorant",
+      "desc": "Habos Babos ML",
+      "market": "VCT Bo3",
+      "odds": -319,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "02:00 PM ET",
+      "vs": "ALTERNATE aTTaX Ruby",
+      "team": "Habos Babos",
+      "opp": "ALTERNATE aTTaX Ruby",
+      "analysis": "3-2 last 5 (beat GIANTX GC, Twisted Minds Orchid, Bar\u00e7a eSports GC) (lost to SK Nebula) vs 1-4 \u2014 live Pinnacle line -319 (our 86% vs book 70%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat GIANTX GC, Twisted Minds Orchid, Bar\u00e7a eSports GC) (lost to SK Nebula) vs 1-4 \u2014 live Pinnacle line -319 (our 86% vs book 7",
+      "awayTeam": "Habos Babos",
+      "homeTeam": "ALTERNATE aTTaX Ruby"
+    },
+    {
+      "id": "ex-young-ninjas-ml-0804",
+      "date": "2026-08-04",
+      "sport": "cs2",
+      "desc": "ex-Young Ninjas ML",
+      "market": "CCT Europe Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "UNiTY esports",
+      "team": "ex-Young Ninjas",
+      "opp": "UNiTY esports",
+      "analysis": "2-2 last 5 (beat Inner Circle Academy, ex-RUSTEC) (lost to SPARTA) vs 2-3 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 2-2 last 5 (beat Inner Circle Academy, ex-RUSTEC) (lost to SPARTA) vs 2-3 \u2014 model line -150 (our 60%). That's a **10-point** gap over UNiTY esports the number hasn't priced.",
+      "awayTeam": "ex-Young Ninjas",
+      "homeTeam": "UNiTY esports"
     }
   ]
 }
