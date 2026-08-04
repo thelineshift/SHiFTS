@@ -7466,10 +7466,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -167,
-        "away_ml": 138,
+        "home_ml": -168,
+        "away_ml": 139,
         "total": 7.5,
-        "ts": 1785821342
+        "ts": 1785844742
       },
       "last_alert_odds": -164
     },
@@ -7561,10 +7561,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Athletics",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -142,
+        "away_ml": 118,
         "total": 9.0,
-        "ts": 1785826742
+        "ts": 1785844742
       }
     },
     {
