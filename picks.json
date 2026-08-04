@@ -7343,12 +7343,12 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -270,
-        "away_ml": 216,
+        "home_ml": -292,
+        "away_ml": 233,
         "total": 9.0,
-        "ts": 1785846541
+        "ts": 1785850141
       },
-      "last_alert_odds": 207
+      "last_alert_odds": 233
     },
     {
       "id": "chicago-sky-ml-0804",
