@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T02:29:08Z",
+  "updated": "2026-08-04T02:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6956,7 +6956,10 @@
         "total": 8.0,
         "ts": 1785797942
       },
-      "last_alert_odds": 192
+      "last_alert_odds": 192,
+      "result": "WIN",
+      "score": "St. Louis Cardinals 13, New York Yankees 7",
+      "units_result": 1.57
     },
     {
       "id": "las-vegas-aces-ml-0803",
@@ -7132,7 +7135,10 @@
         "total": 9.0,
         "ts": 1785801542
       },
-      "last_alert_odds": -147
+      "last_alert_odds": -147,
+      "result": "LOSS",
+      "score": "Toronto Blue Jays 3, Houston Astros 1",
+      "units_result": -1.0
     },
     {
       "id": "los-kogutos-ml-0803",
@@ -7259,7 +7265,10 @@
         "away_ml": -126,
         "total": 7.5,
         "ts": 1785801542
-      }
+      },
+      "result": "LOSS",
+      "score": "Los Angeles Dodgers 5, Chicago Cubs 10",
+      "units_result": -1.0
     },
     {
       "id": "new-york-liberty-ml-0803",
