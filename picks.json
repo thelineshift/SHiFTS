@@ -7343,10 +7343,10 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -275,
+        "home_ml": -276,
         "away_ml": 221,
         "total": 9.0,
-        "ts": 1785851941
+        "ts": 1785853741
       },
       "last_alert_odds": 221
     },
@@ -7442,10 +7442,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -126,
+        "home_ml": -125,
         "away_ml": 104,
-        "total": 8.5,
-        "ts": 1785851942
+        "total": 9.0,
+        "ts": 1785853742
       },
       "last_alert_odds": -131
     },
@@ -7490,12 +7490,12 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
-        "home_ml": 129,
-        "away_ml": -156,
+        "home_ml": 138,
+        "away_ml": -167,
         "total": 11.0,
-        "ts": 1785846542
+        "ts": 1785853742
       },
-      "last_alert_odds": 123
+      "last_alert_odds": 138
     },
     {
       "id": "kansas-city-royals-ml-0804",
@@ -7563,8 +7563,8 @@
       "live_odds": {
         "home_ml": -136,
         "away_ml": 113,
-        "total": 9.5,
-        "ts": 1785846542
+        "total": 9.0,
+        "ts": 1785853742
       }
     },
     {
@@ -7632,10 +7632,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -124,
-        "away_ml": 103,
+        "home_ml": -131,
+        "away_ml": 109,
         "total": 8.5,
-        "ts": 1785851942
+        "ts": 1785853742
       },
       "last_alert_odds": -131
     },
@@ -7801,10 +7801,10 @@
       "homeTeam": "Seattle Mariners",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 8.0,
-        "ts": 1785830343
+        "ts": 1785853742
       }
     },
     {
@@ -7872,10 +7872,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -124,
-        "away_ml": 103,
+        "home_ml": -131,
+        "away_ml": 109,
         "total": 8.5,
-        "ts": 1785851943
+        "ts": 1785853742
       }
     },
     {
