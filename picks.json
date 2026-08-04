@@ -7010,10 +7010,10 @@
       "homeTeam": "Chicago Sky",
       "awayTeam": "Phoenix Mercury",
       "live_odds": {
-        "home_ml": 110,
-        "away_ml": -130,
+        "home_ml": 105,
+        "away_ml": -125,
         "total": 179.5,
-        "ts": 1785796142
+        "ts": 1785805142
       },
       "last_alert_odds": 105
     },
@@ -7068,10 +7068,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -114,
+        "home_ml": -115,
         "away_ml": -105,
         "total": 9.0,
-        "ts": 1785792542
+        "ts": 1785805142
       }
     },
     {
