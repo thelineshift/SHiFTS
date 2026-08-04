@@ -7608,10 +7608,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": 170,
-        "away_ml": -208,
+        "home_ml": 168,
+        "away_ml": -206,
         "total": 9.0,
-        "ts": 1785824942
+        "ts": 1785833942
       },
       "last_alert_odds": -206
     },
@@ -7693,10 +7693,10 @@
       "homeTeam": "Chicago Cubs",
       "awayTeam": "Los Angeles Dodgers",
       "live_odds": {
-        "home_ml": 170,
-        "away_ml": -208,
+        "home_ml": 168,
+        "away_ml": -206,
         "total": 9.0,
-        "ts": 1785824942
+        "ts": 1785833942
       }
     },
     {
@@ -7740,11 +7740,12 @@
       "homeTeam": "Baltimore Orioles",
       "awayTeam": "Los Angeles Angels",
       "live_odds": {
-        "home_ml": -150,
-        "away_ml": 124,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 8.5,
-        "ts": 1785819549
-      }
+        "ts": 1785833942
+      },
+      "last_alert_odds": -156
     },
     {
       "id": "over-8.5-0804",
@@ -7888,7 +7889,14 @@
       "opp": "Miami Marlins",
       "analysis": "67-45 overall, 36-20 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Atlanta Braves 68% straight up | \u2694\ufe0f **Matchup read:** 67-45 overall, 36-20 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Atlanta Braves 68% straight ",
       "homeTeam": "Atlanta Braves",
-      "awayTeam": "Miami Marlins"
+      "awayTeam": "Miami Marlins",
+      "live_odds": {
+        "home_ml": -156,
+        "away_ml": 129,
+        "total": 9.0,
+        "ts": 1785833942
+      },
+      "last_alert_odds": -156
     },
     {
       "id": "2-leg-parlay-0804-whale",
