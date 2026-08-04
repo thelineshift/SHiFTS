@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T17:09:06Z",
+  "updated": "2026-08-04T18:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8114,7 +8114,10 @@
       "opp": "ALTERNATE aTTaX Ruby",
       "analysis": "3-2 last 5 (beat GIANTX GC, Twisted Minds Orchid, Bar\u00e7a eSports GC) (lost to SK Nebula) vs 1-4 \u2014 live Pinnacle line -319 (our 86% vs book 70%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat GIANTX GC, Twisted Minds Orchid, Bar\u00e7a eSports GC) (lost to SK Nebula) vs 1-4 \u2014 live Pinnacle line -319 (our 86% vs book 7",
       "awayTeam": "Habos Babos",
-      "homeTeam": "ALTERNATE aTTaX Ruby"
+      "homeTeam": "ALTERNATE aTTaX Ruby",
+      "result": "WIN",
+      "units_result": 0.47,
+      "score": "Habos Babos 2-0 ALTERNATE aTTaX Ruby \u00b7 final"
     },
     {
       "id": "ex-young-ninjas-ml-0804",
