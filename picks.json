@@ -7091,10 +7091,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
-        "home_ml": 153,
-        "away_ml": -186,
+        "home_ml": 152,
+        "away_ml": -185,
         "total": 11.5,
-        "ts": 1785801542
+        "ts": 1785803342
       },
       "last_alert_odds": 151
     },
