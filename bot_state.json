@@ -51,7 +51,35 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "st.-louis-cardinals-ml-0803",
+      "desc": "St. Louis Cardinals ML",
+      "odds": 157,
+      "result": "WIN",
+      "units": 1.57,
+      "score": "St. Louis Cardinals 13, New York Yankees 7",
+      "tier": "sharp"
+    },
+    {
+      "id": "houston-astros-ml-0803",
+      "desc": "Houston Astros ML",
+      "odds": -135,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Toronto Blue Jays 3, Houston Astros 1",
+      "tier": "lock"
+    },
+    {
+      "id": "los-angeles-dodgers-ml-0803",
+      "desc": "Los Angeles Dodgers ML",
+      "odds": -126,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Los Angeles Dodgers 5, Chicago Cubs 10",
+      "tier": "free"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
