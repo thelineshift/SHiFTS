@@ -7384,10 +7384,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -205,
-        "away_ml": 168,
+        "home_ml": -194,
+        "away_ml": 159,
         "total": 8.0,
-        "ts": 1785841142
+        "ts": 1785855542
       },
       "last_alert_odds": -203
     },
@@ -7442,10 +7442,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -125,
-        "away_ml": 104,
+        "home_ml": -122,
+        "away_ml": 101,
         "total": 9.0,
-        "ts": 1785853742
+        "ts": 1785855542
       },
       "last_alert_odds": -131
     },
@@ -7466,12 +7466,12 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -168,
-        "away_ml": 139,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 7.5,
-        "ts": 1785844742
+        "ts": 1785855542
       },
-      "last_alert_odds": -164
+      "last_alert_odds": -149
     },
     {
       "id": "colorado-rockies-ml-0804",
@@ -7745,8 +7745,8 @@
       "live_odds": {
         "home_ml": -156,
         "away_ml": 129,
-        "total": 8.5,
-        "ts": 1785833942
+        "total": 9.0,
+        "ts": 1785855543
       },
       "last_alert_odds": -156
     },
@@ -7801,10 +7801,10 @@
       "homeTeam": "Seattle Mariners",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
-        "total": 8.0,
-        "ts": 1785853742
+        "home_ml": -135,
+        "away_ml": 112,
+        "total": 7.5,
+        "ts": 1785855543
       }
     },
     {
@@ -8065,8 +8065,8 @@
       "live_odds": {
         "home_ml": -156,
         "away_ml": 129,
-        "total": 8.5,
-        "ts": 1785846542
+        "total": 9.0,
+        "ts": 1785855543
       },
       "last_alert_odds": -156
     }
