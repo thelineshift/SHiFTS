@@ -7384,10 +7384,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -206,
-        "away_ml": 168,
+        "home_ml": -200,
+        "away_ml": 164,
         "total": 8.0,
-        "ts": 1785837542
+        "ts": 1785839342
       },
       "last_alert_odds": -203
     },
