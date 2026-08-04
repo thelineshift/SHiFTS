@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T09:09:08Z",
+  "updated": "2026-08-04T12:00:46Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -7993,6 +7993,74 @@
           "time_et": "07:10 PM ET"
         }
       ]
+    },
+    {
+      "id": "enjoy-ml-0804",
+      "date": "2026-08-04",
+      "sport": "cs2",
+      "desc": "ENJOY ML",
+      "market": "CCT Europe Bo3",
+      "odds": 151,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "Just Players",
+      "team": "ENJOY",
+      "opp": "Just Players",
+      "analysis": "3-2 last 5 (beat Mai Tai, Atreides, Entropy) (lost to GenOne) vs 1-4 \u2014 live Pinnacle line +151 (our 86% vs book 37%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Mai Tai, Atreides, Entropy) (lost to GenOne) vs 1-4 \u2014 live Pinnacle line +151 (our 86% vs book 37%). Ride the **48-point** form edge before the",
+      "awayTeam": "ENJOY",
+      "homeTeam": "Just Players"
+    },
+    {
+      "id": "fokus-sakura-ml-0804",
+      "date": "2026-08-04",
+      "sport": "valorant",
+      "desc": "FOKUS Sakura ML",
+      "market": "VCT Bo3",
+      "odds": -193,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "Karmine Corp GC",
+      "team": "FOKUS Sakura",
+      "opp": "Karmine Corp GC",
+      "analysis": "4-1 last 5 (beat SK Nebula, Gentle Mates GC, G2 Gozen) (lost to GIANTX GC) vs 2-3 \u2014 live Pinnacle line -193 (our 86% vs book 61%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat SK Nebula, Gentle Mates GC, G2 Gozen) (lost to GIANTX GC) vs 2-3 \u2014 live Pinnacle line -193 (our 86% vs book 61%). Ride the **24-po",
+      "awayTeam": "FOKUS Sakura",
+      "homeTeam": "Karmine Corp GC"
+    },
+    {
+      "id": "chiefs-esports-club-ml-0804",
+      "date": "2026-08-04",
+      "sport": "r6",
+      "desc": "Chiefs Esports Club ML",
+      "market": "Esports World Cup Bo1",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "09:20 AM ET",
+      "vs": "TYLOO",
+      "team": "Chiefs Esports Club",
+      "opp": "TYLOO",
+      "analysis": "4-1 last 5 (beat ENTERPRISE Esports, Rival Esports, Arcade Esports) (lost to ENTERPRISE Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ENTERPRISE Esports, Rival Esports, Arcade Esports) (lost to ENTERPRISE Esports) vs 3-2 \u2014 model line -265 (our 73%). The number's ",
+      "awayTeam": "Chiefs Esports Club",
+      "homeTeam": "TYLOO"
+    },
+    {
+      "id": "baltimore-orioles--1.5-0804",
+      "date": "2026-08-04",
+      "sport": "mlb",
+      "desc": "Baltimore Orioles -1.5",
+      "market": "run line",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "sharp",
+      "time_et": "06:35 PM ET",
+      "vs": "Los Angeles Angels",
+      "team": "Baltimore Orioles",
+      "opp": "Los Angeles Angels",
+      "analysis": "54-58 overall, 30-29 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Baltimore Orioles 67% straight up | \ud83d\udcca **Form + price:** 54-58 overall, 30-29 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Baltimore Orioles 67% stra",
+      "homeTeam": "Baltimore Orioles",
+      "awayTeam": "Los Angeles Angels"
     }
   ]
 }
