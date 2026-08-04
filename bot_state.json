@@ -334,7 +334,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 52,
+  "op_calls": 53,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1281,31 +1281,37 @@
     "valorant": {
       "lines": [
         [
-          "SK Nebula",
-          "FOKUS Sakura",
-          1.684,
-          2.09
-        ],
-        [
-          "Gentle Mates GC",
           "Karmine Corp GC",
-          1.152,
-          4.4
+          "FOKUS Sakura",
+          2.4,
+          1.518
         ],
         [
           "G2 Gozen",
-          "ALTERNATE aTTaX Ruby",
-          1.106,
-          5.16
+          "Barca GC",
+          1.1,
+          5.3
         ],
         [
+          "ALTERNATE aTTaX Ruby",
+          "Habos Babos",
+          3.1,
+          1.313
+        ],
+        [
+          "SK Nebula",
           "Twisted Minds Orchid",
-          "Barca GC",
-          1.181,
-          4.05
+          1.462,
+          2.54
+        ],
+        [
+          "Titan",
+          "KeepBest",
+          1.757,
+          2.0
         ]
       ],
-      "odds_ts": 1785787214.6790955,
+      "odds_ts": 1785844812.7294455,
       "active": [
         901974,
         902257,
