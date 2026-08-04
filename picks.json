@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T04:29:13Z",
+  "updated": "2026-08-04T08:01:01Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -7869,6 +7869,116 @@
         "total": 8.5,
         "ts": 1785819549
       }
+    },
+    {
+      "id": "atlanta-braves--1.5-0804",
+      "date": "2026-08-04",
+      "sport": "mlb",
+      "desc": "Atlanta Braves -1.5",
+      "market": "run line",
+      "odds": -110,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:15 PM ET",
+      "vs": "Miami Marlins",
+      "team": "Atlanta Braves",
+      "opp": "Miami Marlins",
+      "analysis": "67-45 overall, 36-20 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Atlanta Braves 68% straight up | \u2694\ufe0f **Matchup read:** 67-45 overall, 36-20 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Atlanta Braves 68% straight ",
+      "homeTeam": "Atlanta Braves",
+      "awayTeam": "Miami Marlins"
+    },
+    {
+      "id": "2-leg-parlay-0804-whale",
+      "date": "2026-08-04",
+      "sport": "parlay",
+      "desc": "San Francisco Giants ML + Boston Red Sox ML",
+      "market": "2-leg parlay (MLB)",
+      "odds": 367,
+      "units": 0.5,
+      "tier": "whale",
+      "time_et": "07:10 PM ET",
+      "vs": "San Francisco Giants ML vs Texas Rangers \u00b7 Boston Red Sox ML vs Chicago White Sox",
+      "team": null,
+      "opp": null,
+      "analysis": "San Francisco Giants ML (+165) \u30fb Boston Red Sox ML (-131) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "San Francisco Giants",
+          "vs": "Texas Rangers",
+          "sport": "mlb",
+          "date": "2026-08-04",
+          "time_et": "08:05 PM ET"
+        },
+        {
+          "team": "Boston Red Sox",
+          "vs": "Chicago White Sox",
+          "sport": "mlb",
+          "date": "2026-08-04",
+          "time_et": "07:10 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "2-leg-parlay-0804-sharp",
+      "date": "2026-08-04",
+      "sport": "parlay",
+      "desc": "San Francisco Giants ML + Boston Red Sox ML",
+      "market": "2-leg parlay (MLB)",
+      "odds": 367,
+      "units": 0.5,
+      "tier": "sharp",
+      "time_et": "07:10 PM ET",
+      "vs": "San Francisco Giants ML vs Texas Rangers \u00b7 Boston Red Sox ML vs Chicago White Sox",
+      "team": null,
+      "opp": null,
+      "analysis": "San Francisco Giants ML (+165) \u30fb Boston Red Sox ML (-131) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "San Francisco Giants",
+          "vs": "Texas Rangers",
+          "sport": "mlb",
+          "date": "2026-08-04",
+          "time_et": "08:05 PM ET"
+        },
+        {
+          "team": "Boston Red Sox",
+          "vs": "Chicago White Sox",
+          "sport": "mlb",
+          "date": "2026-08-04",
+          "time_et": "07:10 PM ET"
+        }
+      ]
+    },
+    {
+      "id": "2-leg-parlay-0804-lock",
+      "date": "2026-08-04",
+      "sport": "parlay",
+      "desc": "San Francisco Giants ML + Boston Red Sox ML",
+      "market": "2-leg parlay (MLB)",
+      "odds": 367,
+      "units": 0.5,
+      "tier": "lock",
+      "time_et": "07:10 PM ET",
+      "vs": "San Francisco Giants ML vs Texas Rangers \u00b7 Boston Red Sox ML vs Chicago White Sox",
+      "team": null,
+      "opp": null,
+      "analysis": "San Francisco Giants ML (+165) \u30fb Boston Red Sox ML (-131) | parlay \u2014 every leg cleared the edge bar",
+      "legs": [
+        {
+          "team": "San Francisco Giants",
+          "vs": "Texas Rangers",
+          "sport": "mlb",
+          "date": "2026-08-04",
+          "time_et": "08:05 PM ET"
+        },
+        {
+          "team": "Boston Red Sox",
+          "vs": "Chicago White Sox",
+          "sport": "mlb",
+          "date": "2026-08-04",
+          "time_et": "07:10 PM ET"
+        }
+      ]
     }
   ]
 }
