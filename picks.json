@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T16:29:05Z",
+  "updated": "2026-08-04T17:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8030,7 +8030,10 @@
       "opp": "Karmine Corp GC",
       "analysis": "4-1 last 5 (beat SK Nebula, Gentle Mates GC, G2 Gozen) (lost to GIANTX GC) vs 2-3 \u2014 live Pinnacle line -193 (our 86% vs book 61%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat SK Nebula, Gentle Mates GC, G2 Gozen) (lost to GIANTX GC) vs 2-3 \u2014 live Pinnacle line -193 (our 86% vs book 61%). Ride the **24-po",
       "awayTeam": "FOKUS Sakura",
-      "homeTeam": "Karmine Corp GC"
+      "homeTeam": "Karmine Corp GC",
+      "result": "WIN",
+      "units_result": 0.78,
+      "score": "FOKUS Sakura 2-0 Karmine Corp GC \u00b7 final"
     },
     {
       "id": "chiefs-esports-club-ml-0804",
