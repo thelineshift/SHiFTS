@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T18:29:06Z",
+  "updated": "2026-08-04T19:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8134,7 +8134,10 @@
       "opp": "UNiTY esports",
       "analysis": "2-2 last 5 (beat Inner Circle Academy, ex-RUSTEC) (lost to SPARTA) vs 2-3 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 2-2 last 5 (beat Inner Circle Academy, ex-RUSTEC) (lost to SPARTA) vs 2-3 \u2014 model line -150 (our 60%). That's a **10-point** gap over UNiTY esports the number hasn't priced.",
       "awayTeam": "ex-Young Ninjas",
-      "homeTeam": "UNiTY esports"
+      "homeTeam": "UNiTY esports",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "ex-Young Ninjas 0-2 UNiTY esports \u00b7 final"
     }
   ]
 }
