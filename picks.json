@@ -7343,10 +7343,10 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -264,
-        "away_ml": 212,
+        "home_ml": -270,
+        "away_ml": 216,
         "total": 9.0,
-        "ts": 1785842941
+        "ts": 1785846541
       },
       "last_alert_odds": 207
     },
@@ -7490,10 +7490,10 @@
       "homeTeam": "Colorado Rockies",
       "awayTeam": "Tampa Bay Rays",
       "live_odds": {
-        "home_ml": 123,
-        "away_ml": -149,
+        "home_ml": 129,
+        "away_ml": -156,
         "total": 11.0,
-        "ts": 1785819543
+        "ts": 1785846542
       },
       "last_alert_odds": 123
     },
@@ -7537,10 +7537,10 @@
       "homeTeam": "Cleveland Guardians",
       "awayTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -155,
-        "away_ml": 128,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 7.5,
-        "ts": 1785830342
+        "ts": 1785846542
       },
       "last_alert_odds": -156
     },
@@ -7561,10 +7561,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Athletics",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
-        "total": 9.0,
-        "ts": 1785844742
+        "home_ml": -136,
+        "away_ml": 113,
+        "total": 9.5,
+        "ts": 1785846542
       }
     },
     {
@@ -7584,10 +7584,10 @@
       "homeTeam": "Boston Red Sox",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -132,
-        "away_ml": 110,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 9.0,
-        "ts": 1785842942
+        "ts": 1785846542
       },
       "last_alert_odds": 104
     },
@@ -7608,10 +7608,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": 168,
-        "away_ml": -206,
-        "total": 9.0,
-        "ts": 1785833942
+        "home_ml": 177,
+        "away_ml": -217,
+        "total": 8.5,
+        "ts": 1785846542
       },
       "last_alert_odds": -206
     },
@@ -7696,10 +7696,10 @@
       "homeTeam": "Chicago Cubs",
       "awayTeam": "Los Angeles Dodgers",
       "live_odds": {
-        "home_ml": 168,
-        "away_ml": -206,
-        "total": 9.0,
-        "ts": 1785833942
+        "home_ml": 177,
+        "away_ml": -217,
+        "total": 8.5,
+        "ts": 1785846542
       }
     },
     {
@@ -7847,10 +7847,10 @@
       "homeTeam": "Cleveland Guardians",
       "awayTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -155,
-        "away_ml": 128,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 7.5,
-        "ts": 1785830343
+        "ts": 1785846542
       },
       "last_alert_odds": -156
     },
@@ -8060,7 +8060,14 @@
       "opp": "Los Angeles Angels",
       "analysis": "54-58 overall, 30-29 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Baltimore Orioles 67% straight up | \ud83d\udcca **Form + price:** 54-58 overall, 30-29 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Baltimore Orioles 67% stra",
       "homeTeam": "Baltimore Orioles",
-      "awayTeam": "Los Angeles Angels"
+      "awayTeam": "Los Angeles Angels",
+      "live_odds": {
+        "home_ml": -156,
+        "away_ml": 129,
+        "total": 8.5,
+        "ts": 1785846542
+      },
+      "last_alert_odds": -156
     }
   ]
 }
