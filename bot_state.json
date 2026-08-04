@@ -331,7 +331,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 50,
+  "op_calls": 52,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1225,37 +1225,55 @@
       "meta_ts": 1785542416.2256446,
       "lines": [
         [
-          "Eternal Fire Academy",
-          "Vp.Prodigy",
-          3.12,
-          1.309
-        ],
-        [
-          "Keyd Stars",
-          "Borracheiros",
-          1.223,
-          3.66
-        ],
-        [
-          "Gremio",
-          "Pain Academy",
-          2.11,
-          1.558
+          "Inner Circle Prospects",
+          "Ence Prospect",
+          2.13,
+          1.657
         ],
         [
           "Yawara eSports",
           "Ex-Guara",
-          1.097,
-          5.36
+          1.197,
+          3.89
         ],
         [
           "Galorys",
           "Meia Noite",
           1.293,
           3.2
+        ],
+        [
+          "Bestia",
+          "Metanoia Wolves",
+          1.083,
+          5.73
+        ],
+        [
+          "Ex-Rustec",
+          "New Vision",
+          1.207,
+          3.97
+        ],
+        [
+          "Just Players",
+          "Enjoy",
+          1.5,
+          2.51
+        ],
+        [
+          "Team Liquid",
+          "9Ine",
+          1.403,
+          2.81
+        ],
+        [
+          "Fnatic",
+          "Eac",
+          1.226,
+          3.79
         ]
       ],
-      "odds_ts": 1785772815.0553236
+      "odds_ts": 1785830413.2775283
     },
     "valorant": {
       "lines": [
