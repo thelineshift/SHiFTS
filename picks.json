@@ -7343,10 +7343,10 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -258,
-        "away_ml": 208,
+        "home_ml": -264,
+        "away_ml": 212,
         "total": 9.0,
-        "ts": 1785837542
+        "ts": 1785842941
       },
       "last_alert_odds": 207
     },
@@ -7584,10 +7584,10 @@
       "homeTeam": "Boston Red Sox",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -132,
+        "away_ml": 110,
         "total": 9.0,
-        "ts": 1785824942
+        "ts": 1785842942
       },
       "last_alert_odds": 104
     },
