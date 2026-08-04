@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T16:09:07Z",
+  "updated": "2026-08-04T16:29:05Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8010,7 +8010,10 @@
       "opp": "Just Players",
       "analysis": "3-2 last 5 (beat Mai Tai, Atreides, Entropy) (lost to GenOne) vs 1-4 \u2014 live Pinnacle line +151 (our 86% vs book 37%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Mai Tai, Atreides, Entropy) (lost to GenOne) vs 1-4 \u2014 live Pinnacle line +151 (our 86% vs book 37%). Ride the **48-point** form edge before the",
       "awayTeam": "ENJOY",
-      "homeTeam": "Just Players"
+      "homeTeam": "Just Players",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "ENJOY 0-2 Just Players \u00b7 final"
     },
     {
       "id": "fokus-sakura-ml-0804",
