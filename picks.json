@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T16:01:00Z",
+  "updated": "2026-08-04T16:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8088,7 +8088,10 @@
       "opp": "TYLOO",
       "analysis": "4-1 last 5 (beat Al Ula, 100 Thieves, Outlast) (lost to DarkZero Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Al Ula, 100 Thieves, Outlast) (lost to DarkZero Esports) vs 3-2 \u2014 model line -265 (our 73%). The number's off by **20 points** \u2014 this is where CLV hunte",
       "awayTeam": "Shopify Rebellion",
-      "homeTeam": "TYLOO"
+      "homeTeam": "TYLOO",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Shopify Rebellion 1-0 Al Ula \u00b7 final"
     },
     {
       "id": "habos-babos-ml-0804",
