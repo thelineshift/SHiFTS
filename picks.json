@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T08:01:01Z",
+  "updated": "2026-08-04T08:29:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -7654,7 +7654,10 @@
       "opp": "LT Gaming",
       "analysis": "4-1 last 5 (beat Mighty Tiger Gaming, WanZhen Esports Club, LT Gaming) (lost to UU Gamers) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 4-1 last 5 (beat Mighty Tiger Gaming, WanZhen Esports Club, LT Gaming) (lost to UU Gamers) vs 3-2 \u2014 model line -265 (our 73%). The book shaded this line t",
       "awayTeam": "Koala Game",
-      "homeTeam": "LT Gaming"
+      "homeTeam": "LT Gaming",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Koala Game 1-3 LT Gaming \u00b7 final"
     },
     {
       "id": "hanwha-life-esports-challeng-0804",
@@ -7885,14 +7888,7 @@
       "opp": "Miami Marlins",
       "analysis": "67-45 overall, 36-20 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Atlanta Braves 68% straight up | \u2694\ufe0f **Matchup read:** 67-45 overall, 36-20 at home \u2014 ML juiced to -156, so the -1.5 at the standard number is the bet; model makes Atlanta Braves 68% straight ",
       "homeTeam": "Atlanta Braves",
-      "awayTeam": "Miami Marlins",
-      "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
-        "total": 9.0,
-        "ts": 1785832142
-      },
-      "last_alert_odds": -156
+      "awayTeam": "Miami Marlins"
     },
     {
       "id": "2-leg-parlay-0804-whale",
