@@ -7384,10 +7384,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -203,
-        "away_ml": 166,
+        "home_ml": -205,
+        "away_ml": 167,
         "total": 8.0,
-        "ts": 1785819542
+        "ts": 1785824942
       },
       "last_alert_odds": -203
     },
@@ -7444,8 +7444,8 @@
       "live_odds": {
         "home_ml": -136,
         "away_ml": 113,
-        "total": 8.5,
-        "ts": 1785821342
+        "total": 9.0,
+        "ts": 1785824942
       },
       "last_alert_odds": -131
     },
@@ -7584,10 +7584,10 @@
       "homeTeam": "Boston Red Sox",
       "awayTeam": "Chicago White Sox",
       "live_odds": {
-        "home_ml": -126,
-        "away_ml": 104,
+        "home_ml": -131,
+        "away_ml": 109,
         "total": 9.0,
-        "ts": 1785819548
+        "ts": 1785824942
       },
       "last_alert_odds": 104
     },
@@ -7608,10 +7608,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": 176,
-        "away_ml": -216,
+        "home_ml": 170,
+        "away_ml": -208,
         "total": 9.0,
-        "ts": 1785821342
+        "ts": 1785824942
       },
       "last_alert_odds": -206
     },
@@ -7690,10 +7690,10 @@
       "homeTeam": "Chicago Cubs",
       "awayTeam": "Los Angeles Dodgers",
       "live_odds": {
-        "home_ml": 176,
-        "away_ml": -216,
+        "home_ml": 170,
+        "away_ml": -208,
         "total": 9.0,
-        "ts": 1785821343
+        "ts": 1785824942
       }
     },
     {
@@ -7794,10 +7794,10 @@
       "homeTeam": "Seattle Mariners",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 8.0,
-        "ts": 1785819549
+        "ts": 1785824942
       }
     },
     {
