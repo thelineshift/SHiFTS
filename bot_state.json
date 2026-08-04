@@ -337,7 +337,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 53,
+  "op_calls": 58,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1233,8 +1233,8 @@
         [
           "Inner Circle Prospects",
           "Ence Prospect",
-          2.13,
-          1.657
+          2.38,
+          1.529
         ],
         [
           "Yawara eSports",
@@ -1245,41 +1245,41 @@
         [
           "Galorys",
           "Meia Noite",
-          1.293,
-          3.2
+          1.295,
+          3.19
         ],
         [
           "Bestia",
           "Metanoia Wolves",
-          1.083,
-          5.73
+          1.054,
+          6.78
         ],
         [
           "Ex-Rustec",
           "New Vision",
-          1.207,
-          3.97
+          1.719,
+          2.07
         ],
         [
           "Just Players",
           "Enjoy",
-          1.5,
-          2.51
+          1.337,
+          3.14
         ],
         [
           "Team Liquid",
           "9Ine",
-          1.403,
-          2.81
+          1.318,
+          3.17
         ],
         [
           "Fnatic",
           "Eac",
-          1.226,
-          3.79
+          1.258,
+          3.54
         ]
       ],
-      "odds_ts": 1785830413.2775283
+      "odds_ts": 1785859216.256826
     },
     "valorant": {
       "lines": [
@@ -2518,98 +2518,80 @@
         [
           "Brion",
           "Nongshim Redforce",
-          2.75,
-          1.45
+          2.77,
+          1.444
         ],
         [
           "Hanwha Life Esports",
           "Gen.g Esports",
-          1.602,
-          2.35
-        ],
-        [
-          "Hanwha Life Esports",
-          "T1",
-          1.454,
-          2.57
-        ],
-        [
-          "Soopers",
-          "Gen.g Esports",
-          6.7,
-          1.093
+          1.892,
+          1.925
         ],
         [
           "DRX",
           "Brion",
-          1.641,
-          2.27
+          1.07,
+          7.8
         ],
         [
           "Eintracht Spandau",
           "Berlin International Gaming",
-          2.57,
-          1.507
-        ],
-        [
-          "Gen.G Global Academy",
-          "Hanwha Life Esports Challengers",
-          3.7,
-          1.267
+          1.442,
+          2.66
         ],
         [
           "T1 Esports Academy",
           "KT Rolster Challengers",
-          1.406,
-          2.91
+          1.107,
+          5.14
         ],
         [
           "Drx Challengers",
           "Fearx Youth",
-          2.28,
-          1.636
+          2.35,
+          1.602
         ],
         [
           "Nongshim Redforce Challengers",
           "Dplus Challengers",
-          1.746,
-          2.11
+          1.819,
+          2.01
+        ],
+        [
+          "LGD Gaming",
+          "JD Gaming",
+          1.336,
+          3.24
         ],
         [
           "TOP Esports",
           "Edward Gaming",
-          4.98,
-          1.158
+          5.65,
+          1.126
         ],
         [
           "The Paradox",
           "Team Phantasma",
-          3.81,
-          1.159
+          4.22,
+          1.121
         ],
         [
           "mCon esports",
           "The Bandits",
-          1.31,
-          3.39
+          1.324,
+          3.31
         ],
         [
           "Zennit",
           "Once Upon A Team",
-          1.446,
-          2.77
-        ],
-        [
-          "Zeu5 eSports",
-          "G3V E-Sports",
-          1.15,
-          5.13
+          1.357,
+          3.13
         ],
         [
           "Maze Gaming",
           "Malvinas Gaming",
-          2.5,
-          1.534
+          2.66,
+          1.478
         ],
         [
           "Volticons",
@@ -2619,24 +2601,36 @@
         ],
         [
           "Keyd Stars Academy",
-          "Pain Gaming Academy",
-          1.041,
-          10.56
-        ],
-        [
-          "Estral E-Sports",
-          "7Rex Team",
-          14.81,
-          1.022
+          "INTZ eSports",
+          2.1,
+          1.751
         ],
         [
           "Red Academy",
+          "Team Solid",
+          3.0,
+          1.386
+        ],
+        [
+          "7Rex Team",
+          "Rmd Gaming",
+          1.98,
+          1.84
+        ],
+        [
           "Kabum Idl",
-          1.026,
-          13.46
+          "Pain Gaming Academy",
+          1.925,
+          1.892
+        ],
+        [
+          "Estral E-Sports",
+          "Ei Nerd eSports",
+          1.217,
+          4.16
         ]
       ],
-      "odds_ts": 1785816019.185102
+      "odds_ts": 1785859210.842271
     }
   },
   "parlay_rot": 34,
