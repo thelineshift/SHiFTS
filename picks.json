@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T12:00:46Z",
+  "updated": "2026-08-04T15:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8044,7 +8044,10 @@
       "opp": "TYLOO",
       "analysis": "4-1 last 5 (beat ENTERPRISE Esports, Rival Esports, Arcade Esports) (lost to ENTERPRISE Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ENTERPRISE Esports, Rival Esports, Arcade Esports) (lost to ENTERPRISE Esports) vs 3-2 \u2014 model line -265 (our 73%). The number's ",
       "awayTeam": "Chiefs Esports Club",
-      "homeTeam": "TYLOO"
+      "homeTeam": "TYLOO",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Chiefs Esports Club 0-1 TYLOO \u00b7 final"
     },
     {
       "id": "baltimore-orioles--1.5-0804",
