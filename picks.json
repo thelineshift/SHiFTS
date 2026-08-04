@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T01:09:07Z",
+  "updated": "2026-08-04T01:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6926,7 +6926,10 @@
         "total": 9.0,
         "ts": 1785796142
       },
-      "last_alert_odds": 131
+      "last_alert_odds": 131,
+      "result": "LOSS",
+      "score": "Washington Nationals 3, Philadelphia Phillies 6",
+      "units_result": -1.0
     },
     {
       "id": "st.-louis-cardinals-ml-0803",
@@ -6974,7 +6977,10 @@
         "total": 184.5,
         "ts": 1785797942
       },
-      "last_alert_odds": 114
+      "last_alert_odds": 114,
+      "result": "WIN",
+      "score": "Las Vegas Aces 109, Atlanta Dream 87",
+      "units_result": 1.0
     },
     {
       "id": "bnk-fearx-youth-ml-0803",
@@ -7071,10 +7077,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -107,
-        "away_ml": -112,
-        "total": 8.5,
-        "ts": 1785806942
+        "home_ml": -115,
+        "away_ml": -105,
+        "total": 9.0,
+        "ts": 1785805142
       }
     },
     {
