@@ -51,26 +51,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "washington-nationals-ml-0803",
-      "desc": "Washington Nationals ML",
-      "odds": 129,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Washington Nationals 3, Philadelphia Phillies 6",
-      "tier": "sharp"
-    },
-    {
-      "id": "las-vegas-aces-ml-0803",
-      "desc": "Las Vegas Aces ML",
-      "odds": 100,
-      "result": "WIN",
-      "units": 1.0,
-      "score": "Las Vegas Aces 109, Atlanta Dream 87",
-      "tier": "sharp"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
