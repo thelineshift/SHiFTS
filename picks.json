@@ -7343,12 +7343,12 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -292,
-        "away_ml": 233,
+        "home_ml": -275,
+        "away_ml": 221,
         "total": 9.0,
-        "ts": 1785850141
+        "ts": 1785851941
       },
-      "last_alert_odds": 233
+      "last_alert_odds": 221
     },
     {
       "id": "chicago-sky-ml-0804",
@@ -7442,10 +7442,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -137,
-        "away_ml": 114,
+        "home_ml": -126,
+        "away_ml": 104,
         "total": 8.5,
-        "ts": 1785848342
+        "ts": 1785851942
       },
       "last_alert_odds": -131
     },
@@ -7514,10 +7514,10 @@
       "homeTeam": "Kansas City Royals",
       "awayTeam": "Minnesota Twins",
       "live_odds": {
-        "home_ml": 119,
-        "away_ml": -144,
+        "home_ml": 123,
+        "away_ml": -149,
         "total": 9.0,
-        "ts": 1785848342
+        "ts": 1785851942
       }
     },
     {
@@ -7608,12 +7608,12 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": 169,
-        "away_ml": -206,
+        "home_ml": 178,
+        "away_ml": -219,
         "total": 9.0,
-        "ts": 1785848342
+        "ts": 1785851942
       },
-      "last_alert_odds": -206
+      "last_alert_odds": -219
     },
     {
       "id": "houston-astros--1.5-0804",
@@ -7632,10 +7632,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -124,
+        "away_ml": 103,
         "total": 8.5,
-        "ts": 1785819548
+        "ts": 1785851942
       },
       "last_alert_odds": -131
     },
@@ -7696,10 +7696,10 @@
       "homeTeam": "Chicago Cubs",
       "awayTeam": "Los Angeles Dodgers",
       "live_odds": {
-        "home_ml": 169,
-        "away_ml": -206,
+        "home_ml": 178,
+        "away_ml": -219,
         "total": 9.0,
-        "ts": 1785848342
+        "ts": 1785851942
       }
     },
     {
@@ -7824,11 +7824,12 @@
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "New York Yankees",
       "live_odds": {
-        "home_ml": -175,
-        "away_ml": 144,
-        "total": 8.0,
-        "ts": 1785819549
-      }
+        "home_ml": -199,
+        "away_ml": 163,
+        "total": 8.5,
+        "ts": 1785851942
+      },
+      "last_alert_odds": 163
     },
     {
       "id": "cleveland-guardians--1.5-0804",
@@ -7871,10 +7872,10 @@
       "homeTeam": "Houston Astros",
       "awayTeam": "Toronto Blue Jays",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -124,
+        "away_ml": 103,
         "total": 8.5,
-        "ts": 1785819549
+        "ts": 1785851943
       }
     },
     {
