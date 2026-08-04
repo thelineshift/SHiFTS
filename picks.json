@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T02:49:08Z",
+  "updated": "2026-08-04T03:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6824,7 +6824,10 @@
         "total": 8.0,
         "ts": 1785799742
       },
-      "last_alert_odds": -125
+      "last_alert_odds": -125,
+      "result": "LOSS",
+      "score": "San Francisco Giants 5, Texas Rangers 1",
+      "units_result": -1.5
     },
     {
       "id": "milwaukee-brewers-ml-0803",
