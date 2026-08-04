@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T00:00:47Z",
+  "updated": "2026-08-04T01:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6797,7 +6797,10 @@
         "total": 182.5,
         "ts": 1785797941
       },
-      "last_alert_odds": -345
+      "last_alert_odds": -345,
+      "result": "WIN",
+      "score": "Seattle Storm 83, New York Liberty 95",
+      "units_result": 0.91
     },
     {
       "id": "texas-rangers-ml-0803",
@@ -7201,7 +7204,10 @@
         "total": 182.5,
         "ts": 1785797942
       },
-      "last_alert_odds": -345
+      "last_alert_odds": -345,
+      "result": "WIN",
+      "score": "Seattle Storm 83, New York Liberty 95",
+      "units_result": 0.91
     },
     {
       "id": "shifters-ml-0803",
@@ -7268,7 +7274,10 @@
         "total": 182.5,
         "ts": 1785797942
       },
-      "last_alert_odds": -345
+      "last_alert_odds": -345,
+      "result": "WIN",
+      "score": "Seattle Storm 83, New York Liberty 95",
+      "units_result": 0.46
     },
     {
       "id": "over-7.5-0803",
