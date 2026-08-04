@@ -7537,10 +7537,10 @@
       "homeTeam": "Cleveland Guardians",
       "awayTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 7.5,
-        "ts": 1785819543
+        "ts": 1785828543
       },
       "last_alert_odds": -156
     },
@@ -7713,12 +7713,12 @@
       "homeTeam": "Atlanta Braves",
       "awayTeam": "Miami Marlins",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 9.0,
-        "ts": 1785821343
+        "ts": 1785828543
       },
-      "last_alert_odds": -156
+      "last_alert_odds": -136
     },
     {
       "id": "baltimore-orioles-ml-0804",
@@ -7840,10 +7840,10 @@
       "homeTeam": "Cleveland Guardians",
       "awayTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -156,
-        "away_ml": 129,
+        "home_ml": -149,
+        "away_ml": 123,
         "total": 7.5,
-        "ts": 1785819549
+        "ts": 1785828543
       },
       "last_alert_odds": -156
     },
