@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T03:09:09Z",
+  "updated": "2026-08-04T03:29:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -7033,7 +7033,10 @@
         "total": 179.5,
         "ts": 1785805142
       },
-      "last_alert_odds": 105
+      "last_alert_odds": 105,
+      "result": "LOSS",
+      "score": "Phoenix Mercury 106, Chicago Sky 101",
+      "units_result": -1.0
     },
     {
       "id": "over-9.0-0803",
@@ -7114,7 +7117,10 @@
         "total": 11.5,
         "ts": 1785803342
       },
-      "last_alert_odds": 151
+      "last_alert_odds": 151,
+      "result": "LOSS",
+      "score": "Tampa Bay Rays 13, Colorado Rockies 9",
+      "units_result": -1.0
     },
     {
       "id": "houston-astros-ml-0803",
