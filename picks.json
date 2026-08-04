@@ -7442,10 +7442,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -131,
-        "away_ml": 109,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 8.5,
-        "ts": 1785819542
+        "ts": 1785821342
       },
       "last_alert_odds": -131
     },
@@ -7466,10 +7466,10 @@
       "homeTeam": "Milwaukee Brewers",
       "awayTeam": "Pittsburgh Pirates",
       "live_odds": {
-        "home_ml": -164,
-        "away_ml": 136,
+        "home_ml": -167,
+        "away_ml": 138,
         "total": 7.5,
-        "ts": 1785819543
+        "ts": 1785821342
       },
       "last_alert_odds": -164
     },
@@ -7608,10 +7608,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": 169,
-        "away_ml": -206,
+        "home_ml": 176,
+        "away_ml": -216,
         "total": 9.0,
-        "ts": 1785819548
+        "ts": 1785821342
       },
       "last_alert_odds": -206
     },
@@ -7690,10 +7690,10 @@
       "homeTeam": "Chicago Cubs",
       "awayTeam": "Los Angeles Dodgers",
       "live_odds": {
-        "home_ml": 169,
-        "away_ml": -206,
+        "home_ml": 176,
+        "away_ml": -216,
         "total": 9.0,
-        "ts": 1785819548
+        "ts": 1785821343
       }
     },
     {
@@ -7713,11 +7713,12 @@
       "homeTeam": "Atlanta Braves",
       "awayTeam": "Miami Marlins",
       "live_odds": {
-        "home_ml": -143,
-        "away_ml": 119,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 9.0,
-        "ts": 1785819549
-      }
+        "ts": 1785821343
+      },
+      "last_alert_odds": -156
     },
     {
       "id": "baltimore-orioles-ml-0804",
