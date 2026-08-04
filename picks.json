@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T19:09:06Z",
+  "updated": "2026-08-04T20:00:47Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8138,6 +8138,23 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "ex-Young Ninjas 0-2 UNiTY esports \u00b7 final"
+    },
+    {
+      "id": "meia-noite-ml-0804",
+      "date": "2026-08-04",
+      "sport": "cs2",
+      "desc": "MEIA NOITE ML",
+      "market": "BetBoom Storm Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 PM ET",
+      "vs": "Galorys",
+      "team": "MEIA NOITE",
+      "opp": "Galorys",
+      "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this spot more than the price says.",
+      "awayTeam": "MEIA NOITE",
+      "homeTeam": "Galorys"
     }
   ]
 }
