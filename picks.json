@@ -7442,10 +7442,10 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayTeam": "San Diego Padres",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -137,
+        "away_ml": 114,
         "total": 8.5,
-        "ts": 1785841142
+        "ts": 1785848342
       },
       "last_alert_odds": -131
     },
@@ -7514,10 +7514,10 @@
       "homeTeam": "Kansas City Royals",
       "awayTeam": "Minnesota Twins",
       "live_odds": {
-        "home_ml": 123,
-        "away_ml": -149,
+        "home_ml": 119,
+        "away_ml": -144,
         "total": 9.0,
-        "ts": 1785819543
+        "ts": 1785848342
       }
     },
     {
@@ -7608,10 +7608,10 @@
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "Chicago Cubs",
       "live_odds": {
-        "home_ml": 177,
-        "away_ml": -217,
-        "total": 8.5,
-        "ts": 1785846542
+        "home_ml": 169,
+        "away_ml": -206,
+        "total": 9.0,
+        "ts": 1785848342
       },
       "last_alert_odds": -206
     },
@@ -7696,10 +7696,10 @@
       "homeTeam": "Chicago Cubs",
       "awayTeam": "Los Angeles Dodgers",
       "live_odds": {
-        "home_ml": 177,
-        "away_ml": -217,
-        "total": 8.5,
-        "ts": 1785846542
+        "home_ml": 169,
+        "away_ml": -206,
+        "total": 9.0,
+        "ts": 1785848342
       }
     },
     {
