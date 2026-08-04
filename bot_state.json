@@ -330,7 +330,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 47,
+  "op_calls": 50,
   "op_meta": {
     "cs2": {
       "active": [
@@ -2485,97 +2485,127 @@
       "meta_ts": 1785571212.8008003,
       "lines": [
         [
-          "Shifters",
-          "Natus Vincere",
-          1.434,
-          2.81
-        ],
-        [
-          "Team Heretics",
-          "Karmine Corp",
-          1.063,
-          8.23
-        ],
-        [
-          "Gen.g Esports",
-          "Hanwha Life Esports",
-          14.91,
-          1.021
-        ],
-        [
+          "Brion",
           "Nongshim Redforce",
+          2.75,
+          1.45
+        ],
+        [
+          "Hanwha Life Esports",
+          "Gen.g Esports",
+          1.602,
+          2.35
+        ],
+        [
+          "Hanwha Life Esports",
           "T1",
-          1.361,
-          2.98
+          1.454,
+          2.57
+        ],
+        [
+          "Soopers",
+          "Gen.g Esports",
+          6.7,
+          1.093
+        ],
+        [
+          "DRX",
+          "Brion",
+          1.641,
+          2.27
         ],
         [
           "Eintracht Spandau",
           "Berlin International Gaming",
-          2.81,
-          1.434
+          2.57,
+          1.507
         ],
         [
+          "Gen.G Global Academy",
+          "Hanwha Life Esports Challengers",
+          3.7,
+          1.267
+        ],
+        [
+          "T1 Esports Academy",
+          "KT Rolster Challengers",
+          1.406,
+          2.91
+        ],
+        [
+          "Drx Challengers",
           "Fearx Youth",
-          "Brion Challengers",
-          4.57,
-          1.14
+          2.28,
+          1.636
         ],
         [
-          "Soopers Challengers",
+          "Nongshim Redforce Challengers",
           "Dplus Challengers",
-          1.523,
-          2.39
+          1.746,
+          2.11
+        ],
+        [
+          "TOP Esports",
+          "Edward Gaming",
+          4.98,
+          1.158
+        ],
+        [
+          "The Paradox",
+          "Team Phantasma",
+          3.81,
+          1.159
+        ],
+        [
+          "mCon esports",
+          "The Bandits",
+          1.31,
+          3.39
+        ],
+        [
+          "Zennit",
+          "Once Upon A Team",
+          1.446,
+          2.77
         ],
         [
           "Zeu5 eSports",
           "G3V E-Sports",
-          1.159,
-          4.96
+          1.15,
+          5.13
+        ],
+        [
+          "Maze Gaming",
+          "Malvinas Gaming",
+          2.5,
+          1.534
         ],
         [
           "Volticons",
           "Docta eSports Club",
-          1.392,
-          2.97
-        ],
-        [
-          "Keyd Stars Academy",
-          "Team Solid",
-          3.0,
-          1.386
-        ],
-        [
-          "Rmd Gaming",
-          "Ei Nerd eSports",
-          2.93,
-          1.401
-        ],
-        [
-          "INTZ eSports",
-          "Team Solid",
-          3.4,
-          1.309
+          10.19,
+          1.044
         ],
         [
           "Keyd Stars Academy",
           "Pain Gaming Academy",
-          1.925,
-          1.892
+          1.041,
+          10.56
         ],
         [
           "Estral E-Sports",
           "7Rex Team",
-          5.6,
-          1.129
+          14.81,
+          1.022
         ],
         [
           "Red Academy",
           "Kabum Idl",
-          1.189,
-          4.5
+          1.026,
+          13.46
         ]
       ],
-      "odds_ts": 1785758410.6064677
+      "odds_ts": 1785816019.185102
     }
   },
   "parlay_rot": 33,
