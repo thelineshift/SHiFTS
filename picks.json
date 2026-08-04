@@ -7343,10 +7343,10 @@
       "awayTeam": "Washington Nationals",
       "homeTeam": "Philadelphia Phillies",
       "live_odds": {
-        "home_ml": -257,
-        "away_ml": 207,
+        "home_ml": -263,
+        "away_ml": 212,
         "total": 9.0,
-        "ts": 1785819541
+        "ts": 1785823142
       },
       "last_alert_odds": 207
     },
@@ -7561,10 +7561,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Athletics",
       "live_odds": {
-        "home_ml": -142,
-        "away_ml": 118,
+        "home_ml": -141,
+        "away_ml": 117,
         "total": 9.0,
-        "ts": 1785819548
+        "ts": 1785823142
       }
     },
     {
