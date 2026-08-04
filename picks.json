@@ -7561,10 +7561,10 @@
       "homeTeam": "Cincinnati Reds",
       "awayTeam": "Athletics",
       "live_odds": {
-        "home_ml": -141,
-        "away_ml": 117,
+        "home_ml": -136,
+        "away_ml": 113,
         "total": 9.0,
-        "ts": 1785823142
+        "ts": 1785826742
       }
     },
     {
