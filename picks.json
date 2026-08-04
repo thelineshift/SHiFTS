@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T01:29:08Z",
+  "updated": "2026-08-04T02:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -6848,7 +6848,10 @@
         "total": 8.5,
         "ts": 1785797942
       },
-      "last_alert_odds": -156
+      "last_alert_odds": -156,
+      "result": "LOSS",
+      "score": "Pittsburgh Pirates 4, Milwaukee Brewers 3",
+      "units_result": -1.0
     },
     {
       "id": "under-164.5-0803",
