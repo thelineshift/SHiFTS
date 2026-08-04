@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T20:00:47Z",
+  "updated": "2026-08-04T22:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8154,7 +8154,10 @@
       "opp": "Galorys",
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this spot more than the price says.",
       "awayTeam": "MEIA NOITE",
-      "homeTeam": "Galorys"
+      "homeTeam": "Galorys",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "MEIA NOITE 1-2 Galorys \u00b7 final"
     }
   ]
 }
