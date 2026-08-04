@@ -7384,10 +7384,10 @@
       "homeTeam": "Texas Rangers",
       "awayTeam": "San Francisco Giants",
       "live_odds": {
-        "home_ml": -205,
-        "away_ml": 167,
+        "home_ml": -201,
+        "away_ml": 165,
         "total": 8.0,
-        "ts": 1785824942
+        "ts": 1785830342
       },
       "last_alert_odds": -203
     },
@@ -7537,10 +7537,10 @@
       "homeTeam": "Cleveland Guardians",
       "awayTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -155,
+        "away_ml": 128,
         "total": 7.5,
-        "ts": 1785828543
+        "ts": 1785830342
       },
       "last_alert_odds": -156
     },
@@ -7713,12 +7713,12 @@
       "homeTeam": "Atlanta Braves",
       "awayTeam": "Miami Marlins",
       "live_odds": {
-        "home_ml": -136,
-        "away_ml": 113,
+        "home_ml": -156,
+        "away_ml": 129,
         "total": 9.0,
-        "ts": 1785828543
+        "ts": 1785830342
       },
-      "last_alert_odds": -136
+      "last_alert_odds": -156
     },
     {
       "id": "baltimore-orioles-ml-0804",
@@ -7794,10 +7794,10 @@
       "homeTeam": "Seattle Mariners",
       "awayTeam": "Detroit Tigers",
       "live_odds": {
-        "home_ml": -137,
-        "away_ml": 114,
+        "home_ml": -142,
+        "away_ml": 118,
         "total": 8.0,
-        "ts": 1785824942
+        "ts": 1785830343
       }
     },
     {
@@ -7840,10 +7840,10 @@
       "homeTeam": "Cleveland Guardians",
       "awayTeam": "New York Mets",
       "live_odds": {
-        "home_ml": -149,
-        "away_ml": 123,
+        "home_ml": -155,
+        "away_ml": 128,
         "total": 7.5,
-        "ts": 1785828543
+        "ts": 1785830343
       },
       "last_alert_odds": -156
     },
