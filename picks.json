@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T19:49:06Z",
+  "updated": "2026-08-05T20:00:54Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8278,6 +8278,23 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "los kogutos 1-2 CYBERSHOKE Esports \u00b7 final"
+    },
+    {
+      "id": "wraith-pcific-ml-0805",
+      "date": "2026-08-05",
+      "sport": "cs2",
+      "desc": "WRAITH PCIFIC ML",
+      "market": "United21 Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Teletubisie",
+      "team": "WRAITH PCIFIC",
+      "opp": "Teletubisie",
+      "analysis": "3-2 last 5 (beat Teletubisie, CYBERSHOKE Prospects, DEPO) (lost to Fire Flux Esports) vs 1-1 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat Teletubisie, CYBERSHOKE Prospects, DEPO) (lost to Fire Flux Esports) vs 1-1 \u2014 model line -150 (our 60%). That's a **10-point** gap over Teletubi",
+      "awayTeam": "WRAITH PCIFIC",
+      "homeTeam": "Teletubisie"
     }
   ]
 }
