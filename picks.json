@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T04:01:00Z",
+  "updated": "2026-08-05T07:29:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8174,7 +8174,10 @@
       "opp": "BNK FearX Youth",
       "analysis": "4-1 last 5 (beat HANJIN BRION Challengers, Gen.G Global Academy, BNK FearX Youth) (lost to Dplus KIA Challengers) vs 3-2 \u2014 live Pinnacle line +120 (our 73% vs book 43%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat HANJIN BRION Challengers, Gen.G Global Academy, BNK FearX Youth) (lost to Dplus KIA Challen",
       "awayTeam": "Kiwoom DRX Challengers",
-      "homeTeam": "BNK FearX Youth"
+      "homeTeam": "BNK FearX Youth",
+      "result": "WIN",
+      "units_result": 1.8,
+      "score": "Kiwoom DRX Challengers 2-1 BNK FearX Youth \u00b7 final"
     },
     {
       "id": "nongshim-red-force-ml-0805",
