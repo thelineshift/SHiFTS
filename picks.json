@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T22:49:06Z",
+  "updated": "2026-08-05T04:01:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8158,6 +8158,57 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "MEIA NOITE 1-2 Galorys \u00b7 final"
+    },
+    {
+      "id": "kiwoom-drx-challengers-ml-0805",
+      "date": "2026-08-05",
+      "sport": "lol",
+      "desc": "Kiwoom DRX Challengers ML",
+      "market": "LCK Challengers League Bo3",
+      "odds": 120,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "01:00 AM ET",
+      "vs": "BNK FearX Youth",
+      "team": "Kiwoom DRX Challengers",
+      "opp": "BNK FearX Youth",
+      "analysis": "4-1 last 5 (beat HANJIN BRION Challengers, Gen.G Global Academy, BNK FearX Youth) (lost to Dplus KIA Challengers) vs 3-2 \u2014 live Pinnacle line +120 (our 73% vs book 43%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat HANJIN BRION Challengers, Gen.G Global Academy, BNK FearX Youth) (lost to Dplus KIA Challen",
+      "awayTeam": "Kiwoom DRX Challengers",
+      "homeTeam": "BNK FearX Youth"
+    },
+    {
+      "id": "nongshim-red-force-ml-0805",
+      "date": "2026-08-05",
+      "sport": "lol",
+      "desc": "Nongshim Red Force ML",
+      "market": "LCK Bo3",
+      "odds": -268,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "HANJIN BRION",
+      "team": "Nongshim Red Force",
+      "opp": "HANJIN BRION",
+      "analysis": "4-1 last 5 (beat T1, BNK FEARX, Kiwoom DRX) (lost to Hanwha Life Esports) vs 1-4 \u2014 live Pinnacle line -268 (our 90% vs book 69%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat T1, BNK FEARX, Kiwoom DRX) (lost to Hanwha Life Esports) vs 1-4 \u2014 live Pinnacle line -268 (our 90% vs book 69%). That's a **21-point** g",
+      "awayTeam": "Nongshim Red Force",
+      "homeTeam": "HANJIN BRION"
+    },
+    {
+      "id": "arcred-ml-0805",
+      "date": "2026-08-05",
+      "sport": "cs2",
+      "desc": "ARCRED ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Just Players",
+      "team": "ARCRED",
+      "opp": "Just Players",
+      "analysis": "2-3 last 5 (beat CYBERSHOKE Esports, Team flacons) (lost to Butterfly) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat CYBERSHOKE Esports, Team flacons) (lost to Butterfly) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edg",
+      "awayTeam": "ARCRED",
+      "homeTeam": "Just Players"
     }
   ]
 }
