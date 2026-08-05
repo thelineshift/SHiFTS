@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T16:00:54Z",
+  "updated": "2026-08-05T19:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8274,7 +8274,10 @@
       "opp": "CYBERSHOKE Esports",
       "analysis": "4-1 last 5 (beat Just Players, Fortress, Noir Verse) (lost to BASEMENT BOYS) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Just Players, Fortress, Noir Verse) (lost to BASEMENT BOYS) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** ",
       "awayTeam": "los kogutos",
-      "homeTeam": "CYBERSHOKE Esports"
+      "homeTeam": "CYBERSHOKE Esports",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "los kogutos 1-2 CYBERSHOKE Esports \u00b7 final"
     }
   ]
 }
