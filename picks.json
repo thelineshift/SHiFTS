@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T07:29:07Z",
+  "updated": "2026-08-05T08:00:53Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8212,6 +8212,23 @@
       "analysis": "2-3 last 5 (beat CYBERSHOKE Esports, Team flacons) (lost to Butterfly) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat CYBERSHOKE Esports, Team flacons) (lost to Butterfly) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edg",
       "awayTeam": "ARCRED",
       "homeTeam": "Just Players"
+    },
+    {
+      "id": "esuba-ml-0805",
+      "date": "2026-08-05",
+      "sport": "cs2",
+      "desc": "eSuba ML",
+      "market": "Tipsport Cup Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "GamersLab Esports",
+      "team": "eSuba",
+      "opp": "GamersLab Esports",
+      "analysis": "3-2 last 5 (beat EAC Rising, EAC Rising, LEO) (lost to Bushido Wildcats) vs 0-0 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat EAC Rising, EAC Rising, LEO) (lost to Bushido Wildcats) vs 0-0 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up",
+      "awayTeam": "eSuba",
+      "homeTeam": "GamersLab Esports"
     }
   ]
 }
