@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T10:49:07Z",
+  "updated": "2026-08-05T11:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8214,7 +8214,10 @@
       "opp": "Just Players",
       "analysis": "2-3 last 5 (beat CYBERSHOKE Esports, Team flacons) (lost to Butterfly) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat CYBERSHOKE Esports, Team flacons) (lost to Butterfly) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edg",
       "awayTeam": "ARCRED",
-      "homeTeam": "Just Players"
+      "homeTeam": "Just Players",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "ARCRED 1-2 Just Players \u00b7 final"
     },
     {
       "id": "esuba-ml-0805",
