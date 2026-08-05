@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T11:09:06Z",
+  "updated": "2026-08-05T12:01:04Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8234,6 +8234,23 @@
       "opp": "GamersLab Esports",
       "analysis": "3-2 last 5 (beat EAC Rising, EAC Rising, LEO) (lost to Bushido Wildcats) vs 0-0 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat EAC Rising, EAC Rising, LEO) (lost to Bushido Wildcats) vs 0-0 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up",
       "awayTeam": "eSuba",
+      "homeTeam": "GamersLab Esports"
+    },
+    {
+      "id": "navi-junior-ml-0805",
+      "date": "2026-08-05",
+      "sport": "cs2",
+      "desc": "NAVI Junior ML",
+      "market": "Tipsport Cup Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "GamersLab Esports",
+      "team": "NAVI Junior",
+      "opp": "GamersLab Esports",
+      "analysis": "3-2 last 5 (beat uust _esports, MOUZ NXT, LEO) (lost to ASTRAL) vs 0-0 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat uust _esports, MOUZ NXT, LEO) (lost to ASTRAL) vs 0-0 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
+      "awayTeam": "NAVI Junior",
       "homeTeam": "GamersLab Esports"
     }
   ]
