@@ -342,7 +342,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 64,
+  "op_calls": 70,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1236,51 +1236,93 @@
       "meta_ts": 1785542416.2256446,
       "lines": [
         [
+          "Phantom Academy",
+          "Vitality Academy",
+          1.193,
+          3.93
+        ],
+        [
+          "Imperial eSports",
+          "Alka Gaming",
+          1.084,
+          4.76
+        ],
+        [
           "Bestia",
-          "Metanoia Wolves",
-          1.043,
-          7.33
+          "Gremio",
+          1.054,
+          5.42
         ],
         [
           "Genone",
           "Nordic Partners",
-          2.73,
-          1.421
+          2.6,
+          1.465
+        ],
+        [
+          "Team Liquid",
+          "Fnatic",
+          1.411,
+          2.77
         ]
       ],
-      "odds_ts": 1785902419.216899
+      "odds_ts": 1785931212.8647308
     },
     "valorant": {
       "lines": [
         [
-          "Natus Vincere",
-          "Joblife",
-          1.591,
-          2.39
+          "SK Nebula",
+          "Karmine Corp GC",
+          1.348,
+          2.94
+        ],
+        [
+          "G2 Gozen",
+          "GIANTX GC",
+          1.125,
+          4.81
+        ],
+        [
+          "FOKUS Sakura",
+          "ALTERNATE aTTaX Ruby",
+          1.188,
+          3.98
+        ],
+        [
+          "Gentle Mates GC",
+          "Twisted Minds Orchid",
+          1.432,
+          2.63
         ],
         [
           "GIANTX",
           "Eintracht Frankfurt",
-          1.649,
-          2.26
+          1.584,
+          2.4
+        ],
+        [
+          "Natus Vincere",
+          "Joblife",
+          1.537,
+          2.52
         ],
         [
           "Evil Geniuses",
           "FURIA",
-          2.39,
-          1.591
+          2.31,
+          1.625
         ],
         [
           "ENVY",
           "NRG",
-          6.78,
-          1.114
+          6.94,
+          1.11
         ],
         [
           "Leviatan",
           "MIBR",
-          1.649,
-          2.26
+          1.632,
+          2.3
         ],
         [
           "Evil Geniuses",
@@ -1297,11 +1339,11 @@
         [
           "Titan",
           "KeepBest",
-          1.657,
-          2.14
+          1.625,
+          2.2
         ]
       ],
-      "odds_ts": 1785902422.635271,
+      "odds_ts": 1785931221.9978013,
       "active": [
         901974,
         902257,
@@ -2505,101 +2547,119 @@
         [
           "Brion",
           "Nongshim Redforce",
-          3.06,
-          1.373
+          1.142,
+          5.17
         ],
         [
           "Hanwha Life Esports",
           "Gen.g Esports",
-          1.854,
-          1.97
+          3.36,
+          1.294
+        ],
+        [
+          "DRX",
+          "Soopers",
+          1.406,
+          2.91
+        ],
+        [
+          "Dplus",
+          "T1",
+          1.99,
+          1.833
         ],
         [
           "E Wie Einfach E-Sports",
           "Eintracht Frankfurt",
-          5.09,
-          1.153
+          5.12,
+          1.151
         ],
         [
           "Kaufland Hangry Knights",
           "TeamOrangeGaming",
-          1.952,
-          1.862
-        ],
-        [
-          "Drx Challengers",
-          "Fearx Youth",
-          2.2,
-          1.68
-        ],
-        [
-          "Nongshim Redforce Challengers",
-          "Dplus Challengers",
-          1.877,
-          1.943
+          1.934,
+          1.884
         ],
         [
           "Soopers Challengers",
           "T1 Esports Academy",
           3.41,
-          1.308
+          1.307
+        ],
+        [
+          "Gen.G Global Academy",
+          "Brion Challengers",
+          1.383,
+          3.01
         ],
         [
           "LGD Gaming",
           "JD Gaming",
-          1.294,
-          3.49
+          1.066,
+          8.36
         ],
         [
           "TOP Esports",
           "Edward Gaming",
-          5.44,
-          1.135
+          5.3,
+          1.142
+        ],
+        [
+          "Anyones Legend",
+          "Team WE",
+          3.21,
+          1.341
         ],
         [
           "Fukuoka Softbank Hawks Gaming",
           "Ground Zero",
-          2.44,
-          1.561
+          2.42,
+          1.571
         ],
         [
           "Deep Cross Gaming",
           "MVK Esports",
-          1.471,
-          2.68
-        ],
-        [
-          "7Rex Team",
-          "Rmd Gaming",
-          1.091,
-          6.72
-        ],
-        [
-          "Kabum Idl",
-          "Pain Gaming Academy",
-          1.192,
-          4.31
+          1.684,
+          2.2
         ],
         [
           "Estral E-Sports",
+          "Rmd Gaming",
+          1.166,
+          4.85
+        ],
+        [
+          "Kabum Idl",
           "Ei Nerd eSports",
-          1.98,
-          1.769
+          1.653,
+          2.25
+        ],
+        [
+          "Red Academy",
+          "Keyd Stars Academy",
+          3.67,
+          1.271
+        ],
+        [
+          "INTZ eSports",
+          "Pain Gaming Academy",
+          2.01,
+          1.819
         ],
         [
           "Giantx Pride",
           "Lua Gaming",
-          1.16,
-          4.94
+          1.156,
+          5.03
         ],
         [
           "UCAM Esports Club",
           "Movistar KOI Fenix",
-          2.11,
-          1.746
+          2.09,
+          1.757
         ]
       ],
-      "odds_ts": 1785902413.9023874
+      "odds_ts": 1785931216.5759108
     }
   },
   "parlay_rot": 34,
