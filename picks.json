@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T08:00:53Z",
+  "updated": "2026-08-05T10:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8194,7 +8194,10 @@
       "opp": "HANJIN BRION",
       "analysis": "4-1 last 5 (beat T1, BNK FEARX, Kiwoom DRX) (lost to Hanwha Life Esports) vs 1-4 \u2014 live Pinnacle line -268 (our 90% vs book 69%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat T1, BNK FEARX, Kiwoom DRX) (lost to Hanwha Life Esports) vs 1-4 \u2014 live Pinnacle line -268 (our 90% vs book 69%). That's a **21-point** g",
       "awayTeam": "Nongshim Red Force",
-      "homeTeam": "HANJIN BRION"
+      "homeTeam": "HANJIN BRION",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Nongshim Red Force 1-2 HANJIN BRION \u00b7 final"
     },
     {
       "id": "arcred-ml-0805",
