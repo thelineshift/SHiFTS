@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T14:09:06Z",
+  "updated": "2026-08-05T16:00:54Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8258,6 +8258,23 @@
       "result": "WIN",
       "units_result": 0.67,
       "score": "NAVI Junior 2-0 maybe \u00b7 final"
+    },
+    {
+      "id": "los-kogutos-ml-0805",
+      "date": "2026-08-05",
+      "sport": "cs2",
+      "desc": "los kogutos ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "CYBERSHOKE Esports",
+      "team": "los kogutos",
+      "opp": "CYBERSHOKE Esports",
+      "analysis": "4-1 last 5 (beat Just Players, Fortress, Noir Verse) (lost to BASEMENT BOYS) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Just Players, Fortress, Noir Verse) (lost to BASEMENT BOYS) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** ",
+      "awayTeam": "los kogutos",
+      "homeTeam": "CYBERSHOKE Esports"
     }
   ]
 }
