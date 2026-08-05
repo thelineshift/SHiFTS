@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T12:49:06Z",
+  "updated": "2026-08-05T14:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8234,7 +8234,10 @@
       "opp": "GamersLab Esports",
       "analysis": "3-2 last 5 (beat EAC Rising, EAC Rising, LEO) (lost to Bushido Wildcats) vs 0-0 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat EAC Rising, EAC Rising, LEO) (lost to Bushido Wildcats) vs 0-0 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up",
       "awayTeam": "eSuba",
-      "homeTeam": "GamersLab Esports"
+      "homeTeam": "GamersLab Esports",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "eSuba 2-0 GamersLab Esports \u00b7 final"
     },
     {
       "id": "navi-junior-ml-0805",
