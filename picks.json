@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T18:29:08Z",
+  "updated": "2026-08-06T19:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8491,7 +8491,10 @@
       "opp": "Geekay Esports",
       "analysis": "4-1 last 5 (beat Chiefs Esports Club, Rival Esports, Man eSports LFO) (lost to Chiefs Esports Club) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Chiefs Esports Club, Rival Esports, Man eSports LFO) (lost to Chiefs Esports Club) vs 3-2 \u2014 model line -265 (our 73%). Model makes",
       "awayTeam": "ENTERPRISE Esports",
-      "homeTeam": "Geekay Esports"
+      "homeTeam": "Geekay Esports",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "ENTERPRISE Esports 0-1 Geekay Esports \u00b7 final"
     },
     {
       "id": "ww-team-ml-0806",
