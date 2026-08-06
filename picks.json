@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T11:29:08Z",
+  "updated": "2026-08-06T12:01:01Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8409,6 +8409,57 @@
       "analysis": "2-3 last 5 (beat JD Gaming, TEC Esports) (lost to All Gamers) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat JD Gaming, TEC Esports) (lost to All Gamers) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
       "awayTeam": "Dragon Ranger Gaming",
       "homeTeam": "Wolves Esports"
+    },
+    {
+      "id": "wildcard-gaming-ml-0806",
+      "date": "2026-08-06",
+      "sport": "r6",
+      "desc": "Wildcard Gaming ML",
+      "market": "Esports World Cup Bo1",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "Team Liquid",
+      "team": "Wildcard Gaming",
+      "opp": "Team Liquid",
+      "analysis": "4-1 last 5 (beat M80, M80, DarkZero Esports) (lost to Five Fears) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat M80, M80, DarkZero Esports) (lost to Five Fears) vs 3-2 \u2014 model line -265 (our 73%). Model makes Wildcard Gaming **73%** \u2014 books imply **73%**. SHiFT presses the ga",
+      "awayTeam": "Wildcard Gaming",
+      "homeTeam": "Team Liquid"
+    },
+    {
+      "id": "unity-esports-ml-0806",
+      "date": "2026-08-06",
+      "sport": "cs2",
+      "desc": "UNiTY esports ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "Walczaki",
+      "team": "UNiTY esports",
+      "opp": "Walczaki",
+      "analysis": "2-3 last 5 (beat ex-Young Ninjas, Mai Tai) (lost to GenOne) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat ex-Young Ninjas, Mai Tai) (lost to GenOne) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
+      "awayTeam": "UNiTY esports",
+      "homeTeam": "Walczaki"
+    },
+    {
+      "id": "karmine-corp-gc-ml-0806",
+      "date": "2026-08-06",
+      "sport": "valorant",
+      "desc": "Karmine Corp GC ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "GIANTX GC",
+      "team": "Karmine Corp GC",
+      "opp": "GIANTX GC",
+      "analysis": "2-3 last 5 (beat Gentle Mates GC, Bar\u00e7a eSports GC) (lost to SK Nebula) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Gentle Mates GC, Bar\u00e7a eSports GC) (lost to SK Nebula) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over GIANTX GC the number hasn't priced.",
+      "awayTeam": "Karmine Corp GC",
+      "homeTeam": "GIANTX GC"
     }
   ]
 }
