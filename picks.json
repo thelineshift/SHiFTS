@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T17:29:08Z",
+  "updated": "2026-08-06T18:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8451,7 +8451,10 @@
       "opp": "Walczaki",
       "analysis": "2-3 last 5 (beat ex-Young Ninjas, Mai Tai) (lost to GenOne) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat ex-Young Ninjas, Mai Tai) (lost to GenOne) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
       "awayTeam": "UNiTY esports",
-      "homeTeam": "Walczaki"
+      "homeTeam": "Walczaki",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "UNiTY esports 0-2 Walczaki \u00b7 final"
     },
     {
       "id": "karmine-corp-gc-ml-0806",
