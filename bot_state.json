@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "wraith-pcific-ml-0806",
+      "desc": "WRAITH PCIFIC ML",
+      "odds": -150,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "WRAITH PCIFIC 1-2 Teletubisie \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "funplus-phoenix-ml-0806",
+      "desc": "FunPlus Phoenix ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "FunPlus Phoenix 1-2 JD Gaming \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-07-23",
   "scan_events": {
