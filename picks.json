@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T20:00:48Z",
+  "updated": "2026-08-06T20:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8511,7 +8511,10 @@
       "opp": "ex-RUSTEC",
       "analysis": "4-1 last 5 (beat Virtus.pro, TDK, ARCRED) (lost to CYBERSHOKE Prospects) vs 3-2 \u2014 live Pinnacle line -183 (our 73% vs book 61%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Virtus.pro, TDK, ARCRED) (lost to CYBERSHOKE Prospects) vs 3-2 \u2014 live Pinnacle line -183 (our 73% vs book 61%). That's a **12-point** gap",
       "awayTeam": "WW Team",
-      "homeTeam": "ex-RUSTEC"
+      "homeTeam": "ex-RUSTEC",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "WW Team 0-2 ex-RUSTEC \u00b7 final"
     },
     {
       "id": "rem-ml-0806",
