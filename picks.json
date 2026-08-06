@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T09:49:08Z",
+  "updated": "2026-08-06T10:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8311,7 +8311,10 @@
       "opp": "Teletubisie",
       "analysis": "3-2 last 5 (beat Teletubisie, CYBERSHOKE Prospects, DEPO) (lost to Fire Flux Esports) vs 1-1 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat Teletubisie, CYBERSHOKE Prospects, DEPO) (lost to Fire Flux Esports) vs 1-1 \u2014 model line -150 (our 60%). That's a **10-point** gap over Teletubi",
       "awayTeam": "WRAITH PCIFIC",
-      "homeTeam": "Teletubisie"
+      "homeTeam": "Teletubisie",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "WRAITH PCIFIC 1-2 Teletubisie \u00b7 final"
     },
     {
       "id": "thundertalk-gaming-ml-0806",
@@ -8365,7 +8368,10 @@
       "opp": "JD Gaming",
       "analysis": "2-3 last 5 (beat Wolves Esports, JD Gaming) (lost to EDward Gaming) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Wolves Esports, JD Gaming) (lost to EDward Gaming) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over JD Gaming the number hasn't priced.",
       "awayTeam": "FunPlus Phoenix",
-      "homeTeam": "JD Gaming"
+      "homeTeam": "JD Gaming",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "FunPlus Phoenix 1-2 JD Gaming \u00b7 final"
     },
     {
       "id": "ninjas-in-pyjamas-ml-0806",
