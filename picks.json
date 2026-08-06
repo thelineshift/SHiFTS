@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T14:09:08Z",
+  "updated": "2026-08-06T15:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8431,7 +8431,10 @@
       "opp": "Team Liquid",
       "analysis": "4-1 last 5 (beat M80, M80, DarkZero Esports) (lost to Five Fears) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat M80, M80, DarkZero Esports) (lost to Five Fears) vs 3-2 \u2014 model line -265 (our 73%). Model makes Wildcard Gaming **73%** \u2014 books imply **73%**. SHiFT presses the ga",
       "awayTeam": "Wildcard Gaming",
-      "homeTeam": "Team Liquid"
+      "homeTeam": "Team Liquid",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Wildcard Gaming 1-0 Team Liquid \u00b7 final"
     },
     {
       "id": "unity-esports-ml-0806",
