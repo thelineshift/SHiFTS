@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T19:29:08Z",
+  "updated": "2026-08-06T20:00:48Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8512,6 +8512,23 @@
       "analysis": "4-1 last 5 (beat Virtus.pro, TDK, ARCRED) (lost to CYBERSHOKE Prospects) vs 3-2 \u2014 live Pinnacle line -183 (our 73% vs book 61%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Virtus.pro, TDK, ARCRED) (lost to CYBERSHOKE Prospects) vs 3-2 \u2014 live Pinnacle line -183 (our 73% vs book 61%). That's a **12-point** gap",
       "awayTeam": "WW Team",
       "homeTeam": "ex-RUSTEC"
+    },
+    {
+      "id": "rem-ml-0806",
+      "date": "2026-08-06",
+      "sport": "cs2",
+      "desc": "REM ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Heroic",
+      "team": "REM",
+      "opp": "Heroic",
+      "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this spot more than the price says.",
+      "awayTeam": "REM",
+      "homeTeam": "Heroic"
     }
   ]
 }
