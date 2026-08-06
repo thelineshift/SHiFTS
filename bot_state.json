@@ -355,7 +355,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 80,
+  "op_calls": 83,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1289,7 +1289,7 @@
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786017618.1199825,
+      "odds_ts": 1786046417.0312178,
       "active": [
         901974,
         902257,
@@ -2489,8 +2489,57 @@
         "1376686": "Shark Attack"
       },
       "meta_ts": 1785571212.8008003,
-      "lines": [],
-      "odds_ts": 1786017618.1199598
+      "lines": [
+        [
+          "kt Rolster",
+          "Gen.g Esports",
+          2.81,
+          1.432
+        ],
+        [
+          "FEARX",
+          "Brion",
+          1.497,
+          2.6
+        ],
+        [
+          "Nongshim Redforce Challengers",
+          "KT Rolster Challengers",
+          1.671,
+          2.22
+        ],
+        [
+          "Drx Challengers",
+          "Hanwha Life Esports Challengers",
+          3.38,
+          1.312
+        ],
+        [
+          "Edward Gaming",
+          "JD Gaming",
+          1.182,
+          4.6
+        ],
+        [
+          "ThunderTalk Gaming",
+          "Team WE",
+          1.375,
+          3.04
+        ],
+        [
+          "Bilibili Gaming",
+          "TOP Esports",
+          1.322,
+          3.32
+        ],
+        [
+          "Deep Cross Gaming",
+          "MVK Esports",
+          1.617,
+          2.32
+        ]
+      ],
+      "odds_ts": 1786046411.805866
     }
   },
   "parlay_rot": 34,
@@ -30492,6 +30541,6 @@
   "deepdive_last": "2026-08-01",
   "dep_checked_ts": 1786039442.2872186,
   "x_bio_v": 2,
-  "op_cool_until": 1786018514.4098573,
+  "op_cool_until": 1786047311.805866,
   "x_ads": []
 }
