@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T16:01:03Z",
+  "updated": "2026-08-06T17:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8468,7 +8468,10 @@
       "opp": "GIANTX GC",
       "analysis": "2-3 last 5 (beat Gentle Mates GC, Bar\u00e7a eSports GC) (lost to SK Nebula) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Gentle Mates GC, Bar\u00e7a eSports GC) (lost to SK Nebula) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over GIANTX GC the number hasn't priced.",
       "awayTeam": "Karmine Corp GC",
-      "homeTeam": "GIANTX GC"
+      "homeTeam": "GIANTX GC",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Karmine Corp GC 2-1 GIANTX GC \u00b7 final"
     },
     {
       "id": "enterprise-esports-ml-0806",
