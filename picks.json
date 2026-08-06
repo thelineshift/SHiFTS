@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T04:00:58Z",
+  "updated": "2026-08-06T08:00:56Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8363,6 +8363,40 @@
       "analysis": "2-3 last 5 (beat Wolves Esports, JD Gaming) (lost to EDward Gaming) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Wolves Esports, JD Gaming) (lost to EDward Gaming) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over JD Gaming the number hasn't priced.",
       "awayTeam": "FunPlus Phoenix",
       "homeTeam": "JD Gaming"
+    },
+    {
+      "id": "ninjas-in-pyjamas-ml-0806",
+      "date": "2026-08-06",
+      "sport": "lol",
+      "desc": "Ninjas in Pyjamas ML",
+      "market": "LPL Bo3",
+      "odds": 133,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Invictus Gaming",
+      "team": "Ninjas in Pyjamas",
+      "opp": "Invictus Gaming",
+      "analysis": "4-1 last 5 (beat Weibo Gaming, LNG Esports, Team WE) (lost to EDward Gaming) vs 2-3 \u2014 live Pinnacle line +133 (our 86% vs book 41%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Weibo Gaming, LNG Esports, Team WE) (lost to EDward Gaming) vs 2-3 \u2014 live Pinnacle line +133 (our 86% vs book 41%). When the for",
+      "awayTeam": "Ninjas in Pyjamas",
+      "homeTeam": "Invictus Gaming"
+    },
+    {
+      "id": "dragon-ranger-gaming-ml-0806",
+      "date": "2026-08-06",
+      "sport": "valorant",
+      "desc": "Dragon Ranger Gaming ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "06:00 AM ET",
+      "vs": "Wolves Esports",
+      "team": "Dragon Ranger Gaming",
+      "opp": "Wolves Esports",
+      "analysis": "2-3 last 5 (beat JD Gaming, TEC Esports) (lost to All Gamers) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat JD Gaming, TEC Esports) (lost to All Gamers) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
+      "awayTeam": "Dragon Ranger Gaming",
+      "homeTeam": "Wolves Esports"
     }
   ]
 }
