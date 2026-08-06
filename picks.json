@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T10:49:08Z",
+  "updated": "2026-08-06T11:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8351,7 +8351,10 @@
       "opp": "Lavked",
       "analysis": "4-1 last 5 (beat Just Players, Butterfly, JiJieHao) (lost to Sashi Esport) vs 0-5 \u2014 live Pinnacle line -162 (our 90% vs book 58%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Just Players, Butterfly, JiJieHao) (lost to Sashi Esport) vs 0-5 \u2014 live Pinnacle line -162 (our 90% vs book 58%). Books hang respec",
       "awayTeam": "Black Phoenix",
-      "homeTeam": "Lavked"
+      "homeTeam": "Lavked",
+      "result": "WIN",
+      "units_result": 0.93,
+      "score": "Black Phoenix 2-1 Lavked \u00b7 final"
     },
     {
       "id": "funplus-phoenix-ml-0806",
