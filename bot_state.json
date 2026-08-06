@@ -349,7 +349,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 78,
+  "op_calls": 80,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1243,41 +1243,47 @@
       "meta_ts": 1785542416.2256446,
       "lines": [
         [
-          "Bestia",
-          "Gremio",
-          1.041,
-          5.8
-        ],
-        [
           "Pain Academy",
           "Meia Noite",
-          2.25,
-          1.591
+          2.28,
+          1.469
+        ],
+        [
+          "Yawara eSports",
+          "Isurus",
+          1.9,
+          1.769
+        ],
+        [
+          "Metanoia Wolves",
+          "Procyon Team",
+          1.877,
+          1.787
         ],
         [
           "Galorys",
           "Borracheiros",
-          1.195,
-          3.91
+          1.19,
+          3.95
         ],
         [
           "Lavked",
           "Black Phoenix",
-          2.25,
-          1.617
+          8.81,
+          1.061
         ],
         [
           "Ww Team",
           "Ex-Rustec",
-          1.512,
-          2.47
+          1.546,
+          2.39
         ]
       ],
-      "odds_ts": 1785988817.7887444
+      "odds_ts": 1786017614.4098573
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1785988821.2181442,
+      "odds_ts": 1786017618.1199825,
       "active": [
         901974,
         902257,
@@ -2477,105 +2483,8 @@
         "1376686": "Shark Attack"
       },
       "meta_ts": 1785571212.8008003,
-      "lines": [
-        [
-          "DRX",
-          "Soopers",
-          1.44,
-          2.79
-        ],
-        [
-          "Dplus",
-          "T1",
-          2.11,
-          1.74
-        ],
-        [
-          "Unicorns of Love Sexy Edition",
-          "G2 Nord",
-          1.353,
-          3.15
-        ],
-        [
-          "Berlin International Gaming",
-          "Centaurs",
-          3.04,
-          1.377
-        ],
-        [
-          "Soopers Challengers",
-          "T1 Esports Academy",
-          3.12,
-          1.359
-        ],
-        [
-          "Gen.G Global Academy",
-          "Brion Challengers",
-          1.375,
-          3.05
-        ],
-        [
-          "Drx Challengers",
-          "Hanwha Life Esports Challengers",
-          3.06,
-          1.373
-        ],
-        [
-          "Nongshim Redforce Challengers",
-          "KT Rolster Challengers",
-          1.763,
-          2.08
-        ],
-        [
-          "LGD Gaming",
-          "ThunderTalk Gaming",
-          1.862,
-          1.952
-        ],
-        [
-          "Invictus Gaming",
-          "Shenzhen Ninjas In Pyjamas",
-          1.613,
-          2.33
-        ],
-        [
-          "Anyones Legend",
-          "Team WE",
-          3.26,
-          1.333
-        ],
-        [
-          "Fukuoka Softbank Hawks Gaming",
-          "Ground Zero",
-          2.04,
-          1.793
-        ],
-        [
-          "Deep Cross Gaming",
-          "MVK Esports",
-          1.645,
-          2.26
-        ],
-        [
-          "Kabum Idl",
-          "Ei Nerd eSports",
-          3.06,
-          1.344
-        ],
-        [
-          "Red Academy",
-          "Keyd Stars Academy",
-          13.38,
-          1.026
-        ],
-        [
-          "INTZ eSports",
-          "Pain Gaming Academy",
-          1.045,
-          10.03
-        ]
-      ],
-      "odds_ts": 1785988812.3618598
+      "lines": [],
+      "odds_ts": 1786017618.1199598
     }
   },
   "parlay_rot": 34,
@@ -30577,6 +30486,6 @@
   "deepdive_last": "2026-08-01",
   "dep_checked_ts": 1786010642.303074,
   "x_bio_v": 2,
-  "op_cool_until": 1785989717.7887444,
+  "op_cool_until": 1786018514.4098573,
   "x_ads": []
 }
