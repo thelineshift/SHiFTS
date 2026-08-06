@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T00:00:41Z",
+  "updated": "2026-08-06T04:00:58Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8312,6 +8312,57 @@
       "analysis": "3-2 last 5 (beat Teletubisie, CYBERSHOKE Prospects, DEPO) (lost to Fire Flux Esports) vs 1-1 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat Teletubisie, CYBERSHOKE Prospects, DEPO) (lost to Fire Flux Esports) vs 1-1 \u2014 model line -150 (our 60%). That's a **10-point** gap over Teletubi",
       "awayTeam": "WRAITH PCIFIC",
       "homeTeam": "Teletubisie"
+    },
+    {
+      "id": "thundertalk-gaming-ml-0806",
+      "date": "2026-08-06",
+      "sport": "lol",
+      "desc": "ThunderTalk Gaming ML",
+      "market": "LPL Bo3",
+      "odds": -105,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "03:00 AM ET",
+      "vs": "LGD Gaming",
+      "team": "ThunderTalk Gaming",
+      "opp": "LGD Gaming",
+      "analysis": "1-4 last 5 (beat EDward Gaming) (lost to Team WE) vs 0-5 \u2014 live Pinnacle line -105 (our 90% vs book 49%) | \u2694\ufe0f **Matchup read:** 1-4 last 5 (beat EDward Gaming) (lost to Team WE) vs 0-5 \u2014 live Pinnacle line -105 (our 90% vs book 49%). When the form gap runs **41 points** wide, the better side wins th",
+      "awayTeam": "ThunderTalk Gaming",
+      "homeTeam": "LGD Gaming"
+    },
+    {
+      "id": "black-phoenix-ml-0806",
+      "date": "2026-08-06",
+      "sport": "cs2",
+      "desc": "Black Phoenix ML",
+      "market": "CCT Europe Bo3",
+      "odds": -162,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Lavked",
+      "team": "Black Phoenix",
+      "opp": "Lavked",
+      "analysis": "4-1 last 5 (beat Just Players, Butterfly, JiJieHao) (lost to Sashi Esport) vs 0-5 \u2014 live Pinnacle line -162 (our 90% vs book 58%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Just Players, Butterfly, JiJieHao) (lost to Sashi Esport) vs 0-5 \u2014 live Pinnacle line -162 (our 90% vs book 58%). Books hang respec",
+      "awayTeam": "Black Phoenix",
+      "homeTeam": "Lavked"
+    },
+    {
+      "id": "funplus-phoenix-ml-0806",
+      "date": "2026-08-06",
+      "sport": "valorant",
+      "desc": "FunPlus Phoenix ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "JD Gaming",
+      "team": "FunPlus Phoenix",
+      "opp": "JD Gaming",
+      "analysis": "2-3 last 5 (beat Wolves Esports, JD Gaming) (lost to EDward Gaming) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Wolves Esports, JD Gaming) (lost to EDward Gaming) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over JD Gaming the number hasn't priced.",
+      "awayTeam": "FunPlus Phoenix",
+      "homeTeam": "JD Gaming"
     }
   ]
 }
