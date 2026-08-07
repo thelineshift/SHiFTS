@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T12:01:03Z",
+  "updated": "2026-08-07T16:00:52Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8629,6 +8629,40 @@
       "analysis": "2-3 last 5 (beat Team Vitality, Solary) (lost to SK Gaming) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Team Vitality, Solary) (lost to SK Gaming) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over Shifters the number hasn't priced.",
       "awayTeam": "GIANTX",
       "homeTeam": "Shifters"
+    },
+    {
+      "id": "sinners-ml-0807",
+      "date": "2026-08-07",
+      "sport": "cs2",
+      "desc": "Sinners ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "12:00 PM ET",
+      "vs": "MANGANESE",
+      "team": "Sinners",
+      "opp": "MANGANESE",
+      "analysis": "3-2 last 5 (beat SPARTA, INOX Division, Rune Eaters) (lost to Sashi Esport) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat SPARTA, INOX Division, Rune Eaters) (lost to Sashi Esport) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over MANGANESE the number hasn't ",
+      "awayTeam": "Sinners",
+      "homeTeam": "MANGANESE"
+    },
+    {
+      "id": "acend-ml-0807",
+      "date": "2026-08-07",
+      "sport": "cs2",
+      "desc": "Acend ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "12:00 PM ET",
+      "vs": "Vandulken",
+      "team": "Acend",
+      "opp": "Vandulken",
+      "analysis": "3-2 last 5 (beat Brute, 6666, ECHO) (lost to Betclic Apogee Esports) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat Brute, 6666, ECHO) (lost to Betclic Apogee Esports) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over Vandulken the number hasn't priced.",
+      "awayTeam": "Acend",
+      "homeTeam": "Vandulken"
     }
   ]
 }
