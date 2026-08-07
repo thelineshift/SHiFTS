@@ -362,7 +362,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 88,
+  "op_calls": 89,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1289,8 +1289,99 @@
       "odds_ts": 1786104017.1794136
     },
     "valorant": {
-      "lines": [],
-      "odds_ts": 1786104020.8853977,
+      "lines": [
+        [
+          "PCIFIC",
+          "Fire Flux",
+          19.85,
+          1.014
+        ],
+        [
+          "Fnatic",
+          "Enterprise",
+          11.16,
+          1.04
+        ],
+        [
+          "GIANTX",
+          "FUT",
+          3.48,
+          1.314
+        ],
+        [
+          "Joblife",
+          "Eternal Fire",
+          2.4,
+          1.584
+        ],
+        [
+          "DRX",
+          "T1",
+          2.56,
+          1.471
+        ],
+        [
+          "Global",
+          "ZETA DIVISION",
+          1.373,
+          2.92
+        ],
+        [
+          "VARREL",
+          "Paper Rex",
+          4.47,
+          1.181
+        ],
+        [
+          "Nongshim RedForce",
+          "Rex Regum Qeon",
+          1.436,
+          2.67
+        ],
+        [
+          "100 Thieves",
+          "Cloud9",
+          1.172,
+          5.14
+        ],
+        [
+          "G2",
+          "LOUD",
+          1.176,
+          5.06
+        ],
+        [
+          "KRU",
+          "Sentinels",
+          3.36,
+          1.332
+        ],
+        [
+          "Leviatan",
+          "MIBR",
+          1.632,
+          2.3
+        ],
+        [
+          "Evil Geniuses",
+          "NRG",
+          6.3,
+          1.127
+        ],
+        [
+          "LOUD",
+          "100 Thieves",
+          5.95,
+          1.139
+        ],
+        [
+          "KeepBest",
+          "FunPlus Phoenix",
+          3.07,
+          1.342
+        ]
+      ],
+      "odds_ts": 1786132812.4414682,
       "active": [
         901974,
         902257,
