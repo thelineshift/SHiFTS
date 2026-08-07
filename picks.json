@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T00:00:39Z",
+  "updated": "2026-08-07T04:00:59Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8566,6 +8566,40 @@
       "analysis": "3-2 last 5 (beat INOX Division, ex-RUBY, INOX Division) (lost to Butterfly) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat INOX Division, ex-RUBY, INOX Division) (lost to Butterfly) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over Citron the number hasn't pri",
       "awayTeam": "1WIN",
       "homeTeam": "Citron"
+    },
+    {
+      "id": "kt-rolster-challengers-ml-0807",
+      "date": "2026-08-07",
+      "sport": "lol",
+      "desc": "KT Rolster Challengers ML",
+      "market": "LCK Challengers League Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 AM ET",
+      "vs": "Nongshim Esports Academy",
+      "team": "KT Rolster Challengers",
+      "opp": "Nongshim Esports Academy",
+      "analysis": "2-3 last 5 (beat DN SOOPers Challengers, Nongshim Esports Academy) (lost to T1 Academy) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat DN SOOPers Challengers, Nongshim Esports Academy) (lost to T1 Academy) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over Nong",
+      "awayTeam": "KT Rolster Challengers",
+      "homeTeam": "Nongshim Esports Academy"
+    },
+    {
+      "id": "detonation-focusme-ml-0807",
+      "date": "2026-08-07",
+      "sport": "valorant",
+      "desc": "DetonatioN FocusMe ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Team Secret",
+      "team": "DetonatioN FocusMe",
+      "opp": "Team Secret",
+      "analysis": "2-3 last 5 (beat T1, VARREL) (lost to Paper Rex) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat T1, VARREL) (lost to Paper Rex) vs 1-4 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this spot more than the price says.",
+      "awayTeam": "DetonatioN FocusMe",
+      "homeTeam": "Team Secret"
     }
   ]
 }
