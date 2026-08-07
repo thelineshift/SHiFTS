@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T20:29:06Z",
+  "updated": "2026-08-07T00:00:39Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8532,6 +8532,40 @@
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this spot more than the price says.",
       "awayTeam": "REM",
       "homeTeam": "Heroic"
+    },
+    {
+      "id": "rem-ml-0807",
+      "date": "2026-08-07",
+      "sport": "cs2",
+      "desc": "REM ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Heroic",
+      "team": "REM",
+      "opp": "Heroic",
+      "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this spot more than the price says.",
+      "awayTeam": "REM",
+      "homeTeam": "Heroic"
+    },
+    {
+      "id": "1win-ml-0807",
+      "date": "2026-08-07",
+      "sport": "cs2",
+      "desc": "1WIN ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Citron",
+      "team": "1WIN",
+      "opp": "Citron",
+      "analysis": "3-2 last 5 (beat INOX Division, ex-RUBY, INOX Division) (lost to Butterfly) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat INOX Division, ex-RUBY, INOX Division) (lost to Butterfly) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over Citron the number hasn't pri",
+      "awayTeam": "1WIN",
+      "homeTeam": "Citron"
     }
   ]
 }
