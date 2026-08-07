@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T04:00:59Z",
+  "updated": "2026-08-07T06:29:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8582,7 +8582,10 @@
       "opp": "Nongshim Esports Academy",
       "analysis": "2-3 last 5 (beat DN SOOPers Challengers, Nongshim Esports Academy) (lost to T1 Academy) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat DN SOOPers Challengers, Nongshim Esports Academy) (lost to T1 Academy) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over Nong",
       "awayTeam": "KT Rolster Challengers",
-      "homeTeam": "Nongshim Esports Academy"
+      "homeTeam": "Nongshim Esports Academy",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "KT Rolster Challengers 0-2 Nongshim Esports Academy \u00b7 final"
     },
     {
       "id": "detonation-focusme-ml-0807",
