@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T11:49:06Z",
+  "updated": "2026-08-07T12:01:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8612,6 +8612,23 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "DetonatioN FocusMe 2-0 Team Secret \u00b7 final"
+    },
+    {
+      "id": "giantx-ml-0807",
+      "date": "2026-08-07",
+      "sport": "lol",
+      "desc": "GIANTX ML",
+      "market": "LEC Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "Shifters",
+      "team": "GIANTX",
+      "opp": "Shifters",
+      "analysis": "2-3 last 5 (beat Team Vitality, Solary) (lost to SK Gaming) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Team Vitality, Solary) (lost to SK Gaming) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over Shifters the number hasn't priced.",
+      "awayTeam": "GIANTX",
+      "homeTeam": "Shifters"
     }
   ]
 }
