@@ -13,7 +13,7 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-08-07 12:59 UTC",
+    "at": "2026-08-07 13:29 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -24,7 +24,7 @@
     "\ud83c\udf81giveaway": "2026-08-04 05:41 UTC"
   },
   "resolution_watch": {
-    "at": "2026-08-07 12:59 UTC",
+    "at": "2026-08-07 13:29 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,11 +41,11 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-08-07 12:59 UTC",
+    "at": "2026-08-07 13:29 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-08-07 12:59 UTC",
+    "at": "2026-08-07 13:29 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
@@ -232,7 +232,7 @@
     "weekly": "2026-08-09",
     "monthly": "2026-08-01",
     "deepdive_fired": "2026-07-25",
-    "x_ad": "2026-08-06",
+    "x_ad": "2026-08-07",
     "weekly_fired": "2026-08-02"
   },
   "gw_handled": [
@@ -30489,5 +30489,7 @@
   "dep_checked_ts": 1786104242.316863,
   "x_bio_v": 2,
   "op_cool_until": 1786104917.1794136,
-  "x_ads": []
+  "x_ads": [
+    "\ud83d\udcca The SHARP room went 12-10 this week \u2014 +6.1 units.\n\n$100 on every pick we posted = +$610 in 7 days. The room costs $50/mo \u2014 it paid for itself 12x over.\n\nEvery pick posted before start. Every result receipted.\n\ud83d\udc8e https://thelineshift.github.io/SHiFTS/upgrade.html"
+  ]
 }
