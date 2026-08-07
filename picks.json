@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T11:09:07Z",
+  "updated": "2026-08-07T11:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8568,7 +8568,10 @@
       "opp": "Citron",
       "analysis": "3-2 last 5 (beat INOX Division, ex-RUBY, INOX Division) (lost to Butterfly) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat INOX Division, ex-RUBY, INOX Division) (lost to Butterfly) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over Citron the number hasn't pri",
       "awayTeam": "1WIN",
-      "homeTeam": "Citron"
+      "homeTeam": "Citron",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "1WIN 2-0 Citron \u00b7 final"
     },
     {
       "id": "kt-rolster-challengers-ml-0807",
