@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T16:00:52Z",
+  "updated": "2026-08-07T17:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8645,7 +8645,10 @@
       "opp": "MANGANESE",
       "analysis": "3-2 last 5 (beat SPARTA, INOX Division, Rune Eaters) (lost to Sashi Esport) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat SPARTA, INOX Division, Rune Eaters) (lost to Sashi Esport) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over MANGANESE the number hasn't ",
       "awayTeam": "Sinners",
-      "homeTeam": "MANGANESE"
+      "homeTeam": "MANGANESE",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "Sinners 2-0 MANGANESE \u00b7 final"
     },
     {
       "id": "acend-ml-0807",
