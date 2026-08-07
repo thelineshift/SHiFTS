@@ -366,7 +366,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 86,
+  "op_calls": 88,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1258,12 +1258,43 @@
         "1377818": "Nordic Partners"
       },
       "meta_ts": 1785542416.2256446,
-      "lines": [],
-      "odds_ts": 1786075220.127982
+      "lines": [
+        [
+          "Dynamo Eclot Phoenix",
+          "Phantom Academy",
+          3.69,
+          1.22
+        ],
+        [
+          "Gremio",
+          "Keyd Stars",
+          3.29,
+          1.278
+        ],
+        [
+          "Bestia",
+          "Yawara eSports",
+          1.24,
+          3.54
+        ],
+        [
+          "Imperial eSports",
+          "Galorys",
+          1.324,
+          3.04
+        ],
+        [
+          "Cybershoke eSports",
+          "Genone",
+          1.884,
+          1.884
+        ]
+      ],
+      "odds_ts": 1786104017.1794136
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786075220.1280088,
+      "odds_ts": 1786104020.8853977,
       "active": [
         901974,
         902257,
@@ -2463,87 +2494,8 @@
         "1376686": "Shark Attack"
       },
       "meta_ts": 1785571212.8008003,
-      "lines": [
-        [
-          "Shifters",
-          "Giantx",
-          2.69,
-          1.467
-        ],
-        [
-          "Fnatic",
-          "Team Heretics",
-          2.98,
-          1.389
-        ],
-        [
-          "kt Rolster",
-          "Gen.g Esports",
-          2.93,
-          1.403
-        ],
-        [
-          "FEARX",
-          "Brion",
-          1.537,
-          2.5
-        ],
-        [
-          "Fluxo W7M",
-          "Keyd Stars",
-          2.1,
-          1.746
-        ],
-        [
-          "Furia Esports",
-          "Loud",
-          1.757,
-          2.09
-        ],
-        [
-          "Nongshim Redforce Challengers",
-          "KT Rolster Challengers",
-          1.74,
-          2.11
-        ],
-        [
-          "Drx Challengers",
-          "Hanwha Life Esports Challengers",
-          3.43,
-          1.303
-        ],
-        [
-          "Edward Gaming",
-          "JD Gaming",
-          1.176,
-          4.68
-        ],
-        [
-          "ThunderTalk Gaming",
-          "Team WE",
-          1.378,
-          3.03
-        ],
-        [
-          "Bilibili Gaming",
-          "TOP Esports",
-          1.377,
-          3.04
-        ],
-        [
-          "GAM Esports",
-          "Detonation Focusme",
-          7.6,
-          1.073
-        ],
-        [
-          "Deep Cross Gaming",
-          "MVK Esports",
-          1.617,
-          2.32
-        ]
-      ],
-      "odds_ts": 1786075214.5119896
+      "lines": [],
+      "odds_ts": 1786104020.885373
     }
   },
   "parlay_rot": 34,
@@ -30545,6 +30497,6 @@
   "deepdive_last": "2026-08-01",
   "dep_checked_ts": 1786097042.3046908,
   "x_bio_v": 2,
-  "op_cool_until": 1786076114.5119896,
+  "op_cool_until": 1786104917.1794136,
   "x_ads": []
 }
