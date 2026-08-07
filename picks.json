@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T17:09:07Z",
+  "updated": "2026-08-07T17:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8628,7 +8628,10 @@
       "opp": "Shifters",
       "analysis": "2-3 last 5 (beat Team Vitality, Solary) (lost to SK Gaming) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Team Vitality, Solary) (lost to SK Gaming) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over Shifters the number hasn't priced.",
       "awayTeam": "GIANTX",
-      "homeTeam": "Shifters"
+      "homeTeam": "Shifters",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "GIANTX 2-1 Shifters \u00b7 final"
     },
     {
       "id": "sinners-ml-0807",
@@ -8665,7 +8668,10 @@
       "opp": "Vandulken",
       "analysis": "3-2 last 5 (beat Brute, 6666, ECHO) (lost to Betclic Apogee Esports) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat Brute, 6666, ECHO) (lost to Betclic Apogee Esports) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over Vandulken the number hasn't priced.",
       "awayTeam": "Acend",
-      "homeTeam": "Vandulken"
+      "homeTeam": "Vandulken",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "Acend 2-0 Vandulken \u00b7 final"
     }
   ]
 }
