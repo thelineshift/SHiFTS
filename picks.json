@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T08:00:57Z",
+  "updated": "2026-08-07T09:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8602,7 +8602,10 @@
       "opp": "Team Secret",
       "analysis": "2-3 last 5 (beat T1, VARREL) (lost to Paper Rex) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat T1, VARREL) (lost to Paper Rex) vs 1-4 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this spot more than the price says.",
       "awayTeam": "DetonatioN FocusMe",
-      "homeTeam": "Team Secret"
+      "homeTeam": "Team Secret",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "DetonatioN FocusMe 2-0 Team Secret \u00b7 final"
     }
   ]
 }
