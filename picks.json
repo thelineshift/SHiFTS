@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T18:09:09Z",
+  "updated": "2026-08-08T21:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8842,7 +8842,10 @@
       "opp": "FaZe Clan",
       "analysis": "4-1 last 5 (beat Project Notorious, Team WaR, Vancouver Surge) (lost to 100 Thieves) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Project Notorious, Team WaR, Vancouver Surge) (lost to 100 Thieves) vs 3-2 \u2014 model line -265 (our 73%). Model makes OpTic Gaming **73%** \u2014 books ",
       "awayTeam": "OpTic Gaming",
-      "homeTeam": "FaZe Clan"
+      "homeTeam": "FaZe Clan",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "OpTic Gaming 4-0 FaZe Clan \u00b7 final"
     }
   ]
 }
