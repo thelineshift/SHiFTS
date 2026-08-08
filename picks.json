@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T16:00:54Z",
+  "updated": "2026-08-08T16:29:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8745,7 +8745,10 @@
       "opp": "Esport Academy Copenhagen",
       "analysis": "4-1 last 5 (beat Esport Academy Copenhagen, Entropy, Wampirki) (lost to DENDELE CS) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Esport Academy Copenhagen, Entropy, Wampirki) (lost to DENDELE CS) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before",
       "awayTeam": "SAW",
-      "homeTeam": "Esport Academy Copenhagen"
+      "homeTeam": "Esport Academy Copenhagen",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "SAW 2-0 Esport Academy Copenhagen \u00b7 final"
     },
     {
       "id": "acend-ml-0808",
