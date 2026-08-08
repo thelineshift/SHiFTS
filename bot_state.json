@@ -361,19 +361,19 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 92,
+  "op_calls": 98,
   "op_meta": {
     "cs2": {
       "active": [
-        23903,
-        31621,
         44609,
+        48985,
         50946,
         51122,
-        52290
+        51220,
+        52654
       ],
       "parts": {
-        "0": "Carolina Royal Ravens",
+        "0": "Vatuvei, Manu",
         "220602": "Fnatic",
         "220604": "MOUZ",
         "220606": "Natus Vincere",
@@ -432,7 +432,7 @@
         "421097": "Isurus",
         "422175": "Dark Tigers",
         "432507": "Furia",
-        "433544": "Sharks eSports",
+        "433544": "Dendele",
         "435262": "W7M eSports",
         "437332": "Luminous Gaming",
         "439758": "LP",
@@ -618,6 +618,7 @@
         "1100309": "Monte Gen",
         "1100311": "Passion UA",
         "1100313": "Vexar",
+        "1101843": "Abt eSports",
         "1104803": "Rush B",
         "1104809": "Might",
         "1104811": "Lag Gaming",
@@ -1146,6 +1147,8 @@
         "1344886": "Nas",
         "1344890": "Team Zevs",
         "1344944": "Inox Division",
+        "1344948": "Ence Prospects",
+        "1344950": "Sinqu Rehti",
         "1345120": "Ex-Marsborne",
         "1345124": "Low Cortisol Gaming",
         "1345194": "Wings of Freedom",
@@ -1169,6 +1172,7 @@
         "1346310": "Mtx",
         "1346312": "Vintage Aim Crew",
         "1346314": "A Great Chaos",
+        "1346908": "Dusty",
         "1347090": "New Vision",
         "1347688": "Kinoa",
         "1347710": "Shishka",
@@ -1221,6 +1225,7 @@
         "1365392": "Wbt",
         "1365424": "Ex-Sashi Academy",
         "1366266": "Ex-Vexa",
+        "1366716": "Spirit eSports",
         "1366726": "Sangrija",
         "1367922": "Mai Tai",
         "1368320": "Kaganat",
@@ -1247,45 +1252,92 @@
         "1374486": "Dynamo Eclot Phoenix",
         "1376302": "Ex-Young Ninjas",
         "1376892": "Teletubisie",
+        "1376898": "IC Academy",
         "1376902": "Ence Prospect",
         "1377682": "Ex-Guara",
         "1377684": "Meia Noite",
-        "1377818": "Nordic Partners"
+        "1377818": "Nordic Partners",
+        "1379242": "Passion Academy",
+        "1379504": "Jam",
+        "1379506": "Gamerslab eSports",
+        "1379768": "Team Kreazion",
+        "1379770": "Nio eSports",
+        "1379772": "Z TO Forward",
+        "1379774": "Queenconso",
+        "1379776": "Lafox",
+        "1379778": "Galactik Rebels 501st",
+        "1379780": "Giant Pandas",
+        "1379782": "Aogiri",
+        "1379786": "Rem",
+        "1379788": "Fkomar Fpl-C",
+        "1379790": "Vael",
+        "1379792": "Passion Chicha",
+        "1379796": "Revenix",
+        "1379798": "Nade Gaming",
+        "1379800": "Sadfamous",
+        "1379804": "Vandulken",
+        "1379806": "Manganese",
+        "1379808": "Dark Tigre",
+        "1379810": "Zeste eSport"
       },
-      "meta_ts": 1785542416.2256446,
+      "meta_ts": 1786176018.2581146,
       "lines": [
         [
-          "Dynamo Eclot Phoenix",
           "Phantom Academy",
-          3.69,
-          1.22
+          "Fire Flux eSports",
+          2.1,
+          1.625
         ],
         [
-          "Gremio",
-          "Keyd Stars",
-          3.29,
-          1.278
+          "Passion Academy",
+          "Sinqu Rehti",
+          1.543,
+          2.4
         ],
         [
-          "Bestia",
-          "Yawara eSports",
-          1.24,
-          3.54
+          "Phantom Academy",
+          "Vp.Prodigy",
+          1.769,
+          2.02
         ],
         [
-          "Imperial eSports",
-          "Galorys",
-          1.324,
-          3.04
+          "Procyon Team",
+          "Oddik Academy",
+          1.699,
+          2.07
         ],
         [
+          "Alka Gaming",
+          "Pain Academy",
+          1.308,
+          3.12
+        ],
+        [
+          "Black Phoenix",
           "Cybershoke eSports",
-          "Genone",
-          1.884,
-          1.884
+          2.56,
+          1.406
+        ],
+        [
+          "Team Liquid",
+          "Metizport",
+          1.273,
+          3.31
+        ],
+        [
+          "Echo",
+          "OG",
+          1.99,
+          1.763
+        ],
+        [
+          "Esuba",
+          "Brute",
+          6.3,
+          1.065
         ]
       ],
-      "odds_ts": 1786104017.1794136
+      "odds_ts": 1786176018.2581146
     },
     "valorant": {
       "lines": [],
@@ -1987,18 +2039,14 @@
         2450,
         2452,
         2454,
-        21962,
         26698,
-        33814,
         36997,
         39985,
         45589,
-        45623,
-        45985,
+        45855,
         46117,
         46119,
-        46121,
-        50586
+        46121
       ],
       "parts": {
         "240564": "Cloud9",
@@ -2483,12 +2531,16 @@
         "1371388": "Disruptors",
         "1372564": "Ole Miss eSports",
         "1372626": "Pyramid IV eSports",
+        "1372982": "Brod & Friends",
         "1372988": "Bitfix Rich Gang",
         "1372992": "2 Massive",
         "1374062": "Volda E-Sport",
-        "1376686": "Shark Attack"
+        "1374232": "Dominion Goblins",
+        "1374248": "Hyperion",
+        "1376686": "Shark Attack",
+        "1378052": "Up2Umedia Cebulaki"
       },
-      "meta_ts": 1785571212.8008003,
+      "meta_ts": 1786176014.5192595,
       "lines": [
         [
           "Cloud9",
