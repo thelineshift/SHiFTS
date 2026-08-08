@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T04:00:53Z",
+  "updated": "2026-08-08T08:01:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8689,6 +8689,40 @@
       "analysis": "2-3 last 5 (beat Team Secret, Paper Rex) (lost to DetonatioN FocusMe) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat Team Secret, Paper Rex) (lost to DetonatioN FocusMe) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge,",
       "awayTeam": "T1",
       "homeTeam": "Kiwoom DRX"
+    },
+    {
+      "id": "nrg-ml-0808",
+      "date": "2026-08-08",
+      "sport": "cs2",
+      "desc": "NRG ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Acend",
+      "team": "NRG",
+      "opp": "Acend",
+      "analysis": "4-1 last 5 (beat Spirit HU, Voca, SportsBetExpert) (lost to Voca) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Spirit HU, Voca, SportsBetExpert) (lost to Voca) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
+      "awayTeam": "NRG",
+      "homeTeam": "Acend"
+    },
+    {
+      "id": "liquid-ml-0808",
+      "date": "2026-08-08",
+      "sport": "cs2",
+      "desc": "Liquid ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -366,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Metizport",
+      "team": "Liquid",
+      "opp": "Metizport",
+      "analysis": "4-1 last 5 (beat Dhala, fnatic, 9INE) (lost to Betclic Apogee Esports) vs 2-3 \u2014 live Pinnacle line -366 (our 86% vs book 72%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Dhala, fnatic, 9INE) (lost to Betclic Apogee Esports) vs 2-3 \u2014 live Pinnacle line -366 (our 86% vs book 72%). Ride the **13-point** fo",
+      "awayTeam": "Liquid",
+      "homeTeam": "Metizport"
     }
   ]
 }
