@@ -364,7 +364,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 98,
+  "op_calls": 101,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1344,7 +1344,7 @@
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786161618.4528368,
+      "odds_ts": 1786190423.3037622,
       "active": [
         901974,
         902257,
@@ -2548,89 +2548,83 @@
         [
           "Cloud9",
           "Disguisedtoast",
-          1.056,
-          8.76
+          1.083,
+          7.12
         ],
         [
           "Shopify Rebellion",
           "Sentinels",
-          1.302,
-          3.45
+          1.304,
+          3.43
         ],
         [
           "SK Gaming",
           "Natus Vincere",
-          2.7,
-          1.465
+          2.61,
+          1.495
         ],
         [
           "Movistar Koi",
           "Giantx",
-          1.321,
-          3.33
+          1.31,
+          3.39
         ],
         [
           "T1",
           "Hanwha Life Esports",
-          1.917,
-          1.9
+          13.81,
+          1.025
         ],
         [
           "Nongshim Redforce",
           "Soopers",
-          1.223,
-          4.1
-        ],
-        [
-          "Furia Esports",
-          "Loud",
-          1.023,
-          14.34
+          1.909,
+          1.943
         ],
         [
           "Pain Gaming",
           "Red Canids",
-          1.925,
-          1.892
+          2.1,
+          1.746
         ],
         [
           "Leviatan",
           "Los",
-          1.038,
-          10.62
+          1.021,
+          13.89
         ],
         [
           "LNG Esports",
           "Weibo Gaming",
-          1.367,
-          3.08
+          1.037,
+          12.32
         ],
         [
           "Anyones Legend",
           "LGD Gaming",
-          4.81,
-          1.168
+          15.42,
+          1.022
         ],
         [
           "Bilibili Gaming",
           "Edward Gaming",
-          1.074,
-          7.59
+          1.085,
+          7.46
         ],
         [
           "Deep Cross Gaming",
           "MVK Esports",
-          1.657,
-          2.24
+          1.231,
+          3.86
         ],
         [
           "Ctbc Flying Oyster",
           "Ground Zero",
-          1.558,
-          2.45
+          1.564,
+          2.43
         ]
       ],
-      "odds_ts": 1786161612.9323158
+      "odds_ts": 1786190417.0641265
     }
   },
   "parlay_rot": 34,
@@ -30632,6 +30626,6 @@
   "deepdive_last": "2026-08-01",
   "dep_checked_ts": 1786183442.336391,
   "x_bio_v": 2,
-  "op_cool_until": 1786162512.9323158,
+  "op_cool_until": 1786191317.0641265,
   "x_ads": []
 }
