@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T16:29:09Z",
+  "updated": "2026-08-08T18:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8822,7 +8822,10 @@
       "opp": "Fnatic",
       "analysis": "4-1 last 5 (beat All Gamers, TYLOO, All Gamers) (lost to Virtus.pro) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat All Gamers, TYLOO, All Gamers) (lost to Virtus.pro) vs 3-2 \u2014 model line -265 (our 73%). Model makes EDward Gaming **73%** \u2014 books imply **73%**. SHiFT presses th",
       "awayTeam": "EDward Gaming",
-      "homeTeam": "Fnatic"
+      "homeTeam": "Fnatic",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "EDward Gaming 0-2 Fnatic \u00b7 final"
     },
     {
       "id": "optic-gaming-ml-0808",
