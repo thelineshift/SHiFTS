@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T12:09:06Z",
+  "updated": "2026-08-08T15:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8782,7 +8782,10 @@
       "opp": "Perfecto Club",
       "analysis": "3-2 last 5 (beat PCH3LK1N Club, Lixxx Club, SNAILKICK Club) (lost to Buster Club) vs 2-2 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 3-2 last 5 (beat PCH3LK1N Club, Lixxx Club, SNAILKICK Club) (lost to Buster Club) vs 2-2 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide,",
       "awayTeam": "shoke Club",
-      "homeTeam": "Perfecto Club"
+      "homeTeam": "Perfecto Club",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "shoke Club 1-2 Perfecto Club \u00b7 final"
     },
     {
       "id": "giant-pandas-ml-0808",
