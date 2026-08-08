@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T11:09:06Z",
+  "updated": "2026-08-08T12:01:05Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8726,6 +8726,74 @@
       "result": "WIN",
       "units_result": 0.41,
       "score": "Liquid 2-0 Metizport \u00b7 final"
+    },
+    {
+      "id": "saw-ml-0808",
+      "date": "2026-08-08",
+      "sport": "cs2",
+      "desc": "SAW ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "Esport Academy Copenhagen",
+      "team": "SAW",
+      "opp": "Esport Academy Copenhagen",
+      "analysis": "4-1 last 5 (beat Esport Academy Copenhagen, Entropy, Wampirki) (lost to DENDELE CS) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Esport Academy Copenhagen, Entropy, Wampirki) (lost to DENDELE CS) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before",
+      "awayTeam": "SAW",
+      "homeTeam": "Esport Academy Copenhagen"
+    },
+    {
+      "id": "acend-ml-0808",
+      "date": "2026-08-08",
+      "sport": "cs2",
+      "desc": "Acend ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "08:15 AM ET",
+      "vs": "Spirit HU",
+      "team": "Acend",
+      "opp": "Spirit HU",
+      "analysis": "3-2 last 5 (beat Vandulken, Brute, 6666) (lost to NRG) vs 1-1 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Vandulken, Brute, 6666) (lost to NRG) vs 1-1 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
+      "awayTeam": "Acend",
+      "homeTeam": "Spirit HU"
+    },
+    {
+      "id": "shoke-club-ml-0808",
+      "date": "2026-08-08",
+      "sport": "cs2",
+      "desc": "shoke Club ML",
+      "market": "Winline Star Series Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "08:30 AM ET",
+      "vs": "Perfecto Club",
+      "team": "shoke Club",
+      "opp": "Perfecto Club",
+      "analysis": "3-2 last 5 (beat PCH3LK1N Club, Lixxx Club, SNAILKICK Club) (lost to Buster Club) vs 2-2 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 3-2 last 5 (beat PCH3LK1N Club, Lixxx Club, SNAILKICK Club) (lost to Buster Club) vs 2-2 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide,",
+      "awayTeam": "shoke Club",
+      "homeTeam": "Perfecto Club"
+    },
+    {
+      "id": "giant-pandas-ml-0808",
+      "date": "2026-08-08",
+      "sport": "cs2",
+      "desc": "Giant Pandas ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "Infinite",
+      "team": "Giant Pandas",
+      "opp": "Infinite",
+      "analysis": "1-1 last 5 (beat Aogiri) (lost to Betclic Apogee Esports) vs 2-3 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 1-1 last 5 (beat Aogiri) (lost to Betclic Apogee Esports) vs 2-3 \u2014 model line -150 (our 60%). That's a **10-point** gap over Infinite the number hasn't priced.",
+      "awayTeam": "Giant Pandas",
+      "homeTeam": "Infinite"
     }
   ]
 }
