@@ -378,7 +378,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 114,
+  "op_calls": 116,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1298,85 +1298,12 @@
         "1379810": "Zeste eSport"
       },
       "meta_ts": 1786176018.2581146,
-      "lines": [
-        [
-          "Inner Circle Prospects",
-          "Ence Prospects",
-          1.507,
-          2.49
-        ],
-        [
-          "Alka Gaming",
-          "Borracheiros",
-          1.714,
-          2.05
-        ],
-        [
-          "Procyon Team",
-          "Gremio",
-          2.07,
-          1.704
-        ],
-        [
-          "Galorys",
-          "Keyd Stars",
-          1.68,
-          2.1
-        ],
-        [
-          "Heroic",
-          "Astral eSports",
-          1.144,
-          4.78
-        ],
-        [
-          "Team Liquid",
-          "1W Team",
-          2.62,
-          1.46
-        ],
-        [
-          "Eyeballers",
-          "Sinners",
-          1.775,
-          2.01
-        ],
-        [
-          "Big",
-          "Eternal Fire",
-          2.93,
-          1.371
-        ],
-        [
-          "Fnatic",
-          "Fluxo W7M",
-          3.12,
-          1.328
-        ],
-        [
-          "BC.Game eSports",
-          "OG",
-          1.292,
-          3.32
-        ],
-        [
-          "Echo",
-          "Genone",
-          1.671,
-          2.16
-        ],
-        [
-          "Hotu",
-          "9Ine",
-          2.55,
-          1.483
-        ]
-      ],
-      "odds_ts": 1786262411.77926
+      "lines": [],
+      "odds_ts": 1786305616.4880137
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786276819.3874545,
+      "odds_ts": 1786305616.4880323,
       "active": [
         901974,
         902257,
@@ -2581,77 +2508,41 @@
         [
           "Dignitas",
           "Lyon Gaming",
-          7.51,
-          1.075
+          7.75,
+          1.071
         ],
         [
           "Flyquest",
           "Team Liquid",
-          2.92,
-          1.403
+          3.18,
+          1.348
         ],
         [
           "G2 Esports",
           "Team Heretics",
-          8.82,
-          1.055
+          8.53,
+          1.06
         ],
         [
           "Fnatic",
           "Karmine Corp",
-          6.4,
-          1.101
-        ],
-        [
-          "Dplus",
-          "kt Rolster",
-          1.02,
-          15.52
-        ],
-        [
-          "FEARX",
-          "DRX",
-          1.278,
-          3.57
+          10.64,
+          1.04
         ],
         [
           "Loud",
           "Keyd Stars",
-          1.666,
-          2.23
+          1.046,
+          9.88
         ],
         [
           "Furia Esports",
           "Fluxo W7M",
-          3.5,
-          1.294
-        ],
-        [
-          "Invictus Gaming",
-          "LNG Esports",
-          1.015,
-          20.01
-        ],
-        [
-          "TOP Esports",
-          "ThunderTalk Gaming",
-          17.12,
-          1.02
-        ],
-        [
-          "JD Gaming",
-          "Team WE",
-          2.0,
-          1.74
-        ],
-        [
-          "Ctbc Flying Oyster",
-          "Ground Zero",
-          1.201,
-          4.19
+          13.55,
+          1.026
         ]
       ],
-      "odds_ts": 1786276813.62334
+      "odds_ts": 1786305612.6471932
     }
   },
   "parlay_rot": 34,
@@ -30653,6 +30544,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786298642.7573254,
   "x_bio_v": 2,
-  "op_cool_until": 1786277713.62334,
+  "op_cool_until": 1786306512.6471932,
   "x_ads": []
 }
