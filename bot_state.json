@@ -368,7 +368,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 104,
+  "op_calls": 107,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1348,7 +1348,7 @@
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786219217.5436852,
+      "odds_ts": 1786248017.443158,
       "active": [
         901974,
         902257,
@@ -2550,64 +2550,70 @@
       "meta_ts": 1786176014.5192595,
       "lines": [
         [
-          "Cloud9",
-          "Disguisedtoast",
-          1.078,
-          7.36
-        ],
-        [
           "Shopify Rebellion",
           "Sentinels",
-          1.309,
-          3.4
+          4.73,
+          1.165
         ],
         [
-          "SK Gaming",
-          "Natus Vincere",
-          5.79,
-          1.117
+          "Dignitas",
+          "Lyon Gaming",
+          7.57,
+          1.074
         ],
         [
-          "Movistar Koi",
-          "Giantx",
-          6.92,
-          1.086
+          "Flyquest",
+          "Team Liquid",
+          2.81,
+          1.434
+        ],
+        [
+          "G2 Esports",
+          "Team Heretics",
+          9.26,
+          1.05
+        ],
+        [
+          "Fnatic",
+          "Karmine Corp",
+          6.96,
+          1.087
         ],
         [
           "Dplus",
           "kt Rolster",
-          1.598,
-          2.36
+          1.584,
+          2.39
         ],
         [
           "FEARX",
           "DRX",
-          1.8,
-          2.03
+          1.833,
+          1.99
         ],
         [
-          "Pain Gaming",
-          "Red Canids",
-          1.02,
-          15.38
+          "Loud",
+          "Keyd Stars",
+          1.497,
+          2.6
         ],
         [
-          "Leviatan",
-          "Los",
-          1.028,
-          13.03
+          "Furia Esports",
+          "Fluxo W7M",
+          3.47,
+          1.298
         ],
         [
           "Invictus Gaming",
           "LNG Esports",
-          1.104,
-          6.28
+          1.109,
+          6.13
         ],
         [
           "TOP Esports",
           "ThunderTalk Gaming",
-          3.77,
-          1.258
+          3.73,
+          1.263
         ],
         [
           "JD Gaming",
@@ -2618,11 +2624,11 @@
         [
           "Ctbc Flying Oyster",
           "Ground Zero",
-          1.534,
-          2.5
+          1.507,
+          2.58
         ]
       ],
-      "odds_ts": 1786219211.920631
+      "odds_ts": 1786248012.0359235
     }
   },
   "parlay_rot": 34,
@@ -30624,6 +30630,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786241042.363479,
   "x_bio_v": 2,
-  "op_cool_until": 1786220111.920631,
+  "op_cool_until": 1786248912.0359235,
   "x_ads": []
 }
