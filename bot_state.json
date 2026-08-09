@@ -379,7 +379,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 107,
+  "op_calls": 109,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1301,61 +1301,79 @@
       "meta_ts": 1786176018.2581146,
       "lines": [
         [
-          "Phantom Academy",
-          "Fire Flux eSports",
-          2.1,
-          1.625
-        ],
-        [
-          "Passion Academy",
-          "Sinqu Rehti",
-          1.543,
-          2.4
-        ],
-        [
-          "Phantom Academy",
-          "Vp.Prodigy",
-          1.769,
-          2.02
-        ],
-        [
-          "Procyon Team",
-          "Oddik Academy",
-          1.699,
-          2.07
+          "Inner Circle Prospects",
+          "Ence Prospects",
+          1.507,
+          2.49
         ],
         [
           "Alka Gaming",
-          "Pain Academy",
-          1.308,
-          3.12
+          "Borracheiros",
+          1.714,
+          2.05
         ],
         [
-          "Black Phoenix",
-          "Cybershoke eSports",
-          2.56,
-          1.406
+          "Procyon Team",
+          "Gremio",
+          2.07,
+          1.704
+        ],
+        [
+          "Galorys",
+          "Keyd Stars",
+          1.68,
+          2.1
+        ],
+        [
+          "Heroic",
+          "Astral eSports",
+          1.144,
+          4.78
         ],
         [
           "Team Liquid",
-          "Metizport",
-          1.273,
-          3.31
+          "1W Team",
+          2.62,
+          1.46
+        ],
+        [
+          "Eyeballers",
+          "Sinners",
+          1.775,
+          2.01
+        ],
+        [
+          "Big",
+          "Eternal Fire",
+          2.93,
+          1.371
+        ],
+        [
+          "Fnatic",
+          "Fluxo W7M",
+          3.12,
+          1.328
+        ],
+        [
+          "BC.Game eSports",
+          "OG",
+          1.292,
+          3.32
         ],
         [
           "Echo",
-          "OG",
-          1.99,
-          1.763
+          "Genone",
+          1.671,
+          2.16
         ],
         [
-          "Esuba",
-          "Brute",
-          6.3,
-          1.065
+          "Hotu",
+          "9Ine",
+          2.55,
+          1.483
         ]
       ],
-      "odds_ts": 1786176018.2581146
+      "odds_ts": 1786262411.77926
     },
     "valorant": {
       "lines": [],
@@ -30641,6 +30659,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786255442.2608635,
   "x_bio_v": 2,
-  "op_cool_until": 1786248912.0359235,
+  "op_cool_until": 1786263311.77926,
   "x_ads": []
 }
