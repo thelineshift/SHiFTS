@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T12:09:07Z",
+  "updated": "2026-08-09T14:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8982,7 +8982,10 @@
       "opp": "Team Heretics",
       "analysis": "4-1 last 5 (beat Gentle Mates, Team Heretics, Project Notorious) (lost to Boston Breach) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Gentle Mates, Team Heretics, Project Notorious) (lost to Boston Breach) vs 3-2 \u2014 model line -265 (our 73%). Model makes Team Falcons **73%** ",
       "awayTeam": "Team Falcons",
-      "homeTeam": "Team Heretics"
+      "homeTeam": "Team Heretics",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Team Falcons 0-4 Team Heretics \u00b7 final"
     }
   ]
 }
