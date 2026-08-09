@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T07:49:08Z",
+  "updated": "2026-08-09T08:01:01Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8883,6 +8883,74 @@
       "analysis": "4-1 last 5 (beat Koala Game, JLY, WanZhen Esports Club) (lost to Koala Game) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcca **Form + price:** 4-1 last 5 (beat Koala Game, JLY, WanZhen Esports Club) (lost to Koala Game) vs 3-2 \u2014 model line -265 (our 73%). Model makes LT Gaming **73%** \u2014 books imply **73%**. ",
       "awayTeam": "LT Gaming",
       "homeTeam": "Titan King's Legion"
+    },
+    {
+      "id": "liquid-ml-0809",
+      "date": "2026-08-09",
+      "sport": "cs2",
+      "desc": "Liquid ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "1WIN",
+      "team": "Liquid",
+      "opp": "1WIN",
+      "analysis": "4-1 last 5 (beat Metizport, Dhala, fnatic) (lost to Betclic Apogee Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Metizport, Dhala, fnatic) (lost to Betclic Apogee Esports) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over 1WIN the number hasn't price",
+      "awayTeam": "Liquid",
+      "homeTeam": "1WIN"
+    },
+    {
+      "id": "nrg-ml-0809",
+      "date": "2026-08-09",
+      "sport": "cs2",
+      "desc": "NRG ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Phantom",
+      "team": "NRG",
+      "opp": "Phantom",
+      "analysis": "4-1 last 5 (beat Acend, Spirit HU, Voca) (lost to Voca) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Acend, Spirit HU, Voca) (lost to Voca) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Phantom the number hasn't priced.",
+      "awayTeam": "NRG",
+      "homeTeam": "Phantom"
+    },
+    {
+      "id": "big-ml-0809",
+      "date": "2026-08-09",
+      "sport": "cs2",
+      "desc": "BIG ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Eternal Fire",
+      "team": "BIG",
+      "opp": "Eternal Fire",
+      "analysis": "4-1 last 5 (beat Fluxo W7M, z to forward, B8) (lost to PARIVISION) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Fluxo W7M, z to forward, B8) (lost to PARIVISION) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Eternal Fire the number hasn't priced.",
+      "awayTeam": "BIG",
+      "homeTeam": "Eternal Fire"
+    },
+    {
+      "id": "infurity-gaming-ml-0809",
+      "date": "2026-08-09",
+      "sport": "cs2",
+      "desc": "INFURITY Gaming ML",
+      "market": "United21 Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "EAC Extra",
+      "team": "INFURITY Gaming",
+      "opp": "EAC Extra",
+      "analysis": "3-2 last 5 (beat Inner Circle Prospect, STATE, ENCE Prospects) (lost to Misa Esports) vs 0-0 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Inner Circle Prospect, STATE, ENCE Prospects) (lost to Misa Esports) vs 0-0 \u2014 model line -150 (our 60%). Books hang respect on the wrong sid",
+      "awayTeam": "INFURITY Gaming",
+      "homeTeam": "EAC Extra"
     }
   ]
 }
