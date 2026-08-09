@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T12:00:59Z",
+  "updated": "2026-08-09T12:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8922,7 +8922,10 @@
       "opp": "Phantom",
       "analysis": "4-1 last 5 (beat Acend, Spirit HU, Voca) (lost to Voca) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Acend, Spirit HU, Voca) (lost to Voca) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Phantom the number hasn't priced.",
       "awayTeam": "NRG",
-      "homeTeam": "Phantom"
+      "homeTeam": "Phantom",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "NRG 1-2 Phantom \u00b7 final"
     },
     {
       "id": "big-ml-0809",
