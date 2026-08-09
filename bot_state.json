@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "liquid-ml-0809",
+      "desc": "Liquid ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Liquid 1-2 1WIN \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "big-ml-0809",
+      "desc": "BIG ML",
+      "odds": -265,
+      "result": "WIN",
+      "units": 0.38,
+      "score": "BIG 2-0 Eternal Fire \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-07",
   "scan_events": {
