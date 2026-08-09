@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T10:29:06Z",
+  "updated": "2026-08-09T11:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8902,7 +8902,10 @@
       "opp": "1WIN",
       "analysis": "4-1 last 5 (beat Metizport, Dhala, fnatic) (lost to Betclic Apogee Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Metizport, Dhala, fnatic) (lost to Betclic Apogee Esports) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over 1WIN the number hasn't price",
       "awayTeam": "Liquid",
-      "homeTeam": "1WIN"
+      "homeTeam": "1WIN",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Liquid 1-2 1WIN \u00b7 final"
     },
     {
       "id": "nrg-ml-0809",
@@ -8936,7 +8939,10 @@
       "opp": "Eternal Fire",
       "analysis": "4-1 last 5 (beat Fluxo W7M, z to forward, B8) (lost to PARIVISION) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Fluxo W7M, z to forward, B8) (lost to PARIVISION) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Eternal Fire the number hasn't priced.",
       "awayTeam": "BIG",
-      "homeTeam": "Eternal Fire"
+      "homeTeam": "Eternal Fire",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "BIG 2-0 Eternal Fire \u00b7 final"
     },
     {
       "id": "infurity-gaming-ml-0809",
