@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T14:29:08Z",
+  "updated": "2026-08-09T16:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8986,6 +8986,23 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "Team Falcons 0-4 Team Heretics \u00b7 final"
+    },
+    {
+      "id": "fnatic-ml-0809",
+      "date": "2026-08-09",
+      "sport": "r6",
+      "desc": "Fnatic ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "FURIA Esports",
+      "team": "Fnatic",
+      "opp": "FURIA Esports",
+      "analysis": "4-1 last 5 (beat EDward Gaming, Al Ula, MIBR.LOS) (lost to FaZe Clan) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcca **Form + price:** 4-1 last 5 (beat EDward Gaming, Al Ula, MIBR.LOS) (lost to FaZe Clan) vs 3-2 \u2014 model line -265 (our 73%). Model makes Fnatic **73%** \u2014 books imply **73%**. Small edge, real ",
+      "awayTeam": "Fnatic",
+      "homeTeam": "FURIA Esports"
     }
   ]
 }
