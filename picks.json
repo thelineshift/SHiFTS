@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T08:01:01Z",
+  "updated": "2026-08-09T09:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8882,7 +8882,10 @@
       "opp": "Titan King's Legion",
       "analysis": "4-1 last 5 (beat Koala Game, JLY, WanZhen Esports Club) (lost to Koala Game) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcca **Form + price:** 4-1 last 5 (beat Koala Game, JLY, WanZhen Esports Club) (lost to Koala Game) vs 3-2 \u2014 model line -265 (our 73%). Model makes LT Gaming **73%** \u2014 books imply **73%**. ",
       "awayTeam": "LT Gaming",
-      "homeTeam": "Titan King's Legion"
+      "homeTeam": "Titan King's Legion",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "LT Gaming 0-3 Titan King's Legion \u00b7 final"
     },
     {
       "id": "liquid-ml-0809",
