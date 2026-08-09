@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T04:00:55Z",
+  "updated": "2026-08-09T07:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8862,7 +8862,10 @@
       "opp": "Koala Game",
       "analysis": "4-1 last 5 (beat WLT Esports Club, JA Gaming, JA Gaming) (lost to To Champion Group) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat WLT Esports Club, JA Gaming, JA Gaming) (lost to To Champion Group) vs 3-2 \u2014 model line -265 (our 73%). Xianyou Gaming in the better spot an",
       "awayTeam": "Xianyou Gaming",
-      "homeTeam": "Koala Game"
+      "homeTeam": "Koala Game",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Xianyou Gaming 3-0 Koala Game \u00b7 final"
     },
     {
       "id": "lt-gaming-ml-0809",
