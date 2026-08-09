@@ -375,7 +375,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 112,
+  "op_calls": 114,
   "op_meta": {
     "cs2": {
       "active": [
@@ -2062,9 +2062,10 @@
         "991139636360": "Lazer",
         "992315478058": "Habos Babos",
         "992797452176": "SR Black",
-        "993074085992": "Shopify Rebellion Black"
+        "993074085992": "Shopify Rebellion Black",
+        "994197380026": "A Team"
       },
-      "meta_ts": 1785672017.9032195
+      "meta_ts": 1786291214.8651478
     },
     "lol": {
       "active": [
