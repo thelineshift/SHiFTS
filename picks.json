@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T20:09:07Z",
+  "updated": "2026-08-09T22:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9056,7 +9056,10 @@
       "opp": "METANOIA WOLVES",
       "analysis": "2-2 last 5 (beat ODDIK Academy, ex-GUARA) (lost to paiN Academy) vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 2-2 last 5 (beat ODDIK Academy, ex-GUARA) (lost to paiN Academy) vs 2-3 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "MEIA NOITE",
-      "homeTeam": "METANOIA WOLVES"
+      "homeTeam": "METANOIA WOLVES",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "MEIA NOITE 2-0 METANOIA WOLVES \u00b7 final"
     }
   ]
 }
