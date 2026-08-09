@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T16:00:55Z",
+  "updated": "2026-08-09T20:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9003,6 +9003,57 @@
       "analysis": "4-1 last 5 (beat EDward Gaming, Al Ula, MIBR.LOS) (lost to FaZe Clan) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcca **Form + price:** 4-1 last 5 (beat EDward Gaming, Al Ula, MIBR.LOS) (lost to FaZe Clan) vs 3-2 \u2014 model line -265 (our 73%). Model makes Fnatic **73%** \u2014 books imply **73%**. Small edge, real ",
       "awayTeam": "Fnatic",
       "homeTeam": "FURIA Esports"
+    },
+    {
+      "id": "quintess\u00eancia-ml-0809",
+      "date": "2026-08-09",
+      "sport": "cs2",
+      "desc": "QUINTESS\u00caNCIA ML",
+      "market": "CCT South America Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:45 PM ET",
+      "vs": "Gr\u00eamio Esports",
+      "team": "QUINTESS\u00caNCIA",
+      "opp": "Gr\u00eamio Esports",
+      "analysis": "4-1 last 5 (beat ODDIK, BESTIA Academy, ALKA GAMING) (lost to Gr\u00eamio Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ODDIK, BESTIA Academy, ALKA GAMING) (lost to Gr\u00eamio Esports) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points*",
+      "awayTeam": "QUINTESS\u00caNCIA",
+      "homeTeam": "Gr\u00eamio Esports"
+    },
+    {
+      "id": "100-thieves-ml-0809",
+      "date": "2026-08-09",
+      "sport": "valorant",
+      "desc": "100 Thieves ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "08:00 PM ET",
+      "vs": "LOUD",
+      "team": "100 Thieves",
+      "opp": "LOUD",
+      "analysis": "4-1 last 5 (beat Sentinels, KR\u00dc Esports, G2 Esports) (lost to Cloud9) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Sentinels, KR\u00dc Esports, G2 Esports) (lost to Cloud9) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over LOUD the number hasn't priced.",
+      "awayTeam": "100 Thieves",
+      "homeTeam": "LOUD"
+    },
+    {
+      "id": "meia-noite-ml-0809",
+      "date": "2026-08-09",
+      "sport": "cs2",
+      "desc": "MEIA NOITE ML",
+      "market": "BetBoom Storm Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 PM ET",
+      "vs": "METANOIA WOLVES",
+      "team": "MEIA NOITE",
+      "opp": "METANOIA WOLVES",
+      "analysis": "2-2 last 5 (beat ODDIK Academy, ex-GUARA) (lost to paiN Academy) vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 2-2 last 5 (beat ODDIK Academy, ex-GUARA) (lost to paiN Academy) vs 2-3 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
+      "awayTeam": "MEIA NOITE",
+      "homeTeam": "METANOIA WOLVES"
     }
   ]
 }
