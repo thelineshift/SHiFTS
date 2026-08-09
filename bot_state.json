@@ -49,17 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "xianyou-gaming-ml-0809",
-      "desc": "Xianyou Gaming ML",
-      "odds": -265,
-      "result": "WIN",
-      "units": 0.38,
-      "score": "Xianyou Gaming 3-0 Koala Game \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-07",
   "scan_events": {
