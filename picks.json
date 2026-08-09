@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T20:00:55Z",
+  "updated": "2026-08-09T20:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9002,7 +9002,10 @@
       "opp": "FURIA Esports",
       "analysis": "4-1 last 5 (beat EDward Gaming, Al Ula, MIBR.LOS) (lost to FaZe Clan) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcca **Form + price:** 4-1 last 5 (beat EDward Gaming, Al Ula, MIBR.LOS) (lost to FaZe Clan) vs 3-2 \u2014 model line -265 (our 73%). Model makes Fnatic **73%** \u2014 books imply **73%**. Small edge, real ",
       "awayTeam": "Fnatic",
-      "homeTeam": "FURIA Esports"
+      "homeTeam": "FURIA Esports",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Fnatic 1-2 FURIA Esports \u00b7 final"
     },
     {
       "id": "quintess\u00eancia-ml-0809",
