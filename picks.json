@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T21:49:08Z",
+  "updated": "2026-08-09T04:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8846,6 +8846,40 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "OpTic Gaming 4-0 FaZe Clan \u00b7 final"
+    },
+    {
+      "id": "xianyou-gaming-ml-0809",
+      "date": "2026-08-09",
+      "sport": "kog",
+      "desc": "Xianyou Gaming ML",
+      "market": "KPL Growth League Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 AM ET",
+      "vs": "Koala Game",
+      "team": "Xianyou Gaming",
+      "opp": "Koala Game",
+      "analysis": "4-1 last 5 (beat WLT Esports Club, JA Gaming, JA Gaming) (lost to To Champion Group) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat WLT Esports Club, JA Gaming, JA Gaming) (lost to To Champion Group) vs 3-2 \u2014 model line -265 (our 73%). Xianyou Gaming in the better spot an",
+      "awayTeam": "Xianyou Gaming",
+      "homeTeam": "Koala Game"
+    },
+    {
+      "id": "lt-gaming-ml-0809",
+      "date": "2026-08-09",
+      "sport": "kog",
+      "desc": "LT Gaming ML",
+      "market": "KPL Growth League Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Titan King's Legion",
+      "team": "LT Gaming",
+      "opp": "Titan King's Legion",
+      "analysis": "4-1 last 5 (beat Koala Game, JLY, WanZhen Esports Club) (lost to Koala Game) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcca **Form + price:** 4-1 last 5 (beat Koala Game, JLY, WanZhen Esports Club) (lost to Koala Game) vs 3-2 \u2014 model line -265 (our 73%). Model makes LT Gaming **73%** \u2014 books imply **73%**. ",
+      "awayTeam": "LT Gaming",
+      "homeTeam": "Titan King's Legion"
     }
   ]
 }
