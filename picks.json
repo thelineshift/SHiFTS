@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T09:29:08Z",
+  "updated": "2026-08-09T10:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -8953,7 +8953,10 @@
       "opp": "EAC Extra",
       "analysis": "3-2 last 5 (beat Inner Circle Prospect, STATE, ENCE Prospects) (lost to Misa Esports) vs 0-0 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Inner Circle Prospect, STATE, ENCE Prospects) (lost to Misa Esports) vs 0-0 \u2014 model line -150 (our 60%). Books hang respect on the wrong sid",
       "awayTeam": "INFURITY Gaming",
-      "homeTeam": "EAC Extra"
+      "homeTeam": "EAC Extra",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "INFURITY Gaming 2-0 EAC Extra \u00b7 final"
     }
   ]
 }
