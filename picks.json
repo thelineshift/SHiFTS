@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T00:49:07Z",
+  "updated": "2026-08-10T01:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9022,7 +9022,10 @@
       "opp": "Gr\u00eamio Esports",
       "analysis": "4-1 last 5 (beat ODDIK, BESTIA Academy, ALKA GAMING) (lost to Gr\u00eamio Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ODDIK, BESTIA Academy, ALKA GAMING) (lost to Gr\u00eamio Esports) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points*",
       "awayTeam": "QUINTESS\u00caNCIA",
-      "homeTeam": "Gr\u00eamio Esports"
+      "homeTeam": "Gr\u00eamio Esports",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "QUINTESS\u00caNCIA 2-0 Gr\u00eamio Esports \u00b7 final"
     },
     {
       "id": "100-thieves-ml-0809",
