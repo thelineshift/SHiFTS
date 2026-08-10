@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T04:00:56Z",
+  "updated": "2026-08-10T10:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9082,7 +9082,10 @@
       "opp": "KT Rolster Challengers",
       "analysis": "2-3 last 5 (beat Dplus KIA Challengers, Gen.G Global Academy) (lost to T1 Academy) vs 1-4 \u2014 live Pinnacle line -106 (our 73% vs book 49%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Dplus KIA Challengers, Gen.G Global Academy) (lost to T1 Academy) vs 1-4 \u2014 live Pinnacle line -106 (our 73% vs book 49%). ",
       "awayTeam": "DN SOOPers Challengers",
-      "homeTeam": "KT Rolster Challengers"
+      "homeTeam": "KT Rolster Challengers",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "DN SOOPers Challengers 1-2 KT Rolster Challengers \u00b7 final"
     }
   ]
 }
