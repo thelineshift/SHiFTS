@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T10:29:08Z",
+  "updated": "2026-08-10T12:00:51Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9086,6 +9086,23 @@
       "result": "LOSS",
       "units_result": -1.5,
       "score": "DN SOOPers Challengers 1-2 KT Rolster Challengers \u00b7 final"
+    },
+    {
+      "id": "team-vitality-ml-0810",
+      "date": "2026-08-10",
+      "sport": "lol",
+      "desc": "Team Vitality ML",
+      "market": "LEC Bo3",
+      "odds": -219,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "SK Gaming",
+      "team": "Team Vitality",
+      "opp": "SK Gaming",
+      "analysis": "2-3 last 5 (beat Team Heretics, Movistar KOI) (lost to G2 Esports) vs 1-4 \u2014 live Pinnacle line -219 (our 73% vs book 65%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Team Heretics, Movistar KOI) (lost to G2 Esports) vs 1-4 \u2014 live Pinnacle line -219 (our 73% vs book 65%). When the form gap runs **8 point",
+      "awayTeam": "Team Vitality",
+      "homeTeam": "SK Gaming"
     }
   ]
 }
