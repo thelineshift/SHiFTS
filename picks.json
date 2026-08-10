@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T22:49:06Z",
+  "updated": "2026-08-10T00:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9039,7 +9039,10 @@
       "opp": "LOUD",
       "analysis": "4-1 last 5 (beat Sentinels, KR\u00dc Esports, G2 Esports) (lost to Cloud9) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Sentinels, KR\u00dc Esports, G2 Esports) (lost to Cloud9) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over LOUD the number hasn't priced.",
       "awayTeam": "100 Thieves",
-      "homeTeam": "LOUD"
+      "homeTeam": "LOUD",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "100 Thieves 2-0 LOUD \u00b7 final"
     },
     {
       "id": "meia-noite-ml-0809",
