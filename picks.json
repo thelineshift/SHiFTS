@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T20:01:01Z",
+  "updated": "2026-08-10T22:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9139,7 +9139,10 @@
       "opp": "Back to Back ",
       "analysis": "2-3 last 5 (beat ELITES, Game Hunters) (lost to pugdesonesto) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat ELITES, Game Hunters) (lost to pugdesonesto) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over Back to Back  the number hasn't priced.",
       "awayTeam": "Damajuana",
-      "homeTeam": "Back to Back "
+      "homeTeam": "Back to Back ",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Damajuana 0-2 Back to Back  \u00b7 final"
     }
   ]
 }
