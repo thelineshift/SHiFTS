@@ -381,7 +381,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 118,
+  "op_calls": 120,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1306,7 +1306,7 @@
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786334419.1618774,
+      "odds_ts": 1786363215.4221513,
       "active": [
         901974,
         902257,
@@ -2509,49 +2509,43 @@
       "meta_ts": 1786176014.5192595,
       "lines": [
         [
-          "Flyquest",
-          "Team Liquid",
-          9.84,
-          1.05
-        ],
-        [
           "SK Gaming",
           "Team Vitality",
-          2.77,
-          1.444
+          2.73,
+          1.456
         ],
         [
           "G2 Esports",
           "Natus Vincere",
-          4.56,
-          1.185
+          4.69,
+          1.176
         ],
         [
           "Leviatan",
           "Red Canids",
-          5.81,
-          1.12
+          6.42,
+          1.1
         ],
         [
           "Pain Gaming",
           "Los",
-          1.277,
-          3.62
+          1.142,
+          5.29
         ],
         [
           "Soopers Challengers",
           "KT Rolster Challengers",
-          1.943,
-          1.877
+          2.4,
+          1.52
         ],
         [
           "Gen.G Global Academy",
           "Hanwha Life Esports Challengers",
-          1.301,
-          3.45
+          1.869,
+          1.869
         ]
       ],
-      "odds_ts": 1786334415.6171768
+      "odds_ts": 1786363211.4446237
     }
   },
   "parlay_rot": 34,
@@ -30553,6 +30547,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786356242.3556151,
   "x_bio_v": 2,
-  "op_cool_until": 1786335315.6171768,
+  "op_cool_until": 1786364111.4446237,
   "x_ads": []
 }
