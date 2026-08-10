@@ -30180,7 +30180,7 @@
     "pnl": -126.67,
     "trades": 485,
     "last_recap": "2026-08-09",
-    "last_recap_hour": "2026-08-10-06",
+    "last_recap_hour": "2026-08-10-08",
     "deposits": 14.0,
     "deposits_since": "2026-07-24",
     "account": 0.01,
@@ -30547,7 +30547,7 @@
     "used": 0
   },
   "deepdive_last": "2026-08-08",
-  "dep_checked_ts": 1786341842.236269,
+  "dep_checked_ts": 1786349042.2748,
   "x_bio_v": 2,
   "op_cool_until": 1786335315.6171768,
   "x_ads": []
