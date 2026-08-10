@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T12:00:51Z",
+  "updated": "2026-08-10T16:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9102,7 +9102,10 @@
       "opp": "SK Gaming",
       "analysis": "2-3 last 5 (beat Team Heretics, Movistar KOI) (lost to G2 Esports) vs 1-4 \u2014 live Pinnacle line -219 (our 73% vs book 65%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Team Heretics, Movistar KOI) (lost to G2 Esports) vs 1-4 \u2014 live Pinnacle line -219 (our 73% vs book 65%). When the form gap runs **8 point",
       "awayTeam": "Team Vitality",
-      "homeTeam": "SK Gaming"
+      "homeTeam": "SK Gaming",
+      "result": "WIN",
+      "units_result": 0.46,
+      "score": "Team Vitality 2-0 SK Gaming \u00b7 final"
     }
   ]
 }
