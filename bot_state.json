@@ -388,7 +388,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 120,
+  "op_calls": 122,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1308,12 +1308,25 @@
         "1379810": "Zeste eSport"
       },
       "meta_ts": 1786176018.2581146,
-      "lines": [],
-      "odds_ts": 1786305616.4880137
+      "lines": [
+        [
+          "Pain Academy",
+          "Keyd Stars",
+          3.39,
+          1.261
+        ],
+        [
+          "Isurus",
+          "Gremio",
+          1.188,
+          3.98
+        ]
+      ],
+      "odds_ts": 1786392013.711933
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786363215.4221513,
+      "odds_ts": 1786392017.4418492,
       "active": [
         901974,
         902257,
@@ -30554,6 +30567,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786385042.2970257,
   "x_bio_v": 2,
-  "op_cool_until": 1786364111.4446237,
+  "op_cool_until": 1786392913.711933,
   "x_ads": []
 }
