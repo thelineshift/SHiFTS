@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T01:49:06Z",
+  "updated": "2026-08-10T04:00:56Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9066,6 +9066,23 @@
       "result": "WIN",
       "units_result": 0.67,
       "score": "MEIA NOITE 2-0 METANOIA WOLVES \u00b7 final"
+    },
+    {
+      "id": "dn-soopers-challengers-ml-0810",
+      "date": "2026-08-10",
+      "sport": "lol",
+      "desc": "DN SOOPers Challengers ML",
+      "market": "LCK Challengers League Bo3",
+      "odds": -106,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "KT Rolster Challengers",
+      "team": "DN SOOPers Challengers",
+      "opp": "KT Rolster Challengers",
+      "analysis": "2-3 last 5 (beat Dplus KIA Challengers, Gen.G Global Academy) (lost to T1 Academy) vs 1-4 \u2014 live Pinnacle line -106 (our 73% vs book 49%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Dplus KIA Challengers, Gen.G Global Academy) (lost to T1 Academy) vs 1-4 \u2014 live Pinnacle line -106 (our 73% vs book 49%). ",
+      "awayTeam": "DN SOOPers Challengers",
+      "homeTeam": "KT Rolster Challengers"
     }
   ]
 }
