@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T01:49:06Z",
+  "updated": "2026-08-11T04:00:54Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9163,6 +9163,23 @@
       "analysis": "2-3 last 5 (beat No Sweat Blossom, No Sweat Blossom) (lost to Akave Esports Black) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat No Sweat Blossom, No Sweat Blossom) (lost to Akave Esports Black) vs 1-4 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wid",
       "awayTeam": "MYVRA GC",
       "homeTeam": "FUSION X"
+    },
+    {
+      "id": "kiwoom-drx-challengers-ml-0811",
+      "date": "2026-08-11",
+      "sport": "lol",
+      "desc": "Kiwoom DRX Challengers ML",
+      "market": "LCK Challengers League Bo3",
+      "odds": -152,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "BNK FearX Youth",
+      "team": "Kiwoom DRX Challengers",
+      "opp": "BNK FearX Youth",
+      "analysis": "4-1 last 5 (beat BNK FearX Youth, HANJIN BRION Challengers, Gen.G Global Academy) (lost to Hanwha Life Esports Challengers) vs 3-2 \u2014 live Pinnacle line -152 (our 73% vs book 57%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat BNK FearX Youth, HANJIN BRION Challengers, Gen.G Global Academy) (lost to Hanwha ",
+      "awayTeam": "Kiwoom DRX Challengers",
+      "homeTeam": "BNK FearX Youth"
     }
   ]
 }
