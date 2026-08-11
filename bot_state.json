@@ -385,7 +385,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 122,
+  "op_calls": 126,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1322,8 +1322,21 @@
       "odds_ts": 1786392013.711933
     },
     "valorant": {
-      "lines": [],
-      "odds_ts": 1786392017.4418492,
+      "lines": [
+        [
+          "JD Gaming",
+          "EDward Gaming",
+          5.17,
+          1.142
+        ],
+        [
+          "Dragon Ranger",
+          "Trace",
+          1.454,
+          2.62
+        ]
+      ],
+      "odds_ts": 1786420817.1150753,
       "active": [
         901974,
         902257,
@@ -2526,43 +2539,43 @@
       "meta_ts": 1786176014.5192595,
       "lines": [
         [
-          "SK Gaming",
-          "Team Vitality",
-          2.73,
-          1.456
-        ],
-        [
-          "G2 Esports",
-          "Natus Vincere",
-          4.69,
-          1.176
-        ],
-        [
-          "Leviatan",
-          "Red Canids",
-          6.42,
-          1.1
-        ],
-        [
           "Pain Gaming",
           "Los",
-          1.142,
-          5.29
+          1.022,
+          14.62
         ],
         [
-          "Soopers Challengers",
-          "KT Rolster Challengers",
-          2.4,
-          1.52
+          "Drx Challengers",
+          "Fearx Youth",
+          1.657,
+          2.24
         ],
         [
-          "Gen.G Global Academy",
-          "Hanwha Life Esports Challengers",
-          1.869,
-          1.869
+          "Nongshim Redforce Challengers",
+          "Dplus Challengers",
+          1.775,
+          2.07
+        ],
+        [
+          "Devils.One",
+          "Barczaca eSports",
+          6.74,
+          1.092
+        ],
+        [
+          "Forsaken",
+          "Matty Lodis",
+          1.558,
+          2.45
+        ],
+        [
+          "Rmd Gaming",
+          "Red Academy",
+          1.324,
+          3.31
         ]
       ],
-      "odds_ts": 1786363211.4446237
+      "odds_ts": 1786420811.723362
     }
   },
   "parlay_rot": 34,
