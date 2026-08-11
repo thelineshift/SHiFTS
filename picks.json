@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T00:00:44Z",
+  "updated": "2026-08-11T01:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9122,7 +9122,10 @@
       "opp": "paiN Academy",
       "analysis": "4-1 last 5 (beat Gr\u00eamio Esports, ODDIK, BESTIA Academy) (lost to Gr\u00eamio Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Gr\u00eamio Esports, ODDIK, BESTIA Academy) (lost to Gr\u00eamio Esports) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the m",
       "awayTeam": "QUINTESS\u00caNCIA",
-      "homeTeam": "paiN Academy"
+      "homeTeam": "paiN Academy",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "QUINTESS\u00caNCIA 0-2 paiN Academy \u00b7 final"
     },
     {
       "id": "damajuana-ml-0810",
