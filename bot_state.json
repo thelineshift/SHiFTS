@@ -398,7 +398,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 127,
+  "op_calls": 129,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1320,19 +1320,85 @@
       "meta_ts": 1786176018.2581146,
       "lines": [
         [
-          "Pain Academy",
-          "Keyd Stars",
-          3.39,
-          1.261
+          "Faze Up Next",
+          "B8 Academy",
+          1.8,
+          1.98
         ],
         [
-          "Isurus",
-          "Gremio",
-          1.188,
-          3.98
+          "Aurora Gaming",
+          "Big",
+          2.41,
+          1.581
+        ],
+        [
+          "Luminosity Gaming",
+          "Team Gamerlegion",
+          1.769,
+          2.07
+        ],
+        [
+          "G2 Esports",
+          "M80",
+          1.38,
+          3.1
+        ],
+        [
+          "Legacy",
+          "Ninjas In Pyjamas",
+          2.32,
+          1.621
+        ],
+        [
+          "Faze Clan",
+          "Betboom Team",
+          2.03,
+          1.8
+        ],
+        [
+          "Parivision",
+          "B8",
+          1.689,
+          2.2
+        ],
+        [
+          "Astralis",
+          "Mibr",
+          2.11,
+          1.746
+        ],
+        [
+          "Natus Vincere",
+          "3Dmax",
+          1.228,
+          4.31
+        ],
+        [
+          "Team Vitality",
+          "100 Thieves",
+          1.265,
+          3.9
+        ],
+        [
+          "Furia",
+          "Wildcard Gaming",
+          4.69,
+          1.201
+        ],
+        [
+          "9Z Team",
+          "Pain Gaming",
+          1.507,
+          2.6
+        ],
+        [
+          "MOUZ",
+          "Lynn Vision Gaming",
+          4.85,
+          1.191
         ]
       ],
-      "odds_ts": 1786392013.711933
+      "odds_ts": 1786478411.4309614
     },
     "valorant": {
       "lines": [
@@ -30626,6 +30692,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786471442.2884653,
   "x_bio_v": 2,
-  "op_cool_until": 1786392913.711933,
+  "op_cool_until": 1786479311.4309614,
   "x_ads": []
 }
