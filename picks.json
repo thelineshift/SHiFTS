@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T15:29:08Z",
+  "updated": "2026-08-12T16:00:59Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9283,6 +9283,40 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "Bilibili Gaming 1-2 JD Gaming \u00b7 final"
+    },
+    {
+      "id": "mibr-ml-0812",
+      "date": "2026-08-12",
+      "sport": "cs2",
+      "desc": "MIBR ML",
+      "market": "Esports World Cup Bo1",
+      "odds": -134,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "12:15 PM ET",
+      "vs": "Astralis",
+      "team": "MIBR",
+      "opp": "Astralis",
+      "analysis": "4-1 last 5 (beat BESTIA, ShindeN, largadosypelados) (lost to 9z) vs 2-3 \u2014 live Pinnacle line -134 (our 86% vs book 55%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat BESTIA, ShindeN, largadosypelados) (lost to 9z) vs 2-3 \u2014 live Pinnacle line -134 (our 86% vs book 55%). Ride the **31-point** form edge befo",
+      "awayTeam": "MIBR",
+      "homeTeam": "Astralis"
+    },
+    {
+      "id": "team-heretics-ml-0812",
+      "date": "2026-08-12",
+      "sport": "valorant",
+      "desc": "Team Heretics ML",
+      "market": "VCT Bo3",
+      "odds": -223,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "02:00 PM ET",
+      "vs": "Natus Vincere",
+      "team": "Team Heretics",
+      "opp": "Natus Vincere",
+      "analysis": "3-2 last 5 (beat Fnatic, GIANTX, Eternal Fire) (lost to Fire Flux Esports) vs 1-4 \u2014 live Pinnacle line -223 (our 86% vs book 66%) | \u2694\ufe0f **Matchup read:** 3-2 last 5 (beat Fnatic, GIANTX, Eternal Fire) (lost to Fire Flux Esports) vs 1-4 \u2014 live Pinnacle line -223 (our 86% vs book 66%). When the form ga",
+      "awayTeam": "Team Heretics",
+      "homeTeam": "Natus Vincere"
     }
   ]
 }
