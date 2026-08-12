@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T20:49:07Z",
+  "updated": "2026-08-12T22:29:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9339,7 +9339,10 @@
       "opp": "Bubliki",
       "analysis": "2-1 last 5 (beat Capybara Esports, Dream Esports) (lost to Hyperion) vs 2-3 \u2014 model line -300 (our 75%) | \ud83e\udde0 **The read:** 2-1 last 5 (beat Capybara Esports, Dream Esports) (lost to Hyperion) vs 2-3 \u2014 model line -300 (our 75%). That's a **27-point** gap over Bubliki the number hasn't priced.",
       "awayTeam": "Dominion Goblins",
-      "homeTeam": "Bubliki"
+      "homeTeam": "Bubliki",
+      "result": "WIN",
+      "units_result": 0.33,
+      "score": "Dominion Goblins 2-0 Bubliki \u00b7 final"
     }
   ]
 }
