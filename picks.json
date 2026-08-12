@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T00:49:06Z",
+  "updated": "2026-08-12T04:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9203,6 +9203,40 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "Looking For Laburo 1-2 KR\u00dc Blaze \u00b7 final"
+    },
+    {
+      "id": "dn-soopers-ml-0812",
+      "date": "2026-08-12",
+      "sport": "lol",
+      "desc": "DN SOOPers ML",
+      "market": "LCK Bo3",
+      "odds": 146,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Nongshim Red Force",
+      "team": "DN SOOPers",
+      "opp": "Nongshim Red Force",
+      "analysis": "4-1 last 5 (beat Hanwha Life Esports, Gen.G, Kiwoom DRX) (lost to Kiwoom DRX) vs 3-2 \u2014 live Pinnacle line +146 (our 73% vs book 39%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Hanwha Life Esports, Gen.G, Kiwoom DRX) (lost to Kiwoom DRX) vs 3-2 \u2014 live Pinnacle line +146 (our 73% vs book 39%). That's a **34-p",
+      "awayTeam": "DN SOOPers",
+      "homeTeam": "Nongshim Red Force"
+    },
+    {
+      "id": "all-gamers-ml-0812",
+      "date": "2026-08-12",
+      "sport": "valorant",
+      "desc": "All Gamers ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "TEC Esports",
+      "team": "All Gamers",
+      "opp": "TEC Esports",
+      "analysis": "4-1 last 5 (beat JD Gaming, Trace Esports, Dragon Ranger Gaming) (lost to EDward Gaming) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat JD Gaming, Trace Esports, Dragon Ranger Gaming) (lost to EDward Gaming) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form e",
+      "awayTeam": "All Gamers",
+      "homeTeam": "TEC Esports"
     }
   ]
 }
