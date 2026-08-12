@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T20:00:53Z",
+  "updated": "2026-08-12T00:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9199,7 +9199,10 @@
       "opp": "KR\u00dc Blaze",
       "analysis": "2-3 last 5 (beat Olimpo Gold, Polar Squad Esports GC) (lost to KR\u00dc Blaze) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Olimpo Gold, Polar Squad Esports GC) (lost to KR\u00dc Blaze) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over KR\u00dc Blaze the number hasn't pric",
       "awayTeam": "Looking For Laburo",
-      "homeTeam": "KR\u00dc Blaze"
+      "homeTeam": "KR\u00dc Blaze",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Looking For Laburo 1-2 KR\u00dc Blaze \u00b7 final"
     }
   ]
 }
