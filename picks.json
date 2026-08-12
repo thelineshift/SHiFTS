@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T08:00:57Z",
+  "updated": "2026-08-12T10:29:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9219,7 +9219,10 @@
       "opp": "Nongshim Red Force",
       "analysis": "4-1 last 5 (beat Hanwha Life Esports, Gen.G, Kiwoom DRX) (lost to Kiwoom DRX) vs 3-2 \u2014 live Pinnacle line +146 (our 73% vs book 39%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Hanwha Life Esports, Gen.G, Kiwoom DRX) (lost to Kiwoom DRX) vs 3-2 \u2014 live Pinnacle line +146 (our 73% vs book 39%). That's a **34-p",
       "awayTeam": "DN SOOPers",
-      "homeTeam": "Nongshim Red Force"
+      "homeTeam": "Nongshim Red Force",
+      "result": "WIN",
+      "units_result": 2.19,
+      "score": "DN SOOPers 2-1 Nongshim Red Force \u00b7 final"
     },
     {
       "id": "all-gamers-ml-0812",
