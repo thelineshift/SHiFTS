@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T12:01:02Z",
+  "updated": "2026-08-12T12:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9259,7 +9259,10 @@
       "opp": "TheMongolz",
       "analysis": "4-1 last 5 (beat NIP, Gentle Mates, Gentle Mates) (lost to 3DMAX) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat NIP, Gentle Mates, Gentle Mates) (lost to 3DMAX) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
       "awayTeam": "magic",
-      "homeTeam": "TheMongolz"
+      "homeTeam": "TheMongolz",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "magic 0-1 TheMongolz \u00b7 final"
     },
     {
       "id": "bilibili-gaming-ml-0812",
