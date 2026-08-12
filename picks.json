@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T10:29:07Z",
+  "updated": "2026-08-12T11:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9239,7 +9239,10 @@
       "opp": "TEC Esports",
       "analysis": "4-1 last 5 (beat JD Gaming, Trace Esports, Dragon Ranger Gaming) (lost to EDward Gaming) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat JD Gaming, Trace Esports, Dragon Ranger Gaming) (lost to EDward Gaming) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form e",
       "awayTeam": "All Gamers",
-      "homeTeam": "TEC Esports"
+      "homeTeam": "TEC Esports",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "All Gamers 1-2 TEC Esports \u00b7 final"
     },
     {
       "id": "magic-ml-0812",
