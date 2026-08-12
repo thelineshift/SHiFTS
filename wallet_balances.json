@@ -1,4 +1,5 @@
 {
-  "ts": "2026-08-12T08:59:01Z",
-  "wallets": []
+  "ts": "2026-08-12T09:14:01Z",
+  "wallets": [],
+  "error": "HTTP Error 429: Too Many Requests"
 }
