@@ -403,7 +403,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 138,
+  "op_calls": 139,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1416,14 +1416,14 @@
         [
           "Gentle Mates",
           "Eintracht Frankfurt",
-          1.371,
-          3.13
+          2.39,
+          1.546
         ],
         [
           "Heretics",
           "Natus Vincere",
-          1.5,
-          2.62
+          1.448,
+          2.8
         ],
         [
           "Joblife",
@@ -1452,29 +1452,23 @@
         [
           "DRX",
           "ONSIDE",
-          1.625,
-          2.2
+          1.657,
+          2.14
         ],
         [
           "KRU",
           "BESTIA",
-          1.636,
-          2.29
-        ],
-        [
-          "All Gamers",
-          "Titan",
-          1.381,
-          2.89
+          1.546,
+          2.49
         ],
         [
           "JD Gaming",
           "Trace",
-          1.666,
-          2.13
+          1.694,
+          2.09
         ]
       ],
-      "odds_ts": 1786521613.091633,
+      "odds_ts": 1786550415.238631,
       "active": [
         901974,
         902257,
