@@ -406,7 +406,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 139,
+  "op_calls": 142,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1326,93 +1326,8 @@
         "1379810": "Zeste eSport"
       },
       "meta_ts": 1786176018.2581146,
-      "lines": [
-        [
-          "Faze Up Next",
-          "B8 Academy",
-          1.062,
-          8.71
-        ],
-        [
-          "Vp.Prodigy",
-          "Passion Academy",
-          1.02,
-          16.36
-        ],
-        [
-          "Aurora Gaming",
-          "Big",
-          1.066,
-          6.87
-        ],
-        [
-          "Luminosity Gaming",
-          "Team Gamerlegion",
-          21.34,
-          1.013
-        ],
-        [
-          "G2 Esports",
-          "M80",
-          1.366,
-          3.17
-        ],
-        [
-          "Legacy",
-          "Ninjas In Pyjamas",
-          2.32,
-          1.621
-        ],
-        [
-          "Faze Clan",
-          "Betboom Team",
-          1.98,
-          1.84
-        ],
-        [
-          "Parivision",
-          "B8",
-          1.675,
-          2.22
-        ],
-        [
-          "Astralis",
-          "Mibr",
-          2.11,
-          1.746
-        ],
-        [
-          "Natus Vincere",
-          "3Dmax",
-          1.262,
-          3.93
-        ],
-        [
-          "Furia",
-          "Wildcard Gaming",
-          4.48,
-          1.215
-        ],
-        [
-          "Team Vitality",
-          "100 Thieves",
-          1.232,
-          4.26
-        ],
-        [
-          "9Z Team",
-          "Pain Gaming",
-          1.574,
-          2.42
-        ],
-        [
-          "MOUZ",
-          "Lynn Vision Gaming",
-          4.39,
-          1.222
-        ]
-      ],
-      "odds_ts": 1786536013.8205833
+      "lines": [],
+      "odds_ts": 1786564820.5980089
     },
     "valorant": {
       "lines": [
@@ -2672,8 +2587,69 @@
         "1378052": "Up2Umedia Cebulaki"
       },
       "meta_ts": 1786176014.5192595,
-      "lines": [],
-      "odds_ts": 1786536017.7756026
+      "lines": [
+        [
+          "DRX",
+          "FEARX",
+          2.22,
+          1.671
+        ],
+        [
+          "Gen.g Esports",
+          "Hanwha Life Esports",
+          1.751,
+          2.1
+        ],
+        [
+          "Drx Challengers",
+          "Gen.G Global Academy",
+          5.14,
+          1.15
+        ],
+        [
+          "Nongshim Redforce Challengers",
+          "KT Rolster Challengers",
+          2.21,
+          1.675
+        ],
+        [
+          "Weibo Gaming",
+          "Shenzhen Ninjas In Pyjamas",
+          2.09,
+          1.757
+        ],
+        [
+          "LGD Gaming",
+          "TOP Esports",
+          1.204,
+          4.32
+        ],
+        [
+          "Bilibili Gaming",
+          "ThunderTalk Gaming",
+          6.3,
+          1.104
+        ],
+        [
+          "Deep Cross Gaming",
+          "GAM Esports",
+          2.18,
+          1.694
+        ],
+        [
+          "Anonymo Esports",
+          "Bomba Team",
+          1.032,
+          11.99
+        ],
+        [
+          "Docisk",
+          "Up2Umedia Cebulaki",
+          11.29,
+          1.036
+        ]
+      ],
+      "odds_ts": 1786564815.1321156
     }
   },
   "parlay_rot": 34,
@@ -30675,6 +30651,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786557842.5061193,
   "x_bio_v": 2,
-  "op_cool_until": 1786536913.8205833,
+  "op_cool_until": 1786565715.1321156,
   "x_ads": []
 }
