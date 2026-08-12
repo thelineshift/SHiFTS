@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T20:01:03Z",
+  "updated": "2026-08-12T20:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9319,7 +9319,10 @@
       "opp": "Natus Vincere",
       "analysis": "3-2 last 5 (beat Fnatic, GIANTX, Eternal Fire) (lost to Fire Flux Esports) vs 1-4 \u2014 live Pinnacle line -223 (our 86% vs book 66%) | \u2694\ufe0f **Matchup read:** 3-2 last 5 (beat Fnatic, GIANTX, Eternal Fire) (lost to Fire Flux Esports) vs 1-4 \u2014 live Pinnacle line -223 (our 86% vs book 66%). When the form ga",
       "awayTeam": "Team Heretics",
-      "homeTeam": "Natus Vincere"
+      "homeTeam": "Natus Vincere",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "Team Heretics 2-1 Natus Vincere \u00b7 final"
     },
     {
       "id": "dominion-goblins-ml-0812",
