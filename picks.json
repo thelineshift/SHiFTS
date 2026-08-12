@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T11:29:06Z",
+  "updated": "2026-08-12T12:01:02Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9260,6 +9260,23 @@
       "analysis": "4-1 last 5 (beat NIP, Gentle Mates, Gentle Mates) (lost to 3DMAX) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat NIP, Gentle Mates, Gentle Mates) (lost to 3DMAX) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
       "awayTeam": "magic",
       "homeTeam": "TheMongolz"
+    },
+    {
+      "id": "bilibili-gaming-ml-0812",
+      "date": "2026-08-12",
+      "sport": "lol",
+      "desc": "Bilibili Gaming ML",
+      "market": "LPL Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "08:15 AM ET",
+      "vs": "JD Gaming",
+      "team": "Bilibili Gaming",
+      "opp": "JD Gaming",
+      "analysis": "4-1 last 5 (beat EDward Gaming, JD Gaming, Team WE) (lost to Top Esports) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat EDward Gaming, JD Gaming, Team WE) (lost to Top Esports) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side",
+      "awayTeam": "Bilibili Gaming",
+      "homeTeam": "JD Gaming"
     }
   ]
 }
