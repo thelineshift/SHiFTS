@@ -49,17 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "mibr-ml-0812",
-      "desc": "MIBR ML",
-      "odds": -134,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "MIBR 0-1 Astralis \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-10",
   "scan_events": {
