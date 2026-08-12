@@ -396,7 +396,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 130,
+  "op_calls": 135,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1320,32 +1320,38 @@
         [
           "Faze Up Next",
           "B8 Academy",
-          1.8,
-          1.98
+          2.0,
+          1.781
+        ],
+        [
+          "Vp.Prodigy",
+          "Passion Academy",
+          1.126,
+          5.11
         ],
         [
           "Aurora Gaming",
           "Big",
-          2.41,
-          1.581
+          2.44,
+          1.568
         ],
         [
           "Luminosity Gaming",
           "Team Gamerlegion",
-          1.769,
-          2.07
+          1.833,
+          1.99
         ],
         [
           "G2 Esports",
           "M80",
-          1.38,
-          3.1
+          1.374,
+          3.13
         ],
         [
           "Legacy",
           "Ninjas In Pyjamas",
-          2.32,
-          1.621
+          2.25,
+          1.657
         ],
         [
           "Faze Clan",
@@ -1356,8 +1362,8 @@
         [
           "Parivision",
           "B8",
-          1.689,
-          2.2
+          1.675,
+          2.22
         ],
         [
           "Astralis",
@@ -1372,16 +1378,16 @@
           4.31
         ],
         [
-          "Team Vitality",
-          "100 Thieves",
-          1.265,
-          3.9
-        ],
-        [
           "Furia",
           "Wildcard Gaming",
           4.69,
           1.201
+        ],
+        [
+          "Team Vitality",
+          "100 Thieves",
+          1.265,
+          3.9
         ],
         [
           "9Z Team",
@@ -1396,7 +1402,7 @@
           1.191
         ]
       ],
-      "odds_ts": 1786478411.4309614
+      "odds_ts": 1786507217.3351722
     },
     "valorant": {
       "lines": [
@@ -2652,43 +2658,73 @@
       "meta_ts": 1786176014.5192595,
       "lines": [
         [
-          "Pain Gaming",
-          "Los",
-          1.022,
-          14.62
+          "Soopers",
+          "Nongshim Redforce",
+          2.46,
+          1.552
+        ],
+        [
+          "kt Rolster",
+          "Dplus",
+          2.39,
+          1.584
+        ],
+        [
+          "Hanwha Life Esports Challengers",
+          "Brion Challengers",
+          2.18,
+          1.694
         ],
         [
           "Drx Challengers",
-          "Fearx Youth",
-          1.657,
-          2.24
+          "Gen.G Global Academy",
+          4.41,
+          1.196
         ],
         [
           "Nongshim Redforce Challengers",
-          "Dplus Challengers",
-          1.775,
-          2.07
+          "KT Rolster Challengers",
+          2.2,
+          1.68
         ],
         [
-          "Devils.One",
-          "Barczaca eSports",
-          6.74,
-          1.092
+          "Anyones Legend",
+          "Edward Gaming",
+          8.21,
+          1.063
         ],
         [
-          "Forsaken",
-          "Matty Lodis",
-          1.558,
-          2.45
+          "Bilibili Gaming",
+          "JD Gaming",
+          1.207,
+          4.28
+        ],
+        [
+          "Anonymo Esports",
+          "Bomba Team",
+          1.076,
+          7.45
+        ],
+        [
+          "Docisk",
+          "Up2Umedia Cebulaki",
+          3.08,
+          1.367
+        ],
+        [
+          "Sdm Tigres",
+          "Kits eSports",
+          10.3,
+          1.042
         ],
         [
           "Rmd Gaming",
           "Red Academy",
-          1.324,
-          3.31
+          1.043,
+          10.22
         ]
       ],
-      "odds_ts": 1786420811.723362
+      "odds_ts": 1786507211.7480392
     }
   },
   "parlay_rot": 34,
@@ -30690,6 +30726,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786500242.3354456,
   "x_bio_v": 2,
-  "op_cool_until": 1786479311.4309614,
+  "op_cool_until": 1786508117.3351722,
   "x_ads": []
 }
