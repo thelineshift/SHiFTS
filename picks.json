@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T17:29:08Z",
+  "updated": "2026-08-12T20:01:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9320,6 +9320,23 @@
       "analysis": "3-2 last 5 (beat Fnatic, GIANTX, Eternal Fire) (lost to Fire Flux Esports) vs 1-4 \u2014 live Pinnacle line -223 (our 86% vs book 66%) | \u2694\ufe0f **Matchup read:** 3-2 last 5 (beat Fnatic, GIANTX, Eternal Fire) (lost to Fire Flux Esports) vs 1-4 \u2014 live Pinnacle line -223 (our 86% vs book 66%). When the form ga",
       "awayTeam": "Team Heretics",
       "homeTeam": "Natus Vincere"
+    },
+    {
+      "id": "dominion-goblins-ml-0812",
+      "date": "2026-08-12",
+      "sport": "lol",
+      "desc": "Dominion Goblins ML",
+      "market": "LPLOL Bo3",
+      "odds": -300,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 PM ET",
+      "vs": "Bubliki",
+      "team": "Dominion Goblins",
+      "opp": "Bubliki",
+      "analysis": "2-1 last 5 (beat Capybara Esports, Dream Esports) (lost to Hyperion) vs 2-3 \u2014 model line -300 (our 75%) | \ud83e\udde0 **The read:** 2-1 last 5 (beat Capybara Esports, Dream Esports) (lost to Hyperion) vs 2-3 \u2014 model line -300 (our 75%). That's a **27-point** gap over Bubliki the number hasn't priced.",
+      "awayTeam": "Dominion Goblins",
+      "homeTeam": "Bubliki"
     }
   ]
 }
