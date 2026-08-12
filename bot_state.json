@@ -400,7 +400,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 136,
+  "op_calls": 138,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1324,44 +1324,44 @@
         [
           "Faze Up Next",
           "B8 Academy",
-          2.0,
-          1.781
+          1.062,
+          8.71
         ],
         [
           "Vp.Prodigy",
           "Passion Academy",
-          1.126,
-          5.11
+          1.02,
+          16.36
         ],
         [
           "Aurora Gaming",
           "Big",
-          2.44,
-          1.568
+          1.066,
+          6.87
         ],
         [
           "Luminosity Gaming",
           "Team Gamerlegion",
-          1.833,
-          1.99
+          21.34,
+          1.013
         ],
         [
           "G2 Esports",
           "M80",
-          1.374,
-          3.13
+          1.366,
+          3.17
         ],
         [
           "Legacy",
           "Ninjas In Pyjamas",
-          2.25,
-          1.657
+          2.32,
+          1.621
         ],
         [
           "Faze Clan",
           "Betboom Team",
-          2.03,
-          1.8
+          1.98,
+          1.84
         ],
         [
           "Parivision",
@@ -1378,35 +1378,35 @@
         [
           "Natus Vincere",
           "3Dmax",
-          1.228,
-          4.31
+          1.262,
+          3.93
         ],
         [
           "Furia",
           "Wildcard Gaming",
-          4.69,
-          1.201
+          4.48,
+          1.215
         ],
         [
           "Team Vitality",
           "100 Thieves",
-          1.265,
-          3.9
+          1.232,
+          4.26
         ],
         [
           "9Z Team",
           "Pain Gaming",
-          1.507,
-          2.6
+          1.574,
+          2.42
         ],
         [
           "MOUZ",
           "Lynn Vision Gaming",
-          4.85,
-          1.191
+          4.39,
+          1.222
         ]
       ],
-      "odds_ts": 1786507217.3351722
+      "odds_ts": 1786536013.8205833
     },
     "valorant": {
       "lines": [
@@ -2672,75 +2672,8 @@
         "1378052": "Up2Umedia Cebulaki"
       },
       "meta_ts": 1786176014.5192595,
-      "lines": [
-        [
-          "Soopers",
-          "Nongshim Redforce",
-          2.46,
-          1.552
-        ],
-        [
-          "kt Rolster",
-          "Dplus",
-          2.39,
-          1.584
-        ],
-        [
-          "Hanwha Life Esports Challengers",
-          "Brion Challengers",
-          2.18,
-          1.694
-        ],
-        [
-          "Drx Challengers",
-          "Gen.G Global Academy",
-          4.41,
-          1.196
-        ],
-        [
-          "Nongshim Redforce Challengers",
-          "KT Rolster Challengers",
-          2.2,
-          1.68
-        ],
-        [
-          "Anyones Legend",
-          "Edward Gaming",
-          8.21,
-          1.063
-        ],
-        [
-          "Bilibili Gaming",
-          "JD Gaming",
-          1.207,
-          4.28
-        ],
-        [
-          "Anonymo Esports",
-          "Bomba Team",
-          1.076,
-          7.45
-        ],
-        [
-          "Docisk",
-          "Up2Umedia Cebulaki",
-          3.08,
-          1.367
-        ],
-        [
-          "Sdm Tigres",
-          "Kits eSports",
-          10.3,
-          1.042
-        ],
-        [
-          "Rmd Gaming",
-          "Red Academy",
-          1.043,
-          10.22
-        ]
-      ],
-      "odds_ts": 1786507211.7480392
+      "lines": [],
+      "odds_ts": 1786536017.7756026
     }
   },
   "parlay_rot": 34,
@@ -30742,6 +30675,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786529042.23709,
   "x_bio_v": 2,
-  "op_cool_until": 1786508117.3351722,
+  "op_cool_until": 1786536913.8205833,
   "x_ads": []
 }
