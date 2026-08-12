@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T04:00:55Z",
+  "updated": "2026-08-12T08:00:57Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9237,6 +9237,23 @@
       "analysis": "4-1 last 5 (beat JD Gaming, Trace Esports, Dragon Ranger Gaming) (lost to EDward Gaming) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat JD Gaming, Trace Esports, Dragon Ranger Gaming) (lost to EDward Gaming) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form e",
       "awayTeam": "All Gamers",
       "homeTeam": "TEC Esports"
+    },
+    {
+      "id": "magic-ml-0812",
+      "date": "2026-08-12",
+      "sport": "cs2",
+      "desc": "magic ML",
+      "market": "Esports World Cup Bo1",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "08:00 AM ET",
+      "vs": "TheMongolz",
+      "team": "magic",
+      "opp": "TheMongolz",
+      "analysis": "4-1 last 5 (beat NIP, Gentle Mates, Gentle Mates) (lost to 3DMAX) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat NIP, Gentle Mates, Gentle Mates) (lost to 3DMAX) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
+      "awayTeam": "magic",
+      "homeTeam": "TheMongolz"
     }
   ]
 }
