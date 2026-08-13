@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T00:00:49Z",
+  "updated": "2026-08-13T04:00:57Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9360,6 +9360,23 @@
       "analysis": "2-3 last 5 (beat No Sweat Blossom, No Sweat Blossom) (lost to Akave Esports Black) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat No Sweat Blossom, No Sweat Blossom) (lost to Akave Esports Black) vs 1-4 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wid",
       "awayTeam": "MYVRA GC",
       "homeTeam": "FUSION X"
+    },
+    {
+      "id": "ninjas-in-pyjamas-ml-0813",
+      "date": "2026-08-13",
+      "sport": "lol",
+      "desc": "Ninjas in Pyjamas ML",
+      "market": "LPL Bo3",
+      "odds": -129,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "03:00 AM ET",
+      "vs": "Weibo Gaming",
+      "team": "Ninjas in Pyjamas",
+      "opp": "Weibo Gaming",
+      "analysis": "4-1 last 5 (beat Invictus Gaming, Weibo Gaming, LNG Esports) (lost to EDward Gaming) vs 1-4 \u2014 live Pinnacle line -129 (our 90% vs book 54%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Invictus Gaming, Weibo Gaming, LNG Esports) (lost to EDward Gaming) vs 1-4 \u2014 live Pinnacle line -129 (our 90% vs book 54%). T",
+      "awayTeam": "Ninjas in Pyjamas",
+      "homeTeam": "Weibo Gaming"
     }
   ]
 }
