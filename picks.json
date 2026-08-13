@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T16:00:55Z",
+  "updated": "2026-08-13T16:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9450,7 +9450,10 @@
       "opp": "Legacy",
       "analysis": "4-1 last 5 (beat BetBoom Team, TheMongolz, DENDELE CS) (lost to Spirit) vs 2-2 \u2014 live Pinnacle line -109 (our 80% vs book 50%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat BetBoom Team, TheMongolz, DENDELE CS) (lost to Spirit) vs 2-2 \u2014 live Pinnacle line -109 (our 80% vs book 50%). That's a **30-point** gap o",
       "awayTeam": "FaZe",
-      "homeTeam": "Legacy"
+      "homeTeam": "Legacy",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "FaZe 1-2 Teletubisie \u00b7 final"
     },
     {
       "id": "northerngrade-esports-ml-0813",
