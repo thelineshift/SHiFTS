@@ -414,7 +414,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 150,
+  "op_calls": 153,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1334,69 +1334,8 @@
         "1379810": "Zeste eSport"
       },
       "meta_ts": 1786176018.2581146,
-      "lines": [
-        [
-          "Yawara eSports",
-          "Keyd Stars",
-          2.01,
-          1.74
-        ],
-        [
-          "Imperial eSports",
-          "Isurus",
-          1.174,
-          4.13
-        ],
-        [
-          "Galorys",
-          "Borracheiros",
-          1.199,
-          3.87
-        ],
-        [
-          "Bestia",
-          "Alka Gaming",
-          1.225,
-          3.65
-        ],
-        [
-          "Bushido Wildcats",
-          "Ex-Rustec",
-          2.08,
-          1.694
-        ],
-        [
-          "Team Spirit",
-          "Luminosity Gaming",
-          13.47,
-          1.031
-        ],
-        [
-          "G2 Esports",
-          "Big",
-          2.73,
-          1.465
-        ],
-        [
-          "M80",
-          "Aurora Gaming",
-          1.303,
-          3.57
-        ],
-        [
-          "Faze Clan",
-          "Legacy",
-          1.917,
-          1.9
-        ],
-        [
-          "Team Falcons",
-          "Astralis",
-          1.235,
-          4.22
-        ]
-      ],
-      "odds_ts": 1786622411.9670384
+      "lines": [],
+      "odds_ts": 1786651218.1946023
     },
     "valorant": {
       "lines": [
@@ -2644,8 +2583,51 @@
         "1378052": "Up2Umedia Cebulaki"
       },
       "meta_ts": 1786176014.5192595,
-      "lines": [],
-      "odds_ts": 1786622415.8312109
+      "lines": [
+        [
+          "SK Gaming",
+          "Shifters",
+          2.03,
+          1.8
+        ],
+        [
+          "Team Vitality",
+          "Giantx",
+          2.22,
+          1.671
+        ],
+        [
+          "T1",
+          "Dplus",
+          1.675,
+          2.21
+        ],
+        [
+          "Nongshim Redforce",
+          "Brion",
+          1.909,
+          1.909
+        ],
+        [
+          "LGD Gaming",
+          "Edward Gaming",
+          2.54,
+          1.52
+        ],
+        [
+          "TOP Esports",
+          "Team WE",
+          2.94,
+          1.4
+        ],
+        [
+          "Anyones Legend",
+          "JD Gaming",
+          1.675,
+          2.21
+        ]
+      ],
+      "odds_ts": 1786651212.3061678
     }
   },
   "parlay_rot": 34,
@@ -30647,6 +30629,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786644242.3074915,
   "x_bio_v": 2,
-  "op_cool_until": 1786623311.9670384,
+  "op_cool_until": 1786652112.3061678,
   "x_ads": []
 }
