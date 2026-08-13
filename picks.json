@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T09:49:07Z",
+  "updated": "2026-08-13T12:01:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9380,6 +9380,40 @@
       "result": "WIN",
       "units_result": 1.16,
       "score": "Ninjas in Pyjamas 2-1 Weibo Gaming \u00b7 final"
+    },
+    {
+      "id": "bushido-wildcats-ml-0813",
+      "date": "2026-08-13",
+      "sport": "cs2",
+      "desc": "Bushido Wildcats ML",
+      "market": "CCT Europe Bo3",
+      "odds": 108,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "ex-RUSTEC",
+      "team": "Bushido Wildcats",
+      "opp": "ex-RUSTEC",
+      "analysis": "4-1 last 5 (beat ex-MANA eSports, Eternal Fire Academy, EAC Extra) (lost to Vitality Academy) vs 3-2 \u2014 live Pinnacle line +108 (our 73% vs book 45%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat ex-MANA eSports, Eternal Fire Academy, EAC Extra) (lost to Vitality Academy) vs 3-2 \u2014 live Pinnacle line +108 (",
+      "awayTeam": "Bushido Wildcats",
+      "homeTeam": "ex-RUSTEC"
+    },
+    {
+      "id": "joblife-ml-0813",
+      "date": "2026-08-13",
+      "sport": "valorant",
+      "desc": "Joblife ML",
+      "market": "VCT Bo3",
+      "odds": -245,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "Pcific Esports",
+      "team": "Joblife",
+      "opp": "Pcific Esports",
+      "analysis": "3-2 last 5 (beat Natus Vincere, FOKUS, NAVI Junior) (lost to Eternal Fire) vs 0-5 \u2014 live Pinnacle line -245 (our 90% vs book 68%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Natus Vincere, FOKUS, NAVI Junior) (lost to Eternal Fire) vs 0-5 \u2014 live Pinnacle line -245 (our 90% vs book 68%). Books hang respec",
+      "awayTeam": "Joblife",
+      "homeTeam": "Pcific Esports"
     }
   ]
 }
