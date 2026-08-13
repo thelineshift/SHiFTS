@@ -403,7 +403,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 143,
+  "op_calls": 146,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1324,7 +1324,7 @@
       },
       "meta_ts": 1786176018.2581146,
       "lines": [],
-      "odds_ts": 1786564820.5980089
+      "odds_ts": 1786593618.3497846
     },
     "valorant": {
       "lines": [
@@ -2577,64 +2577,52 @@
           "DRX",
           "FEARX",
           2.22,
-          1.671
+          1.666
         ],
         [
           "Gen.g Esports",
           "Hanwha Life Esports",
-          1.751,
-          2.1
+          1.735,
+          2.12
         ],
         [
           "Drx Challengers",
           "Gen.G Global Academy",
-          5.14,
-          1.15
+          5.12,
+          1.151
         ],
         [
           "Nongshim Redforce Challengers",
           "KT Rolster Challengers",
-          2.21,
-          1.675
+          2.27,
+          1.645
         ],
         [
           "Weibo Gaming",
           "Shenzhen Ninjas In Pyjamas",
-          2.09,
-          1.757
+          2.07,
+          1.775
         ],
         [
           "LGD Gaming",
           "TOP Esports",
-          1.204,
-          4.32
+          1.188,
+          4.52
         ],
         [
           "Bilibili Gaming",
           "ThunderTalk Gaming",
-          6.3,
-          1.104
+          6.68,
+          1.093
         ],
         [
           "Deep Cross Gaming",
           "GAM Esports",
-          2.18,
-          1.694
-        ],
-        [
-          "Anonymo Esports",
-          "Bomba Team",
-          1.032,
-          11.99
-        ],
-        [
-          "Docisk",
-          "Up2Umedia Cebulaki",
-          11.29,
-          1.036
+          2.11,
+          1.74
         ]
       ],
-      "odds_ts": 1786564815.1321156
+      "odds_ts": 1786593612.7233589
     }
   },
   "parlay_rot": 34,
@@ -30636,6 +30624,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786586642.2773635,
   "x_bio_v": 2,
-  "op_cool_until": 1786565715.1321156,
+  "op_cool_until": 1786594512.7233589,
   "x_ads": []
 }
