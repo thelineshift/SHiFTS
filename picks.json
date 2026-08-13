@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T14:09:06Z",
+  "updated": "2026-08-13T16:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9417,6 +9417,57 @@
       "analysis": "3-2 last 5 (beat Natus Vincere, FOKUS, NAVI Junior) (lost to Eternal Fire) vs 0-5 \u2014 live Pinnacle line -245 (our 90% vs book 68%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Natus Vincere, FOKUS, NAVI Junior) (lost to Eternal Fire) vs 0-5 \u2014 live Pinnacle line -245 (our 90% vs book 68%). Books hang respec",
       "awayTeam": "Joblife",
       "homeTeam": "Pcific Esports"
+    },
+    {
+      "id": "fokus-sakura-ml-0813",
+      "date": "2026-08-13",
+      "sport": "valorant",
+      "desc": "FOKUS Sakura ML",
+      "market": "VCT Bo3",
+      "odds": 121,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "02:00 PM ET",
+      "vs": "Gentle Mates GC",
+      "team": "FOKUS Sakura",
+      "opp": "Gentle Mates GC",
+      "analysis": "4-1 last 5 (beat ALTERNATE aTTaX Ruby, Karmine Corp GC, SK Nebula) (lost to Habos Babos) vs 2-3 \u2014 live Pinnacle line +121 (our 86% vs book 42%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat ALTERNATE aTTaX Ruby, Karmine Corp GC, SK Nebula) (lost to Habos Babos) vs 2-3 \u2014 live Pinnacle line +121 (our 86% vs book",
+      "awayTeam": "FOKUS Sakura",
+      "homeTeam": "Gentle Mates GC"
+    },
+    {
+      "id": "faze-ml-0813",
+      "date": "2026-08-13",
+      "sport": "cs2",
+      "desc": "FaZe ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -109,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "Legacy",
+      "team": "FaZe",
+      "opp": "Legacy",
+      "analysis": "4-1 last 5 (beat BetBoom Team, TheMongolz, DENDELE CS) (lost to Spirit) vs 2-2 \u2014 live Pinnacle line -109 (our 80% vs book 50%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat BetBoom Team, TheMongolz, DENDELE CS) (lost to Spirit) vs 2-2 \u2014 live Pinnacle line -109 (our 80% vs book 50%). That's a **30-point** gap o",
+      "awayTeam": "FaZe",
+      "homeTeam": "Legacy"
+    },
+    {
+      "id": "northerngrade-esports-ml-0813",
+      "date": "2026-08-13",
+      "sport": "lol",
+      "desc": "NORTHERNGRADE ESPORTS ML",
+      "market": "LPLOL Bo3",
+      "odds": -300,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 PM ET",
+      "vs": "The Otter Side",
+      "team": "NORTHERNGRADE ESPORTS",
+      "opp": "The Otter Side",
+      "analysis": "2-1 last 5 (beat GD Esports, Bubliki) (lost to White Dragons) vs 2-3 \u2014 model line -300 (our 75%) | \u2694\ufe0f **Matchup read:** 2-1 last 5 (beat GD Esports, Bubliki) (lost to White Dragons) vs 2-3 \u2014 model line -300 (our 75%). When the form gap runs **27 points** wide, the better side wins this spot more tha",
+      "awayTeam": "NORTHERNGRADE ESPORTS",
+      "homeTeam": "The Otter Side"
     }
   ]
 }
