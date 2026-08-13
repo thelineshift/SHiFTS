@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T21:09:08Z",
+  "updated": "2026-08-13T21:29:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9476,7 +9476,10 @@
       "opp": "The Otter Side",
       "analysis": "2-1 last 5 (beat GD Esports, Bubliki) (lost to White Dragons) vs 2-3 \u2014 model line -300 (our 75%) | \u2694\ufe0f **Matchup read:** 2-1 last 5 (beat GD Esports, Bubliki) (lost to White Dragons) vs 2-3 \u2014 model line -300 (our 75%). When the form gap runs **27 points** wide, the better side wins this spot more tha",
       "awayTeam": "NORTHERNGRADE ESPORTS",
-      "homeTeam": "The Otter Side"
+      "homeTeam": "The Otter Side",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "NORTHERNGRADE ESPORTS 1-2 The Otter Side \u00b7 final"
     },
     {
       "id": "alka-gaming-ml-0813",
