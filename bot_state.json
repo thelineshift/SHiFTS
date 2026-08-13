@@ -49,26 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "fokus-sakura-ml-0813",
-      "desc": "FOKUS Sakura ML",
-      "odds": 121,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "FOKUS Sakura 1-2 Gentle Mates GC \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "northerngrade-esports-ml-0813",
-      "desc": "NORTHERNGRADE ESPORTS ML",
-      "odds": -300,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "NORTHERNGRADE ESPORTS 1-2 The Otter Side \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-12",
   "scan_events": {
