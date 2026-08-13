@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T17:49:08Z",
+  "updated": "2026-08-13T20:00:58Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9474,6 +9474,23 @@
       "analysis": "2-1 last 5 (beat GD Esports, Bubliki) (lost to White Dragons) vs 2-3 \u2014 model line -300 (our 75%) | \u2694\ufe0f **Matchup read:** 2-1 last 5 (beat GD Esports, Bubliki) (lost to White Dragons) vs 2-3 \u2014 model line -300 (our 75%). When the form gap runs **27 points** wide, the better side wins this spot more tha",
       "awayTeam": "NORTHERNGRADE ESPORTS",
       "homeTeam": "The Otter Side"
+    },
+    {
+      "id": "alka-gaming-ml-0813",
+      "date": "2026-08-13",
+      "sport": "cs2",
+      "desc": "ALKA GAMING ML",
+      "market": "CCT South America Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:45 PM ET",
+      "vs": "pugdesonesto",
+      "team": "ALKA GAMING",
+      "opp": "pugdesonesto",
+      "analysis": "4-1 last 5 (beat MEIA NOITE, Patins da Ferrari, BORRACHEIROS) (lost to Imperial) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat MEIA NOITE, Patins da Ferrari, BORRACHEIROS) (lost to Imperial) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 p",
+      "awayTeam": "ALKA GAMING",
+      "homeTeam": "pugdesonesto"
     }
   ]
 }
