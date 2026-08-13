@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T12:01:00Z",
+  "updated": "2026-08-13T14:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9396,7 +9396,10 @@
       "opp": "ex-RUSTEC",
       "analysis": "4-1 last 5 (beat ex-MANA eSports, Eternal Fire Academy, EAC Extra) (lost to Vitality Academy) vs 3-2 \u2014 live Pinnacle line +108 (our 73% vs book 45%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat ex-MANA eSports, Eternal Fire Academy, EAC Extra) (lost to Vitality Academy) vs 3-2 \u2014 live Pinnacle line +108 (",
       "awayTeam": "Bushido Wildcats",
-      "homeTeam": "ex-RUSTEC"
+      "homeTeam": "ex-RUSTEC",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Bushido Wildcats 1-2 STATE \u00b7 final"
     },
     {
       "id": "joblife-ml-0813",
