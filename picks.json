@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T20:00:58Z",
+  "updated": "2026-08-13T21:09:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9436,7 +9436,10 @@
       "opp": "Gentle Mates GC",
       "analysis": "4-1 last 5 (beat ALTERNATE aTTaX Ruby, Karmine Corp GC, SK Nebula) (lost to Habos Babos) vs 2-3 \u2014 live Pinnacle line +121 (our 86% vs book 42%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat ALTERNATE aTTaX Ruby, Karmine Corp GC, SK Nebula) (lost to Habos Babos) vs 2-3 \u2014 live Pinnacle line +121 (our 86% vs book",
       "awayTeam": "FOKUS Sakura",
-      "homeTeam": "Gentle Mates GC"
+      "homeTeam": "Gentle Mates GC",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "FOKUS Sakura 1-2 Gentle Mates GC \u00b7 final"
     },
     {
       "id": "faze-ml-0813",
