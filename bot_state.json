@@ -408,7 +408,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 147,
+  "op_calls": 149,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1328,8 +1328,69 @@
         "1379810": "Zeste eSport"
       },
       "meta_ts": 1786176018.2581146,
-      "lines": [],
-      "odds_ts": 1786593618.3497846
+      "lines": [
+        [
+          "Yawara eSports",
+          "Keyd Stars",
+          2.01,
+          1.74
+        ],
+        [
+          "Imperial eSports",
+          "Isurus",
+          1.174,
+          4.13
+        ],
+        [
+          "Galorys",
+          "Borracheiros",
+          1.199,
+          3.87
+        ],
+        [
+          "Bestia",
+          "Alka Gaming",
+          1.225,
+          3.65
+        ],
+        [
+          "Bushido Wildcats",
+          "Ex-Rustec",
+          2.08,
+          1.694
+        ],
+        [
+          "Team Spirit",
+          "Luminosity Gaming",
+          13.47,
+          1.031
+        ],
+        [
+          "G2 Esports",
+          "Big",
+          2.73,
+          1.465
+        ],
+        [
+          "M80",
+          "Aurora Gaming",
+          1.303,
+          3.57
+        ],
+        [
+          "Faze Clan",
+          "Legacy",
+          1.917,
+          1.9
+        ],
+        [
+          "Team Falcons",
+          "Astralis",
+          1.235,
+          4.22
+        ]
+      ],
+      "odds_ts": 1786622411.9670384
     },
     "valorant": {
       "lines": [
@@ -2583,57 +2644,8 @@
         "1378052": "Up2Umedia Cebulaki"
       },
       "meta_ts": 1786176014.5192595,
-      "lines": [
-        [
-          "DRX",
-          "FEARX",
-          2.22,
-          1.666
-        ],
-        [
-          "Gen.g Esports",
-          "Hanwha Life Esports",
-          1.735,
-          2.12
-        ],
-        [
-          "Drx Challengers",
-          "Gen.G Global Academy",
-          5.12,
-          1.151
-        ],
-        [
-          "Nongshim Redforce Challengers",
-          "KT Rolster Challengers",
-          2.27,
-          1.645
-        ],
-        [
-          "Weibo Gaming",
-          "Shenzhen Ninjas In Pyjamas",
-          2.07,
-          1.775
-        ],
-        [
-          "LGD Gaming",
-          "TOP Esports",
-          1.188,
-          4.52
-        ],
-        [
-          "Bilibili Gaming",
-          "ThunderTalk Gaming",
-          6.68,
-          1.093
-        ],
-        [
-          "Deep Cross Gaming",
-          "GAM Esports",
-          2.11,
-          1.74
-        ]
-      ],
-      "odds_ts": 1786593612.7233589
+      "lines": [],
+      "odds_ts": 1786622415.8312109
     }
   },
   "parlay_rot": 34,
@@ -30635,6 +30647,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786615442.3761282,
   "x_bio_v": 2,
-  "op_cool_until": 1786594512.7233589,
+  "op_cool_until": 1786623311.9670384,
   "x_ads": []
 }
