@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T04:00:57Z",
+  "updated": "2026-08-13T09:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9376,7 +9376,10 @@
       "opp": "Weibo Gaming",
       "analysis": "4-1 last 5 (beat Invictus Gaming, Weibo Gaming, LNG Esports) (lost to EDward Gaming) vs 1-4 \u2014 live Pinnacle line -129 (our 90% vs book 54%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Invictus Gaming, Weibo Gaming, LNG Esports) (lost to EDward Gaming) vs 1-4 \u2014 live Pinnacle line -129 (our 90% vs book 54%). T",
       "awayTeam": "Ninjas in Pyjamas",
-      "homeTeam": "Weibo Gaming"
+      "homeTeam": "Weibo Gaming",
+      "result": "WIN",
+      "units_result": 1.16,
+      "score": "Ninjas in Pyjamas 2-1 Weibo Gaming \u00b7 final"
     }
   ]
 }
