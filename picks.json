@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T16:09:09Z",
+  "updated": "2026-08-13T17:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9416,7 +9416,10 @@
       "opp": "Pcific Esports",
       "analysis": "3-2 last 5 (beat Natus Vincere, FOKUS, NAVI Junior) (lost to Eternal Fire) vs 0-5 \u2014 live Pinnacle line -245 (our 90% vs book 68%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Natus Vincere, FOKUS, NAVI Junior) (lost to Eternal Fire) vs 0-5 \u2014 live Pinnacle line -245 (our 90% vs book 68%). Books hang respec",
       "awayTeam": "Joblife",
-      "homeTeam": "Pcific Esports"
+      "homeTeam": "Pcific Esports",
+      "result": "WIN",
+      "units_result": 0.61,
+      "score": "Joblife 2-1 Pcific Esports \u00b7 final"
     },
     {
       "id": "fokus-sakura-ml-0813",
