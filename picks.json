@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T13:29:07Z",
+  "updated": "2026-08-14T16:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9633,7 +9633,10 @@
       "opp": "GIANTX GC",
       "analysis": "4-1 last 5 (beat FOKUS Sakura, ALTERNATE aTTaX Ruby, GIANTX GC) (lost to SK Nebula) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat FOKUS Sakura, ALTERNATE aTTaX Ruby, GIANTX GC) (lost to SK Nebula) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** w",
       "awayTeam": "Habos Babos",
-      "homeTeam": "GIANTX GC"
+      "homeTeam": "GIANTX GC",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Habos Babos 0-2 GIANTX GC \u00b7 final"
     },
     {
       "id": "eintracht-frankfurt-ml-0814",
@@ -9667,7 +9670,10 @@
       "opp": "FURIA Esports",
       "analysis": "4-1 last 5 (beat Weibo Gaming, CAG by VARREL, Team Secret) (lost to M80) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 4-1 last 5 (beat Weibo Gaming, CAG by VARREL, Team Secret) (lost to M80) vs 3-2 \u2014 model line -265 (our 73%). The book shaded this line toward the public side; we collect th",
       "awayTeam": "DarkZero Esports",
-      "homeTeam": "FURIA Esports"
+      "homeTeam": "FURIA Esports",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "DarkZero Esports 1-2 FURIA Esports \u00b7 final"
     }
   ]
 }
