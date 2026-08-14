@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T16:49:08Z",
+  "updated": "2026-08-14T17:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9653,7 +9653,10 @@
       "opp": "Team Heretics",
       "analysis": "4-1 last 5 (beat Gentle Mates, \u00c7ilekler, Mandatory) (lost to GIANTX) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Gentle Mates, \u00c7ilekler, Mandatory) (lost to GIANTX) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Team Heretics the number hasn't priced.",
       "awayTeam": "Eintracht Frankfurt",
-      "homeTeam": "Team Heretics"
+      "homeTeam": "Team Heretics",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Eintracht Frankfurt 2-0 Team Heretics \u00b7 final"
     },
     {
       "id": "darkzero-esports-ml-0814",
