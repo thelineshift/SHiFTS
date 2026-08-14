@@ -422,7 +422,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 158,
+  "op_calls": 160,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1346,57 +1346,39 @@
         [
           "Galorys",
           "Borracheiros",
-          1.201,
-          3.85
+          1.155,
+          4.35
         ],
         [
           "Bestia",
           "Alka Gaming",
-          1.217,
-          3.71
-        ],
-        [
-          "Enjoy",
-          "Misa eSports",
-          1.021,
-          15.13
-        ],
-        [
-          "Inner Circle Academy",
-          "Ex-Sashi Academy",
-          1.454,
-          2.57
-        ],
-        [
-          "Betboom Team",
-          "Ninjas In Pyjamas",
-          1.401,
-          2.87
+          1.163,
+          4.25
         ],
         [
           "MOUZ",
           "Fut eSports",
-          2.65,
-          1.492
+          1.251,
+          3.8
         ],
         [
           "Team Vitality",
           "B8",
-          6.88,
-          1.116
+          1.023,
+          16.17
         ],
         [
           "100 Thieves",
           "Parivision",
-          1.689,
-          2.2
+          1.015,
+          19.91
         ]
       ],
-      "odds_ts": 1786708815.97209
+      "odds_ts": 1786737619.2795463
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786708819.6586416,
+      "odds_ts": 1786737622.8202186,
       "active": [
         901974,
         902257,
@@ -30600,6 +30582,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786730642.2758813,
   "x_bio_v": 2,
-  "op_cool_until": 1786709715.97209,
+  "op_cool_until": 1786738519.2795463,
   "x_ads": []
 }
