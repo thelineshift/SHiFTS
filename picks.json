@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T02:49:08Z",
+  "updated": "2026-08-14T04:01:04Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9534,6 +9534,40 @@
       "analysis": "4-1 last 5 (beat Nongshim Esports Academy, Nongshim Esports Academy, T1 Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Nongshim Esports Academy, Nongshim Esports Academy, T1 Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line",
       "awayTeam": "Dplus KIA Challengers",
       "homeTeam": "T1 Academy"
+    },
+    {
+      "id": "lgd-gaming-ml-0814",
+      "date": "2026-08-14",
+      "sport": "lol",
+      "desc": "LGD Gaming ML",
+      "market": "LPL Bo3",
+      "odds": 156,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "03:00 AM ET",
+      "vs": "EDward Gaming",
+      "team": "LGD Gaming",
+      "opp": "EDward Gaming",
+      "analysis": "1-4 last 5 (beat Top Esports) (lost to Anyone's Legend) vs 0-5 \u2014 live Pinnacle line +156 (our 90% vs book 37%) | \ud83d\udcc8 **Market angle:** 1-4 last 5 (beat Top Esports) (lost to Anyone's Legend) vs 0-5 \u2014 live Pinnacle line +156 (our 90% vs book 37%). Books hang respect on the wrong side \u2014 **53 points** of",
+      "awayTeam": "LGD Gaming",
+      "homeTeam": "EDward Gaming"
+    },
+    {
+      "id": "dplus-kia-ml-0814",
+      "date": "2026-08-14",
+      "sport": "lol",
+      "desc": "Dplus KIA ML",
+      "market": "LCK Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "T1",
+      "team": "Dplus KIA",
+      "opp": "T1",
+      "analysis": "4-1 last 5 (beat KT Rolster, KT Rolster, Gen.G) (lost to T1) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat KT Rolster, KT Rolster, Gen.G) (lost to T1) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over T1 the number hasn't priced.",
+      "awayTeam": "Dplus KIA",
+      "homeTeam": "T1"
     }
   ]
 }
