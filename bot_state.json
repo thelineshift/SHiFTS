@@ -415,7 +415,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 156,
+  "op_calls": 158,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1335,12 +1335,61 @@
         "1379810": "Zeste eSport"
       },
       "meta_ts": 1786176018.2581146,
-      "lines": [],
-      "odds_ts": 1786680022.6311517
+      "lines": [
+        [
+          "Galorys",
+          "Borracheiros",
+          1.201,
+          3.85
+        ],
+        [
+          "Bestia",
+          "Alka Gaming",
+          1.217,
+          3.71
+        ],
+        [
+          "Enjoy",
+          "Misa eSports",
+          1.021,
+          15.13
+        ],
+        [
+          "Inner Circle Academy",
+          "Ex-Sashi Academy",
+          1.454,
+          2.57
+        ],
+        [
+          "Betboom Team",
+          "Ninjas In Pyjamas",
+          1.401,
+          2.87
+        ],
+        [
+          "MOUZ",
+          "Fut eSports",
+          2.65,
+          1.492
+        ],
+        [
+          "Team Vitality",
+          "B8",
+          6.88,
+          1.116
+        ],
+        [
+          "100 Thieves",
+          "Parivision",
+          1.689,
+          2.2
+        ]
+      ],
+      "odds_ts": 1786708815.97209
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786680022.6311684,
+      "odds_ts": 1786708819.6586416,
       "active": [
         901974,
         902257,
@@ -2541,63 +2590,8 @@
         "1378052": "Up2Umedia Cebulaki"
       },
       "meta_ts": 1786176014.5192595,
-      "lines": [
-        [
-          "SK Gaming",
-          "Shifters",
-          2.02,
-          1.806
-        ],
-        [
-          "Team Vitality",
-          "Giantx",
-          2.24,
-          1.657
-        ],
-        [
-          "T1",
-          "Dplus",
-          1.657,
-          2.25
-        ],
-        [
-          "Nongshim Redforce",
-          "Brion",
-          1.934,
-          1.884
-        ],
-        [
-          "Dplus Challengers",
-          "T1 Esports Academy",
-          1.52,
-          2.54
-        ],
-        [
-          "Fearx Youth",
-          "Brion Challengers",
-          1.534,
-          2.5
-        ],
-        [
-          "LGD Gaming",
-          "Edward Gaming",
-          2.56,
-          1.515
-        ],
-        [
-          "TOP Esports",
-          "Team WE",
-          2.95,
-          1.396
-        ],
-        [
-          "Anyones Legend",
-          "JD Gaming",
-          1.671,
-          2.22
-        ]
-      ],
-      "odds_ts": 1786680017.383753
+      "lines": [],
+      "odds_ts": 1786708819.6586142
     }
   },
   "parlay_rot": 34,
@@ -30599,6 +30593,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786701842.478004,
   "x_bio_v": 2,
-  "op_cool_until": 1786680917.383753,
+  "op_cool_until": 1786709715.97209,
   "x_ads": []
 }
