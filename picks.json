@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T10:49:08Z",
+  "updated": "2026-08-14T12:01:04Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9597,6 +9597,74 @@
       "result": "LOSS",
       "units_result": -1.5,
       "score": "Top Esports 0-2 Team WE \u00b7 final"
+    },
+    {
+      "id": "mouz-ml-0814",
+      "date": "2026-08-14",
+      "sport": "cs2",
+      "desc": "MOUZ ML",
+      "market": "Esports World Cup Bo3",
+      "odds": 165,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "09:55 AM ET",
+      "vs": "FUT Esports",
+      "team": "MOUZ",
+      "opp": "FUT Esports",
+      "analysis": "5-0 last 5 (beat Lynn Vision, Spirit, Astralis) vs 3-2 \u2014 live Pinnacle line +165 (our 90% vs book 36%) | \u2694\ufe0f **Matchup read:** 5-0 last 5 (beat Lynn Vision, Spirit, Astralis) vs 3-2 \u2014 live Pinnacle line +165 (our 90% vs book 36%). When the form gap runs **54 points** wide, the better side wins this s",
+      "awayTeam": "MOUZ",
+      "homeTeam": "FUT Esports"
+    },
+    {
+      "id": "habos-babos-ml-0814",
+      "date": "2026-08-14",
+      "sport": "valorant",
+      "desc": "Habos Babos ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "GIANTX GC",
+      "team": "Habos Babos",
+      "opp": "GIANTX GC",
+      "analysis": "4-1 last 5 (beat FOKUS Sakura, ALTERNATE aTTaX Ruby, GIANTX GC) (lost to SK Nebula) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat FOKUS Sakura, ALTERNATE aTTaX Ruby, GIANTX GC) (lost to SK Nebula) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** w",
+      "awayTeam": "Habos Babos",
+      "homeTeam": "GIANTX GC"
+    },
+    {
+      "id": "eintracht-frankfurt-ml-0814",
+      "date": "2026-08-14",
+      "sport": "valorant",
+      "desc": "Eintracht Frankfurt ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "Team Heretics",
+      "team": "Eintracht Frankfurt",
+      "opp": "Team Heretics",
+      "analysis": "4-1 last 5 (beat Gentle Mates, \u00c7ilekler, Mandatory) (lost to GIANTX) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Gentle Mates, \u00c7ilekler, Mandatory) (lost to GIANTX) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Team Heretics the number hasn't priced.",
+      "awayTeam": "Eintracht Frankfurt",
+      "homeTeam": "Team Heretics"
+    },
+    {
+      "id": "darkzero-esports-ml-0814",
+      "date": "2026-08-14",
+      "sport": "r6",
+      "desc": "DarkZero Esports ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "FURIA Esports",
+      "team": "DarkZero Esports",
+      "opp": "FURIA Esports",
+      "analysis": "4-1 last 5 (beat Weibo Gaming, CAG by VARREL, Team Secret) (lost to M80) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 4-1 last 5 (beat Weibo Gaming, CAG by VARREL, Team Secret) (lost to M80) vs 3-2 \u2014 model line -265 (our 73%). The book shaded this line toward the public side; we collect th",
+      "awayTeam": "DarkZero Esports",
+      "homeTeam": "FURIA Esports"
     }
   ]
 }
