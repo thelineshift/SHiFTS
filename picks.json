@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T08:49:08Z",
+  "updated": "2026-08-14T10:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9533,7 +9533,10 @@
       "opp": "T1 Academy",
       "analysis": "4-1 last 5 (beat Nongshim Esports Academy, Nongshim Esports Academy, T1 Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Nongshim Esports Academy, Nongshim Esports Academy, T1 Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line",
       "awayTeam": "Dplus KIA Challengers",
-      "homeTeam": "T1 Academy"
+      "homeTeam": "T1 Academy",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Dplus KIA Challengers 2-1 T1 \u00b7 final"
     },
     {
       "id": "lgd-gaming-ml-0814",
@@ -9570,7 +9573,10 @@
       "opp": "T1",
       "analysis": "4-1 last 5 (beat KT Rolster, KT Rolster, Gen.G) (lost to T1) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat KT Rolster, KT Rolster, Gen.G) (lost to T1) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over T1 the number hasn't priced.",
       "awayTeam": "Dplus KIA",
-      "homeTeam": "T1"
+      "homeTeam": "T1",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Dplus KIA 2-1 T1 \u00b7 final"
     },
     {
       "id": "top-esports-ml-0814",
@@ -9587,7 +9593,10 @@
       "opp": "Team WE",
       "analysis": "4-1 last 5 (beat ThunderTalk Gaming, Bilibili Gaming, EDward Gaming) (lost to LGD Gaming) vs 2-3 \u2014 live Pinnacle line +195 (our 86% vs book 32%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat ThunderTalk Gaming, Bilibili Gaming, EDward Gaming) (lost to LGD Gaming) vs 2-3 \u2014 live Pinnacle line +195 (our 86% ",
       "awayTeam": "Top Esports",
-      "homeTeam": "Team WE"
+      "homeTeam": "Team WE",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Top Esports 0-2 Team WE \u00b7 final"
     }
   ]
 }
