@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T04:01:04Z",
+  "updated": "2026-08-14T08:01:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9568,6 +9568,23 @@
       "analysis": "4-1 last 5 (beat KT Rolster, KT Rolster, Gen.G) (lost to T1) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat KT Rolster, KT Rolster, Gen.G) (lost to T1) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over T1 the number hasn't priced.",
       "awayTeam": "Dplus KIA",
       "homeTeam": "T1"
+    },
+    {
+      "id": "top-esports-ml-0814",
+      "date": "2026-08-14",
+      "sport": "lol",
+      "desc": "Top Esports ML",
+      "market": "LPL Bo3",
+      "odds": 195,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Team WE",
+      "team": "Top Esports",
+      "opp": "Team WE",
+      "analysis": "4-1 last 5 (beat ThunderTalk Gaming, Bilibili Gaming, EDward Gaming) (lost to LGD Gaming) vs 2-3 \u2014 live Pinnacle line +195 (our 86% vs book 32%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat ThunderTalk Gaming, Bilibili Gaming, EDward Gaming) (lost to LGD Gaming) vs 2-3 \u2014 live Pinnacle line +195 (our 86% ",
+      "awayTeam": "Top Esports",
+      "homeTeam": "Team WE"
     }
   ]
 }
