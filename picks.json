@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T21:29:09Z",
+  "updated": "2026-08-14T00:00:49Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9497,6 +9497,40 @@
       "analysis": "4-1 last 5 (beat MEIA NOITE, Patins da Ferrari, BORRACHEIROS) (lost to Imperial) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat MEIA NOITE, Patins da Ferrari, BORRACHEIROS) (lost to Imperial) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 p",
       "awayTeam": "ALKA GAMING",
       "homeTeam": "pugdesonesto"
+    },
+    {
+      "id": "alka-gaming-ml-0814",
+      "date": "2026-08-14",
+      "sport": "cs2",
+      "desc": "ALKA GAMING ML",
+      "market": "CCT South America Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "08:20 PM ET",
+      "vs": "pugdesonesto",
+      "team": "ALKA GAMING",
+      "opp": "pugdesonesto",
+      "analysis": "4-1 last 5 (beat MEIA NOITE, Patins da Ferrari, BORRACHEIROS) (lost to Imperial) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat MEIA NOITE, Patins da Ferrari, BORRACHEIROS) (lost to Imperial) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 p",
+      "awayTeam": "ALKA GAMING",
+      "homeTeam": "pugdesonesto"
+    },
+    {
+      "id": "dplus-kia-challengers-ml-0814",
+      "date": "2026-08-14",
+      "sport": "lol",
+      "desc": "Dplus KIA Challengers ML",
+      "market": "LCK Challengers League Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:00 PM ET",
+      "vs": "T1 Academy",
+      "team": "Dplus KIA Challengers",
+      "opp": "T1 Academy",
+      "analysis": "4-1 last 5 (beat Nongshim Esports Academy, Nongshim Esports Academy, T1 Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Nongshim Esports Academy, Nongshim Esports Academy, T1 Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line",
+      "awayTeam": "Dplus KIA Challengers",
+      "homeTeam": "T1 Academy"
     }
   ]
 }
