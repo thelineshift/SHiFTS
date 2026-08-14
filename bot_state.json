@@ -49,35 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "dplus-kia-challengers-ml-0814",
-      "desc": "Dplus KIA Challengers ML",
-      "odds": -265,
-      "result": "WIN",
-      "units": 0.38,
-      "score": "Dplus KIA Challengers 2-1 T1 \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "dplus-kia-ml-0814",
-      "desc": "Dplus KIA ML",
-      "odds": -265,
-      "result": "WIN",
-      "units": 0.38,
-      "score": "Dplus KIA 2-1 T1 \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "top-esports-ml-0814",
-      "desc": "Top Esports ML",
-      "odds": 195,
-      "result": "LOSS",
-      "units": -1.5,
-      "score": "Top Esports 0-2 Team WE \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-12",
   "scan_events": {
