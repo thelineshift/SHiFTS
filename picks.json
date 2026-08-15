@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T20:00:56Z",
+  "updated": "2026-08-15T21:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9856,7 +9856,10 @@
       "opp": "Spirit",
       "analysis": "4-1 last 5 (beat Aurora Gaming, Sashi Esport, GenOne) (lost to G2) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Aurora Gaming, Sashi Esport, GenOne) (lost to G2) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Spirit the number hasn't priced.",
       "awayTeam": "BIG",
-      "homeTeam": "Spirit"
+      "homeTeam": "Spirit",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "BIG 1-2 Spirit \u00b7 final"
     },
     {
       "id": "quintess\u00eancia-ml-0815",
