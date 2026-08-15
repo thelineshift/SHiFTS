@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T13:49:07Z",
+  "updated": "2026-08-15T16:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9794,6 +9794,57 @@
       "analysis": "4-1 last 5 (beat MOUZ NXT, Misa Esports, ENCE) (lost to Just Players) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat MOUZ NXT, Misa Esports, ENCE) (lost to Just Players) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins th",
       "awayTeam": "ENJOY",
       "homeTeam": "UNiTY esports"
+    },
+    {
+      "id": "noir-verse-ml-0815",
+      "date": "2026-08-15",
+      "sport": "cs2",
+      "desc": "Noir Verse ML",
+      "market": "CCT Europe Bo3",
+      "odds": -400,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "ex-Sashi Academy",
+      "team": "Noir Verse",
+      "opp": "ex-Sashi Academy",
+      "analysis": "4-1 last 5 (beat Entropy, Honv\u00e9d, Fortress) (lost to Bushido Wildcats) vs 2-2 \u2014 model line -400 (our 80%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Entropy, Honv\u00e9d, Fortress) (lost to Bushido Wildcats) vs 2-2 \u2014 model line -400 (our 80%). Books hang respect on the wrong side \u2014 **30 points** of model edg",
+      "awayTeam": "Noir Verse",
+      "homeTeam": "ex-Sashi Academy"
+    },
+    {
+      "id": "jijiehao-ml-0815",
+      "date": "2026-08-15",
+      "sport": "cs2",
+      "desc": "JiJieHao ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "12:50 PM ET",
+      "vs": "Aurora Gaming",
+      "team": "JiJieHao",
+      "opp": "Aurora Gaming",
+      "analysis": "4-1 last 5 (beat Spirit, HOTU, Phantom) (lost to GamerLegion) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Spirit, HOTU, Phantom) (lost to GamerLegion) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Aurora Gaming the number hasn't priced.",
+      "awayTeam": "JiJieHao",
+      "homeTeam": "Aurora Gaming"
+    },
+    {
+      "id": "big-ml-0815",
+      "date": "2026-08-15",
+      "sport": "cs2",
+      "desc": "BIG ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "12:50 PM ET",
+      "vs": "Spirit",
+      "team": "BIG",
+      "opp": "Spirit",
+      "analysis": "4-1 last 5 (beat Aurora Gaming, Sashi Esport, GenOne) (lost to G2) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Aurora Gaming, Sashi Esport, GenOne) (lost to G2) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Spirit the number hasn't priced.",
+      "awayTeam": "BIG",
+      "homeTeam": "Spirit"
     }
   ]
 }
