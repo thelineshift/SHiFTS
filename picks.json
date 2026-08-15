@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T12:49:08Z",
+  "updated": "2026-08-15T13:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9756,7 +9756,10 @@
       "opp": "Wildcard",
       "analysis": "2-3 last 5 (beat NIP, Gentle Mates) (lost to 9z) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat NIP, Gentle Mates) (lost to 9z) vs 1-4 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this spot more than the price says.",
       "awayTeam": "paiN",
-      "homeTeam": "Wildcard"
+      "homeTeam": "Wildcard",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "paiN 2-1 Wildcard \u00b7 final"
     },
     {
       "id": "sk-gaming-ml-0815",
