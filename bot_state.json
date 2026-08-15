@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "noir-verse-ml-0815",
+      "desc": "Noir Verse ML",
+      "odds": -400,
+      "result": "WIN",
+      "units": 0.25,
+      "score": "Noir Verse 2-0 ex-Sashi Academy \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "jijiehao-ml-0815",
+      "desc": "JiJieHao ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "JiJieHao 0-2 Aurora Gaming \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-14",
   "scan_events": {
