@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T11:09:06Z",
+  "updated": "2026-08-15T12:01:13Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9754,6 +9754,40 @@
       "analysis": "2-3 last 5 (beat NIP, Gentle Mates) (lost to 9z) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat NIP, Gentle Mates) (lost to 9z) vs 1-4 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this spot more than the price says.",
       "awayTeam": "paiN",
       "homeTeam": "Wildcard"
+    },
+    {
+      "id": "sk-gaming-ml-0815",
+      "date": "2026-08-15",
+      "sport": "lol",
+      "desc": "SK Gaming ML",
+      "market": "LEC Bo3",
+      "odds": -115,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "Fnatic",
+      "team": "SK Gaming",
+      "opp": "Fnatic",
+      "analysis": "2-3 last 5 (beat Shifters, GIANTX) (lost to Team Vitality) vs 1-4 \u2014 live Pinnacle line -115 (our 73% vs book 51%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Shifters, GIANTX) (lost to Team Vitality) vs 1-4 \u2014 live Pinnacle line -115 (our 73% vs book 51%). When the form gap runs **22 points** wide, the b",
+      "awayTeam": "SK Gaming",
+      "homeTeam": "Fnatic"
+    },
+    {
+      "id": "enjoy-ml-0815",
+      "date": "2026-08-15",
+      "sport": "cs2",
+      "desc": "ENJOY ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "UNiTY esports",
+      "team": "ENJOY",
+      "opp": "UNiTY esports",
+      "analysis": "4-1 last 5 (beat MOUZ NXT, Misa Esports, ENCE) (lost to Just Players) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat MOUZ NXT, Misa Esports, ENCE) (lost to Just Players) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins th",
+      "awayTeam": "ENJOY",
+      "homeTeam": "UNiTY esports"
     }
   ]
 }
