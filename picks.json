@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T08:00:55Z",
+  "updated": "2026-08-15T10:09:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9713,7 +9713,10 @@
       "opp": "WLT Esports Club",
       "analysis": "2-3 last 5 (beat To Champion Group, Mighty Tiger Gaming) (lost to Xianyou Gaming) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 2-3 last 5 (beat To Champion Group, Mighty Tiger Gaming) (lost to Xianyou Gaming) vs 1-4 \u2014 model line -265 (our 73%). The book shaded this line toward the public s",
       "awayTeam": "Koala Game",
-      "homeTeam": "WLT Esports Club"
+      "homeTeam": "WLT Esports Club",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Koala Game 3-0 WLT Esports Club \u00b7 final"
     },
     {
       "id": "ex-mana-esports-ml-0815",
