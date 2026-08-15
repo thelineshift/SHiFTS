@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T12:01:13Z",
+  "updated": "2026-08-15T12:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9736,7 +9736,10 @@
       "opp": "Misa Esports",
       "analysis": "2-3 last 5 (beat Lazer Cats, SAW Youngsters) (lost to INOX Division) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Lazer Cats, SAW Youngsters) (lost to INOX Division) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over Misa Esports the number hasn't priced.",
       "awayTeam": "ex-MANA eSports",
-      "homeTeam": "Misa Esports"
+      "homeTeam": "Misa Esports",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "ex-MANA eSports 0-2 Misa Esports \u00b7 final"
     },
     {
       "id": "pain-ml-0815",
