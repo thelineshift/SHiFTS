@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T10:09:08Z",
+  "updated": "2026-08-15T11:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9696,7 +9696,10 @@
       "opp": "Kiwoom DRX",
       "analysis": "2-3 last 5 (beat FULL SENSE, Rex Regum Qeon) (lost to Global Esports) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat FULL SENSE, Rex Regum Qeon) (lost to Global Esports) vs 1-4 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
       "awayTeam": "ZETA DIVISION",
-      "homeTeam": "Kiwoom DRX"
+      "homeTeam": "Kiwoom DRX",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "ZETA DIVISION 1-2 Kiwoom DRX \u00b7 final"
     },
     {
       "id": "koala-game-ml-0815",
