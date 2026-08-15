@@ -430,7 +430,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 172,
+  "op_calls": 175,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1358,61 +1358,12 @@
         "1382344": "Guess"
       },
       "meta_ts": 1786795213.8928983,
-      "lines": [
-        [
-          "Fire Flux eSports",
-          "OG",
-          3.65,
-          1.253
-        ],
-        [
-          "Bushido Wildcats",
-          "Phantom Academy",
-          1.591,
-          2.15
-        ],
-        [
-          "Mouz Nxt",
-          "ENCE",
-          2.41,
-          1.512
-        ],
-        [
-          "Keyd Stars",
-          "Galorys",
-          2.35,
-          1.543
-        ],
-        [
-          "Natus Vincere",
-          "The Mongolz",
-          7.84,
-          1.078
-        ],
-        [
-          "Pain Gaming",
-          "Wildcard Gaming",
-          2.73,
-          1.438
-        ],
-        [
-          "Furia",
-          "9Z Team",
-          2.69,
-          1.478
-        ],
-        [
-          "Team Spirit",
-          "Big",
-          5.4,
-          1.163
-        ]
-      ],
-      "odds_ts": 1786795213.8928983
+      "lines": [],
+      "odds_ts": 1786824017.269915
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786795229.6373096,
+      "odds_ts": 1786824017.2699392,
       "active": [
         901974,
         902257,
@@ -2623,50 +2574,38 @@
         [
           "Team Liquid",
           "Disguisedtoast",
-          9.82,
-          1.044
+          12.15,
+          1.028
         ],
         [
           "Dignitas",
           "Shopify Rebellion",
-          1.526,
-          2.53
-        ],
-        [
-          "SK Gaming",
-          "Fnatic",
-          1.869,
-          1.943
+          1.381,
+          3.02
         ],
         [
           "G2 Esports",
           "Shifters",
-          1.035,
-          10.98
+          1.02,
+          15.21
         ],
         [
-          "Hanwha Life Esports",
-          "kt Rolster",
-          1.023,
-          15.09
+          "T1",
+          "Gen.g Esports",
+          2.35,
+          1.602
         ],
         [
-          "FEARX",
-          "Soopers",
-          3.22,
-          1.331
-        ],
-        [
-          "Furia Esports",
-          "Red Canids",
-          1.129,
-          5.6
+          "DRX",
+          "Brion",
+          1.961,
+          1.862
         ],
         [
           "Los",
           "Keyd Stars",
-          3.73,
-          1.262
+          11.4,
+          1.036
         ],
         [
           "Soopers Challengers",
@@ -2675,25 +2614,31 @@
           2.66
         ],
         [
-          "Anyones Legend",
-          "ThunderTalk Gaming",
-          3.2,
-          1.334
+          "LGD Gaming",
+          "JD Gaming",
+          3.0,
+          1.386
         ],
         [
-          "Bilibili Gaming",
-          "Team WE",
-          1.246,
-          3.87
+          "Invictus Gaming",
+          "Weibo Gaming",
+          2.53,
+          1.526
         ],
         [
-          "Detonation Focusme",
-          "Ground Zero",
-          1.02,
-          15.53
+          "TOP Esports",
+          "Edward Gaming",
+          1.16,
+          4.96
+        ],
+        [
+          "Ctbc Flying Oyster",
+          "Team Secret Whales",
+          5.63,
+          1.127
         ]
       ],
-      "odds_ts": 1786795220.9951503
+      "odds_ts": 1786824011.8856142
     }
   },
   "parlay_rot": 34,
@@ -30695,6 +30640,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786817042.3331053,
   "x_bio_v": 2,
-  "op_cool_until": 1786796120.9951503,
+  "op_cool_until": 1786824911.8856142,
   "x_ads": []
 }
