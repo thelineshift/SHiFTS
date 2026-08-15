@@ -420,7 +420,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 160,
+  "op_calls": 163,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1340,43 +1340,12 @@
         "1379810": "Zeste eSport"
       },
       "meta_ts": 1786176018.2581146,
-      "lines": [
-        [
-          "Galorys",
-          "Borracheiros",
-          1.155,
-          4.35
-        ],
-        [
-          "Bestia",
-          "Alka Gaming",
-          1.163,
-          4.25
-        ],
-        [
-          "MOUZ",
-          "Fut eSports",
-          1.251,
-          3.8
-        ],
-        [
-          "Team Vitality",
-          "B8",
-          1.023,
-          16.17
-        ],
-        [
-          "100 Thieves",
-          "Parivision",
-          1.015,
-          19.91
-        ]
-      ],
-      "odds_ts": 1786737619.2795463
+      "lines": [],
+      "odds_ts": 1786766420.6875904
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786737622.8202186,
+      "odds_ts": 1786766420.6876097,
       "active": [
         901974,
         902257,
@@ -2577,8 +2546,81 @@
         "1378052": "Up2Umedia Cebulaki"
       },
       "meta_ts": 1786176014.5192595,
-      "lines": [],
-      "odds_ts": 1786708819.6586142
+      "lines": [
+        [
+          "Team Liquid",
+          "Disguisedtoast",
+          9.91,
+          1.043
+        ],
+        [
+          "Dignitas",
+          "Shopify Rebellion",
+          1.549,
+          2.47
+        ],
+        [
+          "SK Gaming",
+          "Fnatic",
+          1.877,
+          1.943
+        ],
+        [
+          "G2 Esports",
+          "Shifters",
+          1.042,
+          10.05
+        ],
+        [
+          "Hanwha Life Esports",
+          "kt Rolster",
+          1.37,
+          3.07
+        ],
+        [
+          "FEARX",
+          "Soopers",
+          1.568,
+          2.43
+        ],
+        [
+          "Furia Esports",
+          "Red Canids",
+          1.129,
+          5.59
+        ],
+        [
+          "Los",
+          "Keyd Stars",
+          3.38,
+          1.312
+        ],
+        [
+          "Soopers Challengers",
+          "T1 Esports Academy",
+          1.357,
+          3.13
+        ],
+        [
+          "Anyones Legend",
+          "ThunderTalk Gaming",
+          5.09,
+          1.152
+        ],
+        [
+          "Bilibili Gaming",
+          "Team WE",
+          1.22,
+          4.12
+        ],
+        [
+          "Detonation Focusme",
+          "Ground Zero",
+          1.159,
+          4.97
+        ]
+      ],
+      "odds_ts": 1786766415.2811005
     }
   },
   "parlay_rot": 34,
@@ -30580,6 +30622,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786759442.4005475,
   "x_bio_v": 2,
-  "op_cool_until": 1786738519.2795463,
+  "op_cool_until": 1786767315.2811005,
   "x_ads": []
 }
