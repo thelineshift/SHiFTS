@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T02:29:06Z",
+  "updated": "2026-08-15T04:01:00Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9680,6 +9680,40 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "DarkZero Esports 1-2 FURIA Esports \u00b7 final"
+    },
+    {
+      "id": "zeta-division-ml-0815",
+      "date": "2026-08-15",
+      "sport": "valorant",
+      "desc": "ZETA DIVISION ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Kiwoom DRX",
+      "team": "ZETA DIVISION",
+      "opp": "Kiwoom DRX",
+      "analysis": "2-3 last 5 (beat FULL SENSE, Rex Regum Qeon) (lost to Global Esports) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat FULL SENSE, Rex Regum Qeon) (lost to Global Esports) vs 1-4 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
+      "awayTeam": "ZETA DIVISION",
+      "homeTeam": "Kiwoom DRX"
+    },
+    {
+      "id": "koala-game-ml-0815",
+      "date": "2026-08-15",
+      "sport": "kog",
+      "desc": "Koala Game ML",
+      "market": "KPL Growth League Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "WLT Esports Club",
+      "team": "Koala Game",
+      "opp": "WLT Esports Club",
+      "analysis": "2-3 last 5 (beat To Champion Group, Mighty Tiger Gaming) (lost to Xianyou Gaming) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 2-3 last 5 (beat To Champion Group, Mighty Tiger Gaming) (lost to Xianyou Gaming) vs 1-4 \u2014 model line -265 (our 73%). The book shaded this line toward the public s",
+      "awayTeam": "Koala Game",
+      "homeTeam": "WLT Esports Club"
     }
   ]
 }
