@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T16:49:08Z",
+  "updated": "2026-08-15T18:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9816,7 +9816,10 @@
       "opp": "ex-Sashi Academy",
       "analysis": "4-1 last 5 (beat Entropy, Honv\u00e9d, Fortress) (lost to Bushido Wildcats) vs 2-2 \u2014 model line -400 (our 80%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Entropy, Honv\u00e9d, Fortress) (lost to Bushido Wildcats) vs 2-2 \u2014 model line -400 (our 80%). Books hang respect on the wrong side \u2014 **30 points** of model edg",
       "awayTeam": "Noir Verse",
-      "homeTeam": "ex-Sashi Academy"
+      "homeTeam": "ex-Sashi Academy",
+      "result": "WIN",
+      "units_result": 0.25,
+      "score": "Noir Verse 2-0 ex-Sashi Academy \u00b7 final"
     },
     {
       "id": "jijiehao-ml-0815",
@@ -9833,7 +9836,10 @@
       "opp": "Aurora Gaming",
       "analysis": "4-1 last 5 (beat Spirit, HOTU, Phantom) (lost to GamerLegion) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Spirit, HOTU, Phantom) (lost to GamerLegion) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Aurora Gaming the number hasn't priced.",
       "awayTeam": "JiJieHao",
-      "homeTeam": "Aurora Gaming"
+      "homeTeam": "Aurora Gaming",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "JiJieHao 0-2 Aurora Gaming \u00b7 final"
     },
     {
       "id": "big-ml-0815",
