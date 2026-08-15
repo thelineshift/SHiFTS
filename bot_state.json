@@ -424,19 +424,21 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 163,
+  "op_calls": 172,
   "op_meta": {
     "cs2": {
       "active": [
         44609,
-        48985,
+        45781,
+        48529,
+        49568,
         50946,
         51122,
         51220,
-        52654
+        52720
       ],
       "parts": {
-        "0": "Vatuvei, Manu",
+        "0": "Andy Andrade",
         "220602": "Fnatic",
         "220604": "MOUZ",
         "220606": "Natus Vincere",
@@ -1198,6 +1200,7 @@
         "1343592": "Golden Five",
         "1343596": "Passion UA Academy",
         "1343734": "Masq",
+        "1344032": "eSport Berg",
         "1344046": "Red Feet",
         "1344400": "Walczaki",
         "1344402": "Project 91 Team",
@@ -1282,6 +1285,7 @@
         "1363438": "M0Kasyny",
         "1363466": "Echo",
         "1364446": "Roamsfiest",
+        "1364448": "Train Launcher",
         "1364612": "Team Poland",
         "1364614": "Team Germany",
         "1365390": "Honv\u00e9d",
@@ -1298,7 +1302,7 @@
         "1368538": "Borracheiros",
         "1368560": "Inner Circle",
         "1369408": "Faze Up Next",
-        "1369482": "Inner Circle Prospects",
+        "1369482": "IC PROSPECT",
         "1370550": "Yng Sharks eSports",
         "1370552": "Magic eSport",
         "1371072": "Winners",
@@ -1308,6 +1312,7 @@
         "1372570": "Gremio",
         "1372624": "Rush Gaming",
         "1372856": "Whitebit",
+        "1373560": "Phantom eSports Academy",
         "1374214": "Trainwrecks eSports",
         "1374360": "Ex-Rustec",
         "1374362": "Black Phoenix",
@@ -1341,15 +1346,67 @@
         "1379804": "Vandulken",
         "1379806": "Manganese",
         "1379808": "Dark Tigre",
-        "1379810": "Zeste eSport"
+        "1379810": "Zeste eSport",
+        "1382340": "Raccoons",
+        "1382342": "Revise",
+        "1382344": "Guess"
       },
-      "meta_ts": 1786176018.2581146,
-      "lines": [],
-      "odds_ts": 1786766420.6875904
+      "meta_ts": 1786795213.8928983,
+      "lines": [
+        [
+          "Fire Flux eSports",
+          "OG",
+          3.65,
+          1.253
+        ],
+        [
+          "Bushido Wildcats",
+          "Phantom Academy",
+          1.591,
+          2.15
+        ],
+        [
+          "Mouz Nxt",
+          "ENCE",
+          2.41,
+          1.512
+        ],
+        [
+          "Keyd Stars",
+          "Galorys",
+          2.35,
+          1.543
+        ],
+        [
+          "Natus Vincere",
+          "The Mongolz",
+          7.84,
+          1.078
+        ],
+        [
+          "Pain Gaming",
+          "Wildcard Gaming",
+          2.73,
+          1.438
+        ],
+        [
+          "Furia",
+          "9Z Team",
+          2.69,
+          1.478
+        ],
+        [
+          "Team Spirit",
+          "Big",
+          5.4,
+          1.163
+        ]
+      ],
+      "odds_ts": 1786795213.8928983
     },
     "valorant": {
       "lines": [],
-      "odds_ts": 1786766420.6876097,
+      "odds_ts": 1786795229.6373096,
       "active": [
         901974,
         902257,
@@ -2049,10 +2106,13 @@
         2452,
         2454,
         26698,
+        33814,
         36997,
+        39009,
         39985,
         45589,
         45855,
+        45985,
         46117,
         46119,
         46121
@@ -2543,88 +2603,91 @@
         "1372982": "Brod & Friends",
         "1372988": "Bitfix Rich Gang",
         "1372992": "2 Massive",
+        "1373120": "Absolved",
+        "1374058": "B2U",
         "1374062": "Volda E-Sport",
         "1374232": "Dominion Goblins",
         "1374248": "Hyperion",
         "1376686": "Shark Attack",
+        "1376846": "3V E-Sports",
         "1378052": "Up2Umedia Cebulaki"
       },
-      "meta_ts": 1786176014.5192595,
+      "meta_ts": 1786795220.9951503,
       "lines": [
         [
           "Team Liquid",
           "Disguisedtoast",
-          9.91,
-          1.043
+          9.82,
+          1.044
         ],
         [
           "Dignitas",
           "Shopify Rebellion",
-          1.549,
-          2.47
+          1.526,
+          2.53
         ],
         [
           "SK Gaming",
           "Fnatic",
-          1.877,
+          1.869,
           1.943
         ],
         [
           "G2 Esports",
           "Shifters",
-          1.042,
-          10.05
+          1.035,
+          10.98
         ],
         [
           "Hanwha Life Esports",
           "kt Rolster",
-          1.37,
-          3.07
+          1.023,
+          15.09
         ],
         [
           "FEARX",
           "Soopers",
-          1.568,
-          2.43
+          3.22,
+          1.331
         ],
         [
           "Furia Esports",
           "Red Canids",
           1.129,
-          5.59
+          5.6
         ],
         [
           "Los",
           "Keyd Stars",
-          3.38,
-          1.312
+          3.73,
+          1.262
         ],
         [
           "Soopers Challengers",
           "T1 Esports Academy",
-          1.357,
-          3.13
+          1.478,
+          2.66
         ],
         [
           "Anyones Legend",
           "ThunderTalk Gaming",
-          5.09,
-          1.152
+          3.2,
+          1.334
         ],
         [
           "Bilibili Gaming",
           "Team WE",
-          1.22,
-          4.12
+          1.246,
+          3.87
         ],
         [
           "Detonation Focusme",
           "Ground Zero",
-          1.159,
-          4.97
+          1.02,
+          15.53
         ]
       ],
-      "odds_ts": 1786766415.2811005
+      "odds_ts": 1786795220.9951503
     }
   },
   "parlay_rot": 34,
@@ -30626,6 +30689,6 @@
   "deepdive_last": "2026-08-08",
   "dep_checked_ts": 1786788242.2963958,
   "x_bio_v": 2,
-  "op_cool_until": 1786767315.2811005,
+  "op_cool_until": 1786796120.9951503,
   "x_ads": []
 }
