@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T04:01:00Z",
+  "updated": "2026-08-15T08:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9714,6 +9714,40 @@
       "analysis": "2-3 last 5 (beat To Champion Group, Mighty Tiger Gaming) (lost to Xianyou Gaming) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 2-3 last 5 (beat To Champion Group, Mighty Tiger Gaming) (lost to Xianyou Gaming) vs 1-4 \u2014 model line -265 (our 73%). The book shaded this line toward the public s",
       "awayTeam": "Koala Game",
       "homeTeam": "WLT Esports Club"
+    },
+    {
+      "id": "ex-mana-esports-ml-0815",
+      "date": "2026-08-15",
+      "sport": "cs2",
+      "desc": "ex-MANA eSports ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Misa Esports",
+      "team": "ex-MANA eSports",
+      "opp": "Misa Esports",
+      "analysis": "2-3 last 5 (beat Lazer Cats, SAW Youngsters) (lost to INOX Division) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat Lazer Cats, SAW Youngsters) (lost to INOX Division) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-point** gap over Misa Esports the number hasn't priced.",
+      "awayTeam": "ex-MANA eSports",
+      "homeTeam": "Misa Esports"
+    },
+    {
+      "id": "pain-ml-0815",
+      "date": "2026-08-15",
+      "sport": "cs2",
+      "desc": "paiN ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Wildcard",
+      "team": "paiN",
+      "opp": "Wildcard",
+      "analysis": "2-3 last 5 (beat NIP, Gentle Mates) (lost to 9z) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat NIP, Gentle Mates) (lost to 9z) vs 1-4 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this spot more than the price says.",
+      "awayTeam": "paiN",
+      "homeTeam": "Wildcard"
     }
   ]
 }
