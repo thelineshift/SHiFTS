@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T18:49:06Z",
+  "updated": "2026-08-15T20:00:56Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9857,6 +9857,23 @@
       "analysis": "4-1 last 5 (beat Aurora Gaming, Sashi Esport, GenOne) (lost to G2) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Aurora Gaming, Sashi Esport, GenOne) (lost to G2) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Spirit the number hasn't priced.",
       "awayTeam": "BIG",
       "homeTeam": "Spirit"
+    },
+    {
+      "id": "quintess\u00eancia-ml-0815",
+      "date": "2026-08-15",
+      "sport": "cs2",
+      "desc": "QUINTESS\u00caNCIA ML",
+      "market": "CCT South America Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:45 PM ET",
+      "vs": "METANOIA WOLVES",
+      "team": "QUINTESS\u00caNCIA",
+      "opp": "METANOIA WOLVES",
+      "analysis": "4-1 last 5 (beat pugdesonesto, Red Feet, Back to Back ) (lost to paiN Academy) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat pugdesonesto, Red Feet, Back to Back ) (lost to paiN Academy) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over METANOIA WOLVES the nu",
+      "awayTeam": "QUINTESS\u00caNCIA",
+      "homeTeam": "METANOIA WOLVES"
     }
   ]
 }
