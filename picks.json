@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T16:00:55Z",
+  "updated": "2026-08-15T16:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9776,7 +9776,10 @@
       "opp": "Fnatic",
       "analysis": "2-3 last 5 (beat Shifters, GIANTX) (lost to Team Vitality) vs 1-4 \u2014 live Pinnacle line -115 (our 73% vs book 51%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Shifters, GIANTX) (lost to Team Vitality) vs 1-4 \u2014 live Pinnacle line -115 (our 73% vs book 51%). When the form gap runs **22 points** wide, the b",
       "awayTeam": "SK Gaming",
-      "homeTeam": "Fnatic"
+      "homeTeam": "Fnatic",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "SK Gaming 0-2 Fnatic \u00b7 final"
     },
     {
       "id": "enjoy-ml-0815",
@@ -9793,7 +9796,10 @@
       "opp": "UNiTY esports",
       "analysis": "4-1 last 5 (beat MOUZ NXT, Misa Esports, ENCE) (lost to Just Players) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat MOUZ NXT, Misa Esports, ENCE) (lost to Just Players) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins th",
       "awayTeam": "ENJOY",
-      "homeTeam": "UNiTY esports"
+      "homeTeam": "UNiTY esports",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "ENJOY 2-1 UNiTY esports \u00b7 final"
     },
     {
       "id": "noir-verse-ml-0815",
