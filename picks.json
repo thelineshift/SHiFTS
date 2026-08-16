@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T21:29:06Z",
+  "updated": "2026-08-16T01:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9876,7 +9876,10 @@
       "opp": "METANOIA WOLVES",
       "analysis": "4-1 last 5 (beat pugdesonesto, Red Feet, Back to Back ) (lost to paiN Academy) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat pugdesonesto, Red Feet, Back to Back ) (lost to paiN Academy) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over METANOIA WOLVES the nu",
       "awayTeam": "QUINTESS\u00caNCIA",
-      "homeTeam": "METANOIA WOLVES"
+      "homeTeam": "METANOIA WOLVES",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "QUINTESS\u00caNCIA 2-0 METANOIA WOLVES \u00b7 final"
     }
   ]
 }
