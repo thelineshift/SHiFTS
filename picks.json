@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T16:01:15Z",
+  "updated": "2026-08-16T19:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9956,7 +9956,10 @@
       "opp": "Legacy",
       "analysis": "4-1 last 5 (beat K27, BESTIA, ShindeN) (lost to Astralis) vs 2-2 \u2014 live Pinnacle line +141 (our 80% vs book 40%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat K27, BESTIA, ShindeN) (lost to Astralis) vs 2-2 \u2014 live Pinnacle line +141 (our 80% vs book 40%). Books hang respect on the wrong side \u2014 **40 points*",
       "awayTeam": "MIBR",
-      "homeTeam": "Legacy"
+      "homeTeam": "Legacy",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "MIBR 0-2 Legacy \u00b7 final"
     },
     {
       "id": "ex-zero-tenacity-ml-0816",
