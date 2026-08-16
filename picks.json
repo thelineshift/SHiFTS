@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T04:01:08Z",
+  "updated": "2026-08-16T08:00:58Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9914,6 +9914,23 @@
       "analysis": "4-1 last 5 (beat Bilibili Gaming, Team WE, EDward Gaming) (lost to Anyone's Legend) vs 2-3 \u2014 live Pinnacle line -243 (our 86% vs book 67%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Bilibili Gaming, Team WE, EDward Gaming) (lost to Anyone's Legend) vs 2-3 \u2014 live Pinnacle line -243 (our 86% vs book 67%)",
       "awayTeam": "JD Gaming",
       "homeTeam": "LGD Gaming"
+    },
+    {
+      "id": "invictus-gaming-ml-0816",
+      "date": "2026-08-16",
+      "sport": "lol",
+      "desc": "Invictus Gaming ML",
+      "market": "LPL Bo3",
+      "odds": 158,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Weibo Gaming",
+      "team": "Invictus Gaming",
+      "opp": "Weibo Gaming",
+      "analysis": "3-2 last 5 (beat LNG Esports, LNG Esports, Weibo Gaming) (lost to Ninjas in Pyjamas) vs 1-4 \u2014 live Pinnacle line +158 (our 86% vs book 37%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat LNG Esports, LNG Esports, Weibo Gaming) (lost to Ninjas in Pyjamas) vs 1-4 \u2014 live Pinnacle line +158 (our 86% vs book 37",
+      "awayTeam": "Invictus Gaming",
+      "homeTeam": "Weibo Gaming"
     }
   ]
 }
