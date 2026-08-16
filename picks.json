@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T08:09:10Z",
+  "updated": "2026-08-16T09:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9916,7 +9916,10 @@
       "opp": "LGD Gaming",
       "analysis": "4-1 last 5 (beat Bilibili Gaming, Team WE, EDward Gaming) (lost to Anyone's Legend) vs 2-3 \u2014 live Pinnacle line -243 (our 86% vs book 67%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Bilibili Gaming, Team WE, EDward Gaming) (lost to Anyone's Legend) vs 2-3 \u2014 live Pinnacle line -243 (our 86% vs book 67%)",
       "awayTeam": "JD Gaming",
-      "homeTeam": "LGD Gaming"
+      "homeTeam": "LGD Gaming",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "JD Gaming 1-2 LGD Gaming \u00b7 final"
     },
     {
       "id": "invictus-gaming-ml-0816",
