@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T13:09:07Z",
+  "updated": "2026-08-16T16:01:15Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9940,6 +9940,40 @@
       "result": "WIN",
       "units_result": 2.37,
       "score": "Invictus Gaming 2-1 Weibo Gaming \u00b7 final"
+    },
+    {
+      "id": "mibr-ml-0816",
+      "date": "2026-08-16",
+      "sport": "cs2",
+      "desc": "MIBR ML",
+      "market": "Esports World Cup Bo3",
+      "odds": 141,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "12:50 PM ET",
+      "vs": "Legacy",
+      "team": "MIBR",
+      "opp": "Legacy",
+      "analysis": "4-1 last 5 (beat K27, BESTIA, ShindeN) (lost to Astralis) vs 2-2 \u2014 live Pinnacle line +141 (our 80% vs book 40%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat K27, BESTIA, ShindeN) (lost to Astralis) vs 2-2 \u2014 live Pinnacle line +141 (our 80% vs book 40%). Books hang respect on the wrong side \u2014 **40 points*",
+      "awayTeam": "MIBR",
+      "homeTeam": "Legacy"
+    },
+    {
+      "id": "ex-zero-tenacity-ml-0816",
+      "date": "2026-08-16",
+      "sport": "cs2",
+      "desc": "ex-Zero Tenacity ML",
+      "market": "NODWIN Clutch Series Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "boomerang",
+      "team": "ex-Zero Tenacity",
+      "opp": "boomerang",
+      "analysis": "3-2 last 5 (beat BIG Academy, against All authority, illwill) (lost to brazylijski luz) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat BIG Academy, against All authority, illwill) (lost to brazylijski luz) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over boom",
+      "awayTeam": "ex-Zero Tenacity",
+      "homeTeam": "boomerang"
     }
   ]
 }
