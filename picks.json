@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T01:29:06Z",
+  "updated": "2026-08-16T04:01:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9880,6 +9880,40 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "QUINTESS\u00caNCIA 2-0 METANOIA WOLVES \u00b7 final"
+    },
+    {
+      "id": "hero-jiujing-ml-0816",
+      "date": "2026-08-16",
+      "sport": "kog",
+      "desc": "Hero JiuJing ML",
+      "market": "King Pro League Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 AM ET",
+      "vs": "LGD NBW",
+      "team": "Hero JiuJing",
+      "opp": "LGD NBW",
+      "analysis": "2-3 last 5 (beat SYGaming, WST) (lost to EDward Gaming) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcca **Form + price:** 2-3 last 5 (beat SYGaming, WST) (lost to EDward Gaming) vs 1-4 \u2014 model line -265 (our 73%). Model makes Hero JiuJing **73%** \u2014 books imply **73%**. Small edge, real edge, pressed.",
+      "awayTeam": "Hero JiuJing",
+      "homeTeam": "LGD NBW"
+    },
+    {
+      "id": "jd-gaming-ml-0816",
+      "date": "2026-08-16",
+      "sport": "lol",
+      "desc": "JD Gaming ML",
+      "market": "LPL Bo3",
+      "odds": -243,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "03:00 AM ET",
+      "vs": "LGD Gaming",
+      "team": "JD Gaming",
+      "opp": "LGD Gaming",
+      "analysis": "4-1 last 5 (beat Bilibili Gaming, Team WE, EDward Gaming) (lost to Anyone's Legend) vs 2-3 \u2014 live Pinnacle line -243 (our 86% vs book 67%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Bilibili Gaming, Team WE, EDward Gaming) (lost to Anyone's Legend) vs 2-3 \u2014 live Pinnacle line -243 (our 86% vs book 67%)",
+      "awayTeam": "JD Gaming",
+      "homeTeam": "LGD Gaming"
     }
   ]
 }
