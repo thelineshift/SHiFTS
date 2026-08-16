@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T19:49:06Z",
+  "updated": "2026-08-16T20:00:44Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9977,6 +9977,23 @@
       "analysis": "3-2 last 5 (beat BIG Academy, against All authority, illwill) (lost to brazylijski luz) vs 0-0 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 3-2 last 5 (beat BIG Academy, against All authority, illwill) (lost to brazylijski luz) vs 0-0 \u2014 model line -150 (our 60%). That's a **10-point** gap over boom",
       "awayTeam": "ex-Zero Tenacity",
       "homeTeam": "boomerang"
+    },
+    {
+      "id": "quintess\u00eancia-ml-0816",
+      "date": "2026-08-16",
+      "sport": "cs2",
+      "desc": "QUINTESS\u00caNCIA ML",
+      "market": "CCT South America Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 PM ET",
+      "vs": "paiN Academy",
+      "team": "QUINTESS\u00caNCIA",
+      "opp": "paiN Academy",
+      "analysis": "4-1 last 5 (beat METANOIA WOLVES, pugdesonesto, Red Feet) (lost to paiN Academy) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat METANOIA WOLVES, pugdesonesto, Red Feet) (lost to paiN Academy) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the m",
+      "awayTeam": "QUINTESS\u00caNCIA",
+      "homeTeam": "paiN Academy"
     }
   ]
 }
