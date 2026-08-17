@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T12:49:08Z",
+  "updated": "2026-08-17T16:00:57Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10111,6 +10111,23 @@
       "result": "WIN",
       "units_result": 2.35,
       "score": "Inner Circle Academy 2-0 ex-Zero Tenacity \u00b7 final"
+    },
+    {
+      "id": "enjoy-ml-0817",
+      "date": "2026-08-17",
+      "sport": "cs2",
+      "desc": "ENJOY ML",
+      "market": "CCT Europe Bo3",
+      "odds": -162,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "HAVU",
+      "team": "ENJOY",
+      "opp": "HAVU",
+      "analysis": "4-1 last 5 (beat UNiTY esports, MOUZ NXT, Misa Esports) (lost to Just Players) vs 3-2 \u2014 live Pinnacle line -162 (our 73% vs book 58%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat UNiTY esports, MOUZ NXT, Misa Esports) (lost to Just Players) vs 3-2 \u2014 live Pinnacle line -162 (our 73% vs book 58%). When the",
+      "awayTeam": "ENJOY",
+      "homeTeam": "HAVU"
     }
   ]
 }
