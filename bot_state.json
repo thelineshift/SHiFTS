@@ -438,7 +438,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 192,
+  "op_calls": 196,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1366,57 +1366,8 @@
         "1382344": "Guess"
       },
       "meta_ts": 1786795213.8928983,
-      "lines": [
-        [
-          "Eac",
-          "Lavked",
-          1.892,
-          1.892
-        ],
-        [
-          "Ex-Rustec",
-          "Inner Circle Academy",
-          1.483,
-          2.49
-        ],
-        [
-          "Havu",
-          "eSport Berg",
-          1.057,
-          8.81
-        ],
-        [
-          "Team Vitality",
-          "Lynn Vision Gaming",
-          1.012,
-          12.61
-        ],
-        [
-          "The Mongolz",
-          "Pain Gaming",
-          1.014,
-          20.79
-        ],
-        [
-          "MOUZ",
-          "Parivision",
-          1.047,
-          10.67
-        ],
-        [
-          "Astralis",
-          "Ninjas In Pyjamas",
-          1.714,
-          2.15
-        ],
-        [
-          "Legacy",
-          "Mibr",
-          1.581,
-          2.41
-        ]
-      ],
-      "odds_ts": 1786896022.071151
+      "lines": [],
+      "odds_ts": 1786939220.9034102
     },
     "valorant": {
       "lines": [
@@ -2645,67 +2596,43 @@
       "meta_ts": 1786795220.9951503,
       "lines": [
         [
-          "Flyquest",
-          "Cloud9",
-          2.34,
-          1.609
-        ],
-        [
-          "Lyon Gaming",
-          "Sentinels",
-          1.151,
-          5.12
-        ],
-        [
-          "Movistar Koi",
+          "Team Heretics",
           "Natus Vincere",
-          1.207,
-          4.13
+          1.434,
+          2.81
         ],
         [
-          "Fnatic",
-          "G2 Esports",
-          1.151,
-          5.11
+          "Karmine Corp",
+          "Giantx",
+          5.06,
+          1.154
         ],
         [
-          "DRX",
-          "Brion",
-          12.67,
-          1.029
+          "Dplus Challengers",
+          "KT Rolster Challengers",
+          1.606,
+          2.34
         ],
         [
-          "Leviatan",
-          "Loud",
-          1.047,
-          9.5
-        ],
-        [
-          "Pain Gaming",
-          "Fluxo W7M",
-          2.28,
-          1.636
-        ],
-        [
-          "TOP Esports",
-          "Edward Gaming",
-          1.025,
-          15.14
+          "Drx Challengers",
+          "Hanwha Life Esports Challengers",
+          1.534,
+          2.51
         ],
         [
           "3V E-Sports",
           "Lyon Academy",
-          5.7,
+          5.71,
           1.124
         ],
         [
           "Pain Gaming Academy",
           "Ei Nerd eSports",
-          2.7,
-          1.465
+          2.62,
+          1.49
         ]
       ],
-      "odds_ts": 1786896016.4652152
+      "odds_ts": 1786939215.4639275
     }
   },
   "parlay_rot": 34,
@@ -30707,6 +30634,6 @@
   "deepdive_last": "2026-08-15",
   "dep_checked_ts": 1786932242.2422085,
   "x_bio_v": 2,
-  "op_cool_until": 1786925729.255202,
+  "op_cool_until": 1786940120.9034102,
   "x_ads": []
 }
