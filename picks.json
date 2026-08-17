@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T09:49:08Z",
+  "updated": "2026-08-17T11:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10087,7 +10087,10 @@
       "opp": "Hanwha Life Esports Challengers",
       "analysis": "4-1 last 5 (beat Gen.G Global Academy, BNK FearX Youth, BNK FearX Youth) (lost to Hanwha Life Esports Challengers) vs 3-2 \u2014 live Pinnacle line -187 (our 73% vs book 62%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Gen.G Global Academy, BNK FearX Youth, BNK FearX Youth) (lost to Hanwha Life Esports Challe",
       "awayTeam": "Kiwoom DRX Challengers",
-      "homeTeam": "Hanwha Life Esports Challengers"
+      "homeTeam": "Hanwha Life Esports Challengers",
+      "result": "WIN",
+      "units_result": 0.53,
+      "score": "Kiwoom DRX Challengers 2-0 Hanwha Life Esports Challengers \u00b7 final"
     }
   ]
 }
