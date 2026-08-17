@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T04:01:08Z",
+  "updated": "2026-08-17T07:49:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10064,7 +10064,10 @@
       "opp": "To Champion Group",
       "analysis": "4-1 last 5 (beat JLY, Mighty Tiger Gaming, JA Gaming) (lost to Qing Jiu Club) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat JLY, Mighty Tiger Gaming, JA Gaming) (lost to Qing Jiu Club) vs 3-2 \u2014 model line -265 (our 73%). Model makes UU Gamers **73%** \u2014 books imply **73%**. SH",
       "awayTeam": "UU Gamers",
-      "homeTeam": "To Champion Group"
+      "homeTeam": "To Champion Group",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "UU Gamers 1-3 To Champion Group \u00b7 final"
     }
   ]
 }
