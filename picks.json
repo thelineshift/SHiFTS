@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T08:00:54Z",
+  "updated": "2026-08-17T09:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10047,7 +10047,10 @@
       "opp": "KT Rolster Challengers",
       "analysis": "4-1 last 5 (beat T1 Academy, Nongshim Esports Academy, Nongshim Esports Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat T1 Academy, Nongshim Esports Academy, Nongshim Esports Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line",
       "awayTeam": "Dplus KIA Challengers",
-      "homeTeam": "KT Rolster Challengers"
+      "homeTeam": "KT Rolster Challengers",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Dplus KIA Challengers 0-2 KT Rolster Challengers \u00b7 final"
     },
     {
       "id": "uu-gamers-ml-0817",
