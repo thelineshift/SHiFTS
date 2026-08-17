@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T00:00:57Z",
+  "updated": "2026-08-17T04:01:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10031,6 +10031,40 @@
       "analysis": "2-2 last 5 (beat Rich Gang, LEO) (lost to B2U) vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 2-2 last 5 (beat Rich Gang, LEO) (lost to B2U) vs 2-3 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **10 points** of model edge, taken.",
       "awayTeam": "Volda E-Sport",
       "homeTeam": "Lundqvist Lightside"
+    },
+    {
+      "id": "dplus-kia-challengers-ml-0817",
+      "date": "2026-08-17",
+      "sport": "lol",
+      "desc": "Dplus KIA Challengers ML",
+      "market": "LCK Challengers League Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "KT Rolster Challengers",
+      "team": "Dplus KIA Challengers",
+      "opp": "KT Rolster Challengers",
+      "analysis": "4-1 last 5 (beat T1 Academy, Nongshim Esports Academy, Nongshim Esports Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat T1 Academy, Nongshim Esports Academy, Nongshim Esports Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line",
+      "awayTeam": "Dplus KIA Challengers",
+      "homeTeam": "KT Rolster Challengers"
+    },
+    {
+      "id": "uu-gamers-ml-0817",
+      "date": "2026-08-17",
+      "sport": "kog",
+      "desc": "UU Gamers ML",
+      "market": "KPL Growth League Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 AM ET",
+      "vs": "To Champion Group",
+      "team": "UU Gamers",
+      "opp": "To Champion Group",
+      "analysis": "4-1 last 5 (beat JLY, Mighty Tiger Gaming, JA Gaming) (lost to Qing Jiu Club) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat JLY, Mighty Tiger Gaming, JA Gaming) (lost to Qing Jiu Club) vs 3-2 \u2014 model line -265 (our 73%). Model makes UU Gamers **73%** \u2014 books imply **73%**. SH",
+      "awayTeam": "UU Gamers",
+      "homeTeam": "To Champion Group"
     }
   ]
 }
