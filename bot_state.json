@@ -457,7 +457,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 190,
+  "op_calls": 192,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1440,55 +1440,19 @@
     "valorant": {
       "lines": [
         [
-          "G2 Gozen",
-          "Gentle Mates GC",
-          1.847,
-          1.884
-        ],
-        [
-          "GIANTX GC",
-          "SK Nebula",
-          2.54,
-          1.462
-        ],
-        [
-          "Eternal Fire",
-          "Eintracht Frankfurt",
-          21.04,
-          1.012
-        ],
-        [
-          "Fire Flux",
-          "Joblife",
-          1.293,
-          3.41
-        ],
-        [
-          "Nongshim RedForce",
-          "Secret",
-          1.165,
-          5.3
-        ],
-        [
           "FURIA",
           "G2",
-          3.27,
-          1.348
+          2.83,
+          1.403
         ],
         [
           "Cloud9",
           "Evil Geniuses",
-          1.813,
-          2.02
-        ],
-        [
-          "Trace",
-          "All Gamers",
-          2.74,
-          1.465
+          1.751,
+          2.1
         ]
       ],
-      "odds_ts": 1786896025.6351993,
+      "odds_ts": 1786924829.255202,
       "active": [
         901974,
         902102,
@@ -30762,6 +30726,6 @@
   "deepdive_last": "2026-08-15",
   "dep_checked_ts": 1786917842.376113,
   "x_bio_v": 2,
-  "op_cool_until": 1786824911.8856142,
+  "op_cool_until": 1786925729.255202,
   "x_ads": []
 }
