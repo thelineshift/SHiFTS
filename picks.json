@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T11:49:08Z",
+  "updated": "2026-08-17T12:01:03Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10091,6 +10091,23 @@
       "result": "WIN",
       "units_result": 0.53,
       "score": "Kiwoom DRX Challengers 2-0 Hanwha Life Esports Challengers \u00b7 final"
+    },
+    {
+      "id": "inner-circle-academy-ml-0817",
+      "date": "2026-08-17",
+      "sport": "cs2",
+      "desc": "Inner Circle Academy ML",
+      "market": "CCT Europe Bo3",
+      "odds": 157,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "Bushido Wildcats",
+      "team": "Inner Circle Academy",
+      "opp": "Bushido Wildcats",
+      "analysis": "4-1 last 5 (beat ex-Sashi Academy, ex-RUSTEC, Honv\u00e9d) (lost to ex-Sashi Academy) vs 3-2 \u2014 live Pinnacle line +157 (our 73% vs book 36%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ex-Sashi Academy, ex-RUSTEC, Honv\u00e9d) (lost to ex-Sashi Academy) vs 3-2 \u2014 live Pinnacle line +157 (our 73% vs book 36%). Books",
+      "awayTeam": "Inner Circle Academy",
+      "homeTeam": "Bushido Wildcats"
     }
   ]
 }
