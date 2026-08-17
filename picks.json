@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T23:49:06Z",
+  "updated": "2026-08-17T00:00:57Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -9997,6 +9997,40 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "QUINTESS\u00caNCIA 2-1 paiN Academy \u00b7 final"
+    },
+    {
+      "id": "dmg-esports-ml-0817",
+      "date": "2026-08-17",
+      "sport": "lol",
+      "desc": "DMG Esports ML",
+      "market": "NLC Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "12:00 PM ET",
+      "vs": "Brod n Friends",
+      "team": "DMG Esports",
+      "opp": "Brod n Friends",
+      "analysis": "3-2 last 5 (beat Absolved, 2 Massive, Lundqvist Lightside) (lost to Arctic Pandas) vs 2-2 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Absolved, 2 Massive, Lundqvist Lightside) (lost to Arctic Pandas) vs 2-2 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **",
+      "awayTeam": "DMG Esports",
+      "homeTeam": "Brod n Friends"
+    },
+    {
+      "id": "volda-e-sport-ml-0817",
+      "date": "2026-08-17",
+      "sport": "lol",
+      "desc": "Volda E-Sport ML",
+      "market": "NLC Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 PM ET",
+      "vs": "Lundqvist Lightside",
+      "team": "Volda E-Sport",
+      "opp": "Lundqvist Lightside",
+      "analysis": "2-2 last 5 (beat Rich Gang, LEO) (lost to B2U) vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 2-2 last 5 (beat Rich Gang, LEO) (lost to B2U) vs 2-3 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **10 points** of model edge, taken.",
+      "awayTeam": "Volda E-Sport",
+      "homeTeam": "Lundqvist Lightside"
     }
   ]
 }
