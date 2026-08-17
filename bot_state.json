@@ -446,7 +446,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 203,
+  "op_calls": 205,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1401,8 +1401,8 @@
         [
           "GIANTX GC",
           "FOKUS Sakura",
-          2.48,
-          1.487
+          2.46,
+          1.497
         ],
         [
           "G2 Gozen",
@@ -1413,8 +1413,8 @@
         [
           "Gentle Mates GC",
           "SK Nebula",
-          1.5,
-          2.45
+          1.51,
+          2.42
         ],
         [
           "Liquid Brazil",
@@ -1423,7 +1423,7 @@
           4.43
         ]
       ],
-      "odds_ts": 1786968020.7369232,
+      "odds_ts": 1786996811.2167125,
       "active": [
         901974,
         902102,
@@ -30709,6 +30709,6 @@
   "deepdive_last": "2026-08-15",
   "dep_checked_ts": 1786990442.5349822,
   "x_bio_v": 2,
-  "op_cool_until": 1786968920.7369232,
+  "op_cool_until": 1786997711.2167125,
   "x_ads": []
 }
