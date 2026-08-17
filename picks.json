@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T07:49:09Z",
+  "updated": "2026-08-17T08:00:54Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10068,6 +10068,23 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "UU Gamers 1-3 To Champion Group \u00b7 final"
+    },
+    {
+      "id": "kiwoom-drx-challengers-ml-0817",
+      "date": "2026-08-17",
+      "sport": "lol",
+      "desc": "Kiwoom DRX Challengers ML",
+      "market": "LCK Challengers League Bo3",
+      "odds": -187,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "06:00 AM ET",
+      "vs": "Hanwha Life Esports Challengers",
+      "team": "Kiwoom DRX Challengers",
+      "opp": "Hanwha Life Esports Challengers",
+      "analysis": "4-1 last 5 (beat Gen.G Global Academy, BNK FearX Youth, BNK FearX Youth) (lost to Hanwha Life Esports Challengers) vs 3-2 \u2014 live Pinnacle line -187 (our 73% vs book 62%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Gen.G Global Academy, BNK FearX Youth, BNK FearX Youth) (lost to Hanwha Life Esports Challe",
+      "awayTeam": "Kiwoom DRX Challengers",
+      "homeTeam": "Hanwha Life Esports Challengers"
     }
   ]
 }
