@@ -49,17 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "inner-circle-academy-ml-0817",
-      "desc": "Inner Circle Academy ML",
-      "odds": 157,
-      "result": "WIN",
-      "units": 2.35,
-      "score": "Inner Circle Academy 2-0 ex-Zero Tenacity \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-15",
   "scan_events": {
