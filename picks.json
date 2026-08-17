@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T18:29:10Z",
+  "updated": "2026-08-17T20:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10033,7 +10033,10 @@
       "opp": "Lundqvist Lightside",
       "analysis": "2-2 last 5 (beat Rich Gang, LEO) (lost to B2U) vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 2-2 last 5 (beat Rich Gang, LEO) (lost to B2U) vs 2-3 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **10 points** of model edge, taken.",
       "awayTeam": "Volda E-Sport",
-      "homeTeam": "Lundqvist Lightside"
+      "homeTeam": "Lundqvist Lightside",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "Volda E-Sport 2-1 Lundqvist Lightside \u00b7 final"
     },
     {
       "id": "dplus-kia-challengers-ml-0817",
@@ -10130,7 +10133,10 @@
       "opp": "HAVU",
       "analysis": "4-1 last 5 (beat UNiTY esports, MOUZ NXT, Misa Esports) (lost to Just Players) vs 3-2 \u2014 live Pinnacle line -162 (our 73% vs book 58%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat UNiTY esports, MOUZ NXT, Misa Esports) (lost to Just Players) vs 3-2 \u2014 live Pinnacle line -162 (our 73% vs book 58%). When the",
       "awayTeam": "ENJOY",
-      "homeTeam": "HAVU"
+      "homeTeam": "HAVU",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "ENJOY 1-2 HAVU \u00b7 final"
     }
   ]
 }
