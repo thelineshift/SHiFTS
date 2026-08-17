@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T16:00:57Z",
+  "updated": "2026-08-17T18:29:10Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10013,7 +10013,10 @@
       "opp": "Brod n Friends",
       "analysis": "3-2 last 5 (beat Absolved, 2 Massive, Lundqvist Lightside) (lost to Arctic Pandas) vs 2-2 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Absolved, 2 Massive, Lundqvist Lightside) (lost to Arctic Pandas) vs 2-2 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **",
       "awayTeam": "DMG Esports",
-      "homeTeam": "Brod n Friends"
+      "homeTeam": "Brod n Friends",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "DMG Esports 2-0 Brod n Friends \u00b7 final"
     },
     {
       "id": "volda-e-sport-ml-0817",
