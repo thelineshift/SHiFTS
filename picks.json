@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T16:00:55Z",
+  "updated": "2026-08-18T19:09:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10193,7 +10193,10 @@
       "opp": "Misa Esports",
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "Color",
-      "homeTeam": "Misa Esports"
+      "homeTeam": "Misa Esports",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "Color 2-0 The Last Resort \u00b7 final"
     },
     {
       "id": "lavked-ml-0818",
@@ -10210,7 +10213,10 @@
       "opp": "HAVU",
       "analysis": "4-1 last 5 (beat INOX Division, OG, BASEMENT BOYS) (lost to Esport Academy Copenhagen) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat INOX Division, OG, BASEMENT BOYS) (lost to Esport Academy Copenhagen) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over HAVU t",
       "awayTeam": "Lavked",
-      "homeTeam": "HAVU"
+      "homeTeam": "HAVU",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Lavked 0-2 HAVU \u00b7 final"
     },
     {
       "id": "nordic-valor-ml-0818",
