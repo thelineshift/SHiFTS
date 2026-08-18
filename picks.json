@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T12:01:04Z",
+  "updated": "2026-08-18T16:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10194,6 +10194,57 @@
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "Color",
       "homeTeam": "Misa Esports"
+    },
+    {
+      "id": "lavked-ml-0818",
+      "date": "2026-08-18",
+      "sport": "cs2",
+      "desc": "Lavked ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "HAVU",
+      "team": "Lavked",
+      "opp": "HAVU",
+      "analysis": "4-1 last 5 (beat INOX Division, OG, BASEMENT BOYS) (lost to Esport Academy Copenhagen) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat INOX Division, OG, BASEMENT BOYS) (lost to Esport Academy Copenhagen) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over HAVU t",
+      "awayTeam": "Lavked",
+      "homeTeam": "HAVU"
+    },
+    {
+      "id": "nordic-valor-ml-0818",
+      "date": "2026-08-18",
+      "sport": "cs2",
+      "desc": "Nordic Valor ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:15 PM ET",
+      "vs": "Insiders Esport",
+      "team": "Nordic Valor",
+      "opp": "Insiders Esport",
+      "analysis": "2-3 last 5 (beat Aritmije, KUUSAMO.gg) (lost to ROUNDS) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Aritmije, KUUSAMO.gg) (lost to ROUNDS) vs 1-4 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this spot more than the price ",
+      "awayTeam": "Nordic Valor",
+      "homeTeam": "Insiders Esport"
+    },
+    {
+      "id": "g2-gozen-ml-0818",
+      "date": "2026-08-18",
+      "sport": "valorant",
+      "desc": "G2 Gozen ML",
+      "market": "VCT Bo3",
+      "odds": -190,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "FOKUS Sakura",
+      "team": "G2 Gozen",
+      "opp": "FOKUS Sakura",
+      "analysis": "4-1 last 5 (beat Habos Babos, ALTERNATE aTTaX Ruby, GIANTX GC) (lost to Gentle Mates GC) vs 3-2 \u2014 live Pinnacle line -190 (our 73% vs book 61%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Habos Babos, ALTERNATE aTTaX Ruby, GIANTX GC) (lost to Gentle Mates GC) vs 3-2 \u2014 live Pinnacle line -190 (our 73% vs",
+      "awayTeam": "G2 Gozen",
+      "homeTeam": "FOKUS Sakura"
     }
   ]
 }
