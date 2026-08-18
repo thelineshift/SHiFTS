@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T19:49:07Z",
+  "updated": "2026-08-18T20:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10253,7 +10253,10 @@
       "opp": "FOKUS Sakura",
       "analysis": "4-1 last 5 (beat Habos Babos, ALTERNATE aTTaX Ruby, GIANTX GC) (lost to Gentle Mates GC) vs 3-2 \u2014 live Pinnacle line -190 (our 73% vs book 61%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Habos Babos, ALTERNATE aTTaX Ruby, GIANTX GC) (lost to Gentle Mates GC) vs 3-2 \u2014 live Pinnacle line -190 (our 73% vs",
       "awayTeam": "G2 Gozen",
-      "homeTeam": "FOKUS Sakura"
+      "homeTeam": "FOKUS Sakura",
+      "result": "WIN",
+      "units_result": 0.53,
+      "score": "G2 Gozen 2-1 FOKUS Sakura \u00b7 final"
     }
   ]
 }
