@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T10:29:09Z",
+  "updated": "2026-08-18T11:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10173,7 +10173,10 @@
       "opp": "DN SOOPers Challengers",
       "analysis": "2-3 last 5 (beat KT Rolster Challengers, DN SOOPers Challengers) (lost to KT Rolster Challengers) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat KT Rolster Challengers, DN SOOPers Challengers) (lost to KT Rolster Challengers) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-p",
       "awayTeam": "Nongshim Esports Academy",
-      "homeTeam": "DN SOOPers Challengers"
+      "homeTeam": "DN SOOPers Challengers",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Nongshim Esports Academy 1-2 DN SOOPers Challengers \u00b7 final"
     }
   ]
 }
