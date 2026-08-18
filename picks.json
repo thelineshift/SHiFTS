@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T04:00:54Z",
+  "updated": "2026-08-18T10:29:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10153,7 +10153,10 @@
       "opp": "Koala Game",
       "analysis": "4-1 last 5 (beat JA Gaming, UU Gamers, JLY) (lost to LT Gaming) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 4-1 last 5 (beat JA Gaming, UU Gamers, JLY) (lost to LT Gaming) vs 3-2 \u2014 model line -265 (our 73%). The book shaded this line toward the public side; we collect the **20 points** th",
       "awayTeam": "Qing Jiu Club",
-      "homeTeam": "Koala Game"
+      "homeTeam": "Koala Game",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Qing Jiu Club 2-3 Koala Game \u00b7 final"
     },
     {
       "id": "nongshim-esports-academy-ml-0818",
