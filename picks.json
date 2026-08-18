@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T11:09:09Z",
+  "updated": "2026-08-18T12:01:04Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10177,6 +10177,23 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "Nongshim Esports Academy 1-2 DN SOOPers Challengers \u00b7 final"
+    },
+    {
+      "id": "color-ml-0818",
+      "date": "2026-08-18",
+      "sport": "cs2",
+      "desc": "Color ML",
+      "market": "ESL Challenger League Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "09:00 AM ET",
+      "vs": "Misa Esports",
+      "team": "Color",
+      "opp": "Misa Esports",
+      "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
+      "awayTeam": "Color",
+      "homeTeam": "Misa Esports"
     }
   ]
 }
