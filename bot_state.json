@@ -444,7 +444,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 205,
+  "op_calls": 209,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1372,27 +1372,8 @@
         "1382344": "Guess"
       },
       "meta_ts": 1786795213.8928983,
-      "lines": [
-        [
-          "Inner Circle Academy",
-          "Ex-Zero Tenacity",
-          2.88,
-          1.362
-        ],
-        [
-          "Bushido Wildcats",
-          "Inner Circle Academy",
-          1.452,
-          2.57
-        ],
-        [
-          "Enjoy",
-          "Havu",
-          1.617,
-          2.2
-        ]
-      ],
-      "odds_ts": 1786968017.3276951
+      "lines": [],
+      "odds_ts": 1787025617.8008614
     },
     "valorant": {
       "lines": [
@@ -2633,79 +2614,109 @@
       "meta_ts": 1786795220.9951503,
       "lines": [
         [
-          "Team Heretics",
-          "Natus Vincere",
-          1.344,
-          3.2
+          "Gen.g Esports",
+          "kt Rolster",
+          1.167,
+          4.83
         ],
         [
-          "Karmine Corp",
-          "Giantx",
-          5.25,
-          1.144
+          "Brion",
+          "Soopers",
+          1.909,
+          1.909
         ],
         [
-          "Dplus Challengers",
-          "KT Rolster Challengers",
-          6.06,
-          1.072
+          "Dplus",
+          "Hanwha Life Esports",
+          1.909,
+          1.909
+        ],
+        [
+          "Berlin International Gaming",
+          "Unicorns of Love Sexy Edition",
+          1.51,
+          2.57
         ],
         [
           "Nongshim Redforce Challengers",
           "Soopers Challengers",
-          2.2,
-          1.684
+          2.32,
+          1.617
         ],
         [
           "Gen.G Global Academy",
           "Brion Challengers",
-          3.01,
-          1.384
+          3.26,
+          1.333
         ],
         [
           "Fearx Youth",
           "Hanwha Life Esports Challengers",
           2.55,
-          1.515
+          1.518
         ],
         [
           "T1 Esports Academy",
           "KT Rolster Challengers",
-          2.28,
-          1.636
+          2.25,
+          1.657
+        ],
+        [
+          "Edward Gaming",
+          "Team WE",
+          1.175,
+          4.7
+        ],
+        [
+          "Anyones Legend",
+          "TOP Esports",
+          1.632,
+          2.29
+        ],
+        [
+          "Forsaken",
+          "Anonymo Esports",
+          3.6,
+          1.232
+        ],
+        [
+          "Dynasty",
+          "Once Upon A Team",
+          1.909,
+          1.833
         ],
         [
           "3V E-Sports",
           "Lyon Academy",
-          5.64,
-          1.127
+          15.35,
+          1.02
         ],
         [
-          "Estral E-Sports",
-          "Rmd Gaming",
-          5.6,
-          1.088
+          "Maze Gaming",
+          "Docta eSports Club",
+          4.4,
+          1.197
         ],
         [
           "Pain Gaming Academy",
           "Ei Nerd eSports",
-          2.53,
-          1.467
+          1.034,
+          11.61
         ],
         [
           "INTZ eSports",
           "7Rex Team",
-          3.94,
-          1.192
+          4.26,
+          1.163
         ],
         [
           "Kabum Idl",
           "Keyd Stars Academy",
-          2.16,
-          1.641
+          2.14,
+          1.657
         ]
       ],
-      "odds_ts": 1786968012.0524795
+      "odds_ts": 1787025612.492862
     }
   },
   "parlay_rot": 34,
@@ -30707,6 +30718,6 @@
   "deepdive_last": "2026-08-15",
   "dep_checked_ts": 1787018642.3921337,
   "x_bio_v": 2,
-  "op_cool_until": 1786997711.2167125,
+  "op_cool_until": 1787026517.8008614,
   "x_ads": []
 }
