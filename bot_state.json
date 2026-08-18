@@ -449,7 +449,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 209,
+  "op_calls": 213,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1377,28 +1377,77 @@
         "1382344": "Guess"
       },
       "meta_ts": 1786795213.8928983,
-      "lines": [],
-      "odds_ts": 1787025617.8008614
+      "lines": [
+        [
+          "Fire Flux eSports",
+          "Team Omega",
+          1.591,
+          2.32
+        ],
+        [
+          "Metizport",
+          "Donstu eSports",
+          1.141,
+          4.97
+        ],
+        [
+          "Mouz Nxt",
+          "Sparta eSports",
+          3.85,
+          1.229
+        ],
+        [
+          "Masonic",
+          "Bebop",
+          1.641,
+          2.19
+        ],
+        [
+          "Fut eSports",
+          "Magic",
+          1.438,
+          2.84
+        ],
+        [
+          "Team Gamerlegion",
+          "MOUZ",
+          3.82,
+          1.273
+        ],
+        [
+          "Furia",
+          "Aurora Gaming",
+          1.564,
+          2.45
+        ],
+        [
+          "Natus Vincere",
+          "Legacy",
+          1.364,
+          3.17
+        ],
+        [
+          "Faze Clan",
+          "Team Vitality",
+          3.72,
+          1.284
+        ]
+      ],
+      "odds_ts": 1787054412.8986917
     },
     "valorant": {
       "lines": [
         [
-          "GIANTX GC",
-          "FOKUS Sakura",
-          2.46,
-          1.497
-        ],
-        [
-          "G2 Gozen",
-          "Habos Babos",
-          1.244,
-          3.5
-        ],
-        [
           "Gentle Mates GC",
           "SK Nebula",
-          1.51,
-          2.42
+          1.606,
+          2.23
+        ],
+        [
+          "FOKUS Sakura",
+          "G2 Gozen",
+          2.39,
+          1.526
         ],
         [
           "Liquid Brazil",
@@ -1407,7 +1456,7 @@
           4.43
         ]
       ],
-      "odds_ts": 1786996811.2167125,
+      "odds_ts": 1787054416.4517407,
       "active": [
         901974,
         902102,
@@ -30723,6 +30772,6 @@
   "deepdive_last": "2026-08-15",
   "dep_checked_ts": 1787047442.4048991,
   "x_bio_v": 2,
-  "op_cool_until": 1787026517.8008614,
+  "op_cool_until": 1787055316.4517407,
   "x_ads": []
 }
