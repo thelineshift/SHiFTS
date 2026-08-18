@@ -465,7 +465,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 213,
+  "op_calls": 215,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1456,8 +1456,8 @@
         [
           "Gentle Mates GC",
           "SK Nebula",
-          1.606,
-          2.23
+          1.505,
+          2.43
         ],
         [
           "FOKUS Sakura",
@@ -1470,9 +1470,39 @@
           "Evil Geniuses",
           1.15,
           4.43
+        ],
+        [
+          "Secret",
+          "ONSIDE",
+          2.16,
+          1.709
+        ],
+        [
+          "FULL SENSE",
+          "Rex Regum Qeon",
+          1.869,
+          1.952
+        ],
+        [
+          "Cloud9",
+          "BESTIA",
+          1.187,
+          4.88
+        ],
+        [
+          "G2",
+          "M80",
+          1.198,
+          4.69
+        ],
+        [
+          "Bilibili",
+          "XLG",
+          2.34,
+          1.613
         ]
       ],
-      "odds_ts": 1787054416.4517407,
+      "odds_ts": 1787083224.943773,
       "active": [
         901974,
         902102,
