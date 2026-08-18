@@ -49,17 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "g2-gozen-ml-0818",
-      "desc": "G2 Gozen ML",
-      "odds": -190,
-      "result": "WIN",
-      "units": 0.53,
-      "score": "G2 Gozen 2-1 FOKUS Sakura \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-17",
   "scan_events": {
