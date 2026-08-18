@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T19:09:08Z",
+  "updated": "2026-08-18T19:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10233,7 +10233,10 @@
       "opp": "Insiders Esport",
       "analysis": "2-3 last 5 (beat Aritmije, KUUSAMO.gg) (lost to ROUNDS) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Aritmije, KUUSAMO.gg) (lost to ROUNDS) vs 1-4 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side wins this spot more than the price ",
       "awayTeam": "Nordic Valor",
-      "homeTeam": "Insiders Esport"
+      "homeTeam": "Insiders Esport",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Nordic Valor 2-0 Insiders Esport \u00b7 final"
     },
     {
       "id": "g2-gozen-ml-0818",
