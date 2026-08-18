@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T20:49:07Z",
+  "updated": "2026-08-18T04:00:54Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10137,6 +10137,40 @@
       "result": "LOSS",
       "units_result": -1.5,
       "score": "ENJOY 1-2 HAVU \u00b7 final"
+    },
+    {
+      "id": "qing-jiu-club-ml-0818",
+      "date": "2026-08-18",
+      "sport": "kog",
+      "desc": "Qing Jiu Club ML",
+      "market": "KPL Growth League Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Koala Game",
+      "team": "Qing Jiu Club",
+      "opp": "Koala Game",
+      "analysis": "4-1 last 5 (beat JA Gaming, UU Gamers, JLY) (lost to LT Gaming) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 4-1 last 5 (beat JA Gaming, UU Gamers, JLY) (lost to LT Gaming) vs 3-2 \u2014 model line -265 (our 73%). The book shaded this line toward the public side; we collect the **20 points** th",
+      "awayTeam": "Qing Jiu Club",
+      "homeTeam": "Koala Game"
+    },
+    {
+      "id": "nongshim-esports-academy-ml-0818",
+      "date": "2026-08-18",
+      "sport": "lol",
+      "desc": "Nongshim Esports Academy ML",
+      "market": "LCK Challengers League Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "DN SOOPers Challengers",
+      "team": "Nongshim Esports Academy",
+      "opp": "DN SOOPers Challengers",
+      "analysis": "2-3 last 5 (beat KT Rolster Challengers, DN SOOPers Challengers) (lost to KT Rolster Challengers) vs 1-4 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 2-3 last 5 (beat KT Rolster Challengers, DN SOOPers Challengers) (lost to KT Rolster Challengers) vs 1-4 \u2014 model line -265 (our 73%). That's a **20-p",
+      "awayTeam": "Nongshim Esports Academy",
+      "homeTeam": "DN SOOPers Challengers"
     }
   ]
 }
