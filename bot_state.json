@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "bushido-wildcats-ml-0819",
+      "desc": "Bushido Wildcats ML",
+      "odds": 113,
+      "result": "WIN",
+      "units": 1.69,
+      "score": "Bushido Wildcats 2-1 Endless Journey \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-18",
   "scan_events": {
