@@ -453,7 +453,7 @@
   "x_purge_last": "2026-07-25 02:00 UTC",
   "last_deploy_id": "709cab3e-ab10-4871-b091-676d8a2ac40b",
   "op_month": "2026-08",
-  "op_calls": 215,
+  "op_calls": 222,
   "op_meta": {
     "cs2": {
       "active": [
@@ -1383,61 +1383,109 @@
       "meta_ts": 1786795213.8928983,
       "lines": [
         [
-          "Fire Flux eSports",
-          "Team Omega",
-          1.591,
-          2.32
-        ],
-        [
-          "Metizport",
+          "Mouz Nxt",
           "Donstu eSports",
-          1.141,
-          4.97
+          13.82,
+          1.027
         ],
         [
           "Mouz Nxt",
           "Sparta eSports",
-          3.85,
-          1.229
+          1.257,
+          3.62
+        ],
+        [
+          "Inner Circle Academy",
+          "Mouz Nxt",
+          1.51,
+          2.42
+        ],
+        [
+          "Mouz Nxt",
+          "Sparta eSports",
+          14.96,
+          1.023
+        ],
+        [
+          "Metizport",
+          "Donstu eSports",
+          1.021,
+          15.95
+        ],
+        [
+          "Fire Flux eSports",
+          "Team Omega",
+          10.13,
+          1.048
+        ],
+        [
+          "Astralis",
+          "G2 Esports",
+          1.476,
+          2.7
+        ],
+        [
+          "The Mongolz",
+          "Team Falcons",
+          1.218,
+          4.44
+        ],
+        [
+          "Team Spirit",
+          "B8",
+          5.07,
+          1.179
         ],
         [
           "Masonic",
           "Bebop",
-          1.641,
-          2.19
+          1.035,
+          12.07
+        ],
+        [
+          "Lavked",
+          "Havu",
+          2.84,
+          1.401
+        ],
+        [
+          "Black Phoenix",
+          "Bushido Wildcats",
+          1.74,
+          2.07
         ],
         [
           "Fut eSports",
           "Magic",
-          1.438,
-          2.84
+          1.452,
+          2.78
         ],
         [
           "Team Gamerlegion",
           "MOUZ",
-          3.82,
-          1.273
+          4.03,
+          1.252
         ],
         [
           "Furia",
           "Aurora Gaming",
-          1.564,
-          2.45
+          1.561,
+          2.46
         ],
         [
           "Natus Vincere",
           "Legacy",
-          1.364,
-          3.17
+          1.361,
+          3.19
         ],
         [
           "Faze Clan",
           "Team Vitality",
-          3.72,
-          1.284
+          3.92,
+          1.263
         ]
       ],
-      "odds_ts": 1787054412.8986917
+      "odds_ts": 1787112019.195321
     },
     "valorant": {
       "lines": [
@@ -1468,29 +1516,29 @@
         [
           "FULL SENSE",
           "Rex Regum Qeon",
-          1.869,
-          1.952
+          1.735,
+          2.12
         ],
         [
           "Cloud9",
           "BESTIA",
           1.187,
-          4.88
+          4.87
         ],
         [
           "G2",
           "M80",
-          1.198,
-          4.69
+          1.219,
+          4.4
         ],
         [
           "Bilibili",
           "XLG",
-          2.34,
-          1.613
+          2.35,
+          1.609
         ]
       ],
-      "odds_ts": 1787083224.943773,
+      "odds_ts": 1787112022.5578778,
       "active": [
         901974,
         902102,
@@ -2704,20 +2752,14 @@
         [
           "Gen.g Esports",
           "kt Rolster",
-          1.167,
-          4.83
+          1.151,
+          5.11
         ],
         [
           "Brion",
           "Soopers",
-          1.909,
-          1.909
-        ],
-        [
-          "Dplus",
-          "Hanwha Life Esports",
-          1.909,
-          1.909
+          2.05,
+          1.787
         ],
         [
           "Berlin International Gaming",
@@ -2726,85 +2768,103 @@
           2.57
         ],
         [
-          "Nongshim Redforce Challengers",
-          "Soopers Challengers",
-          2.32,
-          1.617
+          "Dplus",
+          "Hanwha Life Esports",
+          2.01,
+          1.813
+        ],
+        [
+          "G2 Nord",
+          "Eintracht Spandau",
+          1.315,
+          3.36
         ],
         [
           "Gen.G Global Academy",
           "Brion Challengers",
-          3.26,
-          1.333
-        ],
-        [
-          "Fearx Youth",
-          "Hanwha Life Esports Challengers",
-          2.55,
-          1.518
-        ],
-        [
-          "T1 Esports Academy",
-          "KT Rolster Challengers",
-          2.25,
-          1.657
-        ],
-        [
-          "Edward Gaming",
-          "Team WE",
-          1.175,
-          4.7
-        ],
-        [
-          "Anyones Legend",
-          "TOP Esports",
-          1.632,
-          2.29
+          2.35,
+          1.543
         ],
         [
           "Forsaken",
           "Anonymo Esports",
-          3.6,
+          10.29,
+          1.043
+        ],
+        [
+          "T1 Esports Academy",
+          "KT Rolster Challengers",
+          2.34,
+          1.606
+        ],
+        [
+          "Fearx Youth",
+          "Hanwha Life Esports Challengers",
+          2.61,
+          1.495
+        ],
+        [
+          "LNG Esports",
+          "Weibo Gaming",
+          4.01,
           1.232
+        ],
+        [
+          "Anyones Legend",
+          "TOP Esports",
+          1.645,
+          2.27
+        ],
+        [
+          "Edward Gaming",
+          "Team WE",
+          1.187,
+          4.53
+        ],
+        [
+          "Docisk",
+          "Barczaca eSports",
+          2.04,
+          1.719
+        ],
+        [
+          "Soopers Challengers",
+          "Dplus Challengers",
+          1.427,
+          2.83
+        ],
+        [
+          "Drx Challengers",
+          "Brion Challengers",
+          3.08,
+          1.367
         ],
         [
           "Dynasty",
           "Once Upon A Team",
-          1.909,
-          1.833
-        ],
-        [
-          "3V E-Sports",
-          "Lyon Academy",
-          15.35,
-          1.02
-        ],
-        [
-          "Maze Gaming",
-          "Docta eSports Club",
-          4.4,
-          1.197
-        ],
-        [
-          "Pain Gaming Academy",
-          "Ei Nerd eSports",
-          1.034,
-          11.61
+          10.82,
+          1.039
         ],
         [
           "INTZ eSports",
           "7Rex Team",
-          4.26,
-          1.163
+          11.68,
+          1.034
         ],
         [
           "Kabum Idl",
           "Keyd Stars Academy",
-          2.14,
-          1.657
+          1.076,
+          7.44
+        ],
+        [
+          "Maze Gaming",
+          "Docta eSports Club",
+          4.06,
+          1.18
         ]
       ],
-      "odds_ts": 1787025612.492862
+      "odds_ts": 1787112014.0449057
     }
   },
   "parlay_rot": 34,
