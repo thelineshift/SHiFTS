@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T12:49:10Z",
+  "updated": "2026-08-19T13:09:11Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10347,7 +10347,10 @@
       "opp": "Top Esports",
       "analysis": "4-1 last 5 (beat ThunderTalk Gaming, JD Gaming, EDward Gaming) (lost to Team WE) vs 3-2 \u2014 live Pinnacle line -155 (our 73% vs book 58%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat ThunderTalk Gaming, JD Gaming, EDward Gaming) (lost to Team WE) vs 3-2 \u2014 live Pinnacle line -155 (our 73% vs book 58%). When",
       "awayTeam": "Anyone's Legend",
-      "homeTeam": "Top Esports"
+      "homeTeam": "Top Esports",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Anyone's Legend 1-2 Top Esports \u00b7 final"
     },
     {
       "id": "magic-ml-0819",
