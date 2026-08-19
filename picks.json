@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T16:00:56Z",
+  "updated": "2026-08-19T16:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10481,7 +10481,10 @@
       "opp": "GamerLegion",
       "analysis": "4-1 last 5 (beat PARIVISION, Lynn Vision, Spirit) (lost to FUT Esports) vs 2-3 \u2014 live Pinnacle line -392 (our 86% vs book 76%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat PARIVISION, Lynn Vision, Spirit) (lost to FUT Esports) vs 2-3 \u2014 live Pinnacle line -392 (our 86% vs book 76%). That's a **10-point** gap o",
       "awayTeam": "MOUZ",
-      "homeTeam": "GamerLegion"
+      "homeTeam": "GamerLegion",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "MOUZ 0-2 SPARTA \u00b7 final"
     }
   ]
 }
