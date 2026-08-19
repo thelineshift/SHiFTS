@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T16:09:09Z",
+  "updated": "2026-08-19T17:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10373,7 +10373,10 @@
       "opp": "FUT Esports",
       "analysis": "4-1 last 5 (beat 9z, 3DMAX, NIP) (lost to TheMongolz) vs 3-2 \u2014 live Pinnacle line +160 (our 73% vs book 37%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat 9z, 3DMAX, NIP) (lost to TheMongolz) vs 3-2 \u2014 live Pinnacle line +160 (our 73% vs book 37%). Ride the **36-point** form edge before the market catches ",
       "awayTeam": "magic",
-      "homeTeam": "FUT Esports"
+      "homeTeam": "FUT Esports",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "magic 1-2 FUT Esports \u00b7 final"
     },
     {
       "id": "bushido-wildcats-ml-0819",
