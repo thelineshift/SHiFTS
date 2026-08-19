@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T14:49:07Z",
+  "updated": "2026-08-19T16:00:56Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10431,6 +10431,57 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "JD Gaming 3-0 TOP Esports Armor \u00b7 final"
+    },
+    {
+      "id": "aurora-gaming-ml-0819",
+      "date": "2026-08-19",
+      "sport": "cs2",
+      "desc": "Aurora Gaming ML",
+      "market": "Esports World Cup Bo3",
+      "odds": 146,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "FURIA",
+      "team": "Aurora Gaming",
+      "opp": "FURIA",
+      "analysis": "4-1 last 5 (beat JiJieHao, M80, HOTU) (lost to BIG) vs 3-2 \u2014 live Pinnacle line +146 (our 73% vs book 39%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat JiJieHao, M80, HOTU) (lost to BIG) vs 3-2 \u2014 live Pinnacle line +146 (our 73% vs book 39%). That's a **34-point** gap over FURIA the number hasn't priced.",
+      "awayTeam": "Aurora Gaming",
+      "homeTeam": "FURIA"
+    },
+    {
+      "id": "francesinhas-ml-0819",
+      "date": "2026-08-19",
+      "sport": "lol",
+      "desc": "Francesinhas ML",
+      "market": "LPLOL Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 PM ET",
+      "vs": "GD Esports",
+      "team": "Francesinhas",
+      "opp": "GD Esports",
+      "analysis": "2-3 last 5 (beat Way Gaming Esports, Crusaders) (lost to Bubliki) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat Way Gaming Esports, Crusaders) (lost to Bubliki) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
+      "awayTeam": "Francesinhas",
+      "homeTeam": "GD Esports"
+    },
+    {
+      "id": "mouz-ml-0819",
+      "date": "2026-08-19",
+      "sport": "cs2",
+      "desc": "MOUZ ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -392,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "GamerLegion",
+      "team": "MOUZ",
+      "opp": "GamerLegion",
+      "analysis": "4-1 last 5 (beat PARIVISION, Lynn Vision, Spirit) (lost to FUT Esports) vs 2-3 \u2014 live Pinnacle line -392 (our 86% vs book 76%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat PARIVISION, Lynn Vision, Spirit) (lost to FUT Esports) vs 2-3 \u2014 live Pinnacle line -392 (our 86% vs book 76%). That's a **10-point** gap o",
+      "awayTeam": "MOUZ",
+      "homeTeam": "GamerLegion"
     }
   ]
 }
