@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T12:01:13Z",
+  "updated": "2026-08-19T12:09:10Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10378,7 +10378,10 @@
       "opp": "Black Phoenix",
       "analysis": "4-1 last 5 (beat Endless Journey, Misa Esports, Permitta Esports) (lost to LFO UKRAINE) vs 3-2 \u2014 live Pinnacle line +113 (our 73% vs book 44%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Endless Journey, Misa Esports, Permitta Esports) (lost to LFO UKRAINE) vs 3-2 \u2014 live Pinnacle line +113 (our 73% vs book 4",
       "awayTeam": "Bushido Wildcats",
-      "homeTeam": "Black Phoenix"
+      "homeTeam": "Black Phoenix",
+      "result": "WIN",
+      "units_result": 1.69,
+      "score": "Bushido Wildcats 2-1 Endless Journey \u00b7 final"
     },
     {
       "id": "g2-gozen-ml-0819",
