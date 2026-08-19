@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T21:29:09Z",
+  "updated": "2026-08-19T23:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10513,7 +10513,10 @@
       "opp": "Cloud9",
       "analysis": "4-1 last 5 (beat Contra, KR\u00dc Spark, KR\u00dc Spark) (lost to KR\u00dc Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Contra, KR\u00dc Spark, KR\u00dc Spark) (lost to KR\u00dc Esports) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Cloud9 the number hasn't priced.",
       "awayTeam": "BESTIA",
-      "homeTeam": "Cloud9"
+      "homeTeam": "Cloud9",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "BESTIA 2-0 Cloud9 \u00b7 final"
     },
     {
       "id": "m80-ml-0819",
