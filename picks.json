@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T12:09:10Z",
+  "updated": "2026-08-19T12:49:10Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10293,7 +10293,10 @@
       "opp": "HANJIN BRION",
       "analysis": "5-0 last 5 (beat Nongshim Red Force, T1, BNK FEARX) vs 3-2 \u2014 live Pinnacle line -127 (our 90% vs book 53%) | \ud83d\udd25 **Momentum play:** 5-0 last 5 (beat Nongshim Red Force, T1, BNK FEARX) vs 3-2 \u2014 live Pinnacle line -127 (our 90% vs book 53%). Ride the **37-point** form edge before the market catches up.",
       "awayTeam": "DN SOOPers",
-      "homeTeam": "HANJIN BRION"
+      "homeTeam": "HANJIN BRION",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "DN SOOPers 0-2 HANJIN BRION \u00b7 final"
     },
     {
       "id": "ex-mana-esports-ml-0819",
