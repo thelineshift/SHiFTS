@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T10:09:09Z",
+  "updated": "2026-08-19T12:01:13Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10345,6 +10345,74 @@
       "analysis": "4-1 last 5 (beat ThunderTalk Gaming, JD Gaming, EDward Gaming) (lost to Team WE) vs 3-2 \u2014 live Pinnacle line -155 (our 73% vs book 58%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat ThunderTalk Gaming, JD Gaming, EDward Gaming) (lost to Team WE) vs 3-2 \u2014 live Pinnacle line -155 (our 73% vs book 58%). When",
       "awayTeam": "Anyone's Legend",
       "homeTeam": "Top Esports"
+    },
+    {
+      "id": "magic-ml-0819",
+      "date": "2026-08-19",
+      "sport": "cs2",
+      "desc": "magic ML",
+      "market": "Esports World Cup Bo3",
+      "odds": 160,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "FUT Esports",
+      "team": "magic",
+      "opp": "FUT Esports",
+      "analysis": "4-1 last 5 (beat 9z, 3DMAX, NIP) (lost to TheMongolz) vs 3-2 \u2014 live Pinnacle line +160 (our 73% vs book 37%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat 9z, 3DMAX, NIP) (lost to TheMongolz) vs 3-2 \u2014 live Pinnacle line +160 (our 73% vs book 37%). Ride the **36-point** form edge before the market catches ",
+      "awayTeam": "magic",
+      "homeTeam": "FUT Esports"
+    },
+    {
+      "id": "bushido-wildcats-ml-0819",
+      "date": "2026-08-19",
+      "sport": "cs2",
+      "desc": "Bushido Wildcats ML",
+      "market": "CCT Europe Bo3",
+      "odds": 113,
+      "units": 1.5,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "Black Phoenix",
+      "team": "Bushido Wildcats",
+      "opp": "Black Phoenix",
+      "analysis": "4-1 last 5 (beat Endless Journey, Misa Esports, Permitta Esports) (lost to LFO UKRAINE) vs 3-2 \u2014 live Pinnacle line +113 (our 73% vs book 44%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Endless Journey, Misa Esports, Permitta Esports) (lost to LFO UKRAINE) vs 3-2 \u2014 live Pinnacle line +113 (our 73% vs book 4",
+      "awayTeam": "Bushido Wildcats",
+      "homeTeam": "Black Phoenix"
+    },
+    {
+      "id": "g2-gozen-ml-0819",
+      "date": "2026-08-19",
+      "sport": "valorant",
+      "desc": "G2 Gozen ML",
+      "market": "VCT Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:00 AM ET",
+      "vs": "SK Nebula",
+      "team": "G2 Gozen",
+      "opp": "SK Nebula",
+      "analysis": "4-1 last 5 (beat FOKUS Sakura, Habos Babos, ALTERNATE aTTaX Ruby) (lost to Gentle Mates GC) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat FOKUS Sakura, Habos Babos, ALTERNATE aTTaX Ruby) (lost to Gentle Mates GC) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on t",
+      "awayTeam": "G2 Gozen",
+      "homeTeam": "SK Nebula"
+    },
+    {
+      "id": "jd-gaming-ml-0819",
+      "date": "2026-08-19",
+      "sport": "kog",
+      "desc": "JD Gaming ML",
+      "market": "King Pro League Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "08:00 AM ET",
+      "vs": "TOP Esports Armor",
+      "team": "JD Gaming",
+      "opp": "TOP Esports Armor",
+      "analysis": "4-1 last 5 (beat Talent Gaming, AG Super Play, Weibo Gaming) (lost to Weibo Gaming) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Talent Gaming, AG Super Play, Weibo Gaming) (lost to Weibo Gaming) vs 3-2 \u2014 model line -265 (our 73%). The number's off by **20 points** \u2014 thi",
+      "awayTeam": "JD Gaming",
+      "homeTeam": "TOP Esports Armor"
     }
   ]
 }
