@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T20:09:09Z",
+  "updated": "2026-08-19T21:29:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10453,7 +10453,10 @@
       "opp": "FURIA",
       "analysis": "4-1 last 5 (beat JiJieHao, M80, HOTU) (lost to BIG) vs 3-2 \u2014 live Pinnacle line +146 (our 73% vs book 39%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat JiJieHao, M80, HOTU) (lost to BIG) vs 3-2 \u2014 live Pinnacle line +146 (our 73% vs book 39%). That's a **34-point** gap over FURIA the number hasn't priced.",
       "awayTeam": "Aurora Gaming",
-      "homeTeam": "FURIA"
+      "homeTeam": "FURIA",
+      "result": "LOSS",
+      "units_result": -1.5,
+      "score": "Aurora Gaming 1-2 FURIA \u00b7 final"
     },
     {
       "id": "francesinhas-ml-0819",
