@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T13:49:08Z",
+  "updated": "2026-08-19T14:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10333,7 +10333,10 @@
       "opp": "Misa Esports",
       "analysis": "2-3 last 5 (beat Atreides, Inner Circle Academy) (lost to Inner Circle Academy) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat Atreides, Inner Circle Academy) (lost to Inner Circle Academy) vs 1-4 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the",
       "awayTeam": "ex-Sashi Academy",
-      "homeTeam": "Misa Esports"
+      "homeTeam": "Misa Esports",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "ex-Sashi Academy 2-1 Misa Esports \u00b7 final"
     },
     {
       "id": "anyone's-legend-ml-0819",
