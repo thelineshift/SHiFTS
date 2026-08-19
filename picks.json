@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T20:00:50Z",
+  "updated": "2026-08-19T20:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10413,7 +10413,10 @@
       "opp": "SK Nebula",
       "analysis": "4-1 last 5 (beat FOKUS Sakura, Habos Babos, ALTERNATE aTTaX Ruby) (lost to Gentle Mates GC) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat FOKUS Sakura, Habos Babos, ALTERNATE aTTaX Ruby) (lost to Gentle Mates GC) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on t",
       "awayTeam": "G2 Gozen",
-      "homeTeam": "SK Nebula"
+      "homeTeam": "SK Nebula",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "G2 Gozen 3-2 SK Nebula \u00b7 final"
     },
     {
       "id": "jd-gaming-ml-0819",
@@ -10467,7 +10470,10 @@
       "opp": "GD Esports",
       "analysis": "2-3 last 5 (beat Way Gaming Esports, Crusaders) (lost to Bubliki) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat Way Gaming Esports, Crusaders) (lost to Bubliki) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
       "awayTeam": "Francesinhas",
-      "homeTeam": "GD Esports"
+      "homeTeam": "GD Esports",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Francesinhas 2-0 GD Esports \u00b7 final"
     },
     {
       "id": "mouz-ml-0819",
