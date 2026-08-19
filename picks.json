@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T17:29:08Z",
+  "updated": "2026-08-19T20:00:50Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10488,6 +10488,40 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "MOUZ 0-2 SPARTA \u00b7 final"
+    },
+    {
+      "id": "bestia-ml-0819",
+      "date": "2026-08-19",
+      "sport": "valorant",
+      "desc": "BESTIA ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 PM ET",
+      "vs": "Cloud9",
+      "team": "BESTIA",
+      "opp": "Cloud9",
+      "analysis": "4-1 last 5 (beat Contra, KR\u00dc Spark, KR\u00dc Spark) (lost to KR\u00dc Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Contra, KR\u00dc Spark, KR\u00dc Spark) (lost to KR\u00dc Esports) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Cloud9 the number hasn't priced.",
+      "awayTeam": "BESTIA",
+      "homeTeam": "Cloud9"
+    },
+    {
+      "id": "m80-ml-0819",
+      "date": "2026-08-19",
+      "sport": "valorant",
+      "desc": "M80 ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "08:00 PM ET",
+      "vs": "G2 Esports",
+      "team": "M80",
+      "opp": "G2 Esports",
+      "analysis": "4-1 last 5 (beat Shopify Rebellion Black, SaD Esports, Nightblood Gaming) (lost to Team Envy) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Shopify Rebellion Black, SaD Esports, Nightblood Gaming) (lost to Team Envy) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect ",
+      "awayTeam": "M80",
+      "homeTeam": "G2 Esports"
     }
   ]
 }
