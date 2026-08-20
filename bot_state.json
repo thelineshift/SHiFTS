@@ -49,7 +49,26 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "natus-vincere-ml-0820",
+      "desc": "Natus Vincere ML",
+      "odds": -150,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Natus Vincere 0-2 Legacy \u00b7 final",
+      "tier": "whale"
+    },
+    {
+      "id": "team-falcons-ml-0820",
+      "desc": "Team Falcons ML",
+      "odds": -265,
+      "result": "WIN",
+      "units": 0.38,
+      "score": "Team Falcons 2-0 TheMongolz \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-18",
   "scan_events": {
