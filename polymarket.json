@@ -1,8 +1,8 @@
 {
-  "ts": "2026-08-20T23:14:05Z",
+  "ts": "2026-08-20T23:29:07Z",
   "configured": true,
-  "balance_usd": 0.01,
-  "buying_power": 0.01,
+  "balance_usd": 16.24,
+  "buying_power": 0.24,
   "positions": [],
   "open_orders": []
 }
