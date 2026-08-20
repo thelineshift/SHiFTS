@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T20:29:06Z",
+  "updated": "2026-08-20T23:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10727,7 +10727,10 @@
       "opp": "Sentinels",
       "analysis": "2-3 last 5 (beat Shopify Rebellion Black, Contra) (lost to FURIA Esports) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat Shopify Rebellion Black, Contra) (lost to FURIA Esports) vs 1-4 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches ",
       "awayTeam": "2GAME Esports",
-      "homeTeam": "Sentinels"
+      "homeTeam": "Sentinels",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "2GAME Esports 0-2 Sentinels \u00b7 final"
     }
   ]
 }
