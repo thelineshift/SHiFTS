@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T08:00:52Z",
+  "updated": "2026-08-20T11:29:11Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10624,7 +10624,10 @@
       "opp": "MVK Esports",
       "analysis": "4-1 last 5 (beat Team Secret Whales, MVK Esports, Ground Zero Gaming) (lost to Team Secret Whales) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Team Secret Whales, MVK Esports, Ground Zero Gaming) (lost to Team Secret Whales) vs 3-2 \u2014 model line -265 (our 73%). Ride the",
       "awayTeam": "CTBC Flying Oyster",
-      "homeTeam": "MVK Esports"
+      "homeTeam": "MVK Esports",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "CTBC Flying Oyster 3-0 MVK Esports \u00b7 final"
     }
   ]
 }
