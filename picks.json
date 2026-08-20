@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T11:29:11Z",
+  "updated": "2026-08-20T12:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10550,7 +10550,10 @@
       "opp": "Legacy",
       "analysis": "3-2 last 5 (beat TheMongolz, 3DMAX, TheMongolz) (lost to G2) vs 2-2 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat TheMongolz, 3DMAX, TheMongolz) (lost to G2) vs 2-2 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "Natus Vincere",
-      "homeTeam": "Legacy"
+      "homeTeam": "Legacy",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Natus Vincere 0-2 Legacy \u00b7 final"
     },
     {
       "id": "kiwoom-drx-challengers-ml-0820",
@@ -10607,7 +10610,10 @@
       "opp": "TheMongolz",
       "analysis": "4-1 last 5 (beat Astralis, K27, FURIA) (lost to 100 Thieves) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Astralis, K27, FURIA) (lost to 100 Thieves) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
       "awayTeam": "Team Falcons",
-      "homeTeam": "TheMongolz"
+      "homeTeam": "TheMongolz",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Team Falcons 2-0 TheMongolz \u00b7 final"
     },
     {
       "id": "ctbc-flying-oyster-ml-0820",
