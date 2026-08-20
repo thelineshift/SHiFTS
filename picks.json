@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T00:00:53Z",
+  "updated": "2026-08-20T04:00:54Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10551,6 +10551,40 @@
       "analysis": "3-2 last 5 (beat TheMongolz, 3DMAX, TheMongolz) (lost to G2) vs 2-2 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat TheMongolz, 3DMAX, TheMongolz) (lost to G2) vs 2-2 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "Natus Vincere",
       "homeTeam": "Legacy"
+    },
+    {
+      "id": "kiwoom-drx-challengers-ml-0820",
+      "date": "2026-08-20",
+      "sport": "lol",
+      "desc": "Kiwoom DRX Challengers ML",
+      "market": "LCK Challengers League Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 AM ET",
+      "vs": "HANJIN BRION Challengers",
+      "team": "Kiwoom DRX Challengers",
+      "opp": "HANJIN BRION Challengers",
+      "analysis": "4-1 last 5 (beat Hanwha Life Esports Challengers, Gen.G Global Academy, BNK FearX Youth) (lost to Hanwha Life Esports Challengers) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Hanwha Life Esports Challengers, Gen.G Global Academy, BNK FearX Youth) (lost to Hanwha Life Esport",
+      "awayTeam": "Kiwoom DRX Challengers",
+      "homeTeam": "HANJIN BRION Challengers"
+    },
+    {
+      "id": "dplus-kia-ml-0820",
+      "date": "2026-08-20",
+      "sport": "lol",
+      "desc": "Dplus KIA ML",
+      "market": "LCK Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Hanwha Life Esports",
+      "team": "Dplus KIA",
+      "opp": "Hanwha Life Esports",
+      "analysis": "4-1 last 5 (beat T1, KT Rolster, KT Rolster) (lost to T1) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat T1, KT Rolster, KT Rolster) (lost to T1) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Hanwha Life Esports the number hasn't priced.",
+      "awayTeam": "Dplus KIA",
+      "homeTeam": "Hanwha Life Esports"
     }
   ]
 }
