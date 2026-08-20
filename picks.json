@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T04:00:54Z",
+  "updated": "2026-08-20T06:49:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10584,7 +10584,10 @@
       "opp": "Hanwha Life Esports",
       "analysis": "4-1 last 5 (beat T1, KT Rolster, KT Rolster) (lost to T1) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat T1, KT Rolster, KT Rolster) (lost to T1) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Hanwha Life Esports the number hasn't priced.",
       "awayTeam": "Dplus KIA",
-      "homeTeam": "Hanwha Life Esports"
+      "homeTeam": "Hanwha Life Esports",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Dplus KIA 2-0 DN SOOPers Challengers \u00b7 final"
     }
   ]
 }
