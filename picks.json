@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T16:09:08Z",
+  "updated": "2026-08-20T20:00:45Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10705,6 +10705,23 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "Bushido Wildcats 2-1 Raccoons \u00b7 final"
+    },
+    {
+      "id": "2game-esports-ml-0820",
+      "date": "2026-08-20",
+      "sport": "valorant",
+      "desc": "2GAME Esports ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 PM ET",
+      "vs": "Sentinels",
+      "team": "2GAME Esports",
+      "opp": "Sentinels",
+      "analysis": "2-3 last 5 (beat Shopify Rebellion Black, Contra) (lost to FURIA Esports) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 2-3 last 5 (beat Shopify Rebellion Black, Contra) (lost to FURIA Esports) vs 1-4 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches ",
+      "awayTeam": "2GAME Esports",
+      "homeTeam": "Sentinels"
     }
   ]
 }
