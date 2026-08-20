@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T16:00:56Z",
+  "updated": "2026-08-20T16:09:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10701,7 +10701,10 @@
       "opp": "Leo Team",
       "analysis": "2-3 last 5 (beat Raccoons, Endless Journey) (lost to Honv\u00e9d) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat Raccoons, Endless Journey) (lost to Honv\u00e9d) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
       "awayTeam": "Bushido Wildcats",
-      "homeTeam": "Leo Team"
+      "homeTeam": "Leo Team",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Bushido Wildcats 2-1 Raccoons \u00b7 final"
     }
   ]
 }
