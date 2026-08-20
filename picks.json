@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T07:49:08Z",
+  "updated": "2026-08-20T08:00:52Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10591,6 +10591,40 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "Dplus KIA 2-0 DN SOOPers Challengers \u00b7 final"
+    },
+    {
+      "id": "team-falcons-ml-0820",
+      "date": "2026-08-20",
+      "sport": "cs2",
+      "desc": "Team Falcons ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "TheMongolz",
+      "team": "Team Falcons",
+      "opp": "TheMongolz",
+      "analysis": "4-1 last 5 (beat Astralis, K27, FURIA) (lost to 100 Thieves) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Astralis, K27, FURIA) (lost to 100 Thieves) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
+      "awayTeam": "Team Falcons",
+      "homeTeam": "TheMongolz"
+    },
+    {
+      "id": "ctbc-flying-oyster-ml-0820",
+      "date": "2026-08-20",
+      "sport": "lol",
+      "desc": "CTBC Flying Oyster ML",
+      "market": "LCP Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "MVK Esports",
+      "team": "CTBC Flying Oyster",
+      "opp": "MVK Esports",
+      "analysis": "4-1 last 5 (beat Team Secret Whales, MVK Esports, Ground Zero Gaming) (lost to Team Secret Whales) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Team Secret Whales, MVK Esports, Ground Zero Gaming) (lost to Team Secret Whales) vs 3-2 \u2014 model line -265 (our 73%). Ride the",
+      "awayTeam": "CTBC Flying Oyster",
+      "homeTeam": "MVK Esports"
     }
   ]
 }
