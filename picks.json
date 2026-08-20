@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T12:49:07Z",
+  "updated": "2026-08-20T16:00:56Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10634,6 +10634,74 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "CTBC Flying Oyster 3-0 MVK Esports \u00b7 final"
+    },
+    {
+      "id": "g2-ml-0820",
+      "date": "2026-08-20",
+      "sport": "cs2",
+      "desc": "G2 ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "12:10 PM ET",
+      "vs": "FURIA",
+      "team": "G2",
+      "opp": "FURIA",
+      "analysis": "4-1 last 5 (beat Astralis, BIG, M80) (lost to Liquid) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Astralis, BIG, M80) (lost to Liquid) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
+      "awayTeam": "G2",
+      "homeTeam": "FURIA"
+    },
+    {
+      "id": "younglings-ml-0820",
+      "date": "2026-08-20",
+      "sport": "cs2",
+      "desc": "Younglings ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:15 PM ET",
+      "vs": "FORZE Reload",
+      "team": "Younglings",
+      "opp": "FORZE Reload",
+      "analysis": "4-1 last 5 (beat IMHOWeRGOAT, EmberKoca, ZOTIX) (lost to ENRAGE) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat IMHOWeRGOAT, EmberKoca, ZOTIX) (lost to ENRAGE) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
+      "awayTeam": "Younglings",
+      "homeTeam": "FORZE Reload"
+    },
+    {
+      "id": "fut-esports-ml-0820",
+      "date": "2026-08-20",
+      "sport": "valorant",
+      "desc": "FUT Esports ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 PM ET",
+      "vs": "Team Liquid",
+      "team": "FUT Esports",
+      "opp": "Team Liquid",
+      "analysis": "4-1 last 5 (beat Eternal Fire, GIANTX, BBL Esports) (lost to Team Vitality) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Eternal Fire, GIANTX, BBL Esports) (lost to Team Vitality) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Team Liquid the number hasn'",
+      "awayTeam": "FUT Esports",
+      "homeTeam": "Team Liquid"
+    },
+    {
+      "id": "bushido-wildcats-ml-0820",
+      "date": "2026-08-20",
+      "sport": "cs2",
+      "desc": "Bushido Wildcats ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "Leo Team",
+      "team": "Bushido Wildcats",
+      "opp": "Leo Team",
+      "analysis": "2-3 last 5 (beat Raccoons, Endless Journey) (lost to Honv\u00e9d) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat Raccoons, Endless Journey) (lost to Honv\u00e9d) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
+      "awayTeam": "Bushido Wildcats",
+      "homeTeam": "Leo Team"
     }
   ]
 }
