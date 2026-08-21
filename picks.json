@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T19:29:08Z",
+  "updated": "2026-08-21T20:00:44Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10831,6 +10831,40 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "Team Vitality 2-1 Natus Vincere \u00b7 final"
+    },
+    {
+      "id": "mibr-ml-0821",
+      "date": "2026-08-21",
+      "sport": "valorant",
+      "desc": "MIBR ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 PM ET",
+      "vs": "Team Envy",
+      "team": "MIBR",
+      "opp": "Team Envy",
+      "analysis": "4-1 last 5 (beat KR\u00dc Esports, Evil Geniuses, FURIA Esports) (lost to Leviat\u00e1n Esports) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat KR\u00dc Esports, Evil Geniuses, FURIA Esports) (lost to Leviat\u00e1n Esports) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 poin",
+      "awayTeam": "MIBR",
+      "homeTeam": "Team Envy"
+    },
+    {
+      "id": "vitalem-aerem-ml-0821",
+      "date": "2026-08-21",
+      "sport": "cs2",
+      "desc": "Vitalem Aerem ML",
+      "market": "Moscow Cyber Games Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 AM ET",
+      "vs": "Chinggis Warriors",
+      "team": "Vitalem Aerem",
+      "opp": "Chinggis Warriors",
+      "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **10 points** of model edge, taken.",
+      "awayTeam": "Vitalem Aerem",
+      "homeTeam": "Chinggis Warriors"
     }
   ]
 }
