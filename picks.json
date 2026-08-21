@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T09:49:06Z",
+  "updated": "2026-08-21T12:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10788,6 +10788,23 @@
       "analysis": "4-1 last 5 (beat Lavked, ENJOY, Esport BERG) (lost to Permitta Esports) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat Lavked, ENJOY, Esport BERG) (lost to Permitta Esports) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the better side win",
       "awayTeam": "HAVU",
       "homeTeam": "GenOne"
+    },
+    {
+      "id": "ex-zero-tenacity-ml-0821",
+      "date": "2026-08-21",
+      "sport": "cs2",
+      "desc": "ex-Zero Tenacity ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "MASONIC",
+      "team": "ex-Zero Tenacity",
+      "opp": "MASONIC",
+      "analysis": "4-1 last 5 (beat ENJOY, G2 Ares, Vexar) (lost to Benched gods) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ENJOY, G2 Ares, Vexar) (lost to Benched gods) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
+      "awayTeam": "ex-Zero Tenacity",
+      "homeTeam": "MASONIC"
     }
   ]
 }
