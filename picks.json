@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T20:00:44Z",
+  "updated": "2026-08-21T23:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10847,7 +10847,10 @@
       "opp": "Team Envy",
       "analysis": "4-1 last 5 (beat KR\u00dc Esports, Evil Geniuses, FURIA Esports) (lost to Leviat\u00e1n Esports) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat KR\u00dc Esports, Evil Geniuses, FURIA Esports) (lost to Leviat\u00e1n Esports) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 poin",
       "awayTeam": "MIBR",
-      "homeTeam": "Team Envy"
+      "homeTeam": "Team Envy",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "MIBR 2-1 Team Envy \u00b7 final"
     },
     {
       "id": "vitalem-aerem-ml-0821",
