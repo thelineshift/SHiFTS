@@ -28799,40 +28799,27 @@
       "qty": 16,
       "market_slug": "aec-valorant-kr-w7m-2026-08-21",
       "outcome": "Fluxo W7M",
-      "status": "open",
+      "status": "settled",
       "ts": "2026-08-20T23:20:14Z",
-      "price_path": [
-        {
-          "ts": 1787269142,
-          "px": 0.24
-        },
-        {
-          "ts": 1787270942,
-          "px": 0.17
-        },
-        {
-          "ts": 1787272742,
-          "px": 0.2
-        },
-        {
-          "ts": 1787274542,
-          "px": 0.22
-        }
-      ]
+      "result": "LOSS",
+      "payout": 0.0,
+      "settled_at": "2026-08-21T01:19:02Z",
+      "pnl": -5.44,
+      "autopsy": "model 49% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, rode to 0.22 before the result \u2014 beat the number by 12\u00a2 \u2705"
     }
   ],
   "pm_stats": {
     "start": 50.0,
     "wins": 52,
-    "losses": 125,
-    "pnl": -126.67,
+    "losses": 126,
+    "pnl": -132.11,
     "trades": 486,
     "last_recap": "2026-08-20",
     "last_recap_hour": "2026-08-21-00",
     "deposits": 100.0,
     "deposits_since": "2026-07-24",
-    "account": 16.26,
-    "net": -83.74,
+    "account": 10.82,
+    "net": -89.18,
     "last_archive": "2026-08-21",
     "kind_totals": {
       "ARB": [
@@ -28842,7 +28829,7 @@
       ],
       "EDGE": [
         43,
-        107,
+        108,
         0
       ],
       "LIVE-BET": [
@@ -28872,14 +28859,6 @@
   },
   "x_purge_complete": 1785987483.5464416,
   "pm_lessons": [
-    {
-      "ts": "2026-07-29T23:09:01Z",
-      "kind": "EDGE",
-      "outcome": "Rostik Team",
-      "result": "LOSS",
-      "pnl": -1.32,
-      "lesson": "model 57% vs market 44% missed \u2014 logged for the playbook review. Taken 0.44, slid to 0.31 before the result \u2014 the number ran 13\u00a2 against us \u26a0\ufe0f"
-    },
     {
       "ts": "2026-07-30T00:09:04Z",
       "kind": "EDGE",
@@ -29111,6 +29090,14 @@
       "result": "LOSS",
       "pnl": -1.8,
       "lesson": "model 43% vs market 36% missed \u2014 logged for the playbook review. Taken 0.36, slid to 0.01 before the result \u2014 the number ran 36\u00a2 against us \u26a0\ufe0f"
+    },
+    {
+      "ts": "2026-08-21T01:19:02Z",
+      "kind": "EDGE",
+      "outcome": "Fluxo W7M",
+      "result": "LOSS",
+      "pnl": -5.44,
+      "lesson": "model 49% vs market 34% missed \u2014 logged for the playbook review. Taken 0.34, rode to 0.22 before the result \u2014 beat the number by 12\u00a2 \u2705"
     }
   ],
   "giveaway_x_posts": [
@@ -29195,7 +29182,7 @@
     "used": 0
   },
   "deepdive_last": "2026-08-15",
-  "dep_checked_ts": 1787270642.5344822,
+  "dep_checked_ts": 1787275142.9547095,
   "x_bio_v": 2,
   "op_cool_until": 1787055316.4517407,
   "x_ads": []
