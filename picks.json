@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T14:09:07Z",
+  "updated": "2026-08-21T16:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10808,6 +10808,23 @@
       "analysis": "4-1 last 5 (beat ENJOY, G2 Ares, Vexar) (lost to Benched gods) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ENJOY, G2 Ares, Vexar) (lost to Benched gods) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
       "awayTeam": "ex-Zero Tenacity",
       "homeTeam": "MASONIC"
+    },
+    {
+      "id": "team-vitality-ml-0821",
+      "date": "2026-08-21",
+      "sport": "lol",
+      "desc": "Team Vitality ML",
+      "market": "LEC Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:15 PM ET",
+      "vs": "Natus Vincere",
+      "team": "Team Vitality",
+      "opp": "Natus Vincere",
+      "analysis": "4-1 last 5 (beat GIANTX, SK Gaming, Team Heretics) (lost to G2 Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat GIANTX, SK Gaming, Team Heretics) (lost to G2 Esports) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Natus Vincere the number hasn't pric",
+      "awayTeam": "Team Vitality",
+      "homeTeam": "Natus Vincere"
     }
   ]
 }
