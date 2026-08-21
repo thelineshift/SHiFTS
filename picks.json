@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T04:00:50Z",
+  "updated": "2026-08-21T06:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10764,7 +10764,10 @@
       "opp": "Gen.G Global Academy",
       "analysis": "2-3 last 5 (beat Hanwha Life Esports Challengers, HANJIN BRION Challengers) (lost to HANJIN BRION Challengers) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat Hanwha Life Esports Challengers, HANJIN BRION Challengers) (lost to HANJIN BRION Challengers) vs 1-4 \u2014 model line -",
       "awayTeam": "BNK FearX Youth",
-      "homeTeam": "Gen.G Global Academy"
+      "homeTeam": "Gen.G Global Academy",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "BNK FearX Youth 2-0 Gen.G Global Academy \u00b7 final"
     }
   ]
 }
