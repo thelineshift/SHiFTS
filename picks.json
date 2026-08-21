@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T23:09:06Z",
+  "updated": "2026-08-21T04:00:50Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10731,6 +10731,40 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "2GAME Esports 0-2 Sentinels \u00b7 final"
+    },
+    {
+      "id": "bilibili-gaming-ml-0821",
+      "date": "2026-08-21",
+      "sport": "valorant",
+      "desc": "Bilibili Gaming ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "JD Gaming",
+      "team": "Bilibili Gaming",
+      "opp": "JD Gaming",
+      "analysis": "4-1 last 5 (beat XLG Gaming, Trace Esports, XLG Gaming) (lost to Nova Esports) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat XLG Gaming, Trace Esports, XLG Gaming) (lost to Nova Esports) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the b",
+      "awayTeam": "Bilibili Gaming",
+      "homeTeam": "JD Gaming"
+    },
+    {
+      "id": "bnk-fearx-youth-ml-0821",
+      "date": "2026-08-21",
+      "sport": "lol",
+      "desc": "BNK FearX Youth ML",
+      "market": "LCK Challengers League Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 AM ET",
+      "vs": "Gen.G Global Academy",
+      "team": "BNK FearX Youth",
+      "opp": "Gen.G Global Academy",
+      "analysis": "2-3 last 5 (beat Hanwha Life Esports Challengers, HANJIN BRION Challengers) (lost to HANJIN BRION Challengers) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat Hanwha Life Esports Challengers, HANJIN BRION Challengers) (lost to HANJIN BRION Challengers) vs 1-4 \u2014 model line -",
+      "awayTeam": "BNK FearX Youth",
+      "homeTeam": "Gen.G Global Academy"
     }
   ]
 }
