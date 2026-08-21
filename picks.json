@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T16:00:55Z",
+  "updated": "2026-08-21T16:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10807,7 +10807,10 @@
       "opp": "MASONIC",
       "analysis": "4-1 last 5 (beat ENJOY, G2 Ares, Vexar) (lost to Benched gods) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat ENJOY, G2 Ares, Vexar) (lost to Benched gods) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
       "awayTeam": "ex-Zero Tenacity",
-      "homeTeam": "MASONIC"
+      "homeTeam": "MASONIC",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "ex-Zero Tenacity 2-0 MASONIC \u00b7 final"
     },
     {
       "id": "team-vitality-ml-0821",
