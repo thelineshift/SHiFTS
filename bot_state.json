@@ -28815,11 +28815,11 @@
     "pnl": -132.11,
     "trades": 486,
     "last_recap": "2026-08-20",
-    "last_recap_hour": "2026-08-21-00",
+    "last_recap_hour": "2026-08-21-02",
     "deposits": 100.0,
     "deposits_since": "2026-07-24",
-    "account": 10.82,
-    "net": -89.18,
+    "account": 0.26,
+    "net": -99.74,
     "last_archive": "2026-08-21",
     "kind_totals": {
       "ARB": [
