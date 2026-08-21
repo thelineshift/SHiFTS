@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T08:01:02Z",
+  "updated": "2026-08-21T09:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10747,7 +10747,10 @@
       "opp": "JD Gaming",
       "analysis": "4-1 last 5 (beat XLG Gaming, Trace Esports, XLG Gaming) (lost to Nova Esports) vs 3-2 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 4-1 last 5 (beat XLG Gaming, Trace Esports, XLG Gaming) (lost to Nova Esports) vs 3-2 \u2014 model line -265 (our 73%). When the form gap runs **20 points** wide, the b",
       "awayTeam": "Bilibili Gaming",
-      "homeTeam": "JD Gaming"
+      "homeTeam": "JD Gaming",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Bilibili Gaming 0-2 JD Gaming \u00b7 final"
     },
     {
       "id": "bnk-fearx-youth-ml-0821",
