@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T16:09:09Z",
+  "updated": "2026-08-21T19:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10827,7 +10827,10 @@
       "opp": "Natus Vincere",
       "analysis": "4-1 last 5 (beat GIANTX, SK Gaming, Team Heretics) (lost to G2 Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat GIANTX, SK Gaming, Team Heretics) (lost to G2 Esports) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Natus Vincere the number hasn't pric",
       "awayTeam": "Team Vitality",
-      "homeTeam": "Natus Vincere"
+      "homeTeam": "Natus Vincere",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Team Vitality 2-1 Natus Vincere \u00b7 final"
     }
   ]
 }
