@@ -1,20 +1,14 @@
 {
-  "updated": "2026-08-21T00:04:05Z",
-  "record": "52-125",
+  "updated": "2026-08-21T02:04:02Z",
+  "record": "52-126",
   "trades": 486,
-  "open": 1,
-  "pnl": -126.67,
-  "account": 16.26,
+  "open": 0,
+  "pnl": -132.11,
+  "account": 0.26,
   "deposits": 100.0,
-  "net_pnl": -83.74,
-  "playbooks": "ARB 3-5 \u00b7 EDGE 43-107 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
+  "net_pnl": -99.74,
+  "playbooks": "ARB 3-5 \u00b7 EDGE 43-108 \u00b7 LIVE-BET 2-7 \u00b7 TAIL 4-3",
   "recent": [
-    {
-      "outcome": "DetonatioN FocusMe",
-      "short": true,
-      "result": "won",
-      "pnl": 5.13
-    },
     {
       "outcome": "Hanwha Life Esports",
       "short": false,
@@ -44,6 +38,12 @@
       "short": false,
       "result": "lost",
       "pnl": -0.55
+    },
+    {
+      "outcome": "Fluxo W7M",
+      "short": true,
+      "result": "lost",
+      "pnl": -5.44
     }
   ],
   "store": "https://thelineshift.github.io/SHiFTS/upgrade.html"
