@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T10:29:08Z",
+  "updated": "2026-08-22T12:00:59Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10928,6 +10928,40 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "WRAITH PCIFIC 2-0 Bebop \u00b7 final"
+    },
+    {
+      "id": "forze-reload-ml-0822",
+      "date": "2026-08-22",
+      "sport": "cs2",
+      "desc": "FORZE Reload ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "11:30 AM ET",
+      "vs": "maybe",
+      "team": "FORZE Reload",
+      "opp": "maybe",
+      "analysis": "4-1 last 5 (beat Younglings, 300FPS, TrafficPills Esports) (lost to Revise) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Younglings, 300FPS, TrafficPills Esports) (lost to Revise) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over maybe the number hasn't pric",
+      "awayTeam": "FORZE Reload",
+      "homeTeam": "maybe"
+    },
+    {
+      "id": "eintracht-frankfurt-ml-0822",
+      "date": "2026-08-22",
+      "sport": "valorant",
+      "desc": "Eintracht Frankfurt ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "Team Liquid",
+      "team": "Eintracht Frankfurt",
+      "opp": "Team Liquid",
+      "analysis": "4-1 last 5 (beat Eternal Fire, Team Heretics, Gentle Mates) (lost to GIANTX) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Eternal Fire, Team Heretics, Gentle Mates) (lost to GIANTX) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market ca",
+      "awayTeam": "Eintracht Frankfurt",
+      "homeTeam": "Team Liquid"
     }
   ]
 }
