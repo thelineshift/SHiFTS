@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T23:49:07Z",
+  "updated": "2026-08-22T00:00:44Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10855,6 +10855,23 @@
     {
       "id": "vitalem-aerem-ml-0821",
       "date": "2026-08-21",
+      "sport": "cs2",
+      "desc": "Vitalem Aerem ML",
+      "market": "Moscow Cyber Games Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 AM ET",
+      "vs": "Chinggis Warriors",
+      "team": "Vitalem Aerem",
+      "opp": "Chinggis Warriors",
+      "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **10 points** of model edge, taken.",
+      "awayTeam": "Vitalem Aerem",
+      "homeTeam": "Chinggis Warriors"
+    },
+    {
+      "id": "vitalem-aerem-ml-0822",
+      "date": "2026-08-22",
       "sport": "cs2",
       "desc": "Vitalem Aerem ML",
       "market": "Moscow Cyber Games Bo3",
