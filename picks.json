@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T12:00:59Z",
+  "updated": "2026-08-22T16:00:55Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10962,6 +10962,23 @@
       "analysis": "4-1 last 5 (beat Eternal Fire, Team Heretics, Gentle Mates) (lost to GIANTX) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Eternal Fire, Team Heretics, Gentle Mates) (lost to GIANTX) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market ca",
       "awayTeam": "Eintracht Frankfurt",
       "homeTeam": "Team Liquid"
+    },
+    {
+      "id": "imhowergoat-ml-0822",
+      "date": "2026-08-22",
+      "sport": "cs2",
+      "desc": "IMHOWeRGOAT ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:15 PM ET",
+      "vs": "Younglings",
+      "team": "IMHOWeRGOAT",
+      "opp": "Younglings",
+      "analysis": "4-1 last 5 (beat Nordic Valor, 300FPS, Aritmije) (lost to Younglings) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Nordic Valor, 300FPS, Aritmije) (lost to Younglings) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
+      "awayTeam": "IMHOWeRGOAT",
+      "homeTeam": "Younglings"
     }
   ]
 }
