@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T09:49:08Z",
+  "updated": "2026-08-22T10:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10904,7 +10904,10 @@
       "opp": "UU Gamers",
       "analysis": "4-1 last 5 (beat WLT Esports Club, JA Gaming, Mighty Tiger Gaming) (lost to Titan King's Legion) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 4-1 last 5 (beat WLT Esports Club, JA Gaming, Mighty Tiger Gaming) (lost to Titan King's Legion) vs 3-2 \u2014 model line -265 (our 73%). The book shaded",
       "awayTeam": "LT Gaming",
-      "homeTeam": "UU Gamers"
+      "homeTeam": "UU Gamers",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "LT Gaming 0-3 UU Gamers \u00b7 final"
     },
     {
       "id": "wraith-pcific-ml-0822",
