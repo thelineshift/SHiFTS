@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T00:00:44Z",
+  "updated": "2026-08-22T04:00:50Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10885,6 +10885,23 @@
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **10 points** of model edge, taken.",
       "awayTeam": "Vitalem Aerem",
       "homeTeam": "Chinggis Warriors"
+    },
+    {
+      "id": "lt-gaming-ml-0822",
+      "date": "2026-08-22",
+      "sport": "kog",
+      "desc": "LT Gaming ML",
+      "market": "KPL Growth League Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "UU Gamers",
+      "team": "LT Gaming",
+      "opp": "UU Gamers",
+      "analysis": "4-1 last 5 (beat WLT Esports Club, JA Gaming, Mighty Tiger Gaming) (lost to Titan King's Legion) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcb0 **Value hunt:** 4-1 last 5 (beat WLT Esports Club, JA Gaming, Mighty Tiger Gaming) (lost to Titan King's Legion) vs 3-2 \u2014 model line -265 (our 73%). The book shaded",
+      "awayTeam": "LT Gaming",
+      "homeTeam": "UU Gamers"
     }
   ]
 }
