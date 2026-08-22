@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T18:09:07Z",
+  "updated": "2026-08-22T20:00:46Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10985,6 +10985,23 @@
       "analysis": "4-1 last 5 (beat Nordic Valor, 300FPS, Aritmije) (lost to Younglings) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Nordic Valor, 300FPS, Aritmije) (lost to Younglings) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
       "awayTeam": "IMHOWeRGOAT",
       "homeTeam": "Younglings"
+    },
+    {
+      "id": "bestia-ml-0822",
+      "date": "2026-08-22",
+      "sport": "valorant",
+      "desc": "BESTIA ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 PM ET",
+      "vs": "G2 Esports",
+      "team": "BESTIA",
+      "opp": "G2 Esports",
+      "analysis": "4-1 last 5 (beat Cloud9, Contra, KR\u00dc Spark) (lost to KR\u00dc Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Cloud9, Contra, KR\u00dc Spark) (lost to KR\u00dc Esports) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
+      "awayTeam": "BESTIA",
+      "homeTeam": "G2 Esports"
     }
   ]
 }
