@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T16:00:55Z",
+  "updated": "2026-08-22T16:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10961,7 +10961,10 @@
       "opp": "Team Liquid",
       "analysis": "4-1 last 5 (beat Eternal Fire, Team Heretics, Gentle Mates) (lost to GIANTX) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Eternal Fire, Team Heretics, Gentle Mates) (lost to GIANTX) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market ca",
       "awayTeam": "Eintracht Frankfurt",
-      "homeTeam": "Team Liquid"
+      "homeTeam": "Team Liquid",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Eintracht Frankfurt 1-2 Team Liquid \u00b7 final"
     },
     {
       "id": "imhowergoat-ml-0822",
