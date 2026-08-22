@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T16:09:07Z",
+  "updated": "2026-08-22T18:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10944,7 +10944,10 @@
       "opp": "maybe",
       "analysis": "4-1 last 5 (beat Younglings, 300FPS, TrafficPills Esports) (lost to Revise) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Younglings, 300FPS, TrafficPills Esports) (lost to Revise) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over maybe the number hasn't pric",
       "awayTeam": "FORZE Reload",
-      "homeTeam": "maybe"
+      "homeTeam": "maybe",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "FORZE Reload 0-2 Nemiga \u00b7 final"
     },
     {
       "id": "eintracht-frankfurt-ml-0822",
