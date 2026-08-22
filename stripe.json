@@ -1,32 +1,12 @@
 {
-  "updated": "2026-08-22T17:59:02Z",
+  "updated": "2026-08-22T18:31:02Z",
   "funnel_30d": {
-    "started": 11,
+    "started": 7,
     "completed": 0,
-    "abandoned": 11,
+    "abandoned": 7,
     "conversion_pct": 0.0
   },
   "abandoned_recent": [
-    {
-      "status": "expired",
-      "tier": "whale",
-      "created": "2026-07-23 18:21"
-    },
-    {
-      "status": "expired",
-      "tier": "whale",
-      "created": "2026-07-23 18:21"
-    },
-    {
-      "status": "expired",
-      "tier": "whale",
-      "created": "2026-07-23 18:21"
-    },
-    {
-      "status": "expired",
-      "tier": "whale",
-      "created": "2026-07-23 18:21"
-    },
     {
       "status": "expired",
       "tier": "whale",
@@ -50,6 +30,11 @@
     {
       "status": "expired",
       "tier": "unknown",
+      "created": "2026-07-25 22:01"
+    },
+    {
+      "status": "expired",
+      "tier": "whale",
       "created": "2026-07-25 22:01"
     },
     {
