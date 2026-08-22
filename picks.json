@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T20:00:46Z",
+  "updated": "2026-08-22T20:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10984,7 +10984,10 @@
       "opp": "Younglings",
       "analysis": "4-1 last 5 (beat Nordic Valor, 300FPS, Aritmije) (lost to Younglings) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Nordic Valor, 300FPS, Aritmije) (lost to Younglings) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
       "awayTeam": "IMHOWeRGOAT",
-      "homeTeam": "Younglings"
+      "homeTeam": "Younglings",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "IMHOWeRGOAT 1-2 Younglings \u00b7 final"
     },
     {
       "id": "bestia-ml-0822",
