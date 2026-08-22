@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T08:00:59Z",
+  "updated": "2026-08-22T08:09:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10884,7 +10884,10 @@
       "opp": "Chinggis Warriors",
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). Books hang respect on the wrong side \u2014 **10 points** of model edge, taken.",
       "awayTeam": "Vitalem Aerem",
-      "homeTeam": "Chinggis Warriors"
+      "homeTeam": "Chinggis Warriors",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "Vitalem Aerem 2-0 Chinggis Warriors \u00b7 final"
     },
     {
       "id": "lt-gaming-ml-0822",
