@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T08:09:08Z",
+  "updated": "2026-08-22T09:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -10921,7 +10921,10 @@
       "opp": "Bebop",
       "analysis": "2-3 last 5 (beat Fire Flux Esports, Entropy) (lost to Drip Too Hard) vs 1-4 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 2-3 last 5 (beat Fire Flux Esports, Entropy) (lost to Drip Too Hard) vs 1-4 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, t",
       "awayTeam": "WRAITH PCIFIC",
-      "homeTeam": "Bebop"
+      "homeTeam": "Bebop",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "WRAITH PCIFIC 2-0 Bebop \u00b7 final"
     }
   ]
 }
