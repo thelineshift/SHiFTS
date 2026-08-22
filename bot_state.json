@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "eintracht-frankfurt-ml-0822",
+      "desc": "Eintracht Frankfurt ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "Eintracht Frankfurt 1-2 Team Liquid \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-18",
   "scan_events": {
