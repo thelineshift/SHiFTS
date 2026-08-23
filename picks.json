@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T22:49:08Z",
+  "updated": "2026-08-23T04:00:57Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11008,6 +11008,40 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "BESTIA 0-2 G2 Esports \u00b7 final"
+    },
+    {
+      "id": "furia-ml-0823",
+      "date": "2026-08-23",
+      "sport": "cs2",
+      "desc": "FURIA ML",
+      "market": "Esports World Cup Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Legacy",
+      "team": "FURIA",
+      "opp": "Legacy",
+      "analysis": "4-1 last 5 (beat G2, Aurora Gaming, 9z) (lost to FUT Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat G2, Aurora Gaming, 9z) (lost to FUT Esports) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
+      "awayTeam": "FURIA",
+      "homeTeam": "Legacy"
+    },
+    {
+      "id": "kuaishou-gaming-ml-0823",
+      "date": "2026-08-23",
+      "sport": "kog",
+      "desc": "Kuaishou Gaming ML",
+      "market": "King Pro League Bo5",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 AM ET",
+      "vs": "LGD NBW",
+      "team": "Kuaishou Gaming",
+      "opp": "LGD NBW",
+      "analysis": "2-3 last 5 (beat AG.AL, Geekay Esports) (lost to Hero JiuJing) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat AG.AL, Geekay Esports) (lost to Hero JiuJing) vs 1-4 \u2014 model line -265 (our 73%). Kuaishou Gaming in the better spot and priced like it isn't \u2014 **20-point** edge.",
+      "awayTeam": "Kuaishou Gaming",
+      "homeTeam": "LGD NBW"
     }
   ]
 }
