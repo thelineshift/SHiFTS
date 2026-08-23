@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T08:00:57Z",
+  "updated": "2026-08-23T08:09:11Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11041,7 +11041,10 @@
       "opp": "LGD NBW",
       "analysis": "2-3 last 5 (beat AG.AL, Geekay Esports) (lost to Hero JiuJing) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat AG.AL, Geekay Esports) (lost to Hero JiuJing) vs 1-4 \u2014 model line -265 (our 73%). Kuaishou Gaming in the better spot and priced like it isn't \u2014 **20-point** edge.",
       "awayTeam": "Kuaishou Gaming",
-      "homeTeam": "LGD NBW"
+      "homeTeam": "LGD NBW",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Kuaishou Gaming 1-3 LGD NBW \u00b7 final"
     },
     {
       "id": "wbt-ml-0823",
