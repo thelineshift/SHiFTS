@@ -1,17 +1,17 @@
 {
-  "updated": "2026-08-22T14:29:02Z",
+  "updated": "2026-08-23T02:29:02Z",
   "tally_30d": {
     "lock": {
-      "units": 0.02,
-      "plays": 8
+      "units": 2.11,
+      "plays": 4
     },
     "sharp": {
-      "units": -2.42,
-      "plays": 14
+      "units": -2.73,
+      "plays": 7
     },
     "whale": {
-      "units": -1.52,
-      "plays": 25
+      "units": -2.84,
+      "plays": 20
     }
   },
   "honored": [],
