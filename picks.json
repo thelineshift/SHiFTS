@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T11:09:10Z",
+  "updated": "2026-08-23T12:00:56Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11082,6 +11082,40 @@
       "analysis": "4-1 last 5 (beat Top Esports, LGD Gaming, Team WE) (lost to JD Gaming) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Top Esports, LGD Gaming, Team WE) (lost to JD Gaming) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Anyone's Legend the number hasn't pric",
       "awayTeam": "Bilibili Gaming",
       "homeTeam": "Anyone's Legend"
+    },
+    {
+      "id": "ex-rustec-ml-0823",
+      "date": "2026-08-23",
+      "sport": "cs2",
+      "desc": "ex-RUSTEC ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "GenOne",
+      "team": "ex-RUSTEC",
+      "opp": "GenOne",
+      "analysis": "4-1 last 5 (beat Black Phoenix, Leo Team, Noir Verse) (lost to ex-Zero Tenacity) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Black Phoenix, Leo Team, Noir Verse) (lost to ex-Zero Tenacity) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 p",
+      "awayTeam": "ex-RUSTEC",
+      "homeTeam": "GenOne"
+    },
+    {
+      "id": "enterprise-esports-ml-0823",
+      "date": "2026-08-23",
+      "sport": "valorant",
+      "desc": "Enterprise Esports ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "10:00 AM ET",
+      "vs": "Team Liquid",
+      "team": "Enterprise Esports",
+      "opp": "Team Liquid",
+      "analysis": "4-1 last 5 (beat Team Vitality, Fire Flux Esports, Gentle Mates) (lost to Karmine Corp) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Team Vitality, Fire Flux Esports, Gentle Mates) (lost to Karmine Corp) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edg",
+      "awayTeam": "Enterprise Esports",
+      "homeTeam": "Team Liquid"
     }
   ]
 }
