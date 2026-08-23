@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T12:00:56Z",
+  "updated": "2026-08-23T13:49:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11064,7 +11064,10 @@
       "opp": "Noir Verse",
       "analysis": "4-1 last 5 (beat MORROW, LPH Gaming, Mai Tai) (lost to mellren) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat MORROW, LPH Gaming, Mai Tai) (lost to mellren) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
       "awayTeam": "WBT",
-      "homeTeam": "Noir Verse"
+      "homeTeam": "Noir Verse",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "WBT 2-1 Noir Verse \u00b7 final"
     },
     {
       "id": "bilibili-gaming-ml-0823",
