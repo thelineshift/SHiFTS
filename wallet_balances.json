@@ -1,5 +1,74 @@
 {
-  "ts": "2026-08-23T08:59:01Z",
-  "wallets": [],
-  "error": "HTTP Error 429: Too Many Requests"
+  "ts": "2026-08-23T09:14:01Z",
+  "wallets": [
+    {
+      "chain": "solana",
+      "symbol": "SOL",
+      "label": "\ud83c\udf81 GIVEAWAY WALLET",
+      "address": "5rw9dnpwi9ER6MQf3yL9obKyM3PSjxd4w9AvzqwW6nG3",
+      "note": "weekly SOL giveaway prizes pay out from here",
+      "balance": 0.08883,
+      "usd": 8.29
+    },
+    {
+      "chain": "solana",
+      "symbol": "SOL",
+      "label": "\ud83d\udcbc OPS WALLET",
+      "address": "CXMSPuotirZU1shtrVL21SiobsDyXf7m7CYoS2W2kTWj",
+      "note": "crypto subscription revenue (SOL/USDC)",
+      "balance": 0.0,
+      "usd": 0.0
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "ETH/EVM",
+      "label": "\ud83d\udcbc OPS WALLET",
+      "address": "0x54D66ffE2492a015A826bDE45c2F321Cec5751d5",
+      "note": "same address on ETH, Base, Polygon, BSC, Arbitrum",
+      "evm": [
+        {
+          "chain": "ethereum",
+          "symbol": "ETH",
+          "balance": 0.0,
+          "usd": 0.0
+        },
+        {
+          "chain": "base",
+          "symbol": "ETH",
+          "balance": 0.0,
+          "usd": 0.0
+        },
+        {
+          "chain": "polygon",
+          "symbol": "POL",
+          "balance": 0.0,
+          "usd": 0.0,
+          "usdc": 0
+        },
+        {
+          "chain": "bsc",
+          "symbol": "BNB",
+          "balance": 0.0,
+          "usd": 0.0
+        },
+        {
+          "chain": "arbitrum",
+          "symbol": "ETH",
+          "balance": 0.0,
+          "usd": 0.0
+        }
+      ],
+      "balance": null,
+      "usd": 0.0
+    },
+    {
+      "chain": "bitcoin",
+      "symbol": "BTC",
+      "label": "\ud83d\udcbc OPS WALLET",
+      "address": "14C6FDubcA5baeAkCtSzbjENvBVuQGdHrz",
+      "note": "BTC revenue",
+      "balance": 0.0,
+      "usd": 0.0
+    }
+  ]
 }
