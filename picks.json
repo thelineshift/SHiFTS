@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T08:09:11Z",
+  "updated": "2026-08-23T11:09:10Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11024,7 +11024,10 @@
       "opp": "Legacy",
       "analysis": "4-1 last 5 (beat G2, Aurora Gaming, 9z) (lost to FUT Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat G2, Aurora Gaming, 9z) (lost to FUT Esports) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
       "awayTeam": "FURIA",
-      "homeTeam": "Legacy"
+      "homeTeam": "Legacy",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "FURIA 1-2 Legacy \u00b7 final"
     },
     {
       "id": "kuaishou-gaming-ml-0823",
