@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T15:29:08Z",
+  "updated": "2026-08-23T16:00:54Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11122,6 +11122,40 @@
       "analysis": "4-1 last 5 (beat Team Vitality, Fire Flux Esports, Gentle Mates) (lost to Karmine Corp) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Team Vitality, Fire Flux Esports, Gentle Mates) (lost to Karmine Corp) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edg",
       "awayTeam": "Enterprise Esports",
       "homeTeam": "Team Liquid"
+    },
+    {
+      "id": "fire-flux-esports-ml-0823",
+      "date": "2026-08-23",
+      "sport": "valorant",
+      "desc": "Fire Flux Esports ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "BBL Esports",
+      "team": "Fire Flux Esports",
+      "opp": "BBL Esports",
+      "analysis": "4-1 last 5 (beat Team Vitality, Joblife, Team Heretics) (lost to Enterprise Esports) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Team Vitality, Joblife, Team Heretics) (lost to Enterprise Esports) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over BBL Esport",
+      "awayTeam": "Fire Flux Esports",
+      "homeTeam": "BBL Esports"
+    },
+    {
+      "id": "vitalem-aerem-ml-0823",
+      "date": "2026-08-23",
+      "sport": "cs2",
+      "desc": "Vitalem Aerem ML",
+      "market": "Moscow Cyber Games Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 AM ET",
+      "vs": "The Huns Esports",
+      "team": "Vitalem Aerem",
+      "opp": "The Huns Esports",
+      "analysis": "1-1 last 5 (beat Chinggis Warriors) (lost to Rare Atom) vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 1-1 last 5 (beat Chinggis Warriors) (lost to Rare Atom) vs 2-3 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
+      "awayTeam": "Vitalem Aerem",
+      "homeTeam": "The Huns Esports"
     }
   ]
 }
