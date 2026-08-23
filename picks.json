@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T16:00:54Z",
+  "updated": "2026-08-23T16:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11121,7 +11121,10 @@
       "opp": "Team Liquid",
       "analysis": "4-1 last 5 (beat Team Vitality, Fire Flux Esports, Gentle Mates) (lost to Karmine Corp) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Team Vitality, Fire Flux Esports, Gentle Mates) (lost to Karmine Corp) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edg",
       "awayTeam": "Enterprise Esports",
-      "homeTeam": "Team Liquid"
+      "homeTeam": "Team Liquid",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Enterprise Esports 0-2 Team Liquid \u00b7 final"
     },
     {
       "id": "fire-flux-esports-ml-0823",
@@ -11155,7 +11158,10 @@
       "opp": "The Huns Esports",
       "analysis": "1-1 last 5 (beat Chinggis Warriors) (lost to Rare Atom) vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 1-1 last 5 (beat Chinggis Warriors) (lost to Rare Atom) vs 2-3 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "Vitalem Aerem",
-      "homeTeam": "The Huns Esports"
+      "homeTeam": "The Huns Esports",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Vitalem Aerem 1-2 Rare Atom \u00b7 final"
     }
   ]
 }
