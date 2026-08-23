@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T04:00:57Z",
+  "updated": "2026-08-23T08:00:57Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11042,6 +11042,40 @@
       "analysis": "2-3 last 5 (beat AG.AL, Geekay Esports) (lost to Hero JiuJing) vs 1-4 \u2014 model line -265 (our 73%) | \u2694\ufe0f **Matchup read:** 2-3 last 5 (beat AG.AL, Geekay Esports) (lost to Hero JiuJing) vs 1-4 \u2014 model line -265 (our 73%). Kuaishou Gaming in the better spot and priced like it isn't \u2014 **20-point** edge.",
       "awayTeam": "Kuaishou Gaming",
       "homeTeam": "LGD NBW"
+    },
+    {
+      "id": "wbt-ml-0823",
+      "date": "2026-08-23",
+      "sport": "cs2",
+      "desc": "WBT ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Noir Verse",
+      "team": "WBT",
+      "opp": "Noir Verse",
+      "analysis": "4-1 last 5 (beat MORROW, LPH Gaming, Mai Tai) (lost to mellren) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat MORROW, LPH Gaming, Mai Tai) (lost to mellren) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
+      "awayTeam": "WBT",
+      "homeTeam": "Noir Verse"
+    },
+    {
+      "id": "bilibili-gaming-ml-0823",
+      "date": "2026-08-23",
+      "sport": "lol",
+      "desc": "Bilibili Gaming ML",
+      "market": "LPL Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Anyone's Legend",
+      "team": "Bilibili Gaming",
+      "opp": "Anyone's Legend",
+      "analysis": "4-1 last 5 (beat Top Esports, LGD Gaming, Team WE) (lost to JD Gaming) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Top Esports, LGD Gaming, Team WE) (lost to JD Gaming) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Anyone's Legend the number hasn't pric",
+      "awayTeam": "Bilibili Gaming",
+      "homeTeam": "Anyone's Legend"
     }
   ]
 }
