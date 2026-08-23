@@ -13,7 +13,7 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-08-23 21:59 UTC",
+    "at": "2026-08-23 22:29 UTC",
     "flags": []
   },
   "room_pulse": {
@@ -24,7 +24,7 @@
     "\ud83c\udf81giveaway": "2026-08-08 01:41 UTC"
   },
   "resolution_watch": {
-    "at": "2026-08-23 21:59 UTC",
+    "at": "2026-08-23 22:29 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,11 +41,13 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-08-23 21:59 UTC",
-    "flags": []
+    "at": "2026-08-23 22:29 UTC",
+    "flags": [
+      "no challenge bet registered for 2026-08-23 (due 6 PM ET)"
+    ]
   },
   "giveaway_watch": {
-    "at": "2026-08-23 21:59 UTC",
+    "at": "2026-08-23 22:29 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
