@@ -49,26 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "enterprise-esports-ml-0823",
-      "desc": "Enterprise Esports ML",
-      "odds": -265,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Enterprise Esports 0-2 Team Liquid \u00b7 final",
-      "tier": "whale"
-    },
-    {
-      "id": "vitalem-aerem-ml-0823",
-      "desc": "Vitalem Aerem ML",
-      "odds": -150,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Vitalem Aerem 1-2 Rare Atom \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-22",
   "scan_events": {
