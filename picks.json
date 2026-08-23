@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T13:49:08Z",
+  "updated": "2026-08-23T15:29:08Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11084,7 +11084,10 @@
       "opp": "Anyone's Legend",
       "analysis": "4-1 last 5 (beat Top Esports, LGD Gaming, Team WE) (lost to JD Gaming) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Top Esports, LGD Gaming, Team WE) (lost to JD Gaming) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Anyone's Legend the number hasn't pric",
       "awayTeam": "Bilibili Gaming",
-      "homeTeam": "Anyone's Legend"
+      "homeTeam": "Anyone's Legend",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Bilibili Gaming 2-1 Anyone's Legend \u00b7 final"
     },
     {
       "id": "ex-rustec-ml-0823",
