@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "g2-esports-ml-0824",
+      "desc": "G2 Esports ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "G2 Esports 0-2 Deer Gaming \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-23",
   "scan_events": {
