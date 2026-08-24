@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T18:29:08Z",
+  "updated": "2026-08-24T04:00:46Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11168,6 +11168,40 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "Vitalem Aerem 1-2 Rare Atom \u00b7 final"
+    },
+    {
+      "id": "vitalem-aerem-ml-0824",
+      "date": "2026-08-24",
+      "sport": "cs2",
+      "desc": "Vitalem Aerem ML",
+      "market": "Moscow Cyber Games Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "02:00 AM ET",
+      "vs": "The Huns Esports",
+      "team": "Vitalem Aerem",
+      "opp": "The Huns Esports",
+      "analysis": "1-1 last 5 (beat Chinggis Warriors) (lost to Rare Atom) vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 1-1 last 5 (beat Chinggis Warriors) (lost to Rare Atom) vs 2-3 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
+      "awayTeam": "Vitalem Aerem",
+      "homeTeam": "The Huns Esports"
+    },
+    {
+      "id": "not-a-squad-esports-ml-0824",
+      "date": "2026-08-24",
+      "sport": "cs2",
+      "desc": "Not A Squad Esports ML",
+      "market": "IEM Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "06:00 AM ET",
+      "vs": "The Huns Esports",
+      "team": "Not A Squad Esports",
+      "opp": "The Huns Esports",
+      "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this spot more than the price says.",
+      "awayTeam": "Not A Squad Esports",
+      "homeTeam": "The Huns Esports"
     }
   ]
 }
