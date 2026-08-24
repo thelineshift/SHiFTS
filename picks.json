@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T16:09:09Z",
+  "updated": "2026-08-24T17:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11224,7 +11224,10 @@
       "opp": "Nuclear TigeRES",
       "analysis": "4-1 last 5 (beat aimclub, Young TigeRES, mellren) (lost to aimclub) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat aimclub, Young TigeRES, mellren) (lost to aimclub) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Nuclear TigeRES the number hasn't priced.",
       "awayTeam": "Spirit Academy",
-      "homeTeam": "Nuclear TigeRES"
+      "homeTeam": "Nuclear TigeRES",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Spirit Academy 0-1 Nuclear TigeRES \u00b7 final"
     },
     {
       "id": "cybershoke-esports-ml-0824",
