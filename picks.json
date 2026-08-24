@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T16:00:54Z",
+  "updated": "2026-08-24T16:09:09Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11258,7 +11258,10 @@
       "opp": "100 Thieves",
       "analysis": "4-1 last 5 (beat Butterfly, Honv\u00e9d, Vitality Academy) (lost to Lavked) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Butterfly, Honv\u00e9d, Vitality Academy) (lost to Lavked) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over 100 Thieves the number hasn't priced.",
       "awayTeam": "INOX Division",
-      "homeTeam": "100 Thieves"
+      "homeTeam": "100 Thieves",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "INOX Division 2-0 Butterfly \u00b7 final"
     },
     {
       "id": "g2-esports-ml-0824",
