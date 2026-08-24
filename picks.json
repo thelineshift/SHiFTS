@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T12:00:52Z",
+  "updated": "2026-08-24T16:00:54Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11242,6 +11242,40 @@
       "analysis": "4-1 last 5 (beat Butterfly, Black Phoenix, GenOne) (lost to GenOne) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Butterfly, Black Phoenix, GenOne) (lost to GenOne) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
       "awayTeam": "CYBERSHOKE Esports",
       "homeTeam": "ECHO"
+    },
+    {
+      "id": "inox-division-ml-0824",
+      "date": "2026-08-24",
+      "sport": "cs2",
+      "desc": "INOX Division ML",
+      "market": "IEM Bo1",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "12:00 PM ET",
+      "vs": "100 Thieves",
+      "team": "INOX Division",
+      "opp": "100 Thieves",
+      "analysis": "4-1 last 5 (beat Butterfly, Honv\u00e9d, Vitality Academy) (lost to Lavked) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat Butterfly, Honv\u00e9d, Vitality Academy) (lost to Lavked) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over 100 Thieves the number hasn't priced.",
+      "awayTeam": "INOX Division",
+      "homeTeam": "100 Thieves"
+    },
+    {
+      "id": "g2-esports-ml-0824",
+      "date": "2026-08-24",
+      "sport": "lol",
+      "desc": "G2 Esports ML",
+      "market": "LEC Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:15 PM ET",
+      "vs": "GIANTX",
+      "team": "G2 Esports",
+      "opp": "GIANTX",
+      "analysis": "4-1 last 5 (beat Shifters, Natus Vincere, Team Heretics) (lost to Fnatic) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Shifters, Natus Vincere, Team Heretics) (lost to Fnatic) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches ",
+      "awayTeam": "G2 Esports",
+      "homeTeam": "GIANTX"
     }
   ]
 }
