@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T09:09:06Z",
+  "updated": "2026-08-24T11:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11204,7 +11204,10 @@
       "opp": "The Huns Esports",
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this spot more than the price says.",
       "awayTeam": "Not A Squad Esports",
-      "homeTeam": "The Huns Esports"
+      "homeTeam": "The Huns Esports",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Not A Squad Esports 0-2 The Huns Esports \u00b7 final"
     }
   ]
 }
