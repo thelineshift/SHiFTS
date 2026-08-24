@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T17:09:09Z",
+  "updated": "2026-08-24T17:29:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11244,7 +11244,10 @@
       "opp": "ECHO",
       "analysis": "4-1 last 5 (beat Butterfly, Black Phoenix, GenOne) (lost to GenOne) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Butterfly, Black Phoenix, GenOne) (lost to GenOne) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
       "awayTeam": "CYBERSHOKE Esports",
-      "homeTeam": "ECHO"
+      "homeTeam": "ECHO",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "CYBERSHOKE Esports 1-0 ECHO \u00b7 final"
     },
     {
       "id": "inox-division-ml-0824",
