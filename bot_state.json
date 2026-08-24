@@ -49,17 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "vitalem-aerem-ml-0824",
-      "desc": "Vitalem Aerem ML",
-      "odds": -150,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Vitalem Aerem 1-2 The Huns Esports \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-23",
   "scan_events": {
