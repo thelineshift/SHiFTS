@@ -49,17 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "spirit-academy-ml-0824",
-      "desc": "Spirit Academy ML",
-      "odds": -265,
-      "result": "LOSS",
-      "units": -1.0,
-      "score": "Spirit Academy 0-1 Nuclear TigeRES \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-23",
   "scan_events": {
