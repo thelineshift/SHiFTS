@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T08:00:48Z",
+  "updated": "2026-08-24T09:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11184,7 +11184,10 @@
       "opp": "The Huns Esports",
       "analysis": "1-1 last 5 (beat Chinggis Warriors) (lost to Rare Atom) vs 2-3 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 1-1 last 5 (beat Chinggis Warriors) (lost to Rare Atom) vs 2-3 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "Vitalem Aerem",
-      "homeTeam": "The Huns Esports"
+      "homeTeam": "The Huns Esports",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Vitalem Aerem 1-2 The Huns Esports \u00b7 final"
     },
     {
       "id": "not-a-squad-esports-ml-0824",
