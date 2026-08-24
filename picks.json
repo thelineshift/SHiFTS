@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T11:49:06Z",
+  "updated": "2026-08-24T12:00:52Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11208,6 +11208,40 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "Not A Squad Esports 0-2 The Huns Esports \u00b7 final"
+    },
+    {
+      "id": "spirit-academy-ml-0824",
+      "date": "2026-08-24",
+      "sport": "cs2",
+      "desc": "Spirit Academy ML",
+      "market": "IEM Bo1",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "12:00 PM ET",
+      "vs": "Nuclear TigeRES",
+      "team": "Spirit Academy",
+      "opp": "Nuclear TigeRES",
+      "analysis": "4-1 last 5 (beat aimclub, Young TigeRES, mellren) (lost to aimclub) vs 3-2 \u2014 model line -265 (our 73%) | \ud83e\udde0 **The read:** 4-1 last 5 (beat aimclub, Young TigeRES, mellren) (lost to aimclub) vs 3-2 \u2014 model line -265 (our 73%). That's a **20-point** gap over Nuclear TigeRES the number hasn't priced.",
+      "awayTeam": "Spirit Academy",
+      "homeTeam": "Nuclear TigeRES"
+    },
+    {
+      "id": "cybershoke-esports-ml-0824",
+      "date": "2026-08-24",
+      "sport": "cs2",
+      "desc": "CYBERSHOKE Esports ML",
+      "market": "IEM Bo1",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "12:00 PM ET",
+      "vs": "ECHO",
+      "team": "CYBERSHOKE Esports",
+      "opp": "ECHO",
+      "analysis": "4-1 last 5 (beat Butterfly, Black Phoenix, GenOne) (lost to GenOne) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Butterfly, Black Phoenix, GenOne) (lost to GenOne) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up.",
+      "awayTeam": "CYBERSHOKE Esports",
+      "homeTeam": "ECHO"
     }
   ]
 }
