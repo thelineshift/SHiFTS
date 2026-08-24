@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T17:29:07Z",
+  "updated": "2026-08-24T17:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11284,7 +11284,10 @@
       "opp": "GIANTX",
       "analysis": "4-1 last 5 (beat Shifters, Natus Vincere, Team Heretics) (lost to Fnatic) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Shifters, Natus Vincere, Team Heretics) (lost to Fnatic) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches ",
       "awayTeam": "G2 Esports",
-      "homeTeam": "GIANTX"
+      "homeTeam": "GIANTX",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "G2 Esports 0-2 Deer Gaming \u00b7 final"
     }
   ]
 }
