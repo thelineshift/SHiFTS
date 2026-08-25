@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T16:00:50Z",
+  "updated": "2026-08-25T19:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11401,7 +11401,10 @@
       "opp": "Just Players",
       "analysis": "2-1 last 5 (beat MASONIC, WRAITH PCIFIC) (lost to HyperSpirit) vs 2-3 \u2014 model line -300 (our 75%) | \ud83d\udd25 **Momentum play:** 2-1 last 5 (beat MASONIC, WRAITH PCIFIC) (lost to HyperSpirit) vs 2-3 \u2014 model line -300 (our 75%). Ride the **27-point** form edge before the market catches up.",
       "awayTeam": "Drip Too Hard",
-      "homeTeam": "Just Players"
+      "homeTeam": "Just Players",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Drip Too Hard 1-2 Just Players \u00b7 final"
     },
     {
       "id": "enrage-ml-0825",
