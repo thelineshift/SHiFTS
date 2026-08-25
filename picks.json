@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T11:49:07Z",
+  "updated": "2026-08-25T12:00:49Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11342,6 +11342,40 @@
       "analysis": "4-1 last 5 (beat Black Phoenix, Lavked, Permitta Esports) (lost to GenOne) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Black Phoenix, Lavked, Permitta Esports) (lost to GenOne) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of m",
       "awayTeam": "UNiTY esports",
       "homeTeam": "Leo Team"
+    },
+    {
+      "id": "quantumx-ml-0825",
+      "date": "2026-08-25",
+      "sport": "cs2",
+      "desc": "QuantumX ML",
+      "market": "ESL Challenger League Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "09:00 AM ET",
+      "vs": "Alter Ego",
+      "team": "QuantumX",
+      "opp": "Alter Ego",
+      "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). That's a **10-point** gap over Alter Ego the number hasn't priced.",
+      "awayTeam": "QuantumX",
+      "homeTeam": "Alter Ego"
+    },
+    {
+      "id": "rare-atom-ml-0825",
+      "date": "2026-08-25",
+      "sport": "cs2",
+      "desc": "Rare Atom ML",
+      "market": "ESL Challenger League Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "09:00 AM ET",
+      "vs": "LEGAM",
+      "team": "Rare Atom",
+      "opp": "LEGAM",
+      "analysis": "3-2 last 5 (beat Morningstar, Vitalem Aerem, The Huns Esports) (lost to Ground Zero) vs 0-0 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Morningstar, Vitalem Aerem, The Huns Esports) (lost to Ground Zero) vs 0-0 \u2014 model line -150 (our 60%). Books hang respect on the wrong side ",
+      "awayTeam": "Rare Atom",
+      "homeTeam": "LEGAM"
     }
   ]
 }
