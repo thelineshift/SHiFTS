@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T12:00:49Z",
+  "updated": "2026-08-25T12:29:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11375,7 +11375,10 @@
       "opp": "LEGAM",
       "analysis": "3-2 last 5 (beat Morningstar, Vitalem Aerem, The Huns Esports) (lost to Ground Zero) vs 0-0 \u2014 model line -150 (our 60%) | \ud83d\udcc8 **Market angle:** 3-2 last 5 (beat Morningstar, Vitalem Aerem, The Huns Esports) (lost to Ground Zero) vs 0-0 \u2014 model line -150 (our 60%). Books hang respect on the wrong side ",
       "awayTeam": "Rare Atom",
-      "homeTeam": "LEGAM"
+      "homeTeam": "LEGAM",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "Rare Atom 1-2 5star \u00b7 final"
     }
   ]
 }
