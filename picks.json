@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T17:49:07Z",
+  "updated": "2026-08-25T00:00:37Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11288,6 +11288,23 @@
       "result": "LOSS",
       "units_result": -1.0,
       "score": "G2 Esports 0-2 Deer Gaming \u00b7 final"
+    },
+    {
+      "id": "qub-ml-0825",
+      "date": "2026-08-25",
+      "sport": "cs2",
+      "desc": "QUB ML",
+      "market": "United21 Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "LPH Gaming",
+      "team": "QUB",
+      "opp": "LPH Gaming",
+      "analysis": "1-1 last 5 (beat Eternal Fire Academy) (lost to LPH Gaming) vs 2-3 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 1-1 last 5 (beat Eternal Fire Academy) (lost to LPH Gaming) vs 2-3 \u2014 model line -150 (our 60%). That's a **10-point** gap over LPH Gaming the number hasn't priced.",
+      "awayTeam": "QUB",
+      "homeTeam": "LPH Gaming"
     }
   ]
 }
