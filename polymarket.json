@@ -1,7 +1,8 @@
 {
-  "ts": "2026-08-25T11:44:04Z",
+  "ts": "2026-08-25T11:59:02Z",
   "configured": true,
   "balance_usd": 0.29,
   "buying_power": 0.29,
-  "error": "The server was unable to process your request."
+  "positions": [],
+  "error": "<!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-"
 }
