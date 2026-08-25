@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T08:00:46Z",
+  "updated": "2026-08-25T11:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11321,7 +11321,10 @@
       "opp": "BNK FearX Youth",
       "analysis": "4-1 last 5 (beat HANJIN BRION Challengers, Hanwha Life Esports Challengers, Gen.G Global Academy) (lost to DN SOOPers Challengers) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat HANJIN BRION Challengers, Hanwha Life Esports Challengers, Gen.G Global Academy) (lost to DN S",
       "awayTeam": "Kiwoom DRX Challengers",
-      "homeTeam": "BNK FearX Youth"
+      "homeTeam": "BNK FearX Youth",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Kiwoom DRX Challengers 3-1 BNK FearX Youth \u00b7 final"
     },
     {
       "id": "unity-esports-ml-0825",
