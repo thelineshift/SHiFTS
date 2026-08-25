@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T19:49:07Z",
+  "updated": "2026-08-25T20:00:50Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11422,6 +11422,23 @@
       "analysis": "3-2 last 5 (beat Subtop De France, ZOTIX, Younglings) (lost to eSuba) vs 2-2 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Subtop De France, ZOTIX, Younglings) (lost to eSuba) vs 2-2 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "ENRAGE",
       "homeTeam": "ex-Sangal ALTERS"
+    },
+    {
+      "id": "borracheiros-ml-0825",
+      "date": "2026-08-25",
+      "sport": "cs2",
+      "desc": "BORRACHEIROS ML",
+      "market": "ESL Challenger League Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 PM ET",
+      "vs": "Galorys",
+      "team": "BORRACHEIROS",
+      "opp": "Galorys",
+      "analysis": "3-2 last 5 (beat Damajuana, ???, ODDIK) (lost to Gr\u00eamio Esports) vs 2-2 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Damajuana, ???, ODDIK) (lost to Gr\u00eamio Esports) vs 2-2 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
+      "awayTeam": "BORRACHEIROS",
+      "homeTeam": "Galorys"
     }
   ]
 }
