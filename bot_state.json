@@ -13,18 +13,18 @@
     "deleted post 2081043081114370064 (oauth2)"
   ],
   "time_audit": {
-    "at": "2026-08-25 13:29 UTC",
+    "at": "2026-08-25 12:59 UTC",
     "flags": []
   },
   "room_pulse": {
     "\ud83c\udfaffree-pick-7-11": "2026-08-25 12:00 UTC",
-    "\ud83e\uddfereceipts": "2026-08-25 13:09 UTC",
+    "\ud83e\uddfereceipts": "2026-08-25 12:29 UTC",
     "\ud83d\udcacgeneral-chat": "2026-08-25 12:00 UTC",
     "\ud83d\udce3promotions": "2026-07-23 20:47 UTC",
     "\ud83c\udf81giveaway": "2026-08-08 01:41 UTC"
   },
   "resolution_watch": {
-    "at": "2026-08-25 13:29 UTC",
+    "at": "2026-08-25 12:59 UTC",
     "flags": [
       "cybershoke-esports-ml-0726 | CYBERSHOKE Esports ML -150 | tier=sharp",
       "team-flacons-ml-0726 | Team flacons ML -150 | tier=sharp",
@@ -41,15 +41,25 @@
     ]
   },
   "challenge_watch": {
-    "at": "2026-08-25 13:29 UTC",
+    "at": "2026-08-25 12:59 UTC",
     "flags": []
   },
   "giveaway_watch": {
-    "at": "2026-08-25 13:29 UTC",
+    "at": "2026-08-25 12:59 UTC",
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "unity-esports-ml-0825",
+      "desc": "UNiTY esports ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "UNiTY esports 0-2 Leo Team \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-24",
   "scan_events": {
@@ -379,7 +389,7 @@
     "weekly": "2026-08-23",
     "monthly": "2026-08-01",
     "deepdive_fired": "2026-07-25",
-    "x_ad": "2026-08-22",
+    "x_ad": "2026-08-25",
     "weekly_fired": "2026-08-23"
   },
   "gw_handled": [
