@@ -1,8 +1,8 @@
 {
-  "ts": "2026-08-25T08:29:05Z",
+  "ts": "2026-08-25T08:44:05Z",
   "configured": true,
   "balance_usd": 0.29,
   "buying_power": 0.29,
   "positions": [],
-  "error": "<!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-"
+  "open_orders": []
 }
