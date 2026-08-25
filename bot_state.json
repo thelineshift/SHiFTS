@@ -49,17 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "borracheiros-ml-0825",
-      "desc": "BORRACHEIROS ML",
-      "odds": -150,
-      "result": "WIN",
-      "units": 0.67,
-      "score": "BORRACHEIROS 2-1 Damajuana \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-24",
   "scan_events": {
