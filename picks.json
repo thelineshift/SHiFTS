@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T13:09:07Z",
+  "updated": "2026-08-25T14:49:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11361,7 +11361,10 @@
       "opp": "Alter Ego",
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \ud83e\udde0 **The read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). That's a **10-point** gap over Alter Ego the number hasn't priced.",
       "awayTeam": "QuantumX",
-      "homeTeam": "Alter Ego"
+      "homeTeam": "Alter Ego",
+      "result": "LOSS",
+      "units_result": -1.0,
+      "score": "QuantumX 0-2 Alter Ego \u00b7 final"
     },
     {
       "id": "rare-atom-ml-0825",
