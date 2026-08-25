@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T20:00:50Z",
+  "updated": "2026-08-25T20:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11438,7 +11438,10 @@
       "opp": "Galorys",
       "analysis": "3-2 last 5 (beat Damajuana, ???, ODDIK) (lost to Gr\u00eamio Esports) vs 2-2 \u2014 model line -150 (our 60%) | \ud83d\udd25 **Momentum play:** 3-2 last 5 (beat Damajuana, ???, ODDIK) (lost to Gr\u00eamio Esports) vs 2-2 \u2014 model line -150 (our 60%). Ride the **10-point** form edge before the market catches up.",
       "awayTeam": "BORRACHEIROS",
-      "homeTeam": "Galorys"
+      "homeTeam": "Galorys",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "BORRACHEIROS 2-1 Damajuana \u00b7 final"
     }
   ]
 }
