@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T00:00:51Z",
+  "updated": "2026-08-26T04:00:50Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11459,6 +11459,23 @@
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this spot more than the price says.",
       "awayTeam": "Elusive",
       "homeTeam": "Marsborne"
+    },
+    {
+      "id": "nongshim-redforce-ml-0826",
+      "date": "2026-08-26",
+      "sport": "valorant",
+      "desc": "Nongshim RedForce ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "04:00 AM ET",
+      "vs": "Paper Rex",
+      "team": "Nongshim RedForce",
+      "opp": "Paper Rex",
+      "analysis": "4-1 last 5 (beat T1, Team Secret, ZETA DIVISION) (lost to Rex Regum Qeon) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat T1, Team Secret, ZETA DIVISION) (lost to Rex Regum Qeon) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches ",
+      "awayTeam": "Nongshim RedForce",
+      "homeTeam": "Paper Rex"
     }
   ]
 }
