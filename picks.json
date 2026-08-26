@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T04:00:50Z",
+  "updated": "2026-08-26T10:09:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11475,7 +11475,10 @@
       "opp": "Paper Rex",
       "analysis": "4-1 last 5 (beat T1, Team Secret, ZETA DIVISION) (lost to Rex Regum Qeon) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat T1, Team Secret, ZETA DIVISION) (lost to Rex Regum Qeon) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches ",
       "awayTeam": "Nongshim RedForce",
-      "homeTeam": "Paper Rex"
+      "homeTeam": "Paper Rex",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Nongshim RedForce 2-0 Paper Rex \u00b7 final"
     }
   ]
 }
