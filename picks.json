@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T08:00:52Z",
+  "updated": "2026-08-27T11:09:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11498,7 +11498,10 @@
       "opp": "Vitality",
       "analysis": "4-1 last 5 (beat Iberian Soul, ASTRAL, NIO) (lost to HOTU) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Iberian Soul, ASTRAL, NIO) (lost to HOTU) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
       "awayTeam": "Inner Circle Esports",
-      "homeTeam": "Vitality"
+      "homeTeam": "Vitality",
+      "result": "WIN",
+      "units_result": 0.38,
+      "score": "Inner Circle Esports 2-0 Vitality \u00b7 final"
     },
     {
       "id": "varrel-ml-0827",
