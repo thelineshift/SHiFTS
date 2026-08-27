@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T13:09:06Z",
+  "updated": "2026-08-27T15:49:06Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11538,7 +11538,10 @@
       "opp": "The KnockoutX",
       "analysis": "3-2 last 5 (beat Kaleido Gaming, Last Bullet, Boring Players) (lost to Rare Atom) vs 1-1 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 3-2 last 5 (beat Kaleido Gaming, Last Bullet, Boring Players) (lost to Rare Atom) vs 1-1 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide,",
       "awayTeam": "Just Swing",
-      "homeTeam": "The KnockoutX"
+      "homeTeam": "The KnockoutX",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "Just Swing 2-1 The KnockoutX \u00b7 final"
     }
   ]
 }
