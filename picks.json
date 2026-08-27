@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T10:09:07Z",
+  "updated": "2026-08-27T03:29:07Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11458,7 +11458,10 @@
       "opp": "Marsborne",
       "analysis": "0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 0-0 last 5 vs 2-3 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide, the better side wins this spot more than the price says.",
       "awayTeam": "Elusive",
-      "homeTeam": "Marsborne"
+      "homeTeam": "Marsborne",
+      "result": "WIN",
+      "units_result": 0.67,
+      "score": "Elusive 2-1 shimmer \u00b7 final"
     },
     {
       "id": "nongshim-redforce-ml-0826",
