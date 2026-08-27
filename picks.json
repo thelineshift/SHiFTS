@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T11:09:06Z",
+  "updated": "2026-08-27T12:00:46Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11519,6 +11519,23 @@
       "analysis": "4-1 last 5 (beat Paper Rex, Kiwoom DRX, T1) (lost to DetonatioN FocusMe) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Paper Rex, Kiwoom DRX, T1) (lost to DetonatioN FocusMe) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up",
       "awayTeam": "VARREL",
       "homeTeam": "Global Esports"
+    },
+    {
+      "id": "just-swing-ml-0827",
+      "date": "2026-08-27",
+      "sport": "cs2",
+      "desc": "Just Swing ML",
+      "market": "ESL Challenger League Bo3",
+      "odds": -150,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "09:00 AM ET",
+      "vs": "The KnockoutX",
+      "team": "Just Swing",
+      "opp": "The KnockoutX",
+      "analysis": "3-2 last 5 (beat Kaleido Gaming, Last Bullet, Boring Players) (lost to Rare Atom) vs 1-1 \u2014 model line -150 (our 60%) | \u2694\ufe0f **Matchup read:** 3-2 last 5 (beat Kaleido Gaming, Last Bullet, Boring Players) (lost to Rare Atom) vs 1-1 \u2014 model line -150 (our 60%). When the form gap runs **10 points** wide,",
+      "awayTeam": "Just Swing",
+      "homeTeam": "The KnockoutX"
     }
   ]
 }
