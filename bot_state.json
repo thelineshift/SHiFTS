@@ -49,17 +49,7 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [
-    {
-      "id": "inner-circle-esports-ml-0827",
-      "desc": "Inner Circle Esports ML",
-      "odds": -265,
-      "result": "WIN",
-      "units": 0.38,
-      "score": "Inner Circle Esports 2-0 Vitality \u00b7 final",
-      "tier": "whale"
-    }
-  ],
+  "unannounced_results": [],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-26",
   "scan_events": {
