@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "varrel-ml-0827",
+      "desc": "VARREL ML",
+      "odds": -265,
+      "result": "LOSS",
+      "units": -1.0,
+      "score": "VARREL 0-2 Global Esports \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-26",
   "scan_events": {
@@ -398,7 +408,7 @@
     "weekly": "2026-08-30",
     "monthly": "2026-08-01",
     "deepdive_fired": "2026-07-25",
-    "x_ad": "2026-08-25",
+    "x_ad": "2026-08-27",
     "weekly_fired": "2026-08-23"
   },
   "gw_handled": [
