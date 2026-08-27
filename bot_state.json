@@ -51,7 +51,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "elusive-ml-0826",
+      "desc": "Elusive ML",
+      "odds": -150,
+      "result": "WIN",
+      "units": 0.67,
+      "score": "Elusive 2-1 shimmer \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-24",
   "scan_events": {
