@@ -1,8 +1,7 @@
 {
-  "ts": "2026-08-27T06:14:04Z",
+  "ts": "2026-08-27T06:29:04Z",
   "configured": true,
   "balance_usd": 0.29,
   "buying_power": 0.29,
-  "positions": [],
-  "open_orders": []
+  "error": "The server was unable to process your request."
 }
