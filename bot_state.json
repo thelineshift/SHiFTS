@@ -49,7 +49,17 @@
     "flags": []
   },
   "bot_version": "9.24.29",
-  "unannounced_results": [],
+  "unannounced_results": [
+    {
+      "id": "just-swing-ml-0827",
+      "desc": "Just Swing ML",
+      "odds": -150,
+      "result": "WIN",
+      "units": 0.67,
+      "score": "Just Swing 2-1 The KnockoutX \u00b7 final",
+      "tier": "whale"
+    }
+  ],
   "last_x_receipt_ts": 1785362587.0271225,
   "last_recap_date": "2026-08-26",
   "scan_events": {
