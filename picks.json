@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T15:49:06Z",
+  "updated": "2026-08-27T16:00:46Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11542,6 +11542,23 @@
       "result": "WIN",
       "units_result": 0.67,
       "score": "Just Swing 2-1 The KnockoutX \u00b7 final"
+    },
+    {
+      "id": "inox-division-ml-0827",
+      "date": "2026-08-27",
+      "sport": "cs2",
+      "desc": "INOX Division ML",
+      "market": "CCT Europe Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "01:00 PM ET",
+      "vs": "Just Players",
+      "team": "INOX Division",
+      "opp": "Just Players",
+      "analysis": "4-1 last 5 (beat SPARTA, Butterfly, Honv\u00e9d) (lost to 100 Thieves) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat SPARTA, Butterfly, Honv\u00e9d) (lost to 100 Thieves) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
+      "awayTeam": "INOX Division",
+      "homeTeam": "Just Players"
     }
   ]
 }
