@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T03:29:07Z",
+  "updated": "2026-08-27T08:00:52Z",
   "picks": [
     {
       "id": "2026-07-19-under15-final",
@@ -11482,6 +11482,40 @@
       "result": "WIN",
       "units_result": 0.38,
       "score": "Nongshim RedForce 2-0 Paper Rex \u00b7 final"
+    },
+    {
+      "id": "inner-circle-esports-ml-0827",
+      "date": "2026-08-27",
+      "sport": "cs2",
+      "desc": "Inner Circle Esports ML",
+      "market": "BLAST Open Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "05:00 AM ET",
+      "vs": "Vitality",
+      "team": "Inner Circle Esports",
+      "opp": "Vitality",
+      "analysis": "4-1 last 5 (beat Iberian Soul, ASTRAL, NIO) (lost to HOTU) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udcc8 **Market angle:** 4-1 last 5 (beat Iberian Soul, ASTRAL, NIO) (lost to HOTU) vs 3-2 \u2014 model line -265 (our 73%). Books hang respect on the wrong side \u2014 **20 points** of model edge, taken.",
+      "awayTeam": "Inner Circle Esports",
+      "homeTeam": "Vitality"
+    },
+    {
+      "id": "varrel-ml-0827",
+      "date": "2026-08-27",
+      "sport": "valorant",
+      "desc": "VARREL ML",
+      "market": "VCT Bo3",
+      "odds": -265,
+      "units": 1.0,
+      "tier": "whale",
+      "time_et": "07:00 AM ET",
+      "vs": "Global Esports",
+      "team": "VARREL",
+      "opp": "Global Esports",
+      "analysis": "4-1 last 5 (beat Paper Rex, Kiwoom DRX, T1) (lost to DetonatioN FocusMe) vs 3-2 \u2014 model line -265 (our 73%) | \ud83d\udd25 **Momentum play:** 4-1 last 5 (beat Paper Rex, Kiwoom DRX, T1) (lost to DetonatioN FocusMe) vs 3-2 \u2014 model line -265 (our 73%). Ride the **20-point** form edge before the market catches up",
+      "awayTeam": "VARREL",
+      "homeTeam": "Global Esports"
     }
   ]
 }
